@@ -25,7 +25,7 @@
 
 **ayberkdt University Explorer**, mühendislik öğrencilerinin akademik kariyerlerini planlamalarına yardımcı olmak için tasarlanmış modern bir masaüstü uygulamasıdır. 
 
-Avrupa'dan Asya'ya, ABD'den Rusya'ya kadar **100+ üniversitenin** detaylı verilerini işler, normalize eder ve kullanıcıya **karar destek mekanizması** sunar. Statik listelerin aksine, dinamik filtreleme ve görsel analiz araçları içerir.
+Avrupa'dan Asya'ya, ABD'den Rusya'ya kadar **150+ üniversitenin** detaylı verilerini işler, normalize eder ve kullanıcıya **karar destek mekanizması** sunar. Statik listelerin aksine, dinamik filtreleme ve görsel analiz araçları içerir.
 
 ### ✨ Temel Özellikler
 
