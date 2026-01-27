@@ -5,7 +5,7 @@
 </a>
 
 <br/>
-<h1>🚀 SimCode University Explorer</h1>
+<h1>🚀 ayberkdt University Explorer</h1>
 
 <p>
   <b>Dünya çapında Havacılık ve Uzay Mühendisliği Yüksek Lisans programlarını keşfedin, analiz edin ve karşılaştırın.</b>
@@ -24,7 +24,7 @@
 
 ## 📖 Proje Hakkında
 
-**SimCode University Explorer**, mühendislik öğrencilerinin akademik kariyerlerini planlamalarına yardımcı olmak için tasarlanmış modern bir masaüstü uygulamasıdır. 
+**ayberkdt University Explorer**, mühendislik öğrencilerinin akademik kariyerlerini planlamalarına yardımcı olmak için tasarlanmış modern bir masaüstü uygulamasıdır. 
 
 Avrupa'dan Asya'ya, ABD'den Rusya'ya kadar **100+ üniversitenin** detaylı verilerini işler, normalize eder ve kullanıcıya **karar destek mekanizması** sunar. Statik listelerin aksine, dinamik filtreleme ve görsel analiz araçları içerir.
 
