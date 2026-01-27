@@ -15,7 +15,6 @@
   <img src="https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/PyQt-6-41CD52?style=for-the-badge&logo=qt&logoColor=white" />
   <img src="https://img.shields.io/badge/Data-JSON-black?style=for-the-badge&logo=json&logoColor=white" />
-  <img src="https://img.shields.io/badge/License-MIT-purple?style=for-the-badge" />
 </p>
 
 </div>
