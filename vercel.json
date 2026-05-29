@@ -1,13 +1,22 @@
 {
-  "functions": {
-    "api/**/*.py": {
-      "includeFiles": "data_base/**"
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python",
+      "config": {
+        "includeFiles": "data_base/**"
+      }
+    },
+    {
+      "src": "public/**",
+      "use": "@vercel/static"
     }
-  },
+  ],
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/api/index"
+      "destination": "/api/index.py"
     },
     {
       "source": "/(.*)",
