@@ -1288,7 +1288,7 @@ def apply_ranking_delegates(
     # Column → goodness key mapping
     heatmap_cols = {
         "Masraf(şehir)": "cost_good",
-        "Semester fee (€)": "fee_good",
+        "Tuition & Fees (€)": "fee_good",
         "Hedefe uyum": "fit_good",
     }
 

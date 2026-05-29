@@ -231,7 +231,7 @@ class MainWindow(QMainWindow):
         weights_layout.setSpacing(14)
 
         self.ws_cost = WeightSliderRow("Cost (↓)", self.weights.cost_city, step=0.01)
-        self.ws_fee = WeightSliderRow("Semester fee (↓)", self.weights.semester_fee, step=0.01)
+        self.ws_fee = WeightSliderRow("Tuition & Fees (↓)", self.weights.semester_fee, step=0.01)
         self.ws_fit = WeightSliderRow("Fit (↑)", self.weights.focus_fit, step=0.01)
         self.ws_pros = WeightSliderRow("Pros (↑)", self.weights.pros_bonus, step=0.01)
         self.ws_cons = WeightSliderRow("Cons (↓)", self.weights.cons_penalty, step=0.01)
@@ -249,7 +249,7 @@ class MainWindow(QMainWindow):
         self.cb_sort = QComboBox()
         self.cb_sort.addItems([
             "Score (High → Low)",
-            "Semester fee (Low → High)",
+            "Tuition & Fees (Low → High)",
             "Cost (Low → High)",
             "University (A → Z)",
         ])
@@ -321,7 +321,7 @@ class MainWindow(QMainWindow):
         kpi_layout.setSpacing(18)
 
         self.kpi_total = KPICard("Total Schools", "0", "🏛️")
-        self.kpi_avg_fee = KPICard("Avg. Semester fee", "0€", "💰")
+        self.kpi_avg_fee = KPICard("Avg. Tuition & Fees", "0€", "💰")
         self.kpi_avg_score = KPICard("Avg. Score", "0.0", "⭐")
         self.kpi_avg_cost = KPICard("Avg. Cost", "Medium", "🏙️")
 
@@ -605,7 +605,7 @@ class MainWindow(QMainWindow):
 
         # Fee numeric cache (semester fee)
         fee_src = None
-        for cand in ("semester_fee_eur", "Cost_Semester_Fees", "semester_fee", "semester_fee_raw", "fee_eur"):
+        for cand in ("annual_fee_eur", "semester_fee_eur", "Cost_Semester_Fees", "semester_fee", "semester_fee_raw", "fee_eur"):
             if cand in out.columns:
                 fee_src = cand
                 break
@@ -753,7 +753,7 @@ class MainWindow(QMainWindow):
         self.kpi_total.setValue(str(len(df)))
 
         # Avg fee
-        fee_col = "Semester fee (€)"
+        fee_col = "Tuition & Fees (€)"
         if fee_col in df.columns:
             fees = pd.to_numeric(df[fee_col], errors="coerce")
             m = fees.mean()
@@ -877,8 +877,8 @@ class MainWindow(QMainWindow):
                 default_if_no_keywords=0.5,
             )
 
-            # weights (normalized() varsa kullan)
-            w = getattr(self.weights, "normalized", lambda: self.weights)()
+            # weights
+            w = self.weights.normalized(has_keywords=bool(keywords))
             df["score"] = (
                 w.cost_city * df["_score_cost"]
                 + w.semester_fee * df["_score_fee"]
@@ -891,7 +891,7 @@ class MainWindow(QMainWindow):
             mode = self.cb_sort.currentText()
             if mode.startswith("Score"):
                 df = df.sort_values("score", ascending=False)
-            elif mode.startswith("Semester fee"):
+            elif mode.startswith("Tuition & Fees"):
                 df = df.sort_values("_fee", ascending=True)
             elif mode.startswith("Cost"):
                 df = df.sort_values("_cost_num", ascending=True)
@@ -907,7 +907,7 @@ class MainWindow(QMainWindow):
                 ("city", "Şehir"),
                 ("country", "Ülke"),
                 (cost_display_col, "Masraf(şehir)"),
-                ("_fee", "Semester fee (€)"),
+                ("_fee", "Tuition & Fees (€)"),
                 ("tuition_eur_per_year", "Tuition (€/yr)"),
                 ("_score_fit", "Hedefe uyum"),
                 ("score", "Skor"),
@@ -936,7 +936,7 @@ class MainWindow(QMainWindow):
             out = out[selected_cols].rename(columns=rename_map)
             out.insert(1, "Detay", "")
 
-            for col in ("Skor", "Hedefe uyum", "Semester fee (€)", "Tuition (€/yr)"):
+            for col in ("Skor", "Hedefe uyum", "Tuition & Fees (€)", "Tuition (€/yr)"):
                 if col in out.columns:
                     try:
                         out[col] = pd.to_numeric(out[col], errors="coerce")

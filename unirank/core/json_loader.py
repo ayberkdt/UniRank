@@ -127,6 +127,10 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
                 "semester_fees_json": _json_compact(dump.get("Cost_Semester_Fees", [])),
                 
                 "tuition_eur_per_year": tuition_eur,
+                "annual_fee_eur": (
+                    (model.Cost_Semester_Fees[0].amount * 2 if model.Cost_Semester_Fees and model.Cost_Semester_Fees[0].amount else 0.0)
+                    + tuition_eur
+                ) if ((model.Cost_Semester_Fees and model.Cost_Semester_Fees[0].amount) or tuition_eur > 0) else None,
                 "tuition_raw": model.Cost_Tuition[0].raw if model.Cost_Tuition else "",
                 "tuition_program": model.Cost_Tuition[0].program if model.Cost_Tuition else "",
                 "tuition_period": model.Cost_Tuition[0].period if model.Cost_Tuition else "",

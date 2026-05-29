@@ -12,7 +12,7 @@ class RankedModel(QAbstractTableModel):
     # Kolon bazlı format + hizalama
     _FMT: Dict[str, Tuple[str, Qt.AlignmentFlag]] = {
         "Skor": ("{:.3f}", Qt.AlignmentFlag.AlignVCenter | Qt.AlignmentFlag.AlignRight),
-        "Semester fee (€)": ("{:.2f}", Qt.AlignmentFlag.AlignVCenter | Qt.AlignmentFlag.AlignRight),
+        "Tuition & Fees (€)": ("{:.2f}", Qt.AlignmentFlag.AlignVCenter | Qt.AlignmentFlag.AlignRight),
         "Hedefe uyum": ("{:.2f}", Qt.AlignmentFlag.AlignVCenter | Qt.AlignmentFlag.AlignRight),
         # İstersen buraya yeni kolonlar da ekleyebilirsin:
         # "Tuition (€/yr)": ("{:.0f}", Qt.AlignmentFlag.AlignVCenter | Qt.AlignmentFlag.AlignRight),
@@ -28,7 +28,7 @@ class RankedModel(QAbstractTableModel):
         "Ülke",
         "Skor",
         "Hedefe uyum",
-        "Semester fee (€)",
+        "Tuition & Fees (€)",
         "Detay",
     ]
 
@@ -215,17 +215,21 @@ class Weights:
     pros_bonus: float = 0.07
     cons_penalty: float = 0.03
 
-    def normalized(self) -> "Weights":
-        # Sadece ana 3 ağırlığı normalize et
-        s = float(self.cost_city + self.semester_fee + self.focus_fit)
+    def normalized(self, has_keywords: bool = True) -> "Weights":
+        # Eğer keyword yoksa fit, pros ve cons ağırlıkları 0'a düşer.
+        fit_w = self.focus_fit if has_keywords else 0.0
+        pros_w = self.pros_bonus if has_keywords else 0.0
+        cons_w = self.cons_penalty if has_keywords else 0.0
+
+        s = float(self.cost_city + self.semester_fee + fit_w + pros_w + cons_w)
         if s <= 1e-9:
             return self
         return Weights(
             cost_city=self.cost_city / s,
             semester_fee=self.semester_fee / s,
-            focus_fit=self.focus_fit / s,
-            pros_bonus=self.pros_bonus,
-            cons_penalty=self.cons_penalty,
+            focus_fit=fit_w / s,
+            pros_bonus=pros_w / s,
+            cons_penalty=cons_w / s,
         )
 
     def clamp_nonneg(self) -> "Weights":

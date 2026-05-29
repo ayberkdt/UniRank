@@ -130,7 +130,7 @@ def vectorized_text_match_score(
     *,
     case: bool = False,
     regex: bool = False,
-    default_if_no_keywords: float = 0.5,
+    default_if_no_keywords: float = 0.0,
 ) -> pd.Series:
     keys = normalize_keywords(keywords, min_len=1, max_terms=40)
 
@@ -167,7 +167,7 @@ def vectorized_text_match_multi(
     *,
     case: bool = False,
     regex: bool = False,
-    default_if_no_keywords: float = 0.5,
+    default_if_no_keywords: float = 0.0,
 ) -> pd.Series:
     cols = [c for c in (columns or []) if c in df.columns]
     if not cols:
