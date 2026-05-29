@@ -718,12 +718,16 @@ class DetailsDrawer(QFrame):
         body.setObjectName("DrawerBody")
         scroll.setWidget(body)
 
-        form = QFormLayout(body)
-        form.setFieldGrowthPolicy(QFormLayout.FieldGrowthPolicy.ExpandingFieldsGrow)
-        form.setLabelAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignTop)
-        form.setFormAlignment(Qt.AlignmentFlag.AlignTop)
-        form.setHorizontalSpacing(16)
-        form.setVerticalSpacing(16)
+        body_layout = QVBoxLayout(body)
+        body_layout.setContentsMargins(0, 0, 0, 0)
+        body_layout.setSpacing(24)
+
+        meta_form = QFormLayout()
+        meta_form.setFieldGrowthPolicy(QFormLayout.FieldGrowthPolicy.ExpandingFieldsGrow)
+        meta_form.setLabelAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignTop)
+        meta_form.setFormAlignment(Qt.AlignmentFlag.AlignTop)
+        meta_form.setHorizontalSpacing(16)
+        meta_form.setVerticalSpacing(12)
 
         # KV labels
         self.lbl_uni = _mk_kv_value("-")
@@ -731,22 +735,42 @@ class DetailsDrawer(QFrame):
         self.lbl_score = _mk_kv_value("-")
         self.lbl_src = _mk_kv_value("-", muted=True)
 
+        meta_form.addRow(self._mk_field_label("Üniversite"), self.lbl_uni)
+        meta_form.addRow(self._mk_field_label("Şehir"), self.lbl_city)
+        meta_form.addRow(self._mk_field_label("Skor"), self.lbl_score)
+        meta_form.addRow(self._mk_field_label("Kaynak"), self.lbl_src)
+        
+        body_layout.addLayout(meta_form)
+
+        # Separator Line
+        line = QFrame()
+        line.setFrameShape(QFrame.Shape.HLine)
+        line.setFrameShadow(QFrame.Shadow.Sunken)
+        line.setStyleSheet(f"background-color: {self._toks['border']}; border: none; height: 1px;")
+        body_layout.addWidget(line)
+
         # Text blocks (premium card-like)
         self.txt_strength = _mk_text_block()
         self.txt_pros = _mk_text_block()
         self.txt_cons = _mk_text_block()
         self.txt_focus = _mk_text_block()
 
-        form.addRow(self._mk_field_label("Üniversite"), self.lbl_uni)
-        form.addRow(self._mk_field_label("Şehir"), self.lbl_city)
-        form.addRow(self._mk_field_label("Skor"), self.lbl_score)
-        form.addRow(self._mk_field_label("Kaynak"), self.lbl_src)
+        sections_layout = QVBoxLayout()
+        sections_layout.setSpacing(20)
 
-        form.addRow(self._mk_section_label("Özet"), QWidget())
-        form.addRow(self._mk_field_label("Güçlü tarafı"), self.txt_strength)
-        form.addRow(self._mk_field_label("Avantaj"), self.txt_pros)
-        form.addRow(self._mk_field_label("Dezavantaj"), self.txt_cons)
-        form.addRow(self._mk_field_label("Güçlü alanlar"), self.txt_focus)
+        def _add_section(title, widget):
+            sec = QVBoxLayout()
+            sec.setSpacing(8)
+            sec.addWidget(self._mk_section_label(title))
+            sec.addWidget(widget)
+            sections_layout.addLayout(sec)
+
+        _add_section("Güçlü Tarafı", self.txt_strength)
+        _add_section("Avantaj", self.txt_pros)
+        _add_section("Dezavantaj", self.txt_cons)
+        _add_section("Güçlü Alanlar", self.txt_focus)
+
+        body_layout.addLayout(sections_layout)
 
         outer.addWidget(scroll, 1)
 
