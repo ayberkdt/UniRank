@@ -574,3 +574,68 @@ tbody tr td:last-child {
         transform: translateX(-100%);
     }
 }
+
+/* Country Flag Animations */
+.country-gradient {
+    font-weight: 700;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 300% 300%;
+    animation: flag-gradient 4s ease infinite;
+}
+
+@keyframes flag-gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Specific Country Flags */
+.country-gradient[data-country="Italy"] {
+    background-image: linear-gradient(135deg, #009246, #ffffff, #ce2b37);
+}
+.country-gradient[data-country="China"] {
+    background-image: linear-gradient(135deg, #EE1C25, #FFFF00, #EE1C25);
+}
+.country-gradient[data-country="Germany"] {
+    background-image: linear-gradient(135deg, #000000, #dd0000, #ffce00);
+}
+.country-gradient[data-country="Netherlands"] {
+    background-image: linear-gradient(135deg, #AE1C28, #FFFFFF, #21468B);
+}
+.country-gradient[data-country="France"] {
+    background-image: linear-gradient(135deg, #002395, #FFFFFF, #ED2939);
+}
+.country-gradient[data-country="Spain"] {
+    background-image: linear-gradient(135deg, #AA151B, #F1BF00, #AA151B);
+}
+.country-gradient[data-country="UK"], 
+.country-gradient[data-country="United Kingdom"] {
+    background-image: linear-gradient(135deg, #012169, #FFFFFF, #C8102E, #FFFFFF, #012169);
+}
+.country-gradient[data-country="USA"], 
+.country-gradient[data-country="United States"] {
+    background-image: linear-gradient(135deg, #B31942, #FFFFFF, #0A3161);
+}
+.country-gradient[data-country="Turkey"],
+.country-gradient[data-country="Türkiye"] {
+    background-image: linear-gradient(135deg, #E30A17, #FFFFFF, #E30A17);
+}
+.country-gradient[data-country="Sweden"] {
+    background-image: linear-gradient(135deg, #006AA7, #FECC00, #006AA7);
+}
+.country-gradient[data-country="Switzerland"] {
+    background-image: linear-gradient(135deg, #D52B1E, #FFFFFF, #D52B1E);
+}
+.country-gradient[data-country="Denmark"] {
+    background-image: linear-gradient(135deg, #C60C30, #FFFFFF, #C60C30);
+}
+.country-gradient[data-country="Belgium"] {
+    background-image: linear-gradient(135deg, #000000, #FDDA24, #EF3340);
+}
+
+/* Fallback for unmapped countries */
+.country-gradient {
+    background-image: linear-gradient(135deg, var(--accent-primary), var(--text-highlight));
+}

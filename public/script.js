@@ -353,11 +353,11 @@ function renderTable() {
         const favIcon = isFav ? '⭐' : '☆';
         
         tr.innerHTML = `
-            <td><span style="color:var(--text-muted); font-weight:700;">#${i + 1}</span></td>
+            <td><span style="color:var(--text-muted); font-weight:700;">${i + 1}</span></td>
             <td class="fav-cell" style="cursor: pointer; font-size: 16px;">${favIcon}</td>
             <td>${row.display_name || row.name}</td>
             <td>${row.city || '-'}</td>
-            <td>${row.country || '-'}</td>
+            <td><span class="country-gradient" data-country="${row.country}">${row.country || '-'}</span></td>
             <td><span class="score-badge" style="background: ${scColor}">${row._score.toFixed(2)}</span></td>
             <td>${(row._fitNorm * 100).toFixed(0)}%</td>
             <td>€${parseFloat(row.tuition_eur_per_year || 0).toFixed(0)}</td>
@@ -409,7 +409,7 @@ function openDrawer(data) {
             <div class="detail-grid">
                 <div class="detail-item">
                     <label>Country</label>
-                    <span>${data.country}</span>
+                    <span class="country-gradient" data-country="${data.country}">${data.country}</span>
                 </div>
                 <div class="detail-item">
                     <label>City</label>
