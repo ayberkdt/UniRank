@@ -662,13 +662,13 @@ class DetailsDrawer(QFrame):
 
         # ---------- UI ----------
         outer = QVBoxLayout(self)
-        outer.setContentsMargins(14, 14, 14, 14)
-        outer.setSpacing(12)
+        outer.setContentsMargins(24, 24, 24, 24)
+        outer.setSpacing(20)
 
         # Header
         header = QHBoxLayout()
         header.setContentsMargins(0, 0, 0, 0)
-        header.setSpacing(10)
+        header.setSpacing(16)
 
         self.lbl_title = QLabel("Detay")
         self.lbl_title.setObjectName("DrawerTitle")
@@ -722,8 +722,8 @@ class DetailsDrawer(QFrame):
         form.setFieldGrowthPolicy(QFormLayout.FieldGrowthPolicy.ExpandingFieldsGrow)
         form.setLabelAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignTop)
         form.setFormAlignment(Qt.AlignmentFlag.AlignTop)
-        form.setHorizontalSpacing(12)
-        form.setVerticalSpacing(10)
+        form.setHorizontalSpacing(16)
+        form.setVerticalSpacing(16)
 
         # KV labels
         self.lbl_uni = _mk_kv_value("-")
@@ -819,7 +819,7 @@ class DetailsDrawer(QFrame):
             background-color: {t["surface2"]};
             border: 1px solid {t["border"]};
             border-radius: 14px;
-            padding: 10px 10px;
+            padding: 14px 16px;
         }}
         """)
         _repolish(self)
