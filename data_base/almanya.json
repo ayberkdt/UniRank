@@ -1,735 +1,1172 @@
 [
     {
-        "Country": "ıGıeırımıaınıyı",
-        "City": "ıMıüınıiıhı",
-        "State_Region": "ıBıaıvıyıeırıaı",
-        "Uni_ID": "ıtıuımı",
-        "University_Name": "ıTıeıcıhınıiıcıaılı ıUınıiıvıeırısıiıtıyı ıoıfı ıMıuınıiıcıhı",
-        "University_Display_Name": "ıTıeıcıhınıiıcıaılı ıUınıiıvıeırısıiıtıyı ıoıfı ıMıuınıiıcıhı ı(ıTıUıMı)ı",
-        "University_Short_Name": "ıTıUıMı",
+        "Country": "Germany",
+        "City": "Münih",
+        "State_Region": "Bavyera",
+        "Uni_ID": "tum",
+        "University_Name": "Technical University of Munich",
+        "University_Display_Name": "Technical University of Munich (TUM)",
+        "University_Short_Name": "TUM",
         "Cost_Tuition": [
             {
+                "scope": "non_eu",
+                "program": "MSc Aerospace",
                 "amount": 6000.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
-                "period": "ısıeımıeısıtıeırı",
-                "program": "ıMıSıcı ıAıeırıoısıpıaıcıeı",
-                "raw": "ıMıSıcı ıAıeırıoısıpıaıcıeı:ı ı€ı6ı,ı0ı0ı0ı/ısıeımıeısıtıeırı ı(ıWıiıSıeı ı2ı5ı/ı2ı6ı→ı)ı",
-                "scope": "ınıoını_ıeıuı"
+                "currency": "EUR",
+                "period": "semester",
+                "raw": "MSc Aerospace: €6,000/semester (WiSe 25/26→)",
+                "effective_from_term_code": "2025W"
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 85.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ı€ı8ı5ı ı(ıWıiıSıeı ı2ı5ı/ı2ı6ı)ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "€85 (WiSe 25/26)",
+                "term_code": "2025W"
             },
             {
+                "term": "SoSe 2026",
                 "amount": 97.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ı€ı9ı7ı ı(ıSıoıSıeı ı2ı6ı→ı)ı",
-                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
-                "term_code": "ı2ı0ı2ı6ıSı"
+                "raw": "€97 (SoSe 26→)",
+                "term_code": "2026S"
             }
         ],
         "Scholarships_Info": [
             {
-                "amount": "ı€ı3ı0ı0ı/ımıoınıtıhı",
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıDıeıuıtısıcıhılıaınıdısıtıiıpıeınıdıiıuımı",
-                "notes": "ı€ı3ı0ı0ı/ımıoınıtıhı;ı ıjıoıiınıtılıyı ıfıuınıdıeıdı ıbıyı ıcıoımıpıaınıiıeısı ıaınıdı ıfıeıdıeırıaılı ıgıoıvıtı",
-                "provider": "ıTıUıMı",
-                "type": "ımıeırıiıtı",
-                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıtıuımı.ıdıeı/ıeını/ısıtıuıdıiıeısı/ıfıeıeısı/ıfıiınıaınıcıiınıgı-ıyıoıuırı-ısıtıuıdıiıeısı/ısıcıhıoılıaırısıhıiıpısı"
+                "name": "Deutschlandstipendium",
+                "provider": "TUM",
+                "type": "merit",
+                "eligibility": "non_eu_ok",
+                "amount": "€300/month",
+                "notes": "€300/month; jointly funded by companies and federal govt",
+                "url": "https://www.tum.de/en/studies/fees/financing-your-studies/scholarships"
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıTıUıMı ıSıtıuıdıyı ıSıcıhıoılıaırısıhıiıpı",
-                "notes": "ıSıuıpıpıoırıtı ıfıoırı ıiınıtıeırınıaıtıiıoınıaılı ısıtıuıdıeınıtısı;ı ıcıoımıpıeıtıiıtıiıvıeı",
-                "provider": "ıTıUıMı",
-                "type": "ınıeıeıdı/ımıeırıiıtı",
-                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıtıuımı.ıdıeı/ıeını/ısıtıuıdıiıeısı/ıfıeıeısı/ıfıiınıaınıcıiınıgı-ıyıoıuırı-ısıtıuıdıiıeısı/ısıcıhıoılıaırısıhıiıpısı"
+                "name": "TUM Study Scholarship",
+                "provider": "TUM",
+                "type": "need/merit",
+                "eligibility": "non_eu_ok",
+                "notes": "Support for international students; competitive",
+                "url": "https://www.tum.de/en/studies/fees/financing-your-studies/scholarships"
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıDıAıAıDı ıSıcıhıoılıaırısıhıiıpı ıDıaıtıaıbıaısıeı",
-                "notes": "ıSıeıaırıcıhı ıeıxıtıeırınıaılı ıfıuınıdıiınıgı ıfıoırı ınıoını-ıEıUı ıaıpıpılıiıcıaınıtısı",
-                "provider": "ıDıAıAıDı",
-                "type": "ıeıxıtıeırınıaılı",
-                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıdıaıaıdı.ıdıeı/ıeını/ısıtıuıdıyı-ıaınıdı-ırıeısıeıaırıcıhı-ıiını-ıgıeırımıaınıyı/ısıcıhıoılıaırısıhıiıpısı/ı"
+                "name": "DAAD Scholarship Database",
+                "provider": "DAAD",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "Search external funding for non-EU applicants",
+                "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
             }
         ],
-        "Cost_City_Living": "ıvıeırıyı_ıhıiıgıhı",
-        "Cost_City_Rank": 5,
-        "Living_Housing_Difficulty": "ıNıiıgıhıtımıaırıeı",
+        "Cost_City_Living": "very_high",
+        "Cost_City_Rank": 5.0,
+        "Living_Housing_Difficulty": "Nightmare",
         "Living_Housing_Score": 10,
-        "Program_Name": "ıMı.ıSıcı.ı ıAıeırıoısıpıaıcıeı ıEınıgıiınıeıeırıiınıgı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıtıuımı.ıdıeı/ıeını/ısıtıuıdıiıeısı/ıdıeıgırıeıeı-ıpırıoıgırıaımısı/ıdıeıtıaıiılı/ıaıeırıoısıpıaıcıeı-ımıaısıtıeırı-ıoıfı-ısıcıiıeınıcıeı-ımısıcı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıAıpıtıiıtıuıdıeı ıTıeısıtı",
-        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
-        "Analysis_Strong_Areas": "ıAısıtırıoıdıyınıaımıiıcısı,ı ıGıNı°ıCı,ı ıOıDı/ıNıaıvıiıgıaıtıiıoını,ı ımıiısısıiıoını ıaınıaılıyısıiısı",
+        "Program_Name": "M.Sc. Aerospace Engineering",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://www.tum.de/en/studies/degree-programs/detail/aerospace-master-of-science-msc",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Aptitude Test",
+        "Admission_Language_Req": "English C1",
+        "Analysis_Strong_Areas": "Astrodynamics, GNC, OD/Navigation, mission analysis",
         "Analysis_Pros": [
-            "ıGıeırımıaınıyı’ısı ısıtırıoınıgıeısıtı ıoıvıeırıaılılı ırıeıpıuıtıaıtıiıoını ıaınıdı ınıeıtıwıoırıkı ıfıoırı ıaıeırıoısıpıaıcıeı/ısıpıaıcıeı,ı ıwıiıtıhı ıaı ıvıeırıyı ıdıeıeıpı ıcıoıuırısıeı ı+ı ıtıhıeısıiısı ıeıcıoısıyısıtıeımı ıaırıoıuınıdı ıaısıtırıoıdıyınıaımıiıcısı,ı ıGıNı°ıCı,ı ıOıDı/ınıaıvıiıgıaıtıiıoını ıaınıdı ımıiısısıiıoını ıdıeısıiıgını.ı;ı ıLıaırıgıeı ırıeısıeıaırıcıhı ıaınıdı ıiınıdıuısıtırıyı ıcılıuısıtıeırı ıaırıoıuınıdı ıMıuınıiıcıhı/ıOıtıtıoıbırıuınını ı(ıDıLıRı ı+ı ıpırıiımıeısı/ısıtıaırıtıuıpısı)ı,ı ıwıhıiıcıhı ıtıeınıdısı ıtıoı ıtırıaınısılıaıtıeı ıiınıtıoı ımıoırıeı ıtıhıeısıiısı ıtıoıpıiıcısı,ı ıpıaırıtı-ıtıiımıeı ıoıpıtıiıoınısı,ı ıaınıdı ısıtıuıdıeınıtı ıpırıoıjıeıcıtı ıvıiısıiıbıiılıiıtıyı.ı;ı ıEıxıcıeılılıeınıtı ıcıoımıpıuıtıaıtıiıoınıaılı ıcıuılıtıuırıeı ı(ısıiımıuılıaıtıiıoını,ı ıeısıtıiımıaıtıiıoını,ı ıoıpıtıiımıiızıaıtıiıoını,ı ıHıPı°ıCı)ı ı–ı ıfıiıtısı ıwıeılılı ıiıfı ıyıoıuı ıwıaınıtı ıtıoı ıgıoı ıhıeıaıvıyı ıoını ıaılıgıoırıiıtıhımıiıcı/ıpıhıyısıiıcısı-ıbıaısıeıdı ıwıoırıkı.ı"
+            "Germany’s strongest overall reputation and network for aerospace/space, with a very deep course + thesis ecosystem around astrodynamics, GNC, OD/navigation and mission design.",
+            "Large research and industry cluster around Munich/Ottobrunn (DLR + primes/startups), which tends to translate into more thesis topics, part-time options, and student project visibility.",
+            "Excellent computational culture (simulation, estimation, optimization, HPC) – fits well if you want to go heavy on algorithmic/physics-based work."
         ],
         "Analysis_Cons": [
-            "ıNıoını‑ıEıUı ıtıuıiıtıiıoını ıfıoırı ıtıhıeı ıAıeırıoısıpıaıcıeı ıMı.ıSıcı.ı ıiısı ıvıeırıyı ıhıiıgıhı,ı ıaınıdı ıtıhıeı ıcıiıtıyı’ısı ıcıoısıtı ıoıfı ılıiıvıiınıgı ıiısı ıaımıoınıgı ıtıhıeı ıhıiıgıhıeısıtı ıiını ıGıeırımıaınıyı ı(ıhıoıuısıiınıgı ıiısı ıtıhıeı ımıaıiını ıpıaıiını ıpıoıiınıtı)ı.ı;ı ıAıdımıiısısıiıoını ıhıaısı ıaını ıaıpıtıiıtıuıdıeı ıaısısıeısısımıeınıtı ıpırıoıcıeıdıuırıeı ı(ırıiısıkı/ıuınıcıeırıtıaıiınıtıyı ıvısı ıpıuırıeılıyı ıgırıaıdıeı-ıbıaısıeıdı ıaıdımıiısısıiıoını)ı.ı;ı ıBıiılıiınıgıuıaılı ıeınıvıiırıoınımıeınıtı:ı ıeıvıeını ıiıfı ıyıoıuı ıaıpıpılıyı ıwıiıtıhı ıEınıgılıiısıhı,ı ısıoımıeı ıcıoıuırısıeısı/ıaıdımıiınıiısıtırıaıtıiıoını ıaınıdı ıdıaıyı-ıtıoı-ıdıaıyı ılıiıfıeı ımıaıyı ırıeıqıuıiırıeı ıGıeırımıaını ıeıfıfıoırıtı.ı"
+            "Non‑EU tuition for the Aerospace M.Sc. is very high, and the city’s cost of living is among the highest in Germany (housing is the main pain point).",
+            "Admission has an aptitude assessment procedure (risk/uncertainty vs purely grade-based admission).",
+            "Bilingual environment: even if you apply with English, some courses/administration and day-to-day life may require German effort."
         ],
         "Analysis_Tags": [
-            "ıaısıtırıoıdıyınıaımıiıcısı;ı ıgınıcı;ı ıoırıbıiıtıdıeıtıeırımıiınıaıtıiıoını;ı ınıaıvıiıgıaıtıiıoını;ı ımıiısısıiıoınıaınıaılıyısıiısı;ı ıcıoınıtırıoılısı;ı ısıaıtıeılılıiıtıeısıyısıtıeımısı;ı ırıoıbıoıtıiıcısı"
+            "astrodynamics",
+            "gnc",
+            "orbitdetermination",
+            "navigation",
+            "missionanalysis",
+            "controls",
+            "satellitesystems",
+            "robotics"
         ],
-        "Industry_Ecosystem": "ı°ıCıhıaıiırı ıoıfı ıAısıtırıoıdıyınıaımıiıcısı;ı ıgıüıçılıüı ıaırıaışıtııırımıaı/ıtıeızı ıaığııı",
+        "Industry_Ecosystem": "Chair of Astrodynamics; güçlü araştırma/tez ağı",
+        "Industry_Comp_Intensity": "High",
         "Industry_Partners": [
-            "ıDıLıRı;ı ıAıiırıbıuısı ı(ıMıuınıiıcıhı/ıOıtıtıoıbırıuınını ırıeıgıiıoını)ı;ı ıEıSıAı ıBıIı°ıCı ıBıaıvıaırıiıaı;ı ıBıMıWı"
+            "DLR",
+            "Airbus (Munich/Ottobrunn region)",
+            "ESA BIC Bavaria",
+            "BMW"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": false,
+        "Internship_Notes": "Not generally mandatory, but strongly recommended; depends on thesis/track.",
+        "Deadline_Winter_Open": "01 Nov",
+        "Deadline_Winter_Close": "31 May",
+        "Deadline_Winter_Note": "TUM masters application portal (general)",
+        "Deadline_Summer_Open": "01 Apr",
+        "Deadline_Summer_Close": "30 Nov",
+        "Deadline_Summer_Note": "TUM masters application portal (general)",
+        "Deadline_Summer_Avail": "Many programs are winter-only; verify per program",
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "fees_or_tuition",
+                "url": "https://www.tum.de/en/studies/fees/semester-fees",
+                "last_verified": "2026-01-26"
+            },
+            {
+                "type": "aerospace",
+                "url": "https://www.asg.ed.tum.de/en/coa/home/",
+                "last_verified": "2026-01-26"
+            },
+            {
+                "type": "admissions",
+                "url": "https://www.tum.de/en/studies/application/application-info-portal/aptitude-assessment/masters-degree-programs",
+                "last_verified": "2026-01-27"
+            },
+            {
+                "type": "deadlines",
+                "url": "https://www.tum.de/en/studies/application/application-info-portal/masters-degree-programs",
+                "last_verified": "2026-01-27"
+            },
+            {
+                "type": "housing",
+                "url": "https://www.tum.de/en/studies/during-your-studies/living-in-munich/accommodation",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": null
     },
     {
-        "Country": "ıGıeırımıaınıyı",
-        "City": "ıSıtıuıtıtıgıaırıtı",
-        "State_Region": "ıBıaıdıeını-ıWıüırıtıtıeımıbıeırıgı",
-        "Uni_ID": "ıuınıiıvıeırısıiıtıyı-ıoıfı-ısıtıuıtıtıgıaırıtı",
-        "University_Name": "ıUınıiıvıeırısıiıtıyı ıoıfı ıSıtıuıtıtıgıaırıtı",
-        "University_Display_Name": "ıUınıiıvıeırısıiıtıyı ıoıfı ıSıtıuıtıtıgıaırıtı",
-        "University_Short_Name": "ıUınıiı ıSıtıuıtıtıgıaırıtı",
+        "Country": "Germany",
+        "City": "Stuttgart",
+        "State_Region": "Baden-Württemberg",
+        "Uni_ID": "university-of-stuttgart",
+        "University_Name": "University of Stuttgart",
+        "University_Display_Name": "University of Stuttgart",
+        "University_Short_Name": "Uni Stuttgart",
         "Cost_Tuition": [
             {
-                "amount": 1500.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": null,
-                "period": "ısıeımıeısıtıeırı",
+                "scope": "non_eu",
                 "program": null,
-                "raw": "ı€ı1ı,ı5ı0ı0ı/ısıeımıeısıtıeırı ı(ıBıaıdıeını-ıWıüırıtıtıeımıbıeırıgı,ı ıkıaımıuı ıüınıiıvı.ı)ı",
-                "scope": "ınıoını_ıeıuı"
+                "amount": 1500.0,
+                "currency": "EUR",
+                "period": "semester",
+                "raw": "€1,500/semester (Baden-Württemberg, kamu üniv.)",
+                "effective_from_term_code": null
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 184.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ı≈ı€ı1ı8ı4ı/ısıeımıeısıtıeırı ı(ıgıeınıeılı ıkıaıtıkııı ıpıaıyııı)ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "≈€184/semester (genel katkı payı)",
+                "term_code": "2025W"
             }
         ],
         "Scholarships_Info": [
             {
-                "amount": "ı€ı3ı0ı0ı/ımıoınıtıhı",
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıDıeıuıtısıcıhılıaınıdısıtıiıpıeınıdıiıuımı",
-                "notes": "ı€ı3ı0ı0ı/ımıoınıtıhı;ı ıcıoımıpıeıtıiıtıiıvıeı",
-                "provider": "ıUınıiıvıeırısıiıtıyı ıoıfı ıSıtıuıtıtıgıaırıtı",
-                "type": "ımıeırıiıtı",
-                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıuınıiı-ısıtıuıtıtıgıaırıtı.ıdıeı/ıeını/ısıtıuıdıyı/ıfıeıeısı-ıaınıdı-ıfıiınıaınıcıiınıgı/ısıcıhıoılıaırısıhıiıpısı-ıaınıdı-ıgırıaınıtısı/ı"
+                "name": "Deutschlandstipendium",
+                "provider": "University of Stuttgart",
+                "type": "merit",
+                "eligibility": "non_eu_ok",
+                "amount": "€300/month",
+                "notes": "€300/month; competitive",
+                "url": "https://www.uni-stuttgart.de/en/study/fees-and-financing/scholarships-and-grants/"
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıDıAıAıDı ıSıcıhıoılıaırısıhıiıpı ıDıaıtıaıbıaısıeı",
-                "notes": "ıEıxıtıeırınıaılı ısıcıhıoılıaırısıhıiıpısı ıfıoırı ınıoını‑ıEıUı ıaıpıpılıiıcıaınıtısı",
-                "provider": "ıDıAıAıDı",
-                "type": "ıeıxıtıeırınıaılı",
-                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıdıaıaıdı.ıdıeı/ıeını/ısıtıuıdıyı-ıaınıdı-ırıeısıeıaırıcıhı-ıiını-ıgıeırımıaınıyı/ısıcıhıoılıaırısıhıiıpısı/ı"
+                "name": "DAAD Scholarship Database",
+                "provider": "DAAD",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "External scholarships for non‑EU applicants",
+                "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
             }
         ],
-        "Cost_City_Living": "ıhıiıgıhı",
-        "Cost_City_Rank": 4,
-        "Living_Housing_Difficulty": "ıHıaırıdı",
+        "Cost_City_Living": "high",
+        "Cost_City_Rank": 4.0,
+        "Living_Housing_Difficulty": "Hard",
         "Living_Housing_Score": 7,
-        "Program_Name": "ıMı.ıSıcı.ı ıAıeırıoısıpıaıcıeı ıEınıgıiınıeıeırıiınıgı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ısıtıuıdıeınıtı.ıuınıiı-ısıtıuıtıtıgıaırıtı.ıdıeı/ıeını/ısıtıuıdıyı-ıpırıoıgırıaımısı/ımıaısıtıeırı/ıaıeırıoısıpıaıcıeı-ıeınıgıiınıeıeırıiınıgı-ımısıcı/ı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ıGıeırımıaını ıBı1ı ırıeıqı",
-        "Analysis_Strong_Areas": "ıSıpıaıcıeı ısıyısıtıeımısı,ı ımıiısısıiıoını ıaınıaılıyısıiısı,ı ıGıNı°ıCı,ı ısıpıaıcıeı ıtıeıcıhı",
+        "Program_Name": "M.Sc. Aerospace Engineering",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://www.student.uni-stuttgart.de/en/study-programs/master/aerospace-engineering-msc/",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "German B1 req",
+        "Analysis_Strong_Areas": "Space systems, mission analysis, GNC, space tech",
         "Analysis_Pros": [
-            "ıVıeırıyı ısıtırıoınıgı ıaıeırıoısıpıaıcıeı/ısıpıaıcıeı ıiınısıtıiıtıuıtıeı ılıaınıdısıcıaıpıeı ı(ıiınıcılı.ı ıIıRıSı)ı ıaınıdı ıpılıeınıtıyı ıoıfı ıtıhıeısıiısı ıoıpıpıoırıtıuınıiıtıiıeısı ıiını ısıpıaıcıeı ısıyısıtıeımısı,ı ımıiısısıiıoını ıaınıaılıyısıiısı,ı ıGıNı°ıCı ıaınıdı ırıeılıaıtıeıdı ısıpıaıcıeı ıtıeıcıhınıoılıoıgıyı.ı;ı ıLıoıcıaıtıeıdı ıiını ıoınıeı ıoıfı ıGıeırımıaınıyı’ısı ısıtırıoınıgıeısıtı ıhıiıgıhı-ıtıeıcıhı ıiınıdıuısıtırıiıaılı ırıeıgıiıoınısı ı(ıaıuıtıoımıoıtıiıvıeı ı+ı ıaıdıvıaınıcıeıdı ımıaınıuıfıaıcıtıuırıiınıgı)ı,ı ıwıhıiıcıhı ıcıaını ıhıeılıpı ıwıiıtıhı ıiınıdıuısıtırıyı-ıaıdıjıaıcıeınıtı ıpırıoıjıeıcıtısı ıaınıdı ıiınıtıeırınısıhıiıpısı.ı;ı ıNıoını‑ıEıUı ıtıuıiıtıiıoını ıiısı ıfıiıxıeıdı ıbıyı ıtıhıeı ısıtıaıtıeı ı(ıBıaıdıeını‑ıWıüırıtıtıeımıbıeırıgı)ı ısıoı ıcıoısıtı ıpılıaınınıiınıgı ıiısı ısıtırıaıiıgıhıtıfıoırıwıaırıdı,ı ıeıvıeını ıiıfı ıiıtı’ısı ıaı ımıaıjıoırı ıbıuıdıgıeıtı ıiıtıeımı.ı"
+            "Very strong aerospace/space institute landscape (incl. IRS) and plenty of thesis opportunities in space systems, mission analysis, GNC and related space technology.",
+            "Located in one of Germany’s strongest high-tech industrial regions (automotive + advanced manufacturing), which can help with industry-adjacent projects and internships.",
+            "Non‑EU tuition is fixed by the state (Baden‑Württemberg) so cost planning is straightforward, even if it’s a major budget item."
         ],
         "Analysis_Cons": [
-            "ıBıaıdıeını‑ıWıüırıtıtıeımıbıeırıgı ıcıhıaırıgıeısı ınıoını‑ıEıUı ıtıuıiıtıiıoını ıiını ıaıdıdıiıtıiıoını ıtıoı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoınısı.ı;ı ıIıfı ıyıoıuırı ıtıaırıgıeıtı ıiısı ıpıuırıeılıyı ı“ıcıoırıeı ıaısıtırıoıdıyınıaımıiıcısı”ı,ı ıcıoıuırısıeı ıdıeıpıtıhı ımıaıyı ıdıeıpıeınıdı ıoını ıyıoıuırı ıiınıdıiıvıiıdıuıaılı ımıoıdıuılıeı ısıeılıeıcıtıiıoını ı(ılıeısısı ıcıeınıtırıaılıiızıeıdı ıtıhıaını ıTıUıMı’ısı ı°ıCıhıaıiırı-ıoıfı-ıAısıtırıoıdıyınıaımıiıcısı ısıtıyılıeı)ı.ı;ı ıGıeırımıaını-ıtıaıuıgıhıtı ıcıoınıtıeıxıtı ıcıaını ıbıeı ıaı ıbılıoıcıkıeırı ıiıfı ıyıoıuı ıwıaınıtı ıaını ıaılımıoısıtı ıeınıtıiırıeılıyı ıEınıgılıiısıhı ısıtıuıdıyı ıeıxıpıeırıiıeınıcıeı.ı"
+            "Baden‑Württemberg charges non‑EU tuition in addition to semester contributions.",
+            "If your target is purely “core astrodynamics”, course depth may depend on your individual module selection (less centralized than TUM’s Chair-of-Astrodynamics style).",
+            "German-taught context can be a blocker if you want an almost entirely English study experience."
         ],
         "Analysis_Tags": [
-            "ısıpıaıcıeısıyısıtıeımısı;ı ımıiısısıiıoınıaınıaılıyısıiısı;ı ıgınıcı;ı ısıaıtıeılılıiıtıeısıyısıtıeımısı;ı ısıpıaıcıeıpırıoıpıuılısıiıoını;ı ısıyısıtıeımısıeınıgıiınıeıeırıiınıgı;ı ıaıeırıoıdıyınıaımıiıcısı"
+            "spacesystems",
+            "missionanalysis",
+            "gnc",
+            "satellitesystems",
+            "spacepropulsion",
+            "systemsengineering",
+            "aerodynamics"
         ],
-        "Industry_Ecosystem": "ıIınısıtıiıtıuıtıeı ıoıfı ıSıpıaıcıeı ıSıyısıtıeımısı ı(ıIıRıSı)ı ı+ı ıgıeınıiışı ıLı&ıRı ıeınısıtıiıtıüılıeırıiı",
+        "Industry_Ecosystem": "Institute of Space Systems (IRS) + geniş L&R enstitüleri",
+        "Industry_Comp_Intensity": "High",
         "Industry_Partners": [
-            "ıDıLıRı ı(ıSıtıuıtıtıgıaırıtı ısıiıtıeı)ı;ı ıPıoırısıcıhıeı;ı ıMıeırıcıeıdıeısı-ıBıeınızı ıGırıoıuıpı;ı ıAıiırıbıuısı ı(ıBıaıdıeını-ıWıüırıtıtıeımıbıeırıgı ırıeıgıiıoını)ı"
+            "DLR (Stuttgart site)",
+            "Porsche",
+            "Mercedes-Benz Group",
+            "Airbus (Baden-Württemberg region)"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": false,
+        "Internship_Notes": "Program-dependent; many theses are done with institutes/industry.",
+        "Deadline_Winter_Open": "15 May",
+        "Deadline_Winter_Close": "15 Jul",
+        "Deadline_Winter_Note": "University of Stuttgart master application window (typical)",
+        "Deadline_Summer_Open": "15 Nov",
+        "Deadline_Summer_Close": "15 Jan",
+        "Deadline_Summer_Note": "Program-dependent; verify per program",
+        "Deadline_Summer_Avail": null,
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "fees_or_tuition",
+                "url": "https://www.uni-stuttgart.de/en/study/fees-and-financing/fees-and-charges/",
+                "last_verified": "2026-01-26"
+            },
+            {
+                "type": "aerospace",
+                "url": "https://www.irs.uni-stuttgart.de/en/",
+                "last_verified": "2026-01-26"
+            },
+            {
+                "type": "deadlines",
+                "url": "https://www.uni-stuttgart.de/en/study/application/application-for-a-study-program/master/application/",
+                "last_verified": "2026-01-27"
+            },
+            {
+                "type": "language",
+                "url": "https://www.uni-stuttgart.de/en/study/application/application-for-a-study-program/prerequisites/language-prerequisites/",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": null
     },
     {
-        "Country": "ıGıeırımıaınıyı",
-        "City": "ıKıaırılısırıuıhıeı",
-        "State_Region": "ıBıaıdıeını-ıWıüırıtıtıeımıbıeırıgı",
-        "Uni_ID": "ıkıiıtı",
-        "University_Name": "ıKıaırılısırıuıhıeı ıIınısıtıiıtıuıtıeı ıoıfı ıTıeıcıhınıoılıoıgıyı",
-        "University_Display_Name": "ıKıaırılısırıuıhıeı ıIınısıtıiıtıuıtıeı ıoıfı ıTıeıcıhınıoılıoıgıyı ı(ıKıIıTı)ı",
-        "University_Short_Name": "ıKıIıTı",
+        "Country": "Germany",
+        "City": "Karlsruhe",
+        "State_Region": "Baden-Württemberg",
+        "Uni_ID": "kit",
+        "University_Name": "Karlsruhe Institute of Technology",
+        "University_Display_Name": "Karlsruhe Institute of Technology (KIT)",
+        "University_Short_Name": "KIT",
         "Cost_Tuition": [
             {
-                "amount": 1500.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": null,
-                "period": "ısıeımıeısıtıeırı",
+                "scope": "non_eu",
                 "program": null,
-                "raw": "ı€ı1ı,ı5ı0ı0ı/ısıeımıeısıtıeırı ı(ıBıaıdıeını-ıWıüırıtıtıeımıbıeırıgı,ı ıkıaımıuı ıüınıiıvı.ı)ı",
-                "scope": "ınıoını_ıeıuı"
+                "amount": 1500.0,
+                "currency": "EUR",
+                "period": "semester",
+                "raw": "€1,500/semester (Baden-Württemberg, kamu üniv.)",
+                "effective_from_term_code": null
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 201.5,
-                "components": "ı8ı0ı ıaıdımıiını ı+ı ı1ı0ı9ı.ı5ı0ı ıSıtıuıdıiıeırıeınıdıeınıwıeırıkı ı+ı ı1ı2ı ısıtıuıdıeınıtı ıbıoıdıyı",
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ı€ı2ı0ı1ı.ı5ı0ı/ısıeımıeısıtıeırı ı(ı8ı0ı ıaıdımıiını ı+ı ı1ı0ı9ı.ı5ı0ı ıSıtıuıdıiıeırıeınıdıeınıwıeırıkı ı+ı ı1ı2ı ısıtıuıdıeınıtı ıbıoıdıyı)ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "€201.50/semester (80 admin + 109.50 Studierendenwerk + 12 student body)",
+                "term_code": "2025W",
+                "components": "80 admin + 109.50 Studierendenwerk + 12 student body"
             }
         ],
         "Scholarships_Info": [
             {
-                "amount": "ı€ı3ı0ı0ı/ımıoınıtıhı",
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıDıeıuıtısıcıhılıaınıdısıtıiıpıeınıdıiıuımı",
-                "notes": "ı€ı3ı0ı0ı/ımıoınıtıhı;ı ıcıoımıpıeıtıiıtıiıvıeı",
-                "provider": "ıKıIıTı",
-                "type": "ımıeırıiıtı",
-                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıkıiıtı.ıeıdıuı/ıeınıgılıiısıhı/ısıtıuıdıiıeısı/ı1ı0ı4ı6ı4ı.ıpıhıpı"
+                "name": "Deutschlandstipendium",
+                "provider": "KIT",
+                "type": "merit",
+                "eligibility": "non_eu_ok",
+                "amount": "€300/month",
+                "notes": "€300/month; competitive",
+                "url": "https://www.kit.edu/english/studies/10464.php"
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıDıAıAıDı ıSıcıhıoılıaırısıhıiıpı ıDıaıtıaıbıaısıeı",
-                "notes": "ıEıxıtıeırınıaılı ıfıuınıdıiınıgı ıfıoırı ınıoını‑ıEıUı ıaıpıpılıiıcıaınıtısı",
-                "provider": "ıDıAıAıDı",
-                "type": "ıeıxıtıeırınıaılı",
-                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıdıaıaıdı.ıdıeı/ıeını/ısıtıuıdıyı-ıaınıdı-ırıeısıeıaırıcıhı-ıiını-ıgıeırımıaınıyı/ısıcıhıoılıaırısıhıiıpısı/ı"
+                "name": "DAAD Scholarship Database",
+                "provider": "DAAD",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "External funding for non‑EU applicants",
+                "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
             }
         ],
-        "Cost_City_Living": "ımıeıdıiıuımı",
-        "Cost_City_Rank": 3,
-        "Living_Housing_Difficulty": "ıMıoıdıeırıaıtıeı",
+        "Cost_City_Living": "medium",
+        "Cost_City_Rank": 3.0,
+        "Living_Housing_Difficulty": "Moderate",
         "Living_Housing_Score": 5,
-        "Program_Name": "ıAıeırıoısıpıaıcıeı/ıSıpıaıcıeı-ırıeılıaıtıeıdı ıMıSıcı ıvıiıaı ıiınısıtıiıtıuıtıeısı ı(ıpırıoıgırıaımı-ısıpıeıcıiıfıiıcı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıkıiıtı.ıeıdıuı/ıeınıgılıiısıhı/ısıtıuıdıiıeısı.ıpıhıpı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ıGıeırımıaını ıBı1ı ırıeıqı",
-        "Analysis_Strong_Areas": "ıAıeırıoıdıyınıaımıiıcısı/ı°ıCıFıDı,ı ıfılıiıgıhıtı ıdıyınıaımıiıcısı,ı ıpırıoıpıuılısıiıoını/ıtıhıeırımıoı,ı ıcıoınıtırıoılısı",
+        "Program_Name": "Aerospace/Space-related MSc via institutes (program-specific)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://www.kit.edu/english/studies.php",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "German B1 req",
+        "Analysis_Strong_Areas": "Aerodynamics/CFD, flight dynamics, propulsion/thermo, controls",
         "Analysis_Pros": [
-            "ıSıtırıoınıgı ıeınıgıiınıeıeırıiınıgı ı+ı ıcıoımıpıuıtıaıtıiıoınıaılı ıcıuılıtıuırıeı ıaınıdı ıaı ıbırıoıaıdı ısıeılıeıcıtıiıoını ıoıfı ısıiımıuılıaıtıiıoını-ıhıeıaıvıyı ımıoıdıuılıeısı ıdıeıpıeınıdıiınıgı ıoını ıtıhıeı ıcıhıoısıeını ımıaısıtıeırı’ısı ıtırıaıcıkı.ı;ı ı°ıCıoısıtısı ıaırıeı ıuısıuıaılılıyı ımıoırıeı ımıaınıaıgıeıaıbılıeı ıtıhıaını ıMıuınıiıcıhı/ıBıeırılıiını ıwıhıiılıeı ısıtıiılılı ıbıeıiınıgı ıiını ıBıaıdıeını‑ıWıüırıtıtıeımıbıeırıgı’ısı ıhıiıgıhı-ıtıeıcıhı ıcıoırırıiıdıoırı.ı;ı ıGıoıoıdı ıpıaıtıhıwıaıyı ıiıfı ıyıoıuı ıwıaınıtı ıtıoı ıcıoımıbıiınıeı ıaıeırıoısıpıaıcıeı/ısıpıaıcıeı ıwıiıtıhı ımıeıcıhıaınıiıcıaılı ıeınıgıiınıeıeırıiınıgı,ı ıcıoınıtırıoılısı,ı ımıaıtıeırıiıaılısı,ı ıoırı ıcıoımıpıuıtıaıtıiıoınıaılı ımıeıtıhıoıdısı.ı"
+            "Strong engineering + computational culture and a broad selection of simulation-heavy modules depending on the chosen master’s track.",
+            "Costs are usually more manageable than Munich/Berlin while still being in Baden‑Württemberg’s high-tech corridor.",
+            "Good pathway if you want to combine aerospace/space with mechanical engineering, controls, materials, or computational methods."
         ],
         "Analysis_Cons": [
-            "ıBıaıdıeını‑ıWıüırıtıtıeımıbıeırıgı ınıoını‑ıEıUı ıtıuıiıtıiıoını ıaıpıpılıiıeısı.ı;ı ı‘ıAıeırıoısıpıaıcıeı’ı ıiısı ıoıfıtıeını ırıeıaıcıhıeıdı ıvıiıaı ısıpıeıcıiıaılıiızıaıtıiıoınısı/ıiınısıtıiıtıuıtıeısı ırıaıtıhıeırı ıtıhıaını ıoınıeı ısıiınıgılıeı ı“ıAıeırıoısıpıaıcıeı ıMıSıcı”ı,ı ısıoı ıyıoıuı ımıuısıtı ıpılıaını ımıoıdıuılıeısı ıcıaırıeıfıuılılıyı.ı;ı ıLıaınıgıuıaıgıeı ırıeıqıuıiırıeımıeınıtısı ıdıeıpıeınıdı ısıtırıoınıgılıyı ıoını ıtıhıeı ıeıxıaıcıtı ıpırıoıgırıaımı ı(ımıaınıyı ıaırıeı ıGıeırımıaını-ıtıaıuıgıhıtı)ı.ı"
+            "Baden‑Württemberg non‑EU tuition applies.",
+            "‘Aerospace’ is often reached via specializations/institutes rather than one single “Aerospace MSc”, so you must plan modules carefully.",
+            "Language requirements depend strongly on the exact program (many are German-taught)."
         ],
         "Analysis_Tags": [
-            "ıaıeırıoıdıyınıaımıiıcısı;ı ıcıfıdı;ı ıfılıiıgıhıtıdıyınıaımıiıcısı;ı ıcıoınıtırıoılısı;ı ıpırıoıpıuılısıiıoını;ı ıtıhıeırımıoıdıyınıaımıiıcısı;ı ısıtırıuıcıtıuırıeısı"
+            "aerodynamics",
+            "cfd",
+            "flightdynamics",
+            "controls",
+            "propulsion",
+            "thermodynamics",
+            "structures"
         ],
-        "Industry_Ecosystem": "ıGıüıçılıüı ıaıkııışıkıaınılıaırı/ıaıeırıoıdıiınıaımıiıkı ı+ı ısıiısıtıeımı ıdıiınıaımıiığıiı ıaılıtıyıaıpııısııı",
+        "Industry_Ecosystem": "Güçlü akışkanlar/aerodinamik + sistem dinamiği altyapısı",
+        "Industry_Comp_Intensity": "High",
         "Industry_Partners": [
-            "ıKıIıTı ıaıeırıoısıpıaıcıeı-ırıeılıaıtıeıdı ıiınısıtıiıtıuıtıeısı ı+ı ıDıLıRı ıeıcıoısıyısıtıeımı;ı ıBıoısıcıhı;ı ıSıAıPı ı(ırıeıgıiıoını)ı"
+            "KIT aerospace-related institutes + DLR ecosystem",
+            "Bosch",
+            "SAP (region)"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": false,
+        "Internship_Notes": "Depends on chosen program; internships common but not always mandatory.",
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "15 Jul",
+        "Deadline_Winter_Note": "KIT application deadlines (general)",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": "15 Jan",
+        "Deadline_Summer_Note": "KIT application deadlines (general)",
+        "Deadline_Summer_Avail": null,
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "fees_or_tuition",
+                "url": "https://www.kit.edu/english/study/charges-and-fees.php",
+                "last_verified": "2026-01-26"
+            },
+            {
+                "type": "aerospace",
+                "url": "https://www.kit.edu/english/",
+                "last_verified": "2026-01-26"
+            },
+            {
+                "type": "deadlines",
+                "url": "https://www.sle.kit.edu/english/vorstudium/bewerbungsfristen.php",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": null
     },
     {
-        "Country": "ıGıeırımıaınıyı",
-        "City": "ıBırıaıuınısıcıhıwıeıiıgı",
-        "State_Region": "ıAışıaığııı ıSıaıkısıoınıyıaı",
-        "Uni_ID": "ıtıeıcıhınıiısıcıhıeı-ıuınıiıvıeırısıiıtıaıeıtı-ıbırıaıuınısıcıhıwıeıiıgı",
-        "University_Name": "ıTıeıcıhınıiısıcıhıeı ıUınıiıvıeırısıiıtıäıtı ıBırıaıuınısıcıhıwıeıiıgı",
-        "University_Display_Name": "ıTıeıcıhınıiısıcıhıeı ıUınıiıvıeırısıiıtıäıtı ıBırıaıuınısıcıhıwıeıiıgı",
-        "University_Short_Name": "ıTıUı ıBırıaıuınısıcıhıwıeıiıgı",
+        "Country": "Germany",
+        "City": "Braunschweig",
+        "State_Region": "Aşağı Saksonya",
+        "Uni_ID": "technische-universitaet-braunschweig",
+        "University_Name": "Technische Universität Braunschweig",
+        "University_Display_Name": "Technische Universität Braunschweig",
+        "University_Short_Name": "TU Braunschweig",
         "Cost_Tuition": [],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 440.0,
-                "components": "ıDıeıuıtısıcıhılıaınıdı-ıSıeımıeısıtıeırıtıiıcıkıeıtı ıdıaıhıiılı",
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": true,
-                "raw": "ı€ı4ı4ı0ı/ısıeımıeısıtıeırı ı(ıDıeıuıtısıcıhılıaınıdı-ıSıeımıeısıtıeırıtıiıcıkıeıtı ıdıaıhıiılı)ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "€440/semester (Deutschland-Semesterticket dahil)",
+                "term_code": "2025W",
+                "components": "Deutschland-Semesterticket dahil"
             }
         ],
         "Scholarships_Info": [
             {
-                "amount": "ı€ı3ı0ı0ı/ımıoınıtıhı",
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıDıeıuıtısıcıhılıaınıdısıtıiıpıeınıdıiıuımı",
-                "notes": "ı€ı3ı0ı0ı/ımıoınıtıhı;ı ıcıoımıpıeıtıiıtıiıvıeı",
-                "provider": "ıTıUı ıBırıaıuınısıcıhıwıeıiıgı",
-                "type": "ımıeırıiıtı",
-                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıtıuı-ıbırıaıuınısıcıhıwıeıiıgı.ıdıeı/ısıtıuıdıiıuımı/ısıtıuıdıiıeınıfıiınıaınızıiıeırıuınıgı/ıdıeıuıtısıcıhılıaınıdısıtıiıpıeınıdıiıuımı"
+                "name": "Deutschlandstipendium",
+                "provider": "TU Braunschweig",
+                "type": "merit",
+                "eligibility": "non_eu_ok",
+                "amount": "€300/month",
+                "notes": "€300/month; competitive",
+                "url": "https://www.tu-braunschweig.de/studium/studienfinanzierung/deutschlandstipendium"
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıDıAıAıDı ıSıcıhıoılıaırısıhıiıpı ıDıaıtıaıbıaısıeı",
-                "notes": "ıEıxıtıeırınıaılı ısıcıhıoılıaırısıhıiıpısı ıfıoırı ınıoını‑ıEıUı",
-                "provider": "ıDıAıAıDı",
-                "type": "ıeıxıtıeırınıaılı",
-                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıdıaıaıdı.ıdıeı/ıeını/ısıtıuıdıyı-ıaınıdı-ırıeısıeıaırıcıhı-ıiını-ıgıeırımıaınıyı/ısıcıhıoılıaırısıhıiıpısı/ı"
+                "name": "DAAD Scholarship Database",
+                "provider": "DAAD",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "External scholarships for non‑EU",
+                "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
             }
         ],
-        "Cost_City_Living": "ımıeıdıiıuımı_ılıoıwı",
-        "Cost_City_Rank": 2,
-        "Living_Housing_Difficulty": "ıMıoıdıeırıaıtıeı",
+        "Cost_City_Living": "medium_low",
+        "Cost_City_Rank": 2.0,
+        "Living_Housing_Difficulty": "Moderate",
         "Living_Housing_Score": 4,
-        "Program_Name": "ıAıeırıoısıpıaıcıeı ıEınıgıiınıeıeırıiınıgı ı(ıGıeırımıaını-ıtıaıuıgıhıtı)ı ı/ı ısıpıaıcıeı ıvıiıaı ıiınısıtıiıtıuıtıeısı ı(ıpırıoıgırıaımı-ısıpıeıcıiıfıiıcı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıtıuı-ıbırıaıuınısıcıhıwıeıiıgı.ıdıeı/ıeını/ı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ıGıeırımıaını ıBı1ı ırıeıqı",
-        "Analysis_Strong_Areas": "ıSıpıaıcıeı ıdıeıbırıiısı/ıSıSıAı,ı ısıaıtıeılılıiıtıeı ıtıeıcıhı,ı ısıpıaıcıeı ıpırıoıpıuılısıiıoını",
+        "Program_Name": "Aerospace Engineering (German-taught) / space via institutes (program-specific)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://www.tu-braunschweig.de/en/",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "German B1 req",
+        "Analysis_Strong_Areas": "Space debris/SSA, satellite tech, space propulsion",
         "Analysis_Pros": [
-            "ıVıeırıyı ısıtırıoınıgı ıaıeırıoınıaıuıtıiıcısı ıeıcıoısıyısıtıeımı ıaınıdı ıuınıuısıuıaılılıyı ıcılıoısıeı ıtıiıeısı ıwıiıtıhı ıDıLıRı ıaıtı ıtıhıeı ıBırıaıuınısıcıhıwıeıiıgı ısıiıtıeı ı(ıgıoıoıdı ıfıoırı ırıeısıeıaırıcıhı-ıdırıiıvıeını ıtıhıeısıeısı ıaınıdı ısıiımıuılıaıtıiıoını-ıhıeıaıvıyı ıtıoıpıiıcısı)ı.ı;ı ıGıoıoıdı ıoıpıtıiıoını ıiıfı ıyıoıuı ıcıaırıeı ıaıbıoıuıtı ıaıeırıoıdıyınıaımıiıcısı/ıfılıiıgıhıtı ımıeıcıhıaınıiıcısı ıaınıdı ıwıaınıtı ıaıcıcıeısısı ıtıoı ılıaırıgıeı ırıeısıeıaırıcıhı ıiınıfırıaısıtırıuıcıtıuırıeı ı(ıwıiınıdı ıtıuınınıeılısı,ı ıDıLıRı ılıaıbısı)ı ıwıiıtıhıoıuıtı ıMıuınıiıcıhı-ılıeıvıeılı ılıiıvıiınıgı ıcıoısıtısı.ı;ı ıSıoılıiıdı ısıtıeıpıpıiınıgı ısıtıoınıeı ıfıoırı ısıpıaıcıeı-ırıeılıaıtıeıdı ıwıoırıkı ıtıhırıoıuıgıhı ırıeısıeıaırıcıhı ıgırıoıuıpısı ıaınıdı ıpırıoıjıeıcıtısı ıcıoınınıeıcıtıeıdı ıtıoı ıEıSıAı/ıDıLıRı ıaıcıtıiıvıiıtıiıeısı.ı"
+            "Very strong aeronautics ecosystem and unusually close ties with DLR at the Braunschweig site (good for research-driven theses and simulation-heavy topics).",
+            "Good option if you care about aerodynamics/flight mechanics and want access to large research infrastructure (wind tunnels, DLR labs) without Munich-level living costs.",
+            "Solid stepping stone for space-related work through research groups and projects connected to ESA/DLR activities."
         ],
         "Analysis_Cons": [
-            "ıKıeıyı ıaıeırıoısıpıaıcıeı ımıaısıtıeırı ıtırıaıcıkısı ıaırıeı ıoıfıtıeını ıGıeırımıaını-ıtıaıuıgıhıtı;ı ılıaınıgıuıaıgıeı ıcıaını ıbıeıcıoımıeı ıtıhıeı ıgıaıtıiınıgı ıfıaıcıtıoırı.ı;ı ıSıpıaıcıeı/ıaısıtırıoıdıyınıaımıiıcısı ıdıeıpıtıhı ıiısı ımıoırıeı ı“ıgırıoıuıpı/ıpırıoıjıeıcıtı-ıdıeıpıeınıdıeınıtı”ı ıtıhıaını ıaı ıdıeıdıiıcıaıtıeıdı ıaısıtırıoıdıyınıaımıiıcısı ıcıhıaıiırı-ıcıeınıtırıiıcı ıcıuırırıiıcıuılıuımı.ı;ı ıSımıaılılıeırı ıiınıtıeırınıaıtıiıoınıaılı ıbırıaınıdı ıtıhıaını ıTıUıMı/ıRıWıTıHı,ı ısıoı ıyıoıuı ırıeılıyı ımıoırıeı ıoını ıpırıoıjıeıcıtı ıoıuıtıpıuıtı ı+ı ısıuıpıeırıvıiısıoırı ınıeıtıwıoırıkı.ı"
+            "Key aerospace master tracks are often German-taught; language can become the gating factor.",
+            "Space/astrodynamics depth is more “group/project-dependent” than a dedicated astrodynamics chair-centric curriculum.",
+            "Smaller international brand than TUM/RWTH, so you rely more on project output + supervisor network."
         ],
         "Analysis_Tags": [
-            "ısıpıaıcıeıdıeıbırıiısı;ı ısısıaı;ı ıoırıbıiıtıdıeıtıeırımıiınıaıtıiıoını;ı ısıaıtıeılılıiıtıeısıyısıtıeımısı;ı ısıpıaıcıeıpırıoıpıuılısıiıoını;ı ıgınıcı;ı ısıpıaıcıeısıyısıtıeımısı"
+            "spacedebris",
+            "ssa",
+            "orbitdetermination",
+            "satellitesystems",
+            "spacepropulsion",
+            "gnc",
+            "spacesystems"
         ],
-        "Industry_Ecosystem": "ıIınısıtıiıtıuıtıeı ıoıfı ıSıpıaıcıeı ıSıyısıtıeımısı;ı ıSıSıAı/ısıpıaıcıeı ıdıeıbırıiısı ıoıdıaığııı",
+        "Industry_Ecosystem": "Institute of Space Systems; SSA/space debris odağı",
+        "Industry_Comp_Intensity": "High",
         "Industry_Partners": [
-            "ıDıLıRı ı(ıBırıaıuınısıcıhıwıeıiıgı ısıiıtıeı)ı;ı ıEıSıAı ı(ıpırıoıjıeıcıtısı/ıcıoılılıaıbıoırıaıtıiıoınısı)ı;ı ıAıiırıbıuısı ı(ırıeıgıiıoınıaılı ılıiınıkısı)ı;ı ıTıUı ıDıeılıfıtı ı(ıaıvıiıaıtıiıoını ısıuısıtıaıiınıaıbıiılıiıtıyı ıcıoılılıaıbıoırıaıtıiıoını)ı"
+            "DLR (Braunschweig site)",
+            "ESA (projects/collaborations)",
+            "Airbus (regional links)",
+            "TU Delft (aviation sustainability collaboration)"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": false,
+        "Internship_Notes": "Varies by program; strong lab/project culture.",
+        "Deadline_Winter_Open": "01 Jun",
+        "Deadline_Winter_Close": "15 Jul",
+        "Deadline_Winter_Note": "TU Braunschweig international application period",
+        "Deadline_Summer_Open": "01 Dec",
+        "Deadline_Summer_Close": "15 Jan",
+        "Deadline_Summer_Note": "TU Braunschweig international application period",
+        "Deadline_Summer_Avail": null,
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "fees_or_tuition",
+                "url": "https://www.tu-braunschweig.de/en/study-teaching/during-your-studies/financing-and-costs",
+                "last_verified": "2026-01-26"
+            },
+            {
+                "type": "aerospace",
+                "url": "https://www.tu-braunschweig.de/en/fmb/institute-fk4/institutes/institut-of-space-systems",
+                "last_verified": "2026-01-26"
+            },
+            {
+                "type": "deadlines",
+                "url": "https://www.tu-braunschweig.de/en/international/international-house/international-students/study-applications/application-and-deadlines",
+                "last_verified": "2026-01-27"
+            },
+            {
+                "type": "partners",
+                "url": "https://magazin.tu-braunschweig.de/en/m-post/the-close-cooperation-between-dlr-and-tu-offers-great-potential/",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": null
     },
     {
-        "Country": "ıGıeırımıaınıyı",
-        "City": "ıBıeırılıiını",
-        "State_Region": "ıBıeırılıiını",
-        "Uni_ID": "ıtıuı-ıbıeırılıiını",
-        "University_Name": "ıTıeıcıhınıiısıcıhıeı ıUınıiıvıeırısıiıtıäıtı ıBıeırılıiını",
-        "University_Display_Name": "ıTıeıcıhınıiısıcıhıeı ıUınıiıvıeırısıiıtıäıtı ıBıeırılıiını ı(ıTıUı ıBıeırılıiını)ı",
-        "University_Short_Name": "ıTıUı ıBıeırılıiını",
+        "Country": "Germany",
+        "City": "Berlin",
+        "State_Region": "Berlin",
+        "Uni_ID": "tu-berlin",
+        "University_Name": "Technische Universität Berlin",
+        "University_Display_Name": "Technische Universität Berlin (TU Berlin)",
+        "University_Short_Name": "TU Berlin",
         "Cost_Tuition": [],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 360.49,
-                "components": "ıtıiıcıkıeıtı ıdıaıhıiılı",
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": true,
-                "raw": "ı€ı3ı6ı0ı.ı4ı9ı/ısıeımıeısıtıeırı ı(ıtıiıcıkıeıtı ıdıaıhıiılı)ı ı-ı ıTıUı ıBıeırılıiını ıMıSıEı ıpırıoıgırıaımı ısıaıyıfıaısııı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "€360.49/semester (ticket dahil) - TU Berlin MSE program sayfası",
+                "term_code": "2025W",
+                "components": "ticket dahil"
             }
         ],
         "Scholarships_Info": [
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıSıcıhıoılıaırısıhıiıpısı ı(ıpırıoıgırıaımımıeı)ı",
-                "notes": "ıMıSıEı ısıtıaıtıeısı ısıcıhıoılıaırısıhıiıpısı ıaırıeı ınıoıtı ıgırıaınıtıeıdı ıfıoırı ıtıhıeı ıpırıoıgırıaımımıeı ıiıtısıeılıfı",
-                "provider": "ıMıSıEı ıTıUı ıBıeırılıiını",
-                "type": "ınıoıtıeı",
-                "url": "ıhıtıtıpısı:ı/ı/ımısıeı.ıtıuı-ıbıeırılıiını.ıdıeı/ıaıpıpılıiıcıaıtıiıoını-ıpırıoıcıeıdıuırıeı/ı"
+                "name": "Scholarships (programme)",
+                "provider": "MSE TU Berlin",
+                "type": "note",
+                "eligibility": "non_eu_ok",
+                "notes": "MSE states scholarships are not granted for the programme itself",
+                "url": "https://mse.tu-berlin.de/application-procedure/"
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıDıAıAıDı ıSıcıhıoılıaırısıhıiıpı ıDıaıtıaıbıaısıeı",
-                "notes": "ıEıxıtıeırınıaılı ısıcıhıoılıaırısıhıiıpısı ıfıoırı ınıoını‑ıEıUı",
-                "provider": "ıDıAıAıDı",
-                "type": "ıeıxıtıeırınıaılı",
-                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıdıaıaıdı.ıdıeı/ıeını/ısıtıuıdıyı-ıaınıdı-ırıeısıeıaırıcıhı-ıiını-ıgıeırımıaınıyı/ısıcıhıoılıaırısıhıiıpısı/ı"
+                "name": "DAAD Scholarship Database",
+                "provider": "DAAD",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "External scholarships for non‑EU",
+                "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
             },
             {
-                "amount": "ı€ı3ı0ı0ı/ımıoınıtıhı",
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıDıeıuıtısıcıhılıaınıdısıtıiıpıeınıdıiıuımı",
-                "notes": "ıFıeıdıeırıaılı ısıcıhıoılıaırısıhıiıpı;ı ıaıvıaıiılıaıbıiılıiıtıyı ıdıeıpıeınıdısı ıoını ıTıUı ıBıeırılıiını ısıcıhıeımıeı",
-                "provider": "ıTıUı ıBıeırılıiını",
-                "type": "ımıeırıiıtı"
+                "name": "Deutschlandstipendium",
+                "provider": "TU Berlin",
+                "type": "merit",
+                "eligibility": "non_eu_ok",
+                "amount": "€300/month",
+                "notes": "Federal scholarship; availability depends on TU Berlin scheme"
             }
         ],
-        "Cost_City_Living": "ımıeıdıiıuımı_ıhıiıgıhı",
-        "Cost_City_Rank": 3,
-        "Living_Housing_Difficulty": "ıVıeırıyı ıHıaırıdı",
+        "Cost_City_Living": "medium_high",
+        "Cost_City_Rank": 3.5,
+        "Living_Housing_Difficulty": "Very Hard",
         "Living_Housing_Score": 9,
-        "Program_Name": "ıMıaısıtıeırı ıoıfı ıSıpıaıcıeı ıEınıgıiınıeıeırıiınıgı ı(ıMıSıEı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ımısıeı.ıtıuı-ıbıeırılıiını.ıdıeı/ı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıAıpıtıiıtıuıdıeı ıTıeısıtı",
-        "Admission_Language_Req": "ı1ı0ı0ı%ı ıEınıgılıiısıhı",
-        "Analysis_Strong_Areas": "ıSıpıaıcıeı ısıyısıtıeımısı,ı ısımıaılılı ısıaıtıeılılıiıtıeısı,ı ısıyısıtıeımısı ıeınıgıiınıeıeırıiınıgı,ı ıAıOı°ıCıSı/ıGıNı°ıCı",
+        "Program_Name": "Master of Space Engineering (MSE)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://mse.tu-berlin.de/",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Aptitude Test",
+        "Admission_Language_Req": "100% English",
+        "Analysis_Strong_Areas": "Space systems, small satellites, systems engineering, AOCS/GNC",
         "Analysis_Pros": [
-            "ıVıeırıyı ıhıaınıdısı-ıoını,ı ıpırıoıjıeıcıtı-ıdırıiıvıeını ısıpıaıcıeı ısıyısıtıeımısı ıpırıoıgırıaımımıeı ıiını ıaı ıbıiıgı-ıcıiıtıyı ıtıeıcıhı ıeıcıoısıyısıtıeımı;ı ıgıoıoıdı ıeıxıpıoısıuırıeı ıtıoı ısımıaılılı-ısıaıtıeılılıiıtıeı ıiınıtıeıgırıaıtıiıoını/ıtıeısıtıiınıgı ıcıuılıtıuırıeı.ı;ı ıSıtırıoınıgı ıfıiıtı ıiıfı ıyıoıuı ıwıaınıtı ısıyısıtıeımısı ıeınıgıiınıeıeırıiınıgı ıaınıdı ısıpıaıcıeı ımıiısısıiıoını ıpırıoıjıeıcıtısı ıaılıoınıgısıiıdıeı ımıaınıaıgıeımıeınıtı/ıoıpıeırıaıtıiıoınısı ıaısıpıeıcıtısı.ı;ı ıBıeırılıiını ıcıaını ıoıfıfıeırı ımıoırıeı ıpıaırıtı-ıtıiımıeı/ısıtıaırıtıuıpı ıoıpıpıoırıtıuınıiıtıiıeısı ıtıhıaını ısımıaılılıeırı ıuınıiıvıeırısıiıtıyı ıtıoıwınısı.ı"
+            "Very hands-on, project-driven space systems programme in a big-city tech ecosystem; good exposure to small-satellite integration/testing culture.",
+            "Strong fit if you want systems engineering and space mission projects alongside management/operations aspects.",
+            "Berlin can offer more part-time/startup opportunities than smaller university towns."
         ],
         "Analysis_Cons": [
-            "ıAıdımıiısısıiıoını ıiınıcılıuıdıeısı ıaını ıiınıtıeırıvıiıeıwı ısıtıaıgıeı ı(ısıeılıeıcıtıiıoını ırıiısıkı)ı.ı;ı ıHıoıuısıiınıgı ıiısı ıoınıeı ıoıfı ıtıhıeı ıhıaırıdıeısıtı ımıaırıkıeıtısı ıiını ıGıeırımıaınıyı;ı ısıeıcıuırıiınıgı ıaıcıcıoımımıoıdıaıtıiıoını ıeıaırılıyı ıiısı ıcırıiıtıiıcıaılı.ı;ı ıTıhıeı ıpırıoıgırıaımımıeı ıiısı ıaı ıpıaıiıdı/ıtıuıiıtıiıoını-ıbıaısıeıdı ımıaısıtıeırı,ı ıaınıdı ıiıtı ıeıxıpılıiıcıiıtılıyı ısıtıaıtıeısı ıpırıoıgırıaımımıeı-ılıeıvıeılı ısıcıhıoılıaırısıhıiıpısı ıaırıeı ınıoıtı ıoıfıfıeırıeıdı.ı"
+            "Admission includes an interview stage (selection risk).",
+            "Housing is one of the hardest markets in Germany; securing accommodation early is critical.",
+            "The programme is a paid/tuition-based master, and it explicitly states programme-level scholarships are not offered."
         ],
         "Analysis_Tags": [
-            "ısıpıaıcıeısıyısıtıeımısı;ı ısıaıtıeılılıiıtıeısıyısıtıeımısı;ı ısıyısıtıeımısıeınıgıiınıeıeırıiınıgı;ı ıgınıcı;ı ımıiısısıiıoınıaınıaılıyısıiısı;ı ıaıoıcısı;ı ıaıvıiıoınıiıcısı"
+            "spacesystems",
+            "satellitesystems",
+            "systemsengineering",
+            "gnc",
+            "missionanalysis",
+            "aocs",
+            "avionics"
         ],
-        "Industry_Ecosystem": "ı°ıCıhıaıiırı ıoıfı ıSıpıaıcıeı ıTıeıcıhınıoılıoıgıyı;ı ıkıüıçıüıkı ıuıyıdıuı ıeıkıoısıiısıtıeımıiı",
+        "Industry_Ecosystem": "Chair of Space Technology; küçük uydu ekosistemi",
+        "Industry_Comp_Intensity": "High",
         "Industry_Partners": [
-            "ıEıSıAı ı(ısıtıuıdıeınıtı ıpırıoıjıeıcıtısı/ıcıoımıpıeıtıiıtıiıoınısı)ı;ı ıDıLıRı;ı ıAıiırıbıuısı;ı ıOıHıBı;ı ıbıeıSıpıaıcıeı ı(ıpırıoıgırıaımımıeı ıoıpıeırıaıtıoırı)ı"
+            "ESA (student projects/competitions)",
+            "DLR",
+            "Airbus",
+            "OHB",
+            "beSpace (programme operator)"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": false,
+        "Internship_Notes": "Project-driven; thesis can be with an industry partner.",
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": null,
+        "Deadline_Winter_Note": null,
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": "01 Oct",
+        "Deadline_Summer_Note": "DAAD & MSE info (summer intake); verify each year",
+        "Deadline_Summer_Avail": null,
+        "Deadline_General_Note": "MSE is typically a summer (April) intake programme; check current cycle on the MSE website.",
+        "Meta_Sources": [
+            {
+                "type": "fees_or_tuition",
+                "url": "https://mse.tu-berlin.de/admission/fees-funding/",
+                "last_verified": "2026-01-26"
+            },
+            {
+                "type": "aerospace",
+                "url": "https://mse.tu-berlin.de/",
+                "last_verified": "2026-01-26"
+            },
+            {
+                "type": "admissions",
+                "url": "https://mse.tu-berlin.de/admission/application/",
+                "last_verified": "2026-01-27"
+            },
+            {
+                "type": "housing",
+                "url": "https://mse.tu-berlin.de/housing/",
+                "last_verified": "2026-01-27"
+            },
+            {
+                "type": "scholarships",
+                "url": "https://mse.tu-berlin.de/application-procedure/",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": null
     },
     {
-        "Country": "ıGıeırımıaınıyı",
-        "City": "ıBırıeımıeını",
-        "State_Region": "ıBırıeımıeını",
-        "Uni_ID": "ıuınıiı-ıbırıeımıeını",
-        "University_Name": "ıUınıiıvıeırısıiıtıäıtı ıBırıeımıeını",
-        "University_Display_Name": "ıUınıiıvıeırısıiıtıäıtı ıBırıeımıeını",
-        "University_Short_Name": "ıUınıiı ıBırıeımıeını",
+        "Country": "Germany",
+        "City": "Bremen",
+        "State_Region": "Bremen",
+        "Uni_ID": "uni-bremen",
+        "University_Name": "Universität Bremen",
+        "University_Display_Name": "Universität Bremen",
+        "University_Short_Name": "Uni Bremen",
         "Cost_Tuition": [],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 425.4,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ı€ı4ı2ı5ı.ı4ı0ı/ısıeımıeısıtıeırı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "€425.40/semester",
+                "term_code": "2025W"
             }
         ],
         "Scholarships_Info": [
             {
-                "amount": "ı€ı3ı0ı0ı/ımıoınıtıhı",
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıDıeıuıtısıcıhılıaınıdısıtıiıpıeınıdıiıuımı",
-                "notes": "ı€ı3ı0ı0ı/ımıoınıtıhı;ı ıcıoımıpıeıtıiıtıiıvıeı",
-                "provider": "ıUınıiıvıeırısıiıtıäıtı ıBırıeımıeını",
-                "type": "ımıeırıiıtı",
-                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıuınıiı-ıbırıeımıeını.ıdıeı/ıdıeıuıtısıcıhılıaınıdısıtıiıpıeınıdıiıuımı"
+                "name": "Deutschlandstipendium",
+                "provider": "Universität Bremen",
+                "type": "merit",
+                "eligibility": "non_eu_ok",
+                "amount": "€300/month",
+                "notes": "€300/month; competitive",
+                "url": "https://www.uni-bremen.de/deutschlandstipendium"
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıDıAıAıDı ıSıcıhıoılıaırısıhıiıpı ıDıaıtıaıbıaısıeı",
-                "notes": "ıEıxıtıeırınıaılı ısıcıhıoılıaırısıhıiıpısı ıfıoırı ınıoını‑ıEıUı",
-                "provider": "ıDıAıAıDı",
-                "type": "ıeıxıtıeırınıaılı",
-                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıdıaıaıdı.ıdıeı/ıeını/ısıtıuıdıyı-ıaınıdı-ırıeısıeıaırıcıhı-ıiını-ıgıeırımıaınıyı/ısıcıhıoılıaırısıhıiıpısı/ı"
+                "name": "DAAD Scholarship Database",
+                "provider": "DAAD",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "External scholarships for non‑EU",
+                "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
             }
         ],
-        "Cost_City_Living": "ımıeıdıiıuımı",
-        "Cost_City_Rank": 3,
-        "Living_Housing_Difficulty": "ıMıoıdıeırıaıtıeı",
+        "Cost_City_Living": "medium",
+        "Cost_City_Rank": 3.0,
+        "Living_Housing_Difficulty": "Moderate",
         "Living_Housing_Score": 5,
-        "Program_Name": "ıMı.ıSıcı.ı ıSıpıaıcıeı ıEınıgıiınıeıeırıiınıgı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıuınıiı-ıbırıeımıeını.ıdıeı/ıeını/ısıtıuıdıiıeısı/ıoırıiıeınıtıaıtıiıoını-ıaıpıpılıiıcıaıtıiıoını/ıoıfıfıeırıeıdı-ısıtıuıdıyı-ıpırıoıgırıaımı/ıdıbısı/ısıtıuıdıyı/ı3ı9ı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ı1ı0ı0ı%ı ıEınıgılıiısıhı",
-        "Analysis_Strong_Areas": "ıSıpıaıcıeı ıeınıgıiınıeıeırıiınıgı,ı ırıoıbıoıtıiıcısı,ı ımıiısısıiıoını ı&ı ısıaıtıeılılıiıtıeı ıaıpıpılıiıcıaıtıiıoınısı",
+        "Program_Name": "M.Sc. Space Engineering",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://www.uni-bremen.de/en/studies/orientation-application/offered-study-program/dbs/study/39",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "100% English",
+        "Analysis_Strong_Areas": "Space engineering, robotics, mission & satellite applications",
         "Analysis_Pros": [
-            "ıOınıeı ıoıfı ıGıeırımıaınıyı’ısı ımıoısıtı ısıpıaıcıeı-ıiınıdıuısıtırıyı-ıdıeınısıeı ıcıiıtıiıeısı ı(ıBırıeımıeını ıcılıuısıtıeırı)ı,ı ıwıhıiıcıhı ıoıfıtıeını ımıeıaınısı ısıtırıoınıgı ıtıhıeısıiısı/ıiınıtıeırınısıhıiıpı ıpıaıtıhıwıaıyısı ıiını ısıaıtıeılılıiıtıeı ıaınıdı ısıpıaıcıeı ısıyısıtıeımısı ıwıoırıkı.ı;ı ıGıoıoıdı ıbıaılıaınıcıeı ıbıeıtıwıeıeını ı‘ısıpıaıcıeı ıeınıgıiınıeıeırıiınıgı’ı ıbırıeıaıdıtıhı ı(ısıyısıtıeımısı,ı ırıoıbıoıtıiıcısı,ı ıaıpıpılıiıcıaıtıiıoınısı)ı ıaınıdı ıoıvıeırıaılılı ılıiıvıiınıgı ıcıoısıtı ıcıoımıpıaırıeıdı ıtıoı ıMıuınıiıcıhı/ıBıeırılıiını.ı;ı ıIıfı ıyıoıuı ıwıaınıtı ıtıoı ısıtıaıyı ıcılıoısıeı ıtıoı ıiınıdıuısıtırıyı ıaınıdı ıaıpıpılıiıeıdı ıpırıoıjıeıcıtısı,ı ıBırıeımıeını ıiısı ıoınıeı ıoıfı ıtıhıeı ısıaıfıeısıtı ıbıeıtısı.ı"
+            "One of Germany’s most space-industry-dense cities (Bremen cluster), which often means strong thesis/internship pathways in satellite and space systems work.",
+            "Good balance between ‘space engineering’ breadth (systems, robotics, applications) and overall living cost compared to Munich/Berlin.",
+            "If you want to stay close to industry and applied projects, Bremen is one of the safest bets."
         ],
         "Analysis_Cons": [
-            "ıIıfı ıyıoıuırı ıgıoıaılı ıiısı ıdıeıeıpı ıtıhıeıoırıeıtıiıcıaılı ıaısıtırıoıdıyınıaımıiıcısı,ı ıyıoıuı ımıaıyı ınıeıeıdı ıtıoı ıpıiıcıkı ımıoıdıuılıeısı ıaınıdı ıtıhıeısıiısı ıtıoıpıiıcısı ısıtırıaıtıeıgıiıcıaılılıyı ı(ınıoıtı ıaısı ıcıhıaıiırı-ıcıeınıtırıiıcı ıaısı ıTıUıMı)ı.ı;ı ıPırıoıgırıaımımıeı ıdıeıtıaıiılısı ı(ılıaınıgıuıaıgıeı/ıaıdımıiısısıiıoını)ı ıcıaını ıvıaırıyı ıbıyı ıtırıaıcıkı ıaınıdı ıyıeıaırı,ı ısıoı ıvıeırıiıfıyı ıtıhıeı ıeıxıaıcıtı ıMıSıcı ıpıaıgıeı ıeıaıcıhı ıcıyıcılıeı.ı"
+            "If your goal is deep theoretical astrodynamics, you may need to pick modules and thesis topics strategically (not as chair-centric as TUM).",
+            "Programme details (language/admission) can vary by track and year, so verify the exact MSc page each cycle."
         ],
         "Analysis_Tags": [
-            "ısıpıaıcıeıeınıgıiınıeıeırıiınıgı;ı ısıpıaıcıeısıyısıtıeımısı;ı ırıoıbıoıtıiıcısı;ı ısıaıtıeılılıiıtıeısıyısıtıeımısı;ı ımıiısısıiıoınıaınıaılıyısıiısı;ı ısıuısıtıaıiınıaıbıiılıiıtıyı"
+            "spaceengineering",
+            "spacesystems",
+            "robotics",
+            "satellitesystems",
+            "missionanalysis",
+            "sustainability"
         ],
-        "Industry_Ecosystem": "ıMıSıcı ıSıpıaıcıeı ıEınıgıiınıeıeırıiınıgı;ı ıBırıeımıeını ıuızıaıyı ıeıkıoısıiısıtıeımıiı",
+        "Industry_Ecosystem": "MSc Space Engineering; Bremen uzay ekosistemi",
+        "Industry_Comp_Intensity": "Medium-High",
         "Industry_Partners": [
-            "ıOıHıBı;ı ıAıiırıbıuısı ı(ıBırıeımıeını)ı;ı ıDıLıRı ı(ırıeıgıiıoınıaılı)ı;ı ıZıAıRıMı"
+            "OHB",
+            "Airbus (Bremen)",
+            "DLR (regional)",
+            "ZARM"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": false,
+        "Internship_Notes": "Often thesis/internship with local space industry; depends on track.",
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "15 Jul",
+        "Deadline_Winter_Note": "Typical German master deadlines; verify per programme",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": "15 Jan",
+        "Deadline_Summer_Note": "Typical German master deadlines; verify per programme",
+        "Deadline_Summer_Avail": null,
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "fees_or_tuition",
+                "url": "https://www.uni-bremen.de/en/studies/during-your-studies/semesterbeitrag",
+                "last_verified": "2026-01-26"
+            },
+            {
+                "type": "aerospace",
+                "url": "https://www.uni-bremen.de/en/studies/orientation-application/offered-study-program/dbs/study/39",
+                "last_verified": "2026-01-26"
+            },
+            {
+                "type": "partners",
+                "url": "https://www.uni-bremen.de/en/alumni/karriere-und-netzwerk/profil-magazin/2024/2024-09-24-tdg25",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": true
     },
     {
-        "Country": "ıGıeırımıaınıyı",
-        "City": "ıDıaırımısıtıaıdıtı",
-        "State_Region": "ıHıeısısıeını",
-        "Uni_ID": "ıtıuı-ıdıaırımısıtıaıdıtı",
-        "University_Name": "ıTıeıcıhınıiısıcıhıeı ıUınıiıvıeırısıiıtıäıtı ıDıaırımısıtıaıdıtı",
-        "University_Display_Name": "ıTıeıcıhınıiısıcıhıeı ıUınıiıvıeırısıiıtıäıtı ıDıaırımısıtıaıdıtı",
-        "University_Short_Name": "ıTıUı ıDıaırımısıtıaıdıtı",
+        "Country": "Germany",
+        "City": "Darmstadt",
+        "State_Region": "Hessen",
+        "Uni_ID": "tu-darmstadt",
+        "University_Name": "Technische Universität Darmstadt",
+        "University_Display_Name": "Technische Universität Darmstadt",
+        "University_Short_Name": "TU Darmstadt",
         "Cost_Tuition": [],
         "Cost_Semester_Fees": [
             {
+                "term": "SoSe 2026",
                 "amount": 382.68,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ı€ı3ı8ı2ı.ı6ı8ı ı(ıSıoıSıeı ı2ı0ı2ı6ı)ı",
-                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
-                "term_code": "ı2ı0ı2ı6ıSı"
+                "raw": "€382.68 (SoSe 2026)",
+                "term_code": "2026S"
             }
         ],
         "Scholarships_Info": [
             {
-                "amount": "ı€ı3ı0ı0ı/ımıoınıtıhı",
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıDıeıuıtısıcıhılıaınıdısıtıiıpıeınıdıiıuımı",
-                "notes": "ı€ı3ı0ı0ı/ımıoınıtıhı",
-                "provider": "ıTıUı ıDıaırımısıtıaıdıtı",
-                "type": "ımıeırıiıtı",
-                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıtıuı-ıdıaırımısıtıaıdıtı.ıdıeı/ıdıeıuıtısıcıhılıaınıdısıtıiıpıeınıdıiıuımı/ıiınıdıeıxı.ıeını.ıjısıpı"
+                "name": "Deutschlandstipendium",
+                "provider": "TU Darmstadt",
+                "type": "merit",
+                "eligibility": "non_eu_ok",
+                "amount": "€300/month",
+                "notes": "€300/month",
+                "url": "https://www.tu-darmstadt.de/deutschlandstipendium/index.en.jsp"
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıGırıaıdıuıaıtıiıoını ıSıcıhıoılıaırısıhıiıpı ı(ıiınıtıeırınıaıtıiıoınıaılı ısıtıuıdıeınıtısı)ı",
-                "notes": "ıPıeırıfıoırımıaınıcıeı-ıbıaısıeıdı ısıcıhıoılıaırısıhıiıpı ıfıoırı ıiınıtıeırınıaıtıiıoınıaılısı ınıeıaırı ıgırıaıdıuıaıtıiıoını;ı ıaıpıpılıiıcıaıtıiıoını ıwıiınıdıoıwısı ıAıpırı/ıOıcıtı",
-                "provider": "ıTıUı ıDıaırımısıtıaıdıtı",
-                "type": "ıuınıiıvıeırısıiıtıyı",
-                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıtıuı-ıdıaırımısıtıaıdıtı.ıdıeı/ısıtıuıdıiıeırıeını/ısıtıuıdıiıeırıeınıdıeı_ıtıuı/ıiınıtıeırınıaıtıiıoınıaılıeı_ısıtıuıdıiıeırıeınıdıeı_ı1ı/ısıtıuıdıiıeınıfıiınıaınızıiıeırıuınıgı_ıuınıdı_ısıtıiıpıeınıdıiıeını_ıiınıtıeırınıaıtıiıoınıaılı/ısıtıuıdıiıeınıfıiınıaınızıiıeırıuınıgı_ısıtıiıpıeınıdıiıeını/ıiınıdıeıxı.ıeını.ıjısıpı"
+                "name": "Graduation Scholarship (international students)",
+                "provider": "TU Darmstadt",
+                "type": "university",
+                "eligibility": "non_eu_ok",
+                "notes": "Performance-based scholarship for internationals near graduation; application windows Apr/Oct",
+                "url": "https://www.tu-darmstadt.de/studieren/studierende_tu/internationale_studierende_1/studienfinanzierung_und_stipendien_international/studienfinanzierung_stipendien/index.en.jsp"
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıDıAıAıDı ıSıcıhıoılıaırısıhıiıpı ıDıaıtıaıbıaısıeı",
-                "notes": "ıEıxıtıeırınıaılı ısıcıhıoılıaırısıhıiıpısı",
-                "provider": "ıDıAıAıDı",
-                "type": "ıeıxıtıeırınıaılı",
-                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıdıaıaıdı.ıdıeı/ıeını/ısıtıuıdıyı-ıaınıdı-ırıeısıeıaırıcıhı-ıiını-ıgıeırımıaınıyı/ısıcıhıoılıaırısıhıiıpısı/ı"
+                "name": "DAAD Scholarship Database",
+                "provider": "DAAD",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "External scholarships",
+                "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
             }
         ],
-        "Cost_City_Living": "ımıeıdıiıuımı",
-        "Cost_City_Rank": 3,
-        "Living_Housing_Difficulty": "ıHıaırıdı",
+        "Cost_City_Living": "medium",
+        "Cost_City_Rank": 3.0,
+        "Living_Housing_Difficulty": "Hard",
         "Living_Housing_Score": 7,
-        "Program_Name": "ıAıeırıoısıpıaıcıeı/ıSıpıaıcıeı-ırıeılıeıvıaınıtı ıMıSıcı ıvıiıaı ıFıSıRı ı&ı ısıyısıtıeımısı/ıcıoınıtırıoılı ıtırıaıcıkısı ı(ıpırıoıgırıaımı-ısıpıeıcıiıfıiıcı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıfısırı.ıtıuı-ıdıaırımısıtıaıdıtı.ıdıeı/ıiınıdıeıxı.ıeını.ıjısıpı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
-        "Analysis_Strong_Areas": "ıFılıiıgıhıtı ıdıyınıaımıiıcısı,ı ıcıoınıtırıoılısı,ı ıGıNı°ıCı,ı ısıyısıtıeımısı ıeınıgıiınıeıeırıiınıgı",
+        "Program_Name": "Aerospace/Space-relevant MSc via FSR & systems/control tracks (program-specific)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://www.fsr.tu-darmstadt.de/index.en.jsp",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "English C1",
+        "Analysis_Strong_Areas": "Flight dynamics, controls, GNC, systems engineering",
         "Analysis_Pros": [
-            "ıVıeırıyı ısıtırıoınıgı ıcıoınıtırıoılısı/ısıyısıtıeımısı ıeınıgıiınıeıeırıiınıgı ıeıcıoısıyısıtıeımı ı(ıFıSıRı)ı ıwıiıtıhı ıgıoıoıdı ıaılıiıgınımıeınıtı ıtıoı ıGıNı°ıCı ıaınıdı ıaıuıtıoınıoımıyı-ıhıeıaıvıyı ısıpıaıcıeı/ıaıeırıoı ıpırıoıbılıeımısı.ı;ı ıDıaırımısıtıaıdıtı ıhıoısıtısı ıEıSıAı/ıEıSıOı°ıCı,ı ıwıhıiıcıhı ıiısı ıaı ıuınıiıqıuıeı ıaıdıvıaınıtıaıgıeı ıfıoırı ıiınıtıeırınısıhıiıpısı ıaınıdı ınıeıtıwıoırıkıiınıgı ıiını ıoıpıeırıaıtıiıoınısı/ıfılıiıgıhıtı ıdıyınıaımıiıcısı ırıeılıaıtıeıdı ırıoılıeısı.ı;ı ıGıoıoıdı ıoıpıtıiıoını ıiıfı ıyıoıuı ıwıaınıtı ıaını ıaıeırıoısıpıaıcıeı/ısıpıaıcıeı ıoıuıtıcıoımıeı ıvıiıaı ıcıoınıtırıoılısı,ı ıeısıtıiımıaıtıiıoını,ı ıoıpıtıiımıiızıaıtıiıoını,ı ıaınıdı ısıoıfıtıwıaırıeı-ıhıeıaıvıyı ıpıaıtıhıwıaıyısı.ı"
+            "Very strong controls/systems engineering ecosystem (FSR) with good alignment to GNC and autonomy-heavy space/aero problems.",
+            "Darmstadt hosts ESA/ESOC, which is a unique advantage for internships and networking in operations/flight dynamics related roles.",
+            "Good option if you want an aerospace/space outcome via controls, estimation, optimization, and software-heavy pathways."
         ],
         "Analysis_Cons": [
-            "ıTıhıeırıeı ıiısını’ıtı ıaı ısıiınıgılıeı ı‘ıoınıeı-ısıiızıeı-ıfıiıtısı-ıaılılı’ı ıaıeırıoısıpıaıcıeı ımıaısıtıeırı ıhıeırıeı;ı ıyıoıuı ıhıaıvıeı ıtıoı ıcırıaıfıtı ıyıoıuırı ıcıuırırıiıcıuılıuımı ıiınıtıeınıtıiıoınıaılılıyı ı(ıpırıoıgırıaımımıeı ı+ı ıeılıeıcıtıiıvıeısı)ı.ı;ı ıHıoıuısıiınıgı ıiını ıtıhıeı ıRıhıiınıeı‑ıMıaıiını ıaırıeıaı ıcıaını ıbıeı ıtıoıuıgıhı,ı ıaınıdı ıcıoısıtısı ıcıaını ıcırıeıeıpı ıuıpı ıdıuıeı ıtıoı ıFırıaınıkıfıuırıtı ıpırıoıxıiımıiıtıyı.ı;ı ıEıxıaıcıtı ılıaınıgıuıaıgıeı ırıeıqıuıiırıeımıeınıtısı ıdıiıfıfıeırı ıbıyı ıpırıoıgırıaımımıeı ı(ısıoımıeı ıGıeırımıaını-ıtıaıuıgıhıtı,ı ısıoımıeı ıEınıgılıiısıhı)ı.ı"
+            "There isn’t a single ‘one-size-fits-all’ aerospace master here; you have to craft your curriculum intentionally (programme + electives).",
+            "Housing in the Rhine‑Main area can be tough, and costs can creep up due to Frankfurt proximity.",
+            "Exact language requirements differ by programme (some German-taught, some English)."
         ],
         "Analysis_Tags": [
-            "ıfılıiıgıhıtıdıyınıaımıiıcısı;ı ıcıoınıtırıoılısı;ı ıgınıcı;ı ısıyısıtıeımısıeınıgıiınıeıeırıiınıgı;ı ımıiısısıiıoınıaınıaılıyısıiısı;ı ısıpıaıcıeısıaıfıeıtıyı"
+            "flightdynamics",
+            "controls",
+            "gnc",
+            "systemsengineering",
+            "missionanalysis",
+            "spacesafety"
         ],
-        "Industry_Ecosystem": "ıIınısıtıiıtıuıtıeı ıoıfı ıFılıiıgıhıtı ıSıyısıtıeımısı ıaınıdı ıAıuıtıoımıaıtıiıcı ı°ıCıoınıtırıoılı ı(ıFıSıRı)ı;ı ısıpıaıcıeı ısıaıfıeıtıyı",
+        "Industry_Ecosystem": "Institute of Flight Systems and Automatic Control (FSR); space safety",
+        "Industry_Comp_Intensity": "High",
         "Industry_Partners": [
-            "ıEıSıAı/ıEıSıOı°ıCı ı(ıDıaırımısıtıaıdıtı)ı;ı ıEıSıRıIı/ısıpıaıcıeı ısıaıfıeıtıyı ıeıcıoısıyısıtıeımı;ı ıDıLıRı ı(ırıeıgıiıoınıaılı)ı"
+            "ESA/ESOC (Darmstadt)",
+            "ESRI/space safety ecosystem",
+            "DLR (regional)"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": false,
+        "Internship_Notes": "Depends on chosen MSc; ESOC proximity can help with internships.",
+        "Deadline_Winter_Open": "01 Jun",
+        "Deadline_Winter_Close": "15 Jul",
+        "Deadline_Winter_Note": "TU Darmstadt typical master window (example programmes)",
+        "Deadline_Summer_Open": "01 Dec",
+        "Deadline_Summer_Close": "15 Jan",
+        "Deadline_Summer_Note": "TU Darmstadt typical master window (example programmes)",
+        "Deadline_Summer_Avail": null,
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "fees_or_tuition",
+                "url": "https://www.tu-darmstadt.de/studieren/organisation_zum_studium/rueckmeldung_und_semesterbeitrag/index.en.jsp",
+                "last_verified": "2026-01-26"
+            },
+            {
+                "type": "aerospace",
+                "url": "https://www.fsr.tu-darmstadt.de/index.en.jsp",
+                "last_verified": "2026-01-26"
+            },
+            {
+                "type": "deadlines",
+                "url": "https://www.tu-darmstadt.de/studieren/studieninteressierte/studienangebot_studiengaenge/studiengaenge_akk/deadlines/index.en.jsp",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": true
     },
     {
-        "Country": "ıGıeırımıaınıyı",
-        "City": "ıAıaıcıhıeını",
-        "State_Region": "ıKıuızıeıyı ıRıeını-ıVıeısıtıfıaılıyıaı",
-        "Uni_ID": "ırıwıtıhı-ıaıaıcıhıeını",
-        "University_Name": "ıRıWıTıHı ıAıaıcıhıeını ıUınıiıvıeırısıiıtıyı",
-        "University_Display_Name": "ıRıWıTıHı ıAıaıcıhıeını ıUınıiıvıeırısıiıtıyı",
-        "University_Short_Name": "ıRıWıTıHı ıAıaıcıhıeını",
+        "Country": "Germany",
+        "City": "Aachen",
+        "State_Region": "Kuzey Ren-Vestfalya",
+        "Uni_ID": "rwth-aachen",
+        "University_Name": "RWTH Aachen University",
+        "University_Display_Name": "RWTH Aachen University",
+        "University_Short_Name": "RWTH Aachen",
         "Cost_Tuition": [],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 358.34,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ı€ı3ı5ı8ı.ı3ı4ı ı(ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı)ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "€358.34 (WiSe 2025/26)",
+                "term_code": "2025W"
             }
         ],
         "Scholarships_Info": [
             {
-                "amount": "ı€ı3ı0ı0ı/ımıoınıtıhı",
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıDıeıuıtısıcıhılıaınıdısıtıiıpıeınıdıiıuımı ı/ı ıRıWıTıHı ıEıdıuıcıaıtıiıoını ıFıuınıdı",
-                "notes": "ı€ı3ı0ı0ı/ımıoınıtıhı ı(ıfıeıdıeırıaılı ı+ı ısıpıoınısıoırısı)ı;ı ımıuısıtı ıbıeı ıeınırıoılılıeıdı ıtıoı ıaıpıpılıyı",
-                "provider": "ıRıWıTıHı ıAıaıcıhıeını",
-                "type": "ımıeırıiıtı",
-                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ırıwıtıhı-ıaıaıcıhıeını.ıdıeı/ıcımısı/ırıoıoıtı/ıtırıaınısıfıeırı/ısıpıeınıdıeını-ısıpıoınısıoırıiınıgı/ı~ıeılıuı/ıdıeıuıtısıcıhılıaınıdısıtıiıpıeınıdıiıuımı/ı?ılıiıdıxı=ı1ı"
+                "name": "Deutschlandstipendium / RWTH Education Fund",
+                "provider": "RWTH Aachen",
+                "type": "merit",
+                "eligibility": "non_eu_ok",
+                "amount": "€300/month",
+                "notes": "€300/month (federal + sponsors); must be enrolled to apply",
+                "url": "https://www.rwth-aachen.de/cms/root/transfer/spenden-sponsoring/~elu/deutschlandstipendium/?lidx=1"
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıDıAıAıDı ıSıcıhıoılıaırısıhıiıpı ıDıaıtıaıbıaısıeı",
-                "notes": "ıEıxıtıeırınıaılı ısıcıhıoılıaırısıhıiıpısı",
-                "provider": "ıDıAıAıDı",
-                "type": "ıeıxıtıeırınıaılı",
-                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıdıaıaıdı.ıdıeı/ıeını/ısıtıuıdıyı-ıaınıdı-ırıeısıeıaırıcıhı-ıiını-ıgıeırımıaınıyı/ısıcıhıoılıaırısıhıiıpısı/ı"
+                "name": "DAAD Scholarship Database",
+                "provider": "DAAD",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "External scholarships",
+                "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
             }
         ],
-        "Cost_City_Living": "ımıeıdıiıuımı",
-        "Cost_City_Rank": 3,
-        "Living_Housing_Difficulty": "ıMıoıdıeırıaıtıeı",
+        "Cost_City_Living": "medium",
+        "Cost_City_Rank": 3.0,
+        "Living_Housing_Difficulty": "Moderate",
         "Living_Housing_Score": 5,
-        "Program_Name": "ıAıeırıoısıpıaıcıeı/ısıpıaıcıeı ırıeılıeıvıaınıtı ıMıSıcı ıvıiıaı ıeınıgıiınıeıeırıiınıgı ıpırıoıgırıaımımıeısı ı(ıpırıoıgırıaımı-ısıpıeıcıiıfıiıcı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ırıwıtıhı-ıaıaıcıhıeını.ıdıeı/ı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
-        "Analysis_Strong_Areas": "ıAıeırıoısıpıaıcıeı ısıyısıtıeımısı ıdıeısıiıgını/ıoıpıeırıaıtıiıoınısı,ı ıaıiırıcırıaıfıtı ı&ı ısıpıaıcıeıcırıaıfıtı ıtıeıcıhı",
+        "Program_Name": "Aerospace/space relevant MSc via engineering programmes (program-specific)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://www.rwth-aachen.de/",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "English C1",
+        "Analysis_Strong_Areas": "Aerospace systems design/operations, aircraft & spacecraft tech",
         "Analysis_Pros": [
-            "ıTıoıpı-ıtıiıeırı ıeınıgıiınıeıeırıiınıgı ıbırıaınıdı ıwıiıtıhı ısıtırıoınıgı ırıeısıeıaırıcıhı ıcıuılıtıuırıeı;ı ıgıoıoıdı ıiıfı ıyıoıuı ıwıaınıtı ıaı ıbırıoıaıdı,ı ıhıiıgıhı-ıpıoıwıeırıeıdı ıtıeıcıhınıiıcıaılı ıeınıvıiırıoınımıeınıtı ıaınıdı ıaıcıcıeısısı ıtıoı ılıaırıgıeı ılıaıbısı.ı;ı ıOıfıtıeını ıaı ıgıoıoıdı ıfıiıtı ıfıoırı ıcıoımıpıuıtıaıtıiıoınıaılı ımıeıcıhıaınıiıcısı,ı ı°ıCıFıDı,ı ıcıoınıtırıoılısı,ı ıaınıdı ımıaıtıeırıiıaılısı-ıhıeıaıvıyı ıaıeırıoısıpıaıcıeı ıdıiırıeıcıtıiıoınısı ıdıeıpıeınıdıiınıgı ıoını ıyıoıuırı ıcıhıoısıeını ıMıSıcı.ı;ı ıLıiıvıiınıgı ıcıoısıtısı ıaırıeı ıtıyıpıiıcıaılılıyı ımıoırıeı ımıaınıaıgıeıaıbılıeı ıtıhıaını ıMıuınıiıcıhı/ıBıeırılıiını/ıHıaımıbıuırıgı.ı"
+            "Top-tier engineering brand with strong research culture; good if you want a broad, high-powered technical environment and access to large labs.",
+            "Often a good fit for computational mechanics, CFD, controls, and materials-heavy aerospace directions depending on your chosen MSc.",
+            "Living costs are typically more manageable than Munich/Berlin/Hamburg."
         ],
         "Analysis_Cons": [
-            "ıSıpıaıcıeı/ıaısıtırıoıdıyınıaımıiıcısı ıcıoınıtıeınıtı ıiısı ıuısıuıaılılıyı ıpırıoıgırıaımımıeı-ı ıaınıdı ıgırıoıuıpı-ıdıeıpıeınıdıeınıtı ı(ıyıoıuı ınıeıeıdı ıtıoı ıtıaırıgıeıtı ıtıhıeı ırıiıgıhıtı ıcıhıaıiırı ıaınıdı ıtıhıeısıiısı)ı.ı;ı ıFıoırı ıiınıtıeırınıaıtıiıoınıaılı ıaıpıpılıiıcıaınıtısı,ı ıtıhıeı ıaıdımıiını/ırıeıcıoıgınıiıtıiıoını ıpırıoıcıeısısı ıcıaını ıbıeı ısıtırıiıcıtı;ı ıpılıaını ıbıuıfıfıeırısı ıfıoırı ıdıoıcıuımıeınıtı ıvıeırıiıfıiıcıaıtıiıoını.ı"
+            "Space/astrodynamics content is usually programme- and group-dependent (you need to target the right chair and thesis).",
+            "For international applicants, the admin/recognition process can be strict; plan buffers for document verification."
         ],
         "Analysis_Tags": [
-            "ıaıeırıoısıpıaıcıeısıyısıtıeımısı;ı ıaıiırıcırıaıfıtıdıeısıiıgını;ı ısıpıaıcıeısıyısıtıeımısı;ı ısıtırıuıcıtıuırıeısı;ı ısıyısıtıeımısıeınıgıiınıeıeırıiınıgı;ı ıpırıoıpıuılısıiıoını"
+            "aerospacesystems",
+            "aircraftdesign",
+            "spacesystems",
+            "structures",
+            "systemsengineering",
+            "propulsion"
         ],
-        "Industry_Ecosystem": "ıIınısıtıiıtıuıtıeı ıoıfı ıAıeırıoısıpıaıcıeı ıSıyısıtıeımısı ı(ıIıLıRı)ı;ı ıuıçıaıkı ı+ı ıuızıaıyı ısıiısıtıeımılıeırıiı ıoıdıaığııı",
+        "Industry_Ecosystem": "Institute of Aerospace Systems (ILR); uçak + uzay sistemleri odağı",
+        "Industry_Comp_Intensity": "High",
         "Industry_Partners": [
-            "ıAıiırıbıuısı;ı ıDıLıRı ı(ıGıeırımıaınıyı-ıwıiıdıeı ınıeıtıwıoırıkı)ı;ı ıIınıdıuısıtırıyı ıiını ıNıRıWı ı(ıaıuıtıoımıoıtıiıvıeı/ıiınıdıuısıtırıiıaılı)ı"
+            "Airbus",
+            "DLR (Germany-wide network)",
+            "Industry in NRW (automotive/industrial)"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": false,
+        "Internship_Notes": "Depends on programme; industrial region nearby (NRW).",
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "15 Jul",
+        "Deadline_Winter_Note": "RWTH deadlines (documents must be available by Jul 15)",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": "15 Jan",
+        "Deadline_Summer_Note": "RWTH deadlines (documents must be available by Jan 15)",
+        "Deadline_Summer_Avail": null,
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "fees_or_tuition",
+                "url": "https://www.rwth-aachen.de/go/id/bibl/ll/rwthindex/?lidx=1",
+                "last_verified": "2026-01-26"
+            },
+            {
+                "type": "aerospace",
+                "url": "https://www.ilr.rwth-aachen.de/cms/ilr/~jmqo/das-institut/?lidx=1",
+                "last_verified": "2026-01-26"
+            },
+            {
+                "type": "deadlines",
+                "url": "https://www.rwth-aachen.de/cms/root/studium/vor-dem-studium/bewerbung/~krc/fristen-und-termine/?lidx=1",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": true
     },
     {
-        "Country": "ıGıeırımıaınıyı",
-        "City": "ıDırıeısıdıeını",
-        "State_Region": "ıSıaıkısıoınıyıaı",
-        "Uni_ID": "ıtıuı-ıdırıeısıdıeını",
-        "University_Name": "ıTıeıcıhınıiısıcıhıeı ıUınıiıvıeırısıiıtıäıtı ıDırıeısıdıeını",
-        "University_Display_Name": "ıTıeıcıhınıiısıcıhıeı ıUınıiıvıeırısıiıtıäıtı ıDırıeısıdıeını",
-        "University_Short_Name": "ıTıUı ıDırıeısıdıeını",
+        "Country": "Germany",
+        "City": "Dresden",
+        "State_Region": "Saksonya",
+        "Uni_ID": "tu-dresden",
+        "University_Name": "Technische Universität Dresden",
+        "University_Display_Name": "Technische Universität Dresden",
+        "University_Short_Name": "TU Dresden",
         "Cost_Tuition": [],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 338.0,
-                "components": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı,ı ıPırıäısıeınızısıtıuıdıiıuımı",
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ı€ı3ı3ı8ı.ı0ı0ı ı(ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı,ı ıPırıäısıeınızısıtıuıdıiıuımı)ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "€338.00 (WiSe 2025/26, Präsenzstudium)",
+                "term_code": "2025W",
+                "components": "WiSe 2025/26, Präsenzstudium"
             }
         ],
         "Scholarships_Info": [
             {
-                "amount": "ı€ı3ı0ı0ı/ımıoınıtıhı",
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıDıeıuıtısıcıhılıaınıdısıtıiıpıeınıdıiıuımı",
-                "notes": "ı€ı3ı0ı0ı/ımıoınıtıhı;ı ıoıpıeını ırıeıgıaırıdılıeısısı ıoıfı ınıaıtıiıoınıaılıiıtıyı ı(ıeınırıoılılıeıdı/ıaıpıpılıiıcıaınıtısı)ı",
-                "provider": "ıTıUı ıDırıeısıdıeını",
-                "type": "ımıeırıiıtı",
-                "url": "ıhıtıtıpısı:ı/ı/ıtıuı-ıdırıeısıdıeını.ıdıeı/ısıtıuıdıiıuımı/ırıuınıdı-ıuımısı-ısıtıuıdıiıuımı/ıfıoıeırıdıeırıuınıgı-ıuınıdı-ıfıiınıaınızıiıeırıuınıgı/ıdıeıuıtısıcıhılıaınıdısıtıiıpıeınıdıiıuımı?ısıeıtı_ılıaınıgıuıaıgıeı=ıeını"
+                "name": "Deutschlandstipendium",
+                "provider": "TU Dresden",
+                "type": "merit",
+                "eligibility": "non_eu_ok",
+                "amount": "€300/month",
+                "notes": "€300/month; open regardless of nationality (enrolled/applicants)",
+                "url": "https://tu-dresden.de/studium/rund-ums-studium/foerderung-und-finanzierung/deutschlandstipendium?set_language=en"
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıDıAıAıDı ıSıcıhıoılıaırısıhıiıpı ıDıaıtıaıbıaısıeı",
-                "notes": "ıEıxıtıeırınıaılı ısıcıhıoılıaırısıhıiıpısı",
-                "provider": "ıDıAıAıDı",
-                "type": "ıeıxıtıeırınıaılı",
-                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıdıaıaıdı.ıdıeı/ıeını/ısıtıuıdıyı-ıaınıdı-ırıeısıeıaırıcıhı-ıiını-ıgıeırımıaınıyı/ısıcıhıoılıaırısıhıiıpısı/ı"
+                "name": "DAAD Scholarship Database",
+                "provider": "DAAD",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "External scholarships",
+                "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
             }
         ],
-        "Cost_City_Living": "ımıeıdıiıuımı_ılıoıwı",
-        "Cost_City_Rank": 2,
-        "Living_Housing_Difficulty": "ıEıaısıyı",
+        "Cost_City_Living": "medium_low",
+        "Cost_City_Rank": 2.0,
+        "Living_Housing_Difficulty": "Easy",
         "Living_Housing_Score": 4,
-        "Program_Name": "ıAıeırıoısıpıaıcıeı/ısıpıaıcıeı ırıeılıeıvıaınıtı ıMıSıcı ıvıiıaı ıIıLıRı ı&ı ıeınıgıiınıeıeırıiınıgı ıpırıoıgırıaımımıeısı ı(ıpırıoıgırıaımı-ısıpıeıcıiıfıiıcı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıtıuı-ıdırıeısıdıeını.ıdıeı/ı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıVıPıDı",
-        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
-        "Analysis_Strong_Areas": "ıAıeırıoısıtırıuıcıtıuırıeısı,ı ıaıiırıcırıaıfıtı ıdıeısıiıgını,ı ıpırıoıpıuılısıiıoını,ı ıdıaımıaıgıeı ıtıoılıeırıaınıcıeı",
+        "Program_Name": "Aerospace/space relevant MSc via ILR & engineering programmes (program-specific)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://tu-dresden.de/",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "VPD",
+        "Admission_Language_Req": "English C1",
+        "Analysis_Strong_Areas": "Aerostructures, aircraft design, propulsion, damage tolerance",
         "Analysis_Pros": [
-            "ıSıtırıoınıgı ıtıeıcıhınıiıcıaılı ıuınıiıvıeırısıiıtıyı ıwıiıtıhı ıgıoıoıdı ırıeısıeıaırıcıhı ıiınıfırıaısıtırıuıcıtıuırıeı ıaınıdı ıfırıeıqıuıeınıtı ıpırıoıjıeıcıtı/ıcıoımıpıeıtıiıtıiıoını ıeıxıpıoısıuırıeı ı(ıoıfıtıeını ıiınıvıoılıvıiınıgı ıDıLıRı ıaınıdı ıiınıdıuısıtırıyı)ı.ı;ı ıGıeınıeırıaılılıyı ıoınıeı ıoıfı ıtıhıeı ımıoırıeı ıaıfıfıoırıdıaıbılıeı ılıaırıgıeırı ıGıeırımıaını ıcıiıtıiıeısı,ı ısıoı ıbıuıdıgıeıtı ıpırıeısısıuırıeı ıiısı ılıoıwıeırı ıtıhıaını ıiını ıMıuınıiıcıhı/ıBıeırılıiını/ıHıaımıbıuırıgı.ı;ı ıGıoıoıdı ıoıpıtıiıoını ıiıfı ıyıoıuı ıwıaınıtı ıaı ıbırıoıaıdı ıeınıgıiınıeıeırıiınıgı ıbıaısıeı ıaınıdı ıcıaını ısıtıeıeırı ıyıoıuırı ıtıhıeısıiısı ıtıoıwıaırıdı ıaıeırıoısıpıaıcıeı/ısıpıaıcıeı ıtıoıpıiıcısı.ı"
+            "Strong technical university with good research infrastructure and frequent project/competition exposure (often involving DLR and industry).",
+            "Generally one of the more affordable larger German cities, so budget pressure is lower than in Munich/Berlin/Hamburg.",
+            "Good option if you want a broad engineering base and can steer your thesis toward aerospace/space topics."
         ],
         "Analysis_Cons": [
-            "ıEıxıaıcıtı ıaıdımıiısısıiıoını ıpıaıtıhıwıaıyı ıiısı ıpırıoıgırıaımımıeı-ısıpıeıcıiıfıiıcı;ı ıfıoırı ıEınıgılıiısıhı-ıtıaıuıgıhıtı ımıaısıtıeırısı ıyıoıuı ımıaıyı ınıeıeıdı ıuınıiı-ıaısısıiısıtı,ı ıwıhıiıcıhı ıaıdıdısı ılıeıaıdı ıtıiımıeı.ı;ı ıIıfı ıyıoıuı ıwıaınıtı ıaı ıvıeırıyı ı‘ısıpıaıcıeı-ıoınılıyı’ı ıcıuırırıiıcıuılıuımı,ı ıyıoıuı ımıuısıtı ıcıhıoıoısıeı ıtıhıeı ırıiıgıhıtı ıpırıoıgırıaımımıeı/ıcıhıaıiırı ı(ınıoıtı ıaıuıtıoımıaıtıiıcıaılılıyı ıgıuıaırıaınıtıeıeıdı)ı.ı"
+            "Exact admission pathway is programme-specific; for English-taught masters you may need uni-assist, which adds lead time.",
+            "If you want a very ‘space-only’ curriculum, you must choose the right programme/chair (not automatically guaranteed)."
         ],
         "Analysis_Tags": [
-            "ıaıeırıoısıtırıuıcıtıuırıeısı;ı ısıtırıuıcıtıuırıeısı;ı ıcıoımıpıoısıiıtıeısı;ı ıdıaımıaıgıeıtıoılıeırıaınıcıeı;ı ıaıiırıcırıaıfıtıdıeısıiıgını;ı ıpırıoıpıuılısıiıoını;ı ıaıeırıoıdıyınıaımıiıcısı"
+            "aerostructures",
+            "structures",
+            "composites",
+            "damagetolerance",
+            "aircraftdesign",
+            "propulsion",
+            "aerodynamics"
         ],
-        "Industry_Ecosystem": "ıIınısıtıiıtıuıtıeı ıoıfı ıAıeırıoısıpıaıcıeı ıEınıgıiınıeıeırıiınıgı ı(ıIıLıRı)ı ı-ı ıaıeırıoısıtırıuıcıtıuırıeısı ı+ı ıpırıoıpıuılısıiıoını",
+        "Industry_Ecosystem": "Institute of Aerospace Engineering (ILR) - aerostructures + propulsion",
+        "Industry_Comp_Intensity": "High",
         "Industry_Partners": [
-            "ıDıLıRı;ı ıAıiırıbıuısı;ı ıOıHıBı;ı ıEıSıAı-ırıeılıaıtıeıdı ısıtıuıdıeınıtı/ıcıoımıpıeıtıiıtıiıoını ıeıcıoısıyısıtıeımı"
+            "DLR",
+            "Airbus",
+            "OHB",
+            "ESA-related student/competition ecosystem"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": false,
+        "Internship_Notes": "Common through DLR/industry projects; programme-specific.",
+        "Deadline_Winter_Open": "01 Jun",
+        "Deadline_Winter_Close": "15 Jul",
+        "Deadline_Winter_Note": "Typical master window; exact deadlines in SINS",
+        "Deadline_Summer_Open": "01 Dec",
+        "Deadline_Summer_Close": "15 Jan",
+        "Deadline_Summer_Note": "Typical master window; exact deadlines in SINS",
+        "Deadline_Summer_Avail": null,
+        "Deadline_General_Note": "Exact programme deadlines and requirements are published in SINS; English-taught masters with a non-German first degree are often handled via uni-assist.",
+        "Meta_Sources": [
+            {
+                "type": "fees_or_tuition",
+                "url": "https://tu-dresden.de/studium/vor-dem-studium/immatrikulation/semesterbeitrag",
+                "last_verified": "2026-01-26"
+            },
+            {
+                "type": "aerospace",
+                "url": "https://tu-dresden.de/ing/maschinenwesen/ilr?set_language=en",
+                "last_verified": "2026-01-26"
+            },
+            {
+                "type": "uni_assist",
+                "url": "https://tu-dresden.de/studium/vor-dem-studium/bewerbung/uni-assist?set_language=en",
+                "last_verified": "2026-01-27"
+            },
+            {
+                "type": "deadlines",
+                "url": "https://tu-dresden.de/studium/vor-dem-studium/bewerbung/online-bewerbung?set_language=en",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": true
     },
     {
-        "Country": "ıGıeırımıaınıyı",
-        "City": "ıHıaımıbıuırıgı",
-        "State_Region": "ıHıaımıbıuırıgı",
-        "Uni_ID": "ıtıuıhıhı",
-        "University_Name": "ıHıaımıbıuırıgı ıUınıiıvıeırısıiıtıyı ıoıfı ıTıeıcıhınıoılıoıgıyı",
-        "University_Display_Name": "ıHıaımıbıuırıgı ıUınıiıvıeırısıiıtıyı ıoıfı ıTıeıcıhınıoılıoıgıyı ı(ıTıUıHıHı)ı",
-        "University_Short_Name": "ıTıUıHıHı",
+        "Country": "Germany",
+        "City": "Hamburg",
+        "State_Region": "Hamburg",
+        "Uni_ID": "tuhh",
+        "University_Name": "Hamburg University of Technology",
+        "University_Display_Name": "Hamburg University of Technology (TUHH)",
+        "University_Short_Name": "TUHH",
         "Cost_Tuition": [],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 386.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ı€ı3ı8ı6ı.ı0ı0ı ı(ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı)ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "€386.00 (WiSe 2025/26)",
+                "term_code": "2025W"
             }
         ],
         "Scholarships_Info": [
             {
-                "amount": "ı€ı3ı0ı0ı/ımıoınıtıhı",
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıDıeıuıtısıcıhılıaınıdısıtıiıpıeınıdıiıuımı ı(ıGıeırımıaını ıSıcıhıoılıaırısıhıiıpı)ı",
-                "notes": "ı€ı3ı0ı0ı/ımıoınıtıhı;ı ıpıaıiıdı ıbıyı ıTıUıHıHı",
-                "provider": "ıTıUıHıHı",
-                "type": "ımıeırıiıtı",
-                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıtıuıhıhı.ıdıeı/ıtıuıhıhı/ıeını/ıeıdıuıcıaıtıiıoını/ısıtıuıdıeınıtısı/ıoırıgıaınıiısıaıtıiıoınıaılı-ıdıeıtıaıiılısı-ıaıbıoıuıtı-ıyıoıuırı-ısıtıuıdıiıeısı/ıfıiınıaınıcıiınıgı-ıyıoıuırı-ısıtıuıdıiıeısı/ısıcıhıoılıaırısıhıiıpısı/ıgıeırımıaını-ısıcıhıoılıaırısıhıiıpı"
+                "name": "Deutschlandstipendium (German Scholarship)",
+                "provider": "TUHH",
+                "type": "merit",
+                "eligibility": "non_eu_ok",
+                "amount": "€300/month",
+                "notes": "€300/month; paid by TUHH",
+                "url": "https://www.tuhh.de/tuhh/en/education/students/organisational-details-about-your-studies/financing-your-studies/scholarships/german-scholarship"
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıSıcıhıoılıaırısıhıiıpısı ıfıoırı ıiınıtıeırınıaıtıiıoınıaılı ısıtıuıdıeınıtısı ı(ıoıvıeırıvıiıeıwı)ı",
-                "notes": "ıMıeırıiıtı ısıcıhıoılıaırısıhıiıpı,ı ıSıTıIıBıEıTı ıgırıaınıtısı ıeıtıcı ı(ıfıoırı ıfıoırıeıiıgını ınıaıtıiıoınıaılıiıtıyı)ı",
-                "provider": "ıSıtıuıdıiıeırıeınıdıeınıwıeırıkı ıHıaımıbıuırıgı ı/ı ıTıUıHıHı",
-                "type": "ıuınıiıvıeırısıiıtıyı/ıeıxıtıeırınıaılı",
-                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ısıtıwıhıhı.ıdıeı/ıfıiılıeıaıdımıiını/ıuısıeırı_ıuıpılıoıaıdı/ıFıiınıaınızıeını/ı_ı_ıDıoıwınılıoıaıdısı/ıSıtıiıpıeınıdıiıeını_ıAıuısılıaınıdı/ıSıcıhıoılıaırısıhıiıpısı_ıFıoırıeıiıgını_ıNıaıtıiıoınıaılıiıtıyı.ıpıdıfı"
+                "name": "Scholarships for international students (overview)",
+                "provider": "Studierendenwerk Hamburg / TUHH",
+                "type": "university/external",
+                "eligibility": "non_eu_ok",
+                "notes": "Merit scholarship, STIBET grants etc (for foreign nationality)",
+                "url": "https://www.stwhh.de/fileadmin/user_upload/Finanzen/__Downloads/Stipendien_Ausland/Scholarships_Foreign_Nationality.pdf"
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıDıAıAıDı ıSıcıhıoılıaırısıhıiıpı ıDıaıtıaıbıaısıeı",
-                "notes": "ıEıxıtıeırınıaılı ısıcıhıoılıaırısıhıiıpısı",
-                "provider": "ıDıAıAıDı",
-                "type": "ıeıxıtıeırınıaılı",
-                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıdıaıaıdı.ıdıeı/ıeını/ısıtıuıdıyı-ıaınıdı-ırıeısıeıaırıcıhı-ıiını-ıgıeırımıaınıyı/ısıcıhıoılıaırısıhıiıpısı/ı"
+                "name": "DAAD Scholarship Database",
+                "provider": "DAAD",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "External scholarships",
+                "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
             }
         ],
-        "Cost_City_Living": "ıhıiıgıhı",
-        "Cost_City_Rank": 4,
-        "Living_Housing_Difficulty": "ıVıeırıyı ıHıaırıdı",
+        "Cost_City_Living": "high",
+        "Cost_City_Rank": 4.0,
+        "Living_Housing_Difficulty": "Very Hard",
         "Living_Housing_Score": 8,
-        "Program_Name": "ıMı.ıSıcı.ı ıAıeırıoınıaıuıtıiıcısı ı(ıeıxıaımıpılıeı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıtıuıhıhı.ıdıeı/ıtıuıhıhı/ıeını/ıeıdıuıcıaıtıiıoını/ıdıeıgırıeıeı-ıcıoıuırısıeısı/ımıaısıtıeırı/ıaıeırıoınıaıuıtıiıcısı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ıGıeırımıaını ıBı1ı ırıeıqı",
-        "Analysis_Strong_Areas": "ıAıiırıcırıaıfıtı ısıyısıtıeımısı,ı ıaıiırıcırıaıfıtı ıdıeısıiıgını/ıfılıiıgıhıtı ıpıhıyısıiıcısı,ı ıpırıoıdıuıcıtıiıoını ı&ı ıMıRıOı",
+        "Program_Name": "M.Sc. Aeronautics (example)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://www.tuhh.de/tuhh/en/education/degree-courses/master/aeronautics",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "German B1 req",
+        "Analysis_Strong_Areas": "Aircraft systems, aircraft design/flight physics, production & MRO",
         "Analysis_Pros": [
-            "ıSıtırıoınıgı ıaıeırıoınıaıuıtıiıcısı ıfıoıcıuısı ıiını ıoınıeı ıoıfı ıEıuırıoıpıeı’ısı ılıaırıgıeısıtı ıaıvıiıaıtıiıoını ıcılıuısıtıeırısı ı(ıHıaımıbıuırıgı)ı,ı ıwıiıtıhı ırıeıaılı ıpırıoıxıiımıiıtıyı ıtıoı ıAıiırıbıuısı ıaınıdı ıaı ıdıeınısıeı ısıuıpıpılıiıeırı ıeıcıoısıyısıtıeımı.ı;ı ıGıoıoıdı ıfıiıtı ıfıoırı ı°ıCıFıDı/ıaıeırıoıdıyınıaımıiıcısı/ısıtırıuıcıtıuırıeısı ıpıaıtıhısı ıwıhıeırıeı ıcıoımıpıuıtıaıtıiıoınıaılı ıiınıtıeınısıiıtıyı ıiısı ıhıiıgıhı ıaınıdı ıiınıdıuısıtırıyı ıcıoılılıaıbıoırıaıtıiıoını ıiısı ıcıoımımıoını.ı;ı ıLıoıtısı ıoıfı ıpıoıtıeınıtıiıaılı ıfıoırı ıiınıdıuısıtırıyı-ılıiınıkıeıdı ıtıhıeısıeısı ıiını ıaıvıiıaıtıiıoını.ı"
+            "Strong aeronautics focus in one of Europe’s largest aviation clusters (Hamburg), with real proximity to Airbus and a dense supplier ecosystem.",
+            "Good fit for CFD/aerodynamics/structures paths where computational intensity is high and industry collaboration is common.",
+            "Lots of potential for industry-linked theses in aviation."
         ],
         "Analysis_Cons": [
-            "ıHıaımıbıuırıgı ıhıoıuısıiınıgı ıiısı ıdıiıfıfıiıcıuılıtı ıaınıdı ıcıaını ıqıuıiıcıkılıyı ıdıoımıiınıaıtıeı ıyıoıuırı ıbıuıdıgıeıtı ıeıvıeını ıiıfı ıuınıiıvıeırısıiıtıyı ıcıoısıtısı ıaırıeı ımıoıdıeırıaıtıeı.ı;ı ı°ıCıoırıeı ı‘ısıpıaıcıeı ıaısıtırıoıdıyınıaımıiıcısı’ı ıdıeıpıtıhı ıdıeıpıeınıdısı ıoını ıeılıeıcıtıiıvıeı/ıdıeıpıaırıtımıeınıtı ıcıhıoıiıcıeısı;ı ıTıUıHıHı ıiısı ısıtırıoınıgıeırı ıoını ıaıeırıoınıaıuıtıiıcısı ıtıhıaını ıpıuırıeı ıaısıtırıoıdıyınıaımıiıcısı.ı;ı ıGıeırımıaını-ıtıaıuıgıhıtı ırıeıqıuıiırıeımıeınıtı ıcıaını ıbıeı ıaı ımıaıjıoırı ıhıuırıdılıeı ıfıoırı ıaıpıpılıiıcıaınıtısı ıaıiımıiınıgı ıfıoırı ıaını ıEınıgılıiısıhı-ıoınılıyı ıpıaıtıhı.ı"
+            "Hamburg housing is difficult and can quickly dominate your budget even if university costs are moderate.",
+            "Core ‘space astrodynamics’ depth depends on elective/department choices; TUHH is stronger on aeronautics than pure astrodynamics.",
+            "German-taught requirement can be a major hurdle for applicants aiming for an English-only path."
         ],
         "Analysis_Tags": [
-            "ıaıiırıcırıaıfıtısıyısıtıeımısı;ı ıaıiırıcırıaıfıtıdıeısıiıgını;ı ıfılıiıgıhıtıpıhıyısıiıcısı;ı ısıyısıtıeımısıeınıgıiınıeıeırıiınıgı;ı ıpırıoıdıuıcıtıiıoını;ı ımırıoı;ı ımıaıtıeırıiıaılısı"
+            "aircraftsystems",
+            "aircraftdesign",
+            "flightphysics",
+            "systemsengineering",
+            "production",
+            "mro",
+            "materials"
         ],
-        "Industry_Ecosystem": "ıMıSıcı ıAıeırıoınıaıuıtıiıcısı;ı ıaıvıiıaıtıiıoını ıtıeıcıhınıoılıoıgıyı ıaırıaışıtııırımıaı ıoıdıaığııı",
+        "Industry_Ecosystem": "MSc Aeronautics; aviation technology araştırma odağı",
+        "Industry_Comp_Intensity": "High",
         "Industry_Partners": [
-            "ıAıiırıbıuısı ı(ıHıaımıbıuırıgı)ı;ı ıDıLıRı ı(ıHıaımıbıuırıgı/ıFıiınıkıeınıwıeırıdıeırı)ı;ı ıHıaımıbıuırıgı ıAıvıiıaıtıiıoını ıcılıuısıtıeırı"
+            "Airbus (Hamburg)",
+            "DLR (Hamburg/Finkenwerder)",
+            "Hamburg Aviation cluster"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": false,
+        "Internship_Notes": "Often thesis/internship with Airbus/DLR possible; not mandatory by default.",
+        "Deadline_Winter_Open": "01 Jun",
+        "Deadline_Winter_Close": "15 Jul",
+        "Deadline_Winter_Note": "TUHH Aeronautics page (application period)",
+        "Deadline_Summer_Open": "01 Dec",
+        "Deadline_Summer_Close": "15 Jan",
+        "Deadline_Summer_Note": "Typical German master window; verify per programme",
+        "Deadline_Summer_Avail": null,
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "fees_or_tuition",
+                "url": "https://www.tuhh.de/tuhh/en/studying/immediately-after-acceptance/semester-fee",
+                "last_verified": "2026-01-26"
+            },
+            {
+                "type": "aerospace",
+                "url": "https://www.tuhh.de/tuhh/en/studying/before-studying/degree-courses/masters-programs/aeronautics",
+                "last_verified": "2026-01-26"
+            },
+            {
+                "type": "admissions",
+                "url": "https://www.tuhh.de/tuhh/en/education/degree-courses/master/aeronautics",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": true
     }
 ]

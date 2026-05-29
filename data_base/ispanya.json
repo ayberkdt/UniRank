@@ -1,890 +1,1218 @@
 [
     {
-        "Country": "ıSıpıaıiını",
-        "City": "ıBıaırıcıeılıoınıaı ı/ı ıTıeırırıaısısıaı",
-        "State_Region": "ıKıaıtıaılıoınıyıaı",
-        "Uni_ID": "ıuıpıcı-ıbıaırıcıeılıoınıaı",
-        "University_Name": "ıUınıiıvıeırısıiıtıaıtı ıPıoılıiıtıèıcınıiıcıaı ıdıeı ı°ıCıaıtıaılıuınıyıaı",
-        "University_Display_Name": "ıUınıiıvıeırısıiıtıaıtı ıPıoılıiıtıèıcınıiıcıaı ıdıeı ı°ıCıaıtıaılıuınıyıaı ı(ıUıPı°ıCı)ı",
-        "University_Short_Name": "ıUıPı°ıCı",
+        "Country": "Spain",
+        "City": "Barcelona / Terrassa",
+        "State_Region": "Katalonya",
+        "Uni_ID": "upc-barcelona",
+        "University_Name": "Universitat Politècnica de Catalunya",
+        "University_Display_Name": "Universitat Politècnica de Catalunya (UPC)",
+        "University_Short_Name": "UPC",
         "Cost_Tuition": [
             {
+                "scope": "non_eu",
+                "program": "Aerospace/Space-related MSc at UPC (program-specific)",
                 "amount": 2700.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
-                "period": "ıyıeıaırı",
-                "program": "ıAıeırıoısıpıaıcıeı/ıSıpıaıcıeı-ırıeılıaıtıeıdı ıMıSıcı ıaıtı ıUıPı°ıCı ı(ıpırıoıgırıaımı-ısıpıeıcıiıfıiıcı)ı",
-                "raw": "ıNıoını‑ıEıUı ıtıuıiıtıiıoını:ı ı€ı2ı7ı0ı0ı/ıyıeıaırı ı(ıdıaıtıaısıeıtı;ı ıvıeırıiıfıyı)ı.ı",
-                "scope": "ınıoını_ıeıuı"
+                "currency": "EUR",
+                "period": "year",
+                "raw": "Non‑EU tuition: €2700/year (dataset; verify).",
+                "effective_from_term_code": "2025W"
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 0.0,
-                "components": "ı",
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ı€ı0ı.ı0ı0ı/ısıeımıeısıtıeırı ı(ıdıaıtıaısıeıtı;ı ıvıeırıiıfıyı)ı.ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "€0.00/semester (dataset; verify).",
+                "term_code": "2025W",
+                "components": ""
             }
         ],
         "Scholarships_Info": [
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıBıeıcıaısı ıMıAıEı°ıCı-ıAıEı°ıCıIıDı",
-                "notes": "ı°ıCıhıeıcıkı ıeılıiıgıiıbıiılıiıtıyı,ı ıdıeıaıdılıiınıeısı ıaınıdı ırıeıqıuıiırıeıdı ıdıoıcıuımıeınıtısı;ı ıpırıoıgırıaımımıeı/ırıeıgıiıoını-ısıpıeıcıiıfıiıcı.ı",
-                "provider": "ıMıAıEı°ıCı-ıAıEı°ıCıIıDı",
-                "type": "ıgıoıvıeırınımıeınıtı",
+                "name": "Becas MAEC-AECID",
+                "provider": "MAEC-AECID",
+                "type": "government",
+                "eligibility": "non_eu_ok",
+                "notes": "Check eligibility, deadlines and required documents; programme/region-specific.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıFıuınıdıaıcıiıóını ı°ıCıaırıoılıiınıaı",
-                "notes": "ı°ıCıhıeıcıkı ıeılıiıgıiıbıiılıiıtıyı,ı ıdıeıaıdılıiınıeısı ıaınıdı ırıeıqıuıiırıeıdı ıdıoıcıuımıeınıtısı;ı ıpırıoıgırıaımımıeı/ırıeıgıiıoını-ısıpıeıcıiıfıiıcı.ı",
-                "provider": "ıFıuınıdıaıcıiıóını ı°ıCıaırıoılıiınıaı",
-                "type": "ımıeırıiıtı/ınıeıeıdı",
+                "name": "Fundación Carolina",
+                "provider": "Fundación Carolina",
+                "type": "merit/need",
+                "eligibility": "non_eu_ok",
+                "notes": "Check eligibility, deadlines and required documents; programme/region-specific.",
                 "url": null
             }
         ],
-        "Cost_City_Living": "ıvıeırıyı_ıhıiıgıhı",
+        "Cost_City_Living": "very_high",
         "Cost_City_Rank": 5,
-        "Living_Housing_Difficulty": "ıNıiıgıhıtımıaırıeı",
+        "Living_Housing_Difficulty": "Nightmare",
         "Living_Housing_Score": 9,
-        "Program_Name": "ıAıeırıoısıpıaıcıeı/ıSıpıaıcıeı-ırıeılıaıtıeıdı ıMıSıcı ıaıtı ıUıPı°ıCı ı(ıpırıoıgırıaımı-ısıpıeıcıiıfıiıcı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıuıpıcı.ıeıdıuı/ısıgıaı/ıcıaı/ımıaıtırıiıcıuılıaı/ıpırıeıuısı/ıPırıeıuısıMıaısıtıeırı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
-        "Analysis_Strong_Areas": "ıSıtırıoınıgı ıiını ı°ıCıoımıpıuıtıaıtıiıoınıaılı ıFılıuıiıdı ıDıyınıaımıiıcısı ı(ı°ıCıFıDı)ı,ı ıMıiıcırıoı-ıgırıaıvıiıtıyı,ı ıSıpıaıcıeı ıSıyısıtıeımısı,ı ıaınıdı ıUınımıaınınıeıdı ıSıyısıtıeımısı.ı",
+        "Program_Name": "Aerospace/Space-related MSc at UPC (program-specific)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://www.upc.edu/sga/ca/matricula/preus/PreusMaster",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "English C1",
+        "Analysis_Strong_Areas": "Strong in Computational Fluid Dynamics (CFD), Micro-gravity, Space Systems, and Unmanned Systems.",
         "Analysis_Pros": [
-            "ıKıaıtıaılıoınıyıaı ıbıöılıgıeısıiı ı€ıNıeıwıSıpıaıcıeı€ı ıgıiırıiışıiımılıeırıiınıeı ıçıoıkı ıyıaıtııırııımı ıyıaıpımıaıkıtıaıdııırı;ı ıUıPı°ıCı ıtıeıkınıiıkı ıaılıtıyıaıpııısııı ıçıoıkı ıgıüıçılıüıdıüırı;ı ıIınıdıuısıtırıyı ı/ı ıeıcıoısıyısıtıeımı ıtıoıuıcıhıpıoıiınıtısı ıiınıcılıuıdıeı:ı ıGıTıDı ıSıyısıtıeımı ı&ı ıSıoıfıtıwıaırıeı ıEınıgıiınıeıeırıiınıgı,ı ıOıpıeını ı°ıCıoısımıoısı,ı ıPıiılıdıoı ıLıaıbısı,ı ıEıSıAı ıBıIı°ıCı ıBıaırıcıeılıoınıaı.ı"
+            "Katalonya bölgesi 'NewSpace' girişimlerine çok yatırım yapmaktadır",
+            "UPC teknik altyapısı çok güçlüdür",
+            "Industry / ecosystem touchpoints include: GTD System & Software Engineering, Open Cosmos, Pildo Labs, ESA BIC Barcelona."
         ],
         "Analysis_Cons": [
-            "ıBıaırıcıeılıoınıaı€ıdıaı ıkıiırıaı ıfıiıyıaıtılıaırııı ıçıoıkı ıyıüıkısıeıkıtıiırı ıvıeı ıeıvı ıbıuılımıaıkı ızıoırıdıuırı;ı ıEığıiıtıiımı ıüıcırıeıtıiı ınıoını-ıEıUı ıiıçıiını ıkıaıtılıaınımıaıkıtıaıdııırı;ı ıNıoını‑ıEıUı ıtıuıiıtıiıoını ıcıaını ıbıeı ısıiıgınıiıfıiıcıaınıtı ıfıoırı ısıoımıeı ırıeıgıiıoınısı/ıpırıoıgırıaımımıeısı ı(ıdıaıtıaısıeıtı:ı ı~ı€ı2ı7ı0ı0ı/ıyıeıaırı)ı.ı;ı ıHıoıuısıiınıgı:ı ıNıiıgıhıtımıaırıeı ı(ısıcıoırıeı ı~ı9ı/ı1ı0ı)ı;ı ısıtıaırıtı ıeıaırılıyı.ı"
+            "Barcelona'da kira fiyatları çok yüksektir ve ev bulmak zordur",
+            "Eğitim ücreti non-EU için katlanmaktadır",
+            "Non‑EU tuition can be significant for some regions/programmes (dataset: ~€2700/year).",
+            "Housing: Nightmare (score ~9/10); start early."
         ],
         "Analysis_Tags": [
-            "ıaıeırıoıdıyınıaımıiıcısı;ı ıcıfıdı;ı ıfılıiıgıhıtıdıyınıaımıiıcısı;ı ıcıoınıtırıoılısı;ı ıgınıcı;ı ısıtırıuıcıtıuırıeısı;ı ıcıoımıpıoısıiıtıeısı;ı ıpırıoıpıuılısıiıoını;ı ısıpıaıcıeısıyısıtıeımısı"
+            "aerodynamics",
+            "cfd",
+            "flightdynamics",
+            "controls",
+            "gnc",
+            "structures",
+            "composites",
+            "propulsion",
+            "spacesystems"
         ],
-        "Industry_Ecosystem": "ıKıaıtıaılıoınıyıaı ıUızıaıyı ıSıtırıaıtıeıjıiısıiı ı(ıNıeıwıSıpıaıcıeı)ı ıvıeı ıgıüıçılıüı ı°ıCıFıDı ıgıeılıeınıeığıiı.ı",
+        "Industry_Ecosystem": "Katalonya Uzay Stratejisi (NewSpace) ve güçlü CFD geleneği.",
+        "Industry_Comp_Intensity": "High",
         "Industry_Partners": [
-            "ıGıTıDı ıSıyısıtıeımı ı&ı ıSıoıfıtıwıaırıeı ıEınıgıiınıeıeırıiınıgı;ı ıOıpıeını ı°ıCıoısımıoısı;ı ıPıiılıdıoı ıLıaıbısı;ı ıEıSıAı ıBıIı°ıCı ıBıaırıcıeılıoınıaı"
+            "GTD System & Software Engineering",
+            "Open Cosmos",
+            "Pildo Labs",
+            "ESA BIC Barcelona"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": true,
+        "Internship_Notes": "Mandatory internship is typical for this programme/track.",
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "Check rounds (Jan/Apr/Jun)",
+        "Deadline_Winter_Note": "Dataset estimate; verify on official programme page",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": null,
+        "Deadline_Summer_Note": "Many Spanish masters are fall (winter) intake only; verify per programme",
+        "Deadline_Summer_Avail": "If your programme has a spring intake, deadlines are programme-specific.",
+        "Deadline_General_Note": "Some programmes run multiple application rounds; treat the closes field as indicative only.",
+        "Meta_Sources": [
+            {
+                "type": "official",
+                "url": "https://www.upc.edu/sga/ca/matricula/preus/PreusMaster",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": true
     },
     {
-        "Country": "ıSıpıaıiını",
-        "City": "ıMıaıdırıiıdı",
-        "State_Region": "ıMıaıdırıiıdı",
-        "Uni_ID": "ıuıpımı-ımıaıdırıiıdı",
-        "University_Name": "ıUınıiıvıeırısıiıdıaıdı ıPıoılıiıtıéıcınıiıcıaı ıdıeı ıMıaıdırıiıdı",
-        "University_Display_Name": "ıUınıiıvıeırısıiıdıaıdı ıPıoılıiıtıéıcınıiıcıaı ıdıeı ıMıaıdırıiıdı ı(ıUıPıMı)ı",
-        "University_Short_Name": "ıUıPıMı",
+        "Country": "Spain",
+        "City": "Madrid",
+        "State_Region": "Madrid",
+        "Uni_ID": "upm-madrid",
+        "University_Name": "Universidad Politécnica de Madrid",
+        "University_Display_Name": "Universidad Politécnica de Madrid (UPM)",
+        "University_Short_Name": "UPM",
         "Cost_Tuition": [
             {
+                "scope": "non_eu",
+                "program": "MSc Aeronautical Engineering (ETSIAE) (example)",
                 "amount": 9288.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
-                "period": "ıyıeıaırı",
-                "program": "ıMıSıcı ıAıeırıoınıaıuıtıiıcıaılı ıEınıgıiınıeıeırıiınıgı ı(ıEıTıSıIıAıEı)ı ı(ıeıxıaımıpılıeı)ı",
-                "raw": "ıNıoını‑ıEıUı ıtıuıiıtıiıoını:ı ı€ı9ı2ı8ı8ı/ıyıeıaırı ı(ıdıaıtıaısıeıtı;ı ıvıeırıiıfıyı)ı.ı",
-                "scope": "ınıoını_ıeıuı"
+                "currency": "EUR",
+                "period": "year",
+                "raw": "Non‑EU tuition: €9288/year (dataset; verify).",
+                "effective_from_term_code": "2025W"
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 0.0,
-                "components": "ı",
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ı€ı0ı.ı0ı0ı/ısıeımıeısıtıeırı ı(ıdıaıtıaısıeıtı;ı ıvıeırıiıfıyı)ı.ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "€0.00/semester (dataset; verify).",
+                "term_code": "2025W",
+                "components": ""
             }
         ],
         "Scholarships_Info": [
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıUıPıMı ıIınıtıeırınıaıtıiıoınıaılı ıGırıaınıtısı",
-                "notes": "ı°ıCıhıeıcıkı ıeılıiıgıiıbıiılıiıtıyı,ı ıdıeıaıdılıiınıeısı ıaınıdı ırıeıqıuıiırıeıdı ıdıoıcıuımıeınıtısı;ı ıpırıoıgırıaımımıeı/ırıeıgıiıoını-ısıpıeıcıiıfıiıcı.ı",
-                "provider": "ıUıPıMı",
-                "type": "ıiınısıtıiıtıuıtıiıoınıaılı",
+                "name": "UPM International Grants",
+                "provider": "UPM",
+                "type": "institutional",
+                "eligibility": "non_eu_ok",
+                "notes": "Check eligibility, deadlines and required documents; programme/region-specific.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıBıeıcıaısı ıSıaınıtıaınıdıeırı",
-                "notes": "ı°ıCıhıeıcıkı ıeılıiıgıiıbıiılıiıtıyı,ı ıdıeıaıdılıiınıeısı ıaınıdı ırıeıqıuıiırıeıdı ıdıoıcıuımıeınıtısı;ı ıpırıoıgırıaımımıeı/ırıeıgıiıoını-ısıpıeıcıiıfıiıcı.ı",
-                "provider": "ıBıaınıcıoı ıSıaınıtıaınıdıeırı",
-                "type": "ımıeırıiıtı/ınıeıeıdı",
+                "name": "Becas Santander",
+                "provider": "Banco Santander",
+                "type": "merit/need",
+                "eligibility": "non_eu_ok",
+                "notes": "Check eligibility, deadlines and required documents; programme/region-specific.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıFıuınıdıaıcıiıóını ı°ıCıaırıoılıiınıaı ıSıcıhıoılıaırısıhıiıpısı",
-                "notes": "ı°ıCıoımımıoını ıfıuınıdıiınıgı ırıoıuıtıeı ıfıoırı ıLıaıtıiını ıAımıeırıiıcıaı ıaınıdı ıiınıtıeırınıaıtıiıoınıaılı ıaıpıpılıiıcıaınıtısı;ı ıcıaılılısı ıvıaırıyı ıbıyı ıyıeıaırı.ı",
-                "provider": "ıFıuınıdıaıcıiıóını ı°ıCıaırıoılıiınıaı",
-                "type": "ıeıxıtıeırınıaılı",
+                "name": "Fundación Carolina Scholarships",
+                "provider": "Fundación Carolina",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "Common funding route for Latin America and international applicants; calls vary by year.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıMıAıEı°ıCı-ıAıEı°ıCıIıDı ıSıcıhıoılıaırısıhıiıpısı",
-                "notes": "ıSıpıaınıiısıhı ıgıoıvıeırınımıeınıtı ısıcıhıoılıaırısıhıiıpısı;ı ıcıaılılısı ıvıaırıyı ıaınıdı ımıaıyı ıtıaırıgıeıtı ısıpıeıcıiıfıiıcı ırıeıgıiıoınısı.ı",
-                "provider": "ıMıAıEı°ıCı-ıAıEı°ıCıIıDı",
-                "type": "ıgıoıvıeırınımıeınıtı",
+                "name": "MAEC-AECID Scholarships",
+                "provider": "MAEC-AECID",
+                "type": "government",
+                "eligibility": "non_eu_ok",
+                "notes": "Spanish government scholarships; calls vary and may target specific regions.",
                 "url": null
             }
         ],
-        "Cost_City_Living": "ıvıeırıyı_ıhıiıgıhı",
+        "Cost_City_Living": "very_high",
         "Cost_City_Rank": 5,
-        "Living_Housing_Difficulty": "ıVıeırıyı ıHıaırıdı",
+        "Living_Housing_Difficulty": "Very Hard",
         "Living_Housing_Score": 8,
-        "Program_Name": "ıMıSıcı ıAıeırıoınıaıuıtıiıcıaılı ıEınıgıiınıeıeırıiınıgı ı(ıEıTıSıIıAıEı)ı ı(ıeıxıaımıpılıeı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıuıpımı.ıeısı/ıiınıtıeırınıaıcıiıoınıaılı/ıUıPıMı/ıEısıtıuıdıiıaınıtıeısı/ıEısıtıuıdıiıaınıtıeısı_ıIınıtıeırınıaıcıiıoınıaılıeısı/ıMıaıtırıiıcıuılıaıPırıeıcıiıoısıPıuıbılıiıcıoısı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ıSıpıaınıiısıhı ıBı2ı ırıeıqı",
-        "Analysis_Strong_Areas": "ıSıtırıoınıgı ıiını ıAıeırıoısıpıaıcıeı ıVıeıhıiıcılıeısı,ı ıPırıoıpıuılısıiıoını,ı ıSıpıaıcıeı ıMıiısısıiıoını ıAınıaılıyısıiısı,ı ıaınıdı ıAıiırı ıNıaıvıiıgıaıtıiıoını.ı",
+        "Program_Name": "MSc Aeronautical Engineering (ETSIAE) (example)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://www.upm.es/internacional/UPM/Estudiantes/Estudiantes_Internacionales/MatriculaPreciosPublicos",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "Spanish B2 req",
+        "Analysis_Strong_Areas": "Strong in Aerospace Vehicles, Propulsion, Space Mission Analysis, and Air Navigation.",
         "Analysis_Pros": [
-            "ıİısıpıaınıyıaı€ıdıaı ıhıaıvıaıcııılıııkı ıdıeınıiınıcıeı ıaıkılıaı ıgıeılıeını ıiılıkı ıyıeırıdıiırı;ı ıEınıdıüısıtırıiı ıiılıeı ıbıaığılıaırııı ı(ıöızıeılılıiıkılıeı ıGıMıVı ıvıeı ıAıiırıbıuısı)ı ımıüıkıeımımıeılıdıiırı;ı ıIınıdıuısıtırıyı ı/ı ıeıcıoısıyısıtıeımı ıtıoıuıcıhıpıoıiınıtısı ıiınıcılıuıdıeı:ı ıAıiırıbıuısı ıDıeıfıeınıcıeı ıaınıdı ıSıpıaıcıeı ı(ıGıeıtıaıfıeı)ı,ı ıIınıdırıaı,ı ıGıMıVı,ı ıSıEıNıEıRı ıAıeırıoıeısıpıaıcıiıaılı.ı"
+            "İspanya'da havacılık denince akla gelen ilk yerdir",
+            "Endüstri ile bağları (özellikle GMV ve Airbus) mükemmeldir",
+            "Industry / ecosystem touchpoints include: Airbus Defence and Space (Getafe), Indra, GMV, SENER Aeroespacial."
         ],
         "Analysis_Cons": [
-            "ıMıaıdırıiıdı ıeıyıaılıeıtıiı ıNıoını-ıEıUı ıöığırıeınıcıiılıeırı ıiıçıiını ıçıoıkı ıyıüıkısıeıkı ıhıaırıçı ı(ıyıaıkılıaışıııkı ı9ı0ı0ı0ı€ı/ıyııılı)ı ıuıyıgıuılıaımıaıkıtıaıdııırı;ı ıŞıeıhıiırı ıyıaışıaımııı ıpıaıhıaılıııdııırı;ı ıNıoını‑ıEıUı ıtıuıiıtıiıoını ıcıaını ıbıeı ısıiıgınıiıfıiıcıaınıtı ıfıoırı ısıoımıeı ırıeıgıiıoınısı/ıpırıoıgırıaımımıeısı ı(ıdıaıtıaısıeıtı:ı ı~ı€ı9ı2ı8ı8ı/ıyıeıaırı)ı.ı;ı ıHıoıuısıiınıgı:ı ıVıeırıyı ıHıaırıdı ı(ısıcıoırıeı ı~ı8ı/ı1ı0ı)ı;ı ısıtıaırıtı ıeıaırılıyı.ı;ı ıSıoımıeı ıtırıaıcıkısı ırıeıqıuıiırıeı ıSıpıaınıiısıhı ı(ıaınıdı ısıoımıeıtıiımıeısı ırıeıgıiıoınıaılı ılıaınıgıuıaıgıeı)ı ıfıoırı ıcıoıuırısıeıwıoırıkı ıoırı ıaıdımıiını;ı ıcıhıeıcıkı ıyıoıuırı ıeıxıaıcıtı ıcıuırırıiıcıuılıuımı.ı"
+            "Madrid eyaleti Non-EU öğrenciler için çok yüksek harç (yaklaşık 9000€/yıl) uygulamaktadır",
+            "Şehir yaşamı pahalıdır",
+            "Non‑EU tuition can be significant for some regions/programmes (dataset: ~€9288/year).",
+            "Housing: Very Hard (score ~8/10); start early.",
+            "Some tracks require Spanish (and sometimes regional language) for coursework or admin; check your exact curriculum."
         ],
         "Analysis_Tags": [
-            "ıaıeırıoısıpıaıcıeıeınıgıiınıeıeırıiınıgı;ı ıaıeırıoıdıyınıaımıiıcısı;ı ıpırıoıpıuılısıiıoını;ı ıfılıiıgıhıtıdıyınıaımıiıcısı;ı ıgınıcı;ı ıcıoınıtırıoılısı;ı ısıtırıuıcıtıuırıeısı;ı ısıpıaıcıeısıyısıtıeımısı"
+            "aerospaceengineering",
+            "aerodynamics",
+            "propulsion",
+            "flightdynamics",
+            "gnc",
+            "controls",
+            "structures",
+            "spacesystems"
         ],
-        "Industry_Ecosystem": "ıİısıpıaınıyıoılı ıhıaıvıaıcııılıııkı ıvıeı ısıaıvıuınımıaı ısıaınıaıyıiısıiınıiını ı(ıAıiırıbıuısı,ı ıIınıdırıaı)ı ıkıaılıbıiı ıMıaıdırıiıdı€ıdıeıdıiırı.ı",
+        "Industry_Ecosystem": "İspanyol havacılık ve savunma sanayisinin (Airbus, Indra) kalbi Madrid'dedir.",
+        "Industry_Comp_Intensity": "High",
         "Industry_Partners": [
-            "ıAıiırıbıuısı ıDıeıfıeınıcıeı ıaınıdı ıSıpıaıcıeı ı(ıGıeıtıaıfıeı)ı;ı ıIınıdırıaı;ı ıGıMıVı;ı ıSıEıNıEıRı ıAıeırıoıeısıpıaıcıiıaılı"
+            "Airbus Defence and Space (Getafe)",
+            "Indra",
+            "GMV",
+            "SENER Aeroespacial"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": true,
+        "Internship_Notes": "Mandatory internship is typical for this programme/track.",
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "Feb / June",
+        "Deadline_Winter_Note": "Dataset estimate; verify on official programme page",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": null,
+        "Deadline_Summer_Note": "Many Spanish masters are fall (winter) intake only; verify per programme",
+        "Deadline_Summer_Avail": "If your programme has a spring intake, deadlines are programme-specific.",
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "official",
+                "url": "https://www.upm.es/internacional/UPM/Estudiantes/Estudiantes_Internacionales/MatriculaPreciosPublicos",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": true
     },
     {
-        "Country": "ıSıpıaıiını",
-        "City": "ıVıaılıeınıcıiıaı",
-        "State_Region": "ıVıaılıeınısıiıyıaı",
-        "Uni_ID": "ıuıpıvı-ıvıaılıeınıcıiıaı",
-        "University_Name": "ıUınıiıvıeırısıiıtıaıtı ıPıoılıiıtıèıcınıiıcıaı ıdıeı ıVıaılıèınıcıiıaı",
-        "University_Display_Name": "ıUınıiıvıeırısıiıtıaıtı ıPıoılıiıtıèıcınıiıcıaı ıdıeı ıVıaılıèınıcıiıaı ı(ıUıPıVı)ı",
-        "University_Short_Name": "ıUıPıVı",
+        "Country": "Spain",
+        "City": "Valencia",
+        "State_Region": "Valensiya",
+        "Uni_ID": "upv-valencia",
+        "University_Name": "Universitat Politècnica de València",
+        "University_Display_Name": "Universitat Politècnica de València (UPV)",
+        "University_Short_Name": "UPV",
         "Cost_Tuition": [
             {
+                "scope": "non_eu",
+                "program": "Space/Aerospace-related MSc (example)",
                 "amount": 1040.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
-                "period": "ıyıeıaırı",
-                "program": "ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı-ırıeılıaıtıeıdı ıMıSıcı ı(ıeıxıaımıpılıeı)ı",
-                "raw": "ıNıoını‑ıEıUı ıtıuıiıtıiıoını:ı ı€ı1ı0ı4ı0ı/ıyıeıaırı ı(ıdıaıtıaısıeıtı;ı ıvıeırıiıfıyı)ı.ı",
-                "scope": "ınıoını_ıeıuı"
+                "currency": "EUR",
+                "period": "year",
+                "raw": "Non‑EU tuition: €1040/year (dataset; verify).",
+                "effective_from_term_code": "2025W"
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 0.0,
-                "components": "ı",
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ı€ı0ı.ı0ı0ı/ısıeımıeısıtıeırı ı(ıdıaıtıaısıeıtı;ı ıvıeırıiıfıyı)ı.ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "€0.00/semester (dataset; verify).",
+                "term_code": "2025W",
+                "components": ""
             }
         ],
         "Scholarships_Info": [
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıGıVıAı ıGırıaınıtısı",
-                "notes": "ı°ıCıhıeıcıkı ıeılıiıgıiıbıiılıiıtıyı,ı ıdıeıaıdılıiınıeısı ıaınıdı ırıeıqıuıiırıeıdı ıdıoıcıuımıeınıtısı;ı ıpırıoıgırıaımımıeı/ırıeıgıiıoını-ısıpıeıcıiıfıiıcı.ı",
-                "provider": "ıEıxıtıeırınıaılı",
-                "type": "ıeıxıtıeırınıaılı",
+                "name": "GVA Grants",
+                "provider": "External",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "Check eligibility, deadlines and required documents; programme/region-specific.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıUıPıVı ıSıoıcıiıaılı ıFıuınıdı",
-                "notes": "ı°ıCıhıeıcıkı ıeılıiıgıiıbıiılıiıtıyı,ı ıdıeıaıdılıiınıeısı ıaınıdı ırıeıqıuıiırıeıdı ıdıoıcıuımıeınıtısı;ı ıpırıoıgırıaımımıeı/ırıeıgıiıoını-ısıpıeıcıiıfıiıcı.ı",
-                "provider": "ıUıPıVı",
-                "type": "ıiınısıtıiıtıuıtıiıoınıaılı",
+                "name": "UPV Social Fund",
+                "provider": "UPV",
+                "type": "institutional",
+                "eligibility": "non_eu_ok",
+                "notes": "Check eligibility, deadlines and required documents; programme/region-specific.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıFıuınıdıaıcıiıóını ı°ıCıaırıoılıiınıaı ıSıcıhıoılıaırısıhıiıpısı",
-                "notes": "ı°ıCıoımımıoını ıfıuınıdıiınıgı ırıoıuıtıeı ıfıoırı ıLıaıtıiını ıAımıeırıiıcıaı ıaınıdı ıiınıtıeırınıaıtıiıoınıaılı ıaıpıpılıiıcıaınıtısı;ı ıcıaılılısı ıvıaırıyı ıbıyı ıyıeıaırı.ı",
-                "provider": "ıFıuınıdıaıcıiıóını ı°ıCıaırıoılıiınıaı",
-                "type": "ıeıxıtıeırınıaılı",
+                "name": "Fundación Carolina Scholarships",
+                "provider": "Fundación Carolina",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "Common funding route for Latin America and international applicants; calls vary by year.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıMıAıEı°ıCı-ıAıEı°ıCıIıDı ıSıcıhıoılıaırısıhıiıpısı",
-                "notes": "ıSıpıaınıiısıhı ıgıoıvıeırınımıeınıtı ısıcıhıoılıaırısıhıiıpısı;ı ıcıaılılısı ıvıaırıyı ıaınıdı ımıaıyı ıtıaırıgıeıtı ısıpıeıcıiıfıiıcı ırıeıgıiıoınısı.ı",
-                "provider": "ıMıAıEı°ıCı-ıAıEı°ıCıIıDı",
-                "type": "ıgıoıvıeırınımıeınıtı",
+                "name": "MAEC-AECID Scholarships",
+                "provider": "MAEC-AECID",
+                "type": "government",
+                "eligibility": "non_eu_ok",
+                "notes": "Spanish government scholarships; calls vary and may target specific regions.",
                 "url": null
             }
         ],
-        "Cost_City_Living": "ımıeıdıiıuımı",
+        "Cost_City_Living": "medium",
         "Cost_City_Rank": 3,
-        "Living_Housing_Difficulty": "ıHıaırıdı",
+        "Living_Housing_Difficulty": "Hard",
         "Living_Housing_Score": 7,
-        "Program_Name": "ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı-ırıeılıaıtıeıdı ıMıSıcı ı(ıeıxıaımıpılıeı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıuıpıvı.ıeısı/ıcıoınıtıeınıiıdıoısı/ıOıRıGıAıUıTıOı/ıiınıfıoı/ıRıeısıuımıeını_ıtıaısıaısı.ıpıdıfı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ıSıpıaınıiısıhı ıBı2ı ırıeıqı",
-        "Analysis_Strong_Areas": "ıSıtırıoınıgı ıiını ıRıFı ı&ı ıMıiıcırıoıwıaıvıeı ıSıyısıtıeımısı,ı ıSıaıtıeılılıiıtıeı ı°ıCıoımımıuınıiıcıaıtıiıoınısı,ı ıAıeırıoıdıyınıaımıiıcısı,ı ıaınıdı ıMıaıtıeırıiıaılısı.ı",
+        "Program_Name": "Space/Aerospace-related MSc (example)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://www.upv.es/contenidos/ORGAUTO/info/Resumen_tasas.pdf",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "Spanish B2 req",
+        "Analysis_Strong_Areas": "Strong in RF & Microwave Systems, Satellite Communications, Aerodynamics, and Materials.",
         "Analysis_Pros": [
-            "ıEıSıAı€ınııını ıyıüıkısıeıkı ıgıüıçılıüı ıRıFı ılıaıbıoırıaıtıuıvıaırııı ıbıuırıaıdıaıdııırı;ı ıEığıiıtıiımı ıüıcırıeıtılıeırıiı ıMıaıdırıiıdı/ıBıaırısıeılıoınıaı€ıyıaı ıgıöırıeı ıçıoıkı ıdıaıhıaı ıuıyıgıuınıdıuırı;ı ıIınıdıuısıtırıyı ı/ı ıeıcıoısıyısıtıeımı ıtıoıuıcıhıpıoıiınıtısı ıiınıcılıuıdıeı:ı ıEıSıAı-ıVıSı°ıCı ı(ıHıiıgıhı ıPıoıwıeırı ıRıFı ıLıaıbı)ı,ı ıPıLıDı ıSıpıaıcıeı ı(ıLıaıuınıcıhıeırısı)ı,ı ıTıhıaılıeısı ıAılıeınıiıaı ıSıpıaıcıeı.ı"
+            "ESA'nın yüksek güçlü RF laboratuvarı buradadır",
+            "Eğitim ücretleri Madrid/Barselona'ya göre çok daha uygundur",
+            "Industry / ecosystem touchpoints include: ESA-VSC (High Power RF Lab), PLD Space (Launchers), Thales Alenia Space."
         ],
         "Analysis_Cons": [
-            "ıŞıeıhıiırı ısıoını ıyııılılıaırıdıaı ıdıiıjıiıtıaılı ıgıöıçıeıbıeılıeırı ınıeıdıeınıiıyılıeı ıpıaıhıaılıaınımııışıtııırı;ı ıSıaıfı ı€ıHıaıvıaıcııılıııkı€ıtıaını ızıiıyıaıdıeı ıTıeılıeıkıoımı/ıRıFı ıvıeıyıaı ıMıeıkıaınıiıkı ıkıöıkıeınılıiı ıuızıaıyı ıçıaılııışımıaılıaırııı ıyıaıyıgııınıdııırı;ı ıNıoını‑ıEıUı ıtıuıiıtıiıoını ıcıaını ıbıeı ısıiıgınıiıfıiıcıaınıtı ıfıoırı ısıoımıeı ırıeıgıiıoınısı/ıpırıoıgırıaımımıeısı ı(ıdıaıtıaısıeıtı:ı ı~ı€ı1ı0ı4ı0ı/ıyıeıaırı)ı.ı;ı ıHıoıuısıiınıgı:ı ıHıaırıdı ı(ısıcıoırıeı ı~ı7ı/ı1ı0ı)ı;ı ısıtıaırıtı ıeıaırılıyı.ı;ı ıSıoımıeı ıtırıaıcıkısı ırıeıqıuıiırıeı ıSıpıaınıiısıhı ı(ıaınıdı ısıoımıeıtıiımıeısı ırıeıgıiıoınıaılı ılıaınıgıuıaıgıeı)ı ıfıoırı ıcıoıuırısıeıwıoırıkı ıoırı ıaıdımıiını;ı ıcıhıeıcıkı ıyıoıuırı ıeıxıaıcıtı ıcıuırırıiıcıuılıuımı.ı"
+            "Şehir son yıllarda dijital göçebeler nedeniyle pahalanmıştır",
+            "Saf 'Havacılık'tan ziyade Telekom/RF veya Mekanik kökenli uzay çalışmaları yaygındır",
+            "Non‑EU tuition can be significant for some regions/programmes (dataset: ~€1040/year).",
+            "Housing: Hard (score ~7/10); start early.",
+            "Some tracks require Spanish (and sometimes regional language) for coursework or admin; check your exact curriculum."
         ],
         "Analysis_Tags": [
-            "ıaıeırıoıdıyınıaımıiıcısı;ı ıcıfıdı;ı ıpırıoıpıuılısıiıoını;ı ıtıhıeırımıoıdıyınıaımıiıcısı;ı ısıtırıuıcıtıuırıeısı;ı ımıaıtıeırıiıaılısı;ı ıcıoınıtırıoılısı;ı ıaıiırıcırıaıfıtısıyısıtıeımısı"
+            "aerodynamics",
+            "cfd",
+            "propulsion",
+            "thermodynamics",
+            "structures",
+            "materials",
+            "controls",
+            "aircraftsystems"
         ],
-        "Industry_Ecosystem": "ıVıaılı ıSıpıaıcıeı ı°ıCıoınısıoırıtıiıuımı ıvıeı ıAıvırıuıpıaı ıUızıaıyı ıAıjıaınısııı ı(ıEıSıAı)ı ılıaıbıoırıaıtıuıvıaırılıaırııınıaı ıeıvı ısıaıhıiıpılıiığıiı ıyıaıpıaırı.ı",
+        "Industry_Ecosystem": "Val Space Consortium ve Avrupa Uzay Ajansı (ESA) laboratuvarlarına ev sahipliği yapar.",
+        "Industry_Comp_Intensity": "Medium",
         "Industry_Partners": [
-            "ıEıSıAı-ıVıSı°ıCı ı(ıHıiıgıhı ıPıoıwıeırı ıRıFı ıLıaıbı)ı;ı ıPıLıDı ıSıpıaıcıeı ı(ıLıaıuınıcıhıeırısı)ı;ı ıTıhıaılıeısı ıAılıeınıiıaı ıSıpıaıcıeı"
+            "ESA-VSC (High Power RF Lab)",
+            "PLD Space (Launchers)",
+            "Thales Alenia Space"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": true,
+        "Internship_Notes": "Mandatory internship is typical for this programme/track.",
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "Phase 1: June",
+        "Deadline_Winter_Note": "Dataset estimate; verify on official programme page",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": null,
+        "Deadline_Summer_Note": "Many Spanish masters are fall (winter) intake only; verify per programme",
+        "Deadline_Summer_Avail": "If your programme has a spring intake, deadlines are programme-specific.",
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "official",
+                "url": "https://www.upv.es/contenidos/ORGAUTO/info/Resumen_tasas.pdf",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": true
     },
     {
-        "Country": "ıSıpıaıiını",
-        "City": "ıMıaıdırıiıdı ı(ıGıeıtıaıfıeı/ıLıeıgıaınıéısı)ı",
-        "State_Region": "ıMıaıdırıiıdı",
-        "Uni_ID": "ıuıcı3ımı-ımıaıdırıiıdı",
-        "University_Name": "ıUınıiıvıeırısıiıdıaıdı ı°ıCıaırılıoısı ıIıIıIı ıdıeı ıMıaıdırıiıdı",
-        "University_Display_Name": "ıUınıiıvıeırısıiıdıaıdı ı°ıCıaırılıoısı ıIıIıIı ıdıeı ıMıaıdırıiıdı ı(ıUı°ıCı3ıMı)ı",
-        "University_Short_Name": "ıUı°ıCı3ıMı",
+        "Country": "Spain",
+        "City": "Madrid (Getafe/Leganés)",
+        "State_Region": "Madrid",
+        "Uni_ID": "uc3m-madrid",
+        "University_Name": "Universidad Carlos III de Madrid",
+        "University_Display_Name": "Universidad Carlos III de Madrid (UC3M)",
+        "University_Short_Name": "UC3M",
         "Cost_Tuition": [
             {
+                "scope": "non_eu",
+                "program": "MSc Aeronautical Engineering (example)",
                 "amount": 4965.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
-                "period": "ıyıeıaırı",
-                "program": "ıMıSıcı ıAıeırıoınıaıuıtıiıcıaılı ıEınıgıiınıeıeırıiınıgı ı(ıeıxıaımıpılıeı)ı",
-                "raw": "ıNıoını‑ıEıUı ıtıuıiıtıiıoını:ı ı€ı4ı9ı6ı5ı/ıyıeıaırı ı(ıdıaıtıaısıeıtı;ı ıvıeırıiıfıyı)ı.ı",
-                "scope": "ınıoını_ıeıuı"
+                "currency": "EUR",
+                "period": "year",
+                "raw": "Non‑EU tuition: €4965/year (dataset; verify).",
+                "effective_from_term_code": "2025W"
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 0.0,
-                "components": "ı",
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ı€ı0ı.ı0ı0ı/ısıeımıeısıtıeırı ı(ıdıaıtıaısıeıtı;ı ıvıeırıiıfıyı)ı.ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "€0.00/semester (dataset; verify).",
+                "term_code": "2025W",
+                "components": ""
             }
         ],
         "Scholarships_Info": [
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıUı°ıCı3ıMı ıTıuıiıtıiıoını ıAıiıdı",
-                "notes": "ı°ıCıhıeıcıkı ıeılıiıgıiıbıiılıiıtıyı,ı ıdıeıaıdılıiınıeısı ıaınıdı ırıeıqıuıiırıeıdı ıdıoıcıuımıeınıtısı;ı ıpırıoıgırıaımımıeı/ırıeıgıiıoını-ısıpıeıcıiıfıiıcı.ı",
-                "provider": "ıUı°ıCı3ıMı",
-                "type": "ıiınısıtıiıtıuıtıiıoınıaılı",
+                "name": "UC3M Tuition Aid",
+                "provider": "UC3M",
+                "type": "institutional",
+                "eligibility": "non_eu_ok",
+                "notes": "Check eligibility, deadlines and required documents; programme/region-specific.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıFıuınıdıaıcıiıóını ı°ıCıaırıoılıiınıaı",
-                "notes": "ı°ıCıhıeıcıkı ıeılıiıgıiıbıiılıiıtıyı,ı ıdıeıaıdılıiınıeısı ıaınıdı ırıeıqıuıiırıeıdı ıdıoıcıuımıeınıtısı;ı ıpırıoıgırıaımımıeı/ırıeıgıiıoını-ısıpıeıcıiıfıiıcı.ı",
-                "provider": "ıFıuınıdıaıcıiıóını ı°ıCıaırıoılıiınıaı",
-                "type": "ımıeırıiıtı/ınıeıeıdı",
+                "name": "Fundación Carolina",
+                "provider": "Fundación Carolina",
+                "type": "merit/need",
+                "eligibility": "non_eu_ok",
+                "notes": "Check eligibility, deadlines and required documents; programme/region-specific.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıMıAıEı°ıCı-ıAıEı°ıCıIıDı ıSıcıhıoılıaırısıhıiıpısı",
-                "notes": "ıSıpıaınıiısıhı ıgıoıvıeırınımıeınıtı ısıcıhıoılıaırısıhıiıpısı;ı ıcıaılılısı ıvıaırıyı ıaınıdı ımıaıyı ıtıaırıgıeıtı ısıpıeıcıiıfıiıcı ırıeıgıiıoınısı.ı",
-                "provider": "ıMıAıEı°ıCı-ıAıEı°ıCıIıDı",
-                "type": "ıgıoıvıeırınımıeınıtı",
+                "name": "MAEC-AECID Scholarships",
+                "provider": "MAEC-AECID",
+                "type": "government",
+                "eligibility": "non_eu_ok",
+                "notes": "Spanish government scholarships; calls vary and may target specific regions.",
                 "url": null
             }
         ],
-        "Cost_City_Living": "ıhıiıgıhı",
+        "Cost_City_Living": "high",
         "Cost_City_Rank": 4,
-        "Living_Housing_Difficulty": "ıHıaırıdı",
+        "Living_Housing_Difficulty": "Hard",
         "Living_Housing_Score": 7,
-        "Program_Name": "ıMıSıcı ıAıeırıoınıaıuıtıiıcıaılı ıEınıgıiınıeıeırıiınıgı ı(ıeıxıaımıpılıeı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıuıcı3ımı.ıeısı/ımıaısıtıeırı/ıaıeırıoınıaıuıtıiıcıaılı-ıeınıgıiınıeıeırıiınıgı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
-        "Analysis_Strong_Areas": "ıSıtırıoınıgı ıiını ıAıiırıcırıaıfıtı ıDıeısıiıgını,ı ı°ıCıoımıpıoısıiıtıeı ıMıaıtıeırıiıaılısı,ı ıSıpıaıcıeı ıSıyısıtıeımısı,ı ıaınıdı ıFılıiıgıhıtı ıMıeıcıhıaınıiıcısı.ı",
+        "Program_Name": "MSc Aeronautical Engineering (example)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://www.uc3m.es/master/aeronautical-engineering",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "English C1",
+        "Analysis_Strong_Areas": "Strong in Aircraft Design, Composite Materials, Space Systems, and Flight Mechanics.",
         "Analysis_Pros": [
-            "ıKıaımıpıüısı,ı ıAıiırıbıuısı€ııını ıaınıaı ıüırıeıtıiımı ıtıeısıiısılıeırıiınıeı ı(ıGıeıtıaıfıeı)ı ıkıoımışıuıdıuırı;ı ıUılıuısılıaırıaırıaısııı ısııırıaılıaımıaısııı ıyıüıkısıeıkıtıiırı ıvıeı ıİınıgıiılıiızıcıeı ıeığıiıtıiımı ıkıaılıiıtıeısıiı ıiıyıiıdıiırı;ı ıIınıdıuısıtırıyı ı/ı ıeıcıoısıyısıtıeımı ıtıoıuıcıhıpıoıiınıtısı ıiınıcılıuıdıeı:ı ıAıiırıbıuısı ıOıpıeırıaıtıiıoınısı,ı ıIıTıPı ıAıeırıoı,ı ıBıoıeıiınıgı ıRıeısıeıaırıcıhı ı&ı ıTıeıcıhınıoılıoıgıyı ıEıuırıoıpıeı.ı"
+            "Kampüs, Airbus'ın ana üretim tesislerine (Getafe) komşudur",
+            "Uluslararası sıralaması yüksektir ve İngilizce eğitim kalitesi iyidir",
+            "Industry / ecosystem touchpoints include: Airbus Operations, ITP Aero, Boeing Research & Technology Europe."
         ],
         "Analysis_Cons": [
-            "ıMıaıdırıiıdı ıbıöılıgıeısıiı ıoılıdıuığıuı ıiıçıiını ıNıoını-ıEıUı ıüıcırıeıtılıeırıiı ıyıüıkısıeıkıtıiırı ı(ıUıPıMı ıkıaıdıaırı ıoılımıaısıaı ıdıaı)ı;ı ıKıoınıuıtı ıpıiıyıaısıaısııı ıMıaıdırıiıdı ımıeırıkıeızı ıkıaıdıaırı ıoılımıaısıaı ıdıaı ızıoırıdıuırı;ı ıNıoını‑ıEıUı ıtıuıiıtıiıoını ıcıaını ıbıeı ısıiıgınıiıfıiıcıaınıtı ıfıoırı ısıoımıeı ırıeıgıiıoınısı/ıpırıoıgırıaımımıeısı ı(ıdıaıtıaısıeıtı:ı ı~ı€ı4ı9ı6ı5ı/ıyıeıaırı)ı.ı;ı ıHıoıuısıiınıgı:ı ıHıaırıdı ı(ısıcıoırıeı ı~ı7ı/ı1ı0ı)ı;ı ısıtıaırıtı ıeıaırılıyı.ı"
+            "Madrid bölgesi olduğu için Non-EU ücretleri yüksektir (UPM kadar olmasa da)",
+            "Konut piyasası Madrid merkez kadar olmasa da zordur",
+            "Non‑EU tuition can be significant for some regions/programmes (dataset: ~€4965/year).",
+            "Housing: Hard (score ~7/10); start early."
         ],
         "Analysis_Tags": [
-            "ıfılıiıgıhıtıdıyınıaımıiıcısı;ı ıcıoınıtırıoılısı;ı ıaıeırıoısıpıaıcıeısıyısıtıeımısı;ı ıpırıoıpıuılısıiıoını;ı ıoıpıtıiımıiızıaıtıiıoını;ı ınıuımıeırıiıcıaılımıeıtıhıoıdısı;ı ıgınıcı"
+            "flightdynamics",
+            "controls",
+            "aerospacesystems",
+            "propulsion",
+            "optimization",
+            "numericalmethods",
+            "gnc"
         ],
-        "Industry_Ecosystem": "ıAıiırıbıuısı ıGıeıtıaıfıeı ıfıaıbırıiıkıaısııınıaı ıçıoıkı ıyıaıkııınıdııırı.ı ıSıaınıaıyıiı ıoıdıaıkılııı ıeığıiıtıiımı.ı",
+        "Industry_Ecosystem": "Airbus Getafe fabrikasına çok yakındır. Sanayi odaklı eğitim.",
+        "Industry_Comp_Intensity": "High",
         "Industry_Partners": [
-            "ıAıiırıbıuısı ıOıpıeırıaıtıiıoınısı;ı ıIıTıPı ıAıeırıoı;ı ıBıoıeıiınıgı ıRıeısıeıaırıcıhı ı&ı ıTıeıcıhınıoılıoıgıyı ıEıuırıoıpıeı"
+            "Airbus Operations",
+            "ITP Aero",
+            "Boeing Research & Technology Europe"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": true,
+        "Internship_Notes": "Mandatory internship is typical for this programme/track.",
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "Feb / May",
+        "Deadline_Winter_Note": "Dataset estimate; verify on official programme page",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": null,
+        "Deadline_Summer_Note": "Many Spanish masters are fall (winter) intake only; verify per programme",
+        "Deadline_Summer_Avail": "If your programme has a spring intake, deadlines are programme-specific.",
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "official",
+                "url": "https://www.uc3m.es/master/aeronautical-engineering",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": true
     },
     {
-        "Country": "ıSıpıaıiını",
-        "City": "ıSıeıvıiılılıaı",
-        "State_Region": "ıEınıdıüılıüısı",
-        "Uni_ID": "ıuısı-ısıeıvıiılılıaı",
-        "University_Name": "ıUınıiıvıeırısıiıdıaıdı ıdıeı ıSıeıvıiılılıaı",
-        "University_Display_Name": "ıUınıiıvıeırısıiıdıaıdı ıdıeı ıSıeıvıiılılıaı",
-        "University_Short_Name": "ıUıSı",
+        "Country": "Spain",
+        "City": "Sevilla",
+        "State_Region": "Endülüs",
+        "Uni_ID": "us-sevilla",
+        "University_Name": "Universidad de Sevilla",
+        "University_Display_Name": "Universidad de Sevilla",
+        "University_Short_Name": "US",
         "Cost_Tuition": [
             {
+                "scope": "non_eu",
+                "program": "Master in Aeronautical Engineering (example)",
                 "amount": 821.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
-                "period": "ıyıeıaırı",
-                "program": "ıMıaısıtıeırı ıiını ıAıeırıoınıaıuıtıiıcıaılı ıEınıgıiınıeıeırıiınıgı ı(ıeıxıaımıpılıeı)ı",
-                "raw": "ıNıoını‑ıEıUı ıtıuıiıtıiıoını:ı ı€ı8ı2ı1ı/ıyıeıaırı ı(ıdıaıtıaısıeıtı;ı ıvıeırıiıfıyı)ı.ı",
-                "scope": "ınıoını_ıeıuı"
+                "currency": "EUR",
+                "period": "year",
+                "raw": "Non‑EU tuition: €821/year (dataset; verify).",
+                "effective_from_term_code": "2025W"
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 0.0,
-                "components": "ı",
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ı€ı0ı.ı0ı0ı/ısıeımıeısıtıeırı ı(ıdıaıtıaısıeıtı;ı ıvıeırıiıfıyı)ı.ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "€0.00/semester (dataset; verify).",
+                "term_code": "2025W",
+                "components": ""
             }
         ],
         "Scholarships_Info": [
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıJıuınıtıaı ıdıeı ıAınıdıaılıuıcıíıaı ıGırıaınıtısı",
-                "notes": "ı°ıCıhıeıcıkı ıeılıiıgıiıbıiılıiıtıyı,ı ıdıeıaıdılıiınıeısı ıaınıdı ırıeıqıuıiırıeıdı ıdıoıcıuımıeınıtısı;ı ıpırıoıgırıaımımıeı/ırıeıgıiıoını-ısıpıeıcıiıfıiıcı.ı",
-                "provider": "ıEıxıtıeırınıaılı",
-                "type": "ıeıxıtıeırınıaılı",
+                "name": "Junta de Andalucía Grants",
+                "provider": "External",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "Check eligibility, deadlines and required documents; programme/region-specific.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıBıeıcıaısı ıAıUıIıPı",
-                "notes": "ı°ıCıhıeıcıkı ıeılıiıgıiıbıiılıiıtıyı,ı ıdıeıaıdılıiınıeısı ıaınıdı ırıeıqıuıiırıeıdı ıdıoıcıuımıeınıtısı;ı ıpırıoıgırıaımımıeı/ırıeıgıiıoını-ısıpıeıcıiıfıiıcı.ı",
-                "provider": "ıEıxıtıeırınıaılı",
-                "type": "ıeıxıtıeırınıaılı",
+                "name": "Becas AUIP",
+                "provider": "External",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "Check eligibility, deadlines and required documents; programme/region-specific.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıFıuınıdıaıcıiıóını ı°ıCıaırıoılıiınıaı ıSıcıhıoılıaırısıhıiıpısı",
-                "notes": "ı°ıCıoımımıoını ıfıuınıdıiınıgı ırıoıuıtıeı ıfıoırı ıLıaıtıiını ıAımıeırıiıcıaı ıaınıdı ıiınıtıeırınıaıtıiıoınıaılı ıaıpıpılıiıcıaınıtısı;ı ıcıaılılısı ıvıaırıyı ıbıyı ıyıeıaırı.ı",
-                "provider": "ıFıuınıdıaıcıiıóını ı°ıCıaırıoılıiınıaı",
-                "type": "ıeıxıtıeırınıaılı",
+                "name": "Fundación Carolina Scholarships",
+                "provider": "Fundación Carolina",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "Common funding route for Latin America and international applicants; calls vary by year.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıMıAıEı°ıCı-ıAıEı°ıCıIıDı ıSıcıhıoılıaırısıhıiıpısı",
-                "notes": "ıSıpıaınıiısıhı ıgıoıvıeırınımıeınıtı ısıcıhıoılıaırısıhıiıpısı;ı ıcıaılılısı ıvıaırıyı ıaınıdı ımıaıyı ıtıaırıgıeıtı ısıpıeıcıiıfıiıcı ırıeıgıiıoınısı.ı",
-                "provider": "ıMıAıEı°ıCı-ıAıEı°ıCıIıDı",
-                "type": "ıgıoıvıeırınımıeınıtı",
+                "name": "MAEC-AECID Scholarships",
+                "provider": "MAEC-AECID",
+                "type": "government",
+                "eligibility": "non_eu_ok",
+                "notes": "Spanish government scholarships; calls vary and may target specific regions.",
                 "url": null
             }
         ],
-        "Cost_City_Living": "ımıeıdıiıuımı_ılıoıwı",
+        "Cost_City_Living": "medium_low",
         "Cost_City_Rank": 2,
-        "Living_Housing_Difficulty": "ıMıoıdıeırıaıtıeı",
+        "Living_Housing_Difficulty": "Moderate",
         "Living_Housing_Score": 6,
-        "Program_Name": "ıMıaısıtıeırı ıiını ıAıeırıoınıaıuıtıiıcıaılı ıEınıgıiınıeıeırıiınıgı ı(ıeıxıaımıpılıeı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıeıtısıiı.ıuısı.ıeısı/ıeısıtıuıdıiıoısı/ıeısıtıuıdıiıoısı-ıdıeı-ımıaısıtıeırı/ımıaısıtıeırı-ıuınıiıvıeırısıiıtıaırıiıoı-ıeını-ıiınıgıeınıiıeırıiıaı-ıaıeırıoınıaıuıtıiıcıaı/ımıaıtırıiıcıuılıaı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ıSıpıaınıiısıhı ıBı2ı ırıeıqı",
-        "Analysis_Strong_Areas": "ıSıtırıoınıgı ıiını ıMıaınıuıfıaıcıtıuırıiınıgı ı&ı ıAısısıeımıbılıyı,ı ıAıeırıoıdıyınıaımıiıcısı,ı ıSıtırıuıcıtıuırıeısı,ı ıaınıdı ıAıvıiıoınıiıcısı.ı",
+        "Program_Name": "Master in Aeronautical Engineering (example)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://etsi.us.es/estudios/estudios-de-master/master-universitario-en-ingenieria-aeronautica/matricula",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "Spanish B2 req",
+        "Analysis_Strong_Areas": "Strong in Manufacturing & Assembly, Aerodynamics, Structures, and Avionics.",
         "Analysis_Pros": [
-            "ıEınıdıüılıüısı ıbıöılıgıeısıiınıdıeı ıeığıiıtıiımı ıüıcırıeıtılıeırıiı ıçıoıkı ıdıüışıüıkıtıüırı ı(ıNıoını-ıEıUı ıiıçıiını ıbıiılıeı ı~ı8ı2ı1ı€ı/ıyııılı)ı;ı ıAı4ı0ı0ıMı ıüırıeıtıiımı ıhıaıtıtııı ınıeıdıeınıiıyılıeı ısıtıaıjı ıiımıkıaınılıaırııı ıfıaızılıaıdııırı;ı ıIınıdıuısıtırıyı ı/ı ıeıcıoısıyısıtıeımı ıtıoıuıcıhıpıoıiınıtısı ıiınıcılıuıdıeı:ı ıAıiırıbıuısı ıDıeıfıeınıcıeı ıaınıdı ıSıpıaıcıeı ı(ıSıaını ıPıaıbılıoı)ı,ı ıAılıeısıtıiısı ıAıeırıoısıpıaıcıeı,ı ıAıeırınınıoıvıaı.ı"
+            "Endülüs bölgesinde eğitim ücretleri çok düşüktür (Non-EU için bile ~821€/yıl)",
+            "A400M üretim hattı nedeniyle staj imkanları fazladır",
+            "Industry / ecosystem touchpoints include: Airbus Defence and Space (San Pablo), Alestis Aerospace, Aernnova."
         ],
         "Analysis_Cons": [
-            "ışıaızılıaırııı ıaışııırııı ısıııcıaıkıtııırı;ı ıİınıgıiılıiızıcıeı ıpırıoıgırıaımı ısıeıçıeınıeıkılıeırıiı ıMıaıdırıiıdı/ıBıaırısıeılıoınıaı€ıyıaı ıgıöırıeı ıdıaıhıaı ısııınııırılııı ıoılıaıbıiılıiırı;ı ıBıaızııı ıaılıaınılıaırıdıaı ı(ıöırı;ı ısıaıfı ıaısıtırıoıdıyınıaımıiıcısı)ı ırıoıtıaı ısıeıçımıeılıiılıeırılıeı ıkıuırıuılımıaılııı;ı ıİınıgıiılıiızıcıeı ıdıeırısı ıkıaıpısıaımııı ıpırıoıgırıaımıaı ıbıaığılııı;ı ıNıoını‑ıEıUı ıtıuıiıtıiıoını ıcıaını ıbıeı ısıiıgınıiıfıiıcıaınıtı ıfıoırı ısıoımıeı ırıeıgıiıoınısı/ıpırıoıgırıaımımıeısı ı(ıdıaıtıaısıeıtı:ı ı~ı€ı8ı2ı1ı/ıyıeıaırı)ı.ı"
+            "Yazları aşırı sıcaktır",
+            "İngilizce program seçenekleri Madrid/Barselona'ya göre daha sınırlı olabilir",
+            "Bazı alanlarda (ör",
+            "saf astrodynamics) rota seçmelilerle kurulmalı",
+            "İngilizce ders kapsamı programa bağlı",
+            "Non‑EU tuition can be significant for some regions/programmes (dataset: ~€821/year)."
         ],
         "Analysis_Tags": [
-            "ıaıeırıoınıaıuıtıiıcısı;ı ıaıeırıoıdıyınıaımıiıcısı;ı ıpırıoıpıuılısıiıoını;ı ısıtırıuıcıtıuırıeısı;ı ıaıvıiıoınıiıcısı;ı ıaıiırıcırıaıfıtısıyısıtıeımısı;ı ıcıoınıtırıoılısı"
+            "aeronautics",
+            "aerodynamics",
+            "propulsion",
+            "structures",
+            "avionics",
+            "aircraftsystems",
+            "controls"
         ],
-        "Industry_Ecosystem": "ıAı4ı0ı0ıMı ısıoını ımıoınıtıaıjı ıhıaıtıtııı ı(ıFıAıLı)ı ıSıeıvıiılılıaı€ıdıaıdııırı.ı ıHıaıvıaıcııılıııkı ıüırıeıtıiımıiı ıvıeı ımıoınıtıaıjııı ıoıdıaığııı.ı",
+        "Industry_Ecosystem": "A400M son montaj hattı (FAL) Sevilla'dadır. Havacılık üretimi ve montajı odağı.",
+        "Industry_Comp_Intensity": "Medium",
         "Industry_Partners": [
-            "ıAıiırıbıuısı ıDıeıfıeınıcıeı ıaınıdı ıSıpıaıcıeı ı(ıSıaını ıPıaıbılıoı)ı;ı ıAılıeısıtıiısı ıAıeırıoısıpıaıcıeı;ı ıAıeırınınıoıvıaı"
+            "Airbus Defence and Space (San Pablo)",
+            "Alestis Aerospace",
+            "Aernnova"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": true,
+        "Internship_Notes": "Mandatory internship is typical for this programme/track.",
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "Jan / June",
+        "Deadline_Winter_Note": "Dataset estimate; verify on official programme page",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": null,
+        "Deadline_Summer_Note": "Many Spanish masters are fall (winter) intake only; verify per programme",
+        "Deadline_Summer_Avail": "If your programme has a spring intake, deadlines are programme-specific.",
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "official",
+                "url": "https://etsi.us.es/estudios/estudios-de-master/master-universitario-en-ingenieria-aeronautica/matricula",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": true
     },
     {
-        "Country": "ıSıpıaıiını",
-        "City": "ıBıaırıcıeılıoınıaı",
-        "State_Region": "ıKıaıtıaılıoınıyıaı",
-        "Uni_ID": "ıuıbı-ıbıaırıcıeılıoınıaı",
-        "University_Name": "ıUınıiıvıeırısıiıtıaıtı ıdıeı ıBıaırıcıeılıoınıaı",
-        "University_Display_Name": "ıUınıiıvıeırısıiıtıaıtı ıdıeı ıBıaırıcıeılıoınıaı ı(ıUıBı)ı",
-        "University_Short_Name": "ıUıBı",
+        "Country": "Spain",
+        "City": "Barcelona",
+        "State_Region": "Katalonya",
+        "Uni_ID": "ub-barcelona",
+        "University_Name": "Universitat de Barcelona",
+        "University_Display_Name": "Universitat de Barcelona (UB)",
+        "University_Short_Name": "UB",
         "Cost_Tuition": [
             {
+                "scope": "non_eu",
+                "program": "MSc Space Sciences (example)",
                 "amount": 2700.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
-                "period": "ıyıeıaırı",
-                "program": "ıMıSıcı ıSıpıaıcıeı ıSıcıiıeınıcıeısı ı(ıeıxıaımıpılıeı)ı",
-                "raw": "ıNıoını‑ıEıUı ıtıuıiıtıiıoını:ı ı€ı2ı7ı0ı0ı/ıyıeıaırı ı(ıdıaıtıaısıeıtı;ı ıvıeırıiıfıyı)ı.ı",
-                "scope": "ınıoını_ıeıuı"
+                "currency": "EUR",
+                "period": "year",
+                "raw": "Non‑EU tuition: €2700/year (dataset; verify).",
+                "effective_from_term_code": "2025W"
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 0.0,
-                "components": "ı",
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ı€ı0ı.ı0ı0ı/ısıeımıeısıtıeırı ı(ıdıaıtıaısıeıtı;ı ıvıeırıiıfıyı)ı.ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "€0.00/semester (dataset; verify).",
+                "term_code": "2025W",
+                "components": ""
             }
         ],
         "Scholarships_Info": [
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıBıeıcıaısı ıMıaısıtıeırı ıUıBı",
-                "notes": "ı°ıCıhıeıcıkı ıeılıiıgıiıbıiılıiıtıyı,ı ıdıeıaıdılıiınıeısı ıaınıdı ırıeıqıuıiırıeıdı ıdıoıcıuımıeınıtısı;ı ıpırıoıgırıaımımıeı/ırıeıgıiıoını-ısıpıeıcıiıfıiıcı.ı",
-                "provider": "ıEıxıtıeırınıaılı",
-                "type": "ıeıxıtıeırınıaılı",
+                "name": "Becas Master UB",
+                "provider": "External",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "Check eligibility, deadlines and required documents; programme/region-specific.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıFıuınıdıaıcıiıóını ı°ıCıaırıoılıiınıaı",
-                "notes": "ı°ıCıhıeıcıkı ıeılıiıgıiıbıiılıiıtıyı,ı ıdıeıaıdılıiınıeısı ıaınıdı ırıeıqıuıiırıeıdı ıdıoıcıuımıeınıtısı;ı ıpırıoıgırıaımımıeı/ırıeıgıiıoını-ısıpıeıcıiıfıiıcı.ı",
-                "provider": "ıFıuınıdıaıcıiıóını ı°ıCıaırıoılıiınıaı",
-                "type": "ımıeırıiıtı/ınıeıeıdı",
+                "name": "Fundación Carolina",
+                "provider": "Fundación Carolina",
+                "type": "merit/need",
+                "eligibility": "non_eu_ok",
+                "notes": "Check eligibility, deadlines and required documents; programme/region-specific.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıMıAıEı°ıCı-ıAıEı°ıCıIıDı ıSıcıhıoılıaırısıhıiıpısı",
-                "notes": "ıSıpıaınıiısıhı ıgıoıvıeırınımıeınıtı ısıcıhıoılıaırısıhıiıpısı;ı ıcıaılılısı ıvıaırıyı ıaınıdı ımıaıyı ıtıaırıgıeıtı ısıpıeıcıiıfıiıcı ırıeıgıiıoınısı.ı",
-                "provider": "ıMıAıEı°ıCı-ıAıEı°ıCıIıDı",
-                "type": "ıgıoıvıeırınımıeınıtı",
+                "name": "MAEC-AECID Scholarships",
+                "provider": "MAEC-AECID",
+                "type": "government",
+                "eligibility": "non_eu_ok",
+                "notes": "Spanish government scholarships; calls vary and may target specific regions.",
                 "url": null
             }
         ],
-        "Cost_City_Living": "ıvıeırıyı_ıhıiıgıhı",
+        "Cost_City_Living": "very_high",
         "Cost_City_Rank": 5,
-        "Living_Housing_Difficulty": "ıNıiıgıhıtımıaırıeı",
+        "Living_Housing_Difficulty": "Nightmare",
         "Living_Housing_Score": 9,
-        "Program_Name": "ıMıSıcı ıSıpıaıcıeı ıSıcıiıeınıcıeısı ı(ıeıxıaımıpılıeı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 60.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıuıpıcı.ıeıdıuı/ısıgıaı/ıcıaı/ımıaıtırıiıcıuılıaı/ıpırıeıuısı/ıPırıeıuısıMıaısıtıeırı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ı1ı0ı0ı%ı ıEınıgılıiısıhı",
-        "Analysis_Strong_Areas": "ıSıtırıoınıgı ıiını ıAısıtırıoıpıhıyısıiıcısı,ı ı°ıCıoısımıoılıoıgıyı,ı ıBıiıgı ıDıaıtıaı ıiını ıSıpıaıcıeı,ı ıaınıdı ıQıuıaınıtıuımı ıPıhıyısıiıcısı.ı",
+        "Program_Name": "MSc Space Sciences (example)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 60,
+        "Program_URL": "https://www.upc.edu/sga/ca/matricula/preus/PreusMaster",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "100% English",
+        "Analysis_Strong_Areas": "Strong in Astrophysics, Cosmology, Big Data in Space, and Quantum Physics.",
         "Analysis_Pros": [
-            "ıMıüıhıeınıdıiısılıiıkıtıeını ızıiıyıaıdıeı ıUızıaıyı ıBıiılıiımılıeırıiı ı(ıSıpıaıcıeı ıSıcıiıeınıcıeı)ı ıiısıtıeıyıeınılıeırı ıiıçıiını ıiıdıeıaılıdıiırı;ı ıBıaırıcıeılıoınıaı ışıeıhıiırı ımıeırıkıeızıiınıdıeıdıiırı;ı ıIınıdıuısıtırıyı ı/ı ıeıcıoısıyısıtıeımı ıtıoıuıcıhıpıoıiınıtısı ıiınıcılıuıdıeı:ı ıEıSıAı ı(ıGıaıiıaı ıMıiısısıiıoını)ı,ı ı°ıCıEıRıNı,ı ıIıEıEı°ıCı.ı"
+            "Mühendislikten ziyade Uzay Bilimleri (Space Science) isteyenler için idealdir",
+            "Barcelona şehir merkezindedir",
+            "Industry / ecosystem touchpoints include: ESA (Gaia Mission), CERN, IEEC."
         ],
         "Analysis_Cons": [
-            "ıMıüıhıeınıdıiısılıiıkı ıuınıvıaınııı ı(ıIınıgıeınıiıeırıoı ıAıeırıoınıáıuıtıiıcıoı)ı ıvıeırımıeızı,ı ıMıaısıtıeırı ıoıfı ıSıcıiıeınıcıeı ıvıeırıiırı;ı ıÜıcırıeıtılıeırı ıKıaıtıaılıoınıyıaı ıtıaırıiıfıeısıiınıdıeıdıiırı;ı ıDıoığırıuıdıaını ıaıeırıoısıpıaıcıeı ıeınıgıiınıeıeırıiınıgı ırıoıtıaısııı ıiıçıiını ıpırıoıgırıaımı ısıeıçıiımıiı ıdıaıhıaı ıkırıiıtıiıkı;ı ışıeıhıiırı ımıaılıiıyıeıtıiı ıyıüıkısıeıkı;ı ıNıoını‑ıEıUı ıtıuıiıtıiıoını ıcıaını ıbıeı ısıiıgınıiıfıiıcıaınıtı ıfıoırı ısıoımıeı ırıeıgıiıoınısı/ıpırıoıgırıaımımıeısı ı(ıdıaıtıaısıeıtı:ı ı~ı€ı2ı7ı0ı0ı/ıyıeıaırı)ı.ı;ı ıHıoıuısıiınıgı:ı ıNıiıgıhıtımıaırıeı ı(ısıcıoırıeı ı~ı9ı/ı1ı0ı)ı;ı ısıtıaırıtı ıeıaırılıyı.ı"
+            "Mühendislik unvanı (Ingeniero Aeronáutico) vermez, Master of Science verir",
+            "Ücretler Katalonya tarifesindedir",
+            "Doğrudan aerospace engineering rotası için program seçimi daha kritik",
+            "şehir maliyeti yüksek",
+            "Non‑EU tuition can be significant for some regions/programmes (dataset: ~€2700/year).",
+            "Housing: Nightmare (score ~9/10); start early."
         ],
         "Analysis_Tags": [
-            "ısıpıaıcıeısıcıiıeınıcıeı;ı ıaısıtırıoıpıhıyısıiıcısı;ı ırıeımıoıtıeısıeınısıiınıgı;ı ıdıaıtıaısıcıiıeınıcıeı;ı ıcıoımıpıuıtıaıtıiıoınıaılıpıhıyısıiıcısı;ı ımıaıtıeırıiıaılısı"
+            "spacescience",
+            "astrophysics",
+            "remotesensing",
+            "datascience",
+            "computationalphysics",
+            "materials"
         ],
-        "Industry_Ecosystem": "ıIınısıtıiıtıuıtıeı ıoıfı ı°ıCıoısımıoısı ıSıcıiıeınıcıeısı ı(ıIı°ıCı°ıCıUıBı)ı.ı ıTıeımıeılı ıbıiılıiımılıeırı ıvıeı ıvıeırıiı ıaınıaılıiızıiı.ı",
+        "Industry_Ecosystem": "Institute of Cosmos Sciences (ICCUB). Temel bilimler ve veri analizi.",
+        "Industry_Comp_Intensity": "High",
         "Industry_Partners": [
-            "ıEıSıAı ı(ıGıaıiıaı ıMıiısısıiıoını)ı;ı ı°ıCıEıRıNı;ı ıIıEıEı°ıCı"
+            "ESA (Gaia Mission)",
+            "CERN",
+            "IEEC"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": false,
+        "Internship_Notes": "Internship may be optional or embedded via thesis/projects; verify per track.",
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "June",
+        "Deadline_Winter_Note": "Dataset estimate; verify on official programme page",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": null,
+        "Deadline_Summer_Note": "Many Spanish masters are fall (winter) intake only; verify per programme",
+        "Deadline_Summer_Avail": "If your programme has a spring intake, deadlines are programme-specific.",
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "official",
+                "url": "https://www.upc.edu/sga/ca/matricula/preus/PreusMaster",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": true
     },
     {
-        "Country": "ıSıpıaıiını",
-        "City": "ıBıeılılıaıtıeırırıaı ı(ıBıaırıcıeılıoınıaı)ı",
-        "State_Region": "ıKıaıtıaılıoınıyıaı",
-        "Uni_ID": "ıuıaıbı-ıbıaırıcıeılıoınıaı",
-        "University_Name": "ıUınıiıvıeırısıiıtıaıtı ıAıuıtıòınıoımıaı ıdıeı ıBıaırıcıeılıoınıaı",
-        "University_Display_Name": "ıUınıiıvıeırısıiıtıaıtı ıAıuıtıòınıoımıaı ıdıeı ıBıaırıcıeılıoınıaı ı(ıUıAıBı)ı",
-        "University_Short_Name": "ıUıAıBı",
+        "Country": "Spain",
+        "City": "Bellaterra (Barcelona)",
+        "State_Region": "Katalonya",
+        "Uni_ID": "uab-barcelona",
+        "University_Name": "Universitat Autònoma de Barcelona",
+        "University_Display_Name": "Universitat Autònoma de Barcelona (UAB)",
+        "University_Short_Name": "UAB",
         "Cost_Tuition": [
             {
+                "scope": "non_eu",
+                "program": "Space/Remote Sensing MSc (example)",
                 "amount": 2700.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
-                "period": "ıyıeıaırı",
-                "program": "ıSıpıaıcıeı/ıRıeımıoıtıeı ıSıeınısıiınıgı ıMıSıcı ı(ıeıxıaımıpılıeı)ı",
-                "raw": "ıNıoını‑ıEıUı ıtıuıiıtıiıoını:ı ı€ı2ı7ı0ı0ı/ıyıeıaırı ı(ıdıaıtıaısıeıtı;ı ıvıeırıiıfıyı)ı.ı",
-                "scope": "ınıoını_ıeıuı"
+                "currency": "EUR",
+                "period": "year",
+                "raw": "Non‑EU tuition: €2700/year (dataset; verify).",
+                "effective_from_term_code": "2025W"
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 0.0,
-                "components": "ı",
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ı€ı0ı.ı0ı0ı/ısıeımıeısıtıeırı ı(ıdıaıtıaısıeıtı;ı ıvıeırıiıfıyı)ı.ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "€0.00/semester (dataset; verify).",
+                "term_code": "2025W",
+                "components": ""
             }
         ],
         "Scholarships_Info": [
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıUıAıBı ıSıpıeıcıiıfıiıcı ıGırıaınıtısı",
-                "notes": "ı°ıCıhıeıcıkı ıeılıiıgıiıbıiılıiıtıyı,ı ıdıeıaıdılıiınıeısı ıaınıdı ırıeıqıuıiırıeıdı ıdıoıcıuımıeınıtısı;ı ıpırıoıgırıaımımıeı/ırıeıgıiıoını-ısıpıeıcıiıfıiıcı.ı",
-                "provider": "ıEıxıtıeırınıaılı",
-                "type": "ıeıxıtıeırınıaılı",
+                "name": "UAB Specific Grants",
+                "provider": "External",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "Check eligibility, deadlines and required documents; programme/region-specific.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıEırıaısımıuısı+ı",
-                "notes": "ı°ıCıhıeıcıkı ıeılıiıgıiıbıiılıiıtıyı,ı ıdıeıaıdılıiınıeısı ıaınıdı ırıeıqıuıiırıeıdı ıdıoıcıuımıeınıtısı;ı ıpırıoıgırıaımımıeı/ırıeıgıiıoını-ısıpıeıcıiıfıiıcı.ı",
-                "provider": "ıEırıaısımıuısı+ı",
-                "type": "ımıoıbıiılıiıtıyı",
+                "name": "Erasmus+",
+                "provider": "Erasmus+",
+                "type": "mobility",
+                "eligibility": "non_eu_ok",
+                "notes": "Check eligibility, deadlines and required documents; programme/region-specific.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıFıuınıdıaıcıiıóını ı°ıCıaırıoılıiınıaı ıSıcıhıoılıaırısıhıiıpısı",
-                "notes": "ı°ıCıoımımıoını ıfıuınıdıiınıgı ırıoıuıtıeı ıfıoırı ıLıaıtıiını ıAımıeırıiıcıaı ıaınıdı ıiınıtıeırınıaıtıiıoınıaılı ıaıpıpılıiıcıaınıtısı;ı ıcıaılılısı ıvıaırıyı ıbıyı ıyıeıaırı.ı",
-                "provider": "ıFıuınıdıaıcıiıóını ı°ıCıaırıoılıiınıaı",
-                "type": "ıeıxıtıeırınıaılı",
+                "name": "Fundación Carolina Scholarships",
+                "provider": "Fundación Carolina",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "Common funding route for Latin America and international applicants; calls vary by year.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıMıAıEı°ıCı-ıAıEı°ıCıIıDı ıSıcıhıoılıaırısıhıiıpısı",
-                "notes": "ıSıpıaınıiısıhı ıgıoıvıeırınımıeınıtı ısıcıhıoılıaırısıhıiıpısı;ı ıcıaılılısı ıvıaırıyı ıaınıdı ımıaıyı ıtıaırıgıeıtı ısıpıeıcıiıfıiıcı ırıeıgıiıoınısı.ı",
-                "provider": "ıMıAıEı°ıCı-ıAıEı°ıCıIıDı",
-                "type": "ıgıoıvıeırınımıeınıtı",
+                "name": "MAEC-AECID Scholarships",
+                "provider": "MAEC-AECID",
+                "type": "government",
+                "eligibility": "non_eu_ok",
+                "notes": "Spanish government scholarships; calls vary and may target specific regions.",
                 "url": null
             }
         ],
-        "Cost_City_Living": "ıvıeırıyı_ıhıiıgıhı",
+        "Cost_City_Living": "very_high",
         "Cost_City_Rank": 5,
-        "Living_Housing_Difficulty": "ıVıeırıyı ıHıaırıdı",
+        "Living_Housing_Difficulty": "Very Hard",
         "Living_Housing_Score": 8,
-        "Program_Name": "ıSıpıaıcıeı/ıRıeımıoıtıeı ıSıeınısıiınıgı ıMıSıcı ı(ıeıxıaımıpılıeı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 60.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıuıaıbı.ıcıaıtı/ıeını/ısıtıuıdıyı/ımıaısıtıeırısı-ıdıeıgırıeıeısı/ıpırıiıcıeısı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ı1ı0ı0ı%ı ıEınıgılıiısıhı",
-        "Analysis_Strong_Areas": "ıSıtırıoınıgı ıiını ıRıeımıoıtıeı ıSıeınısıiınıgı,ı ıGıIıSı,ı ıPıaırıtıiıcılıeı ıPıhıyısıiıcısı,ı ıaınıdı ı°ıCıoımıpıuıtıeırı ıVıiısıiıoını.ı",
+        "Program_Name": "Space/Remote Sensing MSc (example)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 60,
+        "Program_URL": "https://www.uab.cat/en/study/masters-degrees/prices",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "100% English",
+        "Analysis_Strong_Areas": "Strong in Remote Sensing, GIS, Particle Physics, and Computer Vision.",
         "Analysis_Pros": [
-            "ıKıaımıpıüısı ıüınıiıvıeırısıiıtıeısıiıdıiırı ı(ıBıeılılıaıtıeırırıaı)ı,ı ışıeıhıiırı ıkıaırımıaışıaısııınıdıaını ıuızıaıkıtııırı;ı ıAırıaışıtııırımıaı ıvıeı ıdıoıkıtıoırıaı ıoıdıaıkılıııdııırı;ı ıIınıdıuısıtırıyı ı/ı ıeıcıoısıyısıtıeımı ıtıoıuıcıhıpıoıiınıtısı ıiınıcılıuıdıeı:ı ı°ıCıRıEıAıFı ı(ıEıcıoılıoıgıyı/ıFıoırıeısıtırıyı)ı,ı ıIıFıAıEı,ı ıSıyınıcıhırıoıtırıoını ıAıLıBıAı.ı"
+            "Kampüs üniversitesidir (Bellaterra), şehir karmaşasından uzaktır",
+            "Araştırma ve doktora odaklıdır",
+            "Industry / ecosystem touchpoints include: CREAF (Ecology/Forestry), IFAE, Synchrotron ALBA."
         ],
         "Analysis_Cons": [
-            "ıBıaırıcıeılıoınıaı ımıeırıkıeızıeı ıtırıeınıdıeı ı3ı0ı-ı4ı0ı ıdıkı ımıeısıaıfıeıdıeıdıiırı;ı ıHıaıvıaıcııılıııkı ımıüıhıeınıdıiısılıiığıiı ıçıeıkıiırıdıeığıiı ızıaıyıııfıtııırı;ı ıKılıaısıiıkı ıaıeırıoı‑ımıüıhıeınıdıiısılıiıkı ıçıeıkıiırıdıeığıiı ıiıçıiını ıdıoığırıuı ıpırıoıgırıaımııı ısıeıçımıeıkı ıgıeırıeıkıiıyıoırı;ı ışıeıhıiırı ımıaılıiıyıeıtıiı ıyıüıkısıeıkı;ı ıNıoını‑ıEıUı ıtıuıiıtıiıoını ıcıaını ıbıeı ısıiıgınıiıfıiıcıaınıtı ıfıoırı ısıoımıeı ırıeıgıiıoınısı/ıpırıoıgırıaımımıeısı ı(ıdıaıtıaısıeıtı:ı ı~ı€ı2ı7ı0ı0ı/ıyıeıaırı)ı.ı;ı ıHıoıuısıiınıgı:ı ıVıeırıyı ıHıaırıdı ı(ısıcıoırıeı ı~ı8ı/ı1ı0ı)ı;ı ısıtıaırıtı ıeıaırılıyı.ı"
+            "Barcelona merkeze trende 30-40 dk mesafededir",
+            "Havacılık mühendisliği çekirdeği zayıftır",
+            "Klasik aero‑mühendislik çekirdeği için doğru programı seçmek gerekiyor",
+            "şehir maliyeti yüksek",
+            "Non‑EU tuition can be significant for some regions/programmes (dataset: ~€2700/year).",
+            "Housing: Very Hard (score ~8/10); start early."
         ],
         "Analysis_Tags": [
-            "ısıpıaıcıeısıcıiıeınıcıeı;ı ıaısıtırıoıpıhıyısıiıcısı;ı ıdıaıtıaısıcıiıeınıcıeı;ı ırıeımıoıtıeısıeınısıiınıgı;ı ınıuımıeırıiıcıaılımıeıtıhıoıdısı"
+            "spacescience",
+            "astrophysics",
+            "datascience",
+            "remotesensing",
+            "numericalmethods"
         ],
-        "Industry_Ecosystem": "ıUızıaıkıtıaını ıaılıgııılıaımıaı ı(ıRıeımıoıtıeı ıSıeınısıiınıgı)ı ıvıeı ıyıüıkısıeıkı ıeınıeırıjıiı ıfıiızıiığıiı.ı",
+        "Industry_Ecosystem": "Uzaktan algılama (Remote Sensing) ve yüksek enerji fiziği.",
+        "Industry_Comp_Intensity": "High",
         "Industry_Partners": [
-            "ı°ıCıRıEıAıFı ı(ıEıcıoılıoıgıyı/ıFıoırıeısıtırıyı)ı;ı ıIıFıAıEı;ı ıSıyınıcıhırıoıtırıoını ıAıLıBıAı"
+            "CREAF (Ecology/Forestry)",
+            "IFAE",
+            "Synchrotron ALBA"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": false,
+        "Internship_Notes": "Internship may be optional or embedded via thesis/projects; verify per track.",
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "May",
+        "Deadline_Winter_Note": "Dataset estimate; verify on official programme page",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": null,
+        "Deadline_Summer_Note": "Many Spanish masters are fall (winter) intake only; verify per programme",
+        "Deadline_Summer_Avail": "If your programme has a spring intake, deadlines are programme-specific.",
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "official",
+                "url": "https://www.uab.cat/en/study/masters-degrees/prices",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": true
     },
     {
-        "Country": "ıSıpıaıiını",
-        "City": "ıPıaımıpılıoınıaı ı/ı ıSıaını ıSıeıbıaısıtıiıáını",
-        "State_Region": "ıNıaıvıaırırıaı ı/ı ıPıaıíısı ıVıaısıcıoı",
-        "Uni_ID": "ıuınıaıvı-ıpıaımıpılıoınıaı",
-        "University_Name": "ıUınıiıvıeırısıiıdıaıdı ıdıeı ıNıaıvıaırırıaı",
-        "University_Display_Name": "ıUınıiıvıeırısıiıdıaıdı ıdıeı ıNıaıvıaırırıaı ı(ıUıNıAıVı ı/ı ıTıeıcınıuını)ı",
-        "University_Short_Name": "ıUıNıAıVı",
+        "Country": "Spain",
+        "City": "Pamplona / San Sebastián",
+        "State_Region": "Navarra / País Vasco",
+        "Uni_ID": "unav-pamplona",
+        "University_Name": "Universidad de Navarra",
+        "University_Display_Name": "Universidad de Navarra (UNAV / Tecnun)",
+        "University_Short_Name": "UNAV",
         "Cost_Tuition": [
             {
+                "scope": "non_eu",
+                "program": "Engineering MSc (private; program-specific)",
                 "amount": 17850.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
-                "period": "ıyıeıaırı",
-                "program": "ıEınıgıiınıeıeırıiınıgı ıMıSıcı ı(ıpırıiıvıaıtıeı;ı ıpırıoıgırıaımı-ısıpıeıcıiıfıiıcı)ı",
-                "raw": "ıNıoını‑ıEıUı ıtıuıiıtıiıoını:ı ı€ı1ı7ı8ı5ı0ı/ıyıeıaırı ı(ıdıaıtıaısıeıtı;ı ıvıeırıiıfıyı)ı.ı",
-                "scope": "ınıoını_ıeıuı"
+                "currency": "EUR",
+                "period": "year",
+                "raw": "Non‑EU tuition: €17850/year (dataset; verify).",
+                "effective_from_term_code": "2025W"
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 0.0,
-                "components": "ı",
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ı€ı0ı.ı0ı0ı/ısıeımıeısıtıeırı ı(ıdıaıtıaısıeıtı;ı ıvıeırıiıfıyı)ı.ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "€0.00/semester (dataset; verify).",
+                "term_code": "2025W",
+                "components": ""
             }
         ],
         "Scholarships_Info": [
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıBıeıcıaısı ıAılıuımınıiı",
-                "notes": "ı°ıCıhıeıcıkı ıeılıiıgıiıbıiılıiıtıyı,ı ıdıeıaıdılıiınıeısı ıaınıdı ırıeıqıuıiırıeıdı ıdıoıcıuımıeınıtısı;ı ıpırıoıgırıaımımıeı/ırıeıgıiıoını-ısıpıeıcıiıfıiıcı.ı",
-                "provider": "ıEıxıtıeırınıaılı",
-                "type": "ıeıxıtıeırınıaılı",
+                "name": "Becas Alumni",
+                "provider": "External",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "Check eligibility, deadlines and required documents; programme/region-specific.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıUıNıAıVı ıGılıoıbıaılı ıSıcıhıoılıaırısıhıiıpı",
-                "notes": "ı°ıCıhıeıcıkı ıeılıiıgıiıbıiılıiıtıyı,ı ıdıeıaıdılıiınıeısı ıaınıdı ırıeıqıuıiırıeıdı ıdıoıcıuımıeınıtısı;ı ıpırıoıgırıaımımıeı/ırıeıgıiıoını-ısıpıeıcıiıfıiıcı.ı",
-                "provider": "ıEıxıtıeırınıaılı",
-                "type": "ıeıxıtıeırınıaılı",
+                "name": "UNAV Global Scholarship",
+                "provider": "External",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "Check eligibility, deadlines and required documents; programme/region-specific.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıFıuınıdıaıcıiıóını ı°ıCıaırıoılıiınıaı ıSıcıhıoılıaırısıhıiıpısı",
-                "notes": "ı°ıCıoımımıoını ıfıuınıdıiınıgı ırıoıuıtıeı ıfıoırı ıLıaıtıiını ıAımıeırıiıcıaı ıaınıdı ıiınıtıeırınıaıtıiıoınıaılı ıaıpıpılıiıcıaınıtısı;ı ıcıaılılısı ıvıaırıyı ıbıyı ıyıeıaırı.ı",
-                "provider": "ıFıuınıdıaıcıiıóını ı°ıCıaırıoılıiınıaı",
-                "type": "ıeıxıtıeırınıaılı",
+                "name": "Fundación Carolina Scholarships",
+                "provider": "Fundación Carolina",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "Common funding route for Latin America and international applicants; calls vary by year.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıMıAıEı°ıCı-ıAıEı°ıCıIıDı ıSıcıhıoılıaırısıhıiıpısı",
-                "notes": "ıSıpıaınıiısıhı ıgıoıvıeırınımıeınıtı ısıcıhıoılıaırısıhıiıpısı;ı ıcıaılılısı ıvıaırıyı ıaınıdı ımıaıyı ıtıaırıgıeıtı ısıpıeıcıiıfıiıcı ırıeıgıiıoınısı.ı",
-                "provider": "ıMıAıEı°ıCı-ıAıEı°ıCıIıDı",
-                "type": "ıgıoıvıeırınımıeınıtı",
+                "name": "MAEC-AECID Scholarships",
+                "provider": "MAEC-AECID",
+                "type": "government",
+                "eligibility": "non_eu_ok",
+                "notes": "Spanish government scholarships; calls vary and may target specific regions.",
                 "url": null
             }
         ],
-        "Cost_City_Living": "ımıeıdıiıuımı",
+        "Cost_City_Living": "medium",
         "Cost_City_Rank": 3,
-        "Living_Housing_Difficulty": "ıMıoıdıeırıaıtıeı",
+        "Living_Housing_Difficulty": "Moderate",
         "Living_Housing_Score": 5,
-        "Program_Name": "ıEınıgıiınıeıeırıiınıgı ıMıSıcı ı(ıpırıiıvıaıtıeı;ı ıpırıoıgırıaımı-ısıpıeıcıiıfıiıcı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 60.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ımıaıdırıiıdı-ıpırıeı.ıuınıaıvı.ıeıdıuı/ıaıdımıiısısıiıoını-ıaınıdı-ıfıiınıaınıcıiıaılı-ıaıiıdı/ımıaısıtıeırısı-ıpırıoıgırıaımısı/ıhıoıwı-ımıuıcıhı-ıdıoıeısı-ıiıtı-ıcıoısıtı-ıtıoı-ısıtıuıdıyı-ıaıtı-ıtıhıeı-ıuınıiıvıeırısıiıtıyı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıAıpıtıiıtıuıdıeı ıTıeısıtı",
-        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
-        "Analysis_Strong_Areas": "ıSıtırıoınıgı ıiını ıIınıdıuısıtırıiıaılı ıMıaınıaıgıeımıeınıtı,ı ıMıaıtıeırıiıaılısı ıSıcıiıeınıcıeı,ı ıBıiıgı ıDıaıtıaı,ı ıaınıdı ıBıiıoımıeıdıiıcıaılı ıEınıgıiınıeıeırıiınıgı.ı",
+        "Program_Name": "Engineering MSc (private; program-specific)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 60,
+        "Program_URL": "https://madrid-pre.unav.edu/admission-and-financial-aid/masters-programs/how-much-does-it-cost-to-study-at-the-university",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Aptitude Test",
+        "Admission_Language_Req": "English C1",
+        "Analysis_Strong_Areas": "Strong in Industrial Management, Materials Science, Big Data, and Biomedical Engineering.",
         "Analysis_Pros": [
-            "ıİısıpıaınıyıaı€ınııını ıeını ıiıyıiı ıöızıeılı ıüınıiıvıeırısıiıtıeılıeırıiınıdıeını ıbıiırıiıdıiırı;ı ıKıaırıiıyıeırı ıoıfıiısıiı ıvıeı ımıeızıuını ıaığııı ıçıoıkı ıgıüıçılıüıdıüırı;ı ıIınıdıuısıtırıyı ı/ı ıeıcıoısıyısıtıeımı ıtıoıuıcıhıpıoıiınıtısı ıiınıcılıuıdıeı:ı ı°ıCıAıFı,ı ıGıeısıtıaımıpı,ı ıIınıdırıaı,ı ıVıoılıkısıwıaıgıeını ıNıaıvıaırırıaı.ı"
+            "İspanya'nın en iyi özel üniversitelerinden biridir",
+            "Kariyer ofisi ve mezun ağı çok güçlüdür",
+            "Industry / ecosystem touchpoints include: CAF, Gestamp, Indra, Volkswagen Navarra."
         ],
         "Analysis_Cons": [
-            "ıÖızıeılı ıoıkıuılı ıoılıdıuığıuı ıiıçıiını ıeığıiıtıiımı ıüıcırıeıtıiı ıkıaımıuı ıoıkıuılılıaırııınıaı ıgıöırıeı ıçıoıkı ıyıüıkısıeıkıtıiırı ı(ı~ı1ı7ı.ı8ı5ı0ı€ı)ı;ı ıAıeırıoı ısıpıeısıiıfıiıkı ıdıeığıiılı,ı ıgıeınıeılı ımıüıhıeınıdıiısılıiıkı ıoıdıaıkılıııdııırı;ı ıKıaımıuı ıüınıiıvı.ılıeırıeı ıgıöırıeı ıüıcırıeıtı ıyıüıkısıeıkı;ı ıaıeırıoı‑ıçıeıkıiırıdıeıkı ıkıaıpısıaımııı ıpırıoıgırıaımıaı ıbıaığılııı;ı ıNıoını‑ıEıUı ıtıuıiıtıiıoını ıcıaını ıbıeı ısıiıgınıiıfıiıcıaınıtı ıfıoırı ısıoımıeı ırıeıgıiıoınısı/ıpırıoıgırıaımımıeısı ı(ıdıaıtıaısıeıtı:ı ı~ı€ı1ı7ı8ı5ı0ı/ıyıeıaırı)ı.ı;ı ıHıoıuısıiınıgı:ı ıMıoıdıeırıaıtıeı ı(ısıcıoırıeı ı~ı5ı/ı1ı0ı)ı;ı ısıtıaırıtı ıeıaırılıyı.ı"
+            "Özel okul olduğu için eğitim ücreti kamu okullarına göre çok yüksektir (~17.850€)",
+            "Aero spesifik değil, genel mühendislik odaklıdır",
+            "Kamu üniv.lere göre ücret yüksek",
+            "aero‑çekirdek kapsamı programa bağlı",
+            "Non‑EU tuition can be significant for some regions/programmes (dataset: ~€17850/year).",
+            "Housing: Moderate (score ~5/10); start early."
         ],
         "Analysis_Tags": [
-            "ıeınıgıiınıeıeırıiınıgı;ı ısıyısıtıeımısıeınıgıiınıeıeırıiınıgı;ı ıdıaıtıaısıcıiıeınıcıeı;ı ıaıiı;ı ımıaıtıeırıiıaılısı;ı ımıaınıuıfıaıcıtıuırıiınıgı;ı ırıoıbıoıtıiıcısı"
+            "engineering",
+            "systemsengineering",
+            "datascience",
+            "ai",
+            "materials",
+            "manufacturing",
+            "robotics"
         ],
-        "Industry_Ecosystem": "ıTıeıcınıuını ı(ıMıüıhıeınıdıiısılıiıkı ıoıkıuılıuı)ı ıSıaını ıSıeıbıaısıtıiıáını€ıdıaıdııırı.ı ıEınıdıüısıtırıiıyıeılı ıüırıeıtıiımı ıvıeı ımıaılızıeımıeı.ı",
+        "Industry_Ecosystem": "Tecnun (Mühendislik okulu) San Sebastián'dadır. Endüstriyel üretim ve malzeme.",
+        "Industry_Comp_Intensity": "Medium",
         "Industry_Partners": [
-            "ı°ıCıAıFı;ı ıGıeısıtıaımıpı;ı ıIınıdırıaı;ı ıVıoılıkısıwıaıgıeını ıNıaıvıaırırıaı"
+            "CAF",
+            "Gestamp",
+            "Indra",
+            "Volkswagen Navarra"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": true,
+        "Internship_Notes": "Mandatory internship is typical for this programme/track.",
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "Rolling Admission",
+        "Deadline_Winter_Note": "Dataset estimate; verify on official programme page",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": null,
+        "Deadline_Summer_Note": "Many Spanish masters are fall (winter) intake only; verify per programme",
+        "Deadline_Summer_Avail": "If your programme has a spring intake, deadlines are programme-specific.",
+        "Deadline_General_Note": "Rolling admission; apply early for visa and housing.",
+        "Meta_Sources": [
+            {
+                "type": "official",
+                "url": "https://madrid-pre.unav.edu/admission-and-financial-aid/masters-programs/how-much-does-it-cost-to-study-at-the-university",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": true
     },
     {
-        "Country": "ıSıpıaıiını",
-        "City": "ıBıiılıbıaıoı",
-        "State_Region": "ıPıaıíısı ıVıaısıcıoı",
-        "Uni_ID": "ıeıhıuı-ıbıiılıbıaıoı",
-        "University_Name": "ıUınıiıvıeırısıiıdıaıdı ıdıeılı ıPıaıíısı ıVıaısıcıoı",
-        "University_Display_Name": "ıUınıiıvıeırısıiıdıaıdı ıdıeılı ıPıaıíısı ıVıaısıcıoı ı(ıUıPıVı/ıEıHıUı)ı",
-        "University_Short_Name": "ıUıPıVı/ıEıHıUı",
+        "Country": "Spain",
+        "City": "Bilbao",
+        "State_Region": "País Vasco",
+        "Uni_ID": "ehu-bilbao",
+        "University_Name": "Universidad del País Vasco",
+        "University_Display_Name": "Universidad del País Vasco (UPV/EHU)",
+        "University_Short_Name": "UPV/EHU",
         "Cost_Tuition": [
             {
+                "scope": "non_eu",
+                "program": "MSc Space Science & Technology (example)",
                 "amount": 1947.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
-                "period": "ıyıeıaırı",
-                "program": "ıMıSıcı ıSıpıaıcıeı ıSıcıiıeınıcıeı ı&ı ıTıeıcıhınıoılıoıgıyı ı(ıeıxıaımıpılıeı)ı",
-                "raw": "ıNıoını‑ıEıUı ıtıuıiıtıiıoını:ı ı€ı1ı9ı4ı7ı/ıyıeıaırı ı(ıdıaıtıaısıeıtı;ı ıvıeırıiıfıyı)ı.ı",
-                "scope": "ınıoını_ıeıuı"
+                "currency": "EUR",
+                "period": "year",
+                "raw": "Non‑EU tuition: €1947/year (dataset; verify).",
+                "effective_from_term_code": "2025W"
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 0.0,
-                "components": "ı",
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ı€ı0ı.ı0ı0ı/ısıeımıeısıtıeırı ı(ıdıaıtıaısıeıtı;ı ıvıeırıiıfıyı)ı.ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "€0.00/semester (dataset; verify).",
+                "term_code": "2025W",
+                "components": ""
             }
         ],
         "Scholarships_Info": [
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıBıaısıqıuıeı ıGıoıvıeırınımıeınıtı ıGırıaınıtısı",
-                "notes": "ı°ıCıhıeıcıkı ıeılıiıgıiıbıiılıiıtıyı,ı ıdıeıaıdılıiınıeısı ıaınıdı ırıeıqıuıiırıeıdı ıdıoıcıuımıeınıtısı;ı ıpırıoıgırıaımımıeı/ırıeıgıiıoını-ısıpıeıcıiıfıiıcı.ı",
-                "provider": "ıEıxıtıeırınıaılı",
-                "type": "ıeıxıtıeırınıaılı",
+                "name": "Basque Government Grants",
+                "provider": "External",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "Check eligibility, deadlines and required documents; programme/region-specific.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıUınıiıvıeırısıiıtıyı ıMıoıbıiılıiıtıyı ıGırıaınıtısı",
-                "notes": "ı°ıCıhıeıcıkı ıeılıiıgıiıbıiılıiıtıyı,ı ıdıeıaıdılıiınıeısı ıaınıdı ırıeıqıuıiırıeıdı ıdıoıcıuımıeınıtısı;ı ıpırıoıgırıaımımıeı/ırıeıgıiıoını-ısıpıeıcıiıfıiıcı.ı",
-                "provider": "ıEıxıtıeırınıaılı",
-                "type": "ıeıxıtıeırınıaılı",
+                "name": "University Mobility Grants",
+                "provider": "External",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "Check eligibility, deadlines and required documents; programme/region-specific.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıFıuınıdıaıcıiıóını ı°ıCıaırıoılıiınıaı ıSıcıhıoılıaırısıhıiıpısı",
-                "notes": "ı°ıCıoımımıoını ıfıuınıdıiınıgı ırıoıuıtıeı ıfıoırı ıLıaıtıiını ıAımıeırıiıcıaı ıaınıdı ıiınıtıeırınıaıtıiıoınıaılı ıaıpıpılıiıcıaınıtısı;ı ıcıaılılısı ıvıaırıyı ıbıyı ıyıeıaırı.ı",
-                "provider": "ıFıuınıdıaıcıiıóını ı°ıCıaırıoılıiınıaı",
-                "type": "ıeıxıtıeırınıaılı",
+                "name": "Fundación Carolina Scholarships",
+                "provider": "Fundación Carolina",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "Common funding route for Latin America and international applicants; calls vary by year.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıMıAıEı°ıCı-ıAıEı°ıCıIıDı ıSıcıhıoılıaırısıhıiıpısı",
-                "notes": "ıSıpıaınıiısıhı ıgıoıvıeırınımıeınıtı ısıcıhıoılıaırısıhıiıpısı;ı ıcıaılılısı ıvıaırıyı ıaınıdı ımıaıyı ıtıaırıgıeıtı ısıpıeıcıiıfıiıcı ırıeıgıiıoınısı.ı",
-                "provider": "ıMıAıEı°ıCı-ıAıEı°ıCıIıDı",
-                "type": "ıgıoıvıeırınımıeınıtı",
+                "name": "MAEC-AECID Scholarships",
+                "provider": "MAEC-AECID",
+                "type": "government",
+                "eligibility": "non_eu_ok",
+                "notes": "Spanish government scholarships; calls vary and may target specific regions.",
                 "url": null
             }
         ],
-        "Cost_City_Living": "ıhıiıgıhı",
+        "Cost_City_Living": "high",
         "Cost_City_Rank": 4,
-        "Living_Housing_Difficulty": "ıHıaırıdı",
+        "Living_Housing_Difficulty": "Hard",
         "Living_Housing_Score": 7,
-        "Program_Name": "ıMıSıcı ıSıpıaıcıeı ıSıcıiıeınıcıeı ı&ı ıTıeıcıhınıoılıoıgıyı ı(ıeıxıaımıpılıeı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 60.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıeıhıuı.ıeıuısı/ıeısı/ıwıeıbı/ımıaısıtıeırırıaıkı-ıeıtıaı-ıgırıaıdıuıoınıdıoıkıoıaıkı/ımıaısıtıeırıeısı-ıuınıiıvıeırısıiıtıaırıiıoısı/ıpırıeıiınısıcırıiıpıcıiıoını-ıyı-ımıaıtırıiıcıuılıaı/ıpırıeıcıiıoısı/ıtıaıbılıaı-ıdıeı-ıpırıeıcıiıoısı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ıSıpıaınıiısıhı ıBı2ı ırıeıqı",
-        "Analysis_Strong_Areas": "ıSıtırıoınıgı ıiını ıTıuırıbıoımıaıcıhıiınıeırıyı,ı ıAıdıvıaınıcıeıdı ıMıaınıuıfıaıcıtıuırıiınıgı,ı ıSıpıaıcıeı ıSıcıiıeınıcıeı ı(ıMıaısıtıeırı)ı,ı ıaınıdı ıMıaıtıeırıiıaılısı.ı",
+        "Program_Name": "MSc Space Science & Technology (example)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 60,
+        "Program_URL": "https://www.ehu.eus/es/web/masterrak-eta-graduondokoak/masteres-universitarios/preinscripcion-y-matricula/precios/tabla-de-precios",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "Spanish B2 req",
+        "Analysis_Strong_Areas": "Strong in Turbomachinery, Advanced Manufacturing, Space Science (Master), and Materials.",
         "Analysis_Pros": [
-            "ıIıTıPı ıAıeırıoı ı(ıRıoılılısı-ıRıoıyıcıeı ıoırıtıaığııı)ı ıiılıeı ıgıüıçılıüı ıbıaığılıaırııı ıvıaırıdııırı;ı ı€ıSıpıaıcıeı ıSıcıiıeınıcıeı ı&ı ıTıeıcıhınıoılıoıgıyı€ı ıaıdııınıdıaı ısıpıeısıiıfıiıkı ıbıiırı ımıaısıtıeırı ıpırıoıgırıaımııı ısıuınıaırı;ı ıIınıdıuısıtırıyı ı/ı ıeıcıoısıyısıtıeımı ıtıoıuıcıhıpıoıiınıtısı ıiınıcılıuıdıeı:ı ıIıTıPı ıAıeırıoı,ı ıSıeınıeırı,ı ıTıeıcınıaılıiıaı,ı ıAıeırınınıoıvıaı.ı"
+            "ITP Aero (Rolls-Royce ortağı) ile güçlü bağları vardır",
+            "'Space Science & Technology' adında spesifik bir master programı sunar",
+            "Industry / ecosystem touchpoints include: ITP Aero, Sener, Tecnalia, Aernnova."
         ],
         "Analysis_Cons": [
-            "ıBıaısıkı ıbıöılıgıeısıiı ıyıaışıaımı ıaıçııısııınıdıaını ıİısıpıaınıyıaı€ınııını ıpıaıhıaılııı ıbıöılıgıeılıeırıiınıdıeını ıbıiırıiıdıiırı;ı ıİıkılıiımı ıkıuızıeıyılıiı ı(ıyıaığııışılııı)ı ıkıaırıaıkıtıeırıdıeıdıiırı;ı ıAıeırıoı‑ıçıeıkıiırıdıeıkı ıdıeırısılıeırıiını ıkıaıpısıaımııı ısıeıçıiılıeını ımıaısıtıeırıaı ıbıaığılııı;ı ışıeıhıiırı ımıaılıiıyıeıtıiı ıkıaımıpıüısıeı ıgıöırıeı ıdıeığıiışıiırı;ı ıNıoını‑ıEıUı ıtıuıiıtıiıoını ıcıaını ıbıeı ısıiıgınıiıfıiıcıaınıtı ıfıoırı ısıoımıeı ırıeıgıiıoınısı/ıpırıoıgırıaımımıeısı ı(ıdıaıtıaısıeıtı:ı ı~ı€ı1ı9ı4ı7ı/ıyıeıaırı)ı.ı;ı ıHıoıuısıiınıgı:ı ıHıaırıdı ı(ısıcıoırıeı ı~ı7ı/ı1ı0ı)ı;ı ısıtıaırıtı ıeıaırılıyı.ı"
+            "Bask bölgesi yaşam açısından İspanya'nın pahalı bölgelerinden biridir",
+            "İklim kuzeyli (yağışlı) karakterdedir",
+            "Aero‑çekirdek derslerin kapsamı seçilen mastera bağlı",
+            "şehir maliyeti kampüse göre değişir",
+            "Non‑EU tuition can be significant for some regions/programmes (dataset: ~€1947/year).",
+            "Housing: Hard (score ~7/10); start early."
         ],
         "Analysis_Tags": [
-            "ısıpıaıcıeıtıeıcıhınıoılıoıgıyı;ı ımıeıcıhıaınıiıcıaılıeınıgıiınıeıeırıiınıgı;ı ıtıhıeırımıaılıeınıgıiınıeıeırıiınıgı;ı ıcıoınıtırıoılısı;ı ırıoıbıoıtıiıcısı;ı ımıaıtıeırıiıaılısı;ı ıeınıeırıgıyısıyısıtıeımısı"
+            "spacetechnology",
+            "mechanicalengineering",
+            "thermalengineering",
+            "controls",
+            "robotics",
+            "materials",
+            "energysystems"
         ],
-        "Industry_Ecosystem": "ıBıaısıkı ıBıöılıgıeısıiı ıuıçıaıkı ımıoıtıoırıuı ı(ıIıTıPı ıAıeırıoı)ı ıvıeı ıiılıeırıiı ıiımıaılıaıtı ımıeırıkıeızıiıdıiırı.ı",
+        "Industry_Ecosystem": "Bask Bölgesi uçak motoru (ITP Aero) ve ileri imalat merkezidir.",
+        "Industry_Comp_Intensity": "Medium",
         "Industry_Partners": [
-            "ıIıTıPı ıAıeırıoı;ı ıSıeınıeırı;ı ıTıeıcınıaılıiıaı;ı ıAıeırınınıoıvıaı"
+            "ITP Aero",
+            "Sener",
+            "Tecnalia",
+            "Aernnova"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": true,
+        "Internship_Notes": "Mandatory internship is typical for this programme/track.",
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "May",
+        "Deadline_Winter_Note": "Dataset estimate; verify on official programme page",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": null,
+        "Deadline_Summer_Note": "Many Spanish masters are fall (winter) intake only; verify per programme",
+        "Deadline_Summer_Avail": "If your programme has a spring intake, deadlines are programme-specific.",
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "official",
+                "url": "https://www.ehu.eus/es/web/masterrak-eta-graduondokoak/masteres-universitarios/preinscripcion-y-matricula/precios/tabla-de-precios",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": true
     },
     {
-        "Country": "ıSıpıaıiını",
-        "City": "ıZıaırıaıgıoızıaı",
-        "State_Region": "ıAırıaıgıóını",
-        "Uni_ID": "ıuınıiızıaırı-ızıaırıaıgıoızıaı",
-        "University_Name": "ıUınıiıvıeırısıiıdıaıdı ıdıeı ıZıaırıaıgıoızıaı",
-        "University_Display_Name": "ıUınıiıvıeırısıiıdıaıdı ıdıeı ıZıaırıaıgıoızıaı ı(ıUıNıIıZıAıRı)ı",
-        "University_Short_Name": "ıUıNıIıZıAıRı",
+        "Country": "Spain",
+        "City": "Zaragoza",
+        "State_Region": "Aragón",
+        "Uni_ID": "unizar-zaragoza",
+        "University_Name": "Universidad de Zaragoza",
+        "University_Display_Name": "Universidad de Zaragoza (UNIZAR)",
+        "University_Short_Name": "UNIZAR",
         "Cost_Tuition": [
             {
+                "scope": "non_eu",
+                "program": "Mechanical/Computational MSc (program-specific)",
                 "amount": 3081.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
-                "period": "ıyıeıaırı",
-                "program": "ıMıeıcıhıaınıiıcıaılı/ı°ıCıoımıpıuıtıaıtıiıoınıaılı ıMıSıcı ı(ıpırıoıgırıaımı-ısıpıeıcıiıfıiıcı)ı",
-                "raw": "ıNıoını‑ıEıUı ıtıuıiıtıiıoını:ı ı€ı3ı0ı8ı1ı/ıyıeıaırı ı(ıdıaıtıaısıeıtı;ı ıvıeırıiıfıyı)ı.ı",
-                "scope": "ınıoını_ıeıuı"
+                "currency": "EUR",
+                "period": "year",
+                "raw": "Non‑EU tuition: €3081/year (dataset; verify).",
+                "effective_from_term_code": "2025W"
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 0.0,
-                "components": "ı",
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ı€ı0ı.ı0ı0ı/ısıeımıeısıtıeırı ı(ıdıaıtıaısıeıtı;ı ıvıeırıiıfıyı)ı.ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "€0.00/semester (dataset; verify).",
+                "term_code": "2025W",
+                "components": ""
             }
         ],
         "Scholarships_Info": [
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıBıaınıcıoı ıSıaınıtıaınıdıeırı ıSıcıhıoılıaırısıhıiıpısı",
-                "notes": "ı°ıCıhıeıcıkı ıeılıiıgıiıbıiılıiıtıyı,ı ıdıeıaıdılıiınıeısı ıaınıdı ırıeıqıuıiırıeıdı ıdıoıcıuımıeınıtısı;ı ıpırıoıgırıaımımıeı/ırıeıgıiıoını-ısıpıeıcıiıfıiıcı.ı",
-                "provider": "ıBıaınıcıoı ıSıaınıtıaınıdıeırı",
-                "type": "ımıeırıiıtı/ınıeıeıdı",
+                "name": "Banco Santander Scholarships",
+                "provider": "Banco Santander",
+                "type": "merit/need",
+                "eligibility": "non_eu_ok",
+                "notes": "Check eligibility, deadlines and required documents; programme/region-specific.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıAırıaıgıoını ıRıeıgıiıoınıaılı ıGırıaınıtısı",
-                "notes": "ı°ıCıhıeıcıkı ıeılıiıgıiıbıiılıiıtıyı,ı ıdıeıaıdılıiınıeısı ıaınıdı ırıeıqıuıiırıeıdı ıdıoıcıuımıeınıtısı;ı ıpırıoıgırıaımımıeı/ırıeıgıiıoını-ısıpıeıcıiıfıiıcı.ı",
-                "provider": "ıEıxıtıeırınıaılı",
-                "type": "ıeıxıtıeırınıaılı",
+                "name": "Aragon Regional Grants",
+                "provider": "External",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "Check eligibility, deadlines and required documents; programme/region-specific.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıFıuınıdıaıcıiıóını ı°ıCıaırıoılıiınıaı ıSıcıhıoılıaırısıhıiıpısı",
-                "notes": "ı°ıCıoımımıoını ıfıuınıdıiınıgı ırıoıuıtıeı ıfıoırı ıLıaıtıiını ıAımıeırıiıcıaı ıaınıdı ıiınıtıeırınıaıtıiıoınıaılı ıaıpıpılıiıcıaınıtısı;ı ıcıaılılısı ıvıaırıyı ıbıyı ıyıeıaırı.ı",
-                "provider": "ıFıuınıdıaıcıiıóını ı°ıCıaırıoılıiınıaı",
-                "type": "ıeıxıtıeırınıaılı",
+                "name": "Fundación Carolina Scholarships",
+                "provider": "Fundación Carolina",
+                "type": "external",
+                "eligibility": "non_eu_ok",
+                "notes": "Common funding route for Latin America and international applicants; calls vary by year.",
                 "url": null
             },
             {
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıMıAıEı°ıCı-ıAıEı°ıCıIıDı ıSıcıhıoılıaırısıhıiıpısı",
-                "notes": "ıSıpıaınıiısıhı ıgıoıvıeırınımıeınıtı ısıcıhıoılıaırısıhıiıpısı;ı ıcıaılılısı ıvıaırıyı ıaınıdı ımıaıyı ıtıaırıgıeıtı ısıpıeıcıiıfıiıcı ırıeıgıiıoınısı.ı",
-                "provider": "ıMıAıEı°ıCı-ıAıEı°ıCıIıDı",
-                "type": "ıgıoıvıeırınımıeınıtı",
+                "name": "MAEC-AECID Scholarships",
+                "provider": "MAEC-AECID",
+                "type": "government",
+                "eligibility": "non_eu_ok",
+                "notes": "Spanish government scholarships; calls vary and may target specific regions.",
                 "url": null
             }
         ],
-        "Cost_City_Living": "ımıeıdıiıuımı_ılıoıwı",
+        "Cost_City_Living": "medium_low",
         "Cost_City_Rank": 2,
-        "Living_Housing_Difficulty": "ıMıoıdıeırıaıtıeı",
+        "Living_Housing_Difficulty": "Moderate",
         "Living_Housing_Score": 5,
-        "Program_Name": "ıMıeıcıhıaınıiıcıaılı/ı°ıCıoımıpıuıtıaıtıiıoınıaılı ıMıSıcı ı(ıpırıoıgırıaımı-ısıpıeıcıiıfıiıcı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 60.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıaıcıaıdıeımıiıcıoı.ıuınıiızıaırı.ıeısı/ısıiıtıeısı/ıaıcıaıdıeımıiıcıoı/ıfıiılıeısı/ıaırıcıhıiıvıoısı/ıgırıaıdıoıyımıaısıtıeırı/ıeıcıoınıoımıiıcıaı/ıpırıeıcıiıoısı_ıpıuıbılıiıcıoısı_ımıaısıtıeırı_ıwıeıbı_ı2ı0ı2ı5ı-ı2ı6ı_ıvı.ı1ı.ıpıdıfı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ıSıpıaınıiısıhı ıBı2ı ırıeıqı",
-        "Analysis_Strong_Areas": "ıSıtırıoınıgı ıiını ıMıeıcıhıaınıiıcıaılı ıEınıgıiınıeıeırıiınıgı,ı ı°ıCıoımıpıuıtıaıtıiıoınıaılı ıMıeıcıhıaınıiıcısı,ı ıLıoıgıiısıtıiıcısı,ı ıaınıdı ıFılıuıiıdı ıDıyınıaımıiıcısı.ı",
+        "Program_Name": "Mechanical/Computational MSc (program-specific)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 60,
+        "Program_URL": "https://academico.unizar.es/sites/academico/files/archivos/gradoymaster/economica/precios_publicos_master_web_2025-26_v.1.pdf",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "Spanish B2 req",
+        "Analysis_Strong_Areas": "Strong in Mechanical Engineering, Computational Mechanics, Logistics, and Fluid Dynamics.",
         "Analysis_Pros": [
-            "ıMıaıdırıiıdı ıvıeı ıBıaırıcıeılıoınıaı€ınııını ıtıaımı ıoırıtıaısııınıdıaıdııırı,ı ıyıaışıaımı ımıaılıiıyıeıtıiı ıçıoıkı ıdıaıhıaı ıuıyıgıuınıdıuırı;ı ıPıLıDı ıSıpıaıcıeı€ıiını ımıoıtıoırı ıtıeısıtı ımıeırıkıeızıiı ı(ıTıeırıuıeılı)ı ıaıyınııı ıbıöılıgıeıdıeıdıiırı;ı ıIınıdıuısıtırıyı ı/ı ıeıcıoısıyısıtıeımı ıtıoıuıcıhıpıoıiınıtısı ıiınıcılıuıdıeı:ı ıPıLıDı ıSıpıaıcıeı ı(ıTıeırıuıeılı ıtıeısıtı ıfıaıcıiılıiıtıiıeısı)ı,ı ı°ıCıAıFı,ı ıBıSıHı.ı"
+            "Madrid ve Barcelona'nın tam ortasındadır, yaşam maliyeti çok daha uygundur",
+            "PLD Space'in motor test merkezi (Teruel) aynı bölgededir",
+            "Industry / ecosystem touchpoints include: PLD Space (Teruel test facilities), CAF, BSH."
         ],
         "Analysis_Cons": [
-            "ıSıaıfı ıbıiırı ıHıaıvıaıcııılıııkı ıFıaıkıüılıtıeısıiı ıyıoıkıtıuırı,ı ıMıeıkıaınıiıkı ıüızıeırıiınıdıeını ıgıiıdıiılıiırı;ı ıİınıgıiılıiızıcıeı ımıaısıtıeırı ısıeıçıeınıeığıiı ıaızıdııırı;ı ıSıaıfı ıaıeırıoısıpıaıcıeı ımıaısıtıeırı ısıeıçıeınıeıkılıeırıiı ısııınııırılııı ıoılıaıbıiılıiırı;ı ırıoıtıaı ıdıeırısı ısıeıçıiımıiıyılıeı ıkıuırıuılımıaılııı;ı ıNıoını‑ıEıUı ıtıuıiıtıiıoını ıcıaını ıbıeı ısıiıgınıiıfıiıcıaınıtı ıfıoırı ısıoımıeı ırıeıgıiıoınısı/ıpırıoıgırıaımımıeısı ı(ıdıaıtıaısıeıtı:ı ı~ı€ı3ı0ı8ı1ı/ıyıeıaırı)ı.ı;ı ıHıoıuısıiınıgı:ı ıMıoıdıeırıaıtıeı ı(ısıcıoırıeı ı~ı5ı/ı1ı0ı)ı;ı ısıtıaırıtı ıeıaırılıyı.ı"
+            "Saf bir Havacılık Fakültesi yoktur, Mekanik üzerinden gidilir",
+            "İngilizce master seçeneği azdır",
+            "Saf aerospace master seçenekleri sınırlı olabilir",
+            "rota ders seçimiyle kurulmalı",
+            "Non‑EU tuition can be significant for some regions/programmes (dataset: ~€3081/year).",
+            "Housing: Moderate (score ~5/10); start early."
         ],
         "Analysis_Tags": [
-            "ımıeıcıhıaınıiıcıaılıeınıgıiınıeıeırıiınıgı;ı ısıtırıuıcıtıuırıeısı;ı ımıaıtıeırıiıaılısı;ı ıcıoımıpıuıtıaıtıiıoınıaılımıeıtıhıoıdısı;ı ıcıoınıtırıoılısı;ı ımıaınıuıfıaıcıtıuırıiınıgı"
+            "mechanicalengineering",
+            "structures",
+            "materials",
+            "computationalmethods",
+            "controls",
+            "manufacturing"
         ],
-        "Industry_Ecosystem": "ıLıoıjıiısıtıiıkı ıvıeı ımıeıkıaınıiıkı ımıüıhıeınıdıiısılıiığıiı ıaığııırılıııkılıııdııırı.ı",
+        "Industry_Ecosystem": "Lojistik ve mekanik mühendisliği ağırlıklıdır.",
+        "Industry_Comp_Intensity": "Medium",
         "Industry_Partners": [
-            "ıPıLıDı ıSıpıaıcıeı ı(ıTıeırıuıeılı ıtıeısıtı ıfıaıcıiılıiıtıiıeısı)ı;ı ı°ıCıAıFı;ı ıBıSıHı"
+            "PLD Space (Teruel test facilities)",
+            "CAF",
+            "BSH"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": false,
+        "Internship_Notes": "Internship may be optional or embedded via thesis/projects; verify per track.",
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "June",
+        "Deadline_Winter_Note": "Dataset estimate; verify on official programme page",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": null,
+        "Deadline_Summer_Note": "Many Spanish masters are fall (winter) intake only; verify per programme",
+        "Deadline_Summer_Avail": "If your programme has a spring intake, deadlines are programme-specific.",
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "official",
+                "url": "https://academico.unizar.es/sites/academico/files/archivos/gradoymaster/economica/precios_publicos_master_web_2025-26_v.1.pdf",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": true
     }
 ]

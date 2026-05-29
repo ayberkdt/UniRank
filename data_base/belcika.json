@@ -1,798 +1,1076 @@
 [
     {
-        "Country": "ıBıeılıgıiıuımı",
-        "City": "ıLıeıuıvıeını",
-        "State_Region": "ıFılıaınıdıeırısı",
-        "Uni_ID": "ıkıuı-ılıeıuıvıeını",
-        "University_Name": "ıKıUı ıLıeıuıvıeını",
-        "University_Display_Name": "ıKıUı ıLıeıuıvıeını",
-        "University_Short_Name": "ıKıUı ıLıeıuıvıeını",
+        "Country": "Belgium",
+        "City": "Leuven",
+        "State_Region": "Flanders",
+        "Uni_ID": "ku-leuven",
+        "University_Name": "KU Leuven",
+        "University_Display_Name": "KU Leuven",
+        "University_Short_Name": "KU Leuven",
         "Cost_Tuition": [
             {
-                "amount": 7300.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
-                "period": "ıyıeıaırı",
-                "program": "ıSıpıaıcıeı ıSıtıuıdıiıeısı ı/ı ıMıeıcıhıaınıiıcıaılı ıEınıgıiınıeıeırıiınıgı ı(ıAıeırıoı/ıSıpıaıcıeı ıtırıaıcıkısı)ı",
-                "raw": "ı€ı7ı,ı3ı0ı0ı/ıyıeıaırı ı(ınıoını‑ıEıUı;ı ıpırıoıgırıaımımıeı-ıdıeıpıeınıdıeınıtı)ı",
-                "scope": "ınıoını_ıeıuı"
+                "scope": "non_eu",
+                "program": "Space Studies / Mechanical Engineering (Aero/Space tracks)",
+                "amount": 9493.0,
+                "currency": "EUR",
+                "period": "year",
+                "raw": "Updated: ~€9,493/year",
+                "effective_from_term_code": "2025W"
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 0.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ıNıoıtı ısıpıeıcıiıfıiıeıdı ıiını ıdıaıtıaısıeıtı ı(ıBıeılıgıiıuımı ıoıfıtıeını ıuısıeısı ıaınınıuıaılı ıtıuıiıtıiıoını;ı ıvıeırıiıfıyı ısıtıuıdıeınıtı/ırıeıgıiısıtırıaıtıiıoını ıfıeıeısı)ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "Not specified in dataset (Belgium often uses annual tuition; verify student/registration fees)",
+                "term_code": "2025W"
             },
             {
+                "term": "SoSe 2026",
                 "amount": 0.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ıNı/ıAı ıiınıtıaıkıeı ıoırı ıfıeıeı ısıtırıuıcıtıuırıeı ımıaıyı ıbıeı ıaınınıuıaılı;ı ıvıeırıiıfıyı",
-                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
-                "term_code": "ı2ı0ı2ı6ıSı"
+                "raw": "N/A intake or fee structure may be annual; verify",
+                "term_code": "2026S"
             }
         ],
         "Scholarships_Info": [
             {
+                "name": "Science@Leuven Scholarship",
+                "provider": "KU Leuven",
+                "type": "university",
+                "eligibility": "non_eu_ok",
                 "amount": null,
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıSıcıiıeınıcıeı@ıLıeıuıvıeını ıSıcıhıoılıaırısıhıiıpı",
-                "notes": "ıKıUı ıLıeıuıvıeını ıfıaıcıuılıtıyı ısıcıhıoılıaırısıhıiıpı;ı ıcıoınıdıiıtıiıoınısı ıvıaırıyı ıbıyı ıpırıoıgırıaımımıeı.ı",
-                "provider": "ıKıUı ıLıeıuıvıeını",
-                "type": "ıuınıiıvıeırısıiıtıyı",
+                "notes": "KU Leuven faculty scholarship; conditions vary by programme.",
                 "url": null
             },
             {
+                "name": "Master Mind Scholarship",
+                "provider": "Flanders",
+                "type": "regional",
+                "eligibility": "non_eu_ok",
                 "amount": null,
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıMıaısıtıeırı ıMıiınıdı ıSıcıhıoılıaırısıhıiıpı",
-                "notes": "ıFılıaınıdıeırısı ıMıaısıtıeırı ıMıiınıdı ısıcıhıoılıaırısıhıiıpı;ı ıhıiıgıhılıyı ıcıoımıpıeıtıiıtıiıvıeı.ı",
-                "provider": "ıFılıaınıdıeırısı",
-                "type": "ırıeıgıiıoınıaılı",
+                "notes": "Flanders Master Mind scholarship; highly competitive.",
                 "url": null
             }
         ],
-        "Cost_City_Living": "ıvıeırıyı_ıhıiıgıhı",
+        "Cost_City_Living": "very_high",
         "Cost_City_Rank": 5,
-        "Living_Housing_Difficulty": "ıVıeırıyı ıHıaırıdı",
+        "Living_Housing_Difficulty": "Very Hard",
         "Living_Housing_Score": 8,
-        "Program_Name": "ıSıpıaıcıeı ıSıtıuıdıiıeısı ı/ı ıMıeıcıhıaınıiıcıaılı ıEınıgıiınıeıeırıiınıgı ı(ıaıeırıoı/ısıpıaıcıeı ıtırıaıcıkı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıkıuılıeıuıvıeını.ıbıeı/ıpırıoıdısıtıuıdı/ınıuı/ıtıfı/ıeını/ı2ı0ı2ı5ı-ı2ı0ı2ı6ı/ıiınıdıeıxı.ıhıtımılı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
-        "Analysis_Strong_Areas": "ıSıpıaıcıeı ıSıtıuıdıiıeısı,ı ıAıdıdıiıtıiıvıeı ıMıaınıuıfıaıcıtıuırıiınıgı,ı ıRıoıbıoıtıiıcısı,ı ıPılıaısımıaı ıAısıtırıoıpıhıyısıiıcısı",
+        "Program_Name": "Space Studies / Mechanical Engineering (aero/space track)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://www.kuleuven.be/prodstud/nu/tf/en/2025-2026/index.html",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "English C1",
+        "Analysis_Strong_Areas": "Space Studies, Additive Manufacturing, Robotics, Plasma Astrophysics",
         "Analysis_Pros": [
-            "ıEıSıAı ıiılıeı ıçıoıkı ıgıüıçılıüı ıbıaığılıaırı.ı ı€ıMıaısıtıeırı ıoıfı ıSıpıaıcıeı ıSıtıuıdıiıeısı€ı ı(ıDıiısıiıpılıiınılıeırıaırıaısııı)ı ıvıeı ı€ıMıeıcıhıaınıiıcıaılı ı(ıAıeırıoı)ı€ı ıpırıoıgırıaımılıaırııı.ı;ı ıSıtırıoınıgı ısıpıeıcıiıaılıiızıaıtıiıoınısı:ı ıSıpıaıcıeı ıSıtıuıdıiıeısı,ı ıAıdıdıiıtıiıvıeı ıMıaınıuıfıaıcıtıuırıiınıgı,ı ıRıoıbıoıtıiıcısı,ı ıPılıaısımıaı ıAısıtırıoıpıhıyısıiıcısı;ı ıGıoıoıdı ıpırıoıxıiımıiıtıyı/ılıiınıkısı ıtıoı:ı ıEıSıAı,ı ıIıMıEı°ıCı ı(ıNıaınıoıtıeıcıhı)ı,ı ıQıiınıeıtıiıQı ıSıpıaıcıeı,ı ıMıaıtıeırıiıaılıiısıeı;ı ıBıeılıçıiıkıaı€ınııını ıvıeı ıdıüınıyıaınııını ıeını ıiıyıiı ıaırıaışıtııırımıaı ıüınıiıvıeırısıiıtıeılıeırıiınıdıeını ıbıiırıiıdıiırı.ı"
+            "ESA ile çok güçlü bağlar. 'Master of Space Studies' (Disiplinlerarası) ve 'Mechanical (Aero)' programları.",
+            "Strong specializations: Space Studies, Additive Manufacturing, Robotics, Plasma Astrophysics",
+            "Good proximity/links to: ESA, IMEC (Nanotech), QinetiQ Space, Materialise",
+            "Belçika'nın ve dünyanın en iyi araştırma üniversitelerinden biridir."
         ],
         "Analysis_Cons": [
-            "ıEığıiıtıiımı ısıiısıtıeımıiı ıçıoıkı ıtıaılıeıpıkıaırıdııırı,ı ısııınıııfı ıgıeıçımıeıkı ızıoırıdıuırı.ı;ı ıKıiırıaılıaırı ıBırıüıkısıeılı ısıeıvıiıyıeısıiınıdıeıdıiırı.ı;ı ıHıoıuısıiınıgı ısıeıaırıcıhı ıcıaını ıbıeı ıcıhıaılılıeınıgıiınıgı;ı ısıtıaırıtı ıeıaırılıyı ıaınıdı ıbıuıdıgıeıtı ıaıcıcıoırıdıiınıgılıyı.ı"
+            "Eğitim sistemi çok talepkardır, sınıf geçmek zordur.",
+            "Kiralar Brüksel seviyesindedir.",
+            "Housing search can be challenging; start early and budget accordingly."
         ],
         "Analysis_Tags": [
-            "ısıpıaıcıeısıtıuıdıiıeısı;ı ımıaınıuıfıaıcıtıuırıiınıgı;ı ırıoıbıoıtıiıcısı;ı ıpılıaısımıaı;ı ıaısıtırıoıpıhıyısıiıcısı"
+            "spacestudies",
+            "manufacturing",
+            "robotics",
+            "plasma",
+            "astrophysics"
         ],
-        "Industry_Ecosystem": "ıEıSıAı ıiılıeı ıçıoıkı ıgıüıçılıüı ıbıaığılıaırı.ı ı€ıMıaısıtıeırı ıoıfı ıSıpıaıcıeı ıSıtıuıdıiıeısı€ı ı(ıDıiısıiıpılıiınılıeırıaırıaısııı)ı ıvıeı ı€ıMıeıcıhıaınıiıcıaılı ı(ıAıeırıoı)ı€ı ıpırıoıgırıaımılıaırııı.ı",
+        "Industry_Ecosystem": "ESA ile çok güçlü bağlar. 'Master of Space Studies' (Disiplinlerarası) ve 'Mechanical (Aero)' programları.",
+        "Industry_Comp_Intensity": "Very High",
         "Industry_Partners": [
-            "ıEıSıAı;ı ıIıMıEı°ıCı ı(ıNıaınıoıtıeıcıhı)ı;ı ıQıiınıeıtıiıQı ıSıpıaıcıeı;ı ıMıaıtıeırıiıaılıiısıeı"
+            "ESA",
+            "IMEC (Nanotech)",
+            "QinetiQ Space",
+            "Materialise"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": false,
+        "Internship_Notes": null,
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "01 Mar",
+        "Deadline_Winter_Note": "From dataset (official programme/tuition page); verify per programme",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": null,
+        "Deadline_Summer_Note": null,
+        "Deadline_Summer_Avail": null,
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "official",
+                "url": "https://www.kuleuven.be/prodstud/nu/tf/en/2025-2026/index.html",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": null
     },
     {
-        "Country": "ıBıeılıgıiıuımı",
-        "City": "ıLıiıèıgıeı",
-        "State_Region": "ıWıaılılıoınıiıaı",
-        "Uni_ID": "ıuılıiıeıgıeı",
-        "University_Name": "ıUınıiıvıeırısıiıtıyı ıoıfı ıLıiıèıgıeı",
-        "University_Display_Name": "ıUınıiıvıeırısıiıtıyı ıoıfı ıLıiıèıgıeı ı(ıUıLıiıèıgıeı)ı",
-        "University_Short_Name": "ıUıLıiıèıgıeı",
+        "Country": "Belgium",
+        "City": "Liège",
+        "State_Region": "Wallonia",
+        "Uni_ID": "uliege",
+        "University_Name": "University of Liège",
+        "University_Display_Name": "University of Liège (ULiège)",
+        "University_Short_Name": "ULiège",
         "Cost_Tuition": [
             {
-                "amount": 4175.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
-                "period": "ıyıeıaırı",
-                "program": "ıAıeırıoısıpıaıcıeı ıEınıgıiınıeıeırıiınıgı ı(ıEınıgılıiısıhı ıMıSıcı;ı ıtırıaıcıkı-ıdıeıpıeınıdıeınıtı)ı",
-                "raw": "ı€ı4ı,ı1ı7ı5ı/ıyıeıaırı ı(ınıoını‑ıEıUı;ı ıpırıoıgırıaımımıeı-ıdıeıpıeınıdıeınıtı)ı",
-                "scope": "ınıoını_ıeıuı"
+                "scope": "non_eu",
+                "program": "Aerospace Engineering (English MSc; track-dependent)",
+                "amount": 5369.0,
+                "currency": "EUR",
+                "period": "year",
+                "raw": "Updated: €5,369/year",
+                "effective_from_term_code": "2025W"
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 0.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ıNıoıtı ısıpıeıcıiıfıiıeıdı ıiını ıdıaıtıaısıeıtı ı(ıBıeılıgıiıuımı ıoıfıtıeını ıuısıeısı ıaınınıuıaılı ıtıuıiıtıiıoını;ı ıvıeırıiıfıyı ısıtıuıdıeınıtı/ırıeıgıiısıtırıaıtıiıoını ıfıeıeısı)ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "Not specified in dataset (Belgium often uses annual tuition; verify student/registration fees)",
+                "term_code": "2025W"
             },
             {
+                "term": "SoSe 2026",
                 "amount": 0.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ıNı/ıAı ıiınıtıaıkıeı ıoırı ıfıeıeı ısıtırıuıcıtıuırıeı ımıaıyı ıbıeı ıaınınıuıaılı;ı ıvıeırıiıfıyı",
-                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
-                "term_code": "ı2ı0ı2ı6ıSı"
+                "raw": "N/A intake or fee structure may be annual; verify",
+                "term_code": "2026S"
             }
         ],
         "Scholarships_Info": [
             {
+                "name": "Wallasia (Wallonie-Bruxelles) Grants",
+                "provider": "Wallonie-Bruxelles",
+                "type": "regional",
+                "eligibility": "non_eu_ok",
                 "amount": null,
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıWıaılılıaısıiıaı ı(ıWıaılılıoınıiıeı-ıBırıuıxıeılılıeısı)ı ıGırıaınıtısı",
-                "notes": "ıRıeıgıiıoınıaılı ıgırıaınıtısı;ı ıeılıiıgıiıbıiılıiıtıyı ıaınıdı ıcıaılılısı ıvıaırıyı.ı",
-                "provider": "ıWıaılılıoınıiıeı-ıBırıuıxıeılılıeısı",
-                "type": "ırıeıgıiıoınıaılı",
+                "notes": "Regional grants; eligibility and calls vary.",
                 "url": null
             }
         ],
-        "Cost_City_Living": "ımıeıdıiıuımı",
+        "Cost_City_Living": "medium",
         "Cost_City_Rank": 3,
-        "Living_Housing_Difficulty": "ıMıoıdıeırıaıtıeı",
+        "Living_Housing_Difficulty": "Moderate",
         "Living_Housing_Score": 5,
-        "Program_Name": "ıMı.ıSıcı.ı ıAıeırıoısıpıaıcıeı ıEınıgıiınıeıeırıiınıgı ı(ıEınıgılıiısıhı;ı ıtırıaıcıkı-ıdıeıpıeınıdıeınıtı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıuılıiıeıgıeı.ıbıeı/ı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ı1ı0ı0ı%ı ıEınıgılıiısıhı",
-        "Analysis_Strong_Areas": "ıTıuırıbıoımıaıcıhıiınıeırıyı,ı ıSıpıaıcıeı ıOıpıtıiıcıaılı ıIınısıtırıuımıeınıtısı,ı ıPırıoıpıuılısıiıoını,ı ıTıhıeırımıaılı ı°ıCıoınıtırıoılı",
+        "Program_Name": "M.Sc. Aerospace Engineering (English; track-dependent)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://www.uliege.be/",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "100% English",
+        "Analysis_Strong_Areas": "Turbomachinery, Space Optical Instruments, Propulsion, Thermal Control",
         "Analysis_Pros": [
-            "ı°ıCıeınıtırıeı ıSıpıaıtıiıaılı ıdıeı ıLıiıèıgıeı ı(ı°ıCıSıLı)ı ıbıuırıaıdıaıdııırı.ı ıSıaıfırıaını ıAıeırıoı ıBıoıoısıtıeırısı ı(ıMıoıtıoırı)ı ıiılıeı ıyıaını ıyıaınıaıdııırı.ı;ı ıSıtırıoınıgı ısıpıeıcıiıaılıiızıaıtıiıoınısı:ı ıTıuırıbıoımıaıcıhıiınıeırıyı,ı ıSıpıaıcıeı ıOıpıtıiıcıaılı ıIınısıtırıuımıeınıtısı,ı ıPırıoıpıuılısıiıoını,ı ıTıhıeırımıaılı ı°ıCıoınıtırıoılı;ı ıGıoıoıdı ıpırıoıxıiımıiıtıyı/ılıiınıkısı ıtıoı:ı ıSıaıfırıaını ıAıeırıoı ıBıoıoısıtıeırısı,ı ı°ıCıeınıtırıeı ıSıpıaıtıiıaılı ıdıeı ıLıiıèıgıeı,ı ıTıhıaılıeısı ıAılıeınıiıaı ıSıpıaıcıeı;ı ıMıoıtıoırı ı(ıTıuırıbıoımıaıcıhıiınıeırıyı)ı ıvıeı ıUızıaıyı ıOıpıtıiığıiı ıkıoınıuısıuınıdıaı ıAıvırıuıpıaı€ınııını ıeını ıiıyıiı ımıeırıkıeızılıeırıiınıdıeını ıbıiırıiıdıiırı.ı"
+            "Centre Spatial de Liège (CSL) buradadır. Safran Aero Boosters (Motor) ile yan yanadır.",
+            "Strong specializations: Turbomachinery, Space Optical Instruments, Propulsion, Thermal Control",
+            "Good proximity/links to: Safran Aero Boosters, Centre Spatial de Liège, Thales Alenia Space",
+            "Motor (Turbomachinery) ve Uzay Optiği konusunda Avrupa'nın en iyi merkezlerinden biridir."
         ],
         "Analysis_Cons": [
-            "ıŞıeıhıiırı ısıaınıaıyıiı ışıeıhırıiıdıiırı,ı ıeısıtıeıtıiıkı ıoılıaırıaıkı ıBırıuıgıgıeı/ıGıeınıtı ıkıaıdıaırı ıeıtıkıiılıeıyıiıcıiı ıoılımıaıyıaıbıiılıiırı.ı;ı ıBıüırıoıkırıaıtıiıkı ıiışılıeımılıeırı ıFırıaınısııızıcıaıdııırı.ı"
+            "Şehir sanayi şehridir, estetik olarak Brugge/Gent kadar etkileyici olmayabilir.",
+            "Bürokratik işlemler Fransızcadır."
         ],
         "Analysis_Tags": [
-            "ıtıuırıbıoımıaıcıhıiınıeırıyı;ı ıpırıoıpıuılısıiıoını;ı ısıpıaıcıeıoıpıtıiıcısı;ı ıtıhıeırımıaılıcıoınıtırıoılı;ı ıcıfıdı"
+            "turbomachinery",
+            "propulsion",
+            "spaceoptics",
+            "thermalcontrol",
+            "cfd"
         ],
-        "Industry_Ecosystem": "ı°ıCıeınıtırıeı ıSıpıaıtıiıaılı ıdıeı ıLıiıèıgıeı ı(ı°ıCıSıLı)ı ıbıuırıaıdıaıdııırı.ı ıSıaıfırıaını ıAıeırıoı ıBıoıoısıtıeırısı ı(ıMıoıtıoırı)ı ıiılıeı ıyıaını ıyıaınıaıdııırı.ı",
+        "Industry_Ecosystem": "Centre Spatial de Liège (CSL) buradadır. Safran Aero Boosters (Motor) ile yan yanadır.",
+        "Industry_Comp_Intensity": "High",
         "Industry_Partners": [
-            "ıSıaıfırıaını ıAıeırıoı ıBıoıoısıtıeırısı;ı ı°ıCıeınıtırıeı ıSıpıaıtıiıaılı ıdıeı ıLıiıèıgıeı;ı ıTıhıaılıeısı ıAılıeınıiıaı ıSıpıaıcıeı"
+            "Safran Aero Boosters",
+            "Centre Spatial de Liège",
+            "Thales Alenia Space"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": true,
+        "Internship_Notes": "Some programmes require an internship or thesis in industry; verify curriculum.",
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "31 Mar",
+        "Deadline_Winter_Note": "From dataset (official programme/tuition page); verify per programme",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": null,
+        "Deadline_Summer_Note": null,
+        "Deadline_Summer_Avail": null,
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "official",
+                "url": "https://www.uliege.be/cms/c_17627581/en/tuition-fees-amounts",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": null
     },
     {
-        "Country": "ıBıeılıgıiıuımı",
-        "City": "ıSıiınıtı-ıGıeınıeısıiıuısı-ıRıoıdıeı ı(ıBırıuısısıeılısı ıAırıeıaı)ı",
-        "State_Region": "ıFılıaınıdıeırısı",
-        "Uni_ID": "ıvıkıiı-ıvıoını-ıkıaırımıaını",
-        "University_Name": "ıVıoını ıKıaırımıaını ıIınısıtıiıtıuıtıeı ıfıoırı ıFılıuıiıdı ıDıyınıaımıiıcısı",
-        "University_Display_Name": "ıVıoını ıKıaırımıaını ıIınısıtıiıtıuıtıeı ı(ıVıKıIı)ı",
-        "University_Short_Name": "ıVıKıIı",
+        "Country": "Belgium",
+        "City": "Sint-Genesius-Rode (Brussels Area)",
+        "State_Region": "Flanders",
+        "Uni_ID": "vki-von-karman",
+        "University_Name": "Von Karman Institute for Fluid Dynamics",
+        "University_Display_Name": "Von Karman Institute (VKI)",
+        "University_Short_Name": "VKI",
         "Cost_Tuition": [
             {
+                "scope": "non_eu",
+                "program": "VKI Research Master in Fluid Dynamics",
                 "amount": 0.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
-                "period": "ıpırıoıgırıaımı",
-                "program": "ıVıKıIı ıRıeısıeıaırıcıhı ıMıaısıtıeırı ıiını ıFılıuıiıdı ıDıyınıaımıiıcısı",
-                "raw": "ıNıoıtı ısıpıeıcıiıfıiıeıdı;ı ıvıeırıiıfıyı",
-                "scope": "ınıoını_ıeıuı"
+                "currency": "EUR",
+                "period": "program",
+                "raw": "Not specified; verify",
+                "effective_from_term_code": "2025W"
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 0.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ıNıoıtı ısıpıeıcıiıfıiıeıdı ıiını ıdıaıtıaısıeıtı ı(ıBıeılıgıiıuımı ıoıfıtıeını ıuısıeısı ıaınınıuıaılı ıtıuıiıtıiıoını;ı ıvıeırıiıfıyı ısıtıuıdıeınıtı/ırıeıgıiısıtırıaıtıiıoını ıfıeıeısı)ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "Not specified in dataset (Belgium often uses annual tuition; verify student/registration fees)",
+                "term_code": "2025W"
             },
             {
+                "term": "SoSe 2026",
                 "amount": 0.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ıNı/ıAı ıiınıtıaıkıeı ıoırı ıfıeıeı ısıtırıuıcıtıuırıeı ımıaıyı ıbıeı ıaınınıuıaılı;ı ıvıeırıiıfıyı",
-                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
-                "term_code": "ı2ı0ı2ı6ıSı"
+                "raw": "N/A intake or fee structure may be annual; verify",
+                "term_code": "2026S"
             }
         ],
         "Scholarships_Info": [
             {
+                "name": "Tuition is often Free for NATO citizens",
+                "provider": "VKI",
+                "type": "conditional",
+                "eligibility": "non_eu_ok",
                 "amount": null,
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıTıuıiıtıiıoını ıiısı ıoıfıtıeını ıFırıeıeı ıfıoırı ıNıAıTıOı ıcıiıtıiızıeınısı",
-                "notes": "ıOıfıtıeını ıtıuıiıtıiıoını-ıfırıeıeı ıfıoırı ıeılıiıgıiıbılıeı ıNıAıTıOı-ıcıoıuınıtırıyı ıaıpıpılıiıcıaınıtısı;ı ıvıeırıiıfıyı ıpıeırı ıcıyıcılıeı.ı",
-                "provider": "ıVıKıIı",
-                "type": "ıcıoınıdıiıtıiıoınıaılı",
+                "notes": "Often tuition-free for eligible NATO-country applicants; verify per cycle.",
                 "url": null
             },
             {
+                "name": "VKI Fellowships",
+                "provider": "VKI",
+                "type": "university",
+                "eligibility": "non_eu_ok",
                 "amount": null,
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıVıKıIı ıFıeılılıoıwısıhıiıpısı",
                 "notes": null,
-                "provider": "ıVıKıIı",
-                "type": "ıuınıiıvıeırısıiıtıyı",
                 "url": null
             }
         ],
-        "Cost_City_Living": "ıhıiıgıhı",
+        "Cost_City_Living": "high",
         "Cost_City_Rank": 4,
-        "Living_Housing_Difficulty": "ıMıoıdıeırıaıtıeı",
+        "Living_Housing_Difficulty": "Moderate",
         "Living_Housing_Score": 6,
-        "Program_Name": "ıVıKıIı ıRıeısıeıaırıcıhı ıMıaısıtıeırı ıiını ıFılıuıiıdı ıDıyınıaımıiıcısı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 60.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıvıkıiı.ıaıcı.ıbıeı/ıiınıdıeıxı.ıpıhıpı/ıaıcıaıdıeımıiıcı-ıpırıoıgırıaımısı/ırıeısıeıaırıcıhı-ımıaısıtıeırı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıAıpıtıiıtıuıdıeı ıTıeısıtı",
-        "Admission_Language_Req": "ı1ı0ı0ı%ı ıEınıgılıiısıhı",
-        "Analysis_Strong_Areas": "ıHıyıpıeırısıoınıiıcısı,ı ıTıuırıbıoımıaıcıhıiınıeırıyı,ı ıAıeırıoıaıcıoıuısıtıiıcısı,ı ı°ıCıFıDı",
+        "Program_Name": "VKI Research Master in Fluid Dynamics",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 60,
+        "Program_URL": "https://www.vki.ac.be/index.php/academic-programs/research-master",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Aptitude Test",
+        "Admission_Language_Req": "100% English",
+        "Analysis_Strong_Areas": "Hypersonics, Turbomachinery, Aeroacoustics, CFD",
         "Analysis_Pros": [
-            "ıDıüınıyıaınııını ıeını ıiıyıiı ıaıeırıoıdıiınıaımıiıkı ıvıeı ıaıkııışıkıaınılıaırı ıdıiınıaımıiığıiı ıaırıaışıtııırımıaı ımıeırıkıeızıiıdıiırı.ı;ı ıSıtırıoınıgı ısıpıeıcıiıaılıiızıaıtıiıoınısı:ı ıHıyıpıeırısıoınıiıcısı,ı ıTıuırıbıoımıaıcıhıiınıeırıyı,ı ıAıeırıoıaıcıoıuısıtıiıcısı,ı ı°ıCıFıDı;ı ıGıoıoıdı ıpırıoıxıiımıiıtıyı/ılıiınıkısı ıtıoı:ı ıNıAıTıOı,ı ıEıSıAı,ı ıNıAıSıAı,ı ıAıiırıbıuısı;ı ıAıeırıoıdıiınıaımıiıkıçıiılıeırı ıiıçıiını ıbıiırı ıtıaıpııınıaıkıtııırı.ı"
+            "Dünyanın en iyi aerodinamik ve akışkanlar dinamiği araştırma merkezidir.",
+            "Strong specializations: Hypersonics, Turbomachinery, Aeroacoustics, CFD",
+            "Good proximity/links to: NATO, ESA, NASA, Airbus",
+            "Aerodinamikçiler için bir tapınaktır."
         ],
         "Analysis_Cons": [
-            "ıKılıaısıiıkı ıbıiırı ıüınıiıvıeırısıiıtıeı ıdıeığıiılıdıiırı,ı ı€ıPıoısıtı-ıMıaısıtıeırı€ı ısıeıvıiıyıeısıiınıdıeıdıiırı.ı;ı ıNıAıTıOı ıdııışııı ı(ıÇıiını,ı ıİırıaını ıvıbı.ı)ı ıvıaıtıaınıdıaışılıaırı ıiıçıiını ıgıiırıiışı ıiımıkıaınısııızıaı ıyıaıkııınıdııırı.ı;ı ıSıeılıeıcıtıiıoını ıiısı ınıoıtı ıpıuırıeılıyı ıgırıaıdıeı-ıbıaısıeıdı;ı ıiınıtıeırıvıiıeıwı/ıcıoımıpıeıtıiıtıiıvıeı ısıcırıeıeınıiınıgı ıaıdıdısı ıuınıcıeırıtıaıiınıtıyı.ı;ı ıEılıiıgıiıbıiılıiıtıyı ımıaıyı ıbıeı ırıeısıtırıiıcıtıeıdı ıbıyı ınıaıtıiıoınıaılıiıtıyı/ısıeıcıuırıiıtıyı ırıuılıeısı;ı ıvıeırıiıfıyı ıyıoıuırı ısıtıaıtıuısı ıeıaırılıyı.ı"
+            "Klasik bir üniversite değildir, 'Post-Master' seviyesindedir.",
+            "NATO dışı (Çin, İran vb.) vatandaşlar için giriş imkansıza yakındır.",
+            "Selection is not purely grade-based; interview/competitive screening adds uncertainty.",
+            "Eligibility may be restricted by nationality/security rules; verify your status early."
         ],
         "Analysis_Tags": [
-            "ıhıyıpıeırısıoınıiıcısı;ı ıaıeırıoıdıyınıaımıiıcısı;ı ıcıfıdı;ı ıtıuırıbıoımıaıcıhıiınıeırıyı;ı ırıeısıeıaırıcıhı"
+            "hypersonics",
+            "aerodynamics",
+            "cfd",
+            "turbomachinery",
+            "research"
         ],
-        "Industry_Ecosystem": "ıDıüınıyıaınııını ıeını ıiıyıiı ıaıeırıoıdıiınıaımıiıkı ıvıeı ıaıkııışıkıaınılıaırı ıdıiınıaımıiığıiı ıaırıaışıtııırımıaı ımıeırıkıeızıiıdıiırı.ı",
+        "Industry_Ecosystem": "Dünyanın en iyi aerodinamik ve akışkanlar dinamiği araştırma merkezidir.",
+        "Industry_Comp_Intensity": "Very High",
         "Industry_Partners": [
-            "ıNıAıTıOı;ı ıEıSıAı;ı ıNıAıSıAı;ı ıAıiırıbıuısı"
+            "NATO",
+            "ESA",
+            "NASA",
+            "Airbus"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": true,
+        "Internship_Notes": "Some programmes require an internship or thesis in industry; verify curriculum.",
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "Early",
+        "Deadline_Winter_Note": "From VKI academic programme info; verify each year",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": null,
+        "Deadline_Summer_Note": null,
+        "Deadline_Summer_Avail": null,
+        "Deadline_General_Note": "VKI cycle is annual; exact deadlines vary by intake/year.",
+        "Meta_Sources": [
+            {
+                "type": "official",
+                "url": "https://www.vki.ac.be/index.php/academic-programs/research-master",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": null
     },
     {
-        "Country": "ıBıeılıgıiıuımı",
-        "City": "ıGıhıeınıtı",
-        "State_Region": "ıFılıaınıdıeırısı",
-        "Uni_ID": "ıuıgıeınıtı",
-        "University_Name": "ıGıhıeınıtı ıUınıiıvıeırısıiıtıyı",
-        "University_Display_Name": "ıGıhıeınıtı ıUınıiıvıeırısıiıtıyı ı(ıUıGıeınıtı)ı",
-        "University_Short_Name": "ıUıGıeınıtı",
+        "Country": "Belgium",
+        "City": "Ghent",
+        "State_Region": "Flanders",
+        "Uni_ID": "ugent",
+        "University_Name": "Ghent University",
+        "University_Display_Name": "Ghent University (UGent)",
+        "University_Short_Name": "UGent",
         "Cost_Tuition": [
             {
+                "scope": "non_eu",
+                "program": "Mechanical/Electromechanical Engineering (aero/structures focus)",
                 "amount": 6540.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
-                "period": "ıyıeıaırı",
-                "program": "ıMıeıcıhıaınıiıcıaılı/ıEılıeıcıtırıoımıeıcıhıaınıiıcıaılı ıEınıgıiınıeıeırıiınıgı ı(ıaıeırıoı/ısıtırıuıcıtıuırıeısı ıfıoıcıuısı)ı",
-                "raw": "ı€ı6ı,ı5ı4ı0ı/ıyıeıaırı ı(ınıoını‑ıEıUı;ı ıpırıoıgırıaımımıeı-ıdıeıpıeınıdıeınıtı)ı",
-                "scope": "ınıoını_ıeıuı"
+                "currency": "EUR",
+                "period": "year",
+                "raw": "€6,540/year (non‑EU; programme-dependent)",
+                "effective_from_term_code": "2025W"
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 0.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ıNıoıtı ısıpıeıcıiıfıiıeıdı ıiını ıdıaıtıaısıeıtı ı(ıBıeılıgıiıuımı ıoıfıtıeını ıuısıeısı ıaınınıuıaılı ıtıuıiıtıiıoını;ı ıvıeırıiıfıyı ısıtıuıdıeınıtı/ırıeıgıiısıtırıaıtıiıoını ıfıeıeısı)ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "Not specified in dataset (Belgium often uses annual tuition; verify student/registration fees)",
+                "term_code": "2025W"
             },
             {
+                "term": "SoSe 2026",
                 "amount": 0.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ıNı/ıAı ıiınıtıaıkıeı ıoırı ıfıeıeı ısıtırıuıcıtıuırıeı ımıaıyı ıbıeı ıaınınıuıaılı;ı ıvıeırıiıfıyı",
-                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
-                "term_code": "ı2ı0ı2ı6ıSı"
+                "raw": "N/A intake or fee structure may be annual; verify",
+                "term_code": "2026S"
             }
         ],
         "Scholarships_Info": [
             {
+                "name": "Master Mind Scholarship",
+                "provider": "Flanders",
+                "type": "regional",
+                "eligibility": "non_eu_ok",
                 "amount": null,
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıMıaısıtıeırı ıMıiınıdı ıSıcıhıoılıaırısıhıiıpı",
-                "notes": "ıFılıaınıdıeırısı ıMıaısıtıeırı ıMıiınıdı ısıcıhıoılıaırısıhıiıpı;ı ıhıiıgıhılıyı ıcıoımıpıeıtıiıtıiıvıeı.ı",
-                "provider": "ıFılıaınıdıeırısı",
-                "type": "ırıeıgıiıoınıaılı",
+                "notes": "Flanders Master Mind scholarship; highly competitive.",
                 "url": null
             },
             {
+                "name": "Top-up Grants",
+                "provider": "UGent",
+                "type": "university",
+                "eligibility": "non_eu_ok",
                 "amount": null,
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıTıoıpı-ıuıpı ıGırıaınıtısı",
                 "notes": null,
-                "provider": "ıUıGıeınıtı",
-                "type": "ıuınıiıvıeırısıiıtıyı",
                 "url": null
             }
         ],
-        "Cost_City_Living": "ıhıiıgıhı",
+        "Cost_City_Living": "high",
         "Cost_City_Rank": 4,
-        "Living_Housing_Difficulty": "ıHıaırıdı",
+        "Living_Housing_Difficulty": "Hard",
         "Living_Housing_Score": 7,
-        "Program_Name": "ıMı.ıSıcı.ı ıMıeıcıhıaınıiıcıaılı ı/ı ıEılıeıcıtırıoımıeıcıhıaınıiıcıaılı ıEınıgıiınıeıeırıiınıgı ı(ıaıeırıoı/ısıtırıuıcıtıuırıeısı ıfıoıcıuısı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıuıgıeınıtı.ıbıeı/ıeını/ıeıdıuıcıaıtıiıoını",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
-        "Analysis_Strong_Areas": "ı°ıCıoımıpıoısıiıtıeısı,ı ıEılıeıcıtırıoımıeıcıhıaınıiıcıaılı ıEınıgıiınıeıeırıiınıgı,ı ı°ıCıoınıtırıoılı ıEınıgıiınıeıeırıiınıgı,ı ıMıaırıiıtıiımıeı/ıAıeırıoı ısıtırıuıcıtıuırıeısı",
+        "Program_Name": "M.Sc. Mechanical / Electromechanical Engineering (aero/structures focus)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://www.ugent.be/en/education",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "English C1",
+        "Analysis_Strong_Areas": "Composites, Electromechanical Engineering, Control Engineering, Maritime/Aero structures",
         "Analysis_Pros": [
-            "ıKıoımıpıoızıiıtı ımıaılızıeımıeılıeırı ıvıeı ıhıaıfıiıfı ıyıaıpııılıaırı ıkıoınıuısıuınıdıaı ımıüıkıeımımıeılıiıyıeıtı ımıeırıkıeızıiı.ı;ı ıSıtırıoınıgı ısıpıeıcıiıaılıiızıaıtıiıoınısı:ı ı°ıCıoımıpıoısıiıtıeısı,ı ıEılıeıcıtırıoımıeıcıhıaınıiıcıaılı ıEınıgıiınıeıeırıiınıgı,ı ı°ıCıoınıtırıoılı ıEınıgıiınıeıeırıiınıgı,ı ıMıaırıiıtıiımıeı/ıAıeırıoı ısıtırıuıcıtıuırıeısı;ı ıGıoıoıdı ıpırıoıxıiımıiıtıyı/ılıiınıkısı ıtıoı:ı ıHıoınıdıaı,ı ıTıoıyıoıtıaı,ı ıAırıcıeılıoırıMıiıtıtıaılı;ı ıGıhıeınıtı,ı ıAıvırıuıpıaı€ınııını ıeını ıgıüızıeılı ıöığırıeınıcıiı ışıeıhıiırılıeırıiınıdıeını ıbıiırıiıdıiırı.ı"
+            "Kompozit malzemeler ve hafif yapılar konusunda mükemmeliyet merkezi.",
+            "Strong specializations: Composites, Electromechanical Engineering, Control Engineering, Maritime/Aero structures",
+            "Good proximity/links to: Honda, Toyota, ArcelorMittal",
+            "Ghent, Avrupa'nın en güzel öğrenci şehirlerinden biridir."
         ],
         "Analysis_Cons": [
-            "ıHıoıuısıiınıgı ısıeıaırıcıhı ıcıaını ıbıeı ıcıhıaılılıeınıgıiınıgı;ı ısıtıaırıtı ıeıaırılıyı ıaınıdı ıbıuıdıgıeıtı ıaıcıcıoırıdıiınıgılıyı.ı;ı ıAıdımıiınıiısıtırıaıtıiıvıeı ıpırıoıcıeısısıeısı ıaınıdı ıdıoıcıuımıeınıtıaıtıiıoını ırıeıqıuıiırıeımıeınıtısı ıcıaını ıbıeı ıtıiımıeı-ıcıoınısıuımıiınıgı;ı ıpılıaını ıbıuıfıfıeırısı.ı"
+            "Housing search can be challenging; start early and budget accordingly.",
+            "Administrative processes and documentation requirements can be time-consuming; plan buffers."
         ],
         "Analysis_Tags": [
-            "ıcıoımıpıoısıiıtıeısı;ı ımıaıtıeırıiıaılısı;ı ıeılıeıcıtırıoımıeıcıhıaınıiıcıaılı;ı ıcıoınıtırıoılısı;ı ısıtırıuıcıtıuırıeısı"
+            "composites",
+            "materials",
+            "electromechanical",
+            "controls",
+            "structures"
         ],
-        "Industry_Ecosystem": "ıKıoımıpıoızıiıtı ımıaılızıeımıeılıeırı ıvıeı ıhıaıfıiıfı ıyıaıpııılıaırı ıkıoınıuısıuınıdıaı ımıüıkıeımımıeılıiıyıeıtı ımıeırıkıeızıiı.ı",
+        "Industry_Ecosystem": "Kompozit malzemeler ve hafif yapılar konusunda mükemmeliyet merkezi.",
+        "Industry_Comp_Intensity": "Medium",
         "Industry_Partners": [
-            "ıHıoınıdıaı;ı ıTıoıyıoıtıaı;ı ıAırıcıeılıoırıMıiıtıtıaılı"
+            "Honda",
+            "Toyota",
+            "ArcelorMittal"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": false,
+        "Internship_Notes": null,
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "01 Mar",
+        "Deadline_Winter_Note": "From dataset (official programme/tuition page); verify per programme",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": null,
+        "Deadline_Summer_Note": null,
+        "Deadline_Summer_Avail": null,
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "official",
+                "url": "https://www.ugent.be/en/education/degree/tuitionfees",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": true
     },
     {
-        "Country": "ıBıeılıgıiıuımı",
-        "City": "ıBırıuısısıeılısı",
-        "State_Region": "ıBırıuısısıeılısı ı°ıCıaıpıiıtıaılı",
-        "Uni_ID": "ıvıuıbı-ıbırıuısısıeılısı",
-        "University_Name": "ıVırıiıjıeı ıUınıiıvıeırısıiıtıeıiıtı ıBırıuısısıeılı",
-        "University_Display_Name": "ıVırıiıjıeı ıUınıiıvıeırısıiıtıeıiıtı ıBırıuısısıeılı ı(ıVıUıBı)ı",
-        "University_Short_Name": "ıVıUıBı",
+        "Country": "Belgium",
+        "City": "Brussels",
+        "State_Region": "Brussels Capital",
+        "Uni_ID": "vub-brussels",
+        "University_Name": "Vrije Universiteit Brussel",
+        "University_Display_Name": "Vrije Universiteit Brussel (VUB)",
+        "University_Short_Name": "VUB",
         "Cost_Tuition": [
             {
+                "scope": "non_eu",
+                "program": "BRUFACE engineering (aero-related tracks)",
                 "amount": 4500.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
-                "period": "ıyıeıaırı",
-                "program": "ıBıRıUıFıAı°ıCıEı ıeınıgıiınıeıeırıiınıgı ı(ıaıeırıoı-ırıeılıaıtıeıdı ıtırıaıcıkısı)ı",
-                "raw": "ı€ı4ı,ı5ı0ı0ı/ıyıeıaırı ı(ınıoını‑ıEıUı;ı ıpırıoıgırıaımımıeı-ıdıeıpıeınıdıeınıtı)ı",
-                "scope": "ınıoını_ıeıuı"
+                "currency": "EUR",
+                "period": "year",
+                "raw": "BRUFACE ~€4,500/year",
+                "effective_from_term_code": "2025W"
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 0.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ıNıoıtı ısıpıeıcıiıfıiıeıdı ıiını ıdıaıtıaısıeıtı ı(ıBıeılıgıiıuımı ıoıfıtıeını ıuısıeısı ıaınınıuıaılı ıtıuıiıtıiıoını;ı ıvıeırıiıfıyı ısıtıuıdıeınıtı/ırıeıgıiısıtırıaıtıiıoını ıfıeıeısı)ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "Not specified in dataset (Belgium often uses annual tuition; verify student/registration fees)",
+                "term_code": "2025W"
             },
             {
+                "term": "SoSe 2026",
                 "amount": 0.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ıNı/ıAı ıiınıtıaıkıeı ıoırı ıfıeıeı ısıtırıuıcıtıuırıeı ımıaıyı ıbıeı ıaınınıuıaılı;ı ıvıeırıiıfıyı",
-                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
-                "term_code": "ı2ı0ı2ı6ıSı"
+                "raw": "N/A intake or fee structure may be annual; verify",
+                "term_code": "2026S"
             }
         ],
         "Scholarships_Info": [
             {
+                "name": "VUB Scholarships",
+                "provider": "External",
+                "type": "external",
+                "eligibility": "non_eu_ok",
                 "amount": null,
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıVıUıBı ıSıcıhıoılıaırısıhıiıpısı",
                 "notes": null,
-                "provider": "ıEıxıtıeırınıaılı",
-                "type": "ıeıxıtıeırınıaılı",
                 "url": null
             },
             {
+                "name": "Master Mind",
+                "provider": "Flanders",
+                "type": "regional",
+                "eligibility": "non_eu_ok",
                 "amount": null,
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıMıaısıtıeırı ıMıiınıdı",
-                "notes": "ıFılıaınıdıeırısı ıMıaısıtıeırı ıMıiınıdı ısıcıhıoılıaırısıhıiıpı;ı ıhıiıgıhılıyı ıcıoımıpıeıtıiıtıiıvıeı.ı",
-                "provider": "ıFılıaınıdıeırısı",
-                "type": "ırıeıgıiıoınıaılı",
+                "notes": "Flanders Master Mind scholarship; highly competitive.",
                 "url": null
             }
         ],
-        "Cost_City_Living": "ıvıeırıyı_ıhıiıgıhı",
+        "Cost_City_Living": "very_high",
         "Cost_City_Rank": 5,
-        "Living_Housing_Difficulty": "ıHıaırıdı",
+        "Living_Housing_Difficulty": "Hard",
         "Living_Housing_Score": 7,
-        "Program_Name": "ıBıRıUıFıAı°ıCıEı ıEınıgıiınıeıeırıiınıgı ı(ıaıeırıoınıaıuıtıiıcısı ıtırıaıcıkı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıvıuıbı.ıbıeı/ıeını",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ı1ı0ı0ı%ı ıEınıgılıiısıhı",
-        "Analysis_Strong_Areas": "ıPıhıoıtıoınıiıcısı,ı ıRıoıbıoıtıiıcısı,ı ıAıeırıoınıaıuıtıiıcısı ı(ıBırıuıfıaıcıeı ıtırıaıcıkı)ı,ı ıSıuısıtıaıiınıaıbılıeı ıEınıeırıgıyı",
+        "Program_Name": "BRUFACE Engineering (aeronautics track)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://www.vub.be/en",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "100% English",
+        "Analysis_Strong_Areas": "Photonics, Robotics, Aeronautics (Bruface track), Sustainable Energy",
         "Analysis_Pros": [
-            "ıBırıüıkısıeılı€ıdıeıkıiı ıAıBı ıvıeı ıhıaıvıaıcııılıııkı ıkıuırıuımılıaırııınıaı ı(ıEıuırıoıcıoınıtırıoılı)ı ıyıaıkııınılıııkı.ı;ı ıSıtırıoınıgı ısıpıeıcıiıaılıiızıaıtıiıoınısı:ı ıPıhıoıtıoınıiıcısı,ı ıRıoıbıoıtıiıcısı,ı ıAıeırıoınıaıuıtıiıcısı ı(ıBırıuıfıaıcıeı ıtırıaıcıkı)ı,ı ıSıuısıtıaıiınıaıbılıeı ıEınıeırıgıyı;ı ıGıoıoıdı ıpırıoıxıiımıiıtıyı/ılıiınıkısı ıtıoı:ı ıEıuırıoıcıoınıtırıoılı,ı ıTıoıyıoıtıaı ıMıoıtıoırı ıEıuırıoıpıeı,ı ıIıMıEı°ıCı;ı ıUıLıBı ıiılıeı ıoırıtıaıkı ı€ıBırıuıfıaıcıeı€ı ıpırıoıgırıaımııı ısıaıyıeısıiınıdıeı ıİınıgıiılıiızıcıeı ıhıaıvıaıcııılıııkı ıdıeırısılıeırıiı ıgıeınıiışıtıiırı.ı"
+            "Brüksel'deki AB ve havacılık kurumlarına (Eurocontrol) yakınlık.",
+            "Strong specializations: Photonics, Robotics, Aeronautics (Bruface track), Sustainable Energy",
+            "Good proximity/links to: Eurocontrol, Toyota Motor Europe, IMEC",
+            "ULB ile ortak 'Bruface' programı sayesinde İngilizce havacılık dersleri geniştir."
         ],
         "Analysis_Cons": [
-            "ıBırıüıkısıeılı ıkıaırımıaışıııkı ıvıeı ıpıaıhıaılııı ıoılıaıbıiılıiırı.ı;ı ıKıaımıpıüısı ıbıiırıaızı ıdıaığııınıııkıtııırı.ı;ı ıHıoıuısıiınıgı ısıeıaırıcıhı ıcıaını ıbıeı ıcıhıaılılıeınıgıiınıgı;ı ısıtıaırıtı ıeıaırılıyı ıaınıdı ıbıuıdıgıeıtı ıaıcıcıoırıdıiınıgılıyı.ı"
+            "Brüksel karmaşık ve pahalı olabilir.",
+            "Kampüs biraz dağınıktır.",
+            "Housing search can be challenging; start early and budget accordingly."
         ],
         "Analysis_Tags": [
-            "ıpıhıoıtıoınıiıcısı;ı ırıoıbıoıtıiıcısı;ı ıaıeırıoınıaıuıtıiıcısı;ı ısıtırıuıcıtıuırıeısı;ı ıeınıeırıgıyı"
+            "photonics",
+            "robotics",
+            "aeronautics",
+            "structures",
+            "energy"
         ],
-        "Industry_Ecosystem": "ıBırıüıkısıeılı€ıdıeıkıiı ıAıBı ıvıeı ıhıaıvıaıcııılıııkı ıkıuırıuımılıaırııınıaı ı(ıEıuırıoıcıoınıtırıoılı)ı ıyıaıkııınılıııkı.ı",
+        "Industry_Ecosystem": "Brüksel'deki AB ve havacılık kurumlarına (Eurocontrol) yakınlık.",
+        "Industry_Comp_Intensity": "Medium",
         "Industry_Partners": [
-            "ıEıuırıoıcıoınıtırıoılı;ı ıTıoıyıoıtıaı ıMıoıtıoırı ıEıuırıoıpıeı;ı ıIıMıEı°ıCı"
+            "Eurocontrol",
+            "Toyota Motor Europe",
+            "IMEC"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": true,
+        "Internship_Notes": "Some programmes require an internship or thesis in industry; verify curriculum.",
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "31 Mar",
+        "Deadline_Winter_Note": "From dataset (official programme/tuition page); verify per programme",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": null,
+        "Deadline_Summer_Note": null,
+        "Deadline_Summer_Avail": null,
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "official",
+                "url": "https://www.vub.be/en/studying-vub/finances-and-insurance/tuition-fee",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": null
     },
     {
-        "Country": "ıBıeılıgıiıuımı",
-        "City": "ıBırıuısısıeılısı",
-        "State_Region": "ıBırıuısısıeılısı ı°ıCıaıpıiıtıaılı",
-        "Uni_ID": "ıuılıbı-ıbırıuısısıeılısı",
-        "University_Name": "ıUınıiıvıeırısıiıtıéı ılıiıbırıeı ıdıeı ıBırıuıxıeılılıeısı",
-        "University_Display_Name": "ıUınıiıvıeırısıiıtıéı ılıiıbırıeı ıdıeı ıBırıuıxıeılılıeısı ı(ıUıLıBı)ı",
-        "University_Short_Name": "ıUıLıBı",
+        "Country": "Belgium",
+        "City": "Brussels",
+        "State_Region": "Brussels Capital",
+        "Uni_ID": "ulb-brussels",
+        "University_Name": "Université libre de Bruxelles",
+        "University_Display_Name": "Université libre de Bruxelles (ULB)",
+        "University_Short_Name": "ULB",
         "Cost_Tuition": [
             {
+                "scope": "non_eu",
+                "program": "BRUFACE engineering (aero-related tracks)",
                 "amount": 4175.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
-                "period": "ıyıeıaırı",
-                "program": "ıBıRıUıFıAı°ıCıEı ıeınıgıiınıeıeırıiınıgı ı(ıaıeırıoı-ırıeılıaıtıeıdı ıtırıaıcıkısı)ı",
-                "raw": "ı€ı4ı,ı1ı7ı5ı/ıyıeıaırı ı(ınıoını‑ıEıUı;ı ıpırıoıgırıaımımıeı-ıdıeıpıeınıdıeınıtı)ı",
-                "scope": "ınıoını_ıeıuı"
+                "currency": "EUR",
+                "period": "year",
+                "raw": "€4,175/year (non‑EU; programme-dependent)",
+                "effective_from_term_code": "2025W"
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 0.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ıNıoıtı ısıpıeıcıiıfıiıeıdı ıiını ıdıaıtıaısıeıtı ı(ıBıeılıgıiıuımı ıoıfıtıeını ıuısıeısı ıaınınıuıaılı ıtıuıiıtıiıoını;ı ıvıeırıiıfıyı ısıtıuıdıeınıtı/ırıeıgıiısıtırıaıtıiıoını ıfıeıeısı)ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "Not specified in dataset (Belgium often uses annual tuition; verify student/registration fees)",
+                "term_code": "2025W"
             },
             {
+                "term": "SoSe 2026",
                 "amount": 0.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ıNı/ıAı ıiınıtıaıkıeı ıoırı ıfıeıeı ısıtırıuıcıtıuırıeı ımıaıyı ıbıeı ıaınınıuıaılı;ı ıvıeırıiıfıyı",
-                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
-                "term_code": "ı2ı0ı2ı6ıSı"
+                "raw": "N/A intake or fee structure may be annual; verify",
+                "term_code": "2026S"
             }
         ],
         "Scholarships_Info": [
             {
+                "name": "ULB Solidarity Fund",
+                "provider": "ULB",
+                "type": "university",
+                "eligibility": "non_eu_ok",
                 "amount": null,
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıUıLıBı ıSıoılıiıdıaırıiıtıyı ıFıuınıdı",
                 "notes": null,
-                "provider": "ıUıLıBı",
-                "type": "ıuınıiıvıeırısıiıtıyı",
                 "url": null
             }
         ],
-        "Cost_City_Living": "ıvıeırıyı_ıhıiıgıhı",
+        "Cost_City_Living": "very_high",
         "Cost_City_Rank": 5,
-        "Living_Housing_Difficulty": "ıHıaırıdı",
+        "Living_Housing_Difficulty": "Hard",
         "Living_Housing_Score": 7,
-        "Program_Name": "ıBıRıUıFıAı°ıCıEı ıEınıgıiınıeıeırıiınıgı ı(ıaıeırıoı-ıtıhıeırımıoı-ımıeıcıhıaınıiıcısı ıfıoıcıuısı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıuılıbı.ıbıeı/ıeını",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ı1ı0ı0ı%ı ıEınıgılıiısıhı",
-        "Analysis_Strong_Areas": "ıAıeırıoı-ıtıhıeırımıoı-ımıeıcıhıaınıiıcısı,ı ıFılıuıiıdı ıDıyınıaımıiıcısı,ı ıSıpıaıcıeı ıTıeıcıhınıoılıoıgıyı,ı ıBıiıoı-ıeınıgıiınıeıeırıiınıgı",
+        "Program_Name": "BRUFACE Engineering (aero-thermo-mechanics focus)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://www.ulb.be/en",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "100% English",
+        "Analysis_Strong_Areas": "Aero-thermo-mechanics, Fluid Dynamics, Space Technology, Bio-engineering",
         "Analysis_Pros": [
-            "ıAıeırıoı-ıtıhıeırımıoı-ımıeıcıhıaınıiıcısı ıdıeıpıaırıtımıaınııı.ı ıVıKıIı ıiılıeı ıaıkıaıdıeımıiıkı ıiışıbıiırılıiığıiı.ı;ı ıSıtırıoınıgı ısıpıeıcıiıaılıiızıaıtıiıoınısı:ı ıAıeırıoı-ıtıhıeırımıoı-ımıeıcıhıaınıiıcısı,ı ıFılıuıiıdı ıDıyınıaımıiıcısı,ı ıSıpıaıcıeı ıTıeıcıhınıoılıoıgıyı,ı ıBıiıoı-ıeınıgıiınıeıeırıiınıgı;ı ıGıoıoıdı ıpırıoıxıiımıiıtıyı/ılıiınıkısı ıtıoı:ı ıSıaıfırıaını,ı ıSıoınıaıcıaı,ı ıVıoını ıKıaırımıaını ıIınısıtıiıtıuıtıeı;ı ıFırıaınısııızıcıaı ıkıoınıuışıuılıaını ıbıöılıgıeı ısıiısıtıeımıiınıeı ıdıaıhıiılıdıiırı,ı ıüıcırıeıtılıeırı ıVıUıBı€ıyıeı ıgıöırıeı ıbıiırıaızı ıdıaıhıaı ıdıüışıüıkıtıüırı.ı"
+            "Aero-thermo-mechanics departmanı. VKI ile akademik işbirliği.",
+            "Strong specializations: Aero-thermo-mechanics, Fluid Dynamics, Space Technology, Bio-engineering",
+            "Good proximity/links to: Safran, Sonaca, Von Karman Institute",
+            "Fransızca konuşulan bölge sistemine dahildir, ücretler VUB'ye göre biraz daha düşüktür."
         ],
         "Analysis_Cons": [
-            "ıHıoıuısıiınıgı ısıeıaırıcıhı ıcıaını ıbıeı ıcıhıaılılıeınıgıiınıgı;ı ısıtıaırıtı ıeıaırılıyı ıaınıdı ıbıuıdıgıeıtı ıaıcıcıoırıdıiınıgılıyı.ı;ı ıAıdımıiınıiısıtırıaıtıiıvıeı ıpırıoıcıeısısıeısı ıaınıdı ıdıoıcıuımıeınıtıaıtıiıoını ırıeıqıuıiırıeımıeınıtısı ıcıaını ıbıeı ıtıiımıeı-ıcıoınısıuımıiınıgı;ı ıpılıaını ıbıuıfıfıeırısı.ı"
+            "Housing search can be challenging; start early and budget accordingly.",
+            "Administrative processes and documentation requirements can be time-consuming; plan buffers."
         ],
         "Analysis_Tags": [
-            "ıaıeırıoıtıhıeırımıoıdıyınıaımıiıcısı;ı ıfılıuıiıdımıeıcıhıaınıiıcısı;ı ısıpıaıcıeıtıeıcıhı;ı ımıeıcıhıaınıiıcısı"
+            "aerothermodynamics",
+            "fluidmechanics",
+            "spacetech",
+            "mechanics"
         ],
-        "Industry_Ecosystem": "ıAıeırıoı-ıtıhıeırımıoı-ımıeıcıhıaınıiıcısı ıdıeıpıaırıtımıaınııı.ı ıVıKıIı ıiılıeı ıaıkıaıdıeımıiıkı ıiışıbıiırılıiığıiı.ı",
+        "Industry_Ecosystem": "Aero-thermo-mechanics departmanı. VKI ile akademik işbirliği.",
+        "Industry_Comp_Intensity": "Medium",
         "Industry_Partners": [
-            "ıSıaıfırıaını;ı ıSıoınıaıcıaı;ı ıVıoını ıKıaırımıaını ıIınısıtıiıtıuıtıeı"
+            "Safran",
+            "Sonaca",
+            "Von Karman Institute"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": true,
+        "Internship_Notes": "Some programmes require an internship or thesis in industry; verify curriculum.",
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "30 Apr",
+        "Deadline_Winter_Note": "From dataset (official programme/tuition page); verify per programme",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": null,
+        "Deadline_Summer_Note": null,
+        "Deadline_Summer_Avail": null,
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "official",
+                "url": "https://www.ulb.be/en/enrolment/tuition-fees",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": null
     },
     {
-        "Country": "ıBıeılıgıiıuımı",
-        "City": "ıLıoıuıvıaıiını-ılıaı-ıNıeıuıvıeı",
-        "State_Region": "ıWıaılılıoınıiıaı",
-        "Uni_ID": "ıuıcılıoıuıvıaıiını",
-        "University_Name": "ıUı°ıCıLıoıuıvıaıiını",
-        "University_Display_Name": "ıUı°ıCıLıoıuıvıaıiını ı(ıUınıiıvıeırısıiıtıéı ıcıaıtıhıoılıiıqıuıeı ıdıeı ıLıoıuıvıaıiını)ı",
-        "University_Short_Name": "ıUı°ıCıLıoıuıvıaıiını",
+        "Country": "Belgium",
+        "City": "Louvain-la-Neuve",
+        "State_Region": "Wallonia",
+        "Uni_ID": "uclouvain",
+        "University_Name": "UCLouvain",
+        "University_Display_Name": "UCLouvain (Université catholique de Louvain)",
+        "University_Short_Name": "UCLouvain",
         "Cost_Tuition": [
             {
+                "scope": "non_eu",
+                "program": "Mechanical/Electromechanical Engineering (track-dependent)",
                 "amount": 4175.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
-                "period": "ıyıeıaırı",
-                "program": "ıMıeıcıhıaınıiıcıaılı/ıEılıeıcıtırıoımıeıcıhıaınıiıcıaılı ıEınıgıiınıeıeırıiınıgı ı(ıtırıaıcıkı-ıdıeıpıeınıdıeınıtı)ı",
-                "raw": "ı€ı4ı,ı1ı7ı5ı/ıyıeıaırı ı(ınıoını‑ıEıUı;ı ıpırıoıgırıaımımıeı-ıdıeıpıeınıdıeınıtı)ı",
-                "scope": "ınıoını_ıeıuı"
+                "currency": "EUR",
+                "period": "year",
+                "raw": "€4,175/year (non‑EU; programme-dependent)",
+                "effective_from_term_code": "2025W"
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 0.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ıNıoıtı ısıpıeıcıiıfıiıeıdı ıiını ıdıaıtıaısıeıtı ı(ıBıeılıgıiıuımı ıoıfıtıeını ıuısıeısı ıaınınıuıaılı ıtıuıiıtıiıoını;ı ıvıeırıiıfıyı ısıtıuıdıeınıtı/ırıeıgıiısıtırıaıtıiıoını ıfıeıeısı)ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "Not specified in dataset (Belgium often uses annual tuition; verify student/registration fees)",
+                "term_code": "2025W"
             },
             {
+                "term": "SoSe 2026",
                 "amount": 0.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ıNı/ıAı ıiınıtıaıkıeı ıoırı ıfıeıeı ısıtırıuıcıtıuırıeı ımıaıyı ıbıeı ıaınınıuıaılı;ı ıvıeırıiıfıyı",
-                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
-                "term_code": "ı2ı0ı2ı6ıSı"
+                "raw": "N/A intake or fee structure may be annual; verify",
+                "term_code": "2026S"
             }
         ],
         "Scholarships_Info": [
             {
+                "name": "UCLouvain Excellence Scholarship",
+                "provider": "External",
+                "type": "external",
+                "eligibility": "non_eu_ok",
                 "amount": null,
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıUı°ıCıLıoıuıvıaıiını ıEıxıcıeılılıeınıcıeı ıSıcıhıoılıaırısıhıiıpı",
                 "notes": null,
-                "provider": "ıEıxıtıeırınıaılı",
-                "type": "ıeıxıtıeırınıaılı",
                 "url": null
             }
         ],
-        "Cost_City_Living": "ımıeıdıiıuımı",
+        "Cost_City_Living": "medium",
         "Cost_City_Rank": 3,
-        "Living_Housing_Difficulty": "ıMıoıdıeırıaıtıeı",
+        "Living_Housing_Difficulty": "Moderate",
         "Living_Housing_Score": 5,
-        "Program_Name": "ıMı.ıSıcı.ı ıEınıgıiınıeıeırıiınıgı ı(ımıeıcıhıaınıiıcısı/ıtıhıeırımıoı/ınıuımıeırıiıcıaılı;ı ıtırıaıcıkı-ıdıeıpıeınıdıeınıtı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıuıcılıoıuıvıaıiını.ıbıeı/ıeını/ısıtıuıdıyı.ıhıtımılı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ı1ı0ı0ı%ı ıEınıgılıiısıhı",
-        "Analysis_Strong_Areas": "ıAıpıpılıiıeıdı ıMıeıcıhıaınıiıcısı,ı ıTıhıeırımıoıdıyınıaımıiıcısı,ı ıPırıoıcıeısısı ıEınıgıiınıeıeırıiınıgı,ı ıNıuımıeırıiıcıaılı ıMıeıtıhıoıdısı",
+        "Program_Name": "M.Sc. Engineering (mechanics/thermo/numerical; track-dependent)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://uclouvain.be/en/study.html",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "100% English",
+        "Analysis_Strong_Areas": "Applied Mechanics, Thermodynamics, Process Engineering, Numerical Methods",
         "Analysis_Pros": [
-            "ı°ıCıeınıaıeırıoı ı(ıHıaıvıaıcııılıııkı ıAırıaışıtııırımıaı ıMıeırıkıeızıiı)ı ıiılıeı ıgıüıçılıüı ıbıaığılıaırı.ı;ı ıSıtırıoınıgı ısıpıeıcıiıaılıiızıaıtıiıoınısı:ı ıAıpıpılıiıeıdı ıMıeıcıhıaınıiıcısı,ı ıTıhıeırımıoıdıyınıaımıiıcısı,ı ıPırıoıcıeısısı ıEınıgıiınıeıeırıiınıgı,ı ıNıuımıeırıiıcıaılı ıMıeıtıhıoıdısı;ı ıGıoıoıdı ıpırıoıxıiımıiıtıyı/ılıiınıkısı ıtıoı:ı ı°ıCıeınıaıeırıoı,ı ıSıoınıaıcıaı,ı ıTıhıaılıeısı ıAılıeınıiıaı ıSıpıaıcıeı;ı ıLıoıuıvıaıiını-ılıaı-ıNıeıuıvıeı ıtıaımıaımıeını ıyıaıyıaılıaırıaı ıaıyırııılımııışı ıbıiırı ıüınıiıvıeırısıiıtıeı ışıeıhırıiıdıiırı,ı ıyıaışıaımı ıçıoıkı ıgıüıvıeınılıiı ıvıeı ısıaıkıiınıdıiırı.ı"
+            "Cenaero (Havacılık Araştırma Merkezi) ile güçlü bağlar.",
+            "Strong specializations: Applied Mechanics, Thermodynamics, Process Engineering, Numerical Methods",
+            "Good proximity/links to: Cenaero, Sonaca, Thales Alenia Space",
+            "Louvain-la-Neuve tamamen yayalara ayrılmış bir üniversite şehridir, yaşam çok güvenli ve sakindir."
         ],
         "Analysis_Cons": [
-            "ıUızıaıyı ı(ıSıpıaıcıeı)ı ısıpıeısıiıfıiıkı ıpırıoıgırıaımııı ıyıoıkıtıuırı,ı ıeılıeıkıtırıoımıeıkıaınıiıkı ıüızıeırıiınıdıeını ıiılıeırılıeınıiırı.ı;ı ıŞıeıhıiırı ıkıüıçıüıkıtıüırı.ı"
+            "Uzay (Space) spesifik programı yoktur, elektromekanik üzerinden ilerlenir.",
+            "Şehir küçüktür."
         ],
         "Analysis_Tags": [
-            "ımıeıcıhıaınıiıcısı;ı ıtıhıeırımıoıdıyınıaımıiıcısı;ı ınıuımıeırıiıcıaılımıeıtıhıoıdısı;ı ıaıpıpılıiıeıdımıaıtıhı"
+            "mechanics",
+            "thermodynamics",
+            "numericalmethods",
+            "appliedmath"
         ],
-        "Industry_Ecosystem": "ı°ıCıeınıaıeırıoı ı(ıHıaıvıaıcııılıııkı ıAırıaışıtııırımıaı ıMıeırıkıeızıiı)ı ıiılıeı ıgıüıçılıüı ıbıaığılıaırı.ı",
+        "Industry_Ecosystem": "Cenaero (Havacılık Araştırma Merkezi) ile güçlü bağlar.",
+        "Industry_Comp_Intensity": "High",
         "Industry_Partners": [
-            "ı°ıCıeınıaıeırıoı;ı ıSıoınıaıcıaı;ı ıTıhıaılıeısı ıAılıeınıiıaı ıSıpıaıcıeı"
+            "Cenaero",
+            "Sonaca",
+            "Thales Alenia Space"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": false,
+        "Internship_Notes": null,
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "30 Apr",
+        "Deadline_Winter_Note": "From dataset (official programme/tuition page); verify per programme",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": null,
+        "Deadline_Summer_Note": null,
+        "Deadline_Summer_Avail": null,
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "official",
+                "url": "https://uclouvain.be/en/study/inscriptions/tuition-fees.html",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": true
     },
     {
-        "Country": "ıBıeılıgıiıuımı",
-        "City": "ıAınıtıwıeırıpı",
-        "State_Region": "ıFılıaınıdıeırısı",
-        "Uni_ID": "ıuıaınıtıwıeırıpı",
-        "University_Name": "ıUınıiıvıeırısıiıtıyı ıoıfı ıAınıtıwıeırıpı",
-        "University_Display_Name": "ıUınıiıvıeırısıiıtıyı ıoıfı ıAınıtıwıeırıpı",
-        "University_Short_Name": "ıUıAınıtıwıeırıpı",
+        "Country": "Belgium",
+        "City": "Antwerp",
+        "State_Region": "Flanders",
+        "Uni_ID": "uantwerp",
+        "University_Name": "University of Antwerp",
+        "University_Display_Name": "University of Antwerp",
+        "University_Short_Name": "UAntwerp",
         "Cost_Tuition": [
             {
+                "scope": "non_eu",
+                "program": "Engineering/Physics (space-related topics; no dedicated aerospace MSc)",
                 "amount": 5800.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
-                "period": "ıyıeıaırı",
-                "program": "ıEınıgıiınıeıeırıiınıgı/ıPıhıyısıiıcısı ı(ısıpıaıcıeı-ırıeılıaıtıeıdı ıtıoıpıiıcısı;ı ınıoı ıdıeıdıiıcıaıtıeıdı ıaıeırıoısıpıaıcıeı ıMıSıcı)ı",
-                "raw": "ı€ı5ı,ı8ı0ı0ı/ıyıeıaırı ı(ınıoını‑ıEıUı;ı ıpırıoıgırıaımımıeı-ıdıeıpıeınıdıeınıtı)ı",
-                "scope": "ınıoını_ıeıuı"
+                "currency": "EUR",
+                "period": "year",
+                "raw": "€5,800/year (non‑EU; programme-dependent)",
+                "effective_from_term_code": "2025W"
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 0.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ıNıoıtı ısıpıeıcıiıfıiıeıdı ıiını ıdıaıtıaısıeıtı ı(ıBıeılıgıiıuımı ıoıfıtıeını ıuısıeısı ıaınınıuıaılı ıtıuıiıtıiıoını;ı ıvıeırıiıfıyı ısıtıuıdıeınıtı/ırıeıgıiısıtırıaıtıiıoını ıfıeıeısı)ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "Not specified in dataset (Belgium often uses annual tuition; verify student/registration fees)",
+                "term_code": "2025W"
             },
             {
+                "term": "SoSe 2026",
                 "amount": 0.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ıNı/ıAı ıiınıtıaıkıeı ıoırı ıfıeıeı ısıtırıuıcıtıuırıeı ımıaıyı ıbıeı ıaınınıuıaılı;ı ıvıeırıiıfıyı",
-                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
-                "term_code": "ı2ı0ı2ı6ıSı"
+                "raw": "N/A intake or fee structure may be annual; verify",
+                "term_code": "2026S"
             }
         ],
         "Scholarships_Info": [
             {
+                "name": "Master Mind Scholarship",
+                "provider": "Flanders",
+                "type": "regional",
+                "eligibility": "non_eu_ok",
                 "amount": null,
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıMıaısıtıeırı ıMıiınıdı ıSıcıhıoılıaırısıhıiıpı",
-                "notes": "ıFılıaınıdıeırısı ıMıaısıtıeırı ıMıiınıdı ısıcıhıoılıaırısıhıiıpı;ı ıhıiıgıhılıyı ıcıoımıpıeıtıiıtıiıvıeı.ı",
-                "provider": "ıFılıaınıdıeırısı",
-                "type": "ırıeıgıiıoınıaılı",
+                "notes": "Flanders Master Mind scholarship; highly competitive.",
                 "url": null
             }
         ],
-        "Cost_City_Living": "ıhıiıgıhı",
+        "Cost_City_Living": "high",
         "Cost_City_Rank": 4,
-        "Living_Housing_Difficulty": "ıMıoıdıeırıaıtıeı",
+        "Living_Housing_Difficulty": "Moderate",
         "Living_Housing_Score": 6,
-        "Program_Name": "ıMı.ıSıcı.ı ıEınıgıiınıeıeırıiınıgı/ıPıhıyısıiıcısı ı(ısıpıaıcıeı-ırıeılıaıtıeıdı ıtıoıpıiıcısı;ı ıpırıoıgırıaımı-ıdıeıpıeınıdıeınıtı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıuıaınıtıwıeırıpıeını.ıbıeı/ıeını/ı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ı1ı0ı0ı%ı ıEınıgılıiısıhı",
-        "Analysis_Strong_Areas": "ıPıhıyısıiıcısı,ı ı°ıCıoımıpıuıtıeırı ıSıcıiıeınıcıeı,ı ıLıoıgıiısıtıiıcısı ı&ı ıTırıaınısıpıoırıtı,ı ıMıaıtıeırıiıaılısı",
+        "Program_Name": "M.Sc. Engineering/Physics (space-related topics; program-dependent)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://www.uantwerpen.be/en/",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "100% English",
+        "Analysis_Strong_Areas": "Physics, Computer Science, Logistics & Transport, Materials",
         "Analysis_Pros": [
-            "ıLıoıjıiısıtıiıkı,ı ılıiımıaını ıyıöınıeıtıiımıiı ıvıeı ıfıiızıiıkı.ı;ı ıSıtırıoınıgı ısıpıeıcıiıaılıiızıaıtıiıoınısı:ı ıPıhıyısıiıcısı,ı ı°ıCıoımıpıuıtıeırı ıSıcıiıeınıcıeı,ı ıLıoıgıiısıtıiıcısı ı&ı ıTırıaınısıpıoırıtı,ı ıMıaıtıeırıiıaılısı;ı ıGıoıoıdı ıpırıoıxıiımıiıtıyı/ılıiınıkısı ıtıoı:ı ıPıoırıtı ıoıfı ıAınıtıwıeırıpı,ı ıFılıeımıiısıhı ıSıpıaıcıeı ıIınıdıuısıtırıyı;ı ıFıiızıiıkı ıbıöılıüımıüı ıaılıtııınıdıaı ıpılıaızımıaı ıvıeı ıuızıaıyı ıfıiızıiığıiı ıçıaılııışımıaılıaırııı ıvıaırıdııırı.ı"
+            "Lojistik, liman yönetimi ve fizik.",
+            "Strong specializations: Physics, Computer Science, Logistics & Transport, Materials",
+            "Good proximity/links to: Port of Antwerp, Flemish Space Industry",
+            "Fizik bölümü altında plazma ve uzay fiziği çalışmaları vardır."
         ],
         "Analysis_Cons": [
-            "ıAıdımıiınıiısıtırıaıtıiıvıeı ıpırıoıcıeısısıeısı ıaınıdı ıdıoıcıuımıeınıtıaıtıiıoını ırıeıqıuıiırıeımıeınıtısı ıcıaını ıbıeı ıtıiımıeı-ıcıoınısıuımıiınıgı;ı ıpılıaını ıbıuıfıfıeırısı.ı"
+            "Administrative processes and documentation requirements can be time-consuming; plan buffers."
         ],
         "Analysis_Tags": [
-            "ıpıhıyısıiıcısı;ı ılıoıgıiısıtıiıcısı;ı ımıaıtıeırıiıaılısı;ı ıpılıaısımıaı"
+            "physics",
+            "logistics",
+            "materials",
+            "plasma"
         ],
-        "Industry_Ecosystem": "ıLıoıjıiısıtıiıkı,ı ılıiımıaını ıyıöınıeıtıiımıiı ıvıeı ıfıiızıiıkı.ı",
+        "Industry_Ecosystem": "Lojistik, liman yönetimi ve fizik.",
+        "Industry_Comp_Intensity": "Medium",
         "Industry_Partners": [
-            "ıPıoırıtı ıoıfı ıAınıtıwıeırıpı;ı ıFılıeımıiısıhı ıSıpıaıcıeı ıIınıdıuısıtırıyı"
+            "Port of Antwerp",
+            "Flemish Space Industry"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": false,
+        "Internship_Notes": null,
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "01 Mar",
+        "Deadline_Winter_Note": "From dataset (official programme/tuition page); verify per programme",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": null,
+        "Deadline_Summer_Note": null,
+        "Deadline_Summer_Avail": null,
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "official",
+                "url": "https://www.uantwerpen.be/en/study/education-and-training/tuition-fees/",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": true
     },
     {
-        "Country": "ıBıeılıgıiıuımı",
-        "City": "ıMıoınısı",
-        "State_Region": "ıWıaılılıoınıiıaı",
-        "Uni_ID": "ıuımıoınısı",
-        "University_Name": "ıUınıiıvıeırısıiıtıyı ıoıfı ıMıoınısı",
-        "University_Display_Name": "ıUınıiıvıeırısıiıtıyı ıoıfı ıMıoınısı ı(ıUıMıoınısı)ı",
-        "University_Short_Name": "ıUıMıoınısı",
+        "Country": "Belgium",
+        "City": "Mons",
+        "State_Region": "Wallonia",
+        "Uni_ID": "umons",
+        "University_Name": "University of Mons",
+        "University_Display_Name": "University of Mons (UMons)",
+        "University_Short_Name": "UMons",
         "Cost_Tuition": [
             {
+                "scope": "non_eu",
+                "program": "Materials/Physics/Math (space-related topics; program-dependent)",
                 "amount": 4175.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
-                "period": "ıyıeıaırı",
-                "program": "ıMıaıtıeırıiıaılısı/ıPıhıyısıiıcısı/ıMıaıtıhı ı(ısıpıaıcıeı-ırıeılıaıtıeıdı ıtıoıpıiıcısı;ı ıpırıoıgırıaımı-ıdıeıpıeınıdıeınıtı)ı",
-                "raw": "ı€ı4ı,ı1ı7ı5ı/ıyıeıaırı ı(ınıoını‑ıEıUı;ı ıpırıoıgırıaımımıeı-ıdıeıpıeınıdıeınıtı)ı",
-                "scope": "ınıoını_ıeıuı"
+                "currency": "EUR",
+                "period": "year",
+                "raw": "€4,175/year (non‑EU; programme-dependent)",
+                "effective_from_term_code": "2025W"
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 0.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ıNıoıtı ısıpıeıcıiıfıiıeıdı ıiını ıdıaıtıaısıeıtı ı(ıBıeılıgıiıuımı ıoıfıtıeını ıuısıeısı ıaınınıuıaılı ıtıuıiıtıiıoını;ı ıvıeırıiıfıyı ısıtıuıdıeınıtı/ırıeıgıiısıtırıaıtıiıoını ıfıeıeısı)ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "Not specified in dataset (Belgium often uses annual tuition; verify student/registration fees)",
+                "term_code": "2025W"
             },
             {
+                "term": "SoSe 2026",
                 "amount": 0.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ıNı/ıAı ıiınıtıaıkıeı ıoırı ıfıeıeı ısıtırıuıcıtıuırıeı ımıaıyı ıbıeı ıaınınıuıaılı;ı ıvıeırıiıfıyı",
-                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
-                "term_code": "ı2ı0ı2ı6ıSı"
+                "raw": "N/A intake or fee structure may be annual; verify",
+                "term_code": "2026S"
             }
         ],
         "Scholarships_Info": [
             {
+                "name": "UMons Social Aid",
+                "provider": "External",
+                "type": "external",
+                "eligibility": "non_eu_ok",
                 "amount": null,
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıUıMıoınısı ıSıoıcıiıaılı ıAıiıdı",
                 "notes": null,
-                "provider": "ıEıxıtıeırınıaılı",
-                "type": "ıeıxıtıeırınıaılı",
                 "url": null
             }
         ],
-        "Cost_City_Living": "ımıeıdıiıuımı_ılıoıwı",
+        "Cost_City_Living": "medium_low",
         "Cost_City_Rank": 2,
-        "Living_Housing_Difficulty": "ıEıaısıyı",
+        "Living_Housing_Difficulty": "Easy",
         "Living_Housing_Score": 3,
-        "Program_Name": "ıMı.ıSıcı.ı ıMıaıtıeırıiıaılısı/ıMıeıcıhıaınıiıcıaılı ı(ıpırıoıgırıaımı-ıdıeıpıeınıdıeınıtı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıeıbı.ıuımıoınısı.ıaıcı.ıbıeı/ıeını/ı",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ı1ı0ı0ı%ı ıEınıgılıiısıhı",
-        "Analysis_Strong_Areas": "ıMıaıtıeırıiıaılısı ıSıcıiıeınıcıeı,ı ıPıoılıyımıeırısı,ı ıMıeıcıhıaınıiıcıaılı ıEınıgıiınıeıeırıiınıgı,ı ıFılıuıiıdı ıMıeıcıhıaınıiıcısı",
+        "Program_Name": "M.Sc. Materials/Mechanical (program-dependent)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://web.umons.ac.be/en/",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "100% English",
+        "Analysis_Strong_Areas": "Materials Science, Polymers, Mechanical Engineering, Fluid Mechanics",
         "Analysis_Pros": [
-            "ıMıaılızıeımıeı ıbıiılıiımıiı ıvıeı ıpıoılıiımıeırılıeırı.ı;ı ıSıtırıoınıgı ısıpıeıcıiıaılıiızıaıtıiıoınısı:ı ıMıaıtıeırıiıaılısı ıSıcıiıeınıcıeı,ı ıPıoılıyımıeırısı,ı ıMıeıcıhıaınıiıcıaılı ıEınıgıiınıeıeırıiınıgı,ı ıFılıuıiıdı ıMıeıcıhıaınıiıcısı;ı ıGıoıoıdı ıpırıoıxıiımıiıtıyı/ılıiınıkısı ıtıoı:ı ıMıaıtıeırıiıaı ıNıoıvıaı,ı ıGıoıoıgılıeı ıDıaıtıaı ı°ıCıeınıtıeırı ı(ıMıoınısı)ı;ı ışıaışıaımı ımıaılıiıyıeıtıiı ıBıeılıçıiıkıaı€ıdıaıkıiı ıeını ıdıüışıüıkı ışıeıhıiırılıeırıdıeını ıbıiırıiıdıiırı.ı"
+            "Malzeme bilimi ve polimerler.",
+            "Strong specializations: Materials Science, Polymers, Mechanical Engineering, Fluid Mechanics",
+            "Good proximity/links to: Materia Nova, Google Data Center (Mons)",
+            "Yaşam maliyeti Belçika'daki en düşük şehirlerden biridir."
         ],
         "Analysis_Cons": [
-            "ıİınıgıiılıiızıcıeı ımıaısıtıeırı ısıeıçıeınıeıkılıeırıiı ıkııısıııtılıııdııırı ı(ıMıaılızıeımıeı/ıFıiızıiıkı ıhıaırıiıçı)ı.ı;ı ıŞıeıhıiırı ıkıüıçıüıkıtıüırı.ı"
+            "İngilizce master seçenekleri kısıtlıdır (Malzeme/Fizik hariç).",
+            "Şehir küçüktür."
         ],
         "Analysis_Tags": [
-            "ımıaıtıeırıiıaılısı;ı ıpıoılıyımıeırısı;ı ıcıoımıpıoısıiıtıeısı;ı ımıeıcıhıaınıiıcısı"
+            "materials",
+            "polymers",
+            "composites",
+            "mechanics"
         ],
-        "Industry_Ecosystem": "ıMıaılızıeımıeı ıbıiılıiımıiı ıvıeı ıpıoılıiımıeırılıeırı.ı",
+        "Industry_Ecosystem": "Malzeme bilimi ve polimerler.",
+        "Industry_Comp_Intensity": "Medium",
         "Industry_Partners": [
-            "ıMıaıtıeırıiıaı ıNıoıvıaı;ı ıGıoıoıgılıeı ıDıaıtıaı ı°ıCıeınıtıeırı ı(ıMıoınısı)ı"
+            "Materia Nova",
+            "Google Data Center (Mons)"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": false,
+        "Internship_Notes": null,
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "30 Apr",
+        "Deadline_Winter_Note": "From dataset (official programme/tuition page); verify per programme",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": null,
+        "Deadline_Summer_Note": null,
+        "Deadline_Summer_Avail": null,
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "official",
+                "url": "https://web.umons.ac.be/en/enrolment/tuition-fees/",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": true
     },
     {
-        "Country": "ıBıeılıgıiıuımı",
-        "City": "ıNıaımıuırı",
-        "State_Region": "ıWıaılılıoınıiıaı",
-        "Uni_ID": "ıuınıaımıuırı",
-        "University_Name": "ıUınıiıvıeırısıiıtıyı ıoıfı ıNıaımıuırı",
-        "University_Display_Name": "ıUınıiıvıeırısıiıtıyı ıoıfı ıNıaımıuırı ı(ıUıNıaımıuırı)ı",
-        "University_Short_Name": "ıUıNıaımıuırı",
+        "Country": "Belgium",
+        "City": "Namur",
+        "State_Region": "Wallonia",
+        "Uni_ID": "unamur",
+        "University_Name": "University of Namur",
+        "University_Display_Name": "University of Namur (UNamur)",
+        "University_Short_Name": "UNamur",
         "Cost_Tuition": [
             {
+                "scope": "non_eu",
+                "program": "Materials/Physics/Math (space-related topics; program-dependent)",
                 "amount": 4175.0,
-                "currency": "ıEıUıRı",
-                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
-                "period": "ıyıeıaırı",
-                "program": "ıMıaıtıeırıiıaılısı/ıPıhıyısıiıcısı/ıMıaıtıhı ı(ısıpıaıcıeı-ırıeılıaıtıeıdı ıtıoıpıiıcısı;ı ıpırıoıgırıaımı-ıdıeıpıeınıdıeınıtı)ı",
-                "raw": "ı€ı4ı,ı1ı7ı5ı/ıyıeıaırı ı(ınıoını‑ıEıUı;ı ıpırıoıgırıaımımıeı-ıdıeıpıeınıdıeınıtı)ı",
-                "scope": "ınıoını_ıeıuı"
+                "currency": "EUR",
+                "period": "year",
+                "raw": "€4,175/year (non‑EU; programme-dependent)",
+                "effective_from_term_code": "2025W"
             }
         ],
         "Cost_Semester_Fees": [
             {
+                "term": "WiSe 2025/26",
                 "amount": 0.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ıNıoıtı ısıpıeıcıiıfıiıeıdı ıiını ıdıaıtıaısıeıtı ı(ıBıeılıgıiıuımı ıoıfıtıeını ıuısıeısı ıaınınıuıaılı ıtıuıiıtıiıoını;ı ıvıeırıiıfıyı ısıtıuıdıeınıtı/ırıeıgıiısıtırıaıtıiıoını ıfıeıeısı)ı",
-                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
-                "term_code": "ı2ı0ı2ı5ıWı"
+                "raw": "Not specified in dataset (Belgium often uses annual tuition; verify student/registration fees)",
+                "term_code": "2025W"
             },
             {
+                "term": "SoSe 2026",
                 "amount": 0.0,
-                "currency": "ıEıUıRı",
+                "currency": "EUR",
                 "includes_ticket": false,
-                "raw": "ıNı/ıAı ıiınıtıaıkıeı ıoırı ıfıeıeı ısıtırıuıcıtıuırıeı ımıaıyı ıbıeı ıaınınıuıaılı;ı ıvıeırıiıfıyı",
-                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
-                "term_code": "ı2ı0ı2ı6ıSı"
+                "raw": "N/A intake or fee structure may be annual; verify",
+                "term_code": "2026S"
             }
         ],
         "Scholarships_Info": [
             {
+                "name": "UNamur Grants",
+                "provider": "UNamur",
+                "type": "university",
+                "eligibility": "non_eu_ok",
                 "amount": null,
-                "eligibility": "ınıoını_ıeıuı_ıoıkı",
-                "name": "ıUıNıaımıuırı ıGırıaınıtısı",
                 "notes": null,
-                "provider": "ıUıNıaımıuırı",
-                "type": "ıuınıiıvıeırısıiıtıyı",
                 "url": null
             }
         ],
-        "Cost_City_Living": "ımıeıdıiıuımı",
+        "Cost_City_Living": "medium",
         "Cost_City_Rank": 3,
-        "Living_Housing_Difficulty": "ıMıoıdıeırıaıtıeı",
+        "Living_Housing_Difficulty": "Moderate",
         "Living_Housing_Score": 4,
-        "Program_Name": "ıMı.ıSıcı.ı ıMıaıtıhıeımıaıtıiıcısı/ıPıhıyısıiıcısı ı(ıcıeılıeısıtıiıaılı ımıeıcıhıaınıiıcısı;ı ıpırıoıgırıaımı-ıdıeıpıeınıdıeınıtı)ı",
-        "Program_Degree": "ıMıSıcı",
-        "Program_ECTS": 120.0,
-        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıuınıaımıuırı.ıbıeı/ıeını",
-        "Program_Scope": "ınıoını_ıeıuı",
-        "Admission_Mode": "ıDıiırıeıcıtı",
-        "Admission_Language_Req": "ı1ı0ı0ı%ı ıEınıgılıiısıhı",
-        "Analysis_Strong_Areas": "ı°ıCıeılıeısıtıiıaılı ıMıeıcıhıaınıiıcısı,ı ı°ıCıoımıpılıeıxı ıSıyısıtıeımısı,ı ıMıaıtıhıeımıaıtıiıcısı,ı ıSıpıaıcıeı ıDıeıbırıiısı",
+        "Program_Name": "M.Sc. Mathematics/Physics (celestial mechanics; program-dependent)",
+        "Program_Degree": "MSc",
+        "Program_ECTS": 120,
+        "Program_URL": "https://www.unamur.be/en",
+        "Program_Scope": "non_eu",
+        "Admission_Mode": "Direct",
+        "Admission_Language_Req": "100% English",
+        "Analysis_Strong_Areas": "Celestial Mechanics, Complex Systems, Mathematics, Space Debris",
         "Analysis_Pros": [
-            "ınıaıXıyısı ı(ıKıoımıpılıeıkısı ıSıiısıtıeımılıeırı ıEınısıtıiıtıüısıüı)ı.ı ıGıöıkıkı,ı ımıeıkıaınıiığıiı ıvıeı ıyıöırıüınıgıeı ıdıiınıaımıiığıiı.ı;ı ıSıtırıoınıgı ısıpıeıcıiıaılıiızıaıtıiıoınısı:ı ı°ıCıeılıeısıtıiıaılı ıMıeıcıhıaınıiıcısı,ı ı°ıCıoımıpılıeıxı ıSıyısıtıeımısı,ı ıMıaıtıhıeımıaıtıiıcısı,ı ıSıpıaıcıeı ıDıeıbırıiısı;ı ıGıoıoıdı ıpırıoıxıiımıiıtıyı/ılıiınıkısı ıtıoı:ı ıEıSıAı,ı ıFıNıRıSı;ı ınıaıXıyısı ıeınısıtıiıtıüısıüı ısıaıyıeısıiınıdıeı ıtıeıoırıiıkı ıgıöıkı ımıeıkıaınıiığıiı ıvıeı ıyıöırıüınıgıeı ıdıiınıaımıiığıiı ıkıoınıuısıuınıdıaı ıuızımıaınılıaışımııışıtııırı.ı"
+            "naXys (Kompleks Sistemler Enstitüsü). Gökk, mekaniği ve yörünge dinamiği.",
+            "Strong specializations: Celestial Mechanics, Complex Systems, Mathematics, Space Debris",
+            "Good proximity/links to: ESA, FNRS",
+            "naXys enstitüsü sayesinde teorik gök mekaniği ve yörünge dinamiği konusunda uzmanlaşmıştır."
         ],
         "Analysis_Cons": [
-            "ıMıüıhıeınıdıiısılıiıkı ıfıaıkıüılıtıeısıiı ıyıoıkıtıuırı,ı ıMıaıtıeımıaıtıiıkı ıvıeıyıaı ıFıiızıiıkı ıbıöılıüımıüı ıaılıtııınıdıaıdııırı.ı;ı ıPırıaıtıiıkı/ıÜırıeıtıiımı ıoıdıaıkılııı ıdıeığıiılıdıiırı.ı"
+            "Mühendislik fakültesi yoktur, Matematik veya Fizik bölümü altındadır.",
+            "Pratik/Üretim odaklı değildir."
         ],
         "Analysis_Tags": [
-            "ıcıeılıeısıtıiıaılımıeıcıhıaınıiıcısı;ı ımıaıtıhıeımıaıtıiıcısı;ı ıcıoımıpılıeıxısıyısıtıeımısı;ı ısıpıaıcıeıdıeıbırıiısı;ı ıaısıtırıoıdıyınıaımıiıcısı"
+            "celestialmechanics",
+            "mathematics",
+            "complexsystems",
+            "spacedebris",
+            "astrodynamics"
         ],
-        "Industry_Ecosystem": "ınıaıXıyısı ı(ıKıoımıpılıeıkısı ıSıiısıtıeımılıeırı ıEınısıtıiıtıüısıüı)ı.ı ıGıöıkıkı,ı ımıeıkıaınıiığıiı ıvıeı ıyıöırıüınıgıeı ıdıiınıaımıiığıiı.ı",
+        "Industry_Ecosystem": "naXys (Kompleks Sistemler Enstitüsü). Gökk, mekaniği ve yörünge dinamiği.",
+        "Industry_Comp_Intensity": "High",
         "Industry_Partners": [
-            "ıEıSıAı;ı ıFıNıRıSı"
+            "ESA",
+            "FNRS"
         ],
-        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Internship_Mandatory": false,
+        "Internship_Notes": null,
+        "Deadline_Winter_Open": null,
+        "Deadline_Winter_Close": "30 Apr",
+        "Deadline_Winter_Note": "From dataset (official programme/tuition page); verify per programme",
+        "Deadline_Summer_Open": null,
+        "Deadline_Summer_Close": null,
+        "Deadline_Summer_Note": null,
+        "Deadline_Summer_Avail": null,
+        "Deadline_General_Note": null,
+        "Meta_Sources": [
+            {
+                "type": "official",
+                "url": "https://www.unamur.be/en/enrolment/registration-fees",
+                "last_verified": "2026-01-27"
+            }
+        ],
+        "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": true
     }
 ]
