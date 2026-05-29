@@ -11,7 +11,7 @@ const els = {
     countryTags: document.getElementById('country-tags'),
     countryExcludeFilter: document.getElementById('country-exclude-filter'),
     countryExcludeTags: document.getElementById('country-exclude-tags'),
-    cityFilter: document.getElementById('city-filter'),
+    // cityFilter removed
     keywordFilter: document.getElementById('keyword-filter'),
     keywordTags: document.getElementById('keyword-tags'),
     favFilter: document.getElementById('fav-filter'),
@@ -77,7 +77,7 @@ async function fetchData() {
             rawData = json.data;
             populateCountryFilter();
             populateCountryExcludeFilter();
-            populateCityFilter();
+            // populateCityFilter removed
             populateKeywordFilter();
             processAndRender();
         } else {
@@ -135,7 +135,7 @@ function setupEventListeners() {
         }
     });
     
-    els.cityFilter.addEventListener('change', processAndRender);
+    // city filter listener removed
     els.favFilter.addEventListener('change', processAndRender);
     els.searchInput.addEventListener('input', () => {
         clearTimeout(window.searchTimeout);
@@ -213,20 +213,7 @@ function renderCountryExcludeTags() {
     });
 }
 
-function populateCityFilter() {
-    const cities = new Set();
-    rawData.forEach(r => {
-        if (r.city) cities.add(r.city);
-    });
-    
-    const sorted = Array.from(cities).sort();
-    sorted.forEach(c => {
-        const opt = document.createElement('option');
-        opt.value = c;
-        opt.textContent = c;
-        els.cityFilter.appendChild(opt);
-    });
-}
+// populateCityFilter removed
 
 function populateKeywordFilter() {
     const keywords = new Set();
@@ -266,7 +253,7 @@ const COST_MAP = {
 };
 
 function processAndRender() {
-    const city = els.cityFilter.value;
+    const city = 'All';
     const search = els.searchInput.value.toLowerCase();
     
     const wCost = els.weights.cost ? parseFloat(els.weights.cost.value) : 0.20;
@@ -491,7 +478,7 @@ function openDrawer(data) {
         ${prosHTML || consHTML ? `
         <div class="detail-section">
             <h4 class="heading-analysis">Analysis</h4>
-            <div style="display: flex; flex-direction: column; gap: 24px;">
+            <div style="display: flex; flex-direction: column; gap: 12px;">
                 ${prosHTML ? `
                 <div style="background: rgba(16, 185, 129, 0.04); padding: 24px; border-radius: 16px; border: 1px solid rgba(16, 185, 129, 0.25); box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.02);">
                     <ul class="pro-con-list">${prosHTML}</ul>
