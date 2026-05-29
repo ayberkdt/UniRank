@@ -364,18 +364,24 @@ tbody tr td:last-child {
 }
 
 .detail-btn {
-    background: rgba(255, 255, 255, 0.1);
-    border: none;
-    color: var(--text-main);
-    padding: 6px 12px;
-    border-radius: var(--radius-sm);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-muted);
+    padding: 6px 14px;
+    border-radius: 20px;
     cursor: pointer;
     transition: var(--transition);
     font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 .detail-btn:hover {
-    background: var(--accent-primary);
+    background: rgba(56, 189, 248, 0.1);
+    border-color: var(--text-highlight);
+    color: var(--text-highlight);
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.15);
+    transform: translateY(-1px);
 }
 
 /* Drawer */

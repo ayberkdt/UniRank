@@ -352,8 +352,8 @@ function renderTable() {
         const isFav = favorites.has(rid);
         const favIcon = isFav ? '⭐' : '☆';
         
-        // Clean country name (remove emojis like flags)
-        const cleanCountry = row.country ? row.country.replace(/[\u{1F300}-\u{1F6FF}\u{1F900}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F1E6}-\u{1F1FF}]/gu, '').trim() : '-';
+        // Clean country name (remove emojis like flags and any weird prefix symbols)
+        const cleanCountry = row.country ? row.country.replace(/^[^a-zA-ZçğıöşüÇĞİÖŞÜ]+/, '').trim() : '-';
         
         tr.innerHTML = `
             <td><span style="color:var(--text-muted); font-weight:700;">${i + 1}</span></td>
@@ -364,7 +364,7 @@ function renderTable() {
             <td><span class="score-badge" style="background: ${scColor}">${row._score.toFixed(2)}</span></td>
             <td>${(row._fitNorm * 100).toFixed(0)}%</td>
             <td>€${parseFloat(row.tuition_eur_per_year || 0).toFixed(0)}</td>
-            <td><button class="detail-btn">View Details</button></td>
+            <td><button class="detail-btn">Details ↗</button></td>
         `;
         
         els.tableBody.appendChild(tr);
@@ -406,7 +406,7 @@ function openDrawer(data) {
         tagsHTML = data.tags.map(t => `<span class="tag">#${t}</span>`).join('');
     }
 
-    const cleanCountry = data.country ? data.country.replace(/[\u{1F300}-\u{1F6FF}\u{1F900}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F1E6}-\u{1F1FF}]/gu, '').trim() : '-';
+    const cleanCountry = data.country ? data.country.replace(/^[^a-zA-ZçğıöşüÇĞİÖŞÜ]+/, '').trim() : '-';
 
     document.getElementById('drawer-info').innerHTML = `
         <div class="detail-section">
