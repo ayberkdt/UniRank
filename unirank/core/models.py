@@ -2,6 +2,8 @@ import typing
 from typing import Any, Dict, List, Optional, Tuple, Union
 from dataclasses import dataclass
 import pandas as pd
+import numpy as np
+from PyQt6.QtGui import QFont
 from PyQt6.QtCore import Qt, QAbstractTableModel, QModelIndex
 
 class RankedModel(QAbstractTableModel):

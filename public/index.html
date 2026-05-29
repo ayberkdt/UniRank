@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniRank - University Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-container">
+                <div class="logo-icon">🎓</div>
+                <h1>UniRank</h1>
+            </div>
+
+            <div class="card">
+                <h2>Filters</h2>
+                <div class="form-group">
+                    <label for="city-filter">City</label>
+                    <select id="city-filter">
+                        <option value="All">All Cities</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="search-input">Keywords</label>
+                    <input type="text" id="search-input" placeholder="e.g. space, robotics, #AI">
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Ranking Weights</h2>
+                <div class="weight-sliders">
+                    <div class="slider-group">
+                        <label>Cost (↓) <span id="val-cost">0.30</span></label>
+                        <input type="range" id="w-cost" min="0" max="1" step="0.01" value="0.30">
+                    </div>
+                    <div class="slider-group">
+                        <label>Semester Fee (↓) <span id="val-fee">0.20</span></label>
+                        <input type="range" id="w-fee" min="0" max="1" step="0.01" value="0.20">
+                    </div>
+                    <div class="slider-group">
+                        <label>Focus Fit (↑) <span id="val-fit">0.40</span></label>
+                        <input type="range" id="w-fit" min="0" max="1" step="0.01" value="0.40">
+                    </div>
+                    <div class="slider-group">
+                        <label>Pros Bonus (↑) <span id="val-pros">0.07</span></label>
+                        <input type="range" id="w-pros" min="0" max="1" step="0.01" value="0.07">
+                    </div>
+                    <div class="slider-group">
+                        <label>Cons Penalty (↓) <span id="val-cons">0.03</span></label>
+                        <input type="range" id="w-cons" min="0" max="1" step="0.01" value="0.03">
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Sorting</h2>
+                <div class="form-group">
+                    <select id="sort-select">
+                        <option value="score_desc">Score (High → Low)</option>
+                        <option value="fee_asc">Semester Fee (Low → High)</option>
+                        <option value="cost_asc">Cost (Low → High)</option>
+                        <option value="name_asc">University (A → Z)</option>
+                    </select>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-titles">
+                    <h2>University Ranking Dashboard</h2>
+                    <p>Analyze and compare universities based on your personal criteria</p>
+                </div>
+            </header>
+
+            <div class="kpi-container">
+                <div class="kpi-card">
+                    <div class="kpi-icon">🏛️</div>
+                    <div class="kpi-data">
+                        <span class="kpi-label">Total Schools</span>
+                        <span class="kpi-value" id="kpi-total">0</span>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon">💰</div>
+                    <div class="kpi-data">
+                        <span class="kpi-label">Avg. Semester Fee</span>
+                        <span class="kpi-value" id="kpi-fee">0€</span>
+                    </div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-icon">⭐</div>
+                    <div class="kpi-data">
+                        <span class="kpi-label">Avg. Score</span>
+                        <span class="kpi-value" id="kpi-score">0.0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table-card">
+                <div class="table-header">
+                    <h3>Ranked Results</h3>
+                    <div class="loader" id="loader"></div>
+                </div>
+                <div class="table-responsive">
+                    <table id="results-table">
+                        <thead>
+                            <tr>
+                                <th>University</th>
+                                <th>City</th>
+                                <th>Country</th>
+                                <th>Score</th>
+                                <th>Focus Fit</th>
+                                <th>Semester Fee</th>
+                                <th>Detail</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body">
+                            <!-- Rows rendered via JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+
+        <!-- Detail Drawer -->
+        <div class="drawer-overlay" id="drawer-overlay"></div>
+        <aside class="drawer" id="detail-drawer">
+            <div class="drawer-header">
+                <h2 id="drawer-title">University Name</h2>
+                <button class="close-btn" id="drawer-close">&times;</button>
+            </div>
+            <div class="drawer-content" id="drawer-body">
+                <!-- Content generated dynamically -->
+            </div>
+        </aside>
+    </div>
+    
+    <!-- Using a mock/local JSON or API depending on deployment -->
+    <script src="script.js"></script>
+</body>
+</html>

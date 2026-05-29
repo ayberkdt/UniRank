@@ -612,7 +612,7 @@ class MainWindow(QMainWindow):
         if fee_src is None:
             out["_fee"] = np.nan
         else:
-            out["_fee"] = out[fee_src].apply(parse_fee_to_eur)
+            out["_fee"] = pd.to_numeric(out[fee_src], errors="coerce")
 
         # Optional: tuition annual cache
         if "tuition_eur_per_year" in out.columns:

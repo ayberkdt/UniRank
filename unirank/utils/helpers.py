@@ -31,7 +31,7 @@ from unirank.ui.widgets import (
     KPICard,
     SearchBar,
 )
-from unirank.core.json_loader import load_database, parse_fee_to_eur, LoadReport, LoadIssue
+from unirank.core.json_loader import load_database, LoadReport, LoadIssue
 
 
 # ===================================================================

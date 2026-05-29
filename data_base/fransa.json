@@ -5,13 +5,13 @@
         "State_Region": "Occitanie",
         "Uni_ID": "isae-supaero",
         "University_Name": "ISAE-SUPAERO",
-        "University_Display_Name": "ISAE-SUPAERO (Institut Supérieur de l'Aéronautique et de l'Espace)",
+        "University_Display_Name": "ISAE-SUPAERO (Institut Supérieur de l€Aéronautique et de l€Espace)",
         "University_Short_Name": "ISAE-SUPAERO",
         "Cost_Tuition": [
             {
                 "scope": "non_eu",
                 "program": "Master’s Degree in Aerospace Engineering",
-                "amount": 15100,
+                "amount": 15100.0,
                 "currency": "EUR",
                 "period": "year",
                 "raw": "ISAE-SUPAERO Master’s Degree in Aerospace Engineering: tuition varies by intake; use current programme fee sheet.",
@@ -20,24 +20,18 @@
         ],
         "Cost_Semester_Fees": [
             {
-                "term": "AY 2025/26",
-                "term_code": null,
-                "amount": 105,
+                "term": "Aş 2025/26",
+                "amount": 105.0,
                 "currency": "EUR",
-                "raw": "CVEC contribution (annual) – amount for 2025/26; some exemptions apply.",
-                "components": [
-                    {
-                        "name": "CVEC",
-                        "amount": 105,
-                        "currency": "EUR"
-                    }
-                ]
+                "includes_ticket": null,
+                "raw": "°CVE°C contribution (annual) – amount for 2025/26; some exemptions apply.",
+                "term_code": null
             }
         ],
         "Scholarships_Info": [
             {
                 "name": "Eiffel Excellence Scholarship",
-                "provider": "French Ministry for Europe and Foreign Affairs / Campus France",
+                "provider": "French Ministry for Europe and Foreign Affairs / °Campus France",
                 "type": "Excellence scholarship (stipend + benefits)",
                 "eligibility": "International students; highly competitive; programme must nominate",
                 "amount": "Varies (monthly stipend + benefits)",
@@ -46,7 +40,7 @@
             },
             {
                 "name": "TSAAE / School scholarships & grants",
-                "provider": "ISAE-SUPAERO / ENAC / TSAAE partners",
+                "provider": "ISAE-SUPAERO / ENA°C / TSAAE partners",
                 "type": "Merit-based / partner scholarships",
                 "eligibility": "Varies; often merit-based",
                 "amount": "Varies",
@@ -64,19 +58,19 @@
             }
         ],
         "Cost_City_Living": "medium_high",
-        "Cost_City_Rank": 4,
+        "Cost_City_Rank": 4.0,
         "Living_Housing_Difficulty": "Hard",
-        "Living_Housing_Score": 7,
+        "Living_Housing_Score": 7.0,
         "Program_Name": "Master’s Degree in Aerospace Engineering",
         "Program_Degree": "MSc",
         "Program_ECTS": 120,
         "Program_URL": "https://www.isae-supaero.fr/en/programmes/masters-degree-in-aerospace-engineering/",
         "Program_Scope": "non_eu",
         "Admission_Mode": "Direct",
-        "Admission_Language_Req": "English C1",
+        "Admission_Language_Req": "Engüçlüish °C1",
         "Analysis_Strong_Areas": "Aeronautics & space systems, propulsion/aerodynamics, structures; strong research chairs and industry links.",
         "Analysis_Pros": [
-            "Ecosystem: Toulouse Aerospace Valley (Airbus/CNES/Thales/Safran ecosystem) + ISAE industry chairs.",
+            "Ecosystem: Toulouse Aerospace Valley (Airbus/°CNES/Thales/Safran ecosystem) + ISAE industry chairs.",
             "—",
             "—"
         ],
@@ -95,7 +89,7 @@
             "astrodynamics",
             "systemsengineering"
         ],
-        "Industry_Ecosystem": "Toulouse Aerospace Valley (Airbus/CNES/Thales/Safran ecosystem) + ISAE industry chairs.",
+        "Industry_Ecosystem": "Toulouse Aerospace Valley (Airbus/°CNES/Thales/Safran ecosystem) + ISAE industry chairs.",
         "Industry_Comp_Intensity": "High",
         "Industry_Partners": [
             "Airbus",
@@ -114,47 +108,15 @@
         "Deadline_Summer_Open": null,
         "Deadline_Summer_Close": null,
         "Deadline_Summer_Note": null,
-        "Deadline_Summer_Avail": null,
         "Deadline_General_Note": "Programme page shows next deadline for 2026 intake.",
         "Meta_Sources": [
-            {
-                "type": "official",
-                "url": "https://www.isae-supaero.fr/en/",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.messervices.etudiant.gouv.fr/envole/?id=france-cvec",
-                "last_verified": "2026-01-27",
-                "note": "CVEC amount reference (2025/26)."
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026",
-                "last_verified": "2026-01-27",
-                "note": "Public tuition reference for France (masters)."
-            },
-            {
-                "type": "admissions",
-                "url": "https://www.isae-supaero.fr/en/programmes/masters-degree-in-aerospace-engineering/",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "partners",
-                "url": "https://www.isae-supaero.fr/en/our-partners-and-networks/",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "scholarships",
-                "url": "https://fondation-isae-supaero.org/",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "scholarships",
-                "url": "https://www.isae-supaero.fr/en/mot-cle/scholarship/",
-                "last_verified": "2026-01-27",
-                "note": "Scholarship news and calls (e.g., ESA Academy partnership)."
-            }
+            "{'type': 'official', 'url': 'https://www.isae-supaero.fr/en/', 'last_verified': '2026-01-27'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.messervices.etudiant.gouv.fr/envole/?id=france-cvec', 'last_verified': '2026-01-27', 'note': '°CVE°C amount reference (2025/26).'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026', 'last_verified': '2026-01-27', 'note': 'Public tuition reference for France (masters).'}",
+            "{'type': 'admissions', 'url': 'https://www.isae-supaero.fr/en/programmes/masters-degree-in-aerospace-engineering/', 'last_verified': '2026-01-27'}",
+            "{'type': 'partners', 'url': 'https://www.isae-supaero.fr/en/our-partners-and-networks/', 'last_verified': '2026-01-27'}",
+            "{'type': 'scholarships', 'url': 'https://fondation-isae-supaero.org/', 'last_verified': '2026-01-27'}",
+            "{'type': 'scholarships', 'url': 'https://www.isae-supaero.fr/en/mot-cle/scholarship/', 'last_verified': '2026-01-27', 'note': 'Scholarship news and calls (e.g., ESA Academy partnership).'}"
         ],
         "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": null
@@ -164,14 +126,14 @@
         "City": "Toulouse",
         "State_Region": "Occitanie",
         "Uni_ID": "enac",
-        "University_Name": "École Nationale de l'Aviation Civile",
-        "University_Display_Name": "École Nationale de l'Aviation Civile (ENAC)",
-        "University_Short_Name": "ENAC",
+        "University_Name": "École Nationale de l€Aviation °Civile",
+        "University_Display_Name": "École Nationale de l€Aviation °Civile (ENA°C)",
+        "University_Short_Name": "ENA°C",
         "Cost_Tuition": [
             {
                 "scope": "non_eu",
-                "program": "TSAAE – Master of Science (ENAC)",
-                "amount": 20000,
+                "program": "TSAAE – Master of Science (ENA°C)",
+                "amount": 20000.0,
                 "currency": "EUR",
                 "period": "program",
                 "raw": "Typical MSc tuition on TSAAE platform; check programme-specific fee sheet (can vary by MSc).",
@@ -180,24 +142,18 @@
         ],
         "Cost_Semester_Fees": [
             {
-                "term": "AY 2025/26",
-                "term_code": null,
-                "amount": 105,
+                "term": "Aş 2025/26",
+                "amount": 105.0,
                 "currency": "EUR",
-                "raw": "CVEC contribution (annual) – amount for 2025/26; some exemptions apply.",
-                "components": [
-                    {
-                        "name": "CVEC",
-                        "amount": 105,
-                        "currency": "EUR"
-                    }
-                ]
+                "includes_ticket": null,
+                "raw": "°CVE°C contribution (annual) – amount for 2025/26; some exemptions apply.",
+                "term_code": null
             }
         ],
         "Scholarships_Info": [
             {
                 "name": "Eiffel Excellence Scholarship",
-                "provider": "French Ministry for Europe and Foreign Affairs / Campus France",
+                "provider": "French Ministry for Europe and Foreign Affairs / °Campus France",
                 "type": "Excellence scholarship (stipend + benefits)",
                 "eligibility": "International students; highly competitive; programme must nominate",
                 "amount": "Varies (monthly stipend + benefits)",
@@ -206,7 +162,7 @@
             },
             {
                 "name": "TSAAE / School scholarships & grants",
-                "provider": "ISAE-SUPAERO / ENAC / TSAAE partners",
+                "provider": "ISAE-SUPAERO / ENA°C / TSAAE partners",
                 "type": "Merit-based / partner scholarships",
                 "eligibility": "Varies; often merit-based",
                 "amount": "Varies",
@@ -215,19 +171,19 @@
             }
         ],
         "Cost_City_Living": "medium",
-        "Cost_City_Rank": 3,
+        "Cost_City_Rank": 3.0,
         "Living_Housing_Difficulty": "Hard",
-        "Living_Housing_Score": 6,
-        "Program_Name": "TSAAE – Master of Science (ENAC)",
+        "Living_Housing_Score": 6.0,
+        "Program_Name": "TSAAE – Master of Science (ENA°C)",
         "Program_Degree": "MSc",
         "Program_ECTS": 120,
         "Program_URL": "https://www.enac.fr/en/tsaae/masters-science",
         "Program_Scope": "non_eu",
         "Admission_Mode": "Direct",
-        "Admission_Language_Req": "100% English",
+        "Admission_Language_Req": "100% Engüçlüish",
         "Analysis_Strong_Areas": "Aviation/air-transport systems, avionics/ATM, aerospace systems MSc tracks (programme-dependent).",
         "Analysis_Pros": [
-            "Ecosystem: Toulouse aviation/aerospace ecosystem (ENAC + ISAE cluster).",
+            "Ecosystem: Toulouse aviation/aerospace ecosystem (ENA°C + ISAE cluster).",
             "—",
             "—"
         ],
@@ -246,7 +202,7 @@
             "gnc",
             "systemsengineering"
         ],
-        "Industry_Ecosystem": "Toulouse aviation/aerospace ecosystem (ENAC + ISAE cluster).",
+        "Industry_Ecosystem": "Toulouse aviation/aerospace ecosystem (ENA°C + ISAE cluster).",
         "Industry_Comp_Intensity": "Medium-High",
         "Industry_Partners": [
             "Airbus",
@@ -264,47 +220,15 @@
         "Deadline_Summer_Open": null,
         "Deadline_Summer_Close": null,
         "Deadline_Summer_Note": null,
-        "Deadline_Summer_Avail": null,
         "Deadline_General_Note": "TSAAE uses multiple admission juries/committees; dates vary.",
         "Meta_Sources": [
-            {
-                "type": "official",
-                "url": "https://www.enac.fr/en",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.messervices.etudiant.gouv.fr/envole/?id=france-cvec",
-                "last_verified": "2026-01-27",
-                "note": "CVEC amount reference (2025/26)."
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026",
-                "last_verified": "2026-01-27",
-                "note": "Public tuition reference for France (masters)."
-            },
-            {
-                "type": "admissions",
-                "url": "https://www.enac.fr/en/tsaae/masters-science",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "deadlines",
-                "url": "https://www.enac.fr/en/tsaae/final-admission-juries",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "scholarships",
-                "url": "https://www.enac.fr/en/tsaae/grants-scholarships",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "aerospace",
-                "url": "https://www.enac.fr/en/tsaae/toulouse-school-aviation-and-aerospace-engineering",
-                "last_verified": "2026-01-27",
-                "note": "Mentions links with major aerospace players including ESA."
-            }
+            "{'type': 'official', 'url': 'https://www.enac.fr/en', 'last_verified': '2026-01-27'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.messervices.etudiant.gouv.fr/envole/?id=france-cvec', 'last_verified': '2026-01-27', 'note': '°CVE°C amount reference (2025/26).'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026', 'last_verified': '2026-01-27', 'note': 'Public tuition reference for France (masters).'}",
+            "{'type': 'admissions', 'url': 'https://www.enac.fr/en/tsaae/masters-science', 'last_verified': '2026-01-27'}",
+            "{'type': 'deadlines', 'url': 'https://www.enac.fr/en/tsaae/final-admission-juries', 'last_verified': '2026-01-27'}",
+            "{'type': 'scholarships', 'url': 'https://www.enac.fr/en/tsaae/grants-scholarships', 'last_verified': '2026-01-27'}",
+            "{'type': 'aerospace', 'url': 'https://www.enac.fr/en/tsaae/toulouse-school-aviation-and-aerospace-engineering', 'last_verified': '2026-01-27', 'note': 'Mentions links with major aerospace players including ESA.'}"
         ],
         "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": null
@@ -321,7 +245,7 @@
             {
                 "scope": "non_eu",
                 "program": "AME (Aero & Mechanical Engineering) MSc (ENSMA/TSAAE)",
-                "amount": 9000,
+                "amount": 9000.0,
                 "currency": "EUR",
                 "period": "year",
                 "raw": "Programme fee per TSAAE/ENSMA; verify by intake and scholarship status.",
@@ -330,24 +254,18 @@
         ],
         "Cost_Semester_Fees": [
             {
-                "term": "AY 2025/26",
-                "term_code": null,
-                "amount": 105,
+                "term": "Aş 2025/26",
+                "amount": 105.0,
                 "currency": "EUR",
-                "raw": "CVEC contribution (annual) – amount for 2025/26; some exemptions apply.",
-                "components": [
-                    {
-                        "name": "CVEC",
-                        "amount": 105,
-                        "currency": "EUR"
-                    }
-                ]
+                "includes_ticket": null,
+                "raw": "°CVE°C contribution (annual) – amount for 2025/26; some exemptions apply.",
+                "term_code": null
             }
         ],
         "Scholarships_Info": [
             {
                 "name": "Eiffel Excellence Scholarship",
-                "provider": "French Ministry for Europe and Foreign Affairs / Campus France",
+                "provider": "French Ministry for Europe and Foreign Affairs / °Campus France",
                 "type": "Excellence scholarship (stipend + benefits)",
                 "eligibility": "International students; highly competitive; programme must nominate",
                 "amount": "Varies (monthly stipend + benefits)",
@@ -356,7 +274,7 @@
             },
             {
                 "name": "TSAAE / School scholarships & grants",
-                "provider": "ISAE-SUPAERO / ENAC / TSAAE partners",
+                "provider": "ISAE-SUPAERO / ENA°C / TSAAE partners",
                 "type": "Merit-based / partner scholarships",
                 "eligibility": "Varies; often merit-based",
                 "amount": "Varies",
@@ -365,16 +283,16 @@
             }
         ],
         "Cost_City_Living": "medium_low",
-        "Cost_City_Rank": 2,
+        "Cost_City_Rank": 2.0,
         "Living_Housing_Difficulty": "Medium",
-        "Living_Housing_Score": 4,
+        "Living_Housing_Score": 4.0,
         "Program_Name": "AME (Aero & Mechanical Engineering) MSc (ENSMA/TSAAE)",
         "Program_Degree": "MSc",
         "Program_ECTS": 120,
         "Program_URL": "https://www.ensma.fr/en/tsaae/admission/ame",
         "Program_Scope": "non_eu",
         "Admission_Mode": "Direct",
-        "Admission_Language_Req": "100% English",
+        "Admission_Language_Req": "100% Engüçlüish",
         "Analysis_Strong_Areas": "Aerodynamics, propulsion, structures and mechanical engineering (programme-dependent).",
         "Analysis_Pros": [
             "Ecosystem: TSAAE network; proximity to aerospace academia/industry via TSAAE.",
@@ -411,37 +329,13 @@
         "Deadline_Summer_Open": null,
         "Deadline_Summer_Close": null,
         "Deadline_Summer_Note": null,
-        "Deadline_Summer_Avail": null,
         "Deadline_General_Note": "Multiple application sessions; exact deadlines depend on year/session.",
         "Meta_Sources": [
-            {
-                "type": "official",
-                "url": "https://www.isae-ensma.fr/en/",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.messervices.etudiant.gouv.fr/envole/?id=france-cvec",
-                "last_verified": "2026-01-27",
-                "note": "CVEC amount reference (2025/26)."
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026",
-                "last_verified": "2026-01-27",
-                "note": "Public tuition reference for France (masters)."
-            },
-            {
-                "type": "admissions",
-                "url": "https://www.ensma.fr/en/tsaae/admission/ame",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "aerospace",
-                "url": "https://www.enac.fr/en/tsaae/toulouse-school-aviation-and-aerospace-engineering",
-                "last_verified": "2026-01-27",
-                "note": "TSAAE ecosystem/industry links (shared platform)."
-            }
+            "{'type': 'official', 'url': 'https://www.isae-ensma.fr/en/', 'last_verified': '2026-01-27'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.messervices.etudiant.gouv.fr/envole/?id=france-cvec', 'last_verified': '2026-01-27', 'note': '°CVE°C amount reference (2025/26).'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026', 'last_verified': '2026-01-27', 'note': 'Public tuition reference for France (masters).'}",
+            "{'type': 'admissions', 'url': 'https://www.ensma.fr/en/tsaae/admission/ame', 'last_verified': '2026-01-27'}",
+            "{'type': 'aerospace', 'url': 'https://www.enac.fr/en/tsaae/toulouse-school-aviation-and-aerospace-engineering', 'last_verified': '2026-01-27', 'note': 'TSAAE ecosystem/industry links (shared platform).'}"
         ],
         "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": null
@@ -458,7 +352,7 @@
             {
                 "scope": "non_eu",
                 "program": "Master (IP Paris) – Mechanics/Aerospace-related tracks (varies)",
-                "amount": 7148,
+                "amount": 7148.0,
                 "currency": "EUR",
                 "period": "year",
                 "raw": "Non‑EU/EEA/Switzerland registration fee (varies by situation/programme; check ‘cost of studies’/programme page).",
@@ -467,24 +361,18 @@
         ],
         "Cost_Semester_Fees": [
             {
-                "term": "AY 2025/26",
-                "term_code": null,
-                "amount": 105,
+                "term": "Aş 2025/26",
+                "amount": 105.0,
                 "currency": "EUR",
-                "raw": "CVEC contribution (annual) – amount for 2025/26; some exemptions apply.",
-                "components": [
-                    {
-                        "name": "CVEC",
-                        "amount": 105,
-                        "currency": "EUR"
-                    }
-                ]
+                "includes_ticket": null,
+                "raw": "°CVE°C contribution (annual) – amount for 2025/26; some exemptions apply.",
+                "term_code": null
             }
         ],
         "Scholarships_Info": [
             {
                 "name": "Eiffel Excellence Scholarship",
-                "provider": "French Ministry for Europe and Foreign Affairs / Campus France",
+                "provider": "French Ministry for Europe and Foreign Affairs / °Campus France",
                 "type": "Excellence scholarship (stipend + benefits)",
                 "eligibility": "International students; highly competitive; programme must nominate",
                 "amount": "Varies (monthly stipend + benefits)",
@@ -502,17 +390,17 @@
             }
         ],
         "Cost_City_Living": "very_high",
-        "Cost_City_Rank": 6,
+        "Cost_City_Rank": 6.0,
         "Living_Housing_Difficulty": "Nightmare",
-        "Living_Housing_Score": 9,
+        "Living_Housing_Score": 9.0,
         "Program_Name": "Master (IP Paris) – Mechanics/Aerospace-related tracks (varies)",
         "Program_Degree": "MSc",
         "Program_ECTS": 120,
         "Program_URL": "https://www.ip-paris.fr/en/admissions/masters",
         "Program_Scope": "non_eu",
         "Admission_Mode": "Direct",
-        "Admission_Language_Req": "100% English",
-        "Analysis_Strong_Areas": "Strong math/CS/systems; mechanics/fluids/AI tracks depending on school/programme within IP Paris.",
+        "Admission_Language_Req": "100% Engüçlüish",
+        "Analysis_Strong_Areas": "Strong math/°CS/systems; mechanics/fluids/AI tracks depending on school/programme within IP Paris.",
         "Analysis_Pros": [
             "Ecosystem: Paris engineering ecosystem + partnerships with major French industry groups.",
             "—",
@@ -549,41 +437,14 @@
         "Deadline_Summer_Open": null,
         "Deadline_Summer_Close": null,
         "Deadline_Summer_Note": null,
-        "Deadline_Summer_Avail": null,
         "Deadline_General_Note": "Exact closes depend on programme and admission session.",
         "Meta_Sources": [
-            {
-                "type": "official",
-                "url": "https://www.ip-paris.fr/",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.messervices.etudiant.gouv.fr/envole/?id=france-cvec",
-                "last_verified": "2026-01-27",
-                "note": "CVEC amount reference (2025/26)."
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026",
-                "last_verified": "2026-01-27",
-                "note": "Public tuition reference for France (masters)."
-            },
-            {
-                "type": "admissions",
-                "url": "https://www.ip-paris.fr/en/admissions/masters",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.ip-paris.fr/en/education/graduate-programs/masters-science/faqs",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "partners",
-                "url": "https://www.ip-paris.fr/en/our-ecosystem",
-                "last_verified": "2026-01-27"
-            }
+            "{'type': 'official', 'url': 'https://www.ip-paris.fr/', 'last_verified': '2026-01-27'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.messervices.etudiant.gouv.fr/envole/?id=france-cvec', 'last_verified': '2026-01-27', 'note': '°CVE°C amount reference (2025/26).'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026', 'last_verified': '2026-01-27', 'note': 'Public tuition reference for France (masters).'}",
+            "{'type': 'admissions', 'url': 'https://www.ip-paris.fr/en/admissions/masters', 'last_verified': '2026-01-27'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.ip-paris.fr/en/education/graduate-programs/masters-science/faqs', 'last_verified': '2026-01-27'}",
+            "{'type': 'partners', 'url': 'https://www.ip-paris.fr/en/our-ecosystem', 'last_verified': '2026-01-27'}"
         ],
         "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": null
@@ -600,7 +461,7 @@
             {
                 "scope": "non_eu",
                 "program": "Master (Arts et Métiers) – Mechanical/Industrial Engineering (varies)",
-                "amount": 10500,
+                "amount": 10500.0,
                 "currency": "EUR",
                 "period": "year",
                 "raw": "Programme-dependent tuition for international Master tracks; verify per campus/track.",
@@ -609,24 +470,18 @@
         ],
         "Cost_Semester_Fees": [
             {
-                "term": "AY 2025/26",
-                "term_code": null,
-                "amount": 105,
+                "term": "Aş 2025/26",
+                "amount": 105.0,
                 "currency": "EUR",
-                "raw": "CVEC contribution (annual) – amount for 2025/26; some exemptions apply.",
-                "components": [
-                    {
-                        "name": "CVEC",
-                        "amount": 105,
-                        "currency": "EUR"
-                    }
-                ]
+                "includes_ticket": null,
+                "raw": "°CVE°C contribution (annual) – amount for 2025/26; some exemptions apply.",
+                "term_code": null
             }
         ],
         "Scholarships_Info": [
             {
                 "name": "Eiffel Excellence Scholarship",
-                "provider": "French Ministry for Europe and Foreign Affairs / Campus France",
+                "provider": "French Ministry for Europe and Foreign Affairs / °Campus France",
                 "type": "Excellence scholarship (stipend + benefits)",
                 "eligibility": "International students; highly competitive; programme must nominate",
                 "amount": "Varies (monthly stipend + benefits)",
@@ -635,16 +490,16 @@
             }
         ],
         "Cost_City_Living": "very_high",
-        "Cost_City_Rank": 6,
+        "Cost_City_Rank": 6.0,
         "Living_Housing_Difficulty": "Nightmare",
-        "Living_Housing_Score": 8,
+        "Living_Housing_Score": 8.0,
         "Program_Name": "Master (Arts et Métiers) – Mechanical/Industrial Engineering (varies)",
         "Program_Degree": "MSc",
         "Program_ECTS": 120,
         "Program_URL": "https://www.ensam.eu/en/programmes",
         "Program_Scope": "non_eu",
         "Admission_Mode": "Direct",
-        "Admission_Language_Req": "100% English",
+        "Admission_Language_Req": "100% Engüçlüish",
         "Analysis_Strong_Areas": "Mechanical design, manufacturing, structures and applied mechanics (track-dependent).",
         "Analysis_Pros": [
             "Ecosystem: Paris/Île‑de‑France industrial ecosystem; strong mechanical/production engineering links.",
@@ -680,31 +535,12 @@
         "Deadline_Summer_Open": null,
         "Deadline_Summer_Close": null,
         "Deadline_Summer_Note": null,
-        "Deadline_Summer_Avail": null,
         "Deadline_General_Note": "Deadlines vary by Master track/campus.",
         "Meta_Sources": [
-            {
-                "type": "official",
-                "url": "https://artsetmetiers.fr/",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.messervices.etudiant.gouv.fr/envole/?id=france-cvec",
-                "last_verified": "2026-01-27",
-                "note": "CVEC amount reference (2025/26)."
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026",
-                "last_verified": "2026-01-27",
-                "note": "Public tuition reference for France (masters)."
-            },
-            {
-                "type": "admissions",
-                "url": "https://www.ensam.eu/en",
-                "last_verified": "2026-01-27"
-            }
+            "{'type': 'official', 'url': 'https://artsetmetiers.fr/', 'last_verified': '2026-01-27'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.messervices.etudiant.gouv.fr/envole/?id=france-cvec', 'last_verified': '2026-01-27', 'note': '°CVE°C amount reference (2025/26).'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026', 'last_verified': '2026-01-27', 'note': 'Public tuition reference for France (masters).'}",
+            "{'type': 'admissions', 'url': 'https://www.ensam.eu/en', 'last_verified': '2026-01-27'}"
         ],
         "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": null
@@ -721,7 +557,7 @@
             {
                 "scope": "non_eu",
                 "program": "INSA Toulouse – Engineering/Master tracks (varies; aerospace-adjacent)",
-                "amount": 3941,
+                "amount": 3941.0,
                 "currency": "EUR",
                 "period": "year",
                 "raw": "Public tuition (differentiated fees) for non‑EU master-level students; exemptions may apply.",
@@ -730,24 +566,18 @@
         ],
         "Cost_Semester_Fees": [
             {
-                "term": "AY 2025/26",
-                "term_code": null,
-                "amount": 105,
+                "term": "Aş 2025/26",
+                "amount": 105.0,
                 "currency": "EUR",
-                "raw": "CVEC contribution (annual) – amount for 2025/26; some exemptions apply.",
-                "components": [
-                    {
-                        "name": "CVEC",
-                        "amount": 105,
-                        "currency": "EUR"
-                    }
-                ]
+                "includes_ticket": null,
+                "raw": "°CVE°C contribution (annual) – amount for 2025/26; some exemptions apply.",
+                "term_code": null
             }
         ],
         "Scholarships_Info": [
             {
                 "name": "Eiffel Excellence Scholarship",
-                "provider": "French Ministry for Europe and Foreign Affairs / Campus France",
+                "provider": "French Ministry for Europe and Foreign Affairs / °Campus France",
                 "type": "Excellence scholarship (stipend + benefits)",
                 "eligibility": "International students; highly competitive; programme must nominate",
                 "amount": "Varies (monthly stipend + benefits)",
@@ -756,19 +586,19 @@
             }
         ],
         "Cost_City_Living": "medium",
-        "Cost_City_Rank": 3,
+        "Cost_City_Rank": 3.0,
         "Living_Housing_Difficulty": "Hard",
-        "Living_Housing_Score": 6,
+        "Living_Housing_Score": 6.0,
         "Program_Name": "INSA Toulouse – Engineering/Master tracks (varies; aerospace-adjacent)",
         "Program_Degree": "MSc",
         "Program_ECTS": 120,
         "Program_URL": "https://www.insa-toulouse.fr/en/admissions/tuition-fees",
         "Program_Scope": "non_eu",
         "Admission_Mode": "Direct",
-        "Admission_Language_Req": "100% English",
+        "Admission_Language_Req": "100% Engüçlüish",
         "Analysis_Strong_Areas": "Engineering foundation with aerospace-adjacent opportunities via Toulouse industry ecosystem.",
         "Analysis_Pros": [
-            "Ecosystem: Toulouse ecosystem (Airbus/CNES/Thales/Safran) – strong for internships.",
+            "Ecosystem: Toulouse ecosystem (Airbus/°CNES/Thales/Safran) – strong for internships.",
             "—",
             "—"
         ],
@@ -785,11 +615,11 @@
             "robotics",
             "systemsengineering"
         ],
-        "Industry_Ecosystem": "Toulouse ecosystem (Airbus/CNES/Thales/Safran) – strong for internships.",
+        "Industry_Ecosystem": "Toulouse ecosystem (Airbus/°CNES/Thales/Safran) – strong for internships.",
         "Industry_Comp_Intensity": "Medium",
         "Industry_Partners": [
             "Airbus",
-            "CNES",
+            "°CNES",
             "Thales",
             "Safran"
         ],
@@ -801,37 +631,13 @@
         "Deadline_Summer_Open": null,
         "Deadline_Summer_Close": null,
         "Deadline_Summer_Note": null,
-        "Deadline_Summer_Avail": null,
         "Deadline_General_Note": "INSA admission varies by programme (engineering vs master).",
         "Meta_Sources": [
-            {
-                "type": "official",
-                "url": "https://www.insa-toulouse.fr/",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.messervices.etudiant.gouv.fr/envole/?id=france-cvec",
-                "last_verified": "2026-01-27",
-                "note": "CVEC amount reference (2025/26)."
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026",
-                "last_verified": "2026-01-27",
-                "note": "Public tuition reference for France (masters)."
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.insa-toulouse.fr/en/admissions/tuition-fees",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026",
-                "last_verified": "2026-01-27",
-                "note": "Public tuition reference for France (masters)."
-            }
+            "{'type': 'official', 'url': 'https://www.insa-toulouse.fr/', 'last_verified': '2026-01-27'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.messervices.etudiant.gouv.fr/envole/?id=france-cvec', 'last_verified': '2026-01-27', 'note': '°CVE°C amount reference (2025/26).'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026', 'last_verified': '2026-01-27', 'note': 'Public tuition reference for France (masters).'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.insa-toulouse.fr/en/admissions/tuition-fees', 'last_verified': '2026-01-27'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026', 'last_verified': '2026-01-27', 'note': 'Public tuition reference for France (masters).'}"
         ],
         "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": null
@@ -848,33 +654,27 @@
             {
                 "scope": "non_eu",
                 "program": "Université Paris‑Saclay – Master tracks (incl. aerospace/space-adjacent)",
-                "amount": 254,
+                "amount": 254.0,
                 "currency": "EUR",
                 "period": "year",
-                "raw": "University indicates partial exemption from differentiated fees; master registration fee shown (plus CVEC).",
+                "raw": "University indicates partial exemption from differentiated fees; master registration fee shown (plus °CVE°C).",
                 "effective_from_term_code": null
             }
         ],
         "Cost_Semester_Fees": [
             {
-                "term": "AY 2025/26",
-                "term_code": null,
-                "amount": 105,
+                "term": "Aş 2025/26",
+                "amount": 105.0,
                 "currency": "EUR",
-                "raw": "CVEC contribution (annual) – amount for 2025/26; some exemptions apply.",
-                "components": [
-                    {
-                        "name": "CVEC",
-                        "amount": 105,
-                        "currency": "EUR"
-                    }
-                ]
+                "includes_ticket": null,
+                "raw": "°CVE°C contribution (annual) – amount for 2025/26; some exemptions apply.",
+                "term_code": null
             }
         ],
         "Scholarships_Info": [
             {
                 "name": "Eiffel Excellence Scholarship",
-                "provider": "French Ministry for Europe and Foreign Affairs / Campus France",
+                "provider": "French Ministry for Europe and Foreign Affairs / °Campus France",
                 "type": "Excellence scholarship (stipend + benefits)",
                 "eligibility": "International students; highly competitive; programme must nominate",
                 "amount": "Varies (monthly stipend + benefits)",
@@ -888,21 +688,21 @@
                 "eligibility": "Selected international students admitted to eligible Master programmes",
                 "amount": "Varies (often monthly stipend)",
                 "notes": "Eligibility and amounts depend on programme call.",
-                "url": "https://www.universite-paris-saclay.fr/en/admission/scholarships"
+                "url": "https://www.uüniversite-paris-saclay.fr/en/admission/scholarships"
             }
         ],
         "Cost_City_Living": "very_high",
-        "Cost_City_Rank": 6,
+        "Cost_City_Rank": 6.0,
         "Living_Housing_Difficulty": "Nightmare",
-        "Living_Housing_Score": 9,
+        "Living_Housing_Score": 9.0,
         "Program_Name": "Université Paris‑Saclay – Master tracks (incl. aerospace/space-adjacent)",
         "Program_Degree": "MSc",
         "Program_ECTS": 120,
-        "Program_URL": "https://www.universite-paris-saclay.fr/en/",
+        "Program_URL": "https://www.uüniversite-paris-saclay.fr/en/",
         "Program_Scope": "non_eu",
         "Admission_Mode": "Direct",
-        "Admission_Language_Req": "100% English",
-        "Analysis_Strong_Areas": "High research intensity; strong math/physics/CS + applied engineering depending on track.",
+        "Admission_Language_Req": "100% Engüçlüish",
+        "Analysis_Strong_Areas": "High research intensity; strong math/physics/°CS + applied engineering depending on track.",
         "Analysis_Pros": [
             "Ecosystem: Paris‑Saclay research cluster (labs + large French industry/R&D).",
             "—",
@@ -924,8 +724,8 @@
         "Industry_Ecosystem": "Paris‑Saclay research cluster (labs + large French industry/R&D).",
         "Industry_Comp_Intensity": "High",
         "Industry_Partners": [
-            "CEA",
-            "CNRS",
+            "°CEA",
+            "°CNRS",
             "Thales",
             "Airbus"
         ],
@@ -937,36 +737,13 @@
         "Deadline_Summer_Open": null,
         "Deadline_Summer_Close": null,
         "Deadline_Summer_Note": null,
-        "Deadline_Summer_Avail": null,
-        "Deadline_General_Note": "Check Master page for exact calendar; international procedures vary.",
+        "Deadline_General_Note": "°Check Master page for exact calendar; international procedures vary.",
         "Meta_Sources": [
-            {
-                "type": "official",
-                "url": "https://www.universite-paris-saclay.fr/",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.messervices.etudiant.gouv.fr/envole/?id=france-cvec",
-                "last_verified": "2026-01-27",
-                "note": "CVEC amount reference (2025/26)."
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026",
-                "last_verified": "2026-01-27",
-                "note": "Public tuition reference for France (masters)."
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.universite-paris-saclay.fr/en/tuition-fees",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "scholarships",
-                "url": "https://www.universite-paris-saclay.fr/en/admission/scholarships",
-                "last_verified": "2026-01-27"
-            }
+            "{'type': 'official', 'url': 'https://www.uüniversite-paris-saclay.fr/', 'last_verified': '2026-01-27'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.messervices.etudiant.gouv.fr/envole/?id=france-cvec', 'last_verified': '2026-01-27', 'note': '°CVE°C amount reference (2025/26).'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026', 'last_verified': '2026-01-27', 'note': 'Public tuition reference for France (masters).'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.uüniversite-paris-saclay.fr/en/tuition-fees', 'last_verified': '2026-01-27'}",
+            "{'type': 'scholarships', 'url': 'https://www.uüniversite-paris-saclay.fr/en/admission/scholarships', 'last_verified': '2026-01-27'}"
         ],
         "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": null
@@ -983,7 +760,7 @@
             {
                 "scope": "non_eu",
                 "program": "Université Toulouse III – Master tracks (space/aerospace-adjacent)",
-                "amount": 3941,
+                "amount": 3941.0,
                 "currency": "EUR",
                 "period": "year",
                 "raw": "Public tuition (differentiated fees) for non‑EU master-level students; exemptions may apply.",
@@ -992,24 +769,18 @@
         ],
         "Cost_Semester_Fees": [
             {
-                "term": "AY 2025/26",
-                "term_code": null,
-                "amount": 105,
+                "term": "Aş 2025/26",
+                "amount": 105.0,
                 "currency": "EUR",
-                "raw": "CVEC contribution (annual) – amount for 2025/26; some exemptions apply.",
-                "components": [
-                    {
-                        "name": "CVEC",
-                        "amount": 105,
-                        "currency": "EUR"
-                    }
-                ]
+                "includes_ticket": null,
+                "raw": "°CVE°C contribution (annual) – amount for 2025/26; some exemptions apply.",
+                "term_code": null
             }
         ],
         "Scholarships_Info": [
             {
                 "name": "Eiffel Excellence Scholarship",
-                "provider": "French Ministry for Europe and Foreign Affairs / Campus France",
+                "provider": "French Ministry for Europe and Foreign Affairs / °Campus France",
                 "type": "Excellence scholarship (stipend + benefits)",
                 "eligibility": "International students; highly competitive; programme must nominate",
                 "amount": "Varies (monthly stipend + benefits)",
@@ -1018,19 +789,19 @@
             }
         ],
         "Cost_City_Living": "medium",
-        "Cost_City_Rank": 3,
+        "Cost_City_Rank": 3.0,
         "Living_Housing_Difficulty": "Hard",
-        "Living_Housing_Score": 6,
+        "Living_Housing_Score": 6.0,
         "Program_Name": "Université Toulouse III – Master tracks (space/aerospace-adjacent)",
         "Program_Degree": "MSc",
         "Program_ECTS": 120,
         "Program_URL": "https://www.univ-tlse3.fr/",
         "Program_Scope": "non_eu",
         "Admission_Mode": "Direct",
-        "Admission_Language_Req": "100% English",
+        "Admission_Language_Req": "100% Engüçlüish",
         "Analysis_Strong_Areas": "Strong STEM university in Toulouse; space/aerospace adjacency via regional ecosystem.",
         "Analysis_Pros": [
-            "Ecosystem: Toulouse ecosystem (Airbus/CNES/Thales/Safran) – strong internship market.",
+            "Ecosystem: Toulouse ecosystem (Airbus/°CNES/Thales/Safran) – strong internship market.",
             "—",
             "—"
         ],
@@ -1047,11 +818,11 @@
             "signalprocessing",
             "optimization"
         ],
-        "Industry_Ecosystem": "Toulouse ecosystem (Airbus/CNES/Thales/Safran) – strong internship market.",
+        "Industry_Ecosystem": "Toulouse ecosystem (Airbus/°CNES/Thales/Safran) – strong internship market.",
         "Industry_Comp_Intensity": "Medium",
         "Industry_Partners": [
             "Airbus",
-            "CNES",
+            "°CNES",
             "Thales",
             "Safran"
         ],
@@ -1063,32 +834,12 @@
         "Deadline_Summer_Open": null,
         "Deadline_Summer_Close": null,
         "Deadline_Summer_Note": null,
-        "Deadline_Summer_Avail": null,
         "Deadline_General_Note": "Exact deadlines depend on Master; international procedures vary.",
         "Meta_Sources": [
-            {
-                "type": "official",
-                "url": "https://www.univ-tlse3.fr/",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.messervices.etudiant.gouv.fr/envole/?id=france-cvec",
-                "last_verified": "2026-01-27",
-                "note": "CVEC amount reference (2025/26)."
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026",
-                "last_verified": "2026-01-27",
-                "note": "Public tuition reference for France (masters)."
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026",
-                "last_verified": "2026-01-27",
-                "note": "Public tuition reference for France (masters)."
-            }
+            "{'type': 'official', 'url': 'https://www.univ-tlse3.fr/', 'last_verified': '2026-01-27'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.messervices.etudiant.gouv.fr/envole/?id=france-cvec', 'last_verified': '2026-01-27', 'note': '°CVE°C amount reference (2025/26).'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026', 'last_verified': '2026-01-27', 'note': 'Public tuition reference for France (masters).'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026', 'last_verified': '2026-01-27', 'note': 'Public tuition reference for France (masters).'}"
         ],
         "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": null
@@ -1105,7 +856,7 @@
             {
                 "scope": "non_eu",
                 "program": "Université de Bordeaux – Master tracks (engineering/space-adjacent)",
-                "amount": 3941,
+                "amount": 3941.0,
                 "currency": "EUR",
                 "period": "year",
                 "raw": "Public tuition (differentiated fees) for non‑EU master-level students; exemptions may apply.",
@@ -1114,24 +865,18 @@
         ],
         "Cost_Semester_Fees": [
             {
-                "term": "AY 2025/26",
-                "term_code": null,
-                "amount": 105,
+                "term": "Aş 2025/26",
+                "amount": 105.0,
                 "currency": "EUR",
-                "raw": "CVEC contribution (annual) – amount for 2025/26; some exemptions apply.",
-                "components": [
-                    {
-                        "name": "CVEC",
-                        "amount": 105,
-                        "currency": "EUR"
-                    }
-                ]
+                "includes_ticket": null,
+                "raw": "°CVE°C contribution (annual) – amount for 2025/26; some exemptions apply.",
+                "term_code": null
             }
         ],
         "Scholarships_Info": [
             {
                 "name": "Eiffel Excellence Scholarship",
-                "provider": "French Ministry for Europe and Foreign Affairs / Campus France",
+                "provider": "French Ministry for Europe and Foreign Affairs / °Campus France",
                 "type": "Excellence scholarship (stipend + benefits)",
                 "eligibility": "International students; highly competitive; programme must nominate",
                 "amount": "Varies (monthly stipend + benefits)",
@@ -1144,21 +889,21 @@
                 "type": "Scholarship directory (incl. excellence schemes)",
                 "eligibility": "Varies by scheme",
                 "amount": "Varies",
-                "notes": "Check university scholarship portal; some programmes nominate.",
+                "notes": "°Check university scholarship portal; some programmes nominate.",
                 "url": "https://www.u-bordeaux.com/study/scholarships-and-funding"
             }
         ],
         "Cost_City_Living": "medium",
-        "Cost_City_Rank": 3,
+        "Cost_City_Rank": 3.0,
         "Living_Housing_Difficulty": "Medium",
-        "Living_Housing_Score": 5,
+        "Living_Housing_Score": 5.0,
         "Program_Name": "Université de Bordeaux – Master tracks (engineering/space-adjacent)",
         "Program_Degree": "MSc",
         "Program_ECTS": 120,
         "Program_URL": "https://www.u-bordeaux.com/study",
         "Program_Scope": "non_eu",
         "Admission_Mode": "Direct",
-        "Admission_Language_Req": "100% English",
+        "Admission_Language_Req": "100% Engüçlüish",
         "Analysis_Strong_Areas": "Engineering and applied sciences; track-dependent industry links.",
         "Analysis_Pros": [
             "Ecosystem: Bordeaux–Nouvelle-Aquitaine engineering ecosystem; opportunities vary by track.",
@@ -1193,36 +938,13 @@
         "Deadline_Summer_Open": null,
         "Deadline_Summer_Close": null,
         "Deadline_Summer_Note": null,
-        "Deadline_Summer_Avail": null,
         "Deadline_General_Note": "Exact deadlines vary by programme; international procedure may differ.",
         "Meta_Sources": [
-            {
-                "type": "official",
-                "url": "https://www.u-bordeaux.fr/",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.messervices.etudiant.gouv.fr/envole/?id=france-cvec",
-                "last_verified": "2026-01-27",
-                "note": "CVEC amount reference (2025/26)."
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026",
-                "last_verified": "2026-01-27",
-                "note": "Public tuition reference for France (masters)."
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.u-bordeaux.com/study/tuition-fees",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "scholarships",
-                "url": "https://www.u-bordeaux.com/study/scholarships-and-funding",
-                "last_verified": "2026-01-27"
-            }
+            "{'type': 'official', 'url': 'https://www.u-bordeaux.fr/', 'last_verified': '2026-01-27'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.messervices.etudiant.gouv.fr/envole/?id=france-cvec', 'last_verified': '2026-01-27', 'note': '°CVE°C amount reference (2025/26).'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026', 'last_verified': '2026-01-27', 'note': 'Public tuition reference for France (masters).'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.u-bordeaux.com/study/tuition-fees', 'last_verified': '2026-01-27'}",
+            "{'type': 'scholarships', 'url': 'https://www.u-bordeaux.com/study/scholarships-and-funding', 'last_verified': '2026-01-27'}"
         ],
         "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": null
@@ -1230,7 +952,7 @@
     {
         "Country": "France",
         "City": "Marseille",
-        "State_Region": "Provence-Alpes-Côte d'Azur",
+        "State_Region": "Provence-Alpes-°Côte d€Azur",
         "Uni_ID": "amu",
         "University_Name": "Aix-Marseille University",
         "University_Display_Name": "Aix-Marseille University (AMU)",
@@ -1239,7 +961,7 @@
             {
                 "scope": "non_eu",
                 "program": "Aix‑Marseille Université – Master tracks (engineering/space-adjacent)",
-                "amount": 3941,
+                "amount": 3941.0,
                 "currency": "EUR",
                 "period": "year",
                 "raw": "Public tuition (differentiated fees) for non‑EU master-level students; exemptions may apply.",
@@ -1248,24 +970,18 @@
         ],
         "Cost_Semester_Fees": [
             {
-                "term": "AY 2025/26",
-                "term_code": null,
-                "amount": 105,
+                "term": "Aş 2025/26",
+                "amount": 105.0,
                 "currency": "EUR",
-                "raw": "CVEC contribution (annual) – amount for 2025/26; some exemptions apply.",
-                "components": [
-                    {
-                        "name": "CVEC",
-                        "amount": 105,
-                        "currency": "EUR"
-                    }
-                ]
+                "includes_ticket": null,
+                "raw": "°CVE°C contribution (annual) – amount for 2025/26; some exemptions apply.",
+                "term_code": null
             }
         ],
         "Scholarships_Info": [
             {
                 "name": "Eiffel Excellence Scholarship",
-                "provider": "French Ministry for Europe and Foreign Affairs / Campus France",
+                "provider": "French Ministry for Europe and Foreign Affairs / °Campus France",
                 "type": "Excellence scholarship (stipend + benefits)",
                 "eligibility": "International students; highly competitive; programme must nominate",
                 "amount": "Varies (monthly stipend + benefits)",
@@ -1283,16 +999,16 @@
             }
         ],
         "Cost_City_Living": "medium",
-        "Cost_City_Rank": 3,
+        "Cost_City_Rank": 3.0,
         "Living_Housing_Difficulty": "Medium",
-        "Living_Housing_Score": 5,
+        "Living_Housing_Score": 5.0,
         "Program_Name": "Aix‑Marseille Université – Master tracks (engineering/space-adjacent)",
         "Program_Degree": "MSc",
         "Program_ECTS": 120,
         "Program_URL": "https://www.univ-amu.fr/en",
         "Program_Scope": "non_eu",
         "Admission_Mode": "Direct",
-        "Admission_Language_Req": "100% English",
+        "Admission_Language_Req": "100% Engüçlüish",
         "Analysis_Strong_Areas": "Strong research university; programme-dependent engineering/science strengths.",
         "Analysis_Pros": [
             "Ecosystem: Marseille–Provence research/industry ecosystem; depends on track (space-related options exist).",
@@ -1317,7 +1033,7 @@
         "Industry_Partners": [
             "Thales Alenia Space",
             "Airbus",
-            "CEA"
+            "°CEA"
         ],
         "Internship_Mandatory": true,
         "Internship_Notes": "",
@@ -1327,37 +1043,13 @@
         "Deadline_Summer_Open": null,
         "Deadline_Summer_Close": null,
         "Deadline_Summer_Note": null,
-        "Deadline_Summer_Avail": null,
         "Deadline_General_Note": "Exact deadlines vary by programme; international procedures vary.",
         "Meta_Sources": [
-            {
-                "type": "official",
-                "url": "https://www.univ-amu.fr/",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.messervices.etudiant.gouv.fr/envole/?id=france-cvec",
-                "last_verified": "2026-01-27",
-                "note": "CVEC amount reference (2025/26)."
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026",
-                "last_verified": "2026-01-27",
-                "note": "Public tuition reference for France (masters)."
-            },
-            {
-                "type": "fees_or_tuition",
-                "url": "https://www.univ-amu.fr/en/formation/registration-fees",
-                "last_verified": "2026-01-27"
-            },
-            {
-                "type": "scholarships",
-                "url": "https://tigers-amu.univ-amu.fr/en",
-                "last_verified": "2026-01-27",
-                "note": "AMU TIGER scholarship programme."
-            }
+            "{'type': 'official', 'url': 'https://www.univ-amu.fr/', 'last_verified': '2026-01-27'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.messervices.etudiant.gouv.fr/envole/?id=france-cvec', 'last_verified': '2026-01-27', 'note': '°CVE°C amount reference (2025/26).'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.hongkong.campusfrance.org/tuition-fees-in-france-2025-2026', 'last_verified': '2026-01-27', 'note': 'Public tuition reference for France (masters).'}",
+            "{'type': 'fees_or_tuition', 'url': 'https://www.univ-amu.fr/en/formation/registration-fees', 'last_verified': '2026-01-27'}",
+            "{'type': 'scholarships', 'url': 'https://tigers-amu.univ-amu.fr/en', 'last_verified': '2026-01-27', 'note': 'AMU TIGER scholarship programme.'}"
         ],
         "Meta_Updated_At": "2026-01-27",
         "Meta_Needs_Verification": null
