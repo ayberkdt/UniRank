@@ -4,11 +4,11 @@ from fastapi.responses import JSONResponse
 import sys
 import os
 from pathlib import Path
+import pandas as pd
 import numpy as np
 
-# Add root to sys.path so 'unirank' can be imported robustly on Vercel
-sys.path.append(os.getcwd())
-
+# In Vercel, the root directory is automatically in PYTHONPATH.
+# Do NOT use sys.path.append dynamically because it breaks Vercel's static analysis bundle.
 from unirank.core.json_loader import load_database_folder
 
 app = FastAPI()
