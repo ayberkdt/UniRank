@@ -534,21 +534,27 @@ tbody tr td:last-child {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
 }
 .pro-con-list li {
-    padding: 10px 14px;
-    font-size: 14px;
-    line-height: 1.5;
+    padding: 16px 20px;
+    font-size: 15px;
+    line-height: 1.7;
     display: flex;
     align-items: flex-start;
-    gap: 12px;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
-.pro-con-list .pro::before { content: "✅"; flex-shrink: 0; margin-top: 2px; }
-.pro-con-list .con::before { content: "⚠️"; flex-shrink: 0; margin-top: 2px; }
+.pro-con-list .pro::before, .pro-con-list .con::before {
+    font-size: 18px;
+    line-height: 1.4;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+.pro-con-list .pro::before { content: "✅"; }
+.pro-con-list .con::before { content: "⚠️"; }
 
 .loader {
     width: 20px;

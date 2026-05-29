@@ -1,6 +1,7 @@
 let rawData = [];
 let filteredData = [];
 let selectedCountries = new Set();
+let excludedCountries = new Set();
 let selectedKeywords = new Set();
 let favorites = new Set(JSON.parse(localStorage.getItem('unirank_favorites') || '[]'));
 
@@ -8,6 +9,8 @@ let favorites = new Set(JSON.parse(localStorage.getItem('unirank_favorites') || 
 const els = {
     countryFilter: document.getElementById('country-filter'),
     countryTags: document.getElementById('country-tags'),
+    countryExcludeFilter: document.getElementById('country-exclude-filter'),
+    countryExcludeTags: document.getElementById('country-exclude-tags'),
     cityFilter: document.getElementById('city-filter'),
     keywordFilter: document.getElementById('keyword-filter'),
     keywordTags: document.getElementById('keyword-tags'),
@@ -71,6 +74,7 @@ async function fetchData() {
         if (json.status === 'success') {
             rawData = json.data;
             populateCountryFilter();
+            populateCountryExcludeFilter();
             populateCityFilter();
             populateKeywordFilter();
             processAndRender();
@@ -105,6 +109,15 @@ function setupEventListeners() {
             selectedCountries.add(c);
             e.target.value = '';
             renderCountryTags();
+            processAndRender();
+        }
+    });
+    els.countryExcludeFilter.addEventListener('change', (e) => {
+        const c = e.target.value;
+        if (c && !excludedCountries.has(c)) {
+            excludedCountries.add(c);
+            e.target.value = '';
+            renderCountryExcludeTags();
             processAndRender();
         }
     });
@@ -159,6 +172,39 @@ function renderCountryTags() {
             processAndRender();
         };
         els.countryTags.appendChild(span);
+    });
+}
+
+function populateCountryExcludeFilter() {
+    const countries = new Set();
+    rawData.forEach(r => {
+        if (r.country) countries.add(r.country);
+    });
+    
+    const sorted = Array.from(countries).sort();
+    sorted.forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c;
+        opt.textContent = c;
+        els.countryExcludeFilter.appendChild(opt);
+    });
+}
+
+function renderCountryExcludeTags() {
+    els.countryExcludeTags.innerHTML = '';
+    excludedCountries.forEach(c => {
+        const span = document.createElement('span');
+        span.className = 'tag-removable';
+        span.innerHTML = `${c} ✕`;
+        span.style.background = 'rgba(239, 68, 68, 0.15)';
+        span.style.color = '#fca5a5';
+        span.style.borderColor = 'rgba(239, 68, 68, 0.3)';
+        span.onclick = () => {
+            excludedCountries.delete(c);
+            renderCountryExcludeTags();
+            processAndRender();
+        };
+        els.countryExcludeTags.appendChild(span);
     });
 }
 
@@ -238,7 +284,10 @@ function processAndRender() {
     let filtered = rawData.filter(r => {
         const rid = r.Uni_ID || r.id || r.name || r.university;
         if (showFavs && !favorites.has(rid)) return false;
+        
+        if (excludedCountries.size > 0 && excludedCountries.has(r.country)) return false;
         if (selectedCountries.size > 0 && !selectedCountries.has(r.country)) return false;
+        
         if (city !== 'All' && r.city !== city) return false;
         
         if (selectedKeywords.size > 0) {
