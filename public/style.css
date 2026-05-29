@@ -588,6 +588,71 @@ tbody tr td:last-child {
     }
 }
 
+@media (max-width: 768px) {
+    .main-content {
+        padding: 16px;
+        gap: 20px;
+    }
+    
+    .sidebar {
+        padding: 16px;
+    }
+    
+    .header-titles h2 {
+        font-size: 22px;
+    }
+    
+    .kpi-container {
+        gap: 12px;
+    }
+    
+    .kpi-card {
+        padding: 16px;
+        gap: 16px;
+    }
+    
+    .kpi-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 28px;
+    }
+    
+    .kpi-value {
+        font-size: 22px;
+    }
+    
+    .table-card {
+        padding: 16px 12px;
+    }
+    
+    th, td {
+        padding: 12px 10px;
+        white-space: nowrap;
+    }
+    
+    .drawer-header {
+        padding: 16px;
+    }
+    
+    .drawer-header h2 {
+        font-size: 18px;
+    }
+    
+    .drawer-content {
+        padding: 16px;
+        gap: 20px;
+    }
+    
+    .detail-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .radar-container {
+        height: 250px !important;
+    }
+}
+
 /* Dark-Mode Optimized Pastel Country Flags */
 .country-gradient {
     font-weight: 800;
