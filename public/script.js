@@ -249,7 +249,7 @@ function processAndRender() {
         }
         
         if (search) {
-            const text = `${r.name} ${r.university} ${r.tags_raw} ${r.focus} ${r.city}`.toLowerCase();
+            const text = `${r.name} ${r.university} ${r.tags_raw} ${r.focus} ${r.city} ${r.country}`.toLowerCase();
             if (!text.includes(search)) return false;
         }
         return true;
@@ -352,12 +352,15 @@ function renderTable() {
         const isFav = favorites.has(rid);
         const favIcon = isFav ? '⭐' : '☆';
         
+        // Clean country name (remove emojis like flags)
+        const cleanCountry = row.country ? row.country.replace(/[\u{1F300}-\u{1F6FF}\u{1F900}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F1E6}-\u{1F1FF}]/gu, '').trim() : '-';
+        
         tr.innerHTML = `
             <td><span style="color:var(--text-muted); font-weight:700;">${i + 1}</span></td>
             <td class="fav-cell" style="cursor: pointer; font-size: 16px;">${favIcon}</td>
             <td>${row.display_name || row.name}</td>
             <td>${row.city || '-'}</td>
-            <td><span class="country-gradient" data-country="${row.country}">${row.country || '-'}</span></td>
+            <td><span class="country-gradient" data-country="${cleanCountry}">${cleanCountry}</span></td>
             <td><span class="score-badge" style="background: ${scColor}">${row._score.toFixed(2)}</span></td>
             <td>${(row._fitNorm * 100).toFixed(0)}%</td>
             <td>€${parseFloat(row.tuition_eur_per_year || 0).toFixed(0)}</td>
@@ -403,13 +406,15 @@ function openDrawer(data) {
         tagsHTML = data.tags.map(t => `<span class="tag">#${t}</span>`).join('');
     }
 
+    const cleanCountry = data.country ? data.country.replace(/[\u{1F300}-\u{1F6FF}\u{1F900}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F1E6}-\u{1F1FF}]/gu, '').trim() : '-';
+
     document.getElementById('drawer-info').innerHTML = `
         <div class="detail-section">
             <h4>Overview</h4>
             <div class="detail-grid">
                 <div class="detail-item">
                     <label>Country</label>
-                    <span class="country-gradient" data-country="${data.country}">${data.country}</span>
+                    <span class="country-gradient" data-country="${cleanCountry}">${cleanCountry}</span>
                 </div>
                 <div class="detail-item">
                     <label>City</label>
