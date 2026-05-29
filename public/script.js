@@ -1,12 +1,15 @@
 let rawData = [];
 let filteredData = [];
 let selectedCountries = new Set();
+let selectedKeywords = new Set();
 
 // DOM Elements
 const els = {
     countryFilter: document.getElementById('country-filter'),
     countryTags: document.getElementById('country-tags'),
     cityFilter: document.getElementById('city-filter'),
+    keywordFilter: document.getElementById('keyword-filter'),
+    keywordTags: document.getElementById('keyword-tags'),
     searchInput: document.getElementById('search-input'),
     sortSelect: document.getElementById('sort-select'),
     weights: {
@@ -57,6 +60,7 @@ async function fetchData() {
             rawData = json.data;
             populateCountryFilter();
             populateCityFilter();
+            populateKeywordFilter();
             processAndRender();
         } else {
             console.error("API Error:", json.message);
@@ -89,6 +93,15 @@ function setupEventListeners() {
             selectedCountries.add(c);
             e.target.value = '';
             renderCountryTags();
+            processAndRender();
+        }
+    });
+    els.keywordFilter.addEventListener('change', (e) => {
+        const k = e.target.value;
+        if (k && !selectedKeywords.has(k)) {
+            selectedKeywords.add(k);
+            e.target.value = '';
+            renderKeywordTags();
             processAndRender();
         }
     });
@@ -151,6 +164,38 @@ function populateCityFilter() {
     });
 }
 
+function populateKeywordFilter() {
+    const keywords = new Set();
+    rawData.forEach(r => {
+        if (r.tags && Array.isArray(r.tags)) {
+            r.tags.forEach(t => keywords.add(t));
+        }
+    });
+    
+    const sorted = Array.from(keywords).sort();
+    sorted.forEach(k => {
+        const opt = document.createElement('option');
+        opt.value = k;
+        opt.textContent = k;
+        els.keywordFilter.appendChild(opt);
+    });
+}
+
+function renderKeywordTags() {
+    els.keywordTags.innerHTML = '';
+    selectedKeywords.forEach(k => {
+        const span = document.createElement('span');
+        span.className = 'tag-removable';
+        span.innerHTML = `#${k} ✕`;
+        span.onclick = () => {
+            selectedKeywords.delete(k);
+            renderKeywordTags();
+            processAndRender();
+        };
+        els.keywordTags.appendChild(span);
+    });
+}
+
 // Data Processing & Scoring
 const COST_MAP = {
     'very_low': 1, 'low': 2, 'medium': 3, 'high': 4, 'very_high': 5
@@ -168,16 +213,23 @@ function processAndRender() {
         cons: parseFloat(els.weights.cons.value),
     };
     
-    // Normalize main 3 weights
-    const sum = weights.cost + weights.tuition + weights.fit;
-    const wCost = sum > 0 ? weights.cost / sum : 0;
-    const wTuition = sum > 0 ? weights.tuition / sum : 0;
-    const wFit = sum > 0 ? weights.fit / sum : 0;
+    const wCost = weights.cost;
+    const wTuition = weights.tuition;
+    const wFit = weights.fit;
+    const wPros = weights.pros;
+    const wCons = weights.cons;
 
     // First pass: Calculate min/max for normalization across ALL matching records to be fair
     let filtered = rawData.filter(r => {
         if (selectedCountries.size > 0 && !selectedCountries.has(r.country)) return false;
         if (city !== 'All' && r.city !== city) return false;
+        
+        if (selectedKeywords.size > 0) {
+            const rTags = r.tags || [];
+            for (let sk of selectedKeywords) {
+                if (!rTags.includes(sk)) return false;
+            }
+        }
         
         if (search) {
             const text = `${r.name} ${r.university} ${r.tags_raw} ${r.focus} ${r.city}`.toLowerCase();
@@ -212,17 +264,22 @@ function processAndRender() {
         const fitNorm = Math.min(1.0, (numTags * 0.15) + 0.3); // Fake logic if none exists
         
         // Base score (higher is better)
-        // Cost is bad (1-costNorm), Tuition is bad (1-tuitionNorm), Fit is good (fitNorm)
-        let score = (1 - costNorm) * wCost + (1 - tuitionNorm) * wTuition + fitNorm * wFit;
+        let baseScore = (1 - costNorm) * wCost + (1 - tuitionNorm) * wTuition + fitNorm * wFit;
         
-        // Modifiers
+        let maxPossibleBase = wCost + wTuition + wFit;
+        if (maxPossibleBase === 0) maxPossibleBase = 1;
+        
+        let normalizedBase = baseScore / maxPossibleBase; // 0 to 1
+        let score = normalizedBase * 10;
+        
+        // Stronger Modifiers (absolute points based on weights)
         const pLen = (r.pros || []).length;
         const cLen = (r.cons || []).length;
-        score += pLen * weights.pros;
-        score -= cLen * weights.cons;
+        score += pLen * wPros * 8; // If pros weight is high, huge bonus
+        score -= cLen * wCons * 8; // If cons weight is high, huge penalty
         
         // Scale to 0-10
-        score = Math.max(0, Math.min(10, score * 10));
+        score = Math.max(0, Math.min(10, score));
         
         return {
             ...r,
