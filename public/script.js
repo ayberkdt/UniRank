@@ -5,6 +5,12 @@ let excludedCountries = new Set();
 let selectedKeywords = new Set();
 let favorites = new Set(JSON.parse(localStorage.getItem('unirank_favorites') || '[]'));
 
+// Global Boundaries for Normalization
+let globalMaxTuition = 10000;
+let globalMinTuition = 0;
+let globalMaxRank = 1000;
+let globalMinRank = 1;
+
 // DOM Elements
 const els = {
     countryFilter: document.getElementById('country-filter'),
@@ -75,6 +81,19 @@ async function fetchData() {
         
         if (json.status === 'success') {
             rawData = json.data;
+            
+            // Calculate Global Boundaries for Min-Max Normalization
+            if (rawData.length > 0) {
+                globalMaxTuition = Math.max(...rawData.map(r => parseFloat(r.tuition_eur_per_year) || 0));
+                globalMinTuition = Math.min(...rawData.map(r => parseFloat(r.tuition_eur_per_year) || 0));
+                if (globalMaxTuition === globalMinTuition) globalMaxTuition = globalMinTuition + 1; // Prevent division by zero
+                
+                const validRanks = rawData.map(r => r.qs_ranking).filter(r => r && r <= 1000);
+                globalMaxRank = validRanks.length > 0 ? Math.max(...validRanks) : 1000;
+                globalMinRank = validRanks.length > 0 ? Math.min(...validRanks) : 1;
+                if (globalMaxRank === globalMinRank) globalMaxRank = globalMinRank + 1;
+            }
+
             populateCountryFilter();
             populateCountryExcludeFilter();
             // populateCityFilter removed
@@ -284,32 +303,39 @@ function processAndRender() {
         return true;
     });
 
-    let maxTuition = 0;
-    filtered.forEach(r => {
-        const t = parseFloat(r.tuition_eur_per_year) || 0;
-        if (t > maxTuition) maxTuition = t;
-    });
-    if (maxTuition === 0) maxTuition = 10000;
+    let sumWeights = wCost + wTuition + wPros + wCons + wRanking;
+    if (sumWeights === 0) sumWeights = 1;
 
     filtered = filtered.map(r => {
         const rawCostStr = (r.cost_city_raw || 'medium').toString().toLowerCase().replace(/-/g, '_');
         const costNum = COST_MAP[rawCostStr] || 3;
         const costNorm = (costNum - 1) / 4;
+        
+        // Global Min-Max Normalization for Tuition
         const t = parseFloat(r.tuition_eur_per_year) || 0;
-        const tuitionNorm = Math.min(1.0, t / maxTuition);
+        let tuitionNorm = (t - globalMinTuition) / (globalMaxTuition - globalMinTuition);
+        tuitionNorm = Math.max(0, Math.min(1.0, tuitionNorm));
+        
+        // Fit is not used currently
         const fitNorm = 0; 
-        let qsRank = r.qs_ranking || 500;
+        
+        // Global Min-Max Normalization for QS Rank (Lower rank is better, so we invert it by default in scoring)
+        let qsRank = r.qs_ranking || 1000;
         if (qsRank > 1000) qsRank = 1000;
-        const rankingNorm = 1.0 - (qsRank / 1000.0);
-        let rankingScore = rankingNorm * 10;
-        let costScore = (1 - costNorm) * 10;
-        let tuitionScore = (1 - tuitionNorm) * 10;
+        
+        let rankingNorm = (qsRank - globalMinRank) / (globalMaxRank - globalMinRank);
+        rankingNorm = Math.max(0, Math.min(1.0, rankingNorm));
+        
+        let rankingScore = (1.0 - rankingNorm) * 10;
+        let costScore = (1.0 - costNorm) * 10;
+        let tuitionScore = (1.0 - tuitionNorm) * 10;
         let pLen = (r.pros || []).length;
         let cLen = (r.cons || []).length;
         let prosScore = Math.min(10, pLen * 3.33);
         let consScore = Math.max(0, 10 - cLen * 3.33);
-        let sumWeights = wCost + wTuition + wPros + wCons + wRanking;
-        if (sumWeights === 0) sumWeights = 1;
+        let prosScore = Math.min(10, pLen * 3.33);
+        let consScore = Math.max(0, 10 - cLen * 3.33);
+        
         
         let score = (costScore * wCost + tuitionScore * wTuition + prosScore * wPros + consScore * wCons + rankingScore * wRanking) / sumWeights;
         score = Math.max(0, Math.min(10, score));
@@ -438,7 +464,7 @@ function openDrawer(data) {
             <h4 class="heading-rankings">Rankings & Recognition</h4>
             <div class="detail-grid">
                 <div class="detail-item">
-                    <label>QS Ranking (Pseudo)</label>
+                    <label>QS Ranking (Global)</label>
                     <span>#${data.qs_ranking || 'N/A'}</span>
                 </div>
                 <div class="detail-item">
@@ -529,7 +555,9 @@ function openDrawer(data) {
         
         let qsRank = data.qs_ranking || 1000;
         if (qsRank > 1000) qsRank = 1000;
-        const rankingMetric = (1.0 - (qsRank / 1000.0)) * 10;
+        let chartRankingNorm = (qsRank - globalMinRank) / (globalMaxRank - globalMinRank);
+        chartRankingNorm = Math.max(0, Math.min(1.0, chartRankingNorm));
+        const rankingMetric = (1.0 - chartRankingNorm) * 10;
 
         window.uniChart = new Chart(ctx.getContext('2d'), {
             type: 'radar',
