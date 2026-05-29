@@ -332,6 +332,7 @@ function renderTable() {
         else if (row._score < 7.5) scColor = "var(--warning)";
         
         tr.innerHTML = `
+            <td><span style="color:var(--text-muted); font-weight:700;">#${i + 1}</span></td>
             <td>${row.display_name || row.name}</td>
             <td>${row.city || '-'}</td>
             <td>${row.country || '-'}</td>
@@ -366,7 +367,7 @@ function openDrawer(data) {
         tagsHTML = data.tags.map(t => `<span class="tag">#${t}</span>`).join('');
     }
 
-    els.drawer.body.innerHTML = `
+    document.getElementById('drawer-info').innerHTML = `
         <div class="detail-section">
             <h4>Overview</h4>
             <div class="detail-grid">
@@ -450,6 +451,58 @@ function openDrawer(data) {
         </div>
         ` : ''}
     `;
+
+    // Render Chart
+    const ctx = document.getElementById('radarChart');
+    if (ctx) {
+        if (window.uniChart) {
+            window.uniChart.destroy();
+        }
+        
+        // Calculate radar metrics out of 10
+        const fitMetric = (data._fitNorm || 0) * 10;
+        const affordabilityMetric = (1 - ((data._costNum - 1) / 4)) * 10; // Cost 5 -> 0, Cost 1 -> 10
+        const tuitionMetric = (1 - (data._tuitionNorm || 0)) * 10;
+        const prosMetric = Math.min(10, ((data.pros || []).length / 5) * 10);
+        const consMetric = Math.max(0, 10 - ((data.cons || []).length / 3) * 10); // More cons = lower score
+
+        window.uniChart = new Chart(ctx.getContext('2d'), {
+            type: 'radar',
+            data: {
+                labels: ['Focus Fit', 'Affordability', 'Tuition Value', 'Pros Bonus', 'Cons Score'],
+                datasets: [{
+                    data: [fitMetric, affordabilityMetric, tuitionMetric, prosMetric, consMetric],
+                    backgroundColor: 'rgba(99, 102, 241, 0.25)',
+                    borderColor: 'rgba(99, 102, 241, 1)',
+                    pointBackgroundColor: 'rgba(139, 92, 246, 1)',
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: 'rgba(139, 92, 246, 1)'
+                }]
+            },
+            options: {
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                        pointLabels: { color: '#94a3b8', font: { family: 'Inter', size: 11 } },
+                        ticks: { display: false, min: 0, max: 10 }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return ` Score: ${context.raw.toFixed(1)} / 10`;
+                            }
+                        }
+                    }
+                },
+                maintainAspectRatio: false
+            }
+        });
+    }
 
     els.drawer.panel.classList.add('active');
     els.drawer.overlay.classList.add('active');
