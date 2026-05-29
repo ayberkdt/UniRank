@@ -3,26 +3,27 @@ let filteredData = [];
 
 // DOM Elements
 const els = {
+    countryFilter: document.getElementById('country-filter'),
     cityFilter: document.getElementById('city-filter'),
     searchInput: document.getElementById('search-input'),
     sortSelect: document.getElementById('sort-select'),
     weights: {
         cost: document.getElementById('w-cost'),
-        fee: document.getElementById('w-fee'),
+        tuition: document.getElementById('w-tuition'),
         fit: document.getElementById('w-fit'),
         pros: document.getElementById('w-pros'),
         cons: document.getElementById('w-cons')
     },
     vals: {
         cost: document.getElementById('val-cost'),
-        fee: document.getElementById('val-fee'),
+        tuition: document.getElementById('val-tuition'),
         fit: document.getElementById('val-fit'),
         pros: document.getElementById('val-pros'),
         cons: document.getElementById('val-cons')
     },
     kpi: {
         total: document.getElementById('kpi-total'),
-        fee: document.getElementById('kpi-fee'),
+        tuition: document.getElementById('kpi-tuition'),
         score: document.getElementById('kpi-score')
     },
     tableBody: document.getElementById('table-body'),
@@ -52,6 +53,7 @@ async function fetchData() {
         
         if (json.status === 'success') {
             rawData = json.data;
+            populateCountryFilter();
             populateCityFilter();
             processAndRender();
         } else {
@@ -79,6 +81,7 @@ function setupEventListeners() {
     });
 
     // Filters
+    els.countryFilter.addEventListener('change', processAndRender);
     els.cityFilter.addEventListener('change', processAndRender);
     els.searchInput.addEventListener('input', () => {
         clearTimeout(window.searchTimeout);
@@ -91,6 +94,21 @@ function setupEventListeners() {
     // Drawer close
     els.drawer.close.addEventListener('click', closeDrawer);
     els.drawer.overlay.addEventListener('click', closeDrawer);
+}
+
+function populateCountryFilter() {
+    const countries = new Set();
+    rawData.forEach(r => {
+        if (r.country) countries.add(r.country);
+    });
+    
+    const sorted = Array.from(countries).sort();
+    sorted.forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c;
+        opt.textContent = c;
+        els.countryFilter.appendChild(opt);
+    });
 }
 
 function populateCityFilter() {
@@ -114,25 +132,27 @@ const COST_MAP = {
 };
 
 function processAndRender() {
+    const country = els.countryFilter.value;
     const city = els.cityFilter.value;
     const search = els.searchInput.value.toLowerCase();
     
     const weights = {
         cost: parseFloat(els.weights.cost.value),
-        fee: parseFloat(els.weights.fee.value),
+        tuition: parseFloat(els.weights.tuition.value),
         fit: parseFloat(els.weights.fit.value),
         pros: parseFloat(els.weights.pros.value),
         cons: parseFloat(els.weights.cons.value),
     };
     
     // Normalize main 3 weights
-    const sum = weights.cost + weights.fee + weights.fit;
+    const sum = weights.cost + weights.tuition + weights.fit;
     const wCost = sum > 0 ? weights.cost / sum : 0;
-    const wFee = sum > 0 ? weights.fee / sum : 0;
+    const wTuition = sum > 0 ? weights.tuition / sum : 0;
     const wFit = sum > 0 ? weights.fit / sum : 0;
 
     // First pass: Calculate min/max for normalization across ALL matching records to be fair
     let filtered = rawData.filter(r => {
+        if (country !== 'All' && r.country !== country) return false;
         if (city !== 'All' && r.city !== city) return false;
         
         if (search) {
@@ -142,13 +162,13 @@ function processAndRender() {
         return true;
     });
 
-    // Find max fee
-    let maxFee = 0;
+    // Find max tuition
+    let maxTuition = 0;
     filtered.forEach(r => {
-        const fee = parseFloat(r.semester_fee_eur) || 0;
-        if (fee > maxFee) maxFee = fee;
+        const t = parseFloat(r.tuition_eur_per_year) || 0;
+        if (t > maxTuition) maxTuition = t;
     });
-    if (maxFee === 0) maxFee = 1000; // prevent div by zero
+    if (maxTuition === 0) maxTuition = 10000; // prevent div by zero
 
     // Second pass: Calculate score
     filtered = filtered.map(r => {
@@ -157,9 +177,9 @@ function processAndRender() {
         const costNum = COST_MAP[rawCostStr] || 3;
         const costNorm = (costNum - 1) / 4; // 1->0, 5->1
         
-        // Fee to 0-1
-        const fee = parseFloat(r.semester_fee_eur) || 0;
-        const feeNorm = Math.min(1.0, fee / maxFee);
+        // Tuition to 0-1
+        const t = parseFloat(r.tuition_eur_per_year) || 0;
+        const tuitionNorm = Math.min(1.0, t / maxTuition);
         
         // Fit 
         // Try to derive some fit logic if missing, but UniRank uses custom ML or manual scores. 
@@ -168,8 +188,8 @@ function processAndRender() {
         const fitNorm = Math.min(1.0, (numTags * 0.15) + 0.3); // Fake logic if none exists
         
         // Base score (higher is better)
-        // Cost is bad (1-costNorm), Fee is bad (1-feeNorm), Fit is good (fitNorm)
-        let score = (1 - costNorm) * wCost + (1 - feeNorm) * wFee + fitNorm * wFit;
+        // Cost is bad (1-costNorm), Tuition is bad (1-tuitionNorm), Fit is good (fitNorm)
+        let score = (1 - costNorm) * wCost + (1 - tuitionNorm) * wTuition + fitNorm * wFit;
         
         // Modifiers
         const pLen = (r.pros || []).length;
@@ -183,7 +203,7 @@ function processAndRender() {
         return {
             ...r,
             _score: score,
-            _feeNorm: feeNorm,
+            _tuitionNorm: tuitionNorm,
             _fitNorm: fitNorm,
             _costNum: costNum
         };
@@ -193,7 +213,7 @@ function processAndRender() {
     const sortVal = els.sortSelect.value;
     filtered.sort((a, b) => {
         if (sortVal === 'score_desc') return b._score - a._score;
-        if (sortVal === 'fee_asc') return (parseFloat(a.semester_fee_eur)||0) - (parseFloat(b.semester_fee_eur)||0);
+        if (sortVal === 'tuition_asc') return (parseFloat(a.tuition_eur_per_year)||0) - (parseFloat(b.tuition_eur_per_year)||0);
         if (sortVal === 'cost_asc') return a._costNum - b._costNum;
         if (sortVal === 'name_asc') return (a.display_name || a.name).localeCompare(b.display_name || b.name);
         return 0;
@@ -208,13 +228,13 @@ function renderKPIs() {
     els.kpi.total.textContent = filteredData.length;
     
     if (filteredData.length > 0) {
-        const avgFee = filteredData.reduce((acc, r) => acc + (parseFloat(r.semester_fee_eur)||0), 0) / filteredData.length;
+        const avgTuition = filteredData.reduce((acc, r) => acc + (parseFloat(r.tuition_eur_per_year)||0), 0) / filteredData.length;
         const avgScore = filteredData.reduce((acc, r) => acc + r._score, 0) / filteredData.length;
         
-        els.kpi.fee.textContent = `€${avgFee.toFixed(0)}`;
+        els.kpi.tuition.textContent = `€${avgTuition.toFixed(0)}`;
         els.kpi.score.textContent = avgScore.toFixed(2);
     } else {
-        els.kpi.fee.textContent = "€0";
+        els.kpi.tuition.textContent = "€0";
         els.kpi.score.textContent = "0.0";
     }
 }
@@ -236,7 +256,7 @@ function renderTable() {
             <td>${row.country || '-'}</td>
             <td><span class="score-badge" style="background: ${scColor}">${row._score.toFixed(2)}</span></td>
             <td>${(row._fitNorm * 100).toFixed(0)}%</td>
-            <td>€${parseFloat(row.semester_fee_eur || 0).toFixed(2)}</td>
+            <td>€${parseFloat(row.tuition_eur_per_year || 0).toFixed(0)}</td>
             <td><button class="detail-btn">View Details</button></td>
         `;
         
