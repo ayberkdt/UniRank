@@ -333,8 +333,6 @@ function processAndRender() {
         let cLen = (r.cons || []).length;
         let prosScore = Math.min(10, pLen * 3.33);
         let consScore = Math.max(0, 10 - cLen * 3.33);
-        let prosScore = Math.min(10, pLen * 3.33);
-        let consScore = Math.max(0, 10 - cLen * 3.33);
         
         
         let score = (costScore * wCost + tuitionScore * wTuition + prosScore * wPros + consScore * wCons + rankingScore * wRanking) / sumWeights;
