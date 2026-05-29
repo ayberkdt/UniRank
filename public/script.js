@@ -445,10 +445,10 @@ function openDrawer(data) {
     let consHTML = '';
     
     if (data.pros && data.pros.length) {
-        prosHTML = data.pros.map(p => `<li class="pro">${p}</li>`).join('');
+        prosHTML = data.pros.map(p => `<li class="pro"><span class="pro-text">${p}</span></li>`).join('');
     }
     if (data.cons && data.cons.length) {
-        consHTML = data.cons.map(c => `<li class="con">${c}</li>`).join('');
+        consHTML = data.cons.map(c => `<li class="con"><span class="con-text">${c}</span></li>`).join('');
     }
     
     // Generate Tags HTML
