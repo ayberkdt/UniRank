@@ -56,9 +56,11 @@ async function fetchData() {
             processAndRender();
         } else {
             console.error("API Error:", json.message);
+            els.tableBody.innerHTML = `<tr><td colspan="7" style="text-align:center; color:var(--danger)">API Error: ${json.message}</td></tr>`;
         }
     } catch (err) {
         console.error("Fetch Error:", err);
+        els.tableBody.innerHTML = `<tr><td colspan="7" style="text-align:center; color:var(--danger)">Network/Fetch Error: ${err.message}</td></tr>`;
     } finally {
         els.loader.classList.remove('active');
     }
