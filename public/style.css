@@ -575,7 +575,7 @@ tbody tr td:last-child {
     }
 }
 
-/* Country Flag Animations */
+/* Dark-Mode Optimized Pastel Country Flags */
 .country-gradient {
     font-weight: 800;
     color: transparent;
@@ -583,79 +583,80 @@ tbody tr td:last-child {
     background-clip: text;
     -webkit-text-fill-color: transparent;
     display: inline-block;
-    transition: transform 0.3s ease, filter 0.3s ease;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
+    /* Soft shadow to make white/yellow readable without ugly strokes */
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.8));
 }
 
 .country-gradient:hover {
     transform: scale(1.05) translateY(-1px);
-    filter: drop-shadow(0 4px 12px rgba(255,255,255,0.2));
+    filter: drop-shadow(0 4px 12px rgba(99, 102, 241, 0.4));
 }
 
-/* Specific Country Flags (Sharp Stops) */
+/* Soft transition color stops with pastel-tinted flag colors */
 .country-gradient[data-country="Italy"] {
-    background-image: linear-gradient(to right, #009246 33.3%, #ffffff 33.3%, #ffffff 66.6%, #ce2b37 66.6%);
+    background-image: linear-gradient(to right, #4ade80 25%, #e2e8f0 40%, #e2e8f0 60%, #f87171 75%);
 }
 .country-gradient[data-country="China"],
 .country-gradient[data-country="PRC"],
 .country-gradient[data-country="Mainland China"] {
-    background-image: linear-gradient(to right, #EE1C25 20%, #FFFF00 20%, #FFFF00 35%, #EE1C25 35%);
+    background-image: linear-gradient(to right, #f87171 15%, #fde047 25%, #fde047 35%, #f87171 45%);
 }
 .country-gradient[data-country="Germany"] {
-    background-image: linear-gradient(to right, #000000 33.3%, #dd0000 33.3%, #dd0000 66.6%, #ffce00 66.6%);
-    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.6);
+    /* Slate-400 (Gray) instead of Black for legibility */
+    background-image: linear-gradient(to right, #94a3b8 25%, #f87171 40%, #f87171 60%, #fde047 75%);
 }
 .country-gradient[data-country="Netherlands"] {
-    background-image: linear-gradient(to right, #AE1C28 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #21468B 66.6%);
+    background-image: linear-gradient(to right, #f87171 25%, #e2e8f0 40%, #e2e8f0 60%, #60a5fa 75%);
 }
 .country-gradient[data-country="France"] {
-    background-image: linear-gradient(to right, #002395 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #ED2939 66.6%);
+    background-image: linear-gradient(to right, #60a5fa 25%, #e2e8f0 40%, #e2e8f0 60%, #f87171 75%);
 }
 .country-gradient[data-country="Spain"] {
-    background-image: linear-gradient(to right, #AA151B 25%, #F1BF00 25%, #F1BF00 75%, #AA151B 75%);
+    background-image: linear-gradient(to right, #f87171 20%, #fde047 35%, #fde047 65%, #f87171 80%);
 }
 .country-gradient[data-country="UK"], 
 .country-gradient[data-country="United Kingdom"] {
-    background-image: linear-gradient(to right, #012169 25%, #FFFFFF 25%, #FFFFFF 35%, #C8102E 35%, #C8102E 65%, #FFFFFF 65%, #FFFFFF 75%, #012169 75%);
+    background-image: linear-gradient(to right, #60a5fa 15%, #e2e8f0 25%, #e2e8f0 35%, #f87171 45%, #f87171 55%, #e2e8f0 65%, #e2e8f0 75%, #60a5fa 85%);
 }
 .country-gradient[data-country="USA"], 
 .country-gradient[data-country="United States"] {
-    background-image: linear-gradient(to right, #0A3161 40%, #FFFFFF 40%, #FFFFFF 50%, #B31942 50%, #B31942 60%, #FFFFFF 60%, #FFFFFF 70%, #B31942 70%);
+    background-image: linear-gradient(to right, #60a5fa 30%, #e2e8f0 40%, #e2e8f0 45%, #f87171 55%, #f87171 60%, #e2e8f0 70%, #e2e8f0 75%, #f87171 85%);
 }
 .country-gradient[data-country="Turkey"],
 .country-gradient[data-country="Türkiye"] {
-    background-image: linear-gradient(to right, #E30A17 45%, #FFFFFF 45%, #FFFFFF 60%, #E30A17 60%);
+    background-image: linear-gradient(to right, #f87171 35%, #e2e8f0 45%, #e2e8f0 55%, #f87171 65%);
 }
 .country-gradient[data-country="Sweden"] {
-    background-image: linear-gradient(to right, #006AA7 35%, #FECC00 35%, #FECC00 50%, #006AA7 50%);
+    background-image: linear-gradient(to right, #60a5fa 30%, #fde047 40%, #fde047 60%, #60a5fa 70%);
 }
 .country-gradient[data-country="Switzerland"] {
-    background-image: linear-gradient(to right, #D52B1E 40%, #FFFFFF 40%, #FFFFFF 60%, #D52B1E 60%);
+    background-image: linear-gradient(to right, #f87171 35%, #e2e8f0 45%, #e2e8f0 55%, #f87171 65%);
 }
 .country-gradient[data-country="Denmark"] {
-    background-image: linear-gradient(to right, #C60C30 35%, #FFFFFF 35%, #FFFFFF 50%, #C60C30 50%);
+    background-image: linear-gradient(to right, #f87171 30%, #e2e8f0 45%, #e2e8f0 55%, #f87171 70%);
 }
 .country-gradient[data-country="Belgium"] {
-    background-image: linear-gradient(to right, #000000 33.3%, #FDDA24 33.3%, #FDDA24 66.6%, #EF3340 66.6%);
-    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.6);
+    background-image: linear-gradient(to right, #94a3b8 25%, #fde047 40%, #fde047 60%, #f87171 75%);
 }
 .country-gradient[data-country="Russia"],
 .country-gradient[data-country="Russian Federation"] {
-    background-image: linear-gradient(to right, #FFFFFF 33.3%, #0039A6 33.3%, #0039A6 66.6%, #D52B1E 66.6%);
+    background-image: linear-gradient(to right, #e2e8f0 25%, #60a5fa 40%, #60a5fa 60%, #f87171 75%);
 }
 .country-gradient[data-country="Portugal"] {
-    background-image: linear-gradient(to right, #006600 40%, #FF0000 40%);
+    background-image: linear-gradient(to right, #4ade80 35%, #e2e8f0 45%, #e2e8f0 50%, #f87171 60%);
 }
 .country-gradient[data-country="Canada"] {
-    background-image: linear-gradient(to right, #FF0000 25%, #FFFFFF 25%, #FFFFFF 75%, #FF0000 75%);
+    background-image: linear-gradient(to right, #f87171 20%, #e2e8f0 35%, #e2e8f0 65%, #f87171 80%);
 }
 .country-gradient[data-country="Australia"] {
-    background-image: linear-gradient(to right, #012169 40%, #FFFFFF 40%, #FFFFFF 50%, #C8102E 50%, #C8102E 60%, #FFFFFF 60%, #FFFFFF 70%, #012169 70%);
+    background-image: linear-gradient(to right, #60a5fa 35%, #e2e8f0 45%, #e2e8f0 50%, #f87171 60%, #f87171 65%, #60a5fa 75%);
 }
 .country-gradient[data-country="South Korea"] {
-    background-image: linear-gradient(to right, #FFFFFF 30%, #CD2E3A 30%, #CD2E3A 50%, #0F64CD 50%, #0F64CD 70%, #FFFFFF 70%);
+    background-image: linear-gradient(to right, #e2e8f0 25%, #f87171 40%, #f87171 50%, #60a5fa 60%, #60a5fa 70%, #e2e8f0 85%);
 }
 .country-gradient[data-country="Japan"] {
-    background-image: linear-gradient(to right, #FFFFFF 40%, #BC002D 40%, #BC002D 60%, #FFFFFF 60%);
+    background-image: linear-gradient(to right, #e2e8f0 35%, #f87171 45%, #f87171 55%, #e2e8f0 65%);
 }
 
 /* Fallback for unmapped countries */
