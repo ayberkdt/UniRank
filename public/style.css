@@ -534,21 +534,22 @@ tbody tr td:last-child {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
 }
 .pro-con-list li {
-    padding: 16px 20px;
+    padding: 20px 24px;
     font-size: 15px;
-    line-height: 1.7;
+    line-height: 1.8;
     display: flex;
     align-items: flex-start;
-    gap: 16px;
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 .pro-con-list .pro::before, .pro-con-list .con::before {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.4;
     flex-shrink: 0;
     margin-top: 2px;

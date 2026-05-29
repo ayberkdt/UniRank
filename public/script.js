@@ -507,15 +507,15 @@ function openDrawer(data) {
 
         ${prosHTML || consHTML ? `
         <div class="detail-section">
-            <h4>Analysis</h4>
-            <div style="display: flex; flex-direction: column; gap: 16px;">
+            <h4 style="margin-bottom: 20px;">Analysis</h4>
+            <div style="display: flex; flex-direction: column; gap: 24px;">
                 ${prosHTML ? `
-                <div style="background: rgba(16, 185, 129, 0.05); padding: 20px; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.2);">
+                <div style="background: rgba(16, 185, 129, 0.04); padding: 24px; border-radius: 16px; border: 1px solid rgba(16, 185, 129, 0.25); box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.02);">
                     <ul class="pro-con-list">${prosHTML}</ul>
                 </div>
                 ` : ''}
                 ${consHTML ? `
-                <div style="background: rgba(239, 68, 68, 0.05); padding: 20px; border-radius: 12px; border: 1px solid rgba(239, 68, 68, 0.2);">
+                <div style="background: rgba(239, 68, 68, 0.04); padding: 24px; border-radius: 16px; border: 1px solid rgba(239, 68, 68, 0.25); box-shadow: inset 0 0 20px rgba(239, 68, 68, 0.02);">
                     <ul class="pro-con-list">${consHTML}</ul>
                 </div>
                 ` : ''}
