@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css?v=6">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -65,6 +65,10 @@
                     <div class="slider-group">
                         <label>Tuition Fee (↓) <span id="val-tuition">0.20</span></label>
                         <input type="range" id="w-tuition" min="0" max="1" step="0.01" value="0.20">
+                    </div>
+                    <div class="slider-group">
+                        <label>Academic Rank (↑) <span id="val-ranking">0.20</span></label>
+                        <input type="range" id="w-ranking" min="0" max="1" step="0.01" value="0.20">
                     </div>
                     <div class="slider-group" style="display: none;">
                         <label>Focus Fit (↑) <span id="val-fit">0.40</span></label>
@@ -174,6 +178,6 @@
     </div>
     
     <!-- Using a mock/local JSON or API depending on deployment -->
-    <script src="script.js?v=5"></script>
+    <script src="script.js?v=6"></script>
 </body>
 </html>

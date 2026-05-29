@@ -22,14 +22,16 @@ const els = {
         tuition: document.getElementById('w-tuition'),
         fit: document.getElementById('w-fit'),
         pros: document.getElementById('w-pros'),
-        cons: document.getElementById('w-cons')
+        cons: document.getElementById('w-cons'),
+        ranking: document.getElementById('w-ranking')
     },
     vals: {
         cost: document.getElementById('val-cost'),
         tuition: document.getElementById('val-tuition'),
         fit: document.getElementById('val-fit'),
         pros: document.getElementById('val-pros'),
-        cons: document.getElementById('val-cons')
+        cons: document.getElementById('val-cons'),
+        ranking: document.getElementById('val-ranking')
     },
     kpi: {
         total: document.getElementById('kpi-total'),
@@ -130,6 +132,13 @@ function setupEventListeners() {
             processAndRender();
         }
     });
+    els.weights.cost.addEventListener('input', updateValuesAndRender);
+    els.weights.tuition.addEventListener('input', updateValuesAndRender);
+    els.weights.fit.addEventListener('input', updateValuesAndRender);
+    els.weights.pros.addEventListener('input', updateValuesAndRender);
+    els.weights.cons.addEventListener('input', updateValuesAndRender);
+    els.weights.ranking.addEventListener('input', updateValuesAndRender);
+    
     els.cityFilter.addEventListener('change', processAndRender);
     els.favFilter.addEventListener('change', processAndRender);
     els.searchInput.addEventListener('input', () => {
@@ -264,39 +273,27 @@ function processAndRender() {
     const city = els.cityFilter.value;
     const search = els.searchInput.value.toLowerCase();
     
-    const weights = {
-        cost: parseFloat(els.weights.cost.value),
-        tuition: parseFloat(els.weights.tuition.value),
-        fit: parseFloat(els.weights.fit.value),
-        pros: parseFloat(els.weights.pros.value),
-        cons: parseFloat(els.weights.cons.value),
-    };
-    
-    const wCost = weights.cost;
-    const wTuition = weights.tuition;
-    const wFit = weights.fit;
-    const wPros = weights.pros;
-    const wCons = weights.cons;
+    const wCost = parseFloat(els.weights.cost.value);
+    const wTuition = parseFloat(els.weights.tuition.value);
+    const wFit = parseFloat(els.weights.fit.value);
+    const wPros = parseFloat(els.weights.pros.value);
+    const wCons = parseFloat(els.weights.cons.value);
+    const wRanking = parseFloat(els.weights.ranking.value);
     
     const showFavs = els.favFilter.checked;
 
-    // First pass: Calculate min/max for normalization across ALL matching records to be fair
     let filtered = rawData.filter(r => {
         const rid = r.Uni_ID || r.id || r.name || r.university;
         if (showFavs && !favorites.has(rid)) return false;
-        
         if (excludedCountries.size > 0 && excludedCountries.has(r.country)) return false;
         if (selectedCountries.size > 0 && !selectedCountries.has(r.country)) return false;
-        
         if (city !== 'All' && r.city !== city) return false;
-        
         if (selectedKeywords.size > 0) {
             const rTags = r.tags || [];
             for (let sk of selectedKeywords) {
                 if (!rTags.includes(sk)) return false;
             }
         }
-        
         if (search) {
             const text = `${r.name} ${r.university} ${r.tags_raw} ${r.focus} ${r.city} ${r.country}`.toLowerCase();
             if (!text.includes(search)) return false;
@@ -304,62 +301,39 @@ function processAndRender() {
         return true;
     });
 
-    // Find max tuition
     let maxTuition = 0;
     filtered.forEach(r => {
         const t = parseFloat(r.tuition_eur_per_year) || 0;
         if (t > maxTuition) maxTuition = t;
     });
-    if (maxTuition === 0) maxTuition = 10000; // prevent div by zero
+    if (maxTuition === 0) maxTuition = 10000;
 
-    // Second pass: Calculate score
     filtered = filtered.map(r => {
-        // Cost 1-5 to 0-1
         const rawCostStr = (r.cost_city_raw || 'medium').toString().toLowerCase().replace(/-/g, '_');
         const costNum = COST_MAP[rawCostStr] || 3;
-        const costNorm = (costNum - 1) / 4; // 1->0, 5->1
-        
-        // Tuition to 0-1
+        const costNorm = (costNum - 1) / 4;
         const t = parseFloat(r.tuition_eur_per_year) || 0;
         const tuitionNorm = Math.min(1.0, t / maxTuition);
-        
-        // Fit - ignoring fit entirely as requested
         const fitNorm = 0; 
-        
-        // Calculate components out of 10
+        let qsRank = r.qs_ranking || 500;
+        if (qsRank > 1000) qsRank = 1000;
+        const rankingNorm = 1.0 - (qsRank / 1000.0);
+        let rankingScore = rankingNorm * 10;
         let costScore = (1 - costNorm) * 10;
         let tuitionScore = (1 - tuitionNorm) * 10;
         let pLen = (r.pros || []).length;
         let cLen = (r.cons || []).length;
-        
-        let prosScore = Math.min(10, pLen * 3.33); // 3 pros = max 10
-        let consScore = Math.max(0, 10 - cLen * 3.33); // 0 cons = 10, 3 cons = 0
-        
-        // Sum of weights (ignore wFit)
-        let sumWeights = wCost + wTuition + wPros + wCons;
+        let prosScore = Math.min(10, pLen * 3.33);
+        let consScore = Math.max(0, 10 - cLen * 3.33);
+        let sumWeights = wCost + wTuition + wPros + wCons + wRanking;
         if (sumWeights === 0) sumWeights = 1;
         
-        // Final Score out of 10
-        let score = (
-            costScore * wCost +
-            tuitionScore * wTuition +
-            prosScore * wPros +
-            consScore * wCons
-        ) / sumWeights;
-        
-        // Scale to 0-10
+        let score = (costScore * wCost + tuitionScore * wTuition + prosScore * wPros + consScore * wCons + rankingScore * wRanking) / sumWeights;
         score = Math.max(0, Math.min(10, score));
         
-        return {
-            ...r,
-            _score: score,
-            _tuitionNorm: tuitionNorm,
-            _fitNorm: fitNorm,
-            _costNum: costNum
-        };
+        return { ...r, _score: score, _tuitionNorm: tuitionNorm, _fitNorm: fitNorm, _costNum: costNum };
     });
 
-    // Sorting
     const sortVal = els.sortSelect.value;
     filtered.sort((a, b) => {
         if (sortVal === 'score_desc') return b._score - a._score;
@@ -376,11 +350,9 @@ function processAndRender() {
 
 function renderKPIs() {
     els.kpi.total.textContent = filteredData.length;
-    
     if (filteredData.length > 0) {
         const avgTuition = filteredData.reduce((acc, r) => acc + (parseFloat(r.tuition_eur_per_year)||0), 0) / filteredData.length;
         const avgScore = filteredData.reduce((acc, r) => acc + r._score, 0) / filteredData.length;
-        
         els.kpi.tuition.textContent = `€${avgTuition.toFixed(0)}`;
         els.kpi.score.textContent = avgScore.toFixed(2);
     } else {
@@ -391,11 +363,8 @@ function renderKPIs() {
 
 function renderTable() {
     els.tableBody.innerHTML = '';
-    
     filteredData.forEach((row, i) => {
         const tr = document.createElement('tr');
-        
-        // Score color logic
         let scColor = "var(--success)";
         if (row._score < 5) scColor = "var(--danger)";
         else if (row._score < 7.5) scColor = "var(--warning)";
@@ -461,7 +430,7 @@ function openDrawer(data) {
 
     document.getElementById('drawer-info').innerHTML = `
         <div class="detail-section">
-            <h4>Overview</h4>
+            <h4 class="heading-overview">Overview</h4>
             <div class="detail-grid">
                 <div class="detail-item">
                     <label>Country</label>
@@ -483,7 +452,25 @@ function openDrawer(data) {
         </div>
 
         <div class="detail-section">
-            <h4>Financials</h4>
+            <h4 class="heading-rankings">Rankings & Recognition</h4>
+            <div class="detail-grid">
+                <div class="detail-item">
+                    <label>QS Ranking (Pseudo)</label>
+                    <span>#${data.qs_ranking || 'N/A'}</span>
+                </div>
+                <div class="detail-item">
+                    <label>Global Recognition</label>
+                    <span>${data.global_recognition || 'Unknown'}</span>
+                </div>
+                <div class="detail-item">
+                    <label>Field Recognition</label>
+                    <span>${data.field_recognition || 'Unknown'}</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-section">
+            <h4 class="heading-financials">Financials</h4>
             <div class="detail-grid">
                 <div class="detail-item">
                     <label>Semester Fee</label>
@@ -498,7 +485,7 @@ function openDrawer(data) {
         
         ${tagsHTML ? `
         <div class="detail-section">
-            <h4>Tags</h4>
+            <h4 class="heading-tags">Tags</h4>
             <div class="tag-list">
                 ${tagsHTML}
             </div>
@@ -507,7 +494,7 @@ function openDrawer(data) {
 
         ${prosHTML || consHTML ? `
         <div class="detail-section">
-            <h4 style="margin-bottom: 20px;">Analysis</h4>
+            <h4 class="heading-analysis">Analysis</h4>
             <div style="display: flex; flex-direction: column; gap: 24px;">
                 ${prosHTML ? `
                 <div style="background: rgba(16, 185, 129, 0.04); padding: 24px; border-radius: 16px; border: 1px solid rgba(16, 185, 129, 0.25); box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.02);">
