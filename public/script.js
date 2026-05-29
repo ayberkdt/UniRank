@@ -526,13 +526,17 @@ function openDrawer(data) {
         const tuitionMetric = (1 - (data._tuitionNorm || 0)) * 10;
         const prosMetric = Math.min(10, ((data.pros || []).length / 3) * 10);
         const consMetric = Math.max(0, 10 - ((data.cons || []).length / 3) * 10); // More cons = lower score
+        
+        let qsRank = data.qs_ranking || 1000;
+        if (qsRank > 1000) qsRank = 1000;
+        const rankingMetric = (1.0 - (qsRank / 1000.0)) * 10;
 
         window.uniChart = new Chart(ctx.getContext('2d'), {
             type: 'radar',
             data: {
-                labels: ['Affordability', 'Tuition Value', 'Pros Bonus', 'Cons Score'],
+                labels: ['Affordability', 'Tuition Value', 'Pros Bonus', 'Cons Score', 'Academic Rank', 'Total Score'],
                 datasets: [{
-                    data: [affordabilityMetric, tuitionMetric, prosMetric, consMetric],
+                    data: [affordabilityMetric, tuitionMetric, prosMetric, consMetric, rankingMetric, data._score],
                     backgroundColor: 'rgba(99, 102, 241, 0.25)',
                     borderColor: 'rgba(99, 102, 241, 1)',
                     pointBackgroundColor: 'rgba(139, 92, 246, 1)',

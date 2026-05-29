@@ -458,6 +458,12 @@ tbody tr td:last-child {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.drawer-content::-webkit-scrollbar {
+    display: none;
 }
 
 /* Detail Sections */
