@@ -42,6 +42,10 @@
                     </select>
                     <input type="text" id="search-input" placeholder="Or type manual search..." style="margin-top: 8px;">
                 </div>
+                <div class="form-group" style="flex-direction: row; align-items: center; gap: 8px; margin-top: 16px; margin-bottom: 8px;">
+                    <input type="checkbox" id="fav-filter" style="width: auto; cursor: pointer;">
+                    <label for="fav-filter" style="margin: 0; cursor: pointer; color: var(--text-highlight); font-weight: 600;">⭐ Show Favorites</label>
+                </div>
             </div>
 
             <div class="card">
@@ -126,6 +130,7 @@
                         <thead>
                             <tr>
                                 <th>#</th>
+                                <th>Fav</th>
                                 <th>University</th>
                                 <th>City</th>
                                 <th>Country</th>
@@ -148,7 +153,10 @@
         <aside class="drawer" id="detail-drawer">
             <div class="drawer-header">
                 <h2 id="drawer-title">University Name</h2>
-                <button class="close-btn" id="drawer-close">&times;</button>
+                <div style="display: flex; gap: 12px; align-items: center;">
+                    <button id="drawer-fav-btn" style="background: none; border: none; font-size: 24px; cursor: pointer;">☆</button>
+                    <button class="close-btn" id="drawer-close">&times;</button>
+                </div>
             </div>
             <div class="drawer-content" id="drawer-body">
                 <div class="radar-container" style="position: relative; width: 100%; height: 300px; display: flex; justify-content: center; margin-bottom: 24px;">

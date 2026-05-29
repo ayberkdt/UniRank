@@ -2,6 +2,7 @@ let rawData = [];
 let filteredData = [];
 let selectedCountries = new Set();
 let selectedKeywords = new Set();
+let favorites = new Set(JSON.parse(localStorage.getItem('unirank_favorites') || '[]'));
 
 // DOM Elements
 const els = {
@@ -10,6 +11,7 @@ const els = {
     cityFilter: document.getElementById('city-filter'),
     keywordFilter: document.getElementById('keyword-filter'),
     keywordTags: document.getElementById('keyword-tags'),
+    favFilter: document.getElementById('fav-filter'),
     searchInput: document.getElementById('search-input'),
     sortSelect: document.getElementById('sort-select'),
     weights: {
@@ -32,16 +34,25 @@ const els = {
         score: document.getElementById('kpi-score')
     },
     tableBody: document.getElementById('table-body'),
-    loader: document.getElementById('loader'),
-    
     drawer: {
         overlay: document.getElementById('drawer-overlay'),
         panel: document.getElementById('detail-drawer'),
         title: document.getElementById('drawer-title'),
         body: document.getElementById('drawer-body'),
-        close: document.getElementById('drawer-close')
+        closeBtn: document.getElementById('drawer-close'),
+        favBtn: document.getElementById('drawer-fav-btn')
     }
 };
+
+function toggleFavorite(id) {
+    if (favorites.has(id)) {
+        favorites.delete(id);
+    } else {
+        favorites.add(id);
+    }
+    localStorage.setItem('unirank_favorites', JSON.stringify(Array.from(favorites)));
+    processAndRender();
+}
 
 // Initialize
 async function init() {
@@ -51,7 +62,8 @@ async function init() {
 
 // Fetch Data
 async function fetchData() {
-    els.loader.classList.add('active');
+    const loader = document.getElementById('loader');
+    if (loader) loader.classList.add('active');
     try {
         const res = await fetch('/api/universities');
         const json = await res.json();
@@ -70,7 +82,7 @@ async function fetchData() {
         console.error("Fetch Error:", err);
         els.tableBody.innerHTML = `<tr><td colspan="7" style="text-align:center; color:var(--danger)">Network/Fetch Error: ${err.message}</td></tr>`;
     } finally {
-        els.loader.classList.remove('active');
+        if (loader) loader.classList.remove('active');
     }
 }
 
@@ -106,6 +118,7 @@ function setupEventListeners() {
         }
     });
     els.cityFilter.addEventListener('change', processAndRender);
+    els.favFilter.addEventListener('change', processAndRender);
     els.searchInput.addEventListener('input', () => {
         clearTimeout(window.searchTimeout);
         window.searchTimeout = setTimeout(processAndRender, 200);
@@ -115,7 +128,7 @@ function setupEventListeners() {
     els.sortSelect.addEventListener('change', processAndRender);
     
     // Drawer close
-    els.drawer.close.addEventListener('click', closeDrawer);
+    els.drawer.closeBtn.addEventListener('click', closeDrawer);
     els.drawer.overlay.addEventListener('click', closeDrawer);
 }
 
@@ -218,9 +231,13 @@ function processAndRender() {
     const wFit = weights.fit;
     const wPros = weights.pros;
     const wCons = weights.cons;
+    
+    const showFavs = els.favFilter.checked;
 
     // First pass: Calculate min/max for normalization across ALL matching records to be fair
     let filtered = rawData.filter(r => {
+        const rid = r.Uni_ID || r.id || r.name || r.university;
+        if (showFavs && !favorites.has(rid)) return false;
         if (selectedCountries.size > 0 && !selectedCountries.has(r.country)) return false;
         if (city !== 'All' && r.city !== city) return false;
         
@@ -331,8 +348,13 @@ function renderTable() {
         if (row._score < 5) scColor = "var(--danger)";
         else if (row._score < 7.5) scColor = "var(--warning)";
         
+        const rid = row.Uni_ID || row.id || row.name || row.university;
+        const isFav = favorites.has(rid);
+        const favIcon = isFav ? '⭐' : '☆';
+        
         tr.innerHTML = `
             <td><span style="color:var(--text-muted); font-weight:700;">#${i + 1}</span></td>
+            <td class="fav-cell" style="cursor: pointer; font-size: 16px;">${favIcon}</td>
             <td>${row.display_name || row.name}</td>
             <td>${row.city || '-'}</td>
             <td>${row.country || '-'}</td>
@@ -342,14 +364,28 @@ function renderTable() {
             <td><button class="detail-btn">View Details</button></td>
         `;
         
-        tr.addEventListener('click', () => openDrawer(row));
         els.tableBody.appendChild(tr);
+        
+        tr.querySelector('.fav-cell').addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleFavorite(rid);
+        });
+        
+        tr.addEventListener('click', () => openDrawer(row));
     });
 }
 
 function openDrawer(data) {
     els.drawer.title.textContent = data.display_name || data.name;
     
+    const rid = data.Uni_ID || data.id || data.name || data.university;
+    const isFav = favorites.has(rid);
+    els.drawer.favBtn.innerHTML = isFav ? '⭐' : '☆';
+    els.drawer.favBtn.onclick = () => {
+        toggleFavorite(rid);
+        els.drawer.favBtn.innerHTML = favorites.has(rid) ? '⭐' : '☆';
+    };
+
     // Generate Pros / Cons HTML
     let prosHTML = '';
     let consHTML = '';
