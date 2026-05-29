@@ -274,26 +274,29 @@ function processAndRender() {
         const t = parseFloat(r.tuition_eur_per_year) || 0;
         const tuitionNorm = Math.min(1.0, t / maxTuition);
         
-        // Fit 
-        // Try to derive some fit logic if missing, but UniRank uses custom ML or manual scores. 
-        // We'll give a randomish or tag-based fit if missing.
-        const numTags = (r.tags || []).length;
-        const fitNorm = Math.min(1.0, (numTags * 0.15) + 0.3); // Fake logic if none exists
+        // Fit - ignoring fit entirely as requested
+        const fitNorm = 0; 
         
-        // Base score (higher is better)
-        let baseScore = (1 - costNorm) * wCost + (1 - tuitionNorm) * wTuition + fitNorm * wFit;
+        // Calculate components out of 10
+        let costScore = (1 - costNorm) * 10;
+        let tuitionScore = (1 - tuitionNorm) * 10;
+        let pLen = (r.pros || []).length;
+        let cLen = (r.cons || []).length;
         
-        let maxPossibleBase = wCost + wTuition + wFit;
-        if (maxPossibleBase === 0) maxPossibleBase = 1;
+        let prosScore = Math.min(10, pLen * 3.33); // 3 pros = max 10
+        let consScore = Math.max(0, 10 - cLen * 3.33); // 0 cons = 10, 3 cons = 0
         
-        let normalizedBase = baseScore / maxPossibleBase; // 0 to 1
-        let score = normalizedBase * 10;
+        // Sum of weights (ignore wFit)
+        let sumWeights = wCost + wTuition + wPros + wCons;
+        if (sumWeights === 0) sumWeights = 1;
         
-        // Stronger Modifiers (absolute points based on weights)
-        const pLen = (r.pros || []).length;
-        const cLen = (r.cons || []).length;
-        score += pLen * wPros * 8; // If pros weight is high, huge bonus
-        score -= cLen * wCons * 8; // If cons weight is high, huge penalty
+        // Final Score out of 10
+        let score = (
+            costScore * wCost +
+            tuitionScore * wTuition +
+            prosScore * wPros +
+            consScore * wCons
+        ) / sumWeights;
         
         // Scale to 0-10
         score = Math.max(0, Math.min(10, score));
@@ -362,7 +365,6 @@ function renderTable() {
             <td>${row.city || '-'}</td>
             <td><span class="country-gradient" data-country="${cleanCountry}">${cleanCountry}</span></td>
             <td><span class="score-badge" style="background: ${scColor}">${row._score.toFixed(2)}</span></td>
-            <td>${(row._fitNorm * 100).toFixed(0)}%</td>
             <td>€${parseFloat(row.tuition_eur_per_year || 0).toFixed(0)}</td>
             <td><button class="detail-btn">Details ↗</button></td>
         `;
@@ -459,12 +461,12 @@ function openDrawer(data) {
             <h4>Analysis</h4>
             <div style="display: flex; flex-direction: column; gap: 16px;">
                 ${prosHTML ? `
-                <div style="background: rgba(16, 185, 129, 0.1); padding: 16px; border-radius: 8px;">
+                <div style="background: rgba(16, 185, 129, 0.05); padding: 20px; border-radius: 12px; border: 1px solid rgba(16, 185, 129, 0.2);">
                     <ul class="pro-con-list">${prosHTML}</ul>
                 </div>
                 ` : ''}
                 ${consHTML ? `
-                <div style="background: rgba(239, 68, 68, 0.1); padding: 16px; border-radius: 8px;">
+                <div style="background: rgba(239, 68, 68, 0.05); padding: 20px; border-radius: 12px; border: 1px solid rgba(239, 68, 68, 0.2);">
                     <ul class="pro-con-list">${consHTML}</ul>
                 </div>
                 ` : ''}
@@ -501,18 +503,17 @@ function openDrawer(data) {
         }
         
         // Calculate radar metrics out of 10
-        const fitMetric = (data._fitNorm || 0) * 10;
         const affordabilityMetric = (1 - ((data._costNum - 1) / 4)) * 10; // Cost 5 -> 0, Cost 1 -> 10
         const tuitionMetric = (1 - (data._tuitionNorm || 0)) * 10;
-        const prosMetric = Math.min(10, ((data.pros || []).length / 5) * 10);
+        const prosMetric = Math.min(10, ((data.pros || []).length / 3) * 10);
         const consMetric = Math.max(0, 10 - ((data.cons || []).length / 3) * 10); // More cons = lower score
 
         window.uniChart = new Chart(ctx.getContext('2d'), {
             type: 'radar',
             data: {
-                labels: ['Focus Fit', 'Affordability', 'Tuition Value', 'Pros Bonus', 'Cons Score'],
+                labels: ['Affordability', 'Tuition Value', 'Pros Bonus', 'Cons Score'],
                 datasets: [{
-                    data: [fitMetric, affordabilityMetric, tuitionMetric, prosMetric, consMetric],
+                    data: [affordabilityMetric, tuitionMetric, prosMetric, consMetric],
                     backgroundColor: 'rgba(99, 102, 241, 0.25)',
                     borderColor: 'rgba(99, 102, 241, 1)',
                     pointBackgroundColor: 'rgba(139, 92, 246, 1)',

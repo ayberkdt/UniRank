@@ -532,16 +532,23 @@ tbody tr td:last-child {
 
 .pro-con-list {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 .pro-con-list li {
-    padding: 6px 0;
-    font-size: 13px;
+    padding: 10px 14px;
+    font-size: 14px;
+    line-height: 1.5;
     display: flex;
     align-items: flex-start;
-    gap: 8px;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
-.pro-con-list .pro::before { content: "✅"; }
-.pro-con-list .con::before { content: "⚠️"; }
+.pro-con-list .pro::before { content: "✅"; flex-shrink: 0; margin-top: 2px; }
+.pro-con-list .con::before { content: "⚠️"; flex-shrink: 0; margin-top: 2px; }
 
 .loader {
     width: 20px;
