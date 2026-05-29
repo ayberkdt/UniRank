@@ -1,9 +1,11 @@
 let rawData = [];
 let filteredData = [];
+let selectedCountries = new Set();
 
 // DOM Elements
 const els = {
     countryFilter: document.getElementById('country-filter'),
+    countryTags: document.getElementById('country-tags'),
     cityFilter: document.getElementById('city-filter'),
     searchInput: document.getElementById('search-input'),
     sortSelect: document.getElementById('sort-select'),
@@ -81,7 +83,15 @@ function setupEventListeners() {
     });
 
     // Filters
-    els.countryFilter.addEventListener('change', processAndRender);
+    els.countryFilter.addEventListener('change', (e) => {
+        const c = e.target.value;
+        if (c && !selectedCountries.has(c)) {
+            selectedCountries.add(c);
+            e.target.value = '';
+            renderCountryTags();
+            processAndRender();
+        }
+    });
     els.cityFilter.addEventListener('change', processAndRender);
     els.searchInput.addEventListener('input', () => {
         clearTimeout(window.searchTimeout);
@@ -111,6 +121,21 @@ function populateCountryFilter() {
     });
 }
 
+function renderCountryTags() {
+    els.countryTags.innerHTML = '';
+    selectedCountries.forEach(c => {
+        const span = document.createElement('span');
+        span.className = 'tag-removable';
+        span.innerHTML = `${c} ✕`;
+        span.onclick = () => {
+            selectedCountries.delete(c);
+            renderCountryTags();
+            processAndRender();
+        };
+        els.countryTags.appendChild(span);
+    });
+}
+
 function populateCityFilter() {
     const cities = new Set();
     rawData.forEach(r => {
@@ -132,7 +157,6 @@ const COST_MAP = {
 };
 
 function processAndRender() {
-    const country = els.countryFilter.value;
     const city = els.cityFilter.value;
     const search = els.searchInput.value.toLowerCase();
     
@@ -152,7 +176,7 @@ function processAndRender() {
 
     // First pass: Calculate min/max for normalization across ALL matching records to be fair
     let filtered = rawData.filter(r => {
-        if (country !== 'All' && r.country !== country) return false;
+        if (selectedCountries.size > 0 && !selectedCountries.has(r.country)) return false;
         if (city !== 'All' && r.city !== city) return false;
         
         if (search) {
