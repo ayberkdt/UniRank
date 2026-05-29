@@ -595,11 +595,14 @@ tbody tr td:last-child {
 .country-gradient[data-country="Italy"] {
     background-image: linear-gradient(to right, #009246 33.3%, #ffffff 33.3%, #ffffff 66.6%, #ce2b37 66.6%);
 }
-.country-gradient[data-country="China"] {
+.country-gradient[data-country="China"],
+.country-gradient[data-country="PRC"],
+.country-gradient[data-country="Mainland China"] {
     background-image: linear-gradient(to right, #EE1C25 20%, #FFFF00 20%, #FFFF00 35%, #EE1C25 35%);
 }
 .country-gradient[data-country="Germany"] {
     background-image: linear-gradient(to right, #000000 33.3%, #dd0000 33.3%, #dd0000 66.6%, #ffce00 66.6%);
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.6);
 }
 .country-gradient[data-country="Netherlands"] {
     background-image: linear-gradient(to right, #AE1C28 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #21468B 66.6%);
@@ -633,6 +636,26 @@ tbody tr td:last-child {
 }
 .country-gradient[data-country="Belgium"] {
     background-image: linear-gradient(to right, #000000 33.3%, #FDDA24 33.3%, #FDDA24 66.6%, #EF3340 66.6%);
+    -webkit-text-stroke: 0.5px rgba(255, 255, 255, 0.6);
+}
+.country-gradient[data-country="Russia"],
+.country-gradient[data-country="Russian Federation"] {
+    background-image: linear-gradient(to right, #FFFFFF 33.3%, #0039A6 33.3%, #0039A6 66.6%, #D52B1E 66.6%);
+}
+.country-gradient[data-country="Portugal"] {
+    background-image: linear-gradient(to right, #006600 40%, #FF0000 40%);
+}
+.country-gradient[data-country="Canada"] {
+    background-image: linear-gradient(to right, #FF0000 25%, #FFFFFF 25%, #FFFFFF 75%, #FF0000 75%);
+}
+.country-gradient[data-country="Australia"] {
+    background-image: linear-gradient(to right, #012169 40%, #FFFFFF 40%, #FFFFFF 50%, #C8102E 50%, #C8102E 60%, #FFFFFF 60%, #FFFFFF 70%, #012169 70%);
+}
+.country-gradient[data-country="South Korea"] {
+    background-image: linear-gradient(to right, #FFFFFF 30%, #CD2E3A 30%, #CD2E3A 50%, #0F64CD 50%, #0F64CD 70%, #FFFFFF 70%);
+}
+.country-gradient[data-country="Japan"] {
+    background-image: linear-gradient(to right, #FFFFFF 40%, #BC002D 40%, #BC002D 60%, #FFFFFF 60%);
 }
 
 /* Fallback for unmapped countries */
