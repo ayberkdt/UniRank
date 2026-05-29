@@ -14,6 +14,9 @@ dependencies = [
     "numpy>=1.24.0"
 ]
 
+[tool.setuptools]
+packages = ["unirank"]
+
 [project.optional-dependencies]
 dev = [
     "pytest",
