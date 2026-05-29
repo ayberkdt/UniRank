@@ -198,6 +198,10 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
                 "scholarships_json": _json_compact(dump.get("Scholarships_Info", [])),
                 "sources_json": _json_compact(model.Meta_Sources),
                 
+                "qs_ranking": model.qs_ranking,
+                "global_recognition": model.global_recognition,
+                "field_recognition": model.field_recognition,
+
                 "source_file": file.name,
                 "updated_at": model.Meta_Updated_At or ""
             }
@@ -221,7 +225,7 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
             "deadline_summer_opens", "deadline_summer_closes", "deadlines_note", "deadlines_json",
             "housing_difficulty", "housing_difficulty_score", "key_partners", "industry_focus_json",
             "logistics_json", "admission_details_json", "scholarship_names", "scholarships_json",
-            "sources_json", "source_file", "updated_at"
+            "sources_json", "qs_ranking", "global_recognition", "field_recognition", "source_file", "updated_at"
         ]
         df = pd.DataFrame(columns=cols)
         

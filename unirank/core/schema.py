@@ -80,6 +80,10 @@ class UniversityRecord(BaseModel):
     Meta_Sources: List[str] = Field(default_factory=list)
     Meta_Updated_At: Optional[str] = None
     Meta_Needs_Verification: Optional[bool] = None
+    
+    qs_ranking: Optional[int] = None
+    global_recognition: Optional[str] = None
+    field_recognition: Optional[str] = None
 
     @field_validator(
         "Analysis_Pros", "Analysis_Cons", "Analysis_Tags", "Industry_Partners", "Meta_Sources",

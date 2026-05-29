@@ -96,12 +96,14 @@ async function fetchData() {
 function setupEventListeners() {
     // Weights
     Object.keys(els.weights).forEach(k => {
-        els.weights[k].addEventListener('input', (e) => {
-            els.vals[k].textContent = Number(e.target.value).toFixed(2);
-            // Debounce re-render slightly
-            clearTimeout(window.renderTimeout);
-            window.renderTimeout = setTimeout(processAndRender, 100);
-        });
+        if (els.weights[k]) {
+            els.weights[k].addEventListener('input', (e) => {
+                if (els.vals[k]) els.vals[k].textContent = Number(e.target.value).toFixed(2);
+                // Debounce re-render slightly
+                clearTimeout(window.renderTimeout);
+                window.renderTimeout = setTimeout(processAndRender, 100);
+            });
+        }
     });
 
     // Filters
@@ -132,12 +134,6 @@ function setupEventListeners() {
             processAndRender();
         }
     });
-    els.weights.cost.addEventListener('input', updateValuesAndRender);
-    els.weights.tuition.addEventListener('input', updateValuesAndRender);
-    els.weights.fit.addEventListener('input', updateValuesAndRender);
-    els.weights.pros.addEventListener('input', updateValuesAndRender);
-    els.weights.cons.addEventListener('input', updateValuesAndRender);
-    els.weights.ranking.addEventListener('input', updateValuesAndRender);
     
     els.cityFilter.addEventListener('change', processAndRender);
     els.favFilter.addEventListener('change', processAndRender);
@@ -273,12 +269,12 @@ function processAndRender() {
     const city = els.cityFilter.value;
     const search = els.searchInput.value.toLowerCase();
     
-    const wCost = parseFloat(els.weights.cost.value);
-    const wTuition = parseFloat(els.weights.tuition.value);
-    const wFit = parseFloat(els.weights.fit.value);
-    const wPros = parseFloat(els.weights.pros.value);
-    const wCons = parseFloat(els.weights.cons.value);
-    const wRanking = parseFloat(els.weights.ranking.value);
+    const wCost = els.weights.cost ? parseFloat(els.weights.cost.value) : 0.20;
+    const wTuition = els.weights.tuition ? parseFloat(els.weights.tuition.value) : 0.20;
+    const wFit = els.weights.fit ? parseFloat(els.weights.fit.value) : 0.40;
+    const wPros = els.weights.pros ? parseFloat(els.weights.pros.value) : 0.20;
+    const wCons = els.weights.cons ? parseFloat(els.weights.cons.value) : 0.20;
+    const wRanking = els.weights.ranking ? parseFloat(els.weights.ranking.value) : 0.20;
     
     const showFavs = els.favFilter.checked;
 
