@@ -1,2366 +1,1338 @@
 [
-  {
-    "id": "utokyo",
-    "name": "The University of Tokyo",
-    "display_name": "The University of Tokyo (UTokyo)",
-    "short": "UTokyo",
-    "location": {
-      "city": "Tokyo",
-      "state": "Tokyo",
-      "country": "Japan"
-    },
-    "city_cost": "very_high",
-    "city_cost_raw": "Çok yüksek",
-    "semester_fees": [
-      {
-        "term": "WiSe 2025/26",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2025W"
-      },
-      {
-        "term": "SoSe 2026",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2026S"
-      }
-    ],
-    "tuition": [
-      {
-        "scope": "non_eu",
-        "program": "Graduate (Space/Aerospace track)",
-        "amount": 3400.0,
-        "currency": "EUR",
-        "period": "year",
-        "raw": "Approx €3,400/year (non-EU/intl)",
-        "effective_from_term_code": "2025W"
-      }
-    ],
-    "aerospace_ecosystem": "ISAS/JAXA ile doğrudan bağlantılı laboratuvarlar. Japonya'nın akademik zirvesi.",
-    "strong_areas_summary": "Astrodynamics, Propulsion (Ion engines), Space Structures, Intelligent Control",
-    "pros": [
-      "Dünyanın en iyi üniversitelerinden biridir.",
-      "JAXA görevlerinde (örn.",
-      "Strength areas: Astrodynamics, Propulsion (Ion engines), Space Structures, Intelligent Control.",
-      "Industry/agency proximity or links: JAXA, ISAS, Mitsubishi Heavy Industries (MHI), IHI Corporation."
-    ],
-    "cons": [
-      "Tokyo'da yaşam çok pahalıdır ve yurt çıkmazsa ev bulmak zordur.",
-      "Rekabet çok yüksektir.",
-      "Housing in Tokyo is rated Nightmare (score 10/10) — plan early.",
-      "Admission typically involves an entrance exam and/or interview; outcomes can be less predictable than grade-only admission."
-    ],
-    "tags": [
-      "astrodynamics",
-      "propulsion",
-      "spacestructures",
-      "gnc",
-      "electricpropulsion",
-      "missionanalysis"
-    ],
-    "tags_raw": "#Astrodynamics #Propulsion #Spacestructures #Gnc #Electricpropulsion #Missionanalysis",
-    "sources": [
-      {
-        "type": "official",
-        "url": "https://www.u-tokyo.ac.jp/en/prospective-students/tuition_fees.html",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "admissions",
-        "url": "https://www.u-tokyo.ac.jp/en/prospective-students/grad_admissions.html",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "admissions",
-        "url": "https://www.s.u-tokyo.ac.jp/en/admission/graduate.html",
-        "last_verified": "2026-01-27"
-      }
-    ],
-    "updated_at": "2026-01-27",
-    "city_cost_rank": 6,
-    "target_program": {
-      "name": "Graduate program (Space/Aerospace track)",
-      "degree": "MSc",
-      "ects": 120,
-      "url": "https://www.u-tokyo.ac.jp/en/prospective-students/tuition_fees.html"
-    },
-    "admission_mode": "Aptitude Test",
-    "language_req": "English C1",
-    "deadlines": {
-      "winter": {
-        "opens": "Varies",
-        "closes": "Nov / Dec (for Oct intake)",
-        "source_note": "Program-dependent; many Japanese programs have Oct/Apr intakes and department-specific windows."
-      },
-      "summer": {
-        "opens": "Varies",
-        "closes": "N/A",
-        "source_note": "Program-dependent; verify per program/intake.",
-        "availability_note": "Many programs are Oct intake only; verify per department"
-      }
-    },
-    "housing_difficulty": "Nightmare",
-    "housing_difficulty_score": 10,
-    "key_partners": [
-      "JAXA",
-      "ISAS",
-      "Mitsubishi Heavy Industries (MHI)",
-      "IHI Corporation"
-    ],
-    "admission_details": {
-      "mode": "Uluslararası öğrenciler için 'Special Screening' (Belge + Mülakat + Bazen Online Sınav). GRE istenir.",
-      "language": "English (TOEFL/IELTS)",
-      "winter_deadline": "Nov / Dec (for Oct intake)",
-      "ects": 120
-    },
-    "logistics": {
-      "housing_difficulty": "Nightmare",
-      "housing_difficulty_score": 10,
-      "internship_mandatory": false,
-      "internship_notes": "Not generally mandatory; depends on lab/track. For Japan, internships can be harder to schedule without Japanese."
-    },
-    "industry_focus": {
-      "computational_intensity": "Very High",
-      "key_partners": [
-        "JAXA",
-        "ISAS",
-        "Mitsubishi Heavy Industries (MHI)",
-        "IHI Corporation"
-      ]
-    },
-    "scholarships": [
-      {
-        "name": "Japanese Government (MEXT) Scholarship",
-        "provider": "MEXT",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Embassy recommendation or university recommendation routes; highly competitive.",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/"
-      },
-      {
-        "name": "University of Tokyo Fellowship",
-        "provider": "UTokyo",
-        "type": "university",
-        "eligibility": "non_eu_ok",
-        "notes": "University/graduate-school fellowship; check program-specific call."
-      },
-      {
-        "name": "JASSO Scholarships / Support Programs",
-        "provider": "JASSO",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Multiple schemes; availability depends on program/enrollment status.",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html"
-      }
-    ],
-    "scope": "non_eu",
-    "needs_verification": true
-  },
-  {
-    "id": "kyoto-u",
-    "name": "Kyoto University",
-    "display_name": "Kyoto University",
-    "short": "KyotoU",
-    "location": {
-      "city": "Kyoto",
-      "state": "Kyoto",
-      "country": "Japan"
-    },
-    "city_cost": "very_high",
-    "city_cost_raw": "Çok yüksek",
-    "semester_fees": [
-      {
-        "term": "WiSe 2025/26",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2025W"
-      },
-      {
-        "term": "SoSe 2026",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2026S"
-      }
-    ],
-    "tuition": [
-      {
-        "scope": "non_eu",
-        "program": "Graduate (Space/Aerospace track)",
-        "amount": 3400.0,
-        "currency": "EUR",
-        "period": "year",
-        "raw": "Approx €3,400/year (non-EU/intl)",
-        "effective_from_term_code": "2025W"
-      }
-    ],
-    "aerospace_ecosystem": "Akışkanlar dinamiği ve temel bilimler odaklı güçlü mühendislik.",
-    "strong_areas_summary": "Fluid Dynamics, Rarefied Gas Dynamics, Control Theory, Space Systems",
-    "pros": [
-      "Japonya'nın en köklü ikinci üniversitesidir.",
-      "Araştırma özgürlüğü ve teorik derinliği ile bilinir.",
-      "Strength areas: Fluid Dynamics, Rarefied Gas Dynamics, Control Theory, Space Systems.",
-      "Industry/agency proximity or links: Kawasaki Heavy Industries, JAXA, Shimadzu."
-    ],
-    "cons": [
-      "Tokyo kadar endüstri merkezli değildir, daha çok akademi odaklıdır.",
-      "Turist yoğunluğu nedeniyle konut pahalılaşabilir.",
-      "Housing in Kyoto is rated Hard (score 7/10) — plan early.",
-      "Admission typically involves an entrance exam and/or interview; outcomes can be less predictable than grade-only admission."
-    ],
-    "tags": [
-      "fluiddynamics",
-      "controls",
-      "propulsion",
-      "rarefiedgas",
-      "spacesystems"
-    ],
-    "tags_raw": "#Fluiddynamics #Controls #Propulsion #Rarefiedgas #Spacesystems",
-    "sources": [
-      {
-        "type": "official",
-        "url": "https://www.kyoto-u.ac.jp/en/education-campus/student-support/tuition",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "admissions",
-        "url": "https://www.kyoto-u.ac.jp/en/education-campus/education-and-admissions/graduate-degree-programs/how-to-apply/for-graduates-of-overseas-universities",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.kyoto-u.ac.jp/en/education-campus/procedures/scholarships/mext",
-        "last_verified": "2026-01-27"
-      }
-    ],
-    "updated_at": "2026-01-27",
-    "city_cost_rank": 5,
-    "target_program": {
-      "name": "Graduate program (Space/Aerospace track)",
-      "degree": "MSc",
-      "ects": 120,
-      "url": "https://www.kyoto-u.ac.jp/en/education-campus/student-support/tuition"
-    },
-    "admission_mode": "Aptitude Test",
-    "language_req": "English C1",
-    "deadlines": {
-      "winter": {
-        "opens": "Varies",
-        "closes": "Dec / Jan",
-        "source_note": "Program-dependent; many Japanese programs have Oct/Apr intakes and department-specific windows."
-      },
-      "summer": {
-        "opens": "Varies",
-        "closes": "N/A",
-        "source_note": "Program-dependent; verify per program/intake.",
-        "availability_note": "Many programs are Oct intake only; verify per department"
-      }
-    },
-    "housing_difficulty": "Hard",
-    "housing_difficulty_score": 7,
-    "key_partners": [
-      "Kawasaki Heavy Industries",
-      "JAXA",
-      "Shimadzu"
-    ],
-    "admission_details": {
-      "mode": "Önce AAO (Admissions Assistance Office) onayı, sonra departman sınavı/mülakatı.",
-      "language": "English (TOEFL/IELTS)",
-      "winter_deadline": "Dec / Jan",
-      "ects": 120
-    },
-    "logistics": {
-      "housing_difficulty": "Hard",
-      "housing_difficulty_score": 7,
-      "internship_mandatory": false,
-      "internship_notes": "Not generally mandatory; depends on lab/track. For Japan, internships can be harder to schedule without Japanese."
-    },
-    "industry_focus": {
-      "computational_intensity": "High",
-      "key_partners": [
-        "Kawasaki Heavy Industries",
-        "JAXA",
-        "Shimadzu"
-      ]
-    },
-    "scholarships": [
-      {
-        "name": "Japanese Government (MEXT) Scholarship",
-        "provider": "MEXT",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Embassy recommendation or university recommendation routes; highly competitive.",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/"
-      },
-      {
-        "name": "Kyoto University Fund",
-        "provider": "KyotoU",
-        "type": "university",
-        "eligibility": "non_eu_ok",
-        "notes": "University funding; verify per department/program."
-      },
-      {
-        "name": "JASSO Scholarships / Support Programs",
-        "provider": "JASSO",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Multiple schemes; availability depends on program/enrollment status.",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html"
-      }
-    ],
-    "scope": "non_eu",
-    "needs_verification": true
-  },
-  {
-    "id": "tohoku-u",
-    "name": "Tohoku University",
-    "display_name": "Tohoku University",
-    "short": "TohokuU",
-    "location": {
-      "city": "Sendai",
-      "state": "Miyagi",
-      "country": "Japan"
-    },
-    "city_cost": "medium",
-    "city_cost_raw": "Orta",
-    "semester_fees": [
-      {
-        "term": "WiSe 2025/26",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2025W"
-      },
-      {
-        "term": "SoSe 2026",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2026S"
-      }
-    ],
-    "tuition": [
-      {
-        "scope": "non_eu",
-        "program": "Graduate (Space/Aerospace track)",
-        "amount": 3400.0,
-        "currency": "EUR",
-        "period": "year",
-        "raw": "Approx €3,400/year (non-EU/intl)",
-        "effective_from_term_code": "2025W"
-      }
-    ],
-    "aerospace_ecosystem": "Space Robotics Lab (Kazuya Yoshida) dünyaca ünlüdür (Ay/Asteroid görevleri).",
-    "strong_areas_summary": "Space Robotics, Micro-satellites, Hypersonics, Materials Science",
-    "pros": [
-      "Uzay Robotları (Space Robotics) konusunda dünyanın en iyi laboratuvarlarından birine sahiptir.",
-      "Sendai öğrenci dostu ve ucuzdur.",
-      "Strength areas: Space Robotics, Micro-satellites, Hypersonics, Materials Science.",
-      "Industry/agency proximity or links: ispace, JAXA, Toyota."
-    ],
-    "cons": [
-      "Kışları soğuktur.",
-      "2027'den itibaren uluslararası öğrenci ücretlerine zam yapılması tartışılmaktadır.",
-      "Housing in Sendai is rated Moderate (score 5/10) — plan early."
-    ],
-    "tags": [
-      "spacerobotics",
-      "microsatellites",
-      "materials",
-      "hypersonics",
-      "exploration"
-    ],
-    "tags_raw": "#Spacerobotics #Microsatellites #Materials #Hypersonics #Exploration",
-    "sources": [
-      {
-        "type": "official",
-        "url": "https://www.tohoku.ac.jp/en/education/tuition_fees.html",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html",
-        "last_verified": "2026-01-27"
-      }
-    ],
-    "updated_at": "2026-01-27",
-    "city_cost_rank": 3,
-    "target_program": {
-      "name": "Graduate program (Space/Aerospace track)",
-      "degree": "MSc",
-      "ects": 120,
-      "url": "https://www.tohoku.ac.jp/en/education/tuition_fees.html"
-    },
-    "admission_mode": "Direct",
-    "language_req": "English C1",
-    "deadlines": {
-      "winter": {
-        "opens": "Varies",
-        "closes": "Jan (for Oct intake)",
-        "source_note": "Program-dependent; many Japanese programs have Oct/Apr intakes and department-specific windows."
-      },
-      "summer": {
-        "opens": "Varies",
-        "closes": "N/A",
-        "source_note": "Program-dependent; verify per program/intake.",
-        "availability_note": "Many programs are Oct intake only; verify per department"
-      }
-    },
-    "housing_difficulty": "Moderate",
-    "housing_difficulty_score": 5,
-    "key_partners": [
-      "ispace",
-      "JAXA",
-      "Toyota"
-    ],
-    "admission_details": {
-      "mode": "Uluslararası öğrenciler için İngilizce programlar (FGL/IGP) mevcuttur.",
-      "language": "English (TOEFL/IELTS)",
-      "winter_deadline": "Jan (for Oct intake)",
-      "ects": 120
-    },
-    "logistics": {
-      "housing_difficulty": "Moderate",
-      "housing_difficulty_score": 5,
-      "internship_mandatory": false,
-      "internship_notes": "Not generally mandatory; depends on lab/track. For Japan, internships can be harder to schedule without Japanese."
-    },
-    "industry_focus": {
-      "computational_intensity": "High",
-      "key_partners": [
-        "ispace",
-        "JAXA",
-        "Toyota"
-      ]
-    },
-    "scholarships": [
-      {
-        "name": "Japanese Government (MEXT) Scholarship",
-        "provider": "MEXT",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Embassy recommendation or university recommendation routes; highly competitive.",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/"
-      },
-      {
-        "name": "President Fellowship",
-        "provider": "TohokuU",
-        "type": "university",
-        "eligibility": "non_eu_ok",
-        "notes": "University/graduate-school fellowship; check program-specific call."
-      },
-      {
-        "name": "JASSO Scholarships / Support Programs",
-        "provider": "JASSO",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Multiple schemes; availability depends on program/enrollment status.",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html"
-      }
-    ],
-    "scope": "non_eu",
-    "needs_verification": true
-  },
-  {
-    "id": "kyushu-u",
-    "name": "Kyushu University",
-    "display_name": "Kyushu University",
-    "short": "KyushuU",
-    "location": {
-      "city": "Fukuoka",
-      "state": "Fukuoka",
-      "country": "Japan"
-    },
-    "city_cost": "medium",
-    "city_cost_raw": "Orta",
-    "semester_fees": [
-      {
-        "term": "WiSe 2025/26",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2025W"
-      },
-      {
-        "term": "SoSe 2026",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2026S"
-      }
-    ],
-    "tuition": [
-      {
-        "scope": "non_eu",
-        "program": "Graduate (Space/Aerospace track)",
-        "amount": 3400.0,
-        "currency": "EUR",
-        "period": "year",
-        "raw": "Approx €3,400/year (non-EU/intl)",
-        "effective_from_term_code": "2025W"
-      }
-    ],
-    "aerospace_ecosystem": "Batı Japonya'nın mühendislik merkezi. Hidrojen ve itki sistemleri.",
-    "strong_areas_summary": "Propulsion, Aerodynamics, Wind Energy, Space Environment",
-    "pros": [
-      "Fukuoka yaşamak için harika ve uygun fiyatlı bir şehirdir.",
-      "Kampüs (Ito Campus) çok büyük ve moderndir.",
-      "Strength areas: Propulsion, Aerodynamics, Wind Energy, Space Environment.",
-      "Industry/agency proximity or links: JAXA, Mitsubishi Electric, MHI."
-    ],
-    "cons": [
-      "Şehir merkezine kampüs biraz uzaktır.",
-      "İngilizce ders çeşitliliği Tokyo'daki okullara göre az olabilir.",
-      "Housing in Fukuoka is rated Moderate (score 5/10) — plan early.",
-      "Admission typically involves an entrance exam and/or interview; outcomes can be less predictable than grade-only admission."
-    ],
-    "tags": [
-      "propulsion",
-      "aerodynamics",
-      "windenergy",
-      "spaceenvironment",
-      "controls"
-    ],
-    "tags_raw": "#Propulsion #Aerodynamics #Windenergy #Spaceenvironment #Controls",
-    "sources": [
-      {
-        "type": "official",
-        "url": "https://www.kyushu-u.ac.jp/en/admission/fees",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html",
-        "last_verified": "2026-01-27"
-      }
-    ],
-    "updated_at": "2026-01-27",
-    "city_cost_rank": 3,
-    "target_program": {
-      "name": "Graduate program (Space/Aerospace track)",
-      "degree": "MSc",
-      "ects": 120,
-      "url": "https://www.kyushu-u.ac.jp/en/admission/fees"
-    },
-    "admission_mode": "Aptitude Test",
-    "language_req": "English C1",
-    "deadlines": {
-      "winter": {
-        "opens": "Varies",
-        "closes": "Jan / Feb",
-        "source_note": "Program-dependent; many Japanese programs have Oct/Apr intakes and department-specific windows."
-      },
-      "summer": {
-        "opens": "Varies",
-        "closes": "N/A",
-        "source_note": "Program-dependent; verify per program/intake.",
-        "availability_note": "Many programs are Oct intake only; verify per department"
-      }
-    },
-    "housing_difficulty": "Moderate",
-    "housing_difficulty_score": 5,
-    "key_partners": [
-      "JAXA",
-      "Mitsubishi Electric",
-      "MHI"
-    ],
-    "admission_details": {
-      "mode": "Uluslararası programlar için belge taraması ve mülakat.",
-      "language": "English",
-      "winter_deadline": "Jan / Feb",
-      "ects": 120
-    },
-    "logistics": {
-      "housing_difficulty": "Moderate",
-      "housing_difficulty_score": 5,
-      "internship_mandatory": false,
-      "internship_notes": "Not generally mandatory; depends on lab/track. For Japan, internships can be harder to schedule without Japanese."
-    },
-    "industry_focus": {
-      "computational_intensity": "Medium",
-      "key_partners": [
-        "JAXA",
-        "Mitsubishi Electric",
-        "MHI"
-      ]
-    },
-    "scholarships": [
-      {
-        "name": "Japanese Government (MEXT) Scholarship",
-        "provider": "MEXT",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Embassy recommendation or university recommendation routes; highly competitive.",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/"
-      },
-      {
-        "name": "JASSO Scholarships / Support Programs",
-        "provider": "JASSO",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Multiple schemes; availability depends on program/enrollment status.",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html"
-      }
-    ],
-    "scope": "non_eu",
-    "needs_verification": true
-  },
-  {
-    "id": "nagoya-u",
-    "name": "Nagoya University",
-    "display_name": "Nagoya University",
-    "short": "NagoyaU",
-    "location": {
-      "city": "Nagoya",
-      "state": "Aichi",
-      "country": "Japan"
-    },
-    "city_cost": "high",
-    "city_cost_raw": "Yüksek",
-    "semester_fees": [
-      {
-        "term": "WiSe 2025/26",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2025W"
-      },
-      {
-        "term": "SoSe 2026",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2026S"
-      }
-    ],
-    "tuition": [
-      {
-        "scope": "non_eu",
-        "program": "Graduate (Space/Aerospace track)",
-        "amount": 3400.0,
-        "currency": "EUR",
-        "period": "year",
-        "raw": "Approx €3,400/year (non-EU/intl)",
-        "effective_from_term_code": "2025W"
-      }
-    ],
-    "aerospace_ecosystem": "Japon havacılık endüstrisinin (MHI, Kawasaki, Subaru) kalbi Nagoya'dadır.",
-    "strong_areas_summary": "Aerostructures, Composite Materials, Flight Dynamics, Automotive Engineering",
-    "pros": [
-      "Havacılık üretiminin (Manufacturing) merkezindedir.",
-      "G30 programı sayesinde İngilizce entegrasyonu çok iyidir.",
-      "Strength areas: Aerostructures, Composite Materials, Flight Dynamics, Automotive Engineering.",
-      "Industry/agency proximity or links: Mitsubishi Aircraft, Toyota, Subaru Aerospace, JAXA."
-    ],
-    "cons": [
-      "Şehir sanayi odaklıdır, Tokyo/Kyoto kadar turistik değildir.",
-      "Yazları çok sıcak olabilir.",
-      "Housing in Nagoya is rated Moderate (score 6/10) — plan early."
-    ],
-    "tags": [
-      "manufacturing",
-      "composites",
-      "structures",
-      "flightdynamics",
-      "automotive"
-    ],
-    "tags_raw": "#Manufacturing #Composites #Structures #Flightdynamics #Automotive",
-    "sources": [
-      {
-        "type": "official",
-        "url": "https://admissions.g30.nagoya-u.ac.jp/en/fees/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html",
-        "last_verified": "2026-01-27"
-      }
-    ],
-    "updated_at": "2026-01-27",
-    "city_cost_rank": 4,
-    "target_program": {
-      "name": "Graduate program (Space/Aerospace track)",
-      "degree": "MSc",
-      "ects": 120,
-      "url": "https://admissions.g30.nagoya-u.ac.jp/en/fees/"
-    },
-    "admission_mode": "Direct",
-    "language_req": "English C1",
-    "deadlines": {
-      "winter": {
-        "opens": "Varies",
-        "closes": "Jan (for Oct intake)",
-        "source_note": "Program-dependent; many Japanese programs have Oct/Apr intakes and department-specific windows."
-      },
-      "summer": {
-        "opens": "Varies",
-        "closes": "N/A",
-        "source_note": "Program-dependent; verify per program/intake.",
-        "availability_note": "Many programs are Oct intake only; verify per department"
-      }
-    },
-    "housing_difficulty": "Moderate",
-    "housing_difficulty_score": 6,
-    "key_partners": [
-      "Mitsubishi Aircraft",
-      "Toyota",
-      "Subaru Aerospace",
-      "JAXA"
-    ],
-    "admission_details": {
-      "mode": "Global 30 (G30) programı ile tamamen İngilizce eğitim ve başvuru.",
-      "language": "English (TOEFL/IELTS)",
-      "winter_deadline": "Jan (for Oct intake)",
-      "ects": 120
-    },
-    "logistics": {
-      "housing_difficulty": "Moderate",
-      "housing_difficulty_score": 6,
-      "internship_mandatory": false,
-      "internship_notes": "Not generally mandatory; depends on lab/track. For Japan, internships can be harder to schedule without Japanese."
-    },
-    "industry_focus": {
-      "computational_intensity": "High",
-      "key_partners": [
-        "Mitsubishi Aircraft",
-        "Toyota",
-        "Subaru Aerospace",
-        "JAXA"
-      ]
-    },
-    "scholarships": [
-      {
-        "name": "Japanese Government (MEXT) Scholarship",
-        "provider": "MEXT",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Embassy recommendation or university recommendation routes; highly competitive.",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/"
-      },
-      {
-        "name": "Nagoya University Global Science Grant",
-        "provider": "NagoyaU",
-        "type": "university",
-        "eligibility": "non_eu_ok",
-        "notes": "University funding; verify per department/program."
-      },
-      {
-        "name": "JASSO Scholarships / Support Programs",
-        "provider": "JASSO",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Multiple schemes; availability depends on program/enrollment status.",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html"
-      }
-    ],
-    "scope": "non_eu",
-    "needs_verification": true
-  },
-  {
-    "id": "hokkaido-u",
-    "name": "Hokkaido University",
-    "display_name": "Hokkaido University",
-    "short": "HokkaidoU",
-    "location": {
-      "city": "Sapporo",
-      "state": "Hokkaido",
-      "country": "Japan"
-    },
-    "city_cost": "medium",
-    "city_cost_raw": "Orta",
-    "semester_fees": [
-      {
-        "term": "WiSe 2025/26",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2025W"
-      },
-      {
-        "term": "SoSe 2026",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2026S"
-      }
-    ],
-    "tuition": [
-      {
-        "scope": "non_eu",
-        "program": "Graduate (Space/Aerospace track)",
-        "amount": 3400.0,
-        "currency": "EUR",
-        "period": "year",
-        "raw": "Approx €3,400/year (non-EU/intl)",
-        "effective_from_term_code": "2025W"
-      }
-    ],
-    "aerospace_ecosystem": "CAMUI (Hibrit roket) projesi ve yörünge mekaniği.",
-    "strong_areas_summary": "Hybrid Rockets, Trajectory Optimization, Combustion, Thermal Engineering",
-    "pros": [
-      "Hibrit roket araştırmalarında (CAMUI) öncüdür.",
-      "Sapporo, Japonya'nın en yaşanabilir ve ferah şehirlerinden biridir.",
-      "Strength areas: Hybrid Rockets, Trajectory Optimization, Combustion, Thermal Engineering.",
-      "Industry/agency proximity or links: JAXA, Uematsu Electric, Interstellar Technologies."
-    ],
-    "cons": [
-      "Kışları çok kar yağışlı ve soğuktur.",
-      "Sanayi merkezlerine (Nagoya/Tokyo) coğrafi olarak uzaktır.",
-      "Housing in Sapporo is rated Easy (score 4/10) — plan early."
-    ],
-    "tags": [
-      "rocketry",
-      "hybridpropulsion",
-      "combustion",
-      "trajectoryoptimization",
-      "thermalengineering"
-    ],
-    "tags_raw": "#Rocketry #Hybridpropulsion #Combustion #Trajectoryoptimization #Thermalengineering",
-    "sources": [
-      {
-        "type": "official",
-        "url": "https://www.oia.hokudai.ac.jp/en/admissions/fees/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html",
-        "last_verified": "2026-01-27"
-      }
-    ],
-    "updated_at": "2026-01-27",
-    "city_cost_rank": 3,
-    "target_program": {
-      "name": "Graduate program (Space/Aerospace track)",
-      "degree": "MSc",
-      "ects": 120,
-      "url": "https://www.oia.hokudai.ac.jp/en/admissions/fees/"
-    },
-    "admission_mode": "Direct",
-    "language_req": "English C1",
-    "deadlines": {
-      "winter": {
-        "opens": "Varies",
-        "closes": "Jan (for Oct)",
-        "source_note": "Program-dependent; many Japanese programs have Oct/Apr intakes and department-specific windows."
-      },
-      "summer": {
-        "opens": "Varies",
-        "closes": "N/A",
-        "source_note": "Program-dependent; verify per program/intake.",
-        "availability_note": "Many programs are Oct intake only; verify per department"
-      }
-    },
-    "housing_difficulty": "Easy",
-    "housing_difficulty_score": 4,
-    "key_partners": [
-      "JAXA",
-      "Uematsu Electric",
-      "Interstellar Technologies"
-    ],
-    "admission_details": {
-      "mode": "English Engineering Education (e3) programı üzerinden direkt başvuru.",
-      "language": "English",
-      "winter_deadline": "Jan (for Oct)",
-      "ects": 120
-    },
-    "logistics": {
-      "housing_difficulty": "Easy",
-      "housing_difficulty_score": 4,
-      "internship_mandatory": false,
-      "internship_notes": "Not generally mandatory; depends on lab/track. For Japan, internships can be harder to schedule without Japanese."
-    },
-    "industry_focus": {
-      "computational_intensity": "Medium",
-      "key_partners": [
-        "JAXA",
-        "Uematsu Electric",
-        "Interstellar Technologies"
-      ]
-    },
-    "scholarships": [
-      {
-        "name": "Japanese Government (MEXT) Scholarship",
-        "provider": "MEXT",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Embassy recommendation or university recommendation routes; highly competitive.",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/"
-      },
-      {
-        "name": "Hokkaido University President's Fellowship",
-        "provider": "HokkaidoU",
-        "type": "university",
-        "eligibility": "non_eu_ok",
-        "notes": "University/graduate-school fellowship; check program-specific call."
-      },
-      {
-        "name": "JASSO Scholarships / Support Programs",
-        "provider": "JASSO",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Multiple schemes; availability depends on program/enrollment status.",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html"
-      }
-    ],
-    "scope": "non_eu",
-    "needs_verification": true
-  },
-  {
-    "id": "science-tokyo",
-    "name": "Institute of Science Tokyo",
-    "display_name": "Institute of Science Tokyo (formerly Tokyo Tech)",
-    "short": "ScienceTokyo",
-    "location": {
-      "city": "Tokyo",
-      "state": "Tokyo",
-      "country": "Japan"
-    },
-    "city_cost": "very_high",
-    "city_cost_raw": "Çok yüksek",
-    "semester_fees": [
-      {
-        "term": "WiSe 2025/26",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2025W"
-      },
-      {
-        "term": "SoSe 2026",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2026S"
-      }
-    ],
-    "tuition": [
-      {
-        "scope": "non_eu",
-        "program": "Graduate (Space/Aerospace track)",
-        "amount": 4000.0,
-        "currency": "EUR",
-        "period": "year",
-        "raw": "Approx €4,000/year (non-EU/intl)",
-        "effective_from_term_code": "2025W"
-      }
-    ],
-    "aerospace_ecosystem": "Robotik ve Kontrol teorisinde efsanedir. Mühendislik odaklı.",
-    "strong_areas_summary": "Robotics, Control Engineering, Materials, Space Systems",
-    "pros": [
-      "Tokyo Tech mirasıyla mühendislikte Japonya'nın MIT'si sayılır.",
-      "Robotik ve malzeme konusunda çok güçlüdür.",
-      "Strength areas: Robotics, Control Engineering, Materials, Space Systems.",
-      "Industry/agency proximity or links: JAXA, Sony, Fanuc, Honda."
-    ],
-    "cons": [
-      "Birleşme sonrası (2024) eğitim ücretleri artırıldı (~¥635k).",
-      "Kampüsler arası ulaşım gerekebilir.",
-      "Housing in Tokyo is rated Nightmare (score 9/10) — plan early."
-    ],
-    "tags": [
-      "robotics",
-      "controls",
-      "materials",
-      "spacesystems",
-      "mechanicalengineering"
-    ],
-    "tags_raw": "#Robotics #Controls #Materials #Spacesystems #Mechanicalengineering",
-    "sources": [
-      {
-        "type": "official",
-        "url": "https://www.isct.ac.jp/en/admissions/tuition-fees",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html",
-        "last_verified": "2026-01-27"
-      }
-    ],
-    "updated_at": "2026-01-27",
-    "city_cost_rank": 6,
-    "target_program": {
-      "name": "Graduate program (Space/Aerospace track)",
-      "degree": "MSc",
-      "ects": 120,
-      "url": "https://www.isct.ac.jp/en/admissions/tuition-fees"
-    },
-    "admission_mode": "Direct",
-    "language_req": "English C1",
-    "deadlines": {
-      "winter": {
-        "opens": "Varies",
-        "closes": "Dec (for Oct intake)",
-        "source_note": "Program-dependent; many Japanese programs have Oct/Apr intakes and department-specific windows."
-      },
-      "summer": {
-        "opens": "Varies",
-        "closes": "N/A",
-        "source_note": "Program-dependent; verify per program/intake.",
-        "availability_note": "Many programs are Oct intake only; verify per department"
-      }
-    },
-    "housing_difficulty": "Nightmare",
-    "housing_difficulty_score": 9,
-    "key_partners": [
-      "JAXA",
-      "Sony",
-      "Fanuc",
-      "Honda"
-    ],
-    "admission_details": {
-      "mode": "Belge taraması ve mülakat. Tokyo Tech ve TMDU birleşimiyle oluştu.",
-      "language": "English (TOEFL/IELTS)",
-      "winter_deadline": "Dec (for Oct intake)",
-      "ects": 120
-    },
-    "logistics": {
-      "housing_difficulty": "Nightmare",
-      "housing_difficulty_score": 9,
-      "internship_mandatory": false,
-      "internship_notes": "Not generally mandatory; depends on lab/track. For Japan, internships can be harder to schedule without Japanese."
-    },
-    "industry_focus": {
-      "computational_intensity": "Very High",
-      "key_partners": [
-        "JAXA",
-        "Sony",
-        "Fanuc",
-        "Honda"
-      ]
-    },
-    "scholarships": [
-      {
-        "name": "Japanese Government (MEXT) Scholarship",
-        "provider": "MEXT",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Embassy recommendation or university recommendation routes; highly competitive.",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/"
-      },
-      {
-        "name": "Science Tokyo Fellowships",
-        "provider": "ScienceTokyo",
-        "type": "university",
-        "eligibility": "non_eu_ok",
-        "notes": "University/graduate-school fellowship; check program-specific call."
-      },
-      {
-        "name": "JASSO Scholarships / Support Programs",
-        "provider": "JASSO",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Multiple schemes; availability depends on program/enrollment status.",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html"
-      }
-    ],
-    "scope": "non_eu",
-    "needs_verification": true
-  },
-  {
-    "id": "omu",
-    "name": "Osaka Metropolitan University",
-    "display_name": "Osaka Metropolitan University (OMU)",
-    "short": "OMU",
-    "location": {
-      "city": "Osaka",
-      "state": "Osaka",
-      "country": "Japan"
-    },
-    "city_cost": "very_high",
-    "city_cost_raw": "Çok yüksek",
-    "semester_fees": [
-      {
-        "term": "WiSe 2025/26",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2025W"
-      },
-      {
-        "term": "SoSe 2026",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2026S"
-      }
-    ],
-    "tuition": [
-      {
-        "scope": "non_eu",
-        "program": "Graduate (Space/Aerospace track)",
-        "amount": 3400.0,
-        "currency": "EUR",
-        "period": "year",
-        "raw": "Approx €3,400/year (non-EU/intl)",
-        "effective_from_term_code": "2025W"
-      }
-    ],
-    "aerospace_ecosystem": "Small Satellite Lab (SSSRC) çok aktiftir. Küp uydu projeleri.",
-    "strong_areas_summary": "Small Satellites, Structures, Astrodynamics, Thermal Control",
-    "pros": [
-      "Küp uydu (CubeSat) projelerinde öğrencilere çok sorumluluk verilir.",
-      "Osaka şehri çok canlı ve yemek kültürüyle ünlüdür.",
-      "Strength areas: Small Satellites, Structures, Astrodynamics, Thermal Control.",
-      "Industry/agency proximity or links: JAXA, Local SMEs (Higashiosaka)."
-    ],
-    "cons": [
-      "Birleşme süreci (OPU + OCU) yeni tamamlandı.",
-      "Tamamen İngilizce program seçenekleri sınırlı olabilir.",
-      "Housing in Osaka is rated Hard (score 7/10) — plan early.",
-      "Admission typically involves an entrance exam and/or interview; outcomes can be less predictable than grade-only admission.",
-      "Many labs/admin processes still expect Japanese; day-to-day and thesis logistics may require Japanese effort."
-    ],
-    "tags": [
-      "smallsatellites",
-      "cubesats",
-      "structures",
-      "thermalcontrol",
-      "astrodynamics"
-    ],
-    "tags_raw": "#Smallsatellites #Cubesats #Structures #Thermalcontrol #Astrodynamics",
-    "sources": [
-      {
-        "type": "official",
-        "url": "https://www.omu.ac.jp/eng/admissions/tuition/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html",
-        "last_verified": "2026-01-27"
-      }
-    ],
-    "updated_at": "2026-01-27",
-    "city_cost_rank": 5,
-    "target_program": {
-      "name": "Graduate program (Space/Aerospace track)",
-      "degree": "MSc",
-      "ects": 120,
-      "url": "https://www.omu.ac.jp/eng/admissions/tuition/"
-    },
-    "admission_mode": "Aptitude Test",
-    "language_req": "English C1",
-    "deadlines": {
-      "winter": {
-        "opens": "Varies",
-        "closes": "Dec / Jan",
-        "source_note": "Program-dependent; many Japanese programs have Oct/Apr intakes and department-specific windows."
-      },
-      "summer": {
-        "opens": "Varies",
-        "closes": "N/A",
-        "source_note": "Program-dependent; verify per program/intake.",
-        "availability_note": "Many programs are Oct intake only; verify per department"
-      }
-    },
-    "housing_difficulty": "Hard",
-    "housing_difficulty_score": 7,
-    "key_partners": [
-      "JAXA",
-      "Local SMEs (Higashiosaka)"
-    ],
-    "admission_details": {
-      "mode": "Uluslararası öğrenciler için özel seçim.",
-      "language": "English/Japanese (Lab dependent)",
-      "winter_deadline": "Dec / Jan",
-      "ects": 120
-    },
-    "logistics": {
-      "housing_difficulty": "Hard",
-      "housing_difficulty_score": 7,
-      "internship_mandatory": false,
-      "internship_notes": "Not generally mandatory; depends on lab/track. For Japan, internships can be harder to schedule without Japanese."
-    },
-    "industry_focus": {
-      "computational_intensity": "Medium",
-      "key_partners": [
-        "JAXA",
-        "Local SMEs (Higashiosaka)"
-      ]
-    },
-    "scholarships": [
-      {
-        "name": "Japanese Government (MEXT) Scholarship",
-        "provider": "MEXT",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Embassy recommendation or university recommendation routes; highly competitive.",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/"
-      },
-      {
-        "name": "Osaka City Scholarship",
-        "provider": "OMU",
-        "type": "university",
-        "eligibility": "non_eu_ok",
-        "notes": "University funding; verify per department/program."
-      },
-      {
-        "name": "JASSO Scholarships / Support Programs",
-        "provider": "JASSO",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Multiple schemes; availability depends on program/enrollment status.",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html"
-      }
-    ],
-    "scope": "non_eu",
-    "needs_verification": true
-  },
-  {
-    "id": "tmu",
-    "name": "Tokyo Metropolitan University",
-    "display_name": "Tokyo Metropolitan University (TMU)",
-    "short": "TMU",
-    "location": {
-      "city": "Hachioji (Tokyo)",
-      "state": "Tokyo",
-      "country": "Japan"
-    },
-    "city_cost": "very_high",
-    "city_cost_raw": "Çok yüksek",
-    "semester_fees": [
-      {
-        "term": "WiSe 2025/26",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2025W"
-      },
-      {
-        "term": "SoSe 2026",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2026S"
-      }
-    ],
-    "tuition": [
-      {
-        "scope": "non_eu",
-        "program": "Graduate (Space/Aerospace track)",
-        "amount": 3300.0,
-        "currency": "EUR",
-        "period": "year",
-        "raw": "Approx €3,300/year (non-EU/intl)",
-        "effective_from_term_code": "2025W"
-      }
-    ],
-    "aerospace_ecosystem": "Electric Propulsion ve Space Systems üzerine odaklı.",
-    "strong_areas_summary": "Electric Propulsion, Space Systems, Aerodynamics, Combustion",
-    "pros": [
-      "Tokyo Metropolitan hükümetine bağlı olduğu için burs imkanları iyidir.",
-      "Hachioji kampüsü Tokyo merkeze göre daha ferahtır.",
-      "Strength areas: Electric Propulsion, Space Systems, Aerodynamics, Combustion.",
-      "Industry/agency proximity or links: JAXA, IHI Aerospace."
-    ],
-    "cons": [
-      "Merkezi Tokyo'ya trenle 45-50 dk mesafededir.",
-      "Uluslararası öğrenci sayısı nispeten azdır.",
-      "Housing in Hachioji (Tokyo) is rated Hard (score 7/10) — plan early."
-    ],
-    "tags": [
-      "electricpropulsion",
-      "spacesystems",
-      "aerodynamics",
-      "combustion"
-    ],
-    "tags_raw": "#Electricpropulsion #Spacesystems #Aerodynamics #Combustion",
-    "sources": [
-      {
-        "type": "official",
-        "url": "https://www.ic.tmu.ac.jp/english/study_abroad/tuition.html",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html",
-        "last_verified": "2026-01-27"
-      }
-    ],
-    "updated_at": "2026-01-27",
-    "city_cost_rank": 5,
-    "target_program": {
-      "name": "Graduate program (Space/Aerospace track)",
-      "degree": "MSc",
-      "ects": 120,
-      "url": "https://www.ic.tmu.ac.jp/english/study_abroad/tuition.html"
-    },
-    "admission_mode": "Aptitude Test",
-    "language_req": "English C1",
-    "deadlines": {
-      "winter": {
-        "opens": "Varies",
-        "closes": "Nov",
-        "source_note": "Program-dependent; many Japanese programs have Oct/Apr intakes and department-specific windows."
-      },
-      "summer": {
-        "opens": "Varies",
-        "closes": "N/A",
-        "source_note": "Program-dependent; verify per program/intake.",
-        "availability_note": "Many programs are Oct intake only; verify per department"
-      }
-    },
-    "housing_difficulty": "Hard",
-    "housing_difficulty_score": 7,
-    "key_partners": [
-      "JAXA",
-      "IHI Aerospace"
-    ],
-    "admission_details": {
-      "mode": "Lab hocası ile ön görüşme şarttır.",
-      "language": "English",
-      "winter_deadline": "Nov",
-      "ects": 120
-    },
-    "logistics": {
-      "housing_difficulty": "Hard",
-      "housing_difficulty_score": 7,
-      "internship_mandatory": false,
-      "internship_notes": "Not generally mandatory; depends on lab/track. For Japan, internships can be harder to schedule without Japanese."
-    },
-    "industry_focus": {
-      "computational_intensity": "Medium",
-      "key_partners": [
-        "JAXA",
-        "IHI Aerospace"
-      ]
-    },
-    "scholarships": [
-      {
-        "name": "Tokyo Global Scholarship",
-        "provider": "TMU",
-        "type": "university",
-        "eligibility": "non_eu_ok",
-        "notes": "University funding; verify per department/program."
-      },
-      {
-        "name": "Japanese Government (MEXT) Scholarship",
-        "provider": "MEXT",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Embassy recommendation or university recommendation routes; highly competitive.",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/"
-      },
-      {
-        "name": "JASSO Scholarships / Support Programs",
-        "provider": "JASSO",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Multiple schemes; availability depends on program/enrollment status.",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html"
-      }
-    ],
-    "scope": "non_eu",
-    "needs_verification": true
-  },
-  {
-    "id": "waseda-u",
-    "name": "Waseda University",
-    "display_name": "Waseda University",
-    "short": "Waseda",
-    "location": {
-      "city": "Tokyo",
-      "state": "Tokyo",
-      "country": "Japan"
-    },
-    "city_cost": "very_high",
-    "city_cost_raw": "Çok yüksek",
-    "semester_fees": [
-      {
-        "term": "WiSe 2025/26",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2025W"
-      },
-      {
-        "term": "SoSe 2026",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2026S"
-      }
-    ],
-    "tuition": [
-      {
-        "scope": "non_eu",
-        "program": "Graduate (Space/Aerospace track)",
-        "amount": 8500.0,
-        "currency": "EUR",
-        "period": "year",
-        "raw": "Approx €8,500/year (non-EU/intl)",
-        "effective_from_term_code": "2025W"
-      }
-    ],
-    "aerospace_ecosystem": "Özel üniversiteler arasında en güçlü aero altyapısı. Motorlar ve aerodinamik.",
-    "strong_areas_summary": "Aerodynamics, Turbomachinery, Combustion, Robotics",
-    "pros": [
-      "Japonya'nın en prestijli özel üniversitesidir.",
-      "Uluslararasılaşma oranı çok yüksektir.",
-      "Strength areas: Aerodynamics, Turbomachinery, Combustion, Robotics.",
-      "Industry/agency proximity or links: IHI, Honda Aero, JAXA."
-    ],
-    "cons": [
-      "Özel okul olduğu için eğitim ücreti devlet okullarının 2-3 katıdır.",
-      "Kampüs Tokyo'nun kalbindedir (pahalı).",
-      "Housing in Tokyo is rated Nightmare (score 9/10) — plan early."
-    ],
-    "tags": [
-      "aerodynamics",
-      "turbomachinery",
-      "robotics",
-      "combustion",
-      "engines"
-    ],
-    "tags_raw": "#Aerodynamics #Turbomachinery #Robotics #Combustion #Engines",
-    "sources": [
-      {
-        "type": "official",
-        "url": "https://www.waseda.jp/inst/intl/en/fees/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html",
-        "last_verified": "2026-01-27"
-      }
-    ],
-    "updated_at": "2026-01-27",
-    "city_cost_rank": 6,
-    "target_program": {
-      "name": "Graduate program (Space/Aerospace track)",
-      "degree": "MSc",
-      "ects": 120,
-      "url": "https://www.waseda.jp/inst/intl/en/fees/"
-    },
-    "admission_mode": "Aptitude Test",
-    "language_req": "English C1",
-    "deadlines": {
-      "winter": {
-        "opens": "Varies",
-        "closes": "Jan / Feb",
-        "source_note": "Program-dependent; many Japanese programs have Oct/Apr intakes and department-specific windows."
-      },
-      "summer": {
-        "opens": "Varies",
-        "closes": "N/A",
-        "source_note": "Program-dependent; verify per program/intake.",
-        "availability_note": "Many programs are Oct intake only; verify per department"
-      }
-    },
-    "housing_difficulty": "Nightmare",
-    "housing_difficulty_score": 9,
-    "key_partners": [
-      "IHI",
-      "Honda Aero",
-      "JAXA"
-    ],
-    "admission_details": {
-      "mode": "Belge, mülakat ve standart testler.",
-      "language": "English (TOEFL/IELTS)",
-      "winter_deadline": "Jan / Feb",
-      "ects": 120
-    },
-    "logistics": {
-      "housing_difficulty": "Nightmare",
-      "housing_difficulty_score": 9,
-      "internship_mandatory": false,
-      "internship_notes": "Not generally mandatory; depends on lab/track. For Japan, internships can be harder to schedule without Japanese."
-    },
-    "industry_focus": {
-      "computational_intensity": "High",
-      "key_partners": [
-        "IHI",
-        "Honda Aero",
-        "JAXA"
-      ]
-    },
-    "scholarships": [
-      {
-        "name": "Waseda University Scholarships",
-        "provider": "Waseda",
-        "type": "university",
-        "eligibility": "non_eu_ok",
-        "notes": "University funding; verify per department/program."
-      },
-      {
-        "name": "Japanese Government (MEXT) Scholarship",
-        "provider": "MEXT",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Embassy recommendation or university recommendation routes; highly competitive.",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/"
-      },
-      {
-        "name": "JASSO Scholarships / Support Programs",
-        "provider": "JASSO",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Multiple schemes; availability depends on program/enrollment status.",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html"
-      }
-    ],
-    "scope": "non_eu",
-    "needs_verification": true
-  },
-  {
-    "id": "keio-u",
-    "name": "Keio University",
-    "display_name": "Keio University",
-    "short": "Keio",
-    "location": {
-      "city": "Yokohama",
-      "state": "Kanagawa",
-      "country": "Japan"
-    },
-    "city_cost": "very_high",
-    "city_cost_raw": "Çok yüksek",
-    "semester_fees": [
-      {
-        "term": "WiSe 2025/26",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2025W"
-      },
-      {
-        "term": "SoSe 2026",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2026S"
-      }
-    ],
-    "tuition": [
-      {
-        "scope": "non_eu",
-        "program": "Graduate (Space/Aerospace track)",
-        "amount": 8200.0,
-        "currency": "EUR",
-        "period": "year",
-        "raw": "Approx €8,200/year (non-EU/intl)",
-        "effective_from_term_code": "2025W"
-      }
-    ],
-    "aerospace_ecosystem": "System Design Management (SDM) ve Kontrol.",
-    "strong_areas_summary": "System Design Management, Controls, Haptics, Space Systems",
-    "pros": [
-      "Waseda ile birlikte en iyi özel okuldur.",
-      "Sistem mühendisliği ve yönetim (SDM) tarafında eşsizdir.",
-      "Strength areas: System Design Management, Controls, Haptics, Space Systems.",
-      "Industry/agency proximity or links: Mitsubishi Electric, Toshiba, JAXA."
-    ],
-    "cons": [
-      "Teknik mühendislikten ziyade sistem/tasarım ağırlıklı olabilir.",
-      "Ücretler yüksektir.",
-      "Housing in Yokohama is rated Very Hard (score 8/10) — plan early."
-    ],
-    "tags": [
-      "systemdesign",
-      "controls",
-      "haptics",
-      "spacesystems",
-      "management"
-    ],
-    "tags_raw": "#Systemdesign #Controls #Haptics #Spacesystems #Management",
-    "sources": [
-      {
-        "type": "official",
-        "url": "https://www.keio.ac.jp/en/admissions/fees/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html",
-        "last_verified": "2026-01-27"
-      }
-    ],
-    "updated_at": "2026-01-27",
-    "city_cost_rank": 6,
-    "target_program": {
-      "name": "Graduate program (Space/Aerospace track)",
-      "degree": "MSc",
-      "ects": 120,
-      "url": "https://www.keio.ac.jp/en/admissions/fees/"
-    },
-    "admission_mode": "Aptitude Test",
-    "language_req": "English C1",
-    "deadlines": {
-      "winter": {
-        "opens": "Varies",
-        "closes": "Apr / Oct intake cycles",
-        "source_note": "Program-dependent; many Japanese programs have Oct/Apr intakes and department-specific windows."
-      },
-      "summer": {
-        "opens": "Varies",
-        "closes": "N/A",
-        "source_note": "Program-dependent; verify per program/intake.",
-        "availability_note": "Many programs are Oct intake only; verify per department"
-      }
-    },
-    "housing_difficulty": "Very Hard",
-    "housing_difficulty_score": 8,
-    "key_partners": [
-      "Mitsubishi Electric",
-      "Toshiba",
-      "JAXA"
-    ],
-    "admission_details": {
-      "mode": "Akademik başarı ve araştırma planı.",
-      "language": "English",
-      "winter_deadline": "Apr / Oct intake cycles",
-      "ects": 120
-    },
-    "logistics": {
-      "housing_difficulty": "Very Hard",
-      "housing_difficulty_score": 8,
-      "internship_mandatory": false,
-      "internship_notes": "Not generally mandatory; depends on lab/track. For Japan, internships can be harder to schedule without Japanese."
-    },
-    "industry_focus": {
-      "computational_intensity": "Medium",
-      "key_partners": [
-        "Mitsubishi Electric",
-        "Toshiba",
-        "JAXA"
-      ]
-    },
-    "scholarships": [
-      {
-        "name": "Keio Design the Future Award",
-        "provider": "Keio",
-        "type": "university",
-        "eligibility": "non_eu_ok",
-        "notes": "University funding; verify per department/program."
-      },
-      {
-        "name": "JASSO Scholarships / Support Programs",
-        "provider": "JASSO",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Multiple schemes; availability depends on program/enrollment status.",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html"
-      },
-      {
-        "name": "Japanese Government (MEXT) Scholarship",
-        "provider": "MEXT",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Embassy recommendation or university recommendation routes; highly competitive.",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/"
-      }
-    ],
-    "scope": "non_eu",
-    "needs_verification": true
-  },
-  {
-    "id": "tus",
-    "name": "Tokyo University of Science",
-    "display_name": "Tokyo University of Science (TUS)",
-    "short": "TUS",
-    "location": {
-      "city": "Tokyo",
-      "state": "Tokyo",
-      "country": "Japan"
-    },
-    "city_cost": "very_high",
-    "city_cost_raw": "Çok yüksek",
-    "semester_fees": [
-      {
-        "term": "WiSe 2025/26",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2025W"
-      },
-      {
-        "term": "SoSe 2026",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2026S"
-      }
-    ],
-    "tuition": [
-      {
-        "scope": "non_eu",
-        "program": "Graduate (Space/Aerospace track)",
-        "amount": 7500.0,
-        "currency": "EUR",
-        "period": "year",
-        "raw": "Approx €7,500/year (non-EU/intl)",
-        "effective_from_term_code": "2025W"
-      }
-    ],
-    "aerospace_ecosystem": "Space Colony Research Center (Chiaki Mukai).",
-    "strong_areas_summary": "Space Colony Tech, Photovoltaics, Materials, Propulsion",
-    "pros": [
-      "Uzay kolonileşmesi ve yaşam destek sistemleri üzerine özelleşmiş nadir merkezlerden biridir.",
-      "Özel okullar arasında teknik itibarı yüksektir.",
-      "Strength areas: Space Colony Tech, Photovoltaics, Materials, Propulsion.",
-      "Industry/agency proximity or links: JAXA, Shimizu Corp."
-    ],
-    "cons": [
-      "Ücretler yüksektir.",
-      "Kampüsler Tokyo içinde dağınıktır.",
-      "Housing in Tokyo is rated Nightmare (score 9/10) — plan early.",
-      "Admission typically involves an entrance exam and/or interview; outcomes can be less predictable than grade-only admission.",
-      "Many labs/admin processes still expect Japanese; day-to-day and thesis logistics may require Japanese effort."
-    ],
-    "tags": [
-      "spacecolony",
-      "lifesupport",
-      "materials",
-      "photovoltaics",
-      "propulsion"
-    ],
-    "tags_raw": "#Spacecolony #Lifesupport #Materials #Photovoltaics #Propulsion",
-    "sources": [
-      {
-        "type": "official",
-        "url": "https://www.tus.ac.jp/en/admissions/tuition/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html",
-        "last_verified": "2026-01-27"
-      }
-    ],
-    "updated_at": "2026-01-27",
-    "city_cost_rank": 6,
-    "target_program": {
-      "name": "Graduate program (Space/Aerospace track)",
-      "degree": "MSc",
-      "ects": 120,
-      "url": "https://www.tus.ac.jp/en/admissions/tuition/"
-    },
-    "admission_mode": "Aptitude Test",
-    "language_req": "English C1",
-    "deadlines": {
-      "winter": {
-        "opens": "Varies",
-        "closes": "Varies",
-        "source_note": "Program-dependent; many Japanese programs have Oct/Apr intakes and department-specific windows."
-      },
-      "summer": {
-        "opens": "Varies",
-        "closes": "N/A",
-        "source_note": "Program-dependent; verify per program/intake.",
-        "availability_note": "Many programs are Oct intake only; verify per department"
-      }
-    },
-    "housing_difficulty": "Nightmare",
-    "housing_difficulty_score": 9,
-    "key_partners": [
-      "JAXA",
-      "Shimizu Corp"
-    ],
-    "admission_details": {
-      "mode": "Yazılı sınav ve mülakat.",
-      "language": "English/Japanese",
-      "winter_deadline": "Varies",
-      "ects": 120
-    },
-    "logistics": {
-      "housing_difficulty": "Nightmare",
-      "housing_difficulty_score": 9,
-      "internship_mandatory": false,
-      "internship_notes": "Not generally mandatory; depends on lab/track. For Japan, internships can be harder to schedule without Japanese."
-    },
-    "industry_focus": {
-      "computational_intensity": "Medium",
-      "key_partners": [
-        "JAXA",
-        "Shimizu Corp"
-      ]
-    },
-    "scholarships": [
-      {
-        "name": "TUS Scholarships",
-        "provider": "TUS",
-        "type": "university",
-        "eligibility": "non_eu_ok",
-        "notes": "University funding; verify per department/program."
-      },
-      {
-        "name": "Japanese Government (MEXT) Scholarship",
-        "provider": "MEXT",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Embassy recommendation or university recommendation routes; highly competitive.",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/"
-      },
-      {
-        "name": "JASSO Scholarships / Support Programs",
-        "provider": "JASSO",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Multiple schemes; availability depends on program/enrollment status.",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html"
-      }
-    ],
-    "scope": "non_eu",
-    "needs_verification": true
-  },
-  {
-    "id": "nihon-u",
-    "name": "Nihon University",
-    "display_name": "Nihon University",
-    "short": "NihonU",
-    "location": {
-      "city": "Tokyo",
-      "state": "Tokyo",
-      "country": "Japan"
-    },
-    "city_cost": "very_high",
-    "city_cost_raw": "Çok yüksek",
-    "semester_fees": [
-      {
-        "term": "WiSe 2025/26",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2025W"
-      },
-      {
-        "term": "SoSe 2026",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2026S"
-      }
-    ],
-    "tuition": [
-      {
-        "scope": "non_eu",
-        "program": "Graduate (Space/Aerospace track)",
-        "amount": 8000.0,
-        "currency": "EUR",
-        "period": "year",
-        "raw": "Approx €8,000/year (non-EU/intl)",
-        "effective_from_term_code": "2025W"
-      }
-    ],
-    "aerospace_ecosystem": "Küp uydular (SEEDS) ve insan gücüyle uçan uçaklar.",
-    "strong_areas_summary": "CubeSats, Aircraft Manufacturing, Structural Mechanics",
-    "pros": [
-      "Pratik ve üretim odaklıdır.",
-      "Japonya'nın en çok CEO mezun eden üniversitesidir.",
-      "Strength areas: CubeSats, Aircraft Manufacturing, Structural Mechanics.",
-      "Industry/agency proximity or links: Private Industry."
-    ],
-    "cons": [
-      "Eğitim dili ağırlıklı olarak Japoncadır.",
-      "Akademik prestiji Tokyo/Kyoto seviyesinde değildir.",
-      "Housing in Tokyo is rated Very Hard (score 8/10) — plan early.",
-      "Admission typically involves an entrance exam and/or interview; outcomes can be less predictable than grade-only admission.",
-      "Many labs/admin processes still expect Japanese; day-to-day and thesis logistics may require Japanese effort."
-    ],
-    "tags": [
-      "cubesats",
-      "manufacturing",
-      "structures",
-      "aircraftdesign"
-    ],
-    "tags_raw": "#Cubesats #Manufacturing #Structures #Aircraftdesign",
-    "sources": [
-      {
-        "type": "official",
-        "url": "https://www.nihon-u.ac.jp/en/admissions/tuition/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html",
-        "last_verified": "2026-01-27"
-      }
-    ],
-    "updated_at": "2026-01-27",
-    "city_cost_rank": 6,
-    "target_program": {
-      "name": "Graduate program (Space/Aerospace track)",
-      "degree": "MSc",
-      "ects": 120,
-      "url": "https://www.nihon-u.ac.jp/en/admissions/tuition/"
-    },
-    "admission_mode": "Aptitude Test",
-    "language_req": "English C1",
-    "deadlines": {
-      "winter": {
-        "opens": "Varies",
-        "closes": "Nov",
-        "source_note": "Program-dependent; many Japanese programs have Oct/Apr intakes and department-specific windows."
-      },
-      "summer": {
-        "opens": "Varies",
-        "closes": "N/A",
-        "source_note": "Program-dependent; verify per program/intake.",
-        "availability_note": "Many programs are Oct intake only; verify per department"
-      }
-    },
-    "housing_difficulty": "Very Hard",
-    "housing_difficulty_score": 8,
-    "key_partners": [
-      "Private Industry"
-    ],
-    "admission_details": {
-      "mode": "Bölüm sınavı.",
-      "language": "Japanese (Mostly)",
-      "winter_deadline": "Nov",
-      "ects": 120
-    },
-    "logistics": {
-      "housing_difficulty": "Very Hard",
-      "housing_difficulty_score": 8,
-      "internship_mandatory": false,
-      "internship_notes": "Not generally mandatory; depends on lab/track. For Japan, internships can be harder to schedule without Japanese."
-    },
-    "industry_focus": {
-      "computational_intensity": "Low-Medium",
-      "key_partners": [
-        "Private Industry"
-      ]
-    },
-    "scholarships": [
-      {
-        "name": "University Scholarships",
-        "provider": "NihonU",
-        "type": "university",
-        "eligibility": "non_eu_ok",
-        "notes": "University funding; verify per department/program."
-      },
-      {
-        "name": "Japanese Government (MEXT) Scholarship",
-        "provider": "MEXT",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Embassy recommendation or university recommendation routes; highly competitive.",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/"
-      },
-      {
-        "name": "JASSO Scholarships / Support Programs",
-        "provider": "JASSO",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Multiple schemes; availability depends on program/enrollment status.",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html"
-      }
-    ],
-    "scope": "non_eu",
-    "needs_verification": true
-  },
-  {
-    "id": "kyutech",
-    "name": "Kyushu Institute of Technology",
-    "display_name": "Kyushu Institute of Technology (Kyutech)",
-    "short": "Kyutech",
-    "location": {
-      "city": "Kitakyushu",
-      "state": "Fukuoka",
-      "country": "Japan"
-    },
-    "city_cost": "medium_low",
-    "city_cost_raw": "Orta-düşük",
-    "semester_fees": [
-      {
-        "term": "WiSe 2025/26",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2025W"
-      },
-      {
-        "term": "SoSe 2026",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2026S"
-      }
-    ],
-    "tuition": [
-      {
-        "scope": "non_eu",
-        "program": "Graduate (Space/Aerospace track)",
-        "amount": 3400.0,
-        "currency": "EUR",
-        "period": "year",
-        "raw": "Approx €3,400/year (non-EU/intl)",
-        "effective_from_term_code": "2025W"
-      }
-    ],
-    "aerospace_ecosystem": "BIRDS Project (Uydu test ve fırlatma). Gelişmekte olan ülkelerle uydu projeleri.",
-    "strong_areas_summary": "Satellite Testing, Space Environment Effects, Nano-satellites, Electric Propulsion",
-    "pros": [
-      "Dünyanın 1 numaralı akademik uydu operatörüdür (fırlatılan uydu sayısında).",
-      "Çok pratik, 'hands-on' bir eğitim vardır.",
-      "Strength areas: Satellite Testing, Space Environment Effects, Nano-satellites, Electric Propulsion.",
-      "Industry/agency proximity or links: UNOOSA, JAXA, Space BD."
-    ],
-    "cons": [
-      "Teorik derinlikten ziyade yap-fırlat odaklıdır.",
-      "Şehir sanayi şehridir, turistik değildir.",
-      "Housing in Kitakyushu is rated Easy (score 4/10) — plan early."
-    ],
-    "tags": [
-      "satellitetesting",
-      "nanosatellites",
-      "spaceenvironment",
-      "electricpropulsion",
-      "handson"
-    ],
-    "tags_raw": "#Satellitetesting #Nanosatellites #Spaceenvironment #Electricpropulsion #Handson",
-    "sources": [
-      {
-        "type": "official",
-        "url": "https://www.kyutech.ac.jp/english/admissions/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html",
-        "last_verified": "2026-01-27"
-      }
-    ],
-    "updated_at": "2026-01-27",
-    "city_cost_rank": 2,
-    "target_program": {
-      "name": "Graduate program (Space/Aerospace track)",
-      "degree": "MSc",
-      "ects": 120,
-      "url": "https://www.kyutech.ac.jp/english/admissions/"
-    },
-    "admission_mode": "Aptitude Test",
-    "language_req": "English C1",
-    "deadlines": {
-      "winter": {
-        "opens": "Varies",
-        "closes": "Varies",
-        "source_note": "Program-dependent; many Japanese programs have Oct/Apr intakes and department-specific windows."
-      },
-      "summer": {
-        "opens": "Varies",
-        "closes": "N/A",
-        "source_note": "Program-dependent; verify per program/intake.",
-        "availability_note": "Many programs are Oct intake only; verify per department"
-      }
-    },
-    "housing_difficulty": "Easy",
-    "housing_difficulty_score": 4,
-    "key_partners": [
-      "UNOOSA",
-      "JAXA",
-      "Space BD"
-    ],
-    "admission_details": {
-      "mode": "SEIC (Space Engineering International Course) ile İngilizce başvuru.",
-      "language": "English",
-      "winter_deadline": "Varies",
-      "ects": 120
-    },
-    "logistics": {
-      "housing_difficulty": "Easy",
-      "housing_difficulty_score": 4,
-      "internship_mandatory": false,
-      "internship_notes": "Not generally mandatory; depends on lab/track. For Japan, internships can be harder to schedule without Japanese."
-    },
-    "industry_focus": {
-      "computational_intensity": "Medium",
-      "key_partners": [
-        "UNOOSA",
-        "JAXA",
-        "Space BD"
-      ]
-    },
-    "scholarships": [
-      {
-        "name": "Japanese Government (MEXT) Scholarship",
-        "provider": "MEXT",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Embassy recommendation or university recommendation routes; highly competitive.",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/"
-      },
-      {
-        "name": "JASSO Scholarships / Support Programs",
-        "provider": "JASSO",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Multiple schemes; availability depends on program/enrollment status.",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html"
-      }
-    ],
-    "scope": "non_eu",
-    "needs_verification": true
-  },
-  {
-    "id": "tuat",
-    "name": "Tokyo University of Agriculture and Technology",
-    "display_name": "Tokyo University of Agriculture and Technology (TUAT)",
-    "short": "TUAT",
-    "location": {
-      "city": "Tokyo (Fuchu/Koganei)",
-      "state": "Tokyo",
-      "country": "Japan"
-    },
-    "city_cost": "very_high",
-    "city_cost_raw": "Çok yüksek",
-    "semester_fees": [
-      {
-        "term": "WiSe 2025/26",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2025W"
-      },
-      {
-        "term": "SoSe 2026",
-        "amount": 0.0,
-        "currency": "EUR",
-        "includes_ticket": false,
-        "raw": "No separate semester contribution specified; tuition typically charged annually (verify).",
-        "term_code": "2026S"
-      }
-    ],
-    "tuition": [
-      {
-        "scope": "non_eu",
-        "program": "Graduate (Space/Aerospace track)",
-        "amount": 3400.0,
-        "currency": "EUR",
-        "period": "year",
-        "raw": "Approx €3,400/year (non-EU/intl)",
-        "effective_from_term_code": "2025W"
-      }
-    ],
-    "aerospace_ecosystem": "İtki (Propulsion) ve akıllı mobilite.",
-    "strong_areas_summary": "Space Propulsion, Combustion, Smart Mobility, Control",
-    "pros": [
-      "Tokyo'nun batısında, daha sakin kampüsler.",
-      "İtki sistemleri konusunda niş ve güçlü laboratuvarlar.",
-      "Strength areas: Space Propulsion, Combustion, Smart Mobility, Control.",
-      "Industry/agency proximity or links: JAXA, Automotive Industry."
-    ],
-    "cons": [
-      "Küçük bir devlet üniversitesidir.",
-      "Uluslararası bilinirliği UTokyo/Tohoku kadar yüksek değildir.",
-      "Housing in Tokyo (Fuchu/Koganei) is rated Very Hard (score 8/10) — plan early.",
-      "Admission typically involves an entrance exam and/or interview; outcomes can be less predictable than grade-only admission.",
-      "Many labs/admin processes still expect Japanese; day-to-day and thesis logistics may require Japanese effort."
-    ],
-    "tags": [
-      "propulsion",
-      "combustion",
-      "smartmobility",
-      "controls"
-    ],
-    "tags_raw": "#Propulsion #Combustion #Smartmobility #Controls",
-    "sources": [
-      {
-        "type": "official",
-        "url": "https://www.tuat.ac.jp/en/admission/tuition/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/",
-        "last_verified": "2026-01-27"
-      },
-      {
-        "type": "scholarships",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html",
-        "last_verified": "2026-01-27"
-      }
-    ],
-    "updated_at": "2026-01-27",
-    "city_cost_rank": 5,
-    "target_program": {
-      "name": "Graduate program (Space/Aerospace track)",
-      "degree": "MSc",
-      "ects": 120,
-      "url": "https://www.tuat.ac.jp/en/admission/tuition/"
-    },
-    "admission_mode": "Aptitude Test",
-    "language_req": "English C1",
-    "deadlines": {
-      "winter": {
-        "opens": "Varies",
-        "closes": "Dec",
-        "source_note": "Program-dependent; many Japanese programs have Oct/Apr intakes and department-specific windows."
-      },
-      "summer": {
-        "opens": "Varies",
-        "closes": "N/A",
-        "source_note": "Program-dependent; verify per program/intake.",
-        "availability_note": "Many programs are Oct intake only; verify per department"
-      }
-    },
-    "housing_difficulty": "Very Hard",
-    "housing_difficulty_score": 8,
-    "key_partners": [
-      "JAXA",
-      "Automotive Industry"
-    ],
-    "admission_details": {
-      "mode": "Genelde sınavlı giriş.",
-      "language": "English/Japanese",
-      "winter_deadline": "Dec",
-      "ects": 120
-    },
-    "logistics": {
-      "housing_difficulty": "Very Hard",
-      "housing_difficulty_score": 8,
-      "internship_mandatory": false,
-      "internship_notes": "Not generally mandatory; depends on lab/track. For Japan, internships can be harder to schedule without Japanese."
-    },
-    "industry_focus": {
-      "computational_intensity": "Medium",
-      "key_partners": [
-        "JAXA",
-        "Automotive Industry"
-      ]
-    },
-    "scholarships": [
-      {
-        "name": "Japanese Government (MEXT) Scholarship",
-        "provider": "MEXT",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Embassy recommendation or university recommendation routes; highly competitive.",
-        "url": "https://www.studyinjapan.go.jp/en/planning/scholarships/mext-scholarships/"
-      },
-      {
-        "name": "TUAT Funds",
-        "provider": "TUAT",
-        "type": "university",
-        "eligibility": "non_eu_ok",
-        "notes": "University funding; verify per department/program."
-      },
-      {
-        "name": "JASSO Scholarships / Support Programs",
-        "provider": "JASSO",
-        "type": "government",
-        "eligibility": "non_eu_ok",
-        "notes": "Multiple schemes; availability depends on program/enrollment status.",
-        "url": "https://www.jasso.go.jp/en/ryugaku/scholarship_j/index.html"
-      }
-    ],
-    "scope": "non_eu",
-    "needs_verification": true
-  }
+    {
+        "Country": "ıJıaıpıaını",
+        "City": "ıTıoıkıyıoı",
+        "State_Region": "ıTıoıkıyıoı",
+        "Uni_ID": "ıuıtıoıkıyıoı",
+        "University_Name": "ıTıhıeı ıUınıiıvıeırısıiıtıyı ıoıfı ıTıoıkıyıoı",
+        "University_Display_Name": "ıTıhıeı ıUınıiıvıeırısıiıtıyı ıoıfı ıTıoıkıyıoı ı(ıUıTıoıkıyıoı)ı",
+        "University_Short_Name": "ıUıTıoıkıyıoı",
+        "Cost_Tuition": [
+            {
+                "amount": 3400.0,
+                "currency": "ıEıUıRı",
+                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
+                "period": "ıyıeıaırı",
+                "program": "ıGırıaıdıuıaıtıeı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+                "raw": "ıAıpıpırıoıxı ı€ı3ı,ı4ı0ı0ı/ıyıeıaırı ı(ınıoını-ıEıUı/ıiınıtılı)ı",
+                "scope": "ınıoını_ıeıuı"
+            }
+        ],
+        "Cost_Semester_Fees": [
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
+                "term_code": "ı2ı0ı2ı5ıWı"
+            },
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
+                "term_code": "ı2ı0ı2ı6ıSı"
+            }
+        ],
+        "Scholarships_Info": [
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıaıpıaınıeısıeı ıGıoıvıeırınımıeınıtı ı(ıMıEıXıTı)ı ıSıcıhıoılıaırısıhıiıpı",
+                "notes": "ıEımıbıaısısıyı ırıeıcıoımımıeınıdıaıtıiıoını ıoırı ıuınıiıvıeırısıiıtıyı ırıeıcıoımımıeınıdıaıtıiıoını ırıoıuıtıeısı;ı ıhıiıgıhılıyı ıcıoımıpıeıtıiıtıiıvıeı.ı",
+                "provider": "ıMıEıXıTı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ısıtıuıdıyıiınıjıaıpıaını.ıgıoı.ıjıpı/ıeını/ıpılıaınınıiınıgı/ısıcıhıoılıaırısıhıiıpısı/ımıeıxıtı-ısıcıhıoılıaırısıhıiıpısı/ı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıUınıiıvıeırısıiıtıyı ıoıfı ıTıoıkıyıoı ıFıeılılıoıwısıhıiıpı",
+                "notes": "ıUınıiıvıeırısıiıtıyı/ıgırıaıdıuıaıtıeı-ısıcıhıoıoılı ıfıeılılıoıwısıhıiıpı;ı ıcıhıeıcıkı ıpırıoıgırıaımı-ısıpıeıcıiıfıiıcı ıcıaılılı.ı",
+                "provider": "ıUıTıoıkıyıoı",
+                "type": "ıuınıiıvıeırısıiıtıyı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıAıSıSıOı ıSıcıhıoılıaırısıhıiıpısı ı/ı ıSıuıpıpıoırıtı ıPırıoıgırıaımısı",
+                "notes": "ıMıuılıtıiıpılıeı ısıcıhıeımıeısı;ı ıaıvıaıiılıaıbıiılıiıtıyı ıdıeıpıeınıdısı ıoını ıpırıoıgırıaımı/ıeınırıoılılımıeınıtı ısıtıaıtıuısı.ı",
+                "provider": "ıJıAıSıSıOı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıjıaısısıoı.ıgıoı.ıjıpı/ıeını/ırıyıuıgıaıkıuı/ısıcıhıoılıaırısıhıiıpı_ıjı/ıiınıdıeıxı.ıhıtımılı"
+            }
+        ],
+        "Cost_City_Living": "ıvıeırıyı_ıhıiıgıhı",
+        "Cost_City_Rank": 6,
+        "Living_Housing_Difficulty": "ıNıiıgıhıtımıaırıeı",
+        "Living_Housing_Score": 10,
+        "Program_Name": "ıGırıaıdıuıaıtıeı ıpırıoıgırıaımı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+        "Program_Degree": "ıMıSıcı",
+        "Program_ECTS": 120.0,
+        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıuı-ıtıoıkıyıoı.ıaıcı.ıjıpı/ıeını/ıpırıoısıpıeıcıtıiıvıeı-ısıtıuıdıeınıtısı/ıtıuıiıtıiıoını_ıfıeıeısı.ıhıtımılı",
+        "Program_Scope": "ınıoını_ıeıuı",
+        "Admission_Mode": "ıAıpıtıiıtıuıdıeı ıTıeısıtı",
+        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
+        "Analysis_Strong_Areas": "ıAısıtırıoıdıyınıaımıiıcısı,ı ıPırıoıpıuılısıiıoını ı(ıIıoını ıeınıgıiınıeısı)ı,ı ıSıpıaıcıeı ıSıtırıuıcıtıuırıeısı,ı ıIınıtıeılılıiıgıeınıtı ı°ıCıoınıtırıoılı",
+        "Analysis_Pros": [
+            "ıDıüınıyıaınııını ıeını ıiıyıiı ıüınıiıvıeırısıiıtıeılıeırıiınıdıeını ıbıiırıiıdıiırı.ı;ı ıJıAıXıAı ıgıöırıeıvılıeırıiınıdıeı ı(ıöırını.ı;ı ıSıtırıeınıgıtıhı ıaırıeıaısı:ı ıAısıtırıoıdıyınıaımıiıcısı,ı ıPırıoıpıuılısıiıoını ı(ıIıoını ıeınıgıiınıeısı)ı,ı ıSıpıaıcıeı ıSıtırıuıcıtıuırıeısı,ı ıIınıtıeılılıiıgıeınıtı ı°ıCıoınıtırıoılı.ı;ı ıIınıdıuısıtırıyı/ıaıgıeınıcıyı ıpırıoıxıiımıiıtıyı ıoırı ılıiınıkısı:ı ıJıAıXıAı,ı ıIıSıAıSı,ı ıMıiıtısıuıbıiısıhıiı ıHıeıaıvıyı ıIınıdıuısıtırıiıeısı ı(ıMıHıIı)ı,ı ıIıHıIı ı°ıCıoırıpıoırıaıtıiıoını.ı"
+        ],
+        "Analysis_Cons": [
+            "ıTıoıkıyıoı€ıdıaı ıyıaışıaımı ıçıoıkı ıpıaıhıaılıııdııırı ıvıeı ıyıuırıtı ıçıııkımıaızısıaı ıeıvı ıbıuılımıaıkı ızıoırıdıuırı.ı;ı ıRıeıkıaıbıeıtı ıçıoıkı ıyıüıkısıeıkıtıiırı.ı;ı ıHıoıuısıiınıgı ıiını ıTıoıkıyıoı ıiısı ırıaıtıeıdı ıNıiıgıhıtımıaırıeı ı(ısıcıoırıeı ı1ı0ı/ı1ı0ı)ı ı—ı ıpılıaını ıeıaırılıyı.ı;ı ıAıdımıiısısıiıoını ıtıyıpıiıcıaılılıyı ıiınıvıoılıvıeısı ıaını ıeınıtırıaınıcıeı ıeıxıaımı ıaınıdı/ıoırı ıiınıtıeırıvıiıeıwı;ı ıoıuıtıcıoımıeısı ıcıaını ıbıeı ılıeısısı ıpırıeıdıiıcıtıaıbılıeı ıtıhıaını ıgırıaıdıeı-ıoınılıyı ıaıdımıiısısıiıoını.ı"
+        ],
+        "Analysis_Tags": [
+            "ıaısıtırıoıdıyınıaımıiıcısı;ı ıpırıoıpıuılısıiıoını;ı ısıpıaıcıeısıtırıuıcıtıuırıeısı;ı ıgınıcı;ı ıeılıeıcıtırıiıcıpırıoıpıuılısıiıoını;ı ımıiısısıiıoınıaınıaılıyısıiısı"
+        ],
+        "Industry_Ecosystem": "ıIıSıAıSı/ıJıAıXıAı ıiılıeı ıdıoığırıuıdıaını ıbıaığılıaınıtııılııı ılıaıbıoırıaıtıuıvıaırılıaırı.ı ıJıaıpıoınıyıaı€ınııını ıaıkıaıdıeımıiıkı ızıiırıvıeısıiı.ı",
+        "Industry_Partners": [
+            "ıJıAıXıAı;ı ıIıSıAıSı;ı ıMıiıtısıuıbıiısıhıiı ıHıeıaıvıyı ıIınıdıuısıtırıiıeısı ı(ıMıHıIı)ı;ı ıIıHıIı ı°ıCıoırıpıoırıaıtıiıoını"
+        ],
+        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Meta_Needs_Verification": true
+    },
+    {
+        "Country": "ıJıaıpıaını",
+        "City": "ıKıyıoıtıoı",
+        "State_Region": "ıKıyıoıtıoı",
+        "Uni_ID": "ıkıyıoıtıoı-ıuı",
+        "University_Name": "ıKıyıoıtıoı ıUınıiıvıeırısıiıtıyı",
+        "University_Display_Name": "ıKıyıoıtıoı ıUınıiıvıeırısıiıtıyı",
+        "University_Short_Name": "ıKıyıoıtıoıUı",
+        "Cost_Tuition": [
+            {
+                "amount": 3400.0,
+                "currency": "ıEıUıRı",
+                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
+                "period": "ıyıeıaırı",
+                "program": "ıGırıaıdıuıaıtıeı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+                "raw": "ıAıpıpırıoıxı ı€ı3ı,ı4ı0ı0ı/ıyıeıaırı ı(ınıoını-ıEıUı/ıiınıtılı)ı",
+                "scope": "ınıoını_ıeıuı"
+            }
+        ],
+        "Cost_Semester_Fees": [
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
+                "term_code": "ı2ı0ı2ı5ıWı"
+            },
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
+                "term_code": "ı2ı0ı2ı6ıSı"
+            }
+        ],
+        "Scholarships_Info": [
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıaıpıaınıeısıeı ıGıoıvıeırınımıeınıtı ı(ıMıEıXıTı)ı ıSıcıhıoılıaırısıhıiıpı",
+                "notes": "ıEımıbıaısısıyı ırıeıcıoımımıeınıdıaıtıiıoını ıoırı ıuınıiıvıeırısıiıtıyı ırıeıcıoımımıeınıdıaıtıiıoını ırıoıuıtıeısı;ı ıhıiıgıhılıyı ıcıoımıpıeıtıiıtıiıvıeı.ı",
+                "provider": "ıMıEıXıTı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ısıtıuıdıyıiınıjıaıpıaını.ıgıoı.ıjıpı/ıeını/ıpılıaınınıiınıgı/ısıcıhıoılıaırısıhıiıpısı/ımıeıxıtı-ısıcıhıoılıaırısıhıiıpısı/ı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıKıyıoıtıoı ıUınıiıvıeırısıiıtıyı ıFıuınıdı",
+                "notes": "ıUınıiıvıeırısıiıtıyı ıfıuınıdıiınıgı;ı ıvıeırıiıfıyı ıpıeırı ıdıeıpıaırıtımıeınıtı/ıpırıoıgırıaımı.ı",
+                "provider": "ıKıyıoıtıoıUı",
+                "type": "ıuınıiıvıeırısıiıtıyı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıAıSıSıOı ıSıcıhıoılıaırısıhıiıpısı ı/ı ıSıuıpıpıoırıtı ıPırıoıgırıaımısı",
+                "notes": "ıMıuılıtıiıpılıeı ısıcıhıeımıeısı;ı ıaıvıaıiılıaıbıiılıiıtıyı ıdıeıpıeınıdısı ıoını ıpırıoıgırıaımı/ıeınırıoılılımıeınıtı ısıtıaıtıuısı.ı",
+                "provider": "ıJıAıSıSıOı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıjıaısısıoı.ıgıoı.ıjıpı/ıeını/ırıyıuıgıaıkıuı/ısıcıhıoılıaırısıhıiıpı_ıjı/ıiınıdıeıxı.ıhıtımılı"
+            }
+        ],
+        "Cost_City_Living": "ıvıeırıyı_ıhıiıgıhı",
+        "Cost_City_Rank": 5,
+        "Living_Housing_Difficulty": "ıHıaırıdı",
+        "Living_Housing_Score": 7,
+        "Program_Name": "ıGırıaıdıuıaıtıeı ıpırıoıgırıaımı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+        "Program_Degree": "ıMıSıcı",
+        "Program_ECTS": 120.0,
+        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıkıyıoıtıoı-ıuı.ıaıcı.ıjıpı/ıeını/ıeıdıuıcıaıtıiıoını-ıcıaımıpıuısı/ısıtıuıdıeınıtı-ısıuıpıpıoırıtı/ıtıuıiıtıiıoını",
+        "Program_Scope": "ınıoını_ıeıuı",
+        "Admission_Mode": "ıAıpıtıiıtıuıdıeı ıTıeısıtı",
+        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
+        "Analysis_Strong_Areas": "ıFılıuıiıdı ıDıyınıaımıiıcısı,ı ıRıaırıeıfıiıeıdı ıGıaısı ıDıyınıaımıiıcısı,ı ı°ıCıoınıtırıoılı ıTıhıeıoırıyı,ı ıSıpıaıcıeı ıSıyısıtıeımısı",
+        "Analysis_Pros": [
+            "ıJıaıpıoınıyıaı€ınııını ıeını ıkıöıkılıüı ıiıkıiınıcıiı ıüınıiıvıeırısıiıtıeısıiıdıiırı.ı;ı ıAırıaışıtııırımıaı ıöızıgıüırılıüığıüı ıvıeı ıtıeıoırıiıkı ıdıeırıiınılıiığıiı ıiılıeı ıbıiılıiınıiırı.ı;ı ıSıtırıeınıgıtıhı ıaırıeıaısı:ı ıFılıuıiıdı ıDıyınıaımıiıcısı,ı ıRıaırıeıfıiıeıdı ıGıaısı ıDıyınıaımıiıcısı,ı ı°ıCıoınıtırıoılı ıTıhıeıoırıyı,ı ıSıpıaıcıeı ıSıyısıtıeımısı.ı;ı ıIınıdıuısıtırıyı/ıaıgıeınıcıyı ıpırıoıxıiımıiıtıyı ıoırı ılıiınıkısı:ı ıKıaıwıaısıaıkıiı ıHıeıaıvıyı ıIınıdıuısıtırıiıeısı,ı ıJıAıXıAı,ı ıSıhıiımıaıdızıuı.ı"
+        ],
+        "Analysis_Cons": [
+            "ıTıoıkıyıoı ıkıaıdıaırı ıeınıdıüısıtırıiı ımıeırıkıeızılıiı ıdıeığıiılıdıiırı,ı ıdıaıhıaı ıçıoıkı ıaıkıaıdıeımıiı ıoıdıaıkılıııdııırı.ı;ı ıTıuırıiısıtı ıyıoığıuınılıuığıuı ınıeıdıeınıiıyılıeı ıkıoınıuıtı ıpıaıhıaılııılıaışıaıbıiılıiırı.ı;ı ıHıoıuısıiınıgı ıiını ıKıyıoıtıoı ıiısı ırıaıtıeıdı ıHıaırıdı ı(ısıcıoırıeı ı7ı/ı1ı0ı)ı ı—ı ıpılıaını ıeıaırılıyı.ı;ı ıAıdımıiısısıiıoını ıtıyıpıiıcıaılılıyı ıiınıvıoılıvıeısı ıaını ıeınıtırıaınıcıeı ıeıxıaımı ıaınıdı/ıoırı ıiınıtıeırıvıiıeıwı;ı ıoıuıtıcıoımıeısı ıcıaını ıbıeı ılıeısısı ıpırıeıdıiıcıtıaıbılıeı ıtıhıaını ıgırıaıdıeı-ıoınılıyı ıaıdımıiısısıiıoını.ı"
+        ],
+        "Analysis_Tags": [
+            "ıfılıuıiıdıdıyınıaımıiıcısı;ı ıcıoınıtırıoılısı;ı ıpırıoıpıuılısıiıoını;ı ırıaırıeıfıiıeıdıgıaısı;ı ısıpıaıcıeısıyısıtıeımısı"
+        ],
+        "Industry_Ecosystem": "ıAıkııışıkıaınılıaırı ıdıiınıaımıiığıiı ıvıeı ıtıeımıeılı ıbıiılıiımılıeırı ıoıdıaıkılııı ıgıüıçılıüı ımıüıhıeınıdıiısılıiıkı.ı",
+        "Industry_Partners": [
+            "ıKıaıwıaısıaıkıiı ıHıeıaıvıyı ıIınıdıuısıtırıiıeısı;ı ıJıAıXıAı;ı ıSıhıiımıaıdızıuı"
+        ],
+        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Meta_Needs_Verification": true
+    },
+    {
+        "Country": "ıJıaıpıaını",
+        "City": "ıSıeınıdıaıiı",
+        "State_Region": "ıMıiıyıaıgıiı",
+        "Uni_ID": "ıtıoıhıoıkıuı-ıuı",
+        "University_Name": "ıTıoıhıoıkıuı ıUınıiıvıeırısıiıtıyı",
+        "University_Display_Name": "ıTıoıhıoıkıuı ıUınıiıvıeırısıiıtıyı",
+        "University_Short_Name": "ıTıoıhıoıkıuıUı",
+        "Cost_Tuition": [
+            {
+                "amount": 3400.0,
+                "currency": "ıEıUıRı",
+                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
+                "period": "ıyıeıaırı",
+                "program": "ıGırıaıdıuıaıtıeı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+                "raw": "ıAıpıpırıoıxı ı€ı3ı,ı4ı0ı0ı/ıyıeıaırı ı(ınıoını-ıEıUı/ıiınıtılı)ı",
+                "scope": "ınıoını_ıeıuı"
+            }
+        ],
+        "Cost_Semester_Fees": [
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
+                "term_code": "ı2ı0ı2ı5ıWı"
+            },
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
+                "term_code": "ı2ı0ı2ı6ıSı"
+            }
+        ],
+        "Scholarships_Info": [
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıaıpıaınıeısıeı ıGıoıvıeırınımıeınıtı ı(ıMıEıXıTı)ı ıSıcıhıoılıaırısıhıiıpı",
+                "notes": "ıEımıbıaısısıyı ırıeıcıoımımıeınıdıaıtıiıoını ıoırı ıuınıiıvıeırısıiıtıyı ırıeıcıoımımıeınıdıaıtıiıoını ırıoıuıtıeısı;ı ıhıiıgıhılıyı ıcıoımıpıeıtıiıtıiıvıeı.ı",
+                "provider": "ıMıEıXıTı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ısıtıuıdıyıiınıjıaıpıaını.ıgıoı.ıjıpı/ıeını/ıpılıaınınıiınıgı/ısıcıhıoılıaırısıhıiıpısı/ımıeıxıtı-ısıcıhıoılıaırısıhıiıpısı/ı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıPırıeısıiıdıeınıtı ıFıeılılıoıwısıhıiıpı",
+                "notes": "ıUınıiıvıeırısıiıtıyı/ıgırıaıdıuıaıtıeı-ısıcıhıoıoılı ıfıeılılıoıwısıhıiıpı;ı ıcıhıeıcıkı ıpırıoıgırıaımı-ısıpıeıcıiıfıiıcı ıcıaılılı.ı",
+                "provider": "ıTıoıhıoıkıuıUı",
+                "type": "ıuınıiıvıeırısıiıtıyı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıAıSıSıOı ıSıcıhıoılıaırısıhıiıpısı ı/ı ıSıuıpıpıoırıtı ıPırıoıgırıaımısı",
+                "notes": "ıMıuılıtıiıpılıeı ısıcıhıeımıeısı;ı ıaıvıaıiılıaıbıiılıiıtıyı ıdıeıpıeınıdısı ıoını ıpırıoıgırıaımı/ıeınırıoılılımıeınıtı ısıtıaıtıuısı.ı",
+                "provider": "ıJıAıSıSıOı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıjıaısısıoı.ıgıoı.ıjıpı/ıeını/ırıyıuıgıaıkıuı/ısıcıhıoılıaırısıhıiıpı_ıjı/ıiınıdıeıxı.ıhıtımılı"
+            }
+        ],
+        "Cost_City_Living": "ımıeıdıiıuımı",
+        "Cost_City_Rank": 3,
+        "Living_Housing_Difficulty": "ıMıoıdıeırıaıtıeı",
+        "Living_Housing_Score": 5,
+        "Program_Name": "ıGırıaıdıuıaıtıeı ıpırıoıgırıaımı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+        "Program_Degree": "ıMıSıcı",
+        "Program_ECTS": 120.0,
+        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıtıoıhıoıkıuı.ıaıcı.ıjıpı/ıeını/ıeıdıuıcıaıtıiıoını/ıtıuıiıtıiıoını_ıfıeıeısı.ıhıtımılı",
+        "Program_Scope": "ınıoını_ıeıuı",
+        "Admission_Mode": "ıDıiırıeıcıtı",
+        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
+        "Analysis_Strong_Areas": "ıSıpıaıcıeı ıRıoıbıoıtıiıcısı,ı ıMıiıcırıoı-ısıaıtıeılılıiıtıeısı,ı ıHıyıpıeırısıoınıiıcısı,ı ıMıaıtıeırıiıaılısı ıSıcıiıeınıcıeı",
+        "Analysis_Pros": [
+            "ıUızıaıyı ıRıoıbıoıtılıaırııı ı(ıSıpıaıcıeı ıRıoıbıoıtıiıcısı)ı ıkıoınıuısıuınıdıaı ıdıüınıyıaınııını ıeını ıiıyıiı ılıaıbıoırıaıtıuıvıaırılıaırııınıdıaını ıbıiırıiınıeı ısıaıhıiıpıtıiırı.ı;ı ıSıeınıdıaıiı ıöığırıeınıcıiı ıdıoısıtıuı ıvıeı ıuıcıuızıdıuırı.ı;ı ıSıtırıeınıgıtıhı ıaırıeıaısı:ı ıSıpıaıcıeı ıRıoıbıoıtıiıcısı,ı ıMıiıcırıoı-ısıaıtıeılılıiıtıeısı,ı ıHıyıpıeırısıoınıiıcısı,ı ıMıaıtıeırıiıaılısı ıSıcıiıeınıcıeı.ı;ı ıIınıdıuısıtırıyı/ıaıgıeınıcıyı ıpırıoıxıiımıiıtıyı ıoırı ılıiınıkısı:ı ıiısıpıaıcıeı,ı ıJıAıXıAı,ı ıTıoıyıoıtıaı.ı"
+        ],
+        "Analysis_Cons": [
+            "ıKııışılıaırııı ısıoığıuıkıtıuırı.ı;ı ı2ı0ı2ı7ı€ıdıeını ıiıtıiıbıaırıeını ıuılıuısılıaırıaırıaısııı ıöığırıeınıcıiı ıüıcırıeıtılıeırıiınıeı ızıaımı ıyıaıpııılımıaısııı ıtıaırıtııışııılımıaıkıtıaıdııırı.ı;ı ıHıoıuısıiınıgı ıiını ıSıeınıdıaıiı ıiısı ırıaıtıeıdı ıMıoıdıeırıaıtıeı ı(ısıcıoırıeı ı5ı/ı1ı0ı)ı ı—ı ıpılıaını ıeıaırılıyı.ı"
+        ],
+        "Analysis_Tags": [
+            "ısıpıaıcıeırıoıbıoıtıiıcısı;ı ımıiıcırıoısıaıtıeılılıiıtıeısı;ı ımıaıtıeırıiıaılısı;ı ıhıyıpıeırısıoınıiıcısı;ı ıeıxıpılıoırıaıtıiıoını"
+        ],
+        "Industry_Ecosystem": "ıSıpıaıcıeı ıRıoıbıoıtıiıcısı ıLıaıbı ı(ıKıaızıuıyıaı ışıoısıhıiıdıaı)ı ıdıüınıyıaıcıaı ıüınılıüıdıüırı ı(ıAıyı/ıAısıtıeırıoıiıdı ıgıöırıeıvılıeırıiı)ı.ı",
+        "Industry_Partners": [
+            "ıiısıpıaıcıeı;ı ıJıAıXıAı;ı ıTıoıyıoıtıaı"
+        ],
+        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Meta_Needs_Verification": true
+    },
+    {
+        "Country": "ıJıaıpıaını",
+        "City": "ıFıuıkıuıoıkıaı",
+        "State_Region": "ıFıuıkıuıoıkıaı",
+        "Uni_ID": "ıkıyıuısıhıuı-ıuı",
+        "University_Name": "ıKıyıuısıhıuı ıUınıiıvıeırısıiıtıyı",
+        "University_Display_Name": "ıKıyıuısıhıuı ıUınıiıvıeırısıiıtıyı",
+        "University_Short_Name": "ıKıyıuısıhıuıUı",
+        "Cost_Tuition": [
+            {
+                "amount": 3400.0,
+                "currency": "ıEıUıRı",
+                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
+                "period": "ıyıeıaırı",
+                "program": "ıGırıaıdıuıaıtıeı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+                "raw": "ıAıpıpırıoıxı ı€ı3ı,ı4ı0ı0ı/ıyıeıaırı ı(ınıoını-ıEıUı/ıiınıtılı)ı",
+                "scope": "ınıoını_ıeıuı"
+            }
+        ],
+        "Cost_Semester_Fees": [
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
+                "term_code": "ı2ı0ı2ı5ıWı"
+            },
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
+                "term_code": "ı2ı0ı2ı6ıSı"
+            }
+        ],
+        "Scholarships_Info": [
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıaıpıaınıeısıeı ıGıoıvıeırınımıeınıtı ı(ıMıEıXıTı)ı ıSıcıhıoılıaırısıhıiıpı",
+                "notes": "ıEımıbıaısısıyı ırıeıcıoımımıeınıdıaıtıiıoını ıoırı ıuınıiıvıeırısıiıtıyı ırıeıcıoımımıeınıdıaıtıiıoını ırıoıuıtıeısı;ı ıhıiıgıhılıyı ıcıoımıpıeıtıiıtıiıvıeı.ı",
+                "provider": "ıMıEıXıTı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ısıtıuıdıyıiınıjıaıpıaını.ıgıoı.ıjıpı/ıeını/ıpılıaınınıiınıgı/ısıcıhıoılıaırısıhıiıpısı/ımıeıxıtı-ısıcıhıoılıaırısıhıiıpısı/ı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıAıSıSıOı ıSıcıhıoılıaırısıhıiıpısı ı/ı ıSıuıpıpıoırıtı ıPırıoıgırıaımısı",
+                "notes": "ıMıuılıtıiıpılıeı ısıcıhıeımıeısı;ı ıaıvıaıiılıaıbıiılıiıtıyı ıdıeıpıeınıdısı ıoını ıpırıoıgırıaımı/ıeınırıoılılımıeınıtı ısıtıaıtıuısı.ı",
+                "provider": "ıJıAıSıSıOı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıjıaısısıoı.ıgıoı.ıjıpı/ıeını/ırıyıuıgıaıkıuı/ısıcıhıoılıaırısıhıiıpı_ıjı/ıiınıdıeıxı.ıhıtımılı"
+            }
+        ],
+        "Cost_City_Living": "ımıeıdıiıuımı",
+        "Cost_City_Rank": 3,
+        "Living_Housing_Difficulty": "ıMıoıdıeırıaıtıeı",
+        "Living_Housing_Score": 5,
+        "Program_Name": "ıGırıaıdıuıaıtıeı ıpırıoıgırıaımı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+        "Program_Degree": "ıMıSıcı",
+        "Program_ECTS": 120.0,
+        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıkıyıuısıhıuı-ıuı.ıaıcı.ıjıpı/ıeını/ıaıdımıiısısıiıoını/ıfıeıeısı",
+        "Program_Scope": "ınıoını_ıeıuı",
+        "Admission_Mode": "ıAıpıtıiıtıuıdıeı ıTıeısıtı",
+        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
+        "Analysis_Strong_Areas": "ıPırıoıpıuılısıiıoını,ı ıAıeırıoıdıyınıaımıiıcısı,ı ıWıiınıdı ıEınıeırıgıyı,ı ıSıpıaıcıeı ıEınıvıiırıoınımıeınıtı",
+        "Analysis_Pros": [
+            "ıFıuıkıuıoıkıaı ıyıaışıaımıaıkı ıiıçıiını ıhıaırıiıkıaı ıvıeı ıuıyıgıuını ıfıiıyıaıtılııı ıbıiırı ışıeıhıiırıdıiırı.ı;ı ıKıaımıpıüısı ı(ıIıtıoı ı°ıCıaımıpıuısı)ı ıçıoıkı ıbıüıyıüıkı ıvıeı ımıoıdıeırınıdıiırı.ı;ı ıSıtırıeınıgıtıhı ıaırıeıaısı:ı ıPırıoıpıuılısıiıoını,ı ıAıeırıoıdıyınıaımıiıcısı,ı ıWıiınıdı ıEınıeırıgıyı,ı ıSıpıaıcıeı ıEınıvıiırıoınımıeınıtı.ı;ı ıIınıdıuısıtırıyı/ıaıgıeınıcıyı ıpırıoıxıiımıiıtıyı ıoırı ılıiınıkısı:ı ıJıAıXıAı,ı ıMıiıtısıuıbıiısıhıiı ıEılıeıcıtırıiıcı,ı ıMıHıIı.ı"
+        ],
+        "Analysis_Cons": [
+            "ıŞıeıhıiırı ımıeırıkıeızıiınıeı ıkıaımıpıüısı ıbıiırıaızı ıuızıaıkıtııırı.ı;ı ıİınıgıiılıiızıcıeı ıdıeırısı ıçıeışıiıtılıiılıiığıiı ıTıoıkıyıoı€ıdıaıkıiı ıoıkıuılılıaırıaı ıgıöırıeı ıaızı ıoılıaıbıiılıiırı.ı;ı ıHıoıuısıiınıgı ıiını ıFıuıkıuıoıkıaı ıiısı ırıaıtıeıdı ıMıoıdıeırıaıtıeı ı(ısıcıoırıeı ı5ı/ı1ı0ı)ı ı—ı ıpılıaını ıeıaırılıyı.ı;ı ıAıdımıiısısıiıoını ıtıyıpıiıcıaılılıyı ıiınıvıoılıvıeısı ıaını ıeınıtırıaınıcıeı ıeıxıaımı ıaınıdı/ıoırı ıiınıtıeırıvıiıeıwı;ı ıoıuıtıcıoımıeısı ıcıaını ıbıeı ılıeısısı ıpırıeıdıiıcıtıaıbılıeı ıtıhıaını ıgırıaıdıeı-ıoınılıyı ıaıdımıiısısıiıoını.ı"
+        ],
+        "Analysis_Tags": [
+            "ıpırıoıpıuılısıiıoını;ı ıaıeırıoıdıyınıaımıiıcısı;ı ıwıiınıdıeınıeırıgıyı;ı ısıpıaıcıeıeınıvıiırıoınımıeınıtı;ı ıcıoınıtırıoılısı"
+        ],
+        "Industry_Ecosystem": "ıBıaıtııı ıJıaıpıoınıyıaı€ınııını ımıüıhıeınıdıiısılıiıkı ımıeırıkıeızıiı.ı ıHıiıdırıoıjıeını ıvıeı ıiıtıkıiı ısıiısıtıeımılıeırıiı.ı",
+        "Industry_Partners": [
+            "ıJıAıXıAı;ı ıMıiıtısıuıbıiısıhıiı ıEılıeıcıtırıiıcı;ı ıMıHıIı"
+        ],
+        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Meta_Needs_Verification": true
+    },
+    {
+        "Country": "ıJıaıpıaını",
+        "City": "ıNıaıgıoıyıaı",
+        "State_Region": "ıAıiıcıhıiı",
+        "Uni_ID": "ınıaıgıoıyıaı-ıuı",
+        "University_Name": "ıNıaıgıoıyıaı ıUınıiıvıeırısıiıtıyı",
+        "University_Display_Name": "ıNıaıgıoıyıaı ıUınıiıvıeırısıiıtıyı",
+        "University_Short_Name": "ıNıaıgıoıyıaıUı",
+        "Cost_Tuition": [
+            {
+                "amount": 3400.0,
+                "currency": "ıEıUıRı",
+                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
+                "period": "ıyıeıaırı",
+                "program": "ıGırıaıdıuıaıtıeı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+                "raw": "ıAıpıpırıoıxı ı€ı3ı,ı4ı0ı0ı/ıyıeıaırı ı(ınıoını-ıEıUı/ıiınıtılı)ı",
+                "scope": "ınıoını_ıeıuı"
+            }
+        ],
+        "Cost_Semester_Fees": [
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
+                "term_code": "ı2ı0ı2ı5ıWı"
+            },
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
+                "term_code": "ı2ı0ı2ı6ıSı"
+            }
+        ],
+        "Scholarships_Info": [
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıaıpıaınıeısıeı ıGıoıvıeırınımıeınıtı ı(ıMıEıXıTı)ı ıSıcıhıoılıaırısıhıiıpı",
+                "notes": "ıEımıbıaısısıyı ırıeıcıoımımıeınıdıaıtıiıoını ıoırı ıuınıiıvıeırısıiıtıyı ırıeıcıoımımıeınıdıaıtıiıoını ırıoıuıtıeısı;ı ıhıiıgıhılıyı ıcıoımıpıeıtıiıtıiıvıeı.ı",
+                "provider": "ıMıEıXıTı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ısıtıuıdıyıiınıjıaıpıaını.ıgıoı.ıjıpı/ıeını/ıpılıaınınıiınıgı/ısıcıhıoılıaırısıhıiıpısı/ımıeıxıtı-ısıcıhıoılıaırısıhıiıpısı/ı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıNıaıgıoıyıaı ıUınıiıvıeırısıiıtıyı ıGılıoıbıaılı ıSıcıiıeınıcıeı ıGırıaınıtı",
+                "notes": "ıUınıiıvıeırısıiıtıyı ıfıuınıdıiınıgı;ı ıvıeırıiıfıyı ıpıeırı ıdıeıpıaırıtımıeınıtı/ıpırıoıgırıaımı.ı",
+                "provider": "ıNıaıgıoıyıaıUı",
+                "type": "ıuınıiıvıeırısıiıtıyı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıAıSıSıOı ıSıcıhıoılıaırısıhıiıpısı ı/ı ıSıuıpıpıoırıtı ıPırıoıgırıaımısı",
+                "notes": "ıMıuılıtıiıpılıeı ısıcıhıeımıeısı;ı ıaıvıaıiılıaıbıiılıiıtıyı ıdıeıpıeınıdısı ıoını ıpırıoıgırıaımı/ıeınırıoılılımıeınıtı ısıtıaıtıuısı.ı",
+                "provider": "ıJıAıSıSıOı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıjıaısısıoı.ıgıoı.ıjıpı/ıeını/ırıyıuıgıaıkıuı/ısıcıhıoılıaırısıhıiıpı_ıjı/ıiınıdıeıxı.ıhıtımılı"
+            }
+        ],
+        "Cost_City_Living": "ıhıiıgıhı",
+        "Cost_City_Rank": 4,
+        "Living_Housing_Difficulty": "ıMıoıdıeırıaıtıeı",
+        "Living_Housing_Score": 6,
+        "Program_Name": "ıGırıaıdıuıaıtıeı ıpırıoıgırıaımı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+        "Program_Degree": "ıMıSıcı",
+        "Program_ECTS": 120.0,
+        "Program_URL": "ıhıtıtıpısı:ı/ı/ıaıdımıiısısıiıoınısı.ıgı3ı0ı.ınıaıgıoıyıaı-ıuı.ıaıcı.ıjıpı/ıeını/ıfıeıeısı/ı",
+        "Program_Scope": "ınıoını_ıeıuı",
+        "Admission_Mode": "ıDıiırıeıcıtı",
+        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
+        "Analysis_Strong_Areas": "ıAıeırıoısıtırıuıcıtıuırıeısı,ı ı°ıCıoımıpıoısıiıtıeı ıMıaıtıeırıiıaılısı,ı ıFılıiıgıhıtı ıDıyınıaımıiıcısı,ı ıAıuıtıoımıoıtıiıvıeı ıEınıgıiınıeıeırıiınıgı",
+        "Analysis_Pros": [
+            "ıHıaıvıaıcııılıııkı ıüırıeıtıiımıiınıiını ı(ıMıaınıuıfıaıcıtıuırıiınıgı)ı ımıeırıkıeızıiınıdıeıdıiırı.ı;ı ıGı3ı0ı ıpırıoıgırıaımııı ısıaıyıeısıiınıdıeı ıİınıgıiılıiızıcıeı ıeınıtıeıgırıaısıyıoınıuı ıçıoıkı ıiıyıiıdıiırı.ı;ı ıSıtırıeınıgıtıhı ıaırıeıaısı:ı ıAıeırıoısıtırıuıcıtıuırıeısı,ı ı°ıCıoımıpıoısıiıtıeı ıMıaıtıeırıiıaılısı,ı ıFılıiıgıhıtı ıDıyınıaımıiıcısı,ı ıAıuıtıoımıoıtıiıvıeı ıEınıgıiınıeıeırıiınıgı.ı;ı ıIınıdıuısıtırıyı/ıaıgıeınıcıyı ıpırıoıxıiımıiıtıyı ıoırı ılıiınıkısı:ı ıMıiıtısıuıbıiısıhıiı ıAıiırıcırıaıfıtı,ı ıTıoıyıoıtıaı,ı ıSıuıbıaırıuı ıAıeırıoısıpıaıcıeı,ı ıJıAıXıAı.ı"
+        ],
+        "Analysis_Cons": [
+            "ıŞıeıhıiırı ısıaınıaıyıiı ıoıdıaıkılıııdııırı,ı ıTıoıkıyıoı/ıKıyıoıtıoı ıkıaıdıaırı ıtıuırıiısıtıiıkı ıdıeığıiılıdıiırı.ı;ı ışıaızılıaırııı ıçıoıkı ısıııcıaıkı ıoılıaıbıiılıiırı.ı;ı ıHıoıuısıiınıgı ıiını ıNıaıgıoıyıaı ıiısı ırıaıtıeıdı ıMıoıdıeırıaıtıeı ı(ısıcıoırıeı ı6ı/ı1ı0ı)ı ı—ı ıpılıaını ıeıaırılıyı.ı"
+        ],
+        "Analysis_Tags": [
+            "ımıaınıuıfıaıcıtıuırıiınıgı;ı ıcıoımıpıoısıiıtıeısı;ı ısıtırıuıcıtıuırıeısı;ı ıfılıiıgıhıtıdıyınıaımıiıcısı;ı ıaıuıtıoımıoıtıiıvıeı"
+        ],
+        "Industry_Ecosystem": "ıJıaıpıoını ıhıaıvıaıcııılıııkı ıeınıdıüısıtırıiısıiınıiını ı(ıMıHıIı,ı ıKıaıwıaısıaıkıiı,ı ıSıuıbıaırıuı)ı ıkıaılıbıiı ıNıaıgıoıyıaı€ıdıaıdııırı.ı",
+        "Industry_Partners": [
+            "ıMıiıtısıuıbıiısıhıiı ıAıiırıcırıaıfıtı;ı ıTıoıyıoıtıaı;ı ıSıuıbıaırıuı ıAıeırıoısıpıaıcıeı;ı ıJıAıXıAı"
+        ],
+        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Meta_Needs_Verification": true
+    },
+    {
+        "Country": "ıJıaıpıaını",
+        "City": "ıSıaıpıpıoırıoı",
+        "State_Region": "ıHıoıkıkıaıiıdıoı",
+        "Uni_ID": "ıhıoıkıkıaıiıdıoı-ıuı",
+        "University_Name": "ıHıoıkıkıaıiıdıoı ıUınıiıvıeırısıiıtıyı",
+        "University_Display_Name": "ıHıoıkıkıaıiıdıoı ıUınıiıvıeırısıiıtıyı",
+        "University_Short_Name": "ıHıoıkıkıaıiıdıoıUı",
+        "Cost_Tuition": [
+            {
+                "amount": 3400.0,
+                "currency": "ıEıUıRı",
+                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
+                "period": "ıyıeıaırı",
+                "program": "ıGırıaıdıuıaıtıeı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+                "raw": "ıAıpıpırıoıxı ı€ı3ı,ı4ı0ı0ı/ıyıeıaırı ı(ınıoını-ıEıUı/ıiınıtılı)ı",
+                "scope": "ınıoını_ıeıuı"
+            }
+        ],
+        "Cost_Semester_Fees": [
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
+                "term_code": "ı2ı0ı2ı5ıWı"
+            },
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
+                "term_code": "ı2ı0ı2ı6ıSı"
+            }
+        ],
+        "Scholarships_Info": [
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıaıpıaınıeısıeı ıGıoıvıeırınımıeınıtı ı(ıMıEıXıTı)ı ıSıcıhıoılıaırısıhıiıpı",
+                "notes": "ıEımıbıaısısıyı ırıeıcıoımımıeınıdıaıtıiıoını ıoırı ıuınıiıvıeırısıiıtıyı ırıeıcıoımımıeınıdıaıtıiıoını ırıoıuıtıeısı;ı ıhıiıgıhılıyı ıcıoımıpıeıtıiıtıiıvıeı.ı",
+                "provider": "ıMıEıXıTı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ısıtıuıdıyıiınıjıaıpıaını.ıgıoı.ıjıpı/ıeını/ıpılıaınınıiınıgı/ısıcıhıoılıaırısıhıiıpısı/ımıeıxıtı-ısıcıhıoılıaırısıhıiıpısı/ı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıHıoıkıkıaıiıdıoı ıUınıiıvıeırısıiıtıyı ıPırıeısıiıdıeınıtı€ısı ıFıeılılıoıwısıhıiıpı",
+                "notes": "ıUınıiıvıeırısıiıtıyı/ıgırıaıdıuıaıtıeı-ısıcıhıoıoılı ıfıeılılıoıwısıhıiıpı;ı ıcıhıeıcıkı ıpırıoıgırıaımı-ısıpıeıcıiıfıiıcı ıcıaılılı.ı",
+                "provider": "ıHıoıkıkıaıiıdıoıUı",
+                "type": "ıuınıiıvıeırısıiıtıyı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıAıSıSıOı ıSıcıhıoılıaırısıhıiıpısı ı/ı ıSıuıpıpıoırıtı ıPırıoıgırıaımısı",
+                "notes": "ıMıuılıtıiıpılıeı ısıcıhıeımıeısı;ı ıaıvıaıiılıaıbıiılıiıtıyı ıdıeıpıeınıdısı ıoını ıpırıoıgırıaımı/ıeınırıoılılımıeınıtı ısıtıaıtıuısı.ı",
+                "provider": "ıJıAıSıSıOı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıjıaısısıoı.ıgıoı.ıjıpı/ıeını/ırıyıuıgıaıkıuı/ısıcıhıoılıaırısıhıiıpı_ıjı/ıiınıdıeıxı.ıhıtımılı"
+            }
+        ],
+        "Cost_City_Living": "ımıeıdıiıuımı",
+        "Cost_City_Rank": 3,
+        "Living_Housing_Difficulty": "ıEıaısıyı",
+        "Living_Housing_Score": 4,
+        "Program_Name": "ıGırıaıdıuıaıtıeı ıpırıoıgırıaımı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+        "Program_Degree": "ıMıSıcı",
+        "Program_ECTS": 120.0,
+        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıoıiıaı.ıhıoıkıuıdıaıiı.ıaıcı.ıjıpı/ıeını/ıaıdımıiısısıiıoınısı/ıfıeıeısı/ı",
+        "Program_Scope": "ınıoını_ıeıuı",
+        "Admission_Mode": "ıDıiırıeıcıtı",
+        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
+        "Analysis_Strong_Areas": "ıHıyıbırıiıdı ıRıoıcıkıeıtısı,ı ıTırıaıjıeıcıtıoırıyı ıOıpıtıiımıiızıaıtıiıoını,ı ı°ıCıoımıbıuısıtıiıoını,ı ıTıhıeırımıaılı ıEınıgıiınıeıeırıiınıgı",
+        "Analysis_Pros": [
+            "ıHıiıbırıiıtı ırıoıkıeıtı ıaırıaışıtııırımıaılıaırııınıdıaı ı(ı°ıCıAıMıUıIı)ı ıöınıcıüıdıüırı.ı;ı ıSıaıpıpıoırıoı,ı ıJıaıpıoınıyıaı€ınııını ıeını ıyıaışıaınıaıbıiılıiırı ıvıeı ıfıeırıaıhı ışıeıhıiırılıeırıiınıdıeını ıbıiırıiıdıiırı.ı;ı ıSıtırıeınıgıtıhı ıaırıeıaısı:ı ıHıyıbırıiıdı ıRıoıcıkıeıtısı,ı ıTırıaıjıeıcıtıoırıyı ıOıpıtıiımıiızıaıtıiıoını,ı ı°ıCıoımıbıuısıtıiıoını,ı ıTıhıeırımıaılı ıEınıgıiınıeıeırıiınıgı.ı;ı ıIınıdıuısıtırıyı/ıaıgıeınıcıyı ıpırıoıxıiımıiıtıyı ıoırı ılıiınıkısı:ı ıJıAıXıAı,ı ıUıeımıaıtısıuı ıEılıeıcıtırıiıcı,ı ıIınıtıeırısıtıeılılıaırı ıTıeıcıhınıoılıoıgıiıeısı.ı"
+        ],
+        "Analysis_Cons": [
+            "ıKııışılıaırııı ıçıoıkı ıkıaırı ıyıaığııışılııı ıvıeı ısıoığıuıkıtıuırı.ı;ı ıSıaınıaıyıiı ımıeırıkıeızılıeırıiınıeı ı(ıNıaıgıoıyıaı/ıTıoıkıyıoı)ı ıcıoığırıaıfıiı ıoılıaırıaıkı ıuızıaıkıtııırı.ı;ı ıHıoıuısıiınıgı ıiını ıSıaıpıpıoırıoı ıiısı ırıaıtıeıdı ıEıaısıyı ı(ısıcıoırıeı ı4ı/ı1ı0ı)ı ı—ı ıpılıaını ıeıaırılıyı.ı"
+        ],
+        "Analysis_Tags": [
+            "ırıoıcıkıeıtırıyı;ı ıhıyıbırıiıdıpırıoıpıuılısıiıoını;ı ıcıoımıbıuısıtıiıoını;ı ıtırıaıjıeıcıtıoırıyıoıpıtıiımıiızıaıtıiıoını;ı ıtıhıeırımıaılıeınıgıiınıeıeırıiınıgı"
+        ],
+        "Industry_Ecosystem": "ı°ıCıAıMıUıIı ı(ıHıiıbırıiıtı ırıoıkıeıtı)ı ıpırıoıjıeısıiı ıvıeı ıyıöırıüınıgıeı ımıeıkıaınıiığıiı.ı",
+        "Industry_Partners": [
+            "ıJıAıXıAı;ı ıUıeımıaıtısıuı ıEılıeıcıtırıiıcı;ı ıIınıtıeırısıtıeılılıaırı ıTıeıcıhınıoılıoıgıiıeısı"
+        ],
+        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Meta_Needs_Verification": true
+    },
+    {
+        "Country": "ıJıaıpıaını",
+        "City": "ıTıoıkıyıoı",
+        "State_Region": "ıTıoıkıyıoı",
+        "Uni_ID": "ısıcıiıeınıcıeı-ıtıoıkıyıoı",
+        "University_Name": "ıIınısıtıiıtıuıtıeı ıoıfı ıSıcıiıeınıcıeı ıTıoıkıyıoı",
+        "University_Display_Name": "ıIınısıtıiıtıuıtıeı ıoıfı ıSıcıiıeınıcıeı ıTıoıkıyıoı ı(ıfıoırımıeırılıyı ıTıoıkıyıoı ıTıeıcıhı)ı",
+        "University_Short_Name": "ıSıcıiıeınıcıeıTıoıkıyıoı",
+        "Cost_Tuition": [
+            {
+                "amount": 4000.0,
+                "currency": "ıEıUıRı",
+                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
+                "period": "ıyıeıaırı",
+                "program": "ıGırıaıdıuıaıtıeı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+                "raw": "ıAıpıpırıoıxı ı€ı4ı,ı0ı0ı0ı/ıyıeıaırı ı(ınıoını-ıEıUı/ıiınıtılı)ı",
+                "scope": "ınıoını_ıeıuı"
+            }
+        ],
+        "Cost_Semester_Fees": [
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
+                "term_code": "ı2ı0ı2ı5ıWı"
+            },
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
+                "term_code": "ı2ı0ı2ı6ıSı"
+            }
+        ],
+        "Scholarships_Info": [
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıaıpıaınıeısıeı ıGıoıvıeırınımıeınıtı ı(ıMıEıXıTı)ı ıSıcıhıoılıaırısıhıiıpı",
+                "notes": "ıEımıbıaısısıyı ırıeıcıoımımıeınıdıaıtıiıoını ıoırı ıuınıiıvıeırısıiıtıyı ırıeıcıoımımıeınıdıaıtıiıoını ırıoıuıtıeısı;ı ıhıiıgıhılıyı ıcıoımıpıeıtıiıtıiıvıeı.ı",
+                "provider": "ıMıEıXıTı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ısıtıuıdıyıiınıjıaıpıaını.ıgıoı.ıjıpı/ıeını/ıpılıaınınıiınıgı/ısıcıhıoılıaırısıhıiıpısı/ımıeıxıtı-ısıcıhıoılıaırısıhıiıpısı/ı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıSıcıiıeınıcıeı ıTıoıkıyıoı ıFıeılılıoıwısıhıiıpısı",
+                "notes": "ıUınıiıvıeırısıiıtıyı/ıgırıaıdıuıaıtıeı-ısıcıhıoıoılı ıfıeılılıoıwısıhıiıpı;ı ıcıhıeıcıkı ıpırıoıgırıaımı-ısıpıeıcıiıfıiıcı ıcıaılılı.ı",
+                "provider": "ıSıcıiıeınıcıeıTıoıkıyıoı",
+                "type": "ıuınıiıvıeırısıiıtıyı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıAıSıSıOı ıSıcıhıoılıaırısıhıiıpısı ı/ı ıSıuıpıpıoırıtı ıPırıoıgırıaımısı",
+                "notes": "ıMıuılıtıiıpılıeı ısıcıhıeımıeısı;ı ıaıvıaıiılıaıbıiılıiıtıyı ıdıeıpıeınıdısı ıoını ıpırıoıgırıaımı/ıeınırıoılılımıeınıtı ısıtıaıtıuısı.ı",
+                "provider": "ıJıAıSıSıOı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıjıaısısıoı.ıgıoı.ıjıpı/ıeını/ırıyıuıgıaıkıuı/ısıcıhıoılıaırısıhıiıpı_ıjı/ıiınıdıeıxı.ıhıtımılı"
+            }
+        ],
+        "Cost_City_Living": "ıvıeırıyı_ıhıiıgıhı",
+        "Cost_City_Rank": 6,
+        "Living_Housing_Difficulty": "ıNıiıgıhıtımıaırıeı",
+        "Living_Housing_Score": 9,
+        "Program_Name": "ıGırıaıdıuıaıtıeı ıpırıoıgırıaımı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+        "Program_Degree": "ıMıSıcı",
+        "Program_ECTS": 120.0,
+        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıiısıcıtı.ıaıcı.ıjıpı/ıeını/ıaıdımıiısısıiıoınısı/ıtıuıiıtıiıoını-ıfıeıeısı",
+        "Program_Scope": "ınıoını_ıeıuı",
+        "Admission_Mode": "ıDıiırıeıcıtı",
+        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
+        "Analysis_Strong_Areas": "ıRıoıbıoıtıiıcısı,ı ı°ıCıoınıtırıoılı ıEınıgıiınıeıeırıiınıgı,ı ıMıaıtıeırıiıaılısı,ı ıSıpıaıcıeı ıSıyısıtıeımısı",
+        "Analysis_Pros": [
+            "ıTıoıkıyıoı ıTıeıcıhı ımıiırıaısıııyılıaı ımıüıhıeınıdıiısılıiıkıtıeı ıJıaıpıoınıyıaı€ınııını ıMıIıTı€ısıiı ısıaıyııılııırı.ı;ı ıRıoıbıoıtıiıkı ıvıeı ımıaılızıeımıeı ıkıoınıuısıuınıdıaı ıçıoıkı ıgıüıçılıüıdıüırı.ı;ı ıSıtırıeınıgıtıhı ıaırıeıaısı:ı ıRıoıbıoıtıiıcısı,ı ı°ıCıoınıtırıoılı ıEınıgıiınıeıeırıiınıgı,ı ıMıaıtıeırıiıaılısı,ı ıSıpıaıcıeı ıSıyısıtıeımısı.ı;ı ıIınıdıuısıtırıyı/ıaıgıeınıcıyı ıpırıoıxıiımıiıtıyı ıoırı ılıiınıkısı:ı ıJıAıXıAı,ı ıSıoınıyı,ı ıFıaınıuıcı,ı ıHıoınıdıaı.ı"
+        ],
+        "Analysis_Cons": [
+            "ıBıiırılıeışımıeı ısıoınırıaısııı ı(ı2ı0ı2ı4ı)ı ıeığıiıtıiımı ıüıcırıeıtılıeırıiı ıaırıtııırııılıdııı ı(ı~ı¥ı6ı3ı5ıkı)ı.ı;ı ıKıaımıpıüısılıeırı ıaırıaısııı ıuılıaışııımı ıgıeırıeıkıeıbıiılıiırı.ı;ı ıHıoıuısıiınıgı ıiını ıTıoıkıyıoı ıiısı ırıaıtıeıdı ıNıiıgıhıtımıaırıeı ı(ısıcıoırıeı ı9ı/ı1ı0ı)ı ı—ı ıpılıaını ıeıaırılıyı.ı"
+        ],
+        "Analysis_Tags": [
+            "ırıoıbıoıtıiıcısı;ı ıcıoınıtırıoılısı;ı ımıaıtıeırıiıaılısı;ı ısıpıaıcıeısıyısıtıeımısı;ı ımıeıcıhıaınıiıcıaılıeınıgıiınıeıeırıiınıgı"
+        ],
+        "Industry_Ecosystem": "ıRıoıbıoıtıiıkı ıvıeı ıKıoınıtırıoılı ıtıeıoırıiısıiınıdıeı ıeıfısıaınıeıdıiırı.ı ıMıüıhıeınıdıiısılıiıkı ıoıdıaıkılııı.ı",
+        "Industry_Partners": [
+            "ıJıAıXıAı;ı ıSıoınıyı;ı ıFıaınıuıcı;ı ıHıoınıdıaı"
+        ],
+        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Meta_Needs_Verification": true
+    },
+    {
+        "Country": "ıJıaıpıaını",
+        "City": "ıOısıaıkıaı",
+        "State_Region": "ıOısıaıkıaı",
+        "Uni_ID": "ıoımıuı",
+        "University_Name": "ıOısıaıkıaı ıMıeıtırıoıpıoılıiıtıaını ıUınıiıvıeırısıiıtıyı",
+        "University_Display_Name": "ıOısıaıkıaı ıMıeıtırıoıpıoılıiıtıaını ıUınıiıvıeırısıiıtıyı ı(ıOıMıUı)ı",
+        "University_Short_Name": "ıOıMıUı",
+        "Cost_Tuition": [
+            {
+                "amount": 3400.0,
+                "currency": "ıEıUıRı",
+                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
+                "period": "ıyıeıaırı",
+                "program": "ıGırıaıdıuıaıtıeı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+                "raw": "ıAıpıpırıoıxı ı€ı3ı,ı4ı0ı0ı/ıyıeıaırı ı(ınıoını-ıEıUı/ıiınıtılı)ı",
+                "scope": "ınıoını_ıeıuı"
+            }
+        ],
+        "Cost_Semester_Fees": [
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
+                "term_code": "ı2ı0ı2ı5ıWı"
+            },
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
+                "term_code": "ı2ı0ı2ı6ıSı"
+            }
+        ],
+        "Scholarships_Info": [
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıaıpıaınıeısıeı ıGıoıvıeırınımıeınıtı ı(ıMıEıXıTı)ı ıSıcıhıoılıaırısıhıiıpı",
+                "notes": "ıEımıbıaısısıyı ırıeıcıoımımıeınıdıaıtıiıoını ıoırı ıuınıiıvıeırısıiıtıyı ırıeıcıoımımıeınıdıaıtıiıoını ırıoıuıtıeısı;ı ıhıiıgıhılıyı ıcıoımıpıeıtıiıtıiıvıeı.ı",
+                "provider": "ıMıEıXıTı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ısıtıuıdıyıiınıjıaıpıaını.ıgıoı.ıjıpı/ıeını/ıpılıaınınıiınıgı/ısıcıhıoılıaırısıhıiıpısı/ımıeıxıtı-ısıcıhıoılıaırısıhıiıpısı/ı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıOısıaıkıaı ı°ıCıiıtıyı ıSıcıhıoılıaırısıhıiıpı",
+                "notes": "ıUınıiıvıeırısıiıtıyı ıfıuınıdıiınıgı;ı ıvıeırıiıfıyı ıpıeırı ıdıeıpıaırıtımıeınıtı/ıpırıoıgırıaımı.ı",
+                "provider": "ıOıMıUı",
+                "type": "ıuınıiıvıeırısıiıtıyı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıAıSıSıOı ıSıcıhıoılıaırısıhıiıpısı ı/ı ıSıuıpıpıoırıtı ıPırıoıgırıaımısı",
+                "notes": "ıMıuılıtıiıpılıeı ısıcıhıeımıeısı;ı ıaıvıaıiılıaıbıiılıiıtıyı ıdıeıpıeınıdısı ıoını ıpırıoıgırıaımı/ıeınırıoılılımıeınıtı ısıtıaıtıuısı.ı",
+                "provider": "ıJıAıSıSıOı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıjıaısısıoı.ıgıoı.ıjıpı/ıeını/ırıyıuıgıaıkıuı/ısıcıhıoılıaırısıhıiıpı_ıjı/ıiınıdıeıxı.ıhıtımılı"
+            }
+        ],
+        "Cost_City_Living": "ıvıeırıyı_ıhıiıgıhı",
+        "Cost_City_Rank": 5,
+        "Living_Housing_Difficulty": "ıHıaırıdı",
+        "Living_Housing_Score": 7,
+        "Program_Name": "ıGırıaıdıuıaıtıeı ıpırıoıgırıaımı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+        "Program_Degree": "ıMıSıcı",
+        "Program_ECTS": 120.0,
+        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıoımıuı.ıaıcı.ıjıpı/ıeınıgı/ıaıdımıiısısıiıoınısı/ıtıuıiıtıiıoını/ı",
+        "Program_Scope": "ınıoını_ıeıuı",
+        "Admission_Mode": "ıAıpıtıiıtıuıdıeı ıTıeısıtı",
+        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
+        "Analysis_Strong_Areas": "ıSımıaılılı ıSıaıtıeılılıiıtıeısı,ı ıSıtırıuıcıtıuırıeısı,ı ıAısıtırıoıdıyınıaımıiıcısı,ı ıTıhıeırımıaılı ı°ıCıoınıtırıoılı",
+        "Analysis_Pros": [
+            "ıKıüıpı ıuıyıdıuı ı(ı°ıCıuıbıeıSıaıtı)ı ıpırıoıjıeılıeırıiınıdıeı ıöığırıeınıcıiılıeırıeı ıçıoıkı ısıoırıuımılıuılıuıkı ıvıeırıiılıiırı.ı;ı ıOısıaıkıaı ışıeıhırıiı ıçıoıkı ıcıaınılııı ıvıeı ıyıeımıeıkı ıkıüılıtıüırıüıyılıeı ıüınılıüıdıüırı.ı;ı ıSıtırıeınıgıtıhı ıaırıeıaısı:ı ıSımıaılılı ıSıaıtıeılılıiıtıeısı,ı ıSıtırıuıcıtıuırıeısı,ı ıAısıtırıoıdıyınıaımıiıcısı,ı ıTıhıeırımıaılı ı°ıCıoınıtırıoılı.ı;ı ıIınıdıuısıtırıyı/ıaıgıeınıcıyı ıpırıoıxıiımıiıtıyı ıoırı ılıiınıkısı:ı ıJıAıXıAı,ı ıLıoıcıaılı ıSıMıEısı ı(ıHıiıgıaısıhıiıoısıaıkıaı)ı.ı"
+        ],
+        "Analysis_Cons": [
+            "ıBıiırılıeışımıeı ısıüırıeıcıiı ı(ıOıPıUı ı+ı ıOı°ıCıUı)ı ıyıeınıiı ıtıaımıaımılıaınıdııı.ı;ı ıTıaımıaımıeını ıİınıgıiılıiızıcıeı ıpırıoıgırıaımı ısıeıçıeınıeıkılıeırıiı ısııınııırılııı ıoılıaıbıiılıiırı.ı;ı ıHıoıuısıiınıgı ıiını ıOısıaıkıaı ıiısı ırıaıtıeıdı ıHıaırıdı ı(ısıcıoırıeı ı7ı/ı1ı0ı)ı ı—ı ıpılıaını ıeıaırılıyı.ı;ı ıAıdımıiısısıiıoını ıtıyıpıiıcıaılılıyı ıiınıvıoılıvıeısı ıaını ıeınıtırıaınıcıeı ıeıxıaımı ıaınıdı/ıoırı ıiınıtıeırıvıiıeıwı;ı ıoıuıtıcıoımıeısı ıcıaını ıbıeı ılıeısısı ıpırıeıdıiıcıtıaıbılıeı ıtıhıaını ıgırıaıdıeı-ıoınılıyı ıaıdımıiısısıiıoını.ı;ı ıMıaınıyı ılıaıbısı/ıaıdımıiını ıpırıoıcıeısısıeısı ısıtıiılılı ıeıxıpıeıcıtı ıJıaıpıaınıeısıeı;ı ıdıaıyı-ıtıoı-ıdıaıyı ıaınıdı ıtıhıeısıiısı ılıoıgıiısıtıiıcısı ımıaıyı ırıeıqıuıiırıeı ıJıaıpıaınıeısıeı ıeıfıfıoırıtı.ı"
+        ],
+        "Analysis_Tags": [
+            "ısımıaılılısıaıtıeılılıiıtıeısı;ı ıcıuıbıeısıaıtısı;ı ısıtırıuıcıtıuırıeısı;ı ıtıhıeırımıaılıcıoınıtırıoılı;ı ıaısıtırıoıdıyınıaımıiıcısı"
+        ],
+        "Industry_Ecosystem": "ıSımıaılılı ıSıaıtıeılılıiıtıeı ıLıaıbı ı(ıSıSıSıRı°ıCı)ı ıçıoıkı ıaıkıtıiıfıtıiırı.ı ıKıüıpı ıuıyıdıuı ıpırıoıjıeılıeırıiı.ı",
+        "Industry_Partners": [
+            "ıJıAıXıAı;ı ıLıoıcıaılı ıSıMıEısı ı(ıHıiıgıaısıhıiıoısıaıkıaı)ı"
+        ],
+        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Meta_Needs_Verification": true
+    },
+    {
+        "Country": "ıJıaıpıaını",
+        "City": "ıHıaıcıhıiıoıjıiı ı(ıTıoıkıyıoı)ı",
+        "State_Region": "ıTıoıkıyıoı",
+        "Uni_ID": "ıtımıuı",
+        "University_Name": "ıTıoıkıyıoı ıMıeıtırıoıpıoılıiıtıaını ıUınıiıvıeırısıiıtıyı",
+        "University_Display_Name": "ıTıoıkıyıoı ıMıeıtırıoıpıoılıiıtıaını ıUınıiıvıeırısıiıtıyı ı(ıTıMıUı)ı",
+        "University_Short_Name": "ıTıMıUı",
+        "Cost_Tuition": [
+            {
+                "amount": 3300.0,
+                "currency": "ıEıUıRı",
+                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
+                "period": "ıyıeıaırı",
+                "program": "ıGırıaıdıuıaıtıeı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+                "raw": "ıAıpıpırıoıxı ı€ı3ı,ı3ı0ı0ı/ıyıeıaırı ı(ınıoını-ıEıUı/ıiınıtılı)ı",
+                "scope": "ınıoını_ıeıuı"
+            }
+        ],
+        "Cost_Semester_Fees": [
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
+                "term_code": "ı2ı0ı2ı5ıWı"
+            },
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
+                "term_code": "ı2ı0ı2ı6ıSı"
+            }
+        ],
+        "Scholarships_Info": [
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıTıoıkıyıoı ıGılıoıbıaılı ıSıcıhıoılıaırısıhıiıpı",
+                "notes": "ıUınıiıvıeırısıiıtıyı ıfıuınıdıiınıgı;ı ıvıeırıiıfıyı ıpıeırı ıdıeıpıaırıtımıeınıtı/ıpırıoıgırıaımı.ı",
+                "provider": "ıTıMıUı",
+                "type": "ıuınıiıvıeırısıiıtıyı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıaıpıaınıeısıeı ıGıoıvıeırınımıeınıtı ı(ıMıEıXıTı)ı ıSıcıhıoılıaırısıhıiıpı",
+                "notes": "ıEımıbıaısısıyı ırıeıcıoımımıeınıdıaıtıiıoını ıoırı ıuınıiıvıeırısıiıtıyı ırıeıcıoımımıeınıdıaıtıiıoını ırıoıuıtıeısı;ı ıhıiıgıhılıyı ıcıoımıpıeıtıiıtıiıvıeı.ı",
+                "provider": "ıMıEıXıTı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ısıtıuıdıyıiınıjıaıpıaını.ıgıoı.ıjıpı/ıeını/ıpılıaınınıiınıgı/ısıcıhıoılıaırısıhıiıpısı/ımıeıxıtı-ısıcıhıoılıaırısıhıiıpısı/ı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıAıSıSıOı ıSıcıhıoılıaırısıhıiıpısı ı/ı ıSıuıpıpıoırıtı ıPırıoıgırıaımısı",
+                "notes": "ıMıuılıtıiıpılıeı ısıcıhıeımıeısı;ı ıaıvıaıiılıaıbıiılıiıtıyı ıdıeıpıeınıdısı ıoını ıpırıoıgırıaımı/ıeınırıoılılımıeınıtı ısıtıaıtıuısı.ı",
+                "provider": "ıJıAıSıSıOı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıjıaısısıoı.ıgıoı.ıjıpı/ıeını/ırıyıuıgıaıkıuı/ısıcıhıoılıaırısıhıiıpı_ıjı/ıiınıdıeıxı.ıhıtımılı"
+            }
+        ],
+        "Cost_City_Living": "ıvıeırıyı_ıhıiıgıhı",
+        "Cost_City_Rank": 5,
+        "Living_Housing_Difficulty": "ıHıaırıdı",
+        "Living_Housing_Score": 7,
+        "Program_Name": "ıGırıaıdıuıaıtıeı ıpırıoıgırıaımı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+        "Program_Degree": "ıMıSıcı",
+        "Program_ECTS": 120.0,
+        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıiıcı.ıtımıuı.ıaıcı.ıjıpı/ıeınıgılıiısıhı/ısıtıuıdıyı_ıaıbırıoıaıdı/ıtıuıiıtıiıoını.ıhıtımılı",
+        "Program_Scope": "ınıoını_ıeıuı",
+        "Admission_Mode": "ıAıpıtıiıtıuıdıeı ıTıeısıtı",
+        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
+        "Analysis_Strong_Areas": "ıEılıeıcıtırıiıcı ıPırıoıpıuılısıiıoını,ı ıSıpıaıcıeı ıSıyısıtıeımısı,ı ıAıeırıoıdıyınıaımıiıcısı,ı ı°ıCıoımıbıuısıtıiıoını",
+        "Analysis_Pros": [
+            "ıTıoıkıyıoı ıMıeıtırıoıpıoılıiıtıaını ıhıüıkıüımıeıtıiınıeı ıbıaığılııı ıoılıdıuığıuı ıiıçıiını ıbıuırısı ıiımıkıaınılıaırııı ıiıyıiıdıiırı.ı;ı ıHıaıcıhıiıoıjıiı ıkıaımıpıüısıüı ıTıoıkıyıoı ımıeırıkıeızıeı ıgıöırıeı ıdıaıhıaı ıfıeırıaıhıtııırı.ı;ı ıSıtırıeınıgıtıhı ıaırıeıaısı:ı ıEılıeıcıtırıiıcı ıPırıoıpıuılısıiıoını,ı ıSıpıaıcıeı ıSıyısıtıeımısı,ı ıAıeırıoıdıyınıaımıiıcısı,ı ı°ıCıoımıbıuısıtıiıoını.ı;ı ıIınıdıuısıtırıyı/ıaıgıeınıcıyı ıpırıoıxıiımıiıtıyı ıoırı ılıiınıkısı:ı ıJıAıXıAı,ı ıIıHıIı ıAıeırıoısıpıaıcıeı.ı"
+        ],
+        "Analysis_Cons": [
+            "ıMıeırıkıeızıiı ıTıoıkıyıoı€ıyıaı ıtırıeınılıeı ı4ı5ı-ı5ı0ı ıdıkı ımıeısıaıfıeıdıeıdıiırı.ı;ı ıUılıuısılıaırıaırıaısııı ıöığırıeınıcıiı ısıaıyııısııı ınıiısıpıeıtıeını ıaızıdııırı.ı;ı ıHıoıuısıiınıgı ıiını ıHıaıcıhıiıoıjıiı ı(ıTıoıkıyıoı)ı ıiısı ırıaıtıeıdı ıHıaırıdı ı(ısıcıoırıeı ı7ı/ı1ı0ı)ı ı—ı ıpılıaını ıeıaırılıyı.ı"
+        ],
+        "Analysis_Tags": [
+            "ıeılıeıcıtırıiıcıpırıoıpıuılısıiıoını;ı ısıpıaıcıeısıyısıtıeımısı;ı ıaıeırıoıdıyınıaımıiıcısı;ı ıcıoımıbıuısıtıiıoını"
+        ],
+        "Industry_Ecosystem": "ıEılıeıcıtırıiıcı ıPırıoıpıuılısıiıoını ıvıeı ıSıpıaıcıeı ıSıyısıtıeımısı ıüızıeırıiınıeı ıoıdıaıkılııı.ı",
+        "Industry_Partners": [
+            "ıJıAıXıAı;ı ıIıHıIı ıAıeırıoısıpıaıcıeı"
+        ],
+        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Meta_Needs_Verification": true
+    },
+    {
+        "Country": "ıJıaıpıaını",
+        "City": "ıTıoıkıyıoı",
+        "State_Region": "ıTıoıkıyıoı",
+        "Uni_ID": "ıwıaısıeıdıaı-ıuı",
+        "University_Name": "ıWıaısıeıdıaı ıUınıiıvıeırısıiıtıyı",
+        "University_Display_Name": "ıWıaısıeıdıaı ıUınıiıvıeırısıiıtıyı",
+        "University_Short_Name": "ıWıaısıeıdıaı",
+        "Cost_Tuition": [
+            {
+                "amount": 8500.0,
+                "currency": "ıEıUıRı",
+                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
+                "period": "ıyıeıaırı",
+                "program": "ıGırıaıdıuıaıtıeı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+                "raw": "ıAıpıpırıoıxı ı€ı8ı,ı5ı0ı0ı/ıyıeıaırı ı(ınıoını-ıEıUı/ıiınıtılı)ı",
+                "scope": "ınıoını_ıeıuı"
+            }
+        ],
+        "Cost_Semester_Fees": [
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
+                "term_code": "ı2ı0ı2ı5ıWı"
+            },
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
+                "term_code": "ı2ı0ı2ı6ıSı"
+            }
+        ],
+        "Scholarships_Info": [
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıWıaısıeıdıaı ıUınıiıvıeırısıiıtıyı ıSıcıhıoılıaırısıhıiıpısı",
+                "notes": "ıUınıiıvıeırısıiıtıyı ıfıuınıdıiınıgı;ı ıvıeırıiıfıyı ıpıeırı ıdıeıpıaırıtımıeınıtı/ıpırıoıgırıaımı.ı",
+                "provider": "ıWıaısıeıdıaı",
+                "type": "ıuınıiıvıeırısıiıtıyı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıaıpıaınıeısıeı ıGıoıvıeırınımıeınıtı ı(ıMıEıXıTı)ı ıSıcıhıoılıaırısıhıiıpı",
+                "notes": "ıEımıbıaısısıyı ırıeıcıoımımıeınıdıaıtıiıoını ıoırı ıuınıiıvıeırısıiıtıyı ırıeıcıoımımıeınıdıaıtıiıoını ırıoıuıtıeısı;ı ıhıiıgıhılıyı ıcıoımıpıeıtıiıtıiıvıeı.ı",
+                "provider": "ıMıEıXıTı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ısıtıuıdıyıiınıjıaıpıaını.ıgıoı.ıjıpı/ıeını/ıpılıaınınıiınıgı/ısıcıhıoılıaırısıhıiıpısı/ımıeıxıtı-ısıcıhıoılıaırısıhıiıpısı/ı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıAıSıSıOı ıSıcıhıoılıaırısıhıiıpısı ı/ı ıSıuıpıpıoırıtı ıPırıoıgırıaımısı",
+                "notes": "ıMıuılıtıiıpılıeı ısıcıhıeımıeısı;ı ıaıvıaıiılıaıbıiılıiıtıyı ıdıeıpıeınıdısı ıoını ıpırıoıgırıaımı/ıeınırıoılılımıeınıtı ısıtıaıtıuısı.ı",
+                "provider": "ıJıAıSıSıOı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıjıaısısıoı.ıgıoı.ıjıpı/ıeını/ırıyıuıgıaıkıuı/ısıcıhıoılıaırısıhıiıpı_ıjı/ıiınıdıeıxı.ıhıtımılı"
+            }
+        ],
+        "Cost_City_Living": "ıvıeırıyı_ıhıiıgıhı",
+        "Cost_City_Rank": 6,
+        "Living_Housing_Difficulty": "ıNıiıgıhıtımıaırıeı",
+        "Living_Housing_Score": 9,
+        "Program_Name": "ıGırıaıdıuıaıtıeı ıpırıoıgırıaımı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+        "Program_Degree": "ıMıSıcı",
+        "Program_ECTS": 120.0,
+        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıwıaısıeıdıaı.ıjıpı/ıiınısıtı/ıiınıtılı/ıeını/ıfıeıeısı/ı",
+        "Program_Scope": "ınıoını_ıeıuı",
+        "Admission_Mode": "ıAıpıtıiıtıuıdıeı ıTıeısıtı",
+        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
+        "Analysis_Strong_Areas": "ıAıeırıoıdıyınıaımıiıcısı,ı ıTıuırıbıoımıaıcıhıiınıeırıyı,ı ı°ıCıoımıbıuısıtıiıoını,ı ıRıoıbıoıtıiıcısı",
+        "Analysis_Pros": [
+            "ıJıaıpıoınıyıaı€ınııını ıeını ıpırıeısıtıiıjılıiı ıöızıeılı ıüınıiıvıeırısıiıtıeısıiıdıiırı.ı;ı ıUılıuısılıaırıaırıaısııılıaışımıaı ıoırıaınııı ıçıoıkı ıyıüıkısıeıkıtıiırı.ı;ı ıSıtırıeınıgıtıhı ıaırıeıaısı:ı ıAıeırıoıdıyınıaımıiıcısı,ı ıTıuırıbıoımıaıcıhıiınıeırıyı,ı ı°ıCıoımıbıuısıtıiıoını,ı ıRıoıbıoıtıiıcısı.ı;ı ıIınıdıuısıtırıyı/ıaıgıeınıcıyı ıpırıoıxıiımıiıtıyı ıoırı ılıiınıkısı:ı ıIıHıIı,ı ıHıoınıdıaı ıAıeırıoı,ı ıJıAıXıAı.ı"
+        ],
+        "Analysis_Cons": [
+            "ıÖızıeılı ıoıkıuılı ıoılıdıuığıuı ıiıçıiını ıeığıiıtıiımı ıüıcırıeıtıiı ıdıeıvılıeıtı ıoıkıuılılıaırııınııını ı2ı-ı3ı ıkıaıtıııdııırı.ı;ı ıKıaımıpıüısı ıTıoıkıyıoı€ınıuını ıkıaılıbıiınıdıeıdıiırı ı(ıpıaıhıaılııı)ı.ı;ı ıHıoıuısıiınıgı ıiını ıTıoıkıyıoı ıiısı ırıaıtıeıdı ıNıiıgıhıtımıaırıeı ı(ısıcıoırıeı ı9ı/ı1ı0ı)ı ı—ı ıpılıaını ıeıaırılıyı.ı"
+        ],
+        "Analysis_Tags": [
+            "ıaıeırıoıdıyınıaımıiıcısı;ı ıtıuırıbıoımıaıcıhıiınıeırıyı;ı ırıoıbıoıtıiıcısı;ı ıcıoımıbıuısıtıiıoını;ı ıeınıgıiınıeısı"
+        ],
+        "Industry_Ecosystem": "ıÖızıeılı ıüınıiıvıeırısıiıtıeılıeırı ıaırıaısııınıdıaı ıeını ıgıüıçılıüı ıaıeırıoı ıaılıtıyıaıpııısııı.ı ıMıoıtıoırılıaırı ıvıeı ıaıeırıoıdıiınıaımıiıkı.ı",
+        "Industry_Partners": [
+            "ıIıHıIı;ı ıHıoınıdıaı ıAıeırıoı;ı ıJıAıXıAı"
+        ],
+        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Meta_Needs_Verification": true
+    },
+    {
+        "Country": "ıJıaıpıaını",
+        "City": "ışıoıkıoıhıaımıaı",
+        "State_Region": "ıKıaınıaıgıaıwıaı",
+        "Uni_ID": "ıkıeıiıoı-ıuı",
+        "University_Name": "ıKıeıiıoı ıUınıiıvıeırısıiıtıyı",
+        "University_Display_Name": "ıKıeıiıoı ıUınıiıvıeırısıiıtıyı",
+        "University_Short_Name": "ıKıeıiıoı",
+        "Cost_Tuition": [
+            {
+                "amount": 8200.0,
+                "currency": "ıEıUıRı",
+                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
+                "period": "ıyıeıaırı",
+                "program": "ıGırıaıdıuıaıtıeı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+                "raw": "ıAıpıpırıoıxı ı€ı8ı,ı2ı0ı0ı/ıyıeıaırı ı(ınıoını-ıEıUı/ıiınıtılı)ı",
+                "scope": "ınıoını_ıeıuı"
+            }
+        ],
+        "Cost_Semester_Fees": [
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
+                "term_code": "ı2ı0ı2ı5ıWı"
+            },
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
+                "term_code": "ı2ı0ı2ı6ıSı"
+            }
+        ],
+        "Scholarships_Info": [
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıKıeıiıoı ıDıeısıiıgını ıtıhıeı ıFıuıtıuırıeı ıAıwıaırıdı",
+                "notes": "ıUınıiıvıeırısıiıtıyı ıfıuınıdıiınıgı;ı ıvıeırıiıfıyı ıpıeırı ıdıeıpıaırıtımıeınıtı/ıpırıoıgırıaımı.ı",
+                "provider": "ıKıeıiıoı",
+                "type": "ıuınıiıvıeırısıiıtıyı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıAıSıSıOı ıSıcıhıoılıaırısıhıiıpısı ı/ı ıSıuıpıpıoırıtı ıPırıoıgırıaımısı",
+                "notes": "ıMıuılıtıiıpılıeı ısıcıhıeımıeısı;ı ıaıvıaıiılıaıbıiılıiıtıyı ıdıeıpıeınıdısı ıoını ıpırıoıgırıaımı/ıeınırıoılılımıeınıtı ısıtıaıtıuısı.ı",
+                "provider": "ıJıAıSıSıOı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıjıaısısıoı.ıgıoı.ıjıpı/ıeını/ırıyıuıgıaıkıuı/ısıcıhıoılıaırısıhıiıpı_ıjı/ıiınıdıeıxı.ıhıtımılı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıaıpıaınıeısıeı ıGıoıvıeırınımıeınıtı ı(ıMıEıXıTı)ı ıSıcıhıoılıaırısıhıiıpı",
+                "notes": "ıEımıbıaısısıyı ırıeıcıoımımıeınıdıaıtıiıoını ıoırı ıuınıiıvıeırısıiıtıyı ırıeıcıoımımıeınıdıaıtıiıoını ırıoıuıtıeısı;ı ıhıiıgıhılıyı ıcıoımıpıeıtıiıtıiıvıeı.ı",
+                "provider": "ıMıEıXıTı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ısıtıuıdıyıiınıjıaıpıaını.ıgıoı.ıjıpı/ıeını/ıpılıaınınıiınıgı/ısıcıhıoılıaırısıhıiıpısı/ımıeıxıtı-ısıcıhıoılıaırısıhıiıpısı/ı"
+            }
+        ],
+        "Cost_City_Living": "ıvıeırıyı_ıhıiıgıhı",
+        "Cost_City_Rank": 6,
+        "Living_Housing_Difficulty": "ıVıeırıyı ıHıaırıdı",
+        "Living_Housing_Score": 8,
+        "Program_Name": "ıGırıaıdıuıaıtıeı ıpırıoıgırıaımı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+        "Program_Degree": "ıMıSıcı",
+        "Program_ECTS": 120.0,
+        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıkıeıiıoı.ıaıcı.ıjıpı/ıeını/ıaıdımıiısısıiıoınısı/ıfıeıeısı/ı",
+        "Program_Scope": "ınıoını_ıeıuı",
+        "Admission_Mode": "ıAıpıtıiıtıuıdıeı ıTıeısıtı",
+        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
+        "Analysis_Strong_Areas": "ıSıyısıtıeımı ıDıeısıiıgını ıMıaınıaıgıeımıeınıtı,ı ı°ıCıoınıtırıoılısı,ı ıHıaıpıtıiıcısı,ı ıSıpıaıcıeı ıSıyısıtıeımısı",
+        "Analysis_Pros": [
+            "ıWıaısıeıdıaı ıiılıeı ıbıiırılıiıkıtıeı ıeını ıiıyıiı ıöızıeılı ıoıkıuılıdıuırı.ı;ı ıSıiısıtıeımı ımıüıhıeınıdıiısılıiığıiı ıvıeı ıyıöınıeıtıiımı ı(ıSıDıMı)ı ıtıaırıaıfııınıdıaı ıeışısıiızıdıiırı.ı;ı ıSıtırıeınıgıtıhı ıaırıeıaısı:ı ıSıyısıtıeımı ıDıeısıiıgını ıMıaınıaıgıeımıeınıtı,ı ı°ıCıoınıtırıoılısı,ı ıHıaıpıtıiıcısı,ı ıSıpıaıcıeı ıSıyısıtıeımısı.ı;ı ıIınıdıuısıtırıyı/ıaıgıeınıcıyı ıpırıoıxıiımıiıtıyı ıoırı ılıiınıkısı:ı ıMıiıtısıuıbıiısıhıiı ıEılıeıcıtırıiıcı,ı ıTıoısıhıiıbıaı,ı ıJıAıXıAı.ı"
+        ],
+        "Analysis_Cons": [
+            "ıTıeıkınıiıkı ımıüıhıeınıdıiısılıiıkıtıeını ızıiıyıaıdıeı ısıiısıtıeımı/ıtıaısıaırııımı ıaığııırılıııkılııı ıoılıaıbıiılıiırı.ı;ı ıÜıcırıeıtılıeırı ıyıüıkısıeıkıtıiırı.ı;ı ıHıoıuısıiınıgı ıiını ışıoıkıoıhıaımıaı ıiısı ırıaıtıeıdı ıVıeırıyı ıHıaırıdı ı(ısıcıoırıeı ı8ı/ı1ı0ı)ı ı—ı ıpılıaını ıeıaırılıyı.ı"
+        ],
+        "Analysis_Tags": [
+            "ısıyısıtıeımıdıeısıiıgını;ı ıcıoınıtırıoılısı;ı ıhıaıpıtıiıcısı;ı ısıpıaıcıeısıyısıtıeımısı;ı ımıaınıaıgıeımıeınıtı"
+        ],
+        "Industry_Ecosystem": "ıSıyısıtıeımı ıDıeısıiıgını ıMıaınıaıgıeımıeınıtı ı(ıSıDıMı)ı ıvıeı ıKıoınıtırıoılı.ı",
+        "Industry_Partners": [
+            "ıMıiıtısıuıbıiısıhıiı ıEılıeıcıtırıiıcı;ı ıTıoısıhıiıbıaı;ı ıJıAıXıAı"
+        ],
+        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Meta_Needs_Verification": true
+    },
+    {
+        "Country": "ıJıaıpıaını",
+        "City": "ıTıoıkıyıoı",
+        "State_Region": "ıTıoıkıyıoı",
+        "Uni_ID": "ıtıuısı",
+        "University_Name": "ıTıoıkıyıoı ıUınıiıvıeırısıiıtıyı ıoıfı ıSıcıiıeınıcıeı",
+        "University_Display_Name": "ıTıoıkıyıoı ıUınıiıvıeırısıiıtıyı ıoıfı ıSıcıiıeınıcıeı ı(ıTıUıSı)ı",
+        "University_Short_Name": "ıTıUıSı",
+        "Cost_Tuition": [
+            {
+                "amount": 7500.0,
+                "currency": "ıEıUıRı",
+                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
+                "period": "ıyıeıaırı",
+                "program": "ıGırıaıdıuıaıtıeı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+                "raw": "ıAıpıpırıoıxı ı€ı7ı,ı5ı0ı0ı/ıyıeıaırı ı(ınıoını-ıEıUı/ıiınıtılı)ı",
+                "scope": "ınıoını_ıeıuı"
+            }
+        ],
+        "Cost_Semester_Fees": [
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
+                "term_code": "ı2ı0ı2ı5ıWı"
+            },
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
+                "term_code": "ı2ı0ı2ı6ıSı"
+            }
+        ],
+        "Scholarships_Info": [
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıTıUıSı ıSıcıhıoılıaırısıhıiıpısı",
+                "notes": "ıUınıiıvıeırısıiıtıyı ıfıuınıdıiınıgı;ı ıvıeırıiıfıyı ıpıeırı ıdıeıpıaırıtımıeınıtı/ıpırıoıgırıaımı.ı",
+                "provider": "ıTıUıSı",
+                "type": "ıuınıiıvıeırısıiıtıyı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıaıpıaınıeısıeı ıGıoıvıeırınımıeınıtı ı(ıMıEıXıTı)ı ıSıcıhıoılıaırısıhıiıpı",
+                "notes": "ıEımıbıaısısıyı ırıeıcıoımımıeınıdıaıtıiıoını ıoırı ıuınıiıvıeırısıiıtıyı ırıeıcıoımımıeınıdıaıtıiıoını ırıoıuıtıeısı;ı ıhıiıgıhılıyı ıcıoımıpıeıtıiıtıiıvıeı.ı",
+                "provider": "ıMıEıXıTı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ısıtıuıdıyıiınıjıaıpıaını.ıgıoı.ıjıpı/ıeını/ıpılıaınınıiınıgı/ısıcıhıoılıaırısıhıiıpısı/ımıeıxıtı-ısıcıhıoılıaırısıhıiıpısı/ı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıAıSıSıOı ıSıcıhıoılıaırısıhıiıpısı ı/ı ıSıuıpıpıoırıtı ıPırıoıgırıaımısı",
+                "notes": "ıMıuılıtıiıpılıeı ısıcıhıeımıeısı;ı ıaıvıaıiılıaıbıiılıiıtıyı ıdıeıpıeınıdısı ıoını ıpırıoıgırıaımı/ıeınırıoılılımıeınıtı ısıtıaıtıuısı.ı",
+                "provider": "ıJıAıSıSıOı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıjıaısısıoı.ıgıoı.ıjıpı/ıeını/ırıyıuıgıaıkıuı/ısıcıhıoılıaırısıhıiıpı_ıjı/ıiınıdıeıxı.ıhıtımılı"
+            }
+        ],
+        "Cost_City_Living": "ıvıeırıyı_ıhıiıgıhı",
+        "Cost_City_Rank": 6,
+        "Living_Housing_Difficulty": "ıNıiıgıhıtımıaırıeı",
+        "Living_Housing_Score": 9,
+        "Program_Name": "ıGırıaıdıuıaıtıeı ıpırıoıgırıaımı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+        "Program_Degree": "ıMıSıcı",
+        "Program_ECTS": 120.0,
+        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıtıuısı.ıaıcı.ıjıpı/ıeını/ıaıdımıiısısıiıoınısı/ıtıuıiıtıiıoını/ı",
+        "Program_Scope": "ınıoını_ıeıuı",
+        "Admission_Mode": "ıAıpıtıiıtıuıdıeı ıTıeısıtı",
+        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
+        "Analysis_Strong_Areas": "ıSıpıaıcıeı ı°ıCıoılıoınıyı ıTıeıcıhı,ı ıPıhıoıtıoıvıoılıtıaıiıcısı,ı ıMıaıtıeırıiıaılısı,ı ıPırıoıpıuılısıiıoını",
+        "Analysis_Pros": [
+            "ıUızıaıyı ıkıoılıoınıiılıeışımıeısıiı ıvıeı ıyıaışıaımı ıdıeısıtıeıkı ısıiısıtıeımılıeırıiı ıüızıeırıiınıeı ıöızıeılılıeışımıiışı ınıaıdıiırı ımıeırıkıeızılıeırıdıeını ıbıiırıiıdıiırı.ı;ı ıÖızıeılı ıoıkıuılılıaırı ıaırıaısııınıdıaı ıtıeıkınıiıkı ıiıtıiıbıaırııı ıyıüıkısıeıkıtıiırı.ı;ı ıSıtırıeınıgıtıhı ıaırıeıaısı:ı ıSıpıaıcıeı ı°ıCıoılıoınıyı ıTıeıcıhı,ı ıPıhıoıtıoıvıoılıtıaıiıcısı,ı ıMıaıtıeırıiıaılısı,ı ıPırıoıpıuılısıiıoını.ı;ı ıIınıdıuısıtırıyı/ıaıgıeınıcıyı ıpırıoıxıiımıiıtıyı ıoırı ılıiınıkısı:ı ıJıAıXıAı,ı ıSıhıiımıiızıuı ı°ıCıoırıpı.ı"
+        ],
+        "Analysis_Cons": [
+            "ıÜıcırıeıtılıeırı ıyıüıkısıeıkıtıiırı.ı;ı ıKıaımıpıüısılıeırı ıTıoıkıyıoı ıiıçıiınıdıeı ıdıaığııınıııkıtııırı.ı;ı ıHıoıuısıiınıgı ıiını ıTıoıkıyıoı ıiısı ırıaıtıeıdı ıNıiıgıhıtımıaırıeı ı(ısıcıoırıeı ı9ı/ı1ı0ı)ı ı—ı ıpılıaını ıeıaırılıyı.ı;ı ıAıdımıiısısıiıoını ıtıyıpıiıcıaılılıyı ıiınıvıoılıvıeısı ıaını ıeınıtırıaınıcıeı ıeıxıaımı ıaınıdı/ıoırı ıiınıtıeırıvıiıeıwı;ı ıoıuıtıcıoımıeısı ıcıaını ıbıeı ılıeısısı ıpırıeıdıiıcıtıaıbılıeı ıtıhıaını ıgırıaıdıeı-ıoınılıyı ıaıdımıiısısıiıoını.ı;ı ıMıaınıyı ılıaıbısı/ıaıdımıiını ıpırıoıcıeısısıeısı ısıtıiılılı ıeıxıpıeıcıtı ıJıaıpıaınıeısıeı;ı ıdıaıyı-ıtıoı-ıdıaıyı ıaınıdı ıtıhıeısıiısı ılıoıgıiısıtıiıcısı ımıaıyı ırıeıqıuıiırıeı ıJıaıpıaınıeısıeı ıeıfıfıoırıtı.ı"
+        ],
+        "Analysis_Tags": [
+            "ısıpıaıcıeıcıoılıoınıyı;ı ılıiıfıeısıuıpıpıoırıtı;ı ımıaıtıeırıiıaılısı;ı ıpıhıoıtıoıvıoılıtıaıiıcısı;ı ıpırıoıpıuılısıiıoını"
+        ],
+        "Industry_Ecosystem": "ıSıpıaıcıeı ı°ıCıoılıoınıyı ıRıeısıeıaırıcıhı ı°ıCıeınıtıeırı ı(ı°ıCıhıiıaıkıiı ıMıuıkıaıiı)ı.ı",
+        "Industry_Partners": [
+            "ıJıAıXıAı;ı ıSıhıiımıiızıuı ı°ıCıoırıpı"
+        ],
+        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Meta_Needs_Verification": true
+    },
+    {
+        "Country": "ıJıaıpıaını",
+        "City": "ıTıoıkıyıoı",
+        "State_Region": "ıTıoıkıyıoı",
+        "Uni_ID": "ınıiıhıoını-ıuı",
+        "University_Name": "ıNıiıhıoını ıUınıiıvıeırısıiıtıyı",
+        "University_Display_Name": "ıNıiıhıoını ıUınıiıvıeırısıiıtıyı",
+        "University_Short_Name": "ıNıiıhıoınıUı",
+        "Cost_Tuition": [
+            {
+                "amount": 8000.0,
+                "currency": "ıEıUıRı",
+                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
+                "period": "ıyıeıaırı",
+                "program": "ıGırıaıdıuıaıtıeı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+                "raw": "ıAıpıpırıoıxı ı€ı8ı,ı0ı0ı0ı/ıyıeıaırı ı(ınıoını-ıEıUı/ıiınıtılı)ı",
+                "scope": "ınıoını_ıeıuı"
+            }
+        ],
+        "Cost_Semester_Fees": [
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
+                "term_code": "ı2ı0ı2ı5ıWı"
+            },
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
+                "term_code": "ı2ı0ı2ı6ıSı"
+            }
+        ],
+        "Scholarships_Info": [
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıUınıiıvıeırısıiıtıyı ıSıcıhıoılıaırısıhıiıpısı",
+                "notes": "ıUınıiıvıeırısıiıtıyı ıfıuınıdıiınıgı;ı ıvıeırıiıfıyı ıpıeırı ıdıeıpıaırıtımıeınıtı/ıpırıoıgırıaımı.ı",
+                "provider": "ıNıiıhıoınıUı",
+                "type": "ıuınıiıvıeırısıiıtıyı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıaıpıaınıeısıeı ıGıoıvıeırınımıeınıtı ı(ıMıEıXıTı)ı ıSıcıhıoılıaırısıhıiıpı",
+                "notes": "ıEımıbıaısısıyı ırıeıcıoımımıeınıdıaıtıiıoını ıoırı ıuınıiıvıeırısıiıtıyı ırıeıcıoımımıeınıdıaıtıiıoını ırıoıuıtıeısı;ı ıhıiıgıhılıyı ıcıoımıpıeıtıiıtıiıvıeı.ı",
+                "provider": "ıMıEıXıTı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ısıtıuıdıyıiınıjıaıpıaını.ıgıoı.ıjıpı/ıeını/ıpılıaınınıiınıgı/ısıcıhıoılıaırısıhıiıpısı/ımıeıxıtı-ısıcıhıoılıaırısıhıiıpısı/ı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıAıSıSıOı ıSıcıhıoılıaırısıhıiıpısı ı/ı ıSıuıpıpıoırıtı ıPırıoıgırıaımısı",
+                "notes": "ıMıuılıtıiıpılıeı ısıcıhıeımıeısı;ı ıaıvıaıiılıaıbıiılıiıtıyı ıdıeıpıeınıdısı ıoını ıpırıoıgırıaımı/ıeınırıoılılımıeınıtı ısıtıaıtıuısı.ı",
+                "provider": "ıJıAıSıSıOı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıjıaısısıoı.ıgıoı.ıjıpı/ıeını/ırıyıuıgıaıkıuı/ısıcıhıoılıaırısıhıiıpı_ıjı/ıiınıdıeıxı.ıhıtımılı"
+            }
+        ],
+        "Cost_City_Living": "ıvıeırıyı_ıhıiıgıhı",
+        "Cost_City_Rank": 6,
+        "Living_Housing_Difficulty": "ıVıeırıyı ıHıaırıdı",
+        "Living_Housing_Score": 8,
+        "Program_Name": "ıGırıaıdıuıaıtıeı ıpırıoıgırıaımı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+        "Program_Degree": "ıMıSıcı",
+        "Program_ECTS": 120.0,
+        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ınıiıhıoını-ıuı.ıaıcı.ıjıpı/ıeını/ıaıdımıiısısıiıoınısı/ıtıuıiıtıiıoını/ı",
+        "Program_Scope": "ınıoını_ıeıuı",
+        "Admission_Mode": "ıAıpıtıiıtıuıdıeı ıTıeısıtı",
+        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
+        "Analysis_Strong_Areas": "ı°ıCıuıbıeıSıaıtısı,ı ıAıiırıcırıaıfıtı ıMıaınıuıfıaıcıtıuırıiınıgı,ı ıSıtırıuıcıtıuırıaılı ıMıeıcıhıaınıiıcısı",
+        "Analysis_Pros": [
+            "ıPırıaıtıiıkı ıvıeı ıüırıeıtıiımı ıoıdıaıkılıııdııırı.ı;ı ıJıaıpıoınıyıaı€ınııını ıeını ıçıoıkı ı°ıCıEıOı ımıeızıuını ıeıdıeını ıüınıiıvıeırısıiıtıeısıiıdıiırı.ı;ı ıSıtırıeınıgıtıhı ıaırıeıaısı:ı ı°ıCıuıbıeıSıaıtısı,ı ıAıiırıcırıaıfıtı ıMıaınıuıfıaıcıtıuırıiınıgı,ı ıSıtırıuıcıtıuırıaılı ıMıeıcıhıaınıiıcısı.ı;ı ıIınıdıuısıtırıyı/ıaıgıeınıcıyı ıpırıoıxıiımıiıtıyı ıoırı ılıiınıkısı:ı ıPırıiıvıaıtıeı ıIınıdıuısıtırıyı.ı"
+        ],
+        "Analysis_Cons": [
+            "ıEığıiıtıiımı ıdıiılıiı ıaığııırılıııkılııı ıoılıaırıaıkı ıJıaıpıoınıcıaıdııırı.ı;ı ıAıkıaıdıeımıiıkı ıpırıeısıtıiıjıiı ıTıoıkıyıoı/ıKıyıoıtıoı ısıeıvıiıyıeısıiınıdıeı ıdıeığıiılıdıiırı.ı;ı ıHıoıuısıiınıgı ıiını ıTıoıkıyıoı ıiısı ırıaıtıeıdı ıVıeırıyı ıHıaırıdı ı(ısıcıoırıeı ı8ı/ı1ı0ı)ı ı—ı ıpılıaını ıeıaırılıyı.ı;ı ıAıdımıiısısıiıoını ıtıyıpıiıcıaılılıyı ıiınıvıoılıvıeısı ıaını ıeınıtırıaınıcıeı ıeıxıaımı ıaınıdı/ıoırı ıiınıtıeırıvıiıeıwı;ı ıoıuıtıcıoımıeısı ıcıaını ıbıeı ılıeısısı ıpırıeıdıiıcıtıaıbılıeı ıtıhıaını ıgırıaıdıeı-ıoınılıyı ıaıdımıiısısıiıoını.ı;ı ıMıaınıyı ılıaıbısı/ıaıdımıiını ıpırıoıcıeısısıeısı ısıtıiılılı ıeıxıpıeıcıtı ıJıaıpıaınıeısıeı;ı ıdıaıyı-ıtıoı-ıdıaıyı ıaınıdı ıtıhıeısıiısı ılıoıgıiısıtıiıcısı ımıaıyı ırıeıqıuıiırıeı ıJıaıpıaınıeısıeı ıeıfıfıoırıtı.ı"
+        ],
+        "Analysis_Tags": [
+            "ıcıuıbıeısıaıtısı;ı ımıaınıuıfıaıcıtıuırıiınıgı;ı ısıtırıuıcıtıuırıeısı;ı ıaıiırıcırıaıfıtıdıeısıiıgını"
+        ],
+        "Industry_Ecosystem": "ıKıüıpı ıuıyıdıuılıaırı ı(ıSıEıEıDıSı)ı ıvıeı ıiınısıaını ıgıüıcıüıyılıeı ıuıçıaını ıuıçıaıkılıaırı.ı",
+        "Industry_Partners": [
+            "ıPırıiıvıaıtıeı ıIınıdıuısıtırıyı"
+        ],
+        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Meta_Needs_Verification": true
+    },
+    {
+        "Country": "ıJıaıpıaını",
+        "City": "ıKıiıtıaıkıyıuısıhıuı",
+        "State_Region": "ıFıuıkıuıoıkıaı",
+        "Uni_ID": "ıkıyıuıtıeıcıhı",
+        "University_Name": "ıKıyıuısıhıuı ıIınısıtıiıtıuıtıeı ıoıfı ıTıeıcıhınıoılıoıgıyı",
+        "University_Display_Name": "ıKıyıuısıhıuı ıIınısıtıiıtıuıtıeı ıoıfı ıTıeıcıhınıoılıoıgıyı ı(ıKıyıuıtıeıcıhı)ı",
+        "University_Short_Name": "ıKıyıuıtıeıcıhı",
+        "Cost_Tuition": [
+            {
+                "amount": 3400.0,
+                "currency": "ıEıUıRı",
+                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
+                "period": "ıyıeıaırı",
+                "program": "ıGırıaıdıuıaıtıeı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+                "raw": "ıAıpıpırıoıxı ı€ı3ı,ı4ı0ı0ı/ıyıeıaırı ı(ınıoını-ıEıUı/ıiınıtılı)ı",
+                "scope": "ınıoını_ıeıuı"
+            }
+        ],
+        "Cost_Semester_Fees": [
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
+                "term_code": "ı2ı0ı2ı5ıWı"
+            },
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
+                "term_code": "ı2ı0ı2ı6ıSı"
+            }
+        ],
+        "Scholarships_Info": [
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıaıpıaınıeısıeı ıGıoıvıeırınımıeınıtı ı(ıMıEıXıTı)ı ıSıcıhıoılıaırısıhıiıpı",
+                "notes": "ıEımıbıaısısıyı ırıeıcıoımımıeınıdıaıtıiıoını ıoırı ıuınıiıvıeırısıiıtıyı ırıeıcıoımımıeınıdıaıtıiıoını ırıoıuıtıeısı;ı ıhıiıgıhılıyı ıcıoımıpıeıtıiıtıiıvıeı.ı",
+                "provider": "ıMıEıXıTı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ısıtıuıdıyıiınıjıaıpıaını.ıgıoı.ıjıpı/ıeını/ıpılıaınınıiınıgı/ısıcıhıoılıaırısıhıiıpısı/ımıeıxıtı-ısıcıhıoılıaırısıhıiıpısı/ı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıAıSıSıOı ıSıcıhıoılıaırısıhıiıpısı ı/ı ıSıuıpıpıoırıtı ıPırıoıgırıaımısı",
+                "notes": "ıMıuılıtıiıpılıeı ısıcıhıeımıeısı;ı ıaıvıaıiılıaıbıiılıiıtıyı ıdıeıpıeınıdısı ıoını ıpırıoıgırıaımı/ıeınırıoılılımıeınıtı ısıtıaıtıuısı.ı",
+                "provider": "ıJıAıSıSıOı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıjıaısısıoı.ıgıoı.ıjıpı/ıeını/ırıyıuıgıaıkıuı/ısıcıhıoılıaırısıhıiıpı_ıjı/ıiınıdıeıxı.ıhıtımılı"
+            }
+        ],
+        "Cost_City_Living": "ımıeıdıiıuımı_ılıoıwı",
+        "Cost_City_Rank": 2,
+        "Living_Housing_Difficulty": "ıEıaısıyı",
+        "Living_Housing_Score": 4,
+        "Program_Name": "ıGırıaıdıuıaıtıeı ıpırıoıgırıaımı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+        "Program_Degree": "ıMıSıcı",
+        "Program_ECTS": 120.0,
+        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıkıyıuıtıeıcıhı.ıaıcı.ıjıpı/ıeınıgılıiısıhı/ıaıdımıiısısıiıoınısı/ı",
+        "Program_Scope": "ınıoını_ıeıuı",
+        "Admission_Mode": "ıAıpıtıiıtıuıdıeı ıTıeısıtı",
+        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
+        "Analysis_Strong_Areas": "ıSıaıtıeılılıiıtıeı ıTıeısıtıiınıgı,ı ıSıpıaıcıeı ıEınıvıiırıoınımıeınıtı ıEıfıfıeıcıtısı,ı ıNıaınıoı-ısıaıtıeılılıiıtıeısı,ı ıEılıeıcıtırıiıcı ıPırıoıpıuılısıiıoını",
+        "Analysis_Pros": [
+            "ıDıüınıyıaınııını ı1ı ınıuımıaırıaılııı ıaıkıaıdıeımıiıkı ıuıyıdıuı ıoıpıeırıaıtıöırıüıdıüırı ı(ıfııırılıaıtııılıaını ıuıyıdıuı ısıaıyııısııınıdıaı)ı.ı;ı ıÇıoıkı ıpırıaıtıiıkı,ı ı€ıhıaınıdısı-ıoını€ı ıbıiırı ıeığıiıtıiımı ıvıaırıdııırı.ı;ı ıSıtırıeınıgıtıhı ıaırıeıaısı:ı ıSıaıtıeılılıiıtıeı ıTıeısıtıiınıgı,ı ıSıpıaıcıeı ıEınıvıiırıoınımıeınıtı ıEıfıfıeıcıtısı,ı ıNıaınıoı-ısıaıtıeılılıiıtıeısı,ı ıEılıeıcıtırıiıcı ıPırıoıpıuılısıiıoını.ı;ı ıIınıdıuısıtırıyı/ıaıgıeınıcıyı ıpırıoıxıiımıiıtıyı ıoırı ılıiınıkısı:ı ıUıNıOıOıSıAı,ı ıJıAıXıAı,ı ıSıpıaıcıeı ıBıDı.ı"
+        ],
+        "Analysis_Cons": [
+            "ıTıeıoırıiıkı ıdıeırıiınılıiıkıtıeını ızıiıyıaıdıeı ıyıaıpı-ıfııırılıaıtı ıoıdıaıkılıııdııırı.ı;ı ıŞıeıhıiırı ısıaınıaıyıiı ışıeıhırıiıdıiırı,ı ıtıuırıiısıtıiıkı ıdıeığıiılıdıiırı.ı;ı ıHıoıuısıiınıgı ıiını ıKıiıtıaıkıyıuısıhıuı ıiısı ırıaıtıeıdı ıEıaısıyı ı(ısıcıoırıeı ı4ı/ı1ı0ı)ı ı—ı ıpılıaını ıeıaırılıyı.ı"
+        ],
+        "Analysis_Tags": [
+            "ısıaıtıeılılıiıtıeıtıeısıtıiınıgı;ı ınıaınıoısıaıtıeılılıiıtıeısı;ı ısıpıaıcıeıeınıvıiırıoınımıeınıtı;ı ıeılıeıcıtırıiıcıpırıoıpıuılısıiıoını;ı ıhıaınıdısıoını"
+        ],
+        "Industry_Ecosystem": "ıBıIıRıDıSı ıPırıoıjıeıcıtı ı(ıUıyıdıuı ıtıeısıtı ıvıeı ıfııırılıaıtımıaı)ı.ı ıGıeılıiışımıeıkıtıeı ıoılıaını ıüılıkıeılıeırılıeı ıuıyıdıuı ıpırıoıjıeılıeırıiı.ı",
+        "Industry_Partners": [
+            "ıUıNıOıOıSıAı;ı ıJıAıXıAı;ı ıSıpıaıcıeı ıBıDı"
+        ],
+        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Meta_Needs_Verification": true
+    },
+    {
+        "Country": "ıJıaıpıaını",
+        "City": "ıTıoıkıyıoı ı(ıFıuıcıhıuı/ıKıoıgıaınıeıiı)ı",
+        "State_Region": "ıTıoıkıyıoı",
+        "Uni_ID": "ıtıuıaıtı",
+        "University_Name": "ıTıoıkıyıoı ıUınıiıvıeırısıiıtıyı ıoıfı ıAıgırıiıcıuılıtıuırıeı ıaınıdı ıTıeıcıhınıoılıoıgıyı",
+        "University_Display_Name": "ıTıoıkıyıoı ıUınıiıvıeırısıiıtıyı ıoıfı ıAıgırıiıcıuılıtıuırıeı ıaınıdı ıTıeıcıhınıoılıoıgıyı ı(ıTıUıAıTı)ı",
+        "University_Short_Name": "ıTıUıAıTı",
+        "Cost_Tuition": [
+            {
+                "amount": 3400.0,
+                "currency": "ıEıUıRı",
+                "effective_from_term_code": "ı2ı0ı2ı5ıWı",
+                "period": "ıyıeıaırı",
+                "program": "ıGırıaıdıuıaıtıeı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+                "raw": "ıAıpıpırıoıxı ı€ı3ı,ı4ı0ı0ı/ıyıeıaırı ı(ınıoını-ıEıUı/ıiınıtılı)ı",
+                "scope": "ınıoını_ıeıuı"
+            }
+        ],
+        "Cost_Semester_Fees": [
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıWıiıSıeı ı2ı0ı2ı5ı/ı2ı6ı",
+                "term_code": "ı2ı0ı2ı5ıWı"
+            },
+            {
+                "amount": 0.0,
+                "currency": "ıEıUıRı",
+                "includes_ticket": false,
+                "raw": "ıNıoı ısıeıpıaırıaıtıeı ısıeımıeısıtıeırı ıcıoınıtırıiıbıuıtıiıoını ısıpıeıcıiıfıiıeıdı;ı ıtıuıiıtıiıoını ıtıyıpıiıcıaılılıyı ıcıhıaırıgıeıdı ıaınınıuıaılılıyı ı(ıvıeırıiıfıyı)ı.ı",
+                "term": "ıSıoıSıeı ı2ı0ı2ı6ı",
+                "term_code": "ı2ı0ı2ı6ıSı"
+            }
+        ],
+        "Scholarships_Info": [
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıaıpıaınıeısıeı ıGıoıvıeırınımıeınıtı ı(ıMıEıXıTı)ı ıSıcıhıoılıaırısıhıiıpı",
+                "notes": "ıEımıbıaısısıyı ırıeıcıoımımıeınıdıaıtıiıoını ıoırı ıuınıiıvıeırısıiıtıyı ırıeıcıoımımıeınıdıaıtıiıoını ırıoıuıtıeısı;ı ıhıiıgıhılıyı ıcıoımıpıeıtıiıtıiıvıeı.ı",
+                "provider": "ıMıEıXıTı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ısıtıuıdıyıiınıjıaıpıaını.ıgıoı.ıjıpı/ıeını/ıpılıaınınıiınıgı/ısıcıhıoılıaırısıhıiıpısı/ımıeıxıtı-ısıcıhıoılıaırısıhıiıpısı/ı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıTıUıAıTı ıFıuınıdısı",
+                "notes": "ıUınıiıvıeırısıiıtıyı ıfıuınıdıiınıgı;ı ıvıeırıiıfıyı ıpıeırı ıdıeıpıaırıtımıeınıtı/ıpırıoıgırıaımı.ı",
+                "provider": "ıTıUıAıTı",
+                "type": "ıuınıiıvıeırısıiıtıyı"
+            },
+            {
+                "eligibility": "ınıoını_ıeıuı_ıoıkı",
+                "name": "ıJıAıSıSıOı ıSıcıhıoılıaırısıhıiıpısı ı/ı ıSıuıpıpıoırıtı ıPırıoıgırıaımısı",
+                "notes": "ıMıuılıtıiıpılıeı ısıcıhıeımıeısı;ı ıaıvıaıiılıaıbıiılıiıtıyı ıdıeıpıeınıdısı ıoını ıpırıoıgırıaımı/ıeınırıoılılımıeınıtı ısıtıaıtıuısı.ı",
+                "provider": "ıJıAıSıSıOı",
+                "type": "ıgıoıvıeırınımıeınıtı",
+                "url": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıjıaısısıoı.ıgıoı.ıjıpı/ıeını/ırıyıuıgıaıkıuı/ısıcıhıoılıaırısıhıiıpı_ıjı/ıiınıdıeıxı.ıhıtımılı"
+            }
+        ],
+        "Cost_City_Living": "ıvıeırıyı_ıhıiıgıhı",
+        "Cost_City_Rank": 5,
+        "Living_Housing_Difficulty": "ıVıeırıyı ıHıaırıdı",
+        "Living_Housing_Score": 8,
+        "Program_Name": "ıGırıaıdıuıaıtıeı ıpırıoıgırıaımı ı(ıSıpıaıcıeı/ıAıeırıoısıpıaıcıeı ıtırıaıcıkı)ı",
+        "Program_Degree": "ıMıSıcı",
+        "Program_ECTS": 120.0,
+        "Program_URL": "ıhıtıtıpısı:ı/ı/ıwıwıwı.ıtıuıaıtı.ıaıcı.ıjıpı/ıeını/ıaıdımıiısısıiıoını/ıtıuıiıtıiıoını/ı",
+        "Program_Scope": "ınıoını_ıeıuı",
+        "Admission_Mode": "ıAıpıtıiıtıuıdıeı ıTıeısıtı",
+        "Admission_Language_Req": "ıEınıgılıiısıhı ı°ıCı1ı",
+        "Analysis_Strong_Areas": "ıSıpıaıcıeı ıPırıoıpıuılısıiıoını,ı ı°ıCıoımıbıuısıtıiıoını,ı ıSımıaırıtı ıMıoıbıiılıiıtıyı,ı ı°ıCıoınıtırıoılı",
+        "Analysis_Pros": [
+            "ıTıoıkıyıoı€ınıuını ıbıaıtııısııınıdıaı,ı ıdıaıhıaı ısıaıkıiını ıkıaımıpıüısılıeırı.ı;ı ıİıtıkıiı ısıiısıtıeımılıeırıiı ıkıoınıuısıuınıdıaı ınıiışı ıvıeı ıgıüıçılıüı ılıaıbıoırıaıtıuıvıaırılıaırı.ı;ı ıSıtırıeınıgıtıhı ıaırıeıaısı:ı ıSıpıaıcıeı ıPırıoıpıuılısıiıoını,ı ı°ıCıoımıbıuısıtıiıoını,ı ıSımıaırıtı ıMıoıbıiılıiıtıyı,ı ı°ıCıoınıtırıoılı.ı;ı ıIınıdıuısıtırıyı/ıaıgıeınıcıyı ıpırıoıxıiımıiıtıyı ıoırı ılıiınıkısı:ı ıJıAıXıAı,ı ıAıuıtıoımıoıtıiıvıeı ıIınıdıuısıtırıyı.ı"
+        ],
+        "Analysis_Cons": [
+            "ıKıüıçıüıkı ıbıiırı ıdıeıvılıeıtı ıüınıiıvıeırısıiıtıeısıiıdıiırı.ı;ı ıUılıuısılıaırıaırıaısııı ıbıiılıiınıiırılıiığıiı ıUıTıoıkıyıoı/ıTıoıhıoıkıuı ıkıaıdıaırı ıyıüıkısıeıkı ıdıeığıiılıdıiırı.ı;ı ıHıoıuısıiınıgı ıiını ıTıoıkıyıoı ı(ıFıuıcıhıuı/ıKıoıgıaınıeıiı)ı ıiısı ırıaıtıeıdı ıVıeırıyı ıHıaırıdı ı(ısıcıoırıeı ı8ı/ı1ı0ı)ı ı—ı ıpılıaını ıeıaırılıyı.ı;ı ıAıdımıiısısıiıoını ıtıyıpıiıcıaılılıyı ıiınıvıoılıvıeısı ıaını ıeınıtırıaınıcıeı ıeıxıaımı ıaınıdı/ıoırı ıiınıtıeırıvıiıeıwı;ı ıoıuıtıcıoımıeısı ıcıaını ıbıeı ılıeısısı ıpırıeıdıiıcıtıaıbılıeı ıtıhıaını ıgırıaıdıeı-ıoınılıyı ıaıdımıiısısıiıoını.ı;ı ıMıaınıyı ılıaıbısı/ıaıdımıiını ıpırıoıcıeısısıeısı ısıtıiılılı ıeıxıpıeıcıtı ıJıaıpıaınıeısıeı;ı ıdıaıyı-ıtıoı-ıdıaıyı ıaınıdı ıtıhıeısıiısı ılıoıgıiısıtıiıcısı ımıaıyı ırıeıqıuıiırıeı ıJıaıpıaınıeısıeı ıeıfıfıoırıtı.ı"
+        ],
+        "Analysis_Tags": [
+            "ıpırıoıpıuılısıiıoını;ı ıcıoımıbıuısıtıiıoını;ı ısımıaırıtımıoıbıiılıiıtıyı;ı ıcıoınıtırıoılısı"
+        ],
+        "Industry_Ecosystem": "ıİıtıkıiı ı(ıPırıoıpıuılısıiıoını)ı ıvıeı ıaıkııılılııı ımıoıbıiılıiıtıeı.ı",
+        "Industry_Partners": [
+            "ıJıAıXıAı;ı ıAıuıtıoımıoıtıiıvıeı ıIınıdıuısıtırıyı"
+        ],
+        "Meta_Updated_At": "ı2ı0ı2ı6ı-ı0ı1ı-ı2ı7ı",
+        "Meta_Needs_Verification": true
+    }
 ]
