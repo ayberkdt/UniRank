@@ -163,9 +163,10 @@
                             <button onclick="window.handleLogout()" class="btn btn-sm" style="background: rgba(239, 68, 68, 0.1); color: var(--danger); border: 1px solid rgba(239, 68, 68, 0.2);" data-i18n="logout">Log out</button>
                         </div>
                     </div>
-                    <div class="language-toggle"></div>
-                    <button data-lang="tr" onclick="setLanguage('tr')">TR</button>
-                    <button data-lang="en" onclick="setLanguage('en')">EN</button>
+                    <div class="language-toggle" role="group">
+                        <button type="button" data-lang="en" onclick="window.setLanguage('en')">EN</button>
+                        <button type="button" data-lang="tr" onclick="window.setLanguage('tr')">TR</button>
+                    </div>
                 </div>
             </header>
 
