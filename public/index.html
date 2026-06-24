@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=6">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="taxonomy.js"></script>
 </head>
 <body>
     <div class="app-container">
@@ -37,12 +38,29 @@
                 </div>
                 <!-- City filter removed -->
                 <div class="form-group">
-                    <label>Keywords</label>
-                    <div id="keyword-tags" class="tag-list" style="margin-bottom: 8px;"></div>
-                    <select id="keyword-filter">
-                        <option value="">+ Add Keyword</option>
-                    </select>
+                    <label>Academic / Field Categories</label>
+                    <div id="category-tree" class="category-tree" style="max-height: 250px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: 6px; padding: 8px; background: var(--bg-secondary); margin-bottom: 8px;">
+                        <!-- Rendered via JS -->
+                    </div>
                     <input type="text" id="search-input" placeholder="Or type manual search..." style="margin-top: 8px;">
+                </div>
+                <!-- Hard Filters -->
+                <div class="form-group" style="margin-top: 16px;">
+                    <label>Degree Level</label>
+                    <select id="degree-filter">
+                        <option value="All">All Degrees</option>
+                        <option value="BSc">Bachelor (BSc)</option>
+                        <option value="MSc">Master (MSc)</option>
+                        <option value="PhD">Doctorate (PhD)</option>
+                    </select>
+                </div>
+                <div class="form-group" style="flex-direction: row; align-items: center; gap: 8px; margin-top: 8px;">
+                    <input type="checkbox" id="english-only-filter" style="width: auto; cursor: pointer;">
+                    <label for="english-only-filter" style="margin: 0; cursor: pointer;">Only English-taught</label>
+                </div>
+                <div class="form-group" style="margin-top: 8px;">
+                    <label>Max Tuition (€/yr)</label>
+                    <input type="number" id="max-tuition-filter" placeholder="e.g. 5000">
                 </div>
                 <div class="form-group" style="flex-direction: row; align-items: center; gap: 8px; margin-top: 16px; margin-bottom: 8px;">
                     <input type="checkbox" id="fav-filter" style="width: auto; cursor: pointer;">
@@ -52,31 +70,43 @@
 
             <div class="card">
                 <h2>Ranking Weights</h2>
+                <div class="form-group">
+                    <label>Preset Profile</label>
+                    <select id="preset-profile-select">
+                        <option value="balanced">Balanced</option>
+                        <option value="low_cost">Low Cost Priority</option>
+                        <option value="best_fit">Best Aerospace / Space Fit</option>
+                        <option value="safe_choice">English-Only Safe Choice</option>
+                        <option value="career">Career-Oriented</option>
+                        <option value="custom">Custom</option>
+                    </select>
+                </div>
                 <div class="weight-sliders">
                     <div class="slider-group">
-                        <label>Living Cost (↓) <span id="val-cost">0.15</span></label>
-                        <input type="range" id="w-cost" min="0" max="1" step="0.01" value="0.15">
+                        <label>Academic / Field Fit <span id="val-academic">30</span></label>
+                        <input type="range" id="w-academic" min="0" max="100" step="1" value="30">
                     </div>
                     <div class="slider-group">
-                        <label>Tuition Fee (↓) <span id="val-tuition">0.30</span></label>
-                        <input type="range" id="w-tuition" min="0" max="1" step="0.01" value="0.30">
+                        <label>Eligibility & Language <span id="val-eligibility">20</span></label>
+                        <input type="range" id="w-eligibility" min="0" max="100" step="1" value="20">
                     </div>
                     <div class="slider-group">
-                        <label>Academic Rank (↑) <span id="val-ranking">0.30</span></label>
-                        <input type="range" id="w-ranking" min="0" max="1" step="0.01" value="0.30">
-                    </div>
-                    <div class="slider-group" style="display: none;">
-                        <label>Focus Fit (↑) <span id="val-fit">0.40</span></label>
-                        <input type="range" id="w-fit" min="0" max="1" step="0.01" value="0.40">
+                        <label>Cost & Funding <span id="val-cost">20</span></label>
+                        <input type="range" id="w-cost" min="0" max="100" step="1" value="20">
                     </div>
                     <div class="slider-group">
-                        <label>Pros Bonus (↑) <span id="val-pros">0.15</span></label>
-                        <input type="range" id="w-pros" min="0" max="1" step="0.01" value="0.15">
+                        <label>Career / Research <span id="val-career">15</span></label>
+                        <input type="range" id="w-career" min="0" max="100" step="1" value="15">
                     </div>
                     <div class="slider-group">
-                        <label>Cons Penalty (↓) <span id="val-cons">0.10</span></label>
-                        <input type="range" id="w-cons" min="0" max="1" step="0.01" value="0.10">
+                        <label>Living Risk <span id="val-living">10</span></label>
+                        <input type="range" id="w-living" min="0" max="100" step="1" value="10">
                     </div>
+                    <div class="slider-group">
+                        <label>Data Confidence <span id="val-confidence">5</span></label>
+                        <input type="range" id="w-confidence" min="0" max="100" step="1" value="5">
+                    </div>
+                    <p style="font-size: 11px; color: var(--text-muted); margin-top: 8px; line-height: 1.4;">Scores are normalized automatically. Higher weight means this criterion affects ranking more.</p>
                 </div>
             </div>
 
@@ -173,6 +203,7 @@
     </div>
     
     <!-- Using a mock/local JSON or API depending on deployment -->
-    <script src="script.js?v=7"></script>
+    <script src="scoring.js?v=1"></script>
+    <script src="script.js?v=8"></script>
 </body>
 </html>

@@ -209,37 +209,21 @@ class RankedModel(QAbstractTableModel):
 
 @dataclass
 class Weights:
-    cost_city: float = 0.30
-    semester_fee: float = 0.20
-    focus_fit: float = 0.40
-    pros_bonus: float = 0.07
-    cons_penalty: float = 0.03
+    academic_fit: float = 30.0
+    eligibility_language: float = 20.0
+    cost_funding: float = 20.0
+    career_research: float = 15.0
+    living_risk: float = 10.0
+    confidence_deadline: float = 5.0
 
-    def normalized(self, has_keywords: bool = True) -> "Weights":
-        # Eğer keyword yoksa fit, pros ve cons ağırlıkları 0'a düşer.
-        fit_w = self.focus_fit if has_keywords else 0.0
-        pros_w = self.pros_bonus if has_keywords else 0.0
-        cons_w = self.cons_penalty if has_keywords else 0.0
-
-        s = float(self.cost_city + self.semester_fee + fit_w + pros_w + cons_w)
-        if s <= 1e-9:
-            return self
-        return Weights(
-            cost_city=self.cost_city / s,
-            semester_fee=self.semester_fee / s,
-            focus_fit=fit_w / s,
-            pros_bonus=pros_w / s,
-            cons_penalty=cons_w / s,
-        )
-
-    def clamp_nonneg(self) -> "Weights":
-        # Negatif girilirse patlamasın
-        return Weights(
-            cost_city=max(0.0, float(self.cost_city)),
-            semester_fee=max(0.0, float(self.semester_fee)),
-            focus_fit=max(0.0, float(self.focus_fit)),
-            pros_bonus=max(0.0, float(self.pros_bonus)),
-            cons_penalty=max(0.0, float(self.cons_penalty)),
-        )
+    def as_dict(self) -> dict:
+        return {
+            'academic_fit': self.academic_fit,
+            'eligibility_language': self.eligibility_language,
+            'cost_funding': self.cost_funding,
+            'career_research': self.career_research,
+            'living_risk': self.living_risk,
+            'confidence_deadline': self.confidence_deadline
+        }
 
 

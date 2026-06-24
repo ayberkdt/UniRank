@@ -47,6 +47,8 @@ from typing import Any, Dict, List, Optional, Sequence, Tuple
 import numpy as np
 import pandas as pd
 
+from unirank.core.scoring import calculate_score
+
 from PyQt6.QtCore import (
     QAbstractTableModel,
     QEvent,
@@ -69,6 +71,8 @@ from PyQt6.QtWidgets import (
     QVBoxLayout,
     QWidget,
     QScrollArea,
+    QTreeWidget,
+    QTreeWidgetItem,
 )
 
 # ---------------------------------------------------------------------
@@ -216,12 +220,55 @@ class MainWindow(QMainWindow):
             logging.exception("HashtagFilterPanel init failed")
             self.filter_panel = None
 
-        # Keywords
+        # Hard Filters
+        self.cb_degree = QComboBox()
+        self.cb_degree.addItems(["All", "BSc", "MSc", "PhD"])
+        
+        from PyQt6.QtWidgets import QCheckBox
+        self.chk_english_only = QCheckBox("Only English-taught")
+        
+        self.in_max_tuition = QLineEdit()
+        self.in_max_tuition.setPlaceholderText("Max Tuition (€/yr)")
+        
+        hf_layout = QVBoxLayout()
+        hf_layout.addWidget(QLabel("Degree Level:"))
+        hf_layout.addWidget(self.cb_degree)
+        hf_layout.addWidget(self.chk_english_only)
+        hf_layout.addWidget(QLabel("Max Tuition:"))
+        hf_layout.addWidget(self.in_max_tuition)
+        filter_layout.addLayout(hf_layout)
+
+        # Categories
         search_layout = QVBoxLayout()
-        search_layout.addWidget(QLabel("Keywords:"))
-        self.in_keywords = QLineEdit()
-        self.in_keywords.setPlaceholderText('orbit determination, gnc, "trajectory design", #space')
-        search_layout.addWidget(self.in_keywords)
+        search_layout.addWidget(QLabel("Academic/Field Categories:"))
+        self.tree_categories = QTreeWidget()
+        self.tree_categories.setHeaderHidden(True)
+        self.tree_categories.setSelectionMode(QTreeWidget.SelectionMode.NoSelection)
+        self.tree_categories.setMaximumHeight(200)
+        
+        from unirank.core.taxonomy import load_taxonomy
+        taxonomy = load_taxonomy()
+        
+        parents = {}
+        for subcat_id, info in taxonomy.items():
+            p_name = info['parent']
+            if p_name not in parents:
+                parents[p_name] = []
+            parents[p_name].append(info['label'])
+            
+        for p_name, subs in parents.items():
+            parent_item = QTreeWidgetItem(self.tree_categories)
+            parent_item.setText(0, p_name)
+            parent_item.setFlags(parent_item.flags() | Qt.ItemFlag.ItemIsUserCheckable)
+            parent_item.setCheckState(0, Qt.CheckState.Unchecked)
+            
+            for sub_name in subs:
+                child_item = QTreeWidgetItem(parent_item)
+                child_item.setText(0, sub_name)
+                child_item.setFlags(child_item.flags() | Qt.ItemFlag.ItemIsUserCheckable)
+                child_item.setCheckState(0, Qt.CheckState.Unchecked)
+                
+        search_layout.addWidget(self.tree_categories)
         filter_layout.addLayout(search_layout)
 
         # Weights
@@ -230,13 +277,20 @@ class MainWindow(QMainWindow):
         weights_layout.setContentsMargins(18, 18, 18, 18)
         weights_layout.setSpacing(14)
 
-        self.ws_cost = WeightSliderRow("Cost (↓)", self.weights.cost_city, step=0.01)
-        self.ws_fee = WeightSliderRow("Tuition & Fees (↓)", self.weights.semester_fee, step=0.01)
-        self.ws_fit = WeightSliderRow("Fit (↑)", self.weights.focus_fit, step=0.01)
-        self.ws_pros = WeightSliderRow("Pros (↑)", self.weights.pros_bonus, step=0.01)
-        self.ws_cons = WeightSliderRow("Cons (↓)", self.weights.cons_penalty, step=0.01)
+        self.cb_preset = QComboBox()
+        self.cb_preset.addItems(["Balanced", "Low Cost Priority", "Best Aerospace / Space Fit", "English-Only Safe Choice", "Career-Oriented", "Custom"])
+        weights_layout.addWidget(QLabel("Preset Profile:"))
+        weights_layout.addWidget(self.cb_preset)
+        self.cb_preset.currentIndexChanged.connect(self.on_preset_changed)
 
-        for ws in (self.ws_cost, self.ws_fee, self.ws_fit, self.ws_pros, self.ws_cons):
+        self.ws_academic = WeightSliderRow("Academic Fit", self.weights.academic_fit / 100.0, step=0.01)
+        self.ws_eligibility = WeightSliderRow("Eligibility", self.weights.eligibility_language / 100.0, step=0.01)
+        self.ws_cost = WeightSliderRow("Cost & Funding", self.weights.cost_funding / 100.0, step=0.01)
+        self.ws_career = WeightSliderRow("Career / Research", self.weights.career_research / 100.0, step=0.01)
+        self.ws_living = WeightSliderRow("Living Risk", self.weights.living_risk / 100.0, step=0.01)
+        self.ws_confidence = WeightSliderRow("Data Confidence", self.weights.confidence_deadline / 100.0, step=0.01)
+
+        for ws in (self.ws_academic, self.ws_eligibility, self.ws_cost, self.ws_career, self.ws_living, self.ws_confidence):
             ws.valueChanged.connect(lambda *_: self.on_weights_changed())
             weights_layout.addWidget(ws)
 
@@ -405,8 +459,13 @@ class MainWindow(QMainWindow):
 
         # Filters
         self.cb_city.currentIndexChanged.connect(lambda *_: self.schedule_recompute(30))
-        self.in_keywords.textChanged.connect(lambda *_: self.schedule_recompute(160))
+        self.tree_categories.itemChanged.connect(lambda *_: self.schedule_recompute(160))
         self.cb_sort.currentIndexChanged.connect(lambda *_: self.schedule_recompute(30))
+        
+        # Hard Filters
+        self.cb_degree.currentIndexChanged.connect(lambda *_: self.schedule_recompute(30))
+        self.chk_english_only.stateChanged.connect(lambda *_: self.schedule_recompute(30))
+        self.in_max_tuition.textChanged.connect(lambda *_: self.schedule_recompute(160))
 
         # Search bar mirrors keywords
         self.search_bar.textChanged.connect(self.on_search_changed)
@@ -417,7 +476,7 @@ class MainWindow(QMainWindow):
             sel.selectionChanged.connect(self.on_row_selected)
 
     def on_search_changed(self, text: str) -> None:
-        self.in_keywords.setText(text)
+        self.schedule_recompute(160)
 
     # -----------------------------------------------------------------
     # Drawer positioning and hover handling
@@ -796,13 +855,43 @@ class MainWindow(QMainWindow):
     def schedule_recompute(self, delay_ms: int = 120) -> None:
         self._recompute_timer.start(max(0, int(delay_ms)))
 
-    def on_weights_changed(self) -> None:
+    def on_preset_changed(self) -> None:
+        p = self.cb_preset.currentText()
+        w = {}
+        if p == "Balanced": w = {'ac': 30, 'el': 20, 'co': 20, 'ca': 15, 'li': 10, 'cf': 5}
+        elif p == "Low Cost Priority": w = {'ac': 20, 'el': 20, 'co': 35, 'ca': 10, 'li': 10, 'cf': 5}
+        elif p == "Best Aerospace / Space Fit": w = {'ac': 45, 'el': 15, 'co': 10, 'ca': 20, 'li': 5, 'cf': 5}
+        elif p == "English-Only Safe Choice": w = {'ac': 25, 'el': 35, 'co': 15, 'ca': 10, 'li': 10, 'cf': 5}
+        elif p == "Career-Oriented": w = {'ac': 25, 'el': 15, 'co': 10, 'ca': 35, 'li': 10, 'cf': 5}
+        
+        if w:
+            for slider, val in [
+                (self.ws_academic, w['ac']),
+                (self.ws_eligibility, w['el']),
+                (self.ws_cost, w['co']),
+                (self.ws_career, w['ca']),
+                (self.ws_living, w['li']),
+                (self.ws_confidence, w['cf']),
+            ]:
+                slider.blockSignals(True)
+                slider.setValue(val / 100.0, emit=False)
+                slider.blockSignals(False)
+            
+            self.on_weights_changed(custom=False)
+
+    def on_weights_changed(self, custom=True) -> None:
+        if custom:
+            self.cb_preset.blockSignals(True)
+            self.cb_preset.setCurrentText("Custom")
+            self.cb_preset.blockSignals(False)
+            
         self.weights = Weights(
-            cost_city=float(self.ws_cost.value()),
-            semester_fee=float(self.ws_fee.value()),
-            focus_fit=float(self.ws_fit.value()),
-            pros_bonus=float(self.ws_pros.value()),
-            cons_penalty=float(self.ws_cons.value()),
+            academic_fit=float(self.ws_academic.value()) * 100.0,
+            eligibility_language=float(self.ws_eligibility.value()) * 100.0,
+            cost_funding=float(self.ws_cost.value()) * 100.0,
+            career_research=float(self.ws_career.value()) * 100.0,
+            living_risk=float(self.ws_living.value()) * 100.0,
+            confidence_deadline=float(self.ws_confidence.value()) * 100.0,
         )
         self.schedule_recompute(60)
 
@@ -830,9 +919,23 @@ class MainWindow(QMainWindow):
                 except Exception:
                     logging.exception("apply_hashtag_filters failed")
 
-            raw_q = self.in_keywords.text().replace(",", " ")
-            terms, hashtags = parse_search_query(raw_q)
-            keywords = normalize_keywords(list(terms) + list(hashtags))
+            search_query = self.search_bar.text().strip().lower()
+            if search_query:
+                # filter dataframe based on raw text match across program/university
+                mask = df.apply(lambda row: search_query in str(row.get('Program_Name', '')).lower() or search_query in str(row.get('university', '')).lower(), axis=1)
+                df = df[mask]
+
+            selected_cats = []
+            for i in range(self.tree_categories.topLevelItemCount()):
+                p_item = self.tree_categories.topLevelItem(i)
+                if p_item.checkState(0) in (Qt.CheckState.Checked, Qt.CheckState.PartiallyChecked):
+                    selected_cats.append(p_item.text(0))
+                for j in range(p_item.childCount()):
+                    c_item = p_item.child(j)
+                    if c_item.checkState(0) == Qt.CheckState.Checked:
+                        selected_cats.append(c_item.text(0))
+            
+            keywords = selected_cats
 
             if df.empty:
                 self.model.set_df(pd.DataFrame())
@@ -841,51 +944,44 @@ class MainWindow(QMainWindow):
                 self._update_kpis()
                 return
 
-            # Ranges
-            cost_min, cost_max = float(df["_cost_num"].min()), float(df["_cost_num"].max())
+            # Ranges & Preparations
+            
+            # Use calculate_score for each record
+            weights_dict = self.weights.as_dict()
+            
+            try:
+                max_t = float(self.in_max_tuition.text()) if self.in_max_tuition.text() else 0.0
+            except ValueError:
+                max_t = 0.0
+                
+            preferences = {
+                'selectedKeywords': keywords,
+                'degreeFilter': self.cb_degree.currentText(),
+                'onlyEnglish': self.chk_english_only.isChecked(),
+                'maxTuition': max_t,
+                'minFieldFit': 0
+            }
 
-            fee_vals = pd.to_numeric(df["_fee"], errors="coerce").dropna()
-            fee_min = float(fee_vals.min()) if not fee_vals.empty else 0.0
-            fee_max = float(fee_vals.max()) if not fee_vals.empty else 1.0
-
-            df["_score_cost"] = df["_cost_num"].apply(lambda v: normalize_inverse(float(v), cost_min, cost_max))
-            df["_score_fee"] = pd.to_numeric(df["_fee"], errors="coerce").apply(
-                lambda v: normalize_inverse(v, fee_min, fee_max)
-            )
-
-            # Fit columns (json_loader şemasıyla uyumlu)
-            fit_cols = [
-                "focus",
-                "strength",
-                "tags",
-                "target_program_name",
-                "target_program_degree",
-                "university",
-                "city",
-                "country",
-                "key_partners",
-            ]
-            df["_score_fit"] = vectorized_text_match_multi(df, fit_cols, keywords, default_if_no_keywords=0.5)
-            df["_score_pros"] = vectorized_text_match_score(
-                _series(df, "pros").astype("string").fillna(""),
-                keywords,
-                default_if_no_keywords=0.5,
-            )
-            df["_score_cons"] = vectorized_text_match_score(
-                _series(df, "cons").astype("string").fillna(""),
-                keywords,
-                default_if_no_keywords=0.5,
-            )
-
-            # weights
-            w = self.weights.normalized(has_keywords=bool(keywords))
-            df["score"] = (
-                w.cost_city * df["_score_cost"]
-                + w.semester_fee * df["_score_fee"]
-                + w.focus_fit * df["_score_fit"]
-                + w.pros_bonus * df["_score_pros"]
-                - w.cons_penalty * df["_score_cons"]
-            )
+            records = df.to_dict(orient="records")
+            results = []
+            valid_indices = []
+            
+            for i, r in enumerate(records):
+                res = calculate_score(r, preferences, weights_dict)
+                if res['passed_hard_filters']:
+                    valid_indices.append(i)
+                    results.append(res)
+                    
+            if not valid_indices:
+                self.model.set_df(pd.DataFrame())
+                self.df_ranked = None
+                self.good_meta = None
+                self._update_kpis()
+                return
+                
+            df = df.iloc[valid_indices].copy()
+            df["score"] = [res['total_score'] / 10.0 for res in results] # 0-10 scale
+            df["_scoringDetails"] = results
 
             # Sort
             mode = self.cb_sort.currentText()
@@ -957,13 +1053,14 @@ class MainWindow(QMainWindow):
                 self.df_ranked["Detay"] = ""
 
             # Goodness meta (drawer radar)
+            comps_list = [res['components'] for res in results]
             good = pd.DataFrame({
-                "cost_good": df["_score_cost"].astype(float).reset_index(drop=True),
-                "fee_good": df["_score_fee"].astype(float).reset_index(drop=True),
-                "fit_good": df["_score_fit"].astype(float).reset_index(drop=True),
-                "pros_good": df["_score_pros"].astype(float).reset_index(drop=True),
-                "cons_bad": df["_score_cons"].astype(float).reset_index(drop=True),
-            }).reset_index(drop=True)
+                "cost_good": [c['cost_funding'] / 100.0 for c in comps_list],
+                "fee_good": [c['eligibility_language'] / 100.0 for c in comps_list],
+                "fit_good": [c['academic_fit'] / 100.0 for c in comps_list],
+                "pros_good": [c['career_research'] / 100.0 for c in comps_list],
+                "cons_bad": [c['living_risk'] / 100.0 for c in comps_list],
+            })
 
             smin, smax = float(df["score"].min()), float(df["score"].max())
             good["score_good"] = (
@@ -1169,7 +1266,7 @@ class MainWindow(QMainWindow):
             strength = (strength + "\n\n" if strength.strip() else "") + "\n".join(extra_lines)
 
         # Radar values
-        labels = ["Masraf", "Ücret", "Uyum", "Avantaj", "Skor"]
+        labels = ["Cost & Fund", "Elig & Lang", "Academic", "Career", "Skor"]
         if self.good_meta is not None and 0 <= row < len(self.good_meta):
             g = self.good_meta.iloc[row]
             vals = [
@@ -1181,6 +1278,16 @@ class MainWindow(QMainWindow):
             ]
         else:
             vals = [0.5] * 5
+
+        sd = r.get("_scoringDetails", {})
+        explanations = "\n".join([f"• {e}" for e in sd.get("explanation", [])])
+        warnings_str = "\n".join([f"⚠ {w}" for w in sd.get("warnings", [])])
+        if warnings_str:
+            explanations += "\n\n" + warnings_str
+
+        strength = str(r.get("Güçlü tarafı", "") or "")
+        if explanations:
+            strength = f"**Score Explanation:**\n{explanations}\n\n" + strength
 
         try:
             self.drawer.set_record({

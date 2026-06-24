@@ -17,27 +17,31 @@ const els = {
     countryTags: document.getElementById('country-tags'),
     countryExcludeFilter: document.getElementById('country-exclude-filter'),
     countryExcludeTags: document.getElementById('country-exclude-tags'),
-    // cityFilter removed
-    keywordFilter: document.getElementById('keyword-filter'),
-    keywordTags: document.getElementById('keyword-tags'),
+    categoryTree: document.getElementById('category-tree'),
     favFilter: document.getElementById('fav-filter'),
     searchInput: document.getElementById('search-input'),
     sortSelect: document.getElementById('sort-select'),
+    hardFilters: {
+        degree: document.getElementById('degree-filter'),
+        englishOnly: document.getElementById('english-only-filter'),
+        maxTuition: document.getElementById('max-tuition-filter')
+    },
+    preset: document.getElementById('preset-profile-select'),
     weights: {
+        academic: document.getElementById('w-academic'),
+        eligibility: document.getElementById('w-eligibility'),
         cost: document.getElementById('w-cost'),
-        tuition: document.getElementById('w-tuition'),
-        fit: document.getElementById('w-fit'),
-        pros: document.getElementById('w-pros'),
-        cons: document.getElementById('w-cons'),
-        ranking: document.getElementById('w-ranking')
+        career: document.getElementById('w-career'),
+        living: document.getElementById('w-living'),
+        confidence: document.getElementById('w-confidence')
     },
     vals: {
+        academic: document.getElementById('val-academic'),
+        eligibility: document.getElementById('val-eligibility'),
         cost: document.getElementById('val-cost'),
-        tuition: document.getElementById('val-tuition'),
-        fit: document.getElementById('val-fit'),
-        pros: document.getElementById('val-pros'),
-        cons: document.getElementById('val-cons'),
-        ranking: document.getElementById('val-ranking')
+        career: document.getElementById('val-career'),
+        living: document.getElementById('val-living'),
+        confidence: document.getElementById('val-confidence')
     },
     kpi: {
         total: document.getElementById('kpi-total'),
@@ -96,8 +100,7 @@ async function fetchData() {
 
             populateCountryFilter();
             populateCountryExcludeFilter();
-            // populateCityFilter removed
-            populateKeywordFilter();
+            await populateCategoryTree();
             processAndRender();
         } else {
             console.error("API Error:", json.message);
@@ -111,17 +114,54 @@ async function fetchData() {
     }
 }
 
-// Setup Listeners
 function setupEventListeners() {
+    // Presets
+    if (els.preset) {
+        els.preset.addEventListener('change', (e) => {
+            const p = e.target.value;
+            let w = {};
+            if (p === 'balanced') w = { academic: 30, eligibility: 20, cost: 20, career: 15, living: 10, confidence: 5 };
+            else if (p === 'low_cost') w = { academic: 20, eligibility: 20, cost: 35, career: 10, living: 10, confidence: 5 };
+            else if (p === 'best_fit') w = { academic: 45, eligibility: 15, cost: 10, career: 20, living: 5, confidence: 5 };
+            else if (p === 'safe_choice') w = { academic: 25, eligibility: 35, cost: 15, career: 10, living: 10, confidence: 5 };
+            else if (p === 'career') w = { academic: 25, eligibility: 15, cost: 10, career: 35, living: 10, confidence: 5 };
+            
+            if (p !== 'custom' && Object.keys(w).length > 0) {
+                Object.keys(w).forEach(k => {
+                    if (els.weights[k]) {
+                        els.weights[k].value = w[k];
+                        if (els.vals[k]) els.vals[k].textContent = w[k];
+                    }
+                });
+                clearTimeout(window.renderTimeout);
+                window.renderTimeout = setTimeout(processAndRender, 100);
+            }
+        });
+    }
+
     // Weights
     Object.keys(els.weights).forEach(k => {
         if (els.weights[k]) {
             els.weights[k].addEventListener('input', (e) => {
-                if (els.vals[k]) els.vals[k].textContent = Number(e.target.value).toFixed(2);
+                if (els.vals[k]) els.vals[k].textContent = Number(e.target.value);
+                if (els.preset) els.preset.value = 'custom';
                 // Debounce re-render slightly
                 clearTimeout(window.renderTimeout);
                 window.renderTimeout = setTimeout(processAndRender, 100);
             });
+        }
+    });
+
+    // Hard Filters
+    Object.keys(els.hardFilters).forEach(k => {
+        if (els.hardFilters[k]) {
+            els.hardFilters[k].addEventListener('change', processAndRender);
+            if (els.hardFilters[k].type === 'number') {
+                els.hardFilters[k].addEventListener('input', () => {
+                    clearTimeout(window.renderTimeout);
+                    window.renderTimeout = setTimeout(processAndRender, 200);
+                });
+            }
         }
     });
 
@@ -144,15 +184,7 @@ function setupEventListeners() {
             processAndRender();
         }
     });
-    els.keywordFilter.addEventListener('change', (e) => {
-        const k = e.target.value;
-        if (k && !selectedKeywords.has(k)) {
-            selectedKeywords.add(k);
-            e.target.value = '';
-            renderKeywordTags();
-            processAndRender();
-        }
-    });
+    // Category listener is attached inside populateCategoryTree
     
     // city filter listener removed
     els.favFilter.addEventListener('change', processAndRender);
@@ -232,37 +264,40 @@ function renderCountryExcludeTags() {
     });
 }
 
-// populateCityFilter removed
-
-function populateKeywordFilter() {
-    const keywords = new Set();
-    rawData.forEach(r => {
-        if (r.tags && Array.isArray(r.tags)) {
-            r.tags.forEach(t => keywords.add(t));
-        }
-    });
+async function populateCategoryTree() {
+    const taxonomy = await window.loadTaxonomy();
+    const parents = {};
+    for (const [id, info] of Object.entries(taxonomy)) {
+        if (!parents[info.parent]) parents[info.parent] = [];
+        parents[info.parent].push(info.label);
+    }
     
-    const sorted = Array.from(keywords).sort();
-    sorted.forEach(k => {
-        const opt = document.createElement('option');
-        opt.value = k;
-        opt.textContent = k;
-        els.keywordFilter.appendChild(opt);
-    });
-}
-
-function renderKeywordTags() {
-    els.keywordTags.innerHTML = '';
-    selectedKeywords.forEach(k => {
-        const span = document.createElement('span');
-        span.className = 'tag-removable';
-        span.innerHTML = `#${k} ✕`;
-        span.onclick = () => {
-            selectedKeywords.delete(k);
-            renderKeywordTags();
+    let html = '';
+    for (const [pName, subs] of Object.entries(parents)) {
+        html += `<div class="cat-parent" style="margin-bottom: 6px;">`;
+        html += `<label style="font-weight: 600; display: flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer; color: var(--text-color);">
+                   <input type="checkbox" value="${pName}" class="cat-checkbox p-cat"> ${pName}
+                 </label>`;
+        html += `<div class="cat-subs" style="margin-left: 20px; margin-top: 4px; display: flex; flex-direction: column; gap: 4px;">`;
+        for (const sub of subs) {
+            html += `<label style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted); cursor: pointer;">
+                       <input type="checkbox" value="${sub}" class="cat-checkbox c-cat"> ${sub}
+                     </label>`;
+        }
+        html += `</div></div>`;
+    }
+    els.categoryTree.innerHTML = html;
+    
+    els.categoryTree.querySelectorAll('.cat-checkbox').forEach(cb => {
+        cb.addEventListener('change', (e) => {
+            const val = e.target.value;
+            if (e.target.checked) {
+                selectedKeywords.add(val);
+            } else {
+                selectedKeywords.delete(val);
+            }
             processAndRender();
-        };
-        els.keywordTags.appendChild(span);
+        });
     });
 }
 
@@ -275,70 +310,46 @@ function processAndRender() {
     const city = 'All';
     const search = els.searchInput.value.toLowerCase();
     
-    const wCost = els.weights.cost ? parseFloat(els.weights.cost.value) : 0.20;
-    const wTuition = els.weights.tuition ? parseFloat(els.weights.tuition.value) : 0.20;
-    const wFit = els.weights.fit ? parseFloat(els.weights.fit.value) : 0.40;
-    const wPros = els.weights.pros ? parseFloat(els.weights.pros.value) : 0.20;
-    const wCons = els.weights.cons ? parseFloat(els.weights.cons.value) : 0.20;
-    const wRanking = els.weights.ranking ? parseFloat(els.weights.ranking.value) : 0.20;
-    
     const showFavs = els.favFilter.checked;
+
+    const weights = {
+        academic_fit: parseFloat(els.weights.academic ? els.weights.academic.value : 30),
+        eligibility_language: parseFloat(els.weights.eligibility ? els.weights.eligibility.value : 20),
+        cost_funding: parseFloat(els.weights.cost ? els.weights.cost.value : 20),
+        career_research: parseFloat(els.weights.career ? els.weights.career.value : 15),
+        living_risk: parseFloat(els.weights.living ? els.weights.living.value : 10),
+        confidence_deadline: parseFloat(els.weights.confidence ? els.weights.confidence.value : 5)
+    };
+
+    const preferences = {
+        selectedKeywords: Array.from(selectedKeywords),
+        degreeFilter: els.hardFilters.degree ? els.hardFilters.degree.value : 'All',
+        onlyEnglish: els.hardFilters.englishOnly ? els.hardFilters.englishOnly.checked : false,
+        maxTuition: els.hardFilters.maxTuition ? parseFloat(els.hardFilters.maxTuition.value) : 0,
+        minFieldFit: 0 // Could add UI for this later
+    };
 
     let filtered = rawData.filter(r => {
         const rid = r.Uni_ID || r.id || r.name || r.university;
         if (showFavs && !favorites.has(rid)) return false;
         if (excludedCountries.size > 0 && excludedCountries.has(r.country)) return false;
         if (selectedCountries.size > 0 && !selectedCountries.has(r.country)) return false;
-        if (city !== 'All' && r.city !== city) return false;
-        if (selectedKeywords.size > 0) {
-            const rTags = r.tags || [];
-            for (let sk of selectedKeywords) {
-                if (!rTags.includes(sk)) return false;
-            }
-        }
+        
         if (search) {
-            const text = `${r.name} ${r.university} ${r.tags_raw} ${r.focus} ${r.city} ${r.country}`.toLowerCase();
+            const text = `${r.name} ${r.university} ${r.tags_raw} ${r.focus} ${r.city} ${r.country} ${r.Analysis_Strong_Areas}`.toLowerCase();
             if (!text.includes(search)) return false;
         }
+
+        // Apply new scoring model and hard filters
+        const scoringResult = window.unirankScoring.calculateScore(r, preferences, weights);
+        if (!scoringResult.passed_hard_filters) {
+            return false; // Skip if hard filters fail
+        }
+
+        // Inject scoring result into the record
+        r._score = scoringResult.total_score / 10.0; // scale 0-10 for UI compatibility
+        r._scoringDetails = scoringResult;
         return true;
-    });
-
-    let sumWeights = wCost + wTuition + wPros + wCons + wRanking;
-    if (sumWeights === 0) sumWeights = 1;
-
-    filtered = filtered.map(r => {
-        const rawCostStr = (r.cost_city_raw || 'medium').toString().toLowerCase().replace(/-/g, '_');
-        const costNum = COST_MAP[rawCostStr] || 3;
-        const costNorm = (costNum - 1) / 4;
-        
-        // Global Min-Max Normalization for Tuition
-        const t = parseFloat(r.tuition_eur_per_year) || 0;
-        let tuitionNorm = (t - globalMinTuition) / (globalMaxTuition - globalMinTuition);
-        tuitionNorm = Math.max(0, Math.min(1.0, tuitionNorm));
-        
-        // Fit is not used currently
-        const fitNorm = 0; 
-        
-        // Global Min-Max Normalization for QS Rank (Lower rank is better, so we invert it by default in scoring)
-        let qsRank = r.qs_ranking || 1000;
-        if (qsRank > 1000) qsRank = 1000;
-        
-        let rankingNorm = (qsRank - globalMinRank) / (globalMaxRank - globalMinRank);
-        rankingNorm = Math.max(0, Math.min(1.0, rankingNorm));
-        
-        let rankingScore = (1.0 - rankingNorm) * 10;
-        let costScore = (1.0 - costNorm) * 10;
-        let tuitionScore = (1.0 - tuitionNorm) * 10;
-        let pLen = (r.pros || []).length;
-        let cLen = (r.cons || []).length;
-        let prosScore = Math.min(10, pLen * 3.33);
-        let consScore = Math.max(0, 10 - cLen * 3.33);
-        
-        
-        let score = (costScore * wCost + tuitionScore * wTuition + prosScore * wPros + consScore * wCons + rankingScore * wRanking) / sumWeights;
-        score = Math.max(0, Math.min(10, score));
-        
-        return { ...r, _score: score, _tuitionNorm: tuitionNorm, _fitNorm: fitNorm, _costNum: costNum };
     });
 
     const sortVal = els.sortSelect.value;
@@ -499,9 +510,27 @@ function openDrawer(data) {
         </div>
         ` : ''}
 
+        ${data._scoringDetails ? `
+        <div class="detail-section">
+            <h4 class="heading-analysis" style="color: var(--primary);">Score Explanation</h4>
+            <div style="background: rgba(99, 102, 241, 0.05); padding: 16px; border-radius: 12px; border: 1px solid rgba(99, 102, 241, 0.2); margin-bottom: 12px;">
+                <ul class="pro-con-list" style="margin: 0; padding-left: 20px; color: var(--text);">
+                    ${data._scoringDetails.explanation.map(e => `<li style="margin-bottom: 6px;">${e}</li>`).join('')}
+                </ul>
+            </div>
+            ${data._scoringDetails.warnings.length > 0 ? `
+            <div style="background: rgba(239, 68, 68, 0.05); padding: 16px; border-radius: 12px; border: 1px solid rgba(239, 68, 68, 0.2);">
+                <ul class="pro-con-list" style="margin: 0; padding-left: 20px; color: var(--danger);">
+                    ${data._scoringDetails.warnings.map(w => `<li style="margin-bottom: 6px;"><strong>Warning:</strong> ${w}</li>`).join('')}
+                </ul>
+            </div>
+            ` : ''}
+        </div>
+        ` : ''}
+
         ${prosHTML || consHTML ? `
         <div class="detail-section">
-            <h4 class="heading-analysis">Analysis</h4>
+            <h4 class="heading-analysis">Additional Notes</h4>
             <div style="display: flex; flex-direction: column; gap: 12px;">
                 ${prosHTML ? `
                 <div style="background: rgba(16, 185, 129, 0.04); padding: 24px; border-radius: 16px; border: 1px solid rgba(16, 185, 129, 0.25); box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.02);">
@@ -545,24 +574,21 @@ function openDrawer(data) {
             window.uniChart.destroy();
         }
         
-        // Calculate radar metrics out of 10
-        const affordabilityMetric = (1 - ((data._costNum - 1) / 4)) * 10; // Cost 5 -> 0, Cost 1 -> 10
-        const tuitionMetric = (1 - (data._tuitionNorm || 0)) * 10;
-        const prosMetric = Math.min(10, ((data.pros || []).length / 3) * 10);
-        const consMetric = Math.max(0, 10 - ((data.cons || []).length / 3) * 10); // More cons = lower score
-        
-        let qsRank = data.qs_ranking || 1000;
-        if (qsRank > 1000) qsRank = 1000;
-        let chartRankingNorm = (qsRank - globalMinRank) / (globalMaxRank - globalMinRank);
-        chartRankingNorm = Math.max(0, Math.min(1.0, chartRankingNorm));
-        const rankingMetric = (1.0 - chartRankingNorm) * 10;
+        // Calculate radar metrics out of 10 based on new scoring components
+        const sd = data._scoringDetails ? data._scoringDetails.components : {};
+        const fitMetric = (sd.academic_fit || 0) / 10;
+        const eligMetric = (sd.eligibility_language || 0) / 10;
+        const costMetric = (sd.cost_funding || 0) / 10;
+        const careerMetric = (sd.career_research || 0) / 10;
+        const livingMetric = (sd.living_risk || 0) / 10;
+        const confMetric = (sd.confidence_deadline || 0) / 10;
 
         window.uniChart = new Chart(ctx.getContext('2d'), {
             type: 'radar',
             data: {
-                labels: ['Affordability', 'Tuition Value', 'Pros Bonus', 'Cons Score', 'Academic Rank', 'Total Score'],
+                labels: ['Academic Fit', 'Eligibility', 'Cost & Fund.', 'Career', 'Living Risk', 'Data Conf.'],
                 datasets: [{
-                    data: [affordabilityMetric, tuitionMetric, prosMetric, consMetric, rankingMetric, data._score],
+                    data: [fitMetric, eligMetric, costMetric, careerMetric, livingMetric, confMetric],
                     backgroundColor: 'rgba(99, 102, 241, 0.25)',
                     borderColor: 'rgba(99, 102, 241, 1)',
                     pointBackgroundColor: 'rgba(139, 92, 246, 1)',
