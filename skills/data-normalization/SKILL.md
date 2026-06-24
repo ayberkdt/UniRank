@@ -187,3 +187,6 @@ Before saving JSON:
 4. Check confidence values.
 5. Check no invented numeric values.
 6. Check no raw unsupported claims.
+
+## Bilingual Data Rule
+Internal keys must be English, while user-facing text (like summaries) must be bilingual (en/tr object).

@@ -1,3 +1,4 @@
+window.AUTH_MODE = 'demo';
 /**
  * Auth & Profile System
  * Currently using "Local Demo Fallback" to simulate a real auth provider (like Supabase).

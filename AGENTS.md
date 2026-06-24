@@ -236,3 +236,13 @@ If any canary test fails, do not finalize the record.
 ## Final Rule
 
 The database must be useful, source-grounded, and honest about uncertainty. Missing data is acceptable. Invented data is not.
+
+## Bilingual Data Rule
+
+Internal keys must be English (e.g. `scientific_ai_computational_digital`), while user-facing text must be bilingual:
+```json
+{
+  "en": "Strong research output in CFD.",
+  "tr": "HAD alanında güçlü araştırma çıktısı."
+}
+```

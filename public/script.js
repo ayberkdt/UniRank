@@ -543,7 +543,40 @@ function openDrawer(data) {
         const hasIndustry = !!data.aerospace_ecosystem;
         const hasLogistics = !!data.housing_difficulty || !!data.admission_mode;
 
+        
+        let profileMatchHTML = '';
+        if (window.personalizationEnabled && data._scoringDetails && data._scoringDetails.personalized_match) {
+            const pm = data._scoringDetails.personalized_match;
+            let mIntHtml = '';
+            if (pm.matched_interests && pm.matched_interests.length > 0) {
+                mIntHtml = pm.matched_interests.map(i => `<li>${window.getCategoryLabel ? window.getCategoryLabel(i.interest_key) : i.interest_key} (${Math.round(i.match_strength*100)}%)</li>`).join('');
+            }
+            let pPenHtml = '';
+            if (pm.profile_penalties && pm.profile_penalties.length > 0) {
+                pPenHtml = pm.profile_penalties.map(p => `<li>${p.reason}</li>`).join('');
+            }
+            
+            profileMatchHTML = `
+            <div class="detail-section personalized-match-section" style="background: rgba(99, 102, 241, 0.05); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 12px; padding: 16px;">
+                <h4 class="heading-analysis" style="color: var(--text-highlight); margin-bottom: 12px;">${t('why_this_match')}</h4>
+                
+                ${mIntHtml ? `
+                <div style="margin-bottom: 12px;">
+                    <strong style="font-size: 13px; color: var(--text-main); display: block; margin-bottom: 4px;">${t('matched_interests')}</strong>
+                    <ul style="font-size: 13px; color: var(--text-muted); padding-left: 20px; margin: 0;">${mIntHtml}</ul>
+                </div>` : ''}
+                
+                ${pPenHtml ? `
+                <div style="margin-bottom: 12px;">
+                    <strong style="font-size: 13px; color: var(--danger); display: block; margin-bottom: 4px;">${t('profile_penalties')}</strong>
+                    <ul style="font-size: 13px; color: var(--danger); padding-left: 20px; margin: 0;">${pPenHtml}</ul>
+                </div>` : ''}
+                
+            </div>`;
+        }
+
         document.getElementById('drawer-info').innerHTML = `
+            ${profileMatchHTML}
             <div class="detail-section">
                 <h4 class="heading-overview">${t('program_details')}</h4>
                 <div class="detail-grid">

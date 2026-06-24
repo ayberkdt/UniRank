@@ -18,6 +18,11 @@ window.openLoginModal = function() {
   const modal = document.getElementById('login-modal');
   if (!modal) return;
   modal.style.display = 'block';
+  
+  const demoWarning = document.getElementById('demo-auth-warning');
+  if (demoWarning && window.AUTH_MODE === 'demo') {
+      demoWarning.style.display = 'block';
+  }
 };
 
 window.closeLoginModal = function() {
@@ -198,8 +203,33 @@ window.handleProfileSubmit = async function(e) {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+  if (typeof window.populateProfileInterestOptions === 'function') {
+      window.populateProfileInterestOptions();
+  }
   const profileForm = document.getElementById('profile-form');
   if (profileForm) {
     profileForm.addEventListener('submit', window.handleProfileSubmit);
   }
 });
+
+
+window.populateProfileInterestOptions = function() {
+    const select = document.getElementById('profile-interest-select');
+    if (!select || !window.INTEREST_GRAPH) return;
+    
+    // Save current selected value if any
+    const currentVal = select.value;
+    
+    select.innerHTML = `<option value="" disabled selected data-i18n="select_field_of_interest">${window.t ? window.t('select_field_of_interest') : 'Select a field of interest...'}</option>`;
+    
+    Object.entries(window.INTEREST_GRAPH).forEach(([key, data]) => {
+        const opt = document.createElement('option');
+        opt.value = key;
+        opt.textContent = window.localizedValue ? window.localizedValue(data.label) : key;
+        select.appendChild(opt);
+    });
+    
+    if (currentVal && window.INTEREST_GRAPH[currentVal]) {
+        select.value = currentVal;
+    }
+};

@@ -146,8 +146,8 @@
         <main class="main-content">
             <header class="top-header">
                 <div class="header-titles">
-                    <h2 data-i18n="app_title">University Ranking Dashboard</h2>
-                    <p data-i18n="app_subtitle">Analyze and compare universities based on your personal criteria</p>
+                    <h2 data-i18n="dashboard_title">University Ranking Dashboard</h2>
+                    <p data-i18n="dashboard_subtitle">Analyze and compare universities based on your personal criteria</p>
                 </div>
                 
                 <div style="display:flex; align-items:center; gap: 16px;">
@@ -213,7 +213,7 @@
                                 <th data-i18n="col_university">University</th>
                                 <th data-i18n="col_city">City</th>
                                 <th data-i18n="col_country">Country</th>
-                                <th data-i18n="profile_match">Profile Match</th>
+                                <th id="profile-match-header" data-i18n="profile_match">Profile Match</th>
                                 <th data-i18n="col_score">Score</th>
                                 <th data-i18n="col_tuition">Tuition (Yearly)</th>
                                 <th data-i18n="col_detail">Detail</th>
@@ -258,7 +258,7 @@
             <p style="font-size:14px; color:var(--text-muted); margin-bottom: 24px;">Sign in to save your profile and preferences. (Local Demo Mode)</p>
             <form id="login-form" onsubmit="window.handleLoginSubmit(event)">
                 <div class="form-group">
-                    <label>Email Address</label>
+                    <label data-i18n="email_address">Email Address</label>
                     <input type="email" id="login-email" required placeholder="you@example.com" class="modern-input" style="width:100%; padding:10px; border-radius:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:var(--text-main); margin-bottom:16px;">
                 </div>
                 <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:12px;">Sign In / Create Account</button>
@@ -278,7 +278,7 @@
                 <h3 style="margin-bottom:12px; color:var(--primary); font-size:16px;" data-i18n="academic_background">Academic Background</h3>
                 <div class="detail-grid" style="margin-bottom:24px;">
                     <div class="form-group detail-item">
-                        <label>Target Degree</label>
+                        <label data-i18n="target_degree">Target Degree</label>
                         <select id="profile-target-degree" class="modern-input" style="width:100%;">
                             <option value="All">Any Degree</option>
                             <option value="BSc">Bachelor (BSc)</option>
@@ -333,14 +333,14 @@
                 <h3 style="margin-bottom:12px; color:var(--primary); font-size:16px;" data-i18n="language_preferences">Language & Risk</h3>
                 <div class="detail-grid" style="margin-bottom:32px;">
                     <div class="form-group detail-item">
-                        <label>Language Filter</label>
+                        <label data-i18n="language_preferences">Language Preferences</label>
                         <select id="profile-lang-filter" class="modern-input" style="width:100%;">
-                            <option value="any">Any Language</option>
-                            <option value="english_only">Strictly English-Only</option>
+                            <option value="any" data-i18n="any_language">Any Language</option>
+                            <option value="english_only" data-i18n="strictly_english_only">Strictly English-Only</option>
                         </select>
                     </div>
                     <div class="form-group detail-item">
-                        <label>Admission Risk Tolerance</label>
+                        <label data-i18n="admission_risk_tolerance">Admission Risk Tolerance</label>
                         <select id="profile-admission-risk" class="modern-input" style="width:100%;">
                             <option value="low">Low (Prefer direct admission)</option>
                             <option value="medium" selected>Medium</option>
@@ -348,7 +348,7 @@
                         </select>
                     </div>
                     <div class="form-group detail-item">
-                        <label>Housing Risk Tolerance</label>
+                        <label data-i18n="housing_risk_tolerance">Housing Risk Tolerance</label>
                         <select id="profile-housing-risk" class="modern-input" style="width:100%;">
                             <option value="low">Low (Avoid nightmare housing markets)</option>
                             <option value="medium" selected>Medium</option>

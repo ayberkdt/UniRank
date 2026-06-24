@@ -154,6 +154,30 @@ window.I18N = {
     confidence_low: "Low confidence",
     confidence_unknown: "Unknown confidence",
 
+
+    demo_warning: "Demo mode: profile data is stored locally in this browser. Real account sync is not enabled yet.",
+    continue_demo: "Continue with Demo Profile",
+    why_this_match: "Why this match?",
+    matched_interests: "Matched interests",
+    profile_penalties: "Profile penalties",
+    profile_boosts: "Profile boosts",
+    select_field_of_interest: "Select a field of interest...",
+    add: "Add",
+    none: "None",
+    strict_budget: "Strict Budget",
+    any_language: "Any Language",
+    strictly_english_only: "Strictly English-Only",
+    admission_risk_tolerance: "Admission Risk Tolerance",
+    housing_risk_tolerance: "Housing Risk Tolerance",
+    cancel: "Cancel",
+    welcome: "Welcome",
+    sign_in_save: "Sign in to save your profile...",
+    email_address: "Email Address",
+    sign_in_create: "Sign In / Create Account",
+    complete_profile: "Complete your profile...",
+    target_degree: "Target Degree",
+    any_degree: "Any Degree",
+
     tr: "TR",
     en: "EN"
   },
@@ -311,6 +335,30 @@ window.I18N = {
     confidence_low: "Düşük güven",
     confidence_unknown: "Bilinmeyen güven",
 
+
+    demo_warning: "Demo modu: profil verisi yalnızca bu tarayıcıda saklanır. Gerçek hesap senkronizasyonu henüz aktif değil.",
+    continue_demo: "Demo Profil ile Devam Et",
+    why_this_match: "Bu eşleşme neden oluştu?",
+    matched_interests: "Eşleşen ilgi alanları",
+    profile_penalties: "Profil kaynaklı cezalar",
+    profile_boosts: "Profil kaynaklı artılar",
+    select_field_of_interest: "Bir ilgi alanı seçin...",
+    add: "Ekle",
+    none: "Yok",
+    strict_budget: "Kesin Bütçe Sınırı",
+    any_language: "Farketmez (Her Dil)",
+    strictly_english_only: "Kesinlikle Sadece İngilizce",
+    admission_risk_tolerance: "Kabul Risk Toleransı",
+    housing_risk_tolerance: "Barınma Risk Toleransı",
+    cancel: "İptal",
+    welcome: "Hoş Geldiniz",
+    sign_in_save: "Profilinizi kaydetmek için giriş yapın...",
+    email_address: "E-posta Adresi",
+    sign_in_create: "Giriş Yap / Hesap Oluştur",
+    complete_profile: "Profilinizi tamamlayın...",
+    target_degree: "Hedef Derece",
+    any_degree: "Herhangi Bir Derece",
+
     tr: "TR",
     en: "EN"
   }
@@ -346,19 +394,15 @@ window.setLanguage = function(lang) {
 
   window.currentLanguage = lang;
   localStorage.setItem("unirank_language", lang);
+  document.documentElement.lang = lang;
 
   window.applyTranslations();
   window.updateLanguageToggleUI();
 
-  // Re-render UI components if they exist
-  if (typeof window.processAndRender === "function") {
-    window.processAndRender();
-  }
-  
-  // Re-render components that are dynamically generated like categories
-  if (typeof window.renderCategoryUI === "function") {
-    window.renderCategoryUI();
-  }
+  if (typeof window.renderCountryFilter === "function") window.renderCountryFilter();
+  if (typeof window.renderCategoryUI === "function") window.renderCategoryUI();
+  if (typeof window.populateProfileInterestOptions === "function") window.populateProfileInterestOptions();
+  if (typeof window.processAndRender === "function") window.processAndRender();
 };
 
 window.updateLanguageToggleUI = function() {
@@ -422,3 +466,88 @@ window.applyTranslations = function() {
 document.addEventListener("DOMContentLoaded", () => {
     window.updateLanguageToggleUI();
 });
+
+
+window.REGION_GROUPS = {
+  europe: {
+    label: { en: "Europe", tr: "Avrupa" },
+    countries: ["Germany", "Netherlands", "France", "Italy", "Spain", "Sweden", "Switzerland", "Denmark", "Belgium", "Portugal", "Austria"]
+  },
+  east_asia: {
+    label: { en: "East Asia", tr: "Doğu Asya" },
+    countries: ["Japan", "South Korea", "China"]
+  },
+  low_tuition_europe: {
+    label: { en: "Low Tuition Europe", tr: "Düşük Ücretli Avrupa" },
+    countries: ["Germany", "France", "Italy", "Portugal", "Austria"]
+  },
+  space_ecosystem_hotspots: {
+    label: { en: "Space Ecosystem Hotspots", tr: "Uzay Ekosistemi Merkezleri" },
+    countries: ["Germany", "Netherlands", "France", "Italy", "United States", "Japan"]
+  }
+};
+
+window.CATEGORY_GROUPS = {
+  fluid_aerodynamics: {
+    label: {
+      en: "Fluid Mechanics & Aerodynamics",
+      tr: "Akışkanlar Mekaniği ve Aerodinamik"
+    }
+  },
+  flight_control_autonomy: {
+    label: {
+      en: "Flight Mechanics, Control & Autonomy",
+      tr: "Uçuş Mekaniği, Kontrol ve Otonomi"
+    }
+  },
+  space_systems_astronautics: {
+    label: {
+      en: "Space Systems & Astronautics",
+      tr: "Uzay Sistemleri ve Astronotik"
+    }
+  },
+  propulsion_energy_thermal: {
+    label: {
+      en: "Propulsion, Energy & Thermal Systems",
+      tr: "İtki, Enerji ve Termal Sistemler"
+    }
+  },
+  structures_materials_design: {
+    label: {
+      en: "Structures, Materials & Mechanical Design",
+      tr: "Yapılar, Malzemeler ve Mekanik Tasarım"
+    }
+  },
+  systems_design_optimization: {
+    label: {
+      en: "Systems Engineering, Design & Optimization",
+      tr: "Sistem Mühendisliği, Tasarım ve Optimizasyon"
+    }
+  },
+  avionics_software_digital: {
+    label: {
+      en: "Avionics, Software & Digital Technologies",
+      tr: "Aviyonik, Yazılım ve Sayısal Teknolojiler"
+    }
+  },
+  manufacturing_testing_industry: {
+    label: {
+      en: "Manufacturing, Testing & Industrial Applications",
+      tr: "Üretim, Test ve Endüstriyel Uygulamalar"
+    }
+  },
+  scientific_ai_computational_digital: {
+    label: {
+      en: "Scientific AI, Computational Science & Digital Engineering",
+      tr: "Bilimsel Yapay Zekâ, Hesaplamalı Bilim ve Dijital Mühendislik"
+    }
+  }
+};
+
+window.getCategoryLabel = function(key) {
+    if (window.CATEGORY_GROUPS[key]) {
+        return window.localizedValue(window.CATEGORY_GROUPS[key].label);
+    }
+    return key;
+};
+

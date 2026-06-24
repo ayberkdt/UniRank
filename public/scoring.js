@@ -77,16 +77,24 @@ function calculateScore(record, preferences, weights) {
             let matched = false;
             let matchType = '';
             
-            if (recordTags.has(interestKey)) {
+            // Get legacy label just in case the record hasn't been migrated yet
+            const legacyLabel = window.INTEREST_GRAPH && window.INTEREST_GRAPH[interestKey] ? window.INTEREST_GRAPH[interestKey].label.en : interestKey;
+            
+            if (recordTags.has(interestKey) || recordTags.has(legacyLabel)) {
                 score += userWeight;
                 matched = true;
                 matchType = 'direct';
-            } else if (catProfile.subcategories.includes(interestKey)) {
+            } else if (catProfile.subcategories.includes(interestKey) || catProfile.subcategories.includes(legacyLabel)) {
                 score += userWeight;
                 matched = true;
                 matchType = 'direct';
             } else if (catProfile.category_scores[interestKey]) {
                 const ratio = catProfile.category_scores[interestKey] / 100;
+                score += userWeight * ratio;
+                matched = true;
+                matchType = 'partial';
+            } else if (catProfile.category_scores[legacyLabel]) {
+                const ratio = catProfile.category_scores[legacyLabel] / 100;
                 score += userWeight * ratio;
                 matched = true;
                 matchType = 'partial';
@@ -193,9 +201,19 @@ function calculateScore(record, preferences, weights) {
     let semFeeScore = (1.0 - semFeeNorm) * 100;
 
     let scholarshipScore = 0;
-    if (record.Scholarships_Info && record.Scholarships_Info.length > 0) {
+    const sp = record.scholarship_profile || {};
+    if (sp.non_eu_eligible === true) {
         scholarshipScore = 100;
         explanation.push(`Scholarships are available for non-EU students.`);
+    } else if (sp.regional_scholarship_available === true) {
+        scholarshipScore = 80;
+        explanation.push(`Regional/DSU scholarships available.`);
+    } else if (sp.non_eu_eligible === false) {
+        scholarshipScore = 0;
+    } else if (record.Scholarships_Info && record.Scholarships_Info.length > 0) {
+        // Fallback for legacy records
+        scholarshipScore = 60;
+        explanation.push(`Some scholarship information available (needs verification).`);
     }
 
     costFit = (tuitionScore * 0.7) + (semFeeScore * 0.2) + (scholarshipScore * 0.1);
