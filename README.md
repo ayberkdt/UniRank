@@ -75,3 +75,17 @@ vercel
 ## 🤝 Katkıda Bulunma
 
 Hata bildirimleri ve yeni özellik istekleri için lütfen [Issues](../../issues) bölümünü kullanın veya Pull Request açın.
+
+## Research Integrity
+
+All university research and database updates must follow `AGENTS.md` and the skills under `skills/`.
+
+Before adding or updating a university record, run:
+
+1. `skills/university-research/SKILL.md`
+2. `skills/source-verification/SKILL.md`
+3. `skills/student-sentiment/SKILL.md`
+4. `skills/data-normalization/SKILL.md`
+5. `skills/quality-control/SKILL.md`
+
+Do not add unsourced values to the database.

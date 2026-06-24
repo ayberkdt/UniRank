@@ -58,9 +58,16 @@
                     <input type="checkbox" id="english-only-filter" style="width: auto; cursor: pointer;">
                     <label for="english-only-filter" style="margin: 0; cursor: pointer;">Only English-taught</label>
                 </div>
-                <div class="form-group" style="margin-top: 8px;">
-                    <label>Max Tuition (€/yr)</label>
-                    <input type="number" id="max-tuition-filter" placeholder="e.g. 5000">
+                <div class="form-group" style="margin-top: 16px; padding: 16px; background: rgba(0,0,0,0.2); border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                    <label style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <span style="font-weight: 600; color: var(--text-main); font-size: 14px;">Max Tuition</span>
+                        <span id="tuition-val-display" style="color: var(--success); font-weight: 700; background: rgba(16, 185, 129, 0.1); padding: 4px 10px; border-radius: 12px; font-size: 12px; border: 1px solid rgba(16, 185, 129, 0.2);">Any</span>
+                    </label>
+                    <input type="range" id="max-tuition-filter" min="0" max="25000" step="500" value="25000" class="modern-range">
+                    <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted); margin-top: 8px; font-weight: 500;">
+                        <span>0€</span>
+                        <span>25k€+</span>
+                    </div>
                 </div>
                 <div class="form-group" style="flex-direction: row; align-items: center; gap: 8px; margin-top: 16px; margin-bottom: 8px;">
                     <input type="checkbox" id="fav-filter" style="width: auto; cursor: pointer;">
@@ -133,25 +140,31 @@
             </header>
 
             <div class="kpi-container">
-                <div class="kpi-card">
-                    <div class="kpi-icon">🏛️</div>
+                <div class="kpi-card glow-primary">
+                    <div class="kpi-icon">🌍</div>
                     <div class="kpi-data">
-                        <span class="kpi-label">Total Schools</span>
-                        <span class="kpi-value" id="kpi-total">0</span>
+                        <span class="kpi-label">Programs Found</span>
+                        <div style="display: flex; align-items: baseline; gap: 4px;">
+                            <span class="kpi-value" id="kpi-total">0</span>
+                            <span style="font-size: 13px; color: var(--text-muted); font-weight: 500;">across <span id="kpi-countries" style="color: var(--text-main);">0</span> countries</span>
+                        </div>
                     </div>
                 </div>
-                <div class="kpi-card">
-                    <div class="kpi-icon">💰</div>
+                <div class="kpi-card glow-success">
+                    <div class="kpi-icon">💳</div>
                     <div class="kpi-data">
-                        <span class="kpi-label">Avg. Tuition Fee</span>
-                        <span class="kpi-value" id="kpi-tuition">0€</span>
+                        <span class="kpi-label">Avg. Yearly Tuition</span>
+                        <span class="kpi-value" id="kpi-tuition" style="color: var(--success);">0€</span>
                     </div>
                 </div>
-                <div class="kpi-card">
-                    <div class="kpi-icon">⭐</div>
+                <div class="kpi-card glow-warning">
+                    <div class="kpi-icon">🎯</div>
                     <div class="kpi-data">
-                        <span class="kpi-label">Avg. Score</span>
-                        <span class="kpi-value" id="kpi-score">0.0</span>
+                        <span class="kpi-label">Avg. Overall Score</span>
+                        <div style="display: flex; align-items: baseline; gap: 4px;">
+                            <span class="kpi-value" id="kpi-score" style="color: #fbbf24;">0.0</span>
+                            <span style="font-size: 15px; color: var(--text-muted); font-weight: 600;">/ 10</span>
+                        </div>
                     </div>
                 </div>
             </div>

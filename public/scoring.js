@@ -10,7 +10,7 @@ function normalizeText(text) {
 
 // In the browser context, buildCategoryProfile is expected to be available globally (loaded from taxonomy.js).
 
-async function calculateScore(record, preferences, weights) {
+function calculateScore(record, preferences, weights) {
     const explanation = [];
     const warnings = [];
 
@@ -55,12 +55,7 @@ async function calculateScore(record, preferences, weights) {
     // Ensure we have a category profile
     let catProfile = record.Category_Profile;
     if (!catProfile) {
-        if (typeof buildCategoryProfile === 'function') {
-            catProfile = await buildCategoryProfile(record);
-            record.Category_Profile = catProfile;
-        } else {
-            catProfile = { category_scores: {}, subcategories: [], normalized_tags: [] };
-        }
+        catProfile = { category_scores: {}, subcategories: [], normalized_tags: [] };
     }
 
     // 1. Academic / Field Fit (0-100)

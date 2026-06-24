@@ -101,6 +101,14 @@ async function fetchData() {
             populateCountryFilter();
             populateCountryExcludeFilter();
             await populateCategoryTree();
+            
+            // Pre-calculate category profiles synchronously for the UI
+            for (let r of rawData) {
+                if (!r.Category_Profile && typeof window.buildCategoryProfile === 'function') {
+                    r.Category_Profile = await window.buildCategoryProfile(r);
+                }
+            }
+            
             processAndRender();
         } else {
             console.error("API Error:", json.message);
@@ -156,8 +164,24 @@ function setupEventListeners() {
     Object.keys(els.hardFilters).forEach(k => {
         if (els.hardFilters[k]) {
             els.hardFilters[k].addEventListener('change', processAndRender);
-            if (els.hardFilters[k].type === 'number') {
-                els.hardFilters[k].addEventListener('input', () => {
+            if (els.hardFilters[k].type === 'number' || els.hardFilters[k].type === 'range') {
+                els.hardFilters[k].addEventListener('input', (e) => {
+                    if (k === 'maxTuition') {
+                        const valDisplay = document.getElementById('tuition-val-display');
+                        if (valDisplay) {
+                            if (e.target.value >= 25000) {
+                                valDisplay.textContent = 'Any';
+                                valDisplay.style.color = 'var(--success)';
+                                valDisplay.style.borderColor = 'rgba(16, 185, 129, 0.2)';
+                                valDisplay.style.background = 'rgba(16, 185, 129, 0.1)';
+                            } else {
+                                valDisplay.textContent = `≤ €${e.target.value}`;
+                                valDisplay.style.color = 'var(--text-main)';
+                                valDisplay.style.borderColor = 'var(--border-color)';
+                                valDisplay.style.background = 'rgba(255,255,255,0.05)';
+                            }
+                        }
+                    }
                     clearTimeout(window.renderTimeout);
                     window.renderTimeout = setTimeout(processAndRender, 200);
                 });
@@ -325,7 +349,7 @@ function processAndRender() {
         selectedKeywords: Array.from(selectedKeywords),
         degreeFilter: els.hardFilters.degree ? els.hardFilters.degree.value : 'All',
         onlyEnglish: els.hardFilters.englishOnly ? els.hardFilters.englishOnly.checked : false,
-        maxTuition: els.hardFilters.maxTuition ? parseFloat(els.hardFilters.maxTuition.value) : 0,
+        maxTuition: (els.hardFilters.maxTuition && parseFloat(els.hardFilters.maxTuition.value) < 25000) ? parseFloat(els.hardFilters.maxTuition.value) : 0,
         minFieldFit: 0 // Could add UI for this later
     };
 
@@ -368,15 +392,35 @@ function processAndRender() {
 
 function renderKPIs() {
     els.kpi.total.textContent = filteredData.length;
+    const countriesSet = new Set();
+    
     if (filteredData.length > 0) {
-        const avgTuition = filteredData.reduce((acc, r) => acc + (parseFloat(r.tuition_eur_per_year)||0), 0) / filteredData.length;
-        const avgScore = filteredData.reduce((acc, r) => acc + r._score, 0) / filteredData.length;
+        let totalTuit = 0;
+        let validTuitCount = 0;
+        let totalScore = 0;
+        
+        filteredData.forEach(r => {
+            if (r.country) countriesSet.add(r.country);
+            const tuit = parseFloat(r.tuition_eur_per_year) || 0;
+            if (tuit > 0) {
+                totalTuit += tuit;
+                validTuitCount++;
+            }
+            totalScore += r._score;
+        });
+        
+        const avgTuition = validTuitCount > 0 ? totalTuit / validTuitCount : 0;
+        const avgScore = totalScore / filteredData.length;
+        
         els.kpi.tuition.textContent = `€${avgTuition.toFixed(0)}`;
         els.kpi.score.textContent = avgScore.toFixed(2);
     } else {
         els.kpi.tuition.textContent = "€0";
         els.kpi.score.textContent = "0.0";
     }
+    
+    const kpiCountries = document.getElementById('kpi-countries');
+    if (kpiCountries) kpiCountries.textContent = countriesSet.size;
 }
 
 function renderTable() {
