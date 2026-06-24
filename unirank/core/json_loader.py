@@ -75,6 +75,12 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
             if strict: raise ValueError(f"Error parsing {file}: {e}")
             continue
             
+        if file.name == "taxonomy.json" or file.name.startswith("taxonomy"):
+            continue
+
+        if isinstance(data, dict) and "universities" in data:
+            data = data["universities"]
+
         if not isinstance(data, list):
             data = [data]
             
@@ -82,6 +88,89 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
         
         for i, entry in enumerate(data):
             report.records_seen += 1
+            
+            # Intercept new 14-profile schema without Pydantic validation
+            if "eligibility_profile" in entry and "cost_profile" in entry:
+                if not entry.get("eligibility_profile", {}).get("eligible_for_non_eu", True):
+                    report.add(LoadIssue.warn(file.name, "Skipped record due to non-EU ineligibility", record_index=i, record_id=entry.get("id")))
+                    continue
+                
+                cat_prof = entry.get("category_profile", {})
+                categories = cat_prof.get("primary_categories", []) + cat_prof.get("secondary_categories", [])
+                
+                tuit_eur = entry.get("cost_profile", {}).get("tuition_eur_per_year_estimated", 0.0)
+                
+                row = {
+                    "id": entry.get("id", ""),
+                    "name": entry.get("university", ""),
+                    "display_name": entry.get("university_native_name") or entry.get("university", ""),
+                    "short": "",
+                    "university": entry.get("university", ""),
+                    "city": entry.get("city", ""),
+                    "state": entry.get("region", ""),
+                    "country": entry.get("country", ""),
+                    "scope": "non_eu",
+                    "needs_verification": entry.get("source_profile", {}).get("needs_verification", False),
+                    "cost_city": entry.get("living_profile", {}).get("city_cost_level", ""),
+                    "cost_city_raw": entry.get("living_profile", {}).get("city_cost_level", ""),
+                    "city_cost_rank": 0.0,
+                    "semester_fee_eur": entry.get("cost_profile", {}).get("enrollment_fee_eur"),
+                    "semester_fees_json": "[]",
+                    "tuition_eur_per_year": tuit_eur,
+                    "annual_fee_eur": tuit_eur,
+                    "tuition_raw": str(tuit_eur),
+                    "tuition_program": "",
+                    "tuition_period": "year",
+                    "tuition_scope": "non_eu",
+                    "tuition_json": "[]",
+                    "aerospace_ecosystem": entry.get("industry_ecosystem_profile", {}).get("ecosystem_notes", ""),
+                    "strong_areas_summary": entry.get("research_profile", {}).get("research_strength_summary", ""),
+                    "strength": entry.get("research_profile", {}).get("research_strength_summary", ""),
+                    "focus": ", ".join(categories),
+                    "pros": entry.get("decision_summary", {}).get("main_strengths", []),
+                    "cons": entry.get("decision_summary", {}).get("main_risks", []),
+                    "tags": categories,
+                    "tags_raw": ", ".join(categories),
+                    "target_program_name": entry.get("program_name", ""),
+                    "target_program_degree": entry.get("program_degree", ""),
+                    "target_program_ects": entry.get("ects"),
+                    "target_program_url": entry.get("program_url", ""),
+                    "target_program_json": "{}",
+                    "admission_mode": entry.get("eligibility_profile", {}).get("admission_mode", ""),
+                    "language_req": entry.get("language_profile", {}).get("english_level_required", ""),
+                    "internship_mandatory": entry.get("curriculum_profile", {}).get("internship_required", False),
+                    "internship_notes": "",
+                    "deadline_winter_opens": "",
+                    "deadline_winter_closes": entry.get("application_timeline_profile", {}).get("non_eu_deadline", ""),
+                    "deadline_summer_opens": "",
+                    "deadline_summer_closes": "",
+                    "deadlines_note": "",
+                    "deadlines_json": "{}",
+                    "housing_difficulty": entry.get("living_profile", {}).get("housing_difficulty", ""),
+                    "housing_difficulty_score": 0.0,
+                    "key_partners": entry.get("industry_ecosystem_profile", {}).get("nearby_companies", []),
+                    "industry_focus_json": "{}",
+                    "logistics_json": "{}",
+                    "admission_details_json": "{}",
+                    "scholarship_names": entry.get("scholarship_profile", {}).get("regional_scholarship_name", ""),
+                    "scholarships_json": "[]",
+                    "sources_json": "[]",
+                    "qs_ranking": None,
+                    "global_recognition": "",
+                    "field_recognition": "",
+                    "source_file": file.name,
+                    "updated_at": entry.get("source_profile", {}).get("last_verified", "")
+                }
+                
+                # Dynamic scoring inputs directly mapped from new schema
+                scoring_inputs = entry.get("scoring_inputs", {})
+                if scoring_inputs:
+                    row["_scoring_inputs"] = scoring_inputs
+                    
+                rows.append(row)
+                report.records_loaded += 1
+                continue
+
             try:
                 model = UniversityRecord.model_validate(entry)
             except ValidationError as e:
