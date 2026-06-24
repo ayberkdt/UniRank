@@ -500,220 +500,225 @@ function renderTable() {
 }
 
 function openDrawer(data) {
-    els.drawer.title.textContent = data.display_name || data.name;
-    
-    const rid = data.Uni_ID || data.id || data.name || data.university;
-    const isFav = favorites.has(rid);
-    els.drawer.favBtn.innerHTML = isFav ? '⭐' : '☆';
-    els.drawer.favBtn.onclick = () => {
-        toggleFavorite(rid);
-        els.drawer.favBtn.innerHTML = favorites.has(rid) ? '⭐' : '☆';
-    };
-
-    // Generate Pros / Cons HTML
-    let prosHTML = '';
-    let consHTML = '';
-    
-    let localizedPros = window.localizedArray ? window.localizedArray(data.pros) : data.pros;
-    let localizedCons = window.localizedArray ? window.localizedArray(data.cons) : data.cons;
-    
-    if (localizedPros && localizedPros.length) {
-        prosHTML = localizedPros.map(p => `<li class="pro"><span class="pro-text">${p}</span></li>`).join('');
-    }
-    if (localizedCons && localizedCons.length) {
-        consHTML = localizedCons.map(c => `<li class="con"><span class="con-text">${c}</span></li>`).join('');
-    }
-    
-    // Generate Tags HTML
-    let tagsHTML = '';
-    if (data.tags && data.tags.length) {
-        tagsHTML = data.tags.map(t => `<span class="tag">#${t}</span>`).join('');
-    }
-
-    const cleanCountry = data.country ? data.country.replace(/^[^a-zA-ZçğıöşüÇĞİÖŞÜ]+/, '').trim() : '-';
-    const displayCountry = window.getCountryName ? window.getCountryName(cleanCountry) : cleanCountry;
-
-    const t = window.t || (k => k);
-
-    document.getElementById('drawer-info').innerHTML = `
-        <div class="detail-section">
-            <h4 class="heading-overview">${t('program_details')}</h4>
-            <div class="detail-grid">
-                <div class="detail-item">
-                    <label>${t('col_country')}</label>
-                    <span class="country-gradient" data-country="${cleanCountry}">${displayCountry}</span>
-                </div>
-                <div class="detail-item">
-                    <label>${t('col_city')}</label>
-                    <span>${window.localizedValue(data.city) || '-'}</span>
-                </div>
-                <div class="detail-item">
-                    <label>${t('col_score')}</label>
-                    <span style="color: var(--text-highlight)">${data._score.toFixed(2)} / 10.0</span>
-                </div>
-                <div class="detail-item">
-                    <label>${t('city_cost')}</label>
-                    <span style="text-transform: capitalize">${t('risk_' + (data.cost_city_raw || 'unknown'))}</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="detail-section">
-            <h4 class="heading-rankings">Rankings & Recognition</h4>
-            <div class="detail-grid">
-                <div class="detail-item">
-                    <label>QS Ranking</label>
-                    <span>#${data.qs_ranking || 'N/A'}</span>
-                </div>
-                <div class="detail-item">
-                    <label>Global Recognition</label>
-                    <span>${window.localizedValue(data.global_recognition) || 'Unknown'}</span>
-                </div>
-                <div class="detail-item">
-                    <label>Field Recognition</label>
-                    <span>${window.localizedValue(data.field_recognition) || 'Unknown'}</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="detail-section">
-            <h4 class="heading-financials">${t('cost_funding')}</h4>
-            <div class="detail-grid">
-                <div class="detail-item">
-                    <label>${t('semester_fee')}</label>
-                    <span>€${parseFloat(data.semester_fee_eur || 0).toFixed(2)}</span>
-                </div>
-                <div class="detail-item">
-                    <label>${t('yearly_tuition')}</label>
-                    <span>€${parseFloat(data.tuition_eur_per_year || 0).toFixed(2)}</span>
-                </div>
-            </div>
-        </div>
+    try {
+        els.drawer.title.textContent = data.display_name || data.name || data.university_name || 'Details';
         
-        ${tagsHTML ? `
-        <div class="detail-section">
-            <h4 class="heading-tags">Tags</h4>
-            <div class="tag-list">
-                ${tagsHTML}
-            </div>
-        </div>
-        ` : ''}
+        const rid = data.Uni_ID || data.id || data.name || data.university || data.university_name;
+        const isFav = favorites.has(rid);
+        els.drawer.favBtn.innerHTML = isFav ? '★' : '☆';
+        els.drawer.favBtn.onclick = () => {
+            toggleFavorite(rid);
+            els.drawer.favBtn.innerHTML = favorites.has(rid) ? '★' : '☆';
+        };
 
-        ${data._scoringDetails ? `
-        <div class="detail-section">
-            <h4 class="heading-analysis" style="color: var(--primary);">${t('why_this_score')}</h4>
-            <div style="background: rgba(99, 102, 241, 0.05); padding: 16px; border-radius: 12px; border: 1px solid rgba(99, 102, 241, 0.2); margin-bottom: 12px;">
-                <ul class="pro-con-list" style="margin: 0; padding-left: 20px; color: var(--text);">
-                    ${window.localizedArray(data._scoringDetails.explanation).map(e => `<li style="margin-bottom: 6px;">${e}</li>`).join('')}
-                </ul>
-            </div>
-            ${data._scoringDetails.warnings.length > 0 ? `
-            <div style="background: rgba(239, 68, 68, 0.05); padding: 16px; border-radius: 12px; border: 1px solid rgba(239, 68, 68, 0.2);">
-                <ul class="pro-con-list" style="margin: 0; padding-left: 20px; color: var(--danger);">
-                    ${window.localizedArray(data._scoringDetails.warnings).map(w => `<li style="margin-bottom: 6px;"><strong>Warning:</strong> ${w}</li>`).join('')}
-                </ul>
-            </div>
-            ` : ''}
-        </div>
-        ` : ''}
-
-        ${prosHTML || consHTML ? `
-        <div class="detail-section">
-            <h4 class="heading-analysis">Additional Notes</h4>
-            <div style="display: flex; flex-direction: column; gap: 12px;">
-                ${prosHTML ? `
-                <div style="background: rgba(16, 185, 129, 0.04); padding: 24px; border-radius: 16px; border: 1px solid rgba(16, 185, 129, 0.25); box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.02);">
-                    <ul class="pro-con-list">${prosHTML}</ul>
-                </div>
-                ` : ''}
-                ${consHTML ? `
-                <div style="background: rgba(239, 68, 68, 0.04); padding: 24px; border-radius: 16px; border: 1px solid rgba(239, 68, 68, 0.25); box-shadow: inset 0 0 20px rgba(239, 68, 68, 0.02);">
-                    <ul class="pro-con-list">${consHTML}</ul>
-                </div>
-                ` : ''}
-            </div>
-        </div>
-        ` : ''}
+        let prosHTML = '';
+        let consHTML = '';
         
-        ${data.target_program_name ? `
-        <div class="detail-section">
-            <h4>Target Program</h4>
-            <div class="detail-grid">
-                <div class="detail-item" style="grid-column: span 2">
-                    <label>Name</label>
-                    <span>${data.target_program_name}</span>
-                </div>
-                <div class="detail-item">
-                    <label>Degree</label>
-                    <span>${data.target_program_degree || '-'}</span>
-                </div>
-                <div class="detail-item">
-                    <label>URL</label>
-                    <span>${data.target_program_url ? `<a href="${data.target_program_url}" target="_blank" style="color:var(--text-highlight)">Visit Program ↗</a>` : '-'}</span>
-                </div>
-            </div>
-        </div>
-        ` : ''}
-    `;
-
-    // Render Chart
-    const ctx = document.getElementById('radarChart');
-    if (ctx) {
-        if (window.uniChart) {
-            window.uniChart.destroy();
+        let localizedPros = window.localizedArray ? window.localizedArray(data.pros || []) : (data.pros || []);
+        let localizedCons = window.localizedArray ? window.localizedArray(data.cons || []) : (data.cons || []);
+        
+        if (localizedPros && localizedPros.length) {
+            prosHTML = localizedPros.map(p => `<li class="pro"><span class="pro-text">${p}</span></li>`).join('');
+        }
+        if (localizedCons && localizedCons.length) {
+            consHTML = localizedCons.map(c => `<li class="con"><span class="con-text">${c}</span></li>`).join('');
         }
         
-        // Calculate radar metrics out of 10 based on new scoring components
-        const sd = data._scoringDetails ? data._scoringDetails.components : {};
-        const fitMetric = (sd.academic_fit || 0) / 10;
-        const eligMetric = (sd.eligibility_language || 0) / 10;
-        const costMetric = (sd.cost_funding || 0) / 10;
-        const careerMetric = (sd.career_research || 0) / 10;
-        const livingMetric = (sd.living_risk || 0) / 10;
-        const confMetric = (sd.confidence_deadline || 0) / 10;
+        let tagsHTML = '';
+        if (data.tags && data.tags.length) {
+            tagsHTML = data.tags.map(t => `<span class="tag">#${t}</span>`).join('');
+        }
 
-        window.uniChart = new Chart(ctx.getContext('2d'), {
-            type: 'radar',
-            data: {
-                labels: ['Academic Fit', 'Eligibility', 'Cost & Fund.', 'Career', 'Living Risk', 'Data Conf.'],
-                datasets: [{
-                    data: [fitMetric, eligMetric, costMetric, careerMetric, livingMetric, confMetric],
-                    backgroundColor: 'rgba(99, 102, 241, 0.25)',
-                    borderColor: 'rgba(99, 102, 241, 1)',
-                    pointBackgroundColor: 'rgba(139, 92, 246, 1)',
-                    pointBorderColor: '#fff',
-                    pointHoverBackgroundColor: '#fff',
-                    pointHoverBorderColor: 'rgba(139, 92, 246, 1)'
-                }]
-            },
-            options: {
-                scales: {
-                    r: {
-                        angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
-                        grid: { color: 'rgba(255, 255, 255, 0.1)' },
-                        pointLabels: { color: '#94a3b8', font: { family: 'Inter', size: 11 } },
-                        ticks: { display: false, min: 0, max: 10 }
-                    }
+        const cleanCountry = data.country ? String(data.country).replace(/^[^a-zA-ZÀ-ɏ0-9]+/, '').trim() : '-';
+        const displayCountry = window.getCountryName ? window.getCountryName(cleanCountry) : cleanCountry;
+
+        const t = window.t || (k => k);
+        const scoreVal = data._score ? data._score.toFixed(2) : '0.00';
+        
+        const explanations = (data._scoringDetails && data._scoringDetails.explanation) ? window.localizedArray(data._scoringDetails.explanation) : [];
+        const warnings = (data._scoringDetails && data._scoringDetails.warnings) ? window.localizedArray(data._scoringDetails.warnings) : [];
+
+        document.getElementById('drawer-info').innerHTML = `
+            <div class="detail-section">
+                <h4 class="heading-overview">${t('program_details')}</h4>
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <label>${t('col_country')}</label>
+                        <span class="country-gradient" data-country="${cleanCountry}">${displayCountry}</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>${t('col_city')}</label>
+                        <span>${window.localizedValue(data.city) || '-'}</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>${t('col_score')}</label>
+                        <span style="color: var(--text-highlight)">${scoreVal} / 10.0</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>${t('city_cost')}</label>
+                        <span style="text-transform: capitalize">${t('risk_' + (data.cost_city_raw || 'unknown'))}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h4 class="heading-rankings">Rankings & Recognition</h4>
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <label>QS Ranking</label>
+                        <span>#${data.qs_ranking || 'N/A'}</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Global Recognition</label>
+                        <span>${window.localizedValue(data.global_recognition) || 'Unknown'}</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Field Recognition</label>
+                        <span>${window.localizedValue(data.field_recognition) || 'Unknown'}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detail-section">
+                <h4 class="heading-financials">${t('cost_funding')}</h4>
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <label>${t('semester_fee')}</label>
+                        <span>€${parseFloat(data.semester_fee_eur || 0).toFixed(2)}</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>${t('yearly_tuition')}</label>
+                        <span>€${parseFloat(data.tuition_eur_per_year || 0).toFixed(2)}</span>
+                    </div>
+                </div>
+            </div>
+            
+            ${tagsHTML ? `
+            <div class="detail-section">
+                <h4 class="heading-tags">Tags</h4>
+                <div class="tag-list">
+                    ${tagsHTML}
+                </div>
+            </div>
+            ` : ''}
+
+            ${data._scoringDetails ? `
+            <div class="detail-section">
+                <h4 class="heading-analysis" style="color: var(--primary);">${t('why_this_score')}</h4>
+                ${explanations.length > 0 ? `
+                <div style="background: rgba(99, 102, 241, 0.05); padding: 16px; border-radius: 12px; border: 1px solid rgba(99, 102, 241, 0.2); margin-bottom: 12px;">
+                    <ul class="pro-con-list" style="margin: 0; padding-left: 20px; color: var(--text);">
+                        ${explanations.map(e => `<li style="margin-bottom: 6px;">${e}</li>`).join('')}
+                    </ul>
+                </div>
+                ` : ''}
+                ${warnings.length > 0 ? `
+                <div style="background: rgba(239, 68, 68, 0.05); padding: 16px; border-radius: 12px; border: 1px solid rgba(239, 68, 68, 0.2);">
+                    <ul class="pro-con-list" style="margin: 0; padding-left: 20px; color: var(--danger);">
+                        ${warnings.map(w => `<li style="margin-bottom: 6px;"><strong>Warning:</strong> ${w}</li>`).join('')}
+                    </ul>
+                </div>
+                ` : ''}
+            </div>
+            ` : ''}
+
+            ${prosHTML || consHTML ? `
+            <div class="detail-section">
+                <h4 class="heading-analysis">Additional Notes</h4>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    ${prosHTML ? `
+                    <div style="background: rgba(16, 185, 129, 0.04); padding: 24px; border-radius: 16px; border: 1px solid rgba(16, 185, 129, 0.25); box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.02);">
+                        <ul class="pro-con-list">${prosHTML}</ul>
+                    </div>
+                    ` : ''}
+                    ${consHTML ? `
+                    <div style="background: rgba(239, 68, 68, 0.04); padding: 24px; border-radius: 16px; border: 1px solid rgba(239, 68, 68, 0.25); box-shadow: inset 0 0 20px rgba(239, 68, 68, 0.02);">
+                        <ul class="pro-con-list">${consHTML}</ul>
+                    </div>
+                    ` : ''}
+                </div>
+            </div>
+            ` : ''}
+            
+            ${data.target_program_name ? `
+            <div class="detail-section">
+                <h4>Target Program</h4>
+                <div class="detail-grid">
+                    <div class="detail-item" style="grid-column: span 2">
+                        <label>Name</label>
+                        <span>${data.target_program_name}</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Degree</label>
+                        <span>${data.target_program_degree || '-'}</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>URL</label>
+                        <span>${data.target_program_url ? `<a href="${data.target_program_url}" target="_blank" style="color:var(--text-highlight)">Visit Program ↗</a>` : '-'}</span>
+                    </div>
+                </div>
+            </div>
+            ` : ''}
+        `;
+
+        const ctx = document.getElementById('radarChart');
+        if (ctx) {
+            if (window.uniChart) {
+                window.uniChart.destroy();
+            }
+            
+            const sd = data._scoringDetails ? data._scoringDetails.components : {};
+            const fitMetric = (sd.academic_fit || 0) / 10;
+            const eligMetric = (sd.eligibility_language || 0) / 10;
+            const costMetric = (sd.cost_funding || 0) / 10;
+            const careerMetric = (sd.career_research || 0) / 10;
+            const livingMetric = (sd.living_risk || 0) / 10;
+            const confMetric = (sd.confidence_deadline || 0) / 10;
+
+            window.uniChart = new Chart(ctx.getContext('2d'), {
+                type: 'radar',
+                data: {
+                    labels: ['Academic Fit', 'Eligibility', 'Cost & Fund.', 'Career', 'Living Risk', 'Data Conf.'],
+                    datasets: [{
+                        data: [fitMetric, eligMetric, costMetric, careerMetric, livingMetric, confMetric],
+                        backgroundColor: 'rgba(99, 102, 241, 0.25)',
+                        borderColor: 'rgba(99, 102, 241, 1)',
+                        pointBackgroundColor: 'rgba(139, 92, 246, 1)',
+                        pointBorderColor: '#fff',
+                        pointHoverBackgroundColor: '#fff',
+                        pointHoverBorderColor: 'rgba(139, 92, 246, 1)'
+                    }]
                 },
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                return ` Score: ${context.raw.toFixed(1)} / 10`;
+                options: {
+                    scales: {
+                        r: {
+                            angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                            grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                            pointLabels: { color: '#94a3b8', font: { family: 'Inter', size: 11 } },
+                            ticks: { display: false, min: 0, max: 10 }
+                        }
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.raw.toFixed(2) + ' / 1.0';
+                                }
                             }
                         }
-                    }
-                },
-                maintainAspectRatio: false
-            }
-        });
+                    },
+                    maintainAspectRatio: false
+                }
+            });
+        }
+
+        els.drawer.panel.classList.add('active');
+        els.drawer.overlay.classList.add('active');
+    } catch (err) {
+        console.error('Drawer Error:', err);
     }
-
-    els.drawer.panel.classList.add('active');
-    els.drawer.overlay.classList.add('active');
 }
-
 function closeDrawer() {
     els.drawer.panel.classList.remove('active');
     els.drawer.overlay.classList.remove('active');

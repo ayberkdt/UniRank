@@ -24,6 +24,9 @@ window.I18N = {
     profile_match: "Profile Match",
     sync_favorites: "Do you want to sync your local favorites to your account?",
     app_title: "UniRank",
+    app_subtitle: "Üniversiteleri kişisel kriterlerinize göre analiz edin ve karşılaştırın",
+    app_subtitle: "Analyze and compare universities based on your personal criteria",
+    app_subtitle: "Analyze and compare universities based on your personal criteria",
     dashboard_title: "University Ranking Dashboard",
     dashboard_subtitle: "Analyze and compare universities based on your personal criteria",
 
@@ -180,6 +183,7 @@ window.I18N = {
     profile_match: "Profil Uyumu",
     sync_favorites: "Yerel favorilerini hesabına aktarmak ister misin?",
     app_title: "UniRank",
+    app_subtitle: "Analyze and compare universities based on your personal criteria",
     dashboard_title: "Üniversite Tercih Paneli",
     dashboard_subtitle: "Üniversiteleri kişisel kriterlerine göre analiz et ve karşılaştır",
 
