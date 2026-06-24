@@ -538,6 +538,11 @@ function openDrawer(data) {
         const explanations = (data._scoringDetails && data._scoringDetails.explanation) ? window.localizedArray(data._scoringDetails.explanation) : [];
         const warnings = (data._scoringDetails && data._scoringDetails.warnings) ? window.localizedArray(data._scoringDetails.warnings) : [];
 
+        // Determine if we have new schema data to show
+        const hasResearch = !!data.strong_areas_summary;
+        const hasIndustry = !!data.aerospace_ecosystem;
+        const hasLogistics = !!data.housing_difficulty || !!data.admission_mode;
+
         document.getElementById('drawer-info').innerHTML = `
             <div class="detail-section">
                 <h4 class="heading-overview">${t('program_details')}</h4>
@@ -561,6 +566,23 @@ function openDrawer(data) {
                 </div>
             </div>
 
+            ${hasResearch || hasIndustry ? `
+            <div class="detail-section">
+                <h4 class="heading-analysis">Research & Industry</h4>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    ${hasResearch ? `
+                    <div style="background: rgba(255,255,255,0.03); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                        <strong style="color: var(--primary); display: block; margin-bottom: 8px;">${t('research_strength') || 'Research Strength'}</strong>
+                        <p style="font-size: 13px; line-height: 1.5; color: var(--text-main); margin: 0;">${window.localizedValue(data.strong_areas_summary)}</p>
+                    </div>` : ''}
+                    ${hasIndustry ? `
+                    <div style="background: rgba(255,255,255,0.03); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                        <strong style="color: var(--primary); display: block; margin-bottom: 8px;">${t('industry_ecosystem') || 'Industry Ecosystem'}</strong>
+                        <p style="font-size: 13px; line-height: 1.5; color: var(--text-main); margin: 0;">${window.localizedValue(data.aerospace_ecosystem)}</p>
+                    </div>` : ''}
+                </div>
+            </div>
+            ` : `
             <div class="detail-section">
                 <h4 class="heading-rankings">Rankings & Recognition</h4>
                 <div class="detail-grid">
@@ -578,6 +600,7 @@ function openDrawer(data) {
                     </div>
                 </div>
             </div>
+            `}
 
             <div class="detail-section">
                 <h4 class="heading-financials">${t('cost_funding')}</h4>
@@ -590,8 +613,40 @@ function openDrawer(data) {
                         <label>${t('yearly_tuition')}</label>
                         <span>€${parseFloat(data.tuition_eur_per_year || 0).toFixed(2)}</span>
                     </div>
+                    ${data.scholarship_names ? `
+                    <div class="detail-item" style="grid-column: span 2">
+                        <label>Scholarships</label>
+                        <span style="color: var(--success);">${window.localizedValue(data.scholarship_names)}</span>
+                    </div>
+                    ` : ''}
                 </div>
             </div>
+
+            ${hasLogistics ? `
+            <div class="detail-section">
+                <h4 class="heading-overview">${t('application_logistics') || 'Admission & Logistics'}</h4>
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <label>Admission Mode</label>
+                        <span>${window.localizedValue(data.admission_mode) || '-'}</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Language Req.</label>
+                        <span>${window.localizedValue(data.language_req) || '-'}</span>
+                    </div>
+                    <div class="detail-item" style="grid-column: span 2">
+                        <label>Housing Difficulty</label>
+                        <span style="color: var(--danger);">${window.localizedValue(data.housing_difficulty) || '-'}</span>
+                    </div>
+                    ${data.deadline_winter_closes ? `
+                    <div class="detail-item" style="grid-column: span 2">
+                        <label>Deadlines</label>
+                        <span>${window.localizedValue(data.deadline_winter_closes)}</span>
+                    </div>
+                    ` : ''}
+                </div>
+            </div>
+            ` : ''}
             
             ${tagsHTML ? `
             <div class="detail-section">
@@ -624,7 +679,7 @@ function openDrawer(data) {
 
             ${prosHTML || consHTML ? `
             <div class="detail-section">
-                <h4 class="heading-analysis">Additional Notes</h4>
+                <h4 class="heading-analysis">${t('overall_recommendation') || 'Overall Recommendation'}</h4>
                 <div style="display: flex; flex-direction: column; gap: 12px;">
                     ${prosHTML ? `
                     <div style="background: rgba(16, 185, 129, 0.04); padding: 24px; border-radius: 16px; border: 1px solid rgba(16, 185, 129, 0.25); box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.02);">
