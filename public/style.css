@@ -959,3 +959,51 @@ tbody tr td:last-child {
   border-color: var(--accent-primary);
   box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
 }
+
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+
+
+/* Modals and Auth UI */
+.modal-overlay {
+    backdrop-filter: blur(4px);
+    display: flex;
+}
+
+.modal-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border-radius: 16px;
+    padding: 32px;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+}
+
+.btn-outline:hover {
+    background: rgba(255,255,255,0.05);
+}
+
+.btn.active {
+    background: rgba(99, 102, 241, 0.1);
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+#auth-profile .btn {
+    border-radius: 20px;
+}
+
+/* Range slider for interests */
+input[type=range] {
+    accent-color: var(--primary);
+}

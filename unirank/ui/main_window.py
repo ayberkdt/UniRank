@@ -250,21 +250,32 @@ class MainWindow(QMainWindow):
         taxonomy = load_taxonomy()
         
         parents = {}
+        parent_tr_map = {}
         for subcat_id, info in taxonomy.items():
-            p_name = info['parent']
-            if p_name not in parents:
-                parents[p_name] = []
-            parents[p_name].append(info['label'])
+            p_val = info['parent']
+            p_en = p_val['en'] if isinstance(p_val, dict) else p_val
+            p_tr = p_val['tr'] if isinstance(p_val, dict) and 'tr' in p_val else p_en
             
-        for p_name, subs in parents.items():
+            l_val = info['label']
+            l_en = l_val['en'] if isinstance(l_val, dict) else l_val
+            l_tr = l_val['tr'] if isinstance(l_val, dict) and 'tr' in l_val else l_en
+            
+            if p_en not in parents:
+                parents[p_en] = []
+                parent_tr_map[p_en] = p_tr
+            parents[p_en].append((l_en, l_tr))
+            
+        for p_en, subs in parents.items():
             parent_item = QTreeWidgetItem(self.tree_categories)
-            parent_item.setText(0, p_name)
+            parent_item.setText(0, parent_tr_map[p_en])
+            parent_item.setData(0, Qt.ItemDataRole.UserRole, p_en)
             parent_item.setFlags(parent_item.flags() | Qt.ItemFlag.ItemIsUserCheckable)
             parent_item.setCheckState(0, Qt.CheckState.Unchecked)
             
-            for sub_name in subs:
+            for l_en, l_tr in subs:
                 child_item = QTreeWidgetItem(parent_item)
-                child_item.setText(0, sub_name)
+                child_item.setText(0, l_tr)
+                child_item.setData(0, Qt.ItemDataRole.UserRole, l_en)
                 child_item.setFlags(child_item.flags() | Qt.ItemFlag.ItemIsUserCheckable)
                 child_item.setCheckState(0, Qt.CheckState.Unchecked)
                 
@@ -929,11 +940,13 @@ class MainWindow(QMainWindow):
             for i in range(self.tree_categories.topLevelItemCount()):
                 p_item = self.tree_categories.topLevelItem(i)
                 if p_item.checkState(0) in (Qt.CheckState.Checked, Qt.CheckState.PartiallyChecked):
-                    selected_cats.append(p_item.text(0))
+                    p_en = p_item.data(0, Qt.ItemDataRole.UserRole)
+                    selected_cats.append(p_en if p_en else p_item.text(0))
                 for j in range(p_item.childCount()):
                     c_item = p_item.child(j)
                     if c_item.checkState(0) == Qt.CheckState.Checked:
-                        selected_cats.append(c_item.text(0))
+                        c_en = c_item.data(0, Qt.ItemDataRole.UserRole)
+                        selected_cats.append(c_en if c_en else c_item.text(0))
             
             keywords = selected_cats
 

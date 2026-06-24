@@ -62,15 +62,26 @@ const els = {
 function toggleFavorite(id) {
     if (favorites.has(id)) {
         favorites.delete(id);
+        if (window.removeFavorite) window.removeFavorite(id);
     } else {
         favorites.add(id);
+        if (window.addFavorite) window.addFavorite(id);
     }
-    localStorage.setItem('unirank_favorites', JSON.stringify(Array.from(favorites)));
+localStorage.setItem('unirank_favorites', JSON.stringify(Array.from(favorites)));
     processAndRender();
 }
 
 // Initialize
 async function init() {
+    if (window.initAuth) await window.initAuth();
+
+    if (window.currentUser) {
+        const authFavs = JSON.parse(localStorage.getItem('unirank_demo_favs') || '[]');
+        authFavs.forEach(id => favorites.add(id));
+    }
+
+    if (window.updateAuthUI) window.updateAuthUI();
+
     setupEventListeners();
     await fetchData();
     window.applyTranslations();
@@ -741,3 +752,44 @@ document.addEventListener('languageChanged', async () => {
 // Start
 init();
 
+
+
+window.updateAuthUI = function() {
+    const authLinks = document.getElementById('auth-links');
+    const authProfile = document.getElementById('auth-profile');
+    if (window.currentUser) {
+        if (authLinks) authLinks.style.display = 'none';
+        if (authProfile) {
+            authProfile.style.display = 'flex';
+            document.getElementById('auth-user-name').textContent = window.currentUser.display_name;
+        }
+    } else {
+        if (authLinks) authLinks.style.display = 'flex';
+        if (authProfile) authProfile.style.display = 'none';
+    }
+    
+    // Update Use My Profile button state
+    const useProfileBtn = document.getElementById('btn-use-profile');
+    if (useProfileBtn) {
+        if (window.personalizationEnabled) {
+            useProfileBtn.classList.add('active');
+            useProfileBtn.innerHTML = `<span class="icon">✨</span> ${window.t('profile_applied')}`;
+        } else {
+            useProfileBtn.classList.remove('active');
+            useProfileBtn.innerHTML = `<span class="icon">⚙️</span> ${window.t('use_my_profile')}`;
+        }
+    }
+};
+
+window.togglePersonalization = function() {
+    if (!window.currentUser) {
+        window.openLoginModal();
+        return;
+    }
+    if (!window.userProfile) {
+        window.openProfileModal();
+        return;
+    }
+    window.setPersonalization(!window.personalizationEnabled);
+    window.updateAuthUI();
+};

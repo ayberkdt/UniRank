@@ -69,8 +69,10 @@ def build_category_profile(record: Dict[str, Any]) -> Dict[str, Any]:
     
     # Matching
     for subcat_id, subcat_info in taxonomy.items():
-        parent = subcat_info['parent']
-        label = subcat_info['label']
+        parent_val = subcat_info['parent']
+        parent = parent_val['en'] if isinstance(parent_val, dict) else parent_val
+        label_val = subcat_info['label']
+        label = label_val['en'] if isinstance(label_val, dict) else label_val
         aliases = subcat_info.get('aliases', [])
         
         subcat_score = 0.0

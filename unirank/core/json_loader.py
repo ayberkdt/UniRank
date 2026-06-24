@@ -78,8 +78,11 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
         if file.name == "taxonomy.json" or file.name.startswith("taxonomy"):
             continue
 
-        if isinstance(data, dict) and "universities" in data:
-            data = data["universities"]
+        if isinstance(data, dict):
+            if "universities" in data:
+                data = data["universities"]
+            elif "programs" in data:
+                data = data["programs"]
 
         if not isinstance(data, list):
             data = [data]

@@ -1,6 +1,6 @@
 /**
  * UniRank Scoring Engine (JS)
- * Centralized multi-dimensional scoring logic.
+ * Centralized multi-dimensional scoring logic with personalization support.
  */
 
 function normalizeText(text) {
@@ -8,17 +8,25 @@ function normalizeText(text) {
     return String(text).toLowerCase().replace(/[^a-z0-9\s]/g, ' ');
 }
 
-// In the browser context, buildCategoryProfile is expected to be available globally (loaded from taxonomy.js).
-
 function calculateScore(record, preferences, weights) {
     const explanation = [];
     const warnings = [];
+    const profileMatch = {
+        enabled: window.personalizationEnabled || false,
+        personal_field_fit: null,
+        matched_interests: [],
+        profile_penalties: [],
+        profile_boosts: []
+    };
+
+    // Extract User Profile if personalization is enabled
+    const profile = profileMatch.enabled ? window.userProfile : null;
 
     // --- HARD FILTERS ---
     let passed = true;
 
     // 1. Degree Filter
-    const targetDegree = preferences.degreeFilter || 'All';
+    const targetDegree = profile?.target_degree || preferences.degreeFilter || 'All';
     const recDegree = String(record.Program_Degree || record.program_degree || '').toLowerCase();
     if (targetDegree !== 'All' && recDegree) {
         if (!recDegree.includes(targetDegree.toLowerCase())) {
@@ -28,10 +36,9 @@ function calculateScore(record, preferences, weights) {
 
     // 2. English Only Filter
     const langReq = String(record.Admission_Language_Req || record.admission_language_req || '').toLowerCase();
-    if (preferences.onlyEnglish) {
+    const isEnglishOnlyPref = profile ? (profile.language_filter === 'english_only') : preferences.onlyEnglish;
+    if (isEnglishOnlyPref) {
         if (langReq.includes('german') || langReq.includes('french') || langReq.includes('dutch') || langReq.includes('b1') || langReq.includes('c1') && !langReq.includes('english c1')) {
-            // Very simplistic check: if it mentions german/french/dutch, it might require it.
-            // If it explicitly says "English C1 / German A2", it requires German.
             if (langReq.includes('german') || langReq.includes('french') || langReq.includes('dutch')) {
                 passed = false;
             }
@@ -40,19 +47,15 @@ function calculateScore(record, preferences, weights) {
 
     // 3. Max Tuition
     const tuit = parseFloat(record.tuition_eur_per_year) || 0;
-    if (preferences.maxTuition && preferences.maxTuition > 0) {
-        if (tuit > preferences.maxTuition) {
+    const maxTPref = profile?.max_tuition_eur_per_year || preferences.maxTuition;
+    if (maxTPref && maxTPref > 0) {
+        if (profile?.strict_budget && tuit > maxTPref) {
             passed = false;
         }
     }
 
-    // 4. Closed Deadline (Simplified check: if closed, drop it if preference is set)
-    // Note: Date parsing can be tricky, this assumes if a deadline passed, we filter it.
-    // For now, we'll skip complex date parsing for hard filter unless requested.
-
     // --- SCORE COMPONENTS ---
 
-    // Ensure we have a category profile
     let catProfile = record.Category_Profile;
     if (!catProfile) {
         catProfile = { category_scores: {}, subcategories: [], normalized_tags: [] };
@@ -60,44 +63,84 @@ function calculateScore(record, preferences, weights) {
 
     // 1. Academic / Field Fit (0-100)
     let academicFit = 0;
-    const selectedCats = preferences.selectedCategoryKeys || preferences.selectedKeywords || [];
     
-    if (selectedCats.length === 0) {
-        academicFit = 50; // Default if no preference
-    } else {
-        let scoreSum = 0;
-        let matches = 0;
+    if (profileMatch.enabled && profile?.interests?.length > 0 && window.buildExpandedInterestProfile) {
+        // Personalized Field Fit
+        const expandedInterests = window.buildExpandedInterestProfile(profile.interests, window.INTEREST_GRAPH || {});
         
-        for (const cat of selectedCats) {
-            // Is it a top category?
-            if (catProfile.category_scores[cat] !== undefined) {
-                const catScore = catProfile.category_scores[cat];
-                scoreSum += catScore;
-                if (catScore >= 30) matches++;
+        let score = 0;
+        let maxPossible = 0;
+        const recordTags = new Set(catProfile.normalized_tags || []);
+        
+        for (const [interestKey, userWeight] of expandedInterests.entries()) {
+            maxPossible += userWeight;
+            let matched = false;
+            let matchType = '';
+            
+            if (recordTags.has(interestKey)) {
+                score += userWeight;
+                matched = true;
+                matchType = 'direct';
+            } else if (catProfile.subcategories.includes(interestKey)) {
+                score += userWeight;
+                matched = true;
+                matchType = 'direct';
+            } else if (catProfile.category_scores[interestKey]) {
+                const ratio = catProfile.category_scores[interestKey] / 100;
+                score += userWeight * ratio;
+                matched = true;
+                matchType = 'partial';
             }
-            // Is it a subcategory?
-            else if (catProfile.subcategories.includes(cat)) {
-                scoreSum += 100;
-                matches++;
-            }
-            else if (catProfile.normalized_tags.includes(cat)) {
-                scoreSum += 60;
-                matches++;
+            
+            if (matched) {
+                const isDirectUserSelected = profile.interests.find(i => i.key === interestKey);
+                profileMatch.matched_interests.push({
+                    interest_key: interestKey,
+                    match_strength: userWeight,
+                    match_type: isDirectUserSelected ? 'direct' : 'graph_neighbor'
+                });
             }
         }
         
-        if (selectedCats.length > 0) {
-            academicFit = scoreSum / selectedCats.length;
-        }
-        
-        academicFit = Math.min(100, Math.max(0, academicFit));
-        
-        if (academicFit >= 80) {
-            explanation.push("Strong academic match for your selected fields.");
-        } else if (academicFit >= 40) {
-            explanation.push("Partial academic match for your selected fields.");
+        if (maxPossible > 0) {
+            academicFit = Math.round((score / maxPossible) * 100);
+            profileMatch.personal_field_fit = academicFit;
         } else {
-            explanation.push("No strong match found for your selected fields.");
+            academicFit = 50;
+        }
+        
+        if (academicFit >= 80) explanation.push("Strong personalized match with your interest graph.");
+        else if (academicFit >= 40) explanation.push("Partial match with your expanded interest fields.");
+        else explanation.push("Weak match with your stated academic interests.");
+
+    } else {
+        // Default Academic Fit
+        const selectedCats = preferences.selectedCategoryKeys || preferences.selectedKeywords || [];
+        if (selectedCats.length === 0) {
+            academicFit = 50;
+        } else {
+            let scoreSum = 0;
+            let matches = 0;
+            for (const cat of selectedCats) {
+                if (catProfile.category_scores[cat] !== undefined) {
+                    const catScore = catProfile.category_scores[cat];
+                    scoreSum += catScore;
+                    if (catScore >= 30) matches++;
+                }
+                else if (catProfile.subcategories.includes(cat)) {
+                    scoreSum += 100;
+                    matches++;
+                }
+                else if (catProfile.normalized_tags.includes(cat)) {
+                    scoreSum += 60;
+                    matches++;
+                }
+            }
+            if (selectedCats.length > 0) academicFit = scoreSum / selectedCats.length;
+            academicFit = Math.min(100, Math.max(0, academicFit));
+            if (academicFit >= 80) explanation.push("Strong academic match for your selected fields.");
+            else if (academicFit >= 40) explanation.push("Partial academic match for your selected fields.");
+            else explanation.push("No strong match found for your selected fields.");
         }
     }
 
@@ -105,19 +148,21 @@ function calculateScore(record, preferences, weights) {
         passed = false;
     }
 
-
     // 2. Eligibility & Language Fit (0-100)
-    let eligFit = 70; // Baseline
+    let eligFit = 70;
     const adMode = String(record.Admission_Mode || '').toLowerCase();
     
     if (langReq.includes('english')) {
         eligFit += 10;
         if (!langReq.includes('german') && !langReq.includes('french') && !langReq.includes('dutch')) {
-            eligFit += 10; // purely English
+            eligFit += 10;
             explanation.push(`Program is fully English-taught.`);
         } else {
-            eligFit -= 20; // requires additional language
+            eligFit -= 20;
             warnings.push(`Requires an additional language (${langReq}).`);
+            if (profileMatch.enabled && profile?.language_filter === 'english_only') {
+                profileMatch.profile_penalties.push({ type: 'language', reason: 'Requires non-English language.' });
+            }
         }
     }
     
@@ -125,7 +170,12 @@ function calculateScore(record, preferences, weights) {
         eligFit += 20;
         explanation.push(`Direct admission offers lower entry risk.`);
     } else if (adMode.includes('aptitude test') || adMode.includes('committee') || adMode.includes('portfolio') || adMode.includes('interview')) {
-        eligFit -= 20;
+        if (profileMatch.enabled && profile?.admission_risk_tolerance === 'low') {
+            eligFit -= 40;
+            profileMatch.profile_penalties.push({ type: 'admission', reason: 'Competitive admission conflicts with low risk tolerance.' });
+        } else {
+            eligFit -= 20;
+        }
         warnings.push(`Competitive admission process (${adMode}).`);
     }
 
@@ -134,9 +184,9 @@ function calculateScore(record, preferences, weights) {
 
     // 3. Cost & Funding (0-100)
     let costFit = 0;
-    const maxT = 20000; // Expected max tuition boundary for scoring
+    const maxT = 20000;
     const tuitionNorm = Math.min(1.0, tuit / maxT);
-    let tuitionScore = (1.0 - tuitionNorm) * 100; // 0 tuition = 100 score, 20k tuition = 0 score
+    let tuitionScore = (1.0 - tuitionNorm) * 100;
     
     const semFee = parseFloat(record.semester_fee_eur) || 0;
     const semFeeNorm = Math.min(1.0, semFee / 1000);
@@ -149,6 +199,12 @@ function calculateScore(record, preferences, weights) {
     }
 
     costFit = (tuitionScore * 0.7) + (semFeeScore * 0.2) + (scholarshipScore * 0.1);
+
+    if (maxTPref && tuit > maxTPref && (!profile || !profile.strict_budget)) {
+        costFit -= 30; // Soft penalty
+        if (profileMatch.enabled) profileMatch.profile_penalties.push({ type: 'cost', reason: 'Tuition exceeds preferred maximum.' });
+    }
+
     costFit = Math.min(100, Math.max(0, costFit));
 
     if (tuit > 10000) {
@@ -157,9 +213,8 @@ function calculateScore(record, preferences, weights) {
         explanation.push(`Very affordable tuition (€${tuit.toFixed(0)}/yr).`);
     }
 
-
     // 4. Career / Research Ecosystem (0-100)
-    let careerFit = 50; // Baseline
+    let careerFit = 50;
     const ecosystemStr = normalizeText([
         record.Industry_Ecosystem,
         record.Industry_Partners,
@@ -187,9 +242,8 @@ function calculateScore(record, preferences, weights) {
         explanation.push(`Strong aerospace/tech ecosystem (partners include major agencies/corps).`);
     }
 
-
     // 5. Living Risk (0-100)
-    let livingFit = 50; // Baseline
+    let livingFit = 50;
     
     const costCity = String(record.Cost_City_Living || '').toLowerCase();
     if (costCity.includes('very_high')) livingFit -= 30;
@@ -197,11 +251,23 @@ function calculateScore(record, preferences, weights) {
     else if (costCity.includes('low')) livingFit += 20;
 
     const housing = String(record.Living_Housing_Difficulty || '').toLowerCase();
+    const housingTol = profile?.housing_risk_tolerance || 'medium';
+    
     if (housing.includes('nightmare')) {
-        livingFit -= 30;
+        if (profileMatch.enabled && housingTol === 'low') {
+            livingFit -= 50;
+            profileMatch.profile_penalties.push({ type: 'housing', reason: 'Nightmare housing conflicts with low risk tolerance.' });
+        } else {
+            livingFit -= 30;
+        }
         warnings.push(`Housing market is extremely difficult (Nightmare).`);
     } else if (housing.includes('very hard')) {
-        livingFit -= 20;
+        if (profileMatch.enabled && housingTol === 'low') {
+            livingFit -= 40;
+            profileMatch.profile_penalties.push({ type: 'housing', reason: 'Very hard housing conflicts with low risk tolerance.' });
+        } else {
+            livingFit -= 20;
+        }
         warnings.push(`Housing market is very difficult.`);
     } else if (housing.includes('hard')) {
         livingFit -= 10;
@@ -212,9 +278,8 @@ function calculateScore(record, preferences, weights) {
 
     livingFit = Math.min(100, Math.max(0, livingFit));
 
-
     // 6. Data Confidence / Deadline (0-100)
-    let confFit = 80; // Baseline
+    let confFit = 80;
     if (record.Meta_Needs_Verification) {
         confFit -= 20;
         warnings.push(`Data needs manual verification.`);
@@ -229,16 +294,26 @@ function calculateScore(record, preferences, weights) {
     confFit = Math.min(100, Math.max(0, confFit));
 
     // --- WEIGHTED SUM ---
-    // Normalize weights if they don't sum to 100
-    const wTotal = (weights.academic_fit + weights.eligibility_language + weights.cost_funding + weights.career_research + weights.living_risk + weights.confidence_deadline) || 100;
+    // If personalization is enabled, adjust weights slightly towards Academic Fit
+    let effectiveWeights = { ...weights };
+    if (profileMatch.enabled) {
+        effectiveWeights.academic_fit = 35;
+        effectiveWeights.eligibility_language = 20;
+        effectiveWeights.cost_funding = 20;
+        effectiveWeights.career_research = 15;
+        effectiveWeights.living_risk = 7;
+        effectiveWeights.confidence_deadline = 3;
+    }
+
+    const wTotal = (effectiveWeights.academic_fit + effectiveWeights.eligibility_language + effectiveWeights.cost_funding + effectiveWeights.career_research + effectiveWeights.living_risk + effectiveWeights.confidence_deadline) || 100;
     
     const nW = {
-        ac: weights.academic_fit / wTotal,
-        el: weights.eligibility_language / wTotal,
-        co: weights.cost_funding / wTotal,
-        ca: weights.career_research / wTotal,
-        li: weights.living_risk / wTotal,
-        cf: weights.confidence_deadline / wTotal
+        ac: effectiveWeights.academic_fit / wTotal,
+        el: effectiveWeights.eligibility_language / wTotal,
+        co: effectiveWeights.cost_funding / wTotal,
+        ca: effectiveWeights.career_research / wTotal,
+        li: effectiveWeights.living_risk / wTotal,
+        cf: effectiveWeights.confidence_deadline / wTotal
     };
 
     const finalScore = (
@@ -262,7 +337,8 @@ function calculateScore(record, preferences, weights) {
             confidence_deadline: confFit
         },
         explanation: explanation,
-        warnings: warnings
+        warnings: warnings,
+        personalized_match: profileMatch
     };
 }
 

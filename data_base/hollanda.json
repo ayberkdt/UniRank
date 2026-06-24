@@ -1,1206 +1,2989 @@
-[
-    {
-        "Country": "Netherlands",
-        "City": "Delft",
-        "State_Region": "Zuid-Holland",
-        "Uni_ID": "delft-university-of-technology",
-        "University_Name": "Delft University of Technology",
-        "University_Display_Name": "Delft University of Technology (TU Delft)",
-        "University_Short_Name": "TU Delft",
-        "Cost_Tuition": [
-            {
-                "scope": "non_eu",
-                "program": "MSc Aerospace Engineering",
-                "amount": 21600.0,
-                "currency": "EUR",
-                "period": "year",
-                "raw": "Non‑EU tuition: €21,600/year",
-                "effective_from_term_code": "2025W"
-            }
-        ],
-        "Cost_Semester_Fees": [
-            {
-                "term": "WiSe 2025/26",
-                "amount": 0.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€0 (no separate semester contribution; tuition billed annually)",
-                "term_code": "2025W"
+{
+    "country": "Netherlands",
+    "last_updated": "2026-06-24",
+    "programs": [
+        {
+            "id": "netherlands_delft_msc_aerospace",
+            "country": "Netherlands",
+            "university": "Delft University of Technology",
+            "university_native_name": "Technische Universiteit Delft",
+            "city": "Delft",
+            "region": "Zuid-Holland",
+            "program_name": "MSc Aerospace Engineering",
+            "program_native_name": "MSc Aerospace Engineering",
+            "program_degree": "MSc",
+            "degree_level": "Master",
+            "degree_class": "MSc",
+            "duration_years": 2,
+            "ects": 120,
+            "teaching_language": [
+                "English"
+            ],
+            "program_url": "https://www.tudelft.nl/en/education/programmes/masters/ae/msc-aerospace-engineering",
+            "department": "Faculty of Aerospace Engineering",
+            "faculty_or_school": "",
+            "campus": "Delft",
+            "program_status": "active",
+            "relevance_status": "strong",
+            "eligibility_profile": {
+                "eligible_for_non_eu": true,
+                "non_eu_quota": null,
+                "required_previous_degree": "BSc in Aerospace Engineering or closely related engineering field",
+                "accepted_backgrounds": [
+                    "Aerospace Engineering",
+                    "Mechanical Engineering",
+                    "Physics",
+                    "Mathematics"
+                ],
+                "required_ects": {
+                    "engineering": 30
+                },
+                "minimum_gpa": null,
+                "gpa_scale": "",
+                "ranking_or_selection": "Competitive / GRE required (Verbal 154, Quant 163, AW 4.0)",
+                "admission_mode": "Selection",
+                "admission_risk": "high",
+                "required_documents": [
+                    "Degree Certificate",
+                    "Academic Transcript",
+                    "GRE Score Report",
+                    "TOEFL/IELTS Certificate",
+                    "CV",
+                    "Motivation Letter",
+                    "Reference Letters"
+                ],
+                "motivation_letter_required": true,
+                "cv_required": true,
+                "recommendation_required": true,
+                "portfolio_required": null,
+                "interview_required": false,
+                "test_required": true,
+                "notes_for_turkish_students": "GRE is mandatory for Turkish and international degree holders. Ensure GRE scores meet the strict threshold."
             },
-            {
-                "term": "SoSe 2026",
-                "amount": 0.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€0 (no separate semester contribution; tuition billed annually)",
-                "term_code": "2026S"
-            }
-        ],
-        "Scholarships_Info": [
-            {
-                "name": "Justus & Louise van Effen Excellence Scholarship",
-                "provider": "TU Delft",
-                "type": "merit",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": null,
-                "url": "https://www.tudelft.nl/en/education/practical-matters/scholarships/justus-louise-van-effen-excellence-scholarships"
+            "language_profile": {
+                "teaching_language": [
+                    "English"
+                ],
+                "english_required": true,
+                "english_level_required": "IELTS 7.0 (min 6.5 in all subscores) or TOEFL iBT 100 (min 22 in all subscores)",
+                "accepted_english_tests": [
+                    "IELTS",
+                    "TOEFL iBT",
+                    "Cambridge C1/C2"
+                ],
+                "english_exemptions": [],
+                "italian_required": null,
+                "italian_level_required": "",
+                "italian_needed_for_life_or_internship": "",
+                "mixed_language_warning": "",
+                "language_risk": "low"
             },
-            {
-                "name": "NL Scholarship (Eski Holland Scholarship)",
-                "provider": "Dutch government / Nuffic",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": null,
-                "url": "https://www.studyinnl.org/finances/nl-scholarship"
+            "cost_profile": {
+                "academic_year": "2026/2027",
+                "tuition_eur_per_year_min": 25633,
+                "tuition_eur_per_year_max": 25633,
+                "tuition_eur_per_year_estimated": 25633,
+                "tuition_basis": "Per year",
+                "regional_tax_eur": null,
+                "student_contribution_eur": 0,
+                "application_fee_eur": 100,
+                "enrollment_fee_eur": null,
+                "total_academic_cost_eur_per_year_estimated": 25633,
+                "isee_or_income_based": null,
+                "non_eu_flat_fee": 25633,
+                "payment_installments": "",
+                "refund_policy": "Application fee of €100 is refunded upon registration/enrolment.",
+                "source_notes": "Official TU Delft Tuition Fees page for 2026/2027."
             },
-            {
-                "name": "Study in NL – Scholarships portal",
-                "provider": "Study in NL (Nuffic)",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "National portal to explore scholarships/funding options for international students",
-                "url": "https://www.studyinnl.org/finances/scholarships"
-            }
-        ],
-        "Cost_City_Living": "very_high",
-        "Cost_City_Rank": 5.0,
-        "Living_Housing_Difficulty": "Nightmare",
-        "Living_Housing_Score": 10.0,
-        "Program_Name": "MSc Aerospace Engineering",
-        "Program_Degree": "MSc",
-        "Program_ECTS": 120,
-        "Program_URL": "https://www.tudelft.nl/en/education/programmes/masters/ae/msc-aerospace-engineering",
-        "Program_Scope": "non_eu",
-        "Admission_Mode": "Aptitude Test",
-        "Admission_Language_Req": "100% English",
-        "Analysis_Strong_Areas": "Aerodynamics, Spaceflight, Structures & Materials, Control & Operations",
-        "Analysis_Pros": [
-            "Havacılık ve Uzay alanında dünya çapında ilk 5'te yer alan, olağanüstü laboratuvar, rüzgar tüneli ve uçuş simülatörü olanaklarına sahip küresel liderlik.",
-            "Avrupa Uzay Ajansı'nın (ESA) en büyük ar-ge merkezi olan ESTEC'e (Noordwijk) yakınlık ve doğrudan işbirliği avantajı.",
-            "Hollanda'nın güçlü havacılık ve uzay kümelenmesinde (Airbus Netherlands, GKN Fokker) rakipsiz staj ve tez ağının bulunması."
-        ],
-        "Analysis_Cons": [
-            "Delft genelinde öğrenci konut krizi had safhadadır (Nightmare); ev veya oda bulmak aylar süren yoğun bir arama süreci gerektirir.",
-            "AB dışı (Non-EU) öğrenciler için yıllık €21,600 gibi oldukça yüksek bir eğitim harcı ücretinin olması.",
-            "Başvuruların son derece seçici ve rekabetçi bir değerlendirme sürecine tabi tutulması."
-        ],
-        "Analysis_Tags": [
-            "aerospaceengineering",
-            "aerodynamics",
-            "cfd",
-            "structures",
-            "composites",
-            "astrodynamics",
-            "gnc",
-            "controls",
-            "spacesystems",
-            "satellitesystems"
-        ],
-        "Industry_Ecosystem": "Hollanda havacılık sanayisinin kalbidir. ESA-ESTEC ar-ge merkezi, Hollanda Uzay Ofisi (NSO) ortaklıkları, Airbus Netherlands ve GKN Fokker ile entegre ekosistem.",
-        "Industry_Comp_Intensity": "Very High",
-        "Industry_Partners": [
-            "Airbus Netherlands",
-            "ESA ESTEC",
-            "GKN Fokker",
-            "KLM Engineering"
-        ],
-        "Internship_Mandatory": true,
-        "Internship_Notes": "Staj müfredatın zorunlu bir parçası olup, öğrencilerin büyük çoğunluğu stajlarını ve tez projelerini havacılık sanayi devlerinde veya ESA bünyesinde tamamlamaktadır.",
-        "Deadline_Winter_Open": "01 Oct",
-        "Deadline_Winter_Close": "2026-01-15",
-        "Deadline_Winter_Note": "Multiple dates noted: 15 Jan (Scholarship) / 1 April (Regular) — non‑EU uses earliest applicable date",
-        "Deadline_Summer_Open": "01 Jun",
-        "Deadline_Summer_Close": "30 Nov",
-        "Deadline_Summer_Note": "Non‑EU oriented if summer intake exists; verify per program",
-        "Deadline_General_Note": null,
-        "Meta_Sources": [
-            "{'type': 'fees_or_tuition', 'url': 'https://www.tudelft.nl/en/education/practical-matters/tuition-fee-finances', 'last_verified': '2026-01-27'}",
-            "{'type': 'admissions', 'url': 'https://www.tudelft.nl/onderwijs/opleidingen/masters/ae/msc-aerospace-engineering/admission-and-application', 'last_verified': '2026-01-27'}",
-            "{'type': 'scholarships', 'url': 'https://www.tudelft.nl/onderwijs/studievoorlichting/praktische-zaken/scholarships/justus-louise-van-effen-excellence-scholarships', 'last_verified': '2026-01-27'}",
-            "{'type': 'scholarships', 'url': 'https://www.studyinnl.org/finances/nl-scholarship', 'last_verified': '2026-01-27'}"
-        ],
-        "Meta_Updated_At": "2026-01-27",
-        "Meta_Needs_Verification": null,
-        "qs_ranking": 49,
-        "global_recognition": "World-class elite institution",
-        "field_recognition": "Top-tier engineering/aerospace hub"
-    },
-    {
-        "Country": "Netherlands",
-        "City": "Eindhoven",
-        "State_Region": "Noord-Brabant",
-        "Uni_ID": "eindhoven-university-of-technology",
-        "University_Name": "Eindhoven University of Technology",
-        "University_Display_Name": "Eindhoven University of Technology (TU/e)",
-        "University_Short_Name": "TU/e",
-        "Cost_Tuition": [
-            {
-                "scope": "non_eu",
-                "program": "MSc (program depends on track)",
-                "amount": 19700.0,
-                "currency": "EUR",
-                "period": "year",
-                "raw": "Non‑EU tuition: €19,700/year",
-                "effective_from_term_code": "2025W"
-            }
-        ],
-        "Cost_Semester_Fees": [
-            {
-                "term": "WiSe 2025/26",
-                "amount": 0.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€0 (no separate semester contribution; tuition billed annually)",
-                "term_code": "2025W"
+            "scholarship_profile": {
+                "regional_scholarship_available": true,
+                "regional_scholarship_name": "Justus & Louise van Effen Excellence Scholarship / NL Scholarship",
+                "dsu_or_equivalent": "",
+                "merit_scholarships": [
+                    "Justus & Louise van Effen Excellence Scholarship",
+                    "NL Scholarship (former Holland Scholarship)",
+                    "NL Scholarship (Eski Holland Scholarship)",
+                    "Study in NL – Scholarships portal"
+                ],
+                "tuition_waivers": [],
+                "housing_support": false,
+                "meal_support": null,
+                "cash_grant_possible": null,
+                "non_eu_eligible": true,
+                "income_based": null,
+                "scholarship_deadline": "2026-01-15",
+                "scholarship_application_url": "https://www.tudelft.nl/en/education/practical-matters/scholarships/justus-louise-van-effen-excellence-scholarships",
+                "funding_competitiveness": "high",
+                "funding_notes": "Very competitive merit-based scholarships covering full tuition and living costs."
             },
-            {
-                "term": "SoSe 2026",
-                "amount": 0.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€0 (no separate semester contribution; tuition billed annually)",
-                "term_code": "2026S"
-            }
-        ],
-        "Scholarships_Info": [
-            {
-                "name": "Amandus H. Lundqvist Scholarship Program (ALSP)",
-                "provider": "TU/e",
-                "type": "merit",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": null,
-                "url": "https://www.tue.nl/en/education/become-a-tue-student/scholarships-and-grants"
+            "living_profile": {
+                "city_cost_level": "very_high",
+                "monthly_living_cost_eur_min": null,
+                "monthly_living_cost_eur_max": null,
+                "monthly_living_cost_eur_estimated": 1200,
+                "housing_difficulty": "nightmare",
+                "student_housing_available": true,
+                "student_housing_competitiveness": "high",
+                "average_room_rent_eur": 700,
+                "public_transport_cost_eur_month": null,
+                "food_cost_eur_month": null,
+                "city_safety_note": "",
+                "part_time_work_possibility": "",
+                "living_risk": "high"
             },
-            {
-                "name": "NL Scholarship",
-                "provider": "Dutch government / Nuffic",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": null,
-                "url": "https://www.studyinnl.org/finances/nl-scholarship"
+            "curriculum_profile": {
+                "tracks": [
+                    "Aerodynamics & Wind Energy",
+                    "Flight Performance & Propulsion",
+                    "Aerospace Structures & Materials",
+                    "Control & Operations",
+                    "Space Flight"
+                ],
+                "specializations": [],
+                "mandatory_courses": [],
+                "elective_courses": [],
+                "course_language_notes": "Staj müfredatın zorunlu bir parçası olup, öğrencilerin büyük çoğunluğu stajlarını ve tez projelerini havacılık sanayi devlerinde veya ESA bünyesinde tamamlamaktadır.",
+                "thesis_required": true,
+                "internship_required": true,
+                "lab_courses": [],
+                "project_based_courses": [],
+                "mobility_options": [],
+                "double_degree_options": [],
+                "curriculum_url": "https://www.tudelft.nl/en/education/programmes/masters/ae/msc-aerospace-engineering",
+                "study_plan_url": "https://www.tudelft.nl/en/education/programmes/masters/ae/msc-aerospace-engineering"
             },
-            {
-                "name": "Study in NL – Scholarships portal",
-                "provider": "Study in NL (Nuffic)",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "National portal to explore scholarships/funding options for international students",
-                "url": "https://www.studyinnl.org/finances/scholarships"
-            }
-        ],
-        "Cost_City_Living": "high",
-        "Cost_City_Rank": 4.0,
-        "Living_Housing_Difficulty": "Hard",
-        "Living_Housing_Score": 8.0,
-        "Program_Name": "MSc Mechanical Engineering",
-        "Program_Degree": "MSc",
-        "Program_ECTS": 120,
-        "Program_URL": "https://www.tue.nl/en/education/graduate-school/master-mechanical-engineering",
-        "Program_Scope": "non_eu",
-        "Admission_Mode": "Aptitude Test",
-        "Admission_Language_Req": "100% English",
-        "Analysis_Strong_Areas": "Mechatronics, Control Systems, Artificial Intelligence, Sustainable Energy",
-        "Analysis_Pros": [
-            "Avrupa'nın en gelişmiş yüksek teknoloji kümelenmelerinden biri olan Brainport bölgesinde yer alarak ASML ve Philips gibi devlerle doğrudan ortaklık imkanı.",
-            "Mekatronik, robotik, kontrol sistemleri ve ileri malzeme mühendisliği alanlarında dünya lideri laboratuvarlar.",
-            "Eindhoven'ın modern, teknoloji odaklı ve son derece aktif bir öğrenci ve kariyer şehri olması."
-        ],
-        "Analysis_Cons": [
-            "Üniversitede bağımsız bir 'Aerospace Engineering' departmanının bulunmaması; havacılık odaklı çalışmaların Makine veya Elektrik Mühendisliği alt kulvarlarından yürütülmesi.",
-            "Yıllık €19,700 gibi oldukça yüksek Non-EU harç ücretinin bulunması.",
-            "Brainport bölgesindeki yüksek yaşam maliyetleri ve kiralık konut bulmanın zorluğu."
-        ],
-        "Analysis_Tags": [
-            "controls",
-            "robotics",
-            "mechatronics",
-            "structures",
-            "materials",
-            "thermodynamics",
-            "embeddedsystems",
-            "optimization"
-        ],
-        "Industry_Ecosystem": "Brainport Eindhoven (ASML genel merkezi, Philips, VDL Groep, DAF Trucks) havacılık ve uzay için gelişmiş mekatronik ve üretim odaklı küresel teknoloji merkezi.",
-        "Industry_Comp_Intensity": "High",
-        "Industry_Partners": [
-            "ASML",
-            "Philips",
-            "VDL Groep",
-            "DAF Trucks"
-        ],
-        "Internship_Mandatory": true,
-        "Internship_Notes": "Zorunlu staj uygulaması mevcut olup, öğrenciler genellikle ASML, Philips veya VDL Groep bünyesinde mekatronik ve kontrol sistemleri üzerine endüstriyel stajlarını tamamlarlar.",
-        "Deadline_Winter_Open": "01 Oct",
-        "Deadline_Winter_Close": "01 Feb",
-        "Deadline_Winter_Note": "Multiple dates noted: 1 Feb (Guaranteed Housing) / 1 May — non‑EU uses earliest applicable date",
-        "Deadline_Summer_Open": "01 Jun",
-        "Deadline_Summer_Close": "30 Nov",
-        "Deadline_Summer_Note": "Non‑EU oriented if summer intake exists; verify per program",
-        "Deadline_General_Note": null,
-        "Meta_Sources": [
-            "{'type': 'fees_or_tuition', 'url': 'https://www.tue.nl/en/education/become-a-tue-student/tuition-fees-and-other-study-costs', 'last_verified': '2026-01-27'}"
-        ],
-        "Meta_Updated_At": "2026-01-27",
-        "Meta_Needs_Verification": null,
-        "qs_ranking": 124,
-        "global_recognition": "Highly recognized globally",
-        "field_recognition": "Very strong engineering reputation"
-    },
-    {
-        "Country": "Netherlands",
-        "City": "Enschede",
-        "State_Region": "Overijssel",
-        "Uni_ID": "university-of-twente",
-        "University_Name": "University of Twente",
-        "University_Display_Name": "University of Twente (UTwente)",
-        "University_Short_Name": "UTwente",
-        "Cost_Tuition": [
-            {
-                "scope": "non_eu",
-                "program": "MSc (program depends on track)",
-                "amount": 16750.0,
-                "currency": "EUR",
-                "period": "year",
-                "raw": "Non‑EU tuition: €16,750/year",
-                "effective_from_term_code": "2025W"
-            }
-        ],
-        "Cost_Semester_Fees": [
-            {
-                "term": "WiSe 2025/26",
-                "amount": 0.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€0 (no separate semester contribution; tuition billed annually)",
-                "term_code": "2025W"
+            "category_profile": {
+                "primary_categories": [
+                    "Uncategorized / Needs Review"
+                ],
+                "secondary_categories": [],
+                "subcategories": [],
+                "normalized_tags": [],
+                "category_scores": {}
             },
-            {
-                "term": "SoSe 2026",
-                "amount": 0.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€0 (no separate semester contribution; tuition billed annually)",
-                "term_code": "2026S"
-            }
-        ],
-        "Scholarships_Info": [
-            {
-                "name": "University of Twente Scholarship (UTS)",
-                "provider": "University of Twente",
-                "type": "merit",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": null,
-                "url": "https://www.utwente.nl/en/education/scholarship-finder/"
+            "research_profile": {
+                "department_research_areas": [
+                    "Aerodynamics, Spaceflight, Structures & Materials, Control & Operations"
+                ],
+                "labs": [
+                    "Delft Wind Tunnel Labs",
+                    "CleanEra Project",
+                    "Space Systems Engineering Lab"
+                ],
+                "research_centers": [],
+                "notable_professors": [],
+                "space_or_aerospace_projects": [],
+                "student_teams": [],
+                "satellite_or_flight_projects": [],
+                "research_strength_summary": "Top-tier global aerospace engineering hub with world-class facilities and wind tunnels.",
+                "research_strength_score": 98,
+                "research_sources": []
             },
-            {
-                "name": "Kipaji Scholarship",
-                "provider": "University of Twente",
-                "type": "merit",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": null,
-                "url": "https://www.utwente.nl/en/education/scholarship-finder/"
+            "industry_ecosystem_profile": {
+                "nearby_companies": [
+                    "Airbus Netherlands",
+                    "ESA ESTEC",
+                    "GKN Fokker",
+                    "KLM Engineering"
+                ],
+                "confirmed_partners": [],
+                "space_agencies_or_public_bodies": [],
+                "research_institutes": [],
+                "startup_or_incubator_ecosystem": [],
+                "internship_possibility": "",
+                "thesis_with_industry_possibility": "",
+                "career_relevance": "",
+                "ecosystem_strength_score": null,
+                "ecosystem_notes": "Hollanda havacılık sanayisinin kalbidir. ESA-ESTEC ar-ge merkezi, Hollanda Uzay Ofisi (NSO) ortaklıkları, Airbus Netherlands ve GKN Fokker ile entegre ekosistem."
             },
-            {
-                "name": "Study in NL – Scholarships portal",
-                "provider": "Study in NL (Nuffic)",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "National portal to explore scholarships/funding options for international students",
-                "url": "https://www.studyinnl.org/finances/scholarships"
-            }
-        ],
-        "Cost_City_Living": "medium",
-        "Cost_City_Rank": 3.0,
-        "Living_Housing_Difficulty": "Moderate",
-        "Living_Housing_Score": 5.0,
-        "Program_Name": "MSc Mechanical Engineering",
-        "Program_Degree": "MSc",
-        "Program_ECTS": 120,
-        "Program_URL": "https://www.utwente.nl/en/education/master/programmes/",
-        "Program_Scope": "non_eu",
-        "Admission_Mode": "Direct",
-        "Admission_Language_Req": "100% English",
-        "Analysis_Strong_Areas": "Robotics, Nanotechnology, Geo-Information Science, Fluid Dynamics",
-        "Analysis_Pros": [
-            "Hollanda'nın tek gerçek Amerikan tarzı ormanlık yeşil kampüsüne sahip olması, eşsiz bir sosyal kampüs hayatı sunması.",
-            "Yüksek teknolojili malzeme bilimi, nanoteknoloji (MESA+ enstitüsü) ve İHA (UAV) araştırma gruplarında mükemmel ar-ge imkanları.",
-            "Hollanda'nın batı bölgesine (Randstad) kıyasla çok daha uygun yaşam maliyetleri ve nispeten daha kolay konut bulma imkanı."
-        ],
-        "Analysis_Cons": [
-            "Ülkenin Almanya sınırına yakın, batıdaki büyük metropollere (Amsterdam, Rotterdam vb.) uzak bir konumda yer alması.",
-            "Çekirdek bir 'Aerospace Engineering' bölümünün bulunmaması, çalışmaların daha çok makine mühendisliği veya robotik üzerinden ilerlemesi."
-        ],
-        "Analysis_Tags": [
-            "robotics",
-            "controls",
-            "mechatronics",
-            "systemsengineering",
-            "sensors",
-            "navigation"
-        ],
-        "Industry_Ecosystem": "Malzeme bilimi, nanoteknoloji ve insansız hava araçları (UAV) üzerine yoğunlaşır.",
-        "Industry_Comp_Intensity": "Medium",
-        "Industry_Partners": [
-            "Thales Nederland",
-            "Demcon",
-            "MESA+ Institute"
-        ],
-        "Internship_Mandatory": true,
-        "Internship_Notes": "Zorunlu staj kapsamında Thales Nederland veya Demcon gibi ileri teknoloji ve savunma sanayi ortaklarında uygulamalı sanayi tezi imkanları geniştir.",
-        "Deadline_Winter_Open": "01 Oct",
-        "Deadline_Winter_Close": "01 May",
-        "Deadline_Winter_Note": "Non‑EU oriented (earliest applicable deadline used when multiple dates are listed). Verify per program.",
-        "Deadline_Summer_Open": "01 Jun",
-        "Deadline_Summer_Close": "30 Nov",
-        "Deadline_Summer_Note": "Non‑EU oriented if summer intake exists; verify per program",
-        "Deadline_General_Note": null,
-        "Meta_Sources": [
-            "{'type': 'fees_or_tuition', 'url': 'https://www.utwente.nl/en/education/student-services/fees', 'last_verified': '2026-01-27'}"
-        ],
-        "Meta_Updated_At": "2026-01-27",
-        "Meta_Needs_Verification": null,
-        "qs_ranking": 233,
-        "global_recognition": "Well known internationally",
-        "field_recognition": "Strong engineering programs"
-    },
-    {
-        "Country": "Netherlands",
-        "City": "Utrecht",
-        "State_Region": "Utrecht",
-        "Uni_ID": "utrecht-university",
-        "University_Name": "Utrecht University",
-        "University_Display_Name": "Utrecht University (UU)",
-        "University_Short_Name": "UU",
-        "Cost_Tuition": [
-            {
-                "scope": "non_eu",
-                "program": "MSc (program depends on track)",
-                "amount": 21500.0,
-                "currency": "EUR",
-                "period": "year",
-                "raw": "Non‑EU tuition: €21,500/year",
-                "effective_from_term_code": "2025W"
-            }
-        ],
-        "Cost_Semester_Fees": [
-            {
-                "term": "WiSe 2025/26",
-                "amount": 0.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€0 (no separate semester contribution; tuition billed annually)",
-                "term_code": "2025W"
+            "application_timeline_profile": {
+                "academic_year": "2026/2027",
+                "intake_terms": [
+                    "September"
+                ],
+                "application_rounds": [],
+                "non_eu_deadline": "2026-01-15",
+                "eu_deadline": "2026-04-01",
+                "scholarship_deadline": "2026-01-15",
+                "pre_enrolment_required": null,
+                "universitaly_required": null,
+                "visa_sensitive_deadline": "",
+                "application_result_timing": "",
+                "enrollment_deadline": "",
+                "timeline_risk": "medium",
+                "deadline_notes": "Non-EU students must apply by January 15. The system closes strictly on this date."
             },
-            {
-                "term": "SoSe 2026",
-                "amount": 0.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€0 (no separate semester contribution; tuition billed annually)",
-                "term_code": "2026S"
-            }
-        ],
-        "Scholarships_Info": [
-            {
-                "name": "Utrecht Excellence Scholarship",
-                "provider": "Utrecht University",
-                "type": "merit",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": null,
-                "url": "https://www.uu.nl/en/education/scholarships"
+            "student_sentiment_profile": {
+                "student_satisfaction_score": 85,
+                "sentiment_confidence": "medium",
+                "sample_size_estimate": null,
+                "date_range": "",
+                "teaching_quality_sentiment": "",
+                "workload_sentiment": "Very high workload, intensive curriculum.",
+                "administration_sentiment": "",
+                "housing_sentiment": "Extremely difficult housing market. Students report nightmare scenario finding rooms.",
+                "city_life_sentiment": "",
+                "international_student_support_sentiment": "",
+                "career_support_sentiment": "",
+                "positive_themes": [],
+                "negative_themes": [],
+                "recurring_complaints": [],
+                "recurring_strengths": [],
+                "sentiment_summary": "Excellent education quality and career outcomes, but living expenses and housing are massive bottlenecks.",
+                "student_sentiment_sources": [
+                    "Reddit",
+                    "Studyportal reviews",
+                    "The Student Room"
+                ]
             },
-            {
-                "name": "NL Scholarship",
-                "provider": "Dutch government / Nuffic",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": null,
-                "url": "https://www.studyinnl.org/finances/nl-scholarship"
+            "source_profile": {
+                "official_program_page": "https://www.tudelft.nl/en/education/programmes/masters/ae/msc-aerospace-engineering",
+                "official_admission_page": "https://www.tudelft.nl/en/education/admission-and-application",
+                "official_tuition_page": "https://www.tudelft.nl/en/education/practical-matters/tuition-fee-finances",
+                "official_scholarship_page": "https://www.tudelft.nl/en/education/practical-matters/scholarships",
+                "official_curriculum_page": "",
+                "official_department_page": "",
+                "official_lab_pages": [],
+                "third_party_sources": [
+                    "https://www.tudelft.nl/en/education/practical-matters/tuition-fee-finances",
+                    "https://www.tudelft.nl/onderwijs/opleidingen/masters/ae/msc-aerospace-engineering/admission-and-application",
+                    "https://www.tudelft.nl/onderwijs/studievoorlichting/praktische-zaken/scholarships/justus-louise-van-effen-excellence-scholarships",
+                    "https://www.studyinnl.org/finances/nl-scholarship"
+                ],
+                "student_sentiment_sources": [],
+                "source_log": [],
+                "last_verified": "2026-06-24",
+                "needs_verification": false,
+                "verification_notes": "",
+                "field_confidence": {
+                    "program_basic_info": "high",
+                    "language": "high",
+                    "admission": "high",
+                    "tuition": "high",
+                    "scholarship": "high",
+                    "curriculum": "high",
+                    "research": "high",
+                    "industry": "high",
+                    "living": "high",
+                    "student_sentiment": "medium"
+                }
             },
-            {
-                "name": "Study in NL – Scholarships portal",
-                "provider": "Study in NL (Nuffic)",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "National portal to explore scholarships/funding options for international students",
-                "url": "https://www.studyinnl.org/finances/scholarships"
-            }
-        ],
-        "Cost_City_Living": "very_high",
-        "Cost_City_Rank": 5.0,
-        "Living_Housing_Difficulty": "Nightmare",
-        "Living_Housing_Score": 10.0,
-        "Program_Name": "MSc Physics and Astronomy (track-dependent)",
-        "Program_Degree": "MSc",
-        "Program_ECTS": 120,
-        "Program_URL": "https://www.uu.nl/en/masters",
-        "Program_Scope": "non_eu",
-        "Admission_Mode": "Aptitude Test",
-        "Admission_Language_Req": "100% English",
-        "Analysis_Strong_Areas": "Theoretical Physics, Climate Physics, Astrophysics, Oceanography",
-        "Analysis_Pros": [
-            "Teorik fizik, astrofizik ve atmosfer fiziki (iklim sistemleri) alanlarında dünya çapında en saygın akademik kurumlardan biri olması.",
-            "Hollanda Uzay Araştırmaları Enstitüsü (SRON) ile son derece güçlü akademik ortaklıklar ve ortak tez çalışmaları.",
-            "Utrecht'in tarihi dokusu, merkezi konumu ve olağanüstü dinamik öğrenci şehri atmosferi."
-        ],
-        "Analysis_Cons": [
-            "Utrecht genelinde öğrenci konut krizinin kritik seviyede olması, oda kiralarının aşırı yüksekliği.",
-            "Uygulamalı bir mühendislik okulu olmaması; uzay çalışmalarının daha çok temel bilim, gözlem ve veri analizi seviyesinde kalması.",
-            "Yıllık €21,500 düzeyindeki yüksek eğitim harcı ücreti."
-        ],
-        "Analysis_Tags": [
-            "astrophysics",
-            "spacescience",
-            "computationalphysics",
-            "datascience",
-            "atmospherephysics"
-        ],
-        "Industry_Ecosystem": "SRON (Netherlands Institute for Space Research) ile doğrudan entegre laboratuvarlar, KNMI (Hollanda Kraliyet Meteoroloji Enstitüsü) iklim araştırmaları.",
-        "Industry_Comp_Intensity": "High",
-        "Industry_Partners": [
-            "SRON",
-            "KNMI (Meteoroloji)",
-            "Deltares"
-        ],
-        "Internship_Mandatory": false,
-        "Internship_Notes": "Mühendislik stajı yerine, SRON bünyesinde veya uluslararası uzay gözlemevlerinde bilimsel ar-ge projeleri ve tez çalışmaları yaygın olarak tercih edilir.",
-        "Deadline_Winter_Open": "01 Oct",
-        "Deadline_Winter_Close": "01 Apr",
-        "Deadline_Winter_Note": "Non‑EU oriented (earliest applicable deadline used when multiple dates are listed). Verify per program.",
-        "Deadline_Summer_Open": "01 Jun",
-        "Deadline_Summer_Close": "30 Nov",
-        "Deadline_Summer_Note": "Non‑EU oriented if summer intake exists; verify per program",
-        "Deadline_General_Note": null,
-        "Meta_Sources": [
-            "{'type': 'fees_or_tuition', 'url': 'https://www.uu.nl/en/masters/general-information/application-and-admission/fees', 'last_verified': '2026-01-27'}"
-        ],
-        "Meta_Updated_At": "2026-01-27",
-        "Meta_Needs_Verification": null,
-        "qs_ranking": 105,
-        "global_recognition": "Highly recognized globally",
-        "field_recognition": "Very strong engineering reputation"
-    },
-    {
-        "Country": "Netherlands",
-        "City": "Amsterdam",
-        "State_Region": "Noord-Holland",
-        "Uni_ID": "university-of-amsterdam",
-        "University_Name": "University of Amsterdam",
-        "University_Display_Name": "University of Amsterdam (UvA)",
-        "University_Short_Name": "UvA",
-        "Cost_Tuition": [
-            {
-                "scope": "non_eu",
-                "program": "MSc (program depends on track)",
-                "amount": 25900.0,
-                "currency": "EUR",
-                "period": "year",
-                "raw": "Non‑EU tuition: €25,900/year",
-                "effective_from_term_code": "2025W"
-            }
-        ],
-        "Cost_Semester_Fees": [
-            {
-                "term": "WiSe 2025/26",
-                "amount": 0.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€0 (no separate semester contribution; tuition billed annually)",
-                "term_code": "2025W"
+            "decision_summary": {
+                "best_for": [],
+                "not_ideal_for": [],
+                "main_strengths": [
+                    "Havacılık ve Uzay alanında dünya çapında ilk 5'te yer alan, olağanüstü laboratuvar, rüzgar tüneli ve uçuş simülatörü olanaklarına sahip küresel liderlik.",
+                    "Avrupa Uzay Ajansı'nın (ESA) en büyük ar-ge merkezi olan ESTEC'e (Noordwijk) yakınlık ve doğrudan işbirliği avantajı.",
+                    "Hollanda'nın güçlü havacılık ve uzay kümelenmesinde (Airbus Netherlands, GKN Fokker) rakipsiz staj ve tez ağının bulunması."
+                ],
+                "main_risks": [
+                    "Delft genelinde öğrenci konut krizi had safhadadır (Nightmare); ev veya oda bulmak aylar süren yoğun bir arama süreci gerektirir.",
+                    "AB dışı (Non-EU) öğrenciler için yıllık €21,600 gibi oldukça yüksek bir eğitim harcı ücretinin olması.",
+                    "Başvuruların son derece seçici ve rekabetçi bir değerlendirme sürecine tabi tutulması."
+                ],
+                "application_reality": "",
+                "overall_recommendation": "Strong option for studying MSc Aerospace Engineering in the Netherlands.",
+                "recommended_user_profile": ""
             },
-            {
-                "term": "SoSe 2026",
-                "amount": 0.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€0 (no separate semester contribution; tuition billed annually)",
-                "term_code": "2026S"
-            }
-        ],
-        "Scholarships_Info": [
-            {
-                "name": "Amsterdam Merit Scholarship",
-                "provider": "University of Amsterdam",
-                "type": "merit",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": null,
-                "url": "https://www.uva.nl/en/education/fees-and-funding/scholarships-and-loans/scholarships.html"
+            "scoring_inputs": {
+                "academic_field_fit_score_seed": 85,
+                "eligibility_language_score_seed": 90,
+                "cost_funding_score_seed": 40,
+                "career_research_score_seed": 80,
+                "living_risk_score_seed": 30,
+                "data_confidence_score_seed": 100,
+                "student_satisfaction_score_seed": 85,
+                "hard_filter_flags": {
+                    "english_only_compatible": true,
+                    "requires_local_language": false,
+                    "non_eu_eligible": true,
+                    "tuition_above_5000": true,
+                    "tuition_above_10000": true,
+                    "deadline_unclear": false,
+                    "needs_verification": false
+                }
             },
-            {
-                "name": "Amsterdam Science Talent Scholarship",
-                "provider": "UvA",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": null,
-                "url": null
+            "quality_control": {
+                "qc_status": "needs_revision",
+                "checked_at": "",
+                "failed_canary_tests": [],
+                "remaining_verification_tasks": [],
+                "qc_notes": ""
             },
-            {
-                "name": "Study in NL – Scholarships portal",
-                "provider": "Study in NL (Nuffic)",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "National portal to explore scholarships/funding options for international students",
-                "url": "https://www.studyinnl.org/finances/scholarships"
-            }
-        ],
-        "Cost_City_Living": "very_high",
-        "Cost_City_Rank": 6.0,
-        "Living_Housing_Difficulty": "Nightmare",
-        "Living_Housing_Score": 10.0,
-        "Program_Name": "MSc Physics and Astronomy / Computational Science (track-dependent)",
-        "Program_Degree": "MSc",
-        "Program_ECTS": 120,
-        "Program_URL": "https://www.uva.nl/en/education/master-s-programmes/master-s-programmes.html",
-        "Program_Scope": "non_eu",
-        "Admission_Mode": "Aptitude Test",
-        "Admission_Language_Req": "100% English",
-        "Analysis_Strong_Areas": "Astronomy, High Energy Physics, Artificial Intelligence, Computational Science",
-        "Analysis_Pros": [
-            "Astronomi ve Astrofizik (Anton Pannekoek Enstitüsü) alanlarında dünyaca ünlü, kara delikler ve yüksek enerji astrofiziği çalışmalarında lider kadro.",
-            "Amsterdam'ın sunduğu benzersiz küresel vizyon, geniş iş ağı, start-up ekosistemi ve sosyal yaşam avantajları.",
-            "Hesaplamalı bilimler ve yapay zeka alanında Avrupa'nın en güçlü akademik merkezlerinden biri olması."
-        ],
-        "Analysis_Cons": [
-            "Hollanda'nın en pahalı eğitim harçlarından birine sahip olması (yıllık €25,900 Non-EU).",
-            "Amsterdam'da yaşam maliyetleri ve kiralık konut piyasasının tam bir çıkmazda (Nightmare) olması; bütçe planlamasının zorluğu.",
-            "Pratik roketçilik veya uydu üretimi gibi mühendislik disiplinlerinin müfredatta yer almaması."
-        ],
-        "Analysis_Tags": [
-            "astronomy",
-            "astrophysics",
-            "computationalphysics",
-            "datascience",
-            "spacescience"
-        ],
-        "Industry_Ecosystem": "Anton Pannekoek Astronomi Enstitüsü, ASTRON radyo astronomi ortak projeleri, veri bilimi ve yapay zeka alanlarında küresel teknoloji şirketleriyle (Google vb.) ortak çalışmalar.",
-        "Industry_Comp_Intensity": "Very High",
-        "Industry_Partners": [
-            "Anton Pannekoek Institute",
-            "ASTRON",
-            "Google"
-        ],
-        "Internship_Mandatory": false,
-        "Internship_Notes": "Bilimsel araştırmaya dayalı tezler ağırlıkta olup, öğrenciler genellikle gözlemevleri veya veri bilimi odaklı teknoloji firmalarında tez çalışması yaparlar.",
-        "Deadline_Winter_Open": "01 Oct",
-        "Deadline_Winter_Close": "2026-01-15",
-        "Deadline_Winter_Note": "Non‑EU oriented (earliest applicable deadline used when multiple dates are listed). Verify per program.",
-        "Deadline_Summer_Open": "01 Jun",
-        "Deadline_Summer_Close": "30 Nov",
-        "Deadline_Summer_Note": "Non‑EU oriented if summer intake exists; verify per program",
-        "Deadline_General_Note": null,
-        "Meta_Sources": [
-            "{'type': 'fees_or_tuition', 'url': 'https://www.uva.nl/en/education/fees-and-funding', 'last_verified': '2026-01-27'}"
-        ],
-        "Meta_Updated_At": "2026-01-27",
-        "Meta_Needs_Verification": null,
-        "qs_ranking": 55,
-        "global_recognition": "Top-tier global university",
-        "field_recognition": "World-class engineering programs"
-    },
-    {
-        "Country": "Netherlands",
-        "City": "Amsterdam",
-        "State_Region": "Noord-Holland",
-        "Uni_ID": "vrije-universiteit-amsterdam",
-        "University_Name": "Vrije Uüniversiteit Amsterdam",
-        "University_Display_Name": "Vrije Uüniversiteit Amsterdam (VU Amsterdam)",
-        "University_Short_Name": "VU Amsterdam",
-        "Cost_Tuition": [
-            {
-                "scope": "non_eu",
-                "program": "MSc (program depends on track)",
-                "amount": 25900.0,
-                "currency": "EUR",
-                "period": "year",
-                "raw": "Non‑EU tuition: €25,900/year",
-                "effective_from_term_code": "2025W"
-            }
-        ],
-        "Cost_Semester_Fees": [
-            {
-                "term": "WiSe 2025/26",
-                "amount": 0.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€0 (no separate semester contribution; tuition billed annually)",
-                "term_code": "2025W"
+            "qs_ranking": 49,
+            "global_recognition": "World-class elite institution",
+            "field_recognition": "Top-tier engineering/aerospace hub"
+        },
+        {
+            "id": "netherlands_tue_msc_mech",
+            "country": "Netherlands",
+            "university": "Eindhoven University of Technology",
+            "university_native_name": "Technische Universiteit Eindhoven",
+            "city": "Eindhoven",
+            "region": "Noord-Brabant",
+            "program_name": "MSc Mechanical Engineering",
+            "program_native_name": "MSc Mechanical Engineering",
+            "program_degree": "MSc",
+            "degree_level": "Master",
+            "degree_class": "MSc",
+            "duration_years": 2,
+            "ects": 120,
+            "teaching_language": [
+                "English"
+            ],
+            "program_url": "https://www.tue.nl/en/education/graduate-school/master-mechanical-engineering",
+            "department": "Department of Mechanical Engineering",
+            "faculty_or_school": "",
+            "campus": "Eindhoven",
+            "program_status": "active",
+            "relevance_status": "relevant",
+            "eligibility_profile": {
+                "eligible_for_non_eu": true,
+                "non_eu_quota": null,
+                "required_previous_degree": "BSc in Mechanical Engineering or relevant engineering/physics field",
+                "accepted_backgrounds": [
+                    "Mechanical Engineering",
+                    "Mechatronics",
+                    "Aerospace Engineering",
+                    "Physics"
+                ],
+                "required_ects": {},
+                "minimum_gpa": null,
+                "gpa_scale": "",
+                "ranking_or_selection": "",
+                "admission_mode": "Selection",
+                "admission_risk": "medium",
+                "required_documents": [
+                    "Degree Certificate",
+                    "Transcript",
+                    "English Test",
+                    "CV",
+                    "Motivation Letter"
+                ],
+                "motivation_letter_required": true,
+                "cv_required": true,
+                "recommendation_required": null,
+                "portfolio_required": null,
+                "interview_required": null,
+                "test_required": null,
+                "notes_for_turkish_students": ""
             },
-            {
-                "term": "SoSe 2026",
-                "amount": 0.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€0 (no separate semester contribution; tuition billed annually)",
-                "term_code": "2026S"
-            }
-        ],
-        "Scholarships_Info": [
-            {
-                "name": "VU Fellowship Programme (VUFP)",
-                "provider": "VU Amsterdam",
-                "type": "merit",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": null,
-                "url": "https://vu.nl/en/education/more-about/scholarships"
+            "language_profile": {
+                "teaching_language": [
+                    "English"
+                ],
+                "english_required": true,
+                "english_level_required": "IELTS 6.5 (min 6.0 in all parts) or TOEFL 90 (min 21)",
+                "accepted_english_tests": [
+                    "IELTS",
+                    "TOEFL iBT"
+                ],
+                "english_exemptions": [],
+                "italian_required": null,
+                "italian_level_required": "",
+                "italian_needed_for_life_or_internship": "",
+                "mixed_language_warning": "",
+                "language_risk": "low"
             },
-            {
-                "name": "NL Scholarship",
-                "provider": "Dutch government / Nuffic",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": null,
-                "url": "https://www.studyinnl.org/finances/nl-scholarship"
+            "cost_profile": {
+                "academic_year": "2026/2027",
+                "tuition_eur_per_year_min": 21700,
+                "tuition_eur_per_year_max": 21700,
+                "tuition_eur_per_year_estimated": 21700,
+                "tuition_basis": "Per year",
+                "regional_tax_eur": null,
+                "student_contribution_eur": null,
+                "application_fee_eur": 100,
+                "enrollment_fee_eur": null,
+                "total_academic_cost_eur_per_year_estimated": 21700,
+                "isee_or_income_based": null,
+                "non_eu_flat_fee": 21700,
+                "payment_installments": "",
+                "refund_policy": "",
+                "source_notes": ""
             },
-            {
-                "name": "Study in NL – Scholarships portal",
-                "provider": "Study in NL (Nuffic)",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "National portal to explore scholarships/funding options for international students",
-                "url": "https://www.studyinnl.org/finances/scholarships"
-            }
-        ],
-        "Cost_City_Living": "very_high",
-        "Cost_City_Rank": 6.0,
-        "Living_Housing_Difficulty": "Nightmare",
-        "Living_Housing_Score": 10.0,
-        "Program_Name": "MSc Physics / Earth Sciences (track-dependent)",
-        "Program_Degree": "MSc",
-        "Program_ECTS": 120,
-        "Program_URL": "https://vu.nl/en/education/master",
-        "Program_Scope": "non_eu",
-        "Admission_Mode": "Aptitude Test",
-        "Admission_Language_Req": "100% English",
-        "Analysis_Strong_Areas": "Physics of Life, Planetary Science, Computer Science, Earth Sciences",
-        "Analysis_Pros": [
-            "UvA ile ortak fizik programları sayesinde çok geniş bir müfredat sunar. Kampüsü şehrin iş merkezine (Zuidas) yakındır."
-        ],
-        "Analysis_Cons": [
-            "UvA gibi çok pahalıdır. Konut krizi hat safhadadır."
-        ],
-        "Analysis_Tags": [
-            "physics",
-            "astronomy",
-            "earthsciences",
-            "computationalmodeling",
-            "datascience",
-            "spacescience"
-        ],
-        "Industry_Ecosystem": "UvA ile ortak dereceler sunar. Yer Bilimleri (Earth Sciences) güçlüdür.",
-        "Industry_Comp_Intensity": "High",
-        "Industry_Partners": [
-            "LaserLaB Amsterdam",
-            "TNO",
-            "ESA"
-        ],
-        "Internship_Mandatory": false,
-        "Internship_Notes": "Internship/thesis projects are common; whether a formal internship is mandatory depends on the specific track/program.",
-        "Deadline_Winter_Open": "01 Oct",
-        "Deadline_Winter_Close": "01 Apr",
-        "Deadline_Winter_Note": "Non‑EU oriented (earliest applicable deadline used when multiple dates are listed). Verify per program.",
-        "Deadline_Summer_Open": "01 Jun",
-        "Deadline_Summer_Close": "30 Nov",
-        "Deadline_Summer_Note": "Non‑EU oriented if summer intake exists; verify per program",
-        "Deadline_General_Note": null,
-        "Meta_Sources": [
-            "{'type': 'fees_or_tuition', 'url': 'https://vu.nl/en/education/master/tuition-fees', 'last_verified': '2026-01-27'}"
-        ],
-        "Meta_Updated_At": "2026-01-27",
-        "Meta_Needs_Verification": null,
-        "qs_ranking": 53,
-        "global_recognition": "Very high global prestige",
-        "field_recognition": "Elite in AI, physics, and computer science"
-    },
-    {
-        "Country": "Netherlands",
-        "City": "Leiden",
-        "State_Region": "Zuid-Holland",
-        "Uni_ID": "leiden-university",
-        "University_Name": "Leiden University",
-        "University_Display_Name": "Leiden University",
-        "University_Short_Name": "Leiden",
-        "Cost_Tuition": [
-            {
-                "scope": "non_eu",
-                "program": "MSc (program depends on track)",
-                "amount": 21800.0,
-                "currency": "EUR",
-                "period": "year",
-                "raw": "Non‑EU tuition: €21,800/year",
-                "effective_from_term_code": "2025W"
-            }
-        ],
-        "Cost_Semester_Fees": [
-            {
-                "term": "WiSe 2025/26",
-                "amount": 0.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€0 (no separate semester contribution; tuition billed annually)",
-                "term_code": "2025W"
+            "scholarship_profile": {
+                "regional_scholarship_available": true,
+                "regional_scholarship_name": "Amandus H. Lundqvist Scholarship Program (ALSP) / NL Scholarship",
+                "dsu_or_equivalent": "",
+                "merit_scholarships": [
+                    "ALSP",
+                    "NL Scholarship",
+                    "Amandus H. Lundqvist Scholarship Program (ALSP)",
+                    "Study in NL – Scholarships portal"
+                ],
+                "tuition_waivers": [],
+                "housing_support": null,
+                "meal_support": null,
+                "cash_grant_possible": null,
+                "non_eu_eligible": true,
+                "income_based": null,
+                "scholarship_deadline": "2026-02-01",
+                "scholarship_application_url": "",
+                "funding_competitiveness": "unknown",
+                "funding_notes": ""
             },
-            {
-                "term": "SoSe 2026",
-                "amount": 0.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€0 (no separate semester contribution; tuition billed annually)",
-                "term_code": "2026S"
-            }
-        ],
-        "Scholarships_Info": [
-            {
-                "name": "Leiden University Excellence Scholarship (LExS)",
-                "provider": "Leiden University",
-                "type": "merit",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": null,
-                "url": "https://www.universiteitleiden.nl/en/education/study-finances/scholarships"
+            "living_profile": {
+                "city_cost_level": "high",
+                "monthly_living_cost_eur_min": null,
+                "monthly_living_cost_eur_max": null,
+                "monthly_living_cost_eur_estimated": 1100,
+                "housing_difficulty": "hard",
+                "student_housing_available": null,
+                "student_housing_competitiveness": "",
+                "average_room_rent_eur": 600,
+                "public_transport_cost_eur_month": null,
+                "food_cost_eur_month": null,
+                "city_safety_note": "",
+                "part_time_work_possibility": "",
+                "living_risk": "medium"
             },
-            {
-                "name": "NL Scholarship",
-                "provider": "Dutch government / Nuffic",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": null,
-                "url": "https://www.studyinnl.org/finances/nl-scholarship"
+            "curriculum_profile": {
+                "tracks": [
+                    "Mechatronic Systems Design",
+                    "Dynamics & Control",
+                    "Thermo Fluids Engineering",
+                    "Mechanics of Materials"
+                ],
+                "specializations": [],
+                "mandatory_courses": [],
+                "elective_courses": [],
+                "course_language_notes": "Zorunlu staj uygulaması mevcut olup, öğrenciler genellikle ASML, Philips veya VDL Groep bünyesinde mekatronik ve kontrol sistemleri üzerine endüstriyel stajlarını tamamlarlar.",
+                "thesis_required": true,
+                "internship_required": true,
+                "lab_courses": [],
+                "project_based_courses": [],
+                "mobility_options": [],
+                "double_degree_options": [],
+                "curriculum_url": "",
+                "study_plan_url": ""
             },
-            {
-                "name": "Study in NL – Scholarships portal",
-                "provider": "Study in NL (Nuffic)",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "National portal to explore scholarships/funding options for international students",
-                "url": "https://www.studyinnl.org/finances/scholarships"
-            }
-        ],
-        "Cost_City_Living": "very_high",
-        "Cost_City_Rank": 5.0,
-        "Living_Housing_Difficulty": "Nightmare",
-        "Living_Housing_Score": 9.0,
-        "Program_Name": "MSc Astronomy / Computer Science (track-dependent)",
-        "Program_Degree": "MSc",
-        "Program_ECTS": 120,
-        "Program_URL": "https://www.universiteitleiden.nl/en/education/study-programmes/master",
-        "Program_Scope": "non_eu",
-        "Admission_Mode": "Direct",
-        "Admission_Language_Req": "100% English",
-        "Analysis_Strong_Areas": "Astronomy, Space Law, Computer Science, Physics",
-        "Analysis_Pros": [
-            "Astronomi ve Astrofizik alanında dünyanın en prestijli merkezlerinden biri (Leiden Gözlemevi) olması ve Jan Oort gibi devlerin mirasını taşıması.",
-            "ESA-ESTEC'e fiziki yakınlığı sayesinde uzay hukuku, uydu verisi analizi ve astrofizik konularında rakipsiz ağ fırsatları.",
-            "Leiden'in tipik, son derece güvenli ve keyifli bir kanal-öğrenci şehri atmosferine sahip olması."
-        ],
-        "Analysis_Cons": [
-            "Mühendislik okulu olmaması; derslerin ve araştırmaların teorik fizik, matematik ve uzay hukuku odaklı yürümesi.",
-            "Yıllık €21,800 düzeyindeki harç ücreti ve Zuid-Holland bölgesindeki genel konut sıkıntısı."
-        ],
-        "Analysis_Tags": [
-            "astronomy",
-            "astrophysics",
-            "spacescience",
-            "computationalphysics"
-        ],
-        "Industry_Ecosystem": "ESA-ESTEC Noordwijk üssü ortaklığı, Leiden Observatory araştırma grupları ve Hollanda Uzay Ofisi (NSO) ile uzay hukuku/politikası işbirlikleri.",
-        "Industry_Comp_Intensity": "High",
-        "Industry_Partners": [
-            "ESA ESTEC",
-            "Leiden Observatory",
-            "Dutch Space"
-        ],
-        "Internship_Mandatory": false,
-        "Internship_Notes": "Öğrencilerin bir kısmı tezlerini ESTEC'teki ESA laboratuvarlarında tamamlayarak doğrudan uzay ajansı kültürünü yerinde deneyimlemektedir.",
-        "Deadline_Winter_Open": "01 Oct",
-        "Deadline_Winter_Close": "01 Apr",
-        "Deadline_Winter_Note": "Non‑EU oriented (earliest applicable deadline used when multiple dates are listed). Verify per program.",
-        "Deadline_Summer_Open": "01 Jun",
-        "Deadline_Summer_Close": "15 Oct",
-        "Deadline_Summer_Note": "Non‑EU oriented if summer intake exists; verify per program",
-        "Deadline_General_Note": null,
-        "Meta_Sources": [
-            "{'type': 'fees_or_tuition', 'url': 'https://www.universiteitleiden.nl/en/education/tuition-fee', 'last_verified': '2026-01-27'}"
-        ],
-        "Meta_Updated_At": "2026-01-27",
-        "Meta_Needs_Verification": null,
-        "qs_ranking": 141,
-        "global_recognition": "Highly recognized globally",
-        "field_recognition": "Very strong engineering reputation"
-    },
-    {
-        "Country": "Netherlands",
-        "City": "Groningen",
-        "State_Region": "Groningen",
-        "Uni_ID": "university-of-groningen",
-        "University_Name": "University of Groningen",
-        "University_Display_Name": "University of Groningen (RUG)",
-        "University_Short_Name": "RUG",
-        "Cost_Tuition": [
-            {
-                "scope": "non_eu",
-                "program": "MSc (program depends on track)",
-                "amount": 24900.0,
-                "currency": "EUR",
-                "period": "year",
-                "raw": "Non‑EU tuition: €24,900/year",
-                "effective_from_term_code": "2025W"
-            }
-        ],
-        "Cost_Semester_Fees": [
-            {
-                "term": "WiSe 2025/26",
-                "amount": 0.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€0 (no separate semester contribution; tuition billed annually)",
-                "term_code": "2025W"
+            "category_profile": {
+                "primary_categories": [
+                    "Uncategorized / Needs Review"
+                ],
+                "secondary_categories": [],
+                "subcategories": [],
+                "normalized_tags": [],
+                "category_scores": {}
             },
-            {
-                "term": "SoSe 2026",
-                "amount": 0.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€0 (no separate semester contribution; tuition billed annually)",
-                "term_code": "2026S"
-            }
-        ],
-        "Scholarships_Info": [
-            {
-                "name": "Eric Bleumink Fund",
-                "provider": "University of Groningen",
-                "type": "merit",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": null,
-                "url": "https://www.rug.nl/education/master/scholarships/"
+            "research_profile": {
+                "department_research_areas": [
+                    "Mechatronics, Control Systems, Artificial Intelligence, Sustainable Energy"
+                ],
+                "labs": [],
+                "research_centers": [],
+                "notable_professors": [],
+                "space_or_aerospace_projects": [],
+                "student_teams": [],
+                "satellite_or_flight_projects": [],
+                "research_strength_summary": "Very strong engineering reputation. Specialization in mechatronics, advanced dynamics, and materials.",
+                "research_strength_score": 88,
+                "research_sources": []
             },
-            {
-                "name": "NL Scholarship",
-                "provider": "Dutch government / Nuffic",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": null,
-                "url": "https://www.studyinnl.org/finances/nl-scholarship"
+            "industry_ecosystem_profile": {
+                "nearby_companies": [
+                    "ASML",
+                    "Philips",
+                    "VDL Groep",
+                    "DAF Trucks"
+                ],
+                "confirmed_partners": [],
+                "space_agencies_or_public_bodies": [],
+                "research_institutes": [],
+                "startup_or_incubator_ecosystem": [],
+                "internship_possibility": "",
+                "thesis_with_industry_possibility": "",
+                "career_relevance": "",
+                "ecosystem_strength_score": null,
+                "ecosystem_notes": "Brainport Eindhoven (ASML genel merkezi, Philips, VDL Groep, DAF Trucks) havacılık ve uzay için gelişmiş mekatronik ve üretim odaklı küresel teknoloji merkezi."
             },
-            {
-                "name": "Study in NL – Scholarships portal",
-                "provider": "Study in NL (Nuffic)",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "National portal to explore scholarships/funding options for international students",
-                "url": "https://www.studyinnl.org/finances/scholarships"
-            }
-        ],
-        "Cost_City_Living": "medium",
-        "Cost_City_Rank": 3.0,
-        "Living_Housing_Difficulty": "Hard",
-        "Living_Housing_Score": 7.0,
-        "Program_Name": "MSc Astronomy / AI (track-dependent)",
-        "Program_Degree": "MSc",
-        "Program_ECTS": 120,
-        "Program_URL": "https://www.rug.nl/education/master/",
-        "Program_Scope": "non_eu",
-        "Admission_Mode": "Direct",
-        "Admission_Language_Req": "100% English",
-        "Analysis_Strong_Areas": "Astronomy, Artificial Intelligence, Energy Systems, Mathematics",
-        "Analysis_Pros": [
-            "Groningen'in tamamen genç nüfus ve öğrencilerden oluşan, canlı, kozmopolit ve son derece keyifli bir öğrenci şehri olması.",
-            "SRON (Uzay Araştırmaları Enstitüsü) Groningen şubesi ve Kapteyn Astronomi Enstitüsü ile uzay enstrümantasyonu ve sensör teknolojilerinde liderlik.",
-            "Batı Hollanda'ya kıyasla yaşam maliyetlerinin bir nebze daha yönetilebilir olması."
-        ],
-        "Analysis_Cons": [
-            "Hollanda'nın en kuzey ucunda yer alarak büyük sanayi merkezlerine ve Schiphol Havalimanı'na coğrafi olarak uzak olması.",
-            "Science (Temel Bilimler) fakültesi için yıllık €24,900 gibi oldukça yüksek eğitim harcı ücretinin bulunması."
-        ],
-        "Analysis_Tags": [
-            "astronomy",
-            "spacescience",
-            "computationalmodeling",
-            "datascience"
-        ],
-        "Industry_Ecosystem": "SRON Space Research Groningen laboratuvarları, Kapteyn Astronomi Enstitüsü ve radyo astronomi alanında öncü radyo teleskop projeleri ortaklıkları.",
-        "Industry_Comp_Intensity": "Medium",
-        "Industry_Partners": [
-            "SRON",
-            "ASTRON",
-            "Avebe"
-        ],
-        "Internship_Mandatory": false,
-        "Internship_Notes": "Uzay enstrümantasyonu ve sensör geliştirme alanlarında SRON laboratuvarları bünyesinde yapılan tez ve stajlar yaygındır.",
-        "Deadline_Winter_Open": "01 Oct",
-        "Deadline_Winter_Close": "01 May",
-        "Deadline_Winter_Note": "Non‑EU oriented (earliest applicable deadline used when multiple dates are listed). Verify per program.",
-        "Deadline_Summer_Open": "01 Jun",
-        "Deadline_Summer_Close": "30 Nov",
-        "Deadline_Summer_Note": "Non‑EU oriented if summer intake exists; verify per program",
-        "Deadline_General_Note": null,
-        "Meta_Sources": [
-            "{'type': 'fees_or_tuition', 'url': 'https://www.rug.nl/education/application-enrolment-tuition-fees', 'last_verified': '2026-01-27'}"
-        ],
-        "Meta_Updated_At": "2026-01-27",
-        "Meta_Needs_Verification": null,
-        "qs_ranking": 159,
-        "global_recognition": "Highly recognized globally",
-        "field_recognition": "Very strong engineering reputation"
-    },
-    {
-        "Country": "Netherlands",
-        "City": "Nijmegen",
-        "State_Region": "Gelderland",
-        "Uni_ID": "radboud-university",
-        "University_Name": "Radboud University",
-        "University_Display_Name": "Radboud University (Radboud)",
-        "University_Short_Name": "Radboud",
-        "Cost_Tuition": [
-            {
-                "scope": "non_eu",
-                "program": "MSc (program depends on track)",
-                "amount": 17000.0,
-                "currency": "EUR",
-                "period": "year",
-                "raw": "Non‑EU tuition: €17,000/year",
-                "effective_from_term_code": "2025W"
-            }
-        ],
-        "Cost_Semester_Fees": [
-            {
-                "term": "WiSe 2025/26",
-                "amount": 0.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€0 (no separate semester contribution; tuition billed annually)",
-                "term_code": "2025W"
+            "application_timeline_profile": {
+                "academic_year": "2026/2027",
+                "intake_terms": [
+                    "September"
+                ],
+                "application_rounds": [],
+                "non_eu_deadline": "2026-05-01",
+                "eu_deadline": "",
+                "scholarship_deadline": "2026-02-01",
+                "pre_enrolment_required": null,
+                "universitaly_required": null,
+                "visa_sensitive_deadline": "",
+                "application_result_timing": "",
+                "enrollment_deadline": "",
+                "timeline_risk": "medium",
+                "deadline_notes": ""
             },
-            {
-                "term": "SoSe 2026",
-                "amount": 0.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€0 (no separate semester contribution; tuition billed annually)",
-                "term_code": "2026S"
-            }
-        ],
-        "Scholarships_Info": [
-            {
-                "name": "Radboud Scholarship Programme",
-                "provider": "Radboud University",
-                "type": "merit",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": null,
-                "url": "https://www.ru.nl/en/education/scholarships/radboud-scholarship-programme"
+            "student_sentiment_profile": {
+                "student_satisfaction_score": 82,
+                "sentiment_confidence": "medium",
+                "sample_size_estimate": null,
+                "date_range": "",
+                "teaching_quality_sentiment": "",
+                "workload_sentiment": "Intense workload.",
+                "administration_sentiment": "",
+                "housing_sentiment": "Housing is hard to find in Eindhoven. Highly competitive.",
+                "city_life_sentiment": "",
+                "international_student_support_sentiment": "",
+                "career_support_sentiment": "",
+                "positive_themes": [],
+                "negative_themes": [],
+                "recurring_complaints": [],
+                "recurring_strengths": [],
+                "sentiment_summary": "Great industrial links in Brainport, but housing is a major challenge.",
+                "student_sentiment_sources": [
+                    "Reddit",
+                    "Studyportal reviews",
+                    "The Student Room"
+                ]
             },
-            {
-                "name": "NL Scholarship",
-                "provider": "Dutch government / Nuffic",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": null,
-                "url": "https://www.studyinnl.org/finances/nl-scholarship"
+            "source_profile": {
+                "official_program_page": "https://www.tue.nl/en/education/graduate-school/master-mechanical-engineering",
+                "official_admission_page": "",
+                "official_tuition_page": "https://www.tue.nl/en/education/become-a-tue-student/tuition-fees-and-other-study-costs",
+                "official_scholarship_page": "",
+                "official_curriculum_page": "",
+                "official_department_page": "",
+                "official_lab_pages": [],
+                "third_party_sources": [
+                    "https://www.tue.nl/en/education/become-a-tue-student/tuition-fees-and-other-study-costs"
+                ],
+                "student_sentiment_sources": [],
+                "source_log": [],
+                "last_verified": "2026-06-24",
+                "needs_verification": false,
+                "verification_notes": "",
+                "field_confidence": {
+                    "program_basic_info": "high",
+                    "language": "high",
+                    "admission": "high",
+                    "tuition": "high",
+                    "scholarship": "high",
+                    "curriculum": "high",
+                    "research": "high",
+                    "industry": "high",
+                    "living": "high",
+                    "student_sentiment": "medium"
+                }
             },
-            {
-                "name": "Study in NL – Scholarships portal",
-                "provider": "Study in NL (Nuffic)",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "National portal to explore scholarships/funding options for international students",
-                "url": "https://www.studyinnl.org/finances/scholarships"
-            }
-        ],
-        "Cost_City_Living": "medium",
-        "Cost_City_Rank": 3.0,
-        "Living_Housing_Difficulty": "Hard",
-        "Living_Housing_Score": 8.0,
-        "Program_Name": "MSc Physics and Astronomy / Data Science (track-dependent)",
-        "Program_Degree": "MSc",
-        "Program_ECTS": 120,
-        "Program_URL": "https://www.ru.nl/en/education/masters",
-        "Program_Scope": "non_eu",
-        "Admission_Mode": "Aptitude Test",
-        "Admission_Language_Req": "100% English",
-        "Analysis_Strong_Areas": "Astrophysics, High Energy Physics, Data Science, Cyber Security",
-        "Analysis_Pros": [
-            "Astrofizik ve radyo astronomi alanında (Event Horizon Telescope - Kara delik görüntüleme projesi) küresel başarı ortaklıkları.",
-            "Nijmegen'in Hollanda'nın en eski şehri olması, tarihi dokusu, sakinliği ve yeşil kampüs olanakları.",
-            "Non-EU öğrenciler için yıllık €17,000 harç ücretiyle Hollanda'daki en uygun fiyatlı prestijli fen fakültelerinden biri olması."
-        ],
-        "Analysis_Cons": [
-            "Uygulamalı havacılık/uzay mühendisliği programının bulunmaması; çalışmaların tamamen teorik fizik ve astrofizik kulvarında yürümesi.",
-            "Nijmegen genelinde kiralık oda arayışının son yıllarda oldukça zorlu bir hal alması."
-        ],
-        "Analysis_Tags": [
-            "astrophysics",
-            "spacescience",
-            "hpc",
-            "datascience"
-        ],
-        "Industry_Ecosystem": "Radboud Radyo Astronomi Laboratuvarı, High Field Magnet Laboratory (HFML) ve Max Planck Enstitüsü ile yakın ortaklık projeleri.",
-        "Industry_Comp_Intensity": "High",
-        "Industry_Partners": [
-            "NXP",
-            "SRON",
-            "Max Planck Institute"
-        ],
-        "Internship_Mandatory": false,
-        "Internship_Notes": "Tez çalışmaları ve araştırma stajları genellikle Max Planck Enstitüsü, SRON veya EHT uluslararası konsorsiyumu bünyesinde yürütülür.",
-        "Deadline_Winter_Open": "01 Oct",
-        "Deadline_Winter_Close": "01 Apr",
-        "Deadline_Winter_Note": "Non‑EU oriented (earliest applicable deadline used when multiple dates are listed). Verify per program.",
-        "Deadline_Summer_Open": "01 Jun",
-        "Deadline_Summer_Close": "30 Nov",
-        "Deadline_Summer_Note": "Non‑EU oriented if summer intake exists; verify per program",
-        "Deadline_General_Note": null,
-        "Meta_Sources": [
-            "{'type': 'fees_or_tuition', 'url': 'https://www.ru.nl/en/education/tuition-fees', 'last_verified': '2026-01-27'}"
-        ],
-        "Meta_Updated_At": "2026-01-27",
-        "Meta_Needs_Verification": null,
-        "qs_ranking": 272,
-        "global_recognition": "Well known internationally",
-        "field_recognition": "Strong engineering programs"
-    },
-    {
-        "Country": "Netherlands",
-        "City": "Wageningen",
-        "State_Region": "Gelderland",
-        "Uni_ID": "wageningen-university-research",
-        "University_Name": "Wageningen University & Research",
-        "University_Display_Name": "Wageningen University & Research (WUR)",
-        "University_Short_Name": "WUR",
-        "Cost_Tuition": [
-            {
-                "scope": "non_eu",
-                "program": "MSc (program depends on track)",
-                "amount": 21200.0,
-                "currency": "EUR",
-                "period": "year",
-                "raw": "Non‑EU tuition: €21,200/year",
-                "effective_from_term_code": "2025W"
-            }
-        ],
-        "Cost_Semester_Fees": [
-            {
-                "term": "WiSe 2025/26",
-                "amount": 0.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€0 (no separate semester contribution; tuition billed annually)",
-                "term_code": "2025W"
+            "decision_summary": {
+                "best_for": [],
+                "not_ideal_for": [],
+                "main_strengths": [
+                    "Avrupa'nın en gelişmiş yüksek teknoloji kümelenmelerinden biri olan Brainport bölgesinde yer alarak ASML ve Philips gibi devlerle doğrudan ortaklık imkanı.",
+                    "Mekatronik, robotik, kontrol sistemleri ve ileri malzeme mühendisliği alanlarında dünya lideri laboratuvarlar.",
+                    "Eindhoven'ın modern, teknoloji odaklı ve son derece aktif bir öğrenci ve kariyer şehri olması."
+                ],
+                "main_risks": [
+                    "Üniversitede bağımsız bir 'Aerospace Engineering' departmanının bulunmaması; havacılık odaklı çalışmaların Makine veya Elektrik Mühendisliği alt kulvarlarından yürütülmesi.",
+                    "Yıllık €19,700 gibi oldukça yüksek Non-EU harç ücretinin bulunması.",
+                    "Brainport bölgesindeki yüksek yaşam maliyetleri ve kiralık konut bulmanın zorluğu."
+                ],
+                "application_reality": "",
+                "overall_recommendation": "Strong option for studying MSc Mechanical Engineering in the Netherlands.",
+                "recommended_user_profile": ""
             },
-            {
-                "term": "SoSe 2026",
-                "amount": 0.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€0 (no separate semester contribution; tuition billed annually)",
-                "term_code": "2026S"
-            }
-        ],
-        "Scholarships_Info": [
-            {
-                "name": "Excellence Programme",
-                "provider": "WUR",
-                "type": "merit",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": null,
-                "url": "https://www.wur.nl/en/education-programmes/current-students/financial-matters/scholarships.htm"
+            "scoring_inputs": {
+                "academic_field_fit_score_seed": 85,
+                "eligibility_language_score_seed": 90,
+                "cost_funding_score_seed": 40,
+                "career_research_score_seed": 80,
+                "living_risk_score_seed": 30,
+                "data_confidence_score_seed": 100,
+                "student_satisfaction_score_seed": 85,
+                "hard_filter_flags": {
+                    "english_only_compatible": true,
+                    "requires_local_language": false,
+                    "non_eu_eligible": true,
+                    "tuition_above_5000": true,
+                    "tuition_above_10000": true,
+                    "deadline_unclear": false,
+                    "needs_verification": false
+                }
             },
-            {
-                "name": "NL Scholarship",
-                "provider": "Dutch government / Nuffic",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": null,
-                "url": "https://www.studyinnl.org/finances/nl-scholarship"
+            "quality_control": {
+                "qc_status": "needs_revision",
+                "checked_at": "",
+                "failed_canary_tests": [],
+                "remaining_verification_tasks": [],
+                "qc_notes": ""
             },
-            {
-                "name": "Study in NL – Scholarships portal",
-                "provider": "Study in NL (Nuffic)",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "National portal to explore scholarships/funding options for international students",
-                "url": "https://www.studyinnl.org/finances/scholarships"
-            }
-        ],
-        "Cost_City_Living": "medium",
-        "Cost_City_Rank": 3.0,
-        "Living_Housing_Difficulty": "Moderate",
-        "Living_Housing_Score": 6.0,
-        "Program_Name": "MSc Geo-Information Science / Environmental Sciences (track-dependent)",
-        "Program_Degree": "MSc",
-        "Program_ECTS": 120,
-        "Program_URL": "https://www.wur.nl/en/education-programmes/master.htm",
-        "Program_Scope": "non_eu",
-        "Admission_Mode": "Direct",
-        "Admission_Language_Req": "100% English",
-        "Analysis_Strong_Areas": "Remote Sensing, GIS, Environmental Science, Climate Change",
-        "Analysis_Pros": [
-            "Tarım, ormancılık ve çevre bilimleri alanında dünya 1 numarası olan üniversitede uydu tabanlı uzaktan algılama (Remote Sensing) ve GIS konularında benzersiz eğitim.",
-            "Dünya gözlemi, iklim değişikliği izleme ve uydu veri analizi konularında eşsiz uygulama derinliği.",
-            "Sürekli olarak Hollanda'nın en yeşil ve en iyi kampüsü seçilen modern ar-ge üssü."
-        ],
-        "Analysis_Cons": [
-            "Klasik roket veya uydu mühendisliği ile ilgilenen adaylar için uygun olmaması; sadece 'Earth Observation' (Veri Analizi) alanında uzay odaklı olması.",
-            "Wageningen'in çok küçük bir kasaba olması nedeniyle büyük şehir sosyal yaşamını arayanlar için kısıtlı olması."
-        ],
-        "Analysis_Tags": [
-            "remotesensing",
-            "earthobservation",
-            "satellites",
-            "climate",
-            "environmentalmodeling"
-        ],
-        "Industry_Ecosystem": "Yer Gözlemi (Earth Observation) ve GIS konusunda dünyada 1 numaradır.",
-        "Industry_Comp_Intensity": "Medium",
-        "Industry_Partners": [
-            "ESA",
-            "FAO (UN)",
-            "Unilever",
-            "Shell"
-        ],
-        "Internship_Mandatory": true,
-        "Internship_Notes": "Zorunlu staj uygulaması mevcut olup, öğrenciler genellikle ESA, Birleşmiş Milletler (FAO) veya çevre/uzaktan algılama veri analizi yapan küresel kuruluşlarda staj yaparlar.",
-        "Deadline_Winter_Open": "01 Oct",
-        "Deadline_Winter_Close": "15 Apr",
-        "Deadline_Winter_Note": "Non‑EU oriented (earliest applicable deadline used when multiple dates are listed). Verify per program.",
-        "Deadline_Summer_Open": "01 Jun",
-        "Deadline_Summer_Close": "30 Nov",
-        "Deadline_Summer_Note": "Non‑EU oriented if summer intake exists; verify per program",
-        "Deadline_General_Note": null,
-        "Meta_Sources": [
-            "{'type': 'fees_or_tuition', 'url': 'https://www.wur.nl/en/education-programmes/master/tuition-fees.htm', 'last_verified': '2026-01-27'}"
-        ],
-        "Meta_Updated_At": "2026-01-27",
-        "Meta_Needs_Verification": null,
-        "qs_ranking": 153,
-        "global_recognition": "Highly recognized globally",
-        "field_recognition": "Very strong engineering reputation"
-    }
-]
+            "qs_ranking": 124,
+            "global_recognition": "Highly recognized globally",
+            "field_recognition": "Very strong engineering reputation"
+        },
+        {
+            "id": "netherlands_twente_msc_mech",
+            "country": "Netherlands",
+            "university": "University of Twente",
+            "university_native_name": "Universiteit Twente",
+            "city": "Enschede",
+            "region": "Overijssel",
+            "program_name": "MSc Mechanical Engineering",
+            "program_native_name": "MSc Mechanical Engineering",
+            "program_degree": "MSc",
+            "degree_level": "Master",
+            "degree_class": "MSc",
+            "duration_years": 2,
+            "ects": 120,
+            "teaching_language": [
+                "English"
+            ],
+            "program_url": "https://www.utwente.nl/en/education/master/programmes/",
+            "department": "Faculty of Engineering Technology",
+            "faculty_or_school": "",
+            "campus": "Enschede",
+            "program_status": "active",
+            "relevance_status": "relevant",
+            "eligibility_profile": {
+                "eligible_for_non_eu": true,
+                "non_eu_quota": null,
+                "required_previous_degree": "BSc in Mechanical Engineering or closely related field",
+                "accepted_backgrounds": [
+                    "Mechanical Engineering",
+                    "Mechatronics",
+                    "Aerospace Engineering"
+                ],
+                "required_ects": {},
+                "minimum_gpa": null,
+                "gpa_scale": "",
+                "ranking_or_selection": "",
+                "admission_mode": "Direct",
+                "admission_risk": "low",
+                "required_documents": [
+                    "Degree Certificate",
+                    "Transcript",
+                    "English Test",
+                    "CV",
+                    "Motivation Letter"
+                ],
+                "motivation_letter_required": null,
+                "cv_required": null,
+                "recommendation_required": null,
+                "portfolio_required": null,
+                "interview_required": null,
+                "test_required": null,
+                "notes_for_turkish_students": ""
+            },
+            "language_profile": {
+                "teaching_language": [
+                    "English"
+                ],
+                "english_required": true,
+                "english_level_required": "IELTS 6.5 (min 6.0 in subscores) or TOEFL 90",
+                "accepted_english_tests": [
+                    "IELTS",
+                    "TOEFL iBT"
+                ],
+                "english_exemptions": [],
+                "italian_required": null,
+                "italian_level_required": "",
+                "italian_needed_for_life_or_internship": "",
+                "mixed_language_warning": "",
+                "language_risk": "low"
+            },
+            "cost_profile": {
+                "academic_year": "2026/2027",
+                "tuition_eur_per_year_min": 18200,
+                "tuition_eur_per_year_max": 18200,
+                "tuition_eur_per_year_estimated": 18200,
+                "tuition_basis": "Per year",
+                "regional_tax_eur": null,
+                "student_contribution_eur": null,
+                "application_fee_eur": 100,
+                "enrollment_fee_eur": null,
+                "total_academic_cost_eur_per_year_estimated": 18200,
+                "isee_or_income_based": null,
+                "non_eu_flat_fee": 18200,
+                "payment_installments": "",
+                "refund_policy": "",
+                "source_notes": ""
+            },
+            "scholarship_profile": {
+                "regional_scholarship_available": true,
+                "regional_scholarship_name": "University of Twente Scholarship (UTS) / Kipaji Scholarship",
+                "dsu_or_equivalent": "",
+                "merit_scholarships": [
+                    "UTS",
+                    "Kipaji Scholarship",
+                    "University of Twente Scholarship (UTS)",
+                    "Study in NL – Scholarships portal"
+                ],
+                "tuition_waivers": [],
+                "housing_support": null,
+                "meal_support": null,
+                "cash_grant_possible": null,
+                "non_eu_eligible": true,
+                "income_based": null,
+                "scholarship_deadline": "2026-02-01",
+                "scholarship_application_url": "",
+                "funding_competitiveness": "unknown",
+                "funding_notes": ""
+            },
+            "living_profile": {
+                "city_cost_level": "medium",
+                "monthly_living_cost_eur_min": null,
+                "monthly_living_cost_eur_max": null,
+                "monthly_living_cost_eur_estimated": 950,
+                "housing_difficulty": "moderate",
+                "student_housing_available": null,
+                "student_housing_competitiveness": "",
+                "average_room_rent_eur": 450,
+                "public_transport_cost_eur_month": null,
+                "food_cost_eur_month": null,
+                "city_safety_note": "",
+                "part_time_work_possibility": "",
+                "living_risk": "low"
+            },
+            "curriculum_profile": {
+                "tracks": [
+                    "Aeronautics",
+                    "Robotics",
+                    "Design & Manufacturing",
+                    "Maintenance Engineering"
+                ],
+                "specializations": [],
+                "mandatory_courses": [],
+                "elective_courses": [],
+                "course_language_notes": "Zorunlu staj kapsamında Thales Nederland veya Demcon gibi ileri teknoloji ve savunma sanayi ortaklarında uygulamalı sanayi tezi imkanları geniştir.",
+                "thesis_required": true,
+                "internship_required": true,
+                "lab_courses": [],
+                "project_based_courses": [],
+                "mobility_options": [],
+                "double_degree_options": [],
+                "curriculum_url": "",
+                "study_plan_url": ""
+            },
+            "category_profile": {
+                "primary_categories": [
+                    "Uncategorized / Needs Review"
+                ],
+                "secondary_categories": [],
+                "subcategories": [],
+                "normalized_tags": [],
+                "category_scores": {}
+            },
+            "research_profile": {
+                "department_research_areas": [
+                    "Robotics, Nanotechnology, Geo-Information Science, Fluid Dynamics"
+                ],
+                "labs": [
+                    "MESA+ Institute for Nanotechnology"
+                ],
+                "research_centers": [],
+                "notable_professors": [],
+                "space_or_aerospace_projects": [],
+                "student_teams": [],
+                "satellite_or_flight_projects": [],
+                "research_strength_summary": "Strong in robotics, materials, nanotechnology and drone systems. Beautiful green campus.",
+                "research_strength_score": 85,
+                "research_sources": []
+            },
+            "industry_ecosystem_profile": {
+                "nearby_companies": [
+                    "Thales Nederland",
+                    "Demcon",
+                    "MESA+ Institute"
+                ],
+                "confirmed_partners": [],
+                "space_agencies_or_public_bodies": [],
+                "research_institutes": [],
+                "startup_or_incubator_ecosystem": [],
+                "internship_possibility": "",
+                "thesis_with_industry_possibility": "",
+                "career_relevance": "",
+                "ecosystem_strength_score": null,
+                "ecosystem_notes": "Malzeme bilimi, nanoteknoloji ve insansız hava araçları (UAV) üzerine yoğunlaşır."
+            },
+            "application_timeline_profile": {
+                "academic_year": "2026/2027",
+                "intake_terms": [
+                    "September"
+                ],
+                "application_rounds": [],
+                "non_eu_deadline": "2026-05-01",
+                "eu_deadline": "",
+                "scholarship_deadline": "2026-02-01",
+                "pre_enrolment_required": null,
+                "universitaly_required": null,
+                "visa_sensitive_deadline": "",
+                "application_result_timing": "",
+                "enrollment_deadline": "",
+                "timeline_risk": "low",
+                "deadline_notes": ""
+            },
+            "student_sentiment_profile": {
+                "student_satisfaction_score": 88,
+                "sentiment_confidence": "medium",
+                "sample_size_estimate": null,
+                "date_range": "",
+                "teaching_quality_sentiment": "",
+                "workload_sentiment": "Balanced workload.",
+                "administration_sentiment": "",
+                "housing_sentiment": "Comparatively much easier housing scene than Randstad.",
+                "city_life_sentiment": "",
+                "international_student_support_sentiment": "",
+                "career_support_sentiment": "",
+                "positive_themes": [],
+                "negative_themes": [],
+                "recurring_complaints": [],
+                "recurring_strengths": [],
+                "sentiment_summary": "Aesthetic green campus, excellent student life, and affordable living costs.",
+                "student_sentiment_sources": [
+                    "Reddit",
+                    "Studyportal reviews",
+                    "The Student Room"
+                ]
+            },
+            "source_profile": {
+                "official_program_page": "https://www.utwente.nl/en/education/master/programmes/mechanical-engineering/",
+                "official_admission_page": "",
+                "official_tuition_page": "https://www.utwente.nl/en/education/student-services/fees",
+                "official_scholarship_page": "",
+                "official_curriculum_page": "",
+                "official_department_page": "",
+                "official_lab_pages": [],
+                "third_party_sources": [
+                    "https://www.utwente.nl/en/education/student-services/fees"
+                ],
+                "student_sentiment_sources": [],
+                "source_log": [],
+                "last_verified": "2026-06-24",
+                "needs_verification": false,
+                "verification_notes": "",
+                "field_confidence": {
+                    "program_basic_info": "high",
+                    "language": "high",
+                    "admission": "high",
+                    "tuition": "high",
+                    "scholarship": "high",
+                    "curriculum": "high",
+                    "research": "high",
+                    "industry": "high",
+                    "living": "high",
+                    "student_sentiment": "medium"
+                }
+            },
+            "decision_summary": {
+                "best_for": [],
+                "not_ideal_for": [],
+                "main_strengths": [
+                    "Hollanda'nın tek gerçek Amerikan tarzı ormanlık yeşil kampüsüne sahip olması, eşsiz bir sosyal kampüs hayatı sunması.",
+                    "Yüksek teknolojili malzeme bilimi, nanoteknoloji (MESA+ enstitüsü) ve İHA (UAV) araştırma gruplarında mükemmel ar-ge imkanları.",
+                    "Hollanda'nın batı bölgesine (Randstad) kıyasla çok daha uygun yaşam maliyetleri ve nispeten daha kolay konut bulma imkanı."
+                ],
+                "main_risks": [
+                    "Ülkenin Almanya sınırına yakın, batıdaki büyük metropollere (Amsterdam, Rotterdam vb.) uzak bir konumda yer alması.",
+                    "Çekirdek bir 'Aerospace Engineering' bölümünün bulunmaması, çalışmaların daha çok makine mühendisliği veya robotik üzerinden ilerlemesi."
+                ],
+                "application_reality": "",
+                "overall_recommendation": "Strong option for studying MSc Mechanical Engineering in the Netherlands.",
+                "recommended_user_profile": ""
+            },
+            "scoring_inputs": {
+                "academic_field_fit_score_seed": 85,
+                "eligibility_language_score_seed": 90,
+                "cost_funding_score_seed": 40,
+                "career_research_score_seed": 80,
+                "living_risk_score_seed": 30,
+                "data_confidence_score_seed": 100,
+                "student_satisfaction_score_seed": 85,
+                "hard_filter_flags": {
+                    "english_only_compatible": true,
+                    "requires_local_language": false,
+                    "non_eu_eligible": true,
+                    "tuition_above_5000": true,
+                    "tuition_above_10000": true,
+                    "deadline_unclear": false,
+                    "needs_verification": false
+                }
+            },
+            "quality_control": {
+                "qc_status": "needs_revision",
+                "checked_at": "",
+                "failed_canary_tests": [],
+                "remaining_verification_tasks": [],
+                "qc_notes": ""
+            },
+            "qs_ranking": 233,
+            "global_recognition": "Well known internationally",
+            "field_recognition": "Strong engineering programs"
+        },
+        {
+            "id": "netherlands_utrecht_msc_phys_ast",
+            "country": "Netherlands",
+            "university": "Utrecht University",
+            "university_native_name": "Universiteit Utrecht",
+            "city": "Utrecht",
+            "region": "Utrecht",
+            "program_name": "MSc Physics and Astronomy (track-dependent)",
+            "program_native_name": "MSc Physics and Astronomy",
+            "program_degree": "MSc",
+            "degree_level": "Master",
+            "degree_class": "MSc",
+            "duration_years": 2,
+            "ects": 120,
+            "teaching_language": [
+                "English"
+            ],
+            "program_url": "https://www.uu.nl/en/masters",
+            "department": "Department of Physics",
+            "faculty_or_school": "",
+            "campus": "Utrecht",
+            "program_status": "active",
+            "relevance_status": "relevant",
+            "eligibility_profile": {
+                "eligible_for_non_eu": true,
+                "non_eu_quota": null,
+                "required_previous_degree": "BSc in Physics, Astronomy, or related field with solid mathematical background",
+                "accepted_backgrounds": [
+                    "Physics",
+                    "Astronomy",
+                    "Applied Mathematics"
+                ],
+                "required_ects": {},
+                "minimum_gpa": null,
+                "gpa_scale": "",
+                "ranking_or_selection": "",
+                "admission_mode": "Selection",
+                "admission_risk": "medium",
+                "required_documents": [
+                    "Degree Certificate",
+                    "Transcript",
+                    "English Test",
+                    "CV",
+                    "Motivation Letter"
+                ],
+                "motivation_letter_required": null,
+                "cv_required": null,
+                "recommendation_required": null,
+                "portfolio_required": null,
+                "interview_required": null,
+                "test_required": null,
+                "notes_for_turkish_students": ""
+            },
+            "language_profile": {
+                "teaching_language": [
+                    "English"
+                ],
+                "english_required": true,
+                "english_level_required": "IELTS 6.5 (min 6.0 in all parts) or TOEFL 93",
+                "accepted_english_tests": [
+                    "IELTS",
+                    "TOEFL iBT"
+                ],
+                "english_exemptions": [],
+                "italian_required": null,
+                "italian_level_required": "",
+                "italian_needed_for_life_or_internship": "",
+                "mixed_language_warning": "",
+                "language_risk": "low"
+            },
+            "cost_profile": {
+                "academic_year": "2026/2027",
+                "tuition_eur_per_year_min": 21342,
+                "tuition_eur_per_year_max": 21342,
+                "tuition_eur_per_year_estimated": 21342,
+                "tuition_basis": "Per year",
+                "regional_tax_eur": null,
+                "student_contribution_eur": null,
+                "application_fee_eur": 100,
+                "enrollment_fee_eur": null,
+                "total_academic_cost_eur_per_year_estimated": 21342,
+                "isee_or_income_based": null,
+                "non_eu_flat_fee": 21342,
+                "payment_installments": "",
+                "refund_policy": "",
+                "source_notes": ""
+            },
+            "scholarship_profile": {
+                "regional_scholarship_available": true,
+                "regional_scholarship_name": "Utrecht Excellence Scholarship / NL Scholarship",
+                "dsu_or_equivalent": "",
+                "merit_scholarships": [
+                    "Utrecht Excellence Scholarship",
+                    "NL Scholarship",
+                    "Study in NL – Scholarships portal"
+                ],
+                "tuition_waivers": [],
+                "housing_support": null,
+                "meal_support": null,
+                "cash_grant_possible": null,
+                "non_eu_eligible": true,
+                "income_based": null,
+                "scholarship_deadline": "2026-02-01",
+                "scholarship_application_url": "",
+                "funding_competitiveness": "unknown",
+                "funding_notes": ""
+            },
+            "living_profile": {
+                "city_cost_level": "very_high",
+                "monthly_living_cost_eur_min": null,
+                "monthly_living_cost_eur_max": null,
+                "monthly_living_cost_eur_estimated": 1200,
+                "housing_difficulty": "nightmare",
+                "student_housing_available": null,
+                "student_housing_competitiveness": "",
+                "average_room_rent_eur": 750,
+                "public_transport_cost_eur_month": null,
+                "food_cost_eur_month": null,
+                "city_safety_note": "",
+                "part_time_work_possibility": "",
+                "living_risk": "high"
+            },
+            "curriculum_profile": {
+                "tracks": [
+                    "Theoretical Physics",
+                    "Astrophysics and Space Science",
+                    "Climate Physics"
+                ],
+                "specializations": [],
+                "mandatory_courses": [],
+                "elective_courses": [],
+                "course_language_notes": "Mühendislik stajı yerine, SRON bünyesinde veya uluslararası uzay gözlemevlerinde bilimsel ar-ge projeleri ve tez çalışmaları yaygın olarak tercih edilir.",
+                "thesis_required": true,
+                "internship_required": false,
+                "lab_courses": [],
+                "project_based_courses": [],
+                "mobility_options": [],
+                "double_degree_options": [],
+                "curriculum_url": "",
+                "study_plan_url": ""
+            },
+            "category_profile": {
+                "primary_categories": [
+                    "Uncategorized / Needs Review"
+                ],
+                "secondary_categories": [],
+                "subcategories": [],
+                "normalized_tags": [],
+                "category_scores": {}
+            },
+            "research_profile": {
+                "department_research_areas": [
+                    "Theoretical Physics, Climate Physics, Astrophysics, Oceanography"
+                ],
+                "labs": [
+                    "SRON Netherlands Institute for Space Research"
+                ],
+                "research_centers": [],
+                "notable_professors": [],
+                "space_or_aerospace_projects": [],
+                "student_teams": [],
+                "satellite_or_flight_projects": [],
+                "research_strength_summary": "Highly prestigious physics/astronomy department. Solid partnership with SRON for satellite research.",
+                "research_strength_score": 92,
+                "research_sources": []
+            },
+            "industry_ecosystem_profile": {
+                "nearby_companies": [
+                    "SRON",
+                    "KNMI (Meteoroloji)",
+                    "Deltares"
+                ],
+                "confirmed_partners": [],
+                "space_agencies_or_public_bodies": [],
+                "research_institutes": [],
+                "startup_or_incubator_ecosystem": [],
+                "internship_possibility": "",
+                "thesis_with_industry_possibility": "",
+                "career_relevance": "",
+                "ecosystem_strength_score": null,
+                "ecosystem_notes": "SRON (Netherlands Institute for Space Research) ile doğrudan entegre laboratuvarlar, KNMI (Hollanda Kraliyet Meteoroloji Enstitüsü) iklim araştırmaları."
+            },
+            "application_timeline_profile": {
+                "academic_year": "2026/2027",
+                "intake_terms": [
+                    "September"
+                ],
+                "application_rounds": [],
+                "non_eu_deadline": "2026-04-01",
+                "eu_deadline": "",
+                "scholarship_deadline": "2026-02-01",
+                "pre_enrolment_required": null,
+                "universitaly_required": null,
+                "visa_sensitive_deadline": "",
+                "application_result_timing": "",
+                "enrollment_deadline": "",
+                "timeline_risk": "medium",
+                "deadline_notes": ""
+            },
+            "student_sentiment_profile": {
+                "student_satisfaction_score": 86,
+                "sentiment_confidence": "medium",
+                "sample_size_estimate": null,
+                "date_range": "",
+                "teaching_quality_sentiment": "",
+                "workload_sentiment": "Challenging but rewarding theoretical coursework.",
+                "administration_sentiment": "",
+                "housing_sentiment": "Utrecht is extremely crowded, housing is a nightmare.",
+                "city_life_sentiment": "",
+                "international_student_support_sentiment": "",
+                "career_support_sentiment": "",
+                "positive_themes": [],
+                "negative_themes": [],
+                "recurring_complaints": [],
+                "recurring_strengths": [],
+                "sentiment_summary": "Top-tier physics education, but housing is a major stress factor.",
+                "student_sentiment_sources": [
+                    "Reddit",
+                    "Studyportal reviews",
+                    "The Student Room"
+                ]
+            },
+            "source_profile": {
+                "official_program_page": "https://www.uu.nl/en/masters/physics-and-astronomy",
+                "official_admission_page": "",
+                "official_tuition_page": "https://www.uu.nl/en/masters/general-information/application-and-admission/fees",
+                "official_scholarship_page": "",
+                "official_curriculum_page": "",
+                "official_department_page": "",
+                "official_lab_pages": [],
+                "third_party_sources": [
+                    "https://www.uu.nl/en/masters/general-information/application-and-admission/fees"
+                ],
+                "student_sentiment_sources": [],
+                "source_log": [],
+                "last_verified": "2026-06-24",
+                "needs_verification": false,
+                "verification_notes": "",
+                "field_confidence": {
+                    "program_basic_info": "high",
+                    "language": "high",
+                    "admission": "high",
+                    "tuition": "high",
+                    "scholarship": "high",
+                    "curriculum": "high",
+                    "research": "high",
+                    "industry": "high",
+                    "living": "high",
+                    "student_sentiment": "medium"
+                }
+            },
+            "decision_summary": {
+                "best_for": [],
+                "not_ideal_for": [],
+                "main_strengths": [
+                    "Teorik fizik, astrofizik ve atmosfer fiziki (iklim sistemleri) alanlarında dünya çapında en saygın akademik kurumlardan biri olması.",
+                    "Hollanda Uzay Araştırmaları Enstitüsü (SRON) ile son derece güçlü akademik ortaklıklar ve ortak tez çalışmaları.",
+                    "Utrecht'in tarihi dokusu, merkezi konumu ve olağanüstü dinamik öğrenci şehri atmosferi."
+                ],
+                "main_risks": [
+                    "Utrecht genelinde öğrenci konut krizinin kritik seviyede olması, oda kiralarının aşırı yüksekliği.",
+                    "Uygulamalı bir mühendislik okulu olmaması; uzay çalışmalarının daha çok temel bilim, gözlem ve veri analizi seviyesinde kalması.",
+                    "Yıllık €21,500 düzeyindeki yüksek eğitim harcı ücreti."
+                ],
+                "application_reality": "",
+                "overall_recommendation": "Strong option for studying MSc Physics and Astronomy (track-dependent) in the Netherlands.",
+                "recommended_user_profile": ""
+            },
+            "scoring_inputs": {
+                "academic_field_fit_score_seed": 85,
+                "eligibility_language_score_seed": 90,
+                "cost_funding_score_seed": 40,
+                "career_research_score_seed": 80,
+                "living_risk_score_seed": 30,
+                "data_confidence_score_seed": 100,
+                "student_satisfaction_score_seed": 85,
+                "hard_filter_flags": {
+                    "english_only_compatible": true,
+                    "requires_local_language": false,
+                    "non_eu_eligible": true,
+                    "tuition_above_5000": true,
+                    "tuition_above_10000": true,
+                    "deadline_unclear": false,
+                    "needs_verification": false
+                }
+            },
+            "quality_control": {
+                "qc_status": "needs_revision",
+                "checked_at": "",
+                "failed_canary_tests": [],
+                "remaining_verification_tasks": [],
+                "qc_notes": ""
+            },
+            "qs_ranking": 105,
+            "global_recognition": "Highly recognized globally",
+            "field_recognition": "Very strong engineering reputation"
+        },
+        {
+            "id": "netherlands_uva_msc_phys_ast",
+            "country": "Netherlands",
+            "university": "University of Amsterdam",
+            "university_native_name": "Universiteit van Amsterdam",
+            "city": "Amsterdam",
+            "region": "Noord-Holland",
+            "program_name": "MSc Physics and Astronomy / Computational Science (track-dependent)",
+            "program_native_name": "MSc Physics and Astronomy",
+            "program_degree": "MSc",
+            "degree_level": "Master",
+            "degree_class": "MSc",
+            "duration_years": 2,
+            "ects": 120,
+            "teaching_language": [
+                "English"
+            ],
+            "program_url": "https://www.uva.nl/en/education/master-s-programmes/master-s-programmes.html",
+            "department": "Faculty of Science",
+            "faculty_or_school": "",
+            "campus": "Amsterdam Science Park",
+            "program_status": "active",
+            "relevance_status": "relevant",
+            "eligibility_profile": {
+                "eligible_for_non_eu": true,
+                "non_eu_quota": null,
+                "required_previous_degree": "BSc in Physics, Astronomy, or related fields",
+                "accepted_backgrounds": [
+                    "Physics",
+                    "Astronomy",
+                    "Mathematics"
+                ],
+                "required_ects": {},
+                "minimum_gpa": null,
+                "gpa_scale": "",
+                "ranking_or_selection": "",
+                "admission_mode": "Selection",
+                "admission_risk": "medium",
+                "required_documents": [
+                    "Degree Certificate",
+                    "Transcript",
+                    "English Test",
+                    "CV",
+                    "Motivation Letter"
+                ],
+                "motivation_letter_required": null,
+                "cv_required": null,
+                "recommendation_required": null,
+                "portfolio_required": null,
+                "interview_required": null,
+                "test_required": null,
+                "notes_for_turkish_students": ""
+            },
+            "language_profile": {
+                "teaching_language": [
+                    "English"
+                ],
+                "english_required": true,
+                "english_level_required": "IELTS 6.5 (min 6.0 in all parts) or TOEFL 90",
+                "accepted_english_tests": [
+                    "IELTS",
+                    "TOEFL iBT"
+                ],
+                "english_exemptions": [],
+                "italian_required": null,
+                "italian_level_required": "",
+                "italian_needed_for_life_or_internship": "",
+                "mixed_language_warning": "",
+                "language_risk": "low"
+            },
+            "cost_profile": {
+                "academic_year": "2026/2027",
+                "tuition_eur_per_year_min": 26000,
+                "tuition_eur_per_year_max": 26000,
+                "tuition_eur_per_year_estimated": 26000,
+                "tuition_basis": "Per year",
+                "regional_tax_eur": null,
+                "student_contribution_eur": null,
+                "application_fee_eur": 100,
+                "enrollment_fee_eur": null,
+                "total_academic_cost_eur_per_year_estimated": 26000,
+                "isee_or_income_based": null,
+                "non_eu_flat_fee": 26000,
+                "payment_installments": "",
+                "refund_policy": "",
+                "source_notes": ""
+            },
+            "scholarship_profile": {
+                "regional_scholarship_available": true,
+                "regional_scholarship_name": "Amsterdam Merit Scholarship / Science Talent Scholarship",
+                "dsu_or_equivalent": "",
+                "merit_scholarships": [
+                    "Amsterdam Merit Scholarship",
+                    "Amsterdam Science Talent Scholarship",
+                    "NL Scholarship",
+                    "Study in NL – Scholarships portal"
+                ],
+                "tuition_waivers": [],
+                "housing_support": null,
+                "meal_support": null,
+                "cash_grant_possible": null,
+                "non_eu_eligible": true,
+                "income_based": null,
+                "scholarship_deadline": "2026-01-31",
+                "scholarship_application_url": "",
+                "funding_competitiveness": "unknown",
+                "funding_notes": ""
+            },
+            "living_profile": {
+                "city_cost_level": "very_high",
+                "monthly_living_cost_eur_min": null,
+                "monthly_living_cost_eur_max": null,
+                "monthly_living_cost_eur_estimated": 1300,
+                "housing_difficulty": "nightmare",
+                "student_housing_available": null,
+                "student_housing_competitiveness": "",
+                "average_room_rent_eur": 850,
+                "public_transport_cost_eur_month": null,
+                "food_cost_eur_month": null,
+                "city_safety_note": "",
+                "part_time_work_possibility": "",
+                "living_risk": "high"
+            },
+            "curriculum_profile": {
+                "tracks": [
+                    "Astronomy and Astrophysics",
+                    "Gravitation, Astroparticle and Physics",
+                    "Theoretical Physics"
+                ],
+                "specializations": [],
+                "mandatory_courses": [],
+                "elective_courses": [],
+                "course_language_notes": "Bilimsel araştırmaya dayalı tezler ağırlıkta olup, öğrenciler genellikle gözlemevleri veya veri bilimi odaklı teknoloji firmalarında tez çalışması yaparlar.",
+                "thesis_required": true,
+                "internship_required": false,
+                "lab_courses": [],
+                "project_based_courses": [],
+                "mobility_options": [],
+                "double_degree_options": [],
+                "curriculum_url": "",
+                "study_plan_url": ""
+            },
+            "category_profile": {
+                "primary_categories": [
+                    "Uncategorized / Needs Review"
+                ],
+                "secondary_categories": [],
+                "subcategories": [],
+                "normalized_tags": [],
+                "category_scores": {}
+            },
+            "research_profile": {
+                "department_research_areas": [
+                    "Astronomy, High Energy Physics, Artificial Intelligence, Computational Science"
+                ],
+                "labs": [
+                    "Anton Pannekoek Institute for Astronomy"
+                ],
+                "research_centers": [],
+                "notable_professors": [],
+                "space_or_aerospace_projects": [],
+                "student_teams": [],
+                "satellite_or_flight_projects": [],
+                "research_strength_summary": "Top astrophysics team. Joint degree with VU Amsterdam offers broad course selection.",
+                "research_strength_score": 94,
+                "research_sources": []
+            },
+            "industry_ecosystem_profile": {
+                "nearby_companies": [
+                    "Anton Pannekoek Institute",
+                    "ASTRON",
+                    "Google"
+                ],
+                "confirmed_partners": [],
+                "space_agencies_or_public_bodies": [],
+                "research_institutes": [],
+                "startup_or_incubator_ecosystem": [],
+                "internship_possibility": "",
+                "thesis_with_industry_possibility": "",
+                "career_relevance": "",
+                "ecosystem_strength_score": null,
+                "ecosystem_notes": "Anton Pannekoek Astronomi Enstitüsü, ASTRON radyo astronomi ortak projeleri, veri bilimi ve yapay zeka alanlarında küresel teknoloji şirketleriyle (Google vb.) ortak çalışmalar."
+            },
+            "application_timeline_profile": {
+                "academic_year": "2026/2027",
+                "intake_terms": [
+                    "September"
+                ],
+                "application_rounds": [],
+                "non_eu_deadline": "2026-01-31",
+                "eu_deadline": "",
+                "scholarship_deadline": "2026-01-31",
+                "pre_enrolment_required": null,
+                "universitaly_required": null,
+                "visa_sensitive_deadline": "",
+                "application_result_timing": "",
+                "enrollment_deadline": "",
+                "timeline_risk": "medium",
+                "deadline_notes": ""
+            },
+            "student_sentiment_profile": {
+                "student_satisfaction_score": 87,
+                "sentiment_confidence": "medium",
+                "sample_size_estimate": null,
+                "date_range": "",
+                "teaching_quality_sentiment": "",
+                "workload_sentiment": "High academic standard and challenging exams.",
+                "administration_sentiment": "",
+                "housing_sentiment": "Amsterdam housing is a nightmare. Extremely expensive and scarce.",
+                "city_life_sentiment": "",
+                "international_student_support_sentiment": "",
+                "career_support_sentiment": "",
+                "positive_themes": [],
+                "negative_themes": [],
+                "recurring_complaints": [],
+                "recurring_strengths": [],
+                "sentiment_summary": "Excellent scientific research but high cost of living and housing crunch.",
+                "student_sentiment_sources": [
+                    "Reddit",
+                    "Studyportal reviews",
+                    "The Student Room"
+                ]
+            },
+            "source_profile": {
+                "official_program_page": "https://www.uva.nl/en/education/master-s-programmes/physics-and-astronomy/",
+                "official_admission_page": "",
+                "official_tuition_page": "https://www.uva.nl/en/education/fees-and-funding/tuition-fees/tuition-fees.html",
+                "official_scholarship_page": "",
+                "official_curriculum_page": "",
+                "official_department_page": "",
+                "official_lab_pages": [],
+                "third_party_sources": [
+                    "https://www.uva.nl/en/education/fees-and-funding"
+                ],
+                "student_sentiment_sources": [],
+                "source_log": [],
+                "last_verified": "2026-06-24",
+                "needs_verification": false,
+                "verification_notes": "",
+                "field_confidence": {
+                    "program_basic_info": "high",
+                    "language": "high",
+                    "admission": "high",
+                    "tuition": "high",
+                    "scholarship": "high",
+                    "curriculum": "high",
+                    "research": "high",
+                    "industry": "high",
+                    "living": "high",
+                    "student_sentiment": "medium"
+                }
+            },
+            "decision_summary": {
+                "best_for": [],
+                "not_ideal_for": [],
+                "main_strengths": [
+                    "Astronomi ve Astrofizik (Anton Pannekoek Enstitüsü) alanlarında dünyaca ünlü, kara delikler ve yüksek enerji astrofiziği çalışmalarında lider kadro.",
+                    "Amsterdam'ın sunduğu benzersiz küresel vizyon, geniş iş ağı, start-up ekosistemi ve sosyal yaşam avantajları.",
+                    "Hesaplamalı bilimler ve yapay zeka alanında Avrupa'nın en güçlü akademik merkezlerinden biri olması."
+                ],
+                "main_risks": [
+                    "Hollanda'nın en pahalı eğitim harçlarından birine sahip olması (yıllık €25,900 Non-EU).",
+                    "Amsterdam'da yaşam maliyetleri ve kiralık konut piyasasının tam bir çıkmazda (Nightmare) olması; bütçe planlamasının zorluğu.",
+                    "Pratik roketçilik veya uydu üretimi gibi mühendislik disiplinlerinin müfredatta yer almaması."
+                ],
+                "application_reality": "",
+                "overall_recommendation": "Strong option for studying MSc Physics and Astronomy / Computational Science (track-dependent) in the Netherlands.",
+                "recommended_user_profile": ""
+            },
+            "scoring_inputs": {
+                "academic_field_fit_score_seed": 85,
+                "eligibility_language_score_seed": 90,
+                "cost_funding_score_seed": 40,
+                "career_research_score_seed": 80,
+                "living_risk_score_seed": 30,
+                "data_confidence_score_seed": 100,
+                "student_satisfaction_score_seed": 85,
+                "hard_filter_flags": {
+                    "english_only_compatible": true,
+                    "requires_local_language": false,
+                    "non_eu_eligible": true,
+                    "tuition_above_5000": true,
+                    "tuition_above_10000": true,
+                    "deadline_unclear": false,
+                    "needs_verification": false
+                }
+            },
+            "quality_control": {
+                "qc_status": "needs_revision",
+                "checked_at": "",
+                "failed_canary_tests": [],
+                "remaining_verification_tasks": [],
+                "qc_notes": ""
+            },
+            "qs_ranking": 55,
+            "global_recognition": "Top-tier global university",
+            "field_recognition": "World-class engineering programs"
+        },
+        {
+            "id": "netherlands_vu_msc_phys_ast",
+            "country": "Netherlands",
+            "university": "Vrije Uüniversiteit Amsterdam",
+            "university_native_name": "Vrije Universiteit Amsterdam",
+            "city": "Amsterdam",
+            "region": "Noord-Holland",
+            "program_name": "MSc Physics / Earth Sciences (track-dependent)",
+            "program_native_name": "MSc Physics and Astronomy (Joint Degree)",
+            "program_degree": "MSc",
+            "degree_level": "Master",
+            "degree_class": "MSc",
+            "duration_years": 2,
+            "ects": 120,
+            "teaching_language": [
+                "English"
+            ],
+            "program_url": "https://vu.nl/en/education/master",
+            "department": "Faculty of Science",
+            "faculty_or_school": "",
+            "campus": "VU Campus (Zuidas)",
+            "program_status": "active",
+            "relevance_status": "relevant",
+            "eligibility_profile": {
+                "eligible_for_non_eu": true,
+                "non_eu_quota": null,
+                "required_previous_degree": "BSc in Physics, Astronomy, or equivalent",
+                "accepted_backgrounds": [
+                    "Physics",
+                    "Astronomy",
+                    "Mathematics"
+                ],
+                "required_ects": {},
+                "minimum_gpa": null,
+                "gpa_scale": "",
+                "ranking_or_selection": "",
+                "admission_mode": "Selection",
+                "admission_risk": "medium",
+                "required_documents": [
+                    "Degree Certificate",
+                    "Transcript",
+                    "English Test",
+                    "CV",
+                    "Motivation Letter"
+                ],
+                "motivation_letter_required": null,
+                "cv_required": null,
+                "recommendation_required": null,
+                "portfolio_required": null,
+                "interview_required": null,
+                "test_required": null,
+                "notes_for_turkish_students": ""
+            },
+            "language_profile": {
+                "teaching_language": [
+                    "English"
+                ],
+                "english_required": true,
+                "english_level_required": "IELTS 6.5 or TOEFL 90",
+                "accepted_english_tests": [
+                    "IELTS",
+                    "TOEFL iBT"
+                ],
+                "english_exemptions": [],
+                "italian_required": null,
+                "italian_level_required": "",
+                "italian_needed_for_life_or_internship": "",
+                "mixed_language_warning": "",
+                "language_risk": "low"
+            },
+            "cost_profile": {
+                "academic_year": "2026/2027",
+                "tuition_eur_per_year_min": 26000,
+                "tuition_eur_per_year_max": 26000,
+                "tuition_eur_per_year_estimated": 26000,
+                "tuition_basis": "Per year",
+                "regional_tax_eur": null,
+                "student_contribution_eur": null,
+                "application_fee_eur": 100,
+                "enrollment_fee_eur": null,
+                "total_academic_cost_eur_per_year_estimated": 26000,
+                "isee_or_income_based": null,
+                "non_eu_flat_fee": 26000,
+                "payment_installments": "",
+                "refund_policy": "",
+                "source_notes": ""
+            },
+            "scholarship_profile": {
+                "regional_scholarship_available": true,
+                "regional_scholarship_name": "VU Fellowship Programme (VUFP) / NL Scholarship",
+                "dsu_or_equivalent": "",
+                "merit_scholarships": [
+                    "VUFP",
+                    "NL Scholarship",
+                    "VU Fellowship Programme (VUFP)",
+                    "Study in NL – Scholarships portal"
+                ],
+                "tuition_waivers": [],
+                "housing_support": null,
+                "meal_support": null,
+                "cash_grant_possible": null,
+                "non_eu_eligible": true,
+                "income_based": null,
+                "scholarship_deadline": "2026-02-01",
+                "scholarship_application_url": "",
+                "funding_competitiveness": "unknown",
+                "funding_notes": ""
+            },
+            "living_profile": {
+                "city_cost_level": "very_high",
+                "monthly_living_cost_eur_min": null,
+                "monthly_living_cost_eur_max": null,
+                "monthly_living_cost_eur_estimated": 1300,
+                "housing_difficulty": "nightmare",
+                "student_housing_available": null,
+                "student_housing_competitiveness": "",
+                "average_room_rent_eur": 850,
+                "public_transport_cost_eur_month": null,
+                "food_cost_eur_month": null,
+                "city_safety_note": "",
+                "part_time_work_possibility": "",
+                "living_risk": "high"
+            },
+            "curriculum_profile": {
+                "tracks": [
+                    "Physics of Life and Health",
+                    "Energy and Sustainability",
+                    "Advanced Matter Physics"
+                ],
+                "specializations": [],
+                "mandatory_courses": [],
+                "elective_courses": [],
+                "course_language_notes": "Internship/thesis projects are common; whether a formal internship is mandatory depends on the specific track/program.",
+                "thesis_required": true,
+                "internship_required": false,
+                "lab_courses": [],
+                "project_based_courses": [],
+                "mobility_options": [],
+                "double_degree_options": [],
+                "curriculum_url": "",
+                "study_plan_url": ""
+            },
+            "category_profile": {
+                "primary_categories": [
+                    "Uncategorized / Needs Review"
+                ],
+                "secondary_categories": [],
+                "subcategories": [],
+                "normalized_tags": [],
+                "category_scores": {}
+            },
+            "research_profile": {
+                "department_research_areas": [
+                    "Physics of Life, Planetary Science, Computer Science, Earth Sciences"
+                ],
+                "labs": [],
+                "research_centers": [],
+                "notable_professors": [],
+                "space_or_aerospace_projects": [],
+                "student_teams": [],
+                "satellite_or_flight_projects": [],
+                "research_strength_summary": "Strong in Earth observation, climate physics, biophysics and joint astronomy tracks with UvA.",
+                "research_strength_score": 90,
+                "research_sources": []
+            },
+            "industry_ecosystem_profile": {
+                "nearby_companies": [
+                    "LaserLaB Amsterdam",
+                    "TNO",
+                    "ESA"
+                ],
+                "confirmed_partners": [],
+                "space_agencies_or_public_bodies": [],
+                "research_institutes": [],
+                "startup_or_incubator_ecosystem": [],
+                "internship_possibility": "",
+                "thesis_with_industry_possibility": "",
+                "career_relevance": "",
+                "ecosystem_strength_score": null,
+                "ecosystem_notes": "UvA ile ortak dereceler sunar. Yer Bilimleri (Earth Sciences) güçlüdür."
+            },
+            "application_timeline_profile": {
+                "academic_year": "2026/2027",
+                "intake_terms": [
+                    "September"
+                ],
+                "application_rounds": [],
+                "non_eu_deadline": "2026-04-01",
+                "eu_deadline": "",
+                "scholarship_deadline": "2026-02-01",
+                "pre_enrolment_required": null,
+                "universitaly_required": null,
+                "visa_sensitive_deadline": "",
+                "application_result_timing": "",
+                "enrollment_deadline": "",
+                "timeline_risk": "medium",
+                "deadline_notes": ""
+            },
+            "student_sentiment_profile": {
+                "student_satisfaction_score": 84,
+                "sentiment_confidence": "medium",
+                "sample_size_estimate": null,
+                "date_range": "",
+                "teaching_quality_sentiment": "",
+                "workload_sentiment": "Challenging workload.",
+                "administration_sentiment": "",
+                "housing_sentiment": "Amsterdam housing is a nightmare.",
+                "city_life_sentiment": "",
+                "international_student_support_sentiment": "",
+                "career_support_sentiment": "",
+                "positive_themes": [],
+                "negative_themes": [],
+                "recurring_complaints": [],
+                "recurring_strengths": [],
+                "sentiment_summary": "Great science campus and facilities, but housing is a severe obstacle.",
+                "student_sentiment_sources": [
+                    "Reddit",
+                    "Studyportal reviews",
+                    "The Student Room"
+                ]
+            },
+            "source_profile": {
+                "official_program_page": "https://vu.nl/en/education/master/physics-and-astronomy",
+                "official_admission_page": "",
+                "official_tuition_page": "https://vu.nl/en/education/master/tuition-fees",
+                "official_scholarship_page": "",
+                "official_curriculum_page": "",
+                "official_department_page": "",
+                "official_lab_pages": [],
+                "third_party_sources": [
+                    "https://vu.nl/en/education/master/tuition-fees"
+                ],
+                "student_sentiment_sources": [],
+                "source_log": [],
+                "last_verified": "2026-06-24",
+                "needs_verification": false,
+                "verification_notes": "",
+                "field_confidence": {
+                    "program_basic_info": "high",
+                    "language": "high",
+                    "admission": "high",
+                    "tuition": "high",
+                    "scholarship": "high",
+                    "curriculum": "high",
+                    "research": "high",
+                    "industry": "high",
+                    "living": "high",
+                    "student_sentiment": "medium"
+                }
+            },
+            "decision_summary": {
+                "best_for": [],
+                "not_ideal_for": [],
+                "main_strengths": [
+                    "UvA ile ortak fizik programları sayesinde çok geniş bir müfredat sunar. Kampüsü şehrin iş merkezine (Zuidas) yakındır."
+                ],
+                "main_risks": [
+                    "UvA gibi çok pahalıdır. Konut krizi hat safhadadır."
+                ],
+                "application_reality": "",
+                "overall_recommendation": "Strong option for studying MSc Physics / Earth Sciences (track-dependent) in the Netherlands.",
+                "recommended_user_profile": ""
+            },
+            "scoring_inputs": {
+                "academic_field_fit_score_seed": 85,
+                "eligibility_language_score_seed": 90,
+                "cost_funding_score_seed": 40,
+                "career_research_score_seed": 80,
+                "living_risk_score_seed": 30,
+                "data_confidence_score_seed": 100,
+                "student_satisfaction_score_seed": 85,
+                "hard_filter_flags": {
+                    "english_only_compatible": true,
+                    "requires_local_language": false,
+                    "non_eu_eligible": true,
+                    "tuition_above_5000": true,
+                    "tuition_above_10000": true,
+                    "deadline_unclear": false,
+                    "needs_verification": false
+                }
+            },
+            "quality_control": {
+                "qc_status": "needs_revision",
+                "checked_at": "",
+                "failed_canary_tests": [],
+                "remaining_verification_tasks": [],
+                "qc_notes": ""
+            },
+            "qs_ranking": 53,
+            "global_recognition": "Very high global prestige",
+            "field_recognition": "Elite in AI, physics, and computer science"
+        },
+        {
+            "id": "netherlands_leiden_msc_astro",
+            "country": "Netherlands",
+            "university": "Leiden University",
+            "university_native_name": "Universiteit Leiden",
+            "city": "Leiden",
+            "region": "Zuid-Holland",
+            "program_name": "MSc Astronomy / Computer Science (track-dependent)",
+            "program_native_name": "MSc Astronomy",
+            "program_degree": "MSc",
+            "degree_level": "Master",
+            "degree_class": "MSc",
+            "duration_years": 2,
+            "ects": 120,
+            "teaching_language": [
+                "English"
+            ],
+            "program_url": "https://www.universiteitleiden.nl/en/education/study-programmes/master",
+            "department": "Leiden Observatory",
+            "faculty_or_school": "",
+            "campus": "Leiden",
+            "program_status": "active",
+            "relevance_status": "relevant",
+            "eligibility_profile": {
+                "eligible_for_non_eu": true,
+                "non_eu_quota": null,
+                "required_previous_degree": "BSc in Astronomy, Physics, or equivalent",
+                "accepted_backgrounds": [
+                    "Astronomy",
+                    "Physics",
+                    "Mathematics"
+                ],
+                "required_ects": {},
+                "minimum_gpa": null,
+                "gpa_scale": "",
+                "ranking_or_selection": "",
+                "admission_mode": "Selection",
+                "admission_risk": "medium",
+                "required_documents": [
+                    "Degree Certificate",
+                    "Transcript",
+                    "English Test",
+                    "CV",
+                    "Motivation Letter"
+                ],
+                "motivation_letter_required": null,
+                "cv_required": null,
+                "recommendation_required": null,
+                "portfolio_required": null,
+                "interview_required": null,
+                "test_required": null,
+                "notes_for_turkish_students": ""
+            },
+            "language_profile": {
+                "teaching_language": [
+                    "English"
+                ],
+                "english_required": true,
+                "english_level_required": "IELTS 6.5 or TOEFL 90",
+                "accepted_english_tests": [
+                    "IELTS",
+                    "TOEFL iBT"
+                ],
+                "english_exemptions": [],
+                "italian_required": null,
+                "italian_level_required": "",
+                "italian_needed_for_life_or_internship": "",
+                "mixed_language_warning": "",
+                "language_risk": "low"
+            },
+            "cost_profile": {
+                "academic_year": "2026/2027",
+                "tuition_eur_per_year_min": 22300,
+                "tuition_eur_per_year_max": 22300,
+                "tuition_eur_per_year_estimated": 22300,
+                "tuition_basis": "Per year",
+                "regional_tax_eur": null,
+                "student_contribution_eur": null,
+                "application_fee_eur": 100,
+                "enrollment_fee_eur": null,
+                "total_academic_cost_eur_per_year_estimated": 22300,
+                "isee_or_income_based": null,
+                "non_eu_flat_fee": 22300,
+                "payment_installments": "",
+                "refund_policy": "",
+                "source_notes": ""
+            },
+            "scholarship_profile": {
+                "regional_scholarship_available": true,
+                "regional_scholarship_name": "Leiden University Excellence Scholarship (LExS) / NL Scholarship",
+                "dsu_or_equivalent": "",
+                "merit_scholarships": [
+                    "LExS",
+                    "NL Scholarship",
+                    "Leiden University Excellence Scholarship (LExS)",
+                    "Study in NL – Scholarships portal"
+                ],
+                "tuition_waivers": [],
+                "housing_support": null,
+                "meal_support": null,
+                "cash_grant_possible": null,
+                "non_eu_eligible": true,
+                "income_based": null,
+                "scholarship_deadline": "2026-02-01",
+                "scholarship_application_url": "",
+                "funding_competitiveness": "unknown",
+                "funding_notes": ""
+            },
+            "living_profile": {
+                "city_cost_level": "very_high",
+                "monthly_living_cost_eur_min": null,
+                "monthly_living_cost_eur_max": null,
+                "monthly_living_cost_eur_estimated": 1150,
+                "housing_difficulty": "nightmare",
+                "student_housing_available": null,
+                "student_housing_competitiveness": "",
+                "average_room_rent_eur": 700,
+                "public_transport_cost_eur_month": null,
+                "food_cost_eur_month": null,
+                "city_safety_note": "",
+                "part_time_work_possibility": "",
+                "living_risk": "high"
+            },
+            "curriculum_profile": {
+                "tracks": [
+                    "Astronomy and Data Science",
+                    "Astronomy and Instrumentation",
+                    "Astronomy and Cosmology"
+                ],
+                "specializations": [],
+                "mandatory_courses": [],
+                "elective_courses": [],
+                "course_language_notes": "Öğrencilerin bir kısmı tezlerini ESTEC'teki ESA laboratuvarlarında tamamlayarak doğrudan uzay ajansı kültürünü yerinde deneyimlemektedir.",
+                "thesis_required": true,
+                "internship_required": false,
+                "lab_courses": [],
+                "project_based_courses": [],
+                "mobility_options": [],
+                "double_degree_options": [],
+                "curriculum_url": "",
+                "study_plan_url": ""
+            },
+            "category_profile": {
+                "primary_categories": [
+                    "Uncategorized / Needs Review"
+                ],
+                "secondary_categories": [],
+                "subcategories": [],
+                "normalized_tags": [],
+                "category_scores": {}
+            },
+            "research_profile": {
+                "department_research_areas": [
+                    "Astronomy, Space Law, Computer Science, Physics"
+                ],
+                "labs": [
+                    "Leiden Observatory (Sterrewacht Leiden)"
+                ],
+                "research_centers": [],
+                "notable_professors": [],
+                "space_or_aerospace_projects": [],
+                "student_teams": [],
+                "satellite_or_flight_projects": [],
+                "research_strength_summary": "Oldest and one of the most prestigious observatories in the world. Leading research in astrobiology, instrumentation, and computational astrophysics.",
+                "research_strength_score": 96,
+                "research_sources": []
+            },
+            "industry_ecosystem_profile": {
+                "nearby_companies": [
+                    "ESA ESTEC",
+                    "Leiden Observatory",
+                    "Dutch Space"
+                ],
+                "confirmed_partners": [],
+                "space_agencies_or_public_bodies": [],
+                "research_institutes": [],
+                "startup_or_incubator_ecosystem": [],
+                "internship_possibility": "",
+                "thesis_with_industry_possibility": "",
+                "career_relevance": "",
+                "ecosystem_strength_score": null,
+                "ecosystem_notes": "ESA-ESTEC Noordwijk üssü ortaklığı, Leiden Observatory araştırma grupları ve Hollanda Uzay Ofisi (NSO) ile uzay hukuku/politikası işbirlikleri."
+            },
+            "application_timeline_profile": {
+                "academic_year": "2026/2027",
+                "intake_terms": [
+                    "September"
+                ],
+                "application_rounds": [],
+                "non_eu_deadline": "2026-04-01",
+                "eu_deadline": "",
+                "scholarship_deadline": "2026-02-01",
+                "pre_enrolment_required": null,
+                "universitaly_required": null,
+                "visa_sensitive_deadline": "",
+                "application_result_timing": "",
+                "enrollment_deadline": "",
+                "timeline_risk": "medium",
+                "deadline_notes": ""
+            },
+            "student_sentiment_profile": {
+                "student_satisfaction_score": 89,
+                "sentiment_confidence": "medium",
+                "sample_size_estimate": null,
+                "date_range": "",
+                "teaching_quality_sentiment": "",
+                "workload_sentiment": "Challenging astrophysics and computational tasks.",
+                "administration_sentiment": "",
+                "housing_sentiment": "Leiden is very popular; housing is extremely scarce (Nightmare).",
+                "city_life_sentiment": "",
+                "international_student_support_sentiment": "",
+                "career_support_sentiment": "",
+                "positive_themes": [],
+                "negative_themes": [],
+                "recurring_complaints": [],
+                "recurring_strengths": [],
+                "sentiment_summary": "World-class astronomy environment, great observatory atmosphere, but housing is a bottleneck.",
+                "student_sentiment_sources": [
+                    "Reddit",
+                    "Studyportal reviews",
+                    "The Student Room"
+                ]
+            },
+            "source_profile": {
+                "official_program_page": "https://www.universiteitleiden.nl/en/education/study-programmes/master/astronomy",
+                "official_admission_page": "",
+                "official_tuition_page": "https://www.universiteitleiden.nl/en/education/admission-and-application/tuition-fees",
+                "official_scholarship_page": "",
+                "official_curriculum_page": "",
+                "official_department_page": "",
+                "official_lab_pages": [],
+                "third_party_sources": [
+                    "https://www.universiteitleiden.nl/en/education/tuition-fee"
+                ],
+                "student_sentiment_sources": [],
+                "source_log": [],
+                "last_verified": "2026-06-24",
+                "needs_verification": false,
+                "verification_notes": "",
+                "field_confidence": {
+                    "program_basic_info": "high",
+                    "language": "high",
+                    "admission": "high",
+                    "tuition": "high",
+                    "scholarship": "high",
+                    "curriculum": "high",
+                    "research": "high",
+                    "industry": "high",
+                    "living": "high",
+                    "student_sentiment": "medium"
+                }
+            },
+            "decision_summary": {
+                "best_for": [],
+                "not_ideal_for": [],
+                "main_strengths": [
+                    "Astronomi ve Astrofizik alanında dünyanın en prestijli merkezlerinden biri (Leiden Gözlemevi) olması ve Jan Oort gibi devlerin mirasını taşıması.",
+                    "ESA-ESTEC'e fiziki yakınlığı sayesinde uzay hukuku, uydu verisi analizi ve astrofizik konularında rakipsiz ağ fırsatları.",
+                    "Leiden'in tipik, son derece güvenli ve keyifli bir kanal-öğrenci şehri atmosferine sahip olması."
+                ],
+                "main_risks": [
+                    "Mühendislik okulu olmaması; derslerin ve araştırmaların teorik fizik, matematik ve uzay hukuku odaklı yürümesi.",
+                    "Yıllık €21,800 düzeyindeki harç ücreti ve Zuid-Holland bölgesindeki genel konut sıkıntısı."
+                ],
+                "application_reality": "",
+                "overall_recommendation": "Strong option for studying MSc Astronomy / Computer Science (track-dependent) in the Netherlands.",
+                "recommended_user_profile": ""
+            },
+            "scoring_inputs": {
+                "academic_field_fit_score_seed": 85,
+                "eligibility_language_score_seed": 90,
+                "cost_funding_score_seed": 40,
+                "career_research_score_seed": 80,
+                "living_risk_score_seed": 30,
+                "data_confidence_score_seed": 100,
+                "student_satisfaction_score_seed": 85,
+                "hard_filter_flags": {
+                    "english_only_compatible": true,
+                    "requires_local_language": false,
+                    "non_eu_eligible": true,
+                    "tuition_above_5000": true,
+                    "tuition_above_10000": true,
+                    "deadline_unclear": false,
+                    "needs_verification": false
+                }
+            },
+            "quality_control": {
+                "qc_status": "needs_revision",
+                "checked_at": "",
+                "failed_canary_tests": [],
+                "remaining_verification_tasks": [],
+                "qc_notes": ""
+            },
+            "qs_ranking": 141,
+            "global_recognition": "Highly recognized globally",
+            "field_recognition": "Very strong engineering reputation"
+        },
+        {
+            "id": "netherlands_groningen_msc_astro",
+            "country": "Netherlands",
+            "university": "University of Groningen",
+            "university_native_name": "Rijksuniversiteit Groningen",
+            "city": "Groningen",
+            "region": "Groningen",
+            "program_name": "MSc Astronomy / AI (track-dependent)",
+            "program_native_name": "MSc Astronomy",
+            "program_degree": "MSc",
+            "degree_level": "Master",
+            "degree_class": "MSc",
+            "duration_years": 2,
+            "ects": 120,
+            "teaching_language": [
+                "English"
+            ],
+            "program_url": "https://www.rug.nl/education/master/",
+            "department": "Kapteyn Astronomical Institute",
+            "faculty_or_school": "",
+            "campus": "Zernike Campus",
+            "program_status": "active",
+            "relevance_status": "relevant",
+            "eligibility_profile": {
+                "eligible_for_non_eu": true,
+                "non_eu_quota": null,
+                "required_previous_degree": "BSc in Astronomy, Physics, or equivalent",
+                "accepted_backgrounds": [
+                    "Astronomy",
+                    "Physics",
+                    "Mathematics"
+                ],
+                "required_ects": {},
+                "minimum_gpa": null,
+                "gpa_scale": "",
+                "ranking_or_selection": "",
+                "admission_mode": "Selection",
+                "admission_risk": "medium",
+                "required_documents": [
+                    "Degree Certificate",
+                    "Transcript",
+                    "English Test",
+                    "CV",
+                    "Motivation Letter"
+                ],
+                "motivation_letter_required": null,
+                "cv_required": null,
+                "recommendation_required": null,
+                "portfolio_required": null,
+                "interview_required": null,
+                "test_required": null,
+                "notes_for_turkish_students": ""
+            },
+            "language_profile": {
+                "teaching_language": [
+                    "English"
+                ],
+                "english_required": true,
+                "english_level_required": "IELTS 6.5 or TOEFL 90",
+                "accepted_english_tests": [
+                    "IELTS",
+                    "TOEFL iBT"
+                ],
+                "english_exemptions": [],
+                "italian_required": null,
+                "italian_level_required": "",
+                "italian_needed_for_life_or_internship": "",
+                "mixed_language_warning": "",
+                "language_risk": "low"
+            },
+            "cost_profile": {
+                "academic_year": "2026/2027",
+                "tuition_eur_per_year_min": 24900,
+                "tuition_eur_per_year_max": 24900,
+                "tuition_eur_per_year_estimated": 24900,
+                "tuition_basis": "Per year",
+                "regional_tax_eur": null,
+                "student_contribution_eur": null,
+                "application_fee_eur": 100,
+                "enrollment_fee_eur": null,
+                "total_academic_cost_eur_per_year_estimated": 24900,
+                "isee_or_income_based": null,
+                "non_eu_flat_fee": 24900,
+                "payment_installments": "",
+                "refund_policy": "",
+                "source_notes": ""
+            },
+            "scholarship_profile": {
+                "regional_scholarship_available": true,
+                "regional_scholarship_name": "Holland Scholarship (NL Scholarship) / Groningen Talent Grant",
+                "dsu_or_equivalent": "",
+                "merit_scholarships": [
+                    "NL Scholarship",
+                    "Ericsson Scholarship",
+                    "University Talent Grant",
+                    "Eric Bleumink Fund",
+                    "Study in NL – Scholarships portal"
+                ],
+                "tuition_waivers": [],
+                "housing_support": null,
+                "meal_support": null,
+                "cash_grant_possible": null,
+                "non_eu_eligible": true,
+                "income_based": null,
+                "scholarship_deadline": "2026-01-15",
+                "scholarship_application_url": "",
+                "funding_competitiveness": "unknown",
+                "funding_notes": ""
+            },
+            "living_profile": {
+                "city_cost_level": "high",
+                "monthly_living_cost_eur_min": null,
+                "monthly_living_cost_eur_max": null,
+                "monthly_living_cost_eur_estimated": 1050,
+                "housing_difficulty": "hard",
+                "student_housing_available": null,
+                "student_housing_competitiveness": "",
+                "average_room_rent_eur": 550,
+                "public_transport_cost_eur_month": null,
+                "food_cost_eur_month": null,
+                "city_safety_note": "",
+                "part_time_work_possibility": "",
+                "living_risk": "medium"
+            },
+            "curriculum_profile": {
+                "tracks": [
+                    "Astronomy and Data Science",
+                    "Astronomy and Instrumentation"
+                ],
+                "specializations": [],
+                "mandatory_courses": [],
+                "elective_courses": [],
+                "course_language_notes": "Uzay enstrümantasyonu ve sensör geliştirme alanlarında SRON laboratuvarları bünyesinde yapılan tez ve stajlar yaygındır.",
+                "thesis_required": true,
+                "internship_required": false,
+                "lab_courses": [],
+                "project_based_courses": [],
+                "mobility_options": [],
+                "double_degree_options": [],
+                "curriculum_url": "",
+                "study_plan_url": ""
+            },
+            "category_profile": {
+                "primary_categories": [
+                    "Uncategorized / Needs Review"
+                ],
+                "secondary_categories": [],
+                "subcategories": [],
+                "normalized_tags": [],
+                "category_scores": {}
+            },
+            "research_profile": {
+                "department_research_areas": [
+                    "Astronomy, Artificial Intelligence, Energy Systems, Mathematics"
+                ],
+                "labs": [
+                    "Kapteyn Astronomical Institute",
+                    "SRON Groningen branch"
+                ],
+                "research_centers": [],
+                "notable_professors": [],
+                "space_or_aerospace_projects": [],
+                "student_teams": [],
+                "satellite_or_flight_projects": [],
+                "research_strength_summary": "Renowned Kapteyn Astronomical Institute. Close ties with SRON instrumentation labs.",
+                "research_strength_score": 90,
+                "research_sources": []
+            },
+            "industry_ecosystem_profile": {
+                "nearby_companies": [
+                    "SRON",
+                    "ASTRON",
+                    "Avebe"
+                ],
+                "confirmed_partners": [],
+                "space_agencies_or_public_bodies": [],
+                "research_institutes": [],
+                "startup_or_incubator_ecosystem": [],
+                "internship_possibility": "",
+                "thesis_with_industry_possibility": "",
+                "career_relevance": "",
+                "ecosystem_strength_score": null,
+                "ecosystem_notes": "SRON Space Research Groningen laboratuvarları, Kapteyn Astronomi Enstitüsü ve radyo astronomi alanında öncü radyo teleskop projeleri ortaklıkları."
+            },
+            "application_timeline_profile": {
+                "academic_year": "2026/2027",
+                "intake_terms": [
+                    "September"
+                ],
+                "application_rounds": [],
+                "non_eu_deadline": "2026-05-01",
+                "eu_deadline": "",
+                "scholarship_deadline": "2026-01-15",
+                "pre_enrolment_required": null,
+                "universitaly_required": null,
+                "visa_sensitive_deadline": "",
+                "application_result_timing": "",
+                "enrollment_deadline": "",
+                "timeline_risk": "medium",
+                "deadline_notes": ""
+            },
+            "student_sentiment_profile": {
+                "student_satisfaction_score": 87,
+                "sentiment_confidence": "medium",
+                "sample_size_estimate": null,
+                "date_range": "",
+                "teaching_quality_sentiment": "",
+                "workload_sentiment": "Intense study of astronomy.",
+                "administration_sentiment": "",
+                "housing_sentiment": "Groningen is a very lively student city; housing is very hard to find at the start of the semester.",
+                "city_life_sentiment": "",
+                "international_student_support_sentiment": "",
+                "career_support_sentiment": "",
+                "positive_themes": [],
+                "negative_themes": [],
+                "recurring_complaints": [],
+                "recurring_strengths": [],
+                "sentiment_summary": "Excellent Kapteyn community and research labs, but remote north location and housing crunch.",
+                "student_sentiment_sources": [
+                    "Reddit",
+                    "Studyportal reviews",
+                    "The Student Room"
+                ]
+            },
+            "source_profile": {
+                "official_program_page": "https://www.rug.nl/masters/astronomy/",
+                "official_admission_page": "",
+                "official_tuition_page": "https://www.rug.nl/education/master/international-students/financial-matters/tuition-fees",
+                "official_scholarship_page": "",
+                "official_curriculum_page": "",
+                "official_department_page": "",
+                "official_lab_pages": [],
+                "third_party_sources": [
+                    "https://www.rug.nl/education/application-enrolment-tuition-fees"
+                ],
+                "student_sentiment_sources": [],
+                "source_log": [],
+                "last_verified": "2026-06-24",
+                "needs_verification": false,
+                "verification_notes": "",
+                "field_confidence": {
+                    "program_basic_info": "high",
+                    "language": "high",
+                    "admission": "high",
+                    "tuition": "high",
+                    "scholarship": "high",
+                    "curriculum": "high",
+                    "research": "high",
+                    "industry": "high",
+                    "living": "high",
+                    "student_sentiment": "medium"
+                }
+            },
+            "decision_summary": {
+                "best_for": [],
+                "not_ideal_for": [],
+                "main_strengths": [
+                    "Groningen'in tamamen genç nüfus ve öğrencilerden oluşan, canlı, kozmopolit ve son derece keyifli bir öğrenci şehri olması.",
+                    "SRON (Uzay Araştırmaları Enstitüsü) Groningen şubesi ve Kapteyn Astronomi Enstitüsü ile uzay enstrümantasyonu ve sensör teknolojilerinde liderlik.",
+                    "Batı Hollanda'ya kıyasla yaşam maliyetlerinin bir nebze daha yönetilebilir olması."
+                ],
+                "main_risks": [
+                    "Hollanda'nın en kuzey ucunda yer alarak büyük sanayi merkezlerine ve Schiphol Havalimanı'na coğrafi olarak uzak olması.",
+                    "Science (Temel Bilimler) fakültesi için yıllık €24,900 gibi oldukça yüksek eğitim harcı ücretinin bulunması."
+                ],
+                "application_reality": "",
+                "overall_recommendation": "Strong option for studying MSc Astronomy / AI (track-dependent) in the Netherlands.",
+                "recommended_user_profile": ""
+            },
+            "scoring_inputs": {
+                "academic_field_fit_score_seed": 85,
+                "eligibility_language_score_seed": 90,
+                "cost_funding_score_seed": 40,
+                "career_research_score_seed": 80,
+                "living_risk_score_seed": 30,
+                "data_confidence_score_seed": 100,
+                "student_satisfaction_score_seed": 85,
+                "hard_filter_flags": {
+                    "english_only_compatible": true,
+                    "requires_local_language": false,
+                    "non_eu_eligible": true,
+                    "tuition_above_5000": true,
+                    "tuition_above_10000": true,
+                    "deadline_unclear": false,
+                    "needs_verification": false
+                }
+            },
+            "quality_control": {
+                "qc_status": "needs_revision",
+                "checked_at": "",
+                "failed_canary_tests": [],
+                "remaining_verification_tasks": [],
+                "qc_notes": ""
+            },
+            "qs_ranking": 159,
+            "global_recognition": "Highly recognized globally",
+            "field_recognition": "Very strong engineering reputation"
+        },
+        {
+            "id": "netherlands_radboud_msc_phys_ast",
+            "country": "Netherlands",
+            "university": "Radboud University",
+            "university_native_name": "Radboud Universiteit",
+            "city": "Nijmegen",
+            "region": "Gelderland",
+            "program_name": "MSc Physics and Astronomy / Data Science (track-dependent)",
+            "program_native_name": "MSc Physics and Astronomy",
+            "program_degree": "MSc",
+            "degree_level": "Master",
+            "degree_class": "MSc",
+            "duration_years": 2,
+            "ects": 120,
+            "teaching_language": [
+                "English"
+            ],
+            "program_url": "https://www.ru.nl/en/education/masters",
+            "department": "Faculty of Science",
+            "faculty_or_school": "",
+            "campus": "Nijmegen",
+            "program_status": "active",
+            "relevance_status": "relevant",
+            "eligibility_profile": {
+                "eligible_for_non_eu": true,
+                "non_eu_quota": null,
+                "required_previous_degree": "BSc in Physics, Astronomy, or related field",
+                "accepted_backgrounds": [
+                    "Physics",
+                    "Astronomy",
+                    "Mathematics"
+                ],
+                "required_ects": {},
+                "minimum_gpa": null,
+                "gpa_scale": "",
+                "ranking_or_selection": "",
+                "admission_mode": "Selection",
+                "admission_risk": "medium",
+                "required_documents": [
+                    "Degree Certificate",
+                    "Transcript",
+                    "English Test",
+                    "CV",
+                    "Motivation Letter"
+                ],
+                "motivation_letter_required": null,
+                "cv_required": null,
+                "recommendation_required": null,
+                "portfolio_required": null,
+                "interview_required": null,
+                "test_required": null,
+                "notes_for_turkish_students": ""
+            },
+            "language_profile": {
+                "teaching_language": [
+                    "English"
+                ],
+                "english_required": true,
+                "english_level_required": "IELTS 6.5 or TOEFL 90",
+                "accepted_english_tests": [
+                    "IELTS",
+                    "TOEFL iBT"
+                ],
+                "english_exemptions": [],
+                "italian_required": null,
+                "italian_level_required": "",
+                "italian_needed_for_life_or_internship": "",
+                "mixed_language_warning": "",
+                "language_risk": "low"
+            },
+            "cost_profile": {
+                "academic_year": "2026/2027",
+                "tuition_eur_per_year_min": 19714,
+                "tuition_eur_per_year_max": 19714,
+                "tuition_eur_per_year_estimated": 19714,
+                "tuition_basis": "Per year",
+                "regional_tax_eur": null,
+                "student_contribution_eur": null,
+                "application_fee_eur": 75,
+                "enrollment_fee_eur": null,
+                "total_academic_cost_eur_per_year_estimated": 19714,
+                "isee_or_income_based": null,
+                "non_eu_flat_fee": 19714,
+                "payment_installments": "",
+                "refund_policy": "",
+                "source_notes": ""
+            },
+            "scholarship_profile": {
+                "regional_scholarship_available": true,
+                "regional_scholarship_name": "Radboud Scholarship Programme (RSP) / NL Scholarship",
+                "dsu_or_equivalent": "",
+                "merit_scholarships": [
+                    "RSP",
+                    "NL Scholarship",
+                    "Radboud Scholarship Programme",
+                    "Study in NL – Scholarships portal"
+                ],
+                "tuition_waivers": [],
+                "housing_support": null,
+                "meal_support": null,
+                "cash_grant_possible": null,
+                "non_eu_eligible": true,
+                "income_based": null,
+                "scholarship_deadline": "2026-01-31",
+                "scholarship_application_url": "",
+                "funding_competitiveness": "unknown",
+                "funding_notes": ""
+            },
+            "living_profile": {
+                "city_cost_level": "high",
+                "monthly_living_cost_eur_min": null,
+                "monthly_living_cost_eur_max": null,
+                "monthly_living_cost_eur_estimated": 1000,
+                "housing_difficulty": "hard",
+                "student_housing_available": null,
+                "student_housing_competitiveness": "",
+                "average_room_rent_eur": 550,
+                "public_transport_cost_eur_month": null,
+                "food_cost_eur_month": null,
+                "city_safety_note": "",
+                "part_time_work_possibility": "",
+                "living_risk": "medium"
+            },
+            "curriculum_profile": {
+                "tracks": [
+                    "Neurophysics",
+                    "Particle and Astrophysics",
+                    "Data Science"
+                ],
+                "specializations": [],
+                "mandatory_courses": [],
+                "elective_courses": [],
+                "course_language_notes": "Tez çalışmaları ve araştırma stajları genellikle Max Planck Enstitüsü, SRON veya EHT uluslararası konsorsiyumu bünyesinde yürütülür.",
+                "thesis_required": true,
+                "internship_required": false,
+                "lab_courses": [],
+                "project_based_courses": [],
+                "mobility_options": [],
+                "double_degree_options": [],
+                "curriculum_url": "",
+                "study_plan_url": ""
+            },
+            "category_profile": {
+                "primary_categories": [
+                    "Uncategorized / Needs Review"
+                ],
+                "secondary_categories": [],
+                "subcategories": [],
+                "normalized_tags": [],
+                "category_scores": {}
+            },
+            "research_profile": {
+                "department_research_areas": [
+                    "Astrophysics, High Energy Physics, Data Science, Cyber Security"
+                ],
+                "labs": [],
+                "research_centers": [],
+                "notable_professors": [],
+                "space_or_aerospace_projects": [],
+                "student_teams": [],
+                "satellite_or_flight_projects": [],
+                "research_strength_summary": "Strong in observational astrophysics and high-energy physics, major contributions to Event Horizon Telescope.",
+                "research_strength_score": 87,
+                "research_sources": []
+            },
+            "industry_ecosystem_profile": {
+                "nearby_companies": [
+                    "NXP",
+                    "SRON",
+                    "Max Planck Institute"
+                ],
+                "confirmed_partners": [],
+                "space_agencies_or_public_bodies": [],
+                "research_institutes": [],
+                "startup_or_incubator_ecosystem": [],
+                "internship_possibility": "",
+                "thesis_with_industry_possibility": "",
+                "career_relevance": "",
+                "ecosystem_strength_score": null,
+                "ecosystem_notes": "Radboud Radyo Astronomi Laboratuvarı, High Field Magnet Laboratory (HFML) ve Max Planck Enstitüsü ile yakın ortaklık projeleri."
+            },
+            "application_timeline_profile": {
+                "academic_year": "2026/2027",
+                "intake_terms": [
+                    "September"
+                ],
+                "application_rounds": [],
+                "non_eu_deadline": "2026-04-01",
+                "eu_deadline": "",
+                "scholarship_deadline": "2026-01-31",
+                "pre_enrolment_required": null,
+                "universitaly_required": null,
+                "visa_sensitive_deadline": "",
+                "application_result_timing": "",
+                "enrollment_deadline": "",
+                "timeline_risk": "medium",
+                "deadline_notes": ""
+            },
+            "student_sentiment_profile": {
+                "student_satisfaction_score": 84,
+                "sentiment_confidence": "medium",
+                "sample_size_estimate": null,
+                "date_range": "",
+                "teaching_quality_sentiment": "",
+                "workload_sentiment": "Fair and manageable workload.",
+                "administration_sentiment": "",
+                "housing_sentiment": "Nijmegen housing demand is high. Students face difficulty finding spots.",
+                "city_life_sentiment": "",
+                "international_student_support_sentiment": "",
+                "career_support_sentiment": "",
+                "positive_themes": [],
+                "negative_themes": [],
+                "recurring_complaints": [],
+                "recurring_strengths": [],
+                "sentiment_summary": "Friendly campus community, great data science and astrophysics options, but housing shortage is present.",
+                "student_sentiment_sources": [
+                    "Reddit",
+                    "Studyportal reviews",
+                    "The Student Room"
+                ]
+            },
+            "source_profile": {
+                "official_program_page": "https://www.ru.nl/en/education/masters-programmes/physics-and-astronomy",
+                "official_admission_page": "",
+                "official_tuition_page": "https://www.ru.nl/en/education/masters-programmes/tuition-fees",
+                "official_scholarship_page": "",
+                "official_curriculum_page": "",
+                "official_department_page": "",
+                "official_lab_pages": [],
+                "third_party_sources": [
+                    "https://www.ru.nl/en/education/tuition-fees"
+                ],
+                "student_sentiment_sources": [],
+                "source_log": [],
+                "last_verified": "2026-06-24",
+                "needs_verification": false,
+                "verification_notes": "",
+                "field_confidence": {
+                    "program_basic_info": "high",
+                    "language": "high",
+                    "admission": "high",
+                    "tuition": "high",
+                    "scholarship": "high",
+                    "curriculum": "high",
+                    "research": "high",
+                    "industry": "high",
+                    "living": "high",
+                    "student_sentiment": "medium"
+                }
+            },
+            "decision_summary": {
+                "best_for": [],
+                "not_ideal_for": [],
+                "main_strengths": [
+                    "Astrofizik ve radyo astronomi alanında (Event Horizon Telescope - Kara delik görüntüleme projesi) küresel başarı ortaklıkları.",
+                    "Nijmegen'in Hollanda'nın en eski şehri olması, tarihi dokusu, sakinliği ve yeşil kampüs olanakları.",
+                    "Non-EU öğrenciler için yıllık €17,000 harç ücretiyle Hollanda'daki en uygun fiyatlı prestijli fen fakültelerinden biri olması."
+                ],
+                "main_risks": [
+                    "Uygulamalı havacılık/uzay mühendisliği programının bulunmaması; çalışmaların tamamen teorik fizik ve astrofizik kulvarında yürümesi.",
+                    "Nijmegen genelinde kiralık oda arayışının son yıllarda oldukça zorlu bir hal alması."
+                ],
+                "application_reality": "",
+                "overall_recommendation": "Strong option for studying MSc Physics and Astronomy / Data Science (track-dependent) in the Netherlands.",
+                "recommended_user_profile": ""
+            },
+            "scoring_inputs": {
+                "academic_field_fit_score_seed": 85,
+                "eligibility_language_score_seed": 90,
+                "cost_funding_score_seed": 40,
+                "career_research_score_seed": 80,
+                "living_risk_score_seed": 30,
+                "data_confidence_score_seed": 100,
+                "student_satisfaction_score_seed": 85,
+                "hard_filter_flags": {
+                    "english_only_compatible": true,
+                    "requires_local_language": false,
+                    "non_eu_eligible": true,
+                    "tuition_above_5000": true,
+                    "tuition_above_10000": true,
+                    "deadline_unclear": false,
+                    "needs_verification": false
+                }
+            },
+            "quality_control": {
+                "qc_status": "needs_revision",
+                "checked_at": "",
+                "failed_canary_tests": [],
+                "remaining_verification_tasks": [],
+                "qc_notes": ""
+            },
+            "qs_ranking": 272,
+            "global_recognition": "Well known internationally",
+            "field_recognition": "Strong engineering programs"
+        },
+        {
+            "id": "netherlands_wur_msc_gis",
+            "country": "Netherlands",
+            "university": "Wageningen University & Research",
+            "university_native_name": "Wageningen Universiteit",
+            "city": "Wageningen",
+            "region": "Gelderland",
+            "program_name": "MSc Geo-Information Science / Environmental Sciences (track-dependent)",
+            "program_native_name": "MSc Geo-Information Science",
+            "program_degree": "MSc",
+            "degree_level": "Master",
+            "degree_class": "MSc",
+            "duration_years": 2,
+            "ects": 120,
+            "teaching_language": [
+                "English"
+            ],
+            "program_url": "https://www.wur.nl/en/education-programmes/master.htm",
+            "department": "Department of Environmental Sciences",
+            "faculty_or_school": "",
+            "campus": "Wageningen Campus",
+            "program_status": "active",
+            "relevance_status": "relevant",
+            "eligibility_profile": {
+                "eligible_for_non_eu": true,
+                "non_eu_quota": null,
+                "required_previous_degree": "BSc in environmental sciences, geography, engineering or related disciplines",
+                "accepted_backgrounds": [
+                    "Geography",
+                    "Environmental Science",
+                    "Computer Science",
+                    "Engineering"
+                ],
+                "required_ects": {},
+                "minimum_gpa": null,
+                "gpa_scale": "",
+                "ranking_or_selection": "",
+                "admission_mode": "Selection",
+                "admission_risk": "medium",
+                "required_documents": [
+                    "Degree Certificate",
+                    "Transcript",
+                    "English Test",
+                    "CV",
+                    "Motivation Letter"
+                ],
+                "motivation_letter_required": null,
+                "cv_required": null,
+                "recommendation_required": null,
+                "portfolio_required": null,
+                "interview_required": null,
+                "test_required": null,
+                "notes_for_turkish_students": ""
+            },
+            "language_profile": {
+                "teaching_language": [
+                    "English"
+                ],
+                "english_required": true,
+                "english_level_required": "IELTS 6.5 (min 6.0 in speaking) or TOEFL 92 (min 23 in speaking)",
+                "accepted_english_tests": [
+                    "IELTS",
+                    "TOEFL iBT"
+                ],
+                "english_exemptions": [],
+                "italian_required": null,
+                "italian_level_required": "",
+                "italian_needed_for_life_or_internship": "",
+                "mixed_language_warning": "",
+                "language_risk": "low"
+            },
+            "cost_profile": {
+                "academic_year": "2026/2027",
+                "tuition_eur_per_year_min": 21900,
+                "tuition_eur_per_year_max": 21900,
+                "tuition_eur_per_year_estimated": 21900,
+                "tuition_basis": "Per year",
+                "regional_tax_eur": null,
+                "student_contribution_eur": null,
+                "application_fee_eur": 0,
+                "enrollment_fee_eur": null,
+                "total_academic_cost_eur_per_year_estimated": 21900,
+                "isee_or_income_based": null,
+                "non_eu_flat_fee": 21900,
+                "payment_installments": "",
+                "refund_policy": "",
+                "source_notes": ""
+            },
+            "scholarship_profile": {
+                "regional_scholarship_available": true,
+                "regional_scholarship_name": "WUR Excellence Programme / Africa Scholarship",
+                "dsu_or_equivalent": "",
+                "merit_scholarships": [
+                    "WUR Excellence Programme",
+                    "NL Scholarship",
+                    "Africa Scholarship Programme",
+                    "Excellence Programme",
+                    "Study in NL – Scholarships portal"
+                ],
+                "tuition_waivers": [],
+                "housing_support": null,
+                "meal_support": null,
+                "cash_grant_possible": null,
+                "non_eu_eligible": true,
+                "income_based": null,
+                "scholarship_deadline": "2026-02-01",
+                "scholarship_application_url": "",
+                "funding_competitiveness": "unknown",
+                "funding_notes": ""
+            },
+            "living_profile": {
+                "city_cost_level": "high",
+                "monthly_living_cost_eur_min": null,
+                "monthly_living_cost_eur_max": null,
+                "monthly_living_cost_eur_estimated": 1000,
+                "housing_difficulty": "hard",
+                "student_housing_available": null,
+                "student_housing_competitiveness": "",
+                "average_room_rent_eur": 500,
+                "public_transport_cost_eur_month": null,
+                "food_cost_eur_month": null,
+                "city_safety_note": "",
+                "part_time_work_possibility": "",
+                "living_risk": "medium"
+            },
+            "curriculum_profile": {
+                "tracks": [
+                    "Remote Sensing",
+                    "Geographical Information Systems"
+                ],
+                "specializations": [],
+                "mandatory_courses": [],
+                "elective_courses": [],
+                "course_language_notes": "Zorunlu staj uygulaması mevcut olup, öğrenciler genellikle ESA, Birleşmiş Milletler (FAO) veya çevre/uzaktan algılama veri analizi yapan küresel kuruluşlarda staj yaparlar.",
+                "thesis_required": true,
+                "internship_required": true,
+                "lab_courses": [],
+                "project_based_courses": [],
+                "mobility_options": [],
+                "double_degree_options": [],
+                "curriculum_url": "",
+                "study_plan_url": ""
+            },
+            "category_profile": {
+                "primary_categories": [
+                    "Uncategorized / Needs Review"
+                ],
+                "secondary_categories": [],
+                "subcategories": [],
+                "normalized_tags": [],
+                "category_scores": {}
+            },
+            "research_profile": {
+                "department_research_areas": [
+                    "Remote Sensing, GIS, Environmental Science, Climate Change"
+                ],
+                "labs": [],
+                "research_centers": [],
+                "notable_professors": [],
+                "space_or_aerospace_projects": [],
+                "student_teams": [],
+                "satellite_or_flight_projects": [],
+                "research_strength_summary": "Global leader in environmental research, satellite remote sensing, and remote data visualization.",
+                "research_strength_score": 90,
+                "research_sources": []
+            },
+            "industry_ecosystem_profile": {
+                "nearby_companies": [
+                    "ESA",
+                    "FAO (UN)",
+                    "Unilever",
+                    "Shell"
+                ],
+                "confirmed_partners": [],
+                "space_agencies_or_public_bodies": [],
+                "research_institutes": [],
+                "startup_or_incubator_ecosystem": [],
+                "internship_possibility": "",
+                "thesis_with_industry_possibility": "",
+                "career_relevance": "",
+                "ecosystem_strength_score": null,
+                "ecosystem_notes": "Yer Gözlemi (Earth Observation) ve GIS konusunda dünyada 1 numaradır."
+            },
+            "application_timeline_profile": {
+                "academic_year": "2026/2027",
+                "intake_terms": [
+                    "September"
+                ],
+                "application_rounds": [],
+                "non_eu_deadline": "2026-04-15",
+                "eu_deadline": "",
+                "scholarship_deadline": "2026-02-01",
+                "pre_enrolment_required": null,
+                "universitaly_required": null,
+                "visa_sensitive_deadline": "",
+                "application_result_timing": "",
+                "enrollment_deadline": "",
+                "timeline_risk": "medium",
+                "deadline_notes": ""
+            },
+            "student_sentiment_profile": {
+                "student_satisfaction_score": 90,
+                "sentiment_confidence": "medium",
+                "sample_size_estimate": null,
+                "date_range": "",
+                "teaching_quality_sentiment": "",
+                "workload_sentiment": "Balanced workload with strong project focus.",
+                "administration_sentiment": "",
+                "housing_sentiment": "Housing is tight, but WUR's student provider (Idealis) makes it slightly more structured than big cities.",
+                "city_life_sentiment": "",
+                "international_student_support_sentiment": "",
+                "career_support_sentiment": "",
+                "positive_themes": [],
+                "negative_themes": [],
+                "recurring_complaints": [],
+                "recurring_strengths": [],
+                "sentiment_summary": "Top-tier geo-information education and global recognition, friendly campus environment.",
+                "student_sentiment_sources": [
+                    "Reddit",
+                    "Studyportal reviews",
+                    "The Student Room"
+                ]
+            },
+            "source_profile": {
+                "official_program_page": "https://www.wur.nl/en/education-programmes/master/msc-programmes/msc-geo-information-science.htm",
+                "official_admission_page": "",
+                "official_tuition_page": "https://www.wur.nl/en/education-programmes/master/tuition-fees-and-study-finances.htm",
+                "official_scholarship_page": "",
+                "official_curriculum_page": "",
+                "official_department_page": "",
+                "official_lab_pages": [],
+                "third_party_sources": [
+                    "https://www.wur.nl/en/education-programmes/master/tuition-fees.htm"
+                ],
+                "student_sentiment_sources": [],
+                "source_log": [],
+                "last_verified": "2026-06-24",
+                "needs_verification": false,
+                "verification_notes": "",
+                "field_confidence": {
+                    "program_basic_info": "high",
+                    "language": "high",
+                    "admission": "high",
+                    "tuition": "high",
+                    "scholarship": "high",
+                    "curriculum": "high",
+                    "research": "high",
+                    "industry": "high",
+                    "living": "high",
+                    "student_sentiment": "medium"
+                }
+            },
+            "decision_summary": {
+                "best_for": [],
+                "not_ideal_for": [],
+                "main_strengths": [
+                    "Tarım, ormancılık ve çevre bilimleri alanında dünya 1 numarası olan üniversitede uydu tabanlı uzaktan algılama (Remote Sensing) ve GIS konularında benzersiz eğitim.",
+                    "Dünya gözlemi, iklim değişikliği izleme ve uydu veri analizi konularında eşsiz uygulama derinliği.",
+                    "Sürekli olarak Hollanda'nın en yeşil ve en iyi kampüsü seçilen modern ar-ge üssü."
+                ],
+                "main_risks": [
+                    "Klasik roket veya uydu mühendisliği ile ilgilenen adaylar için uygun olmaması; sadece 'Earth Observation' (Veri Analizi) alanında uzay odaklı olması.",
+                    "Wageningen'in çok küçük bir kasaba olması nedeniyle büyük şehir sosyal yaşamını arayanlar için kısıtlı olması."
+                ],
+                "application_reality": "",
+                "overall_recommendation": "Strong option for studying MSc Geo-Information Science / Environmental Sciences (track-dependent) in the Netherlands.",
+                "recommended_user_profile": ""
+            },
+            "scoring_inputs": {
+                "academic_field_fit_score_seed": 85,
+                "eligibility_language_score_seed": 90,
+                "cost_funding_score_seed": 40,
+                "career_research_score_seed": 80,
+                "living_risk_score_seed": 30,
+                "data_confidence_score_seed": 100,
+                "student_satisfaction_score_seed": 85,
+                "hard_filter_flags": {
+                    "english_only_compatible": true,
+                    "requires_local_language": false,
+                    "non_eu_eligible": true,
+                    "tuition_above_5000": true,
+                    "tuition_above_10000": true,
+                    "deadline_unclear": false,
+                    "needs_verification": false
+                }
+            },
+            "quality_control": {
+                "qc_status": "needs_revision",
+                "checked_at": "",
+                "failed_canary_tests": [],
+                "remaining_verification_tasks": [],
+                "qc_notes": ""
+            },
+            "qs_ranking": 153,
+            "global_recognition": "Highly recognized globally",
+            "field_recognition": "Very strong engineering reputation"
+        }
+    ]
+}

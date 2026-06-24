@@ -1,5 +1,28 @@
-export const I18N = {
+window.I18N = {
   en: {
+    profile: "Profile",
+    my_profile: "My Profile",
+    sign_in: "Sign in",
+    create_account: "Create account",
+    logout: "Log out",
+    use_my_profile: "Use My Profile",
+    profile_applied: "Profile Applied",
+    edit_profile: "Edit Profile",
+    personalization_disabled: "Personalization Off",
+    personalization_enabled: "Personalization On",
+    academic_background: "Academic Background",
+    academic_interests: "Academic Interests",
+    related_fields: "Related Fields",
+    budget_preferences: "Budget Preferences",
+    language_preferences: "Language Preferences",
+    country_preferences: "Country Preferences",
+    save_profile: "Save Profile",
+    core_interest: "Core Interest",
+    high_interest: "High Interest",
+    medium_interest: "Medium Interest",
+    low_interest: "Low Interest",
+    profile_match: "Profile Match",
+    sync_favorites: "Do you want to sync your local favorites to your account?",
     app_title: "UniRank",
     dashboard_title: "University Ranking Dashboard",
     dashboard_subtitle: "Analyze and compare universities based on your personal criteria",
@@ -133,6 +156,29 @@ export const I18N = {
   },
 
   tr: {
+    profile: "Profil",
+    my_profile: "Profilim",
+    sign_in: "Giriş yap",
+    create_account: "Hesap oluştur",
+    logout: "Çıkış yap",
+    use_my_profile: "Profilimi Kullan",
+    profile_applied: "Profil Uygulandı",
+    edit_profile: "Profili Düzenle",
+    personalization_disabled: "Kişiselleştirme Kapalı",
+    personalization_enabled: "Kişiselleştirme Açık",
+    academic_background: "Akademik Geçmiş",
+    academic_interests: "Akademik İlgi Alanları",
+    related_fields: "Yakın Alanlar",
+    budget_preferences: "Bütçe Tercihleri",
+    language_preferences: "Dil Tercihleri",
+    country_preferences: "Ülke Tercihleri",
+    save_profile: "Profili Kaydet",
+    core_interest: "Ana İlgi Alanı",
+    high_interest: "Yüksek İlgi",
+    medium_interest: "Orta İlgi",
+    low_interest: "Düşük İlgi",
+    profile_match: "Profil Uyumu",
+    sync_favorites: "Yerel favorilerini hesabına aktarmak ister misin?",
     app_title: "UniRank",
     dashboard_title: "Üniversite Tercih Paneli",
     dashboard_subtitle: "Üniversiteleri kişisel kriterlerine göre analiz et ve karşılaştır",
@@ -266,7 +312,7 @@ export const I18N = {
   }
 };
 
-export const COUNTRY_LABELS = {
+window.COUNTRY_LABELS = {
   Italy: { en: "Italy", tr: "İtalya" },
   Germany: { en: "Germany", tr: "Almanya" },
   Netherlands: { en: "Netherlands", tr: "Hollanda" },
