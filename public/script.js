@@ -73,6 +73,7 @@ function toggleFavorite(id) {
 async function init() {
     setupEventListeners();
     await fetchData();
+    window.applyTranslations();
 }
 
 // Fetch Data
@@ -235,7 +236,7 @@ function populateCountryFilter() {
     sorted.forEach(c => {
         const opt = document.createElement('option');
         opt.value = c;
-        opt.textContent = c;
+        opt.textContent = window.getCountryName ? window.getCountryName(c) : c;
         els.countryFilter.appendChild(opt);
     });
 }
@@ -245,7 +246,7 @@ function renderCountryTags() {
     selectedCountries.forEach(c => {
         const span = document.createElement('span');
         span.className = 'tag-removable';
-        span.innerHTML = `${c} ✕`;
+        span.innerHTML = `${window.getCountryName ? window.getCountryName(c) : c} ✕`;
         span.onclick = () => {
             selectedCountries.delete(c);
             renderCountryTags();
@@ -265,7 +266,7 @@ function populateCountryExcludeFilter() {
     sorted.forEach(c => {
         const opt = document.createElement('option');
         opt.value = c;
-        opt.textContent = c;
+        opt.textContent = window.getCountryName ? window.getCountryName(c) : c;
         els.countryExcludeFilter.appendChild(opt);
     });
 }
@@ -275,7 +276,7 @@ function renderCountryExcludeTags() {
     excludedCountries.forEach(c => {
         const span = document.createElement('span');
         span.className = 'tag-removable';
-        span.innerHTML = `${c} ✕`;
+        span.innerHTML = `${window.getCountryName ? window.getCountryName(c) : c} ✕`;
         span.style.background = 'rgba(239, 68, 68, 0.15)';
         span.style.color = '#fca5a5';
         span.style.borderColor = 'rgba(239, 68, 68, 0.3)';
@@ -297,15 +298,18 @@ async function populateCategoryTree() {
     }
     
     let html = '';
-    for (const [pName, subs] of Object.entries(parents)) {
+    for (const [pNameObj, subs] of Object.entries(parents)) {
+        let pName = typeof pNameObj === 'object' && pNameObj !== null ? (pNameObj[window.currentLanguage] || pNameObj.en || "Unknown") : pNameObj;
+        
         html += `<div class="cat-parent" style="margin-bottom: 6px;">`;
         html += `<label style="font-weight: 600; display: flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer; color: var(--text-color);">
-                   <input type="checkbox" value="${pName}" class="cat-checkbox p-cat"> ${pName}
+                   <input type="checkbox" value="${pNameObj}" class="cat-checkbox p-cat"> ${pName}
                  </label>`;
         html += `<div class="cat-subs" style="margin-left: 20px; margin-top: 4px; display: flex; flex-direction: column; gap: 4px;">`;
-        for (const sub of subs) {
+        for (const subObj of subs) {
+            let sub = typeof subObj === 'object' && subObj !== null ? (subObj[window.currentLanguage] || subObj.en || "Unknown") : subObj;
             html += `<label style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted); cursor: pointer;">
-                       <input type="checkbox" value="${sub}" class="cat-checkbox c-cat"> ${sub}
+                       <input type="checkbox" value="${subObj}" class="cat-checkbox c-cat"> ${sub}
                      </label>`;
         }
         html += `</div></div>`;
@@ -435,18 +439,18 @@ function renderTable() {
         const isFav = favorites.has(rid);
         const favIcon = isFav ? '⭐' : '☆';
         
-        // Clean country name (remove emojis like flags and any weird prefix symbols)
         const cleanCountry = row.country ? row.country.replace(/^[^a-zA-ZçğıöşüÇĞİÖŞÜ]+/, '').trim() : '-';
+        const displayCountry = window.getCountryName ? window.getCountryName(cleanCountry) : cleanCountry;
         
         tr.innerHTML = `
             <td><span style="color:var(--text-muted); font-weight:700;">${i + 1}</span></td>
             <td class="fav-cell" style="cursor: pointer; font-size: 16px;">${favIcon}</td>
-            <td>${row.display_name || row.name}</td>
-            <td>${row.city || '-'}</td>
-            <td><span class="country-gradient" data-country="${cleanCountry}">${cleanCountry}</span></td>
+            <td>${window.localizedValue ? window.localizedValue(row.display_name || row.name) : (row.display_name || row.name)}</td>
+            <td>${window.localizedValue ? window.localizedValue(row.city) || '-' : (row.city || '-')}</td>
+            <td><span class="country-gradient" data-country="${cleanCountry}">${displayCountry}</span></td>
             <td><span class="score-badge" style="background: ${scColor}">${row._score.toFixed(2)}</span></td>
             <td>€${parseFloat(row.tuition_eur_per_year || 0).toFixed(0)}</td>
-            <td><button class="detail-btn">Details ↗</button></td>
+            <td><button class="detail-btn">${window.t ? window.t('btn_view') : 'View'} ↗</button></td>
         `;
         
         els.tableBody.appendChild(tr);
@@ -475,11 +479,14 @@ function openDrawer(data) {
     let prosHTML = '';
     let consHTML = '';
     
-    if (data.pros && data.pros.length) {
-        prosHTML = data.pros.map(p => `<li class="pro"><span class="pro-text">${p}</span></li>`).join('');
+    let localizedPros = window.localizedArray ? window.localizedArray(data.pros) : data.pros;
+    let localizedCons = window.localizedArray ? window.localizedArray(data.cons) : data.cons;
+    
+    if (localizedPros && localizedPros.length) {
+        prosHTML = localizedPros.map(p => `<li class="pro"><span class="pro-text">${p}</span></li>`).join('');
     }
-    if (data.cons && data.cons.length) {
-        consHTML = data.cons.map(c => `<li class="con"><span class="con-text">${c}</span></li>`).join('');
+    if (localizedCons && localizedCons.length) {
+        consHTML = localizedCons.map(c => `<li class="con"><span class="con-text">${c}</span></li>`).join('');
     }
     
     // Generate Tags HTML
@@ -489,26 +496,29 @@ function openDrawer(data) {
     }
 
     const cleanCountry = data.country ? data.country.replace(/^[^a-zA-ZçğıöşüÇĞİÖŞÜ]+/, '').trim() : '-';
+    const displayCountry = window.getCountryName ? window.getCountryName(cleanCountry) : cleanCountry;
+
+    const t = window.t || (k => k);
 
     document.getElementById('drawer-info').innerHTML = `
         <div class="detail-section">
-            <h4 class="heading-overview">Overview</h4>
+            <h4 class="heading-overview">${t('program_details')}</h4>
             <div class="detail-grid">
                 <div class="detail-item">
-                    <label>Country</label>
-                    <span class="country-gradient" data-country="${cleanCountry}">${cleanCountry}</span>
+                    <label>${t('col_country')}</label>
+                    <span class="country-gradient" data-country="${cleanCountry}">${displayCountry}</span>
                 </div>
                 <div class="detail-item">
-                    <label>City</label>
-                    <span>${data.city}</span>
+                    <label>${t('col_city')}</label>
+                    <span>${window.localizedValue(data.city) || '-'}</span>
                 </div>
                 <div class="detail-item">
-                    <label>Score</label>
+                    <label>${t('col_score')}</label>
                     <span style="color: var(--text-highlight)">${data._score.toFixed(2)} / 10.0</span>
                 </div>
                 <div class="detail-item">
-                    <label>City Cost</label>
-                    <span style="text-transform: capitalize">${(data.cost_city_raw || 'Unknown').replace(/_/g, ' ')}</span>
+                    <label>${t('city_cost')}</label>
+                    <span style="text-transform: capitalize">${t('risk_' + (data.cost_city_raw || 'unknown'))}</span>
                 </div>
             </div>
         </div>
@@ -517,29 +527,29 @@ function openDrawer(data) {
             <h4 class="heading-rankings">Rankings & Recognition</h4>
             <div class="detail-grid">
                 <div class="detail-item">
-                    <label>QS Ranking (Global)</label>
+                    <label>QS Ranking</label>
                     <span>#${data.qs_ranking || 'N/A'}</span>
                 </div>
                 <div class="detail-item">
                     <label>Global Recognition</label>
-                    <span>${data.global_recognition || 'Unknown'}</span>
+                    <span>${window.localizedValue(data.global_recognition) || 'Unknown'}</span>
                 </div>
                 <div class="detail-item">
                     <label>Field Recognition</label>
-                    <span>${data.field_recognition || 'Unknown'}</span>
+                    <span>${window.localizedValue(data.field_recognition) || 'Unknown'}</span>
                 </div>
             </div>
         </div>
 
         <div class="detail-section">
-            <h4 class="heading-financials">Financials</h4>
+            <h4 class="heading-financials">${t('cost_funding')}</h4>
             <div class="detail-grid">
                 <div class="detail-item">
-                    <label>Semester Fee</label>
+                    <label>${t('semester_fee')}</label>
                     <span>€${parseFloat(data.semester_fee_eur || 0).toFixed(2)}</span>
                 </div>
                 <div class="detail-item">
-                    <label>Tuition (Per Year)</label>
+                    <label>${t('yearly_tuition')}</label>
                     <span>€${parseFloat(data.tuition_eur_per_year || 0).toFixed(2)}</span>
                 </div>
             </div>
@@ -556,16 +566,16 @@ function openDrawer(data) {
 
         ${data._scoringDetails ? `
         <div class="detail-section">
-            <h4 class="heading-analysis" style="color: var(--primary);">Score Explanation</h4>
+            <h4 class="heading-analysis" style="color: var(--primary);">${t('why_this_score')}</h4>
             <div style="background: rgba(99, 102, 241, 0.05); padding: 16px; border-radius: 12px; border: 1px solid rgba(99, 102, 241, 0.2); margin-bottom: 12px;">
                 <ul class="pro-con-list" style="margin: 0; padding-left: 20px; color: var(--text);">
-                    ${data._scoringDetails.explanation.map(e => `<li style="margin-bottom: 6px;">${e}</li>`).join('')}
+                    ${window.localizedArray(data._scoringDetails.explanation).map(e => `<li style="margin-bottom: 6px;">${e}</li>`).join('')}
                 </ul>
             </div>
             ${data._scoringDetails.warnings.length > 0 ? `
             <div style="background: rgba(239, 68, 68, 0.05); padding: 16px; border-radius: 12px; border: 1px solid rgba(239, 68, 68, 0.2);">
                 <ul class="pro-con-list" style="margin: 0; padding-left: 20px; color: var(--danger);">
-                    ${data._scoringDetails.warnings.map(w => `<li style="margin-bottom: 6px;"><strong>Warning:</strong> ${w}</li>`).join('')}
+                    ${window.localizedArray(data._scoringDetails.warnings).map(w => `<li style="margin-bottom: 6px;"><strong>Warning:</strong> ${w}</li>`).join('')}
                 </ul>
             </div>
             ` : ''}
@@ -674,5 +684,40 @@ function closeDrawer() {
     els.drawer.overlay.classList.remove('active');
 }
 
+document.addEventListener('languageChanged', async () => {
+    // Re-render components that depend on language
+    if (rawData.length > 0) {
+        els.countryFilter.innerHTML = '<option value="" data-i18n="all_countries">All countries</option>';
+        els.countryExcludeFilter.innerHTML = '<option value="" data-i18n="all_countries">All countries</option>';
+        
+        populateCountryFilter();
+        populateCountryExcludeFilter();
+        renderCountryTags();
+        renderCountryExcludeTags();
+        
+        await populateCategoryTree();
+        
+        // Re-apply static translations inside dynamically updated selects
+        if (window.applyTranslations) {
+            // But applyTranslations triggers this event, so we just manually fix the default options.
+            const allCountriesOpt = els.countryFilter.querySelector('option[value=""]');
+            if (allCountriesOpt) allCountriesOpt.textContent = window.t('all_countries');
+            
+            const allCountriesExOpt = els.countryExcludeFilter.querySelector('option[value=""]');
+            if (allCountriesExOpt) allCountriesExOpt.textContent = window.t('all_countries');
+        }
+
+        processAndRender();
+        
+        // If drawer is open, re-render it
+        if (els.drawer.panel.classList.contains('active')) {
+            const openId = els.drawer.title.textContent; // kinda hacky but we can just use the currently selected row or close it
+            // It's safer to close drawer on language change, or we can just leave it to user
+            closeDrawer();
+        }
+    }
+});
+
 // Start
 init();
+

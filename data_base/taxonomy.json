@@ -1,304 +1,888 @@
 {
   "aerodynamics": {
-    "label": "Aerodinamik",
-    "parent": "Akışkanlar Mekaniği ve Aerodinamik",
-    "aliases": ["aerodynamics", "aero", "external aerodynamics"]
+    "label": {
+      "en": "Aerodynamics",
+      "tr": "Aerodinamik"
+    },
+    "parent": {
+      "en": "Fluid Mechanics & Aerodynamics",
+      "tr": "Akışkanlar Mekaniği ve Aerodinamik"
+    },
+    "aliases": [
+      "aerodynamics",
+      "aero",
+      "external aerodynamics"
+    ]
   },
   "cfd": {
-    "label": "CFD",
-    "parent": "Akışkanlar Mekaniği ve Aerodinamik",
-    "aliases": ["cfd", "computational fluid dynamics", "fluid simulation", "numerical fluid mechanics"]
+    "label": {
+      "en": "CFD",
+      "tr": "CFD"
+    },
+    "parent": {
+      "en": "Fluid Mechanics & Aerodynamics",
+      "tr": "Akışkanlar Mekaniği ve Aerodinamik"
+    },
+    "aliases": [
+      "cfd",
+      "computational fluid dynamics",
+      "fluid simulation",
+      "numerical fluid mechanics"
+    ]
   },
   "hypersonics": {
-    "label": "Hipersonik",
-    "parent": "Akışkanlar Mekaniği ve Aerodinamik",
-    "aliases": ["hypersonics", "high-speed flow", "supersonic", "compressible flow"]
+    "label": {
+      "en": "Hypersonics",
+      "tr": "Hipersonik"
+    },
+    "parent": {
+      "en": "Fluid Mechanics & Aerodynamics",
+      "tr": "Akışkanlar Mekaniği ve Aerodinamik"
+    },
+    "aliases": [
+      "hypersonics",
+      "high-speed flow",
+      "supersonic",
+      "compressible flow"
+    ]
   },
   "turbulence": {
-    "label": "Türbülans",
-    "parent": "Akışkanlar Mekaniği ve Aerodinamik",
-    "aliases": ["turbulence", "rans", "les", "dns"]
+    "label": {
+      "en": "Turbulence",
+      "tr": "Türbülans"
+    },
+    "parent": {
+      "en": "Fluid Mechanics & Aerodynamics",
+      "tr": "Akışkanlar Mekaniği ve Aerodinamik"
+    },
+    "aliases": [
+      "turbulence",
+      "rans",
+      "les",
+      "dns"
+    ]
   },
   "aeroacoustics": {
-    "label": "Aeroakustik",
-    "parent": "Akışkanlar Mekaniği ve Aerodinamik",
-    "aliases": ["aeroacoustics", "noise", "acoustics"]
+    "label": {
+      "en": "Aeroacoustics",
+      "tr": "Aeroakustik"
+    },
+    "parent": {
+      "en": "Fluid Mechanics & Aerodynamics",
+      "tr": "Akışkanlar Mekaniği ve Aerodinamik"
+    },
+    "aliases": [
+      "aeroacoustics",
+      "noise",
+      "acoustics"
+    ]
   },
   "experimental_fluids": {
-    "label": "Deneysel Akışkanlar",
-    "parent": "Akışkanlar Mekaniği ve Aerodinamik",
-    "aliases": ["experimental fluids", "experimental fluid dynamics"]
+    "label": {
+      "en": "Experimental Fluids",
+      "tr": "Deneysel Akışkanlar"
+    },
+    "parent": {
+      "en": "Fluid Mechanics & Aerodynamics",
+      "tr": "Akışkanlar Mekaniği ve Aerodinamik"
+    },
+    "aliases": [
+      "experimental fluids",
+      "experimental fluid dynamics"
+    ]
   },
   "wind_tunnel": {
-    "label": "Rüzgar Tüneli Testleri",
-    "parent": "Akışkanlar Mekaniği ve Aerodinamik",
-    "aliases": ["wind tunnel", "experimental aerodynamics", "wind tunnel testing"]
+    "label": {
+      "en": "Wind Tunnel Testing",
+      "tr": "Rüzgar Tüneli Testleri"
+    },
+    "parent": {
+      "en": "Fluid Mechanics & Aerodynamics",
+      "tr": "Akışkanlar Mekaniği ve Aerodinamik"
+    },
+    "aliases": [
+      "wind tunnel",
+      "experimental aerodynamics",
+      "wind tunnel testing"
+    ]
   },
   "heat_transfer": {
-    "label": "Isı Transferi / Termal Akışlar",
-    "parent": "Akışkanlar Mekaniği ve Aerodinamik",
-    "aliases": ["heat transfer", "thermal flow", "convection"]
+    "label": {
+      "en": "Heat Transfer / Thermal Flows",
+      "tr": "Isı Transferi / Termal Akışlar"
+    },
+    "parent": {
+      "en": "Fluid Mechanics & Aerodynamics",
+      "tr": "Akışkanlar Mekaniği ve Aerodinamik"
+    },
+    "aliases": [
+      "heat transfer",
+      "thermal flow",
+      "convection"
+    ]
   },
   "aerothermodynamics": {
-    "label": "Aerotermodinamik",
-    "parent": "Akışkanlar Mekaniği ve Aerodinamik",
-    "aliases": ["aerothermodynamics"]
+    "label": {
+      "en": "Aerothermodynamics",
+      "tr": "Aerotermodinamik"
+    },
+    "parent": {
+      "en": "Fluid Mechanics & Aerodynamics",
+      "tr": "Akışkanlar Mekaniği ve Aerodinamik"
+    },
+    "aliases": [
+      "aerothermodynamics"
+    ]
   },
-  
   "flight_mechanics": {
-    "label": "Uçuş Mekaniği",
-    "parent": "Uçuş Mekaniği, Kontrol ve Otonomi",
-    "aliases": ["flight mechanics", "flight dynamics", "aircraft dynamics"]
+    "label": {
+      "en": "Flight Mechanics",
+      "tr": "Uçuş Mekaniği"
+    },
+    "parent": {
+      "en": "Flight Mechanics, Control & Autonomy",
+      "tr": "Uçuş Mekaniği, Kontrol ve Otonomi"
+    },
+    "aliases": [
+      "flight mechanics",
+      "flight dynamics",
+      "aircraft dynamics"
+    ]
   },
   "stability_control": {
-    "label": "Kararlılık ve Kontrol",
-    "parent": "Uçuş Mekaniği, Kontrol ve Otonomi",
-    "aliases": ["stability", "control", "flight control", "stability and control"]
+    "label": {
+      "en": "Stability & Control",
+      "tr": "Kararlılık ve Kontrol"
+    },
+    "parent": {
+      "en": "Flight Mechanics, Control & Autonomy",
+      "tr": "Uçuş Mekaniği, Kontrol ve Otonomi"
+    },
+    "aliases": [
+      "stability",
+      "control",
+      "flight control",
+      "stability and control"
+    ]
   },
   "gnc": {
-    "label": "GNC",
-    "parent": "Uçuş Mekaniği, Kontrol ve Otonomi",
-    "aliases": ["gnc", "guidance navigation control", "guidance", "navigation", "spacecraft gnc"]
+    "label": {
+      "en": "GNC",
+      "tr": "GNC"
+    },
+    "parent": {
+      "en": "Flight Mechanics, Control & Autonomy",
+      "tr": "Uçuş Mekaniği, Kontrol ve Otonomi"
+    },
+    "aliases": [
+      "gnc",
+      "guidance navigation control",
+      "guidance",
+      "navigation",
+      "spacecraft gnc"
+    ]
   },
   "autonomy": {
-    "label": "Otonom Sistemler",
-    "parent": "Uçuş Mekaniği, Kontrol ve Otonomi",
-    "aliases": ["autonomy", "autonomous systems"]
+    "label": {
+      "en": "Autonomous Systems",
+      "tr": "Otonom Sistemler"
+    },
+    "parent": {
+      "en": "Flight Mechanics, Control & Autonomy",
+      "tr": "Uçuş Mekaniği, Kontrol ve Otonomi"
+    },
+    "aliases": [
+      "autonomy",
+      "autonomous systems"
+    ]
   },
   "uav": {
-    "label": "UAV / Drone Sistemleri",
-    "parent": "Uçuş Mekaniği, Kontrol ve Otonomi",
-    "aliases": ["uav", "drones", "unmanned aerial vehicles", "uas"]
+    "label": {
+      "en": "UAV / Drone Systems",
+      "tr": "UAV / Drone Sistemleri"
+    },
+    "parent": {
+      "en": "Flight Mechanics, Control & Autonomy",
+      "tr": "Uçuş Mekaniği, Kontrol ve Otonomi"
+    },
+    "aliases": [
+      "uav",
+      "drones",
+      "unmanned aerial vehicles",
+      "uas"
+    ]
   },
   "robotics": {
-    "label": "Robotik",
-    "parent": "Uçuş Mekaniği, Kontrol ve Otonomi",
-    "aliases": ["robotics", "manipulators"]
+    "label": {
+      "en": "Robotics",
+      "tr": "Robotik"
+    },
+    "parent": {
+      "en": "Flight Mechanics, Control & Autonomy",
+      "tr": "Uçuş Mekaniği, Kontrol ve Otonomi"
+    },
+    "aliases": [
+      "robotics",
+      "manipulators"
+    ]
   },
-
   "space_systems": {
-    "label": "Uzay Sistemleri",
-    "parent": "Uzay Sistemleri ve Astronotik",
-    "aliases": ["space systems", "spacecraft systems", "space engineering", "aerospace systems"]
+    "label": {
+      "en": "Space Systems",
+      "tr": "Uzay Sistemleri"
+    },
+    "parent": {
+      "en": "Space Systems & Astronautics",
+      "tr": "Uzay Sistemleri ve Astronotik"
+    },
+    "aliases": [
+      "space systems",
+      "spacecraft systems",
+      "space engineering",
+      "aerospace systems"
+    ]
   },
   "satellite_systems": {
-    "label": "Uydu Sistemleri",
-    "parent": "Uzay Sistemleri ve Astronotik",
-    "aliases": ["satellite systems", "small satellites", "cubesat", "satellite engineering"]
+    "label": {
+      "en": "Satellite Systems",
+      "tr": "Uydu Sistemleri"
+    },
+    "parent": {
+      "en": "Space Systems & Astronautics",
+      "tr": "Uzay Sistemleri ve Astronotik"
+    },
+    "aliases": [
+      "satellite systems",
+      "small satellites",
+      "cubesat",
+      "satellite engineering"
+    ]
   },
   "spacecraft_design": {
-    "label": "Uzay Aracı Tasarımı",
-    "parent": "Uzay Sistemleri ve Astronotik",
-    "aliases": ["spacecraft design", "satellite design"]
+    "label": {
+      "en": "Spacecraft Design",
+      "tr": "Uzay Aracı Tasarımı"
+    },
+    "parent": {
+      "en": "Space Systems & Astronautics",
+      "tr": "Uzay Sistemleri ve Astronotik"
+    },
+    "aliases": [
+      "spacecraft design",
+      "satellite design"
+    ]
   },
   "astrodynamics": {
-    "label": "Astrodinamik",
-    "parent": "Uzay Sistemleri ve Astronotik",
-    "aliases": ["astrodynamics", "orbital mechanics", "orbit propagation"]
+    "label": {
+      "en": "Astrodynamics",
+      "tr": "Astrodinamik"
+    },
+    "parent": {
+      "en": "Space Systems & Astronautics",
+      "tr": "Uzay Sistemleri ve Astronotik"
+    },
+    "aliases": [
+      "astrodynamics",
+      "orbital mechanics",
+      "orbit propagation"
+    ]
   },
   "mission_analysis": {
-    "label": "Görev Analizi",
-    "parent": "Uzay Sistemleri ve Astronotik",
-    "aliases": ["mission analysis", "mission design", "trajectory design", "space mission design"]
+    "label": {
+      "en": "Mission Analysis",
+      "tr": "Görev Analizi"
+    },
+    "parent": {
+      "en": "Space Systems & Astronautics",
+      "tr": "Uzay Sistemleri ve Astronotik"
+    },
+    "aliases": [
+      "mission analysis",
+      "mission design",
+      "trajectory design",
+      "space mission design"
+    ]
   },
   "orbit_determination": {
-    "label": "Yörünge Belirleme",
-    "parent": "Uzay Sistemleri ve Astronotik",
-    "aliases": ["orbit determination", "spacecraft navigation"]
+    "label": {
+      "en": "Yörünge Belirleme",
+      "tr": "Yörünge Belirleme"
+    },
+    "parent": {
+      "en": "Space Systems & Astronautics",
+      "tr": "Uzay Sistemleri ve Astronotik"
+    },
+    "aliases": [
+      "orbit determination",
+      "spacecraft navigation"
+    ]
   },
   "space_environment": {
-    "label": "Uzay Ortamı",
-    "parent": "Uzay Sistemleri ve Astronotik",
-    "aliases": ["space environment", "space weather", "radiation"]
+    "label": {
+      "en": "Uzay Ortamı",
+      "tr": "Uzay Ortamı"
+    },
+    "parent": {
+      "en": "Space Systems & Astronautics",
+      "tr": "Uzay Sistemleri ve Astronotik"
+    },
+    "aliases": [
+      "space environment",
+      "space weather",
+      "radiation"
+    ]
   },
-
   "jet_propulsion": {
-    "label": "Jet İtki Sistemleri",
-    "parent": "İtki, Enerji ve Termal Sistemler",
-    "aliases": ["jet engines", "gas turbines", "air-breathing propulsion", "jet propulsion"]
+    "label": {
+      "en": "Jet İtki Sistemleri",
+      "tr": "Jet İtki Sistemleri"
+    },
+    "parent": {
+      "en": "İtki, Enerji ve Termal Sistemler",
+      "tr": "İtki, Enerji ve Termal Sistemler"
+    },
+    "aliases": [
+      "jet engines",
+      "gas turbines",
+      "air-breathing propulsion",
+      "jet propulsion"
+    ]
   },
   "rocket_propulsion": {
-    "label": "Roket İtki Sistemleri",
-    "parent": "İtki, Enerji ve Termal Sistemler",
-    "aliases": ["rocket propulsion", "chemical propulsion", "solid rockets", "liquid rockets"]
+    "label": {
+      "en": "Roket İtki Sistemleri",
+      "tr": "Roket İtki Sistemleri"
+    },
+    "parent": {
+      "en": "İtki, Enerji ve Termal Sistemler",
+      "tr": "İtki, Enerji ve Termal Sistemler"
+    },
+    "aliases": [
+      "rocket propulsion",
+      "chemical propulsion",
+      "solid rockets",
+      "liquid rockets"
+    ]
   },
   "electric_propulsion": {
-    "label": "Elektrikli İtki",
-    "parent": "İtki, Enerji ve Termal Sistemler",
-    "aliases": ["electric propulsion", "ion thruster", "hall thruster", "plasma propulsion"]
+    "label": {
+      "en": "Electric Propulsion",
+      "tr": "Elektrikli İtki"
+    },
+    "parent": {
+      "en": "İtki, Enerji ve Termal Sistemler",
+      "tr": "İtki, Enerji ve Termal Sistemler"
+    },
+    "aliases": [
+      "electric propulsion",
+      "ion thruster",
+      "hall thruster",
+      "plasma propulsion"
+    ]
   },
   "combustion": {
-    "label": "Yanma",
-    "parent": "İtki, Enerji ve Termal Sistemler",
-    "aliases": ["combustion", "reacting flows"]
+    "label": {
+      "en": "Yanma",
+      "tr": "Yanma"
+    },
+    "parent": {
+      "en": "İtki, Enerji ve Termal Sistemler",
+      "tr": "İtki, Enerji ve Termal Sistemler"
+    },
+    "aliases": [
+      "combustion",
+      "reacting flows"
+    ]
   },
   "turbomachinery": {
-    "label": "Turbomakine",
-    "parent": "İtki, Enerji ve Termal Sistemler",
-    "aliases": ["turbomachinery", "compressors", "turbines"]
+    "label": {
+      "en": "Turbomakine",
+      "tr": "Turbomakine"
+    },
+    "parent": {
+      "en": "İtki, Enerji ve Termal Sistemler",
+      "tr": "İtki, Enerji ve Termal Sistemler"
+    },
+    "aliases": [
+      "turbomachinery",
+      "compressors",
+      "turbines"
+    ]
   },
   "energy_systems": {
-    "label": "Enerji Sistemleri",
-    "parent": "İtki, Enerji ve Termal Sistemler",
-    "aliases": ["energy systems", "power systems"]
+    "label": {
+      "en": "Enerji Sistemleri",
+      "tr": "Enerji Sistemleri"
+    },
+    "parent": {
+      "en": "İtki, Enerji ve Termal Sistemler",
+      "tr": "İtki, Enerji ve Termal Sistemler"
+    },
+    "aliases": [
+      "energy systems",
+      "power systems"
+    ]
   },
   "thermal_management": {
-    "label": "Termal Yönetim",
-    "parent": "İtki, Enerji ve Termal Sistemler",
-    "aliases": ["thermal systems", "thermal management", "thermal control"]
+    "label": {
+      "en": "Termal Yönetim",
+      "tr": "Termal Yönetim"
+    },
+    "parent": {
+      "en": "İtki, Enerji ve Termal Sistemler",
+      "tr": "İtki, Enerji ve Termal Sistemler"
+    },
+    "aliases": [
+      "thermal systems",
+      "thermal management",
+      "thermal control"
+    ]
   },
-
   "aerospace_structures": {
-    "label": "Aerospace Structures",
-    "parent": "Yapılar, Malzemeler ve Mekanik Tasarım",
-    "aliases": ["structures", "aerospace structures", "structural analysis", "aircraft structures"]
+    "label": {
+      "en": "Aerospace Structures",
+      "tr": "Aerospace Structures"
+    },
+    "parent": {
+      "en": "Yapılar, Malzemeler ve Mekanik Tasarım",
+      "tr": "Yapılar, Malzemeler ve Mekanik Tasarım"
+    },
+    "aliases": [
+      "structures",
+      "aerospace structures",
+      "structural analysis",
+      "aircraft structures"
+    ]
   },
   "structural_mechanics": {
-    "label": "Structural Mechanics",
-    "parent": "Yapılar, Malzemeler ve Mekanik Tasarım",
-    "aliases": ["structural mechanics", "solid mechanics"]
+    "label": {
+      "en": "Structural Mechanics",
+      "tr": "Structural Mechanics"
+    },
+    "parent": {
+      "en": "Yapılar, Malzemeler ve Mekanik Tasarım",
+      "tr": "Yapılar, Malzemeler ve Mekanik Tasarım"
+    },
+    "aliases": [
+      "structural mechanics",
+      "solid mechanics"
+    ]
   },
   "composites": {
-    "label": "Composites",
-    "parent": "Yapılar, Malzemeler ve Mekanik Tasarım",
-    "aliases": ["composites", "composite materials", "cfrp"]
+    "label": {
+      "en": "Composites",
+      "tr": "Composites"
+    },
+    "parent": {
+      "en": "Yapılar, Malzemeler ve Mekanik Tasarım",
+      "tr": "Yapılar, Malzemeler ve Mekanik Tasarım"
+    },
+    "aliases": [
+      "composites",
+      "composite materials",
+      "cfrp"
+    ]
   },
   "materials": {
-    "label": "Materials",
-    "parent": "Yapılar, Malzemeler ve Mekanik Tasarım",
-    "aliases": ["materials", "material science", "metallurgy", "aerospace materials"]
+    "label": {
+      "en": "Materials",
+      "tr": "Materials"
+    },
+    "parent": {
+      "en": "Yapılar, Malzemeler ve Mekanik Tasarım",
+      "tr": "Yapılar, Malzemeler ve Mekanik Tasarım"
+    },
+    "aliases": [
+      "materials",
+      "material science",
+      "metallurgy",
+      "aerospace materials"
+    ]
   },
   "fea": {
-    "label": "FEM / FEA",
-    "parent": "Yapılar, Malzemeler ve Mekanik Tasarım",
-    "aliases": ["fem", "fea", "finite element", "computational solid mechanics"]
+    "label": {
+      "en": "FEM / FEA",
+      "tr": "FEM / FEA"
+    },
+    "parent": {
+      "en": "Yapılar, Malzemeler ve Mekanik Tasarım",
+      "tr": "Yapılar, Malzemeler ve Mekanik Tasarım"
+    },
+    "aliases": [
+      "fem",
+      "fea",
+      "finite element",
+      "computational solid mechanics"
+    ]
   },
   "fatigue_damage": {
-    "label": "Fatigue & Damage",
-    "parent": "Yapılar, Malzemeler ve Mekanik Tasarım",
-    "aliases": ["fatigue", "damage", "fracture", "fracture mechanics"]
+    "label": {
+      "en": "Fatigue & Damage",
+      "tr": "Fatigue & Damage"
+    },
+    "parent": {
+      "en": "Yapılar, Malzemeler ve Mekanik Tasarım",
+      "tr": "Yapılar, Malzemeler ve Mekanik Tasarım"
+    },
+    "aliases": [
+      "fatigue",
+      "damage",
+      "fracture",
+      "fracture mechanics"
+    ]
   },
   "aeroelasticity": {
-    "label": "Aeroelasticity",
-    "parent": "Yapılar, Malzemeler ve Mekanik Tasarım",
-    "aliases": ["aeroelasticity", "flutter", "fluid-structure interaction"]
+    "label": {
+      "en": "Aeroelasticity",
+      "tr": "Aeroelasticity"
+    },
+    "parent": {
+      "en": "Yapılar, Malzemeler ve Mekanik Tasarım",
+      "tr": "Yapılar, Malzemeler ve Mekanik Tasarım"
+    },
+    "aliases": [
+      "aeroelasticity",
+      "flutter",
+      "fluid-structure interaction"
+    ]
   },
   "lightweight_design": {
-    "label": "Lightweight Design",
-    "parent": "Yapılar, Malzemeler ve Mekanik Tasarım",
-    "aliases": ["lightweight design", "lightweight structures"]
+    "label": {
+      "en": "Lightweight Design",
+      "tr": "Lightweight Design"
+    },
+    "parent": {
+      "en": "Yapılar, Malzemeler ve Mekanik Tasarım",
+      "tr": "Yapılar, Malzemeler ve Mekanik Tasarım"
+    },
+    "aliases": [
+      "lightweight design",
+      "lightweight structures"
+    ]
   },
   "additive_manufacturing": {
-    "label": "Additive Manufacturing",
-    "parent": "Yapılar, Malzemeler ve Mekanik Tasarım",
-    "aliases": ["additive manufacturing", "3d printing"]
+    "label": {
+      "en": "Additive Manufacturing",
+      "tr": "Additive Manufacturing"
+    },
+    "parent": {
+      "en": "Yapılar, Malzemeler ve Mekanik Tasarım",
+      "tr": "Yapılar, Malzemeler ve Mekanik Tasarım"
+    },
+    "aliases": [
+      "additive manufacturing",
+      "3d printing"
+    ]
   },
-
   "aircraft_design": {
-    "label": "Aircraft Design",
-    "parent": "Sistem Mühendisliği, Tasarım ve Optimizasyon",
-    "aliases": ["aircraft design", "airplane design", "fixed-wing design"]
+    "label": {
+      "en": "Aircraft Design",
+      "tr": "Aircraft Design"
+    },
+    "parent": {
+      "en": "Sistem Mühendisliği, Tasarım ve Optimizasyon",
+      "tr": "Sistem Mühendisliği, Tasarım ve Optimizasyon"
+    },
+    "aliases": [
+      "aircraft design",
+      "airplane design",
+      "fixed-wing design"
+    ]
   },
   "systems_engineering": {
-    "label": "Systems Engineering",
-    "parent": "Sistem Mühendisliği, Tasarım ve Optimizasyon",
-    "aliases": ["systems engineering", "system engineering"]
+    "label": {
+      "en": "Systems Engineering",
+      "tr": "Systems Engineering"
+    },
+    "parent": {
+      "en": "Sistem Mühendisliği, Tasarım ve Optimizasyon",
+      "tr": "Sistem Mühendisliği, Tasarım ve Optimizasyon"
+    },
+    "aliases": [
+      "systems engineering",
+      "system engineering"
+    ]
   },
   "mbse": {
-    "label": "MBSE",
-    "parent": "Sistem Mühendisliği, Tasarım ve Optimizasyon",
-    "aliases": ["mbse", "model-based systems engineering"]
+    "label": {
+      "en": "MBSE",
+      "tr": "MBSE"
+    },
+    "parent": {
+      "en": "Sistem Mühendisliği, Tasarım ve Optimizasyon",
+      "tr": "Sistem Mühendisliği, Tasarım ve Optimizasyon"
+    },
+    "aliases": [
+      "mbse",
+      "model-based systems engineering"
+    ]
   },
   "mdo": {
-    "label": "Multidisciplinary Design Optimization",
-    "parent": "Sistem Mühendisliği, Tasarım ve Optimizasyon",
-    "aliases": ["optimization", "mdo", "design optimization", "multidisciplinary optimization"]
+    "label": {
+      "en": "Multidisciplinary Design Optimization",
+      "tr": "Multidisciplinary Design Optimization"
+    },
+    "parent": {
+      "en": "Sistem Mühendisliği, Tasarım ve Optimizasyon",
+      "tr": "Sistem Mühendisliği, Tasarım ve Optimizasyon"
+    },
+    "aliases": [
+      "optimization",
+      "mdo",
+      "design optimization",
+      "multidisciplinary optimization"
+    ]
   },
   "simulation_modelling": {
-    "label": "Simulation & Modelling",
-    "parent": "Sistem Mühendisliği, Tasarım ve Optimizasyon",
-    "aliases": ["simulation", "modelling", "modeling"]
+    "label": {
+      "en": "Simulation & Modelling",
+      "tr": "Simulation & Modelling"
+    },
+    "parent": {
+      "en": "Sistem Mühendisliği, Tasarım ve Optimizasyon",
+      "tr": "Sistem Mühendisliği, Tasarım ve Optimizasyon"
+    },
+    "aliases": [
+      "simulation",
+      "modelling",
+      "modeling"
+    ]
   },
   "verification_validation": {
-    "label": "Verification & Validation",
-    "parent": "Sistem Mühendisliği, Tasarım ve Optimizasyon",
-    "aliases": ["verification", "validation", "v&v"]
+    "label": {
+      "en": "Verification & Validation",
+      "tr": "Verification & Validation"
+    },
+    "parent": {
+      "en": "Sistem Mühendisliği, Tasarım ve Optimizasyon",
+      "tr": "Sistem Mühendisliği, Tasarım ve Optimizasyon"
+    },
+    "aliases": [
+      "verification",
+      "validation",
+      "v&v"
+    ]
   },
   "certification": {
-    "label": "Certification",
-    "parent": "Sistem Mühendisliği, Tasarım ve Optimizasyon",
-    "aliases": ["certification", "airworthiness"]
+    "label": {
+      "en": "Certification",
+      "tr": "Certification"
+    },
+    "parent": {
+      "en": "Sistem Mühendisliği, Tasarım ve Optimizasyon",
+      "tr": "Sistem Mühendisliği, Tasarım ve Optimizasyon"
+    },
+    "aliases": [
+      "certification",
+      "airworthiness"
+    ]
   },
-
   "avionics": {
-    "label": "Aviyonik",
-    "parent": "Aviyonik, Yazılım ve Sayısal Teknolojiler",
-    "aliases": ["avionics", "aerospace electronics", "electronic systems"]
+    "label": {
+      "en": "Aviyonik",
+      "tr": "Aviyonik"
+    },
+    "parent": {
+      "en": "Aviyonik, Yazılım ve Sayısal Teknolojiler",
+      "tr": "Aviyonik, Yazılım ve Sayısal Teknolojiler"
+    },
+    "aliases": [
+      "avionics",
+      "aerospace electronics",
+      "electronic systems"
+    ]
   },
   "embedded_systems": {
-    "label": "Embedded Systems",
-    "parent": "Aviyonik, Yazılım ve Sayısal Teknolojiler",
-    "aliases": ["embedded systems", "embedded software"]
+    "label": {
+      "en": "Embedded Systems",
+      "tr": "Embedded Systems"
+    },
+    "parent": {
+      "en": "Aviyonik, Yazılım ve Sayısal Teknolojiler",
+      "tr": "Aviyonik, Yazılım ve Sayısal Teknolojiler"
+    },
+    "aliases": [
+      "embedded systems",
+      "embedded software"
+    ]
   },
   "sensors": {
-    "label": "Sensors",
-    "parent": "Aviyonik, Yazılım ve Sayısal Teknolojiler",
-    "aliases": ["sensors", "sensor fusion", "radar", "lidar"]
+    "label": {
+      "en": "Sensors",
+      "tr": "Sensors"
+    },
+    "parent": {
+      "en": "Aviyonik, Yazılım ve Sayısal Teknolojiler",
+      "tr": "Aviyonik, Yazılım ve Sayısal Teknolojiler"
+    },
+    "aliases": [
+      "sensors",
+      "sensor fusion",
+      "radar",
+      "lidar"
+    ]
   },
   "signal_processing": {
-    "label": "Signal Processing",
-    "parent": "Aviyonik, Yazılım ve Sayısal Teknolojiler",
-    "aliases": ["signal processing", "image processing"]
+    "label": {
+      "en": "Signal Processing",
+      "tr": "Signal Processing"
+    },
+    "parent": {
+      "en": "Aviyonik, Yazılım ve Sayısal Teknolojiler",
+      "tr": "Aviyonik, Yazılım ve Sayısal Teknolojiler"
+    },
+    "aliases": [
+      "signal processing",
+      "image processing"
+    ]
   },
   "software_engineering": {
-    "label": "Software Engineering",
-    "parent": "Aviyonik, Yazılım ve Sayısal Teknolojiler",
-    "aliases": ["software", "software engineering", "flight software"]
+    "label": {
+      "en": "Software Engineering",
+      "tr": "Software Engineering"
+    },
+    "parent": {
+      "en": "Aviyonik, Yazılım ve Sayısal Teknolojiler",
+      "tr": "Aviyonik, Yazılım ve Sayısal Teknolojiler"
+    },
+    "aliases": [
+      "software",
+      "software engineering",
+      "flight software"
+    ]
   },
   "machine_learning": {
-    "label": "AI / Machine Learning",
-    "parent": "Aviyonik, Yazılım ve Sayısal Teknolojiler",
-    "aliases": ["machine learning", "ai", "artificial intelligence", "deep learning", "data-driven"]
+    "label": {
+      "en": "AI / Machine Learning",
+      "tr": "AI / Machine Learning"
+    },
+    "parent": {
+      "en": "Aviyonik, Yazılım ve Sayısal Teknolojiler",
+      "tr": "Aviyonik, Yazılım ve Sayısal Teknolojiler"
+    },
+    "aliases": [
+      "machine learning",
+      "ai",
+      "artificial intelligence",
+      "deep learning",
+      "data-driven"
+    ]
   },
   "digital_twin": {
-    "label": "Digital Twin",
-    "parent": "Aviyonik, Yazılım ve Sayısal Teknolojiler",
-    "aliases": ["digital twin"]
+    "label": {
+      "en": "Digital Twin",
+      "tr": "Digital Twin"
+    },
+    "parent": {
+      "en": "Aviyonik, Yazılım ve Sayısal Teknolojiler",
+      "tr": "Aviyonik, Yazılım ve Sayısal Teknolojiler"
+    },
+    "aliases": [
+      "digital twin"
+    ]
   },
   "hpc": {
-    "label": "High Performance Computing",
-    "parent": "Aviyonik, Yazılım ve Sayısal Teknolojiler",
-    "aliases": ["hpc", "high performance computing", "supercomputing"]
+    "label": {
+      "en": "High Performance Computing",
+      "tr": "High Performance Computing"
+    },
+    "parent": {
+      "en": "Aviyonik, Yazılım ve Sayısal Teknolojiler",
+      "tr": "Aviyonik, Yazılım ve Sayısal Teknolojiler"
+    },
+    "aliases": [
+      "hpc",
+      "high performance computing",
+      "supercomputing"
+    ]
   },
-
   "manufacturing": {
-    "label": "Aerospace Manufacturing",
-    "parent": "Üretim, Test ve Endüstriyel Uygulamalar",
-    "aliases": ["manufacturing", "production", "aerospace manufacturing", "assembly"]
+    "label": {
+      "en": "Aerospace Manufacturing",
+      "tr": "Aerospace Manufacturing"
+    },
+    "parent": {
+      "en": "Üretim, Test ve Endüstriyel Uygulamalar",
+      "tr": "Üretim, Test ve Endüstriyel Uygulamalar"
+    },
+    "aliases": [
+      "manufacturing",
+      "production",
+      "aerospace manufacturing",
+      "assembly"
+    ]
   },
   "testing": {
-    "label": "Testing",
-    "parent": "Üretim, Test ve Endüstriyel Uygulamalar",
-    "aliases": ["testing", "test engineering"]
+    "label": {
+      "en": "Testing",
+      "tr": "Testing"
+    },
+    "parent": {
+      "en": "Üretim, Test ve Endüstriyel Uygulamalar",
+      "tr": "Üretim, Test ve Endüstriyel Uygulamalar"
+    },
+    "aliases": [
+      "testing",
+      "test engineering"
+    ]
   },
   "flight_testing": {
-    "label": "Flight Testing",
-    "parent": "Üretim, Test ve Endüstriyel Uygulamalar",
-    "aliases": ["flight test", "flight testing"]
+    "label": {
+      "en": "Flight Testing",
+      "tr": "Flight Testing"
+    },
+    "parent": {
+      "en": "Üretim, Test ve Endüstriyel Uygulamalar",
+      "tr": "Üretim, Test ve Endüstriyel Uygulamalar"
+    },
+    "aliases": [
+      "flight test",
+      "flight testing"
+    ]
   },
   "laboratory": {
-    "label": "Laboratory Infrastructure",
-    "parent": "Üretim, Test ve Endüstriyel Uygulamalar",
-    "aliases": ["laboratory", "lab infrastructure", "ground test"]
+    "label": {
+      "en": "Laboratory Infrastructure",
+      "tr": "Laboratory Infrastructure"
+    },
+    "parent": {
+      "en": "Üretim, Test ve Endüstriyel Uygulamalar",
+      "tr": "Üretim, Test ve Endüstriyel Uygulamalar"
+    },
+    "aliases": [
+      "laboratory",
+      "lab infrastructure",
+      "ground test"
+    ]
   },
   "industrial_projects": {
-    "label": "Industrial Projects",
-    "parent": "Üretim, Test ve Endüstriyel Uygulamalar",
-    "aliases": ["industrial projects", "industry collaboration", "applied research"]
+    "label": {
+      "en": "Industrial Projects",
+      "tr": "Industrial Projects"
+    },
+    "parent": {
+      "en": "Üretim, Test ve Endüstriyel Uygulamalar",
+      "tr": "Üretim, Test ve Endüstriyel Uygulamalar"
+    },
+    "aliases": [
+      "industrial projects",
+      "industry collaboration",
+      "applied research"
+    ]
   },
   "internship_thesis": {
-    "label": "Internship / Thesis Ecosystem",
-    "parent": "Üretim, Test ve Endüstriyel Uygulamalar",
-    "aliases": ["internship", "thesis with industry", "industrial placement"]
+    "label": {
+      "en": "Internship / Thesis Ecosystem",
+      "tr": "Internship / Thesis Ecosystem"
+    },
+    "parent": {
+      "en": "Üretim, Test ve Endüstriyel Uygulamalar",
+      "tr": "Üretim, Test ve Endüstriyel Uygulamalar"
+    },
+    "aliases": [
+      "internship",
+      "thesis with industry",
+      "industrial placement"
+    ]
   }
 }

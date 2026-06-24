@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=6">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="i18n.js"></script>
     <script src="taxonomy.js"></script>
 </head>
 <body>
@@ -17,50 +18,50 @@
         <aside class="sidebar">
             <div class="logo-container">
                 <div class="logo-icon">🎓</div>
-                <h1>UniRank</h1>
+                <h1 data-i18n="app_title">UniRank</h1>
             </div>
 
             <div class="card">
-                <h2>Filters</h2>
+                <h2 data-i18n="filters_title">Filters</h2>
                 <div class="form-group">
-                    <label for="country-filter">Include Countries</label>
+                    <label for="country-filter" data-i18n="include_countries">Include Countries</label>
                     <div id="country-tags" class="tag-list" style="margin-bottom: 8px;"></div>
                     <select id="country-filter">
-                        <option value="">+ Add Country to Include</option>
+                        <option value="" data-i18n="add_country_include">+ Add Country to Include</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="country-exclude-filter">Exclude Countries</label>
+                    <label for="country-exclude-filter" data-i18n="exclude_countries">Exclude Countries</label>
                     <div id="country-exclude-tags" class="tag-list" style="margin-bottom: 8px;"></div>
                     <select id="country-exclude-filter">
-                        <option value="">+ Add Country to Exclude</option>
+                        <option value="" data-i18n="add_country_exclude">+ Add Country to Exclude</option>
                     </select>
                 </div>
                 <!-- City filter removed -->
                 <div class="form-group">
-                    <label>Academic / Field Categories</label>
+                    <label data-i18n="academic_categories">Academic / Field Categories</label>
                     <div id="category-tree" class="category-tree" style="max-height: 250px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: 6px; padding: 8px; background: var(--bg-secondary); margin-bottom: 8px;">
                         <!-- Rendered via JS -->
                     </div>
-                    <input type="text" id="search-input" placeholder="Or type manual search..." style="margin-top: 8px;">
+                    <input type="text" id="search-input" data-i18n-placeholder="search_manual" placeholder="Or type manual search..." style="margin-top: 8px;">
                 </div>
                 <!-- Hard Filters -->
                 <div class="form-group" style="margin-top: 16px;">
-                    <label>Degree Level</label>
+                    <label data-i18n="degree_level">Degree Level</label>
                     <select id="degree-filter">
-                        <option value="All">All Degrees</option>
-                        <option value="BSc">Bachelor (BSc)</option>
-                        <option value="MSc">Master (MSc)</option>
-                        <option value="PhD">Doctorate (PhD)</option>
+                        <option value="All" data-i18n="all_degrees">All Degrees</option>
+                        <option value="BSc" data-i18n="bsc">Bachelor (BSc)</option>
+                        <option value="MSc" data-i18n="msc">Master (MSc)</option>
+                        <option value="PhD" data-i18n="phd">Doctorate (PhD)</option>
                     </select>
                 </div>
                 <div class="form-group" style="flex-direction: row; align-items: center; gap: 8px; margin-top: 8px;">
                     <input type="checkbox" id="english-only-filter" style="width: auto; cursor: pointer;">
-                    <label for="english-only-filter" style="margin: 0; cursor: pointer;">Only English-taught</label>
+                    <label for="english-only-filter" style="margin: 0; cursor: pointer;" data-i18n="only_english">Only English-taught</label>
                 </div>
                 <div class="form-group" style="margin-top: 16px; padding: 16px; background: rgba(0,0,0,0.2); border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
                     <label style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                        <span style="font-weight: 600; color: var(--text-main); font-size: 14px;">Max Tuition</span>
+                        <span style="font-weight: 600; color: var(--text-main); font-size: 14px;" data-i18n="max_tuition">Max Tuition</span>
                         <span id="tuition-val-display" style="color: var(--success); font-weight: 700; background: rgba(16, 185, 129, 0.1); padding: 4px 10px; border-radius: 12px; font-size: 12px; border: 1px solid rgba(16, 185, 129, 0.2);">Any</span>
                     </label>
                     <input type="range" id="max-tuition-filter" min="0" max="25000" step="500" value="25000" class="modern-range">
@@ -71,60 +72,60 @@
                 </div>
                 <div class="form-group" style="flex-direction: row; align-items: center; gap: 8px; margin-top: 16px; margin-bottom: 8px;">
                     <input type="checkbox" id="fav-filter" style="width: auto; cursor: pointer;">
-                    <label for="fav-filter" style="margin: 0; cursor: pointer; color: var(--text-highlight); font-weight: 600;">⭐ Show Favorites</label>
+                    <label for="fav-filter" style="margin: 0; cursor: pointer; color: var(--text-highlight); font-weight: 600;" data-i18n="show_favorites">⭐ Show Favorites</label>
                 </div>
             </div>
 
             <div class="card">
-                <h2>Ranking Weights</h2>
+                <h2 data-i18n="ranking_weights">Ranking Weights</h2>
                 <div class="form-group">
-                    <label>Preset Profile</label>
+                    <label data-i18n="preset_profile">Preset Profile</label>
                     <select id="preset-profile-select">
-                        <option value="balanced">Balanced</option>
-                        <option value="low_cost">Low Cost Priority</option>
-                        <option value="best_fit">Best Aerospace / Space Fit</option>
-                        <option value="safe_choice">English-Only Safe Choice</option>
-                        <option value="career">Career-Oriented</option>
-                        <option value="custom">Custom</option>
+                        <option value="balanced" data-i18n="preset_balanced">Balanced</option>
+                        <option value="low_cost" data-i18n="preset_low_cost">Low Cost Priority</option>
+                        <option value="best_fit" data-i18n="preset_best_fit">Best Aerospace / Space Fit</option>
+                        <option value="safe_choice" data-i18n="preset_safe_choice">English-Only Safe Choice</option>
+                        <option value="career" data-i18n="preset_career">Career-Oriented</option>
+                        <option value="custom" data-i18n="preset_custom">Custom</option>
                     </select>
                 </div>
                 <div class="weight-sliders">
                     <div class="slider-group">
-                        <label>Academic / Field Fit <span id="val-academic">30</span></label>
+                        <label><span data-i18n="w_academic">Academic / Field Fit</span> <span id="val-academic">30</span></label>
                         <input type="range" id="w-academic" min="0" max="100" step="1" value="30">
                     </div>
                     <div class="slider-group">
-                        <label>Eligibility & Language <span id="val-eligibility">20</span></label>
+                        <label><span data-i18n="w_eligibility">Eligibility & Language</span> <span id="val-eligibility">20</span></label>
                         <input type="range" id="w-eligibility" min="0" max="100" step="1" value="20">
                     </div>
                     <div class="slider-group">
-                        <label>Cost & Funding <span id="val-cost">20</span></label>
+                        <label><span data-i18n="w_cost">Cost & Funding</span> <span id="val-cost">20</span></label>
                         <input type="range" id="w-cost" min="0" max="100" step="1" value="20">
                     </div>
                     <div class="slider-group">
-                        <label>Career / Research <span id="val-career">15</span></label>
+                        <label><span data-i18n="w_career">Career / Research</span> <span id="val-career">15</span></label>
                         <input type="range" id="w-career" min="0" max="100" step="1" value="15">
                     </div>
                     <div class="slider-group">
-                        <label>Living Risk <span id="val-living">10</span></label>
+                        <label><span data-i18n="w_living">Living Risk</span> <span id="val-living">10</span></label>
                         <input type="range" id="w-living" min="0" max="100" step="1" value="10">
                     </div>
                     <div class="slider-group">
-                        <label>Data Confidence <span id="val-confidence">5</span></label>
+                        <label><span data-i18n="w_confidence">Data Confidence</span> <span id="val-confidence">5</span></label>
                         <input type="range" id="w-confidence" min="0" max="100" step="1" value="5">
                     </div>
-                    <p style="font-size: 11px; color: var(--text-muted); margin-top: 8px; line-height: 1.4;">Scores are normalized automatically. Higher weight means this criterion affects ranking more.</p>
+                    <p style="font-size: 11px; color: var(--text-muted); margin-top: 8px; line-height: 1.4;" data-i18n="weight_desc">Scores are normalized automatically. Higher weight means this criterion affects ranking more.</p>
                 </div>
             </div>
 
             <div class="card">
-                <h2>Sorting</h2>
+                <h2 data-i18n="sorting">Sorting</h2>
                 <div class="form-group">
                     <select id="sort-select">
-                        <option value="score_desc">Score (High → Low)</option>
-                        <option value="tuition_asc">Tuition Fee (Low → High)</option>
-                        <option value="cost_asc">Cost (Low → High)</option>
-                        <option value="name_asc">University (A → Z)</option>
+                        <option value="score_desc" data-i18n="sort_score_desc">Score (High → Low)</option>
+                        <option value="tuition_asc" data-i18n="sort_tuition_asc">Tuition Fee (Low → High)</option>
+                        <option value="cost_asc" data-i18n="sort_cost_asc">Cost (Low → High)</option>
+                        <option value="name_asc" data-i18n="sort_name_asc">University (A → Z)</option>
                     </select>
                 </div>
             </div>
@@ -134,8 +135,12 @@
         <main class="main-content">
             <header class="top-header">
                 <div class="header-titles">
-                    <h2>University Ranking Dashboard</h2>
-                    <p>Analyze and compare universities based on your personal criteria</p>
+                    <h2 data-i18n="app_title">University Ranking Dashboard</h2>
+                    <p data-i18n="app_subtitle">Analyze and compare universities based on your personal criteria</p>
+                </div>
+                <div class="language-toggle">
+                    <button data-lang="tr" onclick="setLanguage('tr')">TR</button>
+                    <button data-lang="en" onclick="setLanguage('en')">EN</button>
                 </div>
             </header>
 
@@ -143,24 +148,24 @@
                 <div class="kpi-card glow-primary">
                     <div class="kpi-icon">🌍</div>
                     <div class="kpi-data">
-                        <span class="kpi-label">Programs Found</span>
+                        <span class="kpi-label" data-i18n="kpi_programs_found">Programs Found</span>
                         <div style="display: flex; align-items: baseline; gap: 4px;">
                             <span class="kpi-value" id="kpi-total">0</span>
-                            <span style="font-size: 13px; color: var(--text-muted); font-weight: 500;">across <span id="kpi-countries" style="color: var(--text-main);">0</span> countries</span>
+                            <span style="font-size: 13px; color: var(--text-muted); font-weight: 500;"><span data-i18n="kpi_across">across</span> <span id="kpi-countries" style="color: var(--text-main);">0</span> <span data-i18n="kpi_countries">countries</span></span>
                         </div>
                     </div>
                 </div>
                 <div class="kpi-card glow-success">
                     <div class="kpi-icon">💳</div>
                     <div class="kpi-data">
-                        <span class="kpi-label">Avg. Yearly Tuition</span>
+                        <span class="kpi-label" data-i18n="kpi_avg_tuition">Avg. Yearly Tuition</span>
                         <span class="kpi-value" id="kpi-tuition" style="color: var(--success);">0€</span>
                     </div>
                 </div>
                 <div class="kpi-card glow-warning">
                     <div class="kpi-icon">🎯</div>
                     <div class="kpi-data">
-                        <span class="kpi-label">Avg. Overall Score</span>
+                        <span class="kpi-label" data-i18n="kpi_avg_score">Avg. Overall Score</span>
                         <div style="display: flex; align-items: baseline; gap: 4px;">
                             <span class="kpi-value" id="kpi-score" style="color: #fbbf24;">0.0</span>
                             <span style="font-size: 15px; color: var(--text-muted); font-weight: 600;">/ 10</span>
@@ -171,21 +176,21 @@
 
             <div class="table-card">
                 <div class="table-header">
-                    <h3>Ranked Results</h3>
+                    <h3 data-i18n="ranked_results">Ranked Results</h3>
                     <div class="loader" id="loader"></div>
                 </div>
                 <div class="table-responsive">
                     <table id="results-table">
                         <thead>
                             <tr>
-                                <th>#</th>
-                                <th>Fav</th>
-                                <th>University</th>
-                                <th>City</th>
-                                <th>Country</th>
-                                <th>Score</th>
-                                <th>Tuition (Yearly)</th>
-                                <th>Detail</th>
+                                <th data-i18n="col_num">#</th>
+                                <th data-i18n="col_fav">Fav</th>
+                                <th data-i18n="col_university">University</th>
+                                <th data-i18n="col_city">City</th>
+                                <th data-i18n="col_country">Country</th>
+                                <th data-i18n="col_score">Score</th>
+                                <th data-i18n="col_tuition">Tuition (Yearly)</th>
+                                <th data-i18n="col_detail">Detail</th>
                             </tr>
                         </thead>
                         <tbody id="table-body">
