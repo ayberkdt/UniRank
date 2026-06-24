@@ -59,8 +59,8 @@ async function buildCategoryProfile(record) {
     const normalizedTags = new Set();
     
     for (const [subcatId, subcatInfo] of Object.entries(taxonomy)) {
-        const parent = subcatInfo.parent;
-        const label = subcatInfo.label;
+        const parent = typeof subcatInfo.parent === 'object' ? subcatInfo.parent.en : subcatInfo.parent;
+        const label = typeof subcatInfo.label === 'object' ? subcatInfo.label.en : subcatInfo.label;
         const aliases = subcatInfo.aliases || [];
         
         let subcatScore = 0.0;

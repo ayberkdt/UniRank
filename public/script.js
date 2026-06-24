@@ -1,8 +1,7 @@
 let rawData = [];
 let filteredData = [];
 let selectedCountries = new Set();
-let excludedCountries = new Set();
-let selectedKeywords = new Set();
+let selectedCategoryKeys = new Set();
 let favorites = new Set(JSON.parse(localStorage.getItem('unirank_favorites') || '[]'));
 
 // Global Boundaries for Normalization
@@ -15,9 +14,10 @@ let globalMinRank = 1;
 const els = {
     countryFilter: document.getElementById('country-filter'),
     countryTags: document.getElementById('country-tags'),
-    countryExcludeFilter: document.getElementById('country-exclude-filter'),
-    countryExcludeTags: document.getElementById('country-exclude-tags'),
-    categoryTree: document.getElementById('category-tree'),
+    categorySearchInput: document.getElementById('categorySearchInput'),
+    categorySuggestions: document.getElementById('categorySuggestions'),
+    selectedCategoryChips: document.getElementById('selectedCategoryChips'),
+    popularCategoryChips: document.getElementById('popularCategoryChips'),
     favFilter: document.getElementById('fav-filter'),
     searchInput: document.getElementById('search-input'),
     sortSelect: document.getElementById('sort-select'),
@@ -100,8 +100,7 @@ async function fetchData() {
             }
 
             populateCountryFilter();
-            populateCountryExcludeFilter();
-            await populateCategoryTree();
+            if (window.renderCategoryUI) window.renderCategoryUI();
             
             // Pre-calculate category profiles synchronously for the UI
             for (let r of rawData) {
@@ -200,15 +199,7 @@ function setupEventListeners() {
             processAndRender();
         }
     });
-    els.countryExcludeFilter.addEventListener('change', (e) => {
-        const c = e.target.value;
-        if (c && !excludedCountries.has(c)) {
-            excludedCountries.add(c);
-            e.target.value = '';
-            renderCountryExcludeTags();
-            processAndRender();
-        }
-    });
+
     // Category listener is attached inside populateCategoryTree
     
     // city filter listener removed
@@ -256,79 +247,113 @@ function renderCountryTags() {
     });
 }
 
-function populateCountryExcludeFilter() {
-    const countries = new Set();
-    rawData.forEach(r => {
-        if (r.country) countries.add(r.country);
-    });
-    
-    const sorted = Array.from(countries).sort();
-    sorted.forEach(c => {
-        const opt = document.createElement('option');
-        opt.value = c;
-        opt.textContent = window.getCountryName ? window.getCountryName(c) : c;
-        els.countryExcludeFilter.appendChild(opt);
-    });
-}
+// Normalize function for search
+window.normalizeSearchText = function(value) {
+  return String(value || "")
+    .toLowerCase()
+    .trim()
+    .replaceAll("ı", "i")
+    .replaceAll("ğ", "g")
+    .replaceAll("ü", "u")
+    .replaceAll("ş", "s")
+    .replaceAll("ö", "o")
+    .replaceAll("ç", "c");
+};
 
-function renderCountryExcludeTags() {
-    els.countryExcludeTags.innerHTML = '';
-    excludedCountries.forEach(c => {
-        const span = document.createElement('span');
-        span.className = 'tag-removable';
-        span.innerHTML = `${window.getCountryName ? window.getCountryName(c) : c} ✕`;
-        span.style.background = 'rgba(239, 68, 68, 0.15)';
-        span.style.color = '#fca5a5';
-        span.style.borderColor = 'rgba(239, 68, 68, 0.3)';
-        span.onclick = () => {
-            excludedCountries.delete(c);
-            renderCountryExcludeTags();
-            processAndRender();
-        };
-        els.countryExcludeTags.appendChild(span);
-    });
-}
+// Popular categories
+const POPULAR_CATEGORIES = [
+    "space_systems", "gnc", "cfd", "jet_propulsion", "aerospace_structures",
+    "scientific_ai", "surrogate_modeling", "digital_twin", "satellite_systems", "astrodynamics"
+];
 
-async function populateCategoryTree() {
-    const taxonomy = await window.loadTaxonomy();
-    const parents = {};
-    for (const [id, info] of Object.entries(taxonomy)) {
-        if (!parents[info.parent]) parents[info.parent] = [];
-        parents[info.parent].push(info.label);
-    }
-    
-    let html = '';
-    for (const [pNameObj, subs] of Object.entries(parents)) {
-        let pName = typeof pNameObj === 'object' && pNameObj !== null ? (pNameObj[window.currentLanguage] || pNameObj.en || "Unknown") : pNameObj;
-        
-        html += `<div class="cat-parent" style="margin-bottom: 6px;">`;
-        html += `<label style="font-weight: 600; display: flex; align-items: center; gap: 6px; font-size: 13px; cursor: pointer; color: var(--text-color);">
-                   <input type="checkbox" value="${pNameObj}" class="cat-checkbox p-cat"> ${pName}
-                 </label>`;
-        html += `<div class="cat-subs" style="margin-left: 20px; margin-top: 4px; display: flex; flex-direction: column; gap: 4px;">`;
-        for (const subObj of subs) {
-            let sub = typeof subObj === 'object' && subObj !== null ? (subObj[window.currentLanguage] || subObj.en || "Unknown") : subObj;
-            html += `<label style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--text-muted); cursor: pointer;">
-                       <input type="checkbox" value="${subObj}" class="cat-checkbox c-cat"> ${sub}
-                     </label>`;
+window.renderCategoryUI = async function() {
+    if (!els.categorySearchInput) return;
+    els.categorySearchInput.addEventListener('input', async (e) => {
+        const val = e.target.value;
+        if (!val) {
+            els.categorySuggestions.innerHTML = '';
+            return;
         }
-        html += `</div></div>`;
-    }
-    els.categoryTree.innerHTML = html;
-    
-    els.categoryTree.querySelectorAll('.cat-checkbox').forEach(cb => {
-        cb.addEventListener('change', (e) => {
-            const val = e.target.value;
-            if (e.target.checked) {
-                selectedKeywords.add(val);
-            } else {
-                selectedKeywords.delete(val);
+        const taxonomy = await window.loadTaxonomy();
+        const normVal = window.normalizeSearchText(val);
+        const results = [];
+        for (const [key, info] of Object.entries(taxonomy)) {
+            let match = false;
+            
+            // Safe label check
+            const lblEn = typeof info.label === 'object' ? info.label.en : info.label;
+            const lblTr = typeof info.label === 'object' ? info.label.tr : info.label;
+            
+            if (window.normalizeSearchText(lblEn).includes(normVal) || window.normalizeSearchText(lblTr).includes(normVal)) match = true;
+            for (const alias of info.aliases || []) {
+                if (window.normalizeSearchText(alias).includes(normVal)) { match = true; break; }
             }
-            processAndRender();
+            if (match) {
+                results.push({ key, ...info });
+            }
+        }
+        
+        els.categorySuggestions.innerHTML = '';
+        if (results.length === 0) {
+            els.categorySuggestions.innerHTML = `<div class="category-suggestion" style="cursor:default; opacity:0.6"><span class="category-suggestion-title">${window.t('no_category_results')}</span></div>`;
+            return;
+        }
+        results.slice(0, 8).forEach(res => {
+            const div = document.createElement('div');
+            div.className = 'category-suggestion';
+            div.innerHTML = `<span class="category-suggestion-title">${window.localizedValue(res.label)}</span>
+                             <span class="category-suggestion-parent">${window.localizedValue(res.parent)}</span>`;
+            div.onclick = () => {
+                selectedCategoryKeys.add(res.key);
+                els.categorySearchInput.value = '';
+                els.categorySuggestions.innerHTML = '';
+                renderSelectedCategories();
+                processAndRender();
+            };
+            els.categorySuggestions.appendChild(div);
         });
     });
+    renderSelectedCategories();
+    renderPopularCategories();
+};
+
+async function renderSelectedCategories() {
+    if (!els.selectedCategoryChips) return;
+    els.selectedCategoryChips.innerHTML = '';
+    const taxonomy = await window.loadTaxonomy();
+    selectedCategoryKeys.forEach(key => {
+        const info = taxonomy[key];
+        if (!info) return;
+        const btn = document.createElement('button');
+        btn.className = 'selected-category-chip';
+        btn.innerHTML = `<span>${window.localizedValue(info.label)}</span><span aria-hidden="true" style="margin-left:4px; font-weight:bold;">×</span>`;
+        btn.onclick = () => {
+            selectedCategoryKeys.delete(key);
+            renderSelectedCategories();
+            processAndRender();
+        };
+        els.selectedCategoryChips.appendChild(btn);
+    });
 }
 
+async function renderPopularCategories() {
+    if (!els.popularCategoryChips) return;
+    els.popularCategoryChips.innerHTML = '';
+    const taxonomy = await window.loadTaxonomy();
+    POPULAR_CATEGORIES.forEach(key => {
+        const info = taxonomy[key];
+        if (!info) return;
+        const btn = document.createElement('button');
+        btn.className = 'popular-category-chip';
+        btn.innerHTML = `<span>${window.localizedValue(info.label)}</span>`;
+        btn.onclick = () => {
+            selectedCategoryKeys.add(key);
+            renderSelectedCategories();
+            processAndRender();
+        };
+        els.popularCategoryChips.appendChild(btn);
+    });
+}
 // Data Processing & Scoring
 const COST_MAP = {
     'very_low': 1, 'low': 2, 'medium': 3, 'high': 4, 'very_high': 5
@@ -350,7 +375,7 @@ function processAndRender() {
     };
 
     const preferences = {
-        selectedKeywords: Array.from(selectedKeywords),
+        selectedCategoryKeys: Array.from(selectedCategoryKeys),
         degreeFilter: els.hardFilters.degree ? els.hardFilters.degree.value : 'All',
         onlyEnglish: els.hardFilters.englishOnly ? els.hardFilters.englishOnly.checked : false,
         maxTuition: (els.hardFilters.maxTuition && parseFloat(els.hardFilters.maxTuition.value) < 25000) ? parseFloat(els.hardFilters.maxTuition.value) : 0,
@@ -360,7 +385,6 @@ function processAndRender() {
     let filtered = rawData.filter(r => {
         const rid = r.Uni_ID || r.id || r.name || r.university;
         if (showFavs && !favorites.has(rid)) return false;
-        if (excludedCountries.size > 0 && excludedCountries.has(r.country)) return false;
         if (selectedCountries.size > 0 && !selectedCountries.has(r.country)) return false;
         
         if (search) {
@@ -687,15 +711,12 @@ function closeDrawer() {
 document.addEventListener('languageChanged', async () => {
     // Re-render components that depend on language
     if (rawData.length > 0) {
-        els.countryFilter.innerHTML = '<option value="" data-i18n="all_countries">All countries</option>';
-        els.countryExcludeFilter.innerHTML = '<option value="" data-i18n="all_countries">All countries</option>';
+        els.countryFilter.innerHTML = '<option value="" data-i18n="search_country">Search country...</option>';
         
         populateCountryFilter();
-        populateCountryExcludeFilter();
         renderCountryTags();
-        renderCountryExcludeTags();
         
-        await populateCategoryTree();
+        if (window.renderCategoryUI) window.renderCategoryUI();
         
         // Re-apply static translations inside dynamically updated selects
         if (window.applyTranslations) {
@@ -703,8 +724,7 @@ document.addEventListener('languageChanged', async () => {
             const allCountriesOpt = els.countryFilter.querySelector('option[value=""]');
             if (allCountriesOpt) allCountriesOpt.textContent = window.t('all_countries');
             
-            const allCountriesExOpt = els.countryExcludeFilter.querySelector('option[value=""]');
-            if (allCountriesExOpt) allCountriesExOpt.textContent = window.t('all_countries');
+
         }
 
         processAndRender();

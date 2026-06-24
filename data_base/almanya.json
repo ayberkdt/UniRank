@@ -1,1056 +1,2049 @@
 [
-    {
-        "Country": "Germany",
-        "City": "Münih",
-        "State_Region": "Bavyera",
-        "Uni_ID": "tum",
-        "University_Name": "Technical University of Munich",
-        "University_Display_Name": "Technical University of Munich (TUM)",
-        "University_Short_Name": "TUM",
-        "Cost_Tuition": [
-            {
-                "scope": "non_eu",
-                "program": "MSc Aerospace",
-                "amount": 6000.0,
-                "currency": "EUR",
-                "period": "semester",
-                "raw": "MSc Aerospace: €6,000/semester (WiSe 25/26→)",
-                "effective_from_term_code": "2025W"
-            }
-        ],
-        "Cost_Semester_Fees": [
-            {
-                "term": "WiSe 2025/26",
-                "amount": 85.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€85 (WiSe 25/26)",
-                "term_code": "2025W"
-            },
-            {
-                "term": "SoSe 2026",
-                "amount": 97.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€97 (SoSe 26→)",
-                "term_code": "2026S"
-            }
-        ],
-        "Scholarships_Info": [
-            {
-                "name": "Deutschlandstipendium",
-                "provider": "TUM",
-                "type": "merit",
-                "eligibility": "non_eu_ok",
-                "amount": "€300/month",
-                "notes": "€300/month; jointly funded by companies and federal govt",
-                "url": "https://www.tum.de/en/studies/fees/financing-your-studies/scholarships"
-            },
-            {
-                "name": "TUM Study Scholarship",
-                "provider": "TUM",
-                "type": "need/merit",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "Support for international students; competitive",
-                "url": "https://www.tum.de/en/studies/fees/financing-your-studies/scholarships"
-            },
-            {
-                "name": "DAAD Scholarship Database",
-                "provider": "DAAD",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "Search external funding for non-EU applicants",
-                "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
-            }
-        ],
-        "Cost_City_Living": "very_high",
-        "Cost_City_Rank": 5.0,
-        "Living_Housing_Difficulty": "Nightmare",
-        "Living_Housing_Score": 10.0,
-        "Program_Name": "M.Sc. Aerospace Engineering",
-        "Program_Degree": "MSc",
-        "Program_ECTS": 120,
-        "Program_URL": "https://www.tum.de/en/studies/degree-programs/detail/aerospace-master-of-science-msc",
-        "Program_Scope": "non_eu",
-        "Admission_Mode": "Aptitude Test",
-        "Admission_Language_Req": "English C1",
-        "Analysis_Strong_Areas": "Astrodynamics, GNC, OD/Navigation, mission analysis",
-        "Analysis_Pros": [
-            "Havacılık ve uzay alanında Avrupa'nın en saygın teknik üniversitelerinden biri olup, dünya çapında marka değerine sahip olması.",
-            "Münih ve Ottobrunn bölgesindeki devasa araştırma ve sanayi kümelenmesi (DLR, Airbus, uzay girişimleri) sayesinde eşsiz tez ve staj imkanları.",
-            "Yörünge mekaniği, navigasyon, görev analizi ve hesaplamalı bilimler alanlarında son derece derin ve zengin ders çeşitliliği."
-        ],
-        "Analysis_Cons": [
-            "Uluslararası (Non-EU) öğrenciler için havacılık yüksek lisans programında dönemlik €6,000 (yıllık €12,000) gibi çok yüksek bir harç ücretinin uygulanması.",
-            "Münih genelinde konut bulmanın tam anlamıyla bir kabus (Nightmare) olması ve yaşam maliyetlerinin Almanya standartlarının çok üzerinde bulunması.",
-            "Kabul sürecinin doğrudan akademik not ortalaması yerine çok aşamalı bir yetenek sınavı (Aptitude Assessment) ile yürütülmesi."
-        ],
-        "Analysis_Tags": [
-            "astrodynamics",
-            "gnc",
-            "orbitdetermination",
-            "navigation",
-            "missionanalysis",
-            "controls",
-            "satellitesystems",
-            "robotics"
-        ],
-        "Industry_Ecosystem": "Ottobrunn Havacılık ve Uzay kampüsü, DLR (Alman Havacılık ve Uzay Merkezi) araştırma ortaklıkları, Airbus Defence and Space ve ESA BIC Bavyera kuluçka merkezi ile entegre ekosistem.",
-        "Industry_Comp_Intensity": "High",
-        "Industry_Partners": [
-            "DLR",
-            "Airbus (Munich/Ottobrunn region)",
-            "ESA BIC Bavaria",
-            "BMW"
-        ],
-        "Internship_Mandatory": false,
-        "Internship_Notes": "Staj zorunlu olmasa da öğrencilerin büyük kısmı tezlerini DLR veya Airbus bünyesinde ücretli stajyer olarak tamamlamakta ve doğrudan sektöre geçiş yapmaktadır.",
-        "Deadline_Winter_Open": "01 Nov",
-        "Deadline_Winter_Close": "31 May",
-        "Deadline_Winter_Note": "TUM masters application portal (general)",
-        "Deadline_Summer_Open": "01 Apr",
-        "Deadline_Summer_Close": "30 Nov",
-        "Deadline_Summer_Note": "TUM masters application portal (general)",
-        "Deadline_General_Note": null,
-        "Meta_Sources": [
-            "{'type': 'fees_or_tuition', 'url': 'https://www.tum.de/en/studies/fees/semester-fees', 'last_verified': '2026-01-26'}",
-            "{'type': 'aerospace', 'url': 'https://www.asg.ed.tum.de/en/coa/home/', 'last_verified': '2026-01-26'}",
-            "{'type': 'admissions', 'url': 'https://www.tum.de/en/studies/application/application-info-portal/aptitude-assessment/masters-degree-programs', 'last_verified': '2026-01-27'}",
-            "{'type': 'deadlines', 'url': 'https://www.tum.de/en/studies/application/application-info-portal/masters-degree-programs', 'last_verified': '2026-01-27'}",
-            "{'type': 'housing', 'url': 'https://www.tum.de/en/studies/during-your-studies/living-in-munich/accommodation', 'last_verified': '2026-01-27'}"
-        ],
-        "Meta_Updated_At": "2026-01-27",
-        "Meta_Needs_Verification": null,
-        "qs_ranking": 28,
-        "global_recognition": "World-class elite institution",
-        "field_recognition": "Top-tier engineering/aerospace hub"
+  {
+    "id": "germany-tum-msc-aerospace",
+    "country": "Germany",
+    "university": "Technical University of Munich",
+    "university_native_name": "Technische Universität München (TUM)",
+    "city": "Munich",
+    "region": "Bavaria",
+    "program_name": "M.Sc. Aerospace Engineering",
+    "program_native_name": "M.Sc. Aerospace",
+    "program_degree": "Master of Science",
+    "degree_level": "Master",
+    "duration_years": 2,
+    "ects": 120,
+    "teaching_language": [
+      "English",
+      "German"
+    ],
+    "program_url": "https://www.asg.ed.tum.de/en/asg/study/master-aerospace/",
+    "program_status": "active",
+    "relevance_status": "highly_relevant",
+    "eligibility_profile": {
+      "eligible_for_non_eu": true,
+      "required_previous_degree": "Bachelor in Aerospace, Mechanical Engineering or related",
+      "required_ects": {},
+      "minimum_gpa": null,
+      "admission_mode": "aptitude assessment",
+      "admission_risk": "high"
     },
-    {
-        "Country": "Germany",
-        "City": "Stuttgart",
-        "State_Region": "Baden-Württemberg",
-        "Uni_ID": "university-of-stuttgart",
-        "University_Name": "University of Stuttgart",
-        "University_Display_Name": "University of Stuttgart (Uni Stuttgart)",
-        "University_Short_Name": "Uni Stuttgart",
-        "Cost_Tuition": [
-            {
-                "scope": "non_eu",
-                "program": null,
-                "amount": 1500.0,
-                "currency": "EUR",
-                "period": "semester",
-                "raw": "€1,500/semester (Baden-Württemberg, Kamu Üniversitesi)",
-                "effective_from_term_code": null
-            }
-        ],
-        "Cost_Semester_Fees": [
-            {
-                "term": "WiSe 2025/26",
-                "amount": 184.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "≈€184/semester (genel katkı payı)",
-                "term_code": "2025W"
-            }
-        ],
-        "Scholarships_Info": [
-            {
-                "name": "Deutschlandstipendium",
-                "provider": "University of Stuttgart",
-                "type": "merit",
-                "eligibility": "non_eu_ok",
-                "amount": "€300/month",
-                "notes": "€300/month; competitive",
-                "url": "https://www.uni-stuttgart.de/en/study/fees-and-financing/scholarships-and-grants/"
-            },
-            {
-                "name": "DAAD Scholarship Database",
-                "provider": "DAAD",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "External scholarships for non‑EU applicants",
-                "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
-            }
-        ],
-        "Cost_City_Living": "high",
-        "Cost_City_Rank": 4.0,
-        "Living_Housing_Difficulty": "Hard",
-        "Living_Housing_Score": 7.0,
-        "Program_Name": "M.Sc. Aerospace Engineering",
-        "Program_Degree": "MSc",
-        "Program_ECTS": 120,
-        "Program_URL": "https://www.student.uni-stuttgart.de/en/study-programs/master/aerospace-engineering-msc/",
-        "Program_Scope": "non_eu",
-        "Admission_Mode": "Direct",
-        "Admission_Language_Req": "German B1 req",
-        "Analysis_Strong_Areas": "Space systems, mission analysis, GNC, space tech",
-        "Analysis_Pros": [
-            "Space Systems (IRS) enstitüsü bünyesinde, uzay teknolojileri ve uydu sistemleri alanında Almanya'nın en köklü akademik altyapılarından birine sahip olması.",
-            "Baden-Württemberg bölgesinin devasa yüksek teknoloji koridorunda yer alarak otomotiv ve havacılık sanayisiyle doğrudan işbirliği yapması.",
-            "Dönemlik €1,500 gibi sabit bir harç ücreti ile TUM'a kıyasla çok daha ekonomik bir eğitim bütçesi sunması."
-        ],
-        "Analysis_Cons": [
-            "Program kapsamında bazı kritik seçmeli derslerin ve idari süreçlerin Almanca (B1 seviyesi gereksinimi) yürütülmesi.",
-            "Eyalet dışı (Non-EU) harç ücretlerinin (€1,500/dönem) dönemlik katkı payına ek olarak tahsil edilmesi.",
-            "Stuttgart genelinde öğrenci konut piyasasının oldukça rekabetçi ve zorlayıcı olması."
-        ],
-        "Analysis_Tags": [
-            "spacesystems",
-            "missionanalysis",
-            "gnc",
-            "satellitesystems",
-            "spacepropulsion",
-            "systemsengineering",
-            "aerodynamics"
-        ],
-        "Industry_Ecosystem": "IRS (Uzay Sistemleri Enstitüsü) araştırma grupları, DLR Stuttgart merkezi ortak projeleri ve havacılık-otomotiv sanayi devleri (Porsche, Mercedes-Benz, Airbus) ile güçlü endüstriyel bağlar.",
-        "Industry_Comp_Intensity": "High",
-        "Industry_Partners": [
-            "DLR (Stuttgart site)",
-            "Porsche",
-            "Mercedes-Benz Group",
-            "Airbus (Baden-Württemberg region)"
-        ],
-        "Internship_Mandatory": false,
-        "Internship_Notes": "Endüstriyel tez ve uzun dönem staj imkanları, Stuttgart bölgesindeki zengin şirket ağı sayesinde oldukça yaygın ve erişilebilirdir.",
-        "Deadline_Winter_Open": "15 May",
-        "Deadline_Winter_Close": "15 Jul",
-        "Deadline_Winter_Note": "University of Stuttgart master application window (typical)",
-        "Deadline_Summer_Open": "15 Nov",
-        "Deadline_Summer_Close": "2026-01-15",
-        "Deadline_Summer_Note": "Program-dependent; verify per program",
-        "Deadline_General_Note": null,
-        "Meta_Sources": [
-            "{'type': 'fees_or_tuition', 'url': 'https://www.uni-stuttgart.de/en/study/fees-and-financing/fees-and-charges/', 'last_verified': '2026-01-26'}",
-            "{'type': 'aerospace', 'url': 'https://www.irs.uni-stuttgart.de/en/', 'last_verified': '2026-01-26'}",
-            "{'type': 'deadlines', 'url': 'https://www.uni-stuttgart.de/en/study/application/application-for-a-study-program/master/application/', 'last_verified': '2026-01-27'}",
-            "{'type': 'language', 'url': 'https://www.uni-stuttgart.de/en/study/application/application-for-a-study-program/prerequisites/language-prerequisites/', 'last_verified': '2026-01-27'}"
-        ],
-        "Meta_Updated_At": "2026-01-27",
-        "Meta_Needs_Verification": null,
-        "qs_ranking": 314,
-        "global_recognition": "Well known internationally",
-        "field_recognition": "Strong engineering programs"
+    "language_profile": {
+      "teaching_language": [
+        "English",
+        "German"
+      ],
+      "english_required": true,
+      "english_level_required": "IELTS 6.5 or TOEFL 88",
+      "mixed_language_warning": "Hybrid German/English program, German proficiency may be required depending on course selection."
     },
-    {
-        "Country": "Germany",
-        "City": "Karlsruhe",
-        "State_Region": "Baden-Württemberg",
-        "Uni_ID": "kit",
-        "University_Name": "Karlsruhe Institute of Technology",
-        "University_Display_Name": "Karlsruhe Institute of Technology (KIT)",
-        "University_Short_Name": "KIT",
-        "Cost_Tuition": [
-            {
-                "scope": "non_eu",
-                "program": null,
-                "amount": 1500.0,
-                "currency": "EUR",
-                "period": "semester",
-                "raw": "€1,500/semester (Baden-Württemberg, Kamu Üniversitesi)",
-                "effective_from_term_code": null
-            }
-        ],
-        "Cost_Semester_Fees": [
-            {
-                "term": "WiSe 2025/26",
-                "amount": 201.5,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€201.50/semester (80 admin + 109.50 Studierendenwerk + 12 student body)",
-                "term_code": "2025W"
-            }
-        ],
-        "Scholarships_Info": [
-            {
-                "name": "Deutschlandstipendium",
-                "provider": "KIT",
-                "type": "merit",
-                "eligibility": "non_eu_ok",
-                "amount": "€300/month",
-                "notes": "€300/month; competitive",
-                "url": "https://www.kit.edu/english/studies/10464.php"
-            },
-            {
-                "name": "DAAD Scholarship Database",
-                "provider": "DAAD",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "External funding for non‑EU applicants",
-                "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
-            }
-        ],
-        "Cost_City_Living": "medium",
-        "Cost_City_Rank": 3.0,
-        "Living_Housing_Difficulty": "Moderate",
-        "Living_Housing_Score": 5.0,
-        "Program_Name": "Aerospace/Space-related MSc via institutes (program-specific)",
-        "Program_Degree": "MSc",
-        "Program_ECTS": 120,
-        "Program_URL": "https://www.kit.edu/english/studies.php",
-        "Program_Scope": "non_eu",
-        "Admission_Mode": "Direct",
-        "Admission_Language_Req": "German B1 req",
-        "Analysis_Strong_Areas": "Aerodynamics/CFD, flight dynamics, propulsion/thermo, controls",
-        "Analysis_Pros": [
-            "Mükemmel mühendislik ve hesaplamalı bilimler kültürü sayesinde yüksek performanslı simülasyon ve CFD alanlarında üst düzey eğitim.",
-            "Karlsruhe'nin Münih ve Berlin gibi metropollere kıyasla çok daha uygun yaşam maliyetlerine ve öğrenci dostu bir atmosfere sahip olması.",
-            "Makine mühendisliği ve kontrol sistemleri ile disiplinlerarası entegrasyon imkanlarının genişliği."
-        ],
-        "Analysis_Cons": [
-            "Baden-Württemberg eyaleti harç yasası gereğince Non-EU öğrenciler için dönemlik €1,500 harç ücretinin bulunması.",
-            "Doğrudan bağımsız bir 'Aerospace M.Sc.' programı yerine, makine mühendisliği altındaki uzmanlaşma enstitüleri aracılığıyla bu alana yönelinmesi.",
-            "Derslerin büyük oranda Almanca yürütülmesi ve İngilizce eğitim seçeneklerinin kısıtlı olması."
-        ],
-        "Analysis_Tags": [
-            "aerodynamics",
-            "cfd",
-            "flightdynamics",
-            "controls",
-            "propulsion",
-            "thermodynamics",
-            "structures"
-        ],
-        "Industry_Ecosystem": "KIT Havacılık ve Uzay enstitüleri, güçlü akışkanlar mekaniği / aerodinamik araştırma laboratuvarları ve DLR ekosistemi ile yakın işbirliği.",
-        "Industry_Comp_Intensity": "High",
-        "Industry_Partners": [
-            "KIT aerospace-related institutes + DLR ecosystem",
-            "Bosch",
-            "SAP (region)"
-        ],
-        "Internship_Mandatory": false,
-        "Internship_Notes": "Havacılık enstitüleri ve bölgedeki teknoloji devleri (Bosch vb.) bünyesinde tez odaklı staj imkanları yaygındır.",
-        "Deadline_Winter_Open": null,
-        "Deadline_Winter_Close": "15 Jul",
-        "Deadline_Winter_Note": "KIT application deadlines (general)",
-        "Deadline_Summer_Open": null,
-        "Deadline_Summer_Close": "2026-01-15",
-        "Deadline_Summer_Note": "KIT application deadlines (general)",
-        "Deadline_General_Note": null,
-        "Meta_Sources": [
-            "{'type': 'fees_or_tuition', 'url': 'https://www.kit.edu/english/study/charges-and-fees.php', 'last_verified': '2026-01-26'}",
-            "{'type': 'aerospace', 'url': 'https://www.kit.edu/english/', 'last_verified': '2026-01-26'}",
-            "{'type': 'deadlines', 'url': 'https://www.sle.kit.edu/english/vorstudium/bewerbungsfristen.php', 'last_verified': '2026-01-27'}"
-        ],
-        "Meta_Updated_At": "2026-01-27",
-        "Meta_Needs_Verification": null,
-        "qs_ranking": 102,
-        "global_recognition": "Highly recognized globally",
-        "field_recognition": "Very strong engineering reputation"
+    "cost_profile": {
+      "academic_year": "2024/2025",
+      "tuition_eur_per_year_min": 12000,
+      "tuition_eur_per_year_max": 12000,
+      "tuition_eur_per_year_estimated": 12000,
+      "tuition_basis": "6000 EUR per semester for non-EU students",
+      "non_eu_flat_fee": 12000,
+      "source_notes": "TUM introduced tuition fees for non-EU/EEA students. 6000 EUR per semester."
     },
-    {
-        "Country": "Germany",
-        "City": "Braunschweig",
-        "State_Region": "Aşağı Saksonya",
-        "Uni_ID": "technische-universitaet-braunschweig",
-        "University_Name": "Technische Universität Braunschweig",
-        "University_Display_Name": "Technische Universität Braunschweig (TU Braunschweig)",
-        "University_Short_Name": "TU Braunschweig",
-        "Cost_Tuition": [],
-        "Cost_Semester_Fees": [
-            {
-                "term": "WiSe 2025/26",
-                "amount": 440.0,
-                "currency": "EUR",
-                "includes_ticket": true,
-                "raw": "€440/semester (Deutschland-Semesterticket dahil)",
-                "term_code": "2025W"
-            }
-        ],
-        "Scholarships_Info": [
-            {
-                "name": "Deutschlandstipendium",
-                "provider": "TU Braunschweig",
-                "type": "merit",
-                "eligibility": "non_eu_ok",
-                "amount": "€300/month",
-                "notes": "€300/month; competitive",
-                "url": "https://www.tu-braunschweig.de/studium/studienfinanzierung/deutschlandstipendium"
-            },
-            {
-                "name": "DAAD Scholarship Database",
-                "provider": "DAAD",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "External scholarships for non‑EU",
-                "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
-            }
-        ],
-        "Cost_City_Living": "medium_low",
-        "Cost_City_Rank": 2.0,
-        "Living_Housing_Difficulty": "Moderate",
-        "Living_Housing_Score": 4.0,
-        "Program_Name": "Aerospace Engineering (German-taught) / space via institutes (program-specific)",
-        "Program_Degree": "MSc",
-        "Program_ECTS": 120,
-        "Program_URL": "https://www.tu-braunschweig.de/en/",
-        "Program_Scope": "non_eu",
-        "Admission_Mode": "Direct",
-        "Admission_Language_Req": "German B1 req",
-        "Analysis_Strong_Areas": "Space debris/SSA, satellite tech, space propulsion",
-        "Analysis_Pros": [
-            "Braunschweig bölgesindeki DLR merkezi ile olağanüstü yakın ortaklık ve araştırma altyapılarına (rüzgar tünelleri vb.) doğrudan erişim.",
-            "Avrupa'nın en güvenli ve bütçe dostu öğrenci şehirlerinden biri olması, konut bulmanın nispeten daha kolay olması.",
-            "Herhangi bir eyalet harç ücreti olmaksızın, sadece dönemlik katkı payı (€440, ulaşım bileti dahil) ile son derece ekonomik eğitim imkanı."
-        ],
-        "Analysis_Cons": [
-            "Havacılık ve uzay programının büyük oranda Almanca (B1/B2 seviyesi) yürütülmesi nedeniyle dil bariyerinin bulunması.",
-            "Küresel marka bilinirliğinin Münih (TUM) veya Aachen (RWTH) kadar yüksek olmaması.",
-            "Uzay mühendisliği alanındaki derinliğin, belirli araştırma grupları ve projelerle sınırlı olması."
-        ],
-        "Analysis_Tags": [
-            "spacedebris",
-            "ssa",
-            "orbitdetermination",
-            "satellitesystems",
-            "spacepropulsion",
-            "gnc",
-            "spacesystems"
-        ],
-        "Industry_Ecosystem": "Space Systems Enstitüsü bünyesindeki uzay enkazı (Space Debris) ve SSA odaklı öncü çalışmalar, Braunschweig DLR merkezi ile entegre araştırma faaliyetleri.",
-        "Industry_Comp_Intensity": "High",
-        "Industry_Partners": [
-            "DLR (Braunschweig site)",
-            "ESA (projects/collaborations)",
-            "Airbus (regional links)",
-            "TU Delft (aviation sustainability collaboration)"
-        ],
-        "Internship_Mandatory": false,
-        "Internship_Notes": "DLR ve bölgesel havacılık sanayisi (Airbus vb.) ile ortak yürütülen endüstriyel tez ve stajlar çok yaygındır.",
-        "Deadline_Winter_Open": "01 Jun",
-        "Deadline_Winter_Close": "15 Jul",
-        "Deadline_Winter_Note": "TU Braunschweig international application period",
-        "Deadline_Summer_Open": "01 Dec",
-        "Deadline_Summer_Close": "2026-01-15",
-        "Deadline_Summer_Note": "TU Braunschweig international application period",
-        "Deadline_General_Note": null,
-        "Meta_Sources": [
-            "{'type': 'fees_or_tuition', 'url': 'https://www.tu-braunschweig.de/en/study-teaching/during-your-studies/financing-and-costs', 'last_verified': '2026-01-26'}",
-            "{'type': 'aerospace', 'url': 'https://www.tu-braunschweig.de/en/fmb/institute-fk4/institutes/institut-of-space-systems', 'last_verified': '2026-01-26'}",
-            "{'type': 'deadlines', 'url': 'https://www.tu-braunschweig.de/en/international/international-house/international-students/study-applications/application-and-deadlines', 'last_verified': '2026-01-27'}",
-            "{'type': 'partners', 'url': 'https://magazin.tu-braunschweig.de/en/m-post/the-close-cooperation-between-dlr-and-tu-offers-great-potential/', 'last_verified': '2026-01-27'}"
-        ],
-        "Meta_Updated_At": "2026-01-27",
-        "Meta_Needs_Verification": null,
-        "qs_ranking": 751,
-        "global_recognition": "Recognized globally",
-        "field_recognition": "Good engineering programs"
+    "curriculum_profile": {
+      "mandatory_courses": [
+        "Total Systems",
+        "Propulsion Systems",
+        "Fluid Dynamics",
+        "Structure",
+        "Dynamics/Control Technology"
+      ],
+      "thesis_required": true
     },
-    {
-        "Country": "Germany",
-        "City": "Berlin",
-        "State_Region": "Berlin",
-        "Uni_ID": "tu-berlin",
-        "University_Name": "Technische Universität Berlin",
-        "University_Display_Name": "Technische Universität Berlin (TU Berlin)",
-        "University_Short_Name": "TU Berlin",
-        "Cost_Tuition": [],
-        "Cost_Semester_Fees": [
-            {
-                "term": "WiSe 2025/26",
-                "amount": 360.49,
-                "currency": "EUR",
-                "includes_ticket": true,
-                "raw": "€360.49/semester (ticket dahil) - TU Berlin MSE program sayfası",
-                "term_code": "2025W"
-            }
-        ],
-        "Scholarships_Info": [
-            {
-                "name": "Scholarships (programme)",
-                "provider": "MSE TU Berlin",
-                "type": "note",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "MSE states scholarships are not granted for the programme itself",
-                "url": "https://mse.tu-berlin.de/application-procedure/"
-            },
-            {
-                "name": "DAAD Scholarship Database",
-                "provider": "DAAD",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "External scholarships for non‑EU",
-                "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
-            },
-            {
-                "name": "Deutschlandstipendium",
-                "provider": "TU Berlin",
-                "type": "merit",
-                "eligibility": "non_eu_ok",
-                "amount": "€300/month",
-                "notes": "Federal scholarship; availability depends on TU Berlin scheme",
-                "url": null
-            }
-        ],
-        "Cost_City_Living": "medium_high",
-        "Cost_City_Rank": 3.5,
-        "Living_Housing_Difficulty": "Very Hard",
-        "Living_Housing_Score": 9.0,
-        "Program_Name": "Master of Space Engineering (MSE)",
-        "Program_Degree": "MSc",
-        "Program_ECTS": 120,
-        "Program_URL": "https://mse.tu-berlin.de/",
-        "Program_Scope": "non_eu",
-        "Admission_Mode": "Aptitude Test",
-        "Admission_Language_Req": "100% English",
-        "Analysis_Strong_Areas": "Space systems, small satellites, systems engineering, AOCS/GNC",
-        "Analysis_Pros": [
-            "Master of Space Engineering (MSE) gibi tamamen İngilizce ve uydu teknolojileri odaklı, doğrudan uygulamalı (hands-on) program seçeneği.",
-            "Berlin gibi kozmopolit bir metropolün sunduğu geniş sosyal yaşam, staj, part-time iş ve start-up ekosistemi fırsatları.",
-            "Küçük uydu sistemleri entegrasyonu ve testi konularında Almanya'nın en pratik eğitimlerinden birini sunması."
-        ],
-        "Analysis_Cons": [
-            "MSE programının ücretli (tuition-based) bir yüksek lisans programı olması ve program düzeyinde burs seçeneğinin bulunmaması.",
-            "Berlin'de konut bulmanın son derece zor (Very Hard) olması, yüksek kiralar ve uzun bekleme süreleri.",
-            "Kabul sürecinin mülakat aşaması içermesi nedeniyle rekabetçi ve belirsiz olması."
-        ],
-        "Analysis_Tags": [
-            "spacesystems",
-            "satellitesystems",
-            "systemsengineering",
-            "gnc",
-            "missionanalysis",
-            "aocs",
-            "avionics"
-        ],
-        "Industry_Ecosystem": "Chair of Space Technology bünyesinde geliştirilen aktif mikro uydu projeleri, ESA ve DLR destekli öğrenci yarışmaları ve başkent start-up ağı.",
-        "Industry_Comp_Intensity": "High",
-        "Industry_Partners": [
-            "ESA (student projects/competitions)",
-            "DLR",
-            "Airbus",
-            "OHB",
-            "beSpace (programme operator)"
-        ],
-        "Internship_Mandatory": false,
-        "Internship_Notes": "Proje tabanlı müfredat yapısı sayesinde, mezuniyet tezi sıklıkla bir sanayi ortağı veya yerel uzay girişimi bünyesinde stajyer olarak tamamlanır.",
-        "Deadline_Winter_Open": null,
-        "Deadline_Winter_Close": null,
-        "Deadline_Winter_Note": null,
-        "Deadline_Summer_Open": null,
-        "Deadline_Summer_Close": "01 Oct",
-        "Deadline_Summer_Note": "DAAD & MSE info (summer intake); verify each year",
-        "Deadline_General_Note": "MSE is typically a summer (April) intake programme; check current cycle on the MSE website.",
-        "Meta_Sources": [
-            "{'type': 'fees_or_tuition', 'url': 'https://mse.tu-berlin.de/admission/fees-funding/', 'last_verified': '2026-01-26'}",
-            "{'type': 'aerospace', 'url': 'https://mse.tu-berlin.de/', 'last_verified': '2026-01-26'}",
-            "{'type': 'admissions', 'url': 'https://mse.tu-berlin.de/admission/application/', 'last_verified': '2026-01-27'}",
-            "{'type': 'housing', 'url': 'https://mse.tu-berlin.de/housing/', 'last_verified': '2026-01-27'}",
-            "{'type': 'scholarships', 'url': 'https://mse.tu-berlin.de/application-procedure/', 'last_verified': '2026-01-27'}"
-        ],
-        "Meta_Updated_At": "2026-01-27",
-        "Meta_Needs_Verification": null,
-        "qs_ranking": 147,
-        "global_recognition": "Highly recognized globally",
-        "field_recognition": "Very strong engineering reputation"
+    "source_profile": {
+      "official_program_page": "https://www.asg.ed.tum.de/en/asg/study/master-aerospace/",
+      "last_verified": "2026-06-24",
+      "needs_verification": false,
+      "field_confidence": {
+        "tuition": "high",
+        "admission": "high",
+        "curriculum": "high",
+        "program_basic_info": "high"
+      }
     },
-    {
-        "Country": "Germany",
-        "City": "Bremen",
-        "State_Region": "Bremen",
-        "Uni_ID": "uni-bremen",
-        "University_Name": "Universität Bremen",
-        "University_Display_Name": "Universität Bremen (Uni Bremen)",
-        "University_Short_Name": "Uni Bremen",
-        "Cost_Tuition": [],
-        "Cost_Semester_Fees": [
-            {
-                "term": "WiSe 2025/26",
-                "amount": 425.4,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€425.40/semester",
-                "term_code": "2025W"
-            }
-        ],
-        "Scholarships_Info": [
-            {
-                "name": "Deutschlandstipendium",
-                "provider": "Universität Bremen",
-                "type": "merit",
-                "eligibility": "non_eu_ok",
-                "amount": "€300/month",
-                "notes": "€300/month; competitive",
-                "url": "https://www.uni-bremen.de/deutschlandstipendium"
-            },
-            {
-                "name": "DAAD Scholarship Database",
-                "provider": "DAAD",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "External scholarships for non‑EU",
-                "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
-            }
-        ],
-        "Cost_City_Living": "medium",
-        "Cost_City_Rank": 3.0,
-        "Living_Housing_Difficulty": "Moderate",
-        "Living_Housing_Score": 5.0,
-        "Program_Name": "M.Sc. Space Engineering",
-        "Program_Degree": "MSc",
-        "Program_ECTS": 120,
-        "Program_URL": "https://www.uni-bremen.de/en/studies/orientation-application/offered-study-program/dbs/study/39",
-        "Program_Scope": "non_eu",
-        "Admission_Mode": "Direct",
-        "Admission_Language_Req": "100% English",
-        "Analysis_Strong_Areas": "Space engineering, robotics, mission & satellite applications",
-        "Analysis_Pros": [
-            "Almanya'nın en yoğun uzay sanayisi kümelenmesine (Bremen Uzay Vadisi) ev sahipliği yapması ve firmalarla doğrudan entegrasyon.",
-            "Uydu sistemleri, robotik uygulamaları ve uzay teknolojileri odaklı son derece modern bir M.Sc. Space Engineering müfredatı.",
-            "Münih ve Berlin'e kıyasla çok daha dengeli yaşam maliyetleri ve daha kolay konut bulma imkanları."
-        ],
-        "Analysis_Cons": [
-            "Teorik yörünge mekaniği ve derin astrodinamik alanında TUM kadar geniş kürsü (chair) odaklı ders çeşitliliğinin olmaması.",
-            "Program detaylarının ve kabul şartlarının dönem bazlı değişebilmesi nedeniyle sıkı takip gerektirmesi."
-        ],
-        "Analysis_Tags": [
-            "spaceengineering",
-            "spacesystems",
-            "robotics",
-            "satellitesystems",
-            "missionanalysis",
-            "sustainability"
-        ],
-        "Industry_Ecosystem": "Bremen Uzay Kümelenmesi (OHB genel merkezi, Airbus Space, DLR) ve ZARM (Drop Tower - Yerçekimsiz Ortam Kulesi) gibi dünya çapında araştırma merkezleri.",
-        "Industry_Comp_Intensity": "Medium-High",
-        "Industry_Partners": [
-            "OHB",
-            "Airbus (Bremen)",
-            "DLR (regional)",
-            "ZARM"
-        ],
-        "Internship_Mandatory": false,
-        "Internship_Notes": "OHB ve Airbus Bremen tesisleri başta olmak üzere, yerel uzay endüstrisinde uzun dönemli staj ve tez çalışmaları öğrencilerin büyük kısmı tarafından tercih edilir.",
-        "Deadline_Winter_Open": null,
-        "Deadline_Winter_Close": "15 Jul",
-        "Deadline_Winter_Note": "Typical German master deadlines; verify per programme",
-        "Deadline_Summer_Open": null,
-        "Deadline_Summer_Close": "2026-01-15",
-        "Deadline_Summer_Note": "Typical German master deadlines; verify per programme",
-        "Deadline_General_Note": null,
-        "Meta_Sources": [
-            "{'type': 'fees_or_tuition', 'url': 'https://www.uni-bremen.de/en/studies/during-your-studies/semesterbeitrag', 'last_verified': '2026-01-26'}",
-            "{'type': 'aerospace', 'url': 'https://www.uni-bremen.de/en/studies/orientation-application/offered-study-program/dbs/study/39', 'last_verified': '2026-01-26'}",
-            "{'type': 'partners', 'url': 'https://www.uni-bremen.de/en/alumni/karriere-und-netzwerk/profil-magazin/2024/2024-09-24-tdg25', 'last_verified': '2026-01-27'}"
-        ],
-        "Meta_Updated_At": "2026-01-27",
-        "Meta_Needs_Verification": true,
-        "qs_ranking": 592,
-        "global_recognition": "Recognized internationally",
-        "field_recognition": "Solid engineering foundation"
+    "decision_summary": {
+      "best_for": [],
+      "not_ideal_for": [],
+      "main_strengths": [],
+      "main_risks": [],
+      "application_reality": "",
+      "overall_recommendation": "",
+      "recommended_user_profile": ""
     },
-    {
-        "Country": "Germany",
-        "City": "Darmstadt",
-        "State_Region": "Hessen",
-        "Uni_ID": "tu-darmstadt",
-        "University_Name": "Technische Universität Darmstadt",
-        "University_Display_Name": "Technische Universität Darmstadt (TU Darmstadt)",
-        "University_Short_Name": "TU Darmstadt",
-        "Cost_Tuition": [],
-        "Cost_Semester_Fees": [
-            {
-                "term": "SoSe 2026",
-                "amount": 382.68,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€382.68 (SoSe 2026)",
-                "term_code": "2026S"
-            }
-        ],
-        "Scholarships_Info": [
-            {
-                "name": "Deutschlandstipendium",
-                "provider": "TU Darmstadt",
-                "type": "merit",
-                "eligibility": "non_eu_ok",
-                "amount": "€300/month",
-                "notes": "€300/month",
-                "url": "https://www.tu-darmstadt.de/deutschlandstipendium/index.en.jsp"
-            },
-            {
-                "name": "Graduation Scholarship (international students)",
-                "provider": "TU Darmstadt",
-                "type": "university",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "Performance-based scholarship for internationals near graduation; application windows Apr/Oct",
-                "url": "https://www.tu-darmstadt.de/studieren/studierende_tu/internationale_studierende_1/studienfinanzierung_und_stipendien_international/studienfinanzierung_stipendien/index.en.jsp"
-            },
-            {
-                "name": "DAAD Scholarship Database",
-                "provider": "DAAD",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "External scholarships",
-                "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
-            }
-        ],
-        "Cost_City_Living": "medium",
-        "Cost_City_Rank": 3.0,
-        "Living_Housing_Difficulty": "Hard",
-        "Living_Housing_Score": 7.0,
-        "Program_Name": "Aerospace/Space-relevant MSc via FSR & systems/control tracks (program-specific)",
-        "Program_Degree": "MSc",
-        "Program_ECTS": 120,
-        "Program_URL": "https://www.fsr.tu-darmstadt.de/index.en.jsp",
-        "Program_Scope": "non_eu",
-        "Admission_Mode": "Direct",
-        "Admission_Language_Req": "English C1",
-        "Analysis_Strong_Areas": "Flight dynamics, controls, GNC, systems engineering",
-        "Analysis_Pros": [
-            "Darmstadt'ta yer alan ESA'nın uzay operasyonları merkezi (ESOC) ile doğrudan komşuluk ve operasyonel projelere erişim fırsatı.",
-            "FSR (Uçuş Sistemleri ve Otomatik Kontrol) enstitüsünün sunduğu mükemmel kontrol teorisi, optimizasyon ve otonomi altyapısı.",
-            "Frankfurt finans ve teknoloji merkezine yakınlığı sayesinde geniş staj ve kariyer olanakları."
-        ],
-        "Analysis_Cons": [
-            "Havacılık ve uzaya adanmış tek bir merkezi program yerine, kontrol ve sistem mühendisliği altındaki modüllerle bu alana yönelinmesi.",
-            "Frankfurt'a yakınlığı nedeniyle Darmstadt ve çevresindeki konut fiyatlarının yüksek seyretmesi.",
-            "İngilizce eğitim veren ders modüllerinin seçmeli havuzunda dikkatle planlanması gerekmesi."
-        ],
-        "Analysis_Tags": [
-            "flightdynamics",
-            "controls",
-            "gnc",
-            "systemsengineering",
-            "missionanalysis",
-            "spacesafety"
-        ],
-        "Industry_Ecosystem": "ESA/ESOC (Avrupa Uzay Operasyonları Merkezi) ile doğrudan ortak ar-ge projeleri, uzay güvenliği (Space Safety) ve otonom uçuş kontrol sistemleri araştırmaları.",
-        "Industry_Comp_Intensity": "High",
-        "Industry_Partners": [
-            "ESA/ESOC (Darmstadt)",
-            "ESRI/space safety ecosystem",
-            "DLR (regional)"
-        ],
-        "Internship_Mandatory": false,
-        "Internship_Notes": "ESOC ve bölgesel uzay güvenliği ekosisteminde yapılan staj ve tez çalışmaları, öğrencilere operasyonel deneyim kazandırmaktadır.",
-        "Deadline_Winter_Open": "01 Jun",
-        "Deadline_Winter_Close": "15 Jul",
-        "Deadline_Winter_Note": "TU Darmstadt typical master window (example programmes)",
-        "Deadline_Summer_Open": "01 Dec",
-        "Deadline_Summer_Close": "2026-01-15",
-        "Deadline_Summer_Note": "TU Darmstadt typical master window (example programmes)",
-        "Deadline_General_Note": null,
-        "Meta_Sources": [
-            "{'type': 'fees_or_tuition', 'url': 'https://www.tu-darmstadt.de/studieren/organisation_zum_studium/rueckmeldung_und_semesterbeitrag/index.en.jsp', 'last_verified': '2026-01-26'}",
-            "{'type': 'aerospace', 'url': 'https://www.fsr.tu-darmstadt.de/index.en.jsp', 'last_verified': '2026-01-26'}",
-            "{'type': 'deadlines', 'url': 'https://www.tu-darmstadt.de/studieren/studieninteressierte/studienangebot_studiengaenge/studiengaenge_akk/deadlines/index.en.jsp', 'last_verified': '2026-01-27'}"
-        ],
-        "Meta_Updated_At": "2026-01-27",
-        "Meta_Needs_Verification": true,
-        "qs_ranking": 271,
-        "global_recognition": "Well known internationally",
-        "field_recognition": "Strong engineering programs"
+    "scoring_inputs": {
+      "academic_field_fit_score_seed": null,
+      "eligibility_language_score_seed": null,
+      "cost_funding_score_seed": null,
+      "career_research_score_seed": null,
+      "living_risk_score_seed": null,
+      "data_confidence_score_seed": null,
+      "hard_filter_flags": {
+        "english_only_compatible": true,
+        "requires_italian": false,
+        "non_eu_eligible": true,
+        "tuition_above_5000": true,
+        "tuition_above_10000": true,
+        "deadline_unclear": false,
+        "needs_verification": false
+      }
     },
-    {
-        "Country": "Germany",
-        "City": "Aachen",
-        "State_Region": "Kuzey Ren-Vestfalya",
-        "Uni_ID": "rwth-aachen",
-        "University_Name": "RWTH Aachen University",
-        "University_Display_Name": "RWTH Aachen University (RWTH Aachen)",
-        "University_Short_Name": "RWTH Aachen",
-        "Cost_Tuition": [],
-        "Cost_Semester_Fees": [
-            {
-                "term": "WiSe 2025/26",
-                "amount": 358.34,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€358.34 (WiSe 2025/26)",
-                "term_code": "2025W"
-            }
-        ],
-        "Scholarships_Info": [
-            {
-                "name": "Deutschlandstipendium / RWTH Education Fund",
-                "provider": "RWTH Aachen",
-                "type": "merit",
-                "eligibility": "non_eu_ok",
-                "amount": "€300/month",
-                "notes": "€300/month (federal + sponsors); must be enrolled to apply",
-                "url": "https://www.rwth-aachen.de/cms/root/transfer/spenden-sponsoring/~elu/deutschlandstipendium/?lidx=1"
-            },
-            {
-                "name": "DAAD Scholarship Database",
-                "provider": "DAAD",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "External scholarships",
-                "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
-            }
-        ],
-        "Cost_City_Living": "medium",
-        "Cost_City_Rank": 3.0,
-        "Living_Housing_Difficulty": "Moderate",
-        "Living_Housing_Score": 5.0,
-        "Program_Name": "Aerospace/space relevant MSc via engineering programmes (program-specific)",
-        "Program_Degree": "MSc",
-        "Program_ECTS": 120,
-        "Program_URL": "https://www.rwth-aachen.de/",
-        "Program_Scope": "non_eu",
-        "Admission_Mode": "Direct",
-        "Admission_Language_Req": "English C1",
-        "Analysis_Strong_Areas": "Aerospace systems design/operations, aircraft & spacecraft tech",
-        "Analysis_Pros": [
-            "Avrupa'nın en prestijli mühendislik okullarından biri olarak dünya çapında tartışmasız marka değeri ve mezun ağı.",
-            "Akışkanlar mekaniği, CFD, kontrol teorisi ve ileri malzemeler alanlarında devasa laboratuvar ve hesaplama (HPC) altyapısı.",
-            "Aachen'ın tam anlamıyla bir öğrenci şehri olması, konut ve yaşam maliyetlerinin metropollere göre çok daha bütçe dostu olması."
-        ],
-        "Analysis_Cons": [
-            "Uzay mühendisliği ve astrodinamik derinliğinin, belirli enstitülerin seçmeli derslerine bağlı olması (genel programın havacılık ağırlıklı olması).",
-            "Uluslararası belgelerin tanınma ve denklik süreçlerinin son derece katı ve yavaş ilerlemesi.",
-            "Derslerin yüksek akademik ağırlığı ve sınav geçme oranlarının düşüklüğü."
-        ],
-        "Analysis_Tags": [
-            "aerospacesystems",
-            "aircraftdesign",
-            "spacesystems",
-            "structures",
-            "systemsengineering",
-            "propulsion"
-        ],
-        "Industry_Ecosystem": "ILR (Havacılık ve Uzay Sistemleri Enstitüsü), RWTH Aachen Havacılık Kümelenmesi ve Kuzey Ren-Vestfalya bölgesindeki zengin sanayi ortaklıkları.",
-        "Industry_Comp_Intensity": "High",
-        "Industry_Partners": [
-            "Airbus",
-            "DLR (Germany-wide network)",
-            "Industry in NRW (automotive/industrial)"
-        ],
-        "Internship_Mandatory": false,
-        "Internship_Notes": "RWTH markası sayesinde Almanya genelindeki tüm büyük havacılık (Airbus, DLR, MTU) ve otomotiv firmalarında staj bulma şansı oldukça yüksektir.",
-        "Deadline_Winter_Open": null,
-        "Deadline_Winter_Close": "15 Jul",
-        "Deadline_Winter_Note": "RWTH deadlines (documents must be available by Jul 15)",
-        "Deadline_Summer_Open": null,
-        "Deadline_Summer_Close": "2026-01-15",
-        "Deadline_Summer_Note": "RWTH deadlines (documents must be available by Jan 15)",
-        "Deadline_General_Note": null,
-        "Meta_Sources": [
-            "{'type': 'fees_or_tuition', 'url': 'https://www.rwth-aachen.de/go/id/bibl/ll/rwthindex/?lidx=1', 'last_verified': '2026-01-26'}",
-            "{'type': 'aerospace', 'url': 'https://www.ilr.rwth-aachen.de/cms/ilr/~jmqo/das-institut/?lidx=1', 'last_verified': '2026-01-26'}",
-            "{'type': 'deadlines', 'url': 'https://www.rwth-aachen.de/cms/root/studium/vor-dem-studium/bewerbung/~krc/fristen-und-termine/?lidx=1', 'last_verified': '2026-01-27'}"
-        ],
-        "Meta_Updated_At": "2026-01-27",
-        "Meta_Needs_Verification": true,
-        "qs_ranking": 99,
-        "global_recognition": "Top-tier global university",
-        "field_recognition": "World-class engineering programs"
+    "category_profile": {
+      "primary_categories": [
+        "Aerospace Engineering"
+      ],
+      "secondary_categories": [],
+      "subcategories": [],
+      "normalized_tags": [
+        "aerospace"
+      ],
+      "category_scores": {},
+      "category_evidence": []
     },
-    {
-        "Country": "Germany",
-        "City": "Dresden",
-        "State_Region": "Saksonya",
-        "Uni_ID": "tu-dresden",
-        "University_Name": "Technische Universität Dresden",
-        "University_Display_Name": "Technische Universität Dresden (TU Dresden)",
-        "University_Short_Name": "TU Dresden",
-        "Cost_Tuition": [],
-        "Cost_Semester_Fees": [
-            {
-                "term": "WiSe 2025/26",
-                "amount": 338.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€338.00 (WiSe 2025/26, Präsenzstudium)",
-                "term_code": "2025W"
-            }
-        ],
-        "Scholarships_Info": [
-            {
-                "name": "Deutschlandstipendium",
-                "provider": "TU Dresden",
-                "type": "merit",
-                "eligibility": "non_eu_ok",
-                "amount": "€300/month",
-                "notes": "€300/month; open regardless of nationality (enrolled/applicants)",
-                "url": "https://tu-dresden.de/studium/rund-ums-studium/foerderung-und-finanzierung/deutschlandstipendium?set_language=en"
-            },
-            {
-                "name": "DAAD Scholarship Database",
-                "provider": "DAAD",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "External scholarships",
-                "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
-            }
-        ],
-        "Cost_City_Living": "medium_low",
-        "Cost_City_Rank": 2.0,
-        "Living_Housing_Difficulty": "Easy",
-        "Living_Housing_Score": 4.0,
-        "Program_Name": "Aerospace/space relevant MSc via ILR & engineering programmes (program-specific)",
-        "Program_Degree": "MSc",
-        "Program_ECTS": 120,
-        "Program_URL": "https://tu-dresden.de/",
-        "Program_Scope": "non_eu",
-        "Admission_Mode": "VPD",
-        "Admission_Language_Req": "English C1",
-        "Analysis_Strong_Areas": "Aerostructures, aircraft design, propulsion, damage tolerance",
-        "Analysis_Pros": [
-            "Saksonya bölgesinin en güçlü teknik araştırma üniversitesi olarak aero-yapılar ve itki sistemlerinde üst düzey ar-ge olanakları.",
-            "Dresden'in doğu Almanya'da yer alması sayesinde son derece ucuz yaşam koşulları ve kolay konut bulma imkanı.",
-            "Dönemlik katkı payının düşüklüğü ve herhangi bir Non-EU eğitim harcının bulunmaması."
-        ],
-        "Analysis_Cons": [
-            "Başvuru süreçlerinde uni-assist zorunluluğunun bulunması ve belge onay süreçlerinin ek zaman alması.",
-            "Tamamen uzay odaklı (space-centric) bir müfredat isteyen öğrenciler için seçmeli ders havuzunun kısıtlı kalabilmesi."
-        ],
-        "Analysis_Tags": [
-            "aerostructures",
-            "structures",
-            "composites",
-            "damagetolerance",
-            "aircraftdesign",
-            "propulsion",
-            "aerodynamics"
-        ],
-        "Industry_Ecosystem": "ILR (Havacılık ve Uzay Mühendisliği Enstitüsü) bünyesindeki aero-yapılar, kompozit malzemeler ve gelişmiş itki sistemleri laboratuvarları.",
-        "Industry_Comp_Intensity": "High",
-        "Industry_Partners": [
-            "DLR",
-            "Airbus",
-            "OHB",
-            "ESA-related student/competition ecosystem"
-        ],
-        "Internship_Mandatory": false,
-        "Internship_Notes": "DLR projeleri, yerel havacılık sanayi tedarikçileri ve kompozit ar-ge merkezleri bünyesinde staj imkanları sunulmaktadır.",
-        "Deadline_Winter_Open": "01 Jun",
-        "Deadline_Winter_Close": "15 Jul",
-        "Deadline_Winter_Note": "Typical master window; exact deadlines in SINS",
-        "Deadline_Summer_Open": "01 Dec",
-        "Deadline_Summer_Close": "2026-01-15",
-        "Deadline_Summer_Note": "Typical master window; exact deadlines in SINS",
-        "Deadline_General_Note": "Exact programme deadlines and requirements are published in SINS; English-taught masters with a non-German first degree are often handled via uni-assist.",
-        "Meta_Sources": [
-            "{'type': 'fees_or_tuition', 'url': 'https://tu-dresden.de/studium/vor-dem-studium/immatrikulation/semesterbeitrag', 'last_verified': '2026-01-26'}",
-            "{'type': 'aerospace', 'url': 'https://tu-dresden.de/ing/maschinenwesen/ilr?set_language=en', 'last_verified': '2026-01-26'}",
-            "{'type': 'uni_assist', 'url': 'https://tu-dresden.de/studium/vor-dem-studium/bewerbung/uni-assist?set_language=en', 'last_verified': '2026-01-27'}",
-            "{'type': 'deadlines', 'url': 'https://tu-dresden.de/studium/vor-dem-studium/bewerbung/online-bewerbung?set_language=en', 'last_verified': '2026-01-27'}"
-        ],
-        "Meta_Updated_At": "2026-01-27",
-        "Meta_Needs_Verification": true,
-        "qs_ranking": 234,
-        "global_recognition": "Well known internationally",
-        "field_recognition": "Strong engineering programs"
+    "research_profile": {
+      "department_research_areas": [],
+      "labs": [],
+      "research_centers": [],
+      "notable_professors": [],
+      "space_or_aerospace_projects": [],
+      "student_teams": [],
+      "satellite_or_flight_projects": [],
+      "research_strength_summary": "",
+      "research_strength_score": 85,
+      "research_sources": []
     },
-    {
-        "Country": "Germany",
-        "City": "Hamburg",
-        "State_Region": "Hamburg",
-        "Uni_ID": "tuhh",
-        "University_Name": "Hamburg University of Technology",
-        "University_Display_Name": "Hamburg University of Technology (TUHH)",
-        "University_Short_Name": "TUHH",
-        "Cost_Tuition": [],
-        "Cost_Semester_Fees": [
-            {
-                "term": "WiSe 2025/26",
-                "amount": 386.0,
-                "currency": "EUR",
-                "includes_ticket": false,
-                "raw": "€386.00 (WiSe 2025/26)",
-                "term_code": "2025W"
-            }
-        ],
-        "Scholarships_Info": [
-            {
-                "name": "Deutschlandstipendium (German Scholarship)",
-                "provider": "TUHH",
-                "type": "merit",
-                "eligibility": "non_eu_ok",
-                "amount": "€300/month",
-                "notes": "€300/month; paid by TUHH",
-                "url": "https://www.tuhh.de/tuhh/en/education/students/organisational-details-about-your-studies/financing-your-studies/scholarships/german-scholarship"
-            },
-            {
-                "name": "Scholarships for international students (overview)",
-                "provider": "Studierendenwerk Hamburg / TUHH",
-                "type": "university/external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "Merit scholarship, STIBET grants etc (for foreign nationality)",
-                "url": "https://www.stwhh.de/fileadmin/user_upload/Finanzen/__Downloads/Stipendien_Ausland/Scholarships_Foreign_Nationality.pdf"
-            },
-            {
-                "name": "DAAD Scholarship Database",
-                "provider": "DAAD",
-                "type": "external",
-                "eligibility": "non_eu_ok",
-                "amount": null,
-                "notes": "External scholarships",
-                "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
-            }
-        ],
-        "Cost_City_Living": "high",
-        "Cost_City_Rank": 4.0,
-        "Living_Housing_Difficulty": "Very Hard",
-        "Living_Housing_Score": 8.0,
-        "Program_Name": "M.Sc. Aeronautics (example)",
-        "Program_Degree": "MSc",
-        "Program_ECTS": 120,
-        "Program_URL": "https://www.tuhh.de/tuhh/en/education/degree-courses/master/aeronautics",
-        "Program_Scope": "non_eu",
-        "Admission_Mode": "Direct",
-        "Admission_Language_Req": "German B1 req",
-        "Analysis_Strong_Areas": "Aircraft systems, aircraft design/flight physics, production & MRO",
-        "Analysis_Pros": [
-            "Avrupa'nın en büyük havacılık merkezlerinden biri olan Hamburg sivil havacılık kümelenmesine ve Airbus tesislerine doğrudan erişim.",
-            "Uçak sistemleri tasarımı, kabin teknolojileri ve bakım-onarım (MRO) alanlarında Almanya'nın en güçlü uygulamalı müfredatı.",
-            "Airbus Hamburg ve Lufthansa Technik bünyesinde endüstriyel staj ve tez yapma imkanlarının fazlalığı."
-        ],
-        "Analysis_Cons": [
-            "Hamburg genelinde konut bulmanın aşırı zor (Very Hard) olması ve yaşam maliyetlerinin yüksekliği.",
-            "Havacılık programının büyük oranda Almanca (B1/B2) olmasından dolayı dil koşullarının katı olması.",
-            "Saf uzay mühendisliği ve astrodinamik konularının sivil havacılık odağının gerisinde kalması."
-        ],
-        "Analysis_Tags": [
-            "aircraftsystems",
-            "aircraftdesign",
-            "flightphysics",
-            "systemsengineering",
-            "production",
-            "mro",
-            "materials"
-        ],
-        "Industry_Ecosystem": "Hamburg Aviation Cluster, Airbus Finkenwerder üretim üssü, Lufthansa Technik genel merkezi ve yerel DLR enstitüleri ortaklığı.",
-        "Industry_Comp_Intensity": "High",
-        "Industry_Partners": [
-            "Airbus (Hamburg)",
-            "DLR (Hamburg/Finkenwerder)",
-            "Hamburg Aviation cluster"
-        ],
-        "Internship_Mandatory": false,
-        "Internship_Notes": "Airbus, Lufthansa Technik ve DLR bünyesinde yapılan stajlar ve endüstriyel tezler, TUHH havacılık öğrencilerinin kariyer basamağıdır.",
-        "Deadline_Winter_Open": "01 Jun",
-        "Deadline_Winter_Close": "15 Jul",
-        "Deadline_Winter_Note": "TUHH Aeronautics page (application period)",
-        "Deadline_Summer_Open": "01 Dec",
-        "Deadline_Summer_Close": "2026-01-15",
-        "Deadline_Summer_Note": "Typical German master window; verify per programme",
-        "Deadline_General_Note": null,
-        "Meta_Sources": [
-            "{'type': 'fees_or_tuition', 'url': 'https://www.tuhh.de/tuhh/en/studying/immediately-after-acceptance/semester-fee', 'last_verified': '2026-01-26'}",
-            "{'type': 'aerospace', 'url': 'https://www.tuhh.de/tuhh/en/studying/before-studying/degree-courses/masters-programs/aeronautics', 'last_verified': '2026-01-26'}",
-            "{'type': 'admissions', 'url': 'https://www.tuhh.de/tuhh/en/education/degree-courses/master/aeronautics', 'last_verified': '2026-01-27'}"
-        ],
-        "Meta_Updated_At": "2026-01-27",
-        "Meta_Needs_Verification": true,
-        "qs_ranking": 601,
-        "global_recognition": "Recognized globally",
-        "field_recognition": "Good engineering programs"
+    "industry_ecosystem_profile": {
+      "nearby_companies": [],
+      "space_agencies_or_public_bodies": [],
+      "research_institutes": [],
+      "startup_or_incubator_ecosystem": [],
+      "internship_possibility": "high",
+      "thesis_with_industry_possibility": "high",
+      "career_relevance": "high",
+      "ecosystem_strength_score": 85,
+      "ecosystem_notes": ""
+    },
+    "application_timeline_profile": {
+      "academic_year": "2024/2025",
+      "intake_terms": [
+        "Winter"
+      ],
+      "application_rounds": [],
+      "non_eu_deadline": "",
+      "eu_deadline": "",
+      "scholarship_deadline": "",
+      "pre_enrolment_required": null,
+      "universitaly_required": null,
+      "visa_sensitive_deadline": "",
+      "application_result_timing": "",
+      "enrollment_deadline": "",
+      "timeline_risk": "medium",
+      "deadline_notes": ""
     }
+  },
+  {
+    "id": "germany-stuttgart-msc-aerospace",
+    "country": "Germany",
+    "university": "University of Stuttgart",
+    "university_native_name": "Universität Stuttgart",
+    "city": "Stuttgart",
+    "region": "Baden-Württemberg",
+    "program_name": "M.Sc. Aerospace Engineering",
+    "program_native_name": "M.Sc. Luft- und Raumfahrttechnik",
+    "program_degree": "Master of Science",
+    "degree_level": "Master",
+    "duration_years": 2,
+    "ects": 120,
+    "teaching_language": [
+      "German",
+      "English"
+    ],
+    "program_url": "https://www.uni-stuttgart.de/en/study/study-programs/program/Aerospace-Engineering-M.Sc./",
+    "program_status": "active",
+    "relevance_status": "highly_relevant",
+    "eligibility_profile": {
+      "eligible_for_non_eu": true,
+      "required_previous_degree": "Bachelor in Aeronautical and Aerospace Engineering or closely related",
+      "admission_mode": "evaluation of Bachelor's degree and modules",
+      "admission_risk": "medium"
+    },
+    "language_profile": {
+      "teaching_language": [
+        "German",
+        "English"
+      ],
+      "mixed_language_warning": "Often heavily German-taught, verify language requirements."
+    },
+    "cost_profile": {
+      "academic_year": "2024/2025",
+      "tuition_eur_per_year_min": 3000,
+      "tuition_eur_per_year_max": 3000,
+      "tuition_eur_per_year_estimated": 3000,
+      "tuition_basis": "1500 EUR per semester for non-EU students (Baden-Württemberg state law)",
+      "student_contribution_eur": 368,
+      "total_academic_cost_eur_per_year_estimated": 3368,
+      "non_eu_flat_fee": 3000,
+      "source_notes": "Baden-Württemberg charges 1500 EUR per semester for non-EU."
+    },
+    "curriculum_profile": {
+      "specializations": [
+        "Aerodynamics",
+        "Avionics",
+        "Flight control",
+        "Lightweight construction"
+      ],
+      "thesis_required": true
+    },
+    "source_profile": {
+      "official_program_page": "https://www.uni-stuttgart.de/en/study/study-programs/program/Aerospace-Engineering-M.Sc./",
+      "last_verified": "2026-06-24",
+      "needs_verification": false,
+      "field_confidence": {
+        "tuition": "high",
+        "admission": "high",
+        "curriculum": "high",
+        "program_basic_info": "high"
+      }
+    },
+    "decision_summary": {
+      "best_for": [],
+      "not_ideal_for": [],
+      "main_strengths": [],
+      "main_risks": [],
+      "application_reality": "",
+      "overall_recommendation": "",
+      "recommended_user_profile": ""
+    },
+    "scoring_inputs": {
+      "academic_field_fit_score_seed": null,
+      "eligibility_language_score_seed": null,
+      "cost_funding_score_seed": null,
+      "career_research_score_seed": null,
+      "living_risk_score_seed": null,
+      "data_confidence_score_seed": null,
+      "hard_filter_flags": {
+        "english_only_compatible": true,
+        "requires_italian": false,
+        "non_eu_eligible": true,
+        "tuition_above_5000": false,
+        "tuition_above_10000": false,
+        "deadline_unclear": false,
+        "needs_verification": false
+      }
+    },
+    "category_profile": {
+      "primary_categories": [
+        "Aerospace Engineering"
+      ],
+      "secondary_categories": [],
+      "subcategories": [],
+      "normalized_tags": [
+        "aerospace"
+      ],
+      "category_scores": {},
+      "category_evidence": []
+    },
+    "research_profile": {
+      "department_research_areas": [],
+      "labs": [],
+      "research_centers": [],
+      "notable_professors": [],
+      "space_or_aerospace_projects": [],
+      "student_teams": [],
+      "satellite_or_flight_projects": [],
+      "research_strength_summary": "",
+      "research_strength_score": 85,
+      "research_sources": []
+    },
+    "industry_ecosystem_profile": {
+      "nearby_companies": [],
+      "space_agencies_or_public_bodies": [],
+      "research_institutes": [],
+      "startup_or_incubator_ecosystem": [],
+      "internship_possibility": "high",
+      "thesis_with_industry_possibility": "high",
+      "career_relevance": "high",
+      "ecosystem_strength_score": 85,
+      "ecosystem_notes": ""
+    },
+    "application_timeline_profile": {
+      "academic_year": "2024/2025",
+      "intake_terms": [
+        "Winter"
+      ],
+      "application_rounds": [],
+      "non_eu_deadline": "",
+      "eu_deadline": "",
+      "scholarship_deadline": "",
+      "pre_enrolment_required": null,
+      "universitaly_required": null,
+      "visa_sensitive_deadline": "",
+      "application_result_timing": "",
+      "enrollment_deadline": "",
+      "timeline_risk": "medium",
+      "deadline_notes": ""
+    }
+  },
+  {
+    "id": "germany-kit-msc-aerospace",
+    "country": "Germany",
+    "university": "Karlsruhe Institute of Technology (KIT)",
+    "university_native_name": "Karlsruher Institut für Technologie",
+    "city": "Karlsruhe",
+    "region": "Baden-Württemberg",
+    "program_name": "M.Sc. Mechanical Engineering / Electrical Engineering (Aerospace Specialization)",
+    "program_native_name": "M.Sc. Maschinenbau / Elektrotechnik",
+    "program_degree": "Master of Science",
+    "degree_level": "Master",
+    "duration_years": 2,
+    "ects": 120,
+    "teaching_language": [
+      "German",
+      "English"
+    ],
+    "program_url": "https://www.kit.edu/",
+    "program_status": "active",
+    "relevance_status": "relevant",
+    "eligibility_profile": {
+      "eligible_for_non_eu": true,
+      "required_previous_degree": "Bachelor in Mechanical Engineering, Electrical Engineering or related",
+      "admission_risk": "medium"
+    },
+    "cost_profile": {
+      "academic_year": "2024/2025",
+      "tuition_eur_per_year_min": 3000,
+      "tuition_eur_per_year_max": 3000,
+      "tuition_eur_per_year_estimated": 3000,
+      "tuition_basis": "1500 EUR per semester for non-EU students (Baden-Württemberg state law)",
+      "non_eu_flat_fee": 3000,
+      "source_notes": "Baden-Württemberg charges 1500 EUR per semester for non-EU."
+    },
+    "curriculum_profile": {
+      "specializations": [
+        "Aerospace Systems",
+        "Flight Systems",
+        "Lightweight Construction"
+      ],
+      "thesis_required": true
+    },
+    "source_profile": {
+      "official_program_page": "https://www.kit.edu/",
+      "last_verified": "2026-06-24",
+      "needs_verification": false,
+      "field_confidence": {
+        "tuition": "high",
+        "admission": "high",
+        "curriculum": "medium",
+        "program_basic_info": "high"
+      }
+    },
+    "decision_summary": {
+      "best_for": [],
+      "not_ideal_for": [],
+      "main_strengths": [],
+      "main_risks": [],
+      "application_reality": "",
+      "overall_recommendation": "",
+      "recommended_user_profile": ""
+    },
+    "scoring_inputs": {
+      "academic_field_fit_score_seed": null,
+      "eligibility_language_score_seed": null,
+      "cost_funding_score_seed": null,
+      "career_research_score_seed": null,
+      "living_risk_score_seed": null,
+      "data_confidence_score_seed": null,
+      "hard_filter_flags": {
+        "english_only_compatible": false,
+        "requires_italian": false,
+        "non_eu_eligible": true,
+        "tuition_above_5000": false,
+        "tuition_above_10000": false,
+        "deadline_unclear": false,
+        "needs_verification": false
+      }
+    },
+    "category_profile": {
+      "primary_categories": [
+        "Aerospace Engineering"
+      ],
+      "secondary_categories": [],
+      "subcategories": [],
+      "normalized_tags": [
+        "aerospace"
+      ],
+      "category_scores": {},
+      "category_evidence": []
+    },
+    "research_profile": {
+      "department_research_areas": [],
+      "labs": [],
+      "research_centers": [],
+      "notable_professors": [],
+      "space_or_aerospace_projects": [],
+      "student_teams": [],
+      "satellite_or_flight_projects": [],
+      "research_strength_summary": "",
+      "research_strength_score": 85,
+      "research_sources": []
+    },
+    "industry_ecosystem_profile": {
+      "nearby_companies": [],
+      "space_agencies_or_public_bodies": [],
+      "research_institutes": [],
+      "startup_or_incubator_ecosystem": [],
+      "internship_possibility": "high",
+      "thesis_with_industry_possibility": "high",
+      "career_relevance": "high",
+      "ecosystem_strength_score": 85,
+      "ecosystem_notes": ""
+    },
+    "application_timeline_profile": {
+      "academic_year": "2024/2025",
+      "intake_terms": [
+        "Winter"
+      ],
+      "application_rounds": [],
+      "non_eu_deadline": "",
+      "eu_deadline": "",
+      "scholarship_deadline": "",
+      "pre_enrolment_required": null,
+      "universitaly_required": null,
+      "visa_sensitive_deadline": "",
+      "application_result_timing": "",
+      "enrollment_deadline": "",
+      "timeline_risk": "medium",
+      "deadline_notes": ""
+    }
+  },
+  {
+    "id": "germany-braunschweig-msc-aerospace",
+    "country": "Germany",
+    "university": "TU Braunschweig",
+    "university_native_name": "Technische Universität Braunschweig",
+    "city": "Braunschweig",
+    "region": "Lower Saxony",
+    "program_name": "M.Sc. Aerospace Engineering",
+    "program_native_name": "M.Sc. Luft- und Raumfahrttechnik",
+    "program_degree": "Master of Science",
+    "degree_level": "Master",
+    "duration_years": 2,
+    "ects": 120,
+    "teaching_language": [
+      "German"
+    ],
+    "program_url": "https://www.tu-braunschweig.de",
+    "program_status": "active",
+    "relevance_status": "highly_relevant",
+    "eligibility_profile": {
+      "eligible_for_non_eu": true,
+      "required_previous_degree": "Bachelor in Aerospace Engineering or related",
+      "admission_risk": "medium"
+    },
+    "language_profile": {
+      "teaching_language": [
+        "German"
+      ],
+      "german_required": true,
+      "mixed_language_warning": "Program primarily taught in German."
+    },
+    "cost_profile": {
+      "academic_year": "2024/2025",
+      "tuition_eur_per_year_min": 0,
+      "tuition_eur_per_year_max": 0,
+      "tuition_eur_per_year_estimated": 0,
+      "tuition_basis": "No tuition fees, only semester contributions",
+      "non_eu_flat_fee": 0,
+      "source_notes": "Public universities in Lower Saxony do not charge tuition fees."
+    },
+    "curriculum_profile": {
+      "thesis_required": true,
+      "project_based_courses": [
+        "Lab work",
+        "Team projects"
+      ]
+    },
+    "source_profile": {
+      "official_program_page": "https://www.tu-braunschweig.de",
+      "last_verified": "2026-06-24",
+      "needs_verification": false,
+      "field_confidence": {
+        "tuition": "high",
+        "admission": "high",
+        "curriculum": "medium",
+        "program_basic_info": "high"
+      }
+    },
+    "decision_summary": {
+      "best_for": [],
+      "not_ideal_for": [],
+      "main_strengths": [],
+      "main_risks": [],
+      "application_reality": "",
+      "overall_recommendation": "",
+      "recommended_user_profile": ""
+    },
+    "scoring_inputs": {
+      "academic_field_fit_score_seed": null,
+      "eligibility_language_score_seed": null,
+      "cost_funding_score_seed": null,
+      "career_research_score_seed": null,
+      "living_risk_score_seed": null,
+      "data_confidence_score_seed": null,
+      "hard_filter_flags": {
+        "english_only_compatible": false,
+        "requires_italian": false,
+        "non_eu_eligible": true,
+        "tuition_above_5000": false,
+        "tuition_above_10000": false,
+        "deadline_unclear": false,
+        "needs_verification": false
+      }
+    },
+    "category_profile": {
+      "primary_categories": [
+        "Aerospace Engineering"
+      ],
+      "secondary_categories": [],
+      "subcategories": [],
+      "normalized_tags": [
+        "aerospace"
+      ],
+      "category_scores": {},
+      "category_evidence": []
+    },
+    "research_profile": {
+      "department_research_areas": [],
+      "labs": [],
+      "research_centers": [],
+      "notable_professors": [],
+      "space_or_aerospace_projects": [],
+      "student_teams": [],
+      "satellite_or_flight_projects": [],
+      "research_strength_summary": "",
+      "research_strength_score": 85,
+      "research_sources": []
+    },
+    "industry_ecosystem_profile": {
+      "nearby_companies": [],
+      "space_agencies_or_public_bodies": [],
+      "research_institutes": [],
+      "startup_or_incubator_ecosystem": [],
+      "internship_possibility": "high",
+      "thesis_with_industry_possibility": "high",
+      "career_relevance": "high",
+      "ecosystem_strength_score": 85,
+      "ecosystem_notes": ""
+    },
+    "application_timeline_profile": {
+      "academic_year": "2024/2025",
+      "intake_terms": [
+        "Winter"
+      ],
+      "application_rounds": [],
+      "non_eu_deadline": "",
+      "eu_deadline": "",
+      "scholarship_deadline": "",
+      "pre_enrolment_required": null,
+      "universitaly_required": null,
+      "visa_sensitive_deadline": "",
+      "application_result_timing": "",
+      "enrollment_deadline": "",
+      "timeline_risk": "medium",
+      "deadline_notes": ""
+    }
+  },
+  {
+    "id": "germany-tuberlin-mse-space-engineering",
+    "country": "Germany",
+    "university": "TU Berlin",
+    "university_native_name": "Technische Universität Berlin",
+    "city": "Berlin",
+    "region": "Berlin",
+    "program_name": "Master of Space Engineering (MSE)",
+    "program_native_name": "Master of Space Engineering",
+    "program_degree": "Master of Science",
+    "degree_level": "Master",
+    "duration_years": 2,
+    "ects": 120,
+    "teaching_language": [
+      "English"
+    ],
+    "program_url": "https://www.mse.tu-berlin.de/",
+    "program_status": "active",
+    "relevance_status": "highly_relevant",
+    "eligibility_profile": {
+      "eligible_for_non_eu": true,
+      "required_previous_degree": "Bachelor's degree or equivalent (Engineering advantageous)",
+      "notes": "Requires minimum of 1 year of practical work experience post-graduation.",
+      "admission_risk": "medium"
+    },
+    "language_profile": {
+      "teaching_language": [
+        "English"
+      ],
+      "english_required": true,
+      "english_level_required": "TOEFL 80 or IELTS 6.5"
+    },
+    "cost_profile": {
+      "academic_year": "2024/2025",
+      "tuition_eur_per_year_min": 12450,
+      "tuition_eur_per_year_max": 12450,
+      "tuition_eur_per_year_estimated": 12450,
+      "tuition_basis": "Total program cost is 24,900 EUR",
+      "student_contribution_eur": 720,
+      "total_academic_cost_eur_per_year_estimated": 13170,
+      "non_eu_flat_fee": 12450,
+      "source_notes": "Fee-based professional program."
+    },
+    "curriculum_profile": {
+      "specializations": [
+        "Space Technology",
+        "Space System Design",
+        "Space Management and Operations",
+        "Interdisciplinary"
+      ],
+      "thesis_required": true
+    },
+    "source_profile": {
+      "official_program_page": "https://www.mse.tu-berlin.de/",
+      "last_verified": "2026-06-24",
+      "needs_verification": false,
+      "field_confidence": {
+        "tuition": "high",
+        "admission": "high",
+        "curriculum": "high",
+        "program_basic_info": "high"
+      }
+    },
+    "decision_summary": {
+      "best_for": [],
+      "not_ideal_for": [],
+      "main_strengths": [],
+      "main_risks": [],
+      "application_reality": "",
+      "overall_recommendation": "",
+      "recommended_user_profile": ""
+    },
+    "scoring_inputs": {
+      "academic_field_fit_score_seed": null,
+      "eligibility_language_score_seed": null,
+      "cost_funding_score_seed": null,
+      "career_research_score_seed": null,
+      "living_risk_score_seed": null,
+      "data_confidence_score_seed": null,
+      "hard_filter_flags": {
+        "english_only_compatible": true,
+        "requires_italian": false,
+        "non_eu_eligible": true,
+        "tuition_above_5000": true,
+        "tuition_above_10000": true,
+        "deadline_unclear": false,
+        "needs_verification": false
+      }
+    },
+    "category_profile": {
+      "primary_categories": [
+        "Aerospace Engineering"
+      ],
+      "secondary_categories": [],
+      "subcategories": [],
+      "normalized_tags": [
+        "aerospace"
+      ],
+      "category_scores": {},
+      "category_evidence": []
+    },
+    "research_profile": {
+      "department_research_areas": [],
+      "labs": [],
+      "research_centers": [],
+      "notable_professors": [],
+      "space_or_aerospace_projects": [],
+      "student_teams": [],
+      "satellite_or_flight_projects": [],
+      "research_strength_summary": "",
+      "research_strength_score": 85,
+      "research_sources": []
+    },
+    "industry_ecosystem_profile": {
+      "nearby_companies": [],
+      "space_agencies_or_public_bodies": [],
+      "research_institutes": [],
+      "startup_or_incubator_ecosystem": [],
+      "internship_possibility": "high",
+      "thesis_with_industry_possibility": "high",
+      "career_relevance": "high",
+      "ecosystem_strength_score": 85,
+      "ecosystem_notes": ""
+    },
+    "application_timeline_profile": {
+      "academic_year": "2024/2025",
+      "intake_terms": [
+        "Winter"
+      ],
+      "application_rounds": [],
+      "non_eu_deadline": "",
+      "eu_deadline": "",
+      "scholarship_deadline": "",
+      "pre_enrolment_required": null,
+      "universitaly_required": null,
+      "visa_sensitive_deadline": "",
+      "application_result_timing": "",
+      "enrollment_deadline": "",
+      "timeline_risk": "medium",
+      "deadline_notes": ""
+    }
+  },
+  {
+    "id": "de_bremen_space_engineering_msc",
+    "country": "Germany",
+    "university": "Universität Bremen",
+    "university_native_name": "Universität Bremen",
+    "city": "Bremen",
+    "region": "Bremen",
+    "program_name": "Space Engineering",
+    "program_native_name": "Space Engineering",
+    "program_degree": "M.Sc.",
+    "degree_level": "Master",
+    "degree_class": "",
+    "duration_years": 2.0,
+    "ects": 120,
+    "teaching_language": [
+      "English"
+    ],
+    "program_url": "https://www.uni-bremen.de/en/fb-04-production-engineering/studies/degree-programs/space-engineering/",
+    "department": "Faculty of Production Engineering",
+    "faculty_or_school": "",
+    "campus": "Bremen",
+    "program_status": "active",
+    "relevance_status": "strong",
+    "eligibility_profile": {
+      "eligible_for_non_eu": true,
+      "non_eu_quota": null,
+      "required_previous_degree": "B.Sc. in engineering, physics, techno-mathematics or similar",
+      "accepted_backgrounds": [
+        "aerospace",
+        "mechanical",
+        "physics",
+        "engineering",
+        "techno-mathematics"
+      ],
+      "required_ects": {
+        "math": null,
+        "physics": null,
+        "engineering": null,
+        "aerospace": null,
+        "mechanical": null,
+        "control": null,
+        "electronics": null,
+        "computer_science": null,
+        "other": []
+      },
+      "minimum_gpa": null,
+      "gpa_scale": "",
+      "ranking_or_selection": "Local NC (Numerus Clausus) and potential entrance exam",
+      "admission_mode": "restricted",
+      "admission_risk": "medium",
+      "required_documents": [
+        "degree certificate",
+        "transcript",
+        "language certificate",
+        "CV"
+      ],
+      "motivation_letter_required": true,
+      "cv_required": true,
+      "recommendation_required": null,
+      "portfolio_required": null,
+      "interview_required": null,
+      "test_required": true,
+      "notes_for_turkish_students": ""
+    },
+    "language_profile": {
+      "teaching_language": [
+        "English"
+      ],
+      "english_required": true,
+      "english_level_required": "C1",
+      "accepted_english_tests": [
+        "TOEFL",
+        "IELTS"
+      ],
+      "english_exemptions": [],
+      "italian_required": false,
+      "italian_level_required": "",
+      "italian_needed_for_life_or_internship": "",
+      "mixed_language_warning": "",
+      "language_risk": "low"
+    },
+    "cost_profile": {
+      "tuition_eur_per_year_min": 0,
+      "tuition_eur_per_year_max": 0,
+      "tuition_eur_per_year_estimated": 0,
+      "tuition_basis": "free",
+      "regional_tax_eur": null,
+      "student_contribution_eur": 670,
+      "application_fee_eur": null,
+      "enrollment_fee_eur": null,
+      "total_academic_cost_eur_per_year_estimated": 670,
+      "isee_or_income_based": null,
+      "non_eu_flat_fee": 0,
+      "payment_installments": "",
+      "refund_policy": "",
+      "source_notes": "No tuition fees, only a semester contribution of approx 335 EUR per semester."
+    },
+    "scholarship_profile": {
+      "regional_scholarship_available": null,
+      "regional_scholarship_name": "",
+      "dsu_or_equivalent": "",
+      "merit_scholarships": [],
+      "tuition_waivers": [],
+      "housing_support": null,
+      "meal_support": null,
+      "cash_grant_possible": null,
+      "non_eu_eligible": null,
+      "income_based": null,
+      "scholarship_deadline": "",
+      "scholarship_application_url": "",
+      "funding_competitiveness": "",
+      "funding_notes": "DAAD scholarships or internal university grants may be available."
+    },
+    "living_profile": {
+      "city_cost_level": "medium",
+      "monthly_living_cost_eur_min": 850,
+      "monthly_living_cost_eur_max": 1100,
+      "monthly_living_cost_eur_estimated": 950,
+      "housing_difficulty": "medium",
+      "student_housing_available": true,
+      "student_housing_competitiveness": "high",
+      "average_room_rent_eur": 450,
+      "public_transport_cost_eur_month": 0,
+      "food_cost_eur_month": 250,
+      "city_safety_note": "",
+      "part_time_work_possibility": "good",
+      "living_risk": "medium"
+    },
+    "curriculum_profile": {
+      "tracks": [],
+      "specializations": [],
+      "mandatory_courses": [
+        "Space System Design",
+        "Satellite Subsystems",
+        "Space Propulsion",
+        "Space Flight Mechanics",
+        "Structural Mechanics"
+      ],
+      "elective_courses": [
+        "Microgravity Technologies",
+        "Human Space Exploration"
+      ],
+      "course_language_notes": "",
+      "thesis_required": true,
+      "internship_required": null,
+      "lab_courses": [],
+      "project_based_courses": [],
+      "mobility_options": [],
+      "double_degree_options": [],
+      "curriculum_url": "",
+      "study_plan_url": ""
+    },
+    "category_profile": {
+      "primary_categories": [
+        "Space Engineering"
+      ],
+      "secondary_categories": [
+        "Aerospace Systems"
+      ],
+      "subcategories": [],
+      "normalized_tags": [
+        "space_systems",
+        "propulsion",
+        "satellite",
+        "flight_mechanics"
+      ],
+      "category_scores": {},
+      "category_evidence": []
+    },
+    "research_profile": {
+      "department_research_areas": [
+        "Space Systems",
+        "Satellites",
+        "Launchers",
+        "Space Stations"
+      ],
+      "labs": [
+        "ZARM"
+      ],
+      "research_centers": [
+        "Institute of Space Systems"
+      ],
+      "notable_professors": [],
+      "space_or_aerospace_projects": [],
+      "student_teams": [],
+      "satellite_or_flight_projects": [],
+      "research_strength_summary": "Strong focus on space systems and microgravity, supported by the ZARM drop tower.",
+      "research_strength_score": 85,
+      "research_sources": []
+    },
+    "industry_ecosystem_profile": {
+      "nearby_companies": [
+        "OHB",
+        "Airbus Defence and Space",
+        "ArianeGroup"
+      ],
+      "space_agencies_or_public_bodies": [
+        "DLR"
+      ],
+      "research_institutes": [
+        "ZARM"
+      ],
+      "startup_or_incubator_ecosystem": [],
+      "internship_possibility": "high",
+      "thesis_with_industry_possibility": "high",
+      "career_relevance": "high",
+      "ecosystem_strength_score": 90,
+      "ecosystem_notes": "Bremen is a major European space industry hub."
+    },
+    "application_timeline_profile": {
+      "academic_year": "2024/2025",
+      "intake_terms": [
+        "Winter",
+        "Summer"
+      ],
+      "application_rounds": [],
+      "non_eu_deadline": "April 30 (Winter), October 15 (Summer)",
+      "eu_deadline": "April 30 (Winter), October 15 (Summer)",
+      "scholarship_deadline": "",
+      "pre_enrolment_required": null,
+      "universitaly_required": null,
+      "visa_sensitive_deadline": "",
+      "application_result_timing": "",
+      "enrollment_deadline": "",
+      "timeline_risk": "low",
+      "deadline_notes": "Deadlines apply equally to EU and Non-EU"
+    },
+    "source_profile": {
+      "official_program_page": "https://www.uni-bremen.de/en/fb-04-production-engineering/studies/degree-programs/space-engineering/",
+      "official_admission_page": "",
+      "official_tuition_page": "",
+      "official_scholarship_page": "",
+      "official_curriculum_page": "",
+      "official_department_page": "",
+      "official_lab_pages": [],
+      "third_party_sources": [
+        "DAAD",
+        "MyGermanUniversity"
+      ],
+      "last_verified": "2026-06-24",
+      "needs_verification": false,
+      "verification_notes": "",
+      "field_confidence": {
+        "program_basic_info": "high",
+        "language": "high",
+        "admission": "medium",
+        "tuition": "high",
+        "scholarship": "medium",
+        "curriculum": "medium",
+        "research": "high",
+        "industry": "high",
+        "living": "low"
+      }
+    },
+    "decision_summary": {
+      "best_for": [
+        "Space engineering enthusiasts",
+        "Those looking for a strong space industry ecosystem in Bremen"
+      ],
+      "not_ideal_for": [
+        "Those focusing solely on aviation/aeronautics"
+      ],
+      "main_strengths": [
+        "No tuition fees",
+        "Excellent location for space industry",
+        "ZARM institute"
+      ],
+      "main_risks": [
+        "Possible entrance exam",
+        "Local admission restrictions (NC)"
+      ],
+      "application_reality": "Competitive due to NC and entrance exam.",
+      "overall_recommendation": "Highly recommended for space engineering focus.",
+      "recommended_user_profile": ""
+    },
+    "scoring_inputs": {
+      "academic_field_fit_score_seed": null,
+      "eligibility_language_score_seed": null,
+      "cost_funding_score_seed": null,
+      "career_research_score_seed": null,
+      "living_risk_score_seed": null,
+      "data_confidence_score_seed": null,
+      "hard_filter_flags": {
+        "english_only_compatible": true,
+        "requires_italian": false,
+        "non_eu_eligible": true,
+        "tuition_above_5000": false,
+        "tuition_above_10000": false,
+        "deadline_unclear": false,
+        "needs_verification": false
+      }
+    }
+  },
+  {
+    "id": "de_darmstadt_aerospace_engineering_msc",
+    "country": "Germany",
+    "university": "TU Darmstadt",
+    "university_native_name": "Technische Universität Darmstadt",
+    "city": "Darmstadt",
+    "region": "Hesse",
+    "program_name": "Aerospace Engineering",
+    "program_native_name": "Aerospace Engineering",
+    "program_degree": "M.Sc.",
+    "degree_level": "Master",
+    "degree_class": "",
+    "duration_years": 2.0,
+    "ects": 120,
+    "teaching_language": [
+      "English"
+    ],
+    "program_url": "https://www.maschinenbau.tu-darmstadt.de",
+    "department": "Department of Mechanical Engineering",
+    "faculty_or_school": "",
+    "campus": "Darmstadt",
+    "program_status": "active",
+    "relevance_status": "strong",
+    "eligibility_profile": {
+      "eligible_for_non_eu": true,
+      "non_eu_quota": null,
+      "required_previous_degree": "B.Sc. in Mechanical Engineering, Aerospace Engineering or equivalent",
+      "accepted_backgrounds": [
+        "aerospace",
+        "mechanical"
+      ],
+      "required_ects": {
+        "math": null,
+        "physics": null,
+        "engineering": null,
+        "aerospace": null,
+        "mechanical": null,
+        "control": null,
+        "electronics": null,
+        "computer_science": null,
+        "other": []
+      },
+      "minimum_gpa": null,
+      "gpa_scale": "",
+      "ranking_or_selection": "Entrance exam possible if competencies are missing",
+      "admission_mode": "aptitude assessment",
+      "admission_risk": "medium",
+      "required_documents": [
+        "degree certificate",
+        "transcript",
+        "language certificate"
+      ],
+      "motivation_letter_required": true,
+      "cv_required": true,
+      "recommendation_required": null,
+      "portfolio_required": null,
+      "interview_required": null,
+      "test_required": true,
+      "notes_for_turkish_students": ""
+    },
+    "language_profile": {
+      "teaching_language": [
+        "English"
+      ],
+      "english_required": true,
+      "english_level_required": "C1",
+      "accepted_english_tests": [
+        "TOEFL",
+        "IELTS"
+      ],
+      "english_exemptions": [],
+      "italian_required": false,
+      "italian_level_required": "",
+      "italian_needed_for_life_or_internship": "",
+      "mixed_language_warning": "",
+      "language_risk": "low"
+    },
+    "cost_profile": {
+      "tuition_eur_per_year_min": 0,
+      "tuition_eur_per_year_max": 0,
+      "tuition_eur_per_year_estimated": 0,
+      "tuition_basis": "free",
+      "regional_tax_eur": null,
+      "student_contribution_eur": 600,
+      "application_fee_eur": null,
+      "enrollment_fee_eur": null,
+      "total_academic_cost_eur_per_year_estimated": 600,
+      "isee_or_income_based": null,
+      "non_eu_flat_fee": 0,
+      "payment_installments": "",
+      "refund_policy": "",
+      "source_notes": "No tuition fees, approx 300 EUR semester contribution."
+    },
+    "scholarship_profile": {
+      "regional_scholarship_available": null,
+      "regional_scholarship_name": "",
+      "dsu_or_equivalent": "",
+      "merit_scholarships": [],
+      "tuition_waivers": [],
+      "housing_support": null,
+      "meal_support": null,
+      "cash_grant_possible": null,
+      "non_eu_eligible": null,
+      "income_based": null,
+      "scholarship_deadline": "",
+      "scholarship_application_url": "",
+      "funding_competitiveness": "",
+      "funding_notes": "Deutschlandstipendium and DAAD available."
+    },
+    "living_profile": {
+      "city_cost_level": "high",
+      "monthly_living_cost_eur_min": 900,
+      "monthly_living_cost_eur_max": 1200,
+      "monthly_living_cost_eur_estimated": 1000,
+      "housing_difficulty": "high",
+      "student_housing_available": true,
+      "student_housing_competitiveness": "high",
+      "average_room_rent_eur": 500,
+      "public_transport_cost_eur_month": 0,
+      "food_cost_eur_month": 250,
+      "city_safety_note": "",
+      "part_time_work_possibility": "good",
+      "living_risk": "medium"
+    },
+    "curriculum_profile": {
+      "tracks": [],
+      "specializations": [],
+      "mandatory_courses": [],
+      "elective_courses": [],
+      "course_language_notes": "",
+      "thesis_required": true,
+      "internship_required": null,
+      "lab_courses": [],
+      "project_based_courses": [],
+      "mobility_options": [],
+      "double_degree_options": [],
+      "curriculum_url": "",
+      "study_plan_url": ""
+    },
+    "category_profile": {
+      "primary_categories": [
+        "Aerospace Engineering"
+      ],
+      "secondary_categories": [],
+      "subcategories": [],
+      "normalized_tags": [
+        "aerospace",
+        "fluid_dynamics",
+        "flight_mechanics",
+        "structures"
+      ],
+      "category_scores": {},
+      "category_evidence": []
+    },
+    "research_profile": {
+      "department_research_areas": [],
+      "labs": [],
+      "research_centers": [],
+      "notable_professors": [],
+      "space_or_aerospace_projects": [],
+      "student_teams": [],
+      "satellite_or_flight_projects": [],
+      "research_strength_summary": "Strong research environment within the mechanical engineering department at a TU9 university.",
+      "research_strength_score": 85,
+      "research_sources": []
+    },
+    "industry_ecosystem_profile": {
+      "nearby_companies": [
+        "ESOC (ESA)",
+        "EUMETSAT"
+      ],
+      "space_agencies_or_public_bodies": [
+        "ESA ESOC",
+        "EUMETSAT"
+      ],
+      "research_institutes": [],
+      "startup_or_incubator_ecosystem": [],
+      "internship_possibility": "high",
+      "thesis_with_industry_possibility": "high",
+      "career_relevance": "high",
+      "ecosystem_strength_score": 90,
+      "ecosystem_notes": "Darmstadt is home to ESA's European Space Operations Centre (ESOC)."
+    },
+    "application_timeline_profile": {
+      "academic_year": "2024/2025",
+      "intake_terms": [
+        "Winter",
+        "Summer"
+      ],
+      "application_rounds": [],
+      "non_eu_deadline": "Check official site (Ausschlussfrist)",
+      "eu_deadline": "Check official site",
+      "scholarship_deadline": "",
+      "pre_enrolment_required": null,
+      "universitaly_required": null,
+      "visa_sensitive_deadline": "",
+      "application_result_timing": "",
+      "enrollment_deadline": "",
+      "timeline_risk": "low",
+      "deadline_notes": "Strict cutoff deadlines apply."
+    },
+    "source_profile": {
+      "official_program_page": "https://www.maschinenbau.tu-darmstadt.de",
+      "official_admission_page": "",
+      "official_tuition_page": "",
+      "official_scholarship_page": "",
+      "official_curriculum_page": "",
+      "official_department_page": "",
+      "official_lab_pages": [],
+      "third_party_sources": [],
+      "last_verified": "2026-06-24",
+      "needs_verification": false,
+      "verification_notes": "",
+      "field_confidence": {
+        "program_basic_info": "high",
+        "language": "high",
+        "admission": "high",
+        "tuition": "high",
+        "scholarship": "low",
+        "curriculum": "medium",
+        "research": "medium",
+        "industry": "high",
+        "living": "low"
+      }
+    },
+    "decision_summary": {
+      "best_for": [
+        "Students wanting proximity to ESA ESOC",
+        "English-taught programs"
+      ],
+      "not_ideal_for": [
+        "Students who lack mechanical engineering foundational knowledge"
+      ],
+      "main_strengths": [
+        "English taught",
+        "ESOC and EUMETSAT in the same city",
+        "TU9 university",
+        "No tuition fees"
+      ],
+      "main_risks": [
+        "Entrance examination if B.Sc. is not fully equivalent",
+        "High living costs"
+      ],
+      "application_reality": "Rigorous background check for B.Sc. equivalence. Conditions up to 30 CP may be imposed.",
+      "overall_recommendation": "Highly recommended for space operations and engineering.",
+      "recommended_user_profile": ""
+    },
+    "scoring_inputs": {
+      "academic_field_fit_score_seed": null,
+      "eligibility_language_score_seed": null,
+      "cost_funding_score_seed": null,
+      "career_research_score_seed": null,
+      "living_risk_score_seed": null,
+      "data_confidence_score_seed": null,
+      "hard_filter_flags": {
+        "english_only_compatible": true,
+        "requires_italian": false,
+        "non_eu_eligible": true,
+        "tuition_above_5000": false,
+        "tuition_above_10000": false,
+        "deadline_unclear": true,
+        "needs_verification": false
+      }
+    }
+  },
+  {
+    "id": "de_rwth_aachen_aerospace_msc",
+    "country": "Germany",
+    "university": "RWTH Aachen University",
+    "university_native_name": "Rheinisch-Westfälische Technische Hochschule Aachen",
+    "city": "Aachen",
+    "region": "North Rhine-Westphalia",
+    "program_name": "Luft- und Raumfahrttechnik",
+    "program_native_name": "Luft- und Raumfahrttechnik",
+    "program_degree": "M.Sc.",
+    "degree_level": "Master",
+    "degree_class": "",
+    "duration_years": 1.5,
+    "ects": 90,
+    "teaching_language": [
+      "German"
+    ],
+    "program_url": "https://www.rwth-aachen.de",
+    "department": "Faculty of Mechanical Engineering",
+    "faculty_or_school": "",
+    "campus": "Aachen",
+    "program_status": "active",
+    "relevance_status": "strong",
+    "eligibility_profile": {
+      "eligible_for_non_eu": true,
+      "non_eu_quota": null,
+      "required_previous_degree": "B.Sc. in mechanical or aerospace engineering with specific ECTS in math/physics",
+      "accepted_backgrounds": [
+        "aerospace",
+        "mechanical"
+      ],
+      "required_ects": {
+        "math": null,
+        "physics": null,
+        "engineering": null,
+        "aerospace": null,
+        "mechanical": null,
+        "control": null,
+        "electronics": null,
+        "computer_science": null,
+        "other": []
+      },
+      "minimum_gpa": null,
+      "gpa_scale": "",
+      "ranking_or_selection": "Unrestricted admission (no NC), but strict ECTS requirements",
+      "admission_mode": "open",
+      "admission_risk": "low",
+      "required_documents": [
+        "degree certificate",
+        "transcript",
+        "German language certificate"
+      ],
+      "motivation_letter_required": null,
+      "cv_required": true,
+      "recommendation_required": null,
+      "portfolio_required": null,
+      "interview_required": null,
+      "test_required": null,
+      "notes_for_turkish_students": ""
+    },
+    "language_profile": {
+      "teaching_language": [
+        "German"
+      ],
+      "english_required": false,
+      "english_level_required": "",
+      "accepted_english_tests": [],
+      "english_exemptions": [],
+      "italian_required": false,
+      "italian_level_required": "",
+      "italian_needed_for_life_or_internship": "",
+      "mixed_language_warning": "Program is entirely in German.",
+      "language_risk": "high"
+    },
+    "cost_profile": {
+      "tuition_eur_per_year_min": 0,
+      "tuition_eur_per_year_max": 0,
+      "tuition_eur_per_year_estimated": 0,
+      "tuition_basis": "free",
+      "regional_tax_eur": null,
+      "student_contribution_eur": 640,
+      "application_fee_eur": null,
+      "enrollment_fee_eur": null,
+      "total_academic_cost_eur_per_year_estimated": 640,
+      "isee_or_income_based": null,
+      "non_eu_flat_fee": 0,
+      "payment_installments": "",
+      "refund_policy": "",
+      "source_notes": "No tuition fees, only approx 320 EUR semester contribution."
+    },
+    "scholarship_profile": {
+      "regional_scholarship_available": null,
+      "regional_scholarship_name": "",
+      "dsu_or_equivalent": "",
+      "merit_scholarships": [],
+      "tuition_waivers": [],
+      "housing_support": null,
+      "meal_support": null,
+      "cash_grant_possible": null,
+      "non_eu_eligible": null,
+      "income_based": null,
+      "scholarship_deadline": "",
+      "scholarship_application_url": "",
+      "funding_competitiveness": "",
+      "funding_notes": "Deutschlandstipendium and DAAD available."
+    },
+    "living_profile": {
+      "city_cost_level": "medium",
+      "monthly_living_cost_eur_min": 850,
+      "monthly_living_cost_eur_max": 1100,
+      "monthly_living_cost_eur_estimated": 950,
+      "housing_difficulty": "medium",
+      "student_housing_available": true,
+      "student_housing_competitiveness": "high",
+      "average_room_rent_eur": 400,
+      "public_transport_cost_eur_month": 0,
+      "food_cost_eur_month": 250,
+      "city_safety_note": "",
+      "part_time_work_possibility": "good",
+      "living_risk": "medium"
+    },
+    "curriculum_profile": {
+      "tracks": [],
+      "specializations": [
+        "Aeronautics",
+        "Space Systems"
+      ],
+      "mandatory_courses": [],
+      "elective_courses": [],
+      "course_language_notes": "",
+      "thesis_required": true,
+      "internship_required": null,
+      "lab_courses": [],
+      "project_based_courses": [],
+      "mobility_options": [],
+      "double_degree_options": [],
+      "curriculum_url": "",
+      "study_plan_url": ""
+    },
+    "category_profile": {
+      "primary_categories": [
+        "Aerospace Engineering"
+      ],
+      "secondary_categories": [],
+      "subcategories": [],
+      "normalized_tags": [
+        "aeronautics",
+        "space_systems"
+      ],
+      "category_scores": {},
+      "category_evidence": []
+    },
+    "research_profile": {
+      "department_research_areas": [],
+      "labs": [
+        "Institute of Aerospace Systems (ILR)"
+      ],
+      "research_centers": [],
+      "notable_professors": [],
+      "space_or_aerospace_projects": [],
+      "student_teams": [],
+      "satellite_or_flight_projects": [],
+      "research_strength_summary": "Top-tier technical university (TU9) with excellent research facilities.",
+      "research_strength_score": 90,
+      "research_sources": []
+    },
+    "industry_ecosystem_profile": {
+      "nearby_companies": [],
+      "space_agencies_or_public_bodies": [],
+      "research_institutes": [],
+      "startup_or_incubator_ecosystem": [],
+      "internship_possibility": "high",
+      "thesis_with_industry_possibility": "high",
+      "career_relevance": "high",
+      "ecosystem_strength_score": 85,
+      "ecosystem_notes": "Excellent reputation among German engineering employers."
+    },
+    "application_timeline_profile": {
+      "academic_year": "2024/2025",
+      "intake_terms": [
+        "Winter",
+        "Summer"
+      ],
+      "application_rounds": [],
+      "non_eu_deadline": "March 1 (Winter), September 1 (Summer)",
+      "eu_deadline": "July 15 (Winter), January 15 (Summer)",
+      "scholarship_deadline": "",
+      "pre_enrolment_required": null,
+      "universitaly_required": null,
+      "visa_sensitive_deadline": "",
+      "application_result_timing": "",
+      "enrollment_deadline": "",
+      "timeline_risk": "low",
+      "deadline_notes": ""
+    },
+    "source_profile": {
+      "official_program_page": "https://www.rwth-aachen.de",
+      "official_admission_page": "",
+      "official_tuition_page": "",
+      "official_scholarship_page": "",
+      "official_curriculum_page": "",
+      "official_department_page": "",
+      "official_lab_pages": [],
+      "third_party_sources": [],
+      "last_verified": "2026-06-24",
+      "needs_verification": false,
+      "verification_notes": "",
+      "field_confidence": {
+        "program_basic_info": "high",
+        "language": "high",
+        "admission": "high",
+        "tuition": "high",
+        "scholarship": "low",
+        "curriculum": "low",
+        "research": "medium",
+        "industry": "medium",
+        "living": "low"
+      }
+    },
+    "decision_summary": {
+      "best_for": [
+        "Students fluent in German wanting a prestigious 90 ECTS master"
+      ],
+      "not_ideal_for": [
+        "International students seeking English-taught programs"
+      ],
+      "main_strengths": [
+        "TU9 prestige",
+        "No tuition fees",
+        "No admission restrictions (NC-free) if background fits"
+      ],
+      "main_risks": [
+        "German language barrier",
+        "Fast-paced 3-semester structure"
+      ],
+      "application_reality": "Accessible if specific course requirements from Bachelor are met.",
+      "overall_recommendation": "Great option for German speakers.",
+      "recommended_user_profile": ""
+    },
+    "scoring_inputs": {
+      "academic_field_fit_score_seed": null,
+      "eligibility_language_score_seed": null,
+      "cost_funding_score_seed": null,
+      "career_research_score_seed": null,
+      "living_risk_score_seed": null,
+      "data_confidence_score_seed": null,
+      "hard_filter_flags": {
+        "english_only_compatible": false,
+        "requires_italian": false,
+        "non_eu_eligible": true,
+        "tuition_above_5000": false,
+        "tuition_above_10000": false,
+        "deadline_unclear": false,
+        "needs_verification": false
+      }
+    }
+  },
+  {
+    "id": "de_dresden_luft_raumfahrttechnik_diplom",
+    "country": "Germany",
+    "university": "TU Dresden",
+    "university_native_name": "Technische Universität Dresden",
+    "city": "Dresden",
+    "region": "Saxony",
+    "program_name": "Maschinenbau - Vertiefung Luft- und Raumfahrttechnik",
+    "program_native_name": "Maschinenbau - Vertiefung Luft- und Raumfahrttechnik (Diplom)",
+    "program_degree": "Diplom",
+    "degree_level": "Master",
+    "degree_class": "",
+    "duration_years": 5.0,
+    "ects": 300,
+    "teaching_language": [
+      "German"
+    ],
+    "program_url": "https://tu-dresden.de/ing/maschinenwesen/ilr",
+    "department": "Faculty of Mechanical Science and Engineering",
+    "faculty_or_school": "",
+    "campus": "Dresden",
+    "program_status": "active",
+    "relevance_status": "strong",
+    "eligibility_profile": {
+      "eligible_for_non_eu": true,
+      "non_eu_quota": null,
+      "required_previous_degree": "High school diploma for basic Diplom, or B.Sc. for Diplom (Aufbaustudium)",
+      "accepted_backgrounds": [
+        "high_school",
+        "mechanical",
+        "engineering"
+      ],
+      "required_ects": {
+        "math": null,
+        "physics": null,
+        "engineering": null,
+        "aerospace": null,
+        "mechanical": null,
+        "control": null,
+        "electronics": null,
+        "computer_science": null,
+        "other": []
+      },
+      "minimum_gpa": null,
+      "gpa_scale": "",
+      "ranking_or_selection": "Direct admission often possible if formal requirements met",
+      "admission_mode": "open",
+      "admission_risk": "low",
+      "required_documents": [
+        "university entrance qualification",
+        "German language certificate"
+      ],
+      "motivation_letter_required": null,
+      "cv_required": null,
+      "recommendation_required": null,
+      "portfolio_required": null,
+      "interview_required": null,
+      "test_required": null,
+      "notes_for_turkish_students": ""
+    },
+    "language_profile": {
+      "teaching_language": [
+        "German"
+      ],
+      "english_required": false,
+      "english_level_required": "",
+      "accepted_english_tests": [],
+      "english_exemptions": [],
+      "italian_required": false,
+      "italian_level_required": "",
+      "italian_needed_for_life_or_internship": "",
+      "mixed_language_warning": "Program is entirely in German.",
+      "language_risk": "high"
+    },
+    "cost_profile": {
+      "tuition_eur_per_year_min": 0,
+      "tuition_eur_per_year_max": 0,
+      "tuition_eur_per_year_estimated": 0,
+      "tuition_basis": "free",
+      "regional_tax_eur": null,
+      "student_contribution_eur": 600,
+      "application_fee_eur": null,
+      "enrollment_fee_eur": null,
+      "total_academic_cost_eur_per_year_estimated": 600,
+      "isee_or_income_based": null,
+      "non_eu_flat_fee": 0,
+      "payment_installments": "",
+      "refund_policy": "",
+      "source_notes": "No tuition fees, standard semester fee approx 300 EUR."
+    },
+    "scholarship_profile": {
+      "regional_scholarship_available": null,
+      "regional_scholarship_name": "",
+      "dsu_or_equivalent": "",
+      "merit_scholarships": [],
+      "tuition_waivers": [],
+      "housing_support": null,
+      "meal_support": null,
+      "cash_grant_possible": null,
+      "non_eu_eligible": null,
+      "income_based": null,
+      "scholarship_deadline": "",
+      "scholarship_application_url": "",
+      "funding_competitiveness": "",
+      "funding_notes": "Deutschlandstipendium and DAAD."
+    },
+    "living_profile": {
+      "city_cost_level": "medium",
+      "monthly_living_cost_eur_min": 750,
+      "monthly_living_cost_eur_max": 1000,
+      "monthly_living_cost_eur_estimated": 850,
+      "housing_difficulty": "medium",
+      "student_housing_available": true,
+      "student_housing_competitiveness": "medium",
+      "average_room_rent_eur": 350,
+      "public_transport_cost_eur_month": 0,
+      "food_cost_eur_month": 250,
+      "city_safety_note": "",
+      "part_time_work_possibility": "good",
+      "living_risk": "low"
+    },
+    "curriculum_profile": {
+      "tracks": [],
+      "specializations": [
+        "Luftfahrzeugtechnik",
+        "Raumfahrtsysteme",
+        "Flugantriebe"
+      ],
+      "mandatory_courses": [],
+      "elective_courses": [],
+      "course_language_notes": "",
+      "thesis_required": true,
+      "internship_required": true,
+      "lab_courses": [],
+      "project_based_courses": [],
+      "mobility_options": [],
+      "double_degree_options": [],
+      "curriculum_url": "",
+      "study_plan_url": ""
+    },
+    "category_profile": {
+      "primary_categories": [
+        "Mechanical Engineering",
+        "Aerospace Engineering"
+      ],
+      "secondary_categories": [],
+      "subcategories": [],
+      "normalized_tags": [
+        "aerospace",
+        "mechanical"
+      ],
+      "category_scores": {},
+      "category_evidence": []
+    },
+    "research_profile": {
+      "department_research_areas": [
+        "Space Systems",
+        "Aeronautics",
+        "Sustainable Aviation"
+      ],
+      "labs": [
+        "Institute of Aerospace Engineering (ILR)"
+      ],
+      "research_centers": [],
+      "notable_professors": [],
+      "space_or_aerospace_projects": [
+        "FoFlu (fossil-free propulsion)"
+      ],
+      "student_teams": [],
+      "satellite_or_flight_projects": [],
+      "research_strength_summary": "Strong mechanical foundation with specialized institutes like ILR.",
+      "research_strength_score": 85,
+      "research_sources": []
+    },
+    "industry_ecosystem_profile": {
+      "nearby_companies": [
+        "Elbe Flugzeugwerke"
+      ],
+      "space_agencies_or_public_bodies": [],
+      "research_institutes": [],
+      "startup_or_incubator_ecosystem": [],
+      "internship_possibility": "high",
+      "thesis_with_industry_possibility": "high",
+      "career_relevance": "high",
+      "ecosystem_strength_score": 80,
+      "ecosystem_notes": "Dresden is a strong high-tech hub, though aerospace is more concentrated in other German hubs."
+    },
+    "application_timeline_profile": {
+      "academic_year": "2024/2025",
+      "intake_terms": [
+        "Winter"
+      ],
+      "application_rounds": [],
+      "non_eu_deadline": "Check official site",
+      "eu_deadline": "Check official site",
+      "scholarship_deadline": "",
+      "pre_enrolment_required": null,
+      "universitaly_required": null,
+      "visa_sensitive_deadline": "",
+      "application_result_timing": "",
+      "enrollment_deadline": "",
+      "timeline_risk": "low",
+      "deadline_notes": ""
+    },
+    "source_profile": {
+      "official_program_page": "https://tu-dresden.de/ing/maschinenwesen/ilr",
+      "official_admission_page": "",
+      "official_tuition_page": "",
+      "official_scholarship_page": "",
+      "official_curriculum_page": "",
+      "official_department_page": "",
+      "official_lab_pages": [],
+      "third_party_sources": [],
+      "last_verified": "2026-06-24",
+      "needs_verification": false,
+      "verification_notes": "TU Dresden offers a Diplom rather than a standard Master's in Aerospace. A standalone Master is reportedly planned for 2027.",
+      "field_confidence": {
+        "program_basic_info": "high",
+        "language": "high",
+        "admission": "high",
+        "tuition": "high",
+        "scholarship": "medium",
+        "curriculum": "medium",
+        "research": "high",
+        "industry": "medium",
+        "living": "low"
+      }
+    },
+    "decision_summary": {
+      "best_for": [
+        "Students wanting a traditional integrated Diplom with mechanical engineering breadth"
+      ],
+      "not_ideal_for": [
+        "Students who want a 2-year English M.Sc. directly in aerospace"
+      ],
+      "main_strengths": [
+        "Strong engineering faculty",
+        "Lower living costs",
+        "No tuition fees"
+      ],
+      "main_risks": [
+        "German required",
+        "Diplom structure may be less familiar internationally"
+      ],
+      "application_reality": "Straightforward admission if language and degree prerequisites are met.",
+      "overall_recommendation": "Good choice for those seeking a German-taught Diplom program.",
+      "recommended_user_profile": ""
+    },
+    "scoring_inputs": {
+      "academic_field_fit_score_seed": null,
+      "eligibility_language_score_seed": null,
+      "cost_funding_score_seed": null,
+      "career_research_score_seed": null,
+      "living_risk_score_seed": null,
+      "data_confidence_score_seed": null,
+      "hard_filter_flags": {
+        "english_only_compatible": false,
+        "requires_italian": false,
+        "non_eu_eligible": true,
+        "tuition_above_5000": false,
+        "tuition_above_10000": false,
+        "deadline_unclear": true,
+        "needs_verification": false
+      }
+    }
+  },
+  {
+    "id": "de_tuhh_aeronautics_msc",
+    "country": "Germany",
+    "university": "Hamburg University of Technology (TUHH)",
+    "university_native_name": "Technische Universität Hamburg",
+    "city": "Hamburg",
+    "region": "Hamburg",
+    "program_name": "Aeronautics",
+    "program_native_name": "Luftfahrttechnik",
+    "program_degree": "M.Sc.",
+    "degree_level": "Master",
+    "degree_class": "",
+    "duration_years": 2.0,
+    "ects": 120,
+    "teaching_language": [
+      "German"
+    ],
+    "program_url": "https://www.tuhh.de/",
+    "department": "Mechanical Engineering",
+    "faculty_or_school": "",
+    "campus": "Hamburg",
+    "program_status": "active",
+    "relevance_status": "strong",
+    "eligibility_profile": {
+      "eligible_for_non_eu": true,
+      "non_eu_quota": null,
+      "required_previous_degree": "B.Sc. in Mechanical Engineering or related",
+      "accepted_backgrounds": [
+        "mechanical",
+        "aerospace"
+      ],
+      "required_ects": {
+        "math": null,
+        "physics": null,
+        "engineering": null,
+        "aerospace": null,
+        "mechanical": null,
+        "control": null,
+        "electronics": null,
+        "computer_science": null,
+        "other": []
+      },
+      "minimum_gpa": null,
+      "gpa_scale": "",
+      "ranking_or_selection": "",
+      "admission_mode": "open",
+      "admission_risk": "low",
+      "required_documents": [
+        "degree certificate",
+        "transcript",
+        "German language certificate"
+      ],
+      "motivation_letter_required": null,
+      "cv_required": null,
+      "recommendation_required": null,
+      "portfolio_required": null,
+      "interview_required": null,
+      "test_required": null,
+      "notes_for_turkish_students": ""
+    },
+    "language_profile": {
+      "teaching_language": [
+        "German"
+      ],
+      "english_required": false,
+      "english_level_required": "",
+      "accepted_english_tests": [],
+      "english_exemptions": [],
+      "italian_required": false,
+      "italian_level_required": "",
+      "italian_needed_for_life_or_internship": "",
+      "mixed_language_warning": "Mainly German, some electives in English.",
+      "language_risk": "high"
+    },
+    "cost_profile": {
+      "tuition_eur_per_year_min": 0,
+      "tuition_eur_per_year_max": 0,
+      "tuition_eur_per_year_estimated": 0,
+      "tuition_basis": "free",
+      "regional_tax_eur": null,
+      "student_contribution_eur": 680,
+      "application_fee_eur": null,
+      "enrollment_fee_eur": null,
+      "total_academic_cost_eur_per_year_estimated": 680,
+      "isee_or_income_based": null,
+      "non_eu_flat_fee": 0,
+      "payment_installments": "",
+      "refund_policy": "",
+      "source_notes": "No tuition fees, semester contribution approx 340 EUR."
+    },
+    "scholarship_profile": {
+      "regional_scholarship_available": null,
+      "regional_scholarship_name": "",
+      "dsu_or_equivalent": "",
+      "merit_scholarships": [],
+      "tuition_waivers": [],
+      "housing_support": null,
+      "meal_support": null,
+      "cash_grant_possible": null,
+      "non_eu_eligible": null,
+      "income_based": null,
+      "scholarship_deadline": "",
+      "scholarship_application_url": "",
+      "funding_competitiveness": "",
+      "funding_notes": "Deutschlandstipendium and DAAD."
+    },
+    "living_profile": {
+      "city_cost_level": "high",
+      "monthly_living_cost_eur_min": 950,
+      "monthly_living_cost_eur_max": 1300,
+      "monthly_living_cost_eur_estimated": 1100,
+      "housing_difficulty": "high",
+      "student_housing_available": true,
+      "student_housing_competitiveness": "high",
+      "average_room_rent_eur": 550,
+      "public_transport_cost_eur_month": 0,
+      "food_cost_eur_month": 300,
+      "city_safety_note": "",
+      "part_time_work_possibility": "good",
+      "living_risk": "high"
+    },
+    "curriculum_profile": {
+      "tracks": [],
+      "specializations": [
+        "Aircraft Systems Design",
+        "Aeronautical Engineering"
+      ],
+      "mandatory_courses": [],
+      "elective_courses": [],
+      "course_language_notes": "",
+      "thesis_required": true,
+      "internship_required": null,
+      "lab_courses": [],
+      "project_based_courses": [],
+      "mobility_options": [],
+      "double_degree_options": [],
+      "curriculum_url": "",
+      "study_plan_url": ""
+    },
+    "category_profile": {
+      "primary_categories": [
+        "Aeronautics"
+      ],
+      "secondary_categories": [],
+      "subcategories": [],
+      "normalized_tags": [
+        "aeronautics",
+        "systems_engineering",
+        "aircraft_design"
+      ],
+      "category_scores": {},
+      "category_evidence": []
+    },
+    "research_profile": {
+      "department_research_areas": [
+        "Aircraft Systems",
+        "Aviation Technology"
+      ],
+      "labs": [],
+      "research_centers": [],
+      "notable_professors": [],
+      "space_or_aerospace_projects": [],
+      "student_teams": [],
+      "satellite_or_flight_projects": [],
+      "research_strength_summary": "Excellent applied research in aircraft systems, closely linked to Hamburg's aviation cluster.",
+      "research_strength_score": 85,
+      "research_sources": []
+    },
+    "industry_ecosystem_profile": {
+      "nearby_companies": [
+        "Airbus",
+        "Lufthansa Technik"
+      ],
+      "space_agencies_or_public_bodies": [],
+      "research_institutes": [
+        "ZAL Center of Applied Aeronautical Research"
+      ],
+      "startup_or_incubator_ecosystem": [],
+      "internship_possibility": "high",
+      "thesis_with_industry_possibility": "high",
+      "career_relevance": "high",
+      "ecosystem_strength_score": 95,
+      "ecosystem_notes": "Hamburg is one of the world's leading civil aviation hubs (Airbus Finkenwerder)."
+    },
+    "application_timeline_profile": {
+      "academic_year": "2024/2025",
+      "intake_terms": [
+        "Winter",
+        "Summer"
+      ],
+      "application_rounds": [],
+      "non_eu_deadline": "July 15 (Winter), January 15 (Summer)",
+      "eu_deadline": "July 15 (Winter), January 15 (Summer)",
+      "scholarship_deadline": "",
+      "pre_enrolment_required": null,
+      "universitaly_required": null,
+      "visa_sensitive_deadline": "",
+      "application_result_timing": "",
+      "enrollment_deadline": "",
+      "timeline_risk": "low",
+      "deadline_notes": ""
+    },
+    "source_profile": {
+      "official_program_page": "https://www.tuhh.de/",
+      "official_admission_page": "",
+      "official_tuition_page": "",
+      "official_scholarship_page": "",
+      "official_curriculum_page": "",
+      "official_department_page": "",
+      "official_lab_pages": [],
+      "third_party_sources": [],
+      "last_verified": "2026-06-24",
+      "needs_verification": false,
+      "verification_notes": "",
+      "field_confidence": {
+        "program_basic_info": "high",
+        "language": "high",
+        "admission": "high",
+        "tuition": "high",
+        "scholarship": "low",
+        "curriculum": "medium",
+        "research": "high",
+        "industry": "high",
+        "living": "low"
+      }
+    },
+    "decision_summary": {
+      "best_for": [
+        "Students interested in civil aviation and systems engineering",
+        "German speakers"
+      ],
+      "not_ideal_for": [
+        "Space engineering focus",
+        "Non-German speakers"
+      ],
+      "main_strengths": [
+        "Proximity to Airbus",
+        "Excellent industry connections",
+        "No tuition fees"
+      ],
+      "main_risks": [
+        "High cost of living in Hamburg",
+        "German language requirement"
+      ],
+      "application_reality": "Accessible if German and B.Sc. requirements are met.",
+      "overall_recommendation": "Outstanding choice for aeronautics/aviation in Germany.",
+      "recommended_user_profile": ""
+    },
+    "scoring_inputs": {
+      "academic_field_fit_score_seed": null,
+      "eligibility_language_score_seed": null,
+      "cost_funding_score_seed": null,
+      "career_research_score_seed": null,
+      "living_risk_score_seed": null,
+      "data_confidence_score_seed": null,
+      "hard_filter_flags": {
+        "english_only_compatible": false,
+        "requires_italian": false,
+        "non_eu_eligible": true,
+        "tuition_above_5000": false,
+        "tuition_above_10000": false,
+        "deadline_unclear": false,
+        "needs_verification": false
+      }
+    }
+  }
 ]

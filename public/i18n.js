@@ -1,16 +1,14 @@
 export const I18N = {
   en: {
     app_title: "UniRank",
-    app_subtitle: "Analyze and compare universities based on your personal criteria",
+    dashboard_title: "University Ranking Dashboard",
+    dashboard_subtitle: "Analyze and compare universities based on your personal criteria",
 
     nav_dashboard: "Dashboard",
     nav_favorites: "Favorites",
 
     filters_title: "Filters",
-    include_countries: "Include Countries",
-    add_country_include: "+ Add Country to Include",
-    exclude_countries: "Exclude Countries",
-    add_country_exclude: "+ Add Country to Exclude",
+    filters: "Filters",
     countries_regions: "Countries & Regions",
     search_country: "Search country...",
     search_manual: "Or type manual search...",
@@ -21,6 +19,13 @@ export const I18N = {
     excluded: "excluded",
 
     academic_categories: "Academic / Field Categories",
+    academic_field_categories: "Academic / Field Categories",
+    search_categories: "Search field, method, technology or keyword...",
+    category_suggestions: "Category Suggestions",
+    selected_categories: "Selected Categories",
+    popular_categories: "Popular Categories",
+    no_category_results: "No matching categories found",
+
     degree_level: "Degree Level",
     all_degrees: "All Degrees",
     bsc: "Bachelor (BSc)",
@@ -54,20 +59,28 @@ export const I18N = {
     sort_name_asc: "University (A → Z)",
 
     kpi_programs_found: "Programs Found",
+    programs_found: "Programs Found",
     kpi_across: "across",
     kpi_countries: "countries",
+    across_countries: "across {count} countries",
     kpi_avg_tuition: "Avg. Yearly Tuition",
+    avg_yearly_tuition: "Avg. Yearly Tuition",
     kpi_avg_score: "Avg. Overall Score",
 
     ranked_results: "Ranked Results",
     col_num: "#",
     col_fav: "Fav",
     col_university: "University",
+    university: "University",
     col_city: "City",
+    city: "City",
     col_country: "Country",
+    country: "Country",
     col_score: "Score",
+    score: "Score",
     col_tuition: "Tuition (Yearly)",
     col_detail: "Detail",
+    detail: "Detail",
     btn_view: "View",
 
     why_this_score: "Why this score?",
@@ -83,6 +96,7 @@ export const I18N = {
 
     program_details: "Program Details",
     program_name: "Program Name",
+    program: "Program",
     degree: "Degree",
     ects: "ECTS",
     language: "Language",
@@ -112,21 +126,22 @@ export const I18N = {
     confidence_high: "High confidence",
     confidence_medium: "Medium confidence",
     confidence_low: "Low confidence",
-    confidence_unknown: "Unknown confidence"
+    confidence_unknown: "Unknown confidence",
+
+    tr: "TR",
+    en: "EN"
   },
 
   tr: {
     app_title: "UniRank",
-    app_subtitle: "Kişisel kriterlerinize göre üniversiteleri analiz edin ve karşılaştırın",
+    dashboard_title: "Üniversite Tercih Paneli",
+    dashboard_subtitle: "Üniversiteleri kişisel kriterlerine göre analiz et ve karşılaştır",
 
     nav_dashboard: "Panel",
     nav_favorites: "Favoriler",
 
     filters_title: "Filtreler",
-    include_countries: "Dahil Edilen Ülkeler",
-    add_country_include: "+ Dahil Edilecek Ülke Ekle",
-    exclude_countries: "Hariç Tutulan Ülkeler",
-    add_country_exclude: "+ Hariç Tutulacak Ülke Ekle",
+    filters: "Filtreler",
     countries_regions: "Ülkeler ve Bölgeler",
     search_country: "Ülke ara...",
     search_manual: "Veya manuel arama yapın...",
@@ -137,6 +152,13 @@ export const I18N = {
     excluded: "hariç",
 
     academic_categories: "Akademik / Alan Kategorileri",
+    academic_field_categories: "Akademik / Teknik Alan Kategorileri",
+    search_categories: "Alan, yöntem, teknoloji veya anahtar kelime ara...",
+    category_suggestions: "Kategori Önerileri",
+    selected_categories: "Seçili Kategoriler",
+    popular_categories: "Popüler Kategoriler",
+    no_category_results: "Eşleşen kategori bulunamadı",
+
     degree_level: "Derece Seviyesi",
     all_degrees: "Tüm Dereceler",
     bsc: "Lisans (BSc)",
@@ -170,20 +192,28 @@ export const I18N = {
     sort_name_asc: "Üniversite (A → Z)",
 
     kpi_programs_found: "Bulunan Programlar",
+    programs_found: "Bulunan Programlar",
     kpi_across: "",
     kpi_countries: "ülkede",
+    across_countries: "{count} ülkede",
     kpi_avg_tuition: "Ort. Yıllık Ücret",
+    avg_yearly_tuition: "Ort. Yıllık Ücret",
     kpi_avg_score: "Ort. Genel Puan",
 
-    ranked_results: "Sıralanmış Sonuçlar",
+    ranked_results: "Sıralı Sonuçlar",
     col_num: "#",
     col_fav: "Fav",
     col_university: "Üniversite",
+    university: "Üniversite",
     col_city: "Şehir",
+    city: "Şehir",
     col_country: "Ülke",
+    country: "Ülke",
     col_score: "Puan",
+    score: "Puan",
     col_tuition: "Öğrenim (Yıllık)",
     col_detail: "Detay",
+    detail: "Detay",
     btn_view: "İncele",
 
     why_this_score: "Neden bu puan?",
@@ -199,6 +229,7 @@ export const I18N = {
 
     program_details: "Program Detayları",
     program_name: "Program Adı",
+    program: "Program",
     degree: "Derece",
     ects: "AKTS",
     language: "Dil",
@@ -228,7 +259,10 @@ export const I18N = {
     confidence_high: "Yüksek güven",
     confidence_medium: "Orta güven",
     confidence_low: "Düşük güven",
-    confidence_unknown: "Bilinmeyen güven"
+    confidence_unknown: "Bilinmeyen güven",
+
+    tr: "TR",
+    en: "EN"
   }
 };
 
@@ -258,23 +292,34 @@ window.COUNTRY_LABELS = COUNTRY_LABELS;
 window.currentLanguage = localStorage.getItem("unirank_language") || "en";
 
 window.setLanguage = function(lang) {
-  if (lang !== "en" && lang !== "tr") lang = "en";
+  if (!["tr", "en"].includes(lang)) return;
+
   window.currentLanguage = lang;
   localStorage.setItem("unirank_language", lang);
+
   window.applyTranslations();
+  window.updateLanguageToggleUI();
+
+  // Re-render UI components if they exist
+  if (typeof window.processAndRender === "function") {
+    window.processAndRender();
+  }
   
-  // Update toggle buttons visual state
-  document.querySelectorAll('.language-toggle button').forEach(btn => {
-      if(btn.dataset.lang === lang) {
-          btn.classList.add('active');
-      } else {
-          btn.classList.remove('active');
-      }
+  // Re-render components that are dynamically generated like categories
+  if (typeof window.renderCategoryUI === "function") {
+    window.renderCategoryUI();
+  }
+};
+
+window.updateLanguageToggleUI = function() {
+  document.querySelectorAll("[data-lang]").forEach((button) => {
+    button.classList.toggle("active", button.dataset.lang === window.currentLanguage);
+    button.setAttribute("aria-pressed", button.dataset.lang === window.currentLanguage ? "true" : "false");
   });
 };
 
 window.t = function(key) {
-  return I18N[window.currentLanguage]?.[key] || I18N.en[key] || key;
+  return I18N[window.currentLanguage]?.[key] || I18N.en?.[key] || key;
 };
 
 window.localizedValue = function(value) {
@@ -322,3 +367,8 @@ window.applyTranslations = function() {
   // Dispatch custom event for dynamic components to re-render
   document.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang: window.currentLanguage }}));
 };
+
+// Initialize toggle UI on load
+document.addEventListener("DOMContentLoaded", () => {
+    window.updateLanguageToggleUI();
+});

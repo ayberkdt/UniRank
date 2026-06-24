@@ -60,7 +60,7 @@ function calculateScore(record, preferences, weights) {
 
     // 1. Academic / Field Fit (0-100)
     let academicFit = 0;
-    const selectedCats = preferences.selectedKeywords || [];
+    const selectedCats = preferences.selectedCategoryKeys || preferences.selectedKeywords || [];
     
     if (selectedCats.length === 0) {
         academicFit = 50; // Default if no preference

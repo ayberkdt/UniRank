@@ -24,26 +24,27 @@
             <div class="card">
                 <h2 data-i18n="filters_title">Filters</h2>
                 <div class="form-group">
-                    <label for="country-filter" data-i18n="include_countries">Include Countries</label>
+                    <label for="country-filter" data-i18n="countries_regions">Countries & Regions</label>
                     <div id="country-tags" class="tag-list" style="margin-bottom: 8px;"></div>
                     <select id="country-filter">
-                        <option value="" data-i18n="add_country_include">+ Add Country to Include</option>
+                        <option value="" data-i18n="search_country">Search country...</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="country-exclude-filter" data-i18n="exclude_countries">Exclude Countries</label>
-                    <div id="country-exclude-tags" class="tag-list" style="margin-bottom: 8px;"></div>
-                    <select id="country-exclude-filter">
-                        <option value="" data-i18n="add_country_exclude">+ Add Country to Exclude</option>
-                    </select>
-                </div>
-                <!-- City filter removed -->
-                <div class="form-group">
-                    <label data-i18n="academic_categories">Academic / Field Categories</label>
-                    <div id="category-tree" class="category-tree" style="max-height: 250px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: 6px; padding: 8px; background: var(--bg-secondary); margin-bottom: 8px;">
-                        <!-- Rendered via JS -->
+                <div class="form-group category-filter-panel">
+                    <label data-i18n="academic_field_categories">Academic / Field Categories</label>
+                    <div class="category-search-box">
+                        <input type="text" id="categorySearchInput" data-i18n-placeholder="search_categories" placeholder="Search field, method, technology or keyword...">
                     </div>
-                    <input type="text" id="search-input" data-i18n-placeholder="search_manual" placeholder="Or type manual search..." style="margin-top: 8px;">
+                    <div id="categorySuggestions" class="category-suggestions"></div>
+                    <div class="selected-category-section" style="margin-top: 12px;">
+                        <span data-i18n="selected_categories" style="font-size: 12px; color: var(--text-muted); display: block; margin-bottom: 6px;">Selected Categories</span>
+                        <div id="selectedCategoryChips" class="selected-category-chips"></div>
+                    </div>
+                    <div class="popular-category-section" style="margin-top: 12px;">
+                        <span data-i18n="popular_categories" style="font-size: 12px; color: var(--text-muted); display: block; margin-bottom: 6px;">Popular Categories</span>
+                        <div id="popularCategoryChips" class="popular-category-chips"></div>
+                    </div>
+                    <input type="text" id="search-input" data-i18n-placeholder="search_manual" placeholder="Or type manual search..." style="margin-top: 16px;">
                 </div>
                 <!-- Hard Filters -->
                 <div class="form-group" style="margin-top: 16px;">
