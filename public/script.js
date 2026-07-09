@@ -452,7 +452,7 @@ function processAndRender() {
         r._scoringDetails = scoringResult;
         
         const n = window.uniDataAdapter ? window.uniDataAdapter.normalizeUniversityRecord(r) : null;
-        r._costNum = n ? parseFloat(n.totalAcademicCost ?? n.tuitionPerYear || 0) : parseFloat(r.tuition_eur_per_year || 0);
+        r._costNum = n ? parseFloat(n.totalAcademicCost || n.tuitionPerYear || 0) : parseFloat(r.tuition_eur_per_year || 0);
         
         return true;
     });
