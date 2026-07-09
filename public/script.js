@@ -36,6 +36,15 @@ function displayValue(val) {
     return String(val);
 }
 
+function formatRiskBadge(risk) {
+    if (!risk || risk === 'unknown' || risk === '—') return `<span class="risk-badge risk-unknown">Unknown</span>`;
+    const r = String(risk).toLowerCase();
+    if (r.includes('low') || r.includes('safe')) return `<span class="risk-badge risk-low">${risk}</span>`;
+    if (r.includes('medium') || r.includes('moderate')) return `<span class="risk-badge risk-medium">${risk}</span>`;
+    if (r.includes('high') || r.includes('hard') || r.includes('difficult')) return `<span class="risk-badge risk-high">${risk}</span>`;
+    return `<span class="risk-badge risk-unknown">${risk}</span>`;
+}
+
 // Global Boundaries for Normalization
 let globalMaxTuition = 10000;
 let globalMinTuition = 0;
