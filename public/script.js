@@ -4,6 +4,21 @@ let selectedCountries = new Set();
 let selectedCategoryKeys = new Set();
 let favorites = new Set(JSON.parse(localStorage.getItem('unirank_favorites') || '[]'));
 
+
+function validateRecordShape(record) {
+  const issues = [];
+  if (!window.uniDataAdapter) return issues;
+  const n = window.uniDataAdapter.normalizeUniversityRecord(record);
+
+  if (!n.universityName) issues.push("Missing university name");
+  if (!n.programName) issues.push("Missing program name");
+  if (!n.country) issues.push("Missing country");
+  if (!n.degree) issues.push("Missing degree");
+  if (!n.tuitionPerYear && !n.totalAcademicCost) issues.push("Missing tuition/cost");
+
+  return issues;
+}
+
 // Global Boundaries for Normalization
 let globalMaxTuition = 10000;
 let globalMinTuition = 0;
@@ -96,7 +111,13 @@ async function fetchData() {
         const json = await res.json();
         
         if (json.status === 'success') {
+            
             rawData = json.data;
+            rawData.slice(0, 20).forEach((r) => {
+              const issues = validateRecordShape(r);
+              if (issues.length) console.warn("Record shape issues:", r.id || r.name, issues);
+            });
+
             
             // Calculate Global Boundaries for Min-Max Normalization
             if (rawData.length > 0) {
@@ -462,30 +483,75 @@ function renderKPIs() {
     if (kpiCountries) kpiCountries.textContent = countriesSet.size;
 }
 
+
+function renderTableHeader() {
+  const showProfileMatch = Boolean(window.personalizationEnabled);
+  const thead = document.querySelector("#results-table thead");
+  if(!thead) return;
+  const t = window.t || (k => k);
+  thead.innerHTML = `
+    <tr>
+      <th>${t("col_num")}</th>
+      <th>${t("col_fav")}</th>
+      <th>${t("university")}</th>
+      <th>${t("program")}</th>
+      <th>${t("city")}</th>
+      <th>${t("country")}</th>
+      <th>${t("profile_match")}</th>
+      <th>${t("col_score") || "Score"}</th>
+      <th>${t("yearly_cost") || "Yearly Cost"}</th>
+      <th>${t("detail")}</th>
+    </tr>
+  `;
+}
+
+
 function renderTable() {
+    renderTableHeader();
     els.tableBody.innerHTML = '';
     filteredData.forEach((row, i) => {
         const tr = document.createElement('tr');
+        const n = window.uniDataAdapter ? window.uniDataAdapter.normalizeUniversityRecord(row) : null;
+        
         let scColor = "var(--success)";
         if (row._score < 5) scColor = "var(--danger)";
         else if (row._score < 7.5) scColor = "var(--warning)";
         
-        const rid = row.Uni_ID || row.id || row.name || row.university;
+        const rid = n ? n.id : (row.Uni_ID || row.id || row.name || row.university);
         const isFav = favorites.has(rid);
         const favIcon = isFav ? '⭐' : '☆';
         
-        const cleanCountry = row.country ? row.country.replace(/^[^a-zA-ZçğıöşüÇĞİÖŞÜ]+/, '').trim() : '-';
+        const cleanCountry = (n ? n.country : row.country) ? (n ? n.country : row.country).replace(/^[^a-zA-ZçğıöşüÇĞİÖŞÜ]+/, '').trim() : '-';
         const displayCountry = window.getCountryName ? window.getCountryName(cleanCountry) : cleanCountry;
         
+        const showProfileMatch = Boolean(window.personalizationEnabled);
+        const profileMatchValue = row._scoringDetails?.personalized_match?.personal_field_fit;
+        
+        let profileMatchHTML = `<td>${profileMatchValue ? `<span class="profile-match-badge">${profileMatchValue}%</span>` : '-'}</td>`;
+
+        const t = window.t || (k => k);
+        const btnText = window.currentLanguage === 'tr' ? 'İncele ↗' : 'View ↗';
+
         tr.innerHTML = `
             <td><span style="color:var(--text-muted); font-weight:700;">${i + 1}</span></td>
             <td class="fav-cell" style="cursor: pointer; font-size: 16px;">${favIcon}</td>
-            <td>${window.localizedValue ? window.localizedValue(row.display_name || row.name) : (row.display_name || row.name)}</td>
-            <td>${window.localizedValue ? window.localizedValue(row.city) || '-' : (row.city || '-')}</td>
+            <td>
+                <div class="uni-cell">
+                    <strong>${n ? window.localizedField(n.universityName) : (window.localizedValue(row.display_name || row.name))}</strong>
+                </div>
+            </td>
+            <td>
+                <div class="program-cell">
+                    ${n ? window.localizedField(n.programName) || "—" : "—"}
+                    ${n && n.degree ? `<br><small style="color:var(--text-muted)">${window.localizedField(n.degree)}</small>` : ""}
+                </div>
+            </td>
+            <td>${n ? (window.localizedField(n.city) || "—") : (window.localizedValue(row.city) || '-')}</td>
             <td><span class="country-gradient" data-country="${cleanCountry}">${displayCountry}</span></td>
+            ${profileMatchHTML}
             <td><span class="score-badge" style="background: ${scColor}">${row._score.toFixed(2)}</span></td>
-            <td>€${parseFloat(row.tuition_eur_per_year || 0).toFixed(0)}</td>
-            <td><button class="detail-btn">${window.t ? window.t('btn_view') : 'View'} ↗</button></td>
+            <td>${n ? formatMoney(n.totalAcademicCost ?? n.tuitionPerYear) : `€${parseFloat(row.tuition_eur_per_year || 0).toFixed(0)}`}</td>
+            <td><button class="detail-btn">${btnText}</button></td>
         `;
         
         els.tableBody.appendChild(tr);
@@ -499,11 +565,17 @@ function renderTable() {
     });
 }
 
+
+
 function openDrawer(data) {
     try {
-        els.drawer.title.textContent = data.display_name || data.name || data.university_name || 'Details';
+        const n = window.uniDataAdapter ? window.uniDataAdapter.normalizeUniversityRecord(data) : null;
+        if (!n) return;
+
+        const t = window.t || (k => k);
+        els.drawer.title.textContent = window.localizedField(n.universityName) || 'Details';
         
-        const rid = data.Uni_ID || data.id || data.name || data.university || data.university_name;
+        const rid = n.id;
         const isFav = favorites.has(rid);
         els.drawer.favBtn.innerHTML = isFav ? '★' : '☆';
         els.drawer.favBtn.onclick = () => {
@@ -511,39 +583,154 @@ function openDrawer(data) {
             els.drawer.favBtn.innerHTML = favorites.has(rid) ? '★' : '☆';
         };
 
-        let prosHTML = '';
-        let consHTML = '';
-        
-        let localizedPros = window.localizedArray ? window.localizedArray(data.pros || []) : (data.pros || []);
-        let localizedCons = window.localizedArray ? window.localizedArray(data.cons || []) : (data.cons || []);
-        
-        if (localizedPros && localizedPros.length) {
-            prosHTML = localizedPros.map(p => `<li class="pro"><span class="pro-text">${p}</span></li>`).join('');
-        }
-        if (localizedCons && localizedCons.length) {
-            consHTML = localizedCons.map(c => `<li class="con"><span class="con-text">${c}</span></li>`).join('');
-        }
-        
-        let tagsHTML = '';
-        if (data.tags && data.tags.length) {
-            tagsHTML = data.tags.map(t => `<span class="tag">#${t}</span>`).join('');
-        }
-
-        const cleanCountry = data.country ? String(data.country).replace(/^[^a-zA-ZÀ-ɏ0-9]+/, '').trim() : '-';
-        const displayCountry = window.getCountryName ? window.getCountryName(cleanCountry) : cleanCountry;
-
-        const t = window.t || (k => k);
         const scoreVal = data._score ? data._score.toFixed(2) : '0.00';
         
-        const explanations = (data._scoringDetails && data._scoringDetails.explanation) ? window.localizedArray(data._scoringDetails.explanation) : [];
-        const warnings = (data._scoringDetails && data._scoringDetails.warnings) ? window.localizedArray(data._scoringDetails.warnings) : [];
+        // 7.1 Overview
+        let overviewHTML = `
+            <div class="detail-section">
+                <h4 class="heading-overview">${t('overview')}</h4>
+                <div class="detail-grid">
+                    <div class="detail-item full-span">
+                        <label>${t('university')}</label>
+                        <span>${displayValue(n.universityName)}</span>
+                    </div>
+                    <div class="detail-item full-span">
+                        <label>${t('program')}</label>
+                        <span>${displayValue(n.programName)}</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>${t('city')}</label>
+                        <span>${displayValue(n.city)}</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>${t('country')}</label>
+                        <span class="country-gradient" data-country="${n.country}">${window.getCountryName ? window.getCountryName(n.country) : n.country}</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>${t('degree')}</label>
+                        <span>${displayValue(n.degree)}</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>${t('language')}</label>
+                        <span>${Array.isArray(n.teachingLanguage) ? n.teachingLanguage.join(', ') : displayValue(n.teachingLanguage)}</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>${t('col_score') || 'Score'}</label>
+                        <span style="color: var(--text-highlight)">${scoreVal} / 10.0</span>
+                    </div>
+                    ${window.personalizationEnabled && data._scoringDetails?.personalized_match?.personal_field_fit ? 
+                    `<div class="detail-item">
+                        <label>${t('profile_match')}</label>
+                        <span class="profile-match-badge">${data._scoringDetails.personalized_match.personal_field_fit}%</span>
+                    </div>` : ''}
+                </div>
+            </div>
+        `;
 
-        // Determine if we have new schema data to show
-        const hasResearch = !!data.strong_areas_summary;
-        const hasIndustry = !!data.aerospace_ecosystem;
-        const hasLogistics = !!data.housing_difficulty || !!data.admission_mode;
+        // 7.2 Program & Admission
+        let programAdmissionHTML = `
+            <div class="detail-section">
+                <h4 class="heading-overview">${t('program_admission')}</h4>
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <label>Admission Mode</label>
+                        <span>${displayValue(n.admissionMode)}</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Admission Risk</label>
+                        ${formatRiskBadge(n.admissionRisk)}
+                    </div>
+                    <div class="detail-item">
+                        <label>Language Risk</label>
+                        ${formatRiskBadge(n.languageRisk)}
+                    </div>
+                    <div class="detail-item full-span">
+                        <label>${t('official_program_page')}</label>
+                        <span>${n.programUrl && n.programUrl !== '—' ? `<a href="${n.programUrl}" target="_blank" style="color:var(--text-highlight)">${t('view_source')} ↗</a>` : '—'}</span>
+                    </div>
+                </div>
+            </div>
+        `;
 
-        
+        // 7.3 Cost & Funding
+        let costFundingHTML = `
+            <div class="detail-section">
+                <h4 class="heading-financials">${t('cost_funding')}</h4>
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <label>Tuition (Yearly)</label>
+                        <span>${formatMoney(n.tuitionPerYear)}</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Total Academic Cost</label>
+                        <span>${formatMoney(n.totalAcademicCost)}</span>
+                    </div>
+                    <div class="detail-item">
+                        <label>Semester Fee</label>
+                        <span>${formatMoney(n.semesterFee)}</span>
+                    </div>
+                    <div class="detail-item full-span">
+                        <label>Scholarships & Funding</label>
+                        <span>${displayValue(n.scholarshipSummary)}</span>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // 7.4 Technical Fit / Categories
+        let categoryHTML = '';
+        if (n.categoryProfile) {
+            let catChips = '';
+            const allCats = [...(n.categoryProfile.primary_categories || []), ...(n.categoryProfile.subcategories || []), ...(n.categoryProfile.normalized_tags || [])];
+            const uniqueCats = [...new Set(allCats)];
+            if (uniqueCats.length > 0) {
+                catChips = uniqueCats.map(c => `<span class="detail-chip">${window.getCategoryLabel ? window.getCategoryLabel(c) : c}</span>`).join('');
+                categoryHTML = `
+                    <div class="detail-section">
+                        <h4 class="heading-tags">${t('technical_fit')}</h4>
+                        <div class="detail-chip-list">
+                            ${catChips}
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // 7.5 Research & Industry
+        let researchIndustryHTML = `
+            <div class="detail-section">
+                <h4 class="heading-analysis">${t('research_industry')}</h4>
+                <div class="detail-grid">
+                    <div class="detail-item full-span">
+                        <label>Research Strength</label>
+                        <span>${displayValue(n.researchSummary)}</span>
+                    </div>
+                    <div class="detail-item full-span">
+                        <label>Industry Ecosystem</label>
+                        <span>${displayValue(n.industrySummary)}</span>
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // 7.6 Living & Logistics
+        let livingLogisticsHTML = `
+            <div class="detail-section">
+                <h4 class="heading-overview">${t('living_logistics')}</h4>
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <label>Housing Difficulty</label>
+                        ${formatRiskBadge(n.housingDifficulty)}
+                    </div>
+                    <div class="detail-item">
+                        <label>Living Risk</label>
+                        ${formatRiskBadge(n.livingRisk)}
+                    </div>
+                </div>
+            </div>
+        `;
+
+        // 7.7 Personalized Match
         let profileMatchHTML = '';
         if (window.personalizationEnabled && data._scoringDetails && data._scoringDetails.personalized_match) {
             const pm = data._scoringDetails.personalized_match;
@@ -556,198 +743,85 @@ function openDrawer(data) {
                 pPenHtml = pm.profile_penalties.map(p => `<li>${p.reason}</li>`).join('');
             }
             
-            profileMatchHTML = `
-            <div class="detail-section personalized-match-section" style="background: rgba(99, 102, 241, 0.05); border: 1px solid rgba(99, 102, 241, 0.2); border-radius: 12px; padding: 16px;">
-                <h4 class="heading-analysis" style="color: var(--text-highlight); margin-bottom: 12px;">${t('why_this_match')}</h4>
-                
-                ${mIntHtml ? `
-                <div style="margin-bottom: 12px;">
-                    <strong style="font-size: 13px; color: var(--text-main); display: block; margin-bottom: 4px;">${t('matched_interests')}</strong>
-                    <ul style="font-size: 13px; color: var(--text-muted); padding-left: 20px; margin: 0;">${mIntHtml}</ul>
-                </div>` : ''}
-                
-                ${pPenHtml ? `
-                <div style="margin-bottom: 12px;">
-                    <strong style="font-size: 13px; color: var(--danger); display: block; margin-bottom: 4px;">${t('profile_penalties')}</strong>
-                    <ul style="font-size: 13px; color: var(--danger); padding-left: 20px; margin: 0;">${pPenHtml}</ul>
-                </div>` : ''}
-                
+            if (mIntHtml || pPenHtml) {
+                profileMatchHTML = `
+                <div class="detail-section personalized-match-section" style="background: rgba(99, 102, 241, 0.05); border: 1px solid rgba(99, 102, 241, 0.2);">
+                    <h4 class="heading-analysis" style="color: var(--text-highlight);">${t('personalized_match')}</h4>
+                    
+                    ${mIntHtml ? `
+                    <div style="margin-bottom: 12px;">
+                        <strong style="font-size: 13px; color: var(--text-main); display: block; margin-bottom: 4px;">Matched Interests</strong>
+                        <ul style="font-size: 13px; color: var(--text-muted); padding-left: 20px; margin: 0;">${mIntHtml}</ul>
+                    </div>` : ''}
+                    
+                    ${pPenHtml ? `
+                    <div style="margin-bottom: 12px;">
+                        <strong style="font-size: 13px; color: var(--danger); display: block; margin-bottom: 4px;">Profile Penalties</strong>
+                        <ul style="font-size: 13px; color: var(--danger); padding-left: 20px; margin: 0;">${pPenHtml}</ul>
+                    </div>` : ''}
+                </div>`;
+            }
+        }
+
+        // 7.8 Sources & Data Confidence
+        let sourcesHtml = '';
+        if (n.sources && n.sources.length > 0) {
+            sourcesHtml = n.sources.map(s => {
+                const url = typeof s === 'string' ? s : s.url;
+                if (!url) return '';
+                return `<li><a href="${url}" target="_blank" style="color:var(--text-highlight)">${s.title || t('view_source')} ↗</a></li>`;
+            }).join('');
+        }
+        let sourcesConfidenceHTML = `
+            <div class="detail-section">
+                <h4 class="heading-rankings">${t('sources_confidence')}</h4>
+                <div class="detail-grid">
+                    ${sourcesHtml ? `<div class="detail-item full-span">
+                        <label>Sources</label>
+                        <ul style="margin: 0; padding-left: 20px; font-size: 13px;">${sourcesHtml}</ul>
+                    </div>` : ''}
+                </div>
+            </div>
+        `;
+
+        // 7.9 Notes, Strengths & Risks
+        let prosHTML = '';
+        let consHTML = '';
+        if (n.mainStrengths && n.mainStrengths.length) {
+            prosHTML = n.mainStrengths.map(p => `<li class="pro"><span class="pro-text">${window.localizedField(p)}</span></li>`).join('');
+        }
+        if (n.mainRisks && n.mainRisks.length) {
+            consHTML = n.mainRisks.map(c => `<li class="con"><span class="con-text">${window.localizedField(c)}</span></li>`).join('');
+        }
+
+        let notesHTML = '';
+        if (prosHTML || consHTML) {
+            notesHTML = `
+            <div class="detail-section">
+                <h4 class="heading-analysis">${t('notes_strengths_risks')}</h4>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    ${prosHTML ? `
+                    <div style="background: rgba(16, 185, 129, 0.04); padding: 24px; border-radius: 16px; border: 1px solid rgba(16, 185, 129, 0.25);">
+                        <ul class="pro-con-list">${prosHTML}</ul>
+                    </div>` : ''}
+                    ${consHTML ? `
+                    <div style="background: rgba(239, 68, 68, 0.04); padding: 24px; border-radius: 16px; border: 1px solid rgba(239, 68, 68, 0.25);">
+                        <ul class="pro-con-list">${consHTML}</ul>
+                    </div>` : ''}
+                </div>
             </div>`;
         }
 
-        document.getElementById('drawer-info').innerHTML = `
-            ${profileMatchHTML}
-            <div class="detail-section">
-                <h4 class="heading-overview">${t('program_details')}</h4>
-                <div class="detail-grid">
-                    <div class="detail-item">
-                        <label>${t('col_country')}</label>
-                        <span class="country-gradient" data-country="${cleanCountry}">${displayCountry}</span>
-                    </div>
-                    <div class="detail-item">
-                        <label>${t('col_city')}</label>
-                        <span>${window.localizedValue(data.city) || '-'}</span>
-                    </div>
-                    <div class="detail-item">
-                        <label>${t('col_score')}</label>
-                        <span style="color: var(--text-highlight)">${scoreVal} / 10.0</span>
-                    </div>
-                    <div class="detail-item">
-                        <label>${t('city_cost')}</label>
-                        <span style="text-transform: capitalize">${t('risk_' + (data.cost_city_raw || 'unknown'))}</span>
-                    </div>
-                </div>
-            </div>
-
-            ${hasResearch || hasIndustry ? `
-            <div class="detail-section">
-                <h4 class="heading-analysis">Research & Industry</h4>
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                    ${hasResearch ? `
-                    <div style="background: rgba(255,255,255,0.03); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
-                        <strong style="color: var(--primary); display: block; margin-bottom: 8px;">${t('research_strength') || 'Research Strength'}</strong>
-                        <p style="font-size: 13px; line-height: 1.5; color: var(--text-main); margin: 0;">${window.localizedValue(data.strong_areas_summary)}</p>
-                    </div>` : ''}
-                    ${hasIndustry ? `
-                    <div style="background: rgba(255,255,255,0.03); padding: 16px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
-                        <strong style="color: var(--primary); display: block; margin-bottom: 8px;">${t('industry_ecosystem') || 'Industry Ecosystem'}</strong>
-                        <p style="font-size: 13px; line-height: 1.5; color: var(--text-main); margin: 0;">${window.localizedValue(data.aerospace_ecosystem)}</p>
-                    </div>` : ''}
-                </div>
-            </div>
-            ` : `
-            <div class="detail-section">
-                <h4 class="heading-rankings">Rankings & Recognition</h4>
-                <div class="detail-grid">
-                    <div class="detail-item">
-                        <label>QS Ranking</label>
-                        <span>#${data.qs_ranking || 'N/A'}</span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Global Recognition</label>
-                        <span>${window.localizedValue(data.global_recognition) || 'Unknown'}</span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Field Recognition</label>
-                        <span>${window.localizedValue(data.field_recognition) || 'Unknown'}</span>
-                    </div>
-                </div>
-            </div>
-            `}
-
-            <div class="detail-section">
-                <h4 class="heading-financials">${t('cost_funding')}</h4>
-                <div class="detail-grid">
-                    <div class="detail-item">
-                        <label>${t('semester_fee')}</label>
-                        <span>€${parseFloat(data.semester_fee_eur || 0).toFixed(2)}</span>
-                    </div>
-                    <div class="detail-item">
-                        <label>${t('yearly_tuition')}</label>
-                        <span>€${parseFloat(data.tuition_eur_per_year || 0).toFixed(2)}</span>
-                    </div>
-                    ${data.scholarship_names ? `
-                    <div class="detail-item" style="grid-column: span 2">
-                        <label>Scholarships</label>
-                        <span style="color: var(--success);">${window.localizedValue(data.scholarship_names)}</span>
-                    </div>
-                    ` : ''}
-                </div>
-            </div>
-
-            ${hasLogistics ? `
-            <div class="detail-section">
-                <h4 class="heading-overview">${t('application_logistics') || 'Admission & Logistics'}</h4>
-                <div class="detail-grid">
-                    <div class="detail-item">
-                        <label>Admission Mode</label>
-                        <span>${window.localizedValue(data.admission_mode) || '-'}</span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Language Req.</label>
-                        <span>${window.localizedValue(data.language_req) || '-'}</span>
-                    </div>
-                    <div class="detail-item" style="grid-column: span 2">
-                        <label>Housing Difficulty</label>
-                        <span style="color: var(--danger);">${window.localizedValue(data.housing_difficulty) || '-'}</span>
-                    </div>
-                    ${data.deadline_winter_closes ? `
-                    <div class="detail-item" style="grid-column: span 2">
-                        <label>Deadlines</label>
-                        <span>${window.localizedValue(data.deadline_winter_closes)}</span>
-                    </div>
-                    ` : ''}
-                </div>
-            </div>
-            ` : ''}
-            
-            ${tagsHTML ? `
-            <div class="detail-section">
-                <h4 class="heading-tags">Tags</h4>
-                <div class="tag-list">
-                    ${tagsHTML}
-                </div>
-            </div>
-            ` : ''}
-
-            ${data._scoringDetails ? `
-            <div class="detail-section">
-                <h4 class="heading-analysis" style="color: var(--primary);">${t('why_this_score')}</h4>
-                ${explanations.length > 0 ? `
-                <div style="background: rgba(99, 102, 241, 0.05); padding: 16px; border-radius: 12px; border: 1px solid rgba(99, 102, 241, 0.2); margin-bottom: 12px;">
-                    <ul class="pro-con-list" style="margin: 0; padding-left: 20px; color: var(--text);">
-                        ${explanations.map(e => `<li style="margin-bottom: 6px;">${e}</li>`).join('')}
-                    </ul>
-                </div>
-                ` : ''}
-                ${warnings.length > 0 ? `
-                <div style="background: rgba(239, 68, 68, 0.05); padding: 16px; border-radius: 12px; border: 1px solid rgba(239, 68, 68, 0.2);">
-                    <ul class="pro-con-list" style="margin: 0; padding-left: 20px; color: var(--danger);">
-                        ${warnings.map(w => `<li style="margin-bottom: 6px;"><strong>Warning:</strong> ${w}</li>`).join('')}
-                    </ul>
-                </div>
-                ` : ''}
-            </div>
-            ` : ''}
-
-            ${prosHTML || consHTML ? `
-            <div class="detail-section">
-                <h4 class="heading-analysis">${t('overall_recommendation') || 'Overall Recommendation'}</h4>
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                    ${prosHTML ? `
-                    <div style="background: rgba(16, 185, 129, 0.04); padding: 24px; border-radius: 16px; border: 1px solid rgba(16, 185, 129, 0.25); box-shadow: inset 0 0 20px rgba(16, 185, 129, 0.02);">
-                        <ul class="pro-con-list">${prosHTML}</ul>
-                    </div>
-                    ` : ''}
-                    ${consHTML ? `
-                    <div style="background: rgba(239, 68, 68, 0.04); padding: 24px; border-radius: 16px; border: 1px solid rgba(239, 68, 68, 0.25); box-shadow: inset 0 0 20px rgba(239, 68, 68, 0.02);">
-                        <ul class="pro-con-list">${consHTML}</ul>
-                    </div>
-                    ` : ''}
-                </div>
-            </div>
-            ` : ''}
-            
-            ${data.target_program_name ? `
-            <div class="detail-section">
-                <h4>Target Program</h4>
-                <div class="detail-grid">
-                    <div class="detail-item" style="grid-column: span 2">
-                        <label>Name</label>
-                        <span>${data.target_program_name}</span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Degree</label>
-                        <span>${data.target_program_degree || '-'}</span>
-                    </div>
-                    <div class="detail-item">
-                        <label>URL</label>
-                        <span>${data.target_program_url ? `<a href="${data.target_program_url}" target="_blank" style="color:var(--text-highlight)">Visit Program ↗</a>` : '-'}</span>
-                    </div>
-                </div>
-            </div>
-            ` : ''}
-        `;
+        document.getElementById('drawer-info').innerHTML = 
+            overviewHTML + 
+            programAdmissionHTML + 
+            costFundingHTML + 
+            categoryHTML + 
+            researchIndustryHTML + 
+            livingLogisticsHTML + 
+            profileMatchHTML + 
+            notesHTML +
+            sourcesConfidenceHTML;
 
         const ctx = document.getElementById('radarChart');
         if (ctx) {
@@ -807,6 +881,7 @@ function openDrawer(data) {
         console.error('Drawer Error:', err);
     }
 }
+
 function closeDrawer() {
     els.drawer.panel.classList.remove('active');
     els.drawer.overlay.classList.remove('active');
