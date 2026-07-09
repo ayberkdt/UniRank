@@ -19,6 +19,23 @@ function validateRecordShape(record) {
   return issues;
 }
 
+// Utility Functions
+function formatMoney(amount) {
+    const val = parseFloat(amount);
+    if (isNaN(val)) return '—';
+    if (val === 0) return window.t ? window.t('free') : 'Free';
+    return '€' + val.toLocaleString('en-US');
+}
+
+function displayValue(val) {
+    if (val === null || val === undefined || val === '') return '—';
+    if (window.localizedField) {
+        const loc = window.localizedField(val);
+        return loc ? loc : '—';
+    }
+    return String(val);
+}
+
 // Global Boundaries for Normalization
 let globalMaxTuition = 10000;
 let globalMinTuition = 0;
@@ -433,6 +450,10 @@ function processAndRender() {
         // Inject scoring result into the record
         r._score = scoringResult.total_score / 10.0; // scale 0-10 for UI compatibility
         r._scoringDetails = scoringResult;
+        
+        const n = window.uniDataAdapter ? window.uniDataAdapter.normalizeUniversityRecord(r) : null;
+        r._costNum = n ? parseFloat(n.totalAcademicCost ?? n.tuitionPerYear || 0) : parseFloat(r.tuition_eur_per_year || 0);
+        
         return true;
     });
 
