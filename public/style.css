@@ -1348,20 +1348,26 @@ input:checked + .switch-slider:before { transform: translateX(20px); }
 .custom-marker {
     width: 32px;
     height: 32px;
-    border-radius: 50%;
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
     font-weight: 800;
     font-size: 11px;
-    box-shadow: 0 4px 0 rgba(0,0,0,0.15);
+    box-shadow: -3px 3px 0 rgba(0,0,0,0.15);
     border: 3px solid white;
     transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
+.custom-marker span.marker-score {
+    transform: rotate(45deg);
+    display: block;
+}
+
 .custom-marker:hover {
-    transform: scale(1.15) translateY(-4px);
+    transform: rotate(-45deg) scale(1.15) translate(2px, -2px);
     z-index: 1000 !important;
 }
 
