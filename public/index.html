@@ -151,6 +151,27 @@
                     </select>
                 </div>
             </div>
+
+            <div class="card map-settings-card">
+                <div class="map-settings-heading">
+                    <div>
+                        <h2 data-i18n="map_display_title">Map display</h2>
+                        <p data-i18n="map_display_desc">Choose how much map detail you want to see.</p>
+                    </div>
+                    <span class="map-settings-icon" aria-hidden="true">🗺️</span>
+                </div>
+                <label class="map-detail-toggle-row" for="map-detail-toggle">
+                    <span>
+                        <strong data-i18n="map_detailed_toggle">Detailed visual map</strong>
+                        <small data-i18n="map_detailed_toggle_desc">Use a real-world map with roads and borders.</small>
+                    </span>
+                    <span class="custom-switch">
+                        <input type="checkbox" id="map-detail-toggle" aria-describedby="map-detail-status">
+                        <span class="switch-slider"></span>
+                    </span>
+                </label>
+                <div class="map-detail-status" id="map-detail-status" data-i18n="map_simple_status">Friendly atlas is on by default.</div>
+            </div>
         </aside>
 
         <!-- Main Content -->
@@ -241,6 +262,7 @@
                 
                 <!-- Map Summary Overlay -->
                 <div class="map-summary-overlay" style="position: absolute; top: 16px; left: 16px; z-index: 1000; display: flex; flex-direction: column; gap: 12px; pointer-events: none;">
+                    <div class="map-mode-badge" id="map-mode-badge" data-i18n="map_simple_badge">Friendly atlas</div>
                     <div class="map-kpi-card" style="pointer-events: auto; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
                         <div style="font-size: 20px;">🌍</div>
                         <div>

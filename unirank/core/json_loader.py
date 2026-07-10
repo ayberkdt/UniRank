@@ -94,7 +94,9 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
             
             # Intercept new 14-profile schema without Pydantic validation
             if "eligibility_profile" in entry and "cost_profile" in entry:
-                if not entry.get("eligibility_profile", {}).get("eligible_for_non_eu", True):
+                # Unknown eligibility must remain visible and be marked for
+                # verification; only an explicit official false excludes a row.
+                if entry.get("eligibility_profile", {}).get("eligible_for_non_eu", True) is False:
                     report.add(LoadIssue.warn(file.name, "Skipped record due to non-EU ineligibility", record_index=i, record_id=entry.get("id")))
                     continue
                 
@@ -112,6 +114,10 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
                     "city": entry.get("city", ""),
                     "state": entry.get("region", ""),
                     "country": entry.get("country", ""),
+                    # Keep the source location object intact for map consumers.
+                    # The web API serializes this DataFrame row, so dropping it
+                    # here makes every otherwise valid coordinate disappear.
+                    "location": entry.get("location"),
                     "scope": "non_eu",
                     "needs_verification": entry.get("source_profile", {}).get("needs_verification", False),
                     "cost_city": entry.get("living_profile", {}).get("city_cost_level", ""),
@@ -207,6 +213,9 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
                 "city": model.City,
                 "state": model.State_Region or "",
                 "country": model.Country,
+                # Legacy records may also carry a location object even though
+                # the Pydantic compatibility model intentionally ignores it.
+                "location": entry.get("location"),
                 
                 "scope": model.Program_Scope,
                 "needs_verification": model.Meta_Needs_Verification or False,
@@ -306,7 +315,7 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
     if df.empty:
         # Guarantee columns exist to prevent KeyError downstream
         cols = [
-            "id", "name", "display_name", "short", "university", "city", "state", "country",
+            "id", "name", "display_name", "short", "university", "city", "state", "country", "location",
             "scope", "needs_verification", "cost_city", "cost_city_raw", "city_cost_rank",
             "semester_fee_eur", "semester_fees_json", "tuition_eur_per_year", "tuition_raw",
             "tuition_program", "tuition_period", "tuition_scope", "tuition_json",

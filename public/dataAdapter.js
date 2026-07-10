@@ -33,6 +33,66 @@ function getCategoryProfile(record) {
   };
 }
 
+function finiteCoordinate(value) {
+  if (value === null || value === undefined || value === "") return null;
+  const number = typeof value === "number" ? value : Number(String(value).trim());
+  return Number.isFinite(number) ? number : null;
+}
+
+function normalizeLocation(record) {
+  const rawLocation = firstValue(
+    record.location,
+    record.Location,
+    record.coordinates,
+    record.Coordinates
+  );
+  const source = rawLocation && typeof rawLocation === "object" && !Array.isArray(rawLocation)
+    ? rawLocation
+    : {};
+  const coordinatePair = Array.isArray(rawLocation)
+    ? rawLocation
+    : (Array.isArray(source.coordinates) ? source.coordinates : null);
+
+  // GeoJSON uses [longitude, latitude], while some imported records use
+  // { lat, lng } or { latitude, longitude }. Accept all of them at the UI edge.
+  let latitude = finiteCoordinate(firstValue(
+    source.latitude,
+    source.lat,
+    record.latitude,
+    record.lat
+  ));
+  let longitude = finiteCoordinate(firstValue(
+    source.longitude,
+    source.lng,
+    source.lon,
+    record.longitude,
+    record.lng,
+    record.lon
+  ));
+
+  if ((latitude === null || longitude === null) && coordinatePair && coordinatePair.length >= 2) {
+    const first = finiteCoordinate(coordinatePair[0]);
+    const second = finiteCoordinate(coordinatePair[1]);
+    longitude = longitude === null ? first : longitude;
+    latitude = latitude === null ? second : latitude;
+  }
+
+  if (
+    latitude === null || longitude === null ||
+    latitude < -90 || latitude > 90 || longitude < -180 || longitude > 180
+  ) {
+    return null;
+  }
+
+  return {
+    ...source,
+    city: firstValue(source.city, source.City, record.city, record.City) || "",
+    country: firstValue(source.country, source.Country, record.country, record.Country) || "",
+    latitude,
+    longitude
+  };
+}
+
 function normalizeUniversityRecord(record) {
   if (!record) return {};
 
@@ -213,7 +273,7 @@ function normalizeUniversityRecord(record) {
     sources,
     fieldConfidence,
     categoryProfile,
-    location: record.location || null,
+    location: normalizeLocation(record),
     raw: record
   };
 }
@@ -223,5 +283,6 @@ window.uniDataAdapter = {
   getPath,
   localizedField,
   getCategoryProfile,
+  normalizeLocation,
   normalizeUniversityRecord
 };

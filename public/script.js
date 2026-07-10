@@ -500,6 +500,10 @@ function processAndRender() {
     });
 
     filteredData = filtered;
+    // Keep the filtered collection public for map popups and other view layers.
+    // The map used to read window.filteredData while this variable stayed local,
+    // so clicking a map result could never open its detail drawer.
+    window.filteredData = filteredData;
     renderKPIs();
     renderTable();
     window.dispatchEvent(new CustomEvent('unirank:dataUpdated', { detail: { filteredData } }));
