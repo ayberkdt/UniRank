@@ -502,6 +502,43 @@ function processAndRender() {
     filteredData = filtered;
     renderKPIs();
     renderTable();
+    window.dispatchEvent(new CustomEvent('unirank:dataUpdated', { detail: { filteredData } }));
+}
+
+window.switchView = function(view) {
+    const listBtn = document.getElementById('btn-view-list');
+    const mapBtn = document.getElementById('btn-view-map');
+    const listContainer = document.getElementById('list-view-container');
+    const mapContainer = document.getElementById('map-view-container');
+    
+    if (view === 'list') {
+        listBtn.classList.add('active');
+        listBtn.style.background = 'var(--primary)';
+        listBtn.style.color = 'white';
+        
+        mapBtn.classList.remove('active');
+        mapBtn.style.background = 'transparent';
+        mapBtn.style.color = 'var(--text-muted)';
+        
+        listContainer.style.display = 'block';
+        mapContainer.style.display = 'none';
+    } else {
+        mapBtn.classList.add('active');
+        mapBtn.style.background = 'var(--primary)';
+        mapBtn.style.color = 'white';
+        
+        listBtn.classList.remove('active');
+        listBtn.style.background = 'transparent';
+        listBtn.style.color = 'var(--text-muted)';
+        
+        listContainer.style.display = 'none';
+        mapContainer.style.display = 'block';
+        
+        // Let leaflet recalculate its size since it was hidden
+        setTimeout(() => {
+            window.dispatchEvent(new Event('resize'));
+        }, 100);
+    }
 }
 
 function renderKPIs() {

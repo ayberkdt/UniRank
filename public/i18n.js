@@ -197,6 +197,16 @@ window.I18N = {
     no_data_available: "No data available",
     view_source: "View Source",
 
+    view_list: "List",
+    view_map: "Map",
+    map_kpi_shown: "Universities Shown",
+    map_kpi_avg: "Avg Score",
+    fit_map: "Fit to Results",
+    legend_excellent: "Excellent (8.5+)",
+    legend_strong: "Strong (7.0 - 8.4)",
+    legend_moderate: "Moderate (5.5 - 6.9)",
+    legend_weak: "Weak (< 5.5)",
+
     tr: "TR",
     en: "EN"
   },
@@ -396,6 +406,16 @@ window.I18N = {
     needs_verification: "Doğrulama Gerekiyor",
     no_data_available: "Veri bulunamadı",
     view_source: "Kaynağı Aç",
+
+    view_list: "Liste",
+    view_map: "Harita",
+    map_kpi_shown: "Gösterilen Üniversite",
+    map_kpi_avg: "Ort. Skor",
+    fit_map: "Sonuçlara Yaklaş",
+    legend_excellent: "Mükemmel (8.5+)",
+    legend_strong: "Güçlü (7.0 - 8.4)",
+    legend_moderate: "Orta (5.5 - 6.9)",
+    legend_weak: "Zayıf (< 5.5)",
 
     tr: "TR",
     en: "EN"

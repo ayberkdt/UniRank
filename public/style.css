@@ -1334,3 +1334,144 @@ input[type=range] {
 input:checked + .switch-slider { background-color: var(--primary); border-color: var(--primary); }
 input:checked + .switch-slider:before { transform: translateX(20px); }
 
+/* --- MAP STYLES --- */
+.leaflet-container {
+    background: #0f172a !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+.unirank-marker-icon {
+    background: transparent;
+    border: none;
+}
+
+.custom-marker {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 11px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    border: 2px solid rgba(255,255,255,0.2);
+    transition: transform 0.2s;
+    backdrop-filter: blur(4px);
+}
+
+.custom-marker:hover {
+    transform: scale(1.15) translateY(-2px);
+    z-index: 1000 !important;
+}
+
+.marker-excellent { background: linear-gradient(135deg, #10b981, #059669); border-color: #34d399; }
+.marker-strong { background: linear-gradient(135deg, #3b82f6, #2563eb); border-color: #60a5fa; }
+.marker-moderate { background: linear-gradient(135deg, #f59e0b, #d97706); border-color: #fbbf24; }
+.marker-weak { background: linear-gradient(135deg, #64748b, #475569); border-color: #94a3b8; }
+
+.custom-cluster-icon {
+    background: transparent;
+}
+.custom-cluster {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+    border: 2px solid rgba(255,255,255,0.4);
+    backdrop-filter: blur(8px);
+}
+.cluster-excellent { background: rgba(16, 185, 129, 0.85); box-shadow: 0 0 15px rgba(16,185,129,0.5); }
+.cluster-strong { background: rgba(59, 130, 246, 0.85); box-shadow: 0 0 15px rgba(59,130,246,0.5); }
+.cluster-moderate { background: rgba(245, 158, 11, 0.85); box-shadow: 0 0 15px rgba(245,158,11,0.5); }
+.cluster-weak { background: rgba(100, 116, 139, 0.85); }
+
+/* Popup Styles */
+.leaflet-popup-content-wrapper {
+    background: rgba(15, 23, 42, 0.95) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--text-main) !important;
+    border-radius: 16px !important;
+    padding: 0 !important;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6) !important;
+}
+.leaflet-popup-tip {
+    background: rgba(15, 23, 42, 0.95) !important;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+.leaflet-popup-content {
+    margin: 0 !important;
+    width: 280px !important;
+}
+
+.map-popup-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.map-popup-header {
+    padding: 16px;
+    color: white;
+}
+.marker-excellent-bg { background: linear-gradient(135deg, rgba(16,185,129,0.2), transparent); border-bottom: 1px solid rgba(16,185,129,0.2); }
+.marker-strong-bg { background: linear-gradient(135deg, rgba(59,130,246,0.2), transparent); border-bottom: 1px solid rgba(59,130,246,0.2); }
+.marker-moderate-bg { background: linear-gradient(135deg, rgba(245,158,11,0.2), transparent); border-bottom: 1px solid rgba(245,158,11,0.2); }
+.marker-weak-bg { background: linear-gradient(135deg, rgba(100,116,139,0.2), transparent); border-bottom: 1px solid rgba(100,116,139,0.2); }
+
+.map-popup-header h3 {
+    margin: 0 0 4px 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+}
+.map-popup-header p {
+    margin: 0;
+    font-size: 12px;
+    color: rgba(255,255,255,0.7);
+}
+
+.map-popup-body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.map-popup-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+.map-popup-label {
+    color: var(--text-muted);
+}
+.map-popup-val {
+    font-weight: 600;
+    color: var(--text-main);
+    text-align: right;
+    max-width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.score-val {
+    color: #fbbf24;
+    font-size: 14px;
+    font-weight: 700;
+}
+.leaflet-container a.leaflet-popup-close-button {
+    color: white !important;
+    top: 12px !important;
+    right: 12px !important;
+    font-weight: 300 !important;
+}
