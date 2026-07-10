@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
         position: 'bottomright'
     }).addTo(window.unirankMap);
 
-    // CartoDB Dark Matter tiles for a premium glassy dark theme
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    // CartoDB Voyager tiles for a clean, vibrant, readable theme (Duolingo-esque)
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 20
@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <span class="map-popup-label">${t("col_score") || "Score"}</span>
                             <span class="map-popup-val score-val">${score.toFixed(1)} / 10</span>
                         </div>
-                        <button class="btn btn-sm" style="width:100%; margin-top: 12px; background:var(--primary); color:white;" onclick="window.openDrawerById('${n.id}')">${t("detail")}</button>
+                        <button class="btn btn-sm" style="width:100%; margin-top: 12px; background:#1cb0f6; color:white; border-radius:12px; border:none; box-shadow:0 4px 0 #1899d6; font-weight:700; transition: transform 0.1s; transform: translateY(0);" onmousedown="this.style.transform='translateY(4px)'; this.style.boxShadow='none'" onmouseup="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 0 #1899d6'" onclick="window.openDrawerById('${n.id}')">${t("detail")}</button>
                     </div>
                 </div>
             `;
