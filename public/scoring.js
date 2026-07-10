@@ -19,6 +19,8 @@ function calculateScore(record, preferences, weights) {
         profile_boosts: []
     };
 
+    const n = window.uniDataAdapter ? window.uniDataAdapter.normalizeUniversityRecord(record) : null;
+
     // Extract User Profile if personalization is enabled
     const profile = profileMatch.enabled ? window.userProfile : null;
 
@@ -27,7 +29,7 @@ function calculateScore(record, preferences, weights) {
 
     // 1. Degree Filter
     const targetDegree = profile?.target_degree || preferences.degreeFilter || 'All';
-    const recDegree = String(record.Program_Degree || record.program_degree || '').toLowerCase();
+    const recDegree = n ? String(n.degree).toLowerCase() : String(record.Program_Degree || record.program_degree || '').toLowerCase();
     if (targetDegree !== 'All' && recDegree) {
         if (!recDegree.includes(targetDegree.toLowerCase())) {
             passed = false;
@@ -35,7 +37,7 @@ function calculateScore(record, preferences, weights) {
     }
 
     // 2. English Only Filter
-    const langReq = String(record.Admission_Language_Req || record.admission_language_req || '').toLowerCase();
+    const langReq = n ? (Array.isArray(n.teachingLanguage) ? n.teachingLanguage.join(' ').toLowerCase() : String(n.teachingLanguage).toLowerCase()) : String(record.Admission_Language_Req || record.admission_language_req || '').toLowerCase();
     const isEnglishOnlyPref = profile ? (profile.language_filter === 'english_only') : preferences.onlyEnglish;
     if (isEnglishOnlyPref) {
         if (langReq.includes('german') || langReq.includes('french') || langReq.includes('dutch') || langReq.includes('b1') || langReq.includes('c1') && !langReq.includes('english c1')) {
@@ -46,7 +48,7 @@ function calculateScore(record, preferences, weights) {
     }
 
     // 3. Max Tuition
-    const tuit = parseFloat(record.tuition_eur_per_year) || 0;
+    const tuit = n ? (n.totalAcademicCost ?? n.tuitionPerYear ?? 0) : (parseFloat(record.tuition_eur_per_year) || 0);
     const maxTPref = profile?.max_tuition_eur_per_year || preferences.maxTuition;
     if (maxTPref && maxTPref > 0) {
         if (profile?.strict_budget && tuit > maxTPref) {
@@ -56,7 +58,7 @@ function calculateScore(record, preferences, weights) {
 
     // --- SCORE COMPONENTS ---
 
-    let catProfile = record.Category_Profile;
+    let catProfile = n ? n.categoryProfile : record.Category_Profile;
     if (!catProfile) {
         catProfile = { category_scores: {}, subcategories: [], normalized_tags: [] };
     }
@@ -158,7 +160,7 @@ function calculateScore(record, preferences, weights) {
 
     // 2. Eligibility & Language Fit (0-100)
     let eligFit = 70;
-    const adMode = String(record.Admission_Mode || '').toLowerCase();
+    const adMode = n ? String(n.admissionMode || '').toLowerCase() : String(record.Admission_Mode || '').toLowerCase();
     
     if (langReq.includes('english')) {
         eligFit += 10;
@@ -196,7 +198,7 @@ function calculateScore(record, preferences, weights) {
     const tuitionNorm = Math.min(1.0, tuit / maxT);
     let tuitionScore = (1.0 - tuitionNorm) * 100;
     
-    const semFee = parseFloat(record.semester_fee_eur) || 0;
+    const semFee = n ? (n.semesterFee ?? 0) : (parseFloat(record.semester_fee_eur) || 0);
     const semFeeNorm = Math.min(1.0, semFee / 1000);
     let semFeeScore = (1.0 - semFeeNorm) * 100;
 
@@ -210,6 +212,9 @@ function calculateScore(record, preferences, weights) {
         explanation.push(`Regional/DSU scholarships available.`);
     } else if (sp.non_eu_eligible === false) {
         scholarshipScore = 0;
+    } else if (n && n.scholarshipSummary) {
+        scholarshipScore = 60;
+        explanation.push(`Some scholarship information available.`);
     } else if (record.Scholarships_Info && record.Scholarships_Info.length > 0) {
         // Fallback for legacy records
         scholarshipScore = 60;
@@ -234,10 +239,10 @@ function calculateScore(record, preferences, weights) {
     // 4. Career / Research Ecosystem (0-100)
     let careerFit = 50;
     const ecosystemStr = normalizeText([
-        record.Industry_Ecosystem,
+        n ? n.industrySummary : record.Industry_Ecosystem,
         record.Industry_Partners,
-        record.Analysis_Pros,
-        record.field_recognition
+        n ? (n.mainStrengths || []).join(' ') : record.Analysis_Pros,
+        n ? n.researchSummary : record.field_recognition
     ].join(' '));
 
     const premiumPartners = ['esa', 'dlr', 'nasa', 'jaxa', 'airbus', 'cern', 'onera', 'isae', 'estec'];
@@ -263,12 +268,12 @@ function calculateScore(record, preferences, weights) {
     // 5. Living Risk (0-100)
     let livingFit = 50;
     
-    const costCity = String(record.Cost_City_Living || '').toLowerCase();
+    const costCity = n ? String(n.livingRisk || '').toLowerCase() : String(record.Cost_City_Living || '').toLowerCase();
     if (costCity.includes('very_high')) livingFit -= 30;
     else if (costCity.includes('high')) livingFit -= 15;
     else if (costCity.includes('low')) livingFit += 20;
 
-    const housing = String(record.Living_Housing_Difficulty || '').toLowerCase();
+    const housing = n ? String(n.housingDifficulty || '').toLowerCase() : String(record.Living_Housing_Difficulty || '').toLowerCase();
     const housingTol = profile?.housing_risk_tolerance || 'medium';
     
     if (housing.includes('nightmare')) {
@@ -305,7 +310,7 @@ function calculateScore(record, preferences, weights) {
         explanation.push(`Data is verified.`);
     }
 
-    if (record.Meta_Sources && record.Meta_Sources.length > 0) {
+    if (n ? (n.sources && n.sources.length > 0) : (record.Meta_Sources && record.Meta_Sources.length > 0)) {
         confFit += 20;
     }
 
@@ -314,14 +319,6 @@ function calculateScore(record, preferences, weights) {
     // --- WEIGHTED SUM ---
     // If personalization is enabled, adjust weights slightly towards Academic Fit
     let effectiveWeights = { ...weights };
-    if (profileMatch.enabled) {
-        effectiveWeights.academic_fit = 35;
-        effectiveWeights.eligibility_language = 20;
-        effectiveWeights.cost_funding = 20;
-        effectiveWeights.career_research = 15;
-        effectiveWeights.living_risk = 7;
-        effectiveWeights.confidence_deadline = 3;
-    }
 
     const wTotal = (effectiveWeights.academic_fit + effectiveWeights.eligibility_language + effectiveWeights.cost_funding + effectiveWeights.career_research + effectiveWeights.living_risk + effectiveWeights.confidence_deadline) || 100;
     

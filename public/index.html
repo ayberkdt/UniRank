@@ -66,9 +66,12 @@
                         <option value="PhD" data-i18n="phd">Doctorate (PhD)</option>
                     </select>
                 </div>
-                <div class="form-group" style="flex-direction: row; align-items: center; gap: 8px; margin-top: 8px;">
-                    <input type="checkbox" id="english-only-filter" style="width: auto; cursor: pointer;">
-                    <label for="english-only-filter" style="margin: 0; cursor: pointer;" data-i18n="only_english">Only English-taught</label>
+                <div class="form-group" style="flex-direction: row; align-items: center; justify-content: space-between; gap: 8px; margin-top: 8px; padding: 12px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
+                    <label for="english-only-filter" style="margin: 0; cursor: pointer; font-weight: 500;" data-i18n="only_english">Only English-taught</label>
+                    <label class="custom-switch">
+                        <input type="checkbox" id="english-only-filter">
+                        <span class="switch-slider"></span>
+                    </label>
                 </div>
                 <div class="form-group" style="margin-top: 16px; padding: 16px; background: rgba(0,0,0,0.2); border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
                     <label style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
@@ -81,9 +84,12 @@
                         <span>25k€+</span>
                     </div>
                 </div>
-                <div class="form-group" style="flex-direction: row; align-items: center; gap: 8px; margin-top: 16px; margin-bottom: 8px;">
-                    <input type="checkbox" id="fav-filter" style="width: auto; cursor: pointer;">
-                    <label for="fav-filter" style="margin: 0; cursor: pointer; color: var(--text-highlight); font-weight: 600;" data-i18n="show_favorites">⭐ Show Favorites</label>
+                <div class="form-group" style="flex-direction: row; align-items: center; justify-content: space-between; gap: 8px; margin-top: 16px; margin-bottom: 8px; padding: 12px; background: rgba(245, 158, 11, 0.05); border-radius: 12px; border: 1px solid rgba(245, 158, 11, 0.2);">
+                    <label for="fav-filter" style="margin: 0; cursor: pointer; color: #f59e0b; font-weight: 600;" data-i18n="show_favorites">⭐ Show Favorites</label>
+                    <label class="custom-switch">
+                        <input type="checkbox" id="fav-filter">
+                        <span class="switch-slider" style="border-color: rgba(245, 158, 11, 0.3);"></span>
+                    </label>
                 </div>
             </div>
 
@@ -208,17 +214,7 @@
                 <div class="table-responsive">
                     <table id="results-table">
                         <thead>
-                            <tr>
-                                <th data-i18n="col_num">#</th>
-                                <th data-i18n="col_fav">Fav</th>
-                                <th data-i18n="col_university">University</th>
-                                <th data-i18n="col_city">City</th>
-                                <th data-i18n="col_country">Country</th>
-                                <th id="profile-match-header" data-i18n="profile_match">Profile Match</th>
-                                <th data-i18n="col_score">Score</th>
-                                <th data-i18n="col_tuition">Tuition (Yearly)</th>
-                                <th data-i18n="col_detail">Detail</th>
-                            </tr>
+                            <!-- Header rendered via JS -->
                         </thead>
                         <tbody id="table-body">
                             <!-- Rows rendered via JS -->
@@ -248,6 +244,7 @@
     </div>
     
     <!-- Using a mock/local JSON or API depending on deployment -->
+    <script src="dataAdapter.js"></script>
     <script src="scoring.js?v=1"></script>
     <script src="script.js?v=8"></script>
 

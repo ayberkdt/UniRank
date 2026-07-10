@@ -38,11 +38,21 @@ function displayValue(val) {
 
 function formatRiskBadge(risk) {
     if (!risk || risk === 'unknown' || risk === '—') return `<span class="risk-badge risk-unknown">Unknown</span>`;
-    const r = String(risk).toLowerCase();
-    if (r.includes('low') || r.includes('safe')) return `<span class="risk-badge risk-low">${risk}</span>`;
-    if (r.includes('medium') || r.includes('moderate')) return `<span class="risk-badge risk-medium">${risk}</span>`;
-    if (r.includes('high') || r.includes('hard') || r.includes('difficult')) return `<span class="risk-badge risk-high">${risk}</span>`;
-    return `<span class="risk-badge risk-unknown">${risk}</span>`;
+    let r = String(risk).toLowerCase();
+    
+    // Clean up backend variable names if they leaked to frontend
+    let displayRisk = risk;
+    if (r.includes('nightmare')) {
+        displayRisk = 'Nightmare';
+    } else if (r.includes('house_difficulty_') || r.includes('living_housing_difficulty_')) {
+        displayRisk = risk.replace(/house_difficulty_|living_housing_difficulty_/gi, '');
+        displayRisk = displayRisk.charAt(0).toUpperCase() + displayRisk.slice(1);
+    }
+    
+    if (r.includes('nightmare') || r.includes('high') || r.includes('hard') || r.includes('difficult')) return `<span class="risk-badge risk-high">${displayRisk}</span>`;
+    if (r.includes('medium') || r.includes('moderate')) return `<span class="risk-badge risk-medium">${displayRisk}</span>`;
+    if (r.includes('low') || r.includes('safe')) return `<span class="risk-badge risk-low">${displayRisk}</span>`;
+    return `<span class="risk-badge risk-unknown">${displayRisk}</span>`;
 }
 
 // Global Boundaries for Normalization
@@ -253,6 +263,7 @@ function setupEventListeners() {
         if (c && !selectedCountries.has(c)) {
             selectedCountries.add(c);
             e.target.value = '';
+            populateCountryFilter();
             renderCountryTags();
             processAndRender();
         }
@@ -276,9 +287,17 @@ function setupEventListeners() {
 }
 
 function populateCountryFilter() {
+    const previousValue = els.countryFilter.value;
+    els.countryFilter.innerHTML = '';
+    const defOpt = document.createElement('option');
+    defOpt.value = '';
+    defOpt.setAttribute('data-i18n', 'search_country');
+    defOpt.textContent = window.t ? window.t('search_country') : 'Search country...';
+    els.countryFilter.appendChild(defOpt);
+
     const countries = new Set();
     rawData.forEach(r => {
-        if (r.country) countries.add(r.country);
+        if (r.country && !selectedCountries.has(r.country)) countries.add(r.country);
     });
     
     const sorted = Array.from(countries).sort();
@@ -288,6 +307,10 @@ function populateCountryFilter() {
         opt.textContent = window.getCountryName ? window.getCountryName(c) : c;
         els.countryFilter.appendChild(opt);
     });
+    
+    if (countries.has(previousValue)) {
+        els.countryFilter.value = previousValue;
+    }
 }
 
 function renderCountryTags() {
@@ -298,6 +321,7 @@ function renderCountryTags() {
         span.innerHTML = `${window.getCountryName ? window.getCountryName(c) : c} ✕`;
         span.onclick = () => {
             selectedCountries.delete(c);
+            populateCountryFilter();
             renderCountryTags();
             processAndRender();
         };
