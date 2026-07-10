@@ -241,7 +241,7 @@ function calculateScore(record, preferences, weights) {
     const ecosystemStr = normalizeText([
         n ? n.industrySummary : record.Industry_Ecosystem,
         record.Industry_Partners,
-        n ? (n.mainStrengths || []).join(' ') : record.Analysis_Pros,
+        n ? (n.mainStrengths || []).map(s => typeof s === 'object' ? (s.en || '') : s).join(' ') : record.Analysis_Pros,
         n ? n.researchSummary : record.field_recognition
     ].join(' '));
 

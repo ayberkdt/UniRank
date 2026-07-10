@@ -123,20 +123,40 @@ function normalizeUniversityRecord(record) {
 
   const decisionSummary = record.decision_summary || {};
   
-  const mainStrengths = firstValue(
+  function normalizeArrayObj(arr) {
+    if (!arr) return [];
+    if (Array.isArray(arr)) return arr;
+    if (typeof arr === 'object') {
+        // Handle format: {"en": ["A", "B"], "tr": ["X", "Y"]}
+        const enArr = Array.isArray(arr.en) ? arr.en : [];
+        const trArr = Array.isArray(arr.tr) ? arr.tr : [];
+        const length = Math.max(enArr.length, trArr.length);
+        const result = [];
+        for (let i = 0; i < length; i++) {
+            result.push({
+                en: enArr[i] || '',
+                tr: trArr[i] || enArr[i] || ''
+            });
+        }
+        return result;
+    }
+    return [];
+  }
+
+  const mainStrengths = normalizeArrayObj(firstValue(
     record.decision_summary?.main_strengths,
     record.Analysis_Pros,
     record.pros
-  ) || [];
+  ) || []);
 
-  const mainRisks = firstValue(
+  const mainRisks = normalizeArrayObj(firstValue(
     record.decision_summary?.main_risks,
     record.Analysis_Cons,
     record.cons
-  ) || [];
+  ) || []);
 
-  const bestFor = record.decision_summary?.best_for || [];
-  const notIdealFor = record.decision_summary?.not_ideal_for || [];
+  const bestFor = normalizeArrayObj(record.decision_summary?.best_for || []);
+  const notIdealFor = normalizeArrayObj(record.decision_summary?.not_ideal_for || []);
   
   const pros = firstValue(record.pros, record.Analysis_Pros) || [];
   const cons = firstValue(record.cons, record.Analysis_Cons) || [];
