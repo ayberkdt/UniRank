@@ -1,364 +1,248 @@
-/**
- * UniRank Scoring Engine (JS)
- * Centralized multi-dimensional scoring logic with personalization support.
- */
-
 function normalizeText(text) {
-    if (!text) return "";
-    return String(text).toLowerCase().replace(/[^a-z0-9\s]/g, ' ');
+  if (!text) return "";
+  return String(text).toLowerCase().replace(/[^a-z0-9\s]/g, " ");
+}
+
+function finiteNumber(value) {
+  if (value === null || value === undefined || value === "") return null;
+  const number = typeof value === "number" ? value : Number(value);
+  return Number.isFinite(number) ? number : null;
+}
+
+function degreeKey(value) {
+  const text = String(value || "").toLowerCase();
+  if (!text || text === "all") return "all";
+  if (text.includes("doctor") || text.includes("phd")) return "phd";
+  if (text.includes("master") || text.includes("msc") || text.includes("m.sc")) return "msc";
+  if (text.includes("bachelor") || text.includes("bsc") || text.includes("b.sc")) return "bsc";
+  return "unknown";
+}
+
+function hasAccessibleSource(sources) {
+  const acceptedStatuses = new Set(["ok", "redirects", "pdf", "requires_js"]);
+  return sources.some((source) => acceptedStatuses.has(String(source?.access_status || "").toLowerCase()));
 }
 
 function calculateScore(record, preferences, weights) {
-    const explanation = [];
-    const warnings = [];
-    const profileMatch = {
-        enabled: window.personalizationEnabled || false,
-        personal_field_fit: null,
-        matched_interests: [],
-        profile_penalties: [],
-        profile_boosts: []
-    };
+  const explanation = [];
+  const warnings = [];
+  const profileMatch = {
+    enabled: window.personalizationEnabled || false,
+    personal_field_fit: null,
+    matched_interests: [],
+    profile_penalties: [],
+    profile_boosts: []
+  };
+  const normalized = window.uniDataAdapter ? window.uniDataAdapter.normalizeUniversityRecord(record) : null;
+  const profile = profileMatch.enabled ? window.userProfile : null;
+  const categoryProfile = normalized?.categoryProfile || record.Category_Profile || {
+    category_scores: {},
+    subcategories: [],
+    normalized_tags: []
+  };
+  const categoryScores = categoryProfile.category_scores || {};
+  const subcategories = Array.isArray(categoryProfile.subcategories) ? categoryProfile.subcategories : [];
+  const normalizedTags = Array.isArray(categoryProfile.normalized_tags) ? categoryProfile.normalized_tags : [];
+  let passed = true;
 
-    const n = window.uniDataAdapter ? window.uniDataAdapter.normalizeUniversityRecord(record) : null;
+  const targetDegree = degreeKey(profile?.target_degree || preferences.degreeFilter || "All");
+  const recordDegree = degreeKey(normalized?.degreeLevel || normalized?.degree || record.Program_Degree);
+  if (targetDegree !== "all" && recordDegree !== targetDegree) passed = false;
 
-    // Extract User Profile if personalization is enabled
-    const profile = profileMatch.enabled ? window.userProfile : null;
+  const languages = normalized?.teachingLanguage || [];
+  const languageText = languages.join(" ").toLowerCase();
+  const hasEnglishTeaching = /\benglish\b/.test(languageText);
+  const hasOtherTeachingLanguage = /\b(german|french|dutch|italian|spanish|portuguese|swedish|japanese|korean|chinese|russian|turkish)\b/.test(languageText);
+  const isEnglishOnlyPref = profile ? profile.language_filter === "english_only" : Boolean(preferences.onlyEnglish);
+  if (isEnglishOnlyPref && (!hasEnglishTeaching || hasOtherTeachingLanguage)) {
+    passed = false;
+    profileMatch.profile_penalties.push({ type: "language", reason: "Teaching language is not verified as English-only." });
+  }
 
-    // --- HARD FILTERS ---
-    let passed = true;
+  const annualCost = finiteNumber(normalized?.totalAcademicCost ?? normalized?.tuitionPerYear);
+  const sliderCap = finiteNumber(preferences.maxTuition);
+  const profileCap = finiteNumber(profile?.max_tuition_eur_per_year);
+  const activeHardCap = sliderCap && sliderCap > 0
+    ? sliderCap
+    : (profile?.strict_budget && profileCap && profileCap > 0 ? profileCap : null);
+  if (activeHardCap !== null && (annualCost === null || annualCost > activeHardCap)) {
+    passed = false;
+    profileMatch.profile_penalties.push({ type: "cost", reason: "Tuition is unknown or exceeds the selected hard limit." });
+  }
 
-    // 1. Degree Filter
-    const targetDegree = profile?.target_degree || preferences.degreeFilter || 'All';
-    const recDegree = n ? String(n.degree).toLowerCase() : String(record.Program_Degree || record.program_degree || '').toLowerCase();
-    if (targetDegree !== 'All' && recDegree) {
-        if (!recDegree.includes(targetDegree.toLowerCase())) {
-            passed = false;
-        }
+  let academicFit = 50;
+  if (profileMatch.enabled && Array.isArray(profile?.interests) && profile.interests.length > 0 && window.buildExpandedInterestProfile) {
+    const expandedInterests = window.buildExpandedInterestProfile(profile.interests, window.INTEREST_GRAPH || {});
+    let score = 0;
+    let maxPossible = 0;
+    const recordTags = new Set(normalizedTags);
+
+    for (const [interestKey, userWeight] of expandedInterests.entries()) {
+      maxPossible += userWeight;
+      let matched = false;
+      const legacyLabel = window.INTEREST_GRAPH?.[interestKey]?.label?.en || interestKey;
+      if (recordTags.has(interestKey) || recordTags.has(legacyLabel) || subcategories.includes(interestKey) || subcategories.includes(legacyLabel)) {
+        score += userWeight;
+        matched = true;
+      } else if (categoryScores[interestKey] !== undefined || categoryScores[legacyLabel] !== undefined) {
+        const categoryScore = finiteNumber(categoryScores[interestKey] ?? categoryScores[legacyLabel]) || 0;
+        score += userWeight * Math.max(0, Math.min(1, categoryScore / 100));
+        matched = true;
+      }
+      if (matched) {
+        profileMatch.matched_interests.push({
+          interest_key: interestKey,
+          match_strength: userWeight,
+          match_type: profile.interests.some((interest) => interest.key === interestKey) ? "direct" : "graph_neighbor"
+        });
+      }
     }
 
-    // 2. English Only Filter
-    const langReq = n ? (Array.isArray(n.teachingLanguage) ? n.teachingLanguage.join(' ').toLowerCase() : String(n.teachingLanguage).toLowerCase()) : String(record.Admission_Language_Req || record.admission_language_req || '').toLowerCase();
-    const isEnglishOnlyPref = profile ? (profile.language_filter === 'english_only') : preferences.onlyEnglish;
-    if (isEnglishOnlyPref) {
-        if (langReq.includes('german') || langReq.includes('french') || langReq.includes('dutch') || langReq.includes('b1') || langReq.includes('c1') && !langReq.includes('english c1')) {
-            if (langReq.includes('german') || langReq.includes('french') || langReq.includes('dutch')) {
-                passed = false;
-            }
-        }
+    academicFit = maxPossible > 0 ? Math.round((score / maxPossible) * 100) : 50;
+    profileMatch.personal_field_fit = academicFit;
+    explanation.push(academicFit >= 80
+      ? "Strong personalized match with your interest graph."
+      : academicFit >= 40
+        ? "Partial match with your expanded interest fields."
+        : "Weak match with your stated academic interests.");
+  } else {
+    const selectedCategories = preferences.selectedCategoryKeys || preferences.selectedKeywords || [];
+    if (selectedCategories.length > 0) {
+      let scoreSum = 0;
+      for (const category of selectedCategories) {
+        if (categoryScores[category] !== undefined) scoreSum += finiteNumber(categoryScores[category]) || 0;
+        else if (subcategories.includes(category)) scoreSum += 100;
+        else if (normalizedTags.includes(category)) scoreSum += 60;
+      }
+      academicFit = Math.min(100, Math.max(0, scoreSum / selectedCategories.length));
+      explanation.push(academicFit >= 80
+        ? "Strong academic match for your selected fields."
+        : academicFit >= 40
+          ? "Partial academic match for your selected fields."
+          : "No strong match found for your selected fields.");
     }
+  }
+  if (preferences.minFieldFit && academicFit < preferences.minFieldFit) passed = false;
 
-    // 3. Max Tuition
-    const tuit = n ? (n.totalAcademicCost ?? n.tuitionPerYear ?? 0) : (parseFloat(record.tuition_eur_per_year) || 0);
-    const maxTPref = profile?.max_tuition_eur_per_year || preferences.maxTuition;
-    if (maxTPref && maxTPref > 0) {
-        if (profile?.strict_budget && tuit > maxTPref) {
-            passed = false;
-        }
-    }
+  let eligibilityFit = 55;
+  if (languages.length > 0) {
+    eligibilityFit += hasEnglishTeaching ? 20 : 0;
+    eligibilityFit += hasOtherTeachingLanguage ? -10 : 10;
+  } else {
+    warnings.push("Teaching language is unknown.");
+  }
+  const admissionMode = String(normalized?.admissionMode || "").toLowerCase();
+  if (admissionMode.includes("direct")) {
+    eligibilityFit += 20;
+    explanation.push("Direct admission offers lower entry risk.");
+  } else if (/(aptitude|committee|portfolio|interview|competitive)/.test(admissionMode)) {
+    eligibilityFit -= profileMatch.enabled && profile?.admission_risk_tolerance === "low" ? 40 : 20;
+    warnings.push(`Competitive admission process (${normalized.admissionMode}).`);
+  }
+  eligibilityFit = Math.min(100, Math.max(0, eligibilityFit));
 
-    // --- SCORE COMPONENTS ---
+  const semesterFee = finiteNumber(normalized?.semesterFee);
+  const tuitionScore = annualCost === null ? 45 : (1 - Math.min(1, annualCost / 20000)) * 100;
+  const semesterFeeScore = semesterFee === null ? 50 : (1 - Math.min(1, semesterFee / 1000)) * 100;
+  let scholarshipScore = 40;
+  const scholarshipProfile = record.scholarship_profile || {};
+  if (!normalized?.needsVerification && scholarshipProfile.non_eu_eligible === true) {
+    scholarshipScore = 100;
+    explanation.push("Scholarship eligibility is documented for non-EU students.");
+  } else if (!normalized?.needsVerification && scholarshipProfile.regional_scholarship_available === true) {
+    scholarshipScore = 80;
+    explanation.push("Regional scholarship availability is documented.");
+  } else if (normalized?.needsVerification && normalized?.scholarshipSummary) {
+    warnings.push("Scholarship information needs verification.");
+  }
+  let costFit = (tuitionScore * 0.7) + (semesterFeeScore * 0.2) + (scholarshipScore * 0.1);
+  if (annualCost === null) {
+    warnings.push("Tuition is unknown, so the cost score is neutral.");
+  } else if (annualCost > 10000) {
+    warnings.push(`High yearly tuition (€${annualCost.toFixed(0)}).`);
+  } else if (annualCost <= 2000) {
+    explanation.push(`Low documented tuition (€${annualCost.toFixed(0)}/yr).`);
+  }
+  if (profileCap && annualCost !== null && annualCost > profileCap && !profile?.strict_budget) {
+    costFit -= 30;
+    if (profileMatch.enabled) profileMatch.profile_penalties.push({ type: "cost", reason: "Tuition exceeds the preferred maximum." });
+  }
+  costFit = Math.min(100, Math.max(0, costFit));
 
-    let catProfile = n ? n.categoryProfile : record.Category_Profile;
-    if (!catProfile) {
-        catProfile = { category_scores: {}, subcategories: [], normalized_tags: [] };
-    }
+  let careerFit = 50;
+  const partnerText = normalizeText((normalized?.confirmedPartners || []).map((partner) => typeof partner === "object" ? partner.name || partner.en || "" : partner).join(" "));
+  const premiumPartners = ["esa", "dlr", "nasa", "jaxa", "airbus", "cern", "onera", "isae", "estec"];
+  const partnerMatches = normalized?.needsVerification ? 0 : premiumPartners.filter((partner) => partnerText.includes(partner)).length;
+  careerFit += partnerMatches * 15;
+  if (normalized?.internshipMandatory === true && !normalized?.needsVerification) {
+    careerFit += 10;
+    explanation.push("A documented mandatory internship supports industry exposure.");
+  }
+  careerFit = Math.min(100, Math.max(0, careerFit));
 
-    // 1. Academic / Field Fit (0-100)
-    let academicFit = 0;
-    
-    if (profileMatch.enabled && profile?.interests?.length > 0 && window.buildExpandedInterestProfile) {
-        // Personalized Field Fit
-        const expandedInterests = window.buildExpandedInterestProfile(profile.interests, window.INTEREST_GRAPH || {});
-        
-        let score = 0;
-        let maxPossible = 0;
-        const recordTags = new Set(catProfile.normalized_tags || []);
-        
-        for (const [interestKey, userWeight] of expandedInterests.entries()) {
-            maxPossible += userWeight;
-            let matched = false;
-            let matchType = '';
-            
-            // Get legacy label just in case the record hasn't been migrated yet
-            const legacyLabel = window.INTEREST_GRAPH && window.INTEREST_GRAPH[interestKey] ? window.INTEREST_GRAPH[interestKey].label.en : interestKey;
-            
-            if (recordTags.has(interestKey) || recordTags.has(legacyLabel)) {
-                score += userWeight;
-                matched = true;
-                matchType = 'direct';
-            } else if (catProfile.subcategories.includes(interestKey) || catProfile.subcategories.includes(legacyLabel)) {
-                score += userWeight;
-                matched = true;
-                matchType = 'direct';
-            } else if (catProfile.category_scores[interestKey]) {
-                const ratio = catProfile.category_scores[interestKey] / 100;
-                score += userWeight * ratio;
-                matched = true;
-                matchType = 'partial';
-            } else if (catProfile.category_scores[legacyLabel]) {
-                const ratio = catProfile.category_scores[legacyLabel] / 100;
-                score += userWeight * ratio;
-                matched = true;
-                matchType = 'partial';
-            }
-            
-            if (matched) {
-                const isDirectUserSelected = profile.interests.find(i => i.key === interestKey);
-                profileMatch.matched_interests.push({
-                    interest_key: interestKey,
-                    match_strength: userWeight,
-                    match_type: isDirectUserSelected ? 'direct' : 'graph_neighbor'
-                });
-            }
-        }
-        
-        if (maxPossible > 0) {
-            academicFit = Math.round((score / maxPossible) * 100);
-            profileMatch.personal_field_fit = academicFit;
-        } else {
-            academicFit = 50;
-        }
-        
-        if (academicFit >= 80) explanation.push("Strong personalized match with your interest graph.");
-        else if (academicFit >= 40) explanation.push("Partial match with your expanded interest fields.");
-        else explanation.push("Weak match with your stated academic interests.");
+  let livingFit = 50;
+  const cityCost = String(normalized?.cityCostLevel || normalized?.livingRisk || "").toLowerCase();
+  if (cityCost.includes("very_high")) livingFit -= 30;
+  else if (cityCost.includes("high")) livingFit -= 15;
+  else if (cityCost.includes("low")) livingFit += 20;
+  const housing = String(normalized?.housingDifficulty || "").toLowerCase();
+  if (housing.includes("nightmare")) {
+    livingFit -= profileMatch.enabled && profile?.housing_risk_tolerance === "low" ? 50 : 30;
+    warnings.push("Housing market is extremely difficult.");
+  } else if (housing.includes("very hard")) {
+    livingFit -= profileMatch.enabled && profile?.housing_risk_tolerance === "low" ? 40 : 20;
+    warnings.push("Housing market is very difficult.");
+  } else if (housing.includes("hard")) {
+    livingFit -= 10;
+  } else if (housing.includes("moderate") || housing.includes("easy")) {
+    livingFit += 20;
+    explanation.push("Housing is relatively accessible.");
+  }
+  livingFit = Math.min(100, Math.max(0, livingFit));
 
-    } else {
-        // Default Academic Fit
-        const selectedCats = preferences.selectedCategoryKeys || preferences.selectedKeywords || [];
-        if (selectedCats.length === 0) {
-            academicFit = 50;
-        } else {
-            let scoreSum = 0;
-            let matches = 0;
-            for (const cat of selectedCats) {
-                if (catProfile.category_scores[cat] !== undefined) {
-                    const catScore = catProfile.category_scores[cat];
-                    scoreSum += catScore;
-                    if (catScore >= 30) matches++;
-                }
-                else if (catProfile.subcategories.includes(cat)) {
-                    scoreSum += 100;
-                    matches++;
-                }
-                else if (catProfile.normalized_tags.includes(cat)) {
-                    scoreSum += 60;
-                    matches++;
-                }
-            }
-            if (selectedCats.length > 0) academicFit = scoreSum / selectedCats.length;
-            academicFit = Math.min(100, Math.max(0, academicFit));
-            if (academicFit >= 80) explanation.push("Strong academic match for your selected fields.");
-            else if (academicFit >= 40) explanation.push("Partial academic match for your selected fields.");
-            else explanation.push("No strong match found for your selected fields.");
-        }
-    }
+  const sourceVerified = hasAccessibleSource(normalized?.sources || []);
+  let confidenceFit = sourceVerified ? 85 : 50;
+  if (normalized?.needsVerification) {
+    confidenceFit = Math.min(confidenceFit, 35);
+    warnings.push("Critical data requires source verification.");
+  } else if (sourceVerified) {
+    explanation.push("The record includes accessible source evidence.");
+  } else {
+    warnings.push("No accessible source log is available for this record.");
+  }
 
-    if (preferences.minFieldFit && academicFit < preferences.minFieldFit) {
-        passed = false;
-    }
+  const totalWeight = (
+    weights.academic_fit + weights.eligibility_language + weights.cost_funding +
+    weights.career_research + weights.living_risk + weights.confidence_deadline
+  ) || 100;
+  const finalScore = (
+    academicFit * (weights.academic_fit / totalWeight) +
+    eligibilityFit * (weights.eligibility_language / totalWeight) +
+    costFit * (weights.cost_funding / totalWeight) +
+    careerFit * (weights.career_research / totalWeight) +
+    livingFit * (weights.living_risk / totalWeight) +
+    confidenceFit * (weights.confidence_deadline / totalWeight)
+  );
 
-    // 2. Eligibility & Language Fit (0-100)
-    let eligFit = 70;
-    const adMode = n ? String(n.admissionMode || '').toLowerCase() : String(record.Admission_Mode || '').toLowerCase();
-    
-    if (langReq.includes('english')) {
-        eligFit += 10;
-        if (!langReq.includes('german') && !langReq.includes('french') && !langReq.includes('dutch')) {
-            eligFit += 10;
-            explanation.push(`Program is fully English-taught.`);
-        } else {
-            eligFit -= 20;
-            warnings.push(`Requires an additional language (${langReq}).`);
-            if (profileMatch.enabled && profile?.language_filter === 'english_only') {
-                profileMatch.profile_penalties.push({ type: 'language', reason: 'Requires non-English language.' });
-            }
-        }
-    }
-    
-    if (adMode.includes('direct')) {
-        eligFit += 20;
-        explanation.push(`Direct admission offers lower entry risk.`);
-    } else if (adMode.includes('aptitude test') || adMode.includes('committee') || adMode.includes('portfolio') || adMode.includes('interview')) {
-        if (profileMatch.enabled && profile?.admission_risk_tolerance === 'low') {
-            eligFit -= 40;
-            profileMatch.profile_penalties.push({ type: 'admission', reason: 'Competitive admission conflicts with low risk tolerance.' });
-        } else {
-            eligFit -= 20;
-        }
-        warnings.push(`Competitive admission process (${adMode}).`);
-    }
-
-    eligFit = Math.min(100, Math.max(0, eligFit));
-
-
-    // 3. Cost & Funding (0-100)
-    let costFit = 0;
-    const maxT = 20000;
-    const tuitionNorm = Math.min(1.0, tuit / maxT);
-    let tuitionScore = (1.0 - tuitionNorm) * 100;
-    
-    const semFee = n ? (n.semesterFee ?? 0) : (parseFloat(record.semester_fee_eur) || 0);
-    const semFeeNorm = Math.min(1.0, semFee / 1000);
-    let semFeeScore = (1.0 - semFeeNorm) * 100;
-
-    let scholarshipScore = 0;
-    const sp = record.scholarship_profile || {};
-    if (sp.non_eu_eligible === true) {
-        scholarshipScore = 100;
-        explanation.push(`Scholarships are available for non-EU students.`);
-    } else if (sp.regional_scholarship_available === true) {
-        scholarshipScore = 80;
-        explanation.push(`Regional/DSU scholarships available.`);
-    } else if (sp.non_eu_eligible === false) {
-        scholarshipScore = 0;
-    } else if (n && n.scholarshipSummary) {
-        scholarshipScore = 60;
-        explanation.push(`Some scholarship information available.`);
-    } else if (record.Scholarships_Info && record.Scholarships_Info.length > 0) {
-        // Fallback for legacy records
-        scholarshipScore = 60;
-        explanation.push(`Some scholarship information available (needs verification).`);
-    }
-
-    costFit = (tuitionScore * 0.7) + (semFeeScore * 0.2) + (scholarshipScore * 0.1);
-
-    if (maxTPref && tuit > maxTPref && (!profile || !profile.strict_budget)) {
-        costFit -= 30; // Soft penalty
-        if (profileMatch.enabled) profileMatch.profile_penalties.push({ type: 'cost', reason: 'Tuition exceeds preferred maximum.' });
-    }
-
-    costFit = Math.min(100, Math.max(0, costFit));
-
-    if (tuit > 10000) {
-        warnings.push(`High yearly tuition (€${tuit.toFixed(0)}).`);
-    } else if (tuit <= 2000) {
-        explanation.push(`Very affordable tuition (€${tuit.toFixed(0)}/yr).`);
-    }
-
-    // 4. Career / Research Ecosystem (0-100)
-    let careerFit = 50;
-    const ecosystemStr = normalizeText([
-        n ? n.industrySummary : record.Industry_Ecosystem,
-        record.Industry_Partners,
-        n ? (n.mainStrengths || []).map(s => typeof s === 'object' ? (s.en || '') : s).join(' ') : record.Analysis_Pros,
-        n ? n.researchSummary : record.field_recognition
-    ].join(' '));
-
-    const premiumPartners = ['esa', 'dlr', 'nasa', 'jaxa', 'airbus', 'cern', 'onera', 'isae', 'estec'];
-    let partnerMatches = 0;
-    premiumPartners.forEach(p => {
-        if (ecosystemStr.includes(p)) partnerMatches++;
-    });
-
-    careerFit += partnerMatches * 15;
-
-    const compInt = String(record.Industry_Comp_Intensity || '').toLowerCase();
-    if (compInt.includes('high')) careerFit += 10;
-    if (record.Internship_Mandatory) {
-        careerFit += 10;
-        explanation.push(`Mandatory internship ensures industry exposure.`);
-    }
-
-    careerFit = Math.min(100, Math.max(0, careerFit));
-    if (partnerMatches > 0) {
-        explanation.push(`Strong aerospace/tech ecosystem (partners include major agencies/corps).`);
-    }
-
-    // 5. Living Risk (0-100)
-    let livingFit = 50;
-    
-    const costCity = n ? String(n.livingRisk || '').toLowerCase() : String(record.Cost_City_Living || '').toLowerCase();
-    if (costCity.includes('very_high')) livingFit -= 30;
-    else if (costCity.includes('high')) livingFit -= 15;
-    else if (costCity.includes('low')) livingFit += 20;
-
-    const housing = n ? String(n.housingDifficulty || '').toLowerCase() : String(record.Living_Housing_Difficulty || '').toLowerCase();
-    const housingTol = profile?.housing_risk_tolerance || 'medium';
-    
-    if (housing.includes('nightmare')) {
-        if (profileMatch.enabled && housingTol === 'low') {
-            livingFit -= 50;
-            profileMatch.profile_penalties.push({ type: 'housing', reason: 'Nightmare housing conflicts with low risk tolerance.' });
-        } else {
-            livingFit -= 30;
-        }
-        warnings.push(`Housing market is extremely difficult (Nightmare).`);
-    } else if (housing.includes('very hard')) {
-        if (profileMatch.enabled && housingTol === 'low') {
-            livingFit -= 40;
-            profileMatch.profile_penalties.push({ type: 'housing', reason: 'Very hard housing conflicts with low risk tolerance.' });
-        } else {
-            livingFit -= 20;
-        }
-        warnings.push(`Housing market is very difficult.`);
-    } else if (housing.includes('hard')) {
-        livingFit -= 10;
-    } else if (housing.includes('moderate') || housing.includes('easy')) {
-        livingFit += 20;
-        explanation.push(`Housing is relatively accessible.`);
-    }
-
-    livingFit = Math.min(100, Math.max(0, livingFit));
-
-    // 6. Data Confidence / Deadline (0-100)
-    let confFit = 80;
-    if (record.Meta_Needs_Verification) {
-        confFit -= 20;
-        warnings.push(`Data needs manual verification.`);
-    } else {
-        explanation.push(`Data is verified.`);
-    }
-
-    if (n ? (n.sources && n.sources.length > 0) : (record.Meta_Sources && record.Meta_Sources.length > 0)) {
-        confFit += 20;
-    }
-
-    confFit = Math.min(100, Math.max(0, confFit));
-
-    // --- WEIGHTED SUM ---
-    // If personalization is enabled, adjust weights slightly towards Academic Fit
-    let effectiveWeights = { ...weights };
-
-    const wTotal = (effectiveWeights.academic_fit + effectiveWeights.eligibility_language + effectiveWeights.cost_funding + effectiveWeights.career_research + effectiveWeights.living_risk + effectiveWeights.confidence_deadline) || 100;
-    
-    const nW = {
-        ac: effectiveWeights.academic_fit / wTotal,
-        el: effectiveWeights.eligibility_language / wTotal,
-        co: effectiveWeights.cost_funding / wTotal,
-        ca: effectiveWeights.career_research / wTotal,
-        li: effectiveWeights.living_risk / wTotal,
-        cf: effectiveWeights.confidence_deadline / wTotal
-    };
-
-    const finalScore = (
-        (academicFit * nW.ac) +
-        (eligFit * nW.el) +
-        (costFit * nW.co) +
-        (careerFit * nW.ca) +
-        (livingFit * nW.li) +
-        (confFit * nW.cf)
-    );
-
-    return {
-        passed_hard_filters: passed,
-        total_score: finalScore,
-        components: {
-            academic_fit: academicFit,
-            eligibility_language: eligFit,
-            cost_funding: costFit,
-            career_research: careerFit,
-            living_risk: livingFit,
-            confidence_deadline: confFit
-        },
-        explanation: explanation,
-        warnings: warnings,
-        personalized_match: profileMatch
-    };
+  return {
+    passed_hard_filters: passed,
+    total_score: finalScore,
+    components: {
+      academic_fit: academicFit,
+      eligibility_language: eligibilityFit,
+      cost_funding: costFit,
+      career_research: careerFit,
+      living_risk: livingFit,
+      confidence_deadline: confidenceFit
+    },
+    explanation,
+    warnings,
+    personalized_match: profileMatch
+  };
 }
 
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { calculateScore };
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = { calculateScore };
 } else {
-    window.unirankScoring = { calculateScore };
+  window.unirankScoring = { calculateScore };
 }

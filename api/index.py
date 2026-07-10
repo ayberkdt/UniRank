@@ -11,12 +11,28 @@ import numpy as np
 # Do NOT use sys.path.append dynamically because it breaks Vercel's static analysis bundle.
 from unirank.core.json_loader import load_database_folder
 
+
+def _json_safe(value):
+    if isinstance(value, dict):
+        return {key: _json_safe(item) for key, item in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [_json_safe(item) for item in value]
+    if isinstance(value, np.generic):
+        value = value.item()
+    if value is pd.NA or value is pd.NaT:
+        return None
+    if isinstance(value, pd.Timestamp):
+        return value.isoformat()
+    if isinstance(value, float) and np.isnan(value):
+        return None
+    return value
+
 app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
-    allow_credentials=True,
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -56,14 +72,14 @@ def get_universities():
         # Replace NaNs with None for safe JSON serialization
         df = df.replace({np.nan: None})
         
-        records = df.to_dict(orient="records")
+        records = _json_safe(df.to_dict(orient="records"))
         return JSONResponse(
             {"status": "success", "data": records, "report": {"files_loaded": report.files_loaded}},
             headers=headers
         )
-    except Exception as e:
+    except Exception:
         return JSONResponse(
-            {"status": "error", "message": f"Python Error: {str(e)}", "data": []},
+            {"status": "error", "message": "The university data could not be loaded.", "data": []},
             headers=headers
         )
 
@@ -93,5 +109,5 @@ def get_taxonomy():
         with open(tax_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
         return JSONResponse(data)
-    except Exception as e:
-        return JSONResponse({"status": "error", "message": str(e)})
+    except Exception:
+        return JSONResponse({"status": "error", "message": "The taxonomy data could not be loaded."})

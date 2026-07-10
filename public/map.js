@@ -254,6 +254,7 @@ function initUniRankMap() {
     }
 
     function formatCost(value) {
+        if (value === null || value === undefined || value === '') return '\u2014';
         const number = Number(value);
         if (!Number.isFinite(number)) return '—';
         return `${number.toLocaleString('en-US')}€`;
@@ -297,7 +298,7 @@ function initUniRankMap() {
                         </div>
                         <div class="map-popup-row">
                             <span class="map-popup-label">${escapeHtml(t('yearly_cost', 'Yearly Cost'))}</span>
-                            <span class="map-popup-val">${escapeHtml(formatCost(n.totalAcademicCost))}</span>
+                            <span class="map-popup-val">${escapeHtml(formatCost(n.totalAcademicCost ?? n.tuitionPerYear))}</span>
                         </div>
                         <div class="map-popup-row">
                             <span class="map-popup-label">${escapeHtml(t('col_score', 'Score'))}</span>

@@ -35,8 +35,11 @@ window.handleLoginSubmit = async function(e) {
   const email = document.getElementById('login-email').value;
   if (email) {
     await window.login(email, "demo-password");
+    const storedFavorites = JSON.parse(localStorage.getItem('unirank_demo_favs') || '[]');
+    storedFavorites.forEach((id) => favorites.add(id));
     window.closeLoginModal();
     window.updateAuthUI();
+    if (window.processAndRender) window.processAndRender();
   }
 };
 
@@ -47,7 +50,11 @@ window.handleLogout = async function() {
 };
 
 function populateProfileForm() {
-  if (!window.userProfile) return;
+  if (!window.userProfile) {
+    currentInterests = [];
+    renderProfileInterests([]);
+    return;
+  }
   
   const p = window.userProfile;
   

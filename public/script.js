@@ -27,6 +27,32 @@ function formatMoney(amount) {
     return '€' + val.toLocaleString('en-US');
 }
 
+function escapeHtml(value) {
+    return String(value ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+}
+
+function safeUrl(value) {
+    if (!value) return '';
+    try {
+        const parsed = new URL(String(value));
+        return ['http:', 'https:'].includes(parsed.protocol) ? parsed.href : '';
+    } catch {
+        return '';
+    }
+}
+
+function getAnnualCost(record) {
+    const normalized = window.uniDataAdapter ? window.uniDataAdapter.normalizeUniversityRecord(record) : null;
+    const value = normalized?.totalAcademicCost ?? normalized?.tuitionPerYear;
+    const number = value === null || value === undefined || value === '' ? null : Number(value);
+    return Number.isFinite(number) ? number : null;
+}
+
 function displayValue(val) {
     if (val === null || val === undefined || val === '') return '—';
     if (window.localizedField) {
@@ -49,10 +75,11 @@ function formatRiskBadge(risk) {
         displayRisk = displayRisk.charAt(0).toUpperCase() + displayRisk.slice(1);
     }
     
-    if (r.includes('nightmare') || r.includes('high') || r.includes('hard') || r.includes('difficult')) return `<span class="risk-badge risk-high">${displayRisk}</span>`;
-    if (r.includes('medium') || r.includes('moderate')) return `<span class="risk-badge risk-medium">${displayRisk}</span>`;
-    if (r.includes('low') || r.includes('safe')) return `<span class="risk-badge risk-low">${displayRisk}</span>`;
-    return `<span class="risk-badge risk-unknown">${displayRisk}</span>`;
+    const safeRisk = escapeHtml(displayRisk);
+    if (r.includes('nightmare') || r.includes('high') || r.includes('hard') || r.includes('difficult')) return `<span class="risk-badge risk-high">${safeRisk}</span>`;
+    if (r.includes('medium') || r.includes('moderate')) return `<span class="risk-badge risk-medium">${safeRisk}</span>`;
+    if (r.includes('low') || r.includes('safe')) return `<span class="risk-badge risk-low">${safeRisk}</span>`;
+    return `<span class="risk-badge risk-unknown">${safeRisk}</span>`;
 }
 
 // Global Boundaries for Normalization
@@ -180,11 +207,11 @@ async function fetchData() {
             processAndRender();
         } else {
             console.error("API Error:", json.message);
-            els.tableBody.innerHTML = `<tr><td colspan="7" style="text-align:center; color:var(--danger)">API Error: ${json.message}</td></tr>`;
+            els.tableBody.innerHTML = `<tr><td colspan="10" class="empty-results">${escapeHtml(json.message || 'API request failed.')}</td></tr>`;
         }
     } catch (err) {
         console.error("Fetch Error:", err);
-        els.tableBody.innerHTML = `<tr><td colspan="7" style="text-align:center; color:var(--danger)">Network/Fetch Error: ${err.message}</td></tr>`;
+        els.tableBody.innerHTML = `<tr><td colspan="10" class="empty-results">${escapeHtml(err.message || 'Network request failed.')}</td></tr>`;
     } finally {
         if (loader) loader.classList.remove('active');
     }
@@ -347,10 +374,12 @@ const POPULAR_CATEGORIES = [
     "space_systems", "gnc", "cfd", "jet_propulsion", "aerospace_structures",
     "scientific_ai", "surrogate_modeling", "digital_twin", "satellite_systems", "astrodynamics"
 ];
+let categorySearchBound = false;
 
 window.renderCategoryUI = async function() {
     if (!els.categorySearchInput) return;
-    els.categorySearchInput.addEventListener('input', async (e) => {
+    if (!categorySearchBound) {
+      els.categorySearchInput.addEventListener('input', async (e) => {
         const val = e.target.value;
         if (!val) {
             els.categorySuggestions.innerHTML = '';
@@ -374,7 +403,7 @@ window.renderCategoryUI = async function() {
                 results.push({ key, ...info });
             }
         }
-        
+
         els.categorySuggestions.innerHTML = '';
         if (results.length === 0) {
             els.categorySuggestions.innerHTML = `<div class="category-suggestion" style="cursor:default; opacity:0.6"><span class="category-suggestion-title">${window.t('no_category_results')}</span></div>`;
@@ -394,7 +423,9 @@ window.renderCategoryUI = async function() {
             };
             els.categorySuggestions.appendChild(div);
         });
-    });
+      });
+      categorySearchBound = true;
+    }
     renderSelectedCategories();
     renderPopularCategories();
 };
@@ -442,8 +473,7 @@ const COST_MAP = {
 };
 
 function processAndRender() {
-    const city = 'All';
-    const search = els.searchInput.value.toLowerCase();
+    const search = window.normalizeSearchText(els.searchInput.value);
     
     const showFavs = els.favFilter.checked;
 
@@ -465,13 +495,25 @@ function processAndRender() {
     };
 
     let filtered = rawData.filter(r => {
-        const rid = r.Uni_ID || r.id || r.name || r.university;
+        const n = window.uniDataAdapter ? window.uniDataAdapter.normalizeUniversityRecord(r) : null;
+        const rid = n?.id || r.Uni_ID || r.id || r.name || r.university;
         if (showFavs && !favorites.has(rid)) return false;
-        if (selectedCountries.size > 0 && !selectedCountries.has(r.country)) return false;
+        if (selectedCountries.size > 0 && !selectedCountries.has(n?.country || r.country)) return false;
         
         if (search) {
-            const text = `${r.name} ${r.university} ${r.tags_raw} ${r.focus} ${r.city} ${r.country} ${r.Analysis_Strong_Areas}`.toLowerCase();
-            if (!text.includes(search)) return false;
+            const text = [
+                n?.universityName,
+                n?.programName,
+                n?.city,
+                n?.country,
+                n?.degree,
+                n?.researchSummary,
+                n?.industrySummary,
+                n?.strongAreas?.join(' '),
+                r.tags_raw,
+                r.focus
+            ].filter(Boolean).join(' ');
+            if (!window.normalizeSearchText(text).includes(search)) return false;
         }
 
         // Apply new scoring model and hard filters
@@ -484,8 +526,7 @@ function processAndRender() {
         r._score = scoringResult.total_score / 10.0; // scale 0-10 for UI compatibility
         r._scoringDetails = scoringResult;
         
-        const n = window.uniDataAdapter ? window.uniDataAdapter.normalizeUniversityRecord(r) : null;
-        r._costNum = n ? parseFloat(n.totalAcademicCost || n.tuitionPerYear || 0) : parseFloat(r.tuition_eur_per_year || 0);
+        r._costNum = getAnnualCost(r);
         
         return true;
     });
@@ -493,8 +534,11 @@ function processAndRender() {
     const sortVal = els.sortSelect.value;
     filtered.sort((a, b) => {
         if (sortVal === 'score_desc') return b._score - a._score;
-        if (sortVal === 'tuition_asc') return (parseFloat(a.tuition_eur_per_year)||0) - (parseFloat(b.tuition_eur_per_year)||0);
-        if (sortVal === 'cost_asc') return a._costNum - b._costNum;
+        if (sortVal === 'tuition_asc' || sortVal === 'cost_asc') {
+            if (a._costNum === null) return b._costNum === null ? 0 : 1;
+            if (b._costNum === null) return -1;
+            return a._costNum - b._costNum;
+        }
         if (sortVal === 'name_asc') return (a.display_name || a.name).localeCompare(b.display_name || b.name);
         return 0;
     });
@@ -557,8 +601,8 @@ function renderKPIs() {
         
         filteredData.forEach(r => {
             if (r.country) countriesSet.add(r.country);
-            const tuit = parseFloat(r.tuition_eur_per_year) || 0;
-            if (tuit > 0) {
+            const tuit = r._costNum;
+            if (tuit !== null) {
                 totalTuit += tuit;
                 validTuitCount++;
             }
@@ -570,9 +614,11 @@ function renderKPIs() {
         
         els.kpi.tuition.textContent = `€${avgTuition.toFixed(0)}`;
         els.kpi.score.textContent = avgScore.toFixed(2);
+        if (validTuitCount === 0) els.kpi.tuition.textContent = '\u2014';
     } else {
         els.kpi.tuition.textContent = "€0";
         els.kpi.score.textContent = "0.0";
+        els.kpi.tuition.textContent = '\u2014';
     }
     
     const kpiCountries = document.getElementById('kpi-countries');
@@ -593,7 +639,7 @@ function renderTableHeader() {
       <th>${t("program")}</th>
       <th>${t("city")}</th>
       <th>${t("country")}</th>
-      <th>${t("profile_match")}</th>
+      ${showProfileMatch ? `<th>${t("profile_match")}</th>` : ""}
       <th>${t("col_score") || "Score"}</th>
       <th>${t("yearly_cost") || "Yearly Cost"}</th>
       <th>${t("detail")}</th>
@@ -605,6 +651,14 @@ function renderTableHeader() {
 function renderTable() {
     renderTableHeader();
     els.tableBody.innerHTML = '';
+    if (filteredData.length === 0) {
+        const columnCount = window.personalizationEnabled ? 10 : 9;
+        const message = window.currentLanguage === 'tr'
+            ? 'Etkin filtrelerle eşleşen program bulunamadı.'
+            : 'No programs match the active filters.';
+        els.tableBody.innerHTML = `<tr class="empty-results"><td colspan="${columnCount}">${escapeHtml(message)}</td></tr>`;
+        return;
+    }
     filteredData.forEach((row, i) => {
         const tr = document.createElement('tr');
         const n = window.uniDataAdapter ? window.uniDataAdapter.normalizeUniversityRecord(row) : null;
@@ -621,9 +675,11 @@ function renderTable() {
         const displayCountry = window.getCountryName ? window.getCountryName(cleanCountry) : cleanCountry;
         
         const showProfileMatch = Boolean(window.personalizationEnabled);
-        const profileMatchValue = row._scoringDetails?.personalized_match?.personal_field_fit || Math.round(row._scoringDetails?.components?.academic_fit || 0);
+        const profileMatchValue = row._scoringDetails?.personalized_match?.personal_field_fit ?? Math.round(row._scoringDetails?.components?.academic_fit || 0);
 
-        let profileMatchHTML = `<td>${profileMatchValue ? `<span class="profile-match-badge">${profileMatchValue}%</span>` : '-'}</td>`;
+        let profileMatchHTML = showProfileMatch
+            ? `<td>${Number.isFinite(profileMatchValue) ? `<span class="profile-match-badge">${profileMatchValue}%</span>` : '-'}</td>`
+            : '';
 
         const t = window.t || (k => k);
         const btnText = window.currentLanguage === 'tr' ? 'İncele ↗' : 'View ↗';
@@ -667,6 +723,10 @@ function openDrawer(data) {
     try {
         const n = window.uniDataAdapter ? window.uniDataAdapter.normalizeUniversityRecord(data) : null;
         if (!n) return;
+        n.programUrl = safeUrl(n.programUrl);
+        n.admissionUrl = safeUrl(n.admissionUrl);
+        n.tuitionUrl = safeUrl(n.tuitionUrl);
+        n.scholarshipUrl = safeUrl(n.scholarshipUrl);
 
         const t = window.t || (k => k);
         els.drawer.title.textContent = window.localizedField(n.universityName) || 'Details';
@@ -680,245 +740,183 @@ function openDrawer(data) {
         };
 
         const scoreVal = data._score ? data._score.toFixed(2) : '0.00';
+        const isTurkish = window.currentLanguage === 'tr';
+        const verificationBanner = n.needsVerification
+            ? `<div class="verification-banner warning"><strong>${isTurkish ? 'Doğrulama gerekli' : 'Verification required'}</strong><span>${isTurkish ? 'Kritik kayıt alanları resmi kaynaklarla yeniden kontrol edilmelidir.' : 'Critical record fields should be rechecked against official sources.'}</span></div>`
+            : `<div class="verification-banner"><strong>${isTurkish ? 'Kaynak durumu' : 'Source status'}</strong><span>${n.sources.length ? (isTurkish ? `${n.sources.length} kaynak kaydı mevcut.` : `${n.sources.length} source record(s) available.`) : (isTurkish ? 'Kaynak kaydı sınırlı.' : 'Source evidence is limited.')}</span></div>`;
+
+        // 2. Temel Bilgiler (Basic Info)
+        const qsBadge = n.qsRanking ? `<span class="rank-badge qs-rank">QS: #${n.qsRanking}</span>` : '';
+        const engBadge = n.engineeringRanking ? `<span class="rank-badge eng-rank">Müh: #${n.engineeringRanking}</span>` : '';
         
-        // 7.1 Overview
-        let overviewHTML = `
-            <div class="detail-section">
-                <h4 class="heading-overview">${t('overview')}</h4>
-                <div class="detail-grid">
-                    <div class="detail-item full-span">
-                        <label>${t('university')}</label>
-                        <span>${displayValue(n.universityName)}</span>
+        let basicInfoHTML = `
+            <div class="drawer-section premium-card">
+                <div class="premium-header">
+                    <span class="premium-icon">🎓</span>
+                    <h4 class="premium-title">${t('overview') || 'Temel Bilgiler'}</h4>
+                </div>
+                <div class="premium-grid">
+                    <div class="premium-item full-span">
+                        <label>Ülke / Şehir</label>
+                        <span class="country-gradient" data-country="${n.country}">${window.getCountryName ? window.getCountryName(n.country) : n.country} - ${displayValue(n.city)}</span>
                     </div>
-                    <div class="detail-item full-span">
-                        <label>${t('program')}</label>
-                        <span>${displayValue(n.programName)}</span>
+                    <div class="premium-item full-span">
+                        <label>Üniversite & Program</label>
+                        <span class="highlight-text">${displayValue(n.universityName)} - ${displayValue(n.programName)}</span>
                     </div>
-                    <div class="detail-item">
-                        <label>${t('city')}</label>
-                        <span>${displayValue(n.city)}</span>
-                    </div>
-                    <div class="detail-item">
-                        <label>${t('country')}</label>
-                        <span class="country-gradient" data-country="${n.country}">${window.getCountryName ? window.getCountryName(n.country) : n.country}</span>
-                    </div>
-                    <div class="detail-item">
-                        <label>${t('degree')}</label>
+                    <div class="premium-item">
+                        <label>Derece</label>
                         <span>${displayValue(n.degree)}</span>
                     </div>
-                    <div class="detail-item">
-                        <label>${t('language')}</label>
+                    <div class="premium-item">
+                        <label>Dil Gereksinimi</label>
                         <span>${Array.isArray(n.teachingLanguage) ? n.teachingLanguage.join(', ') : displayValue(n.teachingLanguage)}</span>
                     </div>
-                    <div class="detail-item">
-                        <label>${t('col_score') || 'Score'}</label>
-                        <span style="color: var(--text-highlight)">${scoreVal} / 10.0</span>
-                    </div>
-                    ${window.personalizationEnabled && data._scoringDetails?.personalized_match?.personal_field_fit ? 
-                    `<div class="detail-item">
-                        <label>${t('profile_match')}</label>
-                        <span class="profile-match-badge">${data._scoringDetails.personalized_match.personal_field_fit}%</span>
+                    ${qsBadge || engBadge ? `
+                    <div class="premium-item full-span ranking-container">
+                        <label>Sıralamalar</label>
+                        <div class="badges-wrapper">${qsBadge}${engBadge}</div>
                     </div>` : ''}
                 </div>
             </div>
         `;
 
-        // 7.2 Program & Admission
-        let programAdmissionHTML = `
-            <div class="detail-section">
-                <h4 class="heading-overview">${t('program_admission')}</h4>
-                <div class="detail-grid">
-                    <div class="detail-item">
-                        <label>Admission Mode</label>
-                        <span>${displayValue(n.admissionMode)}</span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Admission Risk</label>
-                        ${formatRiskBadge(n.admissionRisk)}
-                    </div>
-                    <div class="detail-item">
-                        <label>Language Risk</label>
-                        ${formatRiskBadge(n.languageRisk)}
-                    </div>
-                    <div class="detail-item full-span">
-                        <label>${t('official_program_page')}</label>
-                        <span>${n.programUrl && n.programUrl !== '—' ? `<a href="${n.programUrl}" target="_blank" style="color:var(--text-highlight)">${t('view_source')} ↗</a>` : '—'}</span>
-                    </div>
+        // 3. Bölüm / Araştırma Bilgileri (Department Info)
+        let strongAreasHTML = '';
+        if (n.strongAreas && n.strongAreas.length > 0) {
+            strongAreasHTML = n.strongAreas.map(a => `<li>${window.getCategoryLabel ? window.getCategoryLabel(a) : a}</li>`).join('');
+        }
+        let labsHTML = '';
+        if (n.labs && n.labs.length > 0) {
+            labsHTML = n.labs.map(l => `<span class="lab-chip">${typeof l === 'object' ? (l.name || JSON.stringify(l)) : l}</span>`).join('');
+        }
+        let profsHTML = '';
+        if (n.professors && n.professors.length > 0) {
+            profsHTML = n.professors.map(p => `
+                <div class="prof-card">
+                    <span class="prof-name">${typeof p === 'object' ? p.name : p}</span>
+                    ${p.focus ? `<span class="prof-focus">${p.focus}</span>` : ''}
                 </div>
-            </div>
-        `;
-
-        // 7.3 Cost & Funding
-        let costFundingHTML = `
-            <div class="detail-section">
-                <h4 class="heading-financials">${t('cost_funding')}</h4>
-                <div class="detail-grid">
-                    <div class="detail-item">
-                        <label>Tuition (Yearly)</label>
-                        <span>${formatMoney(n.tuitionPerYear)}</span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Total Academic Cost</label>
-                        <span>${formatMoney(n.totalAcademicCost)}</span>
-                    </div>
-                    <div class="detail-item">
-                        <label>Semester Fee</label>
-                        <span>${formatMoney(n.semesterFee)}</span>
-                    </div>
-                    <div class="detail-item full-span">
-                        <label>Scholarships & Funding</label>
-                        <span>${displayValue(n.scholarshipSummary)}</span>
-                    </div>
-                </div>
-            </div>
-        `;
-
-        // 7.4 Technical Fit / Categories
-        let categoryHTML = '';
-        if (n.categoryProfile) {
-            let catChips = '';
-            const allCats = [...(n.categoryProfile.primary_categories || []), ...(n.categoryProfile.subcategories || []), ...(n.categoryProfile.normalized_tags || [])];
-            const uniqueCats = [...new Set(allCats)];
-            if (uniqueCats.length > 0) {
-                catChips = uniqueCats.map(c => `<span class="detail-chip">${window.getCategoryLabel ? window.getCategoryLabel(c) : c}</span>`).join('');
-                categoryHTML = `
-                    <div class="detail-section">
-                        <h4 class="heading-tags">${t('technical_fit')}</h4>
-                        <div class="detail-chip-list">
-                            ${catChips}
-                        </div>
-                    </div>
-                `;
-            }
+            `).join('');
         }
 
-        // 7.5 Research & Industry
-        let researchIndustryHTML = `
-            <div class="detail-section">
-                <h4 class="heading-analysis">${t('research_industry')}</h4>
-                <div class="detail-grid">
-                    <div class="detail-item full-span">
-                        <label>Research Strength</label>
-                        <span>${displayValue(n.researchSummary)}</span>
+        let deptHTML = `
+            <div class="drawer-section premium-card">
+                <div class="premium-header">
+                    <span class="premium-icon">🔬</span>
+                    <h4 class="premium-title">Bölüm & Araştırma Bilgileri</h4>
+                </div>
+                <div class="dept-content">
+                    ${strongAreasHTML ? `
+                    <div class="dept-block">
+                        <label>Güçlü Alanlar</label>
+                        <ul class="aesthetic-list">${strongAreasHTML}</ul>
+                    </div>` : ''}
+                    ${labsHTML ? `
+                    <div class="dept-block">
+                        <label>İlgili Laboratuvarlar</label>
+                        <div class="chip-container">${labsHTML}</div>
+                    </div>` : ''}
+                    ${profsHTML ? `
+                    <div class="dept-block">
+                        <label>Önemli Profesörler</label>
+                        <div class="prof-grid">${profsHTML}</div>
+                    </div>` : ''}
+                </div>
+            </div>
+        `;
+
+        // 4. Finansallar (Financials)
+        let financeHTML = `
+            <div class="drawer-section premium-card financial-card">
+                <div class="premium-header">
+                    <span class="premium-icon">💰</span>
+                    <h4 class="premium-title">Finansallar</h4>
+                </div>
+                <div class="premium-grid">
+                    <div class="premium-item">
+                        <label>Yıllık Okul Ücreti (Tuition)</label>
+                        <span class="finance-val tuition">${formatMoney(n.tuitionPerYear)}</span>
                     </div>
-                    <div class="detail-item full-span">
-                        <label>Industry Ecosystem</label>
-                        <span>${displayValue(n.industrySummary)}</span>
+                    <div class="premium-item">
+                        <label>Harç / Ek Ücret (Fee)</label>
+                        <span class="finance-val fee">${formatMoney(n.semesterFee)}</span>
+                    </div>
+                    <div class="premium-item full-span scholarship-box">
+                        <label>Burs İmkânları</label>
+                        <span class="scholarship-text">${displayValue(n.scholarshipSummary)}</span>
                     </div>
                 </div>
             </div>
         `;
 
-        // 7.6 Living & Logistics
-        let livingLogisticsHTML = `
-            <div class="detail-section">
-                <h4 class="heading-overview">${t('living_logistics')}</h4>
-                <div class="detail-grid">
-                    <div class="detail-item">
-                        <label>Housing Difficulty</label>
+        // 5. Şehir / Ülke Bilgileri (Living)
+        let livingHTML = `
+            <div class="drawer-section premium-card">
+                <div class="premium-header">
+                    <span class="premium-icon">🏙️</span>
+                    <h4 class="premium-title">Şehir & Yaşam</h4>
+                </div>
+                <div class="premium-grid">
+                    <div class="premium-item">
+                        <label>Ortalama Konut Masrafı</label>
+                        <span class="finance-val">${n.housingCost ? '€' + n.housingCost + ' / ay' : 'Bilinmiyor'}</span>
+                    </div>
+                    <div class="premium-item">
+                        <label>Konut Bulma Zorluğu</label>
                         ${formatRiskBadge(n.housingDifficulty)}
                     </div>
-                    <div class="detail-item">
-                        <label>Living Risk</label>
-                        ${formatRiskBadge(n.livingRisk)}
-                    </div>
                 </div>
             </div>
         `;
 
-        // 7.7 Personalized Match
-        let profileMatchHTML = '';
-        if (window.personalizationEnabled && data._scoringDetails && data._scoringDetails.personalized_match) {
-            const pm = data._scoringDetails.personalized_match;
-            let mIntHtml = '';
-            if (pm.matched_interests && pm.matched_interests.length > 0) {
-                mIntHtml = pm.matched_interests.map(i => `<li>${window.getCategoryLabel ? window.getCategoryLabel(i.interest_key) : i.interest_key} (${Math.round(i.match_strength*100)}%)</li>`).join('');
-            }
-            let pPenHtml = '';
-            if (pm.profile_penalties && pm.profile_penalties.length > 0) {
-                pPenHtml = pm.profile_penalties.map(p => `<li>${p.reason}</li>`).join('');
-            }
-            
-            if (mIntHtml || pPenHtml) {
-                profileMatchHTML = `
-                <div class="detail-section personalized-match-section" style="background: rgba(99, 102, 241, 0.05); border: 1px solid rgba(99, 102, 241, 0.2);">
-                    <h4 class="heading-analysis" style="color: var(--text-highlight);">${t('personalized_match')}</h4>
-                    
-                    ${mIntHtml ? `
-                    <div style="margin-bottom: 12px;">
-                        <strong style="font-size: 13px; color: var(--text-main); display: block; margin-bottom: 4px;">Matched Interests</strong>
-                        <ul style="font-size: 13px; color: var(--text-muted); padding-left: 20px; margin: 0;">${mIntHtml}</ul>
-                    </div>` : ''}
-                    
-                    ${pPenHtml ? `
-                    <div style="margin-bottom: 12px;">
-                        <strong style="font-size: 13px; color: var(--danger); display: block; margin-bottom: 4px;">Profile Penalties</strong>
-                        <ul style="font-size: 13px; color: var(--danger); padding-left: 20px; margin: 0;">${pPenHtml}</ul>
-                    </div>` : ''}
-                </div>`;
-            }
-        }
-
-        // 7.8 Sources & Data Confidence
-        let sourcesHtml = '';
-        if (n.sources && n.sources.length > 0) {
-            sourcesHtml = n.sources.map(s => {
-                const url = typeof s === 'string' ? s : s.url;
-                if (!url) return '';
-                return `<li><a href="${url}" target="_blank" style="color:var(--text-highlight)">${s.title || t('view_source')} ↗</a></li>`;
-            }).join('');
-        }
-        let sourcesConfidenceHTML = `
-            <div class="detail-section">
-                <h4 class="heading-rankings">${t('sources_confidence')}</h4>
-                <div class="detail-grid">
-                    ${sourcesHtml ? `<div class="detail-item full-span">
-                        <label>Sources</label>
-                        <ul style="margin: 0; padding-left: 20px; font-size: 13px;">${sourcesHtml}</ul>
-                    </div>` : ''}
-                </div>
-            </div>
-        `;
-
-        // 7.9 Notes, Strengths & Risks
+        // 6. Avantaj ve Dezavantajlar (Pros & Cons)
         let prosHTML = '';
         let consHTML = '';
         if (n.mainStrengths && n.mainStrengths.length) {
-            prosHTML = n.mainStrengths.map(p => `<li class="pro"><span class="pro-text">${window.localizedField(p)}</span></li>`).join('');
+            prosHTML = n.mainStrengths.map(p => `<li><span class="icon">✅</span> <span class="text">${window.localizedField(p)}</span></li>`).join('');
         }
         if (n.mainRisks && n.mainRisks.length) {
-            consHTML = n.mainRisks.map(c => `<li class="con"><span class="con-text">${window.localizedField(c)}</span></li>`).join('');
+            consHTML = n.mainRisks.map(c => `<li><span class="icon">⚠️</span> <span class="text">${window.localizedField(c)}</span></li>`).join('');
         }
 
-        let notesHTML = '';
+        let prosConsHTML = '';
         if (prosHTML || consHTML) {
-            notesHTML = `
-            <div class="detail-section">
-                <h4 class="heading-analysis">${t('notes_strengths_risks')}</h4>
-                <div style="display: flex; flex-direction: column; gap: 12px;">
-                    ${prosHTML ? `
-                    <div style="background: rgba(16, 185, 129, 0.04); padding: 24px; border-radius: 16px; border: 1px solid rgba(16, 185, 129, 0.25);">
-                        <ul class="pro-con-list">${prosHTML}</ul>
-                    </div>` : ''}
-                    ${consHTML ? `
-                    <div style="background: rgba(239, 68, 68, 0.04); padding: 24px; border-radius: 16px; border: 1px solid rgba(239, 68, 68, 0.25);">
-                        <ul class="pro-con-list">${consHTML}</ul>
-                    </div>` : ''}
+            prosConsHTML = `
+            <div class="drawer-section premium-card pros-cons-card">
+                <div class="premium-header">
+                    <span class="premium-icon">⚖️</span>
+                    <h4 class="premium-title">Avantaj & Dezavantaj Analizi</h4>
+                </div>
+                <div class="pros-cons-grid">
+                    ${prosHTML ? `<div class="pros-col"><h5>Artılar</h5><ul class="clean-list">${prosHTML}</ul></div>` : ''}
+                    ${consHTML ? `<div class="cons-col"><h5>Eksiler</h5><ul class="clean-list">${consHTML}</ul></div>` : ''}
                 </div>
             </div>`;
         }
 
-        document.getElementById('drawer-info').innerHTML = 
-            overviewHTML + 
-            programAdmissionHTML + 
-            costFundingHTML + 
-            categoryHTML + 
-            researchIndustryHTML + 
-            livingLogisticsHTML + 
-            profileMatchHTML + 
-            notesHTML +
-            sourcesConfidenceHTML;
+        // 7. Linkler (Links)
+        let linksHTML = `
+            <div class="drawer-section links-card">
+                <div class="action-buttons">
+                    ${n.programUrl && n.programUrl !== '—' ? `<a href="${n.programUrl}" target="_blank" class="premium-btn main-action">Programa Git ↗</a>` : ''}
+                    ${n.admissionUrl && n.admissionUrl !== '—' ? `<a href="${n.admissionUrl}" target="_blank" class="premium-btn secondary-action">Kabul Sayfası ↗</a>` : ''}
+                    ${n.tuitionUrl && n.tuitionUrl !== '—' ? `<a href="${n.tuitionUrl}" target="_blank" class="premium-btn secondary-action">Okul Ücreti ↗</a>` : ''}
+                    ${n.scholarshipUrl && n.scholarshipUrl !== '—' ? `<a href="${n.scholarshipUrl}" target="_blank" class="premium-btn secondary-action">Burs Sayfası ↗</a>` : ''}
+                </div>
+            </div>
+        `;
 
+        document.getElementById('drawer-info').innerHTML =
+            verificationBanner +
+            basicInfoHTML +
+            deptHTML +
+            financeHTML +
+            livingHTML +
+            prosConsHTML +
+            linksHTML;
+
+        // 1. Radar Chart Setup
         const ctx = document.getElementById('radarChart');
         if (ctx) {
             if (window.uniChart) {
@@ -977,7 +975,6 @@ function openDrawer(data) {
         console.error('Drawer Error:', err);
     }
 }
-
 function closeDrawer() {
     els.drawer.panel.classList.remove('active');
     els.drawer.overlay.classList.remove('active');
@@ -1013,8 +1010,24 @@ document.addEventListener('languageChanged', async () => {
     }
 });
 
-// Start
-init();
+window.processAndRender = processAndRender;
+window.openDrawer = openDrawer;
+
+function startApplication() {
+    init().catch((error) => {
+        console.error('Application initialization failed:', error);
+        const message = window.currentLanguage === 'tr'
+            ? 'Uygulama başlatılamadı. Lütfen sayfayı yenileyin.'
+            : 'The application could not start. Please refresh the page.';
+        els.tableBody.innerHTML = `<tr><td colspan="10" class="empty-results">${escapeHtml(message)}</td></tr>`;
+    });
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', startApplication, { once: true });
+} else {
+    startApplication();
+}
 
 
 

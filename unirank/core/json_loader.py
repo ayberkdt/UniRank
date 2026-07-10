@@ -55,6 +55,17 @@ def _json_compact(obj: Any) -> str:
         return "[]"
 
 
+def _city_name(value: Any) -> str:
+    """Return a displayable city name without discarding the original record."""
+    if isinstance(value, dict):
+        for key in ("name", "city", "City", "label"):
+            candidate = value.get(key)
+            if isinstance(candidate, str) and candidate.strip():
+                return candidate.strip()
+        return ""
+    return value.strip() if isinstance(value, str) else ""
+
+
 def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.DataFrame, LoadReport]:
     folder_path = Path(folder)
     if not folder_path.is_dir():
@@ -101,9 +112,13 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
                     continue
                 
                 cat_prof = entry.get("category_profile", {})
+                language_profile = entry.get("language_profile", {})
+                cost_profile = entry.get("cost_profile", {})
+                living_profile = entry.get("living_profile", {})
+                source_profile = entry.get("source_profile", {})
                 categories = cat_prof.get("primary_categories", []) + cat_prof.get("secondary_categories", [])
                 
-                tuit_eur = entry.get("cost_profile", {}).get("tuition_eur_per_year_estimated", 0.0)
+                tuit_eur = cost_profile.get("tuition_eur_per_year_estimated")
                 
                 row = {
                     "id": entry.get("id", ""),
@@ -111,7 +126,7 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
                     "display_name": entry.get("university_native_name") or entry.get("university", ""),
                     "short": "",
                     "university": entry.get("university", ""),
-                    "city": entry.get("city", ""),
+                    "city": _city_name(entry.get("city", "")),
                     "state": entry.get("region", ""),
                     "country": entry.get("country", ""),
                     # Keep the source location object intact for map consumers.
@@ -119,11 +134,11 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
                     # here makes every otherwise valid coordinate disappear.
                     "location": entry.get("location"),
                     "scope": "non_eu",
-                    "needs_verification": entry.get("source_profile", {}).get("needs_verification", False),
-                    "cost_city": entry.get("living_profile", {}).get("city_cost_level", ""),
-                    "cost_city_raw": entry.get("living_profile", {}).get("city_cost_level", ""),
+                    "needs_verification": source_profile.get("needs_verification", False),
+                    "cost_city": living_profile.get("cost_city_living") or living_profile.get("city_cost_level", ""),
+                    "cost_city_raw": living_profile.get("cost_city_living") or living_profile.get("city_cost_level", ""),
                     "city_cost_rank": 0.0,
-                    "semester_fee_eur": entry.get("cost_profile", {}).get("enrollment_fee_eur"),
+                    "semester_fee_eur": cost_profile.get("enrollment_fee_eur"),
                     "semester_fees_json": "[]",
                     "tuition_eur_per_year": tuit_eur,
                     "annual_fee_eur": tuit_eur,
@@ -146,7 +161,7 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
                     "target_program_url": entry.get("program_url", ""),
                     "target_program_json": "{}",
                     "admission_mode": entry.get("eligibility_profile", {}).get("admission_mode", ""),
-                    "language_req": entry.get("language_profile", {}).get("english_level_required", ""),
+                    "language_req": language_profile.get("english_level_required", ""),
                     "internship_mandatory": entry.get("curriculum_profile", {}).get("internship_required", False),
                     "internship_notes": "",
                     "deadline_winter_opens": "",
@@ -155,7 +170,7 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
                     "deadline_summer_closes": "",
                     "deadlines_note": "",
                     "deadlines_json": "{}",
-                    "housing_difficulty": entry.get("living_profile", {}).get("housing_difficulty", ""),
+                    "housing_difficulty": living_profile.get("housing_difficulty", ""),
                     "housing_difficulty_score": 0.0,
                     "key_partners": entry.get("industry_ecosystem_profile", {}).get("nearby_companies", []),
                     "industry_focus_json": "{}",
@@ -168,7 +183,33 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
                     "global_recognition": "",
                     "field_recognition": "",
                     "source_file": file.name,
-                    "updated_at": entry.get("source_profile", {}).get("last_verified", "")
+                    "updated_at": source_profile.get("last_verified", ""),
+                    "program_name": entry.get("program_name", ""),
+                    "program_degree": entry.get("program_degree", ""),
+                    "degree_level": entry.get("degree_level", ""),
+                    "duration_years": entry.get("duration_years"),
+                    "ects": entry.get("ects"),
+                    "teaching_language": entry.get("teaching_language") or language_profile.get("teaching_language", []),
+                    "program_url": entry.get("program_url", ""),
+                    "program_status": entry.get("program_status", ""),
+                    "eligibility_profile": entry.get("eligibility_profile", {}),
+                    "language_profile": language_profile,
+                    "cost_profile": cost_profile,
+                    "scholarship_profile": entry.get("scholarship_profile", {}),
+                    "living_profile": living_profile,
+                    "curriculum_profile": entry.get("curriculum_profile", {}),
+                    "category_profile": cat_prof,
+                    "research_profile": entry.get("research_profile", {}),
+                    "industry_ecosystem_profile": entry.get("industry_ecosystem_profile", {}),
+                    "application_timeline_profile": entry.get("application_timeline_profile", {}),
+                    "student_sentiment_profile": entry.get("student_sentiment_profile", {}),
+                    "source_profile": source_profile,
+                    "decision_summary": entry.get("decision_summary", {}),
+                    "scoring_inputs": entry.get("scoring_inputs", {}),
+                    "quality_control": entry.get("quality_control", {}),
+                    "urls": entry.get("urls", {}),
+                    "financials": entry.get("financials", {}),
+                    "admission": entry.get("admission", {})
                 }
                 
                 # Dynamic scoring inputs directly mapped from new schema

@@ -19,60 +19,77 @@ function localizedField(value) {
   if (window.localizedValue) return window.localizedValue(value);
   if (value == null) return "";
   if (typeof value === "string") return value;
-  if (typeof value === "object") return value.en || value.tr || "";
+  if (typeof value === "object") return value.en || value.tr || value.name || "";
   return String(value);
 }
 
-function getCategoryProfile(record) {
-  return record.category_profile || record.Category_Profile || {
-    primary_categories: [],
-    secondary_categories: [],
-    subcategories: [],
-    normalized_tags: [],
-    category_scores: {}
-  };
+function valueText(value) {
+  if (value == null) return "";
+  if (Array.isArray(value)) return value.map(valueText).filter(Boolean).join(", ");
+  if (typeof value === "object") {
+    const namedValue = firstValue(value.name, value.city, value.label);
+    return namedValue != null ? valueText(namedValue) : localizedField(value);
+  }
+  return String(value).trim();
 }
 
-function finiteCoordinate(value) {
+function isUnknownValue(value) {
+  if (typeof value !== "string") return false;
+  return ["unknown", "needs_verification", "n/a", "na", "—", "-"].includes(value.trim().toLowerCase());
+}
+
+function firstKnownValue(...values) {
+  for (const value of values) {
+    const candidate = firstValue(value);
+    if (candidate == null || isUnknownValue(candidate)) continue;
+    return candidate;
+  }
+  return null;
+}
+
+function finiteNumber(value) {
   if (value === null || value === undefined || value === "") return null;
   const number = typeof value === "number" ? value : Number(String(value).trim());
   return Number.isFinite(number) ? number : null;
 }
 
+function firstFiniteNumber(...values) {
+  for (const value of values) {
+    const number = finiteNumber(value);
+    if (number !== null) return number;
+  }
+  return null;
+}
+
+function stringList(value) {
+  const values = Array.isArray(value) ? value : (value == null || value === "" ? [] : [value]);
+  return values.map(valueText).filter(Boolean);
+}
+
+function getCategoryProfile(record) {
+  const profile = record.category_profile || record.Category_Profile || {};
+  return {
+    primary_categories: Array.isArray(profile.primary_categories) ? profile.primary_categories : [],
+    secondary_categories: Array.isArray(profile.secondary_categories) ? profile.secondary_categories : [],
+    subcategories: Array.isArray(profile.subcategories) ? profile.subcategories : [],
+    normalized_tags: Array.isArray(profile.normalized_tags) ? profile.normalized_tags : [],
+    category_scores: profile.category_scores && typeof profile.category_scores === "object" ? profile.category_scores : {}
+  };
+}
+
 function normalizeLocation(record) {
-  const rawLocation = firstValue(
-    record.location,
-    record.Location,
-    record.coordinates,
-    record.Coordinates
-  );
-  const source = rawLocation && typeof rawLocation === "object" && !Array.isArray(rawLocation)
-    ? rawLocation
-    : {};
+  const rawLocation = firstValue(record.location, record.Location, record.coordinates, record.Coordinates);
+  const source = rawLocation && typeof rawLocation === "object" && !Array.isArray(rawLocation) ? rawLocation : {};
   const coordinatePair = Array.isArray(rawLocation)
     ? rawLocation
     : (Array.isArray(source.coordinates) ? source.coordinates : null);
 
-  // GeoJSON uses [longitude, latitude], while some imported records use
-  // { lat, lng } or { latitude, longitude }. Accept all of them at the UI edge.
-  let latitude = finiteCoordinate(firstValue(
-    source.latitude,
-    source.lat,
-    record.latitude,
-    record.lat
-  ));
-  let longitude = finiteCoordinate(firstValue(
-    source.longitude,
-    source.lng,
-    source.lon,
-    record.longitude,
-    record.lng,
-    record.lon
-  ));
+  let latitude = firstFiniteNumber(source.latitude, source.lat, record.latitude, record.lat);
+  let longitude = firstFiniteNumber(source.longitude, source.lng, source.lon, record.longitude, record.lng, record.lon);
 
   if ((latitude === null || longitude === null) && coordinatePair && coordinatePair.length >= 2) {
-    const first = finiteCoordinate(coordinatePair[0]);
-    const second = finiteCoordinate(coordinatePair[1]);
+    const first = finiteNumber(coordinatePair[0]);
+    const second = finiteNumber(coordinatePair[1]);
     longitude = longitude === null ? first : longitude;
     latitude = latitude === null ? second : latitude;
   }
@@ -86,161 +103,78 @@ function normalizeLocation(record) {
 
   return {
     ...source,
-    city: firstValue(source.city, source.City, record.city, record.City) || "",
-    country: firstValue(source.country, source.Country, record.country, record.Country) || "",
+    city: valueText(firstValue(source.city, source.City, record.city, record.City)),
+    country: valueText(firstValue(source.country, source.Country, record.country, record.Country)),
     latitude,
     longitude
   };
 }
 
+function normalizeSources(value) {
+  if (Array.isArray(value)) return value.filter(Boolean);
+  if (typeof value === "string" && value.trim()) return [{ url: value }];
+  if (value && typeof value === "object") return [value];
+  return [];
+}
+
 function normalizeUniversityRecord(record) {
   if (!record) return {};
 
-  const id = firstValue(record.Uni_ID, record.id, record.name, record.university) || "";
+  const sourceProfile = record.source_profile || {};
+  const costProfile = record.cost_profile || {};
+  const languageProfile = record.language_profile || {};
+  const livingProfile = record.living_profile || {};
+  const scholarshipProfile = record.scholarship_profile || {};
+  const researchProfile = record.research_profile || {};
+  const industryProfile = record.industry_ecosystem_profile || {};
+  const curriculumProfile = record.curriculum_profile || {};
+  const urls = record.urls || {};
+  const categoryProfile = getCategoryProfile(record);
+
+  const id = valueText(firstValue(record.Uni_ID, record.id, record.name, record.university));
   const universityName = firstValue(record.university, record.University, record.display_name, record.name) || "";
   const programName = firstValue(record.program_name, record.Program_Name, record.target_program_name, record.Target_Program_Name) || "";
-  const city = firstValue(record.city, record.City) || "";
-  const country = firstValue(record.country, record.Country) || "";
+  const city = valueText(firstValue(record.city, record.City));
+  const country = valueText(firstValue(record.country, record.Country));
   const degree = firstValue(record.program_degree, record.Program_Degree, record.target_program_degree, record.degree_level, record.degree_class) || "";
   const degreeLevel = firstValue(record.degree_level, record.degree_class) || "";
-  
-  let teachingLanguage = firstValue(
+  const teachingLanguage = stringList(firstKnownValue(
     record.teaching_language,
-    record.language_profile?.teaching_language,
-    record.language_profile?.teaching_language,
+    languageProfile.teaching_language,
     record.Admission_Language_Req,
     record.admission_language_req,
     record.language_req
-  ) || [];
-  if (typeof teachingLanguage === "string") {
-    teachingLanguage = [teachingLanguage];
-  }
-
-  const programUrl = firstValue(record.program_url, record.target_program_url, record.url) || "";
-  
-  const tuitionPerYear = firstValue(
-    record.cost_profile?.tuition_eur_per_year_estimated,
-    record.cost_profile?.tuition_eur_per_year_min,
+  ));
+  const tuitionPerYear = firstFiniteNumber(
+    costProfile.tuition_eur_per_year_estimated,
+    costProfile.tuition_eur_per_year_min,
     record.tuition_eur_per_year,
     record.Tuition_EUR_Per_Year
   );
-
-  const semesterFee = firstValue(
-    record.cost_profile?.regional_tax_eur,
-    record.cost_profile?.student_contribution_eur,
+  const semesterFee = firstFiniteNumber(
+    costProfile.regional_tax_eur,
+    costProfile.student_contribution_eur,
+    costProfile.enrollment_fee_eur,
     record.semester_fee_eur,
     record.Cost_Semester_Fees
   );
-
-  const totalAcademicCost = firstValue(
-    record.cost_profile?.total_academic_cost_eur_per_year_estimated,
+  const totalAcademicCost = firstFiniteNumber(
+    costProfile.total_academic_cost_eur_per_year_estimated,
     record.annual_fee_eur,
-    record.tuition_eur_per_year
+    tuitionPerYear
   );
-
-  const admissionMode = firstValue(
-    record.eligibility_profile?.admission_mode,
-    record.Admission_Mode,
-    record.admission_mode
-  ) || "";
-
-  const admissionRisk = firstValue(
-    record.eligibility_profile?.admission_risk,
-    record.admission_risk
-  ) || "unknown";
-
-  const languageRisk = firstValue(
-    record.language_profile?.language_risk,
-    record.language_risk
-  ) || "unknown";
-
-  const housingDifficulty = firstValue(
-    record.living_profile?.housing_difficulty,
-    record.Living_Housing_Difficulty,
-    record.housing_difficulty
-  ) || "unknown";
-
-  const livingRisk = firstValue(
-    record.living_profile?.living_risk,
-    record.living_risk,
-    record.cost_city_raw,
-    record.Cost_City_Living
-  ) || "unknown";
-
-  const researchSummary = firstValue(
-    record.research_profile?.research_strength_summary,
-    record.strong_areas_summary,
-    record.research_strength,
-    record.field_recognition
-  ) || "";
-
-  const industrySummary = firstValue(
-    record.industry_ecosystem_profile?.ecosystem_notes,
-    record.aerospace_ecosystem,
-    record.Industry_Ecosystem,
-    record.industry_ecosystem
-  ) || "";
-
-  const decisionSummary = record.decision_summary || {};
-  
-  function normalizeArrayObj(arr) {
-    if (!arr) return [];
-    if (Array.isArray(arr)) return arr;
-    if (typeof arr === 'object') {
-        // Handle format: {"en": ["A", "B"], "tr": ["X", "Y"]}
-        const enArr = Array.isArray(arr.en) ? arr.en : [];
-        const trArr = Array.isArray(arr.tr) ? arr.tr : [];
-        const length = Math.max(enArr.length, trArr.length);
-        const result = [];
-        for (let i = 0; i < length; i++) {
-            result.push({
-                en: enArr[i] || '',
-                tr: trArr[i] || enArr[i] || ''
-            });
-        }
-        return result;
-    }
-    return [];
-  }
-
-  const mainStrengths = normalizeArrayObj(firstValue(
-    record.decision_summary?.main_strengths,
-    record.Analysis_Pros,
-    record.pros
-  ) || []);
-
-  const mainRisks = normalizeArrayObj(firstValue(
-    record.decision_summary?.main_risks,
-    record.Analysis_Cons,
-    record.cons
-  ) || []);
-
-  const bestFor = normalizeArrayObj(record.decision_summary?.best_for || []);
-  const notIdealFor = normalizeArrayObj(record.decision_summary?.not_ideal_for || []);
-  
-  const pros = firstValue(record.pros, record.Analysis_Pros) || [];
-  const cons = firstValue(record.cons, record.Analysis_Cons) || [];
-
-  let sources = firstValue(
-    record.source_profile?.source_log,
-    record.source_profile?.official_program_page,
+  const sources = normalizeSources(firstValue(
+    sourceProfile.source_log,
+    sourceProfile.official_program_page,
     record.Meta_Sources,
     record.sources
-  ) || [];
-
-  if (!Array.isArray(sources)) {
-    if (typeof sources === "string") {
-      sources = [{ url: sources }];
-    } else if (typeof sources === "object") {
-      sources = [sources];
-    } else {
-      sources = [];
-    }
-  }
-
-  const fieldConfidence = record.source_profile?.field_confidence || {};
-  
-  const categoryProfile = getCategoryProfile(record);
+  ));
+  const needsVerification = Boolean(firstValue(
+    sourceProfile.needs_verification,
+    record.needs_verification,
+    record.Meta_Needs_Verification,
+    false
+  ));
 
   return {
     id,
@@ -251,29 +185,64 @@ function normalizeUniversityRecord(record) {
     degree,
     degreeLevel,
     teachingLanguage,
-    programUrl,
+    programUrl: firstValue(record.program_url, record.target_program_url, urls.program, record.url) || "",
     tuitionPerYear,
     semesterFee,
     totalAcademicCost,
-    admissionMode,
-    admissionRisk,
-    languageRisk,
-    housingDifficulty,
-    livingRisk,
-    scholarshipSummary: firstValue(record.scholarship_profile?.scholarship_names, record.scholarship_names) || "",
-    researchSummary,
-    industrySummary,
-    decisionSummary,
-    mainStrengths,
-    mainRisks,
-    bestFor,
-    notIdealFor,
-    pros,
-    cons,
+    hasKnownTuition: tuitionPerYear !== null || totalAcademicCost !== null,
+    admissionMode: firstKnownValue(record.eligibility_profile?.admission_mode, record.Admission_Mode, record.admission_mode) || "unknown",
+    admissionRisk: firstKnownValue(record.eligibility_profile?.admission_risk, record.admission_risk) || "unknown",
+    languageRisk: firstKnownValue(languageProfile.language_risk, record.language_risk) || "unknown",
+    housingDifficulty: firstKnownValue(livingProfile.housing_difficulty, record.Living_Housing_Difficulty, record.housing_difficulty) || "unknown",
+    livingRisk: firstKnownValue(livingProfile.living_risk, record.living_risk, record.Cost_City_Living) || "unknown",
+    cityCostLevel: firstKnownValue(livingProfile.cost_city_living, livingProfile.city_cost_level, record.cost_city_raw, record.Cost_City_Living) || "unknown",
+    scholarshipSummary: firstValue(
+      scholarshipProfile.funding_notes,
+      scholarshipProfile.scholarship_names,
+      scholarshipProfile.regional_scholarship_name,
+      record.scholarship_names
+    ) || "",
+    researchSummary: firstValue(
+      researchProfile.research_strength_summary,
+      record.strong_areas_summary,
+      record.research_strength,
+      record.field_recognition
+    ) || "",
+    industrySummary: firstValue(
+      industryProfile.ecosystem_notes,
+      record.aerospace_ecosystem,
+      record.Industry_Ecosystem,
+      record.industry_ecosystem
+    ) || "",
+    decisionSummary: record.decision_summary || {},
+    mainStrengths: stringList(firstValue(record.decision_summary?.main_strengths, record.Analysis_Pros, record.pros)),
+    mainRisks: stringList(firstValue(record.decision_summary?.main_risks, record.Analysis_Cons, record.cons)),
+    bestFor: stringList(record.decision_summary?.best_for),
+    notIdealFor: stringList(record.decision_summary?.not_ideal_for),
     sources,
-    fieldConfidence,
+    fieldConfidence: sourceProfile.field_confidence || {},
+    needsVerification,
+    lastVerified: sourceProfile.last_verified || record.updated_at || "",
     categoryProfile,
     location: normalizeLocation(record),
+    qsRanking: firstFiniteNumber(record.qs_ranking),
+    engineeringRanking: firstValue(record.engineering_ranking, record.field_recognition) || null,
+    labs: Array.isArray(researchProfile.labs) ? researchProfile.labs : [],
+    professors: Array.isArray(researchProfile.notable_professors) ? researchProfile.notable_professors : [],
+    strongAreas: categoryProfile.normalized_tags,
+    confirmedPartners: Array.isArray(industryProfile.confirmed_partners)
+      ? industryProfile.confirmed_partners
+      : (Array.isArray(record.Industry_Partners) ? record.Industry_Partners : []),
+    internshipMandatory: firstValue(curriculumProfile.internship_required, record.internship_mandatory, record.Internship_Mandatory),
+    housingCost: firstFiniteNumber(
+      livingProfile.average_room_rent_eur,
+      livingProfile.monthly_living_cost_eur_estimated,
+      livingProfile.living_cost_eur_per_month
+    ),
+    scholarshipDetails: scholarshipProfile,
+    admissionUrl: firstValue(sourceProfile.official_admission_page, urls.admission, record.admission_url) || "",
+    tuitionUrl: firstValue(sourceProfile.official_tuition_page, urls.tuition, record.tuition_url) || "",
+    scholarshipUrl: firstValue(sourceProfile.official_scholarship_page, scholarshipProfile.scholarship_application_url, record.scholarship_url) || "",
     raw: record
   };
 }
