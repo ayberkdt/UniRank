@@ -5,20 +5,20 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    const map = L.map('map', {
+    window.unirankMap = L.map('map', {
         zoomControl: false // We will move it to a better position
     }).setView([48.1351, 11.5820], 4); // Default center (Europe)
 
     L.control.zoom({
         position: 'bottomright'
-    }).addTo(map);
+    }).addTo(window.unirankMap);
 
     // CartoDB Dark Matter tiles for a premium glassy dark theme
     L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
         subdomains: 'abcd',
         maxZoom: 20
-    }).addTo(map);
+    }).addTo(window.unirankMap);
 
     // Setup MarkerCluster
     const markers = L.markerClusterGroup({
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    map.addLayer(markers);
+    window.unirankMap.addLayer(markers);
 
     let allMarkers = [];
 
@@ -94,8 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Popup Content
             const t = window.t || (k => k);
-            const title = window.localizedField(n.universityName) || n.id;
-            const program = window.localizedField(n.programName) || "—";
+            const title = window.localizedValue(n.universityName) || n.id;
+            const program = window.localizedValue(n.programName) || "—";
             const cost = n.totalAcademicCost || "—";
 
             const popupContent = `
@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.fitMapToResults = function() {
         if (allMarkers.length > 0) {
             const group = new L.featureGroup(allMarkers);
-            map.fitBounds(group.getBounds(), { padding: [50, 50] });
+            window.unirankMap.fitBounds(group.getBounds(), { padding: [50, 50] });
         }
     };
 

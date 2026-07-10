@@ -536,6 +536,7 @@ window.switchView = function(view) {
         
         // Let leaflet recalculate its size since it was hidden
         setTimeout(() => {
+            if (window.unirankMap) window.unirankMap.invalidateSize();
             window.dispatchEvent(new Event('resize'));
         }, 100);
     }
