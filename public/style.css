@@ -211,6 +211,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
 /* Main Content */
 .main-content {
     flex: 1;
+    min-width: 0;
     padding: 32px 40px;
     display: flex;
     flex-direction: column;
@@ -307,6 +308,7 @@ input[type="range"]::-webkit-slider-thumb:hover {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    min-width: 0;
 }
 
 .kpi-label {
@@ -314,6 +316,9 @@ input[type="range"]::-webkit-slider-thumb:hover {
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .kpi-value {
@@ -778,11 +783,11 @@ tbody tr td:last-child {
     background-image: linear-gradient(to right, #60a5fa 25%, #e2e8f0 40%, #e2e8f0 60%, #f87171 75%);
 }
 .country-gradient[data-country="Spain"] {
-    background: linear-gradient(135deg, #ef4444, #f59e0b);
+    background-image: linear-gradient(to right, #ef4444 20%, #fde047 35%, #fde047 65%, #ef4444 80%);
 }
 
 .country-gradient[data-country="Austria"] {
-    background: linear-gradient(135deg, #ef4444, #b91c1c);
+    background-image: linear-gradient(to right, #ef4444 30%, #ffffff 45%, #ffffff 55%, #ef4444 70%);
 }
 
 .country-gradient[data-country="UK"], 
