@@ -213,6 +213,7 @@ function normalizeUniversityRecord(record) {
     sources,
     fieldConfidence,
     categoryProfile,
+    location: record.location || null,
     raw: record
   };
 }
