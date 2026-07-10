@@ -66,3 +66,32 @@ def get_universities():
             {"status": "error", "message": f"Python Error: {str(e)}", "data": []},
             headers=headers
         )
+
+@app.get("/api/taxonomy")
+def get_taxonomy():
+    import json
+    possible_paths = [
+        Path(os.getcwd()) / "data_base",
+        Path(__file__).parent.parent / "data_base",
+        Path("/var/task/data_base")
+    ]
+    
+    db_path = None
+    for p in possible_paths:
+        if p.exists() and p.is_dir():
+            db_path = p
+            break
+            
+    if not db_path:
+        return JSONResponse({"status": "error", "message": "Database directory not found"})
+        
+    tax_path = db_path / "taxonomy.json"
+    if not tax_path.exists():
+        return JSONResponse({"status": "error", "message": "taxonomy.json not found"})
+        
+    try:
+        with open(tax_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        return JSONResponse(data)
+    except Exception as e:
+        return JSONResponse({"status": "error", "message": str(e)})

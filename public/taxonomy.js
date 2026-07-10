@@ -4,7 +4,7 @@ async function loadTaxonomy() {
     if (taxonomyData !== null) return taxonomyData;
     
     try {
-        const response = await fetch('data_base/taxonomy.json');
+        const response = await fetch('/api/taxonomy');
         taxonomyData = await response.json();
     } catch (e) {
         console.error("Failed to load taxonomy.json", e);

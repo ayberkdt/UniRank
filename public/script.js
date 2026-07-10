@@ -579,8 +579,8 @@ function renderTable() {
         const displayCountry = window.getCountryName ? window.getCountryName(cleanCountry) : cleanCountry;
         
         const showProfileMatch = Boolean(window.personalizationEnabled);
-        const profileMatchValue = row._scoringDetails?.personalized_match?.personal_field_fit;
-        
+        const profileMatchValue = row._scoringDetails?.personalized_match?.personal_field_fit || Math.round(row._scoringDetails?.components?.academic_fit || 0);
+
         let profileMatchHTML = `<td>${profileMatchValue ? `<span class="profile-match-badge">${profileMatchValue}%</span>` : '-'}</td>`;
 
         const t = window.t || (k => k);
