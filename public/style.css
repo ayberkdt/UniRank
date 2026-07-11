@@ -4394,13 +4394,13 @@ option {
     top: 0;
     right: 0;
     bottom: 0;
-    width: 40%; /* Reduced width so it only covers the rightmost edge */
+    width: 70%; /* Reduced width so it only covers the rightmost edge */
     border-radius: 0;
     background: var(--country-flag);
     /* Make the mask fade much faster to transparent so it doesn't bleed into text */
     -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.95) 100%);
     mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.95) 100%);
-    opacity: 0.25; /* Reduced opacity heavily so it's a watermark, not a solid banner */
+    opacity: 0.8; /* Reduced opacity heavily so it's a watermark, not a solid banner */
     transform: none;
     transform-origin: center right;
     transition: opacity 0.35s ease, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
