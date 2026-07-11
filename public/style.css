@@ -5011,3 +5011,16 @@ option {
 [data-theme="dark"] .review-quote {
     color: #e2e8f0;
 }
+
+/* Fix for aesthetic-list */
+.aesthetic-list {
+    margin: 0;
+    padding: 0 0 0 20px;
+    list-style-position: outside;
+    list-style-type: disc;
+}
+.aesthetic-list li {
+    margin-bottom: 4px;
+    line-height: 1.4;
+    padding-left: 2px;
+}
