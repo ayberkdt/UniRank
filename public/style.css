@@ -4717,59 +4717,45 @@ option {
     border: 0 !important;
 }
 
+.leaflet-tile-pane {
+    filter: saturate(1.8) contrast(1.1) brightness(1.05);
+}
+
 .marker-excellent,
-.cluster-excellent { --map-band: #48d6a4; --map-band-rgb: 72, 214, 164; }
+.cluster-excellent { --map-band: #58cc02; --map-band-rgb: 88, 204, 2; --map-band-shadow: #58a700; }
 .marker-strong,
-.cluster-strong { --map-band: #5d98ff; --map-band-rgb: 93, 152, 255; }
+.cluster-strong { --map-band: #1cb0f6; --map-band-rgb: 28, 176, 246; --map-band-shadow: #1899d6; }
 .marker-moderate,
-.cluster-moderate { --map-band: #f2bf59; --map-band-rgb: 242, 191, 89; }
+.cluster-moderate { --map-band: #ffc800; --map-band-rgb: 255, 200, 0; --map-band-shadow: #e5b400; }
 .marker-weak,
-.cluster-weak { --map-band: #ef7180; --map-band-rgb: 239, 113, 128; }
+.cluster-weak { --map-band: #ff4b4b; --map-band-rgb: 255, 75, 75; --map-band-shadow: #ea2b2b; }
 
 .custom-marker {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    padding-top: 8px;
-    width: 46px;
-    height: 54px;
+    justify-content: center;
+    width: 46px !important;
+    height: 46px !important;
+    margin-top: -23px !important;
+    margin-left: -23px !important;
     
-    border: 0 !important;
-    border-radius: 0;
-    background: transparent !important;
-    box-shadow: none !important;
+    border: 3px solid #ffffff !important;
+    border-radius: 50% !important;
+    background: var(--map-band) !important;
+    box-shadow: 0 4px 0 var(--map-band-shadow), 0 4px 8px rgba(0, 0, 0, 0.2) !important;
     color: #fff;
-    transform: none;
+    transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s ease;
 }
 
-.custom-marker::before {
-    position: absolute;
-    top: 4px;
-    left: 5px;
-    width: 36px;
-    height: 36px;
-    border: 2px solid rgba(236, 247, 255, 0.98);
-    border-radius: 50% 50% 50% 4px;
-    background: var(--map-band);
-    box-shadow: 0 5px 16px rgba(var(--map-band-rgb), 0.42), 0 2px 7px rgba(0, 0, 0, 0.42);
-    content: '';
-    transform: rotate(-45deg);
+.custom-marker:active {
+    transform: translateY(4px) scale(0.95) !important;
+    box-shadow: 0 0 0 var(--map-band-shadow), 0 2px 4px rgba(0, 0, 0, 0.15) !important;
 }
 
-.custom-marker::after {
-    position: absolute;
-    top: 0;
-    left: 1px;
-    width: 44px;
-    height: 44px;
-    border: 1px solid rgba(var(--map-band-rgb), 0.56);
-    border-radius: 50%;
-    content: '';
-    opacity: 0.66;
-    transform: scale(0.76);
-    animation: map-marker-pulse 2.8s ease-out infinite;
+.custom-marker::before, .custom-marker::after {
+    display: none !important;
 }
 
 .custom-marker .marker-label,
@@ -4779,47 +4765,50 @@ option {
     display: block;
     color: #fff;
     line-height: 1;
-    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.45);
-    transform: none !important;
+    text-shadow: none;
     text-align: center;
 }
 
 .custom-marker .marker-label {
-    font-size: 6px;
-    font-weight: 900;
-    letter-spacing: 0.08em;
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    margin-bottom: 2px;
 }
 
 .custom-marker .marker-score {
-    margin-top: -1px;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 900;
 }
 
 .custom-marker:hover {
-    transform: translateY(-3px) scale(1.08);
+    transform: translateY(-3px) scale(1.05);
 }
 
 .custom-cluster {
     display: grid;
-    width: 54px;
-    height: 54px;
+    width: 54px !important;
+    height: 54px !important;
+    margin-top: -27px !important;
+    margin-left: -27px !important;
     align-content: center;
     justify-items: center;
-    border: 2px solid rgba(235, 246, 255, 0.98) !important;
-    border-radius: 50%;
-    background: rgba(9, 28, 47, 0.9) !important;
-    box-shadow: 0 0 0 5px rgba(var(--map-band-rgb), 0.35), 0 8px 19px rgba(0, 0, 0, 0.35) !important;
+    border: 3px solid #ffffff !important;
+    border-radius: 50% !important;
+    background: var(--map-band) !important;
+    box-shadow: 0 4px 0 var(--map-band-shadow), 0 6px 12px rgba(0, 0, 0, 0.15) !important;
     color: #fff;
+    cursor: pointer;
+    transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.15s ease;
+}
+
+.custom-cluster:active {
+    transform: translateY(4px) !important;
+    box-shadow: 0 0 0 var(--map-band-shadow), 0 2px 4px rgba(0, 0, 0, 0.15) !important;
 }
 
 .custom-cluster::before {
-    position: absolute;
-    inset: 5px;
-    border: 3px solid var(--map-band);
-    border-radius: 50%;
-    content: '';
-    opacity: 0.95;
+    display: none !important;
 }
 
 .custom-cluster .cluster-count,
@@ -4827,19 +4816,20 @@ option {
     position: relative;
     z-index: 1;
     line-height: 1;
+    text-shadow: none;
 }
 
 .custom-cluster .cluster-count {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 900;
 }
 
 .custom-cluster small {
     margin-top: 1px;
-    color: #bad1e7;
-    font-size: 6px;
-    font-weight: 900;
-    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
 }
 
 .leaflet-control-zoom a {

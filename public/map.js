@@ -109,6 +109,24 @@ function initUniRankMap() {
         maxZoom: 20
     });
 
+    fetch('https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json')
+        .then(response => response.json())
+        .then(data => {
+            L.geoJSON(data, {
+                style: {
+                    color: '#1cb0f6',
+                    weight: 2.5,
+                    opacity: 0.7,
+                    fillColor: '#ffffff',
+                    fillOpacity: 0.0,
+                    lineCap: 'round',
+                    lineJoin: 'round'
+                },
+                interactive: false
+            }).addTo(map);
+        })
+        .catch(err => console.error('Failed to load country borders GeoJSON:', err));
+
     const toggle = document.getElementById('map-detail-toggle');
     const modeBadge = document.getElementById('map-mode-badge');
     const detailStatus = document.getElementById('map-detail-status');
