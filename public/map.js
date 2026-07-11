@@ -98,12 +98,12 @@ function initUniRankMap() {
     const map = window.unirankMap;
     L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
-    const calmTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
+    const calmTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
         attribution: tileAttribution,
         subdomains: 'abcd',
         maxZoom: 20
     });
-    const detailedTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    const detailedTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
         attribution: tileAttribution,
         subdomains: 'abcd',
         maxZoom: 20
@@ -153,7 +153,7 @@ function initUniRankMap() {
         if (typeof L.markerClusterGroup === 'function') {
             return L.markerClusterGroup({
                 showCoverageOnHover: false,
-                maxClusterRadius: 44,
+                maxClusterRadius: 25,
                 spiderfyOnMaxZoom: true,
                 spiderfyDistanceMultiplier: 1.2,
                 zoomToBoundsOnClick: true,
