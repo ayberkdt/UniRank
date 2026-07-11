@@ -242,7 +242,3 @@ function calculateScore(record, preferences, weights) {
 }
 
 export { calculateScore };
-  module.exports = { calculateScore };
-} else {
-  window.unirankScoring = { calculateScore };
-}
