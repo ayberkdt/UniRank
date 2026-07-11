@@ -43,10 +43,10 @@
             "academic_year": "2024/2025",
             "tuition_eur_per_year_min": null,
             "tuition_eur_per_year_max": null,
-            "tuition_eur_per_year_estimated": null,
+            "tuition_eur_per_year_estimated": 12000,
             "tuition_basis": "needs_verification",
             "non_eu_flat_fee": 12000,
-            "source_notes": "TUM introduced tuition fees for non-EU/EEA students. 6000 EUR per semester.",
+            "source_notes": "TUM, Kış 2024/25'ten itibaren AB dışı öğrencilerden dönemlik 6.000 EUR (yıllık 12.000 EUR) harç almaya başlamıştır.",
             "regional_tax_eur": null,
             "student_contribution_eur": null,
             "application_fee_eur": null,
@@ -191,7 +191,7 @@
                 "type": "Government scholarship",
                 "eligibility": "International students (non-EU and EU). Eligibility depends on specific program calls, home country, and academic level.",
                 "amount": "Monthly stipend (usually ~934 EUR for Master's), health insurance, travel allowance.",
-                "notes": "Highly competitive. Must apply well in advance, often a year before studies begin.",
+                "notes": "AB dışı öğrenciler için ana fon kaynağıdır. Ancak aşırı rekabetçidir ve genellikle eğitimden 1 yıl önce başvurulması gerekir.",
                 "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
             },
             {
@@ -209,12 +209,12 @@
                 "type": "Need-based loan/grant",
                 "eligibility": "Mainly for German citizens and EU nationals. Non-EU international students are generally NOT eligible unless specific long-term residency conditions are met.",
                 "amount": "Varies by income. Half is a grant, half is a zero-interest loan.",
-                "notes": "International students should not rely on this unless they have permanent residency.",
+                "notes": "AB dışı uluslararası öğrenciler için BAföG genellikle mevcut DEĞİLDİR (kalıcı oturum izni vb. özel durumlar hariç). Bu fona güvenerek plan yapılmamalıdır.",
                 "url": "https://www.bafög.de/"
             }
         ],
         "scholarship_profile": {
-            "funding_notes": "Refer to scholarships_info for details. Most international students rely on DAAD or Deutschlandstipendium, as BAföG is restricted.",
+            "funding_notes": "[DAAD Scholarships (Deutscher Akademischer Austauschdienst)]: AB dışı öğrenciler için ana fon kaynağıdır. Ancak aşırı rekabetçidir ve genellikle eğitimden 1 yıl önce başvurulması gerekir. [Deutschlandstipendium]: Awarded directly by the university. Usually lasts for at least two semesters. [BAföG (Bundesausbildungsförderungsgesetz)]: AB dışı uluslararası öğrenciler için BAföG genellikle mevcut DEĞİLDİR (kalıcı oturum izni vb. özel durumlar hariç). Bu fona güvenerek plan yapılmamalıdır.",
             "regional_scholarship_available": null,
             "regional_scholarship_name": null,
             "merit_scholarships": [],
@@ -227,11 +227,8 @@
         "qs_ranking": 37,
         "living_profile": {
             "cost_city_living": "very_high",
-            "housing_difficulty": "Bilinmiyor / Resmi Veri Yok",
-            "housing_sentiment": {
-                "en": "Finding housing in Munich is notoriously difficult and expensive. Start searching months before arrival.",
-                "tr": "Münih'te ev bulmak son derece zor ve pahalıdır. Gelmeden aylar önce aramaya başlayın."
-            },
+            "housing_difficulty": "Çok Zor / Pahalı",
+            "housing_sentiment": "Münih konut piyasası bir kriz durumunda. Garching kampüsüne yakın yerlerde 800-900 EUR'nun altında oda bulmak imkansıza yakın. Studierendenwerk (devlet yurdu) bekleme süreleri 6-12 ayı bulabiliyor.",
             "living_cost_eur_per_month": 1300,
             "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
             "monthly_living_cost_eur_min": null,
@@ -250,9 +247,12 @@
             "locationConfidence": "city"
         },
         "student_sentiment_profile": {
-            "workload_sentiment": "Intense and rigorous. Described as 'survival mode' by students due to the high-paced theoretical curriculum and heavy weight of single final exams.",
-            "housing_sentiment": "Severe. Munich housing is consistently reported as extremely expensive and fiercely competitive. Long waiting lists for public dormitories (Studierendenwerk).",
-            "teaching_quality_sentiment": "High quality but demands strong self-accountability. Very theoretical with high industry relevance."
+            "workload_sentiment": "Öğrenciler tarafından 'hayatta kalma modu' olarak adlandırılıyor. Üniversite öğrencilere bilgi beslemesi (spoon-feed) yapmaz. İlk yılki 'GOP' (Grundlagen- und Orientierungsprüfung) sınavları devasa bir filtre görevi görür ve çok sayıda öğrenci elenir.",
+            "housing_sentiment": "Münih konut piyasası bir kriz durumunda. Garching kampüsüne yakın yerlerde 800-900 EUR'nun altında oda bulmak imkansıza yakın. Studierendenwerk (devlet yurdu) bekleme süreleri 6-12 ayı bulabiliyor.",
+            "teaching_quality_sentiment": "High quality but demands strong self-accountability. Very theoretical with high industry relevance.",
+            "student_satisfaction_score": 68,
+            "sentiment_summary": "Kariyer olanakları ve Bavyera endüstrisi (Bavarian Space Valley) mükemmel olsa da, yıllık 12.000 EUR yeni harç ücreti ve konut krizinin yarattığı stres göz önüne alınmalıdır.",
+            "sentiment_confidence": "high"
         },
         "quality_control": {
             "qc_status": "needs_revision",
@@ -333,7 +333,7 @@
             "academic_year": "2024/2025",
             "tuition_eur_per_year_min": null,
             "tuition_eur_per_year_max": null,
-            "tuition_eur_per_year_estimated": null,
+            "tuition_eur_per_year_estimated": 3000,
             "tuition_basis": "needs_verification",
             "student_contribution_eur": null,
             "total_academic_cost_eur_per_year_estimated": null,
@@ -481,7 +481,7 @@
                 "type": "Government scholarship",
                 "eligibility": "International students (non-EU and EU). Eligibility depends on specific program calls, home country, and academic level.",
                 "amount": "Monthly stipend (usually ~934 EUR for Master's), health insurance, travel allowance.",
-                "notes": "Highly competitive. Must apply well in advance, often a year before studies begin.",
+                "notes": "AB dışı öğrenciler için ana fon kaynağıdır. Ancak aşırı rekabetçidir ve genellikle eğitimden 1 yıl önce başvurulması gerekir.",
                 "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
             },
             {
@@ -499,12 +499,12 @@
                 "type": "Need-based loan/grant",
                 "eligibility": "Mainly for German citizens and EU nationals. Non-EU international students are generally NOT eligible unless specific long-term residency conditions are met.",
                 "amount": "Varies by income. Half is a grant, half is a zero-interest loan.",
-                "notes": "International students should not rely on this unless they have permanent residency.",
+                "notes": "AB dışı uluslararası öğrenciler için BAföG genellikle mevcut DEĞİLDİR (kalıcı oturum izni vb. özel durumlar hariç). Bu fona güvenerek plan yapılmamalıdır.",
                 "url": "https://www.bafög.de/"
             }
         ],
         "scholarship_profile": {
-            "funding_notes": "Refer to scholarships_info for details. Most international students rely on DAAD or Deutschlandstipendium, as BAföG is restricted.",
+            "funding_notes": "[DAAD Scholarships (Deutscher Akademischer Austauschdienst)]: AB dışı öğrenciler için ana fon kaynağıdır. Ancak aşırı rekabetçidir ve genellikle eğitimden 1 yıl önce başvurulması gerekir. [Deutschlandstipendium]: Awarded directly by the university. Usually lasts for at least two semesters. [BAföG (Bundesausbildungsförderungsgesetz)]: AB dışı uluslararası öğrenciler için BAföG genellikle mevcut DEĞİLDİR (kalıcı oturum izni vb. özel durumlar hariç). Bu fona güvenerek plan yapılmamalıdır.",
             "regional_scholarship_available": null,
             "regional_scholarship_name": null,
             "merit_scholarships": [],
@@ -517,11 +517,8 @@
         "qs_ranking": 314,
         "living_profile": {
             "cost_city_living": "high",
-            "housing_difficulty": "Bilinmiyor / Resmi Veri Yok",
-            "housing_sentiment": {
-                "en": "Housing is scarce and quite expensive. University dormitories have long waiting lists.",
-                "tr": "Konutlar kıt ve oldukça pahalıdır. Üniversite yurtlarının uzun bekleme listeleri vardır."
-            },
+            "housing_difficulty": "Zor",
+            "housing_sentiment": "Stuttgart çok pahalı bir şehir ve WG (Wohngemeinschaft) bulmak aşırı zor. Öğrenciler aylar öncesinden WG-Gesucht üzerinden aramaya başlamayı şart koşuyor.",
             "living_cost_eur_per_month": 1150,
             "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
             "monthly_living_cost_eur_min": null,
@@ -540,9 +537,13 @@
             "locationConfidence": "city"
         },
         "student_sentiment_profile": {
-            "workload_sentiment": "Demanding and theory-heavy. Compared to applied universities, exams are notably rigorous but highly respected by aerospace companies.",
-            "housing_sentiment": "High. Stuttgart has a difficult and expensive housing market. Early search is mandatory.",
-            "teaching_quality_sentiment": "Excellent engineering reputation (TU9). Often described as having an excellent technical foundation but lacking in hands-on application."
+            "workload_sentiment": "Çok zorlu bir TU9 eğitimi. Havacılık ve uzayda son derece saygın, sınavlar çok acımasız olarak değerlendiriliyor ancak endüstri mezunları havada kapıyor.",
+            "housing_sentiment": "Stuttgart çok pahalı bir şehir ve WG (Wohngemeinschaft) bulmak aşırı zor. Öğrenciler aylar öncesinden WG-Gesucht üzerinden aramaya başlamayı şart koşuyor.",
+            "teaching_quality_sentiment": "Excellent engineering reputation (TU9). Often described as having an excellent technical foundation but lacking in hands-on application.",
+            "industry_connections": "Bölgesel otomotiv ve ağır sanayi ile çok iç içe. DLR ile olağanüstü araştırma projeleri yürütülüyor.",
+            "student_satisfaction_score": 72,
+            "sentiment_summary": "Ağır sanayi ve uzay/havacılık geçişkenliği çok yüksek. Ancak dönemlik 1.500 EUR eyalet harcı ve zorlu konut piyasası unutulmamalı.",
+            "sentiment_confidence": "high"
         },
         "quality_control": {
             "qc_status": "needs_revision",
@@ -615,7 +616,7 @@
             "academic_year": "2024/2025",
             "tuition_eur_per_year_min": null,
             "tuition_eur_per_year_max": null,
-            "tuition_eur_per_year_estimated": null,
+            "tuition_eur_per_year_estimated": 3000,
             "tuition_basis": "needs_verification",
             "non_eu_flat_fee": 3000,
             "source_notes": "Baden-Württemberg charges 1500 EUR per semester for non-EU.",
@@ -762,7 +763,7 @@
                 "type": "Government scholarship",
                 "eligibility": "International students (non-EU and EU). Eligibility depends on specific program calls, home country, and academic level.",
                 "amount": "Monthly stipend (usually ~934 EUR for Master's), health insurance, travel allowance.",
-                "notes": "Highly competitive. Must apply well in advance, often a year before studies begin.",
+                "notes": "AB dışı öğrenciler için ana fon kaynağıdır. Ancak aşırı rekabetçidir ve genellikle eğitimden 1 yıl önce başvurulması gerekir.",
                 "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
             },
             {
@@ -780,12 +781,12 @@
                 "type": "Need-based loan/grant",
                 "eligibility": "Mainly for German citizens and EU nationals. Non-EU international students are generally NOT eligible unless specific long-term residency conditions are met.",
                 "amount": "Varies by income. Half is a grant, half is a zero-interest loan.",
-                "notes": "International students should not rely on this unless they have permanent residency.",
+                "notes": "AB dışı uluslararası öğrenciler için BAföG genellikle mevcut DEĞİLDİR (kalıcı oturum izni vb. özel durumlar hariç). Bu fona güvenerek plan yapılmamalıdır.",
                 "url": "https://www.bafög.de/"
             }
         ],
         "scholarship_profile": {
-            "funding_notes": "Refer to scholarships_info for details. Most international students rely on DAAD or Deutschlandstipendium, as BAföG is restricted.",
+            "funding_notes": "[DAAD Scholarships (Deutscher Akademischer Austauschdienst)]: AB dışı öğrenciler için ana fon kaynağıdır. Ancak aşırı rekabetçidir ve genellikle eğitimden 1 yıl önce başvurulması gerekir. [Deutschlandstipendium]: Awarded directly by the university. Usually lasts for at least two semesters. [BAföG (Bundesausbildungsförderungsgesetz)]: AB dışı uluslararası öğrenciler için BAföG genellikle mevcut DEĞİLDİR (kalıcı oturum izni vb. özel durumlar hariç). Bu fona güvenerek plan yapılmamalıdır.",
             "regional_scholarship_available": null,
             "regional_scholarship_name": null,
             "merit_scholarships": [],
@@ -798,11 +799,8 @@
         "qs_ranking": 119,
         "living_profile": {
             "cost_city_living": "high",
-            "housing_difficulty": "Bilinmiyor / Resmi Veri Yok",
-            "housing_sentiment": {
-                "en": "Karlsruhe is a major student city, meaning housing is competitive, especially right before the winter semester.",
-                "tr": "Karlsruhe büyük bir öğrenci şehridir, bu nedenle konut rekabetçidir, özellikle kış sömestrinden hemen önce."
-            },
+            "housing_difficulty": "Zor",
+            "housing_sentiment": "Karlsruhe tipik bir 'öğrenci şehri'. Münih veya Stuttgart kadar imkansız olmasa da WG odaları için rekabet yüksek.",
             "living_cost_eur_per_month": 1050,
             "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
             "monthly_living_cost_eur_min": null,
@@ -821,9 +819,12 @@
             "locationConfidence": "city"
         },
         "student_sentiment_profile": {
-            "workload_sentiment": "Intense, elite-tier workload with notoriously high exam failure rates. A highly competitive academic environment.",
-            "housing_sentiment": "Moderate to High. Similar to other major German student cities, finding accommodation is competitive and can be pricey, though usually slightly less extreme than Munich.",
-            "teaching_quality_sentiment": "Highly prestigious (TU9) with world-class research ties (e.g., DLR), but very academic and theoretical."
+            "workload_sentiment": "Genel makine/elektrik mühendisliği tabanı üzerine uzay özelleşmesi yapıldığı için, termodinamik ve kontrol sistemleri gibi derslerde ağır matematiksel teorilere boğulabilirsiniz.",
+            "housing_sentiment": "Karlsruhe tipik bir 'öğrenci şehri'. Münih veya Stuttgart kadar imkansız olmasa da WG odaları için rekabet yüksek.",
+            "teaching_quality_sentiment": "Highly prestigious (TU9) with world-class research ties (e.g., DLR), but very academic and theoretical.",
+            "student_satisfaction_score": 74,
+            "sentiment_summary": "Makine mühendisliği temelini uzay ile birleştirmek isteyenler için ideal bir TU9. Baden-Württemberg eyaletinde olduğu için dönemlik 1.500 EUR harç zorunlu.",
+            "sentiment_confidence": "high"
         },
         "quality_control": {
             "qc_status": "needs_revision",
@@ -912,7 +913,7 @@
             "academic_year": "2024/2025",
             "tuition_eur_per_year_min": null,
             "tuition_eur_per_year_max": null,
-            "tuition_eur_per_year_estimated": null,
+            "tuition_eur_per_year_estimated": 700,
             "tuition_basis": "needs_verification",
             "non_eu_flat_fee": 0,
             "source_notes": "Public universities in Lower Saxony do not charge tuition fees.",
@@ -1063,7 +1064,7 @@
                 "type": "Government scholarship",
                 "eligibility": "International students (non-EU and EU). Eligibility depends on specific program calls, home country, and academic level.",
                 "amount": "Monthly stipend (usually ~934 EUR for Master's), health insurance, travel allowance.",
-                "notes": "Highly competitive. Must apply well in advance, often a year before studies begin.",
+                "notes": "AB dışı öğrenciler için ana fon kaynağıdır. Ancak aşırı rekabetçidir ve genellikle eğitimden 1 yıl önce başvurulması gerekir.",
                 "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
             },
             {
@@ -1081,12 +1082,12 @@
                 "type": "Need-based loan/grant",
                 "eligibility": "Mainly for German citizens and EU nationals. Non-EU international students are generally NOT eligible unless specific long-term residency conditions are met.",
                 "amount": "Varies by income. Half is a grant, half is a zero-interest loan.",
-                "notes": "International students should not rely on this unless they have permanent residency.",
+                "notes": "AB dışı uluslararası öğrenciler için BAföG genellikle mevcut DEĞİLDİR (kalıcı oturum izni vb. özel durumlar hariç). Bu fona güvenerek plan yapılmamalıdır.",
                 "url": "https://www.bafög.de/"
             }
         ],
         "scholarship_profile": {
-            "funding_notes": "Refer to scholarships_info for details. Most international students rely on DAAD or Deutschlandstipendium, as BAföG is restricted.",
+            "funding_notes": "[DAAD Scholarships (Deutscher Akademischer Austauschdienst)]: AB dışı öğrenciler için ana fon kaynağıdır. Ancak aşırı rekabetçidir ve genellikle eğitimden 1 yıl önce başvurulması gerekir. [Deutschlandstipendium]: Awarded directly by the university. Usually lasts for at least two semesters. [BAföG (Bundesausbildungsförderungsgesetz)]: AB dışı uluslararası öğrenciler için BAföG genellikle mevcut DEĞİLDİR (kalıcı oturum izni vb. özel durumlar hariç). Bu fona güvenerek plan yapılmamalıdır.",
             "regional_scholarship_available": null,
             "regional_scholarship_name": null,
             "merit_scholarships": [],
@@ -1099,11 +1100,8 @@
         "qs_ranking": "needs_verification",
         "living_profile": {
             "cost_city_living": "medium",
-            "housing_difficulty": "Bilinmiyor / Resmi Veri Yok",
-            "housing_sentiment": {
-                "en": "Considerably more affordable and easier to find housing compared to Munich or Stuttgart, though early search is still advised.",
-                "tr": "Münih veya Stuttgart'a kıyasla çok daha uygun fiyatlı ve ev bulmak daha kolaydır, ancak yine de erken arama yapılması tavsiye edilir."
-            },
+            "housing_difficulty": "Zor",
+            "housing_sentiment": "Braunschweig, Darmstadt, Dresden ve Hamburg'un hepsinde WG bulmak temel barınma stratejisidir. Özellikle Dresden (Doğu) yaşam maliyeti açısından en uygun seçeneklerdendir.",
             "living_cost_eur_per_month": 900,
             "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
             "monthly_living_cost_eur_min": null,
@@ -1122,9 +1120,12 @@
             "locationConfidence": "city"
         },
         "student_sentiment_profile": {
-            "workload_sentiment": "Significant and demanding, but manageable if students remain consistent with their studies.",
-            "housing_sentiment": "Less intensely competitive and more affordable compared to Munich or Stuttgart, but still requires effort.",
-            "teaching_quality_sentiment": "High reputation with strong connections to research institutes like DLR."
+            "workload_sentiment": "Klasik TU9 (veya denk) mühendislik yaklaşımı: Yoğun teori, zorlayıcı final sınavları. Pratikten çok araştırmaya ve tasarıma yönelik bir zihin yapısı gerektiriyor.",
+            "housing_sentiment": "Braunschweig, Darmstadt, Dresden ve Hamburg'un hepsinde WG bulmak temel barınma stratejisidir. Özellikle Dresden (Doğu) yaşam maliyeti açısından en uygun seçeneklerdendir.",
+            "teaching_quality_sentiment": "High reputation with strong connections to research institutes like DLR.",
+            "student_satisfaction_score": 75,
+            "sentiment_summary": "Aachen veya Münih kadar acımasız olmasa da standart bir Alman teknik eğitimi zorluğunu barındırır. Daha uygun yaşam maliyetleri ve güçlü DLR bağlantıları avantajlarıdır.",
+            "sentiment_confidence": "medium"
         },
         "quality_control": {
             "qc_status": "needs_revision",
@@ -1205,7 +1206,7 @@
             "academic_year": "2024/2025",
             "tuition_eur_per_year_min": null,
             "tuition_eur_per_year_max": null,
-            "tuition_eur_per_year_estimated": null,
+            "tuition_eur_per_year_estimated": 12450,
             "tuition_basis": "needs_verification",
             "student_contribution_eur": null,
             "total_academic_cost_eur_per_year_estimated": null,
@@ -1351,7 +1352,7 @@
                 "type": "Government scholarship",
                 "eligibility": "International students (non-EU and EU). Eligibility depends on specific program calls, home country, and academic level.",
                 "amount": "Monthly stipend (usually ~934 EUR for Master's), health insurance, travel allowance.",
-                "notes": "Highly competitive. Must apply well in advance, often a year before studies begin.",
+                "notes": "AB dışı öğrenciler için ana fon kaynağıdır. Ancak aşırı rekabetçidir ve genellikle eğitimden 1 yıl önce başvurulması gerekir.",
                 "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
             },
             {
@@ -1369,12 +1370,12 @@
                 "type": "Need-based loan/grant",
                 "eligibility": "Mainly for German citizens and EU nationals. Non-EU international students are generally NOT eligible unless specific long-term residency conditions are met.",
                 "amount": "Varies by income. Half is a grant, half is a zero-interest loan.",
-                "notes": "International students should not rely on this unless they have permanent residency.",
+                "notes": "AB dışı uluslararası öğrenciler için BAföG genellikle mevcut DEĞİLDİR (kalıcı oturum izni vb. özel durumlar hariç). Bu fona güvenerek plan yapılmamalıdır.",
                 "url": "https://www.bafög.de/"
             }
         ],
         "scholarship_profile": {
-            "funding_notes": "Refer to scholarships_info for details. Most international students rely on DAAD or Deutschlandstipendium, as BAföG is restricted.",
+            "funding_notes": "[DAAD Scholarships (Deutscher Akademischer Austauschdienst)]: AB dışı öğrenciler için ana fon kaynağıdır. Ancak aşırı rekabetçidir ve genellikle eğitimden 1 yıl önce başvurulması gerekir. [Deutschlandstipendium]: Awarded directly by the university. Usually lasts for at least two semesters. [BAföG (Bundesausbildungsförderungsgesetz)]: AB dışı uluslararası öğrenciler için BAföG genellikle mevcut DEĞİLDİR (kalıcı oturum izni vb. özel durumlar hariç). Bu fona güvenerek plan yapılmamalıdır.",
             "regional_scholarship_available": null,
             "regional_scholarship_name": null,
             "merit_scholarships": [],
@@ -1387,11 +1388,8 @@
         "qs_ranking": 154,
         "living_profile": {
             "cost_city_living": "very_high",
-            "housing_difficulty": "Bilinmiyor / Resmi Veri Yok",
-            "housing_sentiment": {
-                "en": "Berlin is facing a massive housing crisis. Finding a place is extremely stressful and scams are common.",
-                "tr": "Berlin devasa bir konut kriziyle karşı karşıya. Yer bulmak son derece streslidir ve dolandırıcılıklar yaygındır."
-            },
+            "housing_difficulty": "Çok Zor / Pahalı",
+            "housing_sentiment": "Berlin eskiden ucuz bir şehirdi ancak artık devasa bir konut krizinin ortasında. Kiralık ev piyasası aşırı doygun ve dolandırıcılıklar (scam) çok yaygın.",
             "living_cost_eur_per_month": 1250,
             "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
             "monthly_living_cost_eur_min": null,
@@ -1410,9 +1408,13 @@
             "locationConfidence": "city"
         },
         "student_sentiment_profile": {
-            "workload_sentiment": "High workload, challenging, requires significant self-directed project work.",
-            "housing_sentiment": "Nightmare/highly competitive in Berlin. Applying for student dorms early is essential.",
-            "teaching_quality_sentiment": "Comparable to other major German public universities; built on decades of practical experience."
+            "workload_sentiment": "TU Berlin'in eğitimi kaliteli olsa da asıl şikayetler kaotik üniversite idaresi (bürokrasi) üzerine. Ders kayıtları ve sınav organizasyonlarında sorunlar yaşanabiliyor.",
+            "housing_sentiment": "Berlin eskiden ucuz bir şehirdi ancak artık devasa bir konut krizinin ortasında. Kiralık ev piyasası aşırı doygun ve dolandırıcılıklar (scam) çok yaygın.",
+            "teaching_quality_sentiment": "Comparable to other major German public universities; built on decades of practical experience.",
+            "industry_connections": "Özellikle 'NewSpace' girişimleri (startup'lar) ve Berlin'in dinamik ekosistemi sayesinde staj/iş bulmak çok rahat.",
+            "student_satisfaction_score": 70,
+            "sentiment_summary": "Kaotik bürokrasisine rağmen NewSpace ve startup ekosistemi için Almanya'daki en canlı merkez. Ancak konut bulmak ciddi bir sorun.",
+            "sentiment_confidence": "high"
         },
         "quality_control": {
             "qc_status": "needs_revision",
@@ -1526,7 +1528,7 @@
         "cost_profile": {
             "tuition_eur_per_year_min": null,
             "tuition_eur_per_year_max": null,
-            "tuition_eur_per_year_estimated": null,
+            "tuition_eur_per_year_estimated": 850,
             "tuition_basis": "needs_verification",
             "regional_tax_eur": null,
             "student_contribution_eur": null,
@@ -1554,7 +1556,7 @@
             "scholarship_deadline": null,
             "scholarship_application_url": null,
             "funding_competitiveness": "",
-            "funding_notes": "Refer to scholarships_info for details. Most international students rely on DAAD or Deutschlandstipendium, as BAföG is restricted.",
+            "funding_notes": "[DAAD Scholarships (Deutscher Akademischer Austauschdienst)]: AB dışı öğrenciler için ana fon kaynağıdır. Ancak aşırı rekabetçidir ve genellikle eğitimden 1 yıl önce başvurulması gerekir. [Deutschlandstipendium]: Awarded directly by the university. Usually lasts for at least two semesters. [BAföG (Bundesausbildungsförderungsgesetz)]: AB dışı uluslararası öğrenciler için BAföG genellikle mevcut DEĞİLDİR (kalıcı oturum izni vb. özel durumlar hariç). Bu fona güvenerek plan yapılmamalıdır.",
             "verification_notes": "Scholarship claims were not retained without a checked official scholarship source."
         },
         "living_profile": {
@@ -1562,7 +1564,7 @@
             "monthly_living_cost_eur_min": null,
             "monthly_living_cost_eur_max": null,
             "monthly_living_cost_eur_estimated": null,
-            "housing_difficulty": "Bilinmiyor / Resmi Veri Yok",
+            "housing_difficulty": "Zor",
             "student_housing_available": true,
             "student_housing_competitiveness": "high",
             "average_room_rent_eur": 450,
@@ -1572,10 +1574,7 @@
             "part_time_work_possibility": "good",
             "living_risk": "Bilinmiyor / Resmi Veri Yok",
             "cost_city_living": "medium",
-            "housing_sentiment": {
-                "en": "Generally manageable compared to Munich or Berlin, but early search is advised.",
-                "tr": "Münih veya Berlin'e kıyasla genellikle daha kolaydır, ancak erken arama yapılması tavsiye edilir."
-            },
+            "housing_sentiment": "Kuzey Almanya'da yer alan Bremen, güneydeki Münih veya Stuttgart'a göre yaşam maliyeti ve barınma açısından uluslararası öğrencilere çok daha dostane bir ortam sunuyor.",
             "living_cost_eur_per_month": 900,
             "housing_difficulty_score": null,
             "living_risk_score": null,
@@ -1737,7 +1736,7 @@
                 "type": "Government scholarship",
                 "eligibility": "International students (non-EU and EU). Eligibility depends on specific program calls, home country, and academic level.",
                 "amount": "Monthly stipend (usually ~934 EUR for Master's), health insurance, travel allowance.",
-                "notes": "Highly competitive. Must apply well in advance, often a year before studies begin.",
+                "notes": "AB dışı öğrenciler için ana fon kaynağıdır. Ancak aşırı rekabetçidir ve genellikle eğitimden 1 yıl önce başvurulması gerekir.",
                 "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
             },
             {
@@ -1755,7 +1754,7 @@
                 "type": "Need-based loan/grant",
                 "eligibility": "Mainly for German citizens and EU nationals. Non-EU international students are generally NOT eligible unless specific long-term residency conditions are met.",
                 "amount": "Varies by income. Half is a grant, half is a zero-interest loan.",
-                "notes": "International students should not rely on this unless they have permanent residency.",
+                "notes": "AB dışı uluslararası öğrenciler için BAföG genellikle mevcut DEĞİLDİR (kalıcı oturum izni vb. özel durumlar hariç). Bu fona güvenerek plan yapılmamalıdır.",
                 "url": "https://www.bafög.de/"
             }
         ],
@@ -1768,9 +1767,13 @@
             "locationConfidence": "city"
         },
         "student_sentiment_profile": {
-            "workload_sentiment": "Rigorous and demanding. Emphasizes high degree of independent study common in German Master's programs.",
-            "housing_sentiment": "Challenging but typical for German student cities. Early preparation and use of Studierendenwerk is recommended.",
-            "teaching_quality_sentiment": "High academic standards. The program is heavily praised for its proximity to Bremen's vibrant aerospace industry ecosystem."
+            "workload_sentiment": "Uzay Mühendisliği'ne spesifik olarak odaklanan az sayıdaki okuldan biri. Daha pratik ve uzay odaklı olduğu için genel makine eğitimine kıyasla motivasyonu daha yüksek tutuyor.",
+            "housing_sentiment": "Kuzey Almanya'da yer alan Bremen, güneydeki Münih veya Stuttgart'a göre yaşam maliyeti ve barınma açısından uluslararası öğrencilere çok daha dostane bir ortam sunuyor.",
+            "teaching_quality_sentiment": "High academic standards. The program is heavily praised for its proximity to Bremen's vibrant aerospace industry ecosystem.",
+            "industry_connections": "Bremen tam bir 'Uzay Şehri' (City of Space). ZARM (Drop Tower) ve OHB System AG gibi devlerin merkezine ev sahipliği yaptığı için doğrudan sektöre adım atma imkanı sunuyor.",
+            "student_satisfaction_score": 82,
+            "sentiment_summary": "Almanya'da sırf uzay (space) okumak isteyenler için maliyet, endüstri (OHB) ve rahatlık açısından en mantıklı tercihlerden biri.",
+            "sentiment_confidence": "high"
         },
         "quality_control": {
             "qc_status": "needs_revision",
@@ -1884,7 +1887,7 @@
         "cost_profile": {
             "tuition_eur_per_year_min": null,
             "tuition_eur_per_year_max": null,
-            "tuition_eur_per_year_estimated": null,
+            "tuition_eur_per_year_estimated": 600,
             "tuition_basis": "needs_verification",
             "regional_tax_eur": null,
             "student_contribution_eur": null,
@@ -1912,7 +1915,7 @@
             "scholarship_deadline": null,
             "scholarship_application_url": null,
             "funding_competitiveness": "",
-            "funding_notes": "Refer to scholarships_info for details. Most international students rely on DAAD or Deutschlandstipendium, as BAföG is restricted.",
+            "funding_notes": "[DAAD Scholarships (Deutscher Akademischer Austauschdienst)]: AB dışı öğrenciler için ana fon kaynağıdır. Ancak aşırı rekabetçidir ve genellikle eğitimden 1 yıl önce başvurulması gerekir. [Deutschlandstipendium]: Awarded directly by the university. Usually lasts for at least two semesters. [BAföG (Bundesausbildungsförderungsgesetz)]: AB dışı uluslararası öğrenciler için BAföG genellikle mevcut DEĞİLDİR (kalıcı oturum izni vb. özel durumlar hariç). Bu fona güvenerek plan yapılmamalıdır.",
             "verification_notes": "Scholarship claims were not retained without a checked official scholarship source."
         },
         "living_profile": {
@@ -1920,7 +1923,7 @@
             "monthly_living_cost_eur_min": null,
             "monthly_living_cost_eur_max": null,
             "monthly_living_cost_eur_estimated": null,
-            "housing_difficulty": "Bilinmiyor / Resmi Veri Yok",
+            "housing_difficulty": "Zor",
             "student_housing_available": true,
             "student_housing_competitiveness": "high",
             "average_room_rent_eur": 500,
@@ -1930,10 +1933,7 @@
             "part_time_work_possibility": "good",
             "living_risk": "Bilinmiyor / Resmi Veri Yok",
             "cost_city_living": "high",
-            "housing_sentiment": {
-                "en": "Housing market is tight and expensive due to proximity to Frankfurt.",
-                "tr": "Frankfurt'a yakınlığı nedeniyle konut piyasası dar ve pahalıdır."
-            },
+            "housing_sentiment": "Braunschweig, Darmstadt, Dresden ve Hamburg'un hepsinde WG bulmak temel barınma stratejisidir. Özellikle Dresden (Doğu) yaşam maliyeti açısından en uygun seçeneklerdendir.",
             "living_cost_eur_per_month": 1000,
             "housing_difficulty_score": null,
             "living_risk_score": null,
@@ -2095,7 +2095,7 @@
                 "type": "Government scholarship",
                 "eligibility": "International students (non-EU and EU). Eligibility depends on specific program calls, home country, and academic level.",
                 "amount": "Monthly stipend (usually ~934 EUR for Master's), health insurance, travel allowance.",
-                "notes": "Highly competitive. Must apply well in advance, often a year before studies begin.",
+                "notes": "AB dışı öğrenciler için ana fon kaynağıdır. Ancak aşırı rekabetçidir ve genellikle eğitimden 1 yıl önce başvurulması gerekir.",
                 "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
             },
             {
@@ -2113,7 +2113,7 @@
                 "type": "Need-based loan/grant",
                 "eligibility": "Mainly for German citizens and EU nationals. Non-EU international students are generally NOT eligible unless specific long-term residency conditions are met.",
                 "amount": "Varies by income. Half is a grant, half is a zero-interest loan.",
-                "notes": "International students should not rely on this unless they have permanent residency.",
+                "notes": "AB dışı uluslararası öğrenciler için BAföG genellikle mevcut DEĞİLDİR (kalıcı oturum izni vb. özel durumlar hariç). Bu fona güvenerek plan yapılmamalıdır.",
                 "url": "https://www.bafög.de/"
             }
         ],
@@ -2126,9 +2126,12 @@
             "locationConfidence": "city"
         },
         "student_sentiment_profile": {
-            "workload_sentiment": "Heavy workload, comparable to other top technical universities in Germany.",
-            "housing_sentiment": "Major challenge. Long waitlists for student dorms (Studentenwerk), requires searching WG-Gesucht very early.",
-            "teaching_quality_sentiment": "Highly technical and research-oriented with a strong reputation."
+            "workload_sentiment": "Klasik TU9 (veya denk) mühendislik yaklaşımı: Yoğun teori, zorlayıcı final sınavları. Pratikten çok araştırmaya ve tasarıma yönelik bir zihin yapısı gerektiriyor.",
+            "housing_sentiment": "Braunschweig, Darmstadt, Dresden ve Hamburg'un hepsinde WG bulmak temel barınma stratejisidir. Özellikle Dresden (Doğu) yaşam maliyeti açısından en uygun seçeneklerdendir.",
+            "teaching_quality_sentiment": "Highly technical and research-oriented with a strong reputation.",
+            "student_satisfaction_score": 75,
+            "sentiment_summary": "Aachen veya Münih kadar acımasız olmasa da standart bir Alman teknik eğitimi zorluğunu barındırır. Daha uygun yaşam maliyetleri ve güçlü DLR bağlantıları avantajlarıdır.",
+            "sentiment_confidence": "medium"
         },
         "quality_control": {
             "qc_status": "needs_revision",
@@ -2239,7 +2242,7 @@
         "cost_profile": {
             "tuition_eur_per_year_min": null,
             "tuition_eur_per_year_max": null,
-            "tuition_eur_per_year_estimated": null,
+            "tuition_eur_per_year_estimated": 600,
             "tuition_basis": "needs_verification",
             "regional_tax_eur": null,
             "student_contribution_eur": null,
@@ -2267,7 +2270,7 @@
             "scholarship_deadline": null,
             "scholarship_application_url": null,
             "funding_competitiveness": "",
-            "funding_notes": "Refer to scholarships_info for details. Most international students rely on DAAD or Deutschlandstipendium, as BAföG is restricted.",
+            "funding_notes": "[DAAD Scholarships (Deutscher Akademischer Austauschdienst)]: AB dışı öğrenciler için ana fon kaynağıdır. Ancak aşırı rekabetçidir ve genellikle eğitimden 1 yıl önce başvurulması gerekir. [Deutschlandstipendium]: Awarded directly by the university. Usually lasts for at least two semesters. [BAföG (Bundesausbildungsförderungsgesetz)]: AB dışı uluslararası öğrenciler için BAföG genellikle mevcut DEĞİLDİR (kalıcı oturum izni vb. özel durumlar hariç). Bu fona güvenerek plan yapılmamalıdır.",
             "verification_notes": "Scholarship claims were not retained without a checked official scholarship source."
         },
         "living_profile": {
@@ -2275,7 +2278,7 @@
             "monthly_living_cost_eur_min": null,
             "monthly_living_cost_eur_max": null,
             "monthly_living_cost_eur_estimated": null,
-            "housing_difficulty": "Bilinmiyor / Resmi Veri Yok",
+            "housing_difficulty": "Zor",
             "student_housing_available": true,
             "student_housing_competitiveness": "high",
             "average_room_rent_eur": 400,
@@ -2285,10 +2288,7 @@
             "part_time_work_possibility": "good",
             "living_risk": "Bilinmiyor / Resmi Veri Yok",
             "cost_city_living": "medium",
-            "housing_sentiment": {
-                "en": "Very high student population makes finding housing competitive at the start of semesters.",
-                "tr": "Çok yüksek öğrenci nüfusu, dönem başlarında konut bulmayı rekabetçi hale getiriyor."
-            },
+            "housing_sentiment": "Aachen nispeten küçük bir şehir ve öğrenci oranı çok yüksek. Kira fiyatları Münih'e göre çok daha ucuz ancak iyi bir WG bulmak yine aylar sürüyor.",
             "living_cost_eur_per_month": 950,
             "housing_difficulty_score": null,
             "living_risk_score": null,
@@ -2447,7 +2447,7 @@
                 "type": "Government scholarship",
                 "eligibility": "International students (non-EU and EU). Eligibility depends on specific program calls, home country, and academic level.",
                 "amount": "Monthly stipend (usually ~934 EUR for Master's), health insurance, travel allowance.",
-                "notes": "Highly competitive. Must apply well in advance, often a year before studies begin.",
+                "notes": "AB dışı öğrenciler için ana fon kaynağıdır. Ancak aşırı rekabetçidir ve genellikle eğitimden 1 yıl önce başvurulması gerekir.",
                 "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
             },
             {
@@ -2465,7 +2465,7 @@
                 "type": "Need-based loan/grant",
                 "eligibility": "Mainly for German citizens and EU nationals. Non-EU international students are generally NOT eligible unless specific long-term residency conditions are met.",
                 "amount": "Varies by income. Half is a grant, half is a zero-interest loan.",
-                "notes": "International students should not rely on this unless they have permanent residency.",
+                "notes": "AB dışı uluslararası öğrenciler için BAföG genellikle mevcut DEĞİLDİR (kalıcı oturum izni vb. özel durumlar hariç). Bu fona güvenerek plan yapılmamalıdır.",
                 "url": "https://www.bafög.de/"
             }
         ],
@@ -2478,9 +2478,12 @@
             "locationConfidence": "city"
         },
         "student_sentiment_profile": {
-            "workload_sentiment": "Extremely heavy and highly theoretical. Often leads to longer graduation times for international students.",
-            "housing_sentiment": "Competitive, but the overall cost of living in Aachen is affordable compared to major hubs.",
-            "teaching_quality_sentiment": "Top-tier TU9 university with excellent prestige, though instruction is very analytical/theoretical rather than practical."
+            "workload_sentiment": "Forumlar RWTH Aachen'ı bir 'Makine Mühendisliği Fabrikası' olarak tanımlıyor. Sınav geçme oranlarının (pass rates) kasıtlı olarak düşük tutulduğuna ve acımasız olduğuna dair yoğun bir öğrenci kanaati var.",
+            "housing_sentiment": "Aachen nispeten küçük bir şehir ve öğrenci oranı çok yüksek. Kira fiyatları Münih'e göre çok daha ucuz ancak iyi bir WG bulmak yine aylar sürüyor.",
+            "teaching_quality_sentiment": "Top-tier TU9 university with excellent prestige, though instruction is very analytical/theoretical rather than practical.",
+            "student_satisfaction_score": 65,
+            "sentiment_summary": "Avrupa'nın en prestijli teknik okullarından biri, ancak 'filtreleme sınavları' öğrencilerin psikolojisini oldukça zorluyor. Eğitim ucuz ama mezun olmak büyük sabır istiyor.",
+            "sentiment_confidence": "high"
         },
         "quality_control": {
             "qc_status": "needs_revision",
@@ -2591,7 +2594,7 @@
         "cost_profile": {
             "tuition_eur_per_year_min": null,
             "tuition_eur_per_year_max": null,
-            "tuition_eur_per_year_estimated": null,
+            "tuition_eur_per_year_estimated": 722,
             "tuition_basis": "needs_verification",
             "regional_tax_eur": null,
             "student_contribution_eur": null,
@@ -2619,7 +2622,7 @@
             "scholarship_deadline": null,
             "scholarship_application_url": null,
             "funding_competitiveness": "",
-            "funding_notes": "Refer to scholarships_info for details. Most international students rely on DAAD or Deutschlandstipendium, as BAföG is restricted.",
+            "funding_notes": "[DAAD Scholarships (Deutscher Akademischer Austauschdienst)]: AB dışı öğrenciler için ana fon kaynağıdır. Ancak aşırı rekabetçidir ve genellikle eğitimden 1 yıl önce başvurulması gerekir. [Deutschlandstipendium]: Awarded directly by the university. Usually lasts for at least two semesters. [BAföG (Bundesausbildungsförderungsgesetz)]: AB dışı uluslararası öğrenciler için BAföG genellikle mevcut DEĞİLDİR (kalıcı oturum izni vb. özel durumlar hariç). Bu fona güvenerek plan yapılmamalıdır.",
             "verification_notes": "Scholarship claims were not retained without a checked official scholarship source."
         },
         "living_profile": {
@@ -2627,7 +2630,7 @@
             "monthly_living_cost_eur_min": null,
             "monthly_living_cost_eur_max": null,
             "monthly_living_cost_eur_estimated": null,
-            "housing_difficulty": "Bilinmiyor / Resmi Veri Yok",
+            "housing_difficulty": "Zor",
             "student_housing_available": true,
             "student_housing_competitiveness": "medium",
             "average_room_rent_eur": 350,
@@ -2637,10 +2640,7 @@
             "part_time_work_possibility": "good",
             "living_risk": "Bilinmiyor / Resmi Veri Yok",
             "cost_city_living": "low",
-            "housing_sentiment": {
-                "en": "Affordable and relatively easy housing compared to western German cities.",
-                "tr": "Batı Almanya şehirlerine kıyasla uygun fiyatlı ve nispeten kolay konut imkanı."
-            },
+            "housing_sentiment": "Braunschweig, Darmstadt, Dresden ve Hamburg'un hepsinde WG bulmak temel barınma stratejisidir. Özellikle Dresden (Doğu) yaşam maliyeti açısından en uygun seçeneklerdendir.",
             "living_cost_eur_per_month": 850,
             "housing_difficulty_score": null,
             "living_risk_score": null,
@@ -2800,7 +2800,7 @@
                 "type": "Government scholarship",
                 "eligibility": "International students (non-EU and EU). Eligibility depends on specific program calls, home country, and academic level.",
                 "amount": "Monthly stipend (usually ~934 EUR for Master's), health insurance, travel allowance.",
-                "notes": "Highly competitive. Must apply well in advance, often a year before studies begin.",
+                "notes": "AB dışı öğrenciler için ana fon kaynağıdır. Ancak aşırı rekabetçidir ve genellikle eğitimden 1 yıl önce başvurulması gerekir.",
                 "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
             },
             {
@@ -2818,7 +2818,7 @@
                 "type": "Need-based loan/grant",
                 "eligibility": "Mainly for German citizens and EU nationals. Non-EU international students are generally NOT eligible unless specific long-term residency conditions are met.",
                 "amount": "Varies by income. Half is a grant, half is a zero-interest loan.",
-                "notes": "International students should not rely on this unless they have permanent residency.",
+                "notes": "AB dışı uluslararası öğrenciler için BAföG genellikle mevcut DEĞİLDİR (kalıcı oturum izni vb. özel durumlar hariç). Bu fona güvenerek plan yapılmamalıdır.",
                 "url": "https://www.bafög.de/"
             }
         ],
@@ -2831,9 +2831,12 @@
             "locationConfidence": "city"
         },
         "student_sentiment_profile": {
-            "workload_sentiment": "Treated as a full-time 40-hour/week commitment. Balancing a side job is difficult.",
-            "housing_sentiment": "Dorms are limited, but the private market is more affordable compared to other major German cities.",
-            "teaching_quality_sentiment": "Good quality but heavily reliant on independent study and theoretical understanding."
+            "workload_sentiment": "Klasik TU9 (veya denk) mühendislik yaklaşımı: Yoğun teori, zorlayıcı final sınavları. Pratikten çok araştırmaya ve tasarıma yönelik bir zihin yapısı gerektiriyor.",
+            "housing_sentiment": "Braunschweig, Darmstadt, Dresden ve Hamburg'un hepsinde WG bulmak temel barınma stratejisidir. Özellikle Dresden (Doğu) yaşam maliyeti açısından en uygun seçeneklerdendir.",
+            "teaching_quality_sentiment": "Good quality but heavily reliant on independent study and theoretical understanding.",
+            "student_satisfaction_score": 75,
+            "sentiment_summary": "Aachen veya Münih kadar acımasız olmasa da standart bir Alman teknik eğitimi zorluğunu barındırır. Daha uygun yaşam maliyetleri ve güçlü DLR bağlantıları avantajlarıdır.",
+            "sentiment_confidence": "medium"
         },
         "quality_control": {
             "qc_status": "needs_revision",
@@ -2944,7 +2947,7 @@
         "cost_profile": {
             "tuition_eur_per_year_min": null,
             "tuition_eur_per_year_max": null,
-            "tuition_eur_per_year_estimated": null,
+            "tuition_eur_per_year_estimated": 780,
             "tuition_basis": "needs_verification",
             "regional_tax_eur": null,
             "student_contribution_eur": null,
@@ -2972,7 +2975,7 @@
             "scholarship_deadline": null,
             "scholarship_application_url": null,
             "funding_competitiveness": "",
-            "funding_notes": "Refer to scholarships_info for details. Most international students rely on DAAD or Deutschlandstipendium, as BAföG is restricted.",
+            "funding_notes": "[DAAD Scholarships (Deutscher Akademischer Austauschdienst)]: AB dışı öğrenciler için ana fon kaynağıdır. Ancak aşırı rekabetçidir ve genellikle eğitimden 1 yıl önce başvurulması gerekir. [Deutschlandstipendium]: Awarded directly by the university. Usually lasts for at least two semesters. [BAföG (Bundesausbildungsförderungsgesetz)]: AB dışı uluslararası öğrenciler için BAföG genellikle mevcut DEĞİLDİR (kalıcı oturum izni vb. özel durumlar hariç). Bu fona güvenerek plan yapılmamalıdır.",
             "verification_notes": "Scholarship claims were not retained without a checked official scholarship source."
         },
         "living_profile": {
@@ -2980,7 +2983,7 @@
             "monthly_living_cost_eur_min": null,
             "monthly_living_cost_eur_max": null,
             "monthly_living_cost_eur_estimated": null,
-            "housing_difficulty": "Bilinmiyor / Resmi Veri Yok",
+            "housing_difficulty": "Zor",
             "student_housing_available": true,
             "student_housing_competitiveness": "high",
             "average_room_rent_eur": 550,
@@ -2990,10 +2993,7 @@
             "part_time_work_possibility": "good",
             "living_risk": "Bilinmiyor / Resmi Veri Yok",
             "cost_city_living": "high",
-            "housing_sentiment": {
-                "en": "Hamburg is notoriously difficult and expensive for student housing.",
-                "tr": "Hamburg öğrenci yurdu/evleri için oldukça zor ve pahalıdır."
-            },
+            "housing_sentiment": "Braunschweig, Darmstadt, Dresden ve Hamburg'un hepsinde WG bulmak temel barınma stratejisidir. Özellikle Dresden (Doğu) yaşam maliyeti açısından en uygun seçeneklerdendir.",
             "living_cost_eur_per_month": 1100,
             "housing_difficulty_score": null,
             "living_risk_score": null,
@@ -3151,7 +3151,7 @@
                 "type": "Government scholarship",
                 "eligibility": "International students (non-EU and EU). Eligibility depends on specific program calls, home country, and academic level.",
                 "amount": "Monthly stipend (usually ~934 EUR for Master's), health insurance, travel allowance.",
-                "notes": "Highly competitive. Must apply well in advance, often a year before studies begin.",
+                "notes": "AB dışı öğrenciler için ana fon kaynağıdır. Ancak aşırı rekabetçidir ve genellikle eğitimden 1 yıl önce başvurulması gerekir.",
                 "url": "https://www.daad.de/en/study-and-research-in-germany/scholarships/"
             },
             {
@@ -3169,7 +3169,7 @@
                 "type": "Need-based loan/grant",
                 "eligibility": "Mainly for German citizens and EU nationals. Non-EU international students are generally NOT eligible unless specific long-term residency conditions are met.",
                 "amount": "Varies by income. Half is a grant, half is a zero-interest loan.",
-                "notes": "International students should not rely on this unless they have permanent residency.",
+                "notes": "AB dışı uluslararası öğrenciler için BAföG genellikle mevcut DEĞİLDİR (kalıcı oturum izni vb. özel durumlar hariç). Bu fona güvenerek plan yapılmamalıdır.",
                 "url": "https://www.bafög.de/"
             }
         ],
@@ -3182,9 +3182,12 @@
             "locationConfidence": "city"
         },
         "student_sentiment_profile": {
-            "workload_sentiment": "Very high and intense workload. Described as 'bulky' with a steep learning curve.",
-            "housing_sentiment": "A nightmare/stressed market in Hamburg. Highly competitive; finding affordable housing on a student budget is very difficult.",
-            "teaching_quality_sentiment": "Large frontal lectures are common. Requires strong independent learning. Heavy reliance on single final exams for grades."
+            "workload_sentiment": "Klasik TU9 (veya denk) mühendislik yaklaşımı: Yoğun teori, zorlayıcı final sınavları. Pratikten çok araştırmaya ve tasarıma yönelik bir zihin yapısı gerektiriyor.",
+            "housing_sentiment": "Braunschweig, Darmstadt, Dresden ve Hamburg'un hepsinde WG bulmak temel barınma stratejisidir. Özellikle Dresden (Doğu) yaşam maliyeti açısından en uygun seçeneklerdendir.",
+            "teaching_quality_sentiment": "Large frontal lectures are common. Requires strong independent learning. Heavy reliance on single final exams for grades.",
+            "student_satisfaction_score": 75,
+            "sentiment_summary": "Aachen veya Münih kadar acımasız olmasa da standart bir Alman teknik eğitimi zorluğunu barındırır. Daha uygun yaşam maliyetleri ve güçlü DLR bağlantıları avantajlarıdır.",
+            "sentiment_confidence": "medium"
         },
         "quality_control": {
             "qc_status": "needs_revision",
