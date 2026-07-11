@@ -2890,8 +2890,16 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .country-themed .decision-item {
-    background: linear-gradient(135deg, rgba(var(--country-rgb), 0.12), rgba(var(--country-rgb), 0.04)) !important;
-    border-color: rgba(var(--country-rgb), 0.25) !important;
+    background: var(--card-bg) !important;
+    border-color: var(--card-border) !important;
+}
+
+.country-themed .decision-item dt {
+    color: var(--card-label) !important;
+}
+
+.country-themed .decision-item dd {
+    color: var(--card-text) !important;
 }
 
 .decision-item dt,
