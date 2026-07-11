@@ -4364,7 +4364,7 @@ option {
     isolation: isolate;
     overflow: hidden;
     border-color: rgba(var(--country-rgb), 0.35) !important;
-    background: var(--country-flag) !important;
+    background: #09131f !important;
     box-shadow: inset 3px 0 0 var(--country-accent), 0 8px 26px rgba(0, 0, 0, 0.2) !important;
 }
 
@@ -4372,9 +4372,7 @@ option {
     position: absolute;
     z-index: 0;
     inset: 0;
-    background:
-        radial-gradient(circle at 78% 44%, rgba(var(--country-rgb), 0.26), transparent 42%),
-        linear-gradient(96deg, rgba(4, 13, 25, 0.89) 0%, rgba(6, 18, 31, 0.75) 48%, rgba(6, 18, 31, 0.56) 100%);
+    background: radial-gradient(circle at 10% 90%, rgba(var(--country-rgb), 0.15), transparent 60%);
     content: '';
     transition: background 0.35s ease;
 }
@@ -4393,23 +4391,29 @@ option {
 .country-card__flag {
     position: absolute;
     z-index: 0;
-    inset: -28%;
-    width: auto;
-    height: auto;
-    border: 0;
-    border-radius: 42%;
-    background: radial-gradient(ellipse at 50% 50%, transparent 32%, rgba(0, 0, 0, 0.25) 100%);
-    box-shadow: inset 0 0 54px rgba(4, 13, 25, 0.38);
-    opacity: 0.46;
-    transform: translate3d(-2%, -1%, 0) rotate(-3deg) scale(1.04);
-    transform-origin: center;
-    animation: country-flag-shimmer 14s ease-in-out infinite alternate;
-    will-change: transform;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 65%;
+    border-radius: 0;
+    background: var(--country-flag);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.95) 100%);
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.95) 100%);
+    opacity: 0.8;
+    transform: none;
+    transform-origin: center right;
+    transition: opacity 0.35s ease, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: transform, opacity;
 }
 
 .country-card > :not(.country-card__flag) {
     position: relative;
     z-index: 1;
+    pointer-events: none;
+}
+
+.country-card > :not(.country-card__flag) * {
+    pointer-events: auto;
 }
 
 .country-card:hover {
@@ -4418,14 +4422,12 @@ option {
 }
 
 .country-card:hover::before {
-    background:
-        radial-gradient(circle at 78% 44%, rgba(var(--country-rgb), 0.32), transparent 42%),
-        linear-gradient(96deg, rgba(4, 13, 25, 0.82) 0%, rgba(6, 18, 31, 0.64) 48%, rgba(6, 18, 31, 0.43) 100%);
+    background: radial-gradient(circle at 10% 90%, rgba(var(--country-rgb), 0.25), transparent 70%);
 }
 
 .country-card:hover .country-card__flag {
-    opacity: 0.62;
-    animation-duration: 8s;
+    opacity: 1;
+    transform: scale(1.05);
 }
 
 .country-card .program-card__rank {
@@ -4504,12 +4506,7 @@ option {
     100% { transform: translate3d(3%, 2%, 0) rotate(3deg) scale(1.1); }
 }
 
-@media (max-width: 600px) {
-    .country-card__flag {
-        inset: -42%;
-        opacity: 0.34;
-    }
-}
+
 
 @media (prefers-reduced-motion: reduce) {
     .country-card__flag,
