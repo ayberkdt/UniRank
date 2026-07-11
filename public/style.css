@@ -4943,3 +4943,71 @@ option {
     border: 1px solid rgba(var(--country-rgb), 0.3) !important;
     color: #e2e8f0;
 }
+
+/* Student Reviews & QS Rankings Premium UI */
+.reviews-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.student-review-item {
+    background: #fdfdfd;
+    border: 1px solid #e1e8ef;
+    border-radius: 8px;
+    padding: 12px;
+    position: relative;
+    border-left: 3px solid var(--primary);
+}
+
+.review-quote {
+    font-size: 11px;
+    color: #3b4958;
+    line-height: 1.45;
+    margin: 0 0 8px 0;
+    font-style: italic;
+}
+
+.review-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.review-source {
+    color: #8c9bad;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.review-link {
+    color: var(--primary);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.review-link:hover {
+    text-decoration: underline;
+}
+
+.rank-badge.qs-rank {
+    background: linear-gradient(135deg, #1f2937, #111827);
+    color: #f9d857;
+    border: 1px solid rgba(249, 216, 87, 0.4);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    font-family: monospace;
+    font-size: 10px;
+}
+
+/* Dark mode support for reviews */
+[data-theme="dark"] .student-review-item {
+    background: #1e293b;
+    border-color: #334155;
+}
+[data-theme="dark"] .review-quote {
+    color: #e2e8f0;
+}

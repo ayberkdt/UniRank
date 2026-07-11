@@ -1117,6 +1117,31 @@ function openDrawer(data) {
             </div>`;
         }
 
+        // 6.5 Öğrenci Yorumları (Student Reviews)
+        let studentReviewsHTML = '';
+        if (n.studentReviews && n.studentReviews.length > 0) {
+            const reviewsItems = n.studentReviews.map(r => `
+                <div class="student-review-item">
+                    <p class="review-quote">"${escapeHtml(r.quote)}"</p>
+                    <div class="review-meta">
+                        <span class="review-source">${escapeHtml(r.source)}</span>
+                        ${r.url ? `<a href="${escapeHtml(r.url)}" target="_blank" class="review-link">Kaynağa Git ↗</a>` : ''}
+                    </div>
+                </div>
+            `).join('');
+            
+            studentReviewsHTML = `
+            <div class="drawer-section premium-card student-reviews-card">
+                <div class="premium-header">
+                    <span class="premium-icon">💬</span>
+                    <h4 class="premium-title">Öğrenci Yorumları</h4>
+                </div>
+                <div class="reviews-grid">
+                    ${reviewsItems}
+                </div>
+            </div>`;
+        }
+
         // 7. Linkler (Links)
         let linksHTML = `
             <div class="drawer-section links-card">
@@ -1137,6 +1162,7 @@ function openDrawer(data) {
             financeHTML +
             livingHTML +
             prosConsHTML +
+            studentReviewsHTML +
             linksHTML;
 
         // 1. Radar Chart Setup

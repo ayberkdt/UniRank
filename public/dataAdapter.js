@@ -368,6 +368,7 @@ function normalizeUniversityRecord(record) {
     admissionUrl: firstValue(sourceProfile.official_admission_page, urls.admission, record.admission_url) || "",
     tuitionUrl: firstValue(sourceProfile.official_tuition_page, urls.tuition, record.tuition_url) || "",
     scholarshipUrl: firstValue(sourceProfile.official_scholarship_page, scholarshipProfile.scholarship_application_url, record.scholarship_url) || "",
+    studentReviews: Array.isArray(record.student_sentiment_profile?.student_sentiment_sources) ? record.student_sentiment_profile.student_sentiment_sources : [],
     raw: record
   };
 }
