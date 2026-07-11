@@ -2890,8 +2890,25 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .country-themed .decision-item {
-    background: linear-gradient(135deg, rgba(var(--country-rgb), 0.12), rgba(var(--country-rgb), 0.04)) !important;
-    border-color: rgba(var(--country-rgb), 0.25) !important;
+    background: linear-gradient(135deg, rgba(14, 22, 33, 0.65), rgba(14, 22, 33, 0.45)) !important;
+    border-color: rgba(var(--country-rgb), 0.35) !important;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.country-themed .decision-item dt,
+.country-themed .drawer-decision-grid dt {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.country-themed .decision-item dd,
+.country-themed .drawer-decision-grid dd {
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.country-themed .decision-item--score small,
+.country-themed .decision-item--score em {
+    color: rgba(255, 255, 255, 0.7) !important;
 }
 
 .decision-item dt,
