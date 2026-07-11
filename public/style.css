@@ -4372,7 +4372,7 @@ option {
     position: absolute;
     z-index: 0;
     inset: 0;
-    background: radial-gradient(circle at 10% 90%, rgba(var(--country-rgb), 0.15), transparent 60%);
+    background: radial-gradient(circle at 10% 90%, rgba(var(--country-rgb), 0.1), transparent 50%);
     content: '';
     transition: background 0.35s ease;
 }
@@ -4384,7 +4384,7 @@ option {
     background: repeating-linear-gradient(112deg, rgba(255, 255, 255, 0.11) 0 1px, transparent 1px 30px);
     content: '';
     mix-blend-mode: soft-light;
-    opacity: 0.32;
+    opacity: 0.15;
     pointer-events: none;
 }
 
@@ -4394,26 +4394,23 @@ option {
     top: 0;
     right: 0;
     bottom: 0;
-    width: 65%;
+    width: 40%; /* Reduced width so it only covers the rightmost edge */
     border-radius: 0;
     background: var(--country-flag);
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.95) 100%);
-    mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.95) 100%);
-    opacity: 0.8;
+    /* Make the mask fade much faster to transparent so it doesn't bleed into text */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.95) 100%);
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.95) 100%);
+    opacity: 0.25; /* Reduced opacity heavily so it's a watermark, not a solid banner */
     transform: none;
     transform-origin: center right;
     transition: opacity 0.35s ease, transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
     will-change: transform, opacity;
 }
 
+/* Ensure inner content is on top */
 .country-card > :not(.country-card__flag) {
     position: relative;
     z-index: 1;
-    pointer-events: none;
-}
-
-.country-card > :not(.country-card__flag) * {
-    pointer-events: auto;
 }
 
 .country-card:hover {
@@ -4422,11 +4419,11 @@ option {
 }
 
 .country-card:hover::before {
-    background: radial-gradient(circle at 10% 90%, rgba(var(--country-rgb), 0.25), transparent 70%);
+    background: radial-gradient(circle at 10% 90%, rgba(var(--country-rgb), 0.2), transparent 70%);
 }
 
 .country-card:hover .country-card__flag {
-    opacity: 1;
+    opacity: 0.5;
     transform: scale(1.05);
 }
 
@@ -4915,4 +4912,18 @@ option {
     .custom-marker::after {
         animation: none;
     }
+}
+
+/* Make KPI cards and badges solid so flag doesn't bleed through */
+.country-card .grid > div {
+    background: rgba(13, 24, 38, 0.95) !important;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(var(--country-rgb), 0.2) !important;
+}
+
+.country-card .flex.gap-2.mb-4 span {
+    background: rgba(13, 24, 38, 0.9) !important;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(var(--country-rgb), 0.3) !important;
+    color: #e2e8f0;
 }
