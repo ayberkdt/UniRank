@@ -118,7 +118,7 @@ function confidenceLabel(value) {
 const COUNTRY_VISUALS = {
     austria: { accent: '#ed2939', rgb: '237, 41, 57', flag: 'linear-gradient(to bottom, #ed2939 0 33%, #ffffff 33% 66%, #ed2939 66% 100%)' },
     belgium: { accent: '#f2bd28', rgb: '242, 189, 40', flag: 'linear-gradient(90deg, #191919 0 33%, #f2bd28 33% 66%, #d4303d 66% 100%)' },
-    china: { accent: '#e53a3e', rgb: '229, 58, 62', flag: 'radial-gradient(circle at 24% 28%, #ffde45 0 6%, transparent 6.5%), radial-gradient(circle at 39% 18%, #ffde45 0 2.3%, transparent 2.8%), radial-gradient(circle at 42% 33%, #ffde45 0 2.3%, transparent 2.8%), #de2939' },
+    china: { accent: '#e53a3e', rgb: '229, 58, 62', flag: 'url("https://flagcdn.com/w320/cn.png") center right / cover no-repeat' },
     denmark: { accent: '#c8102e', rgb: '200, 16, 46', flag: 'linear-gradient(90deg, transparent 0 29%, #ffffff 29% 40%, transparent 40% 100%), linear-gradient(transparent 0 41%, #ffffff 41% 58%, transparent 58% 100%), #c8102e' },
     france: { accent: '#2d57a1', rgb: '45, 87, 161', flag: 'linear-gradient(90deg, #21468b 0 33%, #f7f8fa 33% 66%, #ef4135 66% 100%)' },
     germany: { accent: '#d9a620', rgb: '217, 166, 32', flag: 'linear-gradient(to bottom, #1a1a1a 0 33%, #d83232 33% 66%, #e2b42a 66% 100%)' },
@@ -128,7 +128,7 @@ const COUNTRY_VISUALS = {
     poland: { accent: '#d92b48', rgb: '217, 43, 72', flag: 'linear-gradient(to bottom, #fafafa 0 50%, #d22645 50% 100%)' },
     portugal: { accent: '#d84536', rgb: '216, 69, 54', flag: 'url("https://flagcdn.com/w320/pt.png") center right / cover no-repeat' },
     russia: { accent: '#4366ae', rgb: '67, 102, 174', flag: 'linear-gradient(to bottom, #f7f7f5 0 33%, #3156a6 33% 66%, #ce303c 66% 100%)' },
-    south_korea: { accent: '#d43848', rgb: '212, 56, 72', flag: 'radial-gradient(circle at 50% 50%, #d93848 0 13%, #2c5aac 13% 26%, transparent 26.5%), #f7f8f6' },
+    south_korea: { accent: '#d43848', rgb: '212, 56, 72', flag: 'url("https://flagcdn.com/w320/kr.png") center right / cover no-repeat' },
     spain: { accent: '#efb933', rgb: '239, 185, 51', flag: 'linear-gradient(to bottom, #aa151b 0 25%, #f1bf36 25% 75%, #aa151b 75% 100%)' },
     sweden: { accent: '#e4b424', rgb: '228, 180, 36', flag: 'linear-gradient(90deg, transparent 0 29%, #f6cc38 29% 40%, transparent 40% 100%), linear-gradient(transparent 0 40%, #f6cc38 40% 57%, transparent 57% 100%), #2166a5' },
     switzerland: { accent: '#e13c43', rgb: '225, 60, 67', flag: 'linear-gradient(90deg, transparent 0 39%, #fff 39% 61%, transparent 61% 100%), linear-gradient(transparent 0 32%, #fff 32% 68%, transparent 68% 100%), #d52b1e' },

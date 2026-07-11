@@ -2,143 +2,489 @@
     {
         "id": "tr-itu-aerospace-msc",
         "country": "Turkey",
-        "city": "Istanbul",
         "university": "Istanbul Technical University (ITU)",
+        "university_native_name": "Istanbul Technical University (ITU)",
+        "city": {
+            "name": "Istanbul",
+            "housing_difficulty": "",
+            "estimated_housing_cost_eur": null
+        },
+        "region": "",
         "program_name": "M.Sc. Aerospace Engineering (Uçak Mühendisliği)",
+        "program_native_name": "M.Sc. Aerospace Engineering (Uçak Mühendisliği)",
+        "program_degree": "MSc",
         "degree_level": "MSc",
+        "duration_years": 2.0,
+        "ects": 120,
         "teaching_language": [
             "English",
             "Turkish"
         ],
-        "duration_semesters": 4,
-        "urls": {
-            "program": "https://lee.itu.edu.tr/",
-            "admission": "https://www.sis.itu.edu.tr/onkayitlar/lisansustu/basvuru/",
-            "tuition": "https://sis.itu.edu.tr/"
+        "program_url": "https://lee.itu.edu.tr/",
+        "program_status": "active",
+        "relevance_status": "highly_relevant",
+        "eligibility_profile": {
+            "eligible_for_non_eu": true,
+            "required_previous_degree": null,
+            "required_ects": {
+                "total": "ALES Sayısal 75 veya GRE Sayısal 155"
+            },
+            "minimum_gpa": "2.60/4.00",
+            "admission_mode": "unknown",
+            "admission_risk": "Bilinmiyor / Resmi Veri Yok",
+            "accepted_backgrounds": [],
+            "required_documents": [],
+            "verification_notes": ""
         },
-        "financials": {
-            "tuition_fee_per_year": 0,
-            "semester_fee": 10,
-            "notes": "T.C. Vatandaşları: Dönemlik 343 TL. Yabancı Öğrenciler: Yıllık ~23.500 TL."
+        "language_profile": {
+            "teaching_language": [
+                "English",
+                "Turkish"
+            ],
+            "english_required": true,
+            "english_level_required": "YDS/YÖKDİL 65, TOEFL iBT veya İTÜ YDY minimum 65",
+            "mixed_language_warning": null,
+            "language_risk": "Bilinmiyor / Resmi Veri Yok",
+            "verification_notes": ""
         },
-        "admission": {
-            "requirements": {
-                "minimum_gpa": "2.60/4.00",
-                "minimum_gpa_notes": "Açıkça belirtilmiştir.",
-                "required_ects": "ALES Sayısal 75 veya GRE Sayısal 155",
-                "language_requirements": "YDS/YÖKDİL 65, TOEFL iBT veya İTÜ YDY minimum 65"
-            }
+        "cost_profile": {
+            "academic_year": "2024/2025",
+            "tuition_eur_per_year_min": 0,
+            "tuition_eur_per_year_max": 0,
+            "tuition_eur_per_year_estimated": 0,
+            "tuition_basis": "needs_verification",
+            "non_eu_flat_fee": null,
+            "source_notes": "T.C. Vatandaşları: Dönemlik 343 TL. Yabancı Öğrenciler: Yıllık ~23.500 TL.",
+            "regional_tax_eur": null,
+            "student_union_fee_eur": 10,
+            "living_cost_eur_per_month": null,
+            "total_first_year_cost_eur": null,
+            "scholarship_availability": "Bilinmiyor / Resmi Veri Yok",
+            "scholarship_risk": "Bilinmiyor / Resmi Veri Yok",
+            "verification_notes": ""
+        },
+        "scholarship_profile": {
+            "available_types": [],
+            "non_eu_eligible": true,
+            "details": [],
+            "external_options": [],
+            "verification_notes": ""
+        },
+        "living_profile": {
+            "city_type": "Medium",
+            "housing_search_difficulty": "",
+            "housing_cost_range_eur": null,
+            "student_dorm_availability": "unknown",
+            "living_cost_risk": "Bilinmiyor / Resmi Veri Yok",
+            "verification_notes": ""
+        },
+        "curriculum_profile": {
+            "structure": null,
+            "specializations": [],
+            "mandatory_internship": false,
+            "thesis_type": null,
+            "flexibility": "unknown",
+            "curriculum_risk": "Bilinmiyor / Resmi Veri Yok",
+            "verification_notes": ""
+        },
+        "category_profile": {
+            "primary_categories": [],
+            "secondary_categories": [],
+            "technical_focus": "",
+            "verification_notes": ""
         },
         "student_sentiment_profile": {
+            "student_satisfaction_score": 80,
             "workload_sentiment": "Son derece zorlu ve titiz. Savunma sanayiinde tam zamanlı iş ile akademik görevlerini dengelemeye çalışan profesyoneller için özellikle çok zorlayıcı.",
-            "housing_sentiment": "İstanbul'da konut ve barınma genel olarak son derece zorlu, stresli ve pahalı olarak değerlendirilmektedir.",
             "teaching_quality_sentiment": "Güçlü bir akademik odak, çok disiplinli yaklaşım. Kabul mülakatları öğrencinin teknik bilgisini çok titizlikle test ediyor.",
-            "industry_connections": "TAI, Roketsan ve Baykar gibi devlerle çok yüksek düzeyde entegre. Okurken çalışmak son derece yaygın ancak şirketlerin ağır iş yükü nedeniyle (örn. Baykar'da 6 günlük çalışma sistemi) çok zorlu."
+            "administration_sentiment": "",
+            "housing_sentiment": "İstanbul'da konut ve barınma genel olarak son derece zorlu, stresli ve pahalı olarak değerlendirilmektedir.",
+            "city_life_sentiment": "",
+            "international_student_sentiment": "",
+            "career_support_sentiment": "TAI, Roketsan ve Baykar gibi devlerle çok yüksek düzeyde entegre. Okurken çalışmak son derece yaygın ancak şirketlerin ağır iş yükü nedeniyle (örn. Baykar'da 6 günlük çalışma sistemi) çok zorlu.",
+            "student_sentiment_summary": "",
+            "student_sentiment_sources": [],
+            "sentiment_confidence": "low",
+            "verification_notes": ""
         },
-        "Uni_ID": "tr-itu-aerospace-msc",
-        "Country": "Turkey",
-        "City": "Istanbul",
-        "University_Name": "Istanbul Technical University (ITU)",
-        "Program_Name": "M.Sc. Aerospace Engineering (Uçak Mühendisliği)",
-        "Program_Degree": "MSc",
-        "Cost_Tuition": [],
-        "Cost_Semester_Fees": [],
-        "Meta_Sources": [],
-        "Scholarships_Info": [],
-        "Analysis_Tags": []
+        "application_timeline_profile": {
+            "application_period": "Winter",
+            "pre_enrollment_required": false,
+            "visa_complexity": "Medium",
+            "deadline_eu": null,
+            "deadline_non_eu": null,
+            "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
+            "verification_notes": ""
+        },
+        "research_profile": {
+            "research_focus_areas": [],
+            "key_institutes": [],
+            "research_funding_level": "very_high",
+            "research_risk": "low",
+            "verification_notes": ""
+        },
+        "industry_ecosystem_profile": {
+            "local_industry_strength": "very_high",
+            "key_companies": [],
+            "hiring_culture": "",
+            "alumni_presence": "very_high",
+            "industry_risk": "",
+            "verification_notes": ""
+        },
+        "source_profile": {
+            "primary_url": "https://lee.itu.edu.tr/",
+            "secondary_urls": [
+                "https://www.sis.itu.edu.tr/onkayitlar/lisansustu/basvuru/",
+                "https://sis.itu.edu.tr/"
+            ],
+            "last_verified": "2026-07-11",
+            "field_confidence": {
+                "tuition": "high",
+                "admission": "high",
+                "deadlines": "low",
+                "scholarship": "low"
+            },
+            "source_reliability": "high",
+            "verification_status": "verified",
+            "verification_notes": ""
+        },
+        "decision_summary": {
+            "pros": [],
+            "cons": [],
+            "verdict": ""
+        },
+        "scoring_inputs": {
+            "academic_prestige": 85,
+            "research_output": 80,
+            "industry_links": 80,
+            "affordability": 20,
+            "admission_chance": 30,
+            "living_quality": 80
+        },
+        "location": {}
     },
     {
         "id": "tr-itu-astronautical-msc",
         "country": "Turkey",
-        "city": "Istanbul",
         "university": "Istanbul Technical University (ITU)",
+        "university_native_name": "Istanbul Technical University (ITU)",
+        "city": {
+            "name": "Istanbul",
+            "housing_difficulty": "",
+            "estimated_housing_cost_eur": null
+        },
+        "region": "",
         "program_name": "M.Sc. Astronautical Engineering (Uzay Mühendisliği)",
+        "program_native_name": "M.Sc. Astronautical Engineering (Uzay Mühendisliği)",
+        "program_degree": "MSc",
         "degree_level": "MSc",
+        "duration_years": 2.0,
+        "ects": 120,
         "teaching_language": [
             "English"
         ],
-        "duration_semesters": 4,
-        "urls": {
-            "program": "https://lee.itu.edu.tr/",
-            "admission": "https://www.sis.itu.edu.tr/onkayitlar/lisansustu/basvuru/",
-            "tuition": "https://sis.itu.edu.tr/"
+        "program_url": "https://lee.itu.edu.tr/",
+        "program_status": "active",
+        "relevance_status": "highly_relevant",
+        "eligibility_profile": {
+            "eligible_for_non_eu": true,
+            "required_previous_degree": null,
+            "required_ects": {
+                "total": "ALES Sayısal 75 veya GRE Sayısal 155"
+            },
+            "minimum_gpa": "2.60/4.00",
+            "admission_mode": "unknown",
+            "admission_risk": "Bilinmiyor / Resmi Veri Yok",
+            "accepted_backgrounds": [],
+            "required_documents": [],
+            "verification_notes": ""
         },
-        "financials": {
-            "tuition_fee_per_year": 0,
-            "semester_fee": 10,
-            "notes": "T.C. Vatandaşları: Dönemlik 343 TL. Yabancı Öğrenciler: Yıllık ~23.500 TL."
+        "language_profile": {
+            "teaching_language": [
+                "English"
+            ],
+            "english_required": true,
+            "english_level_required": "YDS/YÖKDİL 65, TOEFL iBT veya İTÜ YDY minimum 65",
+            "mixed_language_warning": null,
+            "language_risk": "Bilinmiyor / Resmi Veri Yok",
+            "verification_notes": ""
         },
-        "admission": {
-            "requirements": {
-                "minimum_gpa": "2.60/4.00",
-                "minimum_gpa_notes": "Açıkça belirtilmiştir.",
-                "required_ects": "ALES Sayısal 75 veya GRE Sayısal 155",
-                "language_requirements": "YDS/YÖKDİL 65, TOEFL iBT veya İTÜ YDY minimum 65"
-            }
+        "cost_profile": {
+            "academic_year": "2024/2025",
+            "tuition_eur_per_year_min": 0,
+            "tuition_eur_per_year_max": 0,
+            "tuition_eur_per_year_estimated": 0,
+            "tuition_basis": "needs_verification",
+            "non_eu_flat_fee": null,
+            "source_notes": "T.C. Vatandaşları: Dönemlik 343 TL. Yabancı Öğrenciler: Yıllık ~23.500 TL.",
+            "regional_tax_eur": null,
+            "student_union_fee_eur": 10,
+            "living_cost_eur_per_month": null,
+            "total_first_year_cost_eur": null,
+            "scholarship_availability": "Bilinmiyor / Resmi Veri Yok",
+            "scholarship_risk": "Bilinmiyor / Resmi Veri Yok",
+            "verification_notes": ""
+        },
+        "scholarship_profile": {
+            "available_types": [],
+            "non_eu_eligible": true,
+            "details": [],
+            "external_options": [],
+            "verification_notes": ""
+        },
+        "living_profile": {
+            "city_type": "Medium",
+            "housing_search_difficulty": "",
+            "housing_cost_range_eur": null,
+            "student_dorm_availability": "unknown",
+            "living_cost_risk": "Bilinmiyor / Resmi Veri Yok",
+            "verification_notes": ""
+        },
+        "curriculum_profile": {
+            "structure": null,
+            "specializations": [],
+            "mandatory_internship": false,
+            "thesis_type": null,
+            "flexibility": "unknown",
+            "curriculum_risk": "Bilinmiyor / Resmi Veri Yok",
+            "verification_notes": ""
+        },
+        "category_profile": {
+            "primary_categories": [],
+            "secondary_categories": [],
+            "technical_focus": "",
+            "verification_notes": ""
         },
         "student_sentiment_profile": {
+            "student_satisfaction_score": 80,
             "workload_sentiment": "Muazzam bir adanmışlık gerektiriyor; %100 İngilizce müfredatla savunma sektörü mesai saatlerini dengelemek çok zor olarak belirtiliyor.",
-            "housing_sentiment": "İstanbul'da konut ve barınma genel olarak son derece zorlu, stresli ve pahalı olarak değerlendirilmektedir.",
             "teaching_quality_sentiment": "Uydu ve uzay aracı sistemlerine belirgin bir odaklanma ile birlikte yüksek akademik standartlar sunuyor. Eğitim %100 İngilizce.",
-            "industry_connections": "Türkiye uzay ve savunma girişimleri, laboratuvarları ve Roketsan / TAI gibi şirketlerle son derece güçlü bağlar."
+            "administration_sentiment": "",
+            "housing_sentiment": "İstanbul'da konut ve barınma genel olarak son derece zorlu, stresli ve pahalı olarak değerlendirilmektedir.",
+            "city_life_sentiment": "",
+            "international_student_sentiment": "",
+            "career_support_sentiment": "Türkiye uzay ve savunma girişimleri, laboratuvarları ve Roketsan / TAI gibi şirketlerle son derece güçlü bağlar.",
+            "student_sentiment_summary": "",
+            "student_sentiment_sources": [],
+            "sentiment_confidence": "low",
+            "verification_notes": ""
         },
-        "Uni_ID": "tr-itu-astronautical-msc",
-        "Country": "Turkey",
-        "City": "Istanbul",
-        "University_Name": "Istanbul Technical University (ITU)",
-        "Program_Name": "M.Sc. Astronautical Engineering (Uzay Mühendisliği)",
-        "Program_Degree": "MSc",
-        "Cost_Tuition": [],
-        "Cost_Semester_Fees": [],
-        "Meta_Sources": [],
-        "Scholarships_Info": [],
-        "Analysis_Tags": []
+        "application_timeline_profile": {
+            "application_period": "Winter",
+            "pre_enrollment_required": false,
+            "visa_complexity": "Medium",
+            "deadline_eu": null,
+            "deadline_non_eu": null,
+            "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
+            "verification_notes": ""
+        },
+        "research_profile": {
+            "research_focus_areas": [],
+            "key_institutes": [],
+            "research_funding_level": "very_high",
+            "research_risk": "low",
+            "verification_notes": ""
+        },
+        "industry_ecosystem_profile": {
+            "local_industry_strength": "very_high",
+            "key_companies": [],
+            "hiring_culture": "",
+            "alumni_presence": "very_high",
+            "industry_risk": "",
+            "verification_notes": ""
+        },
+        "source_profile": {
+            "primary_url": "https://lee.itu.edu.tr/",
+            "secondary_urls": [
+                "https://www.sis.itu.edu.tr/onkayitlar/lisansustu/basvuru/",
+                "https://sis.itu.edu.tr/"
+            ],
+            "last_verified": "2026-07-11",
+            "field_confidence": {
+                "tuition": "high",
+                "admission": "high",
+                "deadlines": "low",
+                "scholarship": "low"
+            },
+            "source_reliability": "high",
+            "verification_status": "verified",
+            "verification_notes": ""
+        },
+        "decision_summary": {
+            "pros": [],
+            "cons": [],
+            "verdict": ""
+        },
+        "scoring_inputs": {
+            "academic_prestige": 85,
+            "research_output": 80,
+            "industry_links": 80,
+            "affordability": 20,
+            "admission_chance": 30,
+            "living_quality": 80
+        },
+        "location": {}
     },
     {
         "id": "tr-metu-aerospace-msc",
         "country": "Turkey",
-        "city": "Ankara",
         "university": "Middle East Technical University (METU)",
+        "university_native_name": "Middle East Technical University (METU)",
+        "city": {
+            "name": "Ankara",
+            "housing_difficulty": "",
+            "estimated_housing_cost_eur": null
+        },
+        "region": "",
         "program_name": "M.Sc. Aerospace Engineering",
+        "program_native_name": "M.Sc. Aerospace Engineering",
+        "program_degree": "MSc",
         "degree_level": "MSc",
+        "duration_years": 2.0,
+        "ects": 120,
         "teaching_language": [
             "English"
         ],
-        "duration_semesters": 4,
-        "urls": {
-            "program": "https://ae.metu.edu.tr/",
-            "admission": "https://fbe.metu.edu.tr/en/admission-requirements",
-            "tuition": "https://oidb.metu.edu.tr/en/tuition-fee-amounts"
+        "program_url": "https://ae.metu.edu.tr/",
+        "program_status": "active",
+        "relevance_status": "highly_relevant",
+        "eligibility_profile": {
+            "eligible_for_non_eu": true,
+            "required_previous_degree": null,
+            "required_ects": {
+                "total": "Minimum ALES Sayısal 75"
+            },
+            "minimum_gpa": "2.50/4.00",
+            "admission_mode": "unknown",
+            "admission_risk": "Bilinmiyor / Resmi Veri Yok",
+            "accepted_backgrounds": [],
+            "required_documents": [],
+            "verification_notes": ""
         },
-        "financials": {
-            "tuition_fee_per_year": 0,
-            "semester_fee": 25,
-            "notes": "Cüzi katkı payı (yakl. 837 TL). Yabancı öğrenciler: Yıllık 750-2400 USD"
+        "language_profile": {
+            "teaching_language": [
+                "English"
+            ],
+            "english_required": true,
+            "english_level_required": "ODTÜ İYS 65, TOEFL iBT veya eşdeğeri",
+            "mixed_language_warning": null,
+            "language_risk": "Bilinmiyor / Resmi Veri Yok",
+            "verification_notes": ""
         },
-        "admission": {
-            "requirements": {
-                "minimum_gpa": "2.50/4.00",
-                "minimum_gpa_notes": "GPA'sı düşük adaylar (ALES + CGPA)/2 >= 75 şartını sağlıyorsa başvurabilir",
-                "required_ects": "Minimum ALES Sayısal 75",
-                "language_requirements": "ODTÜ İYS 65, TOEFL iBT veya eşdeğeri"
-            }
+        "cost_profile": {
+            "academic_year": "2024/2025",
+            "tuition_eur_per_year_min": 0,
+            "tuition_eur_per_year_max": 0,
+            "tuition_eur_per_year_estimated": 0,
+            "tuition_basis": "needs_verification",
+            "non_eu_flat_fee": null,
+            "source_notes": "Cüzi katkı payı (yakl. 837 TL). Yabancı öğrenciler: Yıllık 750-2400 USD",
+            "regional_tax_eur": null,
+            "student_union_fee_eur": 25,
+            "living_cost_eur_per_month": null,
+            "total_first_year_cost_eur": null,
+            "scholarship_availability": "Bilinmiyor / Resmi Veri Yok",
+            "scholarship_risk": "Bilinmiyor / Resmi Veri Yok",
+            "verification_notes": ""
+        },
+        "scholarship_profile": {
+            "available_types": [],
+            "non_eu_eligible": true,
+            "details": [],
+            "external_options": [],
+            "verification_notes": ""
+        },
+        "living_profile": {
+            "city_type": "Medium",
+            "housing_search_difficulty": "",
+            "housing_cost_range_eur": null,
+            "student_dorm_availability": "unknown",
+            "living_cost_risk": "Bilinmiyor / Resmi Veri Yok",
+            "verification_notes": ""
+        },
+        "curriculum_profile": {
+            "structure": null,
+            "specializations": [],
+            "mandatory_internship": false,
+            "thesis_type": null,
+            "flexibility": "unknown",
+            "curriculum_risk": "Bilinmiyor / Resmi Veri Yok",
+            "verification_notes": ""
+        },
+        "category_profile": {
+            "primary_categories": [],
+            "secondary_categories": [],
+            "technical_focus": "",
+            "verification_notes": ""
         },
         "student_sentiment_profile": {
+            "student_satisfaction_score": 80,
             "workload_sentiment": "İş yükü kötü şöhretli derecede ağır. Bunu tam zamanlı savunma sanayii işleriyle dengelemek olağanüstü bir zaman yönetimi gerektiriyor ve son derece stresli.",
-            "housing_sentiment": "Ankara genellikle İstanbul'dan daha uygun fiyatlıdır, ancak hem kampüse hem de (Kazan gibi) savunma sanayii merkezlerine aynı anda yakın olmak lojistik açıdan bir zorluk yaratır.",
             "teaching_quality_sentiment": "Dünya standartlarında ve inanılmaz derecede titiz. Profesörlerin zorlayıcı ve katı olduğu, böylelikle çok derin bir teknik temel sağlandığı biliniyor.",
-            "industry_connections": "Savunma devleri (TAI, Roketsan, Aselsan, TEI, Baykar vb.) için bir numaralı mühendis kaynağı (feeder). ODTÜ Yüksek Lisans derecesine sahip olmak, sektörde elit bir prestij kabul ediliyor."
+            "administration_sentiment": "",
+            "housing_sentiment": "Ankara genellikle İstanbul'dan daha uygun fiyatlıdır, ancak hem kampüse hem de (Kazan gibi) savunma sanayii merkezlerine aynı anda yakın olmak lojistik açıdan bir zorluk yaratır.",
+            "city_life_sentiment": "",
+            "international_student_sentiment": "",
+            "career_support_sentiment": "Savunma devleri (TAI, Roketsan, Aselsan, TEI, Baykar vb.) için bir numaralı mühendis kaynağı (feeder). ODTÜ Yüksek Lisans derecesine sahip olmak, sektörde elit bir prestij kabul ediliyor.",
+            "student_sentiment_summary": "",
+            "student_sentiment_sources": [],
+            "sentiment_confidence": "low",
+            "verification_notes": ""
         },
-        "Uni_ID": "tr-metu-aerospace-msc",
-        "Country": "Turkey",
-        "City": "Ankara",
-        "University_Name": "Middle East Technical University (METU)",
-        "Program_Name": "M.Sc. Aerospace Engineering",
-        "Program_Degree": "MSc",
-        "Cost_Tuition": [],
-        "Cost_Semester_Fees": [],
-        "Meta_Sources": [],
-        "Scholarships_Info": [],
-        "Analysis_Tags": []
+        "application_timeline_profile": {
+            "application_period": "Winter",
+            "pre_enrollment_required": false,
+            "visa_complexity": "Medium",
+            "deadline_eu": null,
+            "deadline_non_eu": null,
+            "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
+            "verification_notes": ""
+        },
+        "research_profile": {
+            "research_focus_areas": [],
+            "key_institutes": [],
+            "research_funding_level": "very_high",
+            "research_risk": "low",
+            "verification_notes": ""
+        },
+        "industry_ecosystem_profile": {
+            "local_industry_strength": "very_high",
+            "key_companies": [],
+            "hiring_culture": "",
+            "alumni_presence": "very_high",
+            "industry_risk": "",
+            "verification_notes": ""
+        },
+        "source_profile": {
+            "primary_url": "https://ae.metu.edu.tr/",
+            "secondary_urls": [
+                "https://fbe.metu.edu.tr/en/admission-requirements",
+                "https://oidb.metu.edu.tr/en/tuition-fee-amounts"
+            ],
+            "last_verified": "2026-07-11",
+            "field_confidence": {
+                "tuition": "high",
+                "admission": "high",
+                "deadlines": "low",
+                "scholarship": "low"
+            },
+            "source_reliability": "high",
+            "verification_status": "verified",
+            "verification_notes": ""
+        },
+        "decision_summary": {
+            "pros": [],
+            "cons": [],
+            "verdict": ""
+        },
+        "scoring_inputs": {
+            "academic_prestige": 85,
+            "research_output": 80,
+            "industry_links": 80,
+            "affordability": 20,
+            "admission_chance": 30,
+            "living_quality": 80
+        },
+        "location": {}
     }
 ]
