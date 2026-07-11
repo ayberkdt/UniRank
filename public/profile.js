@@ -2,22 +2,39 @@
  * Profile UI Management
  */
 
+let modalReturnFocus = null;
+
+function showModal(modal, focusSelector, displayMode = 'block') {
+  modalReturnFocus = document.activeElement;
+  modal.style.display = displayMode;
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+  requestAnimationFrame(() => modal.querySelector(focusSelector)?.focus());
+}
+
+function hideModal(modal) {
+  modal.style.display = 'none';
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+  if (modalReturnFocus instanceof HTMLElement) modalReturnFocus.focus();
+}
+
 window.openProfileModal = function() {
   const modal = document.getElementById('profile-modal');
   if (!modal) return;
-  modal.style.display = 'block';
+  showModal(modal, '[data-modal-close]');
   populateProfileForm();
 };
 
 window.closeProfileModal = function() {
   const modal = document.getElementById('profile-modal');
-  if (modal) modal.style.display = 'none';
+  if (modal) hideModal(modal);
 };
 
 window.openLoginModal = function() {
   const modal = document.getElementById('login-modal');
   if (!modal) return;
-  modal.style.display = 'block';
+  showModal(modal, '#login-email', 'flex');
   
   const demoWarning = document.getElementById('demo-auth-warning');
   if (demoWarning && window.AUTH_MODE === 'demo') {
@@ -27,8 +44,21 @@ window.openLoginModal = function() {
 
 window.closeLoginModal = function() {
   const modal = document.getElementById('login-modal');
-  if (modal) modal.style.display = 'none';
+  if (modal) hideModal(modal);
 };
+
+document.addEventListener('keydown', event => {
+  if (event.key !== 'Escape') return;
+  const profileModal = document.getElementById('profile-modal');
+  const loginModal = document.getElementById('login-modal');
+  if (profileModal?.getAttribute('aria-hidden') === 'false') window.closeProfileModal();
+  else if (loginModal?.getAttribute('aria-hidden') === 'false') window.closeLoginModal();
+});
+
+document.addEventListener('click', event => {
+  if (event.target?.id === 'profile-modal') window.closeProfileModal();
+  if (event.target?.id === 'login-modal') window.closeLoginModal();
+});
 
 window.handleLoginSubmit = async function(e) {
   e.preventDefault();

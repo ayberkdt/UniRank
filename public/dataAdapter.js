@@ -66,6 +66,93 @@ function stringList(value) {
   return values.map(valueText).filter(Boolean);
 }
 
+function firstObjectNumber(values, key = "amount") {
+  if (!Array.isArray(values)) return null;
+  for (const entry of values) {
+    if (!entry || typeof entry !== "object") continue;
+    const number = finiteNumber(entry[key]);
+    if (number !== null) return number;
+  }
+  return null;
+}
+
+function legacyAnnualTuition(values) {
+  if (!Array.isArray(values)) return null;
+  for (const entry of values) {
+    if (!entry || typeof entry !== "object") continue;
+    const amount = finiteNumber(entry.amount);
+    if (amount === null) continue;
+
+    const period = String(entry.period || "").trim().toLowerCase();
+    if (["year", "annual", "annually", "yr"].includes(period)) return amount;
+    if (["semester", "term"].includes(period)) return amount * 2;
+  }
+  return null;
+}
+
+function normalizeDuration(record) {
+  const direct = firstKnownValue(record.duration, record.program_duration, record.Program_Duration);
+  if (direct !== null) return valueText(direct);
+
+  const years = firstFiniteNumber(record.duration_years, record.durationYears);
+  if (years !== null) return `${years} ${years === 1 ? "year" : "years"}`;
+
+  const semesters = firstFiniteNumber(record.duration_semesters, record.durationSemesters);
+  if (semesters !== null) return `${semesters} ${semesters === 1 ? "semester" : "semesters"}`;
+  return null;
+}
+
+function normalizeDeadline(record, timelineProfile) {
+  return firstKnownValue(
+    timelineProfile.non_eu_deadline,
+    timelineProfile.winter_deadline,
+    timelineProfile.application_deadline,
+    record.non_eu_deadline,
+    record.deadline,
+    record.deadline_winter_closes,
+    record.Deadline_Winter_Close,
+    record.deadline_summer_closes,
+    record.Deadline_Summer_Close,
+    timelineProfile.deadline_notes,
+    record.deadlines_note,
+    record.Deadline_General_Note
+  );
+}
+
+function normalizeEligibleForNonEu(record, eligibilityProfile) {
+  if (eligibilityProfile && Object.prototype.hasOwnProperty.call(eligibilityProfile, "eligible_for_non_eu")) {
+    const value = eligibilityProfile.eligible_for_non_eu;
+    return typeof value === "boolean" ? value : null;
+  }
+
+  for (const value of [record.eligibleForNonEu, record.eligible_for_non_eu]) {
+    if (typeof value === "boolean") return value;
+  }
+
+  const flags = record.scoring_inputs?.hard_filter_flags || record._scoring_inputs?.hard_filter_flags || {};
+  if (typeof flags.non_eu_eligible === "boolean") return flags.non_eu_eligible;
+
+  const scope = firstValue(record.Program_Scope, record.scope);
+  if (scope == null) return null;
+  const normalizedScope = String(scope).trim().toLowerCase().replace(/[\s-]+/g, "_");
+  if (["non_eu", "noneu"].includes(normalizedScope)) return true;
+  if (["unknown", "needs_verification", "n/a", "na"].includes(normalizedScope)) return null;
+  if (normalizedScope.includes("bilinmiyor") || normalizedScope.includes("resmi_veri_yok")) return null;
+  return false;
+}
+
+function summarizeConfidence(fieldConfidence) {
+  if (!fieldConfidence || typeof fieldConfidence !== "object" || Array.isArray(fieldConfidence)) return "unknown";
+
+  const rank = { unknown: 0, low: 1, medium: 2, high: 3 };
+  const levels = Object.values(fieldConfidence)
+    .map(value => String(value || "").trim().toLowerCase())
+    .map(value => Object.prototype.hasOwnProperty.call(rank, value) ? value : "unknown");
+
+  if (levels.length === 0) return "unknown";
+  return levels.reduce((lowest, level) => rank[level] < rank[lowest] ? level : lowest, "high");
+}
+
 function getCategoryProfile(record) {
   const profile = record.category_profile || record.Category_Profile || {};
   return {
@@ -120,6 +207,7 @@ function normalizeSources(value) {
 function normalizeUniversityRecord(record) {
   if (!record) return {};
 
+  const eligibilityProfile = record.eligibility_profile || {};
   const sourceProfile = record.source_profile || {};
   const costProfile = record.cost_profile || {};
   const languageProfile = record.language_profile || {};
@@ -128,39 +216,63 @@ function normalizeUniversityRecord(record) {
   const researchProfile = record.research_profile || {};
   const industryProfile = record.industry_ecosystem_profile || {};
   const curriculumProfile = record.curriculum_profile || {};
+  const timelineProfile = record.application_timeline_profile || {};
+  const financials = record.financials || {};
   const urls = record.urls || {};
   const categoryProfile = getCategoryProfile(record);
+  const hasStructuredCostProfile = Boolean(
+    record.cost_profile && typeof record.cost_profile === "object" && !Array.isArray(record.cost_profile)
+  );
 
   const id = valueText(firstValue(record.Uni_ID, record.id, record.name, record.university));
-  const universityName = firstValue(record.university, record.University, record.display_name, record.name) || "";
+  const universityName = firstValue(
+    record.university,
+    record.University_Display_Name,
+    record.University_Name,
+    record.University,
+    record.display_name,
+    record.name
+  ) || "";
   const programName = firstValue(record.program_name, record.Program_Name, record.target_program_name, record.Target_Program_Name) || "";
   const city = valueText(firstValue(record.city, record.City));
   const country = valueText(firstValue(record.country, record.Country));
   const degree = firstValue(record.program_degree, record.Program_Degree, record.target_program_degree, record.degree_level, record.degree_class) || "";
   const degreeLevel = firstValue(record.degree_level, record.degree_class) || "";
+  const ects = firstFiniteNumber(record.ects, record.Program_ECTS, record.target_program_ects);
+  const duration = normalizeDuration(record);
   const teachingLanguage = stringList(firstKnownValue(
     record.teaching_language,
     languageProfile.teaching_language,
     record.Admission_Language_Req,
     record.admission_language_req,
-    record.language_req
+    record.language_req,
+    record.admission?.requirements?.language_requirements
   ));
+  const legacyTuitionPerYear = hasStructuredCostProfile ? null : legacyAnnualTuition(record.Cost_Tuition);
+  const legacySemesterFee = hasStructuredCostProfile ? null : firstObjectNumber(record.Cost_Semester_Fees);
   const tuitionPerYear = firstFiniteNumber(
     costProfile.tuition_eur_per_year_estimated,
     costProfile.tuition_eur_per_year_min,
     record.tuition_eur_per_year,
-    record.Tuition_EUR_Per_Year
+    record.Tuition_EUR_Per_Year,
+    hasStructuredCostProfile ? null : financials.tuition_fee_per_year,
+    legacyTuitionPerYear
   );
   const semesterFee = firstFiniteNumber(
     costProfile.regional_tax_eur,
     costProfile.student_contribution_eur,
     costProfile.enrollment_fee_eur,
     record.semester_fee_eur,
-    record.Cost_Semester_Fees
+    hasStructuredCostProfile ? null : financials.semester_fee,
+    legacySemesterFee
   );
+  const legacyAcademicCost = legacyTuitionPerYear !== null
+    ? legacyTuitionPerYear + ((legacySemesterFee || 0) * 2)
+    : null;
   const totalAcademicCost = firstFiniteNumber(
     costProfile.total_academic_cost_eur_per_year_estimated,
     record.annual_fee_eur,
+    legacyAcademicCost,
     tuitionPerYear
   );
   const sources = normalizeSources(firstValue(
@@ -175,6 +287,9 @@ function normalizeUniversityRecord(record) {
     record.Meta_Needs_Verification,
     false
   ));
+  const fieldConfidence = sourceProfile.field_confidence || record.field_confidence || {};
+  const eligibleForNonEu = normalizeEligibleForNonEu(record, eligibilityProfile);
+  const deadline = normalizeDeadline(record, timelineProfile);
 
   return {
     id,
@@ -184,27 +299,33 @@ function normalizeUniversityRecord(record) {
     country,
     degree,
     degreeLevel,
+    ects,
+    duration,
     teachingLanguage,
-    programUrl: firstValue(record.program_url, record.target_program_url, urls.program, record.url) || "",
+    programUrl: firstValue(record.program_url, record.Program_URL, record.target_program_url, urls.program, record.url) || "",
     tuitionPerYear,
     semesterFee,
     totalAcademicCost,
     hasKnownTuition: tuitionPerYear !== null || totalAcademicCost !== null,
-    admissionMode: firstKnownValue(record.eligibility_profile?.admission_mode, record.Admission_Mode, record.admission_mode) || "unknown",
-    admissionRisk: firstKnownValue(record.eligibility_profile?.admission_risk, record.admission_risk) || "unknown",
+    admissionMode: firstKnownValue(eligibilityProfile.admission_mode, record.Admission_Mode, record.admission_mode, record.admission?.mode) || "unknown",
+    admissionRisk: firstKnownValue(eligibilityProfile.admission_risk, record.admission_risk, record.admission?.risk) || "unknown",
+    deadline,
+    eligibleForNonEu,
     languageRisk: firstKnownValue(languageProfile.language_risk, record.language_risk) || "unknown",
-    housingDifficulty: firstKnownValue(livingProfile.housing_difficulty, record.Living_Housing_Difficulty, record.housing_difficulty) || "unknown",
+    housingDifficulty: firstKnownValue(livingProfile.housing_difficulty, record.Living_Housing_Difficulty, record.housing_difficulty, record.city?.housing_difficulty) || "unknown",
     livingRisk: firstKnownValue(livingProfile.living_risk, record.living_risk, record.Cost_City_Living) || "unknown",
     cityCostLevel: firstKnownValue(livingProfile.cost_city_living, livingProfile.city_cost_level, record.cost_city_raw, record.Cost_City_Living) || "unknown",
     scholarshipSummary: firstValue(
       scholarshipProfile.funding_notes,
       scholarshipProfile.scholarship_names,
       scholarshipProfile.regional_scholarship_name,
-      record.scholarship_names
+      record.scholarship_names,
+      Array.isArray(record.Scholarships_Info) ? stringList(record.Scholarships_Info).join(", ") : record.Scholarships_Info
     ) || "",
     researchSummary: firstValue(
       researchProfile.research_strength_summary,
       record.strong_areas_summary,
+      record.Analysis_Strong_Areas,
       record.research_strength,
       record.field_recognition
     ) || "",
@@ -220,16 +341,19 @@ function normalizeUniversityRecord(record) {
     bestFor: stringList(record.decision_summary?.best_for),
     notIdealFor: stringList(record.decision_summary?.not_ideal_for),
     sources,
-    fieldConfidence: sourceProfile.field_confidence || {},
+    fieldConfidence,
+    confidenceSummary: summarizeConfidence(fieldConfidence),
     needsVerification,
-    lastVerified: sourceProfile.last_verified || record.updated_at || "",
+    lastVerified: sourceProfile.last_verified || record.updated_at || record.Meta_Updated_At || "",
     categoryProfile,
     location: normalizeLocation(record),
     qsRanking: firstFiniteNumber(record.qs_ranking),
     engineeringRanking: firstValue(record.engineering_ranking, record.field_recognition) || null,
     labs: Array.isArray(researchProfile.labs) ? researchProfile.labs : [],
     professors: Array.isArray(researchProfile.notable_professors) ? researchProfile.notable_professors : [],
-    strongAreas: categoryProfile.normalized_tags,
+    strongAreas: categoryProfile.normalized_tags.length
+      ? categoryProfile.normalized_tags
+      : stringList(firstValue(record.Analysis_Tags, record.tags)),
     confirmedPartners: Array.isArray(industryProfile.confirmed_partners)
       ? industryProfile.confirmed_partners
       : (Array.isArray(record.Industry_Partners) ? record.Industry_Partners : []),
@@ -237,7 +361,8 @@ function normalizeUniversityRecord(record) {
     housingCost: firstFiniteNumber(
       livingProfile.average_room_rent_eur,
       livingProfile.monthly_living_cost_eur_estimated,
-      livingProfile.living_cost_eur_per_month
+      livingProfile.living_cost_eur_per_month,
+      record.city?.estimated_housing_cost_eur
     ),
     scholarshipDetails: scholarshipProfile,
     admissionUrl: firstValue(sourceProfile.official_admission_page, urls.admission, record.admission_url) || "",

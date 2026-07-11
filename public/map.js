@@ -1,81 +1,106 @@
 function initUniRankMap() {
     const mapElement = document.getElementById('map');
+    const fallbackElement = document.getElementById('map-fallback');
+    const resultsStatusElement = document.getElementById('map-results-status');
+
+    // Inline controls may call this even when Leaflet failed to load.
+    window.fitMapToResults = function () {};
+
+    function isTurkish() {
+        return window.currentLanguage === 'tr';
+    }
+
+    function t(key, fallback) {
+        const translated = typeof window.t === 'function' ? window.t(key) : '';
+        return translated && translated !== key ? translated : fallback;
+    }
+
+    function showFallback() {
+        const message = isTurkish()
+            ? 'Harita şu anda yüklenemiyor. Sonuçları liste görünümünde inceleyebilirsiniz.'
+            : 'The map is currently unavailable. You can still review the results in list view.';
+
+        if (fallbackElement) {
+            fallbackElement.hidden = false;
+            fallbackElement.classList.add('is-visible');
+            fallbackElement.removeAttribute('aria-hidden');
+            const messageElement = fallbackElement.querySelector('[data-map-fallback-message]');
+            if (messageElement) messageElement.textContent = message;
+            else fallbackElement.textContent = message;
+        }
+
+        if (resultsStatusElement) {
+            resultsStatusElement.setAttribute('role', 'status');
+            resultsStatusElement.setAttribute('aria-live', 'polite');
+            resultsStatusElement.textContent = message;
+        }
+    }
+
     if (!mapElement) return;
 
     if (typeof L === 'undefined') {
         console.error('Leaflet is not loaded; map view cannot start.');
+        mapElement.setAttribute('aria-hidden', 'true');
+        showFallback();
+        document.addEventListener('languageChanged', showFallback);
         return;
     }
 
-    const simpleMode = localStorage.getItem('unirank_map_detailed') !== 'true';
-    const countryShapesUrl = 'https://raw.githubusercontent.com/datasets/geo-countries/master/data/countries.geojson';
-    const palette = ['#ffd166', '#b8e986', '#a8dadc', '#cdb4db', '#ffb4a2', '#90dbf4', '#f7b267'];
+    if (fallbackElement) {
+        fallbackElement.hidden = true;
+        fallbackElement.classList.remove('is-visible');
+        fallbackElement.setAttribute('aria-hidden', 'true');
+    }
+
+    function readDetailedPreference() {
+        try {
+            return localStorage.getItem('unirank_map_detailed') === 'true';
+        } catch (error) {
+            return false;
+        }
+    }
+
+    function persistDetailedPreference(value) {
+        try {
+            localStorage.setItem('unirank_map_detailed', String(value));
+        } catch (error) {
+            // The map remains usable when storage is unavailable.
+        }
+    }
+
+    const initialDetailedMode = readDetailedPreference();
+    const tileAttribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>';
 
     window.unirankMap = L.map(mapElement, {
         zoomControl: false,
         worldCopyJump: true,
-        minZoom: 1.5,
+        minZoom: 2,
         maxZoom: 18
-    }).setView([25, 10], 2.3);
+    }).setView([25, 10], 2);
 
-    L.control.zoom({ position: 'bottomright' }).addTo(window.unirankMap);
+    const map = window.unirankMap;
+    L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
-    // The detailed layer is intentionally opt-in. The default view is a calm,
-    // tile-free atlas so the important objects (countries, cities, universities)
-    // stay readable instead of competing with roads and labels.
+    const calmTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: tileAttribution,
+        subdomains: 'abcd',
+        maxZoom: 20
+    });
     const detailedTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+        attribution: tileAttribution,
         subdomains: 'abcd',
         maxZoom: 20
     });
 
-    const createMarkerLayer = () => {
-        if (typeof L.markerClusterGroup === 'function') {
-            return L.markerClusterGroup({
-                showCoverageOnHover: false,
-                maxClusterRadius: 40,
-                iconCreateFunction: function (cluster) {
-                    const children = cluster.getAllChildMarkers();
-                    const totalScore = children.reduce((sum, marker) => sum + Number(marker.options.score || 0), 0);
-                    const avgScore = children.length ? totalScore / children.length : 0;
-                    let colorClass = 'cluster-weak';
-                    if (avgScore >= 8.5) colorClass = 'cluster-excellent';
-                    else if (avgScore >= 7.0) colorClass = 'cluster-strong';
-                    else if (avgScore >= 5.5) colorClass = 'cluster-moderate';
-
-                    return L.divIcon({
-                        html: `<div class="custom-cluster ${colorClass}"><span>${children.length}</span></div>`,
-                        className: 'custom-cluster-icon',
-                        iconSize: [40, 40]
-                    });
-                }
-            });
-        }
-
-        // A failed optional MarkerCluster request must not make all pins vanish.
-        console.warn('MarkerCluster is unavailable; using a plain marker layer.');
-        return L.layerGroup();
-    };
-
-    const plainMarkers = L.layerGroup();
-    const clusteredMarkers = createMarkerLayer();
-    let markers = plainMarkers;
-    markers.addTo(window.unirankMap);
-    const countryLabelLayer = L.layerGroup();
-    const cityLabelLayer = L.layerGroup();
-    let countryShapesLayer = null;
-    let countryShapesPromise = null;
-    let allMarkers = [];
-    let currentData = [];
-    let isDetailed = false;
-
     const toggle = document.getElementById('map-detail-toggle');
     const modeBadge = document.getElementById('map-mode-badge');
     const detailStatus = document.getElementById('map-detail-status');
-
-    function t(key, fallback) {
-        return typeof window.t === 'function' ? window.t(key) : fallback;
-    }
+    const resultsListElement = document.getElementById('map-results-list');
+    let currentData = [];
+    let currentLocatedData = [];
+    let allMarkers = [];
+    let isDetailed = false;
+    const markerByKey = new Map();
 
     function escapeHtml(value) {
         return String(value ?? '')
@@ -86,191 +111,302 @@ function initUniRankMap() {
             .replace(/'/g, '&#039;');
     }
 
-    function scoreClass(score) {
-        if (score >= 8.5) return 'marker-excellent';
-        if (score >= 7.0) return 'marker-strong';
-        if (score >= 5.5) return 'marker-moderate';
-        return 'marker-weak';
+    function localizedValue(value) {
+        if (typeof window.localizedValue === 'function') return window.localizedValue(value);
+        if (value == null) return '';
+        if (typeof value === 'object') return value.en || value.tr || value.name || '';
+        return String(value);
     }
 
-    function getCountryName(feature) {
-        const properties = feature && feature.properties ? feature.properties : {};
-        return properties.ADMIN || properties.NAME || properties.name || properties.Country || '';
+    function scoreBand(score) {
+        if (score >= 6.0) return 'excellent';
+        if (score >= 5.5) return 'strong';
+        if (score >= 5.0) return 'moderate';
+        return 'weak';
     }
 
-    function colorForCountry(name) {
-        let hash = 0;
-        for (let i = 0; i < name.length; i += 1) hash = (hash * 31 + name.charCodeAt(i)) >>> 0;
-        return palette[hash % palette.length];
+    function scoreClass(score, prefix) {
+        return `${prefix}-${scoreBand(score)}`;
     }
 
-    function styleCountry(feature) {
-        const name = getCountryName(feature);
-        return {
-            color: '#ffffff',
-            weight: 1.2,
-            opacity: 0.9,
-            fillColor: colorForCountry(name),
-            fillOpacity: 0.48
-        };
-    }
+    function createMarkerLayer() {
+        if (typeof L.markerClusterGroup === 'function') {
+            return L.markerClusterGroup({
+                showCoverageOnHover: false,
+                maxClusterRadius: 44,
+                spiderfyOnMaxZoom: true,
+                spiderfyDistanceMultiplier: 1.2,
+                zoomToBoundsOnClick: true,
+                iconCreateFunction: function (cluster) {
+                    const children = cluster.getAllChildMarkers();
+                    const totalScore = children.reduce((sum, marker) => sum + Number(marker.options.score || 0), 0);
+                    const averageScore = children.length ? totalScore / children.length : 0;
+                    const colorClass = scoreClass(averageScore, 'cluster');
+                    const label = isTurkish()
+                        ? `${children.length} program, ortalama skor ${averageScore.toFixed(1)}`
+                        : `${children.length} programs, average score ${averageScore.toFixed(1)}`;
 
-    function addCountryShapes() {
-        if (countryShapesLayer) {
-            countryShapesLayer.addTo(window.unirankMap);
-            return;
-        }
-        if (countryShapesPromise) return;
-
-        countryShapesPromise = fetch(countryShapesUrl)
-            .then(response => {
-                if (!response.ok) throw new Error(`Country map request failed (${response.status})`);
-                return response.json();
-            })
-            .then(geojson => {
-                countryShapesLayer = L.geoJSON(geojson, {
-                    style: styleCountry,
-                    onEachFeature: (feature, layer) => {
-                        const name = getCountryName(feature);
-                        if (name) layer.bindTooltip(escapeHtml(name), { sticky: true, className: 'simple-map-tooltip' });
-                        layer.on({
-                            mouseover: event => event.target.setStyle({ weight: 2, fillOpacity: 0.68 }),
-                            mouseout: event => countryShapesLayer.resetStyle(event.target)
-                        });
-                    }
-                });
-                if (!isDetailed) countryShapesLayer.addTo(window.unirankMap);
-            })
-            .catch(error => {
-                // Labels and pins remain useful if a third-party GeoJSON request
-                // is blocked; the simple map should degrade gracefully.
-                console.warn('Simple country shapes could not be loaded:', error.message);
+                    return L.divIcon({
+                        html: `<div class="custom-cluster ${colorClass}" role="img" aria-label="${escapeHtml(label)}"><span aria-hidden="true">${children.length}</span></div>`,
+                        className: 'custom-cluster-icon',
+                        iconSize: [40, 40]
+                    });
+                }
             });
+        }
+
+        console.warn('MarkerCluster is unavailable; using a plain marker layer.');
+        return L.layerGroup();
     }
+
+    const markers = createMarkerLayer();
+    markers.addTo(map);
 
     function getLocations(data) {
-        return data.map(row => {
+        return data.map((row, index) => {
             const normalized = window.uniDataAdapter
                 ? window.uniDataAdapter.normalizeUniversityRecord(row)
                 : null;
             if (!normalized || !normalized.location) return null;
+
             const { latitude, longitude } = normalized.location;
             if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) return null;
-            return { row, normalized, latitude, longitude };
+
+            const baseId = normalized.id || row.Uni_ID || row.id || row.name || row.university || 'program';
+            return {
+                key: `${String(baseId)}::${index}`,
+                row,
+                normalized,
+                latitude,
+                longitude
+            };
         }).filter(Boolean);
     }
 
-    function addCountryLabel(country, items) {
-        const latitude = items.reduce((sum, item) => sum + item.latitude, 0) / items.length;
-        const longitude = items.reduce((sum, item) => sum + item.longitude, 0) / items.length;
-        const label = window.getCountryName ? window.getCountryName(country) : country;
-        const icon = L.divIcon({
-            className: 'simple-country-icon',
-            html: `<div class="simple-country-label"><span class="simple-country-dot"></span><span>${escapeHtml(label)}</span><b>${items.length}</b></div>`,
-            iconSize: [0, 0],
-            iconAnchor: [0, 0]
-        });
-        L.marker([latitude, longitude], { icon, keyboard: false, interactive: false }).addTo(countryLabelLayer);
+    function universityKey(item) {
+        const university = localizedValue(item.normalized.universityName) || item.normalized.id || item.key;
+        return String(university).trim().toLocaleLowerCase('en-US');
     }
 
-    function renderPlaceLabels(locatedData) {
-        countryLabelLayer.clearLayers();
-        cityLabelLayer.clearLayers();
-
-        const countries = new Map();
-        const cities = new Map();
-        locatedData.forEach(item => {
-            const country = item.normalized.location.country || item.normalized.country || 'Unknown';
-            const city = item.normalized.location.city || item.normalized.city || 'Unknown city';
-            if (!countries.has(country)) countries.set(country, []);
-            countries.get(country).push(item);
-            const cityKey = `${country}::${city}`;
-            if (!cities.has(cityKey)) cities.set(cityKey, { name: city, country, items: [] });
-            cities.get(cityKey).items.push(item);
-        });
-
-        countries.forEach((items, country) => addCountryLabel(country, items));
-
-        // City labels appear after zooming in, keeping the default world view
-        // friendly and uncluttered while preserving the real university point.
-        if (window.unirankMap.getZoom() < 3.4) return;
-        cities.forEach(cityGroup => {
-            const latitude = cityGroup.items.reduce((sum, item) => sum + item.latitude, 0) / cityGroup.items.length;
-            const longitude = cityGroup.items.reduce((sum, item) => sum + item.longitude, 0) / cityGroup.items.length;
-            const icon = L.divIcon({
-                className: 'simple-city-icon',
-                html: `<div class="simple-city-label"><span class="simple-city-dot"></span>${escapeHtml(cityGroup.name)}</div>`,
-                iconSize: [0, 0],
-                iconAnchor: [0, 0]
-            });
-            L.marker([latitude, longitude], { icon, keyboard: false, interactive: false }).addTo(cityLabelLayer);
-        });
-    }
-
-    function setSimpleLayerVisibility() {
-        if (isDetailed) {
-            if (countryShapesLayer) window.unirankMap.removeLayer(countryShapesLayer);
-            window.unirankMap.removeLayer(countryLabelLayer);
-            window.unirankMap.removeLayer(cityLabelLayer);
-            return;
-        }
-
-        addCountryShapes();
-        countryLabelLayer.addTo(window.unirankMap);
-        if (window.unirankMap.getZoom() >= 3.4) cityLabelLayer.addTo(window.unirankMap);
-        else window.unirankMap.removeLayer(cityLabelLayer);
+    function formatCost(value) {
+        if (value === null || value === undefined || value === '') return '—';
+        const number = Number(value);
+        if (!Number.isFinite(number)) return '—';
+        return `${number.toLocaleString(isTurkish() ? 'tr-TR' : 'en-US')}€`;
     }
 
     function updateModeText() {
-        if (modeBadge) modeBadge.textContent = t(isDetailed ? 'map_detailed_badge' : 'map_simple_badge', isDetailed ? 'Detailed map' : 'Friendly atlas');
-        if (detailStatus) detailStatus.textContent = t(isDetailed ? 'map_detailed_toggle_desc' : 'map_simple_status', isDetailed ? 'Real-world map is on.' : 'Friendly atlas is on by default.');
+        const badgeFallback = isDetailed
+            ? (isTurkish() ? 'Daha fazla yer etiketi' : 'More place labels')
+            : (isTurkish() ? 'Sakin harita' : 'Calm map');
+        const statusFallback = isDetailed
+            ? (isTurkish() ? 'Daha fazla yol ve yer etiketi gösteriliyor.' : 'More roads and place labels are shown.')
+            : (isTurkish() ? 'Sade ve dikkat dağıtmayan harita açık.' : 'A clean, low-distraction map is on.');
+
+        if (modeBadge) {
+            modeBadge.removeAttribute('data-i18n');
+            modeBadge.textContent = badgeFallback;
+        }
+        if (detailStatus) {
+            detailStatus.removeAttribute('data-i18n');
+            detailStatus.textContent = statusFallback;
+        }
+        if (toggle) {
+            toggle.checked = isDetailed;
+            toggle.setAttribute('aria-label', statusFallback);
+        }
+
+        mapElement.setAttribute('role', 'region');
+        mapElement.setAttribute(
+            'aria-label',
+            isTurkish() ? 'Filtrelenmiş üniversite programları haritası' : 'Map of filtered university programs'
+        );
     }
 
     function setMapMode(detailed, persist = true) {
         isDetailed = Boolean(detailed);
-        if (persist) localStorage.setItem('unirank_map_detailed', String(isDetailed));
-        if (toggle) toggle.checked = isDetailed;
+        if (persist) persistDetailedPreference(isDetailed);
 
-        const nextMarkerLayer = isDetailed ? clusteredMarkers : plainMarkers;
-        if (markers !== nextMarkerLayer) {
-            window.unirankMap.removeLayer(markers);
-            markers = nextMarkerLayer;
-            markers.addTo(window.unirankMap);
-            updateMap(currentData);
-        }
+        const nextLayer = isDetailed ? detailedTiles : calmTiles;
+        const previousLayer = isDetailed ? calmTiles : detailedTiles;
+        if (map.hasLayer(previousLayer)) map.removeLayer(previousLayer);
+        if (!map.hasLayer(nextLayer)) nextLayer.addTo(map);
 
-        if (isDetailed) {
-            detailedTiles.addTo(window.unirankMap);
-            mapElement.classList.add('map-detailed-mode');
-            mapElement.classList.remove('map-simple-mode');
-        } else {
-            window.unirankMap.removeLayer(detailedTiles);
-            mapElement.classList.add('map-simple-mode');
-            mapElement.classList.remove('map-detailed-mode');
-        }
-        setSimpleLayerVisibility();
+        mapElement.classList.toggle('map-detailed-mode', isDetailed);
+        mapElement.classList.toggle('map-simple-mode', !isDetailed);
         updateModeText();
-        window.unirankMap.invalidateSize();
+        map.invalidateSize();
     }
 
-    function formatCost(value) {
-        if (value === null || value === undefined || value === '') return '\u2014';
-        const number = Number(value);
-        if (!Number.isFinite(number)) return '—';
-        return `${number.toLocaleString('en-US')}€`;
+    function openDrawerForRow(row, id) {
+        if (typeof window.openDrawer === 'function') {
+            window.openDrawer(row);
+            return;
+        }
+        if (typeof window.openDrawerById === 'function') window.openDrawerById(id);
+    }
+
+    function focusMapResult(item) {
+        const marker = markerByKey.get(item.key);
+        if (!marker) return;
+
+        const targetZoom = Math.min(map.getMaxZoom(), Math.max(map.getZoom(), 8));
+        map.setView([item.latitude, item.longitude], targetZoom, { animate: false });
+
+        const openPopup = () => {
+            marker.openPopup();
+            const markerElement = marker.getElement();
+            if (markerElement) markerElement.focus({ preventScroll: true });
+        };
+
+        if (typeof markers.zoomToShowLayer === 'function') {
+            markers.zoomToShowLayer(marker, openPopup);
+        } else {
+            openPopup();
+        }
+    }
+
+    function renderResultsList(locatedData) {
+        if (!resultsListElement) return;
+        resultsListElement.replaceChildren();
+        resultsListElement.setAttribute('aria-label', isTurkish() ? 'Harita sonuçları' : 'Map results');
+
+        if (!locatedData.length) {
+            const empty = document.createElement('p');
+            empty.className = 'map-results-empty';
+            empty.textContent = isTurkish()
+                ? 'Haritada gösterilebilecek sonuç yok.'
+                : 'There are no results that can be shown on the map.';
+            resultsListElement.appendChild(empty);
+            return;
+        }
+
+        locatedData.slice(0, 6).forEach(item => {
+            const n = item.normalized;
+            const title = localizedValue(n.universityName) || String(n.id || '—');
+            const program = localizedValue(n.programName) || '—';
+            const city = n.location.city || n.city || '';
+            const country = n.location.country || n.country || '';
+            const location = [city, country].filter(Boolean).join(', ');
+            const rawScore = Number(item.row._score);
+            const score = Number.isFinite(rawScore) ? rawScore : 0;
+
+            const itemElement = document.createElement('div');
+            itemElement.className = 'map-result-item';
+
+            const cardButton = document.createElement('button');
+            cardButton.type = 'button';
+            cardButton.className = 'map-result-card';
+            cardButton.setAttribute(
+                'aria-label',
+                isTurkish()
+                    ? `${title}, ${program}, skor ${score.toFixed(1)}. Haritada göster.`
+                    : `${title}, ${program}, score ${score.toFixed(1)}. Show on map.`
+            );
+
+            const content = document.createElement('span');
+            content.className = 'map-result-card__content';
+
+            const titleElement = document.createElement('span');
+            titleElement.className = 'map-result-card__title';
+            titleElement.textContent = title;
+
+            const programElement = document.createElement('span');
+            programElement.className = 'map-result-card__program';
+            programElement.textContent = program;
+
+            const metaElement = document.createElement('span');
+            metaElement.className = 'map-result-card__meta';
+            metaElement.textContent = location || (isTurkish() ? 'Konum belirtilmemiş' : 'Location not specified');
+
+            const scoreElement = document.createElement('span');
+            scoreElement.className = `map-result-card__score map-score map-score--${scoreBand(score)}`;
+            scoreElement.textContent = score.toFixed(1);
+            scoreElement.setAttribute('aria-hidden', 'true');
+
+            content.append(titleElement, programElement, metaElement);
+            cardButton.append(content, scoreElement);
+            cardButton.addEventListener('click', () => focusMapResult(item));
+
+            const detailButton = document.createElement('button');
+            detailButton.type = 'button';
+            detailButton.className = 'map-result-detail';
+            detailButton.textContent = '→';
+            detailButton.setAttribute(
+                'aria-label',
+                isTurkish() ? `${title} program detaylarını aç` : `Open program details for ${title}`
+            );
+            detailButton.addEventListener('click', () => openDrawerForRow(item.row, n.id));
+
+            itemElement.append(cardButton, detailButton);
+            resultsListElement.appendChild(itemElement);
+        });
+    }
+
+    function updateSummary(locatedData, totalScore) {
+        const locatedCount = locatedData.length;
+        const universityCount = new Set(locatedData.map(universityKey)).size;
+        const missingCount = Math.max(0, currentData.length - locatedCount);
+        const visibleListCount = Math.min(6, locatedCount);
+
+        const countElement = document.getElementById('map-kpi-count');
+        const universityElement = document.getElementById('map-kpi-universities');
+        const missingElement = document.getElementById('map-kpi-missing');
+        const averageScoreElement = document.getElementById('map-kpi-avg-score');
+
+        if (countElement) countElement.textContent = String(locatedCount);
+        if (universityElement) universityElement.textContent = String(universityCount);
+        if (missingElement) missingElement.textContent = String(missingCount);
+        if (averageScoreElement) {
+            averageScoreElement.textContent = locatedCount ? (totalScore / locatedCount).toFixed(1) : '—';
+        }
+
+        if (!resultsStatusElement) return;
+        resultsStatusElement.setAttribute('role', 'status');
+        resultsStatusElement.setAttribute('aria-live', 'polite');
+        resultsStatusElement.setAttribute('aria-atomic', 'true');
+
+        if (!currentData.length) {
+            resultsStatusElement.textContent = isTurkish()
+                ? 'Filtrelerle eşleşen program yok.'
+                : 'No programs match the current filters.';
+        } else if (!locatedCount) {
+            resultsStatusElement.textContent = isTurkish()
+                ? `${missingCount} programın harita koordinatı yok; sonuçlar liste görünümünde kullanılabilir.`
+                : `${missingCount} programs have no map coordinates; they remain available in list view.`;
+        } else {
+            const base = isTurkish()
+                ? `${locatedCount} koordinatlı program, ${universityCount} üniversite. İlk ${visibleListCount} sonuç gösteriliyor.`
+                : `${locatedCount} mapped programs across ${universityCount} universities. Showing the first ${visibleListCount}.`;
+            const missing = missingCount
+                ? (isTurkish()
+                    ? ` ${missingCount} programın koordinatı eksik.`
+                    : ` ${missingCount} programs are missing coordinates.`)
+                : '';
+            resultsStatusElement.textContent = `${base}${missing}`;
+        }
     }
 
     function updateMap(data) {
         currentData = Array.isArray(data) ? data : [];
-        const locatedData = getLocations(currentData);
+        currentLocatedData = getLocations(currentData);
         markers.clearLayers();
+        markerByKey.clear();
         allMarkers = [];
         let totalScore = 0;
 
-        locatedData.forEach(({ row, normalized: n, latitude, longitude }) => {
+        currentLocatedData.forEach(item => {
+            const { row, normalized: n, latitude, longitude } = item;
             const rawScore = Number(row._score);
             const score = Number.isFinite(rawScore) ? rawScore : 0;
-            const colorClass = scoreClass(score);
+            const colorClass = scoreClass(score, 'marker');
+            const title = localizedValue(n.universityName) || String(n.id || '—');
+            const program = localizedValue(n.programName) || '—';
+            const city = n.location.city || n.city || '';
+            const country = n.location.country || n.country || '';
+            const accessibleLabel = isTurkish()
+                ? `${title}, ${program}, skor ${score.toFixed(1)} / 10`
+                : `${title}, ${program}, score ${score.toFixed(1)} out of 10`;
             const iconHtml = `<div class="custom-marker ${colorClass}"><span class="marker-score">${score.toFixed(1)}</span></div>`;
             const customIcon = L.divIcon({
                 className: 'unirank-marker-icon',
@@ -280,82 +416,91 @@ function initUniRankMap() {
                 popupAnchor: [0, -38]
             });
 
-            const marker = L.marker([latitude, longitude], { icon: customIcon, score });
-            const title = window.localizedValue ? window.localizedValue(n.universityName) : n.universityName;
-            const program = window.localizedValue ? window.localizedValue(n.programName) : n.programName;
-            const city = n.location.city || n.city || '';
-            const country = n.location.country || n.country || '';
+            const marker = L.marker([latitude, longitude], {
+                icon: customIcon,
+                score,
+                title: accessibleLabel,
+                alt: accessibleLabel,
+                keyboard: true,
+                riseOnHover: true
+            });
             const popupContent = `
                 <div class="map-popup-card">
                     <div class="map-popup-header ${colorClass}-bg">
-                        <h3>${escapeHtml(title || n.id)}</h3>
+                        <h3>${escapeHtml(title)}</h3>
                         <p>${escapeHtml([city, country].filter(Boolean).join(', '))}</p>
                     </div>
                     <div class="map-popup-body">
                         <div class="map-popup-row">
-                            <span class="map-popup-label">${escapeHtml(t('program', 'Program'))}</span>
-                            <span class="map-popup-val">${escapeHtml(program || '—')}</span>
+                            <span class="map-popup-label">${escapeHtml(t('program', isTurkish() ? 'Program' : 'Program'))}</span>
+                            <span class="map-popup-val">${escapeHtml(program)}</span>
                         </div>
                         <div class="map-popup-row">
-                            <span class="map-popup-label">${escapeHtml(t('yearly_cost', 'Yearly Cost'))}</span>
+                            <span class="map-popup-label">${escapeHtml(t('yearly_cost', isTurkish() ? 'Yıllık ücret' : 'Yearly cost'))}</span>
                             <span class="map-popup-val">${escapeHtml(formatCost(n.totalAcademicCost ?? n.tuitionPerYear))}</span>
                         </div>
                         <div class="map-popup-row">
-                            <span class="map-popup-label">${escapeHtml(t('col_score', 'Score'))}</span>
+                            <span class="map-popup-label">${escapeHtml(t('col_score', isTurkish() ? 'Skor' : 'Score'))}</span>
                             <span class="map-popup-val score-val">${score.toFixed(1)} / 10</span>
                         </div>
-                        <button class="btn btn-sm map-detail-button" data-map-detail-id="${escapeHtml(n.id)}">${escapeHtml(t('detail', 'Details'))}</button>
+                        <button class="btn btn-sm map-detail-button" type="button" data-map-detail-id="${escapeHtml(n.id)}">${escapeHtml(t('detail', isTurkish() ? 'Detay' : 'Details'))}</button>
                     </div>
                 </div>`;
 
             marker.bindPopup(popupContent, { minWidth: 260, className: 'custom-map-popup' });
+            marker.on('add', () => {
+                const markerElement = marker.getElement();
+                if (!markerElement) return;
+                markerElement.setAttribute('aria-label', accessibleLabel);
+                markerElement.setAttribute('role', 'button');
+            });
             marker.on('popupopen', event => {
                 const button = event.popup.getElement()?.querySelector('[data-map-detail-id]');
-                if (button) button.addEventListener('click', () => window.openDrawerById(button.dataset.mapDetailId));
+                if (button) button.onclick = () => openDrawerForRow(row, n.id);
             });
+
             markers.addLayer(marker);
+            markerByKey.set(item.key, marker);
             allMarkers.push(marker);
             totalScore += score;
         });
 
-        renderPlaceLabels(locatedData);
-        if (!isDetailed) setSimpleLayerVisibility();
-        const countElement = document.getElementById('map-kpi-count');
-        const scoreElement = document.getElementById('map-kpi-avg-score');
-        if (countElement) countElement.textContent = String(locatedData.length);
-        if (scoreElement) scoreElement.textContent = locatedData.length ? (totalScore / locatedData.length).toFixed(1) : '0.0';
+        renderResultsList(currentLocatedData);
+        updateSummary(currentLocatedData, totalScore);
     }
 
     window.openDrawerById = function (id) {
+        const wantedId = String(id ?? '');
         const row = (window.filteredData || currentData).find(item => {
-            const recordId = item.Uni_ID || item.id || item.name || item.university;
-            return recordId === id;
+            const normalized = window.uniDataAdapter
+                ? window.uniDataAdapter.normalizeUniversityRecord(item)
+                : null;
+            const recordId = normalized?.id || item.Uni_ID || item.id || item.name || item.university;
+            return String(recordId ?? '') === wantedId;
         });
-        if (row && window.openDrawer) window.openDrawer(row);
+        if (row && typeof window.openDrawer === 'function') window.openDrawer(row);
     };
 
     window.fitMapToResults = function () {
-        if (allMarkers.length > 0) {
-            const group = new L.featureGroup(allMarkers);
-            window.unirankMap.fitBounds(group.getBounds(), { padding: [50, 50], maxZoom: 8 });
-        }
+        if (!allMarkers.length) return;
+        const group = L.featureGroup(allMarkers);
+        map.fitBounds(group.getBounds(), { padding: [50, 50], maxZoom: 8 });
     };
 
     if (toggle) {
         toggle.addEventListener('change', event => setMapMode(event.target.checked));
     }
-    window.unirankMap.on('zoomend', () => {
-        if (!isDetailed) {
-            renderPlaceLabels(getLocations(currentData));
-            setSimpleLayerVisibility();
-        }
-    });
 
     window.addEventListener('unirank:dataUpdated', event => {
         updateMap(event.detail?.filteredData || []);
     });
 
-    setMapMode(simpleMode ? false : true, false);
+    document.addEventListener('languageChanged', () => {
+        updateModeText();
+        updateMap(currentData);
+    });
+
+    setMapMode(initialDetailedMode, false);
     updateMap(window.filteredData || []);
 }
 

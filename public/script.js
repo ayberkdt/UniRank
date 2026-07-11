@@ -82,6 +82,37 @@ function formatRiskBadge(risk) {
     return `<span class="risk-badge risk-unknown">${safeRisk}</span>`;
 }
 
+function scoreBand(score) {
+    const value = Number(score) || 0;
+    if (value >= 6) return { key: 'excellent', label: window.currentLanguage === 'tr' ? 'Yüksek uyum' : 'High fit' };
+    if (value >= 5.5) return { key: 'strong', label: window.currentLanguage === 'tr' ? 'İyi uyum' : 'Good fit' };
+    if (value >= 5) return { key: 'moderate', label: window.currentLanguage === 'tr' ? 'Orta uyum' : 'Moderate fit' };
+    return { key: 'weak', label: window.currentLanguage === 'tr' ? 'Düşük uyum' : 'Lower fit' };
+}
+
+function compactList(value) {
+    if (Array.isArray(value)) return value.map(displayValue).filter(Boolean).join(', ');
+    return displayValue(value);
+}
+
+function riskLabel(value) {
+    if (!value || ['unknown', 'needs_verification', '—'].includes(String(value).toLowerCase())) {
+        return window.t ? window.t('unknown_value') : 'Unknown';
+    }
+    return displayValue(value).replaceAll('_', ' ');
+}
+
+function confidenceLabel(value) {
+    const normalized = ['high', 'medium', 'low'].includes(String(value).toLowerCase())
+        ? String(value).toLowerCase()
+        : 'unknown';
+    const key = `confidence_${normalized}`;
+    return {
+        key: normalized,
+        label: window.t ? window.t(key) : normalized
+    };
+}
+
 // Global Boundaries for Normalization
 let globalMaxTuition = 10000;
 let globalMinTuition = 0;
@@ -207,11 +238,11 @@ async function fetchData() {
             processAndRender();
         } else {
             console.error("API Error:", json.message);
-            els.tableBody.innerHTML = `<tr><td colspan="10" class="empty-results">${escapeHtml(json.message || 'API request failed.')}</td></tr>`;
+            els.tableBody.innerHTML = `<div class="empty-results-card" role="alert"><h3>${escapeHtml(json.message || 'API request failed.')}</h3></div>`;
         }
     } catch (err) {
         console.error("Fetch Error:", err);
-        els.tableBody.innerHTML = `<tr><td colspan="10" class="empty-results">${escapeHtml(err.message || 'Network request failed.')}</td></tr>`;
+        els.tableBody.innerHTML = `<div class="empty-results-card" role="alert"><h3>${escapeHtml(err.message || 'Network request failed.')}</h3></div>`;
     } finally {
         if (loader) loader.classList.remove('active');
     }
@@ -266,14 +297,8 @@ function setupEventListeners() {
                         if (valDisplay) {
                             if (e.target.value >= 25000) {
                                 valDisplay.textContent = 'Any';
-                                valDisplay.style.color = 'var(--success)';
-                                valDisplay.style.borderColor = 'rgba(16, 185, 129, 0.2)';
-                                valDisplay.style.background = 'rgba(16, 185, 129, 0.1)';
                             } else {
-                                valDisplay.textContent = `≤ €${e.target.value}`;
-                                valDisplay.style.color = 'var(--text-main)';
-                                valDisplay.style.borderColor = 'var(--border-color)';
-                                valDisplay.style.background = 'rgba(255,255,255,0.05)';
+                                valDisplay.textContent = `≤ €${Number(e.target.value).toLocaleString('en-US')}`;
                             }
                         }
                     }
@@ -311,6 +336,61 @@ function setupEventListeners() {
     // Drawer close
     els.drawer.closeBtn.addEventListener('click', closeDrawer);
     els.drawer.overlay.addEventListener('click', closeDrawer);
+
+    const filterToggle = document.getElementById('filter-toggle');
+    const sidebarClose = document.getElementById('sidebar-close');
+    const sidebarScrim = document.getElementById('sidebar-scrim');
+    if (filterToggle) filterToggle.addEventListener('click', () => setFilterSidebar(true));
+    if (sidebarClose) sidebarClose.addEventListener('click', () => setFilterSidebar(false));
+    if (sidebarScrim) sidebarScrim.addEventListener('click', () => setFilterSidebar(false));
+
+    ['clear-filters-sidebar', 'clear-active-filters'].forEach(id => {
+        const button = document.getElementById(id);
+        if (button) button.addEventListener('click', clearAllFilters);
+    });
+
+    document.addEventListener('keydown', event => {
+        if (event.key !== 'Escape') return;
+        if (els.drawer.panel.classList.contains('active')) closeDrawer();
+        else setFilterSidebar(false);
+    });
+
+    window.addEventListener('resize', () => {
+        if (!window.matchMedia('(max-width: 1100px)').matches) setFilterSidebar(false);
+    });
+    setFilterSidebar(false);
+}
+
+function setFilterSidebar(open) {
+    const isOpen = Boolean(open);
+    const wasOpen = document.body.classList.contains('filters-open');
+    if (isOpen && !wasOpen) window.lastFilterTrigger = document.activeElement;
+    document.body.classList.toggle('filters-open', isOpen);
+    const toggle = document.getElementById('filter-toggle');
+    if (toggle) toggle.setAttribute('aria-expanded', String(isOpen));
+    const sidebar = document.getElementById('filter-sidebar');
+    if (sidebar) sidebar.setAttribute('aria-hidden', String(!isOpen && window.matchMedia('(max-width: 1100px)').matches));
+    if (isOpen) document.getElementById('sidebar-close')?.focus();
+    else if (wasOpen && window.lastFilterTrigger instanceof HTMLElement) window.lastFilterTrigger.focus();
+}
+
+function clearAllFilters() {
+    selectedCountries.clear();
+    selectedCategoryKeys.clear();
+    if (els.searchInput) els.searchInput.value = '';
+    if (els.categorySearchInput) els.categorySearchInput.value = '';
+    if (els.categorySuggestions) els.categorySuggestions.innerHTML = '';
+    if (els.hardFilters.degree) els.hardFilters.degree.value = 'All';
+    if (els.hardFilters.englishOnly) els.hardFilters.englishOnly.checked = false;
+    if (els.hardFilters.maxTuition) els.hardFilters.maxTuition.value = '25000';
+    if (els.favFilter) els.favFilter.checked = false;
+    const tuitionOutput = document.getElementById('tuition-val-display');
+    if (tuitionOutput) tuitionOutput.textContent = 'Any';
+    populateCountryFilter();
+    renderCountryTags();
+    renderSelectedCategories();
+    renderPopularCategories();
+    processAndRender();
 }
 
 function populateCountryFilter() {
@@ -324,7 +404,9 @@ function populateCountryFilter() {
 
     const countries = new Set();
     rawData.forEach(r => {
-        if (r.country && !selectedCountries.has(r.country)) countries.add(r.country);
+        const normalized = window.uniDataAdapter ? window.uniDataAdapter.normalizeUniversityRecord(r) : null;
+        const country = normalized?.country || r.country || r.Country;
+        if (country && !selectedCountries.has(country)) countries.add(country);
     });
     
     const sorted = Array.from(countries).sort();
@@ -343,16 +425,19 @@ function populateCountryFilter() {
 function renderCountryTags() {
     els.countryTags.innerHTML = '';
     selectedCountries.forEach(c => {
-        const span = document.createElement('span');
-        span.className = 'tag-removable';
-        span.innerHTML = `${window.getCountryName ? window.getCountryName(c) : c} ✕`;
-        span.onclick = () => {
+        const button = document.createElement('button');
+        const label = window.getCountryName ? window.getCountryName(c) : c;
+        button.type = 'button';
+        button.className = 'tag-removable';
+        button.innerHTML = `${escapeHtml(label)} <span aria-hidden="true">×</span>`;
+        button.setAttribute('aria-label', `${label} ${window.currentLanguage === 'tr' ? 'filtresini kaldır' : 'remove filter'}`);
+        button.onclick = () => {
             selectedCountries.delete(c);
             populateCountryFilter();
             renderCountryTags();
             processAndRender();
         };
-        els.countryTags.appendChild(span);
+        els.countryTags.appendChild(button);
     });
 }
 
@@ -410,18 +495,20 @@ window.renderCategoryUI = async function() {
             return;
         }
         results.slice(0, 8).forEach(res => {
-            const div = document.createElement('div');
-            div.className = 'category-suggestion';
-            div.innerHTML = `<span class="category-suggestion-title">${window.localizedValue(res.label)}</span>
-                             <span class="category-suggestion-parent">${window.localizedValue(res.parent)}</span>`;
-            div.onclick = () => {
+            const button = document.createElement('button');
+            button.type = 'button';
+            button.className = 'category-suggestion';
+            button.innerHTML = `<span class="category-suggestion-title">${escapeHtml(window.localizedValue(res.label))}</span>
+                                <span class="category-suggestion-parent">${escapeHtml(window.localizedValue(res.parent))}</span>`;
+            button.onclick = () => {
                 selectedCategoryKeys.add(res.key);
                 els.categorySearchInput.value = '';
                 els.categorySuggestions.innerHTML = '';
                 renderSelectedCategories();
+                renderPopularCategories();
                 processAndRender();
             };
-            els.categorySuggestions.appendChild(div);
+            els.categorySuggestions.appendChild(button);
         });
       });
       categorySearchBound = true;
@@ -438,11 +525,13 @@ async function renderSelectedCategories() {
         const info = taxonomy[key];
         if (!info) return;
         const btn = document.createElement('button');
+        btn.type = 'button';
         btn.className = 'selected-category-chip';
-        btn.innerHTML = `<span>${window.localizedValue(info.label)}</span><span aria-hidden="true" style="margin-left:4px; font-weight:bold;">×</span>`;
+        btn.innerHTML = `<span>${escapeHtml(window.localizedValue(info.label))}</span><span aria-hidden="true">×</span>`;
         btn.onclick = () => {
             selectedCategoryKeys.delete(key);
             renderSelectedCategories();
+            renderPopularCategories();
             processAndRender();
         };
         els.selectedCategoryChips.appendChild(btn);
@@ -457,11 +546,14 @@ async function renderPopularCategories() {
         const info = taxonomy[key];
         if (!info) return;
         const btn = document.createElement('button');
+        btn.type = 'button';
         btn.className = 'popular-category-chip';
-        btn.innerHTML = `<span>${window.localizedValue(info.label)}</span>`;
+        btn.innerHTML = `<span>${escapeHtml(window.localizedValue(info.label))}</span>`;
+        btn.disabled = selectedCategoryKeys.has(key);
         btn.onclick = () => {
             selectedCategoryKeys.add(key);
             renderSelectedCategories();
+            renderPopularCategories();
             processAndRender();
         };
         els.popularCategoryChips.appendChild(btn);
@@ -539,7 +631,11 @@ function processAndRender() {
             if (b._costNum === null) return -1;
             return a._costNum - b._costNum;
         }
-        if (sortVal === 'name_asc') return (a.display_name || a.name).localeCompare(b.display_name || b.name);
+        if (sortVal === 'name_asc') {
+            const nameA = window.uniDataAdapter?.normalizeUniversityRecord(a)?.universityName || a.display_name || a.name || '';
+            const nameB = window.uniDataAdapter?.normalizeUniversityRecord(b)?.universityName || b.display_name || b.name || '';
+            return String(nameA).localeCompare(String(nameB));
+        }
         return 0;
     });
 
@@ -550,7 +646,72 @@ function processAndRender() {
     window.filteredData = filteredData;
     renderKPIs();
     renderTable();
+    renderActiveFilters();
     window.dispatchEvent(new CustomEvent('unirank:dataUpdated', { detail: { filteredData } }));
+}
+
+function renderActiveFilters() {
+    const bar = document.getElementById('active-filter-bar');
+    const container = document.getElementById('active-filter-chips');
+    const mobileCount = document.getElementById('mobile-filter-count');
+    if (!bar || !container) return;
+
+    const filters = [];
+    selectedCountries.forEach(country => {
+        filters.push({
+            label: window.getCountryName ? window.getCountryName(country) : country,
+            remove: () => {
+                selectedCountries.delete(country);
+                populateCountryFilter();
+                renderCountryTags();
+            }
+        });
+    });
+    selectedCategoryKeys.forEach(key => {
+        filters.push({
+            label: window.getCategoryLabel ? window.getCategoryLabel(key) : key,
+            remove: () => {
+                selectedCategoryKeys.delete(key);
+                renderSelectedCategories();
+                renderPopularCategories();
+            }
+        });
+    });
+
+    const degree = els.hardFilters.degree?.value;
+    if (degree && degree !== 'All') filters.push({ label: degree, remove: () => { els.hardFilters.degree.value = 'All'; } });
+    if (els.hardFilters.englishOnly?.checked) {
+        filters.push({ label: window.t ? window.t('only_english') : 'English only', remove: () => { els.hardFilters.englishOnly.checked = false; } });
+    }
+    const maxTuition = Number(els.hardFilters.maxTuition?.value || 25000);
+    if (maxTuition < 25000) {
+        filters.push({
+            label: `≤ €${maxTuition.toLocaleString('en-US')}`,
+            remove: () => {
+                els.hardFilters.maxTuition.value = '25000';
+                const output = document.getElementById('tuition-val-display');
+                if (output) output.textContent = 'Any';
+            }
+        });
+    }
+    if (els.favFilter?.checked) filters.push({ label: window.t ? window.t('show_favorites') : 'Favorites', remove: () => { els.favFilter.checked = false; } });
+    if (els.searchInput?.value.trim()) filters.push({ label: `“${els.searchInput.value.trim()}”`, remove: () => { els.searchInput.value = ''; } });
+
+    container.innerHTML = '';
+    filters.forEach(filter => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'active-filter-chip';
+        button.innerHTML = `<span>${escapeHtml(filter.label)}</span><span aria-hidden="true">×</span>`;
+        button.addEventListener('click', () => {
+            filter.remove();
+            processAndRender();
+        });
+        container.appendChild(button);
+    });
+
+    bar.hidden = filters.length === 0;
+    if (mobileCount) mobileCount.textContent = String(filters.length);
 }
 
 window.switchView = function(view) {
@@ -558,162 +719,139 @@ window.switchView = function(view) {
     const mapBtn = document.getElementById('btn-view-map');
     const listContainer = document.getElementById('list-view-container');
     const mapContainer = document.getElementById('map-view-container');
-    
-    if (view === 'list') {
-        listBtn.classList.add('active');
-        listBtn.style.background = 'var(--primary)';
-        listBtn.style.color = 'white';
-        
-        mapBtn.classList.remove('active');
-        mapBtn.style.background = 'transparent';
-        mapBtn.style.color = 'var(--text-muted)';
-        
-        listContainer.style.display = 'block';
-        mapContainer.style.display = 'none';
-    } else {
-        mapBtn.classList.add('active');
-        mapBtn.style.background = 'var(--primary)';
-        mapBtn.style.color = 'white';
-        
-        listBtn.classList.remove('active');
-        listBtn.style.background = 'transparent';
-        listBtn.style.color = 'var(--text-muted)';
-        
-        listContainer.style.display = 'none';
-        mapContainer.style.display = 'block';
-        
-        // Let leaflet recalculate its size since it was hidden
+    const showMap = view === 'map';
+    window.currentView = showMap ? 'map' : 'list';
+
+    listBtn.classList.toggle('active', !showMap);
+    mapBtn.classList.toggle('active', showMap);
+    listBtn.setAttribute('aria-pressed', String(!showMap));
+    mapBtn.setAttribute('aria-pressed', String(showMap));
+    listContainer.hidden = showMap;
+    mapContainer.hidden = !showMap;
+    document.body.dataset.view = showMap ? 'map' : 'list';
+
+    if (showMap) {
         setTimeout(() => {
             if (window.unirankMap) window.unirankMap.invalidateSize();
             window.dispatchEvent(new Event('resize'));
-        }, 100);
+        }, 80);
     }
 }
 
 function renderKPIs() {
     els.kpi.total.textContent = filteredData.length;
     const countriesSet = new Set();
-    
-    if (filteredData.length > 0) {
-        let totalTuit = 0;
-        let validTuitCount = 0;
-        let totalScore = 0;
-        
-        filteredData.forEach(r => {
-            if (r.country) countriesSet.add(r.country);
-            const tuit = r._costNum;
-            if (tuit !== null) {
-                totalTuit += tuit;
-                validTuitCount++;
-            }
-            totalScore += r._score;
-        });
-        
-        const avgTuition = validTuitCount > 0 ? totalTuit / validTuitCount : 0;
-        const avgScore = totalScore / filteredData.length;
-        
-        els.kpi.tuition.textContent = `€${avgTuition.toFixed(0)}`;
-        els.kpi.score.textContent = avgScore.toFixed(2);
-        if (validTuitCount === 0) els.kpi.tuition.textContent = '\u2014';
-    } else {
-        els.kpi.tuition.textContent = "€0";
-        els.kpi.score.textContent = "0.0";
-        els.kpi.tuition.textContent = '\u2014';
-    }
-    
+    let totalTuition = 0;
+    let validTuitionCount = 0;
+    let totalScore = 0;
+
+    filteredData.forEach(record => {
+        const normalized = window.uniDataAdapter ? window.uniDataAdapter.normalizeUniversityRecord(record) : null;
+        const country = normalized?.country || record.country;
+        if (country) countriesSet.add(country);
+        if (record._costNum !== null) {
+            totalTuition += record._costNum;
+            validTuitionCount += 1;
+        }
+        totalScore += Number(record._score) || 0;
+    });
+
+    els.kpi.tuition.textContent = validTuitionCount
+        ? formatMoney(Math.round(totalTuition / validTuitionCount))
+        : '—';
+    els.kpi.score.textContent = filteredData.length
+        ? (totalScore / filteredData.length).toFixed(2)
+        : '0.0';
+
     const kpiCountries = document.getElementById('kpi-countries');
     if (kpiCountries) kpiCountries.textContent = countriesSet.size;
-}
-
-
-function renderTableHeader() {
-  const showProfileMatch = Boolean(window.personalizationEnabled);
-  const thead = document.querySelector("#results-table thead");
-  if(!thead) return;
-  const t = window.t || (k => k);
-  thead.innerHTML = `
-    <tr>
-      <th>${t("col_num")}</th>
-      <th>${t("col_fav")}</th>
-      <th>${t("university")}</th>
-      <th>${t("program")}</th>
-      <th>${t("city")}</th>
-      <th>${t("country")}</th>
-      ${showProfileMatch ? `<th>${t("profile_match")}</th>` : ""}
-      <th>${t("col_score") || "Score"}</th>
-      <th>${t("yearly_cost") || "Yearly Cost"}</th>
-      <th>${t("detail")}</th>
-    </tr>
-  `;
+    const costCoverage = document.getElementById('kpi-cost-coverage');
+    if (costCoverage) {
+        costCoverage.textContent = filteredData.length
+            ? `${Math.round((validTuitionCount / filteredData.length) * 100)}%`
+            : '0%';
+    }
 }
 
 
 function renderTable() {
-    renderTableHeader();
     els.tableBody.innerHTML = '';
     if (filteredData.length === 0) {
-        const columnCount = window.personalizationEnabled ? 10 : 9;
-        const message = window.currentLanguage === 'tr'
-            ? 'Etkin filtrelerle eşleşen program bulunamadı.'
-            : 'No programs match the active filters.';
-        els.tableBody.innerHTML = `<tr class="empty-results"><td colspan="${columnCount}">${escapeHtml(message)}</td></tr>`;
+        const title = window.t ? window.t('no_results_title') : 'No matching programs';
+        const description = window.t ? window.t('no_results_desc') : 'Try removing one or two filters.';
+        const resetLabel = window.t ? window.t('reset_filters') : 'Reset filters';
+        els.tableBody.innerHTML = `
+            <div class="empty-results-card" role="listitem">
+                <span class="empty-results-card__icon" aria-hidden="true">⌁</span>
+                <h3>${escapeHtml(title)}</h3>
+                <p>${escapeHtml(description)}</p>
+                <button class="btn btn-primary" type="button" data-reset-results>${escapeHtml(resetLabel)}</button>
+            </div>`;
+        els.tableBody.querySelector('[data-reset-results]')?.addEventListener('click', clearAllFilters);
         return;
     }
+
     filteredData.forEach((row, i) => {
-        const tr = document.createElement('tr');
         const n = window.uniDataAdapter ? window.uniDataAdapter.normalizeUniversityRecord(row) : null;
-        
-        let scColor = "var(--success)";
-        if (row._score < 5) scColor = "var(--danger)";
-        else if (row._score < 7.5) scColor = "var(--warning)";
-        
+        if (!n) return;
         const rid = n ? n.id : (row.Uni_ID || row.id || row.name || row.university);
         const isFav = favorites.has(rid);
-        const favIcon = isFav ? '⭐' : '☆';
-        
-        const cleanCountry = (n ? n.country : row.country) ? (n ? n.country : row.country).replace(/^[^a-zA-ZçğıöşüÇĞİÖŞÜ]+/, '').trim() : '-';
+        const cleanCountry = n.country ? n.country.replace(/^[^a-zA-ZçğıöşüÇĞİÖŞÜ]+/, '').trim() : '—';
         const displayCountry = window.getCountryName ? window.getCountryName(cleanCountry) : cleanCountry;
-        
-        const showProfileMatch = Boolean(window.personalizationEnabled);
-        const profileMatchValue = row._scoringDetails?.personalized_match?.personal_field_fit ?? Math.round(row._scoringDetails?.components?.academic_fit || 0);
+        const band = scoreBand(row._score);
+        const confidence = confidenceLabel(n.confidenceSummary);
+        const language = compactList(n.teachingLanguage) || (window.t ? window.t('unknown_value') : 'Unknown');
+        const annualCost = formatMoney(n.totalAcademicCost ?? n.tuitionPerYear);
+        const city = displayValue(n.city);
+        const degree = displayValue(n.degree);
+        const admission = n.eligibleForNonEu === true
+            ? (window.currentLanguage === 'tr' ? 'AB dışı uygun' : 'Non-EU eligible')
+            : n.eligibleForNonEu === false
+                ? (window.currentLanguage === 'tr' ? 'AB dışı uygun değil' : 'Not Non-EU eligible')
+                : riskLabel(n.admissionRisk !== 'unknown' ? n.admissionRisk : n.admissionMode);
+        const housing = riskLabel(n.housingDifficulty);
+        const deadline = n.deadline ? displayValue(n.deadline) : '';
+        const profileMatch = row._scoringDetails?.personalized_match?.personal_field_fit;
+        const university = window.localizedField(n.universityName) || (window.currentLanguage === 'tr' ? 'Üniversite adı doğrulanmalı' : 'University name needs verification');
+        const program = window.localizedField(n.programName) || (window.currentLanguage === 'tr' ? 'Program adı doğrulanmalı' : 'Program name needs verification');
 
-        let profileMatchHTML = showProfileMatch
-            ? `<td>${Number.isFinite(profileMatchValue) ? `<span class="profile-match-badge">${profileMatchValue}%</span>` : '-'}</td>`
-            : '';
-
-        const t = window.t || (k => k);
-        const btnText = window.currentLanguage === 'tr' ? 'İncele ↗' : 'View ↗';
-
-        tr.innerHTML = `
-            <td><span style="color:var(--text-muted); font-weight:700;">${i + 1}</span></td>
-            <td class="fav-cell" style="cursor: pointer; font-size: 16px;">${favIcon}</td>
-            <td>
-                <div class="uni-cell">
-                    <strong>${n ? window.localizedField(n.universityName) : (window.localizedValue(row.display_name || row.name))}</strong>
+        const article = document.createElement('article');
+        article.className = 'program-card';
+        article.setAttribute('role', 'listitem');
+        article.dataset.programId = rid;
+        article.innerHTML = `
+            <div class="program-card__rank" aria-label="Rank ${i + 1}"><span>${String(i + 1).padStart(2, '0')}</span></div>
+            <div class="program-card__content">
+                <div class="program-card__eyebrow">
+                    <span>${escapeHtml([city, displayCountry].filter(value => value && value !== '—').join(' · ') || '—')}</span>
+                    <span class="confidence-badge confidence-badge--${confidence.key}">${escapeHtml(confidence.label)}</span>
                 </div>
-            </td>
-            <td>
-                <div class="program-cell">
-                    ${n ? window.localizedField(n.programName) || "—" : "—"}
-                    ${n && n.degree ? `<br><small style="color:var(--text-muted)">${window.localizedField(n.degree)}</small>` : ""}
+                <h3>${escapeHtml(university)}</h3>
+                <p class="program-card__program">${escapeHtml(program)}</p>
+                <div class="program-card__meta">
+                    <span>${escapeHtml(degree)}</span>
+                    ${n.ects ? `<span>${escapeHtml(n.ects)} ECTS</span>` : ''}
+                    ${n.duration ? `<span>${escapeHtml(n.duration)}</span>` : ''}
+                    ${deadline ? `<span>${escapeHtml(deadline)}</span>` : ''}
                 </div>
-            </td>
-            <td>${n ? (window.localizedField(n.city) || "—") : (window.localizedValue(row.city) || '-')}</td>
-            <td><span class="country-gradient" data-country="${cleanCountry}">${displayCountry}</span></td>
-            ${profileMatchHTML}
-            <td><span class="score-badge" style="background: ${scColor}">${row._score.toFixed(2)}</span></td>
-            <td>${n ? formatMoney(n.totalAcademicCost ?? n.tuitionPerYear) : `€${parseFloat(row.tuition_eur_per_year || 0).toFixed(0)}`}</td>
-            <td><button class="detail-btn">${btnText}</button></td>
-        `;
-        
-        els.tableBody.appendChild(tr);
-        
-        tr.querySelector('.fav-cell').addEventListener('click', (e) => {
-            e.stopPropagation();
+                <dl class="decision-grid">
+                    <div class="decision-item decision-item--score"><dt>${escapeHtml(window.t ? window.t('technical_match') : 'Technical match')}</dt><dd><span class="fit-score fit-score--${band.key}">${Number(row._score).toFixed(1)}</span><small>${escapeHtml(band.label)}</small>${window.personalizationEnabled && Number.isFinite(profileMatch) ? `<em>${Math.round(profileMatch)}% ${escapeHtml(window.t('profile_match'))}</em>` : ''}</dd></div>
+                    <div class="decision-item"><dt>${escapeHtml(window.t ? window.t('teaching_language') : 'Teaching language')}</dt><dd>${escapeHtml(language)}</dd></div>
+                    <div class="decision-item"><dt>${escapeHtml(window.t ? window.t('annual_cost') : 'Annual cost')}</dt><dd>${escapeHtml(annualCost)}</dd></div>
+                    <div class="decision-item"><dt>${escapeHtml(window.t ? window.t('admission_reality') : 'Admission reality')}</dt><dd>${escapeHtml(admission)}</dd></div>
+                    <div class="decision-item"><dt>${escapeHtml(window.t ? window.t('housing_risk') : 'Housing risk')}</dt><dd>${escapeHtml(housing)}</dd></div>
+                </dl>
+            </div>
+            <div class="program-card__actions">
+                <button class="favorite-button${isFav ? ' is-active' : ''}" type="button" aria-pressed="${String(isFav)}" aria-label="${escapeHtml(window.t ? window.t(isFav ? 'remove_favorite' : 'add_favorite') : 'Favorite')}">${isFav ? '★' : '☆'}</button>
+                <button class="detail-btn" type="button">${escapeHtml(window.t ? window.t('view_program') : 'View program')} <span aria-hidden="true">→</span></button>
+            </div>`;
+
+        article.querySelector('.favorite-button').addEventListener('click', () => {
             toggleFavorite(rid);
         });
-        
-        tr.addEventListener('click', () => openDrawer(row));
+        article.querySelector('.detail-btn').addEventListener('click', () => openDrawer(row));
+        els.tableBody.appendChild(article);
     });
 }
 
@@ -721,6 +859,7 @@ function renderTable() {
 
 function openDrawer(data) {
     try {
+        window.lastDrawerTrigger = document.activeElement;
         const n = window.uniDataAdapter ? window.uniDataAdapter.normalizeUniversityRecord(data) : null;
         if (!n) return;
         n.programUrl = safeUrl(n.programUrl);
@@ -734,13 +873,37 @@ function openDrawer(data) {
         const rid = n.id;
         const isFav = favorites.has(rid);
         els.drawer.favBtn.innerHTML = isFav ? '★' : '☆';
+        els.drawer.favBtn.setAttribute('aria-pressed', String(isFav));
+        els.drawer.favBtn.setAttribute('aria-label', window.t ? window.t(isFav ? 'remove_favorite' : 'add_favorite') : 'Favorite');
         els.drawer.favBtn.onclick = () => {
             toggleFavorite(rid);
-            els.drawer.favBtn.innerHTML = favorites.has(rid) ? '★' : '☆';
+            const nowFavorite = favorites.has(rid);
+            els.drawer.favBtn.innerHTML = nowFavorite ? '★' : '☆';
+            els.drawer.favBtn.setAttribute('aria-pressed', String(nowFavorite));
+            els.drawer.favBtn.setAttribute('aria-label', window.t ? window.t(nowFavorite ? 'remove_favorite' : 'add_favorite') : 'Favorite');
         };
 
         const scoreVal = data._score ? data._score.toFixed(2) : '0.00';
         const isTurkish = window.currentLanguage === 'tr';
+        const band = scoreBand(data._score);
+        const confidence = confidenceLabel(n.confidenceSummary);
+        const languageText = compactList(n.teachingLanguage) || (window.t ? window.t('unknown_value') : 'Unknown');
+        const decisionHeroHTML = `
+            <section class="drawer-decision-hero">
+                <div class="drawer-decision-hero__topline">
+                    <span>${escapeHtml([displayValue(n.city), window.getCountryName ? window.getCountryName(n.country) : n.country].filter(Boolean).join(' · '))}</span>
+                    <span class="confidence-badge confidence-badge--${confidence.key}">${escapeHtml(confidence.label)}</span>
+                </div>
+                <h3>${escapeHtml(displayValue(n.programName))}</h3>
+                <div class="drawer-score-line"><strong class="fit-score fit-score--${band.key}">${escapeHtml(scoreVal)}</strong><span><b>${escapeHtml(band.label)}</b><small>${escapeHtml(window.t ? window.t('technical_match') : 'Technical match')}</small></span></div>
+                <dl class="drawer-decision-grid">
+                    <div><dt>${escapeHtml(window.t ? window.t('teaching_language') : 'Teaching language')}</dt><dd>${escapeHtml(languageText)}</dd></div>
+                    <div><dt>${escapeHtml(window.t ? window.t('annual_cost') : 'Annual cost')}</dt><dd>${escapeHtml(formatMoney(n.totalAcademicCost ?? n.tuitionPerYear))}</dd></div>
+                    <div><dt>ECTS / ${escapeHtml(window.t ? window.t('degree') : 'Degree')}</dt><dd>${escapeHtml([n.ects ? `${n.ects} ECTS` : '', displayValue(n.degree)].filter(Boolean).join(' · ') || '—')}</dd></div>
+                    <div><dt>${escapeHtml(window.t ? window.t('winter_deadline') : 'Deadline')}</dt><dd>${escapeHtml(n.deadline ? displayValue(n.deadline) : '—')}</dd></div>
+                </dl>
+                ${n.lastVerified ? `<p class="drawer-verified">${escapeHtml(window.t ? window.t('last_verified') : 'Last verified')}: ${escapeHtml(n.lastVerified)}</p>` : ''}
+            </section>`;
         const verificationBanner = n.needsVerification
             ? `<div class="verification-banner warning"><strong>${isTurkish ? 'Doğrulama gerekli' : 'Verification required'}</strong><span>${isTurkish ? 'Kritik kayıt alanları resmi kaynaklarla yeniden kontrol edilmelidir.' : 'Critical record fields should be rechecked against official sources.'}</span></div>`
             : `<div class="verification-banner"><strong>${isTurkish ? 'Kaynak durumu' : 'Source status'}</strong><span>${n.sources.length ? (isTurkish ? `${n.sources.length} kaynak kaydı mevcut.` : `${n.sources.length} source record(s) available.`) : (isTurkish ? 'Kaynak kaydı sınırlı.' : 'Source evidence is limited.')}</span></div>`;
@@ -908,6 +1071,7 @@ function openDrawer(data) {
         `;
 
         document.getElementById('drawer-info').innerHTML =
+            decisionHeroHTML +
             verificationBanner +
             basicInfoHTML +
             deptHTML +
@@ -971,6 +1135,10 @@ function openDrawer(data) {
 
         els.drawer.panel.classList.add('active');
         els.drawer.overlay.classList.add('active');
+        els.drawer.panel.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('drawer-open');
+        els.drawer.body.scrollTop = 0;
+        setTimeout(() => els.drawer.closeBtn.focus(), 40);
     } catch (err) {
         console.error('Drawer Error:', err);
     }
@@ -978,6 +1146,9 @@ function openDrawer(data) {
 function closeDrawer() {
     els.drawer.panel.classList.remove('active');
     els.drawer.overlay.classList.remove('active');
+    els.drawer.panel.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('drawer-open');
+    if (window.lastDrawerTrigger instanceof HTMLElement) window.lastDrawerTrigger.focus();
 }
 
 document.addEventListener('languageChanged', async () => {
@@ -1019,7 +1190,7 @@ function startApplication() {
         const message = window.currentLanguage === 'tr'
             ? 'Uygulama başlatılamadı. Lütfen sayfayı yenileyin.'
             : 'The application could not start. Please refresh the page.';
-        els.tableBody.innerHTML = `<tr><td colspan="10" class="empty-results">${escapeHtml(message)}</td></tr>`;
+        els.tableBody.innerHTML = `<div class="empty-results-card" role="alert"><h3>${escapeHtml(message)}</h3></div>`;
     });
 }
 

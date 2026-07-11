@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UniRank - University Dashboard</title>
+    <title>UniRank | Aerospace & Space Master's Finder</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=7">
+    <link rel="stylesheet" href="style.css?v=8">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
@@ -19,130 +19,184 @@
 </head>
 <body>
     <div class="app-container">
-        <!-- Sidebar -->
-        <aside class="sidebar">
-            <div class="logo-container">
-                <div class="logo-icon">🎓</div>
-                <h1 data-i18n="app_title">UniRank</h1>
+        <button class="sidebar-scrim" id="sidebar-scrim" type="button" aria-label="Close filters" data-i18n-aria-label="close_filters"></button>
+
+        <aside class="sidebar" id="filter-sidebar" aria-label="Filters" data-i18n-aria-label="filters_title">
+            <div class="sidebar-brand">
+                <div class="brand-lockup">
+                    <span class="brand-mark" aria-hidden="true">
+                        <svg viewBox="0 0 32 32" role="img"><path d="M5 18c4-8 10-12 20-13-1 10-5 16-13 20l-2-5-5-2Z"></path><path d="m13 19 6-6"></path><circle cx="21.5" cy="10.5" r="2"></circle></svg>
+                    </span>
+                    <span>
+                        <strong data-i18n="app_title">UniRank</strong>
+                        <small data-i18n="brand_tagline">Aerospace decision lab</small>
+                    </span>
+                </div>
+                <button class="icon-button sidebar-close" id="sidebar-close" type="button" aria-label="Close filters" data-i18n-aria-label="close_filters">&times;</button>
             </div>
 
-            
-            <div class="card" style="background: rgba(99, 102, 241, 0.05); border: 1px solid rgba(99, 102, 241, 0.2); position: relative; overflow: hidden;">
-                <div style="position: absolute; top:0; left:0; width:4px; height:100%; background: var(--primary);"></div>
-                <h2 data-i18n="profile">Profile</h2>
-                <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">Personalize rankings based on your academic background, interests, and budget.</p>
-                <button id="btn-use-profile" class="btn btn-outline" style="width: 100%; justify-content: center; border-color: var(--primary); color: var(--text-main);" onclick="window.togglePersonalization()">
-                    <span class="icon">⚙️</span> <span data-i18n="use_my_profile">Use My Profile</span>
-                </button>
-            </div>
+            <button id="btn-use-profile" class="profile-cta" type="button" onclick="window.togglePersonalization()">
+                <span class="profile-cta__icon" aria-hidden="true">◎</span>
+                <span class="profile-cta__copy">
+                    <strong data-i18n="use_my_profile">Use My Profile</strong>
+                    <small data-i18n="profile_cta_desc">Field, budget and risk preferences</small>
+                </span>
+                <span aria-hidden="true">→</span>
+            </button>
 
-            <div class="card">
-                <h2 data-i18n="filters_title">Filters</h2>
+            <section class="filter-card" aria-labelledby="quick-filters-title">
+                <div class="filter-card__header">
+                    <div>
+                        <span class="section-kicker">01</span>
+                        <h2 id="quick-filters-title" data-i18n="quick_filters">Quick filters</h2>
+                    </div>
+                    <button class="text-button" id="clear-filters-sidebar" type="button" data-i18n="clear_all">Clear all</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="search-input" data-i18n="search_programs">Search programs</label>
+                    <div class="search-field">
+                        <span aria-hidden="true">⌕</span>
+                        <input type="text" id="search-input" data-i18n-placeholder="search_programs_hint" placeholder="University, program, city or keyword">
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label for="country-filter" data-i18n="countries_regions">Countries & Regions</label>
-                    <div id="country-tags" class="tag-list" style="margin-bottom: 8px;"></div>
                     <select id="country-filter">
                         <option value="" data-i18n="search_country">Search country...</option>
                     </select>
+                    <div id="country-tags" class="tag-list"></div>
                 </div>
+
                 <div class="form-group category-filter-panel">
-                    <label data-i18n="academic_field_categories">Academic / Field Categories</label>
+                    <label for="categorySearchInput" data-i18n="academic_field_categories">Technical focus</label>
                     <div class="category-search-box">
-                        <input type="text" id="categorySearchInput" data-i18n-placeholder="search_categories" placeholder="Search field, method, technology or keyword...">
+                        <input type="text" id="categorySearchInput" data-i18n-placeholder="search_categories" placeholder="GNC, CFD, propulsion, structures...">
                     </div>
                     <div id="categorySuggestions" class="category-suggestions"></div>
-                    <div class="selected-category-section" style="margin-top: 12px;">
-                        <span data-i18n="selected_categories" style="font-size: 12px; color: var(--text-muted); display: block; margin-bottom: 6px;">Selected Categories</span>
-                        <div id="selectedCategoryChips" class="selected-category-chips"></div>
-                    </div>
-                    <div class="popular-category-section" style="margin-top: 12px;">
-                        <span data-i18n="popular_categories" style="font-size: 12px; color: var(--text-muted); display: block; margin-bottom: 6px;">Popular Categories</span>
+                    <div id="selectedCategoryChips" class="selected-category-chips" aria-live="polite"></div>
+                    <div class="popular-category-section">
+                        <span class="field-help" data-i18n="popular_categories">Popular Categories</span>
                         <div id="popularCategoryChips" class="popular-category-chips"></div>
                     </div>
-                    <input type="text" id="search-input" data-i18n-placeholder="search_manual" placeholder="Or type manual search..." style="margin-top: 16px;">
                 </div>
-                <!-- Hard Filters -->
-                <div class="form-group" style="margin-top: 16px;">
-                    <label data-i18n="degree_level">Degree Level</label>
-                    <select id="degree-filter">
-                        <option value="All" data-i18n="all_degrees">All Degrees</option>
-                        <option value="BSc" data-i18n="bsc">Bachelor (BSc)</option>
-                        <option value="MSc" data-i18n="msc">Master (MSc)</option>
-                        <option value="PhD" data-i18n="phd">Doctorate (PhD)</option>
-                    </select>
+
+                <div class="filter-grid">
+                    <div class="form-group">
+                        <label for="degree-filter" data-i18n="degree_level">Degree Level</label>
+                        <select id="degree-filter">
+                            <option value="All" data-i18n="all_degrees">All Degrees</option>
+                            <option value="MSc" data-i18n="msc">Master (MSc)</option>
+                            <option value="BSc" data-i18n="bsc">Bachelor (BSc)</option>
+                            <option value="PhD" data-i18n="phd">Doctorate (PhD)</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="form-group" style="flex-direction: row; align-items: center; justify-content: space-between; gap: 8px; margin-top: 8px; padding: 12px; background: rgba(255,255,255,0.03); border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
-                    <label for="english-only-filter" style="margin: 0; cursor: pointer; font-weight: 500;" data-i18n="only_english">Only English-taught</label>
-                    <label class="custom-switch">
+
+                <label class="filter-toggle-row" for="english-only-filter">
+                    <span>
+                        <strong data-i18n="only_english">Only English-taught</strong>
+                        <small data-i18n="english_filter_desc">Hide mixed or unverified language options</small>
+                    </span>
+                    <span class="custom-switch">
                         <input type="checkbox" id="english-only-filter">
                         <span class="switch-slider"></span>
-                    </label>
-                </div>
-                <div class="form-group" style="margin-top: 16px; padding: 16px; background: rgba(0,0,0,0.2); border-radius: 12px; border: 1px solid rgba(255,255,255,0.05);">
-                    <label style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                        <span style="font-weight: 600; color: var(--text-main); font-size: 14px;" data-i18n="max_tuition">Max Tuition</span>
-                        <span id="tuition-val-display" style="color: var(--success); font-weight: 700; background: rgba(16, 185, 129, 0.1); padding: 4px 10px; border-radius: 12px; font-size: 12px; border: 1px solid rgba(16, 185, 129, 0.2);">Any</span>
+                    </span>
+                </label>
+
+                <div class="tuition-control">
+                    <label for="max-tuition-filter">
+                        <span data-i18n="max_tuition">Max Tuition</span>
+                        <output id="tuition-val-display" for="max-tuition-filter">Any</output>
                     </label>
                     <input type="range" id="max-tuition-filter" min="0" max="25000" step="500" value="25000" class="modern-range">
-                    <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--text-muted); margin-top: 8px; font-weight: 500;">
-                        <span>0€</span>
-                        <span>25k€+</span>
-                    </div>
+                    <div class="range-ends"><span>€0</span><span>€25k+</span></div>
                 </div>
-                <div class="form-group" style="flex-direction: row; align-items: center; justify-content: space-between; gap: 8px; margin-top: 16px; margin-bottom: 8px; padding: 12px; background: rgba(245, 158, 11, 0.05); border-radius: 12px; border: 1px solid rgba(245, 158, 11, 0.2);">
-                    <label for="fav-filter" style="margin: 0; cursor: pointer; color: #f59e0b; font-weight: 600;" data-i18n="show_favorites">⭐ Show Favorites</label>
-                    <label class="custom-switch">
+
+                <label class="filter-toggle-row filter-toggle-row--favorite" for="fav-filter">
+                    <span><strong data-i18n="show_favorites">Show Favorites</strong></span>
+                    <span class="custom-switch">
                         <input type="checkbox" id="fav-filter">
-                        <span class="switch-slider" style="border-color: rgba(245, 158, 11, 0.3);"></span>
-                    </label>
-                </div>
-            </div>
+                        <span class="switch-slider"></span>
+                    </span>
+                </label>
+            </section>
 
-            <div class="card">
-                <h2 data-i18n="ranking_weights">Ranking Weights</h2>
-                <div class="form-group">
-                    <label data-i18n="preset_profile">Preset Profile</label>
-                    <select id="preset-profile-select">
-                        <option value="balanced" data-i18n="preset_balanced">Balanced</option>
-                        <option value="low_cost" data-i18n="preset_low_cost">Low Cost Priority</option>
-                        <option value="best_fit" data-i18n="preset_best_fit">Best Aerospace / Space Fit</option>
-                        <option value="safe_choice" data-i18n="preset_safe_choice">English-Only Safe Choice</option>
-                        <option value="career" data-i18n="preset_career">Career-Oriented</option>
-                        <option value="custom" data-i18n="preset_custom">Custom</option>
-                    </select>
+            <details class="filter-card advanced-card">
+                <summary>
+                    <span>
+                        <span class="section-kicker">02</span>
+                        <strong data-i18n="advanced_ranking">Advanced ranking</strong>
+                        <small data-i18n="advanced_ranking_desc">Tune how each decision factor affects the result.</small>
+                    </span>
+                    <span class="summary-chevron" aria-hidden="true">⌄</span>
+                </summary>
+                <div class="advanced-card__body">
+                    <div class="form-group">
+                        <label for="preset-profile-select" data-i18n="preset_profile">Preset Profile</label>
+                        <select id="preset-profile-select">
+                            <option value="balanced" data-i18n="preset_balanced">Balanced</option>
+                            <option value="low_cost" data-i18n="preset_low_cost">Low Cost Priority</option>
+                            <option value="best_fit" data-i18n="preset_best_fit">Best Aerospace / Space Fit</option>
+                            <option value="safe_choice" data-i18n="preset_safe_choice">English-Only Safe Choice</option>
+                            <option value="career" data-i18n="preset_career">Career-Oriented</option>
+                            <option value="custom" data-i18n="preset_custom">Custom</option>
+                        </select>
+                    </div>
+                    <div class="weight-sliders">
+                        <div class="slider-group"><label for="w-academic"><span data-i18n="w_academic">Academic / Field Fit</span> <span id="val-academic">30</span></label><input type="range" id="w-academic" min="0" max="100" step="1" value="30"></div>
+                        <div class="slider-group"><label for="w-eligibility"><span data-i18n="w_eligibility">Eligibility & Language</span> <span id="val-eligibility">20</span></label><input type="range" id="w-eligibility" min="0" max="100" step="1" value="20"></div>
+                        <div class="slider-group"><label for="w-cost"><span data-i18n="w_cost">Cost & Funding</span> <span id="val-cost">20</span></label><input type="range" id="w-cost" min="0" max="100" step="1" value="20"></div>
+                        <div class="slider-group"><label for="w-career"><span data-i18n="w_career">Career / Research</span> <span id="val-career">15</span></label><input type="range" id="w-career" min="0" max="100" step="1" value="15"></div>
+                        <div class="slider-group"><label for="w-living"><span data-i18n="w_living">Living Risk</span> <span id="val-living">10</span></label><input type="range" id="w-living" min="0" max="100" step="1" value="10"></div>
+                        <div class="slider-group"><label for="w-confidence"><span data-i18n="w_confidence">Data Confidence</span> <span id="val-confidence">5</span></label><input type="range" id="w-confidence" min="0" max="100" step="1" value="5"></div>
+                    </div>
                 </div>
-                <div class="weight-sliders">
-                    <div class="slider-group">
-                        <label><span data-i18n="w_academic">Academic / Field Fit</span> <span id="val-academic">30</span></label>
-                        <input type="range" id="w-academic" min="0" max="100" step="1" value="30">
-                    </div>
-                    <div class="slider-group">
-                        <label><span data-i18n="w_eligibility">Eligibility & Language</span> <span id="val-eligibility">20</span></label>
-                        <input type="range" id="w-eligibility" min="0" max="100" step="1" value="20">
-                    </div>
-                    <div class="slider-group">
-                        <label><span data-i18n="w_cost">Cost & Funding</span> <span id="val-cost">20</span></label>
-                        <input type="range" id="w-cost" min="0" max="100" step="1" value="20">
-                    </div>
-                    <div class="slider-group">
-                        <label><span data-i18n="w_career">Career / Research</span> <span id="val-career">15</span></label>
-                        <input type="range" id="w-career" min="0" max="100" step="1" value="15">
-                    </div>
-                    <div class="slider-group">
-                        <label><span data-i18n="w_living">Living Risk</span> <span id="val-living">10</span></label>
-                        <input type="range" id="w-living" min="0" max="100" step="1" value="10">
-                    </div>
-                    <div class="slider-group">
-                        <label><span data-i18n="w_confidence">Data Confidence</span> <span id="val-confidence">5</span></label>
-                        <input type="range" id="w-confidence" min="0" max="100" step="1" value="5">
-                    </div>
-                    <p style="font-size: 11px; color: var(--text-muted); margin-top: 8px; line-height: 1.4;" data-i18n="weight_desc">Scores are normalized automatically. Higher weight means this criterion affects ranking more.</p>
-                </div>
-            </div>
+            </details>
+        </aside>
 
-            <div class="card">
-                <h2 data-i18n="sorting">Sorting</h2>
-                <div class="form-group">
+        <main class="main-content">
+            <header class="top-header">
+                <div class="header-copy">
+                    <span class="eyebrow" data-i18n="dashboard_eyebrow">Aerospace & space decision workspace</span>
+                    <h1 data-i18n="dashboard_title">Aerospace & Space Master's Finder</h1>
+                    <p data-i18n="dashboard_subtitle">Compare technical fit, eligibility, cost and source confidence in one clear view.</p>
+                </div>
+                <div class="header-actions">
+                    <div class="auth-section">
+                        <div id="auth-links">
+                            <button onclick="window.openLoginModal()" class="btn btn-outline" data-i18n="sign_in">Sign in</button>
+                            <button onclick="window.openProfileModal()" class="btn btn-primary" data-i18n="my_profile">My Profile</button>
+                        </div>
+                        <div id="auth-profile">
+                            <span class="user-avatar" aria-hidden="true">U</span>
+                            <span id="auth-user-name">User</span>
+                            <button onclick="window.openProfileModal()" class="btn btn-outline" data-i18n="my_profile">My Profile</button>
+                            <button onclick="window.handleLogout()" class="btn btn-quiet" data-i18n="logout">Log out</button>
+                        </div>
+                    </div>
+                    <div class="language-toggle" role="group" aria-label="Language">
+                        <button type="button" data-lang="en" onclick="window.setLanguage('en')">EN</button>
+                        <button type="button" data-lang="tr" onclick="window.setLanguage('tr')">TR</button>
+                    </div>
+                </div>
+            </header>
+
+            <section class="workspace-toolbar" aria-label="Results controls">
+                <div class="toolbar-leading">
+                    <button class="filter-open-button" id="filter-toggle" type="button" aria-controls="filter-sidebar" aria-expanded="false">
+                        <span aria-hidden="true">☷</span>
+                        <span data-i18n="filter_toggle">Filters</span>
+                        <span class="filter-count" id="mobile-filter-count">0</span>
+                    </button>
+                    <div class="view-toggle" role="group" aria-label="View">
+                        <button type="button" id="btn-view-list" class="active" aria-pressed="true" aria-controls="list-view-container" onclick="window.switchView('list')" data-i18n="view_list">List</button>
+                        <button type="button" id="btn-view-map" aria-pressed="false" aria-controls="map-view-container" onclick="window.switchView('map')" data-i18n="view_map">Map</button>
+                    </div>
+                </div>
+                <div class="toolbar-sort">
+                    <label for="sort-select" data-i18n="sort_by">Sort by</label>
                     <select id="sort-select">
                         <option value="score_desc" data-i18n="sort_score_desc">Score (High → Low)</option>
                         <option value="tuition_asc" data-i18n="sort_tuition_asc">Tuition Fee (Low → High)</option>
@@ -150,215 +204,142 @@
                         <option value="name_asc" data-i18n="sort_name_asc">University (A → Z)</option>
                     </select>
                 </div>
+            </section>
+
+            <div class="active-filter-bar" id="active-filter-bar" hidden>
+                <span class="active-filter-label" data-i18n="active_filters">Active filters</span>
+                <div id="active-filter-chips" class="active-filter-chips"></div>
+                <button class="text-button" id="clear-active-filters" type="button" data-i18n="clear_all">Clear all</button>
             </div>
 
-            <div class="card map-settings-card">
-                <div class="map-settings-heading">
-                    <div>
-                        <h2 data-i18n="map_display_title">Map display</h2>
-                        <p data-i18n="map_display_desc">Choose how much map detail you want to see.</p>
-                    </div>
-                    <span class="map-settings-icon" aria-hidden="true">🗺️</span>
-                </div>
-                <label class="map-detail-toggle-row" for="map-detail-toggle">
-                    <span>
-                        <strong data-i18n="map_detailed_toggle">Detailed visual map</strong>
-                        <small data-i18n="map_detailed_toggle_desc">Use a real-world map with roads and borders.</small>
-                    </span>
-                    <span class="custom-switch">
-                        <input type="checkbox" id="map-detail-toggle" aria-describedby="map-detail-status">
-                        <span class="switch-slider"></span>
-                    </span>
-                </label>
-                <div class="map-detail-status" id="map-detail-status" data-i18n="map_simple_status">Friendly atlas is on by default.</div>
-            </div>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="main-content">
-            <header class="top-header">
-                <div class="header-titles" style="display: flex; flex-direction: column; gap: 8px;">
-                    <div style="display: flex; align-items: center; gap: 16px;">
-                        <h2 data-i18n="dashboard_title" style="margin: 0;">University Ranking</h2>
-                        <div class="view-toggle" role="group" style="display: flex; background: rgba(0,0,0,0.2); border-radius: 8px; padding: 4px; border: 1px solid rgba(255,255,255,0.05);">
-                            <button type="button" id="btn-view-list" class="active" onclick="window.switchView('list')" style="background: var(--primary); color: white; border: none; padding: 4px 12px; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer;" data-i18n="view_list">List</button>
-                            <button type="button" id="btn-view-map" onclick="window.switchView('map')" style="background: transparent; color: var(--text-muted); border: none; padding: 4px 12px; border-radius: 6px; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s;" data-i18n="view_map">Map</button>
-                        </div>
-                    </div>
-                    <p data-i18n="dashboard_subtitle" style="margin: 0;">Analyze and compare universities based on your personal criteria</p>
-                </div>
-                
-                <div style="display:flex; align-items:center; gap: 16px;">
-                    <div class="auth-section" style="display: flex; gap: 12px; align-items: center; margin-right: 16px;">
-                        <div id="auth-links" style="display: flex; gap: 8px;">
-                            <button onclick="window.openLoginModal()" class="btn btn-sm btn-outline" style="border-color: rgba(255,255,255,0.2)" data-i18n="sign_in">Sign in</button>
-                            <button onclick="window.openLoginModal()" class="btn btn-sm" style="background: var(--primary); color: white;" data-i18n="create_account">Create account</button>
-                        </div>
-                        <div id="auth-profile" style="display: none; gap: 12px; align-items: center;">
-                            <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px;">U</div>
-                            <span id="auth-user-name" style="font-weight: 600; font-size: 14px; color: var(--text-main);">User</span>
-                            <button onclick="window.openProfileModal()" class="btn btn-sm btn-outline" style="border-color: rgba(255,255,255,0.2)" data-i18n="my_profile">My Profile</button>
-                            <button onclick="window.handleLogout()" class="btn btn-sm" style="background: rgba(239, 68, 68, 0.1); color: var(--danger); border: 1px solid rgba(239, 68, 68, 0.2);" data-i18n="logout">Log out</button>
-                        </div>
-                    </div>
-                    <div class="language-toggle" role="group">
-                        <button type="button" data-lang="en" onclick="window.setLanguage('en')">EN</button>
-                        <button type="button" data-lang="tr" onclick="window.setLanguage('tr')">TR</button>
-                    </div>
-                </div>
-            </header>
-
-            <div id="list-view-container">
+            <section id="list-view-container" aria-label="Ranked programs">
                 <div class="kpi-container">
-                    <div class="kpi-card glow-primary">
-                        <div class="kpi-icon">🌍</div>
-                        <div class="kpi-data">
-                            <span class="kpi-label" data-i18n="kpi_programs_found">Programs Found</span>
-                            <div style="display: flex; align-items: baseline; gap: 4px;">
-                                <span class="kpi-value" id="kpi-total">0</span>
-                                <span style="font-size: 13px; color: var(--text-muted); font-weight: 500;"><span data-i18n="kpi_across">across</span> <span id="kpi-countries" style="color: var(--text-main);">0</span> <span data-i18n="kpi_countries">countries</span></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="kpi-card glow-success">
-                        <div class="kpi-icon">💳</div>
-                        <div class="kpi-data">
-                            <span class="kpi-label" data-i18n="kpi_avg_tuition">Avg. Yearly Tuition</span>
-                            <span class="kpi-value" id="kpi-tuition" style="color: var(--success);">0€</span>
-                        </div>
-                    </div>
-                    <div class="kpi-card glow-warning">
-                        <div class="kpi-icon">🎯</div>
-                        <div class="kpi-data">
-                            <span class="kpi-label" data-i18n="kpi_avg_score">Avg. Overall Score</span>
-                            <div style="display: flex; align-items: baseline; gap: 4px;">
-                                <span class="kpi-value" id="kpi-score" style="color: #fbbf24;">0.0</span>
-                                <span style="font-size: 15px; color: var(--text-muted); font-weight: 600;">/ 10</span>
-                            </div>
-                        </div>
-                    </div>
+                    <article class="kpi-card">
+                        <span class="kpi-icon kpi-icon--blue" aria-hidden="true">01</span>
+                        <div class="kpi-data"><span class="kpi-label" data-i18n="result_programs">Programs</span><strong class="kpi-value" id="kpi-total">0</strong><small><span id="kpi-countries">0</span> <span data-i18n="kpi_countries">countries</span></small></div>
+                    </article>
+                    <article class="kpi-card">
+                        <span class="kpi-icon kpi-icon--teal" aria-hidden="true">€</span>
+                        <div class="kpi-data"><span class="kpi-label" data-i18n="kpi_avg_tuition">Avg. Yearly Tuition</span><strong class="kpi-value" id="kpi-tuition">—</strong><small data-i18n="cost_data_desc">Known tuition records only</small></div>
+                    </article>
+                    <article class="kpi-card">
+                        <span class="kpi-icon kpi-icon--amber" aria-hidden="true">◎</span>
+                        <div class="kpi-data"><span class="kpi-label" data-i18n="kpi_avg_score">Avg. Overall Score</span><strong class="kpi-value"><span id="kpi-score">0.0</span><small> / 10</small></strong><small data-i18n="technical_match">Technical match</small></div>
+                    </article>
+                    <article class="kpi-card">
+                        <span class="kpi-icon kpi-icon--slate" aria-hidden="true">%</span>
+                        <div class="kpi-data"><span class="kpi-label" data-i18n="cost_data">Cost data</span><strong class="kpi-value" id="kpi-cost-coverage">0%</strong><small data-i18n="cost_data_desc">Known tuition records only</small></div>
+                    </article>
                 </div>
 
-                <div class="table-card">
-                    <div class="table-header">
-                        <h3 data-i18n="ranked_results">Ranked Results</h3>
-                        <div class="loader" id="loader"></div>
+                <section class="results-shell" aria-labelledby="ranked-results-title">
+                    <div class="results-header">
+                        <div><span class="section-kicker">03</span><h2 id="ranked-results-title" data-i18n="ranked_results">Ranked Results</h2><p data-i18n="decision_snapshot">Scan the essentials, then open a program for source-backed details.</p></div>
+                        <div class="loader" id="loader" role="status" aria-label="Loading"></div>
                     </div>
-                    <div class="table-responsive">
-                        <table id="results-table">
-                            <thead>
-                                <!-- Header rendered via JS -->
-                            </thead>
-                            <tbody id="table-body">
-                                <!-- Rows rendered via JS -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
+                    <div id="table-body" class="results-grid" role="list" aria-live="polite"></div>
+                </section>
+            </section>
 
-            <div id="map-view-container" style="display: none; height: calc(100vh - 140px); border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.05); position: relative; margin-top: 16px;">
-                <div id="map" style="width: 100%; height: 100%; background: #0f172a;"></div>
-                
-                <!-- Map Summary Overlay -->
-                <div class="map-summary-overlay" style="position: absolute; top: 16px; left: 16px; z-index: 1000; display: flex; flex-direction: column; gap: 12px; pointer-events: none;">
-                    <div class="map-mode-badge" id="map-mode-badge" data-i18n="map_simple_badge">Friendly atlas</div>
-                    <div class="map-kpi-card" style="pointer-events: auto; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
-                        <div style="font-size: 20px;">🌍</div>
-                        <div>
-                            <div style="font-size: 11px; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;" data-i18n="map_kpi_shown">Universities Shown</div>
-                            <div style="font-size: 18px; font-weight: 700; color: var(--text-main); line-height: 1.2;" id="map-kpi-count">0</div>
+            <section id="map-view-container" class="map-workspace" aria-label="Program map" hidden>
+                <aside class="map-results-panel" aria-labelledby="map-results-heading">
+                    <div class="map-results-header">
+                        <span class="section-kicker">Map</span>
+                        <h2 id="map-results-heading" data-i18n="map_top_results">Top mapped results</h2>
+                        <p data-i18n="map_results_desc">Select a program to focus its location.</p>
+                        <div class="map-results-status" id="map-results-status" aria-live="polite"></div>
+                    </div>
+                    <div id="map-results-list" class="map-results-list"></div>
+                </aside>
+
+                <div class="map-canvas-shell">
+                    <div id="map" role="region" aria-label="Interactive university program map"></div>
+                    <div id="map-fallback" class="map-fallback" role="status">
+                        <strong data-i18n="map_fallback_title">Map unavailable</strong>
+                        <span data-map-fallback-message data-i18n="map_fallback_desc">The ranked list is still available.</span>
+                        <button type="button" class="btn btn-primary" onclick="window.switchView('list')" data-i18n="back_to_list">Back to list</button>
+                    </div>
+
+                    <div class="map-toolbar-overlay">
+                        <div class="map-stat-strip" aria-live="polite">
+                            <span><strong id="map-kpi-count">0</strong><small data-i18n="map_programs">programs</small></span>
+                            <span><strong id="map-kpi-universities">0</strong><small data-i18n="map_universities">universities</small></span>
+                            <span class="map-stat-missing"><strong id="map-kpi-missing">0</strong><small data-i18n="map_missing_locations">missing locations</small></span>
+                        </div>
+                        <div class="map-toolbar-actions">
+                            <button class="btn map-focus-button" id="btn-fit-map" type="button" onclick="window.fitMapToResults()" data-i18n="map_focus_results">Focus results</button>
+                            <label class="map-context-toggle" for="map-detail-toggle">
+                                <span><strong data-i18n="map_context_toggle">More map context</strong><small id="map-detail-status" data-i18n="map_context_desc">Show additional place labels.</small></span>
+                                <span class="custom-switch"><input type="checkbox" id="map-detail-toggle" aria-describedby="map-detail-status"><span class="switch-slider"></span></span>
+                            </label>
                         </div>
                     </div>
-                    <div class="map-kpi-card" style="pointer-events: auto; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.4);">
-                        <div style="font-size: 20px;">🎯</div>
-                        <div>
-                            <div style="font-size: 11px; color: var(--text-muted); font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px;" data-i18n="map_kpi_avg">Avg Score</div>
-                            <div style="font-size: 18px; font-weight: 700; color: #fbbf24; line-height: 1.2;" id="map-kpi-avg-score">0.0</div>
-                        </div>
-                    </div>
-                    <button class="btn btn-sm" id="btn-fit-map" onclick="window.fitMapToResults()" style="pointer-events: auto; background: rgba(255,255,255,0.1); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.2); color: white;" data-i18n="fit_map">Fit to Results</button>
-                </div>
-                
-                <div class="map-legend" style="position: absolute; bottom: 16px; right: 16px; z-index: 1000; pointer-events: auto; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 12px 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.4); font-size: 12px; color: var(--text-muted);">
-                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-                        <span style="width: 12px; height: 12px; border-radius: 50%; background: #10b981; box-shadow: 0 0 8px rgba(16,185,129,0.4);"></span>
-                        <span data-i18n="legend_excellent">Excellent (8.5+)</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-                        <span style="width: 12px; height: 12px; border-radius: 50%; background: #3b82f6; box-shadow: 0 0 8px rgba(59,130,246,0.4);"></span>
-                        <span data-i18n="legend_strong">Strong (7.0 - 8.4)</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
-                        <span style="width: 12px; height: 12px; border-radius: 50%; background: #f59e0b; box-shadow: 0 0 8px rgba(245,158,11,0.4);"></span>
-                        <span data-i18n="legend_moderate">Moderate (5.5 - 6.9)</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 8px;">
-                        <span style="width: 12px; height: 12px; border-radius: 50%; background: #64748b;"></span>
-                        <span data-i18n="legend_weak">Weak (< 5.5)</span>
+
+                    <div class="map-legend" aria-label="Score legend">
+                        <strong data-i18n="map_score_legend">Fit score</strong>
+                        <span><i class="legend-dot legend-dot--excellent"></i><span data-i18n="legend_excellent">High fit (6.0+)</span></span>
+                        <span><i class="legend-dot legend-dot--strong"></i><span data-i18n="legend_strong">Good fit (5.5–5.9)</span></span>
+                        <span><i class="legend-dot legend-dot--moderate"></i><span data-i18n="legend_moderate">Moderate fit (5.0–5.4)</span></span>
+                        <span><i class="legend-dot legend-dot--weak"></i><span data-i18n="legend_weak">Lower fit (&lt;5.0)</span></span>
                     </div>
                 </div>
-            </div>
+            </section>
         </main>
 
-        <!-- Detail Drawer -->
         <div class="drawer-overlay" id="drawer-overlay"></div>
-        <aside class="drawer" id="detail-drawer">
+        <aside class="drawer" id="detail-drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
             <div class="drawer-header">
-                <h2 id="drawer-title">University Name</h2>
-                <div style="display: flex; gap: 12px; align-items: center;">
-                    <button id="drawer-fav-btn" style="background: none; border: none; font-size: 24px; cursor: pointer;">☆</button>
-                    <button class="close-btn" id="drawer-close">&times;</button>
+                <div><span class="section-kicker" data-i18n="decision_snapshot">Decision snapshot</span><h2 id="drawer-title">University Name</h2></div>
+                <div class="drawer-actions">
+                    <button id="drawer-fav-btn" class="icon-button" type="button" aria-label="Add favorite">☆</button>
+                    <button class="icon-button close-btn" id="drawer-close" type="button" aria-label="Close">&times;</button>
                 </div>
             </div>
             <div class="drawer-content" id="drawer-body">
-                <div class="radar-container" style="position: relative; width: 100%; height: 300px; display: flex; justify-content: center; margin-bottom: 24px;">
-                    <canvas id="radarChart"></canvas>
-                </div>
+                <div class="radar-container"><canvas id="radarChart" aria-label="Program score breakdown"></canvas></div>
                 <div id="drawer-info"></div>
             </div>
         </aside>
     </div>
-    
-    <!-- Using a mock/local JSON or API depending on deployment -->
-    <script src="dataAdapter.js?v=3"></script>
+
+    <script src="dataAdapter.js?v=4"></script>
     <script src="scoring.js?v=3"></script>
-    <script src="script.js?v=11"></script>
-    <script src="map.js?v=3"></script>
+    <script src="script.js?v=12"></script>
+    <script src="map.js?v=4"></script>
 
     <!-- Login Modal -->
-    <div id="login-modal" class="modal-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:2000; align-items:center; justify-content:center;">
+    <div id="login-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="login-modal-title" aria-hidden="true" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:2000; align-items:center; justify-content:center;">
         <div class="modal-content card" style="max-width: 400px; width: 90%; margin: 10vh auto; position:relative;">
-            <button onclick="window.closeLoginModal()" style="position:absolute; top:16px; right:16px; background:none; border:none; font-size:20px; cursor:pointer; color:var(--text-muted);">&times;</button>
-            <h2 style="margin-bottom: 8px;">Welcome</h2>
-            <p style="font-size:14px; color:var(--text-muted); margin-bottom: 24px;">Sign in to save your profile and preferences. (Local Demo Mode)</p>
+            <button data-modal-close onclick="window.closeLoginModal()" aria-label="Close dialog" data-i18n-aria-label="close_dialog" style="position:absolute; top:16px; right:16px; background:none; border:none; font-size:20px; cursor:pointer; color:var(--text-muted);">&times;</button>
+            <h2 id="login-modal-title" style="margin-bottom: 8px;" data-i18n="welcome">Welcome</h2>
+            <p style="font-size:14px; color:var(--text-muted); margin-bottom: 24px;" data-i18n="sign_in_save">Sign in to save your profile and preferences.</p>
             <form id="login-form" onsubmit="window.handleLoginSubmit(event)">
                 <div class="form-group">
-                    <label data-i18n="email_address">Email Address</label>
+                    <label for="login-email" data-i18n="email_address">Email Address</label>
                     <input type="email" id="login-email" required placeholder="you@example.com" class="modern-input" style="width:100%; padding:10px; border-radius:8px; background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); color:var(--text-main); margin-bottom:16px;">
                 </div>
-                <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:12px;">Sign In / Create Account</button>
+                <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; padding:12px;" data-i18n="sign_in_create">Sign In / Create Account</button>
             </form>
         </div>
     </div>
 
     <!-- Profile Modal -->
-    <div id="profile-modal" class="modal-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:2000; overflow-y:auto;">
+    <div id="profile-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="profile-modal-title" aria-hidden="true" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:2000; overflow-y:auto;">
         <div class="modal-content card" style="max-width: 700px; width: 90%; margin: 5vh auto; position:relative;">
-            <button onclick="window.closeProfileModal()" style="position:absolute; top:16px; right:16px; background:none; border:none; font-size:24px; cursor:pointer; color:var(--text-muted);">&times;</button>
-            <h2 style="margin-bottom: 8px; font-size:24px;" data-i18n="my_profile">My Profile</h2>
-            <p style="font-size:14px; color:var(--text-muted); margin-bottom: 24px;">Complete your profile to get personalized university recommendations.</p>
+            <button data-modal-close onclick="window.closeProfileModal()" aria-label="Close dialog" data-i18n-aria-label="close_dialog" style="position:absolute; top:16px; right:16px; background:none; border:none; font-size:24px; cursor:pointer; color:var(--text-muted);">&times;</button>
+            <h2 id="profile-modal-title" style="margin-bottom: 8px; font-size:24px;" data-i18n="my_profile">My Profile</h2>
+            <p style="font-size:14px; color:var(--text-muted); margin-bottom: 24px;" data-i18n="complete_profile">Complete your profile to get personalized university recommendations.</p>
             
             <form id="profile-form">
                 
                 <h3 style="margin-bottom:12px; color:var(--primary); font-size:16px;" data-i18n="academic_background">Academic Background</h3>
                 <div class="detail-grid" style="margin-bottom:24px;">
                     <div class="form-group detail-item">
-                        <label data-i18n="target_degree">Target Degree</label>
+                        <label for="profile-target-degree" data-i18n="target_degree">Target Degree</label>
                         <select id="profile-target-degree" class="modern-input" style="width:100%;">
-                            <option value="All">Any Degree</option>
+                            <option value="All" data-i18n="any_degree">Any Degree</option>
                             <option value="BSc">Bachelor (BSc)</option>
-                            <option value="MSc">Master (MSc)</option>
+                            <option value="MSc" selected>Master (MSc)</option>
                             <option value="PhD">Doctorate (PhD)</option>
                         </select>
                     </div>
