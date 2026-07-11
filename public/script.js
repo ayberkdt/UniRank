@@ -247,8 +247,21 @@ async function init() {
     if (window.updateAuthUI) window.updateAuthUI();
 
     setupEventListeners();
+    initSpotlightCards();
     await fetchData();
     window.applyTranslations();
+}
+
+function initSpotlightCards() {
+    document.addEventListener("mousemove", (e) => {
+        document.querySelectorAll(".kpi-card").forEach(card => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty("--mouse-x", `${x}px`);
+            card.style.setProperty("--mouse-y", `${y}px`);
+        });
+    });
 }
 
 // Fetch Data
@@ -871,9 +884,10 @@ function renderTable() {
         const program = window.localizedField(n.programName) || (window.currentLanguage === 'tr' ? 'Program adı doğrulanmalı' : 'Program name needs verification');
 
         const article = document.createElement('article');
-        article.className = 'program-card country-card';
+        article.className = 'program-card country-card staggered-item';
         article.setAttribute('role', 'listitem');
         article.dataset.programId = rid;
+        article.style.animationDelay = `${Math.min(i * 0.05, 1.0)}s`;
         article.innerHTML = `
             <div class="country-card__flag" aria-hidden="true"></div>
             <div class="program-card__rank" aria-label="Rank ${i + 1}"><span>${String(i + 1).padStart(2, '0')}</span></div>
