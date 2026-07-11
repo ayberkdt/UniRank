@@ -7,14 +7,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=9">
+    <link rel="stylesheet" href="style.css?v=11">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="i18n.js?v=2"></script>
+    <script src="i18n.js?v=3"></script>
     <script src="taxonomy.js?v=2"></script>
 </head>
 <body>
@@ -242,7 +242,8 @@
             </section>
 
             <section id="map-view-container" class="map-workspace" aria-label="Program map" hidden>
-                <aside class="map-results-panel" aria-labelledby="map-results-heading">
+                <aside id="map-results-panel" class="map-results-panel" aria-labelledby="map-results-heading">
+                    <button id="map-panel-toggle" class="map-panel-toggle" type="button" aria-controls="map-results-panel" aria-expanded="true" aria-label="Collapse top universities panel"><span data-map-panel-icon aria-hidden="true">‹</span></button>
                     <div class="map-results-header">
                         <span class="section-kicker">Map</span>
                         <h2 id="map-results-heading" data-i18n="map_top_results">Top mapped results</h2>
@@ -262,9 +263,9 @@
 
                     <div class="map-toolbar-overlay">
                         <div class="map-stat-strip" aria-live="polite">
-                            <span><strong id="map-kpi-count">0</strong><small data-i18n="map_programs">programs</small></span>
-                            <span><strong id="map-kpi-universities">0</strong><small data-i18n="map_universities">universities</small></span>
-                            <span class="map-stat-missing"><strong id="map-kpi-missing">0</strong><small data-i18n="map_missing_locations">missing locations</small></span>
+                            <span class="map-stat map-stat--programs"><i aria-hidden="true">⌖</i><strong id="map-kpi-count">0</strong><small data-i18n="map_programs">programs</small></span>
+                            <span class="map-stat map-stat--universities"><i aria-hidden="true">◎</i><strong id="map-kpi-universities">0</strong><small data-i18n="map_universities">universities</small></span>
+                            <span class="map-stat map-stat--missing"><i aria-hidden="true">–</i><strong id="map-kpi-missing">0</strong><small data-i18n="map_missing_locations">missing locations</small></span>
                         </div>
                         <div class="map-toolbar-actions">
                             <button class="btn map-focus-button" id="btn-fit-map" type="button" onclick="window.fitMapToResults()" data-i18n="map_focus_results">Focus results</button>
@@ -277,6 +278,8 @@
 
                     <div class="map-legend" aria-label="Score legend">
                         <strong data-i18n="map_score_legend">Fit score</strong>
+                        <span class="map-legend__meaning"><i class="legend-symbol legend-symbol--pin"></i><span data-i18n="map_marker_legend">Pin = fit score</span></span>
+                        <span class="map-legend__meaning"><i class="legend-symbol legend-symbol--cluster">5</i><span data-i18n="map_cluster_legend">Circle = program count</span></span>
                         <span><i class="legend-dot legend-dot--excellent"></i><span data-i18n="legend_excellent">High fit (6.0+)</span></span>
                         <span><i class="legend-dot legend-dot--strong"></i><span data-i18n="legend_strong">Good fit (5.5–5.9)</span></span>
                         <span><i class="legend-dot legend-dot--moderate"></i><span data-i18n="legend_moderate">Moderate fit (5.0–5.4)</span></span>
@@ -305,7 +308,7 @@
     <script src="dataAdapter.js?v=4"></script>
     <script src="scoring.js?v=3"></script>
     <script src="script.js?v=13"></script>
-    <script src="map.js?v=4"></script>
+    <script src="map.js?v=6"></script>
 
     <!-- Login Modal -->
     <div id="login-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="login-modal-title" aria-hidden="true" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:2000; align-items:center; justify-content:center;">

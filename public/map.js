@@ -54,9 +54,10 @@ function initUniRankMap() {
 
     function readDetailedPreference() {
         try {
-            return localStorage.getItem('unirank_map_detailed') === 'true';
+            const stored = localStorage.getItem('unirank_map_detailed');
+            return stored === null ? true : stored === 'true';
         } catch (error) {
-            return false;
+            return true;
         }
     }
 
@@ -65,6 +66,22 @@ function initUniRankMap() {
             localStorage.setItem('unirank_map_detailed', String(value));
         } catch (error) {
             // The map remains usable when storage is unavailable.
+        }
+    }
+
+    function readPanelPreference() {
+        try {
+            return localStorage.getItem('unirank_map_panel_collapsed') === 'true';
+        } catch (error) {
+            return false;
+        }
+    }
+
+    function persistPanelPreference(value) {
+        try {
+            localStorage.setItem('unirank_map_panel_collapsed', String(value));
+        } catch (error) {
+            // The panel remains usable when storage is unavailable.
         }
     }
 
@@ -81,12 +98,12 @@ function initUniRankMap() {
     const map = window.unirankMap;
     L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
-    const calmTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+    const calmTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png', {
         attribution: tileAttribution,
         subdomains: 'abcd',
         maxZoom: 20
     });
-    const detailedTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    const detailedTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
         attribution: tileAttribution,
         subdomains: 'abcd',
         maxZoom: 20
@@ -96,6 +113,9 @@ function initUniRankMap() {
     const modeBadge = document.getElementById('map-mode-badge');
     const detailStatus = document.getElementById('map-detail-status');
     const resultsListElement = document.getElementById('map-results-list');
+    const resultsHeaderElement = document.querySelector('#map-results-panel .map-results-header');
+    const mapWorkspace = document.getElementById('map-view-container');
+    const panelToggle = document.getElementById('map-panel-toggle');
     let currentData = [];
     let currentLocatedData = [];
     let allMarkers = [];
@@ -147,9 +167,9 @@ function initUniRankMap() {
                         : `${children.length} programs, average score ${averageScore.toFixed(1)}`;
 
                     return L.divIcon({
-                        html: `<div class="custom-cluster ${colorClass}" role="img" aria-label="${escapeHtml(label)}"><span aria-hidden="true">${children.length}</span></div>`,
+                        html: `<div class="custom-cluster ${colorClass}" role="img" aria-label="${escapeHtml(label)}"><span class="cluster-count" aria-hidden="true">${children.length}</span><small aria-hidden="true">${isTurkish() ? 'PROG.' : 'PROGS'}</small></div>`,
                         className: 'custom-cluster-icon',
-                        iconSize: [40, 40]
+                        iconSize: [54, 54]
                     });
                 }
             });
@@ -236,6 +256,28 @@ function initUniRankMap() {
         mapElement.classList.toggle('map-simple-mode', !isDetailed);
         updateModeText();
         map.invalidateSize();
+    }
+
+    function setMapPanelCollapsed(collapsed, persist = true) {
+        if (!mapWorkspace || !panelToggle) return;
+
+        const isCollapsed = Boolean(collapsed);
+        if (persist) persistPanelPreference(isCollapsed);
+        mapWorkspace.classList.toggle('map-panel-collapsed', isCollapsed);
+        resultsHeaderElement?.toggleAttribute('inert', isCollapsed);
+        resultsListElement?.toggleAttribute('inert', isCollapsed);
+        panelToggle.setAttribute('aria-expanded', String(!isCollapsed));
+        panelToggle.setAttribute(
+            'aria-label',
+            isCollapsed
+                ? (isTurkish() ? 'En iyi üniversiteler panelini aç' : 'Expand top universities panel')
+                : (isTurkish() ? 'En iyi üniversiteler panelini daralt' : 'Collapse top universities panel')
+        );
+
+        const icon = panelToggle.querySelector('[data-map-panel-icon]');
+        if (icon) icon.textContent = isCollapsed ? '›' : '‹';
+
+        window.setTimeout(() => map.invalidateSize(), 220);
     }
 
     function openDrawerForRow(row, id) {
@@ -407,13 +449,13 @@ function initUniRankMap() {
             const accessibleLabel = isTurkish()
                 ? `${title}, ${program}, skor ${score.toFixed(1)} / 10`
                 : `${title}, ${program}, score ${score.toFixed(1)} out of 10`;
-            const iconHtml = `<div class="custom-marker ${colorClass}"><span class="marker-score">${score.toFixed(1)}</span></div>`;
+            const iconHtml = `<div class="custom-marker ${colorClass}"><small class="marker-label" aria-hidden="true">${isTurkish() ? 'UYUM' : 'FIT'}</small><span class="marker-score">${score.toFixed(1)}</span></div>`;
             const customIcon = L.divIcon({
                 className: 'unirank-marker-icon',
                 html: iconHtml,
-                iconSize: [32, 42],
-                iconAnchor: [16, 38],
-                popupAnchor: [0, -38]
+                iconSize: [46, 54],
+                iconAnchor: [23, 49],
+                popupAnchor: [0, -47]
             });
 
             const marker = L.marker([latitude, longitude], {
@@ -491,16 +533,24 @@ function initUniRankMap() {
         toggle.addEventListener('change', event => setMapMode(event.target.checked));
     }
 
+    if (panelToggle) {
+        panelToggle.addEventListener('click', () => {
+            setMapPanelCollapsed(!mapWorkspace?.classList.contains('map-panel-collapsed'));
+        });
+    }
+
     window.addEventListener('unirank:dataUpdated', event => {
         updateMap(event.detail?.filteredData || []);
     });
 
     document.addEventListener('languageChanged', () => {
         updateModeText();
+        setMapPanelCollapsed(mapWorkspace?.classList.contains('map-panel-collapsed'), false);
         updateMap(currentData);
     });
 
     setMapMode(initialDetailedMode, false);
+    setMapPanelCollapsed(readPanelPreference(), false);
     updateMap(window.filteredData || []);
 }
 
