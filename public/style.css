@@ -2889,6 +2889,11 @@ input[type="range"]::-webkit-slider-thumb {
     background: #f9fbfd;
 }
 
+.country-themed .decision-item {
+    background: linear-gradient(135deg, rgba(var(--country-rgb), 0.12), rgba(var(--country-rgb), 0.04)) !important;
+    border-color: rgba(var(--country-rgb), 0.25) !important;
+}
+
 .decision-item dt,
 .drawer-decision-grid dt {
     margin-bottom: 3px;
@@ -2957,7 +2962,7 @@ input[type="range"]::-webkit-slider-thumb {
     justify-content: space-between;
     gap: 10px;
     padding-left: 14px;
-    border-left: 1px solid var(--border-color);
+    border-left: none;
 }
 
 .favorite-button {
