@@ -113,6 +113,61 @@ function confidenceLabel(value) {
     };
 }
 
+// CSS-only flag textures keep every country card visually distinct without
+// adding external image requests to the ranked-results view.
+const COUNTRY_VISUALS = {
+    austria: { accent: '#ed2939', rgb: '237, 41, 57', flag: 'linear-gradient(to bottom, #ed2939 0 33%, #ffffff 33% 66%, #ed2939 66% 100%)' },
+    belgium: { accent: '#f2bd28', rgb: '242, 189, 40', flag: 'linear-gradient(90deg, #191919 0 33%, #f2bd28 33% 66%, #d4303d 66% 100%)' },
+    china: { accent: '#e53a3e', rgb: '229, 58, 62', flag: 'radial-gradient(circle at 24% 28%, #ffde45 0 6%, transparent 6.5%), radial-gradient(circle at 39% 18%, #ffde45 0 2.3%, transparent 2.8%), radial-gradient(circle at 42% 33%, #ffde45 0 2.3%, transparent 2.8%), #de2939' },
+    denmark: { accent: '#c8102e', rgb: '200, 16, 46', flag: 'linear-gradient(90deg, transparent 0 29%, #ffffff 29% 40%, transparent 40% 100%), linear-gradient(transparent 0 41%, #ffffff 41% 58%, transparent 58% 100%), #c8102e' },
+    france: { accent: '#2d57a1', rgb: '45, 87, 161', flag: 'linear-gradient(90deg, #21468b 0 33%, #f7f8fa 33% 66%, #ef4135 66% 100%)' },
+    germany: { accent: '#d9a620', rgb: '217, 166, 32', flag: 'linear-gradient(to bottom, #1a1a1a 0 33%, #d83232 33% 66%, #e2b42a 66% 100%)' },
+    italy: { accent: '#159447', rgb: '21, 148, 71', flag: 'linear-gradient(90deg, #009246 0 33%, #f7f8f6 33% 66%, #ce2b37 66% 100%)' },
+    japan: { accent: '#dc3044', rgb: '220, 48, 68', flag: 'radial-gradient(circle at 50% 50%, #cf2738 0 22%, transparent 22.5%), #f8f8f4' },
+    netherlands: { accent: '#2d62ad', rgb: '45, 98, 173', flag: 'linear-gradient(to bottom, #ae1c28 0 33%, #f7f8f6 33% 66%, #21468b 66% 100%)' },
+    poland: { accent: '#d92b48', rgb: '217, 43, 72', flag: 'linear-gradient(to bottom, #fafafa 0 50%, #d22645 50% 100%)' },
+    portugal: { accent: '#d84536', rgb: '216, 69, 54', flag: 'linear-gradient(90deg, #046a3a 0 40%, #f1c63c 40% 43%, #d52b1e 43% 100%)' },
+    russia: { accent: '#4366ae', rgb: '67, 102, 174', flag: 'linear-gradient(to bottom, #f7f7f5 0 33%, #3156a6 33% 66%, #ce303c 66% 100%)' },
+    south_korea: { accent: '#d43848', rgb: '212, 56, 72', flag: 'radial-gradient(circle at 50% 50%, #d93848 0 13%, #2c5aac 13% 26%, transparent 26.5%), #f7f8f6' },
+    spain: { accent: '#efb933', rgb: '239, 185, 51', flag: 'linear-gradient(to bottom, #aa151b 0 25%, #f1bf36 25% 75%, #aa151b 75% 100%)' },
+    sweden: { accent: '#e4b424', rgb: '228, 180, 36', flag: 'linear-gradient(90deg, transparent 0 29%, #f6cc38 29% 40%, transparent 40% 100%), linear-gradient(transparent 0 40%, #f6cc38 40% 57%, transparent 57% 100%), #2166a5' },
+    switzerland: { accent: '#e13c43', rgb: '225, 60, 67', flag: 'linear-gradient(90deg, transparent 0 39%, #fff 39% 61%, transparent 61% 100%), linear-gradient(transparent 0 32%, #fff 32% 68%, transparent 68% 100%), #d52b1e' },
+    turkey: { accent: '#e12d3c', rgb: '225, 45, 60', flag: 'radial-gradient(circle at 46% 50%, #ffffff 0 18%, transparent 18.5%), radial-gradient(circle at 52% 50%, #e12d3c 0 15%, transparent 15.5%), radial-gradient(circle at 67% 50%, #ffffff 0 4%, transparent 4.5%), #e30a17' },
+    united_kingdom: { accent: '#c8394d', rgb: '200, 57, 77', flag: 'linear-gradient(33deg, transparent 43%, #ffffff 43% 48%, #cf2d43 48% 52%, #ffffff 52% 57%, transparent 57%), linear-gradient(-33deg, transparent 43%, #ffffff 43% 48%, #cf2d43 48% 52%, #ffffff 52% 57%, transparent 57%), linear-gradient(90deg, transparent 0 40%, #ffffff 40% 60%, transparent 60%), linear-gradient(transparent 0 38%, #ffffff 38% 62%, transparent 62%), linear-gradient(90deg, transparent 0 46%, #cf2d43 46% 54%, transparent 54%), linear-gradient(transparent 0 44%, #cf2d43 44% 56%, transparent 56%), #213f83' },
+    usa: { accent: '#b9334a', rgb: '185, 51, 74', flag: 'linear-gradient(to bottom, #b22234 0 8%, #f7f7f4 8% 16%, #b22234 16% 24%, #f7f7f4 24% 32%, #b22234 32% 40%, #f7f7f4 40% 48%, #b22234 48% 56%, #f7f7f4 56% 64%, #b22234 64% 72%, #f7f7f4 72% 80%, #b22234 80% 88%, #f7f7f4 88% 100%), linear-gradient(90deg, #3c4f85 0 42%, transparent 42%)' }
+};
+
+function countryVisualKey(country) {
+    const normalized = String(country || '')
+        .trim()
+        .toLocaleLowerCase('en-US')
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9]+/g, '_')
+        .replace(/^_|_$/g, '');
+
+    return {
+        uk: 'united_kingdom',
+        great_britain: 'united_kingdom',
+        united_states: 'usa',
+        united_states_of_america: 'usa',
+        america: 'usa',
+        republic_of_korea: 'south_korea',
+        turkiye: 'turkey'
+    }[normalized] || normalized;
+}
+
+function applyCountryVisual(element, country) {
+    if (!element) return;
+    const key = countryVisualKey(country);
+    const visual = COUNTRY_VISUALS[key] || { accent: '#6f85a2', rgb: '111, 133, 162', flag: 'linear-gradient(135deg, #274261, #162a42)' };
+    element.classList.add('country-themed');
+    element.dataset.countryTheme = key || 'global';
+    element.style.setProperty('--country-accent', visual.accent);
+    element.style.setProperty('--country-rgb', visual.rgb);
+    element.style.setProperty('--country-flag', visual.flag);
+}
+
 // Global Boundaries for Normalization
 let globalMaxTuition = 10000;
 let globalMinTuition = 0;
@@ -816,10 +871,11 @@ function renderTable() {
         const program = window.localizedField(n.programName) || (window.currentLanguage === 'tr' ? 'Program adı doğrulanmalı' : 'Program name needs verification');
 
         const article = document.createElement('article');
-        article.className = 'program-card';
+        article.className = 'program-card country-card';
         article.setAttribute('role', 'listitem');
         article.dataset.programId = rid;
         article.innerHTML = `
+            <div class="country-card__flag" aria-hidden="true"></div>
             <div class="program-card__rank" aria-label="Rank ${i + 1}"><span>${String(i + 1).padStart(2, '0')}</span></div>
             <div class="program-card__content">
                 <div class="program-card__eyebrow">
@@ -847,6 +903,8 @@ function renderTable() {
                 <button class="detail-btn" type="button">${escapeHtml(window.t ? window.t('view_program') : 'View program')} <span aria-hidden="true">→</span></button>
             </div>`;
 
+        applyCountryVisual(article, cleanCountry);
+
         article.querySelector('.favorite-button').addEventListener('click', () => {
             toggleFavorite(rid);
         });
@@ -862,6 +920,7 @@ function openDrawer(data) {
         window.lastDrawerTrigger = document.activeElement;
         const n = window.uniDataAdapter ? window.uniDataAdapter.normalizeUniversityRecord(data) : null;
         if (!n) return;
+        applyCountryVisual(els.drawer.panel, n.country);
         n.programUrl = safeUrl(n.programUrl);
         n.admissionUrl = safeUrl(n.admissionUrl);
         n.tuitionUrl = safeUrl(n.tuitionUrl);
