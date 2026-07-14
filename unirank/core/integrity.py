@@ -164,6 +164,7 @@ def _clear_unverified_values(record: dict[str, Any], quality: dict[str, Any]) ->
             "enrollment_fee_eur",
             "tuition_usd_per_year",
             "tuition_usd_per_year_at_three_quarters",
+            "tuition_usd_per_quarter",
             "tuition_usd_per_quarter_nonresident_full_time",
             "tuition_gbp_per_year",
             "tuition_chf_per_year",
@@ -193,6 +194,10 @@ def _clear_unverified_values(record: dict[str, Any], quality: dict[str, Any]) ->
     if "housing" not in quality["verified_fields"]:
         for key in (
             "average_room_rent_eur",
+            "average_room_rent_eur_min",
+            "average_room_rent_eur_max",
+            "monthly_living_cost_eur_min",
+            "monthly_living_cost_eur_max",
             "monthly_living_cost_eur_estimated",
             "living_cost_eur_per_month",
             "housing_difficulty",
@@ -218,10 +223,20 @@ def _clear_unverified_values(record: dict[str, Any], quality: dict[str, Any]) ->
             "monthly_housing_rent_dkk_per_month_min",
             "monthly_housing_rent_dkk_per_month_max",
             "housing_budget_usd_per_year",
+            "housing_budget_usd_per_year_min",
+            "housing_budget_usd_per_year_max",
             "housing_budget_gbp_per_year",
+            "housing_budget_gbp_per_year_min",
+            "housing_budget_gbp_per_year_max",
             "housing_budget_chf_per_year",
+            "housing_budget_chf_per_year_min",
+            "housing_budget_chf_per_year_max",
             "housing_budget_sek_per_year",
+            "housing_budget_sek_per_year_min",
+            "housing_budget_sek_per_year_max",
             "housing_budget_dkk_per_year",
+            "housing_budget_dkk_per_year_min",
+            "housing_budget_dkk_per_year_max",
             "official_student_housing_budget_sek_per_month_examples",
             "official_student_total_budget_sek_per_month_examples",
         ):
@@ -229,12 +244,29 @@ def _clear_unverified_values(record: dict[str, Any], quality: dict[str, Any]) ->
         for key in (
             "living_cost_usd_per_year_i20",
             "living_cost_usd_per_year",
+            "living_cost_usd_per_year_min",
+            "living_cost_usd_per_year_max",
             "living_cost_gbp_per_year",
+            "living_cost_gbp_per_year_min",
+            "living_cost_gbp_per_year_max",
             "living_cost_chf_per_year",
+            "living_cost_chf_per_year_min",
+            "living_cost_chf_per_year_max",
             "living_cost_sek_per_year",
+            "living_cost_sek_per_year_min",
+            "living_cost_sek_per_year_max",
             "living_cost_dkk_per_year",
+            "living_cost_dkk_per_year_min",
+            "living_cost_dkk_per_year_max",
         ):
             profiles["cost"][key] = None
+        # Older imports sometimes stored an unsourced city-wide rent estimate
+        # beside the actual programme record.  Keep the city name, but never
+        # let this legacy estimate leak into a programme card or score.
+        city = record.get("city")
+        if isinstance(city, dict):
+            city["estimated_housing_cost_eur"] = None
+            city["housing_difficulty"] = None
 
     record["language_profile"] = profiles["language"]
     record["cost_profile"] = profiles["cost"]
@@ -242,6 +274,14 @@ def _clear_unverified_values(record: dict[str, Any], quality: dict[str, Any]) ->
     record["application_timeline_profile"] = profiles["timeline"]
     record["eligibility_profile"] = profiles["eligibility"]
     record["living_profile"] = profiles["living"]
+    # Legacy imports sometimes stored unsourced city-wide housing claims next
+    # to a programme.  They have no programme-level provenance, so retain the
+    # city name but remove the decision values even if another housing budget
+    # on the record is source-checked.
+    city = record.get("city")
+    if isinstance(city, dict):
+        city["estimated_housing_cost_eur"] = None
+        city["housing_difficulty"] = None
 
 
 def apply_integrity_gate(record: dict[str, Any], *, strip_unverified: bool = True) -> dict[str, Any]:

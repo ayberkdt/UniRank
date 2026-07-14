@@ -69,6 +69,7 @@ function foreignAnnualTuition(costProfile) {
     ["tuition_chf_per_year", "CHF", "year"],
     ["tuition_sek_per_year", "SEK", "year"],
     ["tuition_dkk_per_year", "DKK", "year"],
+    ["tuition_usd_per_quarter", "USD", "quarter"],
     ["tuition_usd_per_quarter_nonresident_full_time", "USD", "quarter"]
   ];
   for (const [key, currency, period] of exactFields) {
@@ -96,12 +97,27 @@ function foreignMonthlyRoomRent(livingProfile) {
   return null;
 }
 
+function euroMonthlyRoomRent(livingProfile, record) {
+  const min = finiteNumber(livingProfile?.average_room_rent_eur_min);
+  const max = finiteNumber(livingProfile?.average_room_rent_eur_max);
+  const exact = firstFiniteNumber(
+    livingProfile?.average_room_rent_eur
+  );
+  if (min !== null || max !== null || exact !== null) {
+    return { min: min ?? exact ?? max, max: max ?? exact ?? min, currency: "EUR", kind: "room_rent" };
+  }
+  return null;
+}
+
 function foreignAnnualLivingBudget(costProfile) {
   for (const currency of ["usd", "gbp", "chf", "sek", "dkk"]) {
     const direct = finiteNumber(costProfile?.[`living_cost_${currency}_per_year_i20`]);
     const generic = finiteNumber(costProfile?.[`living_cost_${currency}_per_year`]);
     const amount = direct ?? generic;
-    if (amount !== null) return { amount, currency: currency.toUpperCase() };
+    if (amount !== null) return { min: amount, max: amount, currency: currency.toUpperCase() };
+    const min = finiteNumber(costProfile?.[`living_cost_${currency}_per_year_min`]);
+    const max = finiteNumber(costProfile?.[`living_cost_${currency}_per_year_max`]);
+    if (min !== null || max !== null) return { min: min ?? max, max: max ?? min, currency: currency.toUpperCase() };
   }
   return null;
 }
@@ -109,7 +125,25 @@ function foreignAnnualLivingBudget(costProfile) {
 function foreignAnnualHousingBudget(livingProfile) {
   for (const currency of ["usd", "gbp", "chf", "sek", "dkk"]) {
     const amount = finiteNumber(livingProfile?.[`housing_budget_${currency}_per_year`]);
-    if (amount !== null) return { amount, currency: currency.toUpperCase() };
+    if (amount !== null) return { min: amount, max: amount, currency: currency.toUpperCase() };
+    const min = finiteNumber(livingProfile?.[`housing_budget_${currency}_per_year_min`]);
+    const max = finiteNumber(livingProfile?.[`housing_budget_${currency}_per_year_max`]);
+    if (min !== null || max !== null) return { min: min ?? max, max: max ?? min, currency: currency.toUpperCase() };
+  }
+  return null;
+}
+
+function foreignCompulsoryFee(costProfile) {
+  const exactFields = [
+    ["mandatory_fees_usd_per_year", "USD", "year"],
+    ["mandatory_fees_gbp_per_year", "GBP", "year"],
+    ["mandatory_fees_chf_per_year", "CHF", "year"],
+    ["mandatory_fees_sek_per_year", "SEK", "year"],
+    ["mandatory_fees_dkk_per_year", "DKK", "year"]
+  ];
+  for (const [key, currency, period] of exactFields) {
+    const amount = finiteNumber(costProfile?.[key]);
+    if (amount !== null) return { amount, currency, period };
   }
   return null;
 }
@@ -347,7 +381,7 @@ function normalizeUniversityRecord(record) {
     hasStructuredCostProfile ? null : financials.tuition_fee_per_year,
     legacyTuitionPerYear
   );
-  const semesterFee = firstFiniteNumber(
+  const exactSemesterFee = firstFiniteNumber(
     costProfile.regional_tax_eur,
     costProfile.student_contribution_eur,
     costProfile.enrollment_fee_eur,
@@ -355,6 +389,12 @@ function normalizeUniversityRecord(record) {
     hasStructuredCostProfile ? null : financials.semester_fee,
     legacySemesterFee
   );
+  // Some universities publish an explicitly approximate planning contribution
+  // rather than an invoice. Keep that useful figure visible, but expose its
+  // status so cards never make it look exact.
+  const approximateSemesterFee = firstFiniteNumber(costProfile.student_contribution_eur_approximate);
+  const semesterFee = exactSemesterFee ?? approximateSemesterFee;
+  const semesterFeeApproximate = exactSemesterFee === null && approximateSemesterFee !== null;
   const legacyAcademicCost = legacyTuitionPerYear !== null
     ? legacyTuitionPerYear + ((legacySemesterFee || 0) * 2)
     : null;
@@ -365,9 +405,11 @@ function normalizeUniversityRecord(record) {
     tuitionPerYear
   );
   const publishedForeignTuition = foreignAnnualTuition(costProfile);
+  const publishedEuroRoomRent = euroMonthlyRoomRent(livingProfile, record);
   const publishedForeignRoomRent = foreignMonthlyRoomRent(livingProfile);
   const publishedForeignAnnualLivingBudget = foreignAnnualLivingBudget(costProfile);
   const publishedForeignAnnualHousingBudget = foreignAnnualHousingBudget(livingProfile);
+  const publishedForeignCompulsoryFee = foreignCompulsoryFee(costProfile);
   const publishedForeignMonthlyLivingBudget = foreignMonthlyLivingBudget(livingProfile);
   const publishedForeignMonthlyBudgetExamples = foreignMonthlyBudgetExamples(livingProfile);
   const sources = normalizeSources(firstValue(
@@ -407,6 +449,7 @@ function normalizeUniversityRecord(record) {
     programUrl: firstValue(record.program_url, record.Program_URL, record.target_program_url, urls.program, record.url) || "",
     tuitionPerYear,
     semesterFee,
+    semesterFeeApproximate,
     totalAcademicCost,
     foreignTuition: publishedForeignTuition,
     hasKnownTuition: tuitionPerYear !== null || totalAcademicCost !== null || publishedForeignTuition !== null,
@@ -415,7 +458,7 @@ function normalizeUniversityRecord(record) {
     deadline,
     eligibleForNonEu,
     languageRisk: firstKnownValue(languageProfile.language_risk, record.language_risk) || "unknown",
-    housingDifficulty: firstKnownValue(livingProfile.housing_difficulty, record.Living_Housing_Difficulty, record.housing_difficulty, record.city?.housing_difficulty) || "unknown",
+    housingDifficulty: firstKnownValue(livingProfile.housing_difficulty) || "unknown",
     livingRisk: firstKnownValue(livingProfile.living_risk, record.living_risk, record.Cost_City_Living) || "unknown",
     cityCostLevel: firstKnownValue(livingProfile.cost_city_living, livingProfile.city_cost_level, record.cost_city_raw, record.Cost_City_Living) || "unknown",
     scholarshipSummary: firstValue(
@@ -468,7 +511,8 @@ function normalizeUniversityRecord(record) {
       ? industryProfile.confirmed_partners
       : (Array.isArray(record.Industry_Partners) ? record.Industry_Partners : []),
     internshipMandatory: firstValue(curriculumProfile.internship_required, record.internship_mandatory, record.Internship_Mandatory),
-    averageRoomRent: firstFiniteNumber(livingProfile.average_room_rent_eur, record.city?.estimated_housing_cost_eur),
+    averageRoomRent: firstFiniteNumber(livingProfile.average_room_rent_eur),
+    euroRoomRent: publishedEuroRoomRent,
     foreignRoomRent: publishedForeignRoomRent,
     monthlyLivingCost: firstFiniteNumber(livingProfile.monthly_living_cost_eur_estimated, livingProfile.living_cost_eur_per_month),
     monthlyLivingCostMin: firstFiniteNumber(livingProfile.monthly_living_cost_eur_min),
@@ -476,9 +520,10 @@ function normalizeUniversityRecord(record) {
     monthlyLivingCostBasis: firstValue(livingProfile.monthly_living_cost_basis, livingProfile.living_cost_notes),
     foreignAnnualLivingBudget: publishedForeignAnnualLivingBudget,
     foreignAnnualHousingBudget: publishedForeignAnnualHousingBudget,
+    foreignCompulsoryFee: publishedForeignCompulsoryFee,
     foreignMonthlyLivingBudget: publishedForeignMonthlyLivingBudget,
     foreignMonthlyBudgetExamples: publishedForeignMonthlyBudgetExamples,
-    housingCost: firstFiniteNumber(livingProfile.average_room_rent_eur, livingProfile.monthly_living_cost_eur_estimated, livingProfile.living_cost_eur_per_month, record.city?.estimated_housing_cost_eur),
+    housingCost: firstFiniteNumber(livingProfile.average_room_rent_eur, livingProfile.monthly_living_cost_eur_estimated, livingProfile.living_cost_eur_per_month),
     scholarshipDetails: scholarshipProfile,
     costDetails: costProfile,
     livingDetails: livingProfile,

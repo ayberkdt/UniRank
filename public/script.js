@@ -1148,15 +1148,20 @@ function openDrawer(data) {
         const foreignProgrammeFee = fullProgrammeFee?.amount && fullProgrammeFee?.currency
             ? `${Number(fullProgrammeFee.amount).toLocaleString('en-US')} ${escapeHtml(fullProgrammeFee.currency)}${isTurkish ? ' (tam program)' : ' (full programme)'}`
             : '';
+        const noRegularTuition = ["no_regular_tuition_within_standard_period", "no_general_tuition_regular_programme"].includes(n.costDetails?.tuition_basis);
         const tuitionText = tuitionVerified
             ? (n.tuitionPerYear !== null
-                ? `${formatMoney(n.tuitionPerYear)}${isTurkish ? ' / yıl' : ' / year'}`
+                ? (noRegularTuition
+                    ? (isTurkish ? 'Normal süre içinde genel öğrenim ücreti yok' : 'No general tuition within standard period')
+                    : `${formatMoney(n.tuitionPerYear)}${isTurkish ? ' / yıl' : ' / year'}`)
                 : n.foreignTuition
                     ? `${formatPublishedMoney(n.foreignTuition)}${n.foreignTuition.period === 'quarter' ? (isTurkish ? ' / dönem' : ' / quarter') : (isTurkish ? ' / yıl' : ' / year')}`
                     : (foreignProgrammeFee || (isTurkish ? 'Tutar yayımlanmış para biriminde belirtilmemiş' : 'Amount is not stated in a published currency')))
             : unknownMoney;
         const feeText = tuitionVerified && n.semesterFee !== null
-            ? `${formatMoney(n.semesterFee)}${isTurkish ? ' / dönem' : ' / term'}`
+            ? `${n.semesterFeeApproximate ? '≈ ' : ''}${formatMoney(n.semesterFee)}${isTurkish ? ' / dönem' : ' / term'}`
+            : tuitionVerified && n.foreignCompulsoryFee
+                ? `${formatPublishedMoney(n.foreignCompulsoryFee)}${n.foreignCompulsoryFee.period === 'quarter' ? (isTurkish ? ' / dönem' : ' / quarter') : (isTurkish ? ' / yıl' : ' / year')}`
             : (tuitionVerified ? '—' : unknownMoney);
         const financeHTML = `
             <div class="drawer-section premium-card financial-card">
@@ -1170,7 +1175,9 @@ function openDrawer(data) {
                 </div>
             </div>`;
 
-        const roomRentText = housingVerified && n.averageRoomRent !== null
+        const roomRentText = housingVerified && n.euroRoomRent
+            ? `${formatPublishedRange(n.euroRoomRent)}${isTurkish ? ' / ay (oda)' : ' / month (room)'}`
+            : housingVerified && n.averageRoomRent !== null
             ? `${formatMoney(n.averageRoomRent)}${isTurkish ? ' / ay (oda)' : ' / month (room)'}`
             : housingVerified && n.foreignRoomRent
                 ? `${formatPublishedRange(n.foreignRoomRent)}${isTurkish ? ' / ay (oda)' : ' / month (room)'}`
@@ -1178,6 +1185,15 @@ function openDrawer(data) {
         const housingAmountLabel = n.foreignRoomRent?.kind === 'housing_estimate'
             ? (isTurkish ? 'Konut tahmini' : 'Housing estimate')
             : (isTurkish ? 'Oda kirası' : 'Room rent');
+        // A checked national average is useful for planning, but must never
+        // look like a city-specific rent quote.  The database may therefore
+        // attach an explicit scope label next to the amount.
+        const roomRentScope = n.livingDetails?.average_room_rent_scope_label
+            ? displayValue(n.livingDetails.average_room_rent_scope_label)
+            : '';
+        const roomRentLabel = roomRentScope
+            ? `${housingAmountLabel} · ${roomRentScope}`
+            : housingAmountLabel;
         const monthlyLivingText = housingVerified && (n.monthlyLivingCostMin !== null || n.monthlyLivingCost !== null)
             ? (n.monthlyLivingCostMin !== null && n.monthlyLivingCostMax !== null
                 ? `${formatMoney(n.monthlyLivingCostMin)}–${formatMoney(n.monthlyLivingCostMax)}${isTurkish ? ' / ay' : ' / month'}`
@@ -1185,15 +1201,21 @@ function openDrawer(data) {
             : housingVerified && n.foreignMonthlyLivingBudget
                 ? `${formatPublishedRange(n.foreignMonthlyLivingBudget)}${isTurkish ? ' / ay' : ' / month'}`
             : unknownMoney;
+        const monthlyLivingScope = n.livingDetails?.monthly_living_cost_scope_label
+            ? displayValue(n.livingDetails.monthly_living_cost_scope_label)
+            : '';
+        const monthlyLivingLabel = monthlyLivingScope
+            ? `${isTurkish ? 'Aylık toplam yaşam bütçesi' : 'Monthly living budget'} · ${monthlyLivingScope}`
+            : (isTurkish ? 'Aylık toplam yaşam bütçesi' : 'Monthly living budget');
         const livingHTML = `
             <div class="drawer-section premium-card">
                 <div class="premium-header"><span class="premium-icon">🏙️</span><h4 class="premium-title">${isTurkish ? 'Konaklama & Yaşam' : 'Housing & Living'}</h4></div>
                 <div class="premium-grid">
-                    <div class="premium-item"><label>${housingAmountLabel}</label><span class="finance-val">${roomRentText}</span></div>
-                    <div class="premium-item"><label>${isTurkish ? 'Aylık toplam yaşam bütçesi' : 'Monthly living budget'}</label><span class="finance-val">${monthlyLivingText}</span></div>
+                    <div class="premium-item"><label>${roomRentLabel}</label><span class="finance-val">${roomRentText}</span></div>
+                    <div class="premium-item"><label>${monthlyLivingLabel}</label><span class="finance-val">${monthlyLivingText}</span></div>
                     <div class="premium-item"><label>${isTurkish ? 'Konut bulma riski' : 'Housing availability risk'}</label>${housingVerified ? formatRiskBadge(n.housingDifficulty) : `<span class="risk-badge risk-unknown">${unknownMoney}</span>`}</div>
-                    ${housingVerified && n.foreignAnnualLivingBudget ? `<div class="premium-item"><label>${isTurkish ? 'Resmî yıllık yaşam bütçesi' : 'Official annual living budget'}</label><span class="finance-val">${formatPublishedMoney(n.foreignAnnualLivingBudget)}</span></div>` : ''}
-                    ${housingVerified && n.foreignAnnualHousingBudget ? `<div class="premium-item"><label>${isTurkish ? 'Resmî yıllık konut bütçesi' : 'Official annual housing budget'}</label><span class="finance-val">${formatPublishedMoney(n.foreignAnnualHousingBudget)}</span></div>` : ''}
+                    ${housingVerified && n.foreignAnnualLivingBudget ? `<div class="premium-item"><label>${isTurkish ? 'Resmî yıllık yaşam bütçesi' : 'Official annual living budget'}</label><span class="finance-val">${formatPublishedRange(n.foreignAnnualLivingBudget)}</span></div>` : ''}
+                    ${housingVerified && n.foreignAnnualHousingBudget ? `<div class="premium-item"><label>${isTurkish ? 'Resmî yıllık konut bütçesi' : 'Official annual housing budget'}</label><span class="finance-val">${formatPublishedRange(n.foreignAnnualHousingBudget)}</span></div>` : ''}
                     ${housingVerified && n.foreignMonthlyBudgetExamples ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Resmî öğrenci bütçesi örnekleri' : 'Official student budget examples'}</label><span>${n.foreignMonthlyBudgetExamples.values.map((value) => `${Number(value).toLocaleString('en-US')} ${n.foreignMonthlyBudgetExamples.currency}${isTurkish ? ' / ay' : ' / month'}`).join(' · ')}</span></div>` : ''}
                     ${n.monthlyLivingCostBasis ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Bütçe kapsamı' : 'Budget basis'}</label><span>${escapeHtml(displayValue(n.monthlyLivingCostBasis))}</span></div>` : ''}
                     ${n.livingDetails?.housing_notes ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Konut notu' : 'Housing note'}</label><span>${escapeHtml(displayValue(n.livingDetails.housing_notes))}</span></div>` : ''}

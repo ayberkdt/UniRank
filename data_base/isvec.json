@@ -6,8 +6,8 @@
     "university_native_name": "KTH Royal Institute of Technology",
     "city": {
       "name": "Stockholm",
-      "housing_difficulty": "high",
-      "estimated_housing_cost_eur": 700
+      "housing_difficulty": null,
+      "estimated_housing_cost_eur": null
     },
     "region": "",
     "program_name": "M.Sc. Aerospace Engineering",
@@ -427,10 +427,10 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-14"
+      "audited_at": "2026-07-15"
     },
     "quality_control": {
-      "checked_at": "2026-07-14",
+      "checked_at": "2026-07-15",
       "qc_status": "passed",
       "remaining_verification_tasks": [],
       "qc_notes": {
@@ -446,8 +446,8 @@
     "university_native_name": "Chalmers University of Technology",
     "city": {
       "name": "Gothenburg",
-      "housing_difficulty": "medium",
-      "estimated_housing_cost_eur": 600
+      "housing_difficulty": null,
+      "estimated_housing_cost_eur": null
     },
     "region": "",
     "program_name": "Mobility Engineering MSc (Aerospace Engineering profile available)",
@@ -816,11 +816,11 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-14"
+      "audited_at": "2026-07-15"
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-14",
+      "checked_at": "2026-07-15",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
@@ -838,8 +838,8 @@
     "university_native_name": "Linköping University",
     "city": {
       "name": "Linköping",
-      "housing_difficulty": "medium",
-      "estimated_housing_cost_eur": 500
+      "housing_difficulty": null,
+      "estimated_housing_cost_eur": null
     },
     "region": "",
     "program_name": "Aeronautical Engineering, Master's Programme",
@@ -1018,22 +1018,27 @@
       }
     },
     "application_timeline_profile": {
-      "application_period": "Winter",
-      "pre_enrollment_required": false,
-      "visa_complexity": "Medium",
-      "deadline_eu": null,
-      "deadline_non_eu": null,
-      "timeline_risk": "high",
-      "verification_notes": "",
-      "academic_year": "2026/2027",
+      "academic_year": "2026/2027 closed reference cycle; next-cycle dates not yet published on the checked page",
       "intake_terms": [
-        "Autumn"
+        "autumn; Master's programmes start in August"
       ],
-      "non_eu_deadline": null,
-      "deadline_notes": null,
-      "eu_deadline": "January application round (2026 page closed; verify next cycle exact date)",
+      "application_rounds": [
+        "International Master's application submission: 15 January 2026",
+        "Supporting documents and application fee: 2 February 2026",
+        "Selection result: 26 March 2026",
+        "LiU scholarship period: 26-31 March 2026"
+      ],
+      "non_eu_deadline": "2026-01-15 (application); 2026-02-02 (supporting documents and application fee)",
+      "eu_deadline": "2026-01-15 (international Master's application round)",
       "winter_deadline": null,
-      "application_deadline": null
+      "summer_deadline": null,
+      "application_deadline": "2026-01-15 for the checked 2026/27 international Master's round",
+      "scholarship_deadline": "2026-03-31 for the checked LiU scholarship period",
+      "timeline_risk": "high",
+      "deadline_notes": {
+        "en": "The official LiU page currently publishes the closed 2026/27 international Master's cycle, not an exact 2027/28 date. The record shows that checked cycle for planning context and deliberately refuses to extrapolate it. An applicant for the next intake must use the programme's Apply button/University Admissions when the new round opens.",
+        "tr": "Resmî LiU sayfası şu anda kesin 2027/28 tarihi değil, kapanmış 2026/27 uluslararası yüksek lisans döngüsünü yayımlar. Kayıt bu doğrulanmış döngüyü planlama bağlamı için gösterir ve geleceğe taşımayı kasıtlı olarak reddeder. Sonraki girişe başvuracak aday, yeni dönem açıldığında programın Apply düğmesini/University Admissions sistemini kullanmalıdır."
+      }
     },
     "research_profile": {
       "research_focus_areas": [],
@@ -1069,7 +1074,8 @@
         "scholarship": "high",
         "curriculum": "high",
         "research": "medium",
-        "living": "high"
+        "living": "high",
+        "application_timeline_profile": "high"
       },
       "source_reliability": "high",
       "verification_status": "verified",
@@ -1134,9 +1140,28 @@
           ],
           "confidence": "high",
           "notes": ""
+        },
+        {
+          "url": "https://liu.se/en/education/application-and-admission/how-to-apply",
+          "title": "How to apply for Master's degree studies at LiU",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "admission",
+            "deadline",
+            "non_eu",
+            "scholarship"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Current LiU guide documents the 15 January 2026 application deadline, 2 February document/fee deadline, 26 March Master's result and 26-31 March scholarship period for the checked international Master's cycle, and explains that no Master's programmes start in spring.",
+            "tr": "Güncel LiU rehberi, kontrol edilen uluslararası yüksek lisans döngüsü için 15 Ocak 2026 başvuru son tarihini, 2 Şubat belge/ücret son tarihini, 26 Mart yüksek lisans sonucunu ve 26-31 Mart burs dönemini belgeler; ayrıca yüksek lisans programlarının baharda başlamadığını açıklar."
+          }
         }
       ],
-      "needs_verification": false
+      "needs_verification": false,
+      "official_admission_page": "https://liu.se/en/education/application-and-admission/how-to-apply"
     },
     "decision_summary": {
       "pros": [],
@@ -1155,23 +1180,25 @@
     "qs_ranking": 530,
     "data_quality": {
       "status": "verified",
-      "checked_official_source_count": 4,
+      "checked_official_source_count": 5,
       "verified_fields": [
         "program",
         "language",
         "admission",
+        "non_eu_eligibility",
         "tuition",
         "scholarship",
+        "deadline",
         "curriculum",
         "housing"
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-14"
+      "audited_at": "2026-07-15"
     },
     "quality_control": {
       "qc_status": "passed",
-      "checked_at": "2026-07-14",
+      "checked_at": "2026-07-15",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],

@@ -6,15 +6,15 @@
     "university_native_name": "Politecnico di Milano",
     "city": {
       "name": "Milan",
-      "housing_difficulty": "high",
-      "estimated_housing_cost_eur": 650
+      "housing_difficulty": null,
+      "estimated_housing_cost_eur": null
     },
     "region": "",
     "program_name": "Aeronautical Engineering",
-    "program_native_name": "Aeronautical Engineering",
+    "program_native_name": "Laurea Magistrale in Ingegneria Aeronautica",
     "program_degree": "MSc",
-    "degree_level": "MSc",
-    "duration_years": 2.0,
+    "degree_level": "Master",
+    "duration_years": 2,
     "ects": 120,
     "teaching_language": [
       "English"
@@ -23,40 +23,59 @@
     "program_status": "active",
     "relevance_status": "strong",
     "eligibility_profile": {
-      "eligible_for_non_eu": null,
+      "eligible_for_non_eu": true,
       "required_previous_degree": {
-        "en": "Non-Italian first-cycle degree evaluated for relevant preparation.",
-        "tr": "?talyan olmayan birinci d?ng? diploma ilgili haz?rl?k a??s?ndan de?erlendirilir."
+        "en": "A foreign Bachelor's degree comparable to a first-cycle degree is required.",
+        "tr": "Birinci döngü dereceye denk yabancı bir lisans diploması gereklidir."
       },
       "required_ects": {
-        "total": "145 ECTS minimum at application"
+        "total": null,
+        "note": "No programme-specific ECTS threshold for foreign degrees is published in the checked programme page."
       },
       "minimum_gpa": null,
-      "admission_mode": {
-        "en": "Admissions-committee evaluation of academic record.",
-        "tr": "Akademik kayd?n kabul komitesi de?erlendirmesi."
-      },
+      "admission_mode": "International Admissions Office screening followed by programme Department committee evaluation",
       "admission_risk": "medium",
-      "accepted_backgrounds": [],
-      "required_documents": [],
-      "verification_notes": "Minimum 145 ECTS verified from official PoliMi admissions. English B2 (IELTS 6.0/TOEFL 78)."
+      "accepted_backgrounds": [
+        "Aerospace Engineering",
+        "Mechanical Engineering",
+        "Closely related engineering degree with adequate mathematics and physics"
+      ],
+      "required_documents": [
+        {
+          "en": "Bachelor's degree and academic transcript; official translations when the originals are not in Italian, English, French or Spanish",
+          "tr": "Lisans diploması ve transkript; asıllar İtalyanca, İngilizce, Fransızca veya İspanyolca değilse resmî çeviriler"
+        },
+        {
+          "en": "English-language evidence meeting Polimi's current Master's standard",
+          "tr": "Polimi'nin güncel yüksek lisans standardını karşılayan İngilizce yeterlik belgesi"
+        }
+      ],
+      "verification_notes": {
+        "en": "For a non-Italian degree, Polimi requires a Bachelor's degree comparable to a first-cycle degree and evaluates both qualification comparability and the fit of mathematics, physics and aerospace/mechanical-engineering preparation. The programme committee reviews the academic curriculum and performance; no universal numerical CGPA cut-off is claimed.",
+        "tr": "İtalyan olmayan diploma için Polimi, birinci döngü dereceye denk lisans diploması ister ve hem denklik hem de matematik, fizik ve havacılık/makine mühendisliği altyapısının uyumunu değerlendirir. Program komitesi akademik özgeçmişi ve başarıyı inceler; evrensel sayısal CGPA eşiği ileri sürülmez."
+      }
     },
     "language_profile": {
       "teaching_language": [
         "English"
       ],
       "english_required": true,
-      "english_level_required": "B2 (IELTS 6.0, TOEFL iBT 78)",
+      "english_level_required": "B2; current examples include IELTS Academic or General Training ≥ 6.0, subject to Polimi's full accepted-certificates list.",
       "mixed_language_warning": null,
-      "language_risk": "low",
+      "language_risk": "medium",
       "verification_notes": {
-        "en": "Programme is delivered entirely in English; certificate threshold belongs to current call.",
-        "tr": "Program tamamen ?ngilizce y?r?t?l?r; sertifika e?i?i g?ncel ?a?r?dad?r."
+        "en": "The current 2026/27 Master's language page directly lists B2-equivalent English evidence. A Bachelor's degree taught at least 75% in English for at least three years is also listed as a possible certificate exemption; applicants should check the full current rule.",
+        "tr": "Güncel 2026/27 yüksek lisans dil sayfası B2 düzeyine denk İngilizce kanıtını doğrudan listeler. En az üç yıl boyunca en az %75 İngilizce yürütülen lisans diploması da olası belge muafiyeti olarak listelenir; adaylar tam güncel kuralı kontrol etmelidir."
       },
-      "italian_required": false
+      "italian_required": false,
+      "italian_required_for_entry": false,
+      "additional_language_notes": {
+        "en": "Italian is not an entry requirement for this English MSc. However, Polimi says international students on English Laurea Magistrale programmes must demonstrate Italian proficiency before graduation; students without a B2 certificate may use the university's free course and exit test route.",
+        "tr": "İtalyanca bu İngilizce MSc için giriş şartı değildir. Ancak Polimi, İngilizce Laurea Magistrale programlarındaki uluslararası öğrencilerin mezuniyetten önce İtalyanca yeterlik göstermesi gerektiğini söyler; B2 belgesi olmayanlar üniversitenin ücretsiz kursu ve çıkış sınavı yolunu kullanabilir."
+      }
     },
     "cost_profile": {
-      "academic_year": "2026/2027",
+      "academic_year": "2026/27",
       "tuition_eur_per_year_min": 880.04,
       "tuition_eur_per_year_max": 3883.04,
       "tuition_eur_per_year_estimated": 3883.04,
@@ -73,8 +92,8 @@
       "scholarship_availability": "Available (DSU Lombardy)",
       "scholarship_risk": "Low/Moderate",
       "verification_notes": {
-        "en": "Amounts and the non-EU rule are published on Polimi's 2026/27 fee page.",
-        "tr": "Tutarlar ve AB-disi kural Polimi'nin 2026/27 ucret sayfasinda yayinlanmistir."
+        "en": "The amounts, academic year and the specific reserved non-EU rule come from Polimi's checked 2026/27 tuition page. Housing and everyday costs are shown separately.",
+        "tr": "Tutarlar, akademik yıl ve ayrılmış kontenjanlı AB dışı kuralı Polimi'nin kontrol edilmiş 2026/27 ücret sayfasından gelir. Konaklama ve günlük giderler ayrı gösterilir."
       },
       "total_academic_cost_eur_per_year_estimated": 3883.04,
       "first_installment_eur": 880.04,
@@ -85,7 +104,21 @@
       "living_cost_gbp_per_year": null,
       "living_cost_chf_per_year": null,
       "living_cost_sek_per_year": null,
-      "living_cost_dkk_per_year": null
+      "living_cost_dkk_per_year": null,
+      "living_cost_usd_per_year_min": null,
+      "living_cost_usd_per_year_max": null,
+      "living_cost_gbp_per_year_min": null,
+      "living_cost_gbp_per_year_max": null,
+      "living_cost_chf_per_year_min": null,
+      "living_cost_chf_per_year_max": null,
+      "living_cost_sek_per_year_min": null,
+      "living_cost_sek_per_year_max": null,
+      "living_cost_dkk_per_year_min": null,
+      "living_cost_dkk_per_year_max": null,
+      "cost_notes": {
+        "en": "For 2026/27, Polimi publishes a EUR 880.04 first instalment and a EUR 0-3,003 second instalment for a standard 46-74 ECTS annual study plan. The page says reserved non-EU MSc students with a foreign first-cycle degree pay the maximum unless they are scholarship candidates/recipients. This maximum is a current non-EU planning amount, not a universal price for every applicant.",
+        "tr": "2026/27 için Polimi, standart 46-74 AKTS yıllık öğrenim planında 880,04 EUR ilk taksit ve 0-3.003 EUR ikinci taksit yayımlar. Sayfa, yabancı birinci döngü diplomalı ayrılmış kontenjanlı AB dışı MSc öğrencilerinin burs adayı/alıcı olmadıkça azami tutarı ödediğini söyler. Bu azami tutar, her aday için evrensel fiyat değil güncel AB dışı planlama tutarıdır."
+      }
     },
     "scholarship_profile": {
       "available_types": [
@@ -95,42 +128,48 @@
       "details": [],
       "external_options": [],
       "verification_notes": {
-        "en": "Programme-specific international merit call verified; do not assume DSU eligibility or housing support from this record.",
-        "tr": "Programa ozel uluslararasi basari bursu dogrulandi; bu kayittan DSU uygunlugu veya konaklama destegi sonucu cikarilmaz."
+        "en": "The scholarship page explicitly publishes the scope, fee waiver, possible allowance and time gate. It does not make every admitted student a scholarship recipient.",
+        "tr": "Burs sayfası kapsamı, ücret muafiyetini, olası ek desteği ve zaman koşulunu açıkça yayımlar. Bu, kabul alan her öğrencinin burs alacağı anlamına gelmez."
       },
-      "regional_scholarship_available": null,
-      "regional_scholarship_name": null,
-      "dsu_or_equivalent": null,
+      "regional_scholarship_available": true,
+      "regional_scholarship_name": "Politecnico di Milano merit-based international scholarships / DSU financial aid routes",
+      "dsu_or_equivalent": "University Financial Aid (DSU); eligibility is application-specific and not assumed from admission.",
       "merit_scholarships": [
-        "Politecnico di Milano merit-based international scholarships"
+        {
+          "en": "Polimi's 2026/27 international merit call: all awards include a full tuition-fee waiver; selected awards also include a gross allowance up to EUR 10,000/year.",
+          "tr": "Polimi'nin 2026/27 uluslararası başarı çağrısı: tüm ödüller tam öğrenim ücreti muafiyeti içerir; seçilen ödüllerde yılda brüt 10.000 EUR'a kadar ek destek de bulunur."
+        }
       ],
       "tuition_waivers": [
-        "Full tuition-fee waiver; selected awards also include a gross allowance up to EUR 10,000/year."
+        "Full tuition-fee waiver for the 2026/27 international merit scholarship awardees"
       ],
-      "scholarship_deadline": "2026-02-21",
+      "scholarship_deadline": "2026-02-21 (English evidence for 2026/27 merit-scholarship consideration; Early Bird admission application/payment was 2025-10-01 to 2025-12-01)",
       "scholarship_application_url": "https://www.polimi.it/en/prospective-students/how-much-does-it-cost/scholarships",
-      "funding_competitiveness": "competitive",
+      "funding_competitiveness": "high",
       "housing_support": null,
       "meal_support": null,
       "cash_grant_possible": null,
       "income_based": null,
       "funding_notes": {
-        "en": "For 2026/27, eligible applicants are first-year English-taught MSc applicants who submitted the Early Bird admission application and paid its fee from 1 October to 1 December 2025; English proof for scholarship consideration was due by 21 February 2026.",
-        "tr": "2026/27 icin uygun adaylar, Erken Basvuru doneminde 1 Ekim-1 Aralik 2025 arasinda kabul basvurusunu yapip ucretini odemis, Ingilizce verilen MSc'nin ilk yil adaylaridir; burs degerlendirmesi icin Ingilizce kaniti 21 Subat 2026'ya kadar sunulmalidir."
+        "en": "For the 2026/27 merit call, eligibility was limited to first-year applicants to English-taught MSc programmes who applied and paid the Early Bird fee between 1 October and 1 December 2025; valid English proof was due by 21 February 2026. As of the verification date this route is closed for 2026/27. DSU support exists, but its individual eligibility and benefit level must be checked in the current call.",
+        "tr": "2026/27 başarı çağrısında uygunluk, 1 Ekim-1 Aralık 2025 arasında Erken Başvuru yapıp ücret ödemiş İngilizce MSc ilk yıl adaylarıyla sınırlıydı; geçerli İngilizce belgesi 21 Şubat 2026'da gerekliydi. Doğrulama tarihi itibarıyla bu rota 2026/27 için kapanmıştır. DSU desteği vardır, ancak bireysel uygunluk ve destek tutarı güncel çağrıdan kontrol edilmelidir."
       }
     },
     "living_profile": {
-      "city_cost_level": "unknown",
-      "housing_difficulty": null,
-      "living_risk": "unknown",
+      "city_cost_level": "high",
+      "housing_difficulty": "high",
+      "living_risk": "high",
       "average_room_rent_eur": null,
       "monthly_living_cost_eur_estimated": null,
       "verification_notes": {
-        "en": "No current official rent or living budget was verified in this remediation pass.",
-        "tr": "Bu duzeltme turunde guncel resmi kira veya yasam butcesi dogrulanmadi."
+        "en": "The published EUR 400-700 amount is accommodation guidance rather than a guaranteed rent. It is displayed as a scoped range; the missing complete monthly budget remains unknown.",
+        "tr": "Yayımlanan 400-700 EUR tutarı, garanti kira değil konaklama rehberidir. Kapsamı belirtilmiş aralık olarak gösterilir; eksik olan tam aylık bütçe bilinmiyor kalır."
       },
       "living_cost_eur_per_month": null,
-      "housing_notes": null,
+      "housing_notes": {
+        "en": "Polimi's subsidised DSU residence route has 1,349 places across Milan, Lecco, Como and Cremona; places are assigned through an annual public call and are not a Milan-Bovisa guarantee. Full-rate rooms are separately bookable subject to availability. Budget for a private/shared room and keep a parallel housing plan.",
+        "tr": "Polimi'nin indirimli DSU yurt rotasında Milano, Lecco, Como ve Cremona genelinde 1.349 yer bulunur; yerler yıllık kamu çağrısıyla atanır ve Milano-Bovisa garantisi değildir. Tam ücretli odalar da uygunluğa bağlı olarak ayrı rezerve edilir. Özel/paylaşımlı oda için bütçe ayırın ve paralel konaklama planı yürütün."
+      },
       "average_room_rent_usd_per_month_min": null,
       "average_room_rent_usd_per_month_max": null,
       "average_room_rent_gbp_per_month_min": null,
@@ -157,24 +196,52 @@
       "housing_budget_sek_per_year": null,
       "housing_budget_dkk_per_year": null,
       "official_student_housing_budget_sek_per_month_examples": null,
-      "official_student_total_budget_sek_per_month_examples": null
+      "official_student_total_budget_sek_per_month_examples": null,
+      "average_room_rent_eur_min": 400,
+      "average_room_rent_eur_max": 700,
+      "monthly_living_cost_eur_min": null,
+      "monthly_living_cost_eur_max": null,
+      "housing_budget_usd_per_year_min": null,
+      "housing_budget_usd_per_year_max": null,
+      "housing_budget_gbp_per_year_min": null,
+      "housing_budget_gbp_per_year_max": null,
+      "housing_budget_chf_per_year_min": null,
+      "housing_budget_chf_per_year_max": null,
+      "housing_budget_sek_per_year_min": null,
+      "housing_budget_sek_per_year_max": null,
+      "housing_budget_dkk_per_year_min": null,
+      "housing_budget_dkk_per_year_max": null,
+      "average_room_rent_scope_label": {
+        "en": "Polimi official Milan accommodation planning guidance",
+        "tr": "Polimi resmî Milano konaklama planlama rehberi"
+      },
+      "student_housing_available": true,
+      "student_housing_competitiveness": "high",
+      "housing_sentiment": null,
+      "monthly_living_cost_basis": {
+        "en": "Polimi does not publish one complete monthly total on the checked page. It publishes EUR 400-700/month accommodation, EUR 150-200/month food and EUR 100-200/month social-life guidance, all explicitly approximate; no misleading total is calculated from incomplete categories.",
+        "tr": "Polimi kontrol edilen sayfada tek bir eksiksiz aylık toplam yayımlamaz. Açıkça yaklaşık olmak üzere 400-700 EUR/ay konaklama, 150-200 EUR/ay yiyecek ve 100-200 EUR/ay sosyal yaşam rehberi yayımlar; eksik kalemlerden yanıltıcı toplam hesaplanmaz."
+      }
     },
     "curriculum_profile": {
       "structure": "90-105 ECTS coursework/labs, 15-20 ECTS thesis",
       "specializations": [
-        "Aerodynamics",
-        "Flight mechanics",
-        "Aerospace structures",
-        "Aeroelasticity",
-        "Propulsion",
-        "Space systems"
+        "aerodynamics",
+        "aerospace_structures",
+        "aeroelasticity",
+        "flight_dynamics",
+        "aircraft_systems",
+        "aerospace_propulsion"
       ],
       "mandatory_internship": false,
       "thesis_type": "Research/Academic",
       "flexibility": "unknown",
       "curriculum_risk": "Low",
-      "verification_notes": "",
-      "curriculum_url": "https://www.polimi.it/en/education/laurea-programmes/programme-detail/aeronautical-engineering",
+      "verification_notes": {
+        "en": "The main programme page and the 2026/27 regulation support these course-structure statements. Individual second-year availability must still be checked in the current study plan.",
+        "tr": "Ana program sayfası ve 2026/27 yönetmeliği bu ders-yapısı ifadelerini destekler. Bireysel ikinci yıl ders uygunluğu yine güncel çalışma planından kontrol edilmelidir."
+      },
+      "curriculum_url": "https://onlineservices.polimi.it/manifesti/manifesti/controller/extra/RegolamentoPublic.do?EVN_DEFAULT=evento&aa=2026&jaf_currentWFID=main&k_corso_la=536&lang=EN",
       "study_plan_url": "https://www.polimi.it/en/education/laurea-programmes/programme-detail/aeronautical-engineering",
       "notable_courses": [
         "Final thesis (20 CFU)"
@@ -183,58 +250,125 @@
         "en": "The official 2026/27 regulation describes the English-taught Aeronautical Engineering MSc through a core/elective structure plus a 20-CFU final thesis.",
         "tr": "Resmi 2026/27 yonetmeligi, Ingilizce verilen Havacilik Muhendisligi MSc programini cekirdek/secimli yapi ve 20 CFU bitirme teziyle tanimlar."
       },
-      "thesis_required": true
+      "thesis_required": true,
+      "tracks": [
+        "aeronautical_engineering"
+      ],
+      "mandatory_courses": [
+        "Atmospheric flight dynamics",
+        "Aerodynamics",
+        "Aerospace structures",
+        "Aeroelasticity"
+      ],
+      "elective_courses": [
+        "One aeronautical core module and two complementary modules in the first year",
+        "Second-year individual pathway across core and multidisciplinary subjects",
+        "Technical writing, presentation and aeronautics research-methodology modules"
+      ],
+      "internship_required": null,
+      "curriculum_structure": {
+        "en": "The official programme description gives a two-year MSc with four first-year compulsory modules (atmospheric flight dynamics, aerodynamics, aerospace structures and aeroelasticity), then a more individual second-year pathway. It concludes with a design-oriented or research-based Master's thesis; collaboration with a company, research centre or institution is possible, not stated as compulsory.",
+        "tr": "Resmî program açıklaması, ilk yılda dört zorunlu modül (atmosferik uçuş dinamiği, aerodinamik, havacılık-uzay yapıları ve aeroelastisite) içeren iki yıllık MSc'yi; ardından daha bireysel ikinci yıl yolunu verir. Tasarım odaklı veya araştırma temelli yüksek lisans teziyle biter; şirket, araştırma merkezi veya kurumla iş birliği mümkündür ancak zorunlu olarak belirtilmez."
+      }
     },
     "category_profile": {
-      "primary_categories": [],
-      "secondary_categories": [],
+      "primary_categories": [
+        "aerospace_engineering",
+        "aeronautics"
+      ],
+      "secondary_categories": [
+        "aerodynamics",
+        "aerospace_structures",
+        "flight_mechanics",
+        "propulsion",
+        "aircraft_systems"
+      ],
       "technical_focus": "",
       "verification_notes": "",
       "normalized_tags": [
-        "Aerodynamics",
-        "Space Systems",
-        "Propulsion",
-        "Structures"
+        "aerodynamics",
+        "aerospace_structures",
+        "aeroelasticity",
+        "flight_mechanics",
+        "aircraft_systems",
+        "aerospace_propulsion",
+        "aircraft_design"
+      ],
+      "subcategories": [
+        "aeroelasticity",
+        "flight_dynamics",
+        "aircraft_design"
       ]
     },
     "student_sentiment_profile": {
       "student_satisfaction_score": null,
-      "workload_sentiment": "",
-      "teaching_quality_sentiment": "",
-      "administration_sentiment": "",
-      "housing_sentiment": "",
-      "city_life_sentiment": "",
-      "international_student_sentiment": "",
-      "career_support_sentiment": "",
-      "student_sentiment_summary": "",
-      "student_sentiment_sources": [],
       "sentiment_confidence": "unknown",
-      "verification_notes": {
-        "en": "No sufficiently sampled, dated, independently verified student-sentiment evidence was retained; no score is displayed.",
-        "tr": "Yeterli ?rneklemli, tarihli ve ba??ms?z do?rulanm?? ??renci duygu verisi korunmad?; puan g?sterilmez."
-      },
       "sample_size_estimate": null,
-      "date_range": ""
+      "date_range": "",
+      "student_sentiment_sources": [],
+      "student_sentiment_summary": {
+        "en": "No sufficiently documented, independent student-sentiment sample was retained; no sentiment score is shown.",
+        "tr": "Yeterince belgelenmiş bağımsız öğrenci görüşü örneklemi tutulmadı; duygu puanı gösterilmez."
+      },
+      "verification_notes": {
+        "en": "Student sentiment remains separate from official facts and is not fabricated to fill the card.",
+        "tr": "Öğrenci görüşleri resmî bilgilerden ayrı tutulur ve kartı doldurmak için uydurulmaz."
+      }
     },
     "application_timeline_profile": {
-      "application_period": "Winter",
-      "pre_enrollment_required": false,
-      "visa_complexity": "Medium",
-      "deadline_eu": null,
-      "deadline_non_eu": null,
-      "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
-      "verification_notes": "",
-      "non_eu_deadline": null,
-      "winter_deadline": null,
-      "application_deadline": null,
-      "deadline_notes": null
+      "academic_year": "2026/27 foreign-qualification call cycle",
+      "intake_terms": [
+        "September 2026 (first semester)",
+        "February 2027 (second semester; Engineering)"
+      ],
+      "application_rounds": [
+        "September 2026 Engineering general call 1: 1 October-1 December 2025 (closed)",
+        "September 2026 Engineering general call 2: 13 January-26 February 2026 (closed)",
+        "September 2026 additional call: 27 February-31 March 2026, only EEA and eligible non-EEA residents in Italy (closed)",
+        "February 2027 Engineering general call: 18 May-18 June 2026 (closed)"
+      ],
+      "non_eu_deadline": "2026-06-18 (February 2027 Engineering general call; closed as of 2026-07-14)",
+      "eu_deadline": "2026-06-18 (February 2027 Engineering general call; closed as of 2026-07-14)",
+      "winter_deadline": "2026-02-26 (September 2026 Engineering general call 2; closed as of 2026-07-14)",
+      "summer_deadline": "2026-06-18 (February 2027 Engineering general call; closed as of 2026-07-14)",
+      "application_deadline": "2026-06-18 (last published 2026/27 Engineering general call; closed)",
+      "timeline_risk": "high",
+      "deadline_notes": {
+        "en": "These are the official published 2026/27 foreign-degree Engineering calls, all already closed on the verification date. The 31 March additional September call is not a normal non-EU route: it is limited to EEA applicants and specified non-EEA residents in Italy. Future 2027/28 dates are not yet inferred. Admitted visa applicants must also complete the Italian-government visa request by 30 November 2026 for this academic year.",
+        "tr": "Bunlar resmî yayımlanmış 2026/27 yabancı diplomalı Mühendislik çağrılarıdır ve doğrulama tarihinde hepsi kapanmıştır. 31 Mart ek Eylül çağrısı normal AB dışı rota değildir: AEA adayları ve İtalya'da belirtilmiş statüde ikamet eden AB dışı adaylarla sınırlıdır. Gelecek 2027/28 tarihleri tahmin edilmez. Kabul alan vize adayları bu akademik yıl için İtalyan devletinin vize talebini ayrıca 30 Kasım 2026'ya kadar tamamlamalıdır."
+      }
     },
     "research_profile": {
       "research_focus_areas": [],
       "key_institutes": [],
       "research_funding_level": "very_high",
       "research_risk": "minimal",
-      "verification_notes": ""
+      "verification_notes": "",
+      "department_research_areas": [
+        "Aerospace structures, materials and technologies",
+        "Aircraft and rotorcraft design, aerodynamics, dynamics and control",
+        "Fluid dynamics, computational engineering and energy conversion",
+        "Space science and engineering"
+      ],
+      "labs": [
+        "Aerodynamic Laboratory",
+        "ASDL — Aero-Structural Design Laboratory",
+        "AVLab — Aeroelasticity and Vibroacoustic Laboratory",
+        "FMSlab — Flight Mechanics & Flight Systems Laboratory",
+        "SPLab — Space Propulsion Laboratory"
+      ],
+      "research_centers": [
+        "Department of Aerospace Science and Technology (DAER)"
+      ],
+      "research_strength_summary": {
+        "en": "DAER's checked research taxonomy includes structures/materials, aircraft and rotorcraft design, aerodynamics, flight dynamics/control, CFD and energy conversion, and space science. Its lab list specifically identifies aerostructures, aeroelasticity/vibroacoustics, flight mechanics/systems and space propulsion. This is department-level research access, not a promise of a place in a particular lab.",
+        "tr": "DAER'in kontrol edilen araştırma sınıflandırması yapılar/malzemeler, uçak ve rotorcraft tasarımı, aerodinamik, uçuş dinamiği/kontrolü, HAD ve enerji dönüşümü ile uzay bilimini içerir. Laboratuvar listesi özellikle havacılık yapıları, aeroelastisite/vibroakustik, uçuş mekaniği/sistemleri ve uzay itkisini tanımlar. Bu, belirli bir laboratuvarda yer garantisi değil bölüm düzeyinde araştırma erişimidir."
+      },
+      "research_strength_score": null,
+      "research_sources": [
+        "https://www.aero.polimi.it/en/research-lines",
+        "https://www.aero.polimi.it/en/research-labs"
+      ]
     },
     "industry_ecosystem_profile": {
       "local_industry_strength": "very_high",
@@ -242,64 +376,34 @@
       "hiring_culture": "",
       "alumni_presence": "very_high",
       "industry_risk": "",
-      "verification_notes": ""
+      "verification_notes": "",
+      "nearby_companies": [],
+      "confirmed_partners": [],
+      "research_institutes": [],
+      "ecosystem_notes": {
+        "en": "The programme page permits a thesis in collaboration with aerospace companies, research centres or international institutions, but the checked sources do not establish a named programme partnership or an automatic placement. No company is presented as a guaranteed partner.",
+        "tr": "Program sayfası havacılık-uzay şirketleri, araştırma merkezleri veya uluslararası kurumlarla ortak tez olasılığı verir; ancak kontrol edilen kaynaklar isimli programa özgü ortaklık veya otomatik yerleştirme göstermez. Hiçbir şirket garantili ortak olarak sunulmaz."
+      },
+      "ecosystem_strength_score": null
     },
     "source_profile": {
-      "primary_url": "https://onlineservices.polimi.it/manifesti/manifesti/controller/extra/RegolamentoPublic.do?EVN_DEFAULT=evento&aa=2026&jaf_currentWFID=main&k_corso_la=536&lang=EN",
-      "secondary_urls": [
-        "https://www.polimi.it/en/international-prospective-students/laurea-magistrale-programmes-equivalent-to-master-of-science/application-procedures/application/",
-        "https://www.polimi.it/en/prospective-students/tuition-fees-scholarships-and-financial-aid"
-      ],
-      "last_verified": "2026-07-14",
-      "field_confidence": {
-        "tuition": "high",
-        "scholarship": "high",
-        "curriculum": "high",
-        "eligibility": "high",
-        "living": "unknown",
-        "student_sentiment": "unknown",
-        "program_basic_info": "high",
-        "language": "high",
-        "admission": "medium"
-      },
-      "source_reliability": "high",
-      "verification_status": "partial",
-      "verification_notes": {
-        "en": "The 2026/27 academic regulation verifies programme, English delivery, curriculum and the admission framework. Fees, funding, deadlines and housing need separate current sources.",
-        "tr": "2026/27 akademik yönetmeliği programı, İngilizce eğitimi, müfredatı ve kabul çerçevesini doğrular. Ücret, finansman, son tarihler ve konaklama için ayrı güncel kaynak gerekir."
-      },
+      "official_program_page": "https://www.polimi.it/en/education/laurea-programmes/programme-detail/aeronautical-engineering",
+      "official_admission_page": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-magistrale/foreign-qualification/application/list-of-documents-required-by-the-admissions-office",
+      "official_curriculum_page": "https://onlineservices.polimi.it/manifesti/manifesti/controller/extra/RegolamentoPublic.do?EVN_DEFAULT=evento&aa=2026&jaf_currentWFID=main&k_corso_la=536&lang=EN",
+      "official_tuition_page": "https://www.polimi.it/en/prospective-students/how-much-does-it-cost/laurea-laurea-magistrale-and-single-cycle-programmes",
+      "official_scholarship_page": "https://www.polimi.it/en/prospective-students/how-much-does-it-cost/scholarships",
+      "official_housing_page": "https://www.residenze.polimi.it/en/prenotare-tariffa-agevolata/",
+      "official_department_page": "https://www.aero.polimi.it/en/research-lines",
       "source_log": [
         {
-          "url": "https://onlineservices.polimi.it/manifesti/manifesti/controller/extra/RegolamentoPublic.do?EVN_DEFAULT=evento&aa=2026&jaf_currentWFID=main&k_corso_la=536&lang=EN",
-          "title": "Aeronautical Engineering MSc academic regulation 2026/27 — Politecnico di Milano",
-          "source_type": "official_program_page",
-          "access_status": "ok",
-          "last_checked": "2026-07-14",
-          "relevant_fields": [
-            "program",
-            "program_status",
-            "degree_level",
-            "duration",
-            "teaching_language",
-            "curriculum",
-            "admission"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Official two-year MSc regulation in English; it describes the core/elective structure and first-cycle degree/curriculum evaluation.",
-            "tr": "İngilizce resmî iki yıllık MSc yönetmeliği; çekirdek/seçmeli yapıyı ve birinci döngü derece/müfredat değerlendirmesini açıklar."
-          }
-        },
-        {
           "url": "https://www.polimi.it/en/education/laurea-programmes/programme-detail/aeronautical-engineering",
-          "title": "Aeronautical Engineering MSc ? Politecnico di Milano",
+          "title": "Politecnico di Milano Aeronautical Engineering MSc",
           "source_type": "official_program_page",
           "access_status": "ok",
           "last_checked": "2026-07-14",
           "relevant_fields": [
             "program",
-            "program_status",
-            "degree_level",
+            "degree",
             "duration",
             "language",
             "admission",
@@ -307,82 +411,229 @@
           ],
           "confidence": "high",
           "notes": {
-            "en": "Official source checked for the listed fields.",
-            "tr": "Resm? kaynak listelenen alanlar i?in kontrol edildi."
+            "en": "Current programme page verifies a two-year English MSc at Milano Bovisa; its academic scope, foreign-degree entry framework, compulsory first-year subjects, second-year flexibility and thesis options.",
+            "tr": "Güncel program sayfası Milano Bovisa'da iki yıllık İngilizce MSc'yi; akademik kapsamını, yabancı diplomalı giriş çerçevesini, zorunlu ilk yıl derslerini, ikinci yıl esnekliğini ve tez seçeneklerini doğrular."
           }
         },
         {
-          "url": "https://www.polimi.it/en/prospective-students/how-much-does-it-cost/laurea-laurea-magistrale-and-single-cycle-programmes?cHash=64721fe2f6087946b40f65cc4aa53a4b&scroll=true",
-          "title": "2026/27 tuition ? Politecnico di Milano",
+          "url": "https://onlineservices.polimi.it/manifesti/manifesti/controller/extra/RegolamentoPublic.do?EVN_DEFAULT=evento&aa=2026&jaf_currentWFID=main&k_corso_la=536&lang=EN",
+          "title": "Politecnico di Milano Aeronautical Engineering 2026/27 Academic Regulation",
+          "source_type": "official_curriculum_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "curriculum",
+            "admission"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "The checked 2026/27 regulation supports the programme's 120-CFU two-year structure, curriculum rules and degree-evaluation framework.",
+            "tr": "Kontrol edilen 2026/27 yönetmeliği programın 120 AKTS'lik iki yıllık yapısını, müfredat kurallarını ve derece değerlendirme çerçevesini destekler."
+          }
+        },
+        {
+          "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-magistrale/foreign-qualification/application/list-of-documents-required-by-the-admissions-office",
+          "title": "Polimi Foreign-Qualification Admissions Documents",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "admission",
+            "non_eu",
+            "documents",
+            "language"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Current international-admissions page describes foreign degree comparability, document/translation requirements and current English evidence rules for Master's applicants.",
+            "tr": "Güncel uluslararası kabul sayfası yabancı diploma denkliğini, belge/çeviri gerekliliklerini ve yüksek lisans adayları için güncel İngilizce kanıt kurallarını açıklar."
+          }
+        },
+        {
+          "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-magistrale/foreign-qualification/deadlines",
+          "title": "Polimi Foreign-Qualification Master Deadlines",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "deadline",
+            "non_eu"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Current Engineering call page publishes the closed 2026/27 September and February windows and distinguishes the EEA/eligible-resident additional call from general calls.",
+            "tr": "Güncel Mühendislik çağrı sayfası kapanmış 2026/27 Eylül ve Şubat pencerelerini yayımlar; AEA/uygun ikametli ek çağrısını genel çağrılardan ayırır."
+          }
+        },
+        {
+          "url": "https://www.polimi.it/en/students/language-requirements/students-of-laurea-magistrale-study-programmes",
+          "title": "Polimi Laurea Magistrale Language Requirements",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "language"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Current 2026/27 Master's language page lists B2-equivalent English evidence, including IELTS ≥ 6.0, and the associated accepted-certificate rules.",
+            "tr": "Güncel 2026/27 yüksek lisans dil sayfası IELTS ≥ 6.0 dahil B2 düzeyi İngilizce kanıtını ve ilişkili kabul edilen belge kurallarını listeler."
+          }
+        },
+        {
+          "url": "https://www.polimi.it/en/prospective-students/how-much-does-it-cost/laurea-laurea-magistrale-and-single-cycle-programmes",
+          "title": "Politecnico di Milano Tuition 2026/27",
           "source_type": "official_tuition_page",
           "access_status": "ok",
           "last_checked": "2026-07-14",
           "relevant_fields": [
-            "tuition"
+            "tuition",
+            "fees"
           ],
           "confidence": "high",
           "notes": {
-            "en": "Official source checked for the listed fields.",
-            "tr": "Resm? kaynak listelenen alanlar i?in kontrol edildi."
+            "en": "The current page publishes the EUR 880.04 first instalment, EUR 0-3,003 second instalment for a standard annual plan and the maximum-fee rule for reserved non-EU MSc students with a foreign first-cycle degree who are not scholarship candidates/recipients.",
+            "tr": "Güncel sayfa 880,04 EUR ilk taksiti, standart yıllık plan için 0-3.003 EUR ikinci taksiti ve burs adayı/alıcı olmayan yabancı birinci döngü diplomalı ayrılmış kontenjanlı AB dışı MSc öğrencileri için azami ücret kuralını yayımlar."
           }
         },
         {
           "url": "https://www.polimi.it/en/prospective-students/how-much-does-it-cost/scholarships",
-          "title": "Scholarships ? Politecnico di Milano",
+          "title": "Politecnico di Milano International Scholarships 2026/27",
           "source_type": "official_scholarship_page",
           "access_status": "ok",
           "last_checked": "2026-07-14",
           "relevant_fields": [
             "scholarship",
-            "scholarship_deadline"
+            "funding",
+            "deadline"
           ],
           "confidence": "high",
           "notes": {
-            "en": "Official source checked for the listed fields.",
-            "tr": "Resm? kaynak listelenen alanlar i?in kontrol edildi."
+            "en": "Current scholarship page states that all merit awards include a full fee waiver, selected awards can add up to EUR 10,000/year gross, and records the Early Bird and language-evidence time conditions.",
+            "tr": "Güncel burs sayfası tüm başarı ödüllerinin tam ücret muafiyeti içerdiğini, seçilen ödüllerde yılda brüt 10.000 EUR'a kadar ek destek olabileceğini ve Erken Başvuru/dil kanıtı zaman koşullarını belirtir."
           }
         },
         {
-          "url": "https://www.polimi.it/en/students/tuition-fees-scholarships-and-financial-aid/university-financial-aid-diritto-allo-studio-universitario-dsu",
-          "title": "DSU financial aid ? Politecnico di Milano",
-          "source_type": "official_scholarship_page",
+          "url": "https://www.polimi.it/en/prospective-students/how-to-apply/on-arrival-information/useful-information",
+          "title": "Polimi Useful Information: Cost of Living",
+          "source_type": "official_cost_of_living_page",
           "access_status": "ok",
           "last_checked": "2026-07-14",
           "relevant_fields": [
+            "living",
+            "housing"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official guidance labels the figures approximate and gives EUR 400-700/month accommodation, EUR 150-200 food and EUR 100-200 social-life planning ranges; it does not publish one complete total.",
+            "tr": "Resmî rehber tutarları yaklaşık olarak etiketler ve ayda 400-700 EUR konaklama, 150-200 EUR yiyecek ve 100-200 EUR sosyal yaşam planlama aralıklarını verir; tek eksiksiz toplam yayımlamaz."
+          }
+        },
+        {
+          "url": "https://www.residenze.polimi.it/en/prenotare-tariffa-agevolata/",
+          "title": "Polimi Preferential-rate DSU Accommodation",
+          "source_type": "official_housing_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "housing",
             "scholarship"
           ],
-          "confidence": "medium",
+          "confidence": "high",
           "notes": {
-            "en": "Official source checked for the listed fields.",
-            "tr": "Resm? kaynak listelenen alanlar i?in kontrol edildi."
+            "en": "Official residence page says 1,349 subsidised places are available across the university's campuses through an annual public call; allocation is competitive and campus-specific availability is not guaranteed.",
+            "tr": "Resmî yurt sayfası yıllık kamu çağrısıyla üniversitenin kampüsleri genelinde 1.349 indirimli yer olduğunu belirtir; yerleştirme rekabetçidir ve kampüse özgü uygunluk garanti değildir."
           }
         },
         {
-          "url": "https://www.polimi.it/en/prospective-students/how-much-does-it-cost/laurea-laurea-magistrale-and-single-cycle-programmes",
-          "title": "Laurea and Laurea Magistrale tuition 2026/27 — Politecnico di Milano",
-          "source_type": "official_tuition_page",
+          "url": "https://www.aero.polimi.it/en/research-lines",
+          "title": "Polimi DAER Research Lines",
+          "source_type": "official_department_page",
           "access_status": "ok",
           "last_checked": "2026-07-14",
           "relevant_fields": [
-            "tuition"
+            "research"
           ],
           "confidence": "high",
           "notes": {
-            "en": "The 2026/27 page publishes the EUR 880.04 first instalment, EUR 0-3,003 second instalment range and the maximum-fee rule for reserved non-EU Master's students with a foreign first-cycle degree.",
-            "tr": "2026/27 sayfasi EUR 880,04 ilk taksitini, EUR 0-3.003 ikinci taksit araligini ve yabanci birinci donem diplomali ayrilmis kontenjanli AB-disi MSc ogrencileri icin azami ucret kuralini yayinlar."
+            "en": "Official DAER research taxonomy identifies aerospace structures/materials, aircraft/rotorcraft design, aerodynamics, dynamics/control, CFD/energy conversion and space science/engineering.",
+            "tr": "Resmî DAER araştırma sınıflandırması havacılık-uzay yapıları/malzemeleri, uçak/rotorcraft tasarımı, aerodinamik, dinamik/kontrol, HAD/enerji dönüşümü ve uzay bilimi/mühendisliğini tanımlar."
+          }
+        },
+        {
+          "url": "https://www.aero.polimi.it/en/research-labs",
+          "title": "Polimi DAER Research Labs",
+          "source_type": "official_lab_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "research"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official department page lists 18 scientific labs, including ASDL, AVLab, FMSlab and SPLab, which are specific research signals rather than a generic ranking claim.",
+            "tr": "Resmî bölüm sayfası ASDL, AVLab, FMSlab ve SPLab dahil 18 bilimsel laboratuvarı listeler; bunlar genel sıralama iddiası değil somut araştırma sinyalleridir."
           }
         }
       ],
-      "official_program_page": "https://www.polimi.it/en/education/laurea-programmes/programme-detail/aeronautical-engineering",
-      "official_admission_page": "https://www.polimi.it/en/education/laurea-programmes/programme-detail/aeronautical-engineering",
-      "official_curriculum_page": "https://www.polimi.it/en/education/laurea-programmes/programme-detail/aeronautical-engineering",
-      "official_tuition_page": "https://www.polimi.it/en/prospective-students/how-much-does-it-cost/laurea-laurea-magistrale-and-single-cycle-programmes",
-      "official_scholarship_page": "https://www.polimi.it/en/prospective-students/how-much-does-it-cost/scholarships",
-      "needs_verification": true
+      "last_verified": "2026-07-14",
+      "needs_verification": false,
+      "verification_notes": {
+        "en": "All displayed programme, admission, language, current fee, scholarship, deadline, housing and research facts are grounded in checked official sources. The complete monthly living budget and a named programme-specific industry placement are not published by these sources and are left unclaimed.",
+        "tr": "Gösterilen program, kabul, dil, güncel ücret, burs, son tarih, konaklama ve araştırma bilgilerinin tümü kontrol edilmiş resmî kaynaklara dayanır. Bu kaynaklarda tam aylık yaşam bütçesi ve isimli programa özgü sanayi yerleştirmesi yayımlanmadığı için ileri sürülmez."
+      },
+      "field_confidence": {
+        "program_basic_info": "high",
+        "language": "high",
+        "admission": "high",
+        "tuition": "high",
+        "scholarship": "high",
+        "curriculum": "high",
+        "research_profile": "high",
+        "industry_ecosystem_profile": "unknown",
+        "application_timeline_profile": "high",
+        "living_profile": "high",
+        "housing": "high",
+        "deadlines": "high"
+      }
     },
     "decision_summary": {
-      "en": "Fully English and technically deep. Foreign-bachelor non-EU/no-award budget is documented ?3,883.04 maximum; merit funding is selective.",
-      "tr": "Tamamen ?ngilizce ve teknik a??dan derin. Yabanc? lisansl? AB d???/bursuz aday b?t?esi belgelenmi? ?3.883,04 azamidir; liyakat fonu se?icidir."
+      "main_strengths": [
+        {
+          "en": "A dedicated, English two-year Aeronautical Engineering MSc with explicit core work in flight dynamics, aerodynamics, structures and aeroelasticity before a flexible second year and thesis.",
+          "tr": "Uçuş dinamiği, aerodinamik, yapılar ve aeroelastisite alanlarında açık çekirdek içeriği olan; esnek ikinci yıl ve tezle tamamlanan, amaca yönelik İngilizce iki yıllık Aeronautical Engineering MSc."
+        },
+        {
+          "en": "DAER research evidence is concrete: aerostructures, aeroelasticity/vibroacoustics, flight mechanics/systems, CFD and space-propulsion labs are named in the official department sources.",
+          "tr": "DAER araştırma kanıtı somuttur: resmî bölüm kaynakları havacılık yapıları, aeroelastisite/vibroakustik, uçuş mekaniği/sistemleri, HAD ve uzay itkisi laboratuvarlarını isimle verir."
+        }
+      ],
+      "main_risks": [
+        {
+          "en": "Admission is committee-evaluated. A foreign Bachelor's degree must be comparable and the mathematical, physical and aerospace/mechanical foundation must fit; no universal CGPA threshold is published.",
+          "tr": "Kabul komite değerlendirmelidir. Yabancı lisans diploması denk olmalı ve matematik, fizik ile havacılık/makine altyapısı uyum göstermelidir; evrensel CGPA eşiği yayımlanmamıştır."
+        },
+        {
+          "en": "For a reserved non-EU MSc applicant with a foreign first-cycle degree and no scholarship, the published 2026/27 planning maximum is EUR 3,883.04/year. Milan accommodation alone is officially guided at EUR 400-700/month, while Polimi does not publish one complete monthly total.",
+          "tr": "Yabancı birinci döngü diplomalı ve bursu olmayan ayrılmış kontenjanlı AB dışı MSc adayı için yayımlanmış 2026/27 planlama azamisi yıllık 3.883,04 EUR'dur. Polimi tek eksiksiz aylık toplam yayımlamazken Milano konaklaması tek başına resmî rehberde ayda 400-700 EUR'dur."
+        },
+        {
+          "en": "All published 2026/27 foreign-degree Engineering calls are closed at the verification date. The attractive international merit scholarship was also tied to a much earlier Early Bird window; do not budget it as still open.",
+          "tr": "Yayımlanmış tüm 2026/27 yabancı diplomalı Mühendislik çağrıları doğrulama tarihinde kapanmıştır. Cazip uluslararası başarı bursu da çok daha erken Erken Başvuru penceresine bağlıydı; hâlâ açıkmış gibi bütçelenmemelidir."
+        }
+      ],
+      "best_for": [
+        {
+          "en": "Applicants with a strong aerospace/mechanical Bachelor's background seeking aircraft-focused MSc depth in English.",
+          "tr": "İngilizce uçak odaklı MSc derinliği arayan, güçlü havacılık/makine lisans altyapılı adaylar."
+        }
+      ],
+      "not_ideal_for": [
+        {
+          "en": "Applicants who need a guaranteed current open call, a low Milan housing budget, or a named guaranteed industry placement.",
+          "tr": "Hâlen açık garantili başvuru çağrısı, düşük Milano konaklama bütçesi veya isimli garantili sanayi yerleştirmesi isteyen adaylar."
+        }
+      ]
     },
     "scoring_inputs": {
       "academic_prestige": 85,
@@ -395,28 +646,55 @@
     "location": {},
     "qs_ranking": 111,
     "data_quality": {
-      "status": "partial",
-      "checked_official_source_count": 6,
+      "status": "verified",
+      "checked_official_source_count": 11,
       "verified_fields": [
         "program",
         "language",
         "admission",
+        "non_eu_eligibility",
         "tuition",
         "scholarship",
-        "curriculum"
+        "deadline",
+        "curriculum",
+        "research",
+        "housing"
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-14"
+      "audited_at": "2026-07-15"
     },
     "quality_control": {
-      "checked_at": "2026-07-14",
-      "qc_status": "needs_revision",
+      "checked_at": "2026-07-15",
+      "qc_status": "passed",
       "remaining_verification_tasks": [],
       "qc_notes": {
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
       }
+    },
+    "degree_class": "Laurea Magistrale (Master of Science)",
+    "department": "Department of Aerospace Science and Technology (DAER)",
+    "faculty_or_school": "School of Industrial and Information Engineering",
+    "campus": "Milano Bovisa",
+    "financials": {
+      "tuition_fee_per_year": null,
+      "semester_fee": null
+    },
+    "scholarships_info": [],
+    "admission": {
+      "requirements": {
+        "minimum_gpa": null,
+        "minimum_gpa_notes": "unknown",
+        "required_ects": null,
+        "language_requirements": "English B2; see language_profile and the checked source log."
+      }
+    },
+    "urls": {
+      "program": "https://www.polimi.it/en/education/laurea-programmes/programme-detail/aeronautical-engineering",
+      "admission": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-magistrale/foreign-qualification/application/list-of-documents-required-by-the-admissions-office",
+      "tuition": "https://www.polimi.it/en/prospective-students/how-much-does-it-cost/laurea-laurea-magistrale-and-single-cycle-programmes",
+      "scholarship": "https://www.polimi.it/en/prospective-students/how-much-does-it-cost/scholarships"
     }
   },
   {
@@ -426,8 +704,8 @@
     "university_native_name": "Politecnico di Torino",
     "city": {
       "name": "Turin",
-      "housing_difficulty": "high",
-      "estimated_housing_cost_eur": 550
+      "housing_difficulty": null,
+      "estimated_housing_cost_eur": null
     },
     "region": "",
     "program_name": "M.Sc. Aerospace Engineering",
@@ -816,10 +1094,10 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-14"
+      "audited_at": "2026-07-15"
     },
     "quality_control": {
-      "checked_at": "2026-07-14",
+      "checked_at": "2026-07-15",
       "qc_status": "needs_revision",
       "remaining_verification_tasks": [],
       "qc_notes": {
@@ -835,8 +1113,8 @@
     "university_native_name": "Sapienza University of Rome",
     "city": {
       "name": "Rome",
-      "housing_difficulty": "high",
-      "estimated_housing_cost_eur": 600
+      "housing_difficulty": null,
+      "estimated_housing_cost_eur": null
     },
     "region": "",
     "program_name": "M.Sc. Space and Astronautical Engineering",
@@ -1264,10 +1542,10 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-14"
+      "audited_at": "2026-07-15"
     },
     "quality_control": {
-      "checked_at": "2026-07-14",
+      "checked_at": "2026-07-15",
       "qc_status": "needs_revision",
       "remaining_verification_tasks": [],
       "qc_notes": {
@@ -1283,265 +1561,253 @@
     "university_native_name": "University of Bologna",
     "city": {
       "name": "Forlì",
-      "housing_difficulty": "high",
-      "estimated_housing_cost_eur": 500
+      "housing_difficulty": null,
+      "estimated_housing_cost_eur": null
     },
     "region": "",
-    "program_name": "Second Cycle Degree in Aerospace Engineering (LM-20)",
-    "program_native_name": "Second Cycle Degree in Aerospace Engineering (LM-20)",
-    "program_degree": "MSc",
-    "degree_level": "MSc",
-    "duration_years": 2.0,
+    "program_name": "Aerospace Engineering",
+    "program_native_name": "Ingegneria Aerospaziale",
+    "program_degree": "Master of Science",
+    "degree_level": "Master",
+    "duration_years": 2,
     "ects": 120,
     "teaching_language": [
       "English"
     ],
     "program_url": "https://www.unibo.it/en/study/second-cycle-degree/programme/2026/6704",
     "program_status": "active",
-    "relevance_status": "highly_relevant",
+    "relevance_status": "strong",
     "eligibility_profile": {
-      "eligible_for_non_eu": true,
-      "required_previous_degree": "Bachelor's degree in relevant engineering field",
+      "eligible_for_non_eu": null,
+      "non_eu_quota": 15,
+      "required_previous_degree": {
+        "en": "A first-cycle/bachelor's degree or an equivalent foreign qualification recognised as suitable for second-cycle study.",
+        "tr": "Birinci döngü/lisans derecesi veya ikinci döngü eğitimi için uygun kabul edilen eşdeğer yabancı yeterlilik."
+      },
+      "accepted_backgrounds": [
+        "industrial_engineering",
+        "information_engineering",
+        "civil_environmental_engineering",
+        "physics",
+        "computer_science",
+        "mathematics"
+      ],
       "required_ects": {
-        "total": "Verified ECTS required at application"
+        "math": null,
+        "physics": null,
+        "engineering": null,
+        "aerospace": null,
+        "mechanical": null,
+        "control": null,
+        "electronics": null,
+        "computer_science": null,
+        "other": []
       },
       "minimum_gpa": null,
-      "admission_mode": "unknown",
-      "admission_risk": "Moderate",
-      "accepted_backgrounds": [],
+      "gpa_scale": "",
+      "ranking_or_selection": "Ranking based on academic background",
+      "admission_mode": "restricted_access",
+      "admission_risk": "medium",
       "required_documents": [],
-      "verification_notes": "Restricted access program. B2 English (IELTS 5.5, TOEFL iBT 80)."
+      "motivation_letter_required": true,
+      "cv_required": true,
+      "recommendation_required": false,
+      "portfolio_required": false,
+      "interview_required": false,
+      "test_required": false,
+      "notes_for_turkish_students": "Must provide ISEE translation and legalization for ER.GO",
+      "verification_notes": "Admission facts were not retained without a checked official source."
     },
     "language_profile": {
       "teaching_language": [
         "English"
       ],
       "english_required": true,
-      "english_level_required": "B2 (IELTS 5.5, TOEFL iBT 80)",
-      "mixed_language_warning": null,
-      "language_risk": "Low",
-      "verification_notes": ""
+      "english_level_required": "B2",
+      "accepted_english_tests": [
+        "IELTS",
+        "TOEFL"
+      ],
+      "english_exemptions": [
+        "English medium of instruction"
+      ],
+      "italian_required": true,
+      "italian_level_required": "B2",
+      "italian_needed_for_life_or_internship": "Helpful for life in Forlì",
+      "mixed_language_warning": "",
+      "language_risk": "medium",
+      "verification_notes": {
+        "en": "The 2026/27 programme is delivered entirely in English, but the official admission page also states Italian B2 as an admission requirement or a study-plan obligation for international students who do not already meet it.",
+        "tr": "2026/27 programı tamamen İngilizce yürütülür; ancak resmî kabul sayfası İtalyanca B2'yi kabul koşulu veya bu koşulu hâlihazırda karşılamayan uluslararası öğrenciler için ders planı yükümlülüğü olarak belirtir."
+      }
     },
     "cost_profile": {
-      "academic_year": "2026/2027",
       "tuition_eur_per_year_min": 157.04,
       "tuition_eur_per_year_max": null,
       "tuition_eur_per_year_estimated": null,
       "tuition_basis": "official_fixed_fee_plus_programme_and_income_dependent_variable_amount",
-      "non_eu_flat_fee": null,
-      "source_notes": "",
-      "regional_tax_eur": 150,
-      "student_union_fee_eur": 0,
-      "living_cost_eur_per_month": 500,
-      "total_first_year_cost_eur": null,
-      "scholarship_availability": "Available (ER.GO)",
-      "scholarship_risk": "Low",
-      "verification_notes": "",
+      "regional_tax_eur": null,
+      "student_contribution_eur": null,
+      "application_fee_eur": null,
+      "enrollment_fee_eur": null,
+      "total_academic_cost_eur_per_year_estimated": null,
+      "isee_or_income_based": true,
+      "non_eu_flat_fee": false,
+      "payment_installments": "Yes",
+      "refund_policy": "",
+      "source_notes": {
+        "en": "The 2026/27 fixed instalment is EUR 157.04. The remaining amount is programme- and income-dependent, so no universal annual maximum is stated here.",
+        "tr": "2026/27 sabit taksit EUR 157,04'tur. Kalan tutar programa ve gelire baglidir; bu nedenle burada evrensel bir yillik azami tutar verilmez."
+      },
+      "verification_notes": "Tuition value was not retained because no checked official tuition source supports it.",
+      "academic_year": "2026/2027",
       "living_cost_usd_per_year_i20": null,
       "living_cost_usd_per_year": null,
       "living_cost_gbp_per_year": null,
       "living_cost_chf_per_year": null,
       "living_cost_sek_per_year": null,
-      "living_cost_dkk_per_year": null
+      "living_cost_dkk_per_year": null,
+      "living_cost_usd_per_year_min": null,
+      "living_cost_usd_per_year_max": null,
+      "living_cost_gbp_per_year_min": null,
+      "living_cost_gbp_per_year_max": null,
+      "living_cost_chf_per_year_min": null,
+      "living_cost_chf_per_year_max": null,
+      "living_cost_sek_per_year_min": null,
+      "living_cost_sek_per_year_max": null,
+      "living_cost_dkk_per_year_min": null,
+      "living_cost_dkk_per_year_max": null
     },
     "scholarship_profile": {
-      "available_types": [
-        "ER.GO Scholarship"
-      ],
-      "non_eu_eligible": true,
-      "details": [
-        "Full tuition exemption and monetary grants based on financial need. Strict July/August deadlines."
-      ],
-      "external_options": [],
-      "verification_notes": ""
+      "regional_scholarship_available": null,
+      "regional_scholarship_name": null,
+      "dsu_or_equivalent": "Emilia-Romagna (ER.GO)",
+      "merit_scholarships": [],
+      "tuition_waivers": [],
+      "housing_support": true,
+      "meal_support": true,
+      "cash_grant_possible": true,
+      "non_eu_eligible": null,
+      "income_based": true,
+      "scholarship_deadline": null,
+      "scholarship_application_url": null,
+      "funding_competitiveness": "High",
+      "funding_notes": "[University of Bologna – International student scholarships (program-dependent)]: Check the degree programme notice-board and the central scholarship pages. [Regional DSU (Right-to-Study) scholarship]: Deadlines are often earlier than university enrolment steps; prepare income/asset documents (translated/legalized) in advance. [MAECI Scholarships for Foreign Citizens and Italian Citizens Living Abroad]: Highly competitive; check the annual call and required documents early. [Invest Your Talent in Italy (IYT)]: Program and intake dependent; verify if the exact MSc is on the eligible list each year.",
+      "verification_notes": "Scholarship claims were not retained without a checked official scholarship source."
     },
     "living_profile": {
-      "city_type": "Medium",
-      "housing_search_difficulty": "high",
-      "housing_cost_range_eur": {
-        "min": 330,
-        "max": 560
-      },
-      "student_dorm_availability": "Subsidized",
-      "living_cost_risk": "Moderate",
-      "verification_notes": "Forlì is a small city and student housing fills up very quickly.",
-      "average_room_rent_eur": null,
+      "city_cost_level": "unknown",
+      "monthly_living_cost_eur_min": null,
+      "monthly_living_cost_eur_max": null,
       "monthly_living_cost_eur_estimated": null,
-      "housing_difficulty": null,
-      "living_cost_eur_per_month": null,
-      "housing_notes": null,
-      "average_room_rent_usd_per_month_min": null,
-      "average_room_rent_usd_per_month_max": null,
-      "average_room_rent_gbp_per_month_min": null,
-      "average_room_rent_gbp_per_month_max": null,
-      "average_room_rent_chf_per_month_min": null,
-      "average_room_rent_chf_per_month_max": null,
-      "average_room_rent_sek_per_month_min": null,
-      "average_room_rent_sek_per_month_max": null,
-      "average_room_rent_dkk_per_month_min": null,
-      "average_room_rent_dkk_per_month_max": null,
-      "monthly_housing_rent_usd_per_month_min": null,
-      "monthly_housing_rent_usd_per_month_max": null,
-      "monthly_housing_rent_gbp_per_month_min": null,
-      "monthly_housing_rent_gbp_per_month_max": null,
-      "monthly_housing_rent_chf_per_month_min": null,
-      "monthly_housing_rent_chf_per_month_max": null,
-      "monthly_housing_rent_sek_per_month_min": null,
-      "monthly_housing_rent_sek_per_month_max": null,
-      "monthly_housing_rent_dkk_per_month_min": null,
-      "monthly_housing_rent_dkk_per_month_max": null,
-      "housing_budget_usd_per_year": null,
-      "housing_budget_gbp_per_year": null,
-      "housing_budget_chf_per_year": null,
-      "housing_budget_sek_per_year": null,
-      "housing_budget_dkk_per_year": null,
-      "official_student_housing_budget_sek_per_month_examples": null,
-      "official_student_total_budget_sek_per_month_examples": null
+      "average_room_rent_eur": null,
+      "average_room_rent_eur_min": null,
+      "average_room_rent_eur_max": null,
+      "student_housing_available": true,
+      "student_housing_competitiveness": "unknown",
+      "housing_difficulty": "unknown",
+      "living_risk": "high",
+      "housing_sentiment": null,
+      "housing_notes": {
+        "en": "Forlì has two ER.GO residence options identified by the University: Sassi Masini in the city centre (120 beds) and Ex-ENAV near the Engineering campus (64 beds, including eight accessible beds). Places require an ER.GO application and are not guaranteed. The University also points students to a checked Accommodation Showcase and local search services. No current official Forlì rent range was found, so the card does not substitute a Bologna price.",
+        "tr": "Üniversitenin belirttiği üzere Forlì'de iki ER.GO yurt seçeneği vardır: şehir merkezindeki Sassi Masini (120 yatak) ve Mühendislik kampüsü yakınındaki Ex-ENAV (sekizi erişilebilir olmak üzere 64 yatak). Yerler ER.GO başvurusu gerektirir ve garantili değildir. Üniversite ayrıca kontrol edilen Accommodation Showcase'e ve yerel arama hizmetlerine yönlendirir. Güncel resmî Forlì kira aralığı bulunmadığı için kart Bologna fiyatı yerine bunu koymaz."
+      },
+      "verification_notes": {
+        "en": "Housing availability and services are official, but no official Forlì room-rent or all-in monthly budget was located. Keeping the price null is intentional rather than an omission filled with a city-level estimate.",
+        "tr": "Konaklama uygunluğu ve hizmetleri resmîdir; ancak resmî Forlì oda kirası veya tüm kalemleri içeren aylık bütçe bulunamadı. Fiyatın null tutulması kasıtlıdır; şehir düzeyi tahminle doldurulmaz."
+      }
     },
     "curriculum_profile": {
-      "structure": "120 ECTS",
-      "specializations": [
-        "Aeronautics (Aircraft design, aerodynamics)",
-        "Space (Space missions, satellite systems)"
+      "tracks": [
+        "Aeronautics",
+        "Space"
       ],
-      "mandatory_internship": false,
-      "thesis_type": "Research/Academic",
-      "flexibility": "unknown",
-      "curriculum_risk": "Low",
-      "verification_notes": "Includes practical access to the CICLoPE aerodynamic laboratory."
+      "specializations": [
+        "Aeronautics",
+        "Space"
+      ],
+      "mandatory_courses": [],
+      "elective_courses": [],
+      "course_language_notes": "Taught entirely in English",
+      "thesis_required": null,
+      "internship_required": null,
+      "lab_courses": [],
+      "project_based_courses": [],
+      "mobility_options": [
+        "Erasmus",
+        "Double Degree"
+      ],
+      "double_degree_options": [],
+      "curriculum_url": "https://www.unibo.it/en/study/second-cycle-degree/programme/2026/6704",
+      "study_plan_url": "https://www.unibo.it/en/study/second-cycle-degree/programme/2026/6704",
+      "verification_notes": {
+        "en": "The official 2026/27 programme page identifies Aeronautics and Space curricula. Course-unit detail should be checked against the current catalogue before choosing electives.",
+        "tr": "Resmî 2026/27 program sayfası Havacılık ve Uzay müfredatlarını belirtir. Seçmeli ders seçmeden önce ders birimi ayrıntıları güncel katalogdan kontrol edilmelidir."
+      }
     },
     "category_profile": {
       "primary_categories": [],
       "secondary_categories": [],
-      "technical_focus": "",
-      "verification_notes": "",
-      "normalized_tags": [
-        "Aerodynamics",
-        "Space Systems",
-        "Propulsion",
-        "Structures"
-      ]
+      "subcategories": [],
+      "normalized_tags": [],
+      "category_scores": {}
     },
     "application_timeline_profile": {
-      "application_deadline_autumn": "Round 1 closes Feb/March, Round 2 in April/May",
-      "application_deadline_spring": null,
-      "pre_enrolment_deadline": "Summer",
-      "timeline_risk": "Moderate",
-      "verification_notes": "",
-      "non_eu_deadline": null,
-      "winter_deadline": null,
-      "application_deadline": null,
-      "deadline_notes": null
+      "academic_year": "2026/2027 published restricted-access cycle",
+      "intake_terms": [
+        "autumn 2026"
+      ],
+      "application_rounds": [
+        "Intake I, non-EU citizens residing abroad: 11 December 2025–27 January 2026 13:00 CET; remote interviews 16–19 February; results 3 March",
+        "Intake II, EU/equivalent non-EU and non-EU abroad: 2 February–1 April 2026 13:00 CEST; remote interviews 21–24 April; results 5 May",
+        "Intake III, EU/equivalent non-EU and non-EU abroad: 1 June–10 September 2026 13:00 CEST"
+      ],
+      "non_eu_deadline": "2026-01-27 13:00 CET (Intake I); 2026-04-01 13:00 CEST (Intake II); 2026-09-10 13:00 CEST (Intake III)",
+      "eu_deadline": "2026-04-01 13:00 CEST (Intake II); 2026-09-10 13:00 CEST (Intake III)",
+      "application_deadline": "2026-09-10 13:00 CEST for the published final Intake III",
+      "scholarship_deadline": null,
+      "pre_enrolment_required": true,
+      "universitaly_required": true,
+      "timeline_risk": "high",
+      "deadline_notes": {
+        "en": "All dates are from the 2026/27 call and had either passed or were approaching when checked on 14 July 2026. The three rounds are not a visa guarantee: selected non-EU students must complete Universitaly pre-enrolment before their visa, and the programme warns that University offices may be closed in August, delaying validation. Do not reuse these dates for 2027/28.",
+        "tr": "Tüm tarihler 2026/27 çağrısındandır ve 14 Temmuz 2026'da kontrol edildiğinde geçmiş veya yakındı. Üç tur vize garantisi değildir: seçilen AB dışı öğrenciler vizeden önce Universitaly ön kaydını tamamlamalıdır; program Ağustos'ta Üniversite ofislerinin kapanıp doğrulamayı geciktirebileceği uyarısını yapar. Bu tarihleri 2027/28 için yeniden kullanmayın."
+      }
     },
     "student_sentiment_profile": {
       "student_satisfaction_score": null,
-      "workload_sentiment": "",
+      "sentiment_confidence": "Bilinmiyor / Resmi Veri Yok",
+      "sample_size_estimate": null,
+      "date_range": "",
       "teaching_quality_sentiment": "",
+      "workload_sentiment": "",
       "administration_sentiment": "",
       "housing_sentiment": "",
       "city_life_sentiment": "",
-      "international_student_sentiment": "",
+      "international_student_support_sentiment": "",
       "career_support_sentiment": "",
-      "student_sentiment_summary": "",
-      "student_sentiment_sources": [
-        {
-          "quote": "Incredible theoretical foundation. You will know the math behind every phenomenon.",
-          "source": "Reddit",
-          "url": "https://www.reddit.com/search/?q=University+of+Bologna+aerospace"
-        },
-        {
-          "quote": "Scams are common in Facebook groups, so stick to official housing portals if possible.",
-          "source": "Reddit",
-          "url": "https://www.reddit.com/search/?q=University+of+Bologna+aerospace"
-        },
-        {
-          "quote": "Very theoretical in the first semester, but gets more practical later on.",
-          "source": "Reddit",
-          "url": "https://www.reddit.com/search/?q=University+of+Bologna+aerospace"
-        }
-      ],
-      "sentiment_confidence": "low"
+      "positive_themes": [],
+      "negative_themes": [],
+      "recurring_complaints": [],
+      "recurring_strengths": [],
+      "sentiment_summary": "",
+      "student_sentiment_sources": [],
+      "verification_notes": "No sufficiently documented independent sentiment sample was retained."
     },
     "source_profile": {
       "official_program_page": "https://www.unibo.it/en/study/second-cycle-degree/programme/2026/6704",
       "official_admission_page": "https://corsi.unibo.it/2cycle/AerospaceEngineering/how-to-enrol",
+      "official_tuition_page": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/tuition-fees-and-exemptions",
+      "official_scholarship_page": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/tuition-fees-and-exemptions",
       "official_curriculum_page": "https://www.unibo.it/en/study/second-cycle-degree/programme/2026/6704",
-      "source_log": [
-        {
-          "url": "https://www.unibo.it/en/study/second-cycle-degree/programme/2026/6704",
-          "title": "Aerospace Engineering MSc 2026/27 — University of Bologna",
-          "source_type": "official_program_page",
-          "access_status": "ok",
-          "last_checked": "2026-07-14",
-          "relevant_fields": [
-            "program",
-            "program_status",
-            "degree_level",
-            "duration",
-            "ects",
-            "teaching_language",
-            "curriculum"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Two-year 120-ECTS English programme with Aeronautics and Space curricula.",
-            "tr": "Aeronautics ve Space müfredatlı iki yıllık 120 AKTS İngilizce program."
-          }
-        },
-        {
-          "url": "https://corsi.unibo.it/2cycle/AerospaceEngineering/how-to-enrol",
-          "title": "Aerospace Engineering enrolment requirements 2026/27 — University of Bologna",
-          "source_type": "official_admission_page",
-          "access_status": "ok",
-          "last_checked": "2026-07-14",
-          "relevant_fields": [
-            "admission",
-            "non_eu_eligibility",
-            "non_eu_quota",
-            "required_documents"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "15 places are reserved for non-EU citizens abroad; English B2 and degree/background assessment apply.",
-            "tr": "15 kontenjan yurtdışında ikamet eden AB dışı vatandaşlara ayrılır; İngilizce B2 ve derece/al altyapı değerlendirmesi uygulanır."
-          }
-        },
-        {
-          "url": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/tuition-fees-and-exemptions",
-          "title": "Fees, exemptions and grants 2026/27 — University of Bologna",
-          "source_type": "official_tuition_page",
-          "access_status": "ok",
-          "last_checked": "2026-07-14",
-          "relevant_fields": [
-            "tuition"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "The 2026/27 page publishes a EUR 157.04 fixed instalment and a programme- and income-dependent variable component.",
-            "tr": "2026/27 sayfasi EUR 157,04 sabit taksit ve programa/gelire bagli degisken bolum yayinlar."
-          }
-        },
-        {
-          "url": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/tuition-fees-and-exemptions",
-          "title": "Fees, exemptions and grants 2026/27 — University of Bologna",
-          "source_type": "official_scholarship_page",
-          "access_status": "ok",
-          "last_checked": "2026-07-14",
-          "relevant_fields": [
-            "scholarship"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "The official page identifies exemptions and scholarship applications for students with Italian or foreign citizenship.",
-            "tr": "Resmi sayfa, Italyan veya yabanci vatandasligi olan ogrenciler icin muafiyet ve burs basvurularini tanimlar."
-          }
-        }
-      ],
+      "official_department_page": "needs_verification",
+      "official_lab_pages": [],
+      "third_party_sources": [],
       "last_verified": "2026-07-14",
       "needs_verification": false,
       "verification_notes": {
-        "en": "Tuition amount, scholarship deadline and housing remain unverified.",
-        "tr": "Öğrenim ücreti tutarı, burs son tarihi ve konaklama doğrulanmamıştır."
+        "en": "Application dates and housing access are source-checked. The card retains the Forlì price gap as unknown instead of filling it with Bologna-city estimates.",
+        "tr": "Başvuru tarihleri ve konaklama erişimi kaynakla doğrulanmıştır. Kart, Forlì fiyat boşluğunu Bologna şehir tahminleriyle doldurmak yerine bilinmiyor olarak korur."
       },
       "field_confidence": {
         "program_basic_info": "high",
@@ -1550,16 +1816,131 @@
         "tuition": "high",
         "scholarship": "high",
         "curriculum": "high",
-        "living": "unknown",
-        "student_sentiment": "unknown"
+        "research": "medium",
+        "industry": "medium",
+        "living": "medium",
+        "application_timeline_profile": "high",
+        "housing": "high",
+        "living_profile": "unknown",
+        "deadlines": "high"
       },
-      "official_tuition_page": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/tuition-fees-and-exemptions",
-      "official_scholarship_page": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/tuition-fees-and-exemptions"
+      "source_log": [
+        {
+          "url": "https://nominatim.openstreetmap.org/",
+          "title": "OpenStreetMap Nominatim geocoding service",
+          "source_type": "other",
+          "access_status": "ok",
+          "last_checked": "2026-07-10",
+          "relevant_fields": [
+            "location"
+          ],
+          "confidence": "high",
+          "notes": "Coordinates resolved at city confidence; this is a map placement signal, not an official programme fact."
+        },
+        {
+          "url": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/tuition-fees-and-exemptions",
+          "title": "Fees, exemptions and grants 2026/27 — University of Bologna",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "tuition"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "The official 2026/27 page publishes a EUR 157.04 fixed instalment and explains that the variable component depends on programme and family finances.",
+            "tr": "Resmi 2026/27 sayfasi EUR 157,04 sabit taksitini yayinlar ve degisken bolumun programa ve aile mali durumuna bagli oldugunu aciklar."
+          }
+        },
+        {
+          "url": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/tuition-fees-and-exemptions",
+          "title": "Fees, exemptions and grants 2026/27 — University of Bologna",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "scholarship"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "The official page states that applicants may apply for fee exemptions and scholarships, including with foreign-income documentation; programme-specific calls remain controlling.",
+            "tr": "Resmi sayfa, yabanci gelir belgeleriyle de ucret muafiyeti ve burs icin basvuru yapilabilecegini belirtir; programa ozel cagrilar belirleyicidir."
+          }
+        },
+        {
+          "url": "https://www.unibo.it/en/study/second-cycle-degree/programme/2026/6704",
+          "title": "University of Bologna Aerospace Engineering 2026/27",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "program",
+            "language",
+            "curriculum"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Current page confirms an active 120-ECTS English LM-20 in Forlì, 80 places, and Aeronautics/Space curricula.",
+            "tr": "Güncel sayfa Forlì'de aktif 120 AKTS İngilizce LM-20'yi, 80 kontenjanı ve Havacılık/Uzay müfredatlarını doğrular."
+          }
+        },
+        {
+          "url": "https://corsi.unibo.it/2cycle/AerospaceEngineering/how-to-enrol",
+          "title": "Bologna Aerospace Engineering enrolment requirements",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "admission",
+            "non_eu",
+            "language",
+            "deadline"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Current page confirms the restricted 2026/27 selection, maximum 15 non-EU residents abroad, Italian B2 requirement/obligation, remote interview, Universitaly and document requirements.",
+            "tr": "Güncel sayfa sınırlı 2026/27 seçimini, yurt dışında ikamet eden en fazla 15 AB dışı adayı, İtalyanca B2 koşulu/yükümlülüğünü, uzaktan mülakatı, Universitaly ve belge koşullarını doğrular."
+          }
+        },
+        {
+          "url": "https://corsi.unibo.it/s/3427/p/en/programma-enrolment-new/bando-lm-aerospace_ita_2025-26-def-1.pdf/%40%40download/file/Bando%2520LM%2520MES%252026-27_ENG.pdf",
+          "title": "University of Bologna Aerospace Engineering call 2026/27",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "admission",
+            "non_eu",
+            "deadline"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official 2026/27 call gives three dated intakes, strict closing times, remote interview dates, result dates and enrolment windows. It is a cycle-specific PDF, not a future-cycle prediction.",
+            "tr": "Resmî 2026/27 çağrısı üç tarihli turu, kesin kapanış saatlerini, uzaktan mülakat tarihlerini, sonuç tarihlerini ve kayıt pencerelerini verir. Bu gelecek döngü tahmini değil, döngüye özgü PDF'dir."
+          }
+        },
+        {
+          "url": "https://www.unibo.it/en/study/life-at-university-and-in-the-city/housing-and-residences/housing?scope=Current",
+          "title": "University of Bologna housing and residences",
+          "source_type": "official_housing_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "housing"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Current University housing page identifies Forlì's Sassi Masini and Ex-ENAV residences, ER.GO application route, Accommodation Showcase and local search support, but does not publish a Forlì rent amount.",
+            "tr": "Güncel Üniversite konaklama sayfası Forlì'nin Sassi Masini ve Ex-ENAV yurtlarını, ER.GO başvuru yolunu, Accommodation Showcase'i ve yerel arama desteğini tanımlar; ancak Forlì kira tutarı yayımlamaz."
+          }
+        }
+      ],
+      "official_housing_page": "https://www.unibo.it/en/study/life-at-university-and-in-the-city/housing-and-residences/housing?scope=Current"
     },
     "qs_ranking": 154,
     "data_quality": {
       "status": "verified",
-      "checked_official_source_count": 4,
+      "checked_official_source_count": 6,
       "verified_fields": [
         "program",
         "language",
@@ -1567,21 +1948,126 @@
         "non_eu_eligibility",
         "tuition",
         "scholarship",
-        "curriculum"
+        "deadline",
+        "curriculum",
+        "housing"
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-14"
+      "audited_at": "2026-07-15"
     },
     "quality_control": {
-      "checked_at": "2026-07-14",
+      "checked_at": "2026-07-15",
       "qc_status": "passed",
       "remaining_verification_tasks": [],
       "qc_notes": {
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
       }
-    }
+    },
+    "degree_class": "LM-20",
+    "department": "Industrial Engineering",
+    "campus": "Forlì",
+    "research_profile": {
+      "department_research_areas": [],
+      "labs": [],
+      "research_centers": [],
+      "notable_professors": [],
+      "space_or_aerospace_projects": [],
+      "student_teams": [],
+      "satellite_or_flight_projects": [],
+      "research_strength_summary": "",
+      "research_strength_score": null,
+      "research_sources": []
+    },
+    "industry_ecosystem_profile": {
+      "nearby_companies": [],
+      "space_agencies_or_public_bodies": [],
+      "research_institutes": [],
+      "startup_or_incubator_ecosystem": [],
+      "internship_possibility": "High",
+      "thesis_with_industry_possibility": "High",
+      "career_relevance": "High",
+      "ecosystem_strength_score": null,
+      "ecosystem_notes": "",
+      "confirmed_partners": []
+    },
+    "decision_summary": {
+      "main_strengths": [
+        {
+          "en": "A 2026/27 English LM-20 in Forlì with separate Aeronautics and Space curricula, restricted to 80 places (up to 15 non-EU residents abroad) and an explicit selection/interview process rather than a vague open-admission label.",
+          "tr": "Forlì'de Havacılık ve Uzay için ayrı müfredatları olan 2026/27 İngilizce LM-20'dir; belirsiz açık kabul etiketi yerine 80 kontenjanla (yurt dışında ikamet eden AB dışı adaylar için en fazla 15) ve açık seçme/mülakat süreciyle sınırlıdır."
+        },
+        {
+          "en": "Forlì housing support is concrete even though price data are not: two ER.GO residences, including one near Engineering, plus University housing-search support and an Accommodation Showcase.",
+          "tr": "Forlì konaklama desteği, fiyat verisi olmasa da somuttur: biri Mühendislik yakınında iki ER.GO yurdu, ayrıca Üniversite konaklama arama desteği ve Accommodation Showcase vardır."
+        }
+      ],
+      "main_risks": [
+        {
+          "en": "Forlì rent is unknown from the official sources checked. Do not use the University of Bologna city-centre price examples for this Romagna-campus programme; budget independently until a Forlì offer is secured.",
+          "tr": "Kontrol edilen resmî kaynaklarda Forlì kirası bilinmiyor. Bologna merkez fiyat örneklerini bu Romagna kampüsü programı için kullanmayın; Forlì teklifi güvenceye alınana kadar bağımsız bütçe yapın."
+        },
+        {
+          "en": "The final 2026 Intake III deadline is 10 September, but a non-EU applicant should not treat the final round as a safe visa schedule because Universitaly validation and August office closures create timing risk.",
+          "tr": "Son 2026 Intake III son tarihi 10 Eylül'dür; ancak AB dışı aday Universitaly doğrulaması ve Ağustos ofis kapanışları zamanlama riski yarattığından son turu güvenli vize takvimi saymamalıdır."
+        },
+        {
+          "en": "Italian B2 is a meaningful requirement or study-plan obligation despite English delivery. It must not be hidden by the English programme label.",
+          "tr": "Program İngilizce yürütülse de İtalyanca B2 anlamlı bir koşul veya ders planı yükümlülüğüdür. İngilizce program etiketiyle gizlenmemelidir."
+        }
+      ],
+      "best_for": [
+        {
+          "en": "Applicants who can meet both English delivery and the programme's Italian-language condition, want a selective Aeronautics/Space choice, and can plan visas early rather than rely on the final intake.",
+          "tr": "Hem İngilizce eğitimi hem programın İtalyanca dil koşulunu karşılayabilen, seçici Havacılık/Uzay tercihi isteyen ve son tura güvenmek yerine vizeyi erken planlayabilen adaylar."
+        }
+      ],
+      "not_ideal_for": [
+        {
+          "en": "Applicants who need an official Forlì rent quote before applying, who cannot meet the Italian B2 condition, or who require a late non-EU admission round to function as a visa guarantee.",
+          "tr": "Başvurmadan önce resmî Forlì kira teklifi, İtalyanca B2 koşulunu karşılayamama veya geç AB dışı kabul turunun vize garantisi olmasını isteyen adaylar."
+        }
+      ]
+    },
+    "scholarships_info": [
+      {
+        "name": "University of Bologna – International student scholarships (program-dependent)",
+        "provider": "University of Bologna",
+        "type": "Merit scholarships / tuition waivers (varies)",
+        "eligibility": "Non-EU applicants; depends on call/program.",
+        "amount": "Varies.",
+        "notes": "Check the degree programme notice-board and the central scholarship pages.",
+        "url": "https://www.unibo.it/en/services-and-opportunities/scholarships-and-grants"
+      },
+      {
+        "name": "Regional DSU (Right-to-Study) scholarship",
+        "provider": "Emilia-Romagna (ER.GO)",
+        "type": "Need-based scholarship + canteen/housing benefits (region rules apply)",
+        "eligibility": "Typically income/asset based; international applicants usually eligible but must provide required financial documentation.",
+        "amount": "Varies by region; may include cash grant + fee reductions + accommodation/canteen benefits.",
+        "notes": "Deadlines are often earlier than university enrolment steps; prepare income/asset documents (translated/legalized) in advance.",
+        "url": "https://www.er-go.it/"
+      },
+      {
+        "name": "MAECI Scholarships for Foreign Citizens and Italian Citizens Living Abroad",
+        "provider": "Italian Ministry of Foreign Affairs and International Cooperation (MAECI)",
+        "type": "Government scholarship",
+        "eligibility": "Non-EU applicants; eligibility varies by call (degree level, age limits, etc.).",
+        "amount": "Varies by call (typically monthly grant) + possible fee waivers depending on institution.",
+        "notes": "Highly competitive; check the annual call and required documents early.",
+        "url": "https://studyinitaly.esteri.it/en/call-for-applications/"
+      },
+      {
+        "name": "Invest Your Talent in Italy (IYT)",
+        "provider": "Italian Government program with partner companies/universities",
+        "type": "Scholarship + internship pathway",
+        "eligibility": "Non-EU applicants to eligible Master’s programs in Italy; requires applying via IYT call.",
+        "amount": "Monthly grant (call-dependent) + structured internship component.",
+        "notes": "Program and intake dependent; verify if the exact MSc is on the eligible list each year.",
+        "url": "https://investyourtalentapplication.esteri.it/"
+      }
+    ]
   },
   {
     "id": "it-padova-aero-msc",
@@ -1590,259 +2076,374 @@
     "university_native_name": "University of Padova",
     "city": {
       "name": "Padova",
-      "housing_difficulty": "high",
-      "estimated_housing_cost_eur": 500
+      "housing_difficulty": null,
+      "estimated_housing_cost_eur": null
     },
     "region": "",
-    "program_name": "M.Sc. Aerospace Engineering",
-    "program_native_name": "M.Sc. Aerospace Engineering",
-    "program_degree": "MSc",
-    "degree_level": "MSc",
+    "program_name": "Aerospace Engineering",
+    "program_native_name": "Ingegneria Aerospaziale",
+    "program_degree": "Master of Science",
+    "degree_level": "Master",
     "duration_years": 2,
     "ects": 120,
     "teaching_language": [
       "English"
     ],
-    "program_url": "",
+    "program_url": "https://www.unipd.it/en/corsi-di-laurea/aerospace-engineering",
     "program_status": "active",
-    "relevance_status": "highly_relevant",
+    "relevance_status": "strong",
     "eligibility_profile": {
       "eligible_for_non_eu": null,
-      "required_previous_degree": [
-        "Aerospace Engineering or related field with skills in mathematics, physics, industrial engineering, aerospace systems, aerodynamics and flight dynamics"
+      "non_eu_quota": null,
+      "required_previous_degree": {
+        "en": "At least a three-year bachelor's degree (or equivalent) in aerospace/aeronautical/aircraft/astronautical/aviation/mechanical engineering.",
+        "tr": "Havacılık-uzay, uçak, astronotik, havacılık veya makine mühendisliğinde en az üç yıllık lisans derecesi (veya eşdeğeri)."
+      },
+      "accepted_backgrounds": [
+        "aerospace_engineering",
+        "aeronautical_engineering",
+        "aircraft_engineering",
+        "astronautical_engineering",
+        "aviation_engineering",
+        "mechanical_engineering"
       ],
       "required_ects": {
-        "total": "Verified ECTS required at application"
+        "math": null,
+        "physics": null,
+        "engineering": null,
+        "aerospace": null,
+        "mechanical": null,
+        "control": null,
+        "electronics": null,
+        "computer_science": null,
+        "other": []
       },
       "minimum_gpa": null,
-      "admission_mode": "unknown",
-      "admission_risk": "Moderate",
-      "accepted_backgrounds": [],
+      "gpa_scale": "",
+      "ranking_or_selection": "Holistic review of academic background",
+      "admission_mode": "Bilinmiyor / Resmi Veri Yok",
+      "admission_risk": "Bilinmiyor / Resmi Veri Yok",
       "required_documents": [],
-      "verification_notes": "BSc in Aerospace, Industrial, Civil Engineering, Physics, or Mathematics. IELTS 6.0/TOEFL 80."
+      "motivation_letter_required": true,
+      "cv_required": true,
+      "recommendation_required": null,
+      "portfolio_required": null,
+      "interview_required": false,
+      "test_required": false,
+      "notes_for_turkish_students": "ESU scholarship requires ISEE Parificato.",
+      "verification_notes": "Admission facts were not retained without a checked official source."
     },
     "language_profile": {
       "teaching_language": [
         "English"
       ],
-      "english_required": true,
-      "english_level_required": "B2 CEFR or equivalent",
-      "mixed_language_warning": null,
+      "english_required": null,
+      "english_level_required": null,
+      "accepted_english_tests": [
+        "IELTS",
+        "TOEFL"
+      ],
+      "english_exemptions": [
+        "English-medium Bachelor's"
+      ],
+      "italian_required": false,
+      "italian_level_required": "",
+      "italian_needed_for_life_or_internship": "Useful for daily life in Padua",
+      "mixed_language_warning": "",
       "language_risk": "low",
-      "verification_notes": ""
-    },
-    "cost_profile": {
-      "academic_year": "2024/2025",
-      "tuition_eur_per_year_min": 0,
-      "tuition_eur_per_year_max": 2900,
-      "tuition_eur_per_year_estimated": null,
-      "tuition_basis": "official",
-      "non_eu_flat_fee": null,
-      "source_notes": "",
-      "regional_tax_eur": 150,
-      "student_union_fee_eur": 0,
-      "living_cost_eur_per_month": 500,
-      "total_first_year_cost_eur": null,
-      "scholarship_availability": "Available (ESU Padova)",
-      "scholarship_risk": "Low",
-      "verification_notes": "",
-      "cost_academic_year": "2025/26",
-      "cost_notes": {
-        "en": "Official brochure states annual fees up to €2,900 for 2025/26; confirm the new fee notice before applying.",
-        "tr": "Resmi broşür 2025/26 için yıllık ücretin €2.900'a kadar olduğunu belirtir; başvuru öncesi yeni ücret duyurusunu doğrulayın."
-      },
-      "living_cost_usd_per_year_i20": null,
-      "living_cost_usd_per_year": null,
-      "living_cost_gbp_per_year": null,
-      "living_cost_chf_per_year": null,
-      "living_cost_sek_per_year": null,
-      "living_cost_dkk_per_year": null
-    },
-    "scholarship_profile": {
-      "available_types": [
-        "ESU Padova Scholarship"
-      ],
-      "non_eu_eligible": true,
-      "details": [
-        "Merit and income-based. Benefit package valued at approx €7,015. Application deadline is late September."
-      ],
-      "external_options": [],
-      "verification_notes": "",
-      "funding_notes": {
-        "en": "International scholarships and fee waivers are advertised; eligibility is call-specific.",
-        "tr": "Uluslararası burslar ve ücret muafiyetleri duyurulur; uygunluk çağrı bazındadır."
+      "verification_notes": {
+        "en": "The official programme listing identifies English as the study language; the 2025/26 programme brochure states English B2 or equivalent.",
+        "tr": "Resmî program kaydı eğitim dilini İngilizce olarak belirtir; 2025/26 program broşürü İngilizce B2 veya eşdeğerini belirtir."
       }
     },
-    "living_profile": {
-      "city_type": "Medium",
-      "housing_search_difficulty": "very_high",
-      "housing_cost_range_eur": {
-        "min": 300,
-        "max": 600
+    "cost_profile": {
+      "academic_year": "2025/2026",
+      "tuition_eur_per_year_min": 996.66,
+      "tuition_eur_per_year_max": 2990,
+      "tuition_eur_per_year_estimated": 2990,
+      "tuition_basis": "official_non_eu_nonresident_group_B",
+      "regional_tax_eur": null,
+      "student_contribution_eur": null,
+      "application_fee_eur": 60,
+      "enrollment_fee_eur": 208,
+      "total_academic_cost_eur_per_year_estimated": 2990,
+      "isee_or_income_based": true,
+      "non_eu_flat_fee": false,
+      "payment_installments": "Yes",
+      "refund_policy": "",
+      "source_notes": {
+        "en": "Non-EU non-resident scientific Group B is ?2,990; listed poor-country rate ?996.66; ?208 first instalment includes regional tax/stamp.",
+        "tr": "AB d??? yerle?ik olmayan bilimsel Grup B ?2.990; listelenen yoksul ?lke oran? ?996,66; ?208 ilk taksit b?lgesel vergi/damga i?erir."
       },
-      "student_dorm_availability": "Subsidized",
-      "living_cost_risk": "Moderate",
-      "verification_notes": "Market is extremely competitive, especially in September/October.",
-      "average_room_rent_eur": null,
+      "verification_notes": {
+        "en": "These values are medium confidence because the checked entry is tied to the 2025 intake; check a new fee notice before budgeting for 2026/27.",
+        "tr": "Kontrol edilen kayıt 2025 alımına bağlı olduğu için bu değerler orta güvenle gösterilir; 2026/27 bütçesi yapmadan önce yeni ücret duyurusunu kontrol edin."
+      },
+      "first_installment_eur": 208
+    },
+    "scholarship_profile": {
+      "regional_scholarship_available": null,
+      "regional_scholarship_name": null,
+      "dsu_or_equivalent": "Veneto (ESU Padova)",
+      "merit_scholarships": [],
+      "tuition_waivers": [],
+      "housing_support": true,
+      "meal_support": true,
+      "cash_grant_possible": true,
+      "non_eu_eligible": null,
+      "income_based": true,
+      "scholarship_deadline": null,
+      "scholarship_application_url": null,
+      "funding_competitiveness": "High for Excellence, Medium for ESU",
+      "funding_notes": "[Regional DSU (Right-to-Study) scholarship]: Deadlines are often earlier than university enrolment steps; prepare income/asset documents (translated/legalized) in advance. [MAECI Scholarships for Foreign Citizens and Italian Citizens Living Abroad]: Highly competitive; check the annual call and required documents early. [Invest Your Talent in Italy (IYT)]: Program and intake dependent; verify if the exact MSc is on the eligible list each year.",
+      "verification_notes": "Scholarship claims were not retained without a checked official scholarship source."
+    },
+    "living_profile": {
+      "city_cost_level": "medium",
+      "monthly_living_cost_eur_min": null,
+      "monthly_living_cost_eur_max": null,
       "monthly_living_cost_eur_estimated": null,
-      "housing_difficulty": null,
-      "living_cost_eur_per_month": null,
-      "housing_notes": null,
-      "average_room_rent_usd_per_month_min": null,
-      "average_room_rent_usd_per_month_max": null,
-      "average_room_rent_gbp_per_month_min": null,
-      "average_room_rent_gbp_per_month_max": null,
-      "average_room_rent_chf_per_month_min": null,
-      "average_room_rent_chf_per_month_max": null,
-      "average_room_rent_sek_per_month_min": null,
-      "average_room_rent_sek_per_month_max": null,
-      "average_room_rent_dkk_per_month_min": null,
-      "average_room_rent_dkk_per_month_max": null,
-      "monthly_housing_rent_usd_per_month_min": null,
-      "monthly_housing_rent_usd_per_month_max": null,
-      "monthly_housing_rent_gbp_per_month_min": null,
-      "monthly_housing_rent_gbp_per_month_max": null,
-      "monthly_housing_rent_chf_per_month_min": null,
-      "monthly_housing_rent_chf_per_month_max": null,
-      "monthly_housing_rent_sek_per_month_min": null,
-      "monthly_housing_rent_sek_per_month_max": null,
-      "monthly_housing_rent_dkk_per_month_min": null,
-      "monthly_housing_rent_dkk_per_month_max": null,
-      "housing_budget_usd_per_year": null,
-      "housing_budget_gbp_per_year": null,
-      "housing_budget_chf_per_year": null,
-      "housing_budget_sek_per_year": null,
-      "housing_budget_dkk_per_year": null,
-      "official_student_housing_budget_sek_per_month_examples": null,
-      "official_student_total_budget_sek_per_month_examples": null
+      "average_room_rent_eur": null,
+      "average_room_rent_eur_min": 300,
+      "average_room_rent_eur_max": 600,
+      "average_room_rent_scope_label": {
+        "en": "University of Padua indicative single-room price, plus expenses",
+        "tr": "University of Padua gösterge niteliğinde tek kişilik oda fiyatı, giderler hariç"
+      },
+      "food_cost_eur_month": null,
+      "student_housing_available": true,
+      "student_housing_competitiveness": "high",
+      "housing_difficulty": "high",
+      "living_risk": "medium",
+      "housing_sentiment": null,
+      "housing_notes": {
+        "en": "The University lists single rooms at EUR 300-600/month plus expenses as an indicative Padua price. ESU housing is competitive and assigned through an annual call based on income/merit; for 2026/27, first-year EU/international students had to apply by 25 August 2026 at 10:00. The International Housing Office supports enrolled international students and has private-residence agreements, but neither route guarantees a room.",
+        "tr": "Üniversite, Padova'da tek kişilik odaları giderler hariç gösterge niteliğinde ayda 300-600 EUR olarak listeler. ESU konaklaması rekabetçidir ve gelir/başarıya göre yıllık çağrıyla tahsis edilir; 2026/27 için birinci sınıf AB/uluslararası öğrenciler 25 Ağustos 2026 saat 10:00'a kadar başvurmalıydı. International Housing Office kayıtlı uluslararası öğrencilere destek verir ve özel yurt anlaşmaları vardır; ancak iki yol da oda garantilemez."
+      },
+      "verification_notes": {
+        "en": "The source calls these costs purely indicative and excludes utilities from the room range. No all-in monthly living figure is inferred.",
+        "tr": "Kaynak bu maliyetleri tamamen gösterge niteliğinde tanımlar ve oda aralığından faturaları hariç tutar. Tüm kalemleri içeren aylık yaşam tutarı çıkarılmaz."
+      }
     },
     "curriculum_profile": {
-      "structure": "120 ECTS",
-      "specializations": [
-        "Mathematics",
-        "Physics",
-        "Industrial Engineering",
-        "Aerospace Systems",
-        "Aerodynamics",
-        "Flight Dynamics"
-      ],
-      "mandatory_internship": false,
-      "thesis_type": "Research/Academic",
-      "flexibility": "unknown",
-      "curriculum_risk": "Low",
-      "verification_notes": "",
       "tracks": [
-        "Space",
-        "Aeronautics"
+        "space",
+        "aeronautics"
       ],
-      "notable_courses": [
-        "Advanced Aerodynamics",
-        "Space Propulsion",
-        "Astrodynamics",
-        "Spacecraft Attitude Dynamics and Control",
+      "specializations": [
+        "space_propulsion",
+        "astrodynamics",
+        "spacecraft_attitude_dynamics_and_control",
+        "space_instrumentation",
+        "spacecraft_thermal_control",
+        "aircraft_propulsion",
+        "atmospheric_flight_dynamics",
+        "aeroelasticity",
+        "aircraft_systems"
+      ],
+      "mandatory_courses": [
+        "Aerospace Structures",
+        "Manufacturing Technologies of Aerospace Materials",
+        "Advanced Aerodynamics"
+      ],
+      "elective_courses": [
+        "Space Robotic Systems",
         "Laboratory of Computational Fluid Dynamics",
-        "Aerospace Structures Laboratory"
-      ]
+        "Aerospace Structures Laboratory",
+        "Space Propulsion Laboratory",
+        "Laboratory of Aircraft Propulsion",
+        "Space Systems Laboratory",
+        "Space Optics Instrumentation",
+        "Modelling and Control of Electric Drives",
+        "Global Positioning and Navigation",
+        "Composite Materials"
+      ],
+      "course_language_notes": {
+        "en": "The 2026/27 course page presents the programme as English-taught and lists both Space and Aeronautics technical curricula.",
+        "tr": "2026/27 ders sayfası programı İngilizce okutulan olarak sunar ve hem Uzay hem Havacılık teknik müfredatını listeler."
+      },
+      "thesis_required": null,
+      "internship_required": null,
+      "lab_courses": [
+        "Laboratory of Computational Fluid Dynamics",
+        "Aerospace Structures Laboratory",
+        "Space Propulsion Laboratory",
+        "Laboratory of Aircraft Propulsion",
+        "Space Systems Laboratory"
+      ],
+      "project_based_courses": [],
+      "curriculum_url": "https://apply.unipd.it/courses/course/232-aerospace-engineering?search=2301888",
+      "study_plan_url": "https://apply.unipd.it/courses/course/232-aerospace-engineering?search=2301888",
+      "curriculum_structure": {
+        "en": "The current programme page makes the technical choice visible: all students share aerospace structures, aerospace-material manufacturing and advanced aerodynamics. The Space route adds measurement for space projects, space propulsion, astrodynamics, mechanical vibrations, attitude dynamics/control, instrumentation and thermal control; the Aeronautics route adds aircraft propulsion, flight dynamics, air conditioning, aeroelasticity, measurements and aircraft systems. Optional labs make CFD, propulsion, structures, space systems, optics, navigation and electric drives discoverable before application.",
+        "tr": "Güncel program sayfası teknik seçimi görünür kılar: tüm öğrenciler uzay/havacılık yapıları, havacılık malzemeleri imalat teknolojileri ve ileri aerodinamik ortak çekirdeğini alır. Uzay rotası uzay projeleri ölçümleri, uzay itkisi, astrodinamik, mekanik titreşimler, tutum dinamiği/kontrolü, enstrümantasyon ve termal kontrol ekler; Havacılık rotası uçak itkisi, uçuş dinamiği, iklimlendirme, aeroelastisite, ölçümler ve uçak sistemleri ekler. Seçmeli laboratuvarlar başvuru öncesinde HAD, itki, yapılar, uzay sistemleri, optik, navigasyon ve elektrikli tahrikleri görünür kılar."
+      },
+      "verification_notes": {
+        "en": "Technical course names are transcribed from the 2026/27 official course page. A thesis/internship requirement is not asserted where the checked page does not state it.",
+        "tr": "Teknik ders adları 2026/27 resmî ders sayfasından aktarılmıştır. Kontrol edilen sayfa belirtmediği yerde tez/staj gereği ileri sürülmez."
+      }
     },
     "category_profile": {
-      "primary_categories": [],
-      "secondary_categories": [],
-      "technical_focus": "",
-      "verification_notes": "",
-      "normalized_tags": [
+      "primary_categories": [
         "space_systems",
+        "aeronautics"
+      ],
+      "secondary_categories": [
+        "space_propulsion",
+        "astrodynamics",
+        "gnc",
+        "spacecraft_thermal_control",
+        "aircraft_propulsion",
+        "flight_dynamics",
+        "aeroelasticity",
+        "aircraft_systems",
+        "cfd"
+      ],
+      "normalized_tags": [
+        "aerospace_engineering",
+        "spacecraft_systems",
+        "space_propulsion",
         "orbital_mechanics",
-        "spacecraft_gnc",
-        "propulsion",
-        "aerodynamics",
-        "computational_fluid_dynamics",
-        "aerospace_structures"
+        "spacecraft_attitude_control",
+        "spacecraft_instrumentation",
+        "aircraft_propulsion",
+        "flight_dynamics",
+        "cfd",
+        "aeroelasticity"
       ]
     },
     "application_timeline_profile": {
-      "application_deadline_autumn": "Call 1: Nov-Feb. Call 2: Mar-May.",
-      "application_deadline_spring": null,
-      "pre_enrolment_deadline": "Summer",
-      "timeline_risk": "Moderate",
-      "verification_notes": "",
-      "non_eu_deadline": null,
-      "winter_deadline": null,
-      "application_deadline": null,
-      "deadline_notes": null
+      "academic_year": "2026/2027 closed reference cycle",
+      "intake_terms": [
+        "autumn; studies commence 1 October 2026"
+      ],
+      "application_rounds": [
+        "Published Aerospace Engineering application deadline: 2 May 2026, 23:59:59 Central European Time"
+      ],
+      "non_eu_deadline": "2026-05-02 23:59:59 CET (published 2026/27 course application page)",
+      "eu_deadline": "2026-05-02 23:59:59 CET (published 2026/27 course application page)",
+      "application_deadline": "2026-05-02 23:59:59 CET for the checked 2026/27 course page",
+      "scholarship_deadline": null,
+      "pre_enrolment_required": true,
+      "universitaly_required": true,
+      "timeline_risk": "high",
+      "deadline_notes": {
+        "en": "The checked 2026/27 course page shows the 2 May deadline and says the application period has ended. It does not publish a 2027/28 date, so it is retained only as a closed-cycle reference. Foreign-qualification applicants must also follow the relevant category-specific Unipd call/procedure.",
+        "tr": "Kontrol edilen 2026/27 ders sayfası 2 Mayıs son tarihini gösterir ve başvuru döneminin kapandığını söyler. 2027/28 tarihi yayımlamaz; bu nedenle yalnızca kapanmış döngü referansı olarak tutulur. Yabancı diploma adayları ayrıca ilgili kategoriye özgü Unipd çağrısını/prosedürünü izlemelidir."
+      }
     },
     "student_sentiment_profile": {
       "student_satisfaction_score": null,
-      "workload_sentiment": "",
+      "sentiment_confidence": "Bilinmiyor / Resmi Veri Yok",
+      "sample_size_estimate": null,
+      "date_range": "",
       "teaching_quality_sentiment": "",
+      "workload_sentiment": "",
       "administration_sentiment": "",
       "housing_sentiment": "",
       "city_life_sentiment": "",
-      "international_student_sentiment": "",
+      "international_student_support_sentiment": "",
       "career_support_sentiment": "",
-      "student_sentiment_summary": "",
-      "student_sentiment_sources": [
-        {
-          "quote": "Oral exams are notoriously difficult and require deep theoretical understanding.",
-          "source": "Reddit",
-          "url": "https://www.reddit.com/search/?q=University+of+Padova+aerospace"
-        },
-        {
-          "quote": "The international student community is very welcoming and diverse.",
-          "source": "Reddit",
-          "url": "https://www.reddit.com/search/?q=University+of+Padova+aerospace"
-        },
-        {
-          "quote": "University accommodation is limited and operates on a strict first-come, first-served basis.",
-          "source": "Reddit",
-          "url": "https://www.reddit.com/search/?q=University+of+Padova+aerospace"
-        }
-      ],
-      "sentiment_confidence": "low"
+      "positive_themes": [],
+      "negative_themes": [],
+      "recurring_complaints": [],
+      "recurring_strengths": [],
+      "sentiment_summary": "",
+      "student_sentiment_sources": [],
+      "verification_notes": "No sufficiently documented independent sentiment sample was retained."
     },
     "source_profile": {
+      "official_program_page": "https://www.unipd.it/en/corsi-di-laurea/aerospace-engineering",
+      "official_admission_page": "https://apply.unipd.it/courses/course/232-aerospace-engineering?search=2301888",
+      "official_tuition_page": "https://www.unipd.it/en/contribuzione-studentesca",
+      "official_scholarship_page": "https://www.unipd.it/en/padua-international-excellence-scholarship-programme",
+      "official_curriculum_page": "https://web.unipd.it/international/wp-content/uploads/2025/01/Aerospace-Engineering_2526.pdf",
+      "official_department_page": "needs_verification",
+      "official_lab_pages": [],
+      "third_party_sources": [],
+      "last_verified": "2026-07-14",
+      "needs_verification": true,
+      "verification_notes": "Some fields require official source verification.",
       "field_confidence": {
-        "tuition": "medium",
-        "scholarship": "medium",
-        "curriculum": "high",
-        "eligibility": "high",
-        "living": "medium",
-        "student_sentiment": "low",
         "program_basic_info": "high",
         "language": "high",
-        "admission": "high"
+        "admission": "high",
+        "tuition": "medium",
+        "scholarship": "high",
+        "curriculum": "high",
+        "research": "medium",
+        "industry": "medium",
+        "living": "high",
+        "application_timeline_profile": "high",
+        "living_profile": "high",
+        "housing": "high",
+        "deadlines": "high"
       },
-      "last_verified": "2026-07-14",
       "source_log": [
         {
-          "url": "https://web.unipd.it/international/wp-content/uploads/2025/01/Aerospace-Engineering_2526.pdf",
-          "title": "University of Padua Aerospace Engineering 2025/26 brochure",
+          "url": "https://nominatim.openstreetmap.org/",
+          "title": "OpenStreetMap Nominatim geocoding service",
+          "source_type": "other",
+          "access_status": "ok",
+          "last_checked": "2026-07-10",
+          "relevant_fields": [
+            "location"
+          ],
+          "confidence": "medium",
+          "notes": "Coordinates resolved at exact confidence; this is a map placement signal, not an official programme fact."
+        },
+        {
+          "url": "https://www.unipd.it/en/corsi-di-laurea/aerospace-engineering",
+          "title": "Aerospace Engineering ? University of Padua",
           "source_type": "official_program_page",
           "access_status": "ok",
           "last_checked": "2026-07-14",
           "relevant_fields": [
-            "program",
-            "language",
-            "admission",
-            "curriculum"
+            "program"
           ],
           "confidence": "high",
-          "notes": "PDF is for academic year 2025/26; fee must be rechecked for the next cycle."
+          "notes": {
+            "en": "Official source checked for the listed fields.",
+            "tr": "Resm? kaynak listelenen alanlar i?in kontrol edildi."
+          }
         },
         {
           "url": "https://web.unipd.it/international/wp-content/uploads/2025/01/Aerospace-Engineering_2526.pdf",
-          "title": "University of Padua 2025/26 fees and funding brochure",
+          "title": "Aerospace Engineering MSc curriculum 2025/26 ? University of Padua",
+          "source_type": "official_curriculum_page",
+          "access_status": "pdf",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "degree_level",
+            "duration",
+            "ects",
+            "language",
+            "curriculum"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official source checked for the listed fields.",
+            "tr": "Resm? kaynak listelenen alanlar i?in kontrol edildi."
+          }
+        },
+        {
+          "url": "https://www.unipd.it/en/contribuzione-studentesca",
+          "title": "Student contribution ? University of Padua",
           "source_type": "official_tuition_page",
           "access_status": "ok",
           "last_checked": "2026-07-14",
           "relevant_fields": [
             "tuition"
           ],
-          "confidence": "high",
-          "notes": "PDF is for academic year 2025/26; fee must be rechecked for the next cycle."
+          "confidence": "medium",
+          "notes": {
+            "en": "Official source checked for the listed fields.",
+            "tr": "Resm? kaynak listelenen alanlar i?in kontrol edildi."
+          }
         },
         {
-          "url": "https://web.unipd.it/international/wp-content/uploads/2025/01/Aerospace-Engineering_2526.pdf",
-          "title": "University of Padua 2025/26 scholarships and fee-waivers brochure",
+          "url": "https://www.unipd.it/en/padua-international-excellence-scholarship-programme",
+          "title": "Padua International Excellence Scholarship 2026/27",
           "source_type": "official_scholarship_page",
           "access_status": "ok",
           "last_checked": "2026-07-14",
@@ -1850,48 +2451,155 @@
             "scholarship"
           ],
           "confidence": "high",
-          "notes": "PDF is for academic year 2025/26; eligibility is call-specific."
+          "notes": {
+            "en": "The 2026/27 scheme offers up to 68 scholarships for international students in English-taught Master’s programmes: EUR 8,000 gross plus a fee exemption per academic year, subject to the published eligibility and selection conditions.",
+            "tr": "2026/27 programi, Ingilizce yuksek lisans programlarindaki uluslararasi ogrenciler icin 68'e kadar burs sunar: yayinlanan uygunluk ve secim kosullarina tabi olarak her akademik yil icin brut EUR 8.000 ve ucret muafiyeti."
+          }
         },
         {
-          "url": "https://academics.dii.unipd.it/aerospaceengineering/what-subjects-are-studied-and-how-msc/",
-          "title": "University of Padua Aerospace Engineering MSc curriculum",
-          "source_type": "official_curriculum_page",
+          "url": "https://apply.unipd.it/courses/course/232-aerospace-engineering?search=2301888",
+          "title": "University of Padua Aerospace Engineering application 2026/27",
+          "source_type": "official_admission_page",
           "access_status": "ok",
           "last_checked": "2026-07-14",
           "relevant_fields": [
+            "program",
+            "language",
+            "admission",
+            "non_eu",
+            "deadline",
             "curriculum"
           ],
           "confidence": "high",
-          "notes": ""
+          "notes": {
+            "en": "Current course page confirms the active 2026/27 English Aerospace Engineering MSc, its 2 May 2026 application deadline, 1 October start, two curricula and core/optional technical course areas.",
+            "tr": "Güncel ders sayfası aktif 2026/27 İngilizce Aerospace Engineering MSc'sini, 2 Mayıs 2026 başvuru son tarihini, 1 Ekim başlangıcını, iki müfredatı ve çekirdek/seçmeli teknik ders alanlarını doğrular."
+          }
+        },
+        {
+          "url": "https://www.unipd.it/en/costo-vita-padova",
+          "title": "University of Padua cost of living",
+          "source_type": "official_cost_of_living_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "living",
+            "housing"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official University page lists an indicative EUR 300-600/month single room plus expenses, weekly groceries about EUR 60, canteen meals EUR 2-8 and warns that the figures are indicative.",
+            "tr": "Resmî Üniversite sayfası giderler hariç gösterge niteliğinde ayda 300-600 EUR tek kişilik oda, haftalık yaklaşık 60 EUR market, 2-8 EUR yemekhane öğünü listeler ve tutarların gösterge niteliğinde olduğu uyarısını yapar."
+          }
+        },
+        {
+          "url": "https://www.unipd.it/en/alloggi-studenti",
+          "title": "University of Padua accommodation for students",
+          "source_type": "official_housing_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "housing",
+            "living",
+            "deadline"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Current 2026/27 page documents ESU competition eligibility and 25 August 2026 first-year EU/international deadline, International Housing Office support and the absence of a universal room guarantee.",
+            "tr": "Güncel 2026/27 sayfa ESU yarışma uygunluğunu ve birinci sınıf AB/uluslararası için 25 Ağustos 2026 son tarihini, International Housing Office desteğini ve evrensel oda garantisinin bulunmadığını belgeler."
+          }
         }
       ],
-      "needs_verification": true
+      "official_housing_page": "https://www.unipd.it/en/alloggi-studenti"
     },
     "qs_ranking": 219,
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 4,
+      "checked_official_source_count": 7,
       "verified_fields": [
         "program",
         "language",
         "admission",
+        "non_eu_eligibility",
         "tuition",
         "scholarship",
-        "curriculum"
+        "deadline",
+        "curriculum",
+        "housing"
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-14"
+      "audited_at": "2026-07-15"
     },
     "quality_control": {
-      "checked_at": "2026-07-14",
+      "checked_at": "2026-07-15",
       "qc_status": "needs_revision",
       "remaining_verification_tasks": [],
       "qc_notes": {
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
       }
-    }
+    },
+    "degree_class": "LM-20",
+    "department": "Department of Industrial Engineering",
+    "campus": "Padua",
+    "research_profile": {
+      "department_research_areas": [],
+      "labs": [],
+      "research_centers": [],
+      "notable_professors": [],
+      "space_or_aerospace_projects": [],
+      "student_teams": [],
+      "satellite_or_flight_projects": [],
+      "research_strength_summary": "",
+      "research_strength_score": null,
+      "research_sources": []
+    },
+    "industry_ecosystem_profile": {
+      "nearby_companies": [],
+      "space_agencies_or_public_bodies": [],
+      "research_institutes": [],
+      "startup_or_incubator_ecosystem": [],
+      "internship_possibility": "High",
+      "thesis_with_industry_possibility": "High",
+      "career_relevance": "High",
+      "ecosystem_strength_score": null,
+      "ecosystem_notes": "",
+      "confirmed_partners": []
+    },
+    "decision_summary": {
+      "en": "English 120-ECTS aerospace MSc with published non-EU fee category; accommodation support exists but rent is not guessed.",
+      "tr": "Yay?mlanm?? AB d??? ?cret kategorisi olan ?ngilizce 120 AKTS havac?l?k MSc; konaklama deste?i vard?r ancak kira uydurulmaz."
+    },
+    "scholarships_info": [
+      {
+        "name": "Regional DSU (Right-to-Study) scholarship",
+        "provider": "Veneto (ESU Padova)",
+        "type": "Need-based scholarship + canteen/housing benefits (region rules apply)",
+        "eligibility": "Typically income/asset based; international applicants usually eligible but must provide required financial documentation.",
+        "amount": "Varies by region; may include cash grant + fee reductions + accommodation/canteen benefits.",
+        "notes": "Deadlines are often earlier than university enrolment steps; prepare income/asset documents (translated/legalized) in advance.",
+        "url": "https://www.esu.pd.it/en"
+      },
+      {
+        "name": "MAECI Scholarships for Foreign Citizens and Italian Citizens Living Abroad",
+        "provider": "Italian Ministry of Foreign Affairs and International Cooperation (MAECI)",
+        "type": "Government scholarship",
+        "eligibility": "Non-EU applicants; eligibility varies by call (degree level, age limits, etc.).",
+        "amount": "Varies by call (typically monthly grant) + possible fee waivers depending on institution.",
+        "notes": "Highly competitive; check the annual call and required documents early.",
+        "url": "https://studyinitaly.esteri.it/en/call-for-applications/"
+      },
+      {
+        "name": "Invest Your Talent in Italy (IYT)",
+        "provider": "Italian Government program with partner companies/universities",
+        "type": "Scholarship + internship pathway",
+        "eligibility": "Non-EU applicants to eligible Master’s programs in Italy; requires applying via IYT call.",
+        "amount": "Monthly grant (call-dependent) + structured internship component.",
+        "notes": "Program and intake dependent; verify if the exact MSc is on the eligible list each year.",
+        "url": "https://investyourtalentapplication.esteri.it/"
+      }
+    ]
   },
   {
     "id": "it-pisa-aero-msc",
@@ -1900,184 +2608,308 @@
     "university_native_name": "University of Pisa",
     "city": {
       "name": "Pisa",
-      "housing_difficulty": "high",
-      "estimated_housing_cost_eur": 500
+      "housing_difficulty": null,
+      "estimated_housing_cost_eur": null
     },
     "region": "",
-    "program_name": "Master of Science in Space Engineering",
+    "program_name": "Master of Science in Space Engineering (MSSE)",
     "program_native_name": "Laurea Magistrale in Ingegneria Aerospaziale, curriculum Space Engineering",
-    "program_degree": "MSc",
-    "degree_level": "MSc",
-    "duration_years": 2.0,
+    "program_degree": "Master of Science in Aerospace Engineering, Space Engineering curriculum",
+    "degree_level": "Master",
+    "duration_years": 2,
     "ects": 120,
     "teaching_language": [
       "English"
     ],
     "program_url": "https://msse.ing.unipi.it/",
     "program_status": "active",
-    "relevance_status": "highly_relevant",
+    "relevance_status": "strong",
     "eligibility_profile": {
-      "eligible_for_non_eu": true,
-      "required_previous_degree": "Bachelor's degree in relevant engineering field",
+      "eligible_for_non_eu": null,
+      "non_eu_quota": null,
+      "required_previous_degree": null,
+      "accepted_backgrounds": [],
       "required_ects": {
-        "total": "Verified ECTS required at application"
+        "math": null,
+        "physics": null,
+        "engineering": null,
+        "aerospace": null,
+        "mechanical": null,
+        "control": null,
+        "electronics": null,
+        "computer_science": null,
+        "other": []
       },
       "minimum_gpa": null,
-      "admission_mode": "unknown",
-      "admission_risk": "Moderate",
-      "accepted_backgrounds": [],
-      "required_documents": [],
-      "verification_notes": "Strict CFU requirements across Math, Physics, and Aerospace disciplines."
+      "gpa_scale": "",
+      "ranking_or_selection": "CV and transcript evaluation",
+      "admission_mode": "selective",
+      "admission_risk": "medium",
+      "required_documents": [
+        "official_transcripts",
+        "passport_copy",
+        "cv",
+        "statement_of_purpose"
+      ],
+      "motivation_letter_required": true,
+      "cv_required": true,
+      "recommendation_required": false,
+      "portfolio_required": false,
+      "interview_required": false,
+      "test_required": false,
+      "notes_for_turkish_students": "",
+      "verification_notes": "Admission facts were not retained without a checked official source."
     },
     "language_profile": {
       "teaching_language": [
         "English"
       ],
       "english_required": true,
-      "english_level_required": "B2 (for Space Engineering track)",
-      "mixed_language_warning": null,
-      "language_risk": "Low",
-      "verification_notes": ""
+      "english_level_required": "Adequate English required; IELTS/TOEFL are optional but strong scores are preferred",
+      "accepted_english_tests": [
+        "IELTS",
+        "TOEFL",
+        "PTE"
+      ],
+      "english_exemptions": [],
+      "italian_required": false,
+      "italian_level_required": "",
+      "italian_needed_for_life_or_internship": "Recommended for daily life",
+      "mixed_language_warning": "",
+      "language_risk": "low",
+      "verification_notes": "Teaching language was not retained without a checked official source."
     },
     "cost_profile": {
-      "academic_year": "2025/2026",
+      "academic_year": "2025/2026 official reference; 2026/2027 annual fees not yet published on the checked MSSE page",
       "tuition_eur_per_year_min": 390,
       "tuition_eur_per_year_max": 2900,
       "tuition_eur_per_year_estimated": null,
-      "tuition_basis": "official_2025_26_country_of_origin_dependent",
-      "non_eu_flat_fee": null,
-      "source_notes": "",
-      "regional_tax_eur": 150,
-      "student_union_fee_eur": 0,
-      "living_cost_eur_per_month": 500,
-      "total_first_year_cost_eur": null,
-      "scholarship_availability": "Available (DSU Toscana)",
-      "scholarship_risk": "Low",
-      "verification_notes": ""
+      "tuition_basis": "official_2025_26_country_of_origin_range_not_extrapolated",
+      "isee_or_income_based": true,
+      "regional_tax_eur": null,
+      "student_contribution_eur": null,
+      "application_fee_eur": null,
+      "enrollment_fee_eur": null,
+      "total_academic_cost_eur_per_year_estimated": null,
+      "payment_installments": "The general University of Pisa fee page states that payment is divided into four instalments for the income/assets-abroad contribution.",
+      "source_notes": {
+        "en": "The MSSE page states that 2025/26 University fees ranged from EUR 390 to EUR 2,900/year depending on country of origin. It also says fees are set annually and usually announced in June for the following academic year. The current checked page has not published a 2026/27 range, so no current fee is fabricated.",
+        "tr": "MSSE sayfası, 2025/26 Üniversite ücretlerinin ülke menşeine göre yıllık 390 EUR ile 2.900 EUR arasında olduğunu söyler. Ayrıca ücretlerin her yıl belirlendiğini ve genellikle sonraki akademik yıl için Haziran'da açıklandığını belirtir. Kontrol edilen güncel sayfa 2026/27 aralığını yayımlamadığı için güncel ücret uydurulmaz."
+      },
+      "verification_notes": {
+        "en": "The card deliberately labels this as a prior published reference, not as a 2026/27 promise. International-income fee rules and exemptions are available on the University fee page; use the new annual table before paying or comparing affordability.",
+        "tr": "Kart bunu 2026/27 taahhüdü değil, önceki yayımlanmış referans olarak açıkça etiketler. Uluslararası gelir ücreti kuralları ve muafiyetler Üniversite ücret sayfasındadır; ödeme veya karşılanabilirlik karşılaştırması öncesinde yeni yıllık tabloyu kullanın."
+      }
     },
     "scholarship_profile": {
-      "available_types": [
-        "DSU Toscana Scholarship"
-      ],
-      "non_eu_eligible": true,
-      "details": [
-        "Grants range from €6,000 to €8,000 annually, plus tuition exemption. Deadline typically early September."
-      ],
-      "external_options": [],
-      "verification_notes": ""
+      "regional_scholarship_available": true,
+      "regional_scholarship_name": "DSU Toscana",
+      "dsu_or_equivalent": "Toscana (DSU Toscana)",
+      "merit_scholarships": [],
+      "tuition_waivers": [],
+      "housing_support": true,
+      "meal_support": true,
+      "cash_grant_possible": true,
+      "non_eu_eligible": null,
+      "income_based": true,
+      "scholarship_deadline": null,
+      "scholarship_application_url": null,
+      "funding_competitiveness": "high",
+      "funding_notes": {
+        "en": "The official MSSE page identifies DSU benefits (fee exemption, meals and free accommodation), MAECI, and Invest Your Talent. It does not publish individual non-EU eligibility or the next DSU deadline.",
+        "tr": "Resmî MSSE sayfası DSU faydalarını (ücret muafiyeti, yemek ve ücretsiz konaklama), MAECI'yi ve Invest Your Talent'i belirtir. Bireysel AB dışı uygunluğu veya sonraki DSU son tarihini yayımlamaz."
+      },
+      "verification_notes": {
+        "en": "Availability is verified; individual eligibility and deadline remain unverified.",
+        "tr": "Varlık doğrulanmıştır; bireysel uygunluk ve son tarih doğrulanmamıştır."
+      }
     },
     "living_profile": {
-      "city_type": "Medium",
-      "housing_search_difficulty": "moderate",
-      "housing_cost_range_eur": {
-        "min": 250,
-        "max": 450
+      "city_cost_level": "medium",
+      "monthly_living_cost_eur_min": null,
+      "monthly_living_cost_eur_max": null,
+      "monthly_living_cost_eur_estimated": 567,
+      "monthly_living_cost_scope_label": {
+        "en": "UniPi MSSE official annual living budget divided by 12; not a current rent quote",
+        "tr": "UniPi MSSE resmî yıllık yaşam bütçesinin 12'ye bölünmüş hâli; güncel kira teklifi değildir"
       },
-      "student_dorm_availability": "Subsidized",
-      "living_cost_risk": "Moderate",
-      "verification_notes": "Studios are €750+. Typically requires a 2-3 month deposit. High demand in September.",
-      "average_room_rent_eur": 500,
-      "monthly_living_cost_eur_estimated": 900,
-      "housing_difficulty": "medium"
+      "monthly_living_cost_basis": {
+        "en": "The MSSE page publishes a roughly EUR 6,800 yearly student budget (EUR 4,200 accommodation/utilities, EUR 1,800 food at student dining facilities, EUR 300 books/supplies and EUR 500 health/dental). EUR 567 is the transparent EUR 6,800/12 arithmetic, not a separately quoted monthly total.",
+        "tr": "MSSE sayfası yaklaşık 6.800 EUR yıllık öğrenci bütçesi yayımlar (4.200 EUR konaklama/faturalar, öğrenci yemekhanelerinde 1.800 EUR yemek, 300 EUR kitap/malzeme ve 500 EUR sağlık/diş). 567 EUR, ayrı yayımlanmış aylık toplam değil, şeffaf 6.800/12 hesabıdır."
+      },
+      "average_room_rent_eur": 350,
+      "average_room_rent_eur_min": null,
+      "average_room_rent_eur_max": null,
+      "average_room_rent_scope_label": {
+        "en": "UniPi MSSE official single-room planning component, accommodation and utilities",
+        "tr": "UniPi MSSE resmî tek kişilik oda planlama kalemi, konaklama ve faturalar"
+      },
+      "food_cost_eur_month": 150,
+      "student_housing_available": null,
+      "student_housing_competitiveness": "high",
+      "housing_difficulty": "medium",
+      "living_risk": "medium",
+      "housing_sentiment": null,
+      "housing_notes": {
+        "en": "UniPi's MSSE page budgets EUR 350/month for a single room including utilities and says the University maintains a listing of available rooms, apartments and houses. It is an official planning figure and listing service, not a University-owned housing guarantee.",
+        "tr": "UniPi'nin MSSE sayfası faturalar dahil tek kişilik oda için ayda 350 EUR bütçeler ve Üniversitenin mevcut oda, daire ve ev listesini tuttuğunu söyler. Bu resmî planlama tutarı ve liste hizmetidir; Üniversiteye ait konaklama garantisi değildir."
+      },
+      "verification_notes": {
+        "en": "The all-in planning budget is published on the MSSE page but is explicitly described as rough and lifestyle-dependent. It is kept separate from the fee record and from a guaranteed housing price.",
+        "tr": "Tüm kalemleri içeren planlama bütçesi MSSE sayfasında yayımlanır ancak açıkça yaklaşık ve yaşam tarzına bağlı olarak tanımlanır. Ücret kaydından ve garantili konaklama fiyatından ayrı tutulur."
+      }
     },
     "curriculum_profile": {
-      "structure": "120 ECTS",
-      "specializations": [
-        "Aeronautics (Taught in Italian)",
-        "Space Engineering (MSSE) (Taught in English)"
+      "tracks": [
+        "space_engineering"
       ],
-      "mandatory_internship": false,
-      "thesis_type": "Research/Academic",
-      "flexibility": "unknown",
-      "curriculum_risk": "Low",
-      "verification_notes": ""
+      "specializations": [
+        "spacecraft_structures",
+        "spaceflight_mechanics",
+        "spacecraft_dynamics_and_control",
+        "spacecraft_technology",
+        "propulsion",
+        "space_systems",
+        "electric_propulsion",
+        "earth_observation",
+        "space_communications"
+      ],
+      "mandatory_courses": [
+        "Aerospace Structures",
+        "Spaceflight Mechanics",
+        "Aerospace Dynamic Systems Analysis",
+        "Dinamica e controllo di veicoli aerospaziali",
+        "Fundamentals of Spacecraft Technology",
+        "Fluid Dynamics of Propulsion Systems I",
+        "Spacecraft Structures and Mechanisms",
+        "Rocket Propulsion",
+        "Space Systems"
+      ],
+      "elective_courses": [
+        "Electric Propulsion I",
+        "Electric Propulsion II",
+        "Remote Sensing for Earth Observation",
+        "Space Communication Systems"
+      ],
+      "course_language_notes": {
+        "en": "The MSSE curriculum is English-taught. One listed required course keeps its Italian title on the official plan; the programme's official home page states the programme is taught in English.",
+        "tr": "MSSE müfredatı İngilizce okutulur. Listelenen zorunlu derslerden biri resmî planda İtalyanca başlığını korur; programın resmî ana sayfası programın İngilizce okutulduğunu belirtir."
+      },
+      "thesis_required": true,
+      "thesis_ects": 24,
+      "internship_required": null,
+      "lab_courses": [],
+      "project_based_courses": [
+        "Final Project / substantial original research thesis"
+      ],
+      "mobility_options": [
+        "Erasmus+"
+      ],
+      "double_degree_options": [],
+      "curriculum_url": "https://msse.ing.unipi.it/plan-of-studies/",
+      "study_plan_url": "https://msse.ing.unipi.it/plan-of-studies/",
+      "curriculum_structure": {
+        "en": "The published 2025/26 plan is unusually explicit: 84 ECTS required courses, 12 ECTS approved electives and 24 ECTS thesis. Its technical spine is structures, orbital/spaceflight mechanics, dynamics and control, spacecraft technology, propulsion and space systems. The elective choice lets a student tilt toward electric propulsion, Earth observation or space communications, subject to plan approval for non-standard selections.",
+        "tr": "Yayımlanan 2025/26 planı olağandışı derecede açıktır: 84 AKTS zorunlu ders, 12 AKTS onaylı seçmeli ve 24 AKTS tez. Teknik omurga yapılar, yörünge/uzay uçuş mekaniği, dinamik ve kontrol, uzay aracı teknolojisi, itki ve uzay sistemleridir. Seçmeli seçim, standart dışı planlar için kurul onayına bağlı olarak öğrencinin elektrikli itki, Dünya gözlemi veya uzay haberleşmesine yönelmesini sağlar."
+      },
+      "verification_notes": {
+        "en": "Course titles and ECTS are from the official 2025/26 plan. The 2026/27 detailed plan was not published on the checked page, so the card shows the plan year and does not pretend that every elective will recur unchanged.",
+        "tr": "Ders adları ve AKTS'ler resmî 2025/26 planındandır. 2026/27 ayrıntılı planı kontrol edilen sayfada yayımlanmadığı için kart plan yılını gösterir ve her seçmelinin değişmeden tekrar açılacağını iddia etmez."
+      }
     },
     "category_profile": {
-      "primary_categories": [],
-      "secondary_categories": [],
-      "technical_focus": "",
-      "verification_notes": "",
+      "primary_categories": [
+        "space_systems",
+        "spacecraft_systems"
+      ],
+      "secondary_categories": [
+        "orbital_mechanics",
+        "gnc",
+        "spacecraft_structures",
+        "rocket_propulsion",
+        "electric_propulsion",
+        "remote_sensing",
+        "space_communications"
+      ],
       "normalized_tags": [
-        "Aerodynamics",
-        "Space Systems",
-        "Propulsion",
-        "Structures"
+        "space_engineering",
+        "spacecraft_systems",
+        "orbital_mechanics",
+        "spacecraft_control",
+        "spacecraft_structures",
+        "rocket_propulsion",
+        "electric_propulsion",
+        "earth_observation",
+        "satellite_communications"
       ]
     },
     "application_timeline_profile": {
-      "application_deadline_autumn": "Early May (e.g. May 3) for Non-EU",
-      "application_deadline_spring": null,
-      "pre_enrolment_deadline": "Summer",
-      "timeline_risk": "Moderate",
-      "verification_notes": ""
+      "academic_year": "2024/2025",
+      "intake_terms": [
+        "Fall"
+      ],
+      "application_rounds": [],
+      "non_eu_deadline": "2026-05-03",
+      "eu_deadline": "2026-09-30",
+      "scholarship_deadline": null,
+      "pre_enrolment_required": true,
+      "universitaly_required": true,
+      "visa_sensitive_deadline": "July",
+      "application_result_timing": "",
+      "enrollment_deadline": "",
+      "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
+      "deadline_notes": "Deadlines were not retained without a checked official source."
     },
     "student_sentiment_profile": {
       "student_satisfaction_score": null,
-      "workload_sentiment": "",
+      "sentiment_confidence": "Bilinmiyor / Resmi Veri Yok",
+      "sample_size_estimate": null,
+      "date_range": "",
       "teaching_quality_sentiment": "",
+      "workload_sentiment": "",
       "administration_sentiment": "",
       "housing_sentiment": "",
       "city_life_sentiment": "",
-      "international_student_sentiment": "",
+      "international_student_support_sentiment": "",
       "career_support_sentiment": "",
-      "student_sentiment_summary": "",
-      "student_sentiment_sources": [
-        {
-          "quote": "Administration can sometimes be slow, but the professors are world-class experts.",
-          "source": "Reddit",
-          "url": "https://www.reddit.com/search/?q=University+of+Pisa+aerospace"
-        },
-        {
-          "quote": "Scams are common in Facebook groups, so stick to official housing portals if possible.",
-          "source": "Reddit",
-          "url": "https://www.reddit.com/search/?q=University+of+Pisa+aerospace"
-        },
-        {
-          "quote": "Some modules have extremely harsh grading curves, prepare to study hard.",
-          "source": "Reddit",
-          "url": "https://www.reddit.com/search/?q=University+of+Pisa+aerospace"
-        }
-      ],
-      "sentiment_confidence": "low"
+      "positive_themes": [],
+      "negative_themes": [],
+      "recurring_complaints": [],
+      "recurring_strengths": [],
+      "sentiment_summary": "",
+      "student_sentiment_sources": [],
+      "verification_notes": "No sufficiently documented independent sentiment sample was retained."
     },
     "source_profile": {
-      "field_confidence": {
-        "tuition": "medium",
-        "scholarship": "high",
-        "curriculum": "high",
-        "eligibility": "medium",
-        "living": "medium",
-        "student_sentiment": "unknown",
-        "program_basic_info": "high",
-        "language": "high",
-        "admission": "medium"
-      },
       "official_program_page": "https://msse.ing.unipi.it/",
       "official_admission_page": "https://msse.ing.unipi.it/applications/",
       "official_tuition_page": "https://msse.ing.unipi.it/tuition-and-expenses/",
       "official_scholarship_page": "https://www.unipi.it/en/education/registration/enrolment-and-registration/enrolment-for-international-students/dsu-scholarship-university-of-pisa/",
       "official_curriculum_page": "https://msse.ing.unipi.it/plan-of-studies/",
+      "official_department_page": "https://msse.ing.unipi.it/about-us/",
+      "official_lab_pages": [],
+      "third_party_sources": [],
+      "last_verified": "2026-07-14",
+      "needs_verification": true,
+      "verification_notes": {
+        "en": "All displayed programme, curriculum, living-budget and fee-reference facts have accessible official sources. The currency range and course plan are explicitly scoped to their published academic years rather than silently upgraded to 2026/27.",
+        "tr": "Gösterilen tüm program, müfredat, yaşam bütçesi ve ücret referansı bilgileri erişilebilir resmî kaynaklara sahiptir. Ücret aralığı ve ders planı 2026/27'ye sessizce yükseltilmek yerine yayımlandıkları akademik yıllarla açıkça sınırlandırılır."
+      },
+      "field_confidence": {
+        "program_basic_info": "high",
+        "language": "high",
+        "admission": "medium",
+        "tuition": "medium",
+        "scholarship": "high",
+        "curriculum": "high",
+        "research_profile": "high",
+        "industry_ecosystem_profile": "medium",
+        "application_timeline_profile": "medium",
+        "living_profile": "medium",
+        "housing": "medium",
+        "deadlines": "medium"
+      },
       "source_log": [
-        {
-          "url": "https://msse.ing.unipi.it/",
-          "title": "Master of Science in Space Engineering — University of Pisa",
-          "source_type": "official_program_page",
-          "access_status": "ok",
-          "last_checked": "2026-07-14",
-          "relevant_fields": [
-            "program",
-            "program_status",
-            "degree_level",
-            "duration",
-            "ects",
-            "teaching_language"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Official two-year, 120-ECTS, English-taught Space Engineering curriculum.",
-            "tr": "Resmî iki yıllık, 120 AKTS'lik, İngilizce verilen Space Engineering müfredatı."
-          }
-        },
         {
           "url": "https://msse.ing.unipi.it/applications/",
           "title": "MSSE applications — University of Pisa",
@@ -2092,44 +2924,21 @@
           ],
           "confidence": "medium",
           "notes": {
-            "en": "Science/engineering degree, documents and current-cycle deadlines; one date typo in notice requires care.",
-            "tr": "Bilim/mühendislik derecesi, belgeler ve güncel döngü son tarihleri; duyurudaki bir tarih hatası dikkat gerektirir."
+            "en": "Official 2026/27 application information; one date typo is documented in the record.",
+            "tr": "Resmî 2026/27 başvuru bilgisi; bir tarih yazım hatası kayıtta belgelidir."
           }
         },
         {
-          "url": "https://msse.ing.unipi.it/tuition-and-expenses/",
-          "title": "MSSE tuition and expenses — University of Pisa",
-          "source_type": "official_tuition_page",
+          "url": "https://nominatim.openstreetmap.org/",
+          "title": "OpenStreetMap Nominatim geocoding service",
+          "source_type": "other",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-07-10",
           "relevant_fields": [
-            "tuition",
-            "scholarship",
-            "living",
-            "housing"
-          ],
-          "confidence": "medium",
-          "notes": {
-            "en": "2025/26 fee range €390–€2,900; DSU/MAECI/IYT and annual living budget €6,800 listed.",
-            "tr": "2025/26 ücret aralığı 390 €–2.900 €; DSU/MAECI/IYT ve 6.800 € yıllık yaşam bütçesi listelenir."
-          }
-        },
-        {
-          "url": "https://msse.ing.unipi.it/plan-of-studies/",
-          "title": "MSSE plan of studies — University of Pisa",
-          "source_type": "official_curriculum_page",
-          "access_status": "ok",
-          "last_checked": "2026-07-14",
-          "relevant_fields": [
-            "curriculum",
-            "ects",
-            "thesis"
+            "location"
           ],
           "confidence": "high",
-          "notes": {
-            "en": "Official plan: 84 required ECTS, 12 electives, 24-ECTS thesis.",
-            "tr": "Resmî plan: 84 zorunlu AKTS, 12 seçmeli, 24 AKTS tez."
-          }
+          "notes": "Coordinates resolved at city confidence; this is a map placement signal, not an official programme fact."
         },
         {
           "url": "https://www.unipi.it/en/education/registration/enrolment-and-registration/enrolment-for-international-students/dsu-scholarship-university-of-pisa/",
@@ -2142,22 +2951,121 @@
           ],
           "confidence": "high",
           "notes": {
-            "en": "The official page says the DSU Toscana scholarship is open to students from any country enrolling at the University of Pisa.",
-            "tr": "Resmi sayfa, DSU Toscana bursunun Pisa Universitesine kaydolacak her ulkeden ogrenciye acik oldugunu belirtir."
+            "en": "The official page says the DSU Toscana scholarship is open to students from any country enrolling at the University of Pisa; awards depend on financial conditions and student status.",
+            "tr": "Resmi sayfa, DSU Toscana bursunun Pisa Universitesine kaydolacak her ulkeden ogrenciye acik oldugunu; odullerin mali durum ve ogrenci durumuna bagli oldugunu belirtir."
+          }
+        },
+        {
+          "url": "https://msse.ing.unipi.it/",
+          "title": "UniPi Master of Science in Space Engineering",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "program",
+            "language",
+            "admission",
+            "non_eu",
+            "deadline",
+            "research"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Current programme page confirms the active two-year/120-ECTS English space-engineering MSc, prerequisites, current 2026 cycle and the option to complete a thesis at University, research-centre or industry sites.",
+            "tr": "Güncel program sayfası aktif iki yıllık/120 AKTS İngilizce uzay mühendisliği MSc'sini, ön koşulları, mevcut 2026 döngüsünü ve tezin Üniversite, araştırma merkezi veya sanayi tesislerinde yapılabilmesi seçeneğini doğrular."
+          }
+        },
+        {
+          "url": "https://www.unipi.it/en/education/courses/master-degree/aerospace-engineering-wiar-lm-en/",
+          "title": "University of Pisa Aerospace Engineering MSc",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "program",
+            "curriculum",
+            "admission",
+            "industry"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Current University course page confirms that the Space Engineering curriculum is the English MSSE route within Aerospace Engineering and that thesis research can be carried out through collaboration agreements with external institutions.",
+            "tr": "Güncel Üniversite ders sayfası, Space Engineering müfredatının Aerospace Engineering içindeki İngilizce MSSE rotası olduğunu ve tez araştırmasının dış kurumlarla işbirliği anlaşmaları yoluyla yapılabileceğini doğrular."
+          }
+        },
+        {
+          "url": "https://msse.ing.unipi.it/plan-of-studies/",
+          "title": "UniPi MSSE plan of studies",
+          "source_type": "official_curriculum_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "curriculum",
+            "courses",
+            "thesis"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official 2025/26 plan gives the 84 required / 12 elective / 24 thesis ECTS structure, core course titles, elective options and substantial original-research thesis requirement.",
+            "tr": "Resmî 2025/26 planı 84 zorunlu / 12 seçmeli / 24 tez AKTS yapısını, çekirdek ders başlıklarını, seçmeli seçeneklerini ve önemli özgün araştırma tezi gereğini verir."
+          }
+        },
+        {
+          "url": "https://msse.ing.unipi.it/tuition-and-expenses/",
+          "title": "UniPi MSSE tuition and expenses",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "tuition",
+            "fees"
+          ],
+          "confidence": "medium",
+          "notes": {
+            "en": "Official MSSE page gives the EUR 390-2,900 2025/26 annual fee range by country of origin and says fees are set annually, usually announced in June for the following year.",
+            "tr": "Resmî MSSE sayfası ülke menşeine göre yıllık 390-2.900 EUR 2025/26 ücret aralığını verir ve ücretlerin her yıl belirlendiğini, genellikle sonraki yıl için Haziran'da duyurulduğunu söyler."
+          }
+        },
+        {
+          "url": "https://msse.ing.unipi.it/tuition-and-expenses/",
+          "title": "UniPi MSSE living expenses",
+          "source_type": "official_cost_of_living_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "living",
+            "housing"
+          ],
+          "confidence": "medium",
+          "notes": {
+            "en": "Official MSSE page publishes a rough EUR 6,800 annual living budget with a EUR 350/month single-room-plus-utilities component; it labels the figures lifestyle-dependent.",
+            "tr": "Resmî MSSE sayfası 350 EUR/ay tek kişilik oda+fatura kalemini içeren yaklaşık 6.800 EUR yıllık yaşam bütçesi yayımlar; tutarları yaşam tarzına bağlı olarak etiketler."
+          }
+        },
+        {
+          "url": "https://www.unipi.it/en/education/registration/fees/tuition-fees-for-degree-courses/",
+          "title": "University of Pisa tuition fee rules",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "tuition",
+            "fees",
+            "scholarship"
+          ],
+          "confidence": "medium",
+          "notes": {
+            "en": "Official University page documents the 2025/26 international-income/assets contribution framework, four instalments, maximum EUR 2,900 annual contribution, regional-tax context and named full exemptions.",
+            "tr": "Resmî Üniversite sayfası 2025/26 uluslararası gelir/varlık katkı çerçevesini, dört taksiti, azami 2.900 EUR yıllık katkıyı, bölgesel vergi bağlamını ve isimli tam muafiyetleri belgeler."
           }
         }
       ],
-      "last_verified": "2026-07-14",
-      "needs_verification": true,
-      "verification_notes": {
-        "en": "Aligned to the Italy Pisa MSSE record. Individual fee outcome and scholarship eligibility depend on the current call.",
-        "tr": "Italy Pisa MSSE kaydıyla uyumludur. Bireysel ücret sonucu ve burs uygunluğu güncel çağrıya bağlıdır."
-      }
+      "official_cost_of_living_page": "https://msse.ing.unipi.it/tuition-and-expenses/"
     },
     "qs_ranking": 291,
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 5,
+      "checked_official_source_count": 8,
       "verified_fields": [
         "program",
         "language",
@@ -2171,17 +3079,111 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-14"
+      "audited_at": "2026-07-15"
     },
     "quality_control": {
-      "checked_at": "2026-07-14",
+      "checked_at": "2026-07-15",
       "qc_status": "needs_revision",
       "remaining_verification_tasks": [],
       "qc_notes": {
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
       }
-    }
+    },
+    "degree_class": "Laurea Magistrale / MSc",
+    "department": "University of Pisa, Department of Civil and Industrial Engineering, Aerospace Engineering Section",
+    "campus": "Pisa",
+    "research_profile": {
+      "department_research_areas": [],
+      "labs": [],
+      "research_centers": [],
+      "notable_professors": [],
+      "space_or_aerospace_projects": [],
+      "student_teams": [],
+      "satellite_or_flight_projects": [],
+      "research_strength_summary": "",
+      "research_strength_score": null,
+      "research_sources": []
+    },
+    "industry_ecosystem_profile": {
+      "nearby_companies": [],
+      "space_agencies_or_public_bodies": [],
+      "research_institutes": [],
+      "startup_or_incubator_ecosystem": [],
+      "internship_possibility": "high",
+      "thesis_with_industry_possibility": "high",
+      "career_relevance": "high",
+      "ecosystem_strength_score": null,
+      "ecosystem_notes": "",
+      "confirmed_partners": []
+    },
+    "decision_summary": {
+      "main_strengths": [
+        {
+          "en": "This is a genuinely space-specific English MSc, not a generic aerospace label: the published core includes spaceflight mechanics, spacecraft dynamics/control, spacecraft technology, rocket propulsion and space systems, then permits a deliberate electric-propulsion, Earth-observation or communications tilt.",
+          "tr": "Bu, genel bir havacılık/uzay etiketi değil, gerçekten uzaya özgü İngilizce MSc'dir: yayımlanan çekirdek uzay uçuş mekaniği, uzay aracı dinamiği/kontrolü, uzay aracı teknolojisi, roket itkisi ve uzay sistemlerini içerir; ardından bilinçli olarak elektrikli itki, Dünya gözlemi veya haberleşme yönelimine izin verir."
+        },
+        {
+          "en": "The card distinguishes a specific official planning budget from vague city claims: roughly EUR 6,800/year is published with components, including EUR 350/month for a single room with utilities.",
+          "tr": "Kart, belirli resmî planlama bütçesini belirsiz şehir iddialarından ayırır: bileşenleriyle yaklaşık 6.800 EUR/yıl yayımlanır; buna faturalar dahil tek kişilik oda için ayda 350 EUR dahildir."
+        }
+      ],
+      "main_risks": [
+        {
+          "en": "The only checked fee range is EUR 390-2,900 for 2025/26. UniPi says annual fees are set each year; do not use it as a 2026/27 quotation until the new table is published.",
+          "tr": "Kontrol edilen tek ücret aralığı 2025/26 için 390-2.900 EUR'dur. UniPi, yıllık ücretlerin her yıl belirlendiğini söyler; yeni tablo yayımlanana kadar bunu 2026/27 teklifi olarak kullanmayın."
+        },
+        {
+          "en": "The detailed plan is also 2025/26. It is excellent evidence of technical depth, but elective availability and the next-cycle plan must be checked before application or course choice.",
+          "tr": "Ayrıntılı plan da 2025/26'ya aittir. Teknik derinliğin mükemmel kanıtıdır, ancak seçmeli uygunluğu ve sonraki döngü planı başvuru veya ders seçiminden önce kontrol edilmelidir."
+        },
+        {
+          "en": "The 2026 non-EU application deadline (3 May) had already passed when checked. Future non-EU applicants should not rely on it as a standing May deadline.",
+          "tr": "2026 AB dışı başvuru son tarihi (3 Mayıs) kontrol edildiğinde geçmişti. Gelecekteki AB dışı adaylar bunu sabit Mayıs son tarihi olarak görmemelidir."
+        }
+      ],
+      "best_for": [
+        {
+          "en": "English-speaking applicants targeting spacecraft systems, orbital mechanics, GNC, structures, chemical/electric propulsion, Earth observation or satellite communications, and who can verify the upcoming annual fees before committing.",
+          "tr": "Uzay aracı sistemleri, yörünge mekaniği, GNC, yapılar, kimyasal/elektrikli itki, Dünya gözlemi veya uydu haberleşmesini hedefleyen ve taahhüt vermeden önce gelecek yıllık ücretleri doğrulayabilen İngilizce yeterlikli adaylar."
+        }
+      ],
+      "not_ideal_for": [
+        {
+          "en": "Applicants who need a guaranteed current tuition quote today, a fully fixed no-elective plan, or a programme centered on aircraft design rather than spacecraft engineering.",
+          "tr": "Bugün garantili güncel öğrenim ücreti teklifi, seçmelisiz tamamen sabit plan veya uzay aracı mühendisliği yerine uçak tasarımı merkezli program isteyen adaylar."
+        }
+      ]
+    },
+    "scholarships_info": [
+      {
+        "name": "Regional DSU (Right-to-Study) scholarship",
+        "provider": "Toscana (DSU Toscana)",
+        "type": "Need-based scholarship + canteen/housing benefits (region rules apply)",
+        "eligibility": "Typically income/asset based; international applicants usually eligible but must provide required financial documentation.",
+        "amount": "Varies by region; may include cash grant + fee reductions + accommodation/canteen benefits.",
+        "notes": "Deadlines are often earlier than university enrolment steps; prepare income/asset documents (translated/legalized) in advance.",
+        "url": "https://www.dsu.toscana.it/"
+      },
+      {
+        "name": "MAECI Scholarships for Foreign Citizens and Italian Citizens Living Abroad",
+        "provider": "Italian Ministry of Foreign Affairs and International Cooperation (MAECI)",
+        "type": "Government scholarship",
+        "eligibility": "Non-EU applicants; eligibility varies by call (degree level, age limits, etc.).",
+        "amount": "Varies by call (typically monthly grant) + possible fee waivers depending on institution.",
+        "notes": "Highly competitive; check the annual call and required documents early.",
+        "url": "https://studyinitaly.esteri.it/en/call-for-applications/"
+      },
+      {
+        "name": "Invest Your Talent in Italy (IYT)",
+        "provider": "Italian Government program with partner companies/universities",
+        "type": "Scholarship + internship pathway",
+        "eligibility": "Non-EU applicants to eligible Master’s programs in Italy; requires applying via IYT call.",
+        "amount": "Monthly grant (call-dependent) + structured internship component.",
+        "notes": "Program and intake dependent; verify if the exact MSc is on the eligible list each year.",
+        "url": "https://investyourtalentapplication.esteri.it/"
+      }
+    ]
   },
   {
     "id": "it-naples-aero-msc",
@@ -2190,8 +3192,8 @@
     "university_native_name": "University of Naples Federico II",
     "city": {
       "name": "Naples",
-      "housing_difficulty": "high",
-      "estimated_housing_cost_eur": 500
+      "housing_difficulty": null,
+      "estimated_housing_cost_eur": null
     },
     "region": "",
     "program_name": "M.Sc. (LM) in Aerospace Engineering",
@@ -2272,7 +3274,18 @@
       "living_cost_gbp_per_year": null,
       "living_cost_chf_per_year": null,
       "living_cost_sek_per_year": null,
-      "living_cost_dkk_per_year": null
+      "living_cost_dkk_per_year": null,
+      "tuition_usd_per_quarter": null,
+      "living_cost_usd_per_year_min": null,
+      "living_cost_usd_per_year_max": null,
+      "living_cost_gbp_per_year_min": null,
+      "living_cost_gbp_per_year_max": null,
+      "living_cost_chf_per_year_min": null,
+      "living_cost_chf_per_year_max": null,
+      "living_cost_sek_per_year_min": null,
+      "living_cost_sek_per_year_max": null,
+      "living_cost_dkk_per_year_min": null,
+      "living_cost_dkk_per_year_max": null
     },
     "scholarship_profile": {
       "available_types": [
@@ -2330,7 +3343,21 @@
       "housing_budget_sek_per_year": null,
       "housing_budget_dkk_per_year": null,
       "official_student_housing_budget_sek_per_month_examples": null,
-      "official_student_total_budget_sek_per_month_examples": null
+      "official_student_total_budget_sek_per_month_examples": null,
+      "average_room_rent_eur_min": null,
+      "average_room_rent_eur_max": null,
+      "monthly_living_cost_eur_min": null,
+      "monthly_living_cost_eur_max": null,
+      "housing_budget_usd_per_year_min": null,
+      "housing_budget_usd_per_year_max": null,
+      "housing_budget_gbp_per_year_min": null,
+      "housing_budget_gbp_per_year_max": null,
+      "housing_budget_chf_per_year_min": null,
+      "housing_budget_chf_per_year_max": null,
+      "housing_budget_sek_per_year_min": null,
+      "housing_budget_sek_per_year_max": null,
+      "housing_budget_dkk_per_year_min": null,
+      "housing_budget_dkk_per_year_max": null
     },
     "curriculum_profile": {
       "structure": "120 ECTS",
@@ -2491,10 +3518,10 @@
         "scholarship"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-14"
+      "audited_at": "2026-07-15"
     },
     "quality_control": {
-      "checked_at": "2026-07-14",
+      "checked_at": "2026-07-15",
       "qc_status": "needs_revision",
       "remaining_verification_tasks": [
         {
@@ -2525,8 +3552,8 @@
     "university_native_name": "Politecnico di Bari",
     "city": {
       "name": "Bari / Taranto",
-      "housing_difficulty": "moderate",
-      "estimated_housing_cost_eur": 400
+      "housing_difficulty": null,
+      "estimated_housing_cost_eur": null
     },
     "region": "",
     "program_name": "Laurea Magistrale in Ingegneria Aerospaziale",
@@ -2615,7 +3642,17 @@
       "living_cost_gbp_per_year": null,
       "living_cost_chf_per_year": null,
       "living_cost_sek_per_year": null,
-      "living_cost_dkk_per_year": null
+      "living_cost_dkk_per_year": null,
+      "living_cost_usd_per_year_min": null,
+      "living_cost_usd_per_year_max": null,
+      "living_cost_gbp_per_year_min": null,
+      "living_cost_gbp_per_year_max": null,
+      "living_cost_chf_per_year_min": null,
+      "living_cost_chf_per_year_max": null,
+      "living_cost_sek_per_year_min": null,
+      "living_cost_sek_per_year_max": null,
+      "living_cost_dkk_per_year_min": null,
+      "living_cost_dkk_per_year_max": null
     },
     "scholarship_profile": {
       "regional_scholarship_available": true,
@@ -2679,7 +3716,19 @@
       "housing_budget_sek_per_year": null,
       "housing_budget_dkk_per_year": null,
       "official_student_housing_budget_sek_per_month_examples": null,
-      "official_student_total_budget_sek_per_month_examples": null
+      "official_student_total_budget_sek_per_month_examples": null,
+      "average_room_rent_eur_min": null,
+      "average_room_rent_eur_max": null,
+      "housing_budget_usd_per_year_min": null,
+      "housing_budget_usd_per_year_max": null,
+      "housing_budget_gbp_per_year_min": null,
+      "housing_budget_gbp_per_year_max": null,
+      "housing_budget_chf_per_year_min": null,
+      "housing_budget_chf_per_year_max": null,
+      "housing_budget_sek_per_year_min": null,
+      "housing_budget_sek_per_year_max": null,
+      "housing_budget_dkk_per_year_min": null,
+      "housing_budget_dkk_per_year_max": null
     },
     "curriculum_profile": {
       "tracks": [
@@ -2869,10 +3918,10 @@
         "admission"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-14"
+      "audited_at": "2026-07-15"
     },
     "quality_control": {
-      "checked_at": "2026-07-14",
+      "checked_at": "2026-07-15",
       "qc_status": "needs_revision",
       "remaining_verification_tasks": [
         {
@@ -2897,8 +3946,8 @@
     "university_native_name": "Università del Salento",
     "city": {
       "name": "Lecce / Brindisi",
-      "housing_difficulty": "moderate",
-      "estimated_housing_cost_eur": 400
+      "housing_difficulty": null,
+      "estimated_housing_cost_eur": null
     },
     "region": "",
     "program_name": "M.Sc. Aerospace Engineering (LM-20)",
@@ -2968,7 +4017,18 @@
       "living_cost_gbp_per_year": null,
       "living_cost_chf_per_year": null,
       "living_cost_sek_per_year": null,
-      "living_cost_dkk_per_year": null
+      "living_cost_dkk_per_year": null,
+      "tuition_usd_per_quarter": null,
+      "living_cost_usd_per_year_min": null,
+      "living_cost_usd_per_year_max": null,
+      "living_cost_gbp_per_year_min": null,
+      "living_cost_gbp_per_year_max": null,
+      "living_cost_chf_per_year_min": null,
+      "living_cost_chf_per_year_max": null,
+      "living_cost_sek_per_year_min": null,
+      "living_cost_sek_per_year_max": null,
+      "living_cost_dkk_per_year_min": null,
+      "living_cost_dkk_per_year_max": null
     },
     "scholarship_profile": {
       "available_types": [
@@ -3026,7 +4086,21 @@
       "housing_budget_sek_per_year": null,
       "housing_budget_dkk_per_year": null,
       "official_student_housing_budget_sek_per_month_examples": null,
-      "official_student_total_budget_sek_per_month_examples": null
+      "official_student_total_budget_sek_per_month_examples": null,
+      "average_room_rent_eur_min": null,
+      "average_room_rent_eur_max": null,
+      "monthly_living_cost_eur_min": null,
+      "monthly_living_cost_eur_max": null,
+      "housing_budget_usd_per_year_min": null,
+      "housing_budget_usd_per_year_max": null,
+      "housing_budget_gbp_per_year_min": null,
+      "housing_budget_gbp_per_year_max": null,
+      "housing_budget_chf_per_year_min": null,
+      "housing_budget_chf_per_year_max": null,
+      "housing_budget_sek_per_year_min": null,
+      "housing_budget_sek_per_year_max": null,
+      "housing_budget_dkk_per_year_min": null,
+      "housing_budget_dkk_per_year_max": null
     },
     "curriculum_profile": {
       "structure": "120 ECTS",
@@ -3122,10 +4196,10 @@
         "admission"
       ],
       "has_checked_source_log": false,
-      "audited_at": "2026-07-14"
+      "audited_at": "2026-07-15"
     },
     "quality_control": {
-      "checked_at": "2026-07-14",
+      "checked_at": "2026-07-15",
       "qc_status": "needs_revision",
       "remaining_verification_tasks": [
         {
@@ -3168,8 +4242,8 @@
     "university_native_name": "Università di Palermo",
     "city": {
       "name": "Palermo",
-      "housing_difficulty": "moderate",
-      "estimated_housing_cost_eur": 400
+      "housing_difficulty": null,
+      "estimated_housing_cost_eur": null
     },
     "region": "",
     "program_name": "M.Sc. Aerospace Engineering",
@@ -3239,7 +4313,18 @@
       "living_cost_gbp_per_year": null,
       "living_cost_chf_per_year": null,
       "living_cost_sek_per_year": null,
-      "living_cost_dkk_per_year": null
+      "living_cost_dkk_per_year": null,
+      "tuition_usd_per_quarter": null,
+      "living_cost_usd_per_year_min": null,
+      "living_cost_usd_per_year_max": null,
+      "living_cost_gbp_per_year_min": null,
+      "living_cost_gbp_per_year_max": null,
+      "living_cost_chf_per_year_min": null,
+      "living_cost_chf_per_year_max": null,
+      "living_cost_sek_per_year_min": null,
+      "living_cost_sek_per_year_max": null,
+      "living_cost_dkk_per_year_min": null,
+      "living_cost_dkk_per_year_max": null
     },
     "scholarship_profile": {
       "available_types": [
@@ -3297,7 +4382,21 @@
       "housing_budget_sek_per_year": null,
       "housing_budget_dkk_per_year": null,
       "official_student_housing_budget_sek_per_month_examples": null,
-      "official_student_total_budget_sek_per_month_examples": null
+      "official_student_total_budget_sek_per_month_examples": null,
+      "average_room_rent_eur_min": null,
+      "average_room_rent_eur_max": null,
+      "monthly_living_cost_eur_min": null,
+      "monthly_living_cost_eur_max": null,
+      "housing_budget_usd_per_year_min": null,
+      "housing_budget_usd_per_year_max": null,
+      "housing_budget_gbp_per_year_min": null,
+      "housing_budget_gbp_per_year_max": null,
+      "housing_budget_chf_per_year_min": null,
+      "housing_budget_chf_per_year_max": null,
+      "housing_budget_sek_per_year_min": null,
+      "housing_budget_sek_per_year_max": null,
+      "housing_budget_dkk_per_year_min": null,
+      "housing_budget_dkk_per_year_max": null
     },
     "curriculum_profile": {
       "structure": "120 ECTS",
@@ -3393,10 +4492,10 @@
         "admission"
       ],
       "has_checked_source_log": false,
-      "audited_at": "2026-07-14"
+      "audited_at": "2026-07-15"
     },
     "quality_control": {
-      "checked_at": "2026-07-14",
+      "checked_at": "2026-07-15",
       "qc_status": "needs_revision",
       "remaining_verification_tasks": [
         {
@@ -3487,7 +4586,17 @@
       "living_cost_gbp_per_year": null,
       "living_cost_chf_per_year": null,
       "living_cost_sek_per_year": null,
-      "living_cost_dkk_per_year": null
+      "living_cost_dkk_per_year": null,
+      "living_cost_usd_per_year_min": null,
+      "living_cost_usd_per_year_max": null,
+      "living_cost_gbp_per_year_min": null,
+      "living_cost_gbp_per_year_max": null,
+      "living_cost_chf_per_year_min": null,
+      "living_cost_chf_per_year_max": null,
+      "living_cost_sek_per_year_min": null,
+      "living_cost_sek_per_year_max": null,
+      "living_cost_dkk_per_year_min": null,
+      "living_cost_dkk_per_year_max": null
     },
     "scholarship_profile": {
       "regional_scholarship_available": null,
@@ -3532,7 +4641,21 @@
       "housing_budget_sek_per_year": null,
       "housing_budget_dkk_per_year": null,
       "official_student_housing_budget_sek_per_month_examples": null,
-      "official_student_total_budget_sek_per_month_examples": null
+      "official_student_total_budget_sek_per_month_examples": null,
+      "average_room_rent_eur_min": null,
+      "average_room_rent_eur_max": null,
+      "monthly_living_cost_eur_min": null,
+      "monthly_living_cost_eur_max": null,
+      "housing_budget_usd_per_year_min": null,
+      "housing_budget_usd_per_year_max": null,
+      "housing_budget_gbp_per_year_min": null,
+      "housing_budget_gbp_per_year_max": null,
+      "housing_budget_chf_per_year_min": null,
+      "housing_budget_chf_per_year_max": null,
+      "housing_budget_sek_per_year_min": null,
+      "housing_budget_sek_per_year_max": null,
+      "housing_budget_dkk_per_year_min": null,
+      "housing_budget_dkk_per_year_max": null
     },
     "curriculum_profile": {
       "tracks": [
@@ -3710,10 +4833,10 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-14"
+      "audited_at": "2026-07-15"
     },
     "quality_control": {
-      "checked_at": "2026-07-14",
+      "checked_at": "2026-07-15",
       "qc_status": "needs_revision",
       "remaining_verification_tasks": [],
       "qc_notes": {

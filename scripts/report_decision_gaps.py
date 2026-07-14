@@ -65,7 +65,7 @@ def decision_value_gaps(record: dict[str, Any]) -> list[str]:
     if not any_present(
         cost.get("tuition_eur_per_year_estimated"), cost.get("tuition_eur_per_year_min"),
         cost.get("tuition_eur_per_year_max"), cost.get("tuition_non_eu_full_program"),
-        cost.get("tuition_usd_per_year"), cost.get("tuition_usd_per_year_at_three_quarters"),
+        cost.get("tuition_usd_per_year"), cost.get("tuition_usd_per_year_at_three_quarters"), cost.get("tuition_usd_per_quarter"),
         cost.get("tuition_gbp_per_year"), cost.get("tuition_chf_per_year"),
         cost.get("tuition_sek_per_year"), cost.get("tuition_dkk_per_year"),
         record.get("tuition_eur_per_year"), record.get("Cost_Tuition"),
@@ -98,6 +98,10 @@ def decision_value_gaps(record: dict[str, Any]) -> list[str]:
     if not any_present(
         living.get("monthly_living_cost_eur_min"), living.get("monthly_living_cost_eur_max"),
         living.get("monthly_living_cost_eur_estimated"), living.get("average_room_rent_eur"),
+        # A sourced rent range is just as decision-useful as a single rent
+        # quote. It is also safer for volatile housing markets, where the
+        # university publishes a planning range rather than one average.
+        living.get("average_room_rent_eur_min"), living.get("average_room_rent_eur_max"),
         living.get("average_room_rent_usd_per_month_min"), living.get("average_room_rent_usd_per_month_max"),
         living.get("average_room_rent_gbp_per_month_min"), living.get("average_room_rent_gbp_per_month_max"),
         living.get("average_room_rent_chf_per_month_min"), living.get("average_room_rent_chf_per_month_max"),
@@ -120,9 +124,11 @@ def decision_value_gaps(record: dict[str, Any]) -> list[str]:
         living.get("monthly_living_cost_chf_per_month_min"), living.get("monthly_living_cost_chf_per_month_max"),
         living.get("monthly_living_cost_sek_per_month_min"), living.get("monthly_living_cost_sek_per_month_max"),
         living.get("monthly_living_cost_dkk_per_month_min"), living.get("monthly_living_cost_dkk_per_month_max"),
-        cost.get("living_cost_usd_per_year_i20"), cost.get("living_cost_usd_per_year"),
-        cost.get("living_cost_gbp_per_year"), cost.get("living_cost_chf_per_year"),
-        cost.get("living_cost_sek_per_year"), cost.get("living_cost_dkk_per_year"),
+        cost.get("living_cost_usd_per_year_i20"), cost.get("living_cost_usd_per_year"), cost.get("living_cost_usd_per_year_min"), cost.get("living_cost_usd_per_year_max"),
+        cost.get("living_cost_gbp_per_year"), cost.get("living_cost_gbp_per_year_min"), cost.get("living_cost_gbp_per_year_max"),
+        cost.get("living_cost_chf_per_year"), cost.get("living_cost_chf_per_year_min"), cost.get("living_cost_chf_per_year_max"),
+        cost.get("living_cost_sek_per_year"), cost.get("living_cost_sek_per_year_min"), cost.get("living_cost_sek_per_year_max"),
+        cost.get("living_cost_dkk_per_year"), cost.get("living_cost_dkk_per_year_min"), cost.get("living_cost_dkk_per_year_max"),
         record.get("Living_Cost_EUR_Month"),
     ):
         gaps.append("living_or_housing_cost")
