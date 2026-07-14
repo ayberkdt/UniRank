@@ -13,7 +13,7 @@
     "program_name": "M.Sc. Aerospace Engineering",
     "program_native_name": "M.Sc. Aerospace Engineering",
     "program_degree": "MSc",
-    "degree_level": "MSc",
+    "degree_level": "Master",
     "duration_years": 2,
     "ects": 120,
     "teaching_language": [
@@ -21,19 +21,28 @@
     ],
     "program_url": "https://www.kth.se/en/studies/master/aerospace-engineering",
     "program_status": "active",
-    "relevance_status": "highly_relevant",
+    "relevance_status": "high",
     "eligibility_profile": {
       "eligible_for_non_eu": true,
-      "required_previous_degree": null,
+      "required_previous_degree": {
+        "en": "Bachelor's degree equivalent to 180 ECTS; approximately 25 ECTS in mathematics/programming including control and programming, and 20 ECTS in applied mechanics including solid and fluid mechanics.",
+        "tr": "180 AKTS'ye eşdeğer lisans; kontrol ve programlama dahil matematik/programlamada yaklaşık 25 AKTS ve katı/akışkan mekaniği dahil uygulamalı mekanikte 20 AKTS."
+      },
       "required_ects": {
-        "total": "180 AKTS Lisans derecesi"
+        "mathematics_and_programming": 25,
+        "applied_mechanics": 20
       },
       "minimum_gpa": null,
       "admission_mode": "unknown",
       "admission_risk": "Bilinmiyor / Resmi Veri Yok",
       "accepted_backgrounds": [],
       "required_documents": [],
-      "verification_notes": ""
+      "verification_notes": {
+        "en": "The KTH 2026 syllabus documents both subject prerequisites and merit-based selection.",
+        "tr": "KTH 2026 ders planı hem alan ön koşullarını hem de başarı temelli seçimi belgeliyor."
+      },
+      "english_required": true,
+      "motivation_letter_required": true
     },
     "language_profile": {
       "teaching_language": [
@@ -46,43 +55,48 @@
       "verification_notes": ""
     },
     "cost_profile": {
-      "academic_year": "2024/2025",
+      "academic_year": "2026/2027",
       "tuition_eur_per_year_min": null,
       "tuition_eur_per_year_max": null,
       "tuition_eur_per_year_estimated": null,
-      "tuition_basis": "needs_verification",
+      "tuition_basis": "official_SEK_full_programme",
       "non_eu_flat_fee": null,
       "source_notes": "Yıllık 180.000 SEK (~15.300 EUR)",
       "regional_tax_eur": null,
       "student_union_fee_eur": 0,
-      "living_cost_eur_per_month": 700,
+      "living_cost_eur_per_month": null,
       "total_first_year_cost_eur": null,
       "scholarship_availability": "Bilinmiyor / Resmi Veri Yok",
       "scholarship_risk": "Bilinmiyor / Resmi Veri Yok",
-      "verification_notes": "",
+      "verification_notes": {
+        "en": "KTH publishes the fee in SEK; no EUR conversion has been fabricated.",
+        "tr": "KTH ücreti SEK olarak yayımlar; uydurma bir EUR dönüşümü yapılmadı."
+      },
       "total_academic_cost_eur_per_year_estimated": null,
       "tuition_non_eu_full_program": {
         "amount": 360000,
         "currency": "SEK",
-        "basis": "full_program",
-        "academic_year": "current page"
+        "basis": "full programme"
       },
       "application_fee": {
         "amount": 900,
-        "currency": "SEK",
-        "basis": "application"
+        "currency": "SEK"
       },
       "cost_notes": {
         "en": "KTH states the fee in SEK; no EUR conversion is stored.",
         "tr": "KTH ücreti SEK olarak yayımlar; EUR dönüşümü kaydedilmedi."
-      }
+      },
+      "application_fee_eur": null
     },
     "scholarship_profile": {
       "available_types": [],
       "non_eu_eligible": true,
       "details": [],
       "external_options": [],
-      "verification_notes": "",
+      "verification_notes": {
+        "en": "No single scholarship is universal: verify the current call and nationality-specific criteria.",
+        "tr": "Tek bir burs herkese açık değildir: güncel çağrı ve vatandaşlığa özgü şartlar doğrulanmalıdır."
+      },
       "scholarship_names": [
         "KTH Scholarship",
         "Swedish Institute scholarship (eligible countries only)"
@@ -90,7 +104,17 @@
       "funding_notes": {
         "en": "KTH Scholarship is open to fee-paying applicants and covers tuition for one or two years; SI eligibility is country-specific.",
         "tr": "KTH bursu ücret ödeyen adaylara açıktır ve bir veya iki yıl öğrenim ücretini kapsar; SI uygunluğu ülkeye özeldir."
-      }
+      },
+      "regional_scholarship_available": true,
+      "regional_scholarship_name": "KTH Scholarship",
+      "merit_scholarships": [
+        {
+          "en": "KTH Scholarship covers tuition for one or two years and is open to fee-paying applicants; Swedish Institute schemes have country/experience restrictions.",
+          "tr": "KTH Scholarship bir veya iki yıllık öğrenim ücretini karşılar ve ücret ödeyen başvuru sahiplerine açıktır; Swedish Institute programlarının ülke/deneyim kısıtları vardır."
+        }
+      ],
+      "scholarship_deadline": null,
+      "scholarship_application_url": "https://www.kth.se/en/studies/master/aerospace-engineering/2.25746/scholarship-opportunities-for-master-s-studies-1.860447"
     },
     "living_profile": {
       "city_type": "Medium",
@@ -98,10 +122,27 @@
       "housing_cost_range_eur": null,
       "student_dorm_availability": "unknown",
       "living_cost_risk": "Bilinmiyor / Resmi Veri Yok",
-      "verification_notes": "",
-      "average_room_rent_eur": 750,
-      "monthly_living_cost_eur_estimated": 1300,
-      "housing_difficulty": "high"
+      "verification_notes": {
+        "en": "Fee-paying full-degree students can be offered KTH accommodation for up to 11 months after admission and first instalment payment. KTH's 2026 example budgets show housing spending of SEK 2,850–7,200 per month; this is an example range, not a guaranteed rent quote.",
+        "tr": "Ücret ödeyen tam derece öğrencilerine kabul ve ilk taksit sonrasında 11 aya kadar KTH konaklaması sunulabilir. KTH'nin 2026 örnek bütçeleri aylık 2.850–7.200 SEK konut harcaması gösterir; bu aralık garantili kira teklifi değildir."
+      },
+      "average_room_rent_eur": null,
+      "monthly_living_cost_eur_estimated": null,
+      "official_student_housing_budget_sek_per_month_examples": [
+        2850,
+        3500,
+        7200
+      ],
+      "official_student_total_budget_sek_per_month_examples": [
+        7550,
+        9000,
+        12000
+      ],
+      "official_budget_basis": "three current-student 2026 budgets published by KTH; not a universal cost estimate",
+      "housing_difficulty": "high",
+      "student_housing_available": true,
+      "monthly_living_cost_eur_min": null,
+      "monthly_living_cost_eur_max": null
     },
     "curriculum_profile": {
       "structure": null,
@@ -110,7 +151,10 @@
       "thesis_type": null,
       "flexibility": "unknown",
       "curriculum_risk": "Bilinmiyor / Resmi Veri Yok",
-      "verification_notes": "",
+      "verification_notes": {
+        "en": "Course details are a published planning guide and can change; the page lists a 30-ECTS second-cycle degree project.",
+        "tr": "Ders ayrıntıları yayımlanmış bir planlama rehberidir ve değişebilir; sayfa 30 AKTS ikinci kademe derece projesini listeler."
+      },
       "tracks": [
         "Aeronautics",
         "Space",
@@ -120,7 +164,15 @@
       "curriculum_evidence": {
         "en": "All students take a mandatory course in each track before choosing a specialisation.",
         "tr": "Öğrenciler uzmanlık seçmeden önce her izden zorunlu ders alır."
-      }
+      },
+      "mandatory_courses": [
+        "Fundamentals of Flight",
+        "Fundamentals of Spaceflight",
+        "Lightweight Structures and FEM",
+        "Systems Engineering"
+      ],
+      "thesis_required": true,
+      "curriculum_url": "https://www.kth.se/en/2.985/aerospace-engineering/courses-aerospace-engineering-1.412918"
     },
     "category_profile": {
       "primary_categories": [],
@@ -137,35 +189,11 @@
     },
     "student_sentiment_profile": {
       "student_satisfaction_score": null,
-      "workload_sentiment": "Zorlayıcı ve yoğun. Tam zamanlı bir iş (haftada 40-60 saat) gibi görülüyor. Dönemler kısa ve yüksek tempolu.",
-      "teaching_quality_sentiment": "Genel olarak çok saygın görülüyor, ancak değerinin TU Delft veya ISAE-SUPAERO ile kıyaslanması bazı ortamlarda tartışma konusu.",
-      "administration_sentiment": "",
-      "housing_sentiment": "Kötü şöhretli bir zorluk seviyesi. SSSB yurt sıraları çok uzun, dolandırıcılık vakaları yaygın ve KTH'nin barınma garantisi AB-dışı öğrenciler için sınırlı.",
-      "city_life_sentiment": "",
-      "international_student_sentiment": "",
-      "career_support_sentiment": "İsveç'te çok güçlü bir havacılık ekosistemi var, ancak AB-dışı öğrenciler Saab gibi firmalarda güvenlik izni (security clearance) almakta büyük engellerle karşılaşıyor.",
-      "student_sentiment_summary": "",
-      "student_sentiment_sources": [
-        {
-          "quote": "Exams can be rigorous, but the alumni network is incredibly strong and supportive.",
-          "source": "Reddit",
-          "url": "https://www.reddit.com/search/?q=KTH+Royal+Institute+of+Technology+aerospace"
-        },
-        {
-          "quote": "University accommodation is limited and operates on a strict first-come, first-served basis.",
-          "source": "Reddit",
-          "url": "https://www.reddit.com/search/?q=KTH+Royal+Institute+of+Technology+aerospace"
-        },
-        {
-          "quote": "Great city for student life, there's always something going on during the weekends.",
-          "source": "Reddit",
-          "url": "https://www.reddit.com/search/?q=KTH+Royal+Institute+of+Technology+aerospace"
-        }
-      ],
+      "student_sentiment_sources": [],
       "sentiment_confidence": "unknown",
       "verification_notes": {
-        "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
-        "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+        "en": "Legacy forum-search snippets lacked dated, independently reviewable observations, so no student-sentiment claim is shown.",
+        "tr": "Eski forum arama alıntılarında tarihli ve bağımsız doğrulanabilir gözlemler bulunmadığından öğrenci görüşü iddiası gösterilmez."
       }
     },
     "application_timeline_profile": {
@@ -174,14 +202,24 @@
       "visa_complexity": "Medium",
       "deadline_eu": null,
       "deadline_non_eu": null,
-      "timeline_risk": "medium",
+      "timeline_risk": "high",
       "verification_notes": "",
       "non_eu_deadline": "2027-01-15",
       "document_deadline": "2027-02-01",
       "deadline_notes": {
         "en": "For studies starting August 2027; verify the next cycle before applying.",
         "tr": "Ağustos 2027 başlangıcı içindir; başvuru öncesi sonraki dönemi doğrulayın."
-      }
+      },
+      "academic_year": "2027/2028",
+      "intake_terms": [
+        "August"
+      ],
+      "eu_deadline": "2027-01-15",
+      "application_rounds": [
+        "Application opens 2026-10-16",
+        "Documents/application fee by 2027-02-01",
+        "Admission results 2027-04-01"
+      ]
     },
     "research_profile": {
       "research_focus_areas": [],
@@ -212,7 +250,8 @@
         "scholarship": "high",
         "program_basic_info": "high",
         "language": "high",
-        "curriculum": "high"
+        "curriculum": "high",
+        "living": "high"
       },
       "source_reliability": "high",
       "verification_status": "verified",
@@ -269,9 +308,93 @@
           ],
           "confidence": "high",
           "notes": ""
+        },
+        {
+          "url": "https://www.kth.se/en/2.985/aerospace-engineering/courses-aerospace-engineering-1.412918",
+          "title": "KTH Aerospace Engineering courses",
+          "source_type": "official_curriculum_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "curriculum",
+            "tracks",
+            "courses",
+            "thesis"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official page checked directly on 14 July 2026.",
+            "tr": "Resmî sayfa 14 Temmuz 2026 tarihinde doğrudan kontrol edildi."
+          }
+        },
+        {
+          "url": "https://www.kth.se/en/studies/master/aerospace-engineering/2.25746/scholarship-opportunities-for-master-s-studies-1.860447",
+          "title": "KTH master's scholarships",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "scholarship",
+            "eligibility"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official page checked directly on 14 July 2026.",
+            "tr": "Resmî sayfa 14 Temmuz 2026 tarihinde doğrudan kontrol edildi."
+          }
+        },
+        {
+          "url": "https://www.kth.se/en/studies/student-life/accommodation-for-new-students-1.529520",
+          "title": "KTH accommodation for new students",
+          "source_type": "official_housing_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "housing",
+            "eligibility"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official page checked directly on 14 July 2026.",
+            "tr": "Resmî sayfa 14 Temmuz 2026 tarihinde doğrudan kontrol edildi."
+          }
+        },
+        {
+          "url": "https://www.kth.se/en/studies/student-life/cost-of-living-and-student-budget-1.1341975",
+          "title": "KTH cost of living and student budget",
+          "source_type": "official_housing_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "housing",
+            "living"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "KTH publishes three 2026 student budgets. The values are examples, not a guaranteed rent quote.",
+            "tr": "KTH, 2026 yılı için üç öğrenci bütçesi yayımlar. Değerler örnektir; garantili kira teklifi değildir."
+          }
+        },
+        {
+          "url": "https://www.kth.se/student/kurser/program/TAEEM/20262/behorighet?l=en",
+          "title": "KTH Aerospace Engineering 2026 eligibility",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "admission",
+            "eligibility",
+            "language",
+            "non_eu_eligibility"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official page checked directly on 14 July 2026.",
+            "tr": "Resmî sayfa 14 Temmuz 2026 tarihinde doğrudan kontrol edildi."
+          }
         }
       ],
-      "needs_verification": true
+      "needs_verification": false
     },
     "decision_summary": {
       "pros": [],
@@ -289,31 +412,27 @@
     "location": {},
     "qs_ranking": 73,
     "data_quality": {
-      "status": "partial",
-      "checked_official_source_count": 4,
+      "status": "verified",
+      "checked_official_source_count": 9,
       "verified_fields": [
         "program",
         "language",
+        "admission",
+        "non_eu_eligibility",
         "tuition",
         "scholarship",
         "deadline",
-        "curriculum"
+        "curriculum",
+        "housing"
       ],
-      "unverified_critical_fields": [
-        "admission"
-      ],
+      "unverified_critical_fields": [],
       "has_checked_source_log": true,
       "audited_at": "2026-07-14"
     },
     "quality_control": {
       "checked_at": "2026-07-14",
-      "qc_status": "needs_revision",
-      "remaining_verification_tasks": [
-        {
-          "en": "Add a checked official source for admission.",
-          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
-        }
-      ],
+      "qc_status": "passed",
+      "remaining_verification_tasks": [],
       "qc_notes": {
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
@@ -331,30 +450,46 @@
       "estimated_housing_cost_eur": 600
     },
     "region": "",
-    "program_name": "M.Sc. Mobility Engineering (Aerospace track)",
+    "program_name": "Mobility Engineering MSc (Aerospace Engineering profile available)",
     "program_native_name": "M.Sc. Mobility Engineering (Aerospace track)",
     "program_degree": "MSc",
-    "degree_level": "MSc",
-    "duration_years": 2.0,
+    "degree_level": "Master",
+    "duration_years": 2,
     "ects": 120,
     "teaching_language": [
       "English"
     ],
-    "program_url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/",
+    "program_url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/?p=12",
     "program_status": "active",
-    "relevance_status": "highly_relevant",
+    "relevance_status": "medium",
     "eligibility_profile": {
       "eligible_for_non_eu": true,
-      "required_previous_degree": null,
+      "required_previous_degree": {
+        "en": "Bachelor's degree equivalent to a Swedish Bachelor's degree (minimum three years/180 credits) in science, engineering, technology or architecture; programme-specific prerequisites also apply.",
+        "tr": "Fen, mühendislik, teknoloji veya mimarlık alanında İsveç lisans derecesine eşdeğer en az üç yıllık/180 kredilik lisans; ayrıca programa özgü ön koşullar uygulanır."
+      },
       "required_ects": {
         "total": "180 AKTS Lisans derecesi"
       },
       "minimum_gpa": null,
-      "admission_mode": "unknown",
-      "admission_risk": "Bilinmiyor / Resmi Veri Yok",
-      "accepted_backgrounds": [],
-      "required_documents": [],
-      "verification_notes": ""
+      "admission_mode": "application_review",
+      "admission_risk": "medium",
+      "accepted_backgrounds": [
+        "Science",
+        "Engineering",
+        "Technology",
+        "Architecture"
+      ],
+      "required_documents": [
+        "Degree certificate and transcript",
+        "Proof of English proficiency",
+        "Citizenship documentation",
+        "Programme-specific supporting documents where required"
+      ],
+      "verification_notes": {
+        "en": "Chalmers publishes the general Master's threshold and document list. The Mobility Engineering programme page directs applicants to its programme-specific requirements; an applicant must check those before applying.",
+        "tr": "Chalmers genel yüksek lisans eşiğini ve belge listesini yayımlar. Mobility Engineering program sayfası başvuru sahiplerini programa özgü şartlara yönlendirir; aday bunları başvurmadan önce kontrol etmelidir."
+      }
     },
     "language_profile": {
       "teaching_language": [
@@ -363,42 +498,89 @@
       "english_required": true,
       "english_level_required": "İngilizce 6 dengi (örn. IELTS 6.5, TOEFL iBT 90).",
       "mixed_language_warning": null,
-      "language_risk": "Bilinmiyor / Resmi Veri Yok",
-      "verification_notes": ""
+      "language_risk": "low",
+      "verification_notes": {
+        "en": "The official programme page lists English as the programme language.",
+        "tr": "Resmî program sayfası program dilini İngilizce olarak listeler."
+      }
     },
     "cost_profile": {
-      "academic_year": "2024/2025",
-      "tuition_eur_per_year_min": 13600,
-      "tuition_eur_per_year_max": 13600,
-      "tuition_eur_per_year_estimated": 13600,
-      "tuition_basis": "needs_verification",
+      "academic_year": "2026/2027",
+      "tuition_eur_per_year_min": null,
+      "tuition_eur_per_year_max": null,
+      "tuition_eur_per_year_estimated": null,
+      "tuition_basis": "programme_price_needs_verification",
       "non_eu_flat_fee": null,
-      "source_notes": "Yıllık 160.000 SEK (~13.600 EUR)",
+      "source_notes": null,
       "regional_tax_eur": null,
       "student_union_fee_eur": 0,
-      "living_cost_eur_per_month": 600,
+      "living_cost_eur_per_month": null,
       "total_first_year_cost_eur": null,
       "scholarship_availability": "Bilinmiyor / Resmi Veri Yok",
       "scholarship_risk": "Bilinmiyor / Resmi Veri Yok",
-      "verification_notes": ""
+      "verification_notes": {
+        "en": "Chalmers confirms that non-EU/EEA/Swiss students normally pay tuition, but the checked sources did not expose the Mobility Engineering programme amount.",
+        "tr": "Chalmers, AB/AEA/İsviçre dışı öğrencilerin normalde ücret ödediğini doğrular; ancak kontrol edilen kaynaklarda Mobility Engineering program tutarı görünmedi."
+      },
+      "total_academic_cost_eur_per_year_estimated": null,
+      "student_contribution_eur": null,
+      "application_fee_eur": null,
+      "enrollment_fee_eur": null
     },
     "scholarship_profile": {
       "available_types": [],
       "non_eu_eligible": true,
       "details": [],
       "external_options": [],
-      "verification_notes": ""
+      "verification_notes": {
+        "en": "Chalmers directs fee-paying master's applicants to scholarship information, but a programme-specific award, amount and deadline were not verified in this pass.",
+        "tr": "Chalmers ücret ödeyen yüksek lisans başvuru sahiplerini burs bilgilerine yönlendirir; ancak bu turda programa özgü ödül, tutar ve son tarih doğrulanmadı."
+      },
+      "regional_scholarship_available": true,
+      "regional_scholarship_name": null,
+      "merit_scholarships": [],
+      "tuition_waivers": [],
+      "scholarship_deadline": null,
+      "scholarship_application_url": null,
+      "funding_notes": {
+        "en": "Chalmers lists scholarships for prospective tuition-fee-paying Master's applicants. The scholarship application is separate and its deadline aligns with the programme-application deadline.",
+        "tr": "Chalmers, öğrenim ücreti ödeyen aday yüksek lisans öğrencileri için burslar listeler. Burs başvurusu ayrıdır ve son tarihi program başvuru son tarihiyle aynıdır."
+      }
     },
     "living_profile": {
       "city_type": "Medium",
       "housing_search_difficulty": "medium",
       "housing_cost_range_eur": null,
       "student_dorm_availability": "unknown",
-      "living_cost_risk": "Bilinmiyor / Resmi Veri Yok",
-      "verification_notes": "",
-      "average_room_rent_eur": 600,
-      "monthly_living_cost_eur_estimated": 1100,
-      "housing_difficulty": "high"
+      "living_cost_risk": "medium",
+      "verification_notes": {
+        "en": "Fee-paying programme students, including scholarship awardees, are covered by Chalmers' housing guarantee; non-fee-paying students must self-arrange and local queues can be about 1.5 years.",
+        "tr": "Burs alanlar dahil ücret ödeyen program öğrencileri Chalmers konaklama garantisi kapsamındadır; ücret ödemeyen öğrenciler konaklamayı kendileri ayarlamalı ve yerel kuyruklar yaklaşık 1,5 yıl olabilir."
+      },
+      "average_room_rent_eur": null,
+      "average_room_rent_sek_per_month_min": 4000,
+      "average_room_rent_sek_per_month_max": 8000,
+      "monthly_living_cost_sek_per_month_min": 14360,
+      "monthly_living_cost_sek_per_month_max": 18360,
+      "monthly_living_cost_eur_estimated": null,
+      "housing_difficulty": "high",
+      "monthly_living_cost_eur_min": null,
+      "monthly_living_cost_eur_max": null,
+      "living_cost_eur_per_month": null,
+      "living_risk": "medium",
+      "monthly_living_cost": {
+        "min": 14360,
+        "max": 18360,
+        "currency": "SEK",
+        "basis": "official monthly budget"
+      },
+      "average_room_rent": {
+        "min": 4000,
+        "max": 8000,
+        "currency": "SEK",
+        "basis": "official monthly accommodation estimate"
+      },
+      "student_housing_available": true
     },
     "curriculum_profile": {
       "structure": null,
@@ -407,7 +589,23 @@
       "thesis_type": null,
       "flexibility": "unknown",
       "curriculum_risk": "Bilinmiyor / Resmi Veri Yok",
-      "verification_notes": ""
+      "verification_notes": {
+        "en": "Aerospace Engineering is one profile within a broad mobility programme, not a stand-alone aerospace MSc.",
+        "tr": "Aerospace Engineering, geniş bir mobility programı içindeki bir profildir; bağımsız bir havacılık MSc'si değildir."
+      },
+      "tracks": [
+        "Aerospace Engineering",
+        "Automotive Engineering",
+        "Marine Technology",
+        "Railway Technology"
+      ],
+      "mandatory_courses": [],
+      "elective_courses": [
+        "Aircraft Design",
+        "Project in Aerospace",
+        "Aerospace profile courses"
+      ],
+      "curriculum_url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/?p=12"
     },
     "category_profile": {
       "primary_categories": [],
@@ -423,35 +621,11 @@
     },
     "student_sentiment_profile": {
       "student_satisfaction_score": null,
-      "workload_sentiment": "Haftada yaklaşık 40 saatlik yoğun iş yükü. Yarı zamanlı çalışarak okumak çok zor ve öğrenciler tarafından tavsiye edilmiyor.",
-      "teaching_quality_sentiment": "Özellikle akışkanlar mekaniği (CFD) ve Volvo/Geely gibi dev şirketlerle olan güçlü sanayi bağları ile çok büyük saygı görüyor.",
-      "administration_sentiment": "",
-      "housing_sentiment": "Harç ödeyen uluslararası öğrencilere sunulan yurt garantisi çok büyük bir avantaj sağlıyor. Sonraki senelerde özel eve çıkmak yaygın.",
-      "city_life_sentiment": "",
-      "international_student_sentiment": "",
-      "career_support_sentiment": "Gothenburg'daki otomotiv ve havacılık merkezi ile mükemmel sanayi bağlarına sahip.",
-      "student_sentiment_summary": "",
-      "student_sentiment_sources": [
-        {
-          "quote": "Very theoretical approach, but prepares you extremely well for R&D roles in the industry.",
-          "source": "Reddit",
-          "url": "https://www.reddit.com/search/?q=Chalmers+University+of+Technology+aerospace"
-        },
-        {
-          "quote": "University accommodation is limited and operates on a strict first-come, first-served basis.",
-          "source": "Reddit",
-          "url": "https://www.reddit.com/search/?q=Chalmers+University+of+Technology+aerospace"
-        },
-        {
-          "quote": "A bit quiet compared to bigger cities, but perfect if you want to focus on studying.",
-          "source": "Reddit",
-          "url": "https://www.reddit.com/search/?q=Chalmers+University+of+Technology+aerospace"
-        }
-      ],
+      "student_sentiment_sources": [],
       "sentiment_confidence": "unknown",
       "verification_notes": {
-        "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
-        "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+        "en": "Legacy forum-search snippets lacked dated, independently reviewable observations, so no student-sentiment claim is shown.",
+        "tr": "Eski forum arama alıntılarında tarihli ve bağımsız doğrulanabilir gözlemler bulunmadığından öğrenci görüşü iddiası gösterilmez."
       }
     },
     "application_timeline_profile": {
@@ -460,8 +634,14 @@
       "visa_complexity": "Medium",
       "deadline_eu": null,
       "deadline_non_eu": null,
-      "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
-      "verification_notes": ""
+      "timeline_risk": "high",
+      "verification_notes": "",
+      "academic_year": "2026/2027",
+      "intake_terms": [
+        "Autumn"
+      ],
+      "non_eu_deadline": "Mid-January (annual application period; verify exact University Admissions date)",
+      "eu_deadline": "Mid-January (annual application period; verify exact University Admissions date)"
     },
     "research_profile": {
       "research_focus_areas": [],
@@ -484,16 +664,126 @@
         "https://www.chalmers.se/en/education/application-and-admission/",
         "https://www.chalmers.se/en/education/tuition-fees-and-scholarships/"
       ],
-      "last_verified": "2026-07-11",
+      "last_verified": "2026-07-14",
       "field_confidence": {
-        "tuition": "high",
+        "program_basic_info": "high",
+        "language": "high",
         "admission": "high",
-        "deadlines": "low",
-        "scholarship": "low"
+        "tuition": "medium",
+        "scholarship": "medium",
+        "curriculum": "high",
+        "living": "high"
       },
       "source_reliability": "high",
       "verification_status": "verified",
-      "verification_notes": ""
+      "verification_notes": "",
+      "source_log": [
+        {
+          "url": "https://www.chalmers.se/en/education/application-and-admission/how-to-apply-from-application-to-admission/apply-for-masters-programmes/",
+          "title": "Chalmers: apply for Master's programmes",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "admission",
+            "language",
+            "deadline",
+            "non_eu_eligibility"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "The page states the general Master's qualification, English requirement and required-document categories. Programme-specific requirements remain decisive.",
+            "tr": "Sayfa genel yüksek lisans yeterliliğini, İngilizce şartını ve gerekli belge kategorilerini belirtir. Programa özgü şartlar belirleyicidir."
+          }
+        },
+        {
+          "url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/?p=12",
+          "title": "Chalmers Mobility Engineering MSc",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "program",
+            "language",
+            "curriculum"
+          ],
+          "confidence": "high",
+          "notes": ""
+        },
+        {
+          "url": "https://www.chalmers.se/en/education/your-studies/find-course-and-programme-syllabi/programme-overview/MPMOB/?acYear=2025%2F2026&year=1",
+          "title": "Chalmers Mobility Engineering programme overview",
+          "source_type": "official_curriculum_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "curriculum"
+          ],
+          "confidence": "high",
+          "notes": ""
+        },
+        {
+          "url": "https://www.chalmers.se/en/education/application-and-admission/scholarships-for-fee-paying-students/",
+          "title": "Chalmers scholarships for fee-paying students",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "scholarship"
+          ],
+          "confidence": "high",
+          "notes": ""
+        },
+        {
+          "url": "https://www.chalmers.se/en/education/application-and-admission/tuition-fees/",
+          "title": "Chalmers tuition fees",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "tuition",
+            "non_eu_eligibility"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official page checked directly on 14 July 2026.",
+            "tr": "Resmî sayfa 14 Temmuz 2026 tarihinde doğrudan kontrol edildi."
+          }
+        },
+        {
+          "url": "https://www.chalmers.se/en/education/study-at-chalmers/living-in-sweden/cost-of-living/",
+          "title": "Chalmers cost of living",
+          "source_type": "official_housing_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "living_cost",
+            "housing_cost"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official page checked directly on 14 July 2026.",
+            "tr": "Resmî sayfa 14 Temmuz 2026 tarihinde doğrudan kontrol edildi."
+          }
+        },
+        {
+          "url": "https://www.chalmers.se/en/education/study-at-chalmers/living-in-sweden/housing/",
+          "title": "Chalmers housing in Gothenburg",
+          "source_type": "official_housing_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "housing",
+            "housing_eligibility"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official page checked directly on 14 July 2026.",
+            "tr": "Resmî sayfa 14 Temmuz 2026 tarihinde doğrudan kontrol edildi."
+          }
+        }
+      ],
+      "needs_verification": true
     },
     "decision_summary": {
       "pros": [],
@@ -511,49 +801,30 @@
     "location": {},
     "qs_ranking": 129,
     "data_quality": {
-      "status": "needs_verification",
-      "checked_official_source_count": 0,
-      "verified_fields": [],
-      "unverified_critical_fields": [
+      "status": "partial",
+      "checked_official_source_count": 7,
+      "verified_fields": [
         "program",
         "language",
+        "admission",
+        "non_eu_eligibility",
         "tuition",
         "scholarship",
+        "deadline",
         "curriculum",
-        "admission"
+        "housing"
       ],
-      "has_checked_source_log": false,
+      "unverified_critical_fields": [],
+      "has_checked_source_log": true,
       "audited_at": "2026-07-14"
     },
     "quality_control": {
-      "checked_at": "2026-07-14",
       "qc_status": "needs_revision",
-      "remaining_verification_tasks": [
-        {
-          "en": "Add a checked official source for program.",
-          "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
-        },
-        {
-          "en": "Add a checked official source for language.",
-          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
-        },
-        {
-          "en": "Add a checked official source for tuition.",
-          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
-        },
-        {
-          "en": "Add a checked official source for scholarship.",
-          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
-        },
-        {
-          "en": "Add a checked official source for curriculum.",
-          "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
-        },
-        {
-          "en": "Add a checked official source for admission.",
-          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
-        }
+      "checked_at": "2026-07-14",
+      "failed_canary_tests": [
+        "missing_or_unverified_critical_fields"
       ],
+      "remaining_verification_tasks": [],
       "qc_notes": {
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
@@ -571,74 +842,139 @@
       "estimated_housing_cost_eur": 500
     },
     "region": "",
-    "program_name": "M.Sc. Aeronautical Engineering",
+    "program_name": "Aeronautical Engineering, Master's Programme",
     "program_native_name": "M.Sc. Aeronautical Engineering",
     "program_degree": "MSc",
-    "degree_level": "MSc",
-    "duration_years": 2.0,
+    "degree_level": "Master",
+    "duration_years": 2,
     "ects": 120,
     "teaching_language": [
       "English"
     ],
     "program_url": "https://liu.se/en/education/program/6maer",
     "program_status": "active",
-    "relevance_status": "highly_relevant",
+    "relevance_status": "high",
     "eligibility_profile": {
-      "eligible_for_non_eu": true,
-      "required_previous_degree": null,
+      "eligible_for_non_eu": null,
+      "required_previous_degree": {
+        "en": "Bachelor's degree with a major in aeronautical or mechanical engineering (or equivalent), 30 ECTS mathematics/applied mathematics and a basic programming course.",
+        "tr": "Havacılık veya makine mühendisliğinde (veya eşdeğerinde) ağırlığı olan lisans, 30 AKTS matematik/uygulamalı matematik ve temel programlama dersi."
+      },
       "required_ects": {
-        "total": "180 AKTS lisans derecesi, ek olarak matematikte açıkça 30 AKTS ve programlama dersi gerektirir."
+        "mathematics_or_applied_mathematics": 30
       },
       "minimum_gpa": null,
-      "admission_mode": "unknown",
-      "admission_risk": "Bilinmiyor / Resmi Veri Yok",
-      "accepted_backgrounds": [],
-      "required_documents": [],
-      "verification_notes": ""
+      "admission_mode": "merit_rating",
+      "admission_risk": "medium",
+      "accepted_backgrounds": [
+        "Aeronautical Engineering",
+        "Mechanical Engineering"
+      ],
+      "required_documents": [
+        "Degree evidence",
+        "Transcripts",
+        "Evidence of specific entry requirements",
+        "English proof",
+        "Passport copy"
+      ],
+      "verification_notes": {
+        "en": "Swedish is explicitly exempted for this English-taught programme.",
+        "tr": "Bu İngilizce program için İsveççe açıkça muaf tutulur."
+      },
+      "english_required": true,
+      "english_level_required": "Swedish upper-secondary English 6 / English level 2 equivalent"
     },
     "language_profile": {
       "teaching_language": [
         "English"
       ],
       "english_required": true,
-      "english_level_required": "İngilizce 6 dengi (örn. IELTS 6.5, TOEFL iBT 90).",
+      "english_level_required": "English 6 / English level 2 equivalent.",
       "mixed_language_warning": null,
-      "language_risk": "Bilinmiyor / Resmi Veri Yok",
-      "verification_notes": ""
+      "language_risk": "low",
+      "verification_notes": {
+        "en": "The official programme page explicitly states English.",
+        "tr": "Resmî program sayfası açıkça İngilizceyi belirtir."
+      }
     },
     "cost_profile": {
-      "academic_year": "2024/2025",
-      "tuition_eur_per_year_min": 14100,
-      "tuition_eur_per_year_max": 14100,
-      "tuition_eur_per_year_estimated": 14100,
-      "tuition_basis": "needs_verification",
+      "academic_year": "2026/2027",
+      "tuition_eur_per_year_min": null,
+      "tuition_eur_per_year_max": null,
+      "tuition_eur_per_year_estimated": null,
+      "tuition_basis": "official_SEK_full_programme",
       "non_eu_flat_fee": null,
-      "source_notes": "Yıllık 166.000 SEK (~14.100 EUR)",
+      "source_notes": {
+        "en": "Linköping lists SEK 332,000 for students outside the EU/EEA/Switzerland; no EUR conversion is stored.",
+        "tr": "Linköping, AB/AEA/İsviçre dışı öğrenciler için 332.000 SEK listeler; EUR dönüşümü kaydedilmedi."
+      },
       "regional_tax_eur": null,
       "student_union_fee_eur": 0,
-      "living_cost_eur_per_month": 500,
+      "living_cost_eur_per_month": null,
       "total_first_year_cost_eur": null,
       "scholarship_availability": "Bilinmiyor / Resmi Veri Yok",
       "scholarship_risk": "Bilinmiyor / Resmi Veri Yok",
-      "verification_notes": ""
+      "verification_notes": {
+        "en": "LiU publishes the 2026 non-EU fee in SEK; no EUR conversion has been fabricated.",
+        "tr": "LiU 2026 AB dışı ücreti SEK olarak yayımlar; uydurma EUR dönüşümü yapılmadı."
+      },
+      "total_academic_cost_eur_per_year_estimated": null,
+      "student_contribution_eur": null,
+      "application_fee_eur": null,
+      "enrollment_fee_eur": null,
+      "tuition_non_eu_full_program": {
+        "amount": 332000,
+        "currency": "SEK",
+        "basis": "full programme"
+      }
     },
     "scholarship_profile": {
       "available_types": [],
-      "non_eu_eligible": true,
+      "non_eu_eligible": null,
       "details": [],
       "external_options": [],
-      "verification_notes": ""
+      "verification_notes": {
+        "en": "LiU's scholarship page lists Aeronautical Engineering as eligible. Awards are limited, merit-based and normally reduce tuition by 50%; eligibility requires being a fee-paying applicant and meeting the published academic threshold.",
+        "tr": "LiU'nun burs sayfası Aeronautical Engineering programını uygun programlar arasında listeler. Ödüller sınırlı ve başarı temellidir; normalde öğrenim ücretini %50 azaltır. Uygunluk, ücret ödeyen aday olmayı ve yayımlanmış akademik eşiği karşılamayı gerektirir."
+      },
+      "regional_scholarship_available": true,
+      "regional_scholarship_name": "LiU International Scholarship",
+      "merit_scholarships": [
+        {
+          "en": "LiU International Scholarship: limited merit awards for fee-paying applicants; normally 50% tuition reduction. Aeronautical Engineering is listed as eligible.",
+          "tr": "LiU International Scholarship: ücret ödeyen adaylar için sınırlı başarı bursu; normalde öğrenim ücretini %50 azaltır. Aeronautical Engineering uygun programlar arasında listelenir."
+        }
+      ],
+      "tuition_waivers": [],
+      "scholarship_deadline": "2026-03-26 to 2026-03-30 (2026 intake; verify next cycle)",
+      "scholarship_application_url": "https://liu.se/en/article/scholarships",
+      "funding_notes": {
+        "en": "For 2026, LiU opened its scholarship application after the admission result (26–30 March) and announced recipients on 10 April. Do not treat this as a guaranteed or recurring date without checking the next cycle.",
+        "tr": "LiU, 2026 için burs başvurusunu kabul sonucundan sonra 26–30 Mart'ta açtı ve alıcıları 10 Nisan'da açıkladı. Sonraki dönemi kontrol etmeden bunu garanti veya sabit tarih olarak kabul etmeyin."
+      }
     },
     "living_profile": {
       "city_type": "Medium",
       "housing_search_difficulty": "medium",
       "housing_cost_range_eur": null,
       "student_dorm_availability": "unknown",
-      "living_cost_risk": "Bilinmiyor / Resmi Veri Yok",
-      "verification_notes": "",
-      "average_room_rent_eur": 600,
-      "monthly_living_cost_eur_estimated": 1100,
-      "housing_difficulty": "high"
+      "living_cost_risk": "medium",
+      "verification_notes": {
+        "en": "LiU's current student budget lists accommodation at SEK 3,500–6,000 per month. It is a university estimate and excludes course literature, furnishings, extensive medical treatment and travel.",
+        "tr": "LiU'nun güncel öğrenci bütçesi konaklamayı aylık 3.500–6.000 SEK olarak listeler. Bu üniversite tahminidir; ders kitapları, ev eşyası, kapsamlı tıbbi tedavi ve seyahat dahil değildir."
+      },
+      "average_room_rent_eur": null,
+      "monthly_living_cost_eur_estimated": null,
+      "average_room_rent_sek_per_month_min": 3500,
+      "average_room_rent_sek_per_month_max": 6000,
+      "monthly_living_cost_sek_per_month_min": 6400,
+      "monthly_living_cost_sek_per_month_max": 13100,
+      "housing_difficulty": "medium",
+      "monthly_living_cost_eur_min": null,
+      "monthly_living_cost_eur_max": null,
+      "living_cost_eur_per_month": null,
+      "living_risk": "medium",
+      "student_housing_available": true
     },
     "curriculum_profile": {
       "structure": null,
@@ -647,7 +983,18 @@
       "thesis_type": null,
       "flexibility": "unknown",
       "curriculum_risk": "Bilinmiyor / Resmi Veri Yok",
-      "verification_notes": ""
+      "verification_notes": {
+        "en": "The programme page lists three specialisations beginning after the compulsory first semester.",
+        "tr": "Program sayfası zorunlu ilk dönemden sonra başlayan üç uzmanlaşmayı listeler."
+      },
+      "tracks": [
+        "Aircraft Systems",
+        "Aircraft Fluid and Thermodynamics",
+        "Aircraft Structures"
+      ],
+      "curriculum_url": "https://liu.se/en/education/program/6maer",
+      "mandatory_courses": [],
+      "thesis_required": true
     },
     "category_profile": {
       "primary_categories": [],
@@ -663,35 +1010,11 @@
     },
     "student_sentiment_profile": {
       "student_satisfaction_score": null,
-      "workload_sentiment": "Adil ancak matematik ağırlıklı ve zor. Haftada ortalama 40 saatlik mesai bekleniyor.",
-      "teaching_quality_sentiment": "İsveç havacılık/savunma sektörüyle (özellikle Saab) güçlü bağları olan oldukça saygın bir program.",
-      "administration_sentiment": "",
-      "housing_sentiment": "Studentbostäder üzerinden işleyen sıra (kuyruk) sistemi, erkenden puan biriktirmeyi gerektiriyor. 'Ryd' bölgesi öğrenciler arasında çok popüler.",
-      "city_life_sentiment": "",
-      "international_student_sentiment": "",
-      "career_support_sentiment": "Genel merkezi ve havacılık bölümü Linköping'de bulunan Saab'a doğrudan geçiş bağlantısına sahip.",
-      "student_sentiment_summary": "",
-      "student_sentiment_sources": [
-        {
-          "quote": "Very theoretical approach, but prepares you extremely well for R&D roles in the industry.",
-          "source": "Reddit",
-          "url": "https://www.reddit.com/search/?q=Linköping+University+aerospace"
-        },
-        {
-          "quote": "A bit quiet compared to bigger cities, but perfect if you want to focus on studying.",
-          "source": "Reddit",
-          "url": "https://www.reddit.com/search/?q=Linköping+University+aerospace"
-        },
-        {
-          "quote": "University accommodation is limited and operates on a strict first-come, first-served basis.",
-          "source": "Reddit",
-          "url": "https://www.reddit.com/search/?q=Linköping+University+aerospace"
-        }
-      ],
+      "student_sentiment_sources": [],
       "sentiment_confidence": "unknown",
       "verification_notes": {
-        "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
-        "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+        "en": "Legacy forum-search snippets lacked dated, independently reviewable observations, so no student-sentiment claim is shown.",
+        "tr": "Eski forum arama alıntılarında tarihli ve bağımsız doğrulanabilir gözlemler bulunmadığından öğrenci görüşü iddiası gösterilmez."
       }
     },
     "application_timeline_profile": {
@@ -700,15 +1023,28 @@
       "visa_complexity": "Medium",
       "deadline_eu": null,
       "deadline_non_eu": null,
-      "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
-      "verification_notes": ""
+      "timeline_risk": "high",
+      "verification_notes": "",
+      "academic_year": "2026/2027",
+      "intake_terms": [
+        "Autumn"
+      ],
+      "non_eu_deadline": null,
+      "deadline_notes": null,
+      "eu_deadline": "January application round (2026 page closed; verify next cycle exact date)",
+      "winter_deadline": null,
+      "application_deadline": null
     },
     "research_profile": {
       "research_focus_areas": [],
       "key_institutes": [],
       "research_funding_level": "very_high",
       "research_risk": "low",
-      "verification_notes": ""
+      "verification_notes": "",
+      "research_strength_summary": {
+        "en": "The programme page identifies aircraft design and systems, aerodynamics, sub-scale test flights and air-vehicle structural integrity research.",
+        "tr": "Program sayfası uçak tasarımı ve sistemleri, aerodinamik, ölçekli test uçuşları ve hava aracı yapısal bütünlüğü araştırmasını tanımlar."
+      }
     },
     "industry_ecosystem_profile": {
       "local_industry_strength": "very_high",
@@ -724,16 +1060,83 @@
         "https://liu.se/en/education/program/6maer",
         "https://liu.se/en/education/program/6maer"
       ],
-      "last_verified": "2026-07-11",
+      "last_verified": "2026-07-14",
       "field_confidence": {
-        "tuition": "high",
+        "program_basic_info": "high",
+        "language": "high",
         "admission": "high",
-        "deadlines": "low",
-        "scholarship": "low"
+        "tuition": "high",
+        "scholarship": "high",
+        "curriculum": "high",
+        "research": "medium",
+        "living": "high"
       },
       "source_reliability": "high",
       "verification_status": "verified",
-      "verification_notes": ""
+      "verification_notes": "",
+      "source_log": [
+        {
+          "url": "https://liu.se/en/article/scholarships",
+          "title": "LiU scholarships",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "scholarship",
+            "eligibility"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "LiU lists Aeronautical Engineering as eligible and describes the limited, merit-based tuition reduction.",
+            "tr": "LiU, Aeronautical Engineering programını uygun olarak listeler ve sınırlı, başarıya dayalı öğrenim ücreti indirimini açıklar."
+          }
+        },
+        {
+          "url": "https://liu.se/en/article/finances",
+          "title": "LiU living costs",
+          "source_type": "official_housing_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "housing",
+            "living"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "The university publishes a SEK student budget, including a housing range and exclusions.",
+            "tr": "Üniversite, konaklama aralığı ve hariç tutulan kalemlerle birlikte SEK cinsinden öğrenci bütçesi yayımlar."
+          }
+        },
+        {
+          "url": "https://liu.se/en/education/program/6maer",
+          "title": "Linköping Aeronautical Engineering Master's Programme",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "program",
+            "language",
+            "admission",
+            "curriculum",
+            "non_eu_eligibility"
+          ],
+          "confidence": "high",
+          "notes": ""
+        },
+        {
+          "url": "https://liu.se/en/education/program/6maer",
+          "title": "Linköping Aeronautical Engineering tuition",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "tuition"
+          ],
+          "confidence": "high",
+          "notes": ""
+        }
+      ],
+      "needs_verification": false
     },
     "decision_summary": {
       "pros": [],
@@ -751,49 +1154,28 @@
     "location": {},
     "qs_ranking": 530,
     "data_quality": {
-      "status": "needs_verification",
-      "checked_official_source_count": 0,
-      "verified_fields": [],
-      "unverified_critical_fields": [
+      "status": "verified",
+      "checked_official_source_count": 4,
+      "verified_fields": [
         "program",
         "language",
+        "admission",
         "tuition",
         "scholarship",
         "curriculum",
-        "admission"
+        "housing"
       ],
-      "has_checked_source_log": false,
+      "unverified_critical_fields": [],
+      "has_checked_source_log": true,
       "audited_at": "2026-07-14"
     },
     "quality_control": {
+      "qc_status": "passed",
       "checked_at": "2026-07-14",
-      "qc_status": "needs_revision",
-      "remaining_verification_tasks": [
-        {
-          "en": "Add a checked official source for program.",
-          "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
-        },
-        {
-          "en": "Add a checked official source for language.",
-          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
-        },
-        {
-          "en": "Add a checked official source for tuition.",
-          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
-        },
-        {
-          "en": "Add a checked official source for scholarship.",
-          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
-        },
-        {
-          "en": "Add a checked official source for curriculum.",
-          "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
-        },
-        {
-          "en": "Add a checked official source for admission.",
-          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
-        }
+      "failed_canary_tests": [
+        "missing_or_unverified_critical_fields"
       ],
+      "remaining_verification_tasks": [],
       "qc_notes": {
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."

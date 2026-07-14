@@ -1,6 +1,6 @@
 {
   "country": "France",
-  "last_updated": "2026-07-11",
+  "last_updated": "2026-07-14",
   "programs": [
     {
       "id": "france_isae_supaero_msc",
@@ -24,13 +24,14 @@
       "faculty_or_school": "",
       "campus": "Toulouse",
       "program_status": "active",
-      "relevance_status": "strong",
+      "relevance_status": "high",
       "eligibility_profile": {
-        "eligible_for_non_eu": true,
+        "eligible_for_non_eu": null,
         "non_eu_quota": null,
-        "required_previous_degree": [
-          "Bachelor's degree or equivalent in mechanical engineering, mechatronics, aerospace, electronics, electrical engineering, computer science, telecommunications, or related science/engineering"
-        ],
+        "required_previous_degree": {
+          "en": "Bachelor's degree/equivalent in aerospace, mechanical engineering, mechatronics, electronics, electrical engineering, computer science, telecommunications, science/engineering, or strong mathematics/physics background.",
+          "tr": "Havacılık/uzay, makine, mekatronik, elektronik, elektrik, bilgisayar, telekomünikasyon, fen/mühendislik alanında lisans/eşdeğeri veya güçlü matematik/fizik altyapısı."
+        },
         "accepted_backgrounds": [
           {
             "en": "Aerospace Engineering",
@@ -58,41 +59,47 @@
         "admission_mode": "selective",
         "admission_risk": "high",
         "required_documents": [
-          "Diploma or enrolment certificate",
+          "Degree/enrolment evidence",
           "Three years of transcripts",
           "CV in English",
           "Cover letter in English",
-          "English test result",
+          "English test",
+          "EUR 100 application fee",
           "Two recommendation letters"
         ],
         "motivation_letter_required": true,
         "cv_required": true,
         "recommendation_required": true,
         "portfolio_required": null,
-        "interview_required": true,
+        "interview_required": false,
         "test_required": true,
         "notes_for_turkish_students": {
           "en": "Very competitive admissions. GRE is highly recommended.",
           "tr": "Çok rekabetçi kabuller. GRE şiddetle tavsiye edilir."
         },
         "verification_notes": {
-          "en": "Admission criteria verified.",
-          "tr": "Kabul kriterleri doğrulandı."
+          "en": "The programme FAQ says no admission interview is planned; English-language exceptions are limited to listed native-English nationalities.",
+          "tr": "Program SSS'si kabul mülakatı planlanmadığını söyler; İngilizce muafiyetleri yalnızca listelenen ana dili İngilizce ülkelerle sınırlıdır."
         },
         "application_fee": {
           "amount": 100,
           "currency": "EUR"
-        }
+        },
+        "english_required": true,
+        "english_level_required": "TOEFL iBT 87 / TOEIC 785 (4 skills) or 850 (L/R) / IELTS Academic 6 / Cambridge 170 / Linguaskill 170"
       },
       "language_profile": {
         "teaching_language": [
           "English"
         ],
         "english_required": true,
-        "english_level_required": "TOEFL iBT 88, IELTS 6.5, or equivalent",
+        "english_level_required": "IELTS Academic 6 / TOEFL iBT 87 / TOEIC/CAE/Linguaskill alternatives",
         "accepted_english_tests": [
-          "IELTS",
-          "TOEFL iBT"
+          "TOEFL iBT 87",
+          "TOEIC 785/850",
+          "IELTS Academic 6",
+          "CAE/FCE 170",
+          "Linguaskill 170"
         ],
         "english_exemptions": [],
         "italian_required": null,
@@ -120,10 +127,10 @@
         "tuition_eur_per_year_min": null,
         "tuition_eur_per_year_max": null,
         "tuition_eur_per_year_estimated": null,
-        "tuition_basis": "official",
+        "tuition_basis": "needs_verification",
         "regional_tax_eur": null,
         "student_contribution_eur": null,
-        "application_fee_eur": null,
+        "application_fee_eur": 100,
         "enrollment_fee_eur": null,
         "total_academic_cost_eur_per_year_estimated": null,
         "isee_or_income_based": false,
@@ -138,9 +145,24 @@
           "tr": "AB dışı öğrenciler için farklılaştırılmış ücretler. Kesin 2026/2027 rakamlarının resmi olarak yayınlanması bekleniyor."
         },
         "verification_notes": {
-          "en": "Exact tuition value for 2026/2027 Non-EU students could not be verified directly and requires official confirmation. Marked as null to prevent guessing.",
-          "tr": "2026/2027 AB Dışı öğrenciler için kesin öğrenim ücreti doğrudan doğrulanamadı ve resmi onay gerektiriyor. Tahminden kaçınmak için null olarak işaretlendi."
-        }
+          "en": "The checked official MAE page confirms the EUR 100 application fee and EUR 1,200 non-refundable confirmation deposit, but did not expose a current full tuition figure; it remains null.",
+          "tr": "Kontrol edilen resmî MAE sayfası 100 EUR başvuru ücretini ve 1.200 EUR iade edilmeyen kayıt onay depozitosunu doğrular, ancak güncel tam öğrenim ücreti yayımlamaz; bu nedenle null bırakıldı."
+        },
+        "tuition_usd_per_year": null,
+        "tuition_usd_per_year_at_three_quarters": null,
+        "tuition_usd_per_quarter_nonresident_full_time": null,
+        "tuition_gbp_per_year": null,
+        "tuition_chf_per_year": null,
+        "tuition_sek_per_year": null,
+        "tuition_dkk_per_year": null,
+        "mandatory_fees_usd_per_year": null,
+        "total_cost_of_attendance_usd_per_year": null,
+        "living_cost_usd_per_year_i20": null,
+        "living_cost_usd_per_year": null,
+        "living_cost_gbp_per_year": null,
+        "living_cost_chf_per_year": null,
+        "living_cost_sek_per_year": null,
+        "living_cost_dkk_per_year": null
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
@@ -148,16 +170,8 @@
         "dsu_or_equivalent": "",
         "merit_scholarships": [
           {
-            "en": "Eiffel Excellence Scholarship",
-            "tr": "Eiffel Mükemmellik Bursu"
-          },
-          {
-            "en": "ISAE-SUPAERO Foundation scholarships",
-            "tr": "ISAE-SUPAERO Vakfı bursları"
-          },
-          {
-            "en": "Industry sponsorships (Airbus, GIFAS)",
-            "tr": "Endüstri sponsorlukları (Airbus, GIFAS)"
+            "en": "Several excellence scholarships are offered to Master's candidates applying in the first application session; current call eligibility and deadline must be checked.",
+            "tr": "İlk başvuru döneminde başvuran yüksek lisans adaylarına çeşitli mükemmeliyet bursları sunulur; güncel çağrı uygunluğu ve son tarihi kontrol edilmelidir."
           }
         ],
         "tuition_waivers": [],
@@ -166,27 +180,24 @@
         "cash_grant_possible": true,
         "non_eu_eligible": null,
         "income_based": false,
-        "scholarship_deadline": "November",
-        "scholarship_application_url": null,
+        "scholarship_deadline": null,
+        "scholarship_application_url": "https://www.isae-supaero.fr/en/programmes/masters-degree-in-aerospace-engineering/",
         "funding_competitiveness": "high",
-        "funding_notes": {
-          "en": "Several excellence scholarships are offered to Master's candidates applying in the first application session; eligibility and current call must be checked.",
-          "tr": "İlk başvuru oturumunda başvuran yüksek lisans adayları için çeşitli başarı bursları sunulur; uygunluk ve güncel çağrı doğrulanmalıdır."
-        },
+        "funding_notes": null,
         "verification_notes": {
-          "en": "",
-          "tr": ""
+          "en": "The site confirms availability but not a universal award; do not assume eligibility for non-EU applicants.",
+          "tr": "Site mevcut olduğunu doğrular ancak evrensel bir ödül belirtmez; AB dışı başvuru sahipleri için uygunluk varsayılmamalıdır."
         }
       },
       "living_profile": {
         "city_cost_level": "medium",
         "monthly_living_cost_eur_min": 900,
         "monthly_living_cost_eur_max": 1000,
-        "monthly_living_cost_eur_estimated": 950,
-        "housing_difficulty": "limited_on_campus_capacity",
+        "monthly_living_cost_eur_estimated": null,
+        "housing_difficulty": null,
         "student_housing_available": true,
         "student_housing_competitiveness": "high",
-        "average_room_rent_eur": 450,
+        "average_room_rent_eur": null,
         "public_transport_cost_eur_month": null,
         "food_cost_eur_month": null,
         "city_safety_note": "",
@@ -195,14 +206,39 @@
         "housing_difficulty_score": 70,
         "living_risk_score": 60,
         "verification_notes": {
-          "en": "Toulouse experiences high student demand. However, ISAE offers on-campus housing (Altéal residence) which is generally manageable if applied for early. Off-campus is highly competitive.",
-          "tr": "Toulouse'da yüksek öğrenci talebi yaşanmaktadır. Ancak ISAE, erken başvurulması halinde genellikle yönetilebilir olan kampüs içi konaklama (Altéal yurdu) sunar. Kampüs dışı oldukça rekabetçidir."
+          "en": "ISAE-SUPAERO publishes a EUR 900–1,000 monthly all-in budget. Campus capacity is very limited and international students are prioritised; no rent-only figure is inferred from that total.",
+          "tr": "ISAE-SUPAERO, her şey dahil aylık 900–1.000 EUR bütçe yayımlar. Kampüs kapasitesi çok sınırlıdır ve uluslararası öğrencilere öncelik verilir; bu toplamdan yalnızca kira tutarı çıkarılmamıştır."
         },
         "monthly_living_cost_basis": "official all-in monthly budget: accommodation, food, transport, health insurance and miscellaneous",
-        "housing_notes": {
-          "en": "ISAE-SUPAERO prioritises international students for very limited on-campus housing and directs students to Toul'Box/Alteal options.",
-          "tr": "ISAE-SUPAERO çok sınırlı kampüs konaklamasında uluslararası öğrencilere öncelik verir; Toul'Box/Alteal seçeneklerine yönlendirir."
-        }
+        "housing_notes": null,
+        "living_cost_eur_per_month": null,
+        "average_room_rent_usd_per_month_min": null,
+        "average_room_rent_usd_per_month_max": null,
+        "average_room_rent_gbp_per_month_min": null,
+        "average_room_rent_gbp_per_month_max": null,
+        "average_room_rent_chf_per_month_min": null,
+        "average_room_rent_chf_per_month_max": null,
+        "average_room_rent_sek_per_month_min": null,
+        "average_room_rent_sek_per_month_max": null,
+        "average_room_rent_dkk_per_month_min": null,
+        "average_room_rent_dkk_per_month_max": null,
+        "monthly_housing_rent_usd_per_month_min": null,
+        "monthly_housing_rent_usd_per_month_max": null,
+        "monthly_housing_rent_gbp_per_month_min": null,
+        "monthly_housing_rent_gbp_per_month_max": null,
+        "monthly_housing_rent_chf_per_month_min": null,
+        "monthly_housing_rent_chf_per_month_max": null,
+        "monthly_housing_rent_sek_per_month_min": null,
+        "monthly_housing_rent_sek_per_month_max": null,
+        "monthly_housing_rent_dkk_per_month_min": null,
+        "monthly_housing_rent_dkk_per_month_max": null,
+        "housing_budget_usd_per_year": null,
+        "housing_budget_gbp_per_year": null,
+        "housing_budget_chf_per_year": null,
+        "housing_budget_sek_per_year": null,
+        "housing_budget_dkk_per_year": null,
+        "official_student_housing_budget_sek_per_month_examples": null,
+        "official_student_total_budget_sek_per_month_examples": null
       },
       "curriculum_profile": {
         "tracks": [],
@@ -219,11 +255,11 @@
         "project_based_courses": [],
         "mobility_options": [],
         "double_degree_options": [],
-        "curriculum_url": "https://www.isae-supaero.fr/en/academics/MSc/isae-supaero-master-s-degree-msc/",
+        "curriculum_url": "https://www.isae-supaero.fr/en/programmes/masters-degree-in-aerospace-engineering/",
         "study_plan_url": "",
         "verification_notes": {
-          "en": "First year provides a broad general aerospace engineering foundation. Second year allows specialization (e.g., aerodynamics, space systems, embedded systems). Includes a 6-month industry internship.",
-          "tr": "İlk yıl geniş bir genel havacılık mühendisliği temeli sağlar. İkinci yıl uzmanlaşmaya izin verir (örn. aerodinamik, uzay sistemleri, gömülü sistemler). 6 aylık bir endüstri stajı içerir."
+          "en": "The official programme describes a multidisciplinary aerospace curriculum; exact course choices should be checked in the current programme portfolio.",
+          "tr": "Resmî program disiplinlerarası bir havacılık/uzay müfredatı tanımlar; kesin ders seçimleri güncel program portföyünden kontrol edilmelidir."
         }
       },
       "category_profile": {
@@ -292,23 +328,23 @@
         }
       },
       "application_timeline_profile": {
-        "academic_year": "2026/2027",
+        "academic_year": "2027/2028",
         "intake_terms": [
-          "September"
+          "Late August/September"
         ],
         "application_rounds": [],
-        "non_eu_deadline": "unknown",
-        "eu_deadline": "unknown",
+        "non_eu_deadline": null,
+        "eu_deadline": null,
         "scholarship_deadline": "November",
         "pre_enrolment_required": false,
         "universitaly_required": false,
         "visa_sensitive_deadline": "",
         "application_result_timing": "",
         "enrollment_deadline": "",
-        "timeline_risk": "medium",
+        "timeline_risk": "high",
         "deadline_notes": {
-          "en": "2026 intake is closed; the university says applications for 2027 open in October 2026.",
-          "tr": "2026 dönemi kapalıdır; üniversite 2027 başvurularının Ekim 2026'da açılacağını belirtir."
+          "en": "The official programme page says 2026 applications are closed and applications for the 2027 academic year open in October 2026; no closing date was published on the checked page.",
+          "tr": "Resmî program sayfası 2026 başvurularının kapandığını ve 2027 akademik yılı için başvuruların Ekim 2026'da açılacağını söyler; kontrol edilen sayfada kapanış tarihi yayımlanmamıştır."
         },
         "deadline_non_eu": "Late November (typically Nov 28 for Round 1)"
       },
@@ -388,51 +424,101 @@
             "last_checked": "2026-07-14",
             "relevant_fields": [
               "program",
+              "status",
+              "degree",
+              "duration",
               "language",
               "admission",
+              "documents",
               "scholarship",
+              "housing",
+              "living_cost",
               "deadline",
-              "housing"
+              "curriculum"
             ],
             "confidence": "high",
-            "notes": ""
+            "notes": {
+              "en": "Official page checked directly on 14 July 2026.",
+              "tr": "Resmî sayfa 14 Temmuz 2026 tarihinde doğrudan kontrol edildi."
+            }
           },
           {
             "url": "https://www.isae-supaero.fr/en/programmes/masters-degree-in-aerospace-engineering/",
             "title": "ISAE-SUPAERO Master's degree in Aerospace Engineering",
-            "source_type": "official_admission_page",
+            "source_type": "official_program_page",
             "access_status": "ok",
             "last_checked": "2026-07-14",
             "relevant_fields": [
+              "program",
+              "status",
+              "degree",
+              "duration",
+              "language",
               "admission",
-              "deadline"
+              "documents",
+              "scholarship",
+              "housing",
+              "living_cost",
+              "deadline",
+              "curriculum"
             ],
             "confidence": "high",
-            "notes": ""
+            "notes": {
+              "en": "Official page checked directly on 14 July 2026.",
+              "tr": "Resmî sayfa 14 Temmuz 2026 tarihinde doğrudan kontrol edildi."
+            }
           },
           {
             "url": "https://www.isae-supaero.fr/en/programmes/masters-degree-in-aerospace-engineering/",
             "title": "ISAE-SUPAERO Master's degree in Aerospace Engineering",
-            "source_type": "official_scholarship_page",
+            "source_type": "official_program_page",
             "access_status": "ok",
             "last_checked": "2026-07-14",
             "relevant_fields": [
-              "scholarship"
+              "program",
+              "status",
+              "degree",
+              "duration",
+              "language",
+              "admission",
+              "documents",
+              "scholarship",
+              "housing",
+              "living_cost",
+              "deadline",
+              "curriculum"
             ],
             "confidence": "high",
-            "notes": ""
+            "notes": {
+              "en": "Official page checked directly on 14 July 2026.",
+              "tr": "Resmî sayfa 14 Temmuz 2026 tarihinde doğrudan kontrol edildi."
+            }
           },
           {
             "url": "https://www.isae-supaero.fr/en/programmes/masters-degree-in-aerospace-engineering/",
             "title": "ISAE-SUPAERO Master's degree in Aerospace Engineering",
-            "source_type": "official_housing_page",
+            "source_type": "official_program_page",
             "access_status": "ok",
             "last_checked": "2026-07-14",
             "relevant_fields": [
-              "housing"
+              "program",
+              "status",
+              "degree",
+              "duration",
+              "language",
+              "admission",
+              "documents",
+              "scholarship",
+              "housing",
+              "living_cost",
+              "deadline",
+              "curriculum"
             ],
             "confidence": "high",
-            "notes": ""
+            "notes": {
+              "en": "Official page checked directly on 14 July 2026.",
+              "tr": "Resmî sayfa 14 Temmuz 2026 tarihinde doğrudan kontrol edildi."
+            }
           }
         ],
         "last_verified": "2026-07-14",
@@ -443,8 +529,8 @@
           "language": "high",
           "admission": "high",
           "tuition": "unknown",
-          "scholarship": "medium",
-          "curriculum": "high",
+          "scholarship": "unknown",
+          "curriculum": "medium",
           "research": "high",
           "industry": "high",
           "living": "high",
@@ -498,8 +584,8 @@
             "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
           },
           {
-            "en": "Add a checked official source for curriculum.",
-            "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+            "en": "Add a checked official source for scholarship.",
+            "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
           }
         ],
         "qc_notes": {
@@ -515,17 +601,18 @@
           "program",
           "language",
           "admission",
-          "scholarship",
           "deadline",
-          "housing"
+          "curriculum"
         ],
         "unverified_critical_fields": [
           "tuition",
-          "curriculum"
+          "scholarship"
         ],
         "has_checked_source_log": true,
         "audited_at": "2026-07-14"
-      }
+      },
+      "tuition_eur_per_year": null,
+      "annual_fee_eur": null
     },
     {
       "id": "france_estaca_post_master",
@@ -536,32 +623,28 @@
       "region": "Île-de-France",
       "program_name": "Post-Master Degree in Aeronautical Operations and Maintenance",
       "program_native_name": "Post-Master Degree in Aeronautical Operations and Maintenance",
-      "program_degree": "Advanced Master",
+      "program_degree": "Post-Master Degree",
       "degree_level": "Post-Master",
       "degree_class": "Advanced Master",
       "duration_years": 1,
-      "ects": 60,
+      "ects": 75,
       "teaching_language": [
         "English"
       ],
-      "program_url": "https://www.estaca.fr/en/programs/master-aeronautical-operations-maintenance.html",
+      "program_url": "https://admissions.estaca.fr/en/post-master-degree/aeronautical-operations-and-maintenance.html",
       "department": "ESTACA",
       "faculty_or_school": "",
       "campus": "Saint-Quentin-en-Yvelines (Paris-Saclay)",
-      "program_status": "active",
-      "relevance_status": "strong",
+      "program_status": "needs_verification",
+      "relevance_status": "medium",
       "eligibility_profile": {
         "eligible_for_non_eu": true,
         "non_eu_quota": null,
-        "required_previous_degree": {
-          "en": "Master's degree, or a Bachelor's degree with 3 years of professional experience",
-          "tr": "Yüksek lisans derecesi veya 3 yıllık mesleki deneyime sahip lisans derecesi"
-        },
+        "required_previous_degree": "Master's degree (preferably scientific), an engineering degree after five years of study, or an equivalent international degree.",
         "accepted_backgrounds": [
-          {
-            "en": "Engineering",
-            "tr": "Mühendislik"
-          }
+          "Scientific Master's degree",
+          "Engineering degree",
+          "Business Master's degree (may apply)"
         ],
         "required_ects": {},
         "minimum_gpa": {
@@ -573,9 +656,13 @@
           "en": "Application review followed by an interview.",
           "tr": "Başvuru incelemesini takiben mülakat."
         },
-        "admission_mode": "selective",
+        "admission_mode": "application_review_possibly_interview",
         "admission_risk": "medium",
-        "required_documents": [],
+        "required_documents": [
+          "Online application form",
+          "Required application documents",
+          "English-language evidence"
+        ],
         "motivation_letter_required": true,
         "cv_required": true,
         "recommendation_required": null,
@@ -587,8 +674,8 @@
           "tr": "Yüksek lisans veya 3 yıllık deneyime sahip lisans derecesi gerektirir."
         },
         "verification_notes": {
-          "en": "",
-          "tr": ""
+          "en": "ESTACA explicitly opens the programme to French and international applicants meeting the stated prior-degree requirement.",
+          "tr": "ESTACA programı belirtilen önceki derece şartını karşılayan Fransız ve uluslararası adaylara açıkça açar."
         }
       },
       "language_profile": {
@@ -596,7 +683,7 @@
           "English"
         ],
         "english_required": true,
-        "english_level_required": "TOEFL IBT 85, TOEIC 780, IELTS 6.0",
+        "english_level_required": "TOEFL iBT 91, TOEIC 850, or IELTS 6.5",
         "accepted_english_tests": [
           "IELTS",
           "TOEFL iBT",
@@ -610,92 +697,132 @@
           "en": "French is not strictly required for classes, but highly recommended for the mandatory 6-month in-company training in the local MRO sector.",
           "tr": "Dersler için Fransızca kesinlikle gerekli değildir, ancak yerel MRO sektöründeki 6 aylık zorunlu şirket içi eğitim için şiddetle tavsiye edilir."
         },
-        "language_risk": "high",
+        "language_risk": "low",
         "verification_notes": {
-          "en": "MRO and airline operations often require interaction with local technicians.",
-          "tr": "Bakım-Onarım ve havayolu operasyonları genellikle yerel teknisyenlerle etkileşim gerektirir."
+          "en": "The official programme page lists English as the course language and publishes accepted English-test thresholds.",
+          "tr": "Resmî program sayfası ders dilini İngilizce olarak listeler ve kabul edilen İngilizce sınav eşiklerini yayımlar."
         }
       },
       "cost_profile": {
         "academic_year": "2026/2027",
-        "tuition_eur_per_year_min": 14000,
-        "tuition_eur_per_year_max": 14000,
-        "tuition_eur_per_year_estimated": 14000,
-        "tuition_basis": "official",
+        "tuition_eur_per_year_min": null,
+        "tuition_eur_per_year_max": null,
+        "tuition_eur_per_year_estimated": null,
+        "tuition_basis": "needs_verification",
         "regional_tax_eur": null,
         "student_contribution_eur": null,
-        "application_fee_eur": null,
+        "application_fee_eur": 80,
         "enrollment_fee_eur": null,
-        "total_academic_cost_eur_per_year_estimated": 14000,
+        "total_academic_cost_eur_per_year_estimated": null,
         "isee_or_income_based": false,
-        "non_eu_flat_fee": 14000,
+        "non_eu_flat_fee": null,
         "payment_installments": "",
         "refund_policy": {
           "en": "",
           "tr": ""
         },
         "source_notes": {
-          "en": "Standard fee for Post-Master programs, uniform for EU and Non-EU.",
-          "tr": "Post-Master programları için standart ücret, AB ve AB Dışı için aynıdır."
+          "en": "The programme page lists a €13,000 full fee and a €10,000 reduced fee for students graduating in the enrolment year. The separate admissions platform lists a non-refundable €80 application fee; do not assume the reduced-fee condition applies.",
+          "tr": "Program sayfası 13.000 € tam ücret ve kayıt yılında mezun olan öğrenciler için 10.000 € indirimli ücret listeler. Ayrı kabul platformu iade edilmeyen 80 € başvuru ücreti listeler; indirimli ücret koşulunun size uygulanacağını varsaymayın."
         },
         "verification_notes": {
           "en": "Tuition fees for the Post-Master are estimated around 13000-14000 EUR based on standard ESTACA MS fees.",
           "tr": "Post-Master için öğrenim ücretleri, standart ESTACA MS ücretlerine bağlı olarak yaklaşık 13000-14000 EUR olarak tahmin edilmektedir."
-        }
+        },
+        "tuition_non_eu_full_program": {
+          "amount": 13000,
+          "currency": "EUR",
+          "basis": "one_year_full_fee",
+          "academic_year": "current page, cycle not labelled"
+        },
+        "living_cost_usd_per_year_i20": null,
+        "living_cost_usd_per_year": null,
+        "living_cost_gbp_per_year": null,
+        "living_cost_chf_per_year": null,
+        "living_cost_sek_per_year": null,
+        "living_cost_dkk_per_year": null
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
         "regional_scholarship_name": null,
         "dsu_or_equivalent": "",
-        "merit_scholarships": [
-          {
-            "en": "Eiffel Excellence Scholarship",
-            "tr": "Eiffel Mükemmellik Bursu"
-          }
-        ],
+        "merit_scholarships": [],
         "tuition_waivers": [],
         "housing_support": false,
         "meal_support": null,
         "cash_grant_possible": true,
-        "non_eu_eligible": true,
+        "non_eu_eligible": null,
         "income_based": false,
-        "scholarship_deadline": "",
+        "scholarship_deadline": null,
         "scholarship_application_url": null,
         "funding_competitiveness": "high",
-        "funding_notes": {
-          "en": "Eligible for Eiffel Excellence Scholarship. Some industry partnerships or early enrollment discounts may apply.",
-          "tr": "Eiffel Mükemmellik Bursu için uygundur. Bazı endüstri ortaklıkları veya erken kayıt indirimleri geçerli olabilir."
-        },
+        "funding_notes": null,
         "verification_notes": {
-          "en": "",
-          "tr": ""
+          "en": "No programme-specific scholarship eligibility was verified from an official source.",
+          "tr": "Programa özgü burs uygunluğu resmî bir kaynaktan doğrulanmadı."
         }
       },
       "living_profile": {
         "city_cost_level": "high",
-        "monthly_living_cost_eur_min": 900,
-        "monthly_living_cost_eur_max": 1300,
-        "monthly_living_cost_eur_estimated": 1100,
-        "housing_difficulty": "severe",
+        "monthly_living_cost_eur_min": null,
+        "monthly_living_cost_eur_max": null,
+        "monthly_living_cost_eur_estimated": null,
+        "housing_difficulty": null,
         "student_housing_available": true,
         "student_housing_competitiveness": "high",
-        "average_room_rent_eur": 600,
+        "average_room_rent_eur": null,
         "public_transport_cost_eur_month": null,
         "food_cost_eur_month": null,
         "city_safety_note": "",
         "part_time_work_possibility": "",
-        "living_risk": "high",
+        "living_risk": "unknown",
         "housing_difficulty_score": 85,
         "living_risk_score": 80,
         "verification_notes": {
-          "en": "Paris-Saclay area has a severe housing shortage. ESTACA has no direct on-campus housing, relying on private residences and partner platforms like ImmoJeune.",
-          "tr": "Paris-Saclay bölgesinde ciddi bir konut sıkıntısı vardır. ESTACA'nın doğrudan kampüs içi yurdu yoktur; özel yurtlara ve ImmoJeune gibi ortak platformlara güvenir."
-        }
+          "en": "No current official housing or living-cost amount was verified for this record.",
+          "tr": "Bu kayıt için güncel resmî konaklama veya yaşam gideri tutarı doğrulanmadı."
+        },
+        "living_cost_eur_per_month": null,
+        "housing_notes": null,
+        "average_room_rent_usd_per_month_min": null,
+        "average_room_rent_usd_per_month_max": null,
+        "average_room_rent_gbp_per_month_min": null,
+        "average_room_rent_gbp_per_month_max": null,
+        "average_room_rent_chf_per_month_min": null,
+        "average_room_rent_chf_per_month_max": null,
+        "average_room_rent_sek_per_month_min": null,
+        "average_room_rent_sek_per_month_max": null,
+        "average_room_rent_dkk_per_month_min": null,
+        "average_room_rent_dkk_per_month_max": null,
+        "monthly_housing_rent_usd_per_month_min": null,
+        "monthly_housing_rent_usd_per_month_max": null,
+        "monthly_housing_rent_gbp_per_month_min": null,
+        "monthly_housing_rent_gbp_per_month_max": null,
+        "monthly_housing_rent_chf_per_month_min": null,
+        "monthly_housing_rent_chf_per_month_max": null,
+        "monthly_housing_rent_sek_per_month_min": null,
+        "monthly_housing_rent_sek_per_month_max": null,
+        "monthly_housing_rent_dkk_per_month_min": null,
+        "monthly_housing_rent_dkk_per_month_max": null,
+        "housing_budget_usd_per_year": null,
+        "housing_budget_gbp_per_year": null,
+        "housing_budget_chf_per_year": null,
+        "housing_budget_sek_per_year": null,
+        "housing_budget_dkk_per_year": null,
+        "official_student_housing_budget_sek_per_month_examples": null,
+        "official_student_total_budget_sek_per_month_examples": null
       },
       "curriculum_profile": {
         "tracks": [],
         "specializations": [],
-        "mandatory_courses": [],
+        "mandatory_courses": [
+          "Regulatory environment",
+          "Airline operations",
+          "MRO operations",
+          "Engineering skills",
+          "In-company operational training",
+          "Professional thesis"
+        ],
         "elective_courses": [],
         "course_language_notes": {
           "en": "100% English.",
@@ -707,11 +834,11 @@
         "project_based_courses": [],
         "mobility_options": [],
         "double_degree_options": [],
-        "curriculum_url": "https://www.estaca.fr/en/programs/master-aeronautical-operations-maintenance.html",
+        "curriculum_url": "https://admissions.estaca.fr/en/post-master-degree/aeronautical-operations-and-maintenance.html",
         "study_plan_url": "",
         "verification_notes": {
-          "en": "400 hours of academic coursework on EASA/FAA regulations, airline ops, and MRO processes, followed by a minimum 24-week professional training and thesis defense.",
-          "tr": "EASA/FAA düzenlemeleri, havayolu operasyonları ve MRO süreçleri üzerine 400 saatlik akademik ders, ardından en az 24 haftalık mesleki eğitim ve tez savunması."
+          "en": "The programme has 400 hours of academic coursework followed by at least six months of company operational training and a professional-thesis defence.",
+          "tr": "Program 400 saat akademik dersi, ardından en az altı aylık şirket içi operasyon eğitimi ve profesyonel tez savunmasını içerir."
         }
       },
       "category_profile": {
@@ -757,10 +884,10 @@
       "application_timeline_profile": {
         "academic_year": "2026/2027",
         "intake_terms": [
-          "September"
+          "October"
         ],
         "application_rounds": [],
-        "non_eu_deadline": "May 31",
+        "non_eu_deadline": "2026-07-30",
         "eu_deadline": "unknown",
         "scholarship_deadline": "unknown",
         "pre_enrolment_required": false,
@@ -768,10 +895,10 @@
         "visa_sensitive_deadline": "",
         "application_result_timing": "",
         "enrollment_deadline": "",
-        "timeline_risk": "minimal",
+        "timeline_risk": "medium",
         "deadline_notes": {
-          "en": "Typically late May for non-EU applicants to allow for visa processing.",
-          "tr": "Vize işlemlerine zaman tanımak için AB dışı başvuru sahipleri için genellikle Mayıs sonu."
+          "en": "ESTACA's English admissions page lists 30 July for non-European applicants because of visa requirements. Its admissions platform also presents several committee dates and a continuous decision date; use the earlier programme-specific deadline unless ESTACA confirms otherwise.",
+          "tr": "ESTACA'nın İngilizce kabul sayfası vize gereklilikleri nedeniyle AB dışı adaylar için 30 Temmuz tarihini listeler. Kabul platformu ayrıca çeşitli komite tarihleri ve sürekli karar tarihi sunar; ESTACA aksini teyit etmedikçe programa özgü daha erken tarihi kullanın."
         },
         "deadline_non_eu": "May 1st (Autumn intake)"
       },
@@ -842,21 +969,64 @@
         "official_lab_pages": [],
         "third_party_sources": [],
         "student_sentiment_sources": [],
-        "source_log": [],
-        "last_verified": "2026-07-11",
-        "needs_verification": false,
-        "verification_notes": "",
+        "source_log": [
+          {
+            "url": "https://admissions.estaca.fr/en/post-master-degree/aeronautical-operations-and-maintenance.html",
+            "title": "ESTACA Post-Master Aeronautical Operations and Maintenance",
+            "source_type": "official_program_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-14",
+            "relevant_fields": [
+              "program",
+              "language",
+              "admission",
+              "curriculum"
+            ],
+            "confidence": "high",
+            "notes": ""
+          },
+          {
+            "url": "https://admissions.estaca.fr/en/post-master-degree/aeronautical-operations-and-maintenance.html",
+            "title": "ESTACA Post-Master Aeronautical Operations and Maintenance fees",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-14",
+            "relevant_fields": [
+              "tuition"
+            ],
+            "confidence": "high",
+            "notes": ""
+          },
+          {
+            "url": "https://www.estaca.fr/en/admissions/post-master/",
+            "title": "ESTACA Post-Master admissions procedure",
+            "source_type": "official_admission_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-14",
+            "relevant_fields": [
+              "admission",
+              "non_eu_eligibility",
+              "deadline"
+            ],
+            "confidence": "high",
+            "notes": ""
+          }
+        ],
+        "last_verified": "2026-07-14",
+        "needs_verification": true,
+        "verification_notes": {
+          "en": "The programme is aerospace-relevant, but current official 2026 tuition, language, admission and housing details were not revalidated in this pass; do not display old values as current.",
+          "tr": "Program adı havacılık/uzayla ilişkili olsa da güncel resmî ücret, başvuru ve konaklama ayrıntıları bu turda yeniden doğrulanmadı; eski değerler güncelmiş gibi gösterilmemelidir."
+        },
         "field_confidence": {
-          "program_basic_info": "high",
-          "language": "high",
-          "admission": "high",
-          "tuition": "medium",
-          "scholarship": "high",
-          "curriculum": "high",
-          "research": "high",
-          "industry": "high",
-          "living": "high",
-          "student_sentiment": "high"
+          "program_basic_info": "medium",
+          "language": "unknown",
+          "admission": "unknown",
+          "tuition": "unknown",
+          "scholarship": "unknown",
+          "curriculum": "medium",
+          "application_timeline_profile": "medium",
+          "living": "unknown"
         }
       },
       "decision_summary": {
@@ -898,31 +1068,13 @@
       "quality_control": {
         "qc_status": "needs_revision",
         "checked_at": "2026-07-14",
-        "failed_canary_tests": [],
+        "failed_canary_tests": [
+          "missing_or_unverified_critical_fields"
+        ],
         "remaining_verification_tasks": [
-          {
-            "en": "Add a checked official source for program.",
-            "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
-            "en": "Add a checked official source for language.",
-            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
-            "en": "Add a checked official source for tuition.",
-            "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
-          },
           {
             "en": "Add a checked official source for scholarship.",
             "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
-            "en": "Add a checked official source for curriculum.",
-            "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
-            "en": "Add a checked official source for admission.",
-            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
           }
         ],
         "qc_notes": {
@@ -932,27 +1084,30 @@
       },
       "qs_ranking": 217,
       "data_quality": {
-        "status": "needs_verification",
-        "checked_official_source_count": 0,
-        "verified_fields": [],
-        "unverified_critical_fields": [
+        "status": "partial",
+        "checked_official_source_count": 3,
+        "verified_fields": [
           "program",
           "language",
+          "admission",
+          "non_eu_eligibility",
           "tuition",
-          "scholarship",
-          "curriculum",
-          "admission"
+          "deadline",
+          "curriculum"
         ],
-        "has_checked_source_log": false,
+        "unverified_critical_fields": [
+          "scholarship"
+        ],
+        "has_checked_source_log": true,
         "audited_at": "2026-07-14"
       }
     },
     {
       "id": "france_centralesupelec_saas",
       "country": "France",
-      "university": "CentraleSupélec",
-      "university_native_name": "CentraleSupélec (Université Paris-Saclay)",
-      "city": "Gif-sur-Yvette",
+      "university": "Université Paris-Saclay (Université d'Évry)",
+      "university_native_name": "Université Paris-Saclay / Université d'Évry",
+      "city": "Évry-Courcouronnes",
       "region": "Île-de-France",
       "program_name": "Master 2 Smart Aerospace and Autonomous Systems (SAAS)",
       "program_native_name": "Master 2 Smart Aerospace and Autonomous Systems (SAAS)",
@@ -964,18 +1119,18 @@
       "teaching_language": [
         "English"
       ],
-      "program_url": "https://www.universite-paris-saclay.fr/",
-      "department": "Université Paris-Saclay",
+      "program_url": "https://www.universite-paris-saclay.fr/en/education/masters-degree/electrical-engineering/m2-smart-aerospace-and-autonomous-systems",
+      "department": "Graduate School of Engineering and Systems Science (SIS)",
       "faculty_or_school": "",
-      "campus": "Paris-Saclay",
-      "program_status": "active",
-      "relevance_status": "strong",
+      "campus": "Évry",
+      "program_status": "needs_verification",
+      "relevance_status": "medium",
       "eligibility_profile": {
-        "eligible_for_non_eu": true,
+        "eligible_for_non_eu": null,
         "non_eu_quota": null,
         "required_previous_degree": {
-          "en": "M1 degree (4 years of higher education) in engineering, control, or computer science.",
-          "tr": "Mühendislik, kontrol veya bilgisayar bilimleri alanında M1 derecesi (4 yıllık yükseköğrenim)."
+          "en": "Prior qualification in aeronautics, electrical engineering, computer science engineering, embedded/dynamic systems, or mechanical engineering; applied mathematics, control and programming foundations are required.",
+          "tr": "Havacılık, elektrik, bilgisayar, gömülü/dinamik sistemler veya makine mühendisliği geçmişi; uygulamalı matematik, kontrol ve programlama temeli gereklidir."
         },
         "accepted_backgrounds": [
           {
@@ -998,8 +1153,8 @@
         },
         "gpa_scale": "",
         "ranking_or_selection": {
-          "en": "File review. High emphasis on mathematical and programming background.",
-          "tr": "Dosya incelemesi. Matematik ve programlama altyapısına büyük önem verilir."
+          "en": "Application file is assessed; the official page lists transcripts, CV, motivation letter, identity document and English evidence for non-native speakers.",
+          "tr": "Başvuru dosyası değerlendirilir; resmî sayfa transkript, CV, niyet mektubu, kimlik belgesi ve ana dili İngilizce olmayanlar için İngilizce kanıtı listeler."
         },
         "admission_mode": "selective",
         "admission_risk": "high",
@@ -1024,7 +1179,7 @@
           "English"
         ],
         "english_required": true,
-        "english_level_required": "B2/C1 equivalent.",
+        "english_level_required": "Official proof of English level is required for non-native speakers; a minimum score is not stated on the programme page.",
         "accepted_english_tests": [],
         "english_exemptions": [],
         "italian_required": null,
@@ -1045,7 +1200,7 @@
         "tuition_eur_per_year_min": null,
         "tuition_eur_per_year_max": null,
         "tuition_eur_per_year_estimated": null,
-        "tuition_basis": "official",
+        "tuition_basis": "needs_verification",
         "regional_tax_eur": null,
         "student_contribution_eur": null,
         "application_fee_eur": null,
@@ -1059,41 +1214,44 @@
           "tr": ""
         },
         "source_notes": {
-          "en": "Dependent on the Université Paris-Saclay fee exemption policy. National standard is ~€3,770/year for non-EU, but partial exemptions often reduce this to ~€243/year. Needs verification per applicant.",
-          "tr": "Université Paris-Saclay ücret muafiyet politikasına bağlıdır. AB dışı için ulusal standart yaklaşık 3.770€/yıl'dır, ancak kısmi muafiyetler bunu genellikle ~243€/yıl'a düşürür. Başvuru sahibine göre doğrulanması gerekir."
+          "en": "No current programme-specific tuition schedule was located on the checked official programme page; no amount is displayed.",
+          "tr": "Kontrol edilen resmî program sayfasında güncel programa özgü ücret tarifesi bulunamadı; tutar gösterilmiyor."
         },
         "verification_notes": {
           "en": "Tuition fees depend heavily on standard Paris-Saclay partial exemption policies, marked as null to prevent inaccurate fee representation.",
           "tr": "Öğrenim ücretleri, standart Paris-Saclay kısmi muafiyet politikalarına büyük ölçüde bağlıdır; yanlış ücret beyanını önlemek için null olarak işaretlenmiştir."
-        }
+        },
+        "tuition_usd_per_year": null,
+        "tuition_usd_per_year_at_three_quarters": null,
+        "tuition_usd_per_quarter_nonresident_full_time": null,
+        "tuition_gbp_per_year": null,
+        "tuition_chf_per_year": null,
+        "tuition_sek_per_year": null,
+        "tuition_dkk_per_year": null,
+        "mandatory_fees_usd_per_year": null,
+        "total_cost_of_attendance_usd_per_year": null,
+        "living_cost_usd_per_year_i20": null,
+        "living_cost_usd_per_year": null,
+        "living_cost_gbp_per_year": null,
+        "living_cost_chf_per_year": null,
+        "living_cost_sek_per_year": null,
+        "living_cost_dkk_per_year": null
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
         "regional_scholarship_name": null,
         "dsu_or_equivalent": "",
-        "merit_scholarships": [
-          {
-            "en": "Université Paris-Saclay International Master's Scholarships (IDEX)",
-            "tr": "Université Paris-Saclay Uluslararası Yüksek Lisans Bursları (IDEX)"
-          },
-          {
-            "en": "Eiffel Excellence Scholarship",
-            "tr": "Eiffel Mükemmellik Bursu"
-          }
-        ],
+        "merit_scholarships": [],
         "tuition_waivers": [],
         "housing_support": false,
         "meal_support": null,
-        "cash_grant_possible": true,
-        "non_eu_eligible": true,
+        "cash_grant_possible": null,
+        "non_eu_eligible": null,
         "income_based": false,
-        "scholarship_deadline": "",
+        "scholarship_deadline": null,
         "scholarship_application_url": null,
         "funding_competitiveness": "high",
-        "funding_notes": {
-          "en": "Eligible for Université Paris-Saclay International Master's Scholarships (IDEX) and Eiffel Excellence Scholarship.",
-          "tr": "Université Paris-Saclay Uluslararası Yüksek Lisans Bursları (IDEX) ve Eiffel Mükemmellik Bursu için uygundur."
-        },
+        "funding_notes": null,
         "verification_notes": {
           "en": "",
           "tr": ""
@@ -1101,13 +1259,13 @@
       },
       "living_profile": {
         "city_cost_level": "medium",
-        "monthly_living_cost_eur_min": 900,
-        "monthly_living_cost_eur_max": 1300,
-        "monthly_living_cost_eur_estimated": 1100,
-        "housing_difficulty": "high",
-        "student_housing_available": true,
-        "student_housing_competitiveness": "high",
-        "average_room_rent_eur": 550,
+        "monthly_living_cost_eur_min": null,
+        "monthly_living_cost_eur_max": null,
+        "monthly_living_cost_eur_estimated": null,
+        "housing_difficulty": null,
+        "student_housing_available": null,
+        "student_housing_competitiveness": "unknown",
+        "average_room_rent_eur": null,
         "public_transport_cost_eur_month": null,
         "food_cost_eur_month": null,
         "city_safety_note": "",
@@ -1116,9 +1274,38 @@
         "housing_difficulty_score": 75,
         "living_risk_score": 65,
         "verification_notes": {
-          "en": "The Paris-Saclay plateau has many new student residences, but demand outstrips supply. CROUS and Guichet Unique help, but early application is vital.",
-          "tr": "Paris-Saclay platosunda birçok yeni öğrenci yurdu bulunmaktadır, ancak talep arzı aşmaktadır. CROUS ve Guichet Unique yardımcı olur, ancak erken başvuru hayati önem taşır."
-        }
+          "en": "No checked official housing or living-cost source was added for this programme; values are intentionally withheld.",
+          "tr": "Bu program için kontrol edilmiş resmî konaklama veya yaşam gideri kaynağı eklenmedi; değerler bilinçli olarak gizlendi."
+        },
+        "living_cost_eur_per_month": null,
+        "housing_notes": null,
+        "average_room_rent_usd_per_month_min": null,
+        "average_room_rent_usd_per_month_max": null,
+        "average_room_rent_gbp_per_month_min": null,
+        "average_room_rent_gbp_per_month_max": null,
+        "average_room_rent_chf_per_month_min": null,
+        "average_room_rent_chf_per_month_max": null,
+        "average_room_rent_sek_per_month_min": null,
+        "average_room_rent_sek_per_month_max": null,
+        "average_room_rent_dkk_per_month_min": null,
+        "average_room_rent_dkk_per_month_max": null,
+        "monthly_housing_rent_usd_per_month_min": null,
+        "monthly_housing_rent_usd_per_month_max": null,
+        "monthly_housing_rent_gbp_per_month_min": null,
+        "monthly_housing_rent_gbp_per_month_max": null,
+        "monthly_housing_rent_chf_per_month_min": null,
+        "monthly_housing_rent_chf_per_month_max": null,
+        "monthly_housing_rent_sek_per_month_min": null,
+        "monthly_housing_rent_sek_per_month_max": null,
+        "monthly_housing_rent_dkk_per_month_min": null,
+        "monthly_housing_rent_dkk_per_month_max": null,
+        "housing_budget_usd_per_year": null,
+        "housing_budget_gbp_per_year": null,
+        "housing_budget_chf_per_year": null,
+        "housing_budget_sek_per_year": null,
+        "housing_budget_dkk_per_year": null,
+        "official_student_housing_budget_sek_per_month_examples": null,
+        "official_student_total_budget_sek_per_month_examples": null
       },
       "curriculum_profile": {
         "tracks": [],
@@ -1188,7 +1375,7 @@
           "September"
         ],
         "application_rounds": [],
-        "non_eu_deadline": "May",
+        "non_eu_deadline": null,
         "eu_deadline": "unknown",
         "scholarship_deadline": "unknown",
         "pre_enrolment_required": false,
@@ -1197,11 +1384,10 @@
         "application_result_timing": "",
         "enrollment_deadline": "",
         "timeline_risk": "minimal",
-        "deadline_notes": {
-          "en": "Variable depending on the Paris-Saclay inception portal. Usually closes around May for international students.",
-          "tr": "Paris-Saclay başvuru portalına bağlı olarak değişkendir. Uluslararası öğrenciler için genellikle Mayıs civarında kapanır."
-        },
-        "deadline_non_eu": "Late November (Round 1) with rolling rounds until June"
+        "deadline_notes": null,
+        "deadline_non_eu": "Late November (Round 1) with rolling rounds until June",
+        "winter_deadline": null,
+        "application_deadline": null
       },
       "student_sentiment_profile": {
         "student_satisfaction_score": null,
@@ -1261,29 +1447,69 @@
         }
       },
       "source_profile": {
-        "official_program_page": "https://www.universite-paris-saclay.fr/",
-        "official_admission_page": "",
+        "official_program_page": "https://www.universite-paris-saclay.fr/en/education/masters-degree/electrical-engineering/m2-smart-aerospace-and-autonomous-systems",
+        "official_admission_page": "https://www.universite-paris-saclay.fr/en/education/masters-degree/electrical-engineering/m2-smart-aerospace-and-autonomous-systems",
         "official_tuition_page": "",
         "official_scholarship_page": "",
-        "official_curriculum_page": "",
-        "official_department_page": "",
+        "official_curriculum_page": "https://www.universite-paris-saclay.fr/en/education/masters-degree/electrical-engineering/m2-smart-aerospace-and-autonomous-systems",
+        "official_department_page": "https://www.universite-paris-saclay.fr/graduate-schools/graduate-school-sciences-de-lingenierie-et-des-systemes-sis/les-parcours-de-master-graduate-school-sis",
         "official_lab_pages": [],
         "third_party_sources": [],
         "student_sentiment_sources": [],
-        "source_log": [],
-        "last_verified": "2026-07-11",
-        "needs_verification": false,
-        "verification_notes": "",
+        "source_log": [
+          {
+            "url": "https://www.universite-paris-saclay.fr/en/education/masters-degree/electrical-engineering/m2-smart-aerospace-and-autonomous-systems",
+            "title": "M2 Smart Aerospace and Autonomous Systems",
+            "source_type": "official_program_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-14",
+            "relevant_fields": [
+              "program_basic_info",
+              "program_status",
+              "language",
+              "admission",
+              "curriculum",
+              "application_deadline"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Current programme page: English-taught M2 with 2026 application windows and detailed course content.",
+              "tr": "Güncel program sayfası: İngilizce M2, 2026 başvuru dönemleri ve ayrıntılı ders içeriği."
+            }
+          },
+          {
+            "url": "https://www.universite-paris-saclay.fr/graduate-schools/graduate-school-sciences-de-lingenierie-et-des-systemes-sis/les-parcours-de-master-graduate-school-sis",
+            "title": "Graduate School SIS master's pathways",
+            "source_type": "official_department_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-14",
+            "relevant_fields": [
+              "program_status",
+              "research"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Lists SAAS among the current engineering master's pathways in aerospace/aeronautics-relevant areas.",
+              "tr": "SAAS'ı havacılık/uzayla ilgili güncel mühendislik yüksek lisans yolları arasında listeler."
+            }
+          }
+        ],
+        "last_verified": "2026-07-14",
+        "needs_verification": true,
+        "verification_notes": {
+          "en": "The programme name is aerospace-relevant, but current official 2026 fee, application and housing details were not revalidated in this pass; do not display old values as current.",
+          "tr": "Program adı havacılık/uzayla ilişkili olsa da güncel resmî ücret, başvuru ve konaklama ayrıntıları bu turda yeniden doğrulanmadı; eski değerler güncelmiş gibi gösterilmemelidir."
+        },
         "field_confidence": {
-          "program_basic_info": "high",
-          "language": "high",
-          "admission": "high",
-          "tuition": "high",
-          "scholarship": "high",
-          "curriculum": "high",
+          "program_basic_info": "medium",
+          "language": "unknown",
+          "admission": "unknown",
+          "tuition": "unknown",
+          "scholarship": "unknown",
+          "curriculum": "medium",
           "research": "high",
           "industry": "high",
-          "living": "high",
+          "living": "unknown",
           "student_sentiment": "medium"
         }
       },
@@ -1329,28 +1555,12 @@
         "failed_canary_tests": [],
         "remaining_verification_tasks": [
           {
-            "en": "Add a checked official source for program.",
-            "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
-            "en": "Add a checked official source for language.",
-            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
             "en": "Add a checked official source for tuition.",
             "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
           },
           {
             "en": "Add a checked official source for scholarship.",
             "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
-            "en": "Add a checked official source for curriculum.",
-            "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
-            "en": "Add a checked official source for admission.",
-            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
           }
         ],
         "qc_notes": {
@@ -1360,20 +1570,24 @@
       },
       "qs_ranking": 229,
       "data_quality": {
-        "status": "needs_verification",
-        "checked_official_source_count": 0,
-        "verified_fields": [],
-        "unverified_critical_fields": [
+        "status": "partial",
+        "checked_official_source_count": 2,
+        "verified_fields": [
           "program",
           "language",
-          "tuition",
-          "scholarship",
+          "admission",
           "curriculum",
-          "admission"
+          "research"
         ],
-        "has_checked_source_log": false,
+        "unverified_critical_fields": [
+          "tuition",
+          "scholarship"
+        ],
+        "has_checked_source_log": true,
         "audited_at": "2026-07-14"
-      }
+      },
+      "tuition_eur_per_year": null,
+      "annual_fee_eur": null
     }
   ]
 }

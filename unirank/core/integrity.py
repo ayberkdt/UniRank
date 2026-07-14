@@ -24,13 +24,15 @@ OFFICIAL_SOURCE_TYPES = {
     "official_housing_page",
     "official_visa_or_government_page",
     "official_industry_partner_page",
+    "official_university_policy_page",
+    "official_cost_of_living_page",
 }
 
 # A source type can support a field even when the older source log did not
 # include ``relevant_fields``.  It may *not* support unrelated fields.
 FIELD_SOURCE_TYPES = {
     "program": {"official_program_page", "official_admission_page"},
-    "language": {"official_program_page", "official_admission_page"},
+    "language": {"official_program_page", "official_admission_page", "official_university_policy_page"},
     "admission": {"official_admission_page", "official_program_page"},
     "non_eu_eligibility": {"official_admission_page", "official_visa_or_government_page"},
     "tuition": {"official_tuition_page"},
@@ -39,7 +41,10 @@ FIELD_SOURCE_TYPES = {
     "curriculum": {"official_curriculum_page", "official_program_page"},
     "research": {"official_department_page", "official_lab_page"},
     "industry": {"official_industry_partner_page"},
-    "housing": {"official_housing_page", "official_visa_or_government_page"},
+    # An official cost-of-attendance/financial-aid page can directly publish a
+    # housing allowance.  It is valid evidence for that budget figure, but
+    # must not be mistaken for a rent quote or an availability guarantee.
+    "housing": {"official_housing_page", "official_visa_or_government_page", "official_tuition_page", "official_cost_of_living_page"},
 }
 
 FIELD_ALIASES = {
@@ -157,6 +162,15 @@ def _clear_unverified_values(record: dict[str, Any], quality: dict[str, Any]) ->
             "regional_tax_eur",
             "student_contribution_eur",
             "enrollment_fee_eur",
+            "tuition_usd_per_year",
+            "tuition_usd_per_year_at_three_quarters",
+            "tuition_usd_per_quarter_nonresident_full_time",
+            "tuition_gbp_per_year",
+            "tuition_chf_per_year",
+            "tuition_sek_per_year",
+            "tuition_dkk_per_year",
+            "mandatory_fees_usd_per_year",
+            "total_cost_of_attendance_usd_per_year",
         ):
             profiles["cost"][key] = None
         record["tuition_eur_per_year"] = None
@@ -183,8 +197,44 @@ def _clear_unverified_values(record: dict[str, Any], quality: dict[str, Any]) ->
             "living_cost_eur_per_month",
             "housing_difficulty",
             "housing_notes",
+            "average_room_rent_usd_per_month_min",
+            "average_room_rent_usd_per_month_max",
+            "average_room_rent_gbp_per_month_min",
+            "average_room_rent_gbp_per_month_max",
+            "average_room_rent_chf_per_month_min",
+            "average_room_rent_chf_per_month_max",
+            "average_room_rent_sek_per_month_min",
+            "average_room_rent_sek_per_month_max",
+            "average_room_rent_dkk_per_month_min",
+            "average_room_rent_dkk_per_month_max",
+            "monthly_housing_rent_usd_per_month_min",
+            "monthly_housing_rent_usd_per_month_max",
+            "monthly_housing_rent_gbp_per_month_min",
+            "monthly_housing_rent_gbp_per_month_max",
+            "monthly_housing_rent_chf_per_month_min",
+            "monthly_housing_rent_chf_per_month_max",
+            "monthly_housing_rent_sek_per_month_min",
+            "monthly_housing_rent_sek_per_month_max",
+            "monthly_housing_rent_dkk_per_month_min",
+            "monthly_housing_rent_dkk_per_month_max",
+            "housing_budget_usd_per_year",
+            "housing_budget_gbp_per_year",
+            "housing_budget_chf_per_year",
+            "housing_budget_sek_per_year",
+            "housing_budget_dkk_per_year",
+            "official_student_housing_budget_sek_per_month_examples",
+            "official_student_total_budget_sek_per_month_examples",
         ):
             profiles["living"][key] = None
+        for key in (
+            "living_cost_usd_per_year_i20",
+            "living_cost_usd_per_year",
+            "living_cost_gbp_per_year",
+            "living_cost_chf_per_year",
+            "living_cost_sek_per_year",
+            "living_cost_dkk_per_year",
+        ):
+            profiles["cost"][key] = None
 
     record["language_profile"] = profiles["language"]
     record["cost_profile"] = profiles["cost"]
@@ -223,6 +273,24 @@ def apply_integrity_gate(record: dict[str, Any], *, strip_unverified: bool = Tru
     gated["student_sentiment_profile"] = sentiment
 
     source_profile = gated.setdefault("source_profile", {})
+    # A confidence label must never remain "high" after the evidence audit has
+    # found no checked official source for that field.  Keeping it would make a
+    # raw export look more certain than the public decision card.
+    confidence = source_profile.setdefault("field_confidence", {})
+    confidence_keys = {
+        "program": "program_basic_info",
+        "language": "language",
+        "admission": "admission",
+        "tuition": "tuition",
+        "scholarship": "scholarship",
+        "curriculum": "curriculum",
+        "deadline": "deadlines",
+        "housing": "housing",
+    }
+    for field in quality["unverified_critical_fields"]:
+        key = confidence_keys.get(field)
+        if key:
+            confidence[key] = "unknown"
     source_profile["needs_verification"] = quality["status"] != "verified"
     gated["data_quality"] = quality
     if strip_unverified:

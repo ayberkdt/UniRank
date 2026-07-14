@@ -1,8 +1,9 @@
-"""Audit the JSON data store and persist only its evidence metadata.
+"""Audit the JSON data store and persist its source-safe research state.
 
-This intentionally does not replace raw research values.  The API's integrity
-gate is the public safety boundary; this script records the audit outcome in
-the source files so that research work can be prioritised and reviewed.
+The API applies the same integrity gate at read time.  Persisting the gated
+state here prevents raw JSON from retaining high-stakes values that have no
+checked official evidence, so exports and future tooling cannot accidentally
+present them as facts.
 """
 
 from __future__ import annotations
@@ -18,7 +19,7 @@ ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from unirank.core.integrity import audit_record
+from unirank.core.integrity import apply_integrity_gate, audit_record
 
 
 DATABASE = ROOT / "data_base"
@@ -59,6 +60,12 @@ def main() -> None:
         if not records:
             continue
         for record in records:
+            # Keep the stored database as honest as the public API: an
+            # unsupported tuition, language, funding or housing value becomes
+            # explicitly unknown rather than a tempting but unsafe raw fact.
+            gated = apply_integrity_gate(record)
+            record.clear()
+            record.update(gated)
             quality = audit_record(record)
             quality["audited_at"] = TODAY
             record["data_quality"] = quality

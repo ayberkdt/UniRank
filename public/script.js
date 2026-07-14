@@ -14,7 +14,7 @@ function validateRecordShape(record) {
   if (!n.programName) issues.push("Missing program name");
   if (!n.country) issues.push("Missing country");
   if (!n.degree) issues.push("Missing degree");
-  if (!n.tuitionPerYear && !n.totalAcademicCost) issues.push("Missing tuition/cost");
+  if (!n.tuitionPerYear && !n.totalAcademicCost && !n.foreignTuition) issues.push("Missing tuition/cost");
 
   return issues;
 }
@@ -25,6 +25,27 @@ function formatMoney(amount) {
     if (isNaN(val)) return '—';
     if (val === 0) return window.t ? window.t('free') : 'Free';
     return '€' + val.toLocaleString('en-US');
+}
+
+function formatPublishedMoney(money) {
+    if (!money || money.amount === null || money.amount === undefined || !money.currency) return 'â€”';
+    const amount = Number(money.amount);
+    if (!Number.isFinite(amount)) return 'â€”';
+    const currency = String(money.currency).toUpperCase();
+    try {
+        return new Intl.NumberFormat('en-US', { style: 'currency', currency, maximumFractionDigits: 2 }).format(amount);
+    } catch {
+        return `${amount.toLocaleString('en-US')} ${currency}`;
+    }
+}
+
+function formatPublishedRange(range) {
+    if (!range || !range.currency || range.min === null || range.min === undefined) return 'â€”';
+    const start = formatPublishedMoney({ amount: range.min, currency: range.currency });
+    const end = range.max !== null && range.max !== undefined && Number(range.max) !== Number(range.min)
+        ? formatPublishedMoney({ amount: range.max, currency: range.currency })
+        : '';
+    return end ? `${start}–${end}` : start;
 }
 
 function escapeHtml(value) {
@@ -869,7 +890,9 @@ function renderTable() {
         const band = scoreBand(row._score);
         const confidence = confidenceLabel(n.confidenceSummary);
         const language = compactList(n.teachingLanguage) || (window.t ? window.t('unknown_value') : 'Unknown');
-        const annualCost = formatMoney(n.totalAcademicCost ?? n.tuitionPerYear);
+        const annualCost = n.totalAcademicCost !== null || n.tuitionPerYear !== null
+            ? formatMoney(n.totalAcademicCost ?? n.tuitionPerYear)
+            : formatPublishedMoney(n.foreignTuition);
         const city = displayValue(n.city);
         const degree = displayValue(n.degree);
         const admission = n.eligibleForNonEu === true
@@ -964,6 +987,8 @@ function openDrawer(data) {
         const publishedProgrammeFee = n.costDetails?.tuition_non_eu_full_program;
         const headlineCost = n.totalAcademicCost != null || n.tuitionPerYear != null
             ? formatMoney(n.totalAcademicCost ?? n.tuitionPerYear)
+            : n.foreignTuition
+                ? `${formatPublishedMoney(n.foreignTuition)}${n.foreignTuition.period === 'quarter' ? ` (${isTurkish ? 'dönem' : 'quarter'})` : ` (${isTurkish ? 'yıllık' : 'annual'})`}`
             : publishedProgrammeFee?.amount != null && publishedProgrammeFee?.currency
                 ? `${Number(publishedProgrammeFee.amount).toLocaleString('en-US')} ${publishedProgrammeFee.currency} (${isTurkish ? 'program toplamı' : 'full programme'})`
                 : '—';
@@ -1124,7 +1149,11 @@ function openDrawer(data) {
             ? `${Number(fullProgrammeFee.amount).toLocaleString('en-US')} ${escapeHtml(fullProgrammeFee.currency)}${isTurkish ? ' (tam program)' : ' (full programme)'}`
             : '';
         const tuitionText = tuitionVerified
-            ? (n.tuitionPerYear !== null ? `${formatMoney(n.tuitionPerYear)}${isTurkish ? ' / yıl' : ' / year'}` : (foreignProgrammeFee || (isTurkish ? 'Tutar EUR olarak yayımlanmıyor' : 'Amount is not published in EUR')))
+            ? (n.tuitionPerYear !== null
+                ? `${formatMoney(n.tuitionPerYear)}${isTurkish ? ' / yıl' : ' / year'}`
+                : n.foreignTuition
+                    ? `${formatPublishedMoney(n.foreignTuition)}${n.foreignTuition.period === 'quarter' ? (isTurkish ? ' / dönem' : ' / quarter') : (isTurkish ? ' / yıl' : ' / year')}`
+                    : (foreignProgrammeFee || (isTurkish ? 'Tutar yayımlanmış para biriminde belirtilmemiş' : 'Amount is not stated in a published currency')))
             : unknownMoney;
         const feeText = tuitionVerified && n.semesterFee !== null
             ? `${formatMoney(n.semesterFee)}${isTurkish ? ' / dönem' : ' / term'}`
@@ -1143,19 +1172,29 @@ function openDrawer(data) {
 
         const roomRentText = housingVerified && n.averageRoomRent !== null
             ? `${formatMoney(n.averageRoomRent)}${isTurkish ? ' / ay (oda)' : ' / month (room)'}`
+            : housingVerified && n.foreignRoomRent
+                ? `${formatPublishedRange(n.foreignRoomRent)}${isTurkish ? ' / ay (oda)' : ' / month (room)'}`
             : unknownMoney;
+        const housingAmountLabel = n.foreignRoomRent?.kind === 'housing_estimate'
+            ? (isTurkish ? 'Konut tahmini' : 'Housing estimate')
+            : (isTurkish ? 'Oda kirası' : 'Room rent');
         const monthlyLivingText = housingVerified && (n.monthlyLivingCostMin !== null || n.monthlyLivingCost !== null)
             ? (n.monthlyLivingCostMin !== null && n.monthlyLivingCostMax !== null
                 ? `${formatMoney(n.monthlyLivingCostMin)}–${formatMoney(n.monthlyLivingCostMax)}${isTurkish ? ' / ay' : ' / month'}`
                 : `${formatMoney(n.monthlyLivingCost ?? n.monthlyLivingCostMin)}${isTurkish ? ' / ay' : ' / month'}`)
+            : housingVerified && n.foreignMonthlyLivingBudget
+                ? `${formatPublishedRange(n.foreignMonthlyLivingBudget)}${isTurkish ? ' / ay' : ' / month'}`
             : unknownMoney;
         const livingHTML = `
             <div class="drawer-section premium-card">
                 <div class="premium-header"><span class="premium-icon">🏙️</span><h4 class="premium-title">${isTurkish ? 'Konaklama & Yaşam' : 'Housing & Living'}</h4></div>
                 <div class="premium-grid">
-                    <div class="premium-item"><label>${isTurkish ? 'Oda kirası' : 'Room rent'}</label><span class="finance-val">${roomRentText}</span></div>
+                    <div class="premium-item"><label>${housingAmountLabel}</label><span class="finance-val">${roomRentText}</span></div>
                     <div class="premium-item"><label>${isTurkish ? 'Aylık toplam yaşam bütçesi' : 'Monthly living budget'}</label><span class="finance-val">${monthlyLivingText}</span></div>
                     <div class="premium-item"><label>${isTurkish ? 'Konut bulma riski' : 'Housing availability risk'}</label>${housingVerified ? formatRiskBadge(n.housingDifficulty) : `<span class="risk-badge risk-unknown">${unknownMoney}</span>`}</div>
+                    ${housingVerified && n.foreignAnnualLivingBudget ? `<div class="premium-item"><label>${isTurkish ? 'Resmî yıllık yaşam bütçesi' : 'Official annual living budget'}</label><span class="finance-val">${formatPublishedMoney(n.foreignAnnualLivingBudget)}</span></div>` : ''}
+                    ${housingVerified && n.foreignAnnualHousingBudget ? `<div class="premium-item"><label>${isTurkish ? 'Resmî yıllık konut bütçesi' : 'Official annual housing budget'}</label><span class="finance-val">${formatPublishedMoney(n.foreignAnnualHousingBudget)}</span></div>` : ''}
+                    ${housingVerified && n.foreignMonthlyBudgetExamples ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Resmî öğrenci bütçesi örnekleri' : 'Official student budget examples'}</label><span>${n.foreignMonthlyBudgetExamples.values.map((value) => `${Number(value).toLocaleString('en-US')} ${n.foreignMonthlyBudgetExamples.currency}${isTurkish ? ' / ay' : ' / month'}`).join(' · ')}</span></div>` : ''}
                     ${n.monthlyLivingCostBasis ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Bütçe kapsamı' : 'Budget basis'}</label><span>${escapeHtml(displayValue(n.monthlyLivingCostBasis))}</span></div>` : ''}
                     ${n.livingDetails?.housing_notes ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Konut notu' : 'Housing note'}</label><span>${escapeHtml(displayValue(n.livingDetails.housing_notes))}</span></div>` : ''}
                 </div>

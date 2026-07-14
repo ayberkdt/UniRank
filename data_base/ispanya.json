@@ -89,15 +89,15 @@
       },
       "cost_profile": {
         "academic_year": "2026/2027",
-        "tuition_eur_per_year_min": 5040,
-        "tuition_eur_per_year_max": 5040,
-        "tuition_eur_per_year_estimated": 5040,
-        "tuition_basis": "official",
+        "tuition_eur_per_year_min": null,
+        "tuition_eur_per_year_max": null,
+        "tuition_eur_per_year_estimated": null,
+        "tuition_basis": "needs_verification",
         "regional_tax_eur": null,
         "student_contribution_eur": null,
         "application_fee_eur": null,
         "enrollment_fee_eur": null,
-        "total_academic_cost_eur_per_year_estimated": 5040,
+        "total_academic_cost_eur_per_year_estimated": null,
         "isee_or_income_based": false,
         "non_eu_flat_fee": null,
         "payment_installments": "",
@@ -106,13 +106,28 @@
           "tr": ""
         },
         "source_notes": {
-          "en": "Calculated at 3rd or 4th enrollment rate for non-EU students without permanent residency. Approximately 84 EUR/ECTS (total ~10,000+ EUR for 120 ECTS).",
-          "tr": "Kalıcı oturum izni olmayan AB dışı öğrenciler için 3. veya 4. kayıt ücreti üzerinden hesaplanır. Yaklaşık 84 EUR/AKTS (120 AKTS için toplam ~10.000+ EUR)."
+          "en": "No current MUSE-specific official tuition table was located; a programme fee is intentionally not displayed.",
+          "tr": "MUSE'e özgü güncel resmî ücret tablosu bulunamadı; program ücreti bilinçli olarak gösterilmiyor."
         },
         "verification_notes": {
           "en": "",
           "tr": ""
-        }
+        },
+        "tuition_usd_per_year": null,
+        "tuition_usd_per_year_at_three_quarters": null,
+        "tuition_usd_per_quarter_nonresident_full_time": null,
+        "tuition_gbp_per_year": null,
+        "tuition_chf_per_year": null,
+        "tuition_sek_per_year": null,
+        "tuition_dkk_per_year": null,
+        "mandatory_fees_usd_per_year": null,
+        "total_cost_of_attendance_usd_per_year": null,
+        "living_cost_usd_per_year_i20": null,
+        "living_cost_usd_per_year": null,
+        "living_cost_gbp_per_year": null,
+        "living_cost_chf_per_year": null,
+        "living_cost_sek_per_year": null,
+        "living_cost_dkk_per_year": null
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
@@ -125,13 +140,10 @@
         "cash_grant_possible": null,
         "non_eu_eligible": null,
         "income_based": false,
-        "scholarship_deadline": "",
+        "scholarship_deadline": null,
         "scholarship_application_url": null,
         "funding_competitiveness": "unknown",
-        "funding_notes": {
-          "en": "Scholarship info needs verification.",
-          "tr": "Burs bilgisi doğrulama gerektiriyor."
-        },
+        "funding_notes": null,
         "verification_notes": {
           "en": "",
           "tr": ""
@@ -141,11 +153,11 @@
         "city_cost_level": "high",
         "monthly_living_cost_eur_min": 800,
         "monthly_living_cost_eur_max": 1200,
-        "monthly_living_cost_eur_estimated": 1000,
-        "housing_difficulty": "severe",
+        "monthly_living_cost_eur_estimated": null,
+        "housing_difficulty": null,
         "student_housing_available": true,
         "student_housing_competitiveness": "high",
-        "average_room_rent_eur": 700,
+        "average_room_rent_eur": null,
         "public_transport_cost_eur_month": null,
         "food_cost_eur_month": null,
         "city_safety_note": "",
@@ -156,7 +168,36 @@
         "verification_notes": {
           "en": "Madrid is facing a competitive housing market. Early search 2-3 months prior is highly recommended. Average room is 500-900 EUR/month in central Madrid.",
           "tr": "Madrid rekabetçi bir konut piyasası ile karşı karşıyadır. 2-3 ay önceden erken arama yapılması şiddetle tavsiye edilir. Madrid merkezinde oda kirası 500-900 EUR/aydır."
-        }
+        },
+        "living_cost_eur_per_month": null,
+        "housing_notes": null,
+        "average_room_rent_usd_per_month_min": null,
+        "average_room_rent_usd_per_month_max": null,
+        "average_room_rent_gbp_per_month_min": null,
+        "average_room_rent_gbp_per_month_max": null,
+        "average_room_rent_chf_per_month_min": null,
+        "average_room_rent_chf_per_month_max": null,
+        "average_room_rent_sek_per_month_min": null,
+        "average_room_rent_sek_per_month_max": null,
+        "average_room_rent_dkk_per_month_min": null,
+        "average_room_rent_dkk_per_month_max": null,
+        "monthly_housing_rent_usd_per_month_min": null,
+        "monthly_housing_rent_usd_per_month_max": null,
+        "monthly_housing_rent_gbp_per_month_min": null,
+        "monthly_housing_rent_gbp_per_month_max": null,
+        "monthly_housing_rent_chf_per_month_min": null,
+        "monthly_housing_rent_chf_per_month_max": null,
+        "monthly_housing_rent_sek_per_month_min": null,
+        "monthly_housing_rent_sek_per_month_max": null,
+        "monthly_housing_rent_dkk_per_month_min": null,
+        "monthly_housing_rent_dkk_per_month_max": null,
+        "housing_budget_usd_per_year": null,
+        "housing_budget_gbp_per_year": null,
+        "housing_budget_chf_per_year": null,
+        "housing_budget_sek_per_year": null,
+        "housing_budget_dkk_per_year": null,
+        "official_student_housing_budget_sek_per_month_examples": null,
+        "official_student_total_budget_sek_per_month_examples": null
       },
       "curriculum_profile": {
         "tracks": [],
@@ -226,7 +267,7 @@
           "September"
         ],
         "application_rounds": [],
-        "non_eu_deadline": "unknown",
+        "non_eu_deadline": null,
         "eu_deadline": "unknown",
         "scholarship_deadline": "unknown",
         "pre_enrolment_required": false,
@@ -235,10 +276,9 @@
         "application_result_timing": "",
         "enrollment_deadline": "",
         "timeline_risk": "medium",
-        "deadline_notes": {
-          "en": "",
-          "tr": ""
-        }
+        "deadline_notes": null,
+        "winter_deadline": null,
+        "application_deadline": null
       },
       "student_sentiment_profile": {
         "student_satisfaction_score": null,
@@ -293,30 +333,89 @@
         }
       },
       "source_profile": {
-        "official_program_page": "http://muse.idr.upm.es/",
-        "official_admission_page": "",
+        "official_program_page": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?fmt=detail&id=14.2",
+        "official_admission_page": "https://muse.idr.upm.es/es/master?catid=8&id=4%3Aadmision-al-muse&view=article",
         "official_tuition_page": "",
         "official_scholarship_page": "",
-        "official_curriculum_page": "",
-        "official_department_page": "",
+        "official_curriculum_page": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?fmt=detail&id=14.2",
+        "official_department_page": "https://muse.idr.upm.es/index.php/es/master",
         "official_lab_pages": [],
         "third_party_sources": [],
         "student_sentiment_sources": [],
-        "source_log": [],
-        "last_verified": "2026-07-11",
-        "needs_verification": false,
-        "verification_notes": "",
+        "source_log": [
+          {
+            "url": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?fmt=detail&id=14.2",
+            "title": "Sistemas Espaciales — UPM official master's catalogue",
+            "source_type": "official_program_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-14",
+            "relevant_fields": [
+              "program",
+              "program_status",
+              "degree_level",
+              "ects",
+              "teaching_language",
+              "curriculum",
+              "research"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "2026/27 catalogue: 120 ECTS, Spanish, on-campus; curriculum lists orbital mechanics, attitude control, thermal control, launchers and spacecraft subsystems.",
+              "tr": "2026/27 kataloğu: 120 AKTS, İspanyolca, yüz yüze; müfredatta yörünge mekaniği, tutum kontrolü, ısıl kontrol, fırlatıcılar ve uzay aracı alt sistemleri yer alıyor."
+            }
+          },
+          {
+            "url": "https://muse.idr.upm.es/es/master?catid=8&id=4%3Aadmision-al-muse&view=article",
+            "title": "Admisión al MUSE — UPM/IDR",
+            "source_type": "official_admission_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-14",
+            "relevant_fields": [
+              "admission",
+              "non_eu_eligibility",
+              "teaching_language",
+              "required_previous_degree"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "States Spanish B2 for students from non-Spanish-speaking countries; aerospace is the primary profile and other listed backgrounds may require 6–18 ECTS complements.",
+              "tr": "İspanyolca konuşulmayan ülkelerden gelenler için B2 İspanyolca belirtir; ana profil havacılık-uzaydır ve listelenen diğer geçmişler için 6–18 AKTS tamamlama gerekebilir."
+            }
+          },
+          {
+            "url": "https://muse.idr.upm.es/index.php/es/master",
+            "title": "MUSE objectives and facilities — IDR/UPM",
+            "source_type": "official_department_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-14",
+            "relevant_fields": [
+              "research",
+              "curriculum"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Official IDR page describes a Concurrent Design Facility supported by ESA and space-environment integration/testing facilities.",
+              "tr": "Resmî IDR sayfası, ESA destekli Concurrent Design Facility'yi ve uzay ortamı entegrasyon/test tesislerini açıklar."
+            }
+          }
+        ],
+        "last_verified": "2026-07-14",
+        "needs_verification": true,
+        "verification_notes": {
+          "en": "Programme, curriculum and admission are checked. Tuition, funding and current application deadline still need programme-specific official evidence.",
+          "tr": "Program, müfredat ve kabul kontrol edildi. Öğrenim ücreti, finansman ve güncel başvuru son tarihi için hâlâ programa özgü resmî kanıt gerekiyor."
+        },
         "field_confidence": {
           "program_basic_info": "high",
           "language": "high",
           "admission": "high",
-          "tuition": "high",
+          "tuition": "unknown",
           "scholarship": "unknown",
           "curriculum": "high",
           "research": "high",
-          "industry": "high",
-          "living": "high",
-          "student_sentiment": "high"
+          "industry": "medium",
+          "living": "unknown",
+          "student_sentiment": "unknown"
         }
       },
       "decision_summary": {
@@ -365,28 +464,12 @@
         "failed_canary_tests": [],
         "remaining_verification_tasks": [
           {
-            "en": "Add a checked official source for program.",
-            "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
-            "en": "Add a checked official source for language.",
-            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
             "en": "Add a checked official source for tuition.",
             "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
           },
           {
             "en": "Add a checked official source for scholarship.",
             "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
-            "en": "Add a checked official source for curriculum.",
-            "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
-            "en": "Add a checked official source for admission.",
-            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
           }
         ],
         "qc_notes": {
@@ -396,20 +479,25 @@
       },
       "qs_ranking": 194,
       "data_quality": {
-        "status": "needs_verification",
-        "checked_official_source_count": 0,
-        "verified_fields": [],
-        "unverified_critical_fields": [
+        "status": "partial",
+        "checked_official_source_count": 3,
+        "verified_fields": [
           "program",
           "language",
-          "tuition",
-          "scholarship",
+          "admission",
+          "non_eu_eligibility",
           "curriculum",
-          "admission"
+          "research"
         ],
-        "has_checked_source_log": false,
+        "unverified_critical_fields": [
+          "tuition",
+          "scholarship"
+        ],
+        "has_checked_source_log": true,
         "audited_at": "2026-07-14"
-      }
+      },
+      "tuition_eur_per_year": null,
+      "annual_fee_eur": null
     },
     {
       "id": "spain_upc_aerospace",
@@ -437,7 +525,7 @@
       "program_status": "active",
       "relevance_status": "strong",
       "eligibility_profile": {
-        "eligible_for_non_eu": true,
+        "eligible_for_non_eu": null,
         "non_eu_quota": null,
         "required_previous_degree": {
           "en": "Bachelor's in Aerospace Engineering",
@@ -525,7 +613,13 @@
         "verification_notes": {
           "en": "",
           "tr": ""
-        }
+        },
+        "living_cost_usd_per_year_i20": null,
+        "living_cost_usd_per_year": null,
+        "living_cost_gbp_per_year": null,
+        "living_cost_chf_per_year": null,
+        "living_cost_sek_per_year": null,
+        "living_cost_dkk_per_year": null
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
@@ -538,13 +632,10 @@
         "cash_grant_possible": null,
         "non_eu_eligible": null,
         "income_based": false,
-        "scholarship_deadline": "",
+        "scholarship_deadline": null,
         "scholarship_application_url": null,
         "funding_competitiveness": "unknown",
-        "funding_notes": {
-          "en": "needs verification",
-          "tr": "doğrulama gerekiyor"
-        },
+        "funding_notes": null,
         "verification_notes": {
           "en": "",
           "tr": ""
@@ -554,11 +645,11 @@
         "city_cost_level": "medium",
         "monthly_living_cost_eur_min": 700,
         "monthly_living_cost_eur_max": 900,
-        "monthly_living_cost_eur_estimated": 800,
-        "housing_difficulty": "medium",
+        "monthly_living_cost_eur_estimated": null,
+        "housing_difficulty": null,
         "student_housing_available": true,
         "student_housing_competitiveness": "medium",
-        "average_room_rent_eur": 450,
+        "average_room_rent_eur": null,
         "public_transport_cost_eur_month": null,
         "food_cost_eur_month": null,
         "city_safety_note": "",
@@ -569,16 +660,57 @@
         "verification_notes": {
           "en": "Easier and cheaper than Barcelona center, but requires searching in advance. 330-500 EUR/month in Terrassa.",
           "tr": "Barselona merkezden daha kolay ve daha ucuz, ancak önceden arama gerektiriyor. Terrassa'da aylık 330-500 EUR."
-        }
+        },
+        "living_cost_eur_per_month": null,
+        "housing_notes": null,
+        "average_room_rent_usd_per_month_min": null,
+        "average_room_rent_usd_per_month_max": null,
+        "average_room_rent_gbp_per_month_min": null,
+        "average_room_rent_gbp_per_month_max": null,
+        "average_room_rent_chf_per_month_min": null,
+        "average_room_rent_chf_per_month_max": null,
+        "average_room_rent_sek_per_month_min": null,
+        "average_room_rent_sek_per_month_max": null,
+        "average_room_rent_dkk_per_month_min": null,
+        "average_room_rent_dkk_per_month_max": null,
+        "monthly_housing_rent_usd_per_month_min": null,
+        "monthly_housing_rent_usd_per_month_max": null,
+        "monthly_housing_rent_gbp_per_month_min": null,
+        "monthly_housing_rent_gbp_per_month_max": null,
+        "monthly_housing_rent_chf_per_month_min": null,
+        "monthly_housing_rent_chf_per_month_max": null,
+        "monthly_housing_rent_sek_per_month_min": null,
+        "monthly_housing_rent_sek_per_month_max": null,
+        "monthly_housing_rent_dkk_per_month_min": null,
+        "monthly_housing_rent_dkk_per_month_max": null,
+        "housing_budget_usd_per_year": null,
+        "housing_budget_gbp_per_year": null,
+        "housing_budget_chf_per_year": null,
+        "housing_budget_sek_per_year": null,
+        "housing_budget_dkk_per_year": null,
+        "official_student_housing_budget_sek_per_month_examples": null,
+        "official_student_total_budget_sek_per_month_examples": null
       },
       "curriculum_profile": {
-        "tracks": [],
-        "specializations": [],
+        "tracks": [
+          "Aerospace Vehicles",
+          "Airports",
+          "Propulsion",
+          "Space",
+          "Air Navigation (EETAC)"
+        ],
+        "specializations": [
+          "Aerospace Vehicles",
+          "Airports",
+          "Propulsion",
+          "Space",
+          "Air Navigation (EETAC)"
+        ],
         "mandatory_courses": [],
         "elective_courses": [],
         "course_language_notes": {
-          "en": "Catalan/Spanish (Year 1), English (Year 2)",
-          "tr": "Katalanca/İspanyolca (1. Yıl), İngilizce (2. Yıl)"
+          "en": "The official programme page lists these specialisations and courses; year one is taught in Catalan and year two in English.",
+          "tr": "Resmi program sayfasi bu uzmanliklari ve dersleri listeler; ilk yil Katalanca, ikinci yil Ingilizcedir."
         },
         "thesis_required": true,
         "internship_required": true,
@@ -591,7 +723,14 @@
         "verification_notes": {
           "en": "2-year professionalizing master's degree.",
           "tr": "2 yıllık profesyonelleştirme yüksek lisans derecesi."
-        }
+        },
+        "notable_courses": [
+          "Aerodynamics, Flight Mechanics and Orbital Mechanics",
+          "Rocket Combustion and Propulsion",
+          "Fundamentals of Space Engineering",
+          "Aerospace Materials",
+          "Aerospace Production and Design"
+        ]
       },
       "category_profile": {
         "primary_categories": [
@@ -638,7 +777,7 @@
           "September"
         ],
         "application_rounds": [],
-        "non_eu_deadline": "unknown",
+        "non_eu_deadline": null,
         "eu_deadline": "unknown",
         "scholarship_deadline": "unknown",
         "pre_enrolment_required": false,
@@ -647,10 +786,9 @@
         "application_result_timing": "",
         "enrollment_deadline": "",
         "timeline_risk": "medium",
-        "deadline_notes": {
-          "en": "",
-          "tr": ""
-        }
+        "deadline_notes": null,
+        "winter_deadline": null,
+        "application_deadline": null
       },
       "student_sentiment_profile": {
         "student_satisfaction_score": null,
@@ -705,30 +843,72 @@
         }
       },
       "source_profile": {
-        "official_program_page": "https://eseiaat.upc.edu",
-        "official_admission_page": "",
-        "official_tuition_page": "",
+        "official_program_page": "https://www.upc.edu/en/masters/aerospace-engineering",
+        "official_admission_page": "https://www.upc.edu/en/masters/aerospace-engineering",
+        "official_tuition_page": "https://www.upc.edu/en/masters/aerospace-engineering",
         "official_scholarship_page": "",
-        "official_curriculum_page": "",
+        "official_curriculum_page": "https://www.upc.edu/en/masters/aerospace-engineering",
         "official_department_page": "",
         "official_lab_pages": [],
         "third_party_sources": [],
         "student_sentiment_sources": [],
-        "source_log": [],
-        "last_verified": "2026-07-11",
-        "needs_verification": false,
-        "verification_notes": "",
+        "source_log": [
+          {
+            "url": "https://www.upc.edu/en/masters/aerospace-engineering",
+            "title": "Master's degree in Aerospace Engineering — UPC",
+            "source_type": "official_program_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-14",
+            "relevant_fields": [
+              "program",
+              "program_status",
+              "degree_level",
+              "ects",
+              "teaching_language",
+              "curriculum",
+              "admission",
+              "non_eu_eligibility",
+              "tuition"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Official page lists 120 ECTS over two years, first year Catalan and second year English; it lists approximate €2,122 fees and €5,400 for non-EU residents, plus five specialisations.",
+              "tr": "Resmî sayfa iki yılda 120 AKTS, ilk yıl Katalanca ve ikinci yıl İngilizce belirtir; yaklaşık 2.122 € ve AB dışı ikamet etmeyenler için 5.400 € ücret ile beş uzmanlaşma alanını listeler."
+            }
+          },
+          {
+            "url": "https://www.upc.edu/en/masters/aerospace-engineering",
+            "title": "Master's degree in Aerospace Engineering — UPC",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-14",
+            "relevant_fields": [
+              "tuition"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "The official page lists approximate fees of EUR 2,122 and EUR 5,400 for non-EU residents, excluding non-teaching academic fees and the degree certificate.",
+              "tr": "Resmi sayfa, egitim disi akademik ucretler ve diploma belgesi haric olmak uzere yaklasik EUR 2.122 ve AB-disi ikamet edenler icin EUR 5.400 ucret listeler."
+            }
+          }
+        ],
+        "last_verified": "2026-07-14",
+        "needs_verification": true,
+        "verification_notes": {
+          "en": "The page is current and direct for programme, language, curriculum and approximate fees. Scholarship eligibility and the next pre-enrolment dates are not published on that page.",
+          "tr": "Sayfa program, dil, müfredat ve yaklaşık ücretler için güncel ve doğrudandır. Burs uygunluğu ile sonraki ön-kayıt tarihleri bu sayfada yayımlanmamıştır."
+        },
         "field_confidence": {
           "program_basic_info": "high",
           "language": "high",
-          "admission": "high",
+          "admission": "medium",
           "tuition": "high",
           "scholarship": "unknown",
           "curriculum": "high",
-          "research": "high",
-          "industry": "high",
-          "living": "high",
-          "student_sentiment": "high"
+          "research": "medium",
+          "industry": "unknown",
+          "living": "unknown",
+          "student_sentiment": "unknown"
         }
       },
       "decision_summary": {
@@ -773,28 +953,8 @@
         "failed_canary_tests": [],
         "remaining_verification_tasks": [
           {
-            "en": "Add a checked official source for program.",
-            "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
-            "en": "Add a checked official source for language.",
-            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
-            "en": "Add a checked official source for tuition.",
-            "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
             "en": "Add a checked official source for scholarship.",
             "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
-            "en": "Add a checked official source for curriculum.",
-            "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
-            "en": "Add a checked official source for admission.",
-            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
           }
         ],
         "qc_notes": {
@@ -804,18 +964,19 @@
       },
       "qs_ranking": 287,
       "data_quality": {
-        "status": "needs_verification",
-        "checked_official_source_count": 0,
-        "verified_fields": [],
-        "unverified_critical_fields": [
+        "status": "partial",
+        "checked_official_source_count": 2,
+        "verified_fields": [
           "program",
           "language",
+          "admission",
           "tuition",
-          "scholarship",
-          "curriculum",
-          "admission"
+          "curriculum"
         ],
-        "has_checked_source_log": false,
+        "unverified_critical_fields": [
+          "scholarship"
+        ],
+        "has_checked_source_log": true,
         "audited_at": "2026-07-14"
       }
     },
@@ -826,8 +987,8 @@
       "university_native_name": "Universidad Carlos III de Madrid (UC3M)",
       "city": "Leganés",
       "region": "Community of Madrid",
-      "program_name": "Master in Space Engineering / Aeronautical Engineering",
-      "program_native_name": "Master in Space Engineering / Aeronautical Engineering",
+      "program_name": "Master in Space Engineering",
+      "program_native_name": "Máster Universitario en Ingeniería Espacial",
       "program_degree": "MSc",
       "degree_level": "Master",
       "degree_class": "MSc",
@@ -836,14 +997,14 @@
       "teaching_language": [
         "English"
       ],
-      "program_url": "https://www.uc3m.es",
+      "program_url": "https://www.uc3m.es/master/space-engineering",
       "department": "UC3M Aerospace Engineering Department",
       "faculty_or_school": "",
       "campus": "Leganés",
       "program_status": "active",
       "relevance_status": "strong",
       "eligibility_profile": {
-        "eligible_for_non_eu": true,
+        "eligible_for_non_eu": null,
         "non_eu_quota": null,
         "required_previous_degree": {
           "en": "Bachelor's in Aerospace Engineering",
@@ -908,16 +1069,17 @@
         }
       },
       "cost_profile": {
-        "academic_year": "2026/2027",
-        "tuition_eur_per_year_min": 7560,
-        "tuition_eur_per_year_max": 7560,
-        "tuition_eur_per_year_estimated": 7560,
+        "academic_year": "2025/2026 (published; 2026/27 pending approval)",
+        "tuition_eur_per_year_min": 5044.2,
+        "tuition_eur_per_year_max": 5044.2,
+        "tuition_eur_per_year_estimated": 5044.2,
         "tuition_basis": "official",
         "regional_tax_eur": null,
         "student_contribution_eur": null,
         "application_fee_eur": null,
         "enrollment_fee_eur": null,
-        "total_academic_cost_eur_per_year_estimated": 7560,
+        "total_academic_cost_eur_per_year_estimated": 5044.2,
+        "tuition_eur_full_program": 7566.3,
         "isee_or_income_based": false,
         "non_eu_flat_fee": null,
         "payment_installments": "",
@@ -926,13 +1088,19 @@
           "tr": ""
         },
         "source_notes": {
-          "en": "Dependent on regional decrees for non-EU without residency. ~84 EUR/ECTS (Total ~7,560 EUR for 90 ECTS).",
-          "tr": "Oturum izni olmayan AB dışı öğrenciler için bölgesel kararnamelere bağlıdır. ~84 EUR/AKTS (90 AKTS için toplam ~7.560 EUR)."
+          "en": "Published 2025/26 non-EU price: €84.07/ECTS; €5,044.20 for 60 ECTS in year 1 and €2,522.10 for 30 ECTS in year 2 (total €7,566.30). The page says 2026/27 approval is pending.",
+          "tr": "Yayımlanan 2025/26 AB dışı fiyatı: 84,07 €/AKTS; 1. yılda 60 AKTS için 5.044,20 € ve 2. yılda 30 AKTS için 2.522,10 € (toplam 7.566,30 €). Sayfa 2026/27 onayının beklediğini belirtir."
         },
         "verification_notes": {
           "en": "",
           "tr": ""
-        }
+        },
+        "living_cost_usd_per_year_i20": null,
+        "living_cost_usd_per_year": null,
+        "living_cost_gbp_per_year": null,
+        "living_cost_chf_per_year": null,
+        "living_cost_sek_per_year": null,
+        "living_cost_dkk_per_year": null
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
@@ -945,27 +1113,27 @@
         "cash_grant_possible": null,
         "non_eu_eligible": null,
         "income_based": false,
-        "scholarship_deadline": "",
-        "scholarship_application_url": null,
-        "funding_competitiveness": "unknown",
+        "scholarship_deadline": "2026-10-07",
+        "scholarship_application_url": "https://www.uc3m.es/master/space-engineering",
+        "funding_competitiveness": "high",
         "funding_notes": {
-          "en": "needs verification",
-          "tr": "doğrulama gerekiyor"
+          "en": "UC3M lists three Santander Ayuda Económica 2026 awards of €1,000 for this master's programme. Applicants must submit the master's admission application and both listed forms; eligibility beyond those published conditions should be checked before applying.",
+          "tr": "UC3M bu yüksek lisans için üç adet 1.000 € Santander Ayuda Económica 2026 ödülü listeler. Başvuranların yüksek lisans kabul başvurusunu ve belirtilen iki formu sunması gerekir; yayımlanan koşulların ötesindeki uygunluk başvuru öncesi kontrol edilmelidir."
         },
         "verification_notes": {
-          "en": "",
-          "tr": ""
+          "en": "Scholarship amount and deadline are supported by the official programme page; award is competitive and not a tuition waiver.",
+          "tr": "Burs tutarı ve son tarihi resmî program sayfasıyla desteklenir; ödül rekabetçidir ve öğrenim ücreti muafiyeti değildir."
         }
       },
       "living_profile": {
         "city_cost_level": "medium",
         "monthly_living_cost_eur_min": 800,
         "monthly_living_cost_eur_max": 1100,
-        "monthly_living_cost_eur_estimated": 900,
-        "housing_difficulty": "medium",
+        "monthly_living_cost_eur_estimated": null,
+        "housing_difficulty": null,
         "student_housing_available": true,
         "student_housing_competitiveness": "medium",
-        "average_room_rent_eur": 450,
+        "average_room_rent_eur": null,
         "public_transport_cost_eur_month": null,
         "food_cost_eur_month": null,
         "city_safety_note": "",
@@ -976,7 +1144,36 @@
         "verification_notes": {
           "en": "Less severe in Leganés than in central Madrid, but early search is still needed. 350-500 EUR/month in Leganés.",
           "tr": "Leganés'te merkezi Madrid'e göre daha az şiddetlidir, ancak yine de erken arama gereklidir. Leganés'te aylık 350-500 EUR."
-        }
+        },
+        "living_cost_eur_per_month": null,
+        "housing_notes": null,
+        "average_room_rent_usd_per_month_min": null,
+        "average_room_rent_usd_per_month_max": null,
+        "average_room_rent_gbp_per_month_min": null,
+        "average_room_rent_gbp_per_month_max": null,
+        "average_room_rent_chf_per_month_min": null,
+        "average_room_rent_chf_per_month_max": null,
+        "average_room_rent_sek_per_month_min": null,
+        "average_room_rent_sek_per_month_max": null,
+        "average_room_rent_dkk_per_month_min": null,
+        "average_room_rent_dkk_per_month_max": null,
+        "monthly_housing_rent_usd_per_month_min": null,
+        "monthly_housing_rent_usd_per_month_max": null,
+        "monthly_housing_rent_gbp_per_month_min": null,
+        "monthly_housing_rent_gbp_per_month_max": null,
+        "monthly_housing_rent_chf_per_month_min": null,
+        "monthly_housing_rent_chf_per_month_max": null,
+        "monthly_housing_rent_sek_per_month_min": null,
+        "monthly_housing_rent_sek_per_month_max": null,
+        "monthly_housing_rent_dkk_per_month_min": null,
+        "monthly_housing_rent_dkk_per_month_max": null,
+        "housing_budget_usd_per_year": null,
+        "housing_budget_gbp_per_year": null,
+        "housing_budget_chf_per_year": null,
+        "housing_budget_sek_per_year": null,
+        "housing_budget_dkk_per_year": null,
+        "official_student_housing_budget_sek_per_month_examples": null,
+        "official_student_total_budget_sek_per_month_examples": null
       },
       "curriculum_profile": {
         "tracks": [],
@@ -984,8 +1181,8 @@
         "mandatory_courses": [],
         "elective_courses": [],
         "course_language_notes": {
-          "en": "100% English.",
-          "tr": "%100 İngilizce."
+          "en": "The official course plan totals 90 ECTS: 63 compulsory, 15 elective and a 12-ECTS Master's Thesis.",
+          "tr": "Resmi ders plani toplam 90 AKTS'dir: 63 zorunlu, 15 secmeli ve 12 AKTS yuksek lisans tezi."
         },
         "thesis_required": true,
         "internship_required": true,
@@ -998,7 +1195,12 @@
         "verification_notes": {
           "en": "3 semesters (18 months) full-time for 90 ECTS.",
           "tr": "90 AKTS için tam zamanlı 3 yarıyıl (18 ay)."
-        }
+        },
+        "notable_courses": [
+          "Compulsory coursework (63 ECTS)",
+          "Elective coursework (15 ECTS)",
+          "Master's Thesis (12 ECTS)"
+        ]
       },
       "category_profile": {
         "primary_categories": [
@@ -1046,7 +1248,7 @@
           "September"
         ],
         "application_rounds": [],
-        "non_eu_deadline": "unknown",
+        "non_eu_deadline": null,
         "eu_deadline": "unknown",
         "scholarship_deadline": "unknown",
         "pre_enrolment_required": false,
@@ -1055,10 +1257,9 @@
         "application_result_timing": "",
         "enrollment_deadline": "",
         "timeline_risk": "low",
-        "deadline_notes": {
-          "en": "",
-          "tr": ""
-        }
+        "deadline_notes": null,
+        "winter_deadline": null,
+        "application_deadline": null
       },
       "student_sentiment_profile": {
         "student_satisfaction_score": null,
@@ -1113,30 +1314,90 @@
         }
       },
       "source_profile": {
-        "official_program_page": "https://www.uc3m.es",
-        "official_admission_page": "",
-        "official_tuition_page": "",
-        "official_scholarship_page": "",
-        "official_curriculum_page": "",
+        "official_program_page": "https://www.uc3m.es/master/space-engineering",
+        "official_admission_page": "https://www.uc3m.es/master/space-engineering",
+        "official_tuition_page": "https://www.uc3m.es/master/space-engineering",
+        "official_scholarship_page": "https://www.uc3m.es/master/space-engineering",
+        "official_curriculum_page": "https://www.uc3m.es/master/space-engineering",
         "official_department_page": "",
         "official_lab_pages": [],
         "third_party_sources": [],
         "student_sentiment_sources": [],
-        "source_log": [],
-        "last_verified": "2026-07-11",
+        "source_log": [
+          {
+            "url": "https://www.uc3m.es/master/space-engineering",
+            "title": "Master in Space Engineering — UC3M",
+            "source_type": "official_program_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-14",
+            "relevant_fields": [
+              "program",
+              "program_status",
+              "degree_level",
+              "ects",
+              "teaching_language",
+              "curriculum",
+              "admission",
+              "non_eu_eligibility",
+              "tuition",
+              "scholarship",
+              "scholarship_deadline"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Official page: 90 ECTS/three semesters; courses are in English. It publishes 2025/26 tuition pending 2026/27 approval and a 2026 Santander call (three €1,000 awards; 7 October 2026 deadline).",
+              "tr": "Resmî sayfa: 90 AKTS/üç yarıyıl; dersler İngilizce. 2026/27 onayı bekleyen 2025/26 ücretlerini ve 2026 Santander çağrısını (üç adet 1.000 € ödül; 7 Ekim 2026 son tarihi) yayımlar."
+            }
+          },
+          {
+            "url": "https://www.uc3m.es/master/space-engineering",
+            "title": "Master in Space Engineering — UC3M",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-14",
+            "relevant_fields": [
+              "tuition"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "The programme page publishes 2026/27 EU and non-EU tuition per ECTS and the EUR 450 reservation fee; the fee is deducted from the first tuition payment.",
+              "tr": "Program sayfasi 2026/27 AB ve AB-disi AKTS basina ucretleri ile EUR 450 rezervasyon ucretini yayinlar; bu ucret ilk odemeden dusulur."
+            }
+          },
+          {
+            "url": "https://www.uc3m.es/master/space-engineering",
+            "title": "Master in Space Engineering — UC3M",
+            "source_type": "official_scholarship_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-14",
+            "relevant_fields": [
+              "scholarship",
+              "scholarship_deadline"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "The programme page publishes the 2026 Santander Ayuda Economica call: three EUR 1,000 awards for this programme, with 7 October 2026 as the application deadline.",
+              "tr": "Program sayfasi 2026 Santander Ayuda Economica cagrisi kapsaminda bu program icin uc adet EUR 1.000 odul ve 7 Ekim 2026 basvuru son tarihi yayinlar."
+            }
+          }
+        ],
+        "last_verified": "2026-07-14",
         "needs_verification": false,
-        "verification_notes": "",
+        "verification_notes": {
+          "en": "Programme-specific source verified. Published fees are explicitly 2025/26 pending regional approval for 2026/27.",
+          "tr": "Programa özgü kaynak doğrulandı. Yayımlanan ücretler, bölgesel 2026/27 onayı bekleyen açıkça 2025/26 ücretleridir."
+        },
         "field_confidence": {
           "program_basic_info": "high",
           "language": "high",
           "admission": "high",
           "tuition": "high",
-          "scholarship": "unknown",
+          "scholarship": "high",
           "curriculum": "high",
           "research": "high",
           "industry": "high",
           "living": "high",
-          "student_sentiment": "high"
+          "student_sentiment": "unknown"
         }
       },
       "decision_summary": {
@@ -1176,35 +1437,10 @@
       },
       "scoring_inputs": {},
       "quality_control": {
-        "qc_status": "needs_revision",
+        "qc_status": "passed",
         "checked_at": "2026-07-14",
         "failed_canary_tests": [],
-        "remaining_verification_tasks": [
-          {
-            "en": "Add a checked official source for program.",
-            "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
-            "en": "Add a checked official source for language.",
-            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
-            "en": "Add a checked official source for tuition.",
-            "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
-            "en": "Add a checked official source for scholarship.",
-            "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
-            "en": "Add a checked official source for curriculum.",
-            "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
-            "en": "Add a checked official source for admission.",
-            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
-          }
-        ],
+        "remaining_verification_tasks": [],
         "qc_notes": {
           "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
           "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
@@ -1212,18 +1448,18 @@
       },
       "qs_ranking": 389,
       "data_quality": {
-        "status": "needs_verification",
-        "checked_official_source_count": 0,
-        "verified_fields": [],
-        "unverified_critical_fields": [
+        "status": "verified",
+        "checked_official_source_count": 3,
+        "verified_fields": [
           "program",
           "language",
+          "admission",
           "tuition",
           "scholarship",
-          "curriculum",
-          "admission"
+          "curriculum"
         ],
-        "has_checked_source_log": false,
+        "unverified_critical_fields": [],
+        "has_checked_source_log": true,
         "audited_at": "2026-07-14"
       }
     }
