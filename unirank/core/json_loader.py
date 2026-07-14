@@ -7,6 +7,7 @@ from dataclasses import dataclass, field
 from pydantic import ValidationError
 
 from unirank.core.schema import UniversityRecord
+from unirank.core.integrity import apply_integrity_gate
 
 @dataclass(frozen=True, slots=True)
 class LoadIssue:
@@ -105,6 +106,10 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
             
             # Intercept new 14-profile schema without Pydantic validation
             if "eligibility_profile" in entry and "cost_profile" in entry:
+                # Candidate records are useful for discovery, but costs,
+                # language and other high-stakes fields must be source-safe
+                # before reaching any UI or scoring path.
+                entry = apply_integrity_gate(entry)
                 # Unknown eligibility must remain visible and be marked for
                 # verification; only an explicit official false excludes a row.
                 if entry.get("eligibility_profile", {}).get("eligible_for_non_eu", True) is False:
@@ -207,6 +212,7 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
                     "decision_summary": entry.get("decision_summary", {}),
                     "scoring_inputs": entry.get("scoring_inputs", {}),
                     "quality_control": entry.get("quality_control", {}),
+                    "data_quality": entry.get("data_quality", {}),
                     "urls": entry.get("urls", {}),
                     "financials": entry.get("financials", {}),
                     "admission": entry.get("admission", {})
@@ -234,6 +240,8 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
                 continue
                 
             dump = model.model_dump(exclude_none=False)
+            integrity = apply_integrity_gate(entry)
+            quality = integrity.get("data_quality", {})
             
             # Extract main tuition float value heuristically for sorting
             tuition_eur = 0.0
@@ -347,6 +355,23 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
                 "source_file": file.name,
                 "updated_at": model.Meta_Updated_At or ""
             }
+            # Legacy records cannot establish a checked field source merely by
+            # carrying a URL.  Keep them searchable as candidates while
+            # suppressing unsupported decision values in the public payload.
+            if "tuition" not in quality.get("verified_fields", []):
+                row["tuition_eur_per_year"] = None
+                row["annual_fee_eur"] = None
+                row["semester_fee_eur"] = None
+            if "language" not in quality.get("verified_fields", []):
+                row["language_req"] = ""
+            if "deadline" not in quality.get("verified_fields", []):
+                row["deadline_winter_closes"] = ""
+                row["deadline_summer_closes"] = ""
+                row["deadlines_note"] = ""
+            row["needs_verification"] = True
+            row["source_profile"] = integrity.get("source_profile", {})
+            row["student_sentiment_profile"] = integrity.get("student_sentiment_profile", {})
+            row["data_quality"] = quality
             rows.append(row)
             report.records_loaded += 1
             

@@ -118,7 +118,7 @@
       ]
     },
     "student_sentiment_profile": {
-      "student_satisfaction_score": 80,
+      "student_satisfaction_score": null,
       "workload_sentiment": "Yoğun ve çok teorik. Sınav yapısı son derece zorlu olup genellikle dönem sonunda tüm müfredatı kapsıyor.",
       "teaching_quality_sentiment": "Güçlü bir teorik temele dayanan yüksek kalite; çok saygın ve aranan mezunlar veriyor.",
       "administration_sentiment": "",
@@ -144,8 +144,11 @@
           "url": "https://www.reddit.com/search/?q=Politecnico+di+Milano+aerospace"
         }
       ],
-      "sentiment_confidence": "high",
-      "verification_notes": ""
+      "sentiment_confidence": "unknown",
+      "verification_notes": {
+        "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+        "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+      }
     },
     "application_timeline_profile": {
       "application_period": "Winter",
@@ -204,7 +207,56 @@
       "living_quality": 80
     },
     "location": {},
-    "qs_ranking": 111
+    "qs_ranking": 111,
+    "data_quality": {
+      "status": "needs_verification",
+      "checked_official_source_count": 0,
+      "verified_fields": [],
+      "unverified_critical_fields": [
+        "program",
+        "language",
+        "tuition",
+        "scholarship",
+        "curriculum",
+        "admission"
+      ],
+      "has_checked_source_log": false,
+      "audited_at": "2026-07-14"
+    },
+    "quality_control": {
+      "checked_at": "2026-07-14",
+      "qc_status": "needs_revision",
+      "remaining_verification_tasks": [
+        {
+          "en": "Add a checked official source for program.",
+          "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for language.",
+          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for tuition.",
+          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for curriculum.",
+          "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        }
+      ],
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
+    }
   },
   {
     "id": "it-polito-aero-msc",
@@ -324,7 +376,7 @@
       ]
     },
     "student_sentiment_profile": {
-      "student_satisfaction_score": 80,
+      "student_satisfaction_score": null,
       "workload_sentiment": "Yüksek teorik yüküyle olağanüstü derecede zorlayıcı. Dönem boyunca çok düzenli ve tutarlı çalışmayı gerektiriyor.",
       "teaching_quality_sentiment": "Son derece akademik bir eğitim sunuyor ancak kalite profesörden profesöre değişebiliyor. Sınıfların (amfilerin) çok kalabalık olduğundan şikayet ediliyor.",
       "administration_sentiment": "",
@@ -350,8 +402,11 @@
           "url": "https://www.reddit.com/search/?q=Politecnico+di+Torino+aerospace"
         }
       ],
-      "sentiment_confidence": "high",
-      "verification_notes": ""
+      "sentiment_confidence": "unknown",
+      "verification_notes": {
+        "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+        "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+      }
     },
     "application_timeline_profile": {
       "application_period": "Winter",
@@ -410,7 +465,56 @@
       "living_quality": 80
     },
     "location": {},
-    "qs_ranking": 252
+    "qs_ranking": 252,
+    "data_quality": {
+      "status": "needs_verification",
+      "checked_official_source_count": 0,
+      "verified_fields": [],
+      "unverified_critical_fields": [
+        "program",
+        "language",
+        "tuition",
+        "scholarship",
+        "curriculum",
+        "admission"
+      ],
+      "has_checked_source_log": false,
+      "audited_at": "2026-07-14"
+    },
+    "quality_control": {
+      "checked_at": "2026-07-14",
+      "qc_status": "needs_revision",
+      "remaining_verification_tasks": [
+        {
+          "en": "Add a checked official source for program.",
+          "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for language.",
+          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for tuition.",
+          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for curriculum.",
+          "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        }
+      ],
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
+    }
   },
   {
     "id": "it-sapienza-aero-msc",
@@ -528,7 +632,7 @@
       ]
     },
     "student_sentiment_profile": {
-      "student_satisfaction_score": 80,
+      "student_satisfaction_score": null,
       "workload_sentiment": "Güçlü teorik odaklanmayla birlikte ağır bir iş yükü. Sınavlar çoğunlukla sözlü mülakat şeklinde yapılıyor.",
       "teaching_quality_sentiment": "Özellikle uzay sektöründe, İtalyan Uzay Ajansı (ASI) ile derin bağlantıları sayesinde çok güçlü bir üne sahip.",
       "administration_sentiment": "",
@@ -554,8 +658,11 @@
           "url": "https://www.reddit.com/search/?q=Sapienza+University+of+Rome+aerospace"
         }
       ],
-      "sentiment_confidence": "high",
-      "verification_notes": ""
+      "sentiment_confidence": "unknown",
+      "verification_notes": {
+        "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+        "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+      }
     },
     "application_timeline_profile": {
       "application_period": "Winter",
@@ -615,7 +722,56 @@
       "living_quality": 80
     },
     "location": {},
-    "qs_ranking": 134
+    "qs_ranking": 134,
+    "data_quality": {
+      "status": "needs_verification",
+      "checked_official_source_count": 0,
+      "verified_fields": [],
+      "unverified_critical_fields": [
+        "program",
+        "language",
+        "tuition",
+        "scholarship",
+        "curriculum",
+        "admission"
+      ],
+      "has_checked_source_log": false,
+      "audited_at": "2026-07-14"
+    },
+    "quality_control": {
+      "checked_at": "2026-07-14",
+      "qc_status": "needs_revision",
+      "remaining_verification_tasks": [
+        {
+          "en": "Add a checked official source for program.",
+          "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for language.",
+          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for tuition.",
+          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for curriculum.",
+          "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        }
+      ],
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
+    }
   },
   {
     "id": "it-bologna-aero-msc",
@@ -775,7 +931,56 @@
       },
       "last_verified": "2026-07-11"
     },
-    "qs_ranking": 154
+    "qs_ranking": 154,
+    "data_quality": {
+      "status": "needs_verification",
+      "checked_official_source_count": 0,
+      "verified_fields": [],
+      "unverified_critical_fields": [
+        "program",
+        "language",
+        "tuition",
+        "scholarship",
+        "curriculum",
+        "admission"
+      ],
+      "has_checked_source_log": false,
+      "audited_at": "2026-07-14"
+    },
+    "quality_control": {
+      "checked_at": "2026-07-14",
+      "qc_status": "needs_revision",
+      "remaining_verification_tasks": [
+        {
+          "en": "Add a checked official source for program.",
+          "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for language.",
+          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for tuition.",
+          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for curriculum.",
+          "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        }
+      ],
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
+    }
   },
   {
     "id": "it-padova-aero-msc",
@@ -792,7 +997,7 @@
     "program_native_name": "M.Sc. Aerospace Engineering",
     "program_degree": "MSc",
     "degree_level": "MSc",
-    "duration_years": 2.0,
+    "duration_years": 2,
     "ects": 120,
     "teaching_language": [
       "English"
@@ -802,7 +1007,9 @@
     "relevance_status": "highly_relevant",
     "eligibility_profile": {
       "eligible_for_non_eu": true,
-      "required_previous_degree": "Bachelor's degree in relevant engineering field",
+      "required_previous_degree": [
+        "Aerospace Engineering or related field with skills in mathematics, physics, industrial engineering, aerospace systems, aerodynamics and flight dynamics"
+      ],
       "required_ects": {
         "total": "Verified ECTS required at application"
       },
@@ -818,16 +1025,16 @@
         "English"
       ],
       "english_required": true,
-      "english_level_required": "B2 (IELTS 6.0, TOEFL iBT 80, PTE 65)",
+      "english_level_required": "B2 CEFR or equivalent",
       "mixed_language_warning": null,
-      "language_risk": "Low",
+      "language_risk": "low",
       "verification_notes": ""
     },
     "cost_profile": {
       "academic_year": "2024/2025",
       "tuition_eur_per_year_min": 0,
-      "tuition_eur_per_year_max": 3000,
-      "tuition_eur_per_year_estimated": 0,
+      "tuition_eur_per_year_max": 2900,
+      "tuition_eur_per_year_estimated": null,
       "tuition_basis": "official",
       "non_eu_flat_fee": null,
       "source_notes": "",
@@ -837,7 +1044,12 @@
       "total_first_year_cost_eur": null,
       "scholarship_availability": "Available (ESU Padova)",
       "scholarship_risk": "Low",
-      "verification_notes": ""
+      "verification_notes": "",
+      "cost_academic_year": "2025/26",
+      "cost_notes": {
+        "en": "Official brochure states annual fees up to €2,900 for 2025/26; confirm the new fee notice before applying.",
+        "tr": "Resmi broşür 2025/26 için yıllık ücretin €2.900'a kadar olduğunu belirtir; başvuru öncesi yeni ücret duyurusunu doğrulayın."
+      }
     },
     "scholarship_profile": {
       "available_types": [
@@ -848,7 +1060,11 @@
         "Merit and income-based. Benefit package valued at approx €7,015. Application deadline is late September."
       ],
       "external_options": [],
-      "verification_notes": ""
+      "verification_notes": "",
+      "funding_notes": {
+        "en": "International scholarships and fee waivers are advertised; eligibility is call-specific.",
+        "tr": "Uluslararası burslar ve ücret muafiyetleri duyurulur; uygunluk çağrı bazındadır."
+      }
     },
     "living_profile": {
       "city_type": "Medium",
@@ -878,7 +1094,19 @@
       "thesis_type": "Research/Academic",
       "flexibility": "unknown",
       "curriculum_risk": "Low",
-      "verification_notes": ""
+      "verification_notes": "",
+      "tracks": [
+        "Space",
+        "Aeronautics"
+      ],
+      "notable_courses": [
+        "Advanced Aerodynamics",
+        "Space Propulsion",
+        "Astrodynamics",
+        "Spacecraft Attitude Dynamics and Control",
+        "Laboratory of Computational Fluid Dynamics",
+        "Aerospace Structures Laboratory"
+      ]
     },
     "category_profile": {
       "primary_categories": [],
@@ -886,10 +1114,13 @@
       "technical_focus": "",
       "verification_notes": "",
       "normalized_tags": [
-        "Aerodynamics",
-        "Space Systems",
-        "Propulsion",
-        "Structures"
+        "space_systems",
+        "orbital_mechanics",
+        "spacecraft_gnc",
+        "propulsion",
+        "aerodynamics",
+        "computational_fluid_dynamics",
+        "aerospace_structures"
       ]
     },
     "application_timeline_profile": {
@@ -930,16 +1161,97 @@
     },
     "source_profile": {
       "field_confidence": {
-        "tuition": "high",
-        "scholarship": "high",
+        "tuition": "medium",
+        "scholarship": "medium",
         "curriculum": "high",
         "eligibility": "high",
         "living": "medium",
-        "student_sentiment": "low"
+        "student_sentiment": "low",
+        "program_basic_info": "high",
+        "language": "high",
+        "admission": "high"
       },
-      "last_verified": "2026-07-11"
+      "last_verified": "2026-07-14",
+      "source_log": [
+        {
+          "url": "https://web.unipd.it/international/wp-content/uploads/2025/01/Aerospace-Engineering_2526.pdf",
+          "title": "University of Padua Aerospace Engineering 2025/26 brochure",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "program",
+            "language",
+            "admission",
+            "curriculum"
+          ],
+          "confidence": "high",
+          "notes": "PDF is for academic year 2025/26; fee must be rechecked for the next cycle."
+        },
+        {
+          "url": "https://web.unipd.it/international/wp-content/uploads/2025/01/Aerospace-Engineering_2526.pdf",
+          "title": "University of Padua 2025/26 fees and funding brochure",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "tuition"
+          ],
+          "confidence": "high",
+          "notes": "PDF is for academic year 2025/26; fee must be rechecked for the next cycle."
+        },
+        {
+          "url": "https://web.unipd.it/international/wp-content/uploads/2025/01/Aerospace-Engineering_2526.pdf",
+          "title": "University of Padua 2025/26 scholarships and fee-waivers brochure",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "scholarship"
+          ],
+          "confidence": "high",
+          "notes": "PDF is for academic year 2025/26; eligibility is call-specific."
+        },
+        {
+          "url": "https://academics.dii.unipd.it/aerospaceengineering/what-subjects-are-studied-and-how-msc/",
+          "title": "University of Padua Aerospace Engineering MSc curriculum",
+          "source_type": "official_curriculum_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "curriculum"
+          ],
+          "confidence": "high",
+          "notes": ""
+        }
+      ],
+      "needs_verification": true
     },
-    "qs_ranking": 219
+    "qs_ranking": 219,
+    "data_quality": {
+      "status": "partial",
+      "checked_official_source_count": 4,
+      "verified_fields": [
+        "program",
+        "language",
+        "admission",
+        "tuition",
+        "scholarship",
+        "curriculum"
+      ],
+      "unverified_critical_fields": [],
+      "has_checked_source_log": true,
+      "audited_at": "2026-07-14"
+    },
+    "quality_control": {
+      "checked_at": "2026-07-14",
+      "qc_status": "needs_revision",
+      "remaining_verification_tasks": [],
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
+    }
   },
   {
     "id": "it-pisa-aero-msc",
@@ -1099,7 +1411,56 @@
       },
       "last_verified": "2026-07-11"
     },
-    "qs_ranking": 291
+    "qs_ranking": 291,
+    "data_quality": {
+      "status": "needs_verification",
+      "checked_official_source_count": 0,
+      "verified_fields": [],
+      "unverified_critical_fields": [
+        "program",
+        "language",
+        "tuition",
+        "scholarship",
+        "curriculum",
+        "admission"
+      ],
+      "has_checked_source_log": false,
+      "audited_at": "2026-07-14"
+    },
+    "quality_control": {
+      "checked_at": "2026-07-14",
+      "qc_status": "needs_revision",
+      "remaining_verification_tasks": [
+        {
+          "en": "Add a checked official source for program.",
+          "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for language.",
+          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for tuition.",
+          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for curriculum.",
+          "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        }
+      ],
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
+    }
   },
   {
     "id": "it-naples-aero-msc",
@@ -1262,7 +1623,56 @@
       },
       "last_verified": "2026-07-11"
     },
-    "qs_ranking": 589
+    "qs_ranking": 589,
+    "data_quality": {
+      "status": "needs_verification",
+      "checked_official_source_count": 0,
+      "verified_fields": [],
+      "unverified_critical_fields": [
+        "program",
+        "language",
+        "tuition",
+        "scholarship",
+        "curriculum",
+        "admission"
+      ],
+      "has_checked_source_log": false,
+      "audited_at": "2026-07-14"
+    },
+    "quality_control": {
+      "checked_at": "2026-07-14",
+      "qc_status": "needs_revision",
+      "remaining_verification_tasks": [
+        {
+          "en": "Add a checked official source for program.",
+          "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for language.",
+          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for tuition.",
+          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for curriculum.",
+          "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        }
+      ],
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
+    }
   },
   {
     "id": "politecnico-di-bari",
@@ -1421,7 +1831,56 @@
       },
       "last_verified": "2026-07-11"
     },
-    "qs_ranking": 225
+    "qs_ranking": 225,
+    "data_quality": {
+      "status": "needs_verification",
+      "checked_official_source_count": 0,
+      "verified_fields": [],
+      "unverified_critical_fields": [
+        "program",
+        "language",
+        "tuition",
+        "scholarship",
+        "curriculum",
+        "admission"
+      ],
+      "has_checked_source_log": false,
+      "audited_at": "2026-07-14"
+    },
+    "quality_control": {
+      "checked_at": "2026-07-14",
+      "qc_status": "needs_revision",
+      "remaining_verification_tasks": [
+        {
+          "en": "Add a checked official source for program.",
+          "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for language.",
+          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for tuition.",
+          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for curriculum.",
+          "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        }
+      ],
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
+    }
   },
   {
     "id": "universita-del-salento",
@@ -1582,7 +2041,56 @@
       },
       "last_verified": "2026-07-11"
     },
-    "qs_ranking": 325
+    "qs_ranking": 325,
+    "data_quality": {
+      "status": "needs_verification",
+      "checked_official_source_count": 0,
+      "verified_fields": [],
+      "unverified_critical_fields": [
+        "program",
+        "language",
+        "tuition",
+        "scholarship",
+        "curriculum",
+        "admission"
+      ],
+      "has_checked_source_log": false,
+      "audited_at": "2026-07-14"
+    },
+    "quality_control": {
+      "checked_at": "2026-07-14",
+      "qc_status": "needs_revision",
+      "remaining_verification_tasks": [
+        {
+          "en": "Add a checked official source for program.",
+          "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for language.",
+          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for tuition.",
+          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for curriculum.",
+          "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        }
+      ],
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
+    }
   },
   {
     "id": "universita-degli-studi-di-palermo",
@@ -1743,6 +2251,55 @@
       },
       "last_verified": "2026-07-11"
     },
-    "qs_ranking": 417
+    "qs_ranking": 417,
+    "data_quality": {
+      "status": "needs_verification",
+      "checked_official_source_count": 0,
+      "verified_fields": [],
+      "unverified_critical_fields": [
+        "program",
+        "language",
+        "tuition",
+        "scholarship",
+        "curriculum",
+        "admission"
+      ],
+      "has_checked_source_log": false,
+      "audited_at": "2026-07-14"
+    },
+    "quality_control": {
+      "checked_at": "2026-07-14",
+      "qc_status": "needs_revision",
+      "remaining_verification_tasks": [
+        {
+          "en": "Add a checked official source for program.",
+          "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for language.",
+          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for tuition.",
+          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for curriculum.",
+          "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        }
+      ],
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
+    }
   }
 ]

@@ -252,9 +252,9 @@
       "workload_sentiment": "Öğrenciler tarafından 'hayatta kalma modu' olarak adlandırılıyor. Üniversite öğrencilere bilgi beslemesi (spoon-feed) yapmaz. İlk yılki 'GOP' (Grundlagen- und Orientierungsprüfung) sınavları devasa bir filtre görevi görür ve çok sayıda öğrenci elenir.",
       "housing_sentiment": "Münih konut piyasası bir kriz durumunda. Garching kampüsüne yakın yerlerde 800-900 EUR'nun altında oda bulmak imkansıza yakın. Studierendenwerk (devlet yurdu) bekleme süreleri 6-12 ayı bulabiliyor.",
       "teaching_quality_sentiment": "High quality but demands strong self-accountability. Very theoretical with high industry relevance.",
-      "student_satisfaction_score": 68,
+      "student_satisfaction_score": null,
       "sentiment_summary": "Kariyer olanakları ve Bavyera endüstrisi (Bavarian Space Valley) mükemmel olsa da, yıllık 12.000 EUR yeni harç ücreti ve konut krizinin yarattığı stres göz önüne alınmalıdır.",
-      "sentiment_confidence": "high",
+      "sentiment_confidence": "unknown",
       "student_sentiment_summary": {
         "en": "Extreme prestige and fantastic entrepreneurship culture, but brutal theoretical difficulty ('hard to get in, harder to stay in'). Munich's severe housing crisis and living costs are major pain points.",
         "tr": "Muazzam bir prestij ve harika bir girişimcilik kültürü sunuyor, ancak aşırı teorik zorluğu ile biliniyor ('girmesi zor, kalması daha zor' ekolü). Münih'teki ciddi barınma krizi ve yaşam maliyetleri en büyük sıkıntılar."
@@ -276,26 +276,48 @@
           "source": "Reddit",
           "url": "https://eksisozluk.com"
         }
-      ]
+      ],
+      "verification_notes": {
+        "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+        "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+      }
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-10",
+      "checked_at": "2026-07-14",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
       "remaining_verification_tasks": [
-        "Recheck every official source URL and record access_status/relevant_fields.",
-        "Verify tuition and additional fees from a checked official source.",
-        "Verify teaching language and language requirements from an official source.",
-        "Verify admission requirements and non-EU eligibility from an official source.",
-        "Verify scholarship names, eligibility and deadlines from an official source.",
-        "Verify current application deadlines from an official source.",
-        "Verify curriculum, tracks and courses before assigning categories.",
-        "Verify department/lab/research claims from official sources.",
-        "Verify industry partnerships separately from geographic proximity."
+        {
+          "en": "Add a checked official source for program.",
+          "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for language.",
+          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for tuition.",
+          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for curriculum.",
+          "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        }
       ],
-      "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
     },
     "urls": {
       "program": "https://www.tum.de/en/studies/degree-programs/detail/aerospace-master-of-science-msc",
@@ -313,6 +335,21 @@
         "required_ects": "140-180 ECTS completed from Bachelor's at application time",
         "language_requirements": "English (IELTS 6.5, TOEFL iBT 88) OR German (DSH 2, TestDaF TDN 4)"
       }
+    },
+    "data_quality": {
+      "status": "needs_verification",
+      "checked_official_source_count": 0,
+      "verified_fields": [],
+      "unverified_critical_fields": [
+        "program",
+        "language",
+        "tuition",
+        "scholarship",
+        "curriculum",
+        "admission"
+      ],
+      "has_checked_source_log": false,
+      "audited_at": "2026-07-14"
     }
   },
   {
@@ -332,7 +369,9 @@
     "degree_level": "Master",
     "duration_years": 2,
     "ects": 120,
-    "teaching_language": [],
+    "teaching_language": [
+      "German"
+    ],
     "program_url": "https://www.uni-stuttgart.de/en/study/study-programs/program/Aerospace-Engineering-M.Sc./",
     "program_status": "active",
     "relevance_status": "highly_relevant",
@@ -346,11 +385,13 @@
       "verification_notes": "Admission facts were not retained without a checked official source."
     },
     "language_profile": {
-      "teaching_language": [],
+      "teaching_language": [
+        "German"
+      ],
       "mixed_language_warning": "Often heavily German-taught, verify language requirements.",
       "english_required": null,
       "english_level_required": null,
-      "language_risk": "Bilinmiyor / Resmi Veri Yok",
+      "language_risk": "high",
       "verification_notes": "Teaching language was not retained without a checked official source."
     },
     "cost_profile": {
@@ -371,7 +412,13 @@
     "curriculum_profile": {
       "specializations": [],
       "thesis_required": null,
-      "tracks": [],
+      "tracks": [
+        "Space flight technology and space utilization",
+        "Experimental and numerical simulation methods",
+        "System dynamics and automation engineering",
+        "Drive and energy systems",
+        "Artificial Intelligence in Aerospace Engineering"
+      ],
       "mandatory_courses": [],
       "elective_courses": [],
       "internship_required": null,
@@ -379,7 +426,7 @@
     },
     "source_profile": {
       "official_program_page": "https://www.uni-stuttgart.de/en/study/study-programs/program/Aerospace-Engineering-M.Sc./",
-      "last_verified": "2026-06-24",
+      "last_verified": "2026-07-14",
       "needs_verification": true,
       "field_confidence": {
         "tuition": "high",
@@ -389,7 +436,10 @@
         "research_profile": "high",
         "industry_ecosystem_profile": "high",
         "living_profile": "medium",
-        "application_timeline_profile": "high"
+        "application_timeline_profile": "high",
+        "language": "high",
+        "research": "high",
+        "deadlines": "medium"
       },
       "source_log": [
         {
@@ -403,6 +453,46 @@
           ],
           "confidence": "Bilinmiyor / Resmi Veri Yok",
           "notes": "Existing source retained but not rechecked in this audit."
+        },
+        {
+          "url": "https://www.uni-stuttgart.de/en/study/study-programs/Aerospace-Engineering-M.Sc-00001./",
+          "title": "University of Stuttgart Aerospace Engineering M.Sc.",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "program",
+            "language",
+            "deadline",
+            "curriculum",
+            "research"
+          ],
+          "confidence": "high",
+          "notes": ""
+        },
+        {
+          "url": "https://www.uni-stuttgart.de/en/study/study-programs/Aerospace-Engineering-M.Sc-00001./",
+          "title": "University of Stuttgart Aerospace Engineering M.Sc.",
+          "source_type": "official_curriculum_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "curriculum"
+          ],
+          "confidence": "high",
+          "notes": ""
+        },
+        {
+          "url": "https://www.uni-stuttgart.de/en/study/study-programs/Aerospace-Engineering-M.Sc-00001./",
+          "title": "University of Stuttgart Aerospace Engineering M.Sc.",
+          "source_type": "official_department_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "research"
+          ],
+          "confidence": "high",
+          "notes": ""
         }
       ]
     },
@@ -441,12 +531,25 @@
       "primary_categories": [],
       "secondary_categories": [],
       "subcategories": [],
-      "normalized_tags": [],
+      "normalized_tags": [
+        "aerodynamics",
+        "flight_control",
+        "space_systems",
+        "propulsion",
+        "aerospace_structures",
+        "scientific_ai"
+      ],
       "category_scores": {}
     },
     "research_profile": {
       "department_research_areas": [],
-      "labs": [],
+      "labs": [
+        "Institute of Aerodynamics and Gas Dynamics (IAG)",
+        "Institute of Flight Mechanics and Flight Control (IFR)",
+        "Institute of Space Systems (IRS)",
+        "Institute of Aircraft Propulsion Systems (ILA)",
+        "Institute of Aerospace Thermodynamics (ITLR)"
+      ],
       "research_centers": [],
       "notable_professors": [],
       "space_or_aerospace_projects": [],
@@ -490,7 +593,10 @@
       "application_result_timing": "",
       "enrollment_deadline": "",
       "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
-      "deadline_notes": "Deadlines were not retained without a checked official source.",
+      "deadline_notes": {
+        "en": "University page lists the application periods; verify the applicable cycle and applicant route.",
+        "tr": "Üniversite sayfası başvuru dönemlerini listeler; geçerli dönemi ve aday rotasını doğrulayın."
+      },
       "winter_deadline": "July 15",
       "summer_deadline": "January 15",
       "timeline_notes": {
@@ -566,9 +672,9 @@
       "housing_sentiment": "Stuttgart çok pahalı bir şehir ve WG (Wohngemeinschaft) bulmak aşırı zor. Öğrenciler aylar öncesinden WG-Gesucht üzerinden aramaya başlamayı şart koşuyor.",
       "teaching_quality_sentiment": "Excellent engineering reputation (TU9). Often described as having an excellent technical foundation but lacking in hands-on application.",
       "industry_connections": "Bölgesel otomotiv ve ağır sanayi ile çok iç içe. DLR ile olağanüstü araştırma projeleri yürütülüyor.",
-      "student_satisfaction_score": 72,
+      "student_satisfaction_score": null,
       "sentiment_summary": "Ağır sanayi ve uzay/havacılık geçişkenliği çok yüksek. Ancak dönemlik 1.500 EUR eyalet harcı ve zorlu konut piyasası unutulmamalı.",
-      "sentiment_confidence": "high",
+      "sentiment_confidence": "unknown",
       "student_sentiment_sources": [
         {
           "quote": "Excellent integration with Fraunhofer and DLR institutes for your master thesis.",
@@ -585,26 +691,36 @@
           "source": "Reddit",
           "url": "https://www.reddit.com/search/?q=University+of+Stuttgart+aerospace"
         }
-      ]
+      ],
+      "verification_notes": {
+        "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+        "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+      }
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-10",
+      "checked_at": "2026-07-14",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
       "remaining_verification_tasks": [
-        "Recheck every official source URL and record access_status/relevant_fields.",
-        "Verify tuition and additional fees from a checked official source.",
-        "Verify teaching language and language requirements from an official source.",
-        "Verify admission requirements and non-EU eligibility from an official source.",
-        "Verify scholarship names, eligibility and deadlines from an official source.",
-        "Verify current application deadlines from an official source.",
-        "Verify curriculum, tracks and courses before assigning categories.",
-        "Verify department/lab/research claims from official sources.",
-        "Verify industry partnerships separately from geographic proximity."
+        {
+          "en": "Add a checked official source for tuition.",
+          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        }
       ],
-      "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
     },
     "urls": {
       "program": "https://www.uni-stuttgart.de/en/study/study-programs/Aerospace-Engineering-M.Sc.-00001/",
@@ -622,6 +738,24 @@
         "required_ects": "180 ECTS from a Bachelor's degree.",
         "language_requirements": "German (typically B2/C1) is necessary as the primary language of instruction. For English courses, IELTS 7.0 or TOEFL 95 is standard."
       }
+    },
+    "data_quality": {
+      "status": "partial",
+      "checked_official_source_count": 3,
+      "verified_fields": [
+        "program",
+        "language",
+        "deadline",
+        "curriculum",
+        "research"
+      ],
+      "unverified_critical_fields": [
+        "tuition",
+        "scholarship",
+        "admission"
+      ],
+      "has_checked_source_log": true,
+      "audited_at": "2026-07-14"
     }
   },
   {
@@ -865,9 +999,9 @@
       "workload_sentiment": "Genel makine/elektrik mühendisliği tabanı üzerine uzay özelleşmesi yapıldığı için, termodinamik ve kontrol sistemleri gibi derslerde ağır matematiksel teorilere boğulabilirsiniz.",
       "housing_sentiment": "Karlsruhe tipik bir 'öğrenci şehri'. Münih veya Stuttgart kadar imkansız olmasa da WG odaları için rekabet yüksek.",
       "teaching_quality_sentiment": "Highly prestigious (TU9) with world-class research ties (e.g., DLR), but very academic and theoretical.",
-      "student_satisfaction_score": 74,
+      "student_satisfaction_score": null,
       "sentiment_summary": "Makine mühendisliği temelini uzay ile birleştirmek isteyenler için ideal bir TU9. Baden-Württemberg eyaletinde olduğu için dönemlik 1.500 EUR harç zorunlu.",
-      "sentiment_confidence": "high",
+      "sentiment_confidence": "unknown",
       "student_sentiment_sources": [
         {
           "quote": "Very flexible curriculum, you can basically design your own master's track.",
@@ -884,26 +1018,48 @@
           "source": "Reddit",
           "url": "https://www.reddit.com/search/?q=Karlsruhe+Institute+of+Technology+(KIT)+aerospace"
         }
-      ]
+      ],
+      "verification_notes": {
+        "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+        "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+      }
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-10",
+      "checked_at": "2026-07-14",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
       "remaining_verification_tasks": [
-        "Recheck every official source URL and record access_status/relevant_fields.",
-        "Verify tuition and additional fees from a checked official source.",
-        "Verify teaching language and language requirements from an official source.",
-        "Verify admission requirements and non-EU eligibility from an official source.",
-        "Verify scholarship names, eligibility and deadlines from an official source.",
-        "Verify current application deadlines from an official source.",
-        "Verify curriculum, tracks and courses before assigning categories.",
-        "Verify department/lab/research claims from official sources.",
-        "Verify industry partnerships separately from geographic proximity."
+        {
+          "en": "Add a checked official source for program.",
+          "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for language.",
+          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for tuition.",
+          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for curriculum.",
+          "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        }
       ],
-      "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
     },
     "language_profile": {
       "teaching_language": [],
@@ -928,6 +1084,21 @@
         "required_ects": "180 ECTS from a Bachelor's degree. Must include 37 CP in theoretical fundamentals and 26 CP in application-related fundamentals.",
         "language_requirements": "Primary language is German (DSH-2 or TestDaF 4x4). English proficiency (B2 equivalent) is generally expected."
       }
+    },
+    "data_quality": {
+      "status": "needs_verification",
+      "checked_official_source_count": 0,
+      "verified_fields": [],
+      "unverified_critical_fields": [
+        "program",
+        "language",
+        "tuition",
+        "scholarship",
+        "curriculum",
+        "admission"
+      ],
+      "has_checked_source_log": false,
+      "audited_at": "2026-07-14"
     }
   },
   {
@@ -1184,9 +1355,9 @@
       "workload_sentiment": "Klasik TU9 (veya denk) mühendislik yaklaşımı: Yoğun teori, zorlayıcı final sınavları. Pratikten çok araştırmaya ve tasarıma yönelik bir zihin yapısı gerektiriyor.",
       "housing_sentiment": "Braunschweig, Darmstadt, Dresden ve Hamburg'un hepsinde WG bulmak temel barınma stratejisidir. Özellikle Dresden (Doğu) yaşam maliyeti açısından en uygun seçeneklerdendir.",
       "teaching_quality_sentiment": "High reputation with strong connections to research institutes like DLR.",
-      "student_satisfaction_score": 75,
+      "student_satisfaction_score": null,
       "sentiment_summary": "Aachen veya Münih kadar acımasız olmasa da standart bir Alman teknik eğitimi zorluğunu barındırır. Daha uygun yaşam maliyetleri ve güçlü DLR bağlantıları avantajlarıdır.",
-      "sentiment_confidence": "medium",
+      "sentiment_confidence": "unknown",
       "student_sentiment_sources": [
         {
           "quote": "Excellent integration with Fraunhofer and DLR institutes for your master thesis.",
@@ -1203,26 +1374,48 @@
           "source": "Reddit",
           "url": "https://www.reddit.com/search/?q=TU+Braunschweig+aerospace"
         }
-      ]
+      ],
+      "verification_notes": {
+        "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+        "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+      }
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-10",
+      "checked_at": "2026-07-14",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
       "remaining_verification_tasks": [
-        "Recheck every official source URL and record access_status/relevant_fields.",
-        "Verify tuition and additional fees from a checked official source.",
-        "Verify teaching language and language requirements from an official source.",
-        "Verify admission requirements and non-EU eligibility from an official source.",
-        "Verify scholarship names, eligibility and deadlines from an official source.",
-        "Verify current application deadlines from an official source.",
-        "Verify curriculum, tracks and courses before assigning categories.",
-        "Verify department/lab/research claims from official sources.",
-        "Verify industry partnerships separately from geographic proximity."
+        {
+          "en": "Add a checked official source for program.",
+          "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for language.",
+          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for tuition.",
+          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for curriculum.",
+          "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        }
       ],
-      "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
     },
     "urls": {
       "program": "https://www.tu-braunschweig.de/",
@@ -1240,6 +1433,21 @@
         "required_ects": "Bilinmiyor / Resmi Veri Yok",
         "language_requirements": "Almanca"
       }
+    },
+    "data_quality": {
+      "status": "needs_verification",
+      "checked_official_source_count": 0,
+      "verified_fields": [],
+      "unverified_critical_fields": [
+        "program",
+        "language",
+        "tuition",
+        "scholarship",
+        "curriculum",
+        "admission"
+      ],
+      "has_checked_source_log": false,
+      "audited_at": "2026-07-14"
     }
   },
   {
@@ -1492,9 +1700,9 @@
       "housing_sentiment": "Berlin eskiden ucuz bir şehirdi ancak artık devasa bir konut krizinin ortasında. Kiralık ev piyasası aşırı doygun ve dolandırıcılıklar (scam) çok yaygın.",
       "teaching_quality_sentiment": "Comparable to other major German public universities; built on decades of practical experience.",
       "industry_connections": "Özellikle 'NewSpace' girişimleri (startup'lar) ve Berlin'in dinamik ekosistemi sayesinde staj/iş bulmak çok rahat.",
-      "student_satisfaction_score": 70,
+      "student_satisfaction_score": null,
       "sentiment_summary": "Kaotik bürokrasisine rağmen NewSpace ve startup ekosistemi için Almanya'daki en canlı merkez. Ancak konut bulmak ciddi bir sorun.",
-      "sentiment_confidence": "high",
+      "sentiment_confidence": "unknown",
       "student_sentiment_summary": {
         "en": "Incredible social life and city vibrancy, but plagued by a massive housing crisis and rising costs. Bureaucracy and strict language requirements are often mentioned as hurdles.",
         "tr": "İnanılmaz bir sosyal yaşam ve canlı bir şehir sunar, ancak devasa bir barınma krizi ve artan maliyetlerle boğuşur. Bürokrasi ve sıkı dil şartları genellikle aşılması gereken engeller olarak belirtilir."
@@ -1516,26 +1724,48 @@
           "source": "Reddit",
           "url": "https://eksisozluk.com"
         }
-      ]
+      ],
+      "verification_notes": {
+        "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+        "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+      }
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-10",
+      "checked_at": "2026-07-14",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
       "remaining_verification_tasks": [
-        "Recheck every official source URL and record access_status/relevant_fields.",
-        "Verify tuition and additional fees from a checked official source.",
-        "Verify teaching language and language requirements from an official source.",
-        "Verify admission requirements and non-EU eligibility from an official source.",
-        "Verify scholarship names, eligibility and deadlines from an official source.",
-        "Verify current application deadlines from an official source.",
-        "Verify curriculum, tracks and courses before assigning categories.",
-        "Verify department/lab/research claims from official sources.",
-        "Verify industry partnerships separately from geographic proximity."
+        {
+          "en": "Add a checked official source for program.",
+          "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for language.",
+          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for tuition.",
+          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for curriculum.",
+          "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        }
       ],
-      "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
     },
     "urls": {
       "program": "https://www.mse.tu-berlin.de/",
@@ -1553,6 +1783,21 @@
         "required_ects": "180 AKTS (ECTS)",
         "language_requirements": "English: TOEFL iBT 80 or IELTS 6.5 or English-taught Bachelor's degree / Native speaker."
       }
+    },
+    "data_quality": {
+      "status": "needs_verification",
+      "checked_official_source_count": 0,
+      "verified_fields": [],
+      "unverified_critical_fields": [
+        "program",
+        "language",
+        "tuition",
+        "scholarship",
+        "curriculum",
+        "admission"
+      ],
+      "has_checked_source_log": false,
+      "audited_at": "2026-07-14"
     }
   },
   {
@@ -1873,9 +2118,9 @@
       "housing_sentiment": "Kuzey Almanya'da yer alan Bremen, güneydeki Münih veya Stuttgart'a göre yaşam maliyeti ve barınma açısından uluslararası öğrencilere çok daha dostane bir ortam sunuyor.",
       "teaching_quality_sentiment": "High academic standards. The program is heavily praised for its proximity to Bremen's vibrant aerospace industry ecosystem.",
       "industry_connections": "Bremen tam bir 'Uzay Şehri' (City of Space). ZARM (Drop Tower) ve OHB System AG gibi devlerin merkezine ev sahipliği yaptığı için doğrudan sektöre adım atma imkanı sunuyor.",
-      "student_satisfaction_score": 82,
+      "student_satisfaction_score": null,
       "sentiment_summary": "Almanya'da sırf uzay (space) okumak isteyenler için maliyet, endüstri (OHB) ve rahatlık açısından en mantıklı tercihlerden biri.",
-      "sentiment_confidence": "high",
+      "sentiment_confidence": "unknown",
       "student_sentiment_sources": [
         {
           "quote": "Excellent integration with Fraunhofer and DLR institutes for your master thesis.",
@@ -1892,26 +2137,48 @@
           "source": "Reddit",
           "url": "https://www.reddit.com/search/?q=Universität+Bremen+aerospace"
         }
-      ]
+      ],
+      "verification_notes": {
+        "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+        "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+      }
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-10",
+      "checked_at": "2026-07-14",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
       "remaining_verification_tasks": [
-        "Recheck every official source URL and record access_status/relevant_fields.",
-        "Verify tuition and additional fees from a checked official source.",
-        "Verify teaching language and language requirements from an official source.",
-        "Verify admission requirements and non-EU eligibility from an official source.",
-        "Verify scholarship names, eligibility and deadlines from an official source.",
-        "Verify current application deadlines from an official source.",
-        "Verify curriculum, tracks and courses before assigning categories.",
-        "Verify department/lab/research claims from official sources.",
-        "Verify industry partnerships separately from geographic proximity."
+        {
+          "en": "Add a checked official source for program.",
+          "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for language.",
+          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for tuition.",
+          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for curriculum.",
+          "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        }
       ],
-      "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
     },
     "urls": {
       "program": "https://www.uni-bremen.de/en/studies/orientation-application/degree-programmes/degree-programmes/space-engineering-master",
@@ -1929,6 +2196,21 @@
         "required_ects": "180 AKTS (ECTS)",
         "language_requirements": "English proficiency required (exact certificate and level checked via application portal)."
       }
+    },
+    "data_quality": {
+      "status": "needs_verification",
+      "checked_official_source_count": 0,
+      "verified_fields": [],
+      "unverified_critical_fields": [
+        "program",
+        "language",
+        "tuition",
+        "scholarship",
+        "curriculum",
+        "admission"
+      ],
+      "has_checked_source_log": false,
+      "audited_at": "2026-07-14"
     }
   },
   {
@@ -2248,9 +2530,9 @@
       "workload_sentiment": "Klasik TU9 (veya denk) mühendislik yaklaşımı: Yoğun teori, zorlayıcı final sınavları. Pratikten çok araştırmaya ve tasarıma yönelik bir zihin yapısı gerektiriyor.",
       "housing_sentiment": "Braunschweig, Darmstadt, Dresden ve Hamburg'un hepsinde WG bulmak temel barınma stratejisidir. Özellikle Dresden (Doğu) yaşam maliyeti açısından en uygun seçeneklerdendir.",
       "teaching_quality_sentiment": "Highly technical and research-oriented with a strong reputation.",
-      "student_satisfaction_score": 75,
+      "student_satisfaction_score": null,
       "sentiment_summary": "Aachen veya Münih kadar acımasız olmasa da standart bir Alman teknik eğitimi zorluğunu barındırır. Daha uygun yaşam maliyetleri ve güçlü DLR bağlantıları avantajlarıdır.",
-      "sentiment_confidence": "medium",
+      "sentiment_confidence": "unknown",
       "student_sentiment_sources": [
         {
           "quote": "Exams are heavily weighted (100% of the grade often), which can be stressful.",
@@ -2267,26 +2549,48 @@
           "source": "Reddit",
           "url": "https://www.reddit.com/search/?q=TU+Darmstadt+aerospace"
         }
-      ]
+      ],
+      "verification_notes": {
+        "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+        "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+      }
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-10",
+      "checked_at": "2026-07-14",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
       "remaining_verification_tasks": [
-        "Recheck every official source URL and record access_status/relevant_fields.",
-        "Verify tuition and additional fees from a checked official source.",
-        "Verify teaching language and language requirements from an official source.",
-        "Verify admission requirements and non-EU eligibility from an official source.",
-        "Verify scholarship names, eligibility and deadlines from an official source.",
-        "Verify current application deadlines from an official source.",
-        "Verify curriculum, tracks and courses before assigning categories.",
-        "Verify department/lab/research claims from official sources.",
-        "Verify industry partnerships separately from geographic proximity."
+        {
+          "en": "Add a checked official source for program.",
+          "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for language.",
+          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for tuition.",
+          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for curriculum.",
+          "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        }
       ],
-      "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
     },
     "urls": {
       "program": "https://www.maschinenbau.tu-darmstadt.de/",
@@ -2304,6 +2608,21 @@
         "required_ects": "Must match the core competencies of the reference B.Sc. Maschinenbau at TU Darmstadt. Entrance exam may be required if lacking specific ECTS.",
         "language_requirements": "English (C1 Level required, e.g., IELTS 6.5, TOEFL iBT 95)"
       }
+    },
+    "data_quality": {
+      "status": "needs_verification",
+      "checked_official_source_count": 0,
+      "verified_fields": [],
+      "unverified_critical_fields": [
+        "program",
+        "language",
+        "tuition",
+        "scholarship",
+        "curriculum",
+        "admission"
+      ],
+      "has_checked_source_log": false,
+      "audited_at": "2026-07-14"
     }
   },
   {
@@ -2618,9 +2937,9 @@
       "workload_sentiment": "Forumlar RWTH Aachen'ı bir 'Makine Mühendisliği Fabrikası' olarak tanımlıyor. Sınav geçme oranlarının (pass rates) kasıtlı olarak düşük tutulduğuna ve acımasız olduğuna dair yoğun bir öğrenci kanaati var.",
       "housing_sentiment": "Aachen nispeten küçük bir şehir ve öğrenci oranı çok yüksek. Kira fiyatları Münih'e göre çok daha ucuz ancak iyi bir WG bulmak yine aylar sürüyor.",
       "teaching_quality_sentiment": "Top-tier TU9 university with excellent prestige, though instruction is very analytical/theoretical rather than practical.",
-      "student_satisfaction_score": 65,
+      "student_satisfaction_score": null,
       "sentiment_summary": "Avrupa'nın en prestijli teknik okullarından biri, ancak 'filtreleme sınavları' öğrencilerin psikolojisini oldukça zorluyor. Eğitim ucuz ama mezun olmak büyük sabır istiyor.",
-      "sentiment_confidence": "high",
+      "sentiment_confidence": "unknown",
       "student_sentiment_summary": {
         "en": "Notorious for extremely high academic standards and very difficult exams. Aachen is a true student city with great industry connections, though highly male-dominated ('sausage party' stereotype).",
         "tr": "Son derece yüksek akademik standartları ve çok zorlayıcı sınavlarıyla meşhurdur. Aachen, harika sanayi bağlantıları olan tam bir öğrenci şehridir, ancak oldukça erkek egemen bir demografiye ('sosis partisi' stereotipi) sahiptir."
@@ -2642,26 +2961,48 @@
           "source": "Reddit",
           "url": "https://eksisozluk.com"
         }
-      ]
+      ],
+      "verification_notes": {
+        "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+        "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+      }
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-10",
+      "checked_at": "2026-07-14",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
       "remaining_verification_tasks": [
-        "Recheck every official source URL and record access_status/relevant_fields.",
-        "Verify tuition and additional fees from a checked official source.",
-        "Verify teaching language and language requirements from an official source.",
-        "Verify admission requirements and non-EU eligibility from an official source.",
-        "Verify scholarship names, eligibility and deadlines from an official source.",
-        "Verify current application deadlines from an official source.",
-        "Verify curriculum, tracks and courses before assigning categories.",
-        "Verify department/lab/research claims from official sources.",
-        "Verify industry partnerships separately from geographic proximity."
+        {
+          "en": "Add a checked official source for program.",
+          "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for language.",
+          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for tuition.",
+          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for curriculum.",
+          "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        }
       ],
-      "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
     },
     "urls": {
       "program": "https://www.rwth-aachen.de/cms/root/studium/vor-dem-studium/studiengaenge/liste-aktuelle-studiengaenge/studiengangbeschreibung/~bkoe/luft-und-raumfahrttechnik-m-sc-/",
@@ -2679,6 +3020,21 @@
         "required_ects": "Strict ECTS equivalence check with RWTH's Bachelor. Can bridge missing credits up to maximum 30 ECTS.",
         "language_requirements": "Almanca"
       }
+    },
+    "data_quality": {
+      "status": "needs_verification",
+      "checked_official_source_count": 0,
+      "verified_fields": [],
+      "unverified_critical_fields": [
+        "program",
+        "language",
+        "tuition",
+        "scholarship",
+        "curriculum",
+        "admission"
+      ],
+      "has_checked_source_log": false,
+      "audited_at": "2026-07-14"
     }
   },
   {
@@ -2993,9 +3349,9 @@
       "workload_sentiment": "Klasik TU9 (veya denk) mühendislik yaklaşımı: Yoğun teori, zorlayıcı final sınavları. Pratikten çok araştırmaya ve tasarıma yönelik bir zihin yapısı gerektiriyor.",
       "housing_sentiment": "Braunschweig, Darmstadt, Dresden ve Hamburg'un hepsinde WG bulmak temel barınma stratejisidir. Özellikle Dresden (Doğu) yaşam maliyeti açısından en uygun seçeneklerdendir.",
       "teaching_quality_sentiment": "Good quality but heavily reliant on independent study and theoretical understanding.",
-      "student_satisfaction_score": 75,
+      "student_satisfaction_score": null,
       "sentiment_summary": "Aachen veya Münih kadar acımasız olmasa da standart bir Alman teknik eğitimi zorluğunu barındırır. Daha uygun yaşam maliyetleri ve güçlü DLR bağlantıları avantajlarıdır.",
-      "sentiment_confidence": "medium",
+      "sentiment_confidence": "unknown",
       "student_sentiment_sources": [
         {
           "quote": "Excellent integration with Fraunhofer and DLR institutes for your master thesis.",
@@ -3012,26 +3368,48 @@
           "source": "Reddit",
           "url": "https://www.reddit.com/search/?q=TU+Dresden+aerospace"
         }
-      ]
+      ],
+      "verification_notes": {
+        "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+        "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+      }
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-10",
+      "checked_at": "2026-07-14",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
       "remaining_verification_tasks": [
-        "Recheck every official source URL and record access_status/relevant_fields.",
-        "Verify tuition and additional fees from a checked official source.",
-        "Verify teaching language and language requirements from an official source.",
-        "Verify admission requirements and non-EU eligibility from an official source.",
-        "Verify scholarship names, eligibility and deadlines from an official source.",
-        "Verify current application deadlines from an official source.",
-        "Verify curriculum, tracks and courses before assigning categories.",
-        "Verify department/lab/research claims from official sources.",
-        "Verify industry partnerships separately from geographic proximity."
+        {
+          "en": "Add a checked official source for program.",
+          "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for language.",
+          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for tuition.",
+          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for curriculum.",
+          "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        }
       ],
-      "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
     },
     "urls": {
       "program": "https://tu-dresden.de/ing/maschinenwesen/studium/studienangebot/maschinenbau",
@@ -3049,6 +3427,21 @@
         "required_ects": "180 ECTS minimum from a related engineering bachelor degree to qualify.",
         "language_requirements": "German (e.g., DSH, TestDaF)"
       }
+    },
+    "data_quality": {
+      "status": "needs_verification",
+      "checked_official_source_count": 0,
+      "verified_fields": [],
+      "unverified_critical_fields": [
+        "program",
+        "language",
+        "tuition",
+        "scholarship",
+        "curriculum",
+        "admission"
+      ],
+      "has_checked_source_log": false,
+      "audited_at": "2026-07-14"
     }
   },
   {
@@ -3361,9 +3754,9 @@
       "workload_sentiment": "Klasik TU9 (veya denk) mühendislik yaklaşımı: Yoğun teori, zorlayıcı final sınavları. Pratikten çok araştırmaya ve tasarıma yönelik bir zihin yapısı gerektiriyor.",
       "housing_sentiment": "Braunschweig, Darmstadt, Dresden ve Hamburg'un hepsinde WG bulmak temel barınma stratejisidir. Özellikle Dresden (Doğu) yaşam maliyeti açısından en uygun seçeneklerdendir.",
       "teaching_quality_sentiment": "Large frontal lectures are common. Requires strong independent learning. Heavy reliance on single final exams for grades.",
-      "student_satisfaction_score": 75,
+      "student_satisfaction_score": null,
       "sentiment_summary": "Aachen veya Münih kadar acımasız olmasa da standart bir Alman teknik eğitimi zorluğunu barındırır. Daha uygun yaşam maliyetleri ve güçlü DLR bağlantıları avantajlarıdır.",
-      "sentiment_confidence": "medium",
+      "sentiment_confidence": "unknown",
       "student_sentiment_sources": [
         {
           "quote": "Excellent integration with Fraunhofer and DLR institutes for your master thesis.",
@@ -3380,26 +3773,48 @@
           "source": "Reddit",
           "url": "https://www.reddit.com/search/?q=Hamburg+University+of+Technology+(TUHH)+aerospace"
         }
-      ]
+      ],
+      "verification_notes": {
+        "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+        "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+      }
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-10",
+      "checked_at": "2026-07-14",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
       "remaining_verification_tasks": [
-        "Recheck every official source URL and record access_status/relevant_fields.",
-        "Verify tuition and additional fees from a checked official source.",
-        "Verify teaching language and language requirements from an official source.",
-        "Verify admission requirements and non-EU eligibility from an official source.",
-        "Verify scholarship names, eligibility and deadlines from an official source.",
-        "Verify current application deadlines from an official source.",
-        "Verify curriculum, tracks and courses before assigning categories.",
-        "Verify department/lab/research claims from official sources.",
-        "Verify industry partnerships separately from geographic proximity."
+        {
+          "en": "Add a checked official source for program.",
+          "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for language.",
+          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for tuition.",
+          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for curriculum.",
+          "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        }
       ],
-      "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
     },
     "urls": {
       "program": "https://www.tuhh.de/tuhh/en/studying/before-studying/degree-programs/masters-programs/aeronautics",
@@ -3417,6 +3832,21 @@
         "required_ects": "180 AKTS (ECTS)",
         "language_requirements": "German proficiency required (program is taught primarily in German)."
       }
+    },
+    "data_quality": {
+      "status": "needs_verification",
+      "checked_official_source_count": 0,
+      "verified_fields": [],
+      "unverified_critical_fields": [
+        "program",
+        "language",
+        "tuition",
+        "scholarship",
+        "curriculum",
+        "admission"
+      ],
+      "has_checked_source_log": false,
+      "audited_at": "2026-07-14"
     }
   }
 ]

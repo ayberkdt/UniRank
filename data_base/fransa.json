@@ -28,10 +28,9 @@
       "eligibility_profile": {
         "eligible_for_non_eu": true,
         "non_eu_quota": null,
-        "required_previous_degree": {
-          "en": "Bachelor's degree in engineering or science",
-          "tr": "Mühendislik veya fen bilimleri alanında lisans derecesi"
-        },
+        "required_previous_degree": [
+          "Bachelor's degree or equivalent in mechanical engineering, mechatronics, aerospace, electronics, electrical engineering, computer science, telecommunications, or related science/engineering"
+        ],
         "accepted_backgrounds": [
           {
             "en": "Aerospace Engineering",
@@ -58,7 +57,14 @@
         },
         "admission_mode": "selective",
         "admission_risk": "high",
-        "required_documents": [],
+        "required_documents": [
+          "Diploma or enrolment certificate",
+          "Three years of transcripts",
+          "CV in English",
+          "Cover letter in English",
+          "English test result",
+          "Two recommendation letters"
+        ],
         "motivation_letter_required": true,
         "cv_required": true,
         "recommendation_required": true,
@@ -72,6 +78,10 @@
         "verification_notes": {
           "en": "Admission criteria verified.",
           "tr": "Kabul kriterleri doğrulandı."
+        },
+        "application_fee": {
+          "amount": 100,
+          "currency": "EUR"
         }
       },
       "language_profile": {
@@ -92,11 +102,18 @@
           "en": "French is not required for admission, but B1/B2 is highly recommended to secure mandatory internships in France.",
           "tr": "Kabul için Fransızca gerekmez, ancak Fransa'da zorunlu stajları ayarlamak için B1/B2 şiddetle tavsiye edilir."
         },
-        "language_risk": "medium",
+        "language_risk": "low",
         "verification_notes": {
           "en": "Internship language risk verified.",
           "tr": "Staj dil riski doğrulandı."
-        }
+        },
+        "english_tests": [
+          "TOEFL iBT 87",
+          "TOEIC 785 (four skills) or 850 (listening/reading)",
+          "IELTS Academic 6",
+          "CAE/FCE 170",
+          "Linguaskill 170"
+        ]
       },
       "cost_profile": {
         "academic_year": "2026/2027",
@@ -147,14 +164,14 @@
         "housing_support": false,
         "meal_support": null,
         "cash_grant_possible": true,
-        "non_eu_eligible": true,
+        "non_eu_eligible": null,
         "income_based": false,
         "scholarship_deadline": "November",
         "scholarship_application_url": null,
         "funding_competitiveness": "high",
         "funding_notes": {
-          "en": "Eligible for Eiffel Excellence Scholarship (via ISAE nomination), ISAE-SUPAERO Foundation scholarships, and industry sponsorships (e.g., Airbus, GIFAS).",
-          "tr": "Eiffel Mükemmellik Bursu (ISAE adaylığı ile), ISAE-SUPAERO Vakfı bursları ve endüstri sponsorlukları (örn. Airbus, GIFAS) için uygundur."
+          "en": "Several excellence scholarships are offered to Master's candidates applying in the first application session; eligibility and current call must be checked.",
+          "tr": "İlk başvuru oturumunda başvuran yüksek lisans adayları için çeşitli başarı bursları sunulur; uygunluk ve güncel çağrı doğrulanmalıdır."
         },
         "verification_notes": {
           "en": "",
@@ -163,10 +180,10 @@
       },
       "living_profile": {
         "city_cost_level": "medium",
-        "monthly_living_cost_eur_min": 800,
-        "monthly_living_cost_eur_max": 1200,
+        "monthly_living_cost_eur_min": 900,
+        "monthly_living_cost_eur_max": 1000,
         "monthly_living_cost_eur_estimated": 950,
-        "housing_difficulty": "high",
+        "housing_difficulty": "limited_on_campus_capacity",
         "student_housing_available": true,
         "student_housing_competitiveness": "high",
         "average_room_rent_eur": 450,
@@ -180,6 +197,11 @@
         "verification_notes": {
           "en": "Toulouse experiences high student demand. However, ISAE offers on-campus housing (Altéal residence) which is generally manageable if applied for early. Off-campus is highly competitive.",
           "tr": "Toulouse'da yüksek öğrenci talebi yaşanmaktadır. Ancak ISAE, erken başvurulması halinde genellikle yönetilebilir olan kampüs içi konaklama (Altéal yurdu) sunar. Kampüs dışı oldukça rekabetçidir."
+        },
+        "monthly_living_cost_basis": "official all-in monthly budget: accommodation, food, transport, health insurance and miscellaneous",
+        "housing_notes": {
+          "en": "ISAE-SUPAERO prioritises international students for very limited on-campus housing and directs students to Toul'Box/Alteal options.",
+          "tr": "ISAE-SUPAERO çok sınırlı kampüs konaklamasında uluslararası öğrencilere öncelik verir; Toul'Box/Alteal seçeneklerine yönlendirir."
         }
       },
       "curriculum_profile": {
@@ -285,14 +307,14 @@
         "enrollment_deadline": "",
         "timeline_risk": "medium",
         "deadline_notes": {
-          "en": "Multiple rounds. Early deadlines (Nov/Dec) are critical for Eiffel and Foundation scholarship consideration.",
-          "tr": "Çoklu turlar. Erken son tarihler (Kasım/Aralık) Eiffel ve Vakıf bursu değerlendirmesi için kritiktir."
+          "en": "2026 intake is closed; the university says applications for 2027 open in October 2026.",
+          "tr": "2026 dönemi kapalıdır; üniversite 2027 başvurularının Ekim 2026'da açılacağını belirtir."
         },
         "deadline_non_eu": "Late November (typically Nov 28 for Round 1)"
       },
       "student_sentiment_profile": {
-        "student_satisfaction_score": 90,
-        "sentiment_confidence": "high",
+        "student_satisfaction_score": null,
+        "sentiment_confidence": "unknown",
         "sample_size_estimate": null,
         "date_range": "",
         "teaching_quality_sentiment": "positive",
@@ -339,8 +361,8 @@
           }
         ],
         "verification_notes": {
-          "en": "",
-          "tr": ""
+          "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+          "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
         },
         "student_sentiment_summary": {
           "en": "Widely regarded as the 'final boss' of aerospace engineering in Europe. Superb industry connections with Airbus and ESA, and an excellent campus life in Toulouse, the heart of European aviation.",
@@ -357,21 +379,77 @@
         "official_lab_pages": [],
         "third_party_sources": [],
         "student_sentiment_sources": [],
-        "source_log": [],
-        "last_verified": "2026-07-11",
-        "needs_verification": false,
+        "source_log": [
+          {
+            "url": "https://www.isae-supaero.fr/en/programmes/masters-degree-in-aerospace-engineering/",
+            "title": "ISAE-SUPAERO Master's degree in Aerospace Engineering",
+            "source_type": "official_program_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-14",
+            "relevant_fields": [
+              "program",
+              "language",
+              "admission",
+              "scholarship",
+              "deadline",
+              "housing"
+            ],
+            "confidence": "high",
+            "notes": ""
+          },
+          {
+            "url": "https://www.isae-supaero.fr/en/programmes/masters-degree-in-aerospace-engineering/",
+            "title": "ISAE-SUPAERO Master's degree in Aerospace Engineering",
+            "source_type": "official_admission_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-14",
+            "relevant_fields": [
+              "admission",
+              "deadline"
+            ],
+            "confidence": "high",
+            "notes": ""
+          },
+          {
+            "url": "https://www.isae-supaero.fr/en/programmes/masters-degree-in-aerospace-engineering/",
+            "title": "ISAE-SUPAERO Master's degree in Aerospace Engineering",
+            "source_type": "official_scholarship_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-14",
+            "relevant_fields": [
+              "scholarship"
+            ],
+            "confidence": "high",
+            "notes": ""
+          },
+          {
+            "url": "https://www.isae-supaero.fr/en/programmes/masters-degree-in-aerospace-engineering/",
+            "title": "ISAE-SUPAERO Master's degree in Aerospace Engineering",
+            "source_type": "official_housing_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-14",
+            "relevant_fields": [
+              "housing"
+            ],
+            "confidence": "high",
+            "notes": ""
+          }
+        ],
+        "last_verified": "2026-07-14",
+        "needs_verification": true,
         "verification_notes": "",
         "field_confidence": {
           "program_basic_info": "high",
           "language": "high",
           "admission": "high",
           "tuition": "unknown",
-          "scholarship": "high",
+          "scholarship": "medium",
           "curriculum": "high",
           "research": "high",
           "industry": "high",
           "living": "high",
-          "student_sentiment": "medium"
+          "student_sentiment": "medium",
+          "deadlines": "high"
         }
       },
       "decision_summary": {
@@ -411,13 +489,43 @@
       },
       "scoring_inputs": {},
       "quality_control": {
-        "qc_status": "passed",
-        "checked_at": "2026-07-11",
+        "qc_status": "needs_revision",
+        "checked_at": "2026-07-14",
         "failed_canary_tests": [],
-        "remaining_verification_tasks": [],
-        "qc_notes": ""
+        "remaining_verification_tasks": [
+          {
+            "en": "Add a checked official source for tuition.",
+            "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for curriculum.",
+            "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+          }
+        ],
+        "qc_notes": {
+          "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+          "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        }
       },
-      "qs_ranking": 200
+      "qs_ranking": 200,
+      "data_quality": {
+        "status": "partial",
+        "checked_official_source_count": 4,
+        "verified_fields": [
+          "program",
+          "language",
+          "admission",
+          "scholarship",
+          "deadline",
+          "housing"
+        ],
+        "unverified_critical_fields": [
+          "tuition",
+          "curriculum"
+        ],
+        "has_checked_source_log": true,
+        "audited_at": "2026-07-14"
+      }
     },
     {
       "id": "france_estaca_post_master",
@@ -668,8 +776,8 @@
         "deadline_non_eu": "May 1st (Autumn intake)"
       },
       "student_sentiment_profile": {
-        "student_satisfaction_score": 85,
-        "sentiment_confidence": "high",
+        "student_satisfaction_score": null,
+        "sentiment_confidence": "unknown",
         "sample_size_estimate": null,
         "date_range": "",
         "teaching_quality_sentiment": "positive",
@@ -716,8 +824,8 @@
           }
         ],
         "verification_notes": {
-          "en": "",
-          "tr": ""
+          "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+          "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
         },
         "student_sentiment_summary": {
           "en": "Highly praised for its practical, industry-integrated approach in automotive and aerospace sectors. Great internship opportunities and strong integration with the Paris-Saclay ecosystem.",
@@ -788,13 +896,56 @@
       },
       "scoring_inputs": {},
       "quality_control": {
-        "qc_status": "passed",
-        "checked_at": "2026-07-11",
+        "qc_status": "needs_revision",
+        "checked_at": "2026-07-14",
         "failed_canary_tests": [],
-        "remaining_verification_tasks": [],
-        "qc_notes": ""
+        "remaining_verification_tasks": [
+          {
+            "en": "Add a checked official source for program.",
+            "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for language.",
+            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for tuition.",
+            "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for scholarship.",
+            "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for curriculum.",
+            "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for admission.",
+            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          }
+        ],
+        "qc_notes": {
+          "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+          "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        }
       },
-      "qs_ranking": 217
+      "qs_ranking": 217,
+      "data_quality": {
+        "status": "needs_verification",
+        "checked_official_source_count": 0,
+        "verified_fields": [],
+        "unverified_critical_fields": [
+          "program",
+          "language",
+          "tuition",
+          "scholarship",
+          "curriculum",
+          "admission"
+        ],
+        "has_checked_source_log": false,
+        "audited_at": "2026-07-14"
+      }
     },
     {
       "id": "france_centralesupelec_saas",
@@ -1053,8 +1204,8 @@
         "deadline_non_eu": "Late November (Round 1) with rolling rounds until June"
       },
       "student_sentiment_profile": {
-        "student_satisfaction_score": 88,
-        "sentiment_confidence": "high",
+        "student_satisfaction_score": null,
+        "sentiment_confidence": "unknown",
         "sample_size_estimate": null,
         "date_range": "",
         "teaching_quality_sentiment": "positive",
@@ -1101,8 +1252,8 @@
           }
         ],
         "verification_notes": {
-          "en": "",
-          "tr": ""
+          "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+          "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
         },
         "student_sentiment_summary": {
           "en": "An elite Grande École known for its extremely theoretical and mathematical rigor. Provides outstanding career outcomes in both engineering and finance.",
@@ -1173,13 +1324,56 @@
       },
       "scoring_inputs": {},
       "quality_control": {
-        "qc_status": "passed",
-        "checked_at": "2026-07-11",
+        "qc_status": "needs_revision",
+        "checked_at": "2026-07-14",
         "failed_canary_tests": [],
-        "remaining_verification_tasks": [],
-        "qc_notes": ""
+        "remaining_verification_tasks": [
+          {
+            "en": "Add a checked official source for program.",
+            "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for language.",
+            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for tuition.",
+            "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for scholarship.",
+            "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for curriculum.",
+            "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for admission.",
+            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          }
+        ],
+        "qc_notes": {
+          "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+          "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        }
       },
-      "qs_ranking": 229
+      "qs_ranking": 229,
+      "data_quality": {
+        "status": "needs_verification",
+        "checked_official_source_count": 0,
+        "verified_fields": [],
+        "unverified_critical_fields": [
+          "program",
+          "language",
+          "tuition",
+          "scholarship",
+          "curriculum",
+          "admission"
+        ],
+        "has_checked_source_log": false,
+        "audited_at": "2026-07-14"
+      }
     }
   ]
 }

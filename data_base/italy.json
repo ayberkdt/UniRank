@@ -317,8 +317,8 @@
                 }
             ],
             "student_sentiment_profile": {
-                "student_satisfaction_score": 70,
-                "sentiment_confidence": "high",
+                "student_satisfaction_score": null,
+                "sentiment_confidence": "unknown",
                 "sample_size_estimate": null,
                 "date_range": "",
                 "teaching_quality_sentiment": "",
@@ -334,23 +334,45 @@
                 "recurring_strengths": [],
                 "sentiment_summary": "Prestijli ve kariyer açısından çok güçlü olsa da, Milano'nun yaşam maliyeti ve İtalyan eğitim sisteminin acımasız teorik yükü nedeniyle ruh sağlığını korumak ciddi bir mesele.",
                 "student_sentiment_sources": [],
-                "verification_notes": "No sufficiently documented independent sentiment sample was retained."
+                "verification_notes": {
+                    "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+                    "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+                }
             },
             "quality_control": {
                 "qc_status": "needs_revision",
-                "checked_at": "2026-07-10",
+                "checked_at": "2026-07-14",
                 "failed_canary_tests": [],
                 "remaining_verification_tasks": [
-                    "Verify tuition and additional fees from a checked official source.",
-                    "Verify teaching language and language requirements from an official source.",
-                    "Verify admission requirements and non-EU eligibility from an official source.",
-                    "Verify scholarship names, eligibility and deadlines from an official source.",
-                    "Verify current application deadlines from an official source.",
-                    "Verify curriculum, tracks and courses before assigning categories.",
-                    "Verify department/lab/research claims from official sources.",
-                    "Verify industry partnerships separately from geographic proximity."
+                    {
+                        "en": "Add a checked official source for program.",
+                        "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for language.",
+                        "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for tuition.",
+                        "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for scholarship.",
+                        "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for curriculum.",
+                        "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for admission.",
+                        "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                    }
                 ],
-                "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+                "qc_notes": {
+                    "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+                    "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+                }
             },
             "location": {
                 "country": "Italy",
@@ -358,6 +380,21 @@
                 "latitude": 45.4800101,
                 "longitude": 9.2282387,
                 "locationConfidence": "exact"
+            },
+            "data_quality": {
+                "status": "needs_verification",
+                "checked_official_source_count": 0,
+                "verified_fields": [],
+                "unverified_critical_fields": [
+                    "program",
+                    "language",
+                    "tuition",
+                    "scholarship",
+                    "curriculum",
+                    "admission"
+                ],
+                "has_checked_source_log": false,
+                "audited_at": "2026-07-14"
             }
         },
         {
@@ -374,7 +411,9 @@
             "degree_class": "LM-20",
             "duration_years": 2,
             "ects": 120,
-            "teaching_language": [],
+            "teaching_language": [
+                "Italian"
+            ],
             "program_url": "https://www.polito.it",
             "department": "Department of Mechanical and Aerospace Engineering",
             "faculty_or_school": "Engineering",
@@ -413,7 +452,9 @@
                 "verification_notes": "Admission facts were not retained without a checked official source."
             },
             "language_profile": {
-                "teaching_language": [],
+                "teaching_language": [
+                    "Italian"
+                ],
                 "english_required": null,
                 "english_level_required": null,
                 "accepted_english_tests": [
@@ -428,7 +469,7 @@
                 "italian_level_required": "",
                 "italian_needed_for_life_or_internship": "Yes",
                 "mixed_language_warning": "",
-                "language_risk": "Bilinmiyor / Resmi Veri Yok",
+                "language_risk": "high",
                 "verification_notes": "Teaching language was not retained without a checked official source."
             },
             "cost_profile": {
@@ -488,7 +529,13 @@
                 "housing_sentiment": "Milano'ya göre daha ucuz olsa da rekabet yüksek. Öğrenci forumlarında özellikle uluslararası öğrencileri hedef alan konut dolandırıcılarına (scam) karşı çok dikkatli olunması uyarısı yapılıyor."
             },
             "curriculum_profile": {
-                "tracks": [],
+                "tracks": [
+                    "Aerostructures",
+                    "Propulsion systems",
+                    "Aeromechanics and systems",
+                    "Aero-gas dynamics",
+                    "Space"
+                ],
                 "specializations": [],
                 "mandatory_courses": [],
                 "elective_courses": [],
@@ -568,16 +615,16 @@
                 "official_department_page": "needs_verification",
                 "official_lab_pages": [],
                 "third_party_sources": [],
-                "last_verified": "2024",
+                "last_verified": "2026-07-14",
                 "needs_verification": true,
                 "verification_notes": "Some fields require official source verification.",
                 "field_confidence": {
                     "program_basic_info": "high",
                     "language": "high",
-                    "admission": "high",
+                    "admission": "medium",
                     "tuition": "high",
                     "scholarship": "high",
-                    "curriculum": "medium",
+                    "curriculum": "high",
                     "research": "medium",
                     "industry": "high",
                     "living": "high"
@@ -594,6 +641,33 @@
                         ],
                         "confidence": "medium",
                         "notes": "Coordinates resolved at exact confidence; this is a map placement signal, not an official programme fact."
+                    },
+                    {
+                        "url": "https://www.polito.it/en/education/master-s-degree-programmes/aerospace-engineering",
+                        "title": "Politecnico di Torino Aerospace Engineering MSc",
+                        "source_type": "official_program_page",
+                        "access_status": "ok",
+                        "last_checked": "2026-07-14",
+                        "relevant_fields": [
+                            "program",
+                            "language",
+                            "admission",
+                            "curriculum"
+                        ],
+                        "confidence": "high",
+                        "notes": ""
+                    },
+                    {
+                        "url": "https://www.polito.it/en/education/master-s-degree-programmes/aerospace-engineering/programme-details",
+                        "title": "Politecnico di Torino Aerospace Engineering programme details",
+                        "source_type": "official_curriculum_page",
+                        "access_status": "ok",
+                        "last_checked": "2026-07-14",
+                        "relevant_fields": [
+                            "curriculum"
+                        ],
+                        "confidence": "high",
+                        "notes": ""
                     }
                 ]
             },
@@ -667,8 +741,8 @@
                 }
             ],
             "student_sentiment_profile": {
-                "student_satisfaction_score": 75,
-                "sentiment_confidence": "high",
+                "student_satisfaction_score": null,
+                "sentiment_confidence": "unknown",
                 "sample_size_estimate": null,
                 "date_range": "",
                 "teaching_quality_sentiment": "",
@@ -684,26 +758,32 @@
                 "recurring_strengths": [],
                 "sentiment_summary": "Maliyet/performans ve endüstri bağlantıları açısından Milano'dan daha iyi bir alternatif olarak görülüyor ancak barınma sürecinde dolandırıcılara karşı tetikte olunmalı.",
                 "student_sentiment_sources": [],
-                "verification_notes": "No sufficiently documented independent sentiment sample was retained.",
+                "verification_notes": {
+                    "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+                    "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+                },
                 "industry_connections": "Torino'daki dev havacılık sanayisi (Thales Alenia Space, Leonardo, Avio) nedeniyle staj ve iş bulma bağlantıları muazzam."
             },
             "quality_control": {
                 "qc_status": "needs_revision",
-                "checked_at": "2026-07-10",
+                "checked_at": "2026-07-14",
                 "failed_canary_tests": [
                     "missing_or_unverified_critical_fields"
                 ],
                 "remaining_verification_tasks": [
-                    "Verify tuition and additional fees from a checked official source.",
-                    "Verify teaching language and language requirements from an official source.",
-                    "Verify admission requirements and non-EU eligibility from an official source.",
-                    "Verify scholarship names, eligibility and deadlines from an official source.",
-                    "Verify current application deadlines from an official source.",
-                    "Verify curriculum, tracks and courses before assigning categories.",
-                    "Verify department/lab/research claims from official sources.",
-                    "Verify industry partnerships separately from geographic proximity."
+                    {
+                        "en": "Add a checked official source for tuition.",
+                        "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for scholarship.",
+                        "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+                    }
                 ],
-                "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+                "qc_notes": {
+                    "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+                    "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+                }
             },
             "location": {
                 "country": "Italy",
@@ -711,6 +791,22 @@
                 "latitude": 45.0636974,
                 "longitude": 7.6575263,
                 "locationConfidence": "exact"
+            },
+            "data_quality": {
+                "status": "partial",
+                "checked_official_source_count": 2,
+                "verified_fields": [
+                    "program",
+                    "language",
+                    "admission",
+                    "curriculum"
+                ],
+                "unverified_critical_fields": [
+                    "tuition",
+                    "scholarship"
+                ],
+                "has_checked_source_log": true,
+                "audited_at": "2026-07-14"
             }
         },
         {
@@ -727,7 +823,9 @@
             "degree_class": "LM-20",
             "duration_years": 2,
             "ects": 120,
-            "teaching_language": [],
+            "teaching_language": [
+                "English"
+            ],
             "program_url": "https://corsidilaurea.uniroma1.it/en/corso/2024/30423/home",
             "department": "Department of Mechanical and Aerospace Engineering (DIMA)",
             "faculty_or_school": "Faculty of Civil and Industrial Engineering",
@@ -753,7 +851,7 @@
                 "minimum_gpa": null,
                 "gpa_scale": "",
                 "ranking_or_selection": "Evaluation of academic record and background",
-                "admission_mode": "Bilinmiyor / Resmi Veri Yok",
+                "admission_mode": "Verification of requirements and personal preparation",
                 "admission_risk": "Bilinmiyor / Resmi Veri Yok",
                 "required_documents": [],
                 "motivation_letter_required": true,
@@ -766,7 +864,9 @@
                 "verification_notes": "Admission facts were not retained without a checked official source."
             },
             "language_profile": {
-                "teaching_language": [],
+                "teaching_language": [
+                    "English"
+                ],
                 "english_required": null,
                 "english_level_required": null,
                 "accepted_english_tests": [
@@ -781,7 +881,7 @@
                 "italian_level_required": "",
                 "italian_needed_for_life_or_internship": "Highly recommended for daily life in Rome",
                 "mixed_language_warning": "",
-                "language_risk": "Bilinmiyor / Resmi Veri Yok",
+                "language_risk": "low",
                 "verification_notes": "Teaching language was not retained without a checked official source."
             },
             "cost_profile": {
@@ -840,7 +940,9 @@
                 "verification_notes": "Living and housing values were not retained without a checked official or clearly labelled sentiment source."
             },
             "curriculum_profile": {
-                "tracks": [],
+                "tracks": [
+                    "Space and astronautical engineering"
+                ],
                 "specializations": [],
                 "mandatory_courses": [],
                 "elective_courses": [],
@@ -931,16 +1033,16 @@
                 "official_department_page": "https://www.dima.uniroma1.it/",
                 "official_lab_pages": [],
                 "third_party_sources": [],
-                "last_verified": "2024-06-24",
+                "last_verified": "2026-07-14",
                 "needs_verification": true,
                 "verification_notes": "Some fields require official source verification.",
                 "field_confidence": {
                     "program_basic_info": "high",
                     "language": "high",
-                    "admission": "medium",
+                    "admission": "high",
                     "tuition": "medium",
                     "scholarship": "high",
-                    "curriculum": "high",
+                    "curriculum": "medium",
                     "research": "high",
                     "industry": "high",
                     "living": "high"
@@ -993,6 +1095,33 @@
                         ],
                         "confidence": "high",
                         "notes": "Coordinates resolved at city confidence; this is a map placement signal, not an official programme fact."
+                    },
+                    {
+                        "url": "https://corsidilaurea.uniroma1.it/en/corso/2022/31825/home",
+                        "title": "Sapienza Space and astronautical engineering course catalogue",
+                        "source_type": "official_program_page",
+                        "access_status": "ok",
+                        "last_checked": "2026-07-14",
+                        "relevant_fields": [
+                            "program",
+                            "language",
+                            "admission",
+                            "curriculum"
+                        ],
+                        "confidence": "high",
+                        "notes": ""
+                    },
+                    {
+                        "url": "https://corsidilaurea.uniroma1.it/sites/default/files/offertaformativa/documenti_ufficiali/187/33484_e.pdf",
+                        "title": "Sapienza 2025–26 admission procedures",
+                        "source_type": "official_admission_page",
+                        "access_status": "ok",
+                        "last_checked": "2026-07-14",
+                        "relevant_fields": [
+                            "admission"
+                        ],
+                        "confidence": "high",
+                        "notes": ""
                     }
                 ]
             },
@@ -1078,22 +1207,24 @@
             },
             "quality_control": {
                 "qc_status": "needs_revision",
-                "checked_at": "2026-07-10",
+                "checked_at": "2026-07-14",
                 "failed_canary_tests": [
                     "missing_or_unverified_critical_fields"
                 ],
                 "remaining_verification_tasks": [
-                    "Recheck every official source URL and record access_status/relevant_fields.",
-                    "Verify tuition and additional fees from a checked official source.",
-                    "Verify teaching language and language requirements from an official source.",
-                    "Verify admission requirements and non-EU eligibility from an official source.",
-                    "Verify scholarship names, eligibility and deadlines from an official source.",
-                    "Verify current application deadlines from an official source.",
-                    "Verify curriculum, tracks and courses before assigning categories.",
-                    "Verify department/lab/research claims from official sources.",
-                    "Verify industry partnerships separately from geographic proximity."
+                    {
+                        "en": "Add a checked official source for tuition.",
+                        "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for scholarship.",
+                        "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+                    }
                 ],
-                "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+                "qc_notes": {
+                    "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+                    "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+                }
             },
             "location": {
                 "country": "Italy",
@@ -1101,6 +1232,22 @@
                 "latitude": 41.8933203,
                 "longitude": 12.4829321,
                 "locationConfidence": "city"
+            },
+            "data_quality": {
+                "status": "partial",
+                "checked_official_source_count": 2,
+                "verified_fields": [
+                    "program",
+                    "language",
+                    "admission",
+                    "curriculum"
+                ],
+                "unverified_critical_fields": [
+                    "tuition",
+                    "scholarship"
+                ],
+                "has_checked_source_log": true,
+                "audited_at": "2026-07-14"
             }
         },
         {
@@ -1426,22 +1573,40 @@
             },
             "quality_control": {
                 "qc_status": "needs_revision",
-                "checked_at": "2026-07-10",
+                "checked_at": "2026-07-14",
                 "failed_canary_tests": [
                     "missing_or_unverified_critical_fields"
                 ],
                 "remaining_verification_tasks": [
-                    "Recheck every official source URL and record access_status/relevant_fields.",
-                    "Verify tuition and additional fees from a checked official source.",
-                    "Verify teaching language and language requirements from an official source.",
-                    "Verify admission requirements and non-EU eligibility from an official source.",
-                    "Verify scholarship names, eligibility and deadlines from an official source.",
-                    "Verify current application deadlines from an official source.",
-                    "Verify curriculum, tracks and courses before assigning categories.",
-                    "Verify department/lab/research claims from official sources.",
-                    "Verify industry partnerships separately from geographic proximity."
+                    {
+                        "en": "Add a checked official source for program.",
+                        "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for language.",
+                        "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for tuition.",
+                        "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for scholarship.",
+                        "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for curriculum.",
+                        "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for admission.",
+                        "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                    }
                 ],
-                "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+                "qc_notes": {
+                    "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+                    "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+                }
             },
             "location": {
                 "country": "Italy",
@@ -1449,6 +1614,21 @@
                 "latitude": 40.8358846,
                 "longitude": 14.2487679,
                 "locationConfidence": "city"
+            },
+            "data_quality": {
+                "status": "needs_verification",
+                "checked_official_source_count": 0,
+                "verified_fields": [],
+                "unverified_critical_fields": [
+                    "program",
+                    "language",
+                    "tuition",
+                    "scholarship",
+                    "curriculum",
+                    "admission"
+                ],
+                "has_checked_source_log": false,
+                "audited_at": "2026-07-14"
             }
         },
         {
@@ -1770,22 +1950,40 @@
             },
             "quality_control": {
                 "qc_status": "needs_revision",
-                "checked_at": "2026-07-10",
+                "checked_at": "2026-07-14",
                 "failed_canary_tests": [
                     "missing_or_unverified_critical_fields"
                 ],
                 "remaining_verification_tasks": [
-                    "Recheck every official source URL and record access_status/relevant_fields.",
-                    "Verify tuition and additional fees from a checked official source.",
-                    "Verify teaching language and language requirements from an official source.",
-                    "Verify admission requirements and non-EU eligibility from an official source.",
-                    "Verify scholarship names, eligibility and deadlines from an official source.",
-                    "Verify current application deadlines from an official source.",
-                    "Verify curriculum, tracks and courses before assigning categories.",
-                    "Verify department/lab/research claims from official sources.",
-                    "Verify industry partnerships separately from geographic proximity."
+                    {
+                        "en": "Add a checked official source for program.",
+                        "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for language.",
+                        "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for tuition.",
+                        "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for scholarship.",
+                        "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for curriculum.",
+                        "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for admission.",
+                        "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                    }
                 ],
-                "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+                "qc_notes": {
+                    "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+                    "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+                }
             },
             "location": {
                 "country": "Italy",
@@ -1793,6 +1991,21 @@
                 "latitude": 43.4714722,
                 "longitude": 10.6797912,
                 "locationConfidence": "city"
+            },
+            "data_quality": {
+                "status": "needs_verification",
+                "checked_official_source_count": 0,
+                "verified_fields": [],
+                "unverified_critical_fields": [
+                    "program",
+                    "language",
+                    "tuition",
+                    "scholarship",
+                    "curriculum",
+                    "admission"
+                ],
+                "has_checked_source_log": false,
+                "audited_at": "2026-07-14"
             }
         },
         {
@@ -2098,21 +2311,40 @@
             },
             "quality_control": {
                 "qc_status": "needs_revision",
-                "checked_at": "2026-07-10",
+                "checked_at": "2026-07-14",
                 "failed_canary_tests": [
                     "missing_or_unverified_critical_fields"
                 ],
                 "remaining_verification_tasks": [
-                    "Verify tuition and additional fees from a checked official source.",
-                    "Verify teaching language and language requirements from an official source.",
-                    "Verify admission requirements and non-EU eligibility from an official source.",
-                    "Verify scholarship names, eligibility and deadlines from an official source.",
-                    "Verify current application deadlines from an official source.",
-                    "Verify curriculum, tracks and courses before assigning categories.",
-                    "Verify department/lab/research claims from official sources.",
-                    "Verify industry partnerships separately from geographic proximity."
+                    {
+                        "en": "Add a checked official source for program.",
+                        "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for language.",
+                        "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for tuition.",
+                        "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for scholarship.",
+                        "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for curriculum.",
+                        "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for admission.",
+                        "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                    }
                 ],
-                "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+                "qc_notes": {
+                    "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+                    "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+                }
             },
             "location": {
                 "country": "Italy",
@@ -2120,6 +2352,21 @@
                 "latitude": 41.108887,
                 "longitude": 16.8785859,
                 "locationConfidence": "exact"
+            },
+            "data_quality": {
+                "status": "needs_verification",
+                "checked_official_source_count": 0,
+                "verified_fields": [],
+                "unverified_critical_fields": [
+                    "program",
+                    "language",
+                    "tuition",
+                    "scholarship",
+                    "curriculum",
+                    "admission"
+                ],
+                "has_checked_source_log": false,
+                "audited_at": "2026-07-14"
             }
         },
         {
@@ -2421,21 +2668,40 @@
             },
             "quality_control": {
                 "qc_status": "needs_revision",
-                "checked_at": "2026-07-10",
+                "checked_at": "2026-07-14",
                 "failed_canary_tests": [
                     "missing_or_unverified_critical_fields"
                 ],
                 "remaining_verification_tasks": [
-                    "Verify tuition and additional fees from a checked official source.",
-                    "Verify teaching language and language requirements from an official source.",
-                    "Verify admission requirements and non-EU eligibility from an official source.",
-                    "Verify scholarship names, eligibility and deadlines from an official source.",
-                    "Verify current application deadlines from an official source.",
-                    "Verify curriculum, tracks and courses before assigning categories.",
-                    "Verify department/lab/research claims from official sources.",
-                    "Verify industry partnerships separately from geographic proximity."
+                    {
+                        "en": "Add a checked official source for program.",
+                        "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for language.",
+                        "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for tuition.",
+                        "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for scholarship.",
+                        "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for curriculum.",
+                        "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for admission.",
+                        "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                    }
                 ],
-                "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+                "qc_notes": {
+                    "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+                    "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+                }
             },
             "location": {
                 "country": "Italy",
@@ -2443,6 +2709,21 @@
                 "latitude": 38.1112268,
                 "longitude": 13.3524434,
                 "locationConfidence": "city"
+            },
+            "data_quality": {
+                "status": "needs_verification",
+                "checked_official_source_count": 0,
+                "verified_fields": [],
+                "unverified_critical_fields": [
+                    "program",
+                    "language",
+                    "tuition",
+                    "scholarship",
+                    "curriculum",
+                    "admission"
+                ],
+                "has_checked_source_log": false,
+                "audited_at": "2026-07-14"
             }
         },
         {
@@ -2763,21 +3044,40 @@
             },
             "quality_control": {
                 "qc_status": "needs_revision",
-                "checked_at": "2026-07-10",
+                "checked_at": "2026-07-14",
                 "failed_canary_tests": [
                     "missing_or_unverified_critical_fields"
                 ],
                 "remaining_verification_tasks": [
-                    "Verify tuition and additional fees from a checked official source.",
-                    "Verify teaching language and language requirements from an official source.",
-                    "Verify admission requirements and non-EU eligibility from an official source.",
-                    "Verify scholarship names, eligibility and deadlines from an official source.",
-                    "Verify current application deadlines from an official source.",
-                    "Verify curriculum, tracks and courses before assigning categories.",
-                    "Verify department/lab/research claims from official sources.",
-                    "Verify industry partnerships separately from geographic proximity."
+                    {
+                        "en": "Add a checked official source for program.",
+                        "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for language.",
+                        "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for tuition.",
+                        "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for scholarship.",
+                        "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for curriculum.",
+                        "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for admission.",
+                        "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                    }
                 ],
-                "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+                "qc_notes": {
+                    "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+                    "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+                }
             },
             "location": {
                 "country": "Italy",
@@ -2785,6 +3085,21 @@
                 "latitude": 44.2227278,
                 "longitude": 12.041273,
                 "locationConfidence": "city"
+            },
+            "data_quality": {
+                "status": "needs_verification",
+                "checked_official_source_count": 0,
+                "verified_fields": [],
+                "unverified_critical_fields": [
+                    "program",
+                    "language",
+                    "tuition",
+                    "scholarship",
+                    "curriculum",
+                    "admission"
+                ],
+                "has_checked_source_log": false,
+                "audited_at": "2026-07-14"
             }
         },
         {
@@ -3095,21 +3410,40 @@
             },
             "quality_control": {
                 "qc_status": "needs_revision",
-                "checked_at": "2026-07-10",
+                "checked_at": "2026-07-14",
                 "failed_canary_tests": [
                     "missing_or_unverified_critical_fields"
                 ],
                 "remaining_verification_tasks": [
-                    "Verify tuition and additional fees from a checked official source.",
-                    "Verify teaching language and language requirements from an official source.",
-                    "Verify admission requirements and non-EU eligibility from an official source.",
-                    "Verify scholarship names, eligibility and deadlines from an official source.",
-                    "Verify current application deadlines from an official source.",
-                    "Verify curriculum, tracks and courses before assigning categories.",
-                    "Verify department/lab/research claims from official sources.",
-                    "Verify industry partnerships separately from geographic proximity."
+                    {
+                        "en": "Add a checked official source for program.",
+                        "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for language.",
+                        "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for tuition.",
+                        "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for scholarship.",
+                        "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for curriculum.",
+                        "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for admission.",
+                        "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                    }
                 ],
-                "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+                "qc_notes": {
+                    "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+                    "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+                }
             },
             "location": {
                 "country": "Italy",
@@ -3117,6 +3451,21 @@
                 "latitude": 45.4066496,
                 "longitude": 11.8774407,
                 "locationConfidence": "exact"
+            },
+            "data_quality": {
+                "status": "needs_verification",
+                "checked_official_source_count": 0,
+                "verified_fields": [],
+                "unverified_critical_fields": [
+                    "program",
+                    "language",
+                    "tuition",
+                    "scholarship",
+                    "curriculum",
+                    "admission"
+                ],
+                "has_checked_source_log": false,
+                "audited_at": "2026-07-14"
             }
         },
         {
@@ -3410,21 +3759,40 @@
             },
             "quality_control": {
                 "qc_status": "needs_revision",
-                "checked_at": "2026-07-10",
+                "checked_at": "2026-07-14",
                 "failed_canary_tests": [
                     "missing_or_unverified_critical_fields"
                 ],
                 "remaining_verification_tasks": [
-                    "Verify tuition and additional fees from a checked official source.",
-                    "Verify teaching language and language requirements from an official source.",
-                    "Verify admission requirements and non-EU eligibility from an official source.",
-                    "Verify scholarship names, eligibility and deadlines from an official source.",
-                    "Verify current application deadlines from an official source.",
-                    "Verify curriculum, tracks and courses before assigning categories.",
-                    "Verify department/lab/research claims from official sources.",
-                    "Verify industry partnerships separately from geographic proximity."
+                    {
+                        "en": "Add a checked official source for program.",
+                        "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for language.",
+                        "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for tuition.",
+                        "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for scholarship.",
+                        "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for curriculum.",
+                        "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for admission.",
+                        "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                    }
                 ],
-                "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+                "qc_notes": {
+                    "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+                    "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+                }
             },
             "location": {
                 "country": "Italy",
@@ -3432,6 +3800,21 @@
                 "latitude": 46.0661807,
                 "longitude": 11.1166177,
                 "locationConfidence": "exact"
+            },
+            "data_quality": {
+                "status": "needs_verification",
+                "checked_official_source_count": 0,
+                "verified_fields": [],
+                "unverified_critical_fields": [
+                    "program",
+                    "language",
+                    "tuition",
+                    "scholarship",
+                    "curriculum",
+                    "admission"
+                ],
+                "has_checked_source_log": false,
+                "audited_at": "2026-07-14"
             }
         },
         {
@@ -3741,8 +4124,8 @@
                 }
             ],
             "student_sentiment_profile": {
-                "student_satisfaction_score": 70,
-                "sentiment_confidence": "high",
+                "student_satisfaction_score": null,
+                "sentiment_confidence": "unknown",
                 "sample_size_estimate": null,
                 "date_range": "",
                 "teaching_quality_sentiment": "",
@@ -3758,24 +4141,46 @@
                 "recurring_strengths": [],
                 "sentiment_summary": "Prestijli ve kariyer açısından çok güçlü olsa da, Milano'nun yaşam maliyeti ve İtalyan eğitim sisteminin acımasız teorik yükü nedeniyle ruh sağlığını korumak ciddi bir mesele.",
                 "student_sentiment_sources": [],
-                "verification_notes": "No sufficiently documented independent sentiment sample was retained.",
+                "verification_notes": {
+                    "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+                    "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+                },
                 "industry_connections": "Thales Alenia Space, Leonardo gibi devlerle ve ESA ile güçlü araştırma bağları."
             },
             "quality_control": {
                 "qc_status": "needs_revision",
-                "checked_at": "2026-07-10",
+                "checked_at": "2026-07-14",
                 "failed_canary_tests": [],
                 "remaining_verification_tasks": [
-                    "Verify tuition and additional fees from a checked official source.",
-                    "Verify teaching language and language requirements from an official source.",
-                    "Verify admission requirements and non-EU eligibility from an official source.",
-                    "Verify scholarship names, eligibility and deadlines from an official source.",
-                    "Verify current application deadlines from an official source.",
-                    "Verify curriculum, tracks and courses before assigning categories.",
-                    "Verify department/lab/research claims from official sources.",
-                    "Verify industry partnerships separately from geographic proximity."
+                    {
+                        "en": "Add a checked official source for program.",
+                        "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for language.",
+                        "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for tuition.",
+                        "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for scholarship.",
+                        "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for curriculum.",
+                        "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+                    },
+                    {
+                        "en": "Add a checked official source for admission.",
+                        "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                    }
                 ],
-                "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+                "qc_notes": {
+                    "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+                    "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+                }
             },
             "location": {
                 "country": "Italy",
@@ -3783,6 +4188,21 @@
                 "latitude": 45.4800101,
                 "longitude": 9.2282387,
                 "locationConfidence": "exact"
+            },
+            "data_quality": {
+                "status": "needs_verification",
+                "checked_official_source_count": 0,
+                "verified_fields": [],
+                "unverified_critical_fields": [
+                    "program",
+                    "language",
+                    "tuition",
+                    "scholarship",
+                    "curriculum",
+                    "admission"
+                ],
+                "has_checked_source_log": false,
+                "audited_at": "2026-07-14"
             }
         }
     ],

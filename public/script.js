@@ -961,6 +961,12 @@ function openDrawer(data) {
         const band = scoreBand(data._score);
         const confidence = confidenceLabel(n.confidenceSummary);
         const languageText = compactList(n.teachingLanguage) || (window.t ? window.t('unknown_value') : 'Unknown');
+        const publishedProgrammeFee = n.costDetails?.tuition_non_eu_full_program;
+        const headlineCost = n.totalAcademicCost != null || n.tuitionPerYear != null
+            ? formatMoney(n.totalAcademicCost ?? n.tuitionPerYear)
+            : publishedProgrammeFee?.amount != null && publishedProgrammeFee?.currency
+                ? `${Number(publishedProgrammeFee.amount).toLocaleString('en-US')} ${publishedProgrammeFee.currency} (${isTurkish ? 'program toplamı' : 'full programme'})`
+                : '—';
         const decisionHeroHTML = `
             <section class="drawer-decision-hero">
                 <div class="drawer-decision-hero__topline">
@@ -971,7 +977,7 @@ function openDrawer(data) {
                 <div class="drawer-score-line"><strong class="fit-score fit-score--${band.key}">${escapeHtml(scoreVal)}</strong><span><b>${escapeHtml(band.label)}</b><small>${escapeHtml(window.t ? window.t('technical_match') : 'Technical match')}</small></span></div>
                 <dl class="drawer-decision-grid">
                     <div><dt>${escapeHtml(window.t ? window.t('teaching_language') : 'Teaching language')}</dt><dd>${escapeHtml(languageText)}</dd></div>
-                    <div><dt>${escapeHtml(window.t ? window.t('annual_cost') : 'Annual cost')}</dt><dd>${escapeHtml(formatMoney(n.totalAcademicCost ?? n.tuitionPerYear))}</dd></div>
+                    <div><dt>${escapeHtml(window.t ? window.t('annual_cost') : 'Annual cost')}</dt><dd>${escapeHtml(headlineCost)}</dd></div>
                     <div><dt>ECTS / ${escapeHtml(window.t ? window.t('degree') : 'Degree')}</dt><dd>${escapeHtml([n.ects ? `${n.ects} ECTS` : '', displayValue(n.degree)].filter(Boolean).join(' · ') || '—')}</dd></div>
                     <div><dt>${escapeHtml(window.t ? window.t('winter_deadline') : 'Deadline')}</dt><dd>${escapeHtml(n.deadline ? displayValue(n.deadline) : '—')}</dd></div>
                 </dl>
@@ -980,6 +986,50 @@ function openDrawer(data) {
         const verificationBanner = n.needsVerification
             ? `<div class="verification-banner warning"><strong>${isTurkish ? 'Doğrulama gerekli' : 'Verification required'}</strong><span>${isTurkish ? 'Kritik kayıt alanları resmi kaynaklarla yeniden kontrol edilmelidir.' : 'Critical record fields should be rechecked against official sources.'}</span></div>`
             : `<div class="verification-banner"><strong>${isTurkish ? 'Kaynak durumu' : 'Source status'}</strong><span>${n.sources.length ? (isTurkish ? `${n.sources.length} kaynak kaydı mevcut.` : `${n.sources.length} source record(s) available.`) : (isTurkish ? 'Kaynak kaydı sınırlı.' : 'Source evidence is limited.')}</span></div>`;
+
+        const quality = n.dataQuality || {};
+        const verifiedFields = quality.verifiedFields || [];
+        const unverifiedFields = quality.unverifiedCriticalFields || [];
+        const qualityStatusLabel = {
+            verified: isTurkish ? 'Kritik alanlar doğrulandı' : 'Critical fields verified',
+            partial: isTurkish ? 'Kısmi doğrulama' : 'Partially verified',
+            needs_verification: isTurkish ? 'Doğrulama bekliyor' : 'Verification pending'
+        }[quality.status] || (isTurkish ? 'Doğrulama bekliyor' : 'Verification pending');
+        const humanField = (field) => ({
+            program: isTurkish ? 'program' : 'programme', language: isTurkish ? 'öğretim dili' : 'teaching language',
+            admission: isTurkish ? 'kabul' : 'admission', non_eu_eligibility: isTurkish ? 'AB dışı uygunluk' : 'non-EU eligibility',
+            tuition: isTurkish ? 'öğrenim ücreti' : 'tuition', scholarship: isTurkish ? 'burs' : 'scholarship',
+            deadline: isTurkish ? 'son tarih' : 'deadline', curriculum: isTurkish ? 'müfredat' : 'curriculum',
+            research: isTurkish ? 'araştırma' : 'research', industry: isTurkish ? 'endüstri ilişkisi' : 'industry links',
+            housing: isTurkish ? 'konaklama' : 'housing'
+        }[field] || field);
+        const qualityHTML = `
+            <section class="evidence-strip evidence-strip--${escapeHtml(quality.status || 'needs_verification')}">
+                <div><span class="evidence-strip__eyebrow">${isTurkish ? 'VERİ KAPSAMI' : 'DATA COVERAGE'}</span><strong>${escapeHtml(qualityStatusLabel)}</strong></div>
+                <div class="evidence-strip__counts"><b>${Number(quality.checkedOfficialSourceCount || 0)}</b><span>${isTurkish ? 'kontrol edilmiş resmi kaynak' : 'checked official sources'}</span></div>
+                <p>${verifiedFields.length ? (isTurkish ? `Doğrulanan: ${verifiedFields.map(humanField).join(', ')}.` : `Verified: ${verifiedFields.map(humanField).join(', ')}.`) : (isTurkish ? 'Henüz karar verdiren alan doğrulanmadı.' : 'No decision-critical field is verified yet.')}</p>
+                ${unverifiedFields.length ? `<small>${isTurkish ? 'Kontrol bekleyen: ' : 'Still to verify: '}${escapeHtml(unverifiedFields.map(humanField).join(', '))}</small>` : ''}
+            </section>`;
+
+        const weighted = data._scoringDetails?.weighted_components || {};
+        const impactLabels = {
+            academic_fit: isTurkish ? 'Akademik / alan uyumu' : 'Academic / field fit',
+            eligibility_language: isTurkish ? 'Uygunluk ve dil' : 'Eligibility & language',
+            cost_funding: isTurkish ? 'Maliyet ve burs' : 'Cost & funding',
+            career_research: isTurkish ? 'Kariyer / araştırma' : 'Career / research',
+            living_risk: isTurkish ? 'Yaşam riski' : 'Living risk',
+            confidence_deadline: isTurkish ? 'Veri güveni' : 'Data confidence'
+        };
+        const impactRows = Object.entries(weighted)
+            .sort(([, left], [, right]) => Number(right) - Number(left))
+            .map(([key, value]) => `<li><span>${escapeHtml(impactLabels[key] || key)}</span><b>${Number(value).toFixed(1)}</b></li>`)
+            .join('');
+        const scoreImpactHTML = impactRows ? `
+            <section class="score-impact-card">
+                <div><span class="evidence-strip__eyebrow">${isTurkish ? 'AĞIRLIK ETKİSİ' : 'WEIGHT IMPACT'}</span><strong>${isTurkish ? 'Bu puanı hangi ağırlıklar taşıyor?' : 'Which weights drive this score?'}</strong></div>
+                <ol>${impactRows}</ol>
+                <small>${isTurkish ? 'Katkılar, seçtiğiniz ağırlıklarla 100 üzerinden puana yapılan katkıdır; akademik katkı yalnızca kaynaklı müfredat kapsamını kullanır.' : 'Contributions are points toward the 100-point result at your selected weights; academic contribution uses source-backed curriculum coverage only.'}</small>
+            </section>` : '';
 
         // 2. Temel Bilgiler (Basic Info)
         const qsBadge = n.qsRanking ? `<span class="rank-badge qs-rank">QS: #${n.qsRanking}</span>` : '';
@@ -1062,49 +1112,54 @@ function openDrawer(data) {
             </div>
         `;
 
-        // 4. Finansallar (Financials)
-        let financeHTML = `
+        // 4. Money reality.  Tuition, compulsory fees, room rent and total
+        // monthly living budget are deliberately separate: a cheap tuition
+        // never implies an affordable city.
+        const tuitionVerified = verifiedFields.includes('tuition');
+        const scholarshipVerified = verifiedFields.includes('scholarship');
+        const housingVerified = verifiedFields.includes('housing');
+        const unknownMoney = isTurkish ? 'Resmi kaynakla doğrulanmadı' : 'Not verified by an official source';
+        const fullProgrammeFee = n.costDetails?.tuition_non_eu_full_program;
+        const foreignProgrammeFee = fullProgrammeFee?.amount && fullProgrammeFee?.currency
+            ? `${Number(fullProgrammeFee.amount).toLocaleString('en-US')} ${escapeHtml(fullProgrammeFee.currency)}${isTurkish ? ' (tam program)' : ' (full programme)'}`
+            : '';
+        const tuitionText = tuitionVerified
+            ? (n.tuitionPerYear !== null ? `${formatMoney(n.tuitionPerYear)}${isTurkish ? ' / yıl' : ' / year'}` : (foreignProgrammeFee || (isTurkish ? 'Tutar EUR olarak yayımlanmıyor' : 'Amount is not published in EUR')))
+            : unknownMoney;
+        const feeText = tuitionVerified && n.semesterFee !== null
+            ? `${formatMoney(n.semesterFee)}${isTurkish ? ' / dönem' : ' / term'}`
+            : (tuitionVerified ? '—' : unknownMoney);
+        const financeHTML = `
             <div class="drawer-section premium-card financial-card">
-                <div class="premium-header">
-                    <span class="premium-icon">💰</span>
-                    <h4 class="premium-title">Finansallar</h4>
-                </div>
+                <div class="premium-header"><span class="premium-icon">💰</span><h4 class="premium-title">${isTurkish ? 'Maliyet & Burs Gerçeği' : 'Cost & Funding Reality'}</h4></div>
+                <p class="card-disclaimer">${isTurkish ? 'Tutarlar yalnızca kontrol edilmiş resmi kaynak bulunduğunda gösterilir. Konaklama ve yaşam bütçesi okul ücretinden ayrıdır.' : 'Amounts are displayed only with a checked official source. Housing and living budget are separate from tuition.'}</p>
                 <div class="premium-grid">
-                    <div class="premium-item">
-                        <label>Yıllık Okul Ücreti (Tuition)</label>
-                        <span class="finance-val tuition">${formatMoney(n.tuitionPerYear)}</span>
-                    </div>
-                    <div class="premium-item">
-                        <label>Harç / Ek Ücret (Fee)</label>
-                        <span class="finance-val fee">${formatMoney(n.semesterFee)}</span>
-                    </div>
-                    <div class="premium-item full-span scholarship-box">
-                        <label>Burs İmkânları</label>
-                        <span class="scholarship-text">${displayValue(n.scholarshipSummary)}</span>
-                    </div>
+                    <div class="premium-item"><label>${isTurkish ? 'Öğrenim ücreti' : 'Tuition'}</label><span class="finance-val tuition">${tuitionText}</span></div>
+                    <div class="premium-item"><label>${isTurkish ? 'Zorunlu ek ücret' : 'Compulsory fee'}</label><span class="finance-val fee">${feeText}</span></div>
+                    <div class="premium-item full-span scholarship-box"><label>${isTurkish ? 'Burs / ücret muafiyeti' : 'Scholarship / fee waiver'}</label><span class="scholarship-text">${scholarshipVerified ? escapeHtml(compactList(n.scholarshipSummary) || '—') : unknownMoney}</span></div>
+                    ${n.costDetails?.cost_notes ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Maliyet notu' : 'Cost note'}</label><span>${escapeHtml(displayValue(n.costDetails.cost_notes))}</span></div>` : ''}
                 </div>
-            </div>
-        `;
+            </div>`;
 
-        // 5. Şehir / Ülke Bilgileri (Living)
-        let livingHTML = `
+        const roomRentText = housingVerified && n.averageRoomRent !== null
+            ? `${formatMoney(n.averageRoomRent)}${isTurkish ? ' / ay (oda)' : ' / month (room)'}`
+            : unknownMoney;
+        const monthlyLivingText = housingVerified && (n.monthlyLivingCostMin !== null || n.monthlyLivingCost !== null)
+            ? (n.monthlyLivingCostMin !== null && n.monthlyLivingCostMax !== null
+                ? `${formatMoney(n.monthlyLivingCostMin)}–${formatMoney(n.monthlyLivingCostMax)}${isTurkish ? ' / ay' : ' / month'}`
+                : `${formatMoney(n.monthlyLivingCost ?? n.monthlyLivingCostMin)}${isTurkish ? ' / ay' : ' / month'}`)
+            : unknownMoney;
+        const livingHTML = `
             <div class="drawer-section premium-card">
-                <div class="premium-header">
-                    <span class="premium-icon">🏙️</span>
-                    <h4 class="premium-title">Şehir & Yaşam</h4>
-                </div>
+                <div class="premium-header"><span class="premium-icon">🏙️</span><h4 class="premium-title">${isTurkish ? 'Konaklama & Yaşam' : 'Housing & Living'}</h4></div>
                 <div class="premium-grid">
-                    <div class="premium-item">
-                        <label>Ortalama Konut Masrafı</label>
-                        <span class="finance-val">${n.housingCost ? '€' + n.housingCost + ' / ay' : 'Bilinmiyor'}</span>
-                    </div>
-                    <div class="premium-item">
-                        <label>Konut Bulma Zorluğu</label>
-                        ${formatRiskBadge(n.housingDifficulty)}
-                    </div>
+                    <div class="premium-item"><label>${isTurkish ? 'Oda kirası' : 'Room rent'}</label><span class="finance-val">${roomRentText}</span></div>
+                    <div class="premium-item"><label>${isTurkish ? 'Aylık toplam yaşam bütçesi' : 'Monthly living budget'}</label><span class="finance-val">${monthlyLivingText}</span></div>
+                    <div class="premium-item"><label>${isTurkish ? 'Konut bulma riski' : 'Housing availability risk'}</label>${housingVerified ? formatRiskBadge(n.housingDifficulty) : `<span class="risk-badge risk-unknown">${unknownMoney}</span>`}</div>
+                    ${n.monthlyLivingCostBasis ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Bütçe kapsamı' : 'Budget basis'}</label><span>${escapeHtml(displayValue(n.monthlyLivingCostBasis))}</span></div>` : ''}
+                    ${n.livingDetails?.housing_notes ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Konut notu' : 'Housing note'}</label><span>${escapeHtml(displayValue(n.livingDetails.housing_notes))}</span></div>` : ''}
                 </div>
-            </div>
-        `;
+            </div>`;
 
         // 6. Avantaj ve Dezavantajlar (Pros & Cons)
         let prosHTML = '';
@@ -1131,30 +1186,48 @@ function openDrawer(data) {
             </div>`;
         }
 
-        // 6.5 Öğrenci Yorumları (Student Reviews)
-        let studentReviewsHTML = '';
-        if (n.studentReviews && n.studentReviews.length > 0) {
-            const reviewsItems = n.studentReviews.map(r => `
-                <div class="student-review-item">
-                    <p class="review-quote">"${escapeHtml(r.quote)}"</p>
-                    <div class="review-meta">
-                        <span class="review-source">${escapeHtml(r.source)}</span>
-                        ${r.url ? `<a href="${escapeHtml(r.url)}" target="_blank" class="review-link">Kaynağa Git ↗</a>` : ''}
-                    </div>
-                </div>
-            `).join('');
-            
-            studentReviewsHTML = `
+        // 6.5 Student experience is deliberately displayed as perception,
+        // never as a substitute for the official programme facts above.
+        const sentiment = n.studentSentiment || {};
+        const sentimentSources = Array.isArray(n.studentReviews) ? n.studentReviews : [];
+        const sentimentScore = Number.isFinite(Number(sentiment.student_satisfaction_score)) ? Number(sentiment.student_satisfaction_score) : null;
+        const sentimentSummary = displayValue(sentiment.sentiment_summary || sentiment.student_sentiment_summary || sentiment.verification_notes);
+        const sourceLinks = sentimentSources.map((review) => {
+            const url = safeUrl(review?.url);
+            const title = review?.title || review?.source || review?.platform || (isTurkish ? 'Öğrenci deneyimi kaynağı' : 'Student-experience source');
+            const quote = review?.quote ? `<p class="review-quote">“${escapeHtml(review.quote)}”</p>` : '';
+            return `<li>${quote}<span>${escapeHtml(title)}</span>${url ? `<a href="${url}" target="_blank" rel="noreferrer">${isTurkish ? 'Kaynağı aç ↗' : 'Open source ↗'}</a>` : ''}</li>`;
+        }).join('');
+        const studentReviewsHTML = `
             <div class="drawer-section premium-card student-reviews-card">
-                <div class="premium-header">
-                    <span class="premium-icon">💬</span>
-                    <h4 class="premium-title">Öğrenci Yorumları</h4>
+                <div class="premium-header"><span class="premium-icon">💬</span><h4 class="premium-title">${isTurkish ? 'Öğrenci Deneyimi Sinyali' : 'Student Experience Signal'}</h4></div>
+                <p class="card-disclaimer">${isTurkish ? 'Bu bölüm resmi bilgi değildir; sınırlı öğrenci deneyimlerinin ihtiyatlı bir özetidir.' : 'This section is not official fact; it is a cautious summary of student-experience evidence.'}</p>
+                <div class="sentiment-facts">
+                    <span><b>${sentimentScore === null ? '—' : `${sentimentScore}/100`}</b><small>${isTurkish ? 'memnuniyet sinyali' : 'satisfaction signal'}</small></span>
+                    <span><b>${Number(sentiment.sample_size_estimate || 0) || '—'}</b><small>${isTurkish ? 'yaklaşık örneklem' : 'estimated sample'}</small></span>
+                    <span><b>${escapeHtml(confidenceLabel(sentiment.sentiment_confidence).label)}</b><small>${isTurkish ? 'güven' : 'confidence'}</small></span>
                 </div>
-                <div class="reviews-grid">
-                    ${reviewsItems}
-                </div>
+                ${sentiment.date_range ? `<p class="sentiment-date">${isTurkish ? 'Tarih aralığı: ' : 'Date range: '}${escapeHtml(sentiment.date_range)}</p>` : ''}
+                <p class="sentiment-summary">${escapeHtml(sentimentSummary || (isTurkish ? 'Kaynaklı öğrenci deneyimi özeti henüz yeterli değil; bu nedenle puan gösterilmiyor.' : 'There is not yet enough sourced student-experience evidence, so no score is shown.'))}</p>
+                ${sourceLinks ? `<ul class="student-source-list">${sourceLinks}</ul>` : ''}
             </div>`;
-        }
+
+        const sourceRows = (n.sources || []).map((item) => {
+            const url = safeUrl(item?.url);
+            const title = item?.title || item?.source_type || (isTurkish ? 'Kaynak' : 'Source');
+            const access = String(item?.access_status || 'unknown').replaceAll('_', ' ');
+            const type = String(item?.source_type || 'other').replaceAll('_', ' ');
+            const fields = Array.isArray(item?.relevant_fields) && item.relevant_fields.length
+                ? item.relevant_fields.map(humanField).join(', ')
+                : (isTurkish ? 'Alan belirtilmemiş' : 'Fields not specified');
+            return `<li><div><strong>${escapeHtml(title)}</strong><small>${escapeHtml(type)} · ${escapeHtml(fields)}</small></div><span class="source-access source-access--${escapeHtml(access.toLowerCase().replace(/\s+/g, '-'))}">${escapeHtml(access)}</span>${url ? `<a href="${url}" target="_blank" rel="noreferrer">↗</a>` : ''}</li>`;
+        }).join('');
+        const sourcesHTML = `
+            <div class="drawer-section premium-card sources-card">
+                <div class="premium-header"><span class="premium-icon">🔗</span><h4 class="premium-title">${isTurkish ? 'Kaynak Günlüğü' : 'Source Log'}</h4></div>
+                <p class="card-disclaimer">${isTurkish ? 'Her sayı veya iddia için kaynak türünü ve erişim durumunu görün. “unknown”, “broken” veya “requires js” durumları karar kanıtı değildir.' : 'Inspect the source type and access status behind each claim. “unknown”, “broken” and “requires js” are not decision evidence.'}</p>
+                ${sourceRows ? `<ul class="source-log-list">${sourceRows}</ul>` : `<p class="empty-source-note">${isTurkish ? 'Kaynak günlüğü henüz yok.' : 'No source log yet.'}</p>`}
+            </div>`;
 
         // 7. Linkler (Links)
         let linksHTML = `
@@ -1171,12 +1244,15 @@ function openDrawer(data) {
         document.getElementById('drawer-info').innerHTML =
             decisionHeroHTML +
             verificationBanner +
+            qualityHTML +
+            scoreImpactHTML +
             basicInfoHTML +
             deptHTML +
             financeHTML +
             livingHTML +
             prosConsHTML +
             studentReviewsHTML +
+            sourcesHTML +
             linksHTML;
 
         // 1. Radar Chart Setup

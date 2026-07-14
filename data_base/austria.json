@@ -314,22 +314,40 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-07-10",
+        "checked_at": "2026-07-14",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
         "remaining_verification_tasks": [
-          "Recheck every official source URL and record access_status/relevant_fields.",
-          "Verify tuition and additional fees from a checked official source.",
-          "Verify teaching language and language requirements from an official source.",
-          "Verify admission requirements and non-EU eligibility from an official source.",
-          "Verify scholarship names, eligibility and deadlines from an official source.",
-          "Verify current application deadlines from an official source.",
-          "Verify curriculum, tracks and courses before assigning categories.",
-          "Verify department/lab/research claims from official sources.",
-          "Verify industry partnerships separately from geographic proximity."
+          {
+            "en": "Add a checked official source for program.",
+            "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for language.",
+            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for tuition.",
+            "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for scholarship.",
+            "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for curriculum.",
+            "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for admission.",
+            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          }
         ],
-        "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+        "qc_notes": {
+          "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+          "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        }
       },
       "location": {
         "country": "Austria",
@@ -338,7 +356,22 @@
         "longitude": 16.2480017,
         "locationConfidence": "exact"
       },
-      "qs_ranking": 392
+      "qs_ranking": 392,
+      "data_quality": {
+        "status": "needs_verification",
+        "checked_official_source_count": 0,
+        "verified_fields": [],
+        "unverified_critical_fields": [
+          "program",
+          "language",
+          "tuition",
+          "scholarship",
+          "curriculum",
+          "admission"
+        ],
+        "has_checked_source_log": false,
+        "audited_at": "2026-07-14"
+      }
     },
     {
       "id": "austria_fhjoanneum_msc_aviation",
@@ -648,22 +681,40 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-07-10",
+        "checked_at": "2026-07-14",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
         "remaining_verification_tasks": [
-          "Recheck every official source URL and record access_status/relevant_fields.",
-          "Verify tuition and additional fees from a checked official source.",
-          "Verify teaching language and language requirements from an official source.",
-          "Verify admission requirements and non-EU eligibility from an official source.",
-          "Verify scholarship names, eligibility and deadlines from an official source.",
-          "Verify current application deadlines from an official source.",
-          "Verify curriculum, tracks and courses before assigning categories.",
-          "Verify department/lab/research claims from official sources.",
-          "Verify industry partnerships separately from geographic proximity."
+          {
+            "en": "Add a checked official source for program.",
+            "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for language.",
+            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for tuition.",
+            "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for scholarship.",
+            "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for curriculum.",
+            "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for admission.",
+            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          }
         ],
-        "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+        "qc_notes": {
+          "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+          "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        }
       },
       "location": {
         "country": "Austria",
@@ -672,7 +723,22 @@
         "longitude": 15.4074642,
         "locationConfidence": "exact"
       },
-      "qs_ranking": 354
+      "qs_ranking": 354,
+      "data_quality": {
+        "status": "needs_verification",
+        "checked_official_source_count": 0,
+        "verified_fields": [],
+        "unverified_critical_fields": [
+          "program",
+          "language",
+          "tuition",
+          "scholarship",
+          "curriculum",
+          "admission"
+        ],
+        "has_checked_source_log": false,
+        "audited_at": "2026-07-14"
+      }
     },
     {
       "id": "austria_tugraz_msc_space_sciences",
@@ -974,22 +1040,40 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-07-10",
+        "checked_at": "2026-07-14",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
         "remaining_verification_tasks": [
-          "Recheck every official source URL and record access_status/relevant_fields.",
-          "Verify tuition and additional fees from a checked official source.",
-          "Verify teaching language and language requirements from an official source.",
-          "Verify admission requirements and non-EU eligibility from an official source.",
-          "Verify scholarship names, eligibility and deadlines from an official source.",
-          "Verify current application deadlines from an official source.",
-          "Verify curriculum, tracks and courses before assigning categories.",
-          "Verify department/lab/research claims from official sources.",
-          "Verify industry partnerships separately from geographic proximity."
+          {
+            "en": "Add a checked official source for program.",
+            "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for language.",
+            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for tuition.",
+            "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for scholarship.",
+            "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for curriculum.",
+            "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for admission.",
+            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          }
         ],
-        "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+        "qc_notes": {
+          "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+          "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        }
       },
       "location": {
         "country": "Austria",
@@ -998,7 +1082,22 @@
         "longitude": 15.4602462,
         "locationConfidence": "exact"
       },
-      "qs_ranking": 194
+      "qs_ranking": 194,
+      "data_quality": {
+        "status": "needs_verification",
+        "checked_official_source_count": 0,
+        "verified_fields": [],
+        "unverified_critical_fields": [
+          "program",
+          "language",
+          "tuition",
+          "scholarship",
+          "curriculum",
+          "admission"
+        ],
+        "has_checked_source_log": false,
+        "audited_at": "2026-07-14"
+      }
     },
     {
       "id": "austria_tugraz_msc_mechanical",
@@ -1300,22 +1399,40 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-07-10",
+        "checked_at": "2026-07-14",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
         "remaining_verification_tasks": [
-          "Recheck every official source URL and record access_status/relevant_fields.",
-          "Verify tuition and additional fees from a checked official source.",
-          "Verify teaching language and language requirements from an official source.",
-          "Verify admission requirements and non-EU eligibility from an official source.",
-          "Verify scholarship names, eligibility and deadlines from an official source.",
-          "Verify current application deadlines from an official source.",
-          "Verify curriculum, tracks and courses before assigning categories.",
-          "Verify department/lab/research claims from official sources.",
-          "Verify industry partnerships separately from geographic proximity."
+          {
+            "en": "Add a checked official source for program.",
+            "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for language.",
+            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for tuition.",
+            "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for scholarship.",
+            "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for curriculum.",
+            "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for admission.",
+            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          }
         ],
-        "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+        "qc_notes": {
+          "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+          "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        }
       },
       "location": {
         "country": "Austria",
@@ -1324,7 +1441,22 @@
         "longitude": 15.4602462,
         "locationConfidence": "exact"
       },
-      "qs_ranking": 415
+      "qs_ranking": 415,
+      "data_quality": {
+        "status": "needs_verification",
+        "checked_official_source_count": 0,
+        "verified_fields": [],
+        "unverified_critical_fields": [
+          "program",
+          "language",
+          "tuition",
+          "scholarship",
+          "curriculum",
+          "admission"
+        ],
+        "has_checked_source_log": false,
+        "audited_at": "2026-07-14"
+      }
     },
     {
       "id": "austria_tuwien_msc_mechanical",
@@ -1631,22 +1763,40 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-07-10",
+        "checked_at": "2026-07-14",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
         "remaining_verification_tasks": [
-          "Recheck every official source URL and record access_status/relevant_fields.",
-          "Verify tuition and additional fees from a checked official source.",
-          "Verify teaching language and language requirements from an official source.",
-          "Verify admission requirements and non-EU eligibility from an official source.",
-          "Verify scholarship names, eligibility and deadlines from an official source.",
-          "Verify current application deadlines from an official source.",
-          "Verify curriculum, tracks and courses before assigning categories.",
-          "Verify department/lab/research claims from official sources.",
-          "Verify industry partnerships separately from geographic proximity."
+          {
+            "en": "Add a checked official source for program.",
+            "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for language.",
+            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for tuition.",
+            "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for scholarship.",
+            "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for curriculum.",
+            "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for admission.",
+            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          }
         ],
-        "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+        "qc_notes": {
+          "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+          "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        }
       },
       "location": {
         "country": "Austria",
@@ -1655,7 +1805,22 @@
         "longitude": 16.3698617,
         "locationConfidence": "exact"
       },
-      "qs_ranking": 184
+      "qs_ranking": 184,
+      "data_quality": {
+        "status": "needs_verification",
+        "checked_official_source_count": 0,
+        "verified_fields": [],
+        "unverified_critical_fields": [
+          "program",
+          "language",
+          "tuition",
+          "scholarship",
+          "curriculum",
+          "admission"
+        ],
+        "has_checked_source_log": false,
+        "audited_at": "2026-07-14"
+      }
     },
     {
       "id": "AT-TUW-INFOCOM-EN",
@@ -1961,22 +2126,40 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-07-10",
+        "checked_at": "2026-07-14",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
         "remaining_verification_tasks": [
-          "Recheck every official source URL and record access_status/relevant_fields.",
-          "Verify tuition and additional fees from a checked official source.",
-          "Verify teaching language and language requirements from an official source.",
-          "Verify admission requirements and non-EU eligibility from an official source.",
-          "Verify scholarship names, eligibility and deadlines from an official source.",
-          "Verify current application deadlines from an official source.",
-          "Verify curriculum, tracks and courses before assigning categories.",
-          "Verify department/lab/research claims from official sources.",
-          "Verify industry partnerships separately from geographic proximity."
+          {
+            "en": "Add a checked official source for program.",
+            "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for language.",
+            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for tuition.",
+            "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for scholarship.",
+            "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for curriculum.",
+            "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for admission.",
+            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          }
         ],
-        "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+        "qc_notes": {
+          "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+          "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        }
       },
       "location": {
         "country": "Austria",
@@ -1985,7 +2168,22 @@
         "longitude": 16.3698617,
         "locationConfidence": "exact"
       },
-      "qs_ranking": 184
+      "qs_ranking": 184,
+      "data_quality": {
+        "status": "needs_verification",
+        "checked_official_source_count": 0,
+        "verified_fields": [],
+        "unverified_critical_fields": [
+          "program",
+          "language",
+          "tuition",
+          "scholarship",
+          "curriculum",
+          "admission"
+        ],
+        "has_checked_source_log": false,
+        "audited_at": "2026-07-14"
+      }
     },
     {
       "id": "AT-INNSBRUCK-ASTRO-EN",
@@ -2294,22 +2492,40 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-07-10",
+        "checked_at": "2026-07-14",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
         "remaining_verification_tasks": [
-          "Recheck every official source URL and record access_status/relevant_fields.",
-          "Verify tuition and additional fees from a checked official source.",
-          "Verify teaching language and language requirements from an official source.",
-          "Verify admission requirements and non-EU eligibility from an official source.",
-          "Verify scholarship names, eligibility and deadlines from an official source.",
-          "Verify current application deadlines from an official source.",
-          "Verify curriculum, tracks and courses before assigning categories.",
-          "Verify department/lab/research claims from official sources.",
-          "Verify industry partnerships separately from geographic proximity."
+          {
+            "en": "Add a checked official source for program.",
+            "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for language.",
+            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for tuition.",
+            "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for scholarship.",
+            "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for curriculum.",
+            "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for admission.",
+            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          }
         ],
-        "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+        "qc_notes": {
+          "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+          "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        }
       },
       "location": {
         "country": "Austria",
@@ -2318,7 +2534,22 @@
         "longitude": 11.3844497,
         "locationConfidence": "exact"
       },
-      "qs_ranking": 577
+      "qs_ranking": 577,
+      "data_quality": {
+        "status": "needs_verification",
+        "checked_official_source_count": 0,
+        "verified_fields": [],
+        "unverified_critical_fields": [
+          "program",
+          "language",
+          "tuition",
+          "scholarship",
+          "curriculum",
+          "admission"
+        ],
+        "has_checked_source_log": false,
+        "audited_at": "2026-07-14"
+      }
     },
     {
       "id": "AT-JKU-MECH-DE",
@@ -2621,22 +2852,40 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-07-10",
+        "checked_at": "2026-07-14",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
         "remaining_verification_tasks": [
-          "Recheck every official source URL and record access_status/relevant_fields.",
-          "Verify tuition and additional fees from a checked official source.",
-          "Verify teaching language and language requirements from an official source.",
-          "Verify admission requirements and non-EU eligibility from an official source.",
-          "Verify scholarship names, eligibility and deadlines from an official source.",
-          "Verify current application deadlines from an official source.",
-          "Verify curriculum, tracks and courses before assigning categories.",
-          "Verify department/lab/research claims from official sources.",
-          "Verify industry partnerships separately from geographic proximity."
+          {
+            "en": "Add a checked official source for program.",
+            "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for language.",
+            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for tuition.",
+            "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for scholarship.",
+            "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for curriculum.",
+            "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for admission.",
+            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          }
         ],
-        "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+        "qc_notes": {
+          "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+          "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        }
       },
       "location": {
         "country": "Austria",
@@ -2645,7 +2894,22 @@
         "longitude": 14.286198,
         "locationConfidence": "city"
       },
-      "qs_ranking": 177
+      "qs_ranking": 177,
+      "data_quality": {
+        "status": "needs_verification",
+        "checked_official_source_count": 0,
+        "verified_fields": [],
+        "unverified_critical_fields": [
+          "program",
+          "language",
+          "tuition",
+          "scholarship",
+          "curriculum",
+          "admission"
+        ],
+        "has_checked_source_log": false,
+        "audited_at": "2026-07-14"
+      }
     },
     {
       "id": "AT-LEOBEN-ADVMAT-EN",
@@ -2953,22 +3217,40 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-07-10",
+        "checked_at": "2026-07-14",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
         "remaining_verification_tasks": [
-          "Recheck every official source URL and record access_status/relevant_fields.",
-          "Verify tuition and additional fees from a checked official source.",
-          "Verify teaching language and language requirements from an official source.",
-          "Verify admission requirements and non-EU eligibility from an official source.",
-          "Verify scholarship names, eligibility and deadlines from an official source.",
-          "Verify current application deadlines from an official source.",
-          "Verify curriculum, tracks and courses before assigning categories.",
-          "Verify department/lab/research claims from official sources.",
-          "Verify industry partnerships separately from geographic proximity."
+          {
+            "en": "Add a checked official source for program.",
+            "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for language.",
+            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for tuition.",
+            "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for scholarship.",
+            "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for curriculum.",
+            "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for admission.",
+            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          }
         ],
-        "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+        "qc_notes": {
+          "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+          "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        }
       },
       "location": {
         "country": "Austria",
@@ -2977,7 +3259,22 @@
         "longitude": 15.0935383,
         "locationConfidence": "exact"
       },
-      "qs_ranking": 534
+      "qs_ranking": 534,
+      "data_quality": {
+        "status": "needs_verification",
+        "checked_official_source_count": 0,
+        "verified_fields": [],
+        "unverified_critical_fields": [
+          "program",
+          "language",
+          "tuition",
+          "scholarship",
+          "curriculum",
+          "admission"
+        ],
+        "has_checked_source_log": false,
+        "audited_at": "2026-07-14"
+      }
     },
     {
       "id": "AT-FHOO-MECH-DE",
@@ -3279,22 +3576,40 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-07-10",
+        "checked_at": "2026-07-14",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
         "remaining_verification_tasks": [
-          "Recheck every official source URL and record access_status/relevant_fields.",
-          "Verify tuition and additional fees from a checked official source.",
-          "Verify teaching language and language requirements from an official source.",
-          "Verify admission requirements and non-EU eligibility from an official source.",
-          "Verify scholarship names, eligibility and deadlines from an official source.",
-          "Verify current application deadlines from an official source.",
-          "Verify curriculum, tracks and courses before assigning categories.",
-          "Verify department/lab/research claims from official sources.",
-          "Verify industry partnerships separately from geographic proximity."
+          {
+            "en": "Add a checked official source for program.",
+            "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for language.",
+            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for tuition.",
+            "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for scholarship.",
+            "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for curriculum.",
+            "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for admission.",
+            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          }
         ],
-        "qc_notes": "European database integrity audit; source-grounded updates are separated from unresolved legacy data."
+        "qc_notes": {
+          "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+          "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        }
       },
       "location": {
         "country": "Austria",
@@ -3303,7 +3618,22 @@
         "longitude": 14.0243752,
         "locationConfidence": "city"
       },
-      "qs_ranking": 247
+      "qs_ranking": 247,
+      "data_quality": {
+        "status": "needs_verification",
+        "checked_official_source_count": 0,
+        "verified_fields": [],
+        "unverified_critical_fields": [
+          "program",
+          "language",
+          "tuition",
+          "scholarship",
+          "curriculum",
+          "admission"
+        ],
+        "has_checked_source_log": false,
+        "audited_at": "2026-07-14"
+      }
     }
   ]
 }

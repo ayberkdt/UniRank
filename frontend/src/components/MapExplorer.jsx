@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import L from 'leaflet'
 import {
+  CircleMarker,
   GeoJSON,
   MapContainer,
   Marker,
@@ -10,7 +11,7 @@ import {
   useMapEvents,
   ZoomControl,
 } from 'react-leaflet'
-import { Focus, Layers3, MapPin, Minus, Plus, Route } from 'lucide-react'
+import { Focus, Layers3, MapPin, Minus, Palette, Plus, Route } from 'lucide-react'
 import './MapExplorer.css'
 
 const WORLD_BORDERS_URL = 'https://cdn.jsdelivr.net/gh/johan/world.geo.json@master/countries.geo.json'
@@ -19,6 +20,28 @@ const TILE_URLS = {
   detailed: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
 }
 const TILE_ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+const COUNTRY_TONES = [
+  { fill: '#ffe8a8', stroke: '#cf9731', accent: '#dfaa3f' },
+  { fill: '#ccebc8', stroke: '#61a46c', accent: '#55a763' },
+  { fill: '#cce8f8', stroke: '#5d9cc0', accent: '#5aa4ce' },
+  { fill: '#e5d5f5', stroke: '#9875b5', accent: '#9c75bd' },
+  { fill: '#ffd8cf', stroke: '#ca7c69', accent: '#d88270' },
+  { fill: '#cef0e8', stroke: '#55a794', accent: '#53ab99' },
+  { fill: '#f7dfc4', stroke: '#c98e50', accent: '#d59652' },
+  { fill: '#d9e1f6', stroke: '#778bc3', accent: '#738bc4' },
+]
+
+function countryTone(value) {
+  const name = String(value || 'world')
+  let hash = 0
+  for (let index = 0; index < name.length; index += 1) hash = ((hash << 5) - hash) + name.charCodeAt(index)
+  return COUNTRY_TONES[Math.abs(hash) % COUNTRY_TONES.length]
+}
+
+function geoCountryName(feature) {
+  const properties = feature?.properties || {}
+  return properties.ADMIN || properties.name || properties.NAME_EN || properties.NAME || properties.sovereignt || 'world'
+}
 
 function escapeHtml(value) {
   return String(value || '')
@@ -41,22 +64,33 @@ function pointIcon(score, count) {
   })
 }
 
-function cityIcon(city) {
+function cityIcon(city, country) {
+  const tone = countryTone(country)
   return L.divIcon({
     className: 'city-label-icon',
     iconSize: [1, 1],
     iconAnchor: [0, 0],
-    html: `<span class="city-label">${escapeHtml(city)}</span>`,
+    html: `<span class="city-label" style="--city-tone:${tone.accent}"><i></i>${escapeHtml(city)}</span>`,
   })
 }
 
-function clusterIcon(count) {
+function clusterIcon(count, country) {
+  const tone = countryTone(country)
   return L.divIcon({
     className: 'map-cluster-icon',
     iconSize: [54, 54],
     iconAnchor: [27, 27],
-    html: `<span class="map-cluster"><b>${count}</b><small>PROGRAM</small></span>`,
+    html: `<span class="map-cluster" style="--cluster-tone:${tone.accent};--cluster-shadow:${tone.stroke}"><b>${count}</b><small>PROGRAM</small></span>`,
   })
+}
+
+function dominantCountry(programs) {
+  const counts = new Map()
+  programs.forEach((program) => {
+    const country = program.location?.country || program.country || ''
+    counts.set(country, (counts.get(country) || 0) + 1)
+  })
+  return Array.from(counts.entries()).sort((left, right) => right[1] - left[1])[0]?.[0] || ''
 }
 
 function groupPrograms(programs) {
@@ -88,9 +122,9 @@ function groupPrograms(programs) {
 }
 
 function clusterPoints(points, zoom) {
-  if (zoom >= 5) return points.map((point) => ({ ...point, type: 'point' }))
+  if (zoom >= 7) return points.map((point) => ({ ...point, type: 'point' }))
 
-  const gridSize = zoom <= 2 ? 18 : zoom === 3 ? 10 : 5
+  const gridSize = zoom <= 2 ? 18 : zoom === 3 ? 10 : zoom === 4 ? 5 : zoom === 5 ? 2.5 : 1
   const clusters = new Map()
   points.forEach((point) => {
     const key = `${Math.floor((point.latitude + 90) / gridSize)}:${Math.floor((point.longitude + 180) / gridSize)}`
@@ -112,6 +146,7 @@ function clusterPoints(points, zoom) {
       programs: allPrograms,
       top,
       count: totalPrograms,
+      country: dominantCountry(allPrograms),
     }
   })
 }
@@ -123,7 +158,7 @@ function MapViewport({ points, selectedProgram, fitSignal }) {
     if (!points.length) return
     const selectedPoint = selectedProgram && points.find((point) => point.programs.some((program) => program.key === selectedProgram.key))
     if (selectedPoint) {
-      map.flyTo([selectedPoint.latitude, selectedPoint.longitude], Math.max(map.getZoom(), 6), { duration: 0.55 })
+      map.flyTo([selectedPoint.latitude, selectedPoint.longitude], Math.max(map.getZoom(), 7), { duration: 0.55 })
       return
     }
 
@@ -144,9 +179,12 @@ function CountryBorders() {
   const map = useMap()
 
   useEffect(() => {
-    const pane = map.getPane('country-borders') || map.createPane('country-borders')
-    pane.style.zIndex = '380'
-    pane.style.pointerEvents = 'none'
+    const outlinePane = map.getPane('country-outlines') || map.createPane('country-outlines')
+    const fillPane = map.getPane('country-fills') || map.createPane('country-fills')
+    outlinePane.style.zIndex = '370'
+    fillPane.style.zIndex = '380'
+    outlinePane.style.pointerEvents = 'none'
+    fillPane.style.pointerEvents = 'none'
 
     const controller = new AbortController()
     fetch(WORLD_BORDERS_URL, { signal: controller.signal })
@@ -158,20 +196,31 @@ function CountryBorders() {
   }, [map])
 
   if (!borders) return null
-  return <GeoJSON
-    data={borders}
-    pane="country-borders"
-    interactive={false}
-    style={{
-      color: '#80bd89',
-      weight: 1.1,
-      opacity: 0.86,
-      fillColor: '#fdf9e8',
-      fillOpacity: 0.32,
-      lineCap: 'round',
-      lineJoin: 'round',
-    }}
-  />
+  return <>
+    <GeoJSON
+      data={borders}
+      pane="country-outlines"
+      interactive={false}
+      style={{ color: '#fffdf5', weight: 4.2, opacity: 0.92, fillOpacity: 0, lineCap: 'round', lineJoin: 'round' }}
+    />
+    <GeoJSON
+      data={borders}
+      pane="country-fills"
+      interactive={false}
+      style={(feature) => {
+        const tone = countryTone(geoCountryName(feature))
+        return {
+          color: tone.stroke,
+          weight: 1.35,
+          opacity: 0.9,
+          fillColor: tone.fill,
+          fillOpacity: 0.82,
+          lineCap: 'round',
+          lineJoin: 'round',
+        }
+      }}
+    />
+  </>
 }
 
 function ProgramPopup({ point, onSelectProgram }) {
@@ -201,16 +250,26 @@ function MapMarkers({ points, showLabels, selectedProgram, onSelectProgram }) {
   const [zoom, setZoom] = useState(map.getZoom())
   useMapEvents({ zoomend: () => setZoom(map.getZoom()) })
   const displayedPoints = useMemo(() => clusterPoints(points, zoom), [points, zoom])
-  const cityLabels = useMemo(() => zoom >= 4 ? [...points]
+  const cityLabels = useMemo(() => zoom >= 6 ? [...points]
     .sort((left, right) => right.programs.length - left.programs.length)
     .slice(0, 22) : [], [points, zoom])
 
   return <>
+    {zoom >= 6 && points.map((point) => {
+      const tone = countryTone(point.country)
+      return <CircleMarker
+        key={`zone-${point.key}`}
+        center={[point.latitude, point.longitude]}
+        radius={Math.min(24, 9 + (point.programs.length * 3))}
+        pathOptions={{ color: tone.accent, weight: 1.2, opacity: 0.62, fillColor: tone.fill, fillOpacity: 0.44 }}
+        interactive={false}
+      />
+    })}
     {showLabels && cityLabels.map((point) => (
       <Marker
         key={`label-${point.key}`}
         position={[point.latitude, point.longitude]}
-        icon={cityIcon(point.city)}
+        icon={cityIcon(point.city, point.country)}
         interactive={false}
       />
     ))}
@@ -218,7 +277,7 @@ function MapMarkers({ points, showLabels, selectedProgram, onSelectProgram }) {
       <Marker
         key={point.key}
         position={[point.latitude, point.longitude]}
-        icon={clusterIcon(point.count)}
+        icon={clusterIcon(point.count, point.country)}
         title={`${point.count} programs in this area`}
         alt={`${point.count} programs in this area`}
         keyboard
@@ -271,15 +330,15 @@ export default function MapExplorer({ programs, showLabels, selectedProgram, onS
         <CountryBorders />
         <MapViewport points={points} selectedProgram={selectedProgram} fitSignal={fitSignal} />
         <ZoomControl position="bottomright" />
-
         <MapMarkers points={points} showLabels={showLabels} selectedProgram={selectedProgram} onSelectProgram={onSelectProgram} />
       </MapContainer>
 
       <div className="map-toolbar" aria-label="Harita kontrolleri">
         <button type="button" className="map-focus" onClick={() => { onSelectProgram(null); setFitSignal((value) => value + 1) }}><Focus size={15} /> Sonuçlara odaklan</button>
-        <label className="map-layer-toggle"><Layers3 size={15} /><span><strong>Yer adları</strong><small>{detailedBasemap ? 'Açık' : 'Kapalı'}</small></span><input type="checkbox" checked={detailedBasemap} onChange={(event) => setDetailedBasemap(event.target.checked)} /><i /></label>
+        <label className="map-layer-toggle"><Layers3 size={15} /><span><strong>Yer adları</strong><small>{detailedBasemap ? 'Şehirler & yollar' : 'Sade atlas'}</small></span><input type="checkbox" checked={detailedBasemap} onChange={(event) => setDetailedBasemap(event.target.checked)} /><i /></label>
       </div>
-      <div className="map-key"><span><i className="key-dot key-dot--great" /> Güçlü uyum</span><span><i className="key-dot key-dot--good" /> İyi uyum</span><span><i className="key-dot key-dot--consider" /> Değerlendir</span><span><i className="key-cluster" /> Yakındaki programlar</span></div>
+      <div className="map-atlas-note"><span><Palette size={17} /></span><div><small>PASTEL ATLAS</small><strong>Ülkeler ayrı tonda</strong></div></div>
+      <div className="map-key"><span><i className="key-country" /> Ülke tonları</span><span><i className="key-dot key-dot--great" /> Güçlü uyum</span><span><i className="key-dot key-dot--good" /> İyi uyum</span><span><i className="key-dot key-dot--consider" /> Değerlendir</span><span><i className="key-cluster" /> Yakındaki programlar</span></div>
       <div className="map-decoration map-decoration--one"><Plus size={14} /></div>
       <div className="map-decoration map-decoration--two"><Minus size={14} /></div>
       <div className="map-route" aria-hidden="true"><Route size={17} /></div>

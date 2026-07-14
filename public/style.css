@@ -5131,3 +5131,121 @@ option {
         transform: translateY(0);
     }
 }
+
+/* Research integrity cards ------------------------------------------------ */
+.card-disclaimer {
+    margin: -2px 0 14px;
+    color: var(--text-muted);
+    font-size: 11px;
+    line-height: 1.45;
+}
+
+.evidence-strip {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px 14px;
+    padding: 14px;
+    border: 1px solid #d9e3ef;
+    border-radius: 13px;
+    background: #f8fafc;
+}
+
+.evidence-strip--verified { border-color: #b8decf; background: #eff9f4; }
+.evidence-strip--partial { border-color: #ead59f; background: #fff9e9; }
+.evidence-strip--needs_verification { border-color: #e4cbd0; background: #fff5f5; }
+
+.evidence-strip__eyebrow {
+    display: block;
+    margin-bottom: 2px;
+    color: #708197;
+    font-size: 8px;
+    font-weight: 850;
+    letter-spacing: .1em;
+}
+
+.evidence-strip strong,
+.score-impact-card strong {
+    color: var(--text-main);
+    font-size: 13px;
+}
+
+.evidence-strip__counts {
+    display: grid;
+    min-width: 62px;
+    place-items: center;
+    align-content: center;
+    padding: 4px 8px;
+    border-radius: 9px;
+    background: rgba(255,255,255,.72);
+    text-align: center;
+}
+
+.evidence-strip__counts b { color: var(--primary); font-size: 18px; line-height: 1; }
+.evidence-strip__counts span { color: var(--text-muted); font-size: 7px; font-weight: 800; line-height: 1.15; }
+.evidence-strip p { grid-column: 1 / -1; margin: 0; color: #40536c; font-size: 10px; line-height: 1.45; }
+.evidence-strip small { grid-column: 1 / -1; color: #7a5960; font-size: 9px; line-height: 1.4; }
+
+.score-impact-card {
+    padding: 14px;
+    border: 1px solid #d7e1f2;
+    border-radius: 13px;
+    background: linear-gradient(135deg, #f4f7ff, #fbfcff);
+}
+
+.score-impact-card ol { display: grid; gap: 5px; margin: 11px 0; padding: 0; list-style: none; }
+.score-impact-card li { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 7px 9px; border: 1px solid #e1e8f4; border-radius: 8px; background: rgba(255,255,255,.78); color: #4c607a; font-size: 10px; }
+.score-impact-card li b { color: #204fa8; font-size: 11px; }
+.score-impact-card small { color: var(--text-muted); font-size: 9px; line-height: 1.45; }
+
+.source-note { padding-top: 8px; border-top: 1px dashed var(--border-color); }
+.source-note span { color: #53667f; font-size: 11px !important; line-height: 1.45; }
+
+.sentiment-facts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+    margin-bottom: 10px;
+}
+.sentiment-facts span { display: grid; gap: 2px; padding: 9px; border: 1px solid #e1e8ef; border-radius: 9px; background: #fafbfd; }
+.sentiment-facts b { color: var(--text-main); font-size: 12px; overflow-wrap: anywhere; }
+.sentiment-facts small { color: var(--text-muted); font-size: 8px; line-height: 1.25; }
+.sentiment-date { margin: 0 0 7px; color: #62738a; font-size: 10px; }
+.sentiment-summary { margin: 0; color: #455971; font-size: 11px; line-height: 1.5; }
+
+.student-source-list,
+.source-log-list { display: grid; gap: 7px; margin: 12px 0 0; padding: 0; list-style: none; }
+.student-source-list li { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: baseline; padding: 9px; border: 1px solid #e3e9ef; border-radius: 9px; background: #fafbfd; color: #52647d; font-size: 10px; }
+.student-source-list .review-quote { flex-basis: 100%; margin: 0; color: #40546d; font-size: 10px; font-style: italic; line-height: 1.45; }
+.student-source-list a,
+.source-log-list a { color: var(--primary); font-size: 10px; font-weight: 800; text-decoration: none; }
+
+.source-log-list li { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; align-items: center; padding: 10px; border: 1px solid #e1e8ef; border-radius: 9px; background: #fff; }
+.source-log-list strong,
+.source-log-list small { display: block; overflow-wrap: anywhere; }
+.source-log-list strong { color: #3b4f69; font-size: 10px; line-height: 1.35; }
+.source-log-list small { margin-top: 2px; color: #78879a; font-size: 8px; line-height: 1.35; }
+.source-access { padding: 3px 6px; border-radius: 999px; background: #f0f3f7; color: #68778a; font-size: 8px; font-weight: 850; text-transform: uppercase; white-space: nowrap; }
+.source-access--ok, .source-access--pdf, .source-access--redirects { background: #e7f5ef; color: #0b6a51; }
+.source-access--blocked, .source-access--broken, .source-access--not-found, .source-access--unknown, .source-access--requires-js { background: #fff1ef; color: #a0444d; }
+.empty-source-note { margin: 0; color: var(--text-muted); font-size: 11px; }
+
+/* Drawer country theming intentionally darkens the older cards.  These new
+   evidence panels have their own light surfaces, so restore high-contrast
+   type instead of inheriting the dark-card palette. */
+.country-themed .evidence-strip strong,
+.country-themed .score-impact-card strong { color: #19304e !important; }
+.country-themed .evidence-strip p,
+.country-themed .evidence-strip small,
+.country-themed .score-impact-card small { color: #52657e !important; }
+.country-themed .score-impact-card li { color: #4c607a !important; }
+.country-themed .score-impact-card li b { color: #204fa8 !important; }
+.country-themed .evidence-strip__eyebrow { color: #708197 !important; }
+
+@media (max-width: 560px) {
+    .evidence-strip { grid-template-columns: 1fr; }
+    .evidence-strip__counts { justify-self: start; grid-template-columns: auto 1fr; column-gap: 6px; text-align: left; }
+    .evidence-strip__counts b { grid-row: 1 / span 2; }
+    .sentiment-facts { grid-template-columns: 1fr; }
+    .source-log-list li { grid-template-columns: minmax(0, 1fr) auto; }
+    .source-log-list a { grid-column: 2; }
+}

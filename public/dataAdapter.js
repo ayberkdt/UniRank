@@ -217,6 +217,8 @@ function normalizeUniversityRecord(record) {
   const industryProfile = record.industry_ecosystem_profile || {};
   const curriculumProfile = record.curriculum_profile || {};
   const timelineProfile = record.application_timeline_profile || {};
+  const sentimentProfile = record.student_sentiment_profile || {};
+  const dataQuality = record.data_quality || {};
   const financials = record.financials || {};
   const urls = record.urls || {};
   const categoryProfile = getCategoryProfile(record);
@@ -282,12 +284,19 @@ function normalizeUniversityRecord(record) {
     record.sources
   ));
   const needsVerification = Boolean(firstValue(
+    dataQuality.status && dataQuality.status !== "verified",
     sourceProfile.needs_verification,
     record.needs_verification,
     record.Meta_Needs_Verification,
     false
   ));
   const fieldConfidence = sourceProfile.field_confidence || record.field_confidence || {};
+  const qualityStatus = ["verified", "partial", "needs_verification"].includes(String(dataQuality.status || ""))
+    ? dataQuality.status
+    : (needsVerification ? "needs_verification" : "partial");
+  const confidenceSummary = qualityStatus === "verified"
+    ? summarizeConfidence(fieldConfidence)
+    : qualityStatus === "partial" ? "medium" : "unknown";
   const eligibleForNonEu = normalizeEligibleForNonEu(record, eligibilityProfile);
   const deadline = normalizeDeadline(record, timelineProfile);
 
@@ -342,9 +351,16 @@ function normalizeUniversityRecord(record) {
     notIdealFor: stringList(record.decision_summary?.not_ideal_for),
     sources,
     fieldConfidence,
-    confidenceSummary: summarizeConfidence(fieldConfidence),
+    confidenceSummary,
     needsVerification,
     lastVerified: sourceProfile.last_verified || record.updated_at || record.Meta_Updated_At || "",
+    dataQuality: {
+      status: qualityStatus,
+      checkedOfficialSourceCount: firstFiniteNumber(dataQuality.checked_official_source_count) || 0,
+      verifiedFields: Array.isArray(dataQuality.verified_fields) ? dataQuality.verified_fields : [],
+      unverifiedCriticalFields: Array.isArray(dataQuality.unverified_critical_fields) ? dataQuality.unverified_critical_fields : [],
+      auditedAt: dataQuality.audited_at || ""
+    },
     categoryProfile,
     location: normalizeLocation(record),
     qsRanking: firstFiniteNumber(record.qs_ranking),
@@ -358,17 +374,20 @@ function normalizeUniversityRecord(record) {
       ? industryProfile.confirmed_partners
       : (Array.isArray(record.Industry_Partners) ? record.Industry_Partners : []),
     internshipMandatory: firstValue(curriculumProfile.internship_required, record.internship_mandatory, record.Internship_Mandatory),
-    housingCost: firstFiniteNumber(
-      livingProfile.average_room_rent_eur,
-      livingProfile.monthly_living_cost_eur_estimated,
-      livingProfile.living_cost_eur_per_month,
-      record.city?.estimated_housing_cost_eur
-    ),
+    averageRoomRent: firstFiniteNumber(livingProfile.average_room_rent_eur, record.city?.estimated_housing_cost_eur),
+    monthlyLivingCost: firstFiniteNumber(livingProfile.monthly_living_cost_eur_estimated, livingProfile.living_cost_eur_per_month),
+    monthlyLivingCostMin: firstFiniteNumber(livingProfile.monthly_living_cost_eur_min),
+    monthlyLivingCostMax: firstFiniteNumber(livingProfile.monthly_living_cost_eur_max),
+    monthlyLivingCostBasis: firstValue(livingProfile.monthly_living_cost_basis, livingProfile.living_cost_notes),
+    housingCost: firstFiniteNumber(livingProfile.average_room_rent_eur, livingProfile.monthly_living_cost_eur_estimated, livingProfile.living_cost_eur_per_month, record.city?.estimated_housing_cost_eur),
     scholarshipDetails: scholarshipProfile,
+    costDetails: costProfile,
+    livingDetails: livingProfile,
     admissionUrl: firstValue(sourceProfile.official_admission_page, urls.admission, record.admission_url) || "",
     tuitionUrl: firstValue(sourceProfile.official_tuition_page, urls.tuition, record.tuition_url) || "",
     scholarshipUrl: firstValue(sourceProfile.official_scholarship_page, scholarshipProfile.scholarship_application_url, record.scholarship_url) || "",
-    studentReviews: Array.isArray(record.student_sentiment_profile?.student_sentiment_sources) ? record.student_sentiment_profile.student_sentiment_sources : [],
+    studentSentiment: sentimentProfile,
+    studentReviews: Array.isArray(sentimentProfile.student_sentiment_sources) ? sentimentProfile.student_sentiment_sources : [],
     raw: record
   };
 }

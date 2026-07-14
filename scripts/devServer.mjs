@@ -86,6 +86,70 @@ function isNonEuScope(scope) {
   return normalizedScope === 'non_eu' || normalizedScope === 'noneu';
 }
 
+function verifiedFields(record) {
+  const fields = record?.data_quality?.verified_fields;
+  return Array.isArray(fields) ? new Set(fields) : new Set();
+}
+
+// The development server mirrors the production API's source-safety boundary.
+// It never turns an unchecked legacy value into a locally visible decision
+// fact, so screenshots and local QA cannot accidentally validate the wrong UI.
+function applySourceGuard(record) {
+  const guarded = structuredClone(record);
+  const verified = verifiedFields(guarded);
+  guarded.needs_verification = guarded.data_quality?.status !== 'verified';
+  guarded.source_profile = { ...(guarded.source_profile || {}), needs_verification: guarded.needs_verification };
+
+  if (!verified.has('language')) {
+    guarded.teaching_language = ['Unknown'];
+    guarded.language_req = '';
+    if (guarded.language_profile) guarded.language_profile = { ...guarded.language_profile, teaching_language: ['Unknown'], language_risk: 'unknown' };
+  }
+  if (!verified.has('tuition')) {
+    guarded.tuition_eur_per_year = null;
+    guarded.annual_fee_eur = null;
+    guarded.semester_fee_eur = null;
+    if (guarded.cost_profile) {
+      guarded.cost_profile = {
+        ...guarded.cost_profile,
+        tuition_eur_per_year_estimated: null,
+        tuition_eur_per_year_min: null,
+        tuition_eur_per_year_max: null,
+        total_academic_cost_eur_per_year_estimated: null,
+        regional_tax_eur: null,
+        student_contribution_eur: null,
+        enrollment_fee_eur: null,
+      };
+    }
+  }
+  if (!verified.has('deadline')) {
+    guarded.deadline_winter_closes = '';
+    guarded.deadline_summer_closes = '';
+    guarded.deadlines_note = '';
+    if (guarded.application_timeline_profile) guarded.application_timeline_profile = {};
+  }
+  if (!verified.has('housing') && guarded.living_profile) {
+    guarded.living_profile = {
+      ...guarded.living_profile,
+      average_room_rent_eur: null,
+      monthly_living_cost_eur_estimated: null,
+      living_cost_eur_per_month: null,
+      housing_difficulty: null,
+    };
+  }
+  if (!verified.has('scholarship') && guarded.scholarship_profile) {
+    guarded.scholarship_profile = {
+      ...guarded.scholarship_profile,
+      regional_scholarship_available: null,
+      regional_scholarship_name: null,
+      non_eu_eligible: null,
+      scholarship_deadline: null,
+      funding_notes: null,
+    };
+  }
+  return guarded;
+}
+
 function recordId(record) {
   return displayText(firstDisplayValue(record?.Uni_ID, record?.id, record?.name, record?.university));
 }
@@ -216,7 +280,7 @@ async function loadPrograms() {
           return;
         }
 
-        records.push(isLegacyRecord(record) ? normalizeLegacyRecord(record, fileName) : record);
+        records.push(applySourceGuard(isLegacyRecord(record) ? normalizeLegacyRecord(record, fileName) : record));
       });
     } catch (error) {
       skipped.push({ file: fileName, message: error.message });

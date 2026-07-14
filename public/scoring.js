@@ -19,8 +19,26 @@ function degreeKey(value) {
 }
 
 function hasAccessibleSource(sources) {
-  const acceptedStatuses = new Set(["ok", "redirects", "pdf", "requires_js"]);
-  return sources.some((source) => acceptedStatuses.has(String(source?.access_status || "").toLowerCase()));
+  const acceptedStatuses = new Set(["ok", "redirects", "pdf"]);
+  const officialTypes = new Set([
+    "official_program_page", "official_admission_page", "official_curriculum_page",
+    "official_tuition_page", "official_scholarship_page", "official_department_page",
+    "official_lab_page", "official_housing_page", "official_visa_or_government_page",
+    "official_industry_partner_page"
+  ]);
+  return sources.some((source) => (
+    officialTypes.has(String(source?.source_type || "").toLowerCase()) &&
+    acceptedStatuses.has(String(source?.access_status || "").toLowerCase())
+  ));
+}
+
+function hasVerifiedField(normalized, field) {
+  return Array.isArray(normalized?.dataQuality?.verifiedFields) && normalized.dataQuality.verifiedFields.includes(field);
+}
+
+function bounded(value, fallback = 50) {
+  const number = finiteNumber(value);
+  return number === null ? fallback : Math.min(100, Math.max(0, number));
 }
 
 function calculateScore(record, preferences, weights) {
@@ -70,7 +88,9 @@ function calculateScore(record, preferences, weights) {
     profileMatch.profile_penalties.push({ type: "cost", reason: "Tuition is unknown or exceeds the selected hard limit." });
   }
 
-  let academicFit = 50;
+  const hasCurriculumEvidence = hasVerifiedField(normalized, "curriculum");
+  const hasResearchEvidence = hasVerifiedField(normalized, "research");
+  let academicFit = hasCurriculumEvidence ? 60 : 40;
   if (profileMatch.enabled && Array.isArray(profile?.interests) && profile.interests.length > 0 && window.buildExpandedInterestProfile) {
     const expandedInterests = window.buildExpandedInterestProfile(profile.interests, window.INTEREST_GRAPH || {});
     let score = 0;
@@ -98,7 +118,11 @@ function calculateScore(record, preferences, weights) {
       }
     }
 
-    academicFit = maxPossible > 0 ? Math.round((score / maxPossible) * 100) : 50;
+    academicFit = maxPossible > 0 ? Math.round((score / maxPossible) * 100) : 40;
+    if (!hasCurriculumEvidence) {
+      academicFit = Math.min(academicFit, 40);
+      warnings.push("Technical tags are not yet backed by a checked curriculum source.");
+    }
     profileMatch.personal_field_fit = academicFit;
     explanation.push(academicFit >= 80
       ? "Strong personalized match with your interest graph."
@@ -115,11 +139,25 @@ function calculateScore(record, preferences, weights) {
         else if (normalizedTags.includes(category)) scoreSum += 60;
       }
       academicFit = Math.min(100, Math.max(0, scoreSum / selectedCategories.length));
+      if (!hasCurriculumEvidence) {
+        academicFit = Math.min(academicFit, 40);
+        warnings.push("Technical match is capped until the curriculum source is checked.");
+      }
       explanation.push(academicFit >= 80
         ? "Strong academic match for your selected fields."
         : academicFit >= 40
           ? "Partial academic match for your selected fields."
           : "No strong match found for your selected fields.");
+    } else if (hasCurriculumEvidence) {
+      // This is an evidence-breadth score, not a prestige score.  It only
+      // rewards distinct technical areas documented in an official curriculum
+      // (and, separately, official research/lab evidence).
+      const technicalAreas = new Set([...normalizedTags, ...subcategories]).size;
+      const documentedLabs = Array.isArray(normalized?.labs) ? normalized.labs.length : 0;
+      academicFit = Math.min(100, 60 + Math.min(30, technicalAreas * 6) + (hasResearchEvidence ? Math.min(10, documentedLabs * 2) : 0));
+      explanation.push("Academic score uses documented curriculum breadth, not university prestige.");
+    } else {
+      warnings.push("Academic score is conservative because curriculum evidence is incomplete.");
     }
   }
   if (preferences.minFieldFit && academicFit < preferences.minFieldFit) passed = false;
@@ -146,13 +184,14 @@ function calculateScore(record, preferences, weights) {
   const semesterFeeScore = semesterFee === null ? 50 : (1 - Math.min(1, semesterFee / 1000)) * 100;
   let scholarshipScore = 40;
   const scholarshipProfile = record.scholarship_profile || {};
-  if (!normalized?.needsVerification && scholarshipProfile.non_eu_eligible === true) {
+  const scholarshipVerified = hasVerifiedField(normalized, "scholarship");
+  if (scholarshipVerified && scholarshipProfile.non_eu_eligible === true) {
     scholarshipScore = 100;
     explanation.push("Scholarship eligibility is documented for non-EU students.");
-  } else if (!normalized?.needsVerification && scholarshipProfile.regional_scholarship_available === true) {
+  } else if (scholarshipVerified && scholarshipProfile.regional_scholarship_available === true) {
     scholarshipScore = 80;
     explanation.push("Regional scholarship availability is documented.");
-  } else if (normalized?.needsVerification && normalized?.scholarshipSummary) {
+  } else if (normalized?.scholarshipSummary) {
     warnings.push("Scholarship information needs verification.");
   }
   let costFit = (tuitionScore * 0.7) + (semesterFeeScore * 0.2) + (scholarshipScore * 0.1);
@@ -169,46 +208,47 @@ function calculateScore(record, preferences, weights) {
   }
   costFit = Math.min(100, Math.max(0, costFit));
 
-  let careerFit = 50;
+  let careerFit = hasResearchEvidence ? 55 : 45;
   const partnerText = normalizeText((normalized?.confirmedPartners || []).map((partner) => typeof partner === "object" ? partner.name || partner.en || "" : partner).join(" "));
   const premiumPartners = ["esa", "dlr", "nasa", "jaxa", "airbus", "cern", "onera", "isae", "estec"];
-  const partnerMatches = normalized?.needsVerification ? 0 : premiumPartners.filter((partner) => partnerText.includes(partner)).length;
+  const partnerMatches = hasVerifiedField(normalized, "industry") ? premiumPartners.filter((partner) => partnerText.includes(partner)).length : 0;
   careerFit += partnerMatches * 15;
-  if (normalized?.internshipMandatory === true && !normalized?.needsVerification) {
+  if (normalized?.internshipMandatory === true && hasCurriculumEvidence) {
     careerFit += 10;
     explanation.push("A documented mandatory internship supports industry exposure.");
   }
   careerFit = Math.min(100, Math.max(0, careerFit));
 
-  let livingFit = 50;
+  const housingVerified = hasVerifiedField(normalized, "housing");
+  let livingFit = housingVerified ? 50 : 45;
   const cityCost = String(normalized?.cityCostLevel || normalized?.livingRisk || "").toLowerCase();
-  if (cityCost.includes("very_high")) livingFit -= 30;
-  else if (cityCost.includes("high")) livingFit -= 15;
-  else if (cityCost.includes("low")) livingFit += 20;
+  if (housingVerified && cityCost.includes("very_high")) livingFit -= 30;
+  else if (housingVerified && cityCost.includes("high")) livingFit -= 15;
+  else if (housingVerified && cityCost.includes("low")) livingFit += 20;
   const housing = String(normalized?.housingDifficulty || "").toLowerCase();
-  if (housing.includes("nightmare")) {
+  if (housingVerified && housing.includes("nightmare")) {
     livingFit -= profileMatch.enabled && profile?.housing_risk_tolerance === "low" ? 50 : 30;
     warnings.push("Housing market is extremely difficult.");
-  } else if (housing.includes("very hard")) {
+  } else if (housingVerified && housing.includes("very hard")) {
     livingFit -= profileMatch.enabled && profile?.housing_risk_tolerance === "low" ? 40 : 20;
     warnings.push("Housing market is very difficult.");
-  } else if (housing.includes("hard")) {
+  } else if (housingVerified && housing.includes("hard")) {
     livingFit -= 10;
-  } else if (housing.includes("moderate") || housing.includes("easy")) {
+  } else if (housingVerified && (housing.includes("moderate") || housing.includes("easy"))) {
     livingFit += 20;
     explanation.push("Housing is relatively accessible.");
   }
   livingFit = Math.min(100, Math.max(0, livingFit));
 
   const sourceVerified = hasAccessibleSource(normalized?.sources || []);
-  let confidenceFit = sourceVerified ? 85 : 50;
-  if (normalized?.needsVerification) {
-    confidenceFit = Math.min(confidenceFit, 35);
+  const qualityStatus = normalized?.dataQuality?.status || (normalized?.needsVerification ? "needs_verification" : "partial");
+  const verifiedCount = normalized?.dataQuality?.verifiedFields?.length || 0;
+  let confidenceFit = qualityStatus === "verified" ? 90 : qualityStatus === "partial" ? Math.min(75, 42 + (verifiedCount * 6)) : 20;
+  if (!sourceVerified) confidenceFit = Math.min(confidenceFit, 20);
+  if (qualityStatus !== "verified") {
     warnings.push("Critical data requires source verification.");
-  } else if (sourceVerified) {
-    explanation.push("The record includes accessible source evidence.");
   } else {
-    warnings.push("No accessible source log is available for this record.");
+    explanation.push("The record has checked official source evidence for all critical fields.");
   }
 
   const totalWeight = (
@@ -224,6 +264,15 @@ function calculateScore(record, preferences, weights) {
     confidenceFit * (weights.confidence_deadline / totalWeight)
   );
 
+  const weightedComponents = {
+    academic_fit: academicFit * (weights.academic_fit / totalWeight),
+    eligibility_language: eligibilityFit * (weights.eligibility_language / totalWeight),
+    cost_funding: costFit * (weights.cost_funding / totalWeight),
+    career_research: careerFit * (weights.career_research / totalWeight),
+    living_risk: livingFit * (weights.living_risk / totalWeight),
+    confidence_deadline: confidenceFit * (weights.confidence_deadline / totalWeight)
+  };
+
   return {
     passed_hard_filters: passed,
     total_score: finalScore,
@@ -235,6 +284,7 @@ function calculateScore(record, preferences, weights) {
       living_risk: livingFit,
       confidence_deadline: confidenceFit
     },
+    weighted_components: weightedComponents,
     explanation,
     warnings,
     personalized_match: profileMatch

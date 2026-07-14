@@ -14,7 +14,7 @@
     "program_native_name": "M.Sc. Aerospace Engineering",
     "program_degree": "MSc",
     "degree_level": "MSc",
-    "duration_years": 2.0,
+    "duration_years": 2,
     "ects": 120,
     "teaching_language": [
       "English"
@@ -42,14 +42,14 @@
       "english_required": true,
       "english_level_required": "İngilizce 6 dengi (örn. IELTS 6.5, TOEFL iBT 90).",
       "mixed_language_warning": null,
-      "language_risk": "Bilinmiyor / Resmi Veri Yok",
+      "language_risk": "low",
       "verification_notes": ""
     },
     "cost_profile": {
       "academic_year": "2024/2025",
-      "tuition_eur_per_year_min": 15300,
-      "tuition_eur_per_year_max": 15300,
-      "tuition_eur_per_year_estimated": 15300,
+      "tuition_eur_per_year_min": null,
+      "tuition_eur_per_year_max": null,
+      "tuition_eur_per_year_estimated": null,
       "tuition_basis": "needs_verification",
       "non_eu_flat_fee": null,
       "source_notes": "Yıllık 180.000 SEK (~15.300 EUR)",
@@ -59,14 +59,38 @@
       "total_first_year_cost_eur": null,
       "scholarship_availability": "Bilinmiyor / Resmi Veri Yok",
       "scholarship_risk": "Bilinmiyor / Resmi Veri Yok",
-      "verification_notes": ""
+      "verification_notes": "",
+      "total_academic_cost_eur_per_year_estimated": null,
+      "tuition_non_eu_full_program": {
+        "amount": 360000,
+        "currency": "SEK",
+        "basis": "full_program",
+        "academic_year": "current page"
+      },
+      "application_fee": {
+        "amount": 900,
+        "currency": "SEK",
+        "basis": "application"
+      },
+      "cost_notes": {
+        "en": "KTH states the fee in SEK; no EUR conversion is stored.",
+        "tr": "KTH ücreti SEK olarak yayımlar; EUR dönüşümü kaydedilmedi."
+      }
     },
     "scholarship_profile": {
       "available_types": [],
       "non_eu_eligible": true,
       "details": [],
       "external_options": [],
-      "verification_notes": ""
+      "verification_notes": "",
+      "scholarship_names": [
+        "KTH Scholarship",
+        "Swedish Institute scholarship (eligible countries only)"
+      ],
+      "funding_notes": {
+        "en": "KTH Scholarship is open to fee-paying applicants and covers tuition for one or two years; SI eligibility is country-specific.",
+        "tr": "KTH bursu ücret ödeyen adaylara açıktır ve bir veya iki yıl öğrenim ücretini kapsar; SI uygunluğu ülkeye özeldir."
+      }
     },
     "living_profile": {
       "city_type": "Medium",
@@ -86,7 +110,17 @@
       "thesis_type": null,
       "flexibility": "unknown",
       "curriculum_risk": "Bilinmiyor / Resmi Veri Yok",
-      "verification_notes": ""
+      "verification_notes": "",
+      "tracks": [
+        "Aeronautics",
+        "Space",
+        "Lightweight Structures",
+        "Systems Engineering"
+      ],
+      "curriculum_evidence": {
+        "en": "All students take a mandatory course in each track before choosing a specialisation.",
+        "tr": "Öğrenciler uzmanlık seçmeden önce her izden zorunlu ders alır."
+      }
     },
     "category_profile": {
       "primary_categories": [],
@@ -94,14 +128,15 @@
       "technical_focus": "",
       "verification_notes": "",
       "normalized_tags": [
-        "Aerodynamics",
-        "Space Systems",
-        "Propulsion",
-        "Structures"
-      ]
+        "aerodynamics",
+        "space_systems",
+        "aerospace_structures",
+        "systems_engineering"
+      ],
+      "evidence_basis": "Official KTH programme tracks, checked 2026-07-14."
     },
     "student_sentiment_profile": {
-      "student_satisfaction_score": 80,
+      "student_satisfaction_score": null,
       "workload_sentiment": "Zorlayıcı ve yoğun. Tam zamanlı bir iş (haftada 40-60 saat) gibi görülüyor. Dönemler kısa ve yüksek tempolu.",
       "teaching_quality_sentiment": "Genel olarak çok saygın görülüyor, ancak değerinin TU Delft veya ISAE-SUPAERO ile kıyaslanması bazı ortamlarda tartışma konusu.",
       "administration_sentiment": "",
@@ -127,8 +162,11 @@
           "url": "https://www.reddit.com/search/?q=KTH+Royal+Institute+of+Technology+aerospace"
         }
       ],
-      "sentiment_confidence": "low",
-      "verification_notes": ""
+      "sentiment_confidence": "unknown",
+      "verification_notes": {
+        "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+        "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+      }
     },
     "application_timeline_profile": {
       "application_period": "Winter",
@@ -136,8 +174,14 @@
       "visa_complexity": "Medium",
       "deadline_eu": null,
       "deadline_non_eu": null,
-      "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
-      "verification_notes": ""
+      "timeline_risk": "medium",
+      "verification_notes": "",
+      "non_eu_deadline": "2027-01-15",
+      "document_deadline": "2027-02-01",
+      "deadline_notes": {
+        "en": "For studies starting August 2027; verify the next cycle before applying.",
+        "tr": "Ağustos 2027 başlangıcı içindir; başvuru öncesi sonraki dönemi doğrulayın."
+      }
     },
     "research_profile": {
       "research_focus_areas": [],
@@ -160,16 +204,74 @@
         "https://www.universityadmissions.se/intl/search?period=18&freeText=aerospace+engineering",
         "https://www.kth.se/en/studies/master/aerospace-engineering"
       ],
-      "last_verified": "2026-07-11",
+      "last_verified": "2026-07-14",
       "field_confidence": {
         "tuition": "high",
         "admission": "high",
-        "deadlines": "low",
-        "scholarship": "low"
+        "deadlines": "high",
+        "scholarship": "high",
+        "program_basic_info": "high",
+        "language": "high",
+        "curriculum": "high"
       },
       "source_reliability": "high",
       "verification_status": "verified",
-      "verification_notes": ""
+      "verification_notes": "",
+      "source_log": [
+        {
+          "url": "https://www.kth.se/en/studies/master/aerospace-engineering",
+          "title": "KTH MSc Aerospace Engineering",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "program",
+            "language",
+            "deadline",
+            "curriculum",
+            "non_eu_eligibility"
+          ],
+          "confidence": "high",
+          "notes": ""
+        },
+        {
+          "url": "https://www.kth.se/en/2.985/aerospace-engineering/fees-aerospace-engineering-1.910116",
+          "title": "KTH fees and scholarships for Aerospace Engineering",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "tuition"
+          ],
+          "confidence": "high",
+          "notes": ""
+        },
+        {
+          "url": "https://www.kth.se/en/2.985/aerospace-engineering/fees-aerospace-engineering-1.910116",
+          "title": "KTH fees and scholarships for Aerospace Engineering",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "scholarship"
+          ],
+          "confidence": "high",
+          "notes": ""
+        },
+        {
+          "url": "https://www.kth.se/en/studies/master/aerospace-engineering/courses-aerospace-engineering-1.412918",
+          "title": "KTH Aerospace Engineering courses",
+          "source_type": "official_curriculum_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-14",
+          "relevant_fields": [
+            "curriculum"
+          ],
+          "confidence": "high",
+          "notes": ""
+        }
+      ],
+      "needs_verification": true
     },
     "decision_summary": {
       "pros": [],
@@ -185,7 +287,38 @@
       "living_quality": 80
     },
     "location": {},
-    "qs_ranking": 73
+    "qs_ranking": 73,
+    "data_quality": {
+      "status": "partial",
+      "checked_official_source_count": 4,
+      "verified_fields": [
+        "program",
+        "language",
+        "tuition",
+        "scholarship",
+        "deadline",
+        "curriculum"
+      ],
+      "unverified_critical_fields": [
+        "admission"
+      ],
+      "has_checked_source_log": true,
+      "audited_at": "2026-07-14"
+    },
+    "quality_control": {
+      "checked_at": "2026-07-14",
+      "qc_status": "needs_revision",
+      "remaining_verification_tasks": [
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        }
+      ],
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
+    }
   },
   {
     "id": "se-chalmers-mobility-msc",
@@ -289,7 +422,7 @@
       ]
     },
     "student_sentiment_profile": {
-      "student_satisfaction_score": 80,
+      "student_satisfaction_score": null,
       "workload_sentiment": "Haftada yaklaşık 40 saatlik yoğun iş yükü. Yarı zamanlı çalışarak okumak çok zor ve öğrenciler tarafından tavsiye edilmiyor.",
       "teaching_quality_sentiment": "Özellikle akışkanlar mekaniği (CFD) ve Volvo/Geely gibi dev şirketlerle olan güçlü sanayi bağları ile çok büyük saygı görüyor.",
       "administration_sentiment": "",
@@ -315,8 +448,11 @@
           "url": "https://www.reddit.com/search/?q=Chalmers+University+of+Technology+aerospace"
         }
       ],
-      "sentiment_confidence": "low",
-      "verification_notes": ""
+      "sentiment_confidence": "unknown",
+      "verification_notes": {
+        "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+        "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+      }
     },
     "application_timeline_profile": {
       "application_period": "Winter",
@@ -373,7 +509,56 @@
       "living_quality": 80
     },
     "location": {},
-    "qs_ranking": 129
+    "qs_ranking": 129,
+    "data_quality": {
+      "status": "needs_verification",
+      "checked_official_source_count": 0,
+      "verified_fields": [],
+      "unverified_critical_fields": [
+        "program",
+        "language",
+        "tuition",
+        "scholarship",
+        "curriculum",
+        "admission"
+      ],
+      "has_checked_source_log": false,
+      "audited_at": "2026-07-14"
+    },
+    "quality_control": {
+      "checked_at": "2026-07-14",
+      "qc_status": "needs_revision",
+      "remaining_verification_tasks": [
+        {
+          "en": "Add a checked official source for program.",
+          "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for language.",
+          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for tuition.",
+          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for curriculum.",
+          "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        }
+      ],
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
+    }
   },
   {
     "id": "se-linkoping-aero-msc",
@@ -477,7 +662,7 @@
       ]
     },
     "student_sentiment_profile": {
-      "student_satisfaction_score": 80,
+      "student_satisfaction_score": null,
       "workload_sentiment": "Adil ancak matematik ağırlıklı ve zor. Haftada ortalama 40 saatlik mesai bekleniyor.",
       "teaching_quality_sentiment": "İsveç havacılık/savunma sektörüyle (özellikle Saab) güçlü bağları olan oldukça saygın bir program.",
       "administration_sentiment": "",
@@ -503,8 +688,11 @@
           "url": "https://www.reddit.com/search/?q=Linköping+University+aerospace"
         }
       ],
-      "sentiment_confidence": "low",
-      "verification_notes": ""
+      "sentiment_confidence": "unknown",
+      "verification_notes": {
+        "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+        "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+      }
     },
     "application_timeline_profile": {
       "application_period": "Winter",
@@ -561,6 +749,55 @@
       "living_quality": 80
     },
     "location": {},
-    "qs_ranking": 530
+    "qs_ranking": 530,
+    "data_quality": {
+      "status": "needs_verification",
+      "checked_official_source_count": 0,
+      "verified_fields": [],
+      "unverified_critical_fields": [
+        "program",
+        "language",
+        "tuition",
+        "scholarship",
+        "curriculum",
+        "admission"
+      ],
+      "has_checked_source_log": false,
+      "audited_at": "2026-07-14"
+    },
+    "quality_control": {
+      "checked_at": "2026-07-14",
+      "qc_status": "needs_revision",
+      "remaining_verification_tasks": [
+        {
+          "en": "Add a checked official source for program.",
+          "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for language.",
+          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for tuition.",
+          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for curriculum.",
+          "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        }
+      ],
+      "qc_notes": {
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+      }
+    }
   }
 ]

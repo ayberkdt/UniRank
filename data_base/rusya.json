@@ -241,14 +241,55 @@
         "scoring_inputs": {},
         "quality_control": {
             "qc_status": "needs_revision",
-            "checked_at": "2026-07-10",
+            "checked_at": "2026-07-14",
             "failed_canary_tests": [
                 "missing_or_unverified_critical_fields"
             ],
             "remaining_verification_tasks": [
-                "Verify programme, language, admission, tuition, scholarship, curriculum, research and deadline sources."
+                {
+                    "en": "Add a checked official source for program.",
+                    "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for language.",
+                    "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for tuition.",
+                    "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for scholarship.",
+                    "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for curriculum.",
+                    "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for admission.",
+                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                }
             ],
-            "qc_notes": "Russian record migrated from legacy schema; no unsupported values retained in canonical fields."
+            "qc_notes": {
+                "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+                "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+            }
+        },
+        "data_quality": {
+            "status": "needs_verification",
+            "checked_official_source_count": 0,
+            "verified_fields": [],
+            "unverified_critical_fields": [
+                "program",
+                "language",
+                "tuition",
+                "scholarship",
+                "curriculum",
+                "admission"
+            ],
+            "has_checked_source_log": false,
+            "audited_at": "2026-07-14"
         }
     },
     {
@@ -493,14 +534,55 @@
         "scoring_inputs": {},
         "quality_control": {
             "qc_status": "needs_revision",
-            "checked_at": "2026-07-10",
+            "checked_at": "2026-07-14",
             "failed_canary_tests": [
                 "missing_or_unverified_critical_fields"
             ],
             "remaining_verification_tasks": [
-                "Verify programme, language, admission, tuition, scholarship, curriculum, research and deadline sources."
+                {
+                    "en": "Add a checked official source for program.",
+                    "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for language.",
+                    "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for tuition.",
+                    "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for scholarship.",
+                    "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for curriculum.",
+                    "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for admission.",
+                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                }
             ],
-            "qc_notes": "Russian record migrated from legacy schema; no unsupported values retained in canonical fields."
+            "qc_notes": {
+                "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+                "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+            }
+        },
+        "data_quality": {
+            "status": "needs_verification",
+            "checked_official_source_count": 0,
+            "verified_fields": [],
+            "unverified_critical_fields": [
+                "program",
+                "language",
+                "tuition",
+                "scholarship",
+                "curriculum",
+                "admission"
+            ],
+            "has_checked_source_log": false,
+            "audited_at": "2026-07-14"
         }
     },
     {
@@ -750,14 +832,40 @@
         "scoring_inputs": {},
         "quality_control": {
             "qc_status": "needs_revision",
-            "checked_at": "2026-07-10",
+            "checked_at": "2026-07-14",
             "failed_canary_tests": [
                 "missing_or_unverified_critical_fields"
             ],
             "remaining_verification_tasks": [
-                "Verify programme, language, admission, tuition, scholarship, curriculum, research and deadline sources."
+                {
+                    "en": "Add a checked official source for program.",
+                    "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for language.",
+                    "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for tuition.",
+                    "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for scholarship.",
+                    "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for curriculum.",
+                    "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for admission.",
+                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                }
             ],
-            "qc_notes": "Russian record migrated from legacy schema; no unsupported values retained in canonical fields."
+            "qc_notes": {
+                "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+                "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+            }
         },
         "location": {
             "country": "Russia",
@@ -765,6 +873,21 @@
             "latitude": 55.929035,
             "longitude": 37.5186681,
             "locationConfidence": "exact"
+        },
+        "data_quality": {
+            "status": "needs_verification",
+            "checked_official_source_count": 0,
+            "verified_fields": [],
+            "unverified_critical_fields": [
+                "program",
+                "language",
+                "tuition",
+                "scholarship",
+                "curriculum",
+                "admission"
+            ],
+            "has_checked_source_log": false,
+            "audited_at": "2026-07-14"
         }
     },
     {
@@ -1009,14 +1132,55 @@
         "scoring_inputs": {},
         "quality_control": {
             "qc_status": "needs_revision",
-            "checked_at": "2026-07-10",
+            "checked_at": "2026-07-14",
             "failed_canary_tests": [
                 "missing_or_unverified_critical_fields"
             ],
             "remaining_verification_tasks": [
-                "Verify programme, language, admission, tuition, scholarship, curriculum, research and deadline sources."
+                {
+                    "en": "Add a checked official source for program.",
+                    "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for language.",
+                    "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for tuition.",
+                    "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for scholarship.",
+                    "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for curriculum.",
+                    "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for admission.",
+                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                }
             ],
-            "qc_notes": "Russian record migrated from legacy schema; no unsupported values retained in canonical fields."
+            "qc_notes": {
+                "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+                "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+            }
+        },
+        "data_quality": {
+            "status": "needs_verification",
+            "checked_official_source_count": 0,
+            "verified_fields": [],
+            "unverified_critical_fields": [
+                "program",
+                "language",
+                "tuition",
+                "scholarship",
+                "curriculum",
+                "admission"
+            ],
+            "has_checked_source_log": false,
+            "audited_at": "2026-07-14"
         }
     },
     {
@@ -1261,14 +1425,55 @@
         "scoring_inputs": {},
         "quality_control": {
             "qc_status": "needs_revision",
-            "checked_at": "2026-07-10",
+            "checked_at": "2026-07-14",
             "failed_canary_tests": [
                 "missing_or_unverified_critical_fields"
             ],
             "remaining_verification_tasks": [
-                "Verify programme, language, admission, tuition, scholarship, curriculum, research and deadline sources."
+                {
+                    "en": "Add a checked official source for program.",
+                    "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for language.",
+                    "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for tuition.",
+                    "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for scholarship.",
+                    "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for curriculum.",
+                    "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for admission.",
+                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                }
             ],
-            "qc_notes": "Russian record migrated from legacy schema; no unsupported values retained in canonical fields."
+            "qc_notes": {
+                "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+                "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+            }
+        },
+        "data_quality": {
+            "status": "needs_verification",
+            "checked_official_source_count": 0,
+            "verified_fields": [],
+            "unverified_critical_fields": [
+                "program",
+                "language",
+                "tuition",
+                "scholarship",
+                "curriculum",
+                "admission"
+            ],
+            "has_checked_source_log": false,
+            "audited_at": "2026-07-14"
         }
     },
     {
@@ -1513,14 +1718,55 @@
         "scoring_inputs": {},
         "quality_control": {
             "qc_status": "needs_revision",
-            "checked_at": "2026-07-10",
+            "checked_at": "2026-07-14",
             "failed_canary_tests": [
                 "missing_or_unverified_critical_fields"
             ],
             "remaining_verification_tasks": [
-                "Verify programme, language, admission, tuition, scholarship, curriculum, research and deadline sources."
+                {
+                    "en": "Add a checked official source for program.",
+                    "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for language.",
+                    "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for tuition.",
+                    "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for scholarship.",
+                    "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for curriculum.",
+                    "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for admission.",
+                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                }
             ],
-            "qc_notes": "Russian record migrated from legacy schema; no unsupported values retained in canonical fields."
+            "qc_notes": {
+                "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+                "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+            }
+        },
+        "data_quality": {
+            "status": "needs_verification",
+            "checked_official_source_count": 0,
+            "verified_fields": [],
+            "unverified_critical_fields": [
+                "program",
+                "language",
+                "tuition",
+                "scholarship",
+                "curriculum",
+                "admission"
+            ],
+            "has_checked_source_log": false,
+            "audited_at": "2026-07-14"
         }
     },
     {
@@ -1765,14 +2011,55 @@
         "scoring_inputs": {},
         "quality_control": {
             "qc_status": "needs_revision",
-            "checked_at": "2026-07-10",
+            "checked_at": "2026-07-14",
             "failed_canary_tests": [
                 "missing_or_unverified_critical_fields"
             ],
             "remaining_verification_tasks": [
-                "Verify programme, language, admission, tuition, scholarship, curriculum, research and deadline sources."
+                {
+                    "en": "Add a checked official source for program.",
+                    "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for language.",
+                    "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for tuition.",
+                    "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for scholarship.",
+                    "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for curriculum.",
+                    "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for admission.",
+                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                }
             ],
-            "qc_notes": "Russian record migrated from legacy schema; no unsupported values retained in canonical fields."
+            "qc_notes": {
+                "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+                "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+            }
+        },
+        "data_quality": {
+            "status": "needs_verification",
+            "checked_official_source_count": 0,
+            "verified_fields": [],
+            "unverified_critical_fields": [
+                "program",
+                "language",
+                "tuition",
+                "scholarship",
+                "curriculum",
+                "admission"
+            ],
+            "has_checked_source_log": false,
+            "audited_at": "2026-07-14"
         }
     },
     {
@@ -2017,14 +2304,55 @@
         "scoring_inputs": {},
         "quality_control": {
             "qc_status": "needs_revision",
-            "checked_at": "2026-07-10",
+            "checked_at": "2026-07-14",
             "failed_canary_tests": [
                 "missing_or_unverified_critical_fields"
             ],
             "remaining_verification_tasks": [
-                "Verify programme, language, admission, tuition, scholarship, curriculum, research and deadline sources."
+                {
+                    "en": "Add a checked official source for program.",
+                    "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for language.",
+                    "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for tuition.",
+                    "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for scholarship.",
+                    "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for curriculum.",
+                    "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for admission.",
+                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                }
             ],
-            "qc_notes": "Russian record migrated from legacy schema; no unsupported values retained in canonical fields."
+            "qc_notes": {
+                "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+                "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+            }
+        },
+        "data_quality": {
+            "status": "needs_verification",
+            "checked_official_source_count": 0,
+            "verified_fields": [],
+            "unverified_critical_fields": [
+                "program",
+                "language",
+                "tuition",
+                "scholarship",
+                "curriculum",
+                "admission"
+            ],
+            "has_checked_source_log": false,
+            "audited_at": "2026-07-14"
         }
     },
     {
@@ -2269,14 +2597,55 @@
         "scoring_inputs": {},
         "quality_control": {
             "qc_status": "needs_revision",
-            "checked_at": "2026-07-10",
+            "checked_at": "2026-07-14",
             "failed_canary_tests": [
                 "missing_or_unverified_critical_fields"
             ],
             "remaining_verification_tasks": [
-                "Verify programme, language, admission, tuition, scholarship, curriculum, research and deadline sources."
+                {
+                    "en": "Add a checked official source for program.",
+                    "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for language.",
+                    "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for tuition.",
+                    "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for scholarship.",
+                    "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for curriculum.",
+                    "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for admission.",
+                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                }
             ],
-            "qc_notes": "Russian record migrated from legacy schema; no unsupported values retained in canonical fields."
+            "qc_notes": {
+                "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+                "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+            }
+        },
+        "data_quality": {
+            "status": "needs_verification",
+            "checked_official_source_count": 0,
+            "verified_fields": [],
+            "unverified_critical_fields": [
+                "program",
+                "language",
+                "tuition",
+                "scholarship",
+                "curriculum",
+                "admission"
+            ],
+            "has_checked_source_log": false,
+            "audited_at": "2026-07-14"
         }
     },
     {
@@ -2521,14 +2890,55 @@
         "scoring_inputs": {},
         "quality_control": {
             "qc_status": "needs_revision",
-            "checked_at": "2026-07-10",
+            "checked_at": "2026-07-14",
             "failed_canary_tests": [
                 "missing_or_unverified_critical_fields"
             ],
             "remaining_verification_tasks": [
-                "Verify programme, language, admission, tuition, scholarship, curriculum, research and deadline sources."
+                {
+                    "en": "Add a checked official source for program.",
+                    "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for language.",
+                    "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for tuition.",
+                    "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for scholarship.",
+                    "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for curriculum.",
+                    "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for admission.",
+                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                }
             ],
-            "qc_notes": "Russian record migrated from legacy schema; no unsupported values retained in canonical fields."
+            "qc_notes": {
+                "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+                "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+            }
+        },
+        "data_quality": {
+            "status": "needs_verification",
+            "checked_official_source_count": 0,
+            "verified_fields": [],
+            "unverified_critical_fields": [
+                "program",
+                "language",
+                "tuition",
+                "scholarship",
+                "curriculum",
+                "admission"
+            ],
+            "has_checked_source_log": false,
+            "audited_at": "2026-07-14"
         }
     }
 ]

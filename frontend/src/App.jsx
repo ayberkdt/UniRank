@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
+import { motion } from 'framer-motion'
 import {
   ArrowUpRight,
   BadgeCheck,
@@ -147,7 +148,7 @@ function App() {
   }, [visiblePrograms, selectedProgram])
 
   const mappedCities = new Set(visiblePrograms.map((program) => `${program.location.city}-${program.location.country}`)).size
-  const verifiedPrograms = visiblePrograms.filter((program) => program.confidenceSummary === 'high').length
+  const mappedCountries = new Set(visiblePrograms.map((program) => program.location.country || program.country).filter(Boolean)).size
 
   return (
     <div className="app-shell">
@@ -227,7 +228,7 @@ function App() {
           <div className="stats" aria-live="polite">
             <div><strong>{visiblePrograms.length}</strong><span>Haritalanan program</span></div>
             <div><strong>{mappedCities}</strong><span>Şehir</span></div>
-            <div><strong>{verifiedPrograms}</strong><span>Yüksek kaynak güveni</span></div>
+            <div><strong>{mappedCountries}</strong><span>Ülke</span></div>
           </div>
 
           {status === 'loading' && <div className="map-state"><span className="loading-orb" /> Harita verisi hazırlanıyor…</div>}
@@ -250,7 +251,11 @@ function App() {
           <div className="results-heading"><span className="eyebrow">ÖNE ÇIKANLAR</span><h2>Haritada öne çıkanlar</h2><p>Uyum skoruna göre sıralanır.</p></div>
           <div className="result-list">
             {visiblePrograms.slice(0, 6).map((program, index) => (
-              <button
+              <motion.button
+                layout
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.22, delay: index * 0.025 }}
                 className={`result-card ${selectedProgram?.key === program.key ? 'is-selected' : ''}`}
                 type="button"
                 key={program.key}
@@ -259,9 +264,13 @@ function App() {
                 <span className="result-rank">{String(index + 1).padStart(2, '0')}</span>
                 <span className="result-body"><strong>{text(program.universityName)}</strong><small>{text(program.programName)}</small><em>{text(program.location.city)}, {text(program.location.country)}</em></span>
                 <span className={`score-pill score-pill--${scoreBand(program.score)}`}>{program.score ?? '—'}</span>
-              </button>
+              </motion.button>
             ))}
             {status === 'ready' && !visiblePrograms.length && <p className="empty-results">Bu filtrelerle eşleşen konumlu program bulunamadı.</p>}
+          </div>
+          <div className="results-bento" aria-label="Harita tasarım rehberi">
+            <div><span>PASTEL ATLAS</span><strong>Renk + sınır</strong><small>Ülkeler ayrı tonda, şehirler bölgesel odakla gösterilir.</small></div>
+            <i aria-hidden="true"><span /><span /><span /></i>
           </div>
           <a className="all-results" href="#top">Tüm sonuçları listele <ArrowUpRight size={16} /></a>
           <SpotlightCard className="source-card">

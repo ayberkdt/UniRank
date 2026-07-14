@@ -241,8 +241,8 @@
         }
       },
       "student_sentiment_profile": {
-        "student_satisfaction_score": 75,
-        "sentiment_confidence": "high",
+        "student_satisfaction_score": null,
+        "sentiment_confidence": "unknown",
         "sample_size_estimate": null,
         "date_range": "",
         "teaching_quality_sentiment": "positive",
@@ -288,8 +288,8 @@
           }
         ],
         "verification_notes": {
-          "en": "Reddit r/Madrid, Idealista",
-          "tr": "Reddit r/Madrid, Idealista"
+          "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+          "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
         }
       },
       "source_profile": {
@@ -360,13 +360,56 @@
       },
       "scoring_inputs": {},
       "quality_control": {
-        "qc_status": "passed",
-        "checked_at": "2026-07-11",
+        "qc_status": "needs_revision",
+        "checked_at": "2026-07-14",
         "failed_canary_tests": [],
-        "remaining_verification_tasks": [],
-        "qc_notes": ""
+        "remaining_verification_tasks": [
+          {
+            "en": "Add a checked official source for program.",
+            "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for language.",
+            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for tuition.",
+            "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for scholarship.",
+            "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for curriculum.",
+            "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for admission.",
+            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          }
+        ],
+        "qc_notes": {
+          "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+          "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        }
       },
-      "qs_ranking": 194
+      "qs_ranking": 194,
+      "data_quality": {
+        "status": "needs_verification",
+        "checked_official_source_count": 0,
+        "verified_fields": [],
+        "unverified_critical_fields": [
+          "program",
+          "language",
+          "tuition",
+          "scholarship",
+          "curriculum",
+          "admission"
+        ],
+        "has_checked_source_log": false,
+        "audited_at": "2026-07-14"
+      }
     },
     {
       "id": "spain_upc_aerospace",
@@ -610,8 +653,8 @@
         }
       },
       "student_sentiment_profile": {
-        "student_satisfaction_score": 70,
-        "sentiment_confidence": "high",
+        "student_satisfaction_score": null,
+        "sentiment_confidence": "unknown",
         "sample_size_estimate": null,
         "date_range": "",
         "teaching_quality_sentiment": "mixed",
@@ -657,8 +700,8 @@
           }
         ],
         "verification_notes": {
-          "en": "Reddit r/UPC",
-          "tr": "Reddit r/UPC"
+          "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+          "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
         }
       },
       "source_profile": {
@@ -725,13 +768,56 @@
       },
       "scoring_inputs": {},
       "quality_control": {
-        "qc_status": "passed",
-        "checked_at": "2026-07-11",
+        "qc_status": "needs_revision",
+        "checked_at": "2026-07-14",
         "failed_canary_tests": [],
-        "remaining_verification_tasks": [],
-        "qc_notes": ""
+        "remaining_verification_tasks": [
+          {
+            "en": "Add a checked official source for program.",
+            "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for language.",
+            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for tuition.",
+            "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for scholarship.",
+            "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for curriculum.",
+            "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for admission.",
+            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          }
+        ],
+        "qc_notes": {
+          "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+          "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        }
       },
-      "qs_ranking": 287
+      "qs_ranking": 287,
+      "data_quality": {
+        "status": "needs_verification",
+        "checked_official_source_count": 0,
+        "verified_fields": [],
+        "unverified_critical_fields": [
+          "program",
+          "language",
+          "tuition",
+          "scholarship",
+          "curriculum",
+          "admission"
+        ],
+        "has_checked_source_log": false,
+        "audited_at": "2026-07-14"
+      }
     },
     {
       "id": "spain_uc3m_space_aero",
@@ -975,8 +1061,8 @@
         }
       },
       "student_sentiment_profile": {
-        "student_satisfaction_score": 85,
-        "sentiment_confidence": "high",
+        "student_satisfaction_score": null,
+        "sentiment_confidence": "unknown",
         "sample_size_estimate": null,
         "date_range": "",
         "teaching_quality_sentiment": "positive",
@@ -1022,8 +1108,8 @@
           }
         ],
         "verification_notes": {
-          "en": "Reddit r/uc3m",
-          "tr": "Reddit r/uc3m"
+          "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
+          "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
         }
       },
       "source_profile": {
@@ -1090,13 +1176,56 @@
       },
       "scoring_inputs": {},
       "quality_control": {
-        "qc_status": "passed",
-        "checked_at": "2026-07-11",
+        "qc_status": "needs_revision",
+        "checked_at": "2026-07-14",
         "failed_canary_tests": [],
-        "remaining_verification_tasks": [],
-        "qc_notes": ""
+        "remaining_verification_tasks": [
+          {
+            "en": "Add a checked official source for program.",
+            "tr": "program için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for language.",
+            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for tuition.",
+            "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for scholarship.",
+            "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for curriculum.",
+            "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for admission.",
+            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          }
+        ],
+        "qc_notes": {
+          "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+          "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        }
       },
-      "qs_ranking": 389
+      "qs_ranking": 389,
+      "data_quality": {
+        "status": "needs_verification",
+        "checked_official_source_count": 0,
+        "verified_fields": [],
+        "unverified_critical_fields": [
+          "program",
+          "language",
+          "tuition",
+          "scholarship",
+          "curriculum",
+          "admission"
+        ],
+        "has_checked_source_log": false,
+        "audited_at": "2026-07-14"
+      }
     }
   ]
 }
