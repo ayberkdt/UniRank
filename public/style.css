@@ -1,24 +1,24 @@
 :root {
-    color-scheme: light;
-    --bg-dark: #f4f7fb;
-    --bg-card: #ffffff;
-    --bg-card-hover: #f8fafc;
-    --bg-secondary: #eef3f8;
-    --border-color: #dce5ef;
+    color-scheme: dark;
+    --bg-dark: #071827;
+    --bg-card: rgba(12, 29, 47, 0.88);
+    --bg-card-hover: #102d46;
+    --bg-secondary: #0b2237;
+    --border-color: #254863;
 
-    --text-main: #10233f;
+    --text-main: #eaf5ff;
     --text: var(--text-main);
-    --text-muted: #66768d;
-    --text-highlight: #2856c5;
+    --text-muted: #9db4c8;
+    --text-highlight: #83d5ff;
 
-    --accent-primary: #2f5bd3;
-    --accent-secondary: #0f766e;
+    --accent-primary: #5d8fff;
+    --accent-secondary: #4fc6bd;
     --primary: var(--accent-primary);
     --accent-gradient: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
 
-    --success: #0b7a5c;
-    --warning: #a95c00;
-    --danger: #b33b42;
+    --success: #62d5a4;
+    --warning: #f3c369;
+    --danger: #ff949d;
 
     --font-main: 'Inter', -apple-system, sans-serif;
     
@@ -5240,6 +5240,111 @@ option {
 .country-themed .score-impact-card li { color: #4c607a !important; }
 .country-themed .score-impact-card li b { color: #204fa8 !important; }
 .country-themed .evidence-strip__eyebrow { color: #708197 !important; }
+
+/* Production drawer evidence palette -------------------------------------
+   The drawer itself is intentionally midnight-themed. Keep its evidence
+   panels in the same family so a low-confidence student quote never reads as
+   a bright, unrelated white card. Colour supplements labels and numbers; it
+   is never the only source of meaning. */
+#detail-drawer .evidence-strip {
+    border-color: rgba(91, 161, 202, .38);
+    background: linear-gradient(145deg, rgba(16, 50, 76, .96), rgba(9, 30, 48, .98));
+    box-shadow: inset 0 1px 0 rgba(167, 224, 255, .05);
+}
+
+#detail-drawer .evidence-strip--verified {
+    border-color: rgba(74, 201, 153, .45);
+    background: linear-gradient(145deg, rgba(13, 62, 62, .96), rgba(8, 38, 48, .98));
+}
+
+#detail-drawer .evidence-strip--partial {
+    border-color: rgba(237, 181, 83, .45);
+    background: linear-gradient(145deg, rgba(66, 52, 23, .96), rgba(30, 34, 39, .98));
+}
+
+#detail-drawer .evidence-strip--needs_verification {
+    border-color: rgba(224, 116, 128, .43);
+    background: linear-gradient(145deg, rgba(65, 35, 46, .96), rgba(31, 29, 43, .98));
+}
+
+#detail-drawer .evidence-strip__counts {
+    border: 1px solid rgba(126, 190, 228, .22);
+    background: rgba(3, 18, 31, .48);
+}
+
+#detail-drawer .evidence-strip strong,
+#detail-drawer .score-impact-card strong,
+#detail-drawer .sentiment-facts b,
+#detail-drawer .source-log-list strong {
+    color: #edf8ff !important;
+}
+
+#detail-drawer .evidence-strip__eyebrow,
+#detail-drawer .evidence-strip__counts span,
+#detail-drawer .sentiment-facts small,
+#detail-drawer .source-log-list small,
+#detail-drawer .source-access {
+    color: #a9c1d4 !important;
+}
+
+#detail-drawer .evidence-strip p,
+#detail-drawer .evidence-strip small,
+#detail-drawer .score-impact-card small,
+#detail-drawer .sentiment-date,
+#detail-drawer .sentiment-summary,
+#detail-drawer .student-source-list li,
+#detail-drawer .student-source-list .review-quote {
+    color: #c7d9e8 !important;
+}
+
+#detail-drawer .score-impact-card {
+    border-color: rgba(119, 167, 229, .4);
+    background: linear-gradient(145deg, rgba(24, 49, 88, .94), rgba(12, 31, 56, .98));
+    box-shadow: inset 0 1px 0 rgba(166, 205, 255, .06);
+}
+
+#detail-drawer .score-impact-card li,
+#detail-drawer .sentiment-facts span,
+#detail-drawer .student-source-list li,
+#detail-drawer .source-log-list li {
+    border-color: rgba(99, 155, 193, .3);
+    background: linear-gradient(135deg, rgba(16, 48, 73, .96), rgba(10, 32, 51, .98));
+}
+
+#detail-drawer .score-impact-card li,
+#detail-drawer .student-source-list li {
+    color: #c7d9e8 !important;
+}
+
+#detail-drawer .score-impact-card li b,
+#detail-drawer .evidence-strip__counts b,
+#detail-drawer .student-source-list a,
+#detail-drawer .source-log-list a {
+    color: #82d6ff !important;
+}
+
+#detail-drawer .source-access {
+    border: 1px solid rgba(126, 190, 228, .2);
+    background: rgba(13, 42, 64, .86);
+}
+
+#detail-drawer .source-access--ok,
+#detail-drawer .source-access--pdf,
+#detail-drawer .source-access--redirects {
+    border-color: rgba(77, 210, 159, .35);
+    background: rgba(18, 92, 74, .45);
+    color: #8ce7c1 !important;
+}
+
+#detail-drawer .source-access--blocked,
+#detail-drawer .source-access--broken,
+#detail-drawer .source-access--not-found,
+#detail-drawer .source-access--unknown,
+#detail-drawer .source-access--requires-js {
+    border-color: rgba(234, 134, 145, .35);
+    background: rgba(108, 39, 54, .43);
+    color: #ffb4bd !important;
+}
 
 @media (max-width: 560px) {
     .evidence-strip { grid-template-columns: 1fr; }

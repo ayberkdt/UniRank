@@ -1190,7 +1190,10 @@ function openDrawer(data) {
         // never as a substitute for the official programme facts above.
         const sentiment = n.studentSentiment || {};
         const sentimentSources = Array.isArray(n.studentReviews) ? n.studentReviews : [];
-        const sentimentScore = Number.isFinite(Number(sentiment.student_satisfaction_score)) ? Number(sentiment.student_satisfaction_score) : null;
+        const rawSentimentScore = sentiment.student_satisfaction_score;
+        const sentimentScore = rawSentimentScore !== null && rawSentimentScore !== undefined && rawSentimentScore !== '' && Number.isFinite(Number(rawSentimentScore))
+            ? Number(rawSentimentScore)
+            : null;
         const sentimentSummary = displayValue(sentiment.sentiment_summary || sentiment.student_sentiment_summary || sentiment.verification_notes);
         const sourceLinks = sentimentSources.map((review) => {
             const url = safeUrl(review?.url);
