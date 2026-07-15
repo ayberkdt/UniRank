@@ -1,5 +1,6 @@
 from __future__ import annotations
 import json
+import re
 from pathlib import Path
 import pandas as pd
 from typing import Any, Dict, List, Optional, Tuple, Iterable
@@ -65,6 +66,59 @@ def _city_name(value: Any) -> str:
                 return candidate.strip()
         return ""
     return value.strip() if isinstance(value, str) else ""
+
+
+def _identity_text(value: Any) -> str:
+    """Normalize a display value for exact programme-duplicate detection.
+
+    The key deliberately includes the programme and degree.  A university can
+    legitimately have several programmes, so institution-only de-duplication
+    would hide real choices from students.
+    """
+    return re.sub(r"[^a-z0-9]+", " ", str(value or "").lower()).strip()
+
+
+def _programme_identity(row: Dict[str, Any]) -> tuple[str, str, str, str]:
+    return (
+        _identity_text(row.get("country")),
+        _identity_text(row.get("university") or row.get("name")),
+        _identity_text(row.get("program_name") or row.get("target_program_name")),
+        _identity_text(row.get("degree_level") or row.get("program_degree") or row.get("target_program_degree")),
+    )
+
+
+def _record_preference(row: Dict[str, Any]) -> tuple[int, int, int, str]:
+    """Prefer the most complete source-grounded representation of one programme."""
+    quality = row.get("data_quality") or {}
+    status = str(quality.get("status") or "").lower()
+    status_rank = {"verified": 3, "partial": 2, "needs_verification": 1}.get(status, 0)
+    verified_count = len(quality.get("verified_fields") or [])
+    source_count = len((row.get("source_profile") or {}).get("source_log") or [])
+    return status_rank, verified_count, source_count, str(row.get("updated_at") or "")
+
+
+def _deduplicate_programme_rows(rows: List[Dict[str, Any]], report: LoadReport) -> List[Dict[str, Any]]:
+    """Keep one record only for an exact country/university/programme/degree clone."""
+    grouped: Dict[tuple[str, str, str, str], List[Dict[str, Any]]] = {}
+    for row in rows:
+        key = _programme_identity(row)
+        # Do not merge incomplete legacy rows that lack the identifying fields.
+        if not all(key):
+            key = (*key, str(row.get("id") or ""))
+        grouped.setdefault(key, []).append(row)
+
+    unique: List[Dict[str, Any]] = []
+    for group in grouped.values():
+        selected = max(group, key=_record_preference)
+        unique.append(selected)
+        if len(group) > 1:
+            dropped = [str(row.get("id") or "unknown") for row in group if row is not selected]
+            report.add(LoadIssue.warn(
+                str(selected.get("source_file") or "data_base"),
+                f"Suppressed exact duplicate programme record(s): {', '.join(dropped)}; retained {selected.get('id') or 'unknown'}.",
+                record_id=str(selected.get("id") or "") or None,
+            ))
+    return unique
 
 
 def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.DataFrame, LoadReport]:
@@ -375,6 +429,8 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
             rows.append(row)
             report.records_loaded += 1
             
+    rows = _deduplicate_programme_rows(rows, report)
+    report.records_loaded = len(rows)
     df = pd.DataFrame(rows)
     
     # Check if empty

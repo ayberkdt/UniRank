@@ -173,6 +173,54 @@ function programName(record) {
   );
 }
 
+function duplicateProgrammeKey(record) {
+  const compact = (value) => displayText(value).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  const key = [
+    compact(record?.country),
+    compact(universityName(record)),
+    compact(programName(record)),
+    compact(firstDisplayValue(record?.degree_level, record?.program_degree, record?.target_program_degree)),
+  ];
+  return key.every(Boolean) ? key.join('|') : '';
+}
+
+function programmePreference(record) {
+  const quality = record?.data_quality || {};
+  const statusRank = { verified: 3, partial: 2, needs_verification: 1 }[String(quality.status || '').toLowerCase()] || 0;
+  return [
+    statusRank,
+    Array.isArray(quality.verified_fields) ? quality.verified_fields.length : 0,
+    Array.isArray(record?.source_profile?.source_log) ? record.source_profile.source_log.length : 0,
+    String(record?.updated_at || ''),
+  ];
+}
+
+function keepPreferredProgramme(records) {
+  const selected = new Map();
+  const duplicates = [];
+  for (const record of records) {
+    const key = duplicateProgrammeKey(record);
+    if (!key) {
+      selected.set(`id:${recordId(record)}:${selected.size}`, record);
+      continue;
+    }
+    const current = selected.get(key);
+    if (!current) {
+      selected.set(key, record);
+      continue;
+    }
+    const currentRank = programmePreference(current).join('|');
+    const candidateRank = programmePreference(record).join('|');
+    if (candidateRank > currentRank) {
+      duplicates.push({ retained: recordId(record), suppressed: recordId(current) });
+      selected.set(key, record);
+    } else {
+      duplicates.push({ retained: recordId(current), suppressed: recordId(record) });
+    }
+  }
+  return { records: [...selected.values()], duplicates };
+}
+
 function normalizeLegacyRecord(record, sourceFile) {
   const tuition = annualTuition(record.Cost_Tuition);
   const fee = semesterFee(record.Cost_Semester_Fees);
@@ -287,13 +335,15 @@ async function loadPrograms() {
     }
   }
 
+  const deduplicated = keepPreferredProgramme(records);
   return {
-    records,
+    records: deduplicated.records,
     report: {
       files_seen: fileNames.length,
       files_loaded: filesLoaded,
       records_seen: recordsSeen,
-      records_loaded: records.length,
+      records_loaded: deduplicated.records.length,
+      duplicate_programmes_suppressed: deduplicated.duplicates,
       skipped,
     },
   };

@@ -27,6 +27,52 @@ function formatMoney(amount) {
     return '€' + val.toLocaleString('en-US');
 }
 
+function duplicateProgrammeKey(record) {
+    const normalized = window.uniDataAdapter?.normalizeUniversityRecord(record);
+    const compact = (value) => String(value || '')
+        .toLocaleLowerCase('en-US')
+        .replace(/[^a-z0-9]+/g, ' ')
+        .trim();
+    const key = [
+        compact(normalized?.country),
+        compact(normalized?.universityName),
+        compact(normalized?.programName),
+        compact(normalized?.degreeLevel || normalized?.degree)
+    ];
+    return key.every(Boolean) ? key.join('|') : `id:${record?.id || normalized?.id || Math.random()}`;
+}
+
+function recordPreference(record) {
+    const quality = record?.data_quality || {};
+    const statusRank = { verified: 3, partial: 2, needs_verification: 1 }[quality.status] || 0;
+    return [
+        statusRank,
+        Array.isArray(quality.verified_fields) ? quality.verified_fields.length : 0,
+        Array.isArray(record?.source_profile?.source_log) ? record.source_profile.source_log.length : 0,
+        String(record?.source_profile?.last_verified || record?.updated_at || '')
+    ];
+}
+
+function compareRecordPreference(left, right) {
+    const a = recordPreference(left);
+    const b = recordPreference(right);
+    for (let index = 0; index < a.length; index += 1) {
+        if (a[index] === b[index]) continue;
+        return a[index] > b[index] ? 1 : -1;
+    }
+    return 0;
+}
+
+function deduplicateProgrammeRecords(records) {
+    const selected = new Map();
+    for (const record of Array.isArray(records) ? records : []) {
+        const key = duplicateProgrammeKey(record);
+        const existing = selected.get(key);
+        if (!existing || compareRecordPreference(record, existing) > 0) selected.set(key, record);
+    }
+    return [...selected.values()];
+}
+
 function formatPublishedMoney(money) {
     if (!money || money.amount === null || money.amount === undefined || !money.currency) return 'â€”';
     const amount = Number(money.amount);
@@ -295,7 +341,9 @@ async function fetchData() {
         
         if (json.status === 'success') {
             
-            rawData = json.data;
+            // The API already removes exact programme clones. This client-side
+            // guard also protects people viewing an older cached deployment.
+            rawData = deduplicateProgrammeRecords(json.data);
             rawData.slice(0, 20).forEach((r) => {
               const issues = validateRecordShape(r);
               if (issues.length) console.warn("Record shape issues:", r.id || r.name, issues);
@@ -1095,18 +1143,18 @@ function openDrawer(data) {
         // 3. Bölüm / Araştırma Bilgileri (Department Info)
         let strongAreasHTML = '';
         if (n.strongAreas && n.strongAreas.length > 0) {
-            strongAreasHTML = n.strongAreas.map(a => `<li>${window.getCategoryLabel ? window.getCategoryLabel(a) : a}</li>`).join('');
+            strongAreasHTML = n.strongAreas.map(a => `<li>${escapeHtml(window.getCategoryLabel ? window.getCategoryLabel(a) : a)}</li>`).join('');
         }
         let labsHTML = '';
         if (n.labs && n.labs.length > 0) {
-            labsHTML = n.labs.map(l => `<span class="lab-chip">${typeof l === 'object' ? (l.name || JSON.stringify(l)) : l}</span>`).join('');
+            labsHTML = n.labs.map(l => `<span class="lab-chip">${escapeHtml(displayValue(typeof l === 'object' ? (l.name || l.label) : l))}</span>`).join('');
         }
         let profsHTML = '';
         if (n.professors && n.professors.length > 0) {
             profsHTML = n.professors.map(p => `
                 <div class="prof-card">
-                    <span class="prof-name">${typeof p === 'object' ? p.name : p}</span>
-                    ${p.focus ? `<span class="prof-focus">${p.focus}</span>` : ''}
+                    <span class="prof-name">${escapeHtml(displayValue(typeof p === 'object' ? p.name : p))}</span>
+                    ${p.focus ? `<span class="prof-focus">${escapeHtml(displayValue(p.focus))}</span>` : ''}
                 </div>
             `).join('');
         }
@@ -1251,12 +1299,21 @@ function openDrawer(data) {
         // never as a substitute for the official programme facts above.
         const sentiment = n.studentSentiment || {};
         const sentimentSources = Array.isArray(n.studentReviews) ? n.studentReviews : [];
+        // Search result pages and platform homepages are not student comments.
+        // Only render direct, accessible discussion/review URLs as evidence.
+        const directSentimentSources = sentimentSources.map((review) => {
+            if (typeof review === 'string') return { title: review, url: '' };
+            return review && typeof review === 'object' ? review : {};
+        }).filter((review) => {
+            const url = safeUrl(review.url);
+            return Boolean(url) && !/\/(?:search|r\/[^/]+)\/?(?:[?#].*)?$/i.test(url) && !/eksisozluk\.com\/?$/i.test(url);
+        });
         const rawSentimentScore = sentiment.student_satisfaction_score;
         const sentimentScore = rawSentimentScore !== null && rawSentimentScore !== undefined && rawSentimentScore !== '' && Number.isFinite(Number(rawSentimentScore))
             ? Number(rawSentimentScore)
             : null;
         const sentimentSummary = displayValue(sentiment.sentiment_summary || sentiment.student_sentiment_summary || sentiment.verification_notes);
-        const sourceLinks = sentimentSources.map((review) => {
+        const sourceLinks = directSentimentSources.map((review) => {
             const url = safeUrl(review?.url);
             const title = review?.title || review?.source || review?.platform || (isTurkish ? 'Öğrenci deneyimi kaynağı' : 'Student-experience source');
             const quote = review?.quote ? `<p class="review-quote">“${escapeHtml(review.quote)}”</p>` : '';
@@ -1268,12 +1325,12 @@ function openDrawer(data) {
                 <p class="card-disclaimer">${isTurkish ? 'Bu bölüm resmi bilgi değildir; sınırlı öğrenci deneyimlerinin ihtiyatlı bir özetidir.' : 'This section is not official fact; it is a cautious summary of student-experience evidence.'}</p>
                 <div class="sentiment-facts">
                     <span><b>${sentimentScore === null ? '—' : `${sentimentScore}/100`}</b><small>${isTurkish ? 'memnuniyet sinyali' : 'satisfaction signal'}</small></span>
-                    <span><b>${Number(sentiment.sample_size_estimate || 0) || '—'}</b><small>${isTurkish ? 'yaklaşık örneklem' : 'estimated sample'}</small></span>
+                    <span><b>${directSentimentSources.length || '—'}</b><small>${isTurkish ? 'doğrudan kaynak' : 'direct sources'}</small></span>
                     <span><b>${escapeHtml(confidenceLabel(sentiment.sentiment_confidence).label)}</b><small>${isTurkish ? 'güven' : 'confidence'}</small></span>
                 </div>
                 ${sentiment.date_range ? `<p class="sentiment-date">${isTurkish ? 'Tarih aralığı: ' : 'Date range: '}${escapeHtml(sentiment.date_range)}</p>` : ''}
                 <p class="sentiment-summary">${escapeHtml(sentimentSummary || (isTurkish ? 'Kaynaklı öğrenci deneyimi özeti henüz yeterli değil; bu nedenle puan gösterilmiyor.' : 'There is not yet enough sourced student-experience evidence, so no score is shown.'))}</p>
-                ${sourceLinks ? `<ul class="student-source-list">${sourceLinks}</ul>` : ''}
+                ${sourceLinks ? `<ul class="student-source-list">${sourceLinks}</ul>` : `<p class="empty-source-note">${isTurkish ? 'Doğrudan ve erişilebilir öğrenci yorumu kaynağı henüz doğrulanmadı.' : 'No direct, accessible student-review source has been verified yet.'}</p>`}
             </div>`;
 
         const sourceRows = (n.sources || []).map((item) => {
@@ -1311,11 +1368,11 @@ function openDrawer(data) {
             qualityHTML +
             scoreImpactHTML +
             basicInfoHTML +
+            studentReviewsHTML +
             deptHTML +
             financeHTML +
             livingHTML +
             prosConsHTML +
-            studentReviewsHTML +
             sourcesHTML +
             linksHTML;
 

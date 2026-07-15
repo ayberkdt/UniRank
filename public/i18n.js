@@ -724,6 +724,12 @@ window.getCategoryLabel = function(key) {
     if (window.CATEGORY_GROUPS[key]) {
         return window.localizedValue(window.CATEGORY_GROUPS[key].label);
     }
-    return key;
+    if (window.CATEGORY_LABELS?.[key]) {
+        return window.localizedValue(window.CATEGORY_LABELS[key]);
+    }
+    // Never surface an internal snake_case key while the taxonomy is loading.
+    return String(key || '')
+        .replace(/[_-]+/g, ' ')
+        .replace(/\b\w/g, character => character.toUpperCase());
 };
 

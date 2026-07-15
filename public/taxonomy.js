@@ -6,6 +6,9 @@ async function loadTaxonomy() {
     try {
         const response = await fetch('/api/taxonomy');
         taxonomyData = await response.json();
+        window.CATEGORY_LABELS = Object.fromEntries(
+            Object.entries(taxonomyData || {}).map(([key, value]) => [key, value?.label || {}])
+        );
     } catch (e) {
         console.error("Failed to load taxonomy.json", e);
         taxonomyData = {};

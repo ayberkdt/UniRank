@@ -5287,6 +5287,30 @@ option {
     color: #a9c1d4 !important;
 }
 
+/* Detail cards carry long, decision-critical explanations.  The older muted
+   blue was too dim against the midnight surface, especially at small sizes. */
+#detail-drawer .premium-item label,
+#detail-drawer .dept-block label {
+    color: #b9cfe2 !important;
+    font-size: 11px !important;
+    line-height: 1.35;
+}
+
+#detail-drawer .premium-item span,
+#detail-drawer .dept-block,
+#detail-drawer .aesthetic-list li {
+    color: #f1f7fc !important;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+#detail-drawer .source-note span,
+#detail-drawer .card-disclaimer {
+    color: #c9dbea !important;
+    font-size: 13px !important;
+    line-height: 1.6;
+}
+
 #detail-drawer .evidence-strip p,
 #detail-drawer .evidence-strip small,
 #detail-drawer .score-impact-card small,

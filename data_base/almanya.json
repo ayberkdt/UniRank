@@ -123,7 +123,7 @@
     },
     "source_profile": {
       "official_program_page": "https://www.tum.de/en/studies/degree-programs/detail/aerospace-master-of-science-msc?cHash=4529d92753fb930cb5ee3b1c475952d0&hl=en-GB",
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-07-15",
       "needs_verification": true,
       "field_confidence": {
         "program_basic_info": "high",
@@ -533,20 +533,49 @@
       "locationConfidence": "city"
     },
     "student_sentiment_profile": {
-      "workload_sentiment": "Öğrenciler tarafından 'hayatta kalma modu' olarak adlandırılıyor. Üniversite öğrencilere bilgi beslemesi (spoon-feed) yapmaz. İlk yılki 'GOP' (Grundlagen- und Orientierungsprüfung) sınavları devasa bir filtre görevi görür ve çok sayıda öğrenci elenir.",
-      "housing_sentiment": "Münih konut piyasası bir kriz durumunda. Garching kampüsüne yakın yerlerde 800-900 EUR'nun altında oda bulmak imkansıza yakın. Studierendenwerk (devlet yurdu) bekleme süreleri 6-12 ayı bulabiliyor.",
-      "teaching_quality_sentiment": "High quality but demands strong self-accountability. Very theoretical with high industry relevance.",
       "student_satisfaction_score": null,
-      "sentiment_summary": "Kariyer olanakları ve Bavyera endüstrisi (Bavarian Space Valley) mükemmel olsa da, yıllık 12.000 EUR yeni harç ücreti ve konut krizinin yarattığı stres göz önüne alınmalıdır.",
-      "sentiment_confidence": "unknown",
+      "sentiment_confidence": "low",
+      "sample_size_estimate": null,
+      "date_range": "2025-01 to 2026-07",
       "student_sentiment_summary": {
-        "en": "No sufficiently documented, independent student-sentiment sample was retained; no sentiment score is shown.",
-        "tr": "Yeterince belgelenmiş bağımsız öğrenci görüşü örneklemi tutulmadı; duygu puanı gösterilmez."
+        "en": "Three direct TUM community discussions point to demanding workload and difficult, expensive housing. One Aerospace MSc thread also reports that non-EU students can encounter internship and job-access barriers. This is a low-confidence perception signal, not a programme outcome or a cost estimate.",
+        "tr": "Üç doğrudan TUM topluluk ileti dizisi yoğun iş yükü ile zor ve pahalı konuta işaret ediyor. Aerospace MSc ile ilgili bir ileti de AB dışı öğrencilerin staj ve işe erişimde engellerle karşılaşabildiğini aktarıyor. Bu, düşük güvenli bir algı sinyalidir; program sonucu veya maliyet tahmini değildir."
       },
-      "student_sentiment_sources": [],
+      "student_sentiment_sources": [
+        {
+          "title": "TUM Aerospace MSc student experience: downsides and barriers",
+          "url": "https://www.reddit.com/r/tumunich/comments/1up5szp/what_are_the_downsides_of_studying_at_tum_or_even/",
+          "source_type": "student_forum",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": ["workload_sentiment", "housing_sentiment", "international_student_sentiment", "career_support_sentiment"],
+          "confidence": "low",
+          "notes": "Mixed university-wide discussion; includes one Aerospace MSc perspective."
+        },
+        {
+          "title": "Workload at TUM: Aerospace Engineering Master's exchange discussion",
+          "url": "https://www.reddit.com/r/tumunich/comments/1i26dvh",
+          "source_type": "student_forum",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": ["workload_sentiment"],
+          "confidence": "low",
+          "notes": "Single student discussion; not a representative sample."
+        },
+        {
+          "title": "TUM as an international student: Aerospace and living-cost discussion",
+          "url": "https://www.reddit.com/r/tumunich/comments/1m2nls0",
+          "source_type": "student_forum",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": ["housing_sentiment", "international_student_sentiment"],
+          "confidence": "low",
+          "notes": "Student discussion; it does not establish a verified living-cost figure."
+        }
+      ],
       "verification_notes": {
-        "en": "Uncited or inadequately documented sentiment was removed from decision use.",
-        "tr": "Atıfsız veya yetersiz belgelenmiş öğrenci görüşleri karar kullanımından çıkarıldı."
+        "en": "Student perception is kept separate from official programme facts. No satisfaction score is calculated from these three discussion threads.",
+        "tr": "Öğrenci algısı resmî program bilgilerinden ayrı tutulur. Bu üç ileti dizisinden memnuniyet puanı hesaplanmaz."
       }
     },
     "quality_control": {
