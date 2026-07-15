@@ -5044,6 +5044,131 @@ option {
     gap: 12px;
 }
 
+/* The map's controls and reading guide deliberately sit outside the canvas so
+   that map details stay visible while students compare locations. */
+.map-stage {
+    display: grid;
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+    grid-template-rows: auto minmax(0, 1fr);
+}
+
+.map-context-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 11px 12px;
+    border-bottom: 1px solid rgba(125, 169, 218, 0.28);
+    background: rgba(7, 23, 39, 0.72);
+}
+
+.map-stage .map-toolbar-overlay {
+    position: static;
+    z-index: auto;
+    display: flex;
+    max-width: none;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    pointer-events: auto;
+}
+
+.map-stage .map-stat-strip,
+.map-stage .map-toolbar-actions,
+.map-stage .map-legend {
+    border-color: rgba(125, 169, 218, 0.4) !important;
+    background: rgba(12, 29, 47, 0.82) !important;
+}
+
+.map-stage .map-legend {
+    position: static;
+    z-index: auto;
+    width: max-content;
+    margin: 0;
+    pointer-events: none;
+}
+
+.map-stage .map-canvas-shell {
+    min-height: 0;
+    height: 100%;
+}
+
+.map-fullscreen-button {
+    min-height: 36px;
+    border: 1px solid rgba(116, 174, 255, 0.46) !important;
+    background: rgba(31, 77, 122, 0.78) !important;
+    color: #edf6ff !important;
+    box-shadow: none !important;
+}
+
+.map-fullscreen-button:hover {
+    border-color: rgba(157, 203, 255, 0.9) !important;
+    background: rgba(44, 101, 159, 0.9) !important;
+}
+
+body.map-fullscreen-active {
+    overflow: hidden;
+}
+
+.map-stage.is-fullscreen {
+    position: fixed;
+    z-index: 5000;
+    inset: clamp(10px, 2vw, 28px);
+    height: auto;
+    border: 1px solid rgba(140, 190, 255, 0.58);
+    border-radius: 18px;
+    overflow: hidden;
+    background: #071421;
+    box-shadow: 0 28px 85px rgba(0, 0, 0, 0.48);
+}
+
+@media (max-width: 860px) {
+    .map-stage {
+        min-height: 480px;
+    }
+
+    .map-context-strip {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .map-stage .map-toolbar-overlay {
+        width: 100%;
+    }
+
+    .map-stage .map-legend {
+        width: 100%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .map-stage {
+        min-height: 500px;
+    }
+
+    .map-context-strip {
+        padding: 9px;
+    }
+
+    .map-stage .map-stat-strip,
+    .map-stage .map-toolbar-actions {
+        width: 100%;
+    }
+
+    .map-stage .map-toolbar-actions {
+        flex-wrap: wrap;
+    }
+
+    .map-stage .map-focus-button,
+    .map-stage .map-fullscreen-button {
+        flex: 1 1 120px;
+    }
+}
+
 .student-review-item {
     background: #fdfdfd;
     border: 1px solid #e1e8ef;

@@ -98,7 +98,28 @@ function initUniRankMap() {
     const map = window.unirankMap;
     L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
-    const calmTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
+    const PASTEL_HUES = [8, 20, 34, 47, 61, 77, 91, 106, 122, 139, 157, 173, 190, 207, 222, 238, 254, 270, 286, 302, 318, 334, 348];
+
+    function countryTone(value) {
+        const name = String(value || 'world');
+        let hash = 0;
+        for (let index = 0; index < name.length; index += 1) {
+            hash = ((hash << 5) - hash) + name.charCodeAt(index);
+            hash |= 0;
+        }
+        const hue = PASTEL_HUES[Math.abs(hash) % PASTEL_HUES.length];
+        return {
+            fill: `hsl(${hue} 77% 83%)`,
+            stroke: `hsl(${hue} 56% 54%)`
+        };
+    }
+
+    function geoCountryName(feature) {
+        const properties = feature?.properties || {};
+        return properties.ADMIN || properties.name || properties.NAME_EN || properties.NAME || properties.sovereignt || 'world';
+    }
+
+    const calmTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
         attribution: tileAttribution,
         subdomains: 'abcd',
         maxZoom: 20
@@ -113,14 +134,17 @@ function initUniRankMap() {
         .then(response => response.json())
         .then(data => {
             L.geoJSON(data, {
-                style: {
-                    color: '#1cb0f6',
-                    weight: 2.5,
-                    opacity: 0.7,
-                    fillColor: '#ffffff',
-                    fillOpacity: 0.0,
-                    lineCap: 'round',
-                    lineJoin: 'round'
+                style: feature => {
+                    const tone = countryTone(geoCountryName(feature));
+                    return {
+                        color: tone.stroke,
+                        weight: 1.3,
+                        opacity: 0.84,
+                        fillColor: tone.fill,
+                        fillOpacity: 0.42,
+                        lineCap: 'round',
+                        lineJoin: 'round'
+                    };
                 },
                 interactive: false
             }).addTo(map);
@@ -134,6 +158,29 @@ function initUniRankMap() {
     const resultsHeaderElement = document.querySelector('#map-results-panel .map-results-header');
     const mapWorkspace = document.getElementById('map-view-container');
     const panelToggle = document.getElementById('map-panel-toggle');
+    const mapCanvasShell = mapElement.closest('.map-canvas-shell');
+    const mapToolbarOverlay = document.querySelector('.map-toolbar-overlay');
+    const mapLegend = document.querySelector('.map-legend');
+    const mapToolbarActions = document.querySelector('.map-toolbar-actions');
+    let mapStage = null;
+
+    if (mapWorkspace && mapCanvasShell && mapToolbarOverlay && mapLegend) {
+        mapStage = document.createElement('div');
+        mapStage.className = 'map-stage';
+        const contextStrip = document.createElement('div');
+        contextStrip.className = 'map-context-strip';
+        mapWorkspace.insertBefore(mapStage, mapCanvasShell);
+        mapStage.append(contextStrip, mapCanvasShell);
+        contextStrip.append(mapToolbarOverlay, mapLegend);
+    }
+
+    const fullscreenButton = mapToolbarActions && mapStage ? document.createElement('button') : null;
+    if (fullscreenButton) {
+        fullscreenButton.type = 'button';
+        fullscreenButton.className = 'btn map-fullscreen-button';
+        fullscreenButton.textContent = isTurkish() ? 'Tam ekran' : 'Full screen';
+        mapToolbarActions.appendChild(fullscreenButton);
+    }
     let currentData = [];
     let currentLocatedData = [];
     let allMarkers = [];
@@ -200,8 +247,16 @@ function initUniRankMap() {
     const markers = createMarkerLayer();
     markers.addTo(map);
 
+    function universityIdentity(normalized) {
+        return [
+            localizedValue(normalized?.universityName),
+            normalized?.location?.city || normalized?.city || '',
+            normalized?.location?.country || normalized?.country || ''
+        ].map(value => String(value).trim().toLocaleLowerCase('en-US')).join('|');
+    }
+
     function getLocations(data) {
-        return data.map((row, index) => {
+        const candidates = data.map((row, index) => {
             const normalized = window.uniDataAdapter
                 ? window.uniDataAdapter.normalizeUniversityRecord(row)
                 : null;
@@ -219,11 +274,49 @@ function initUniRankMap() {
                 longitude
             };
         }).filter(Boolean);
+
+        const universities = new Map();
+        candidates.forEach(candidate => {
+            const key = universityIdentity(candidate.normalized);
+            const current = universities.get(key);
+            if (!current) {
+                universities.set(key, {
+                    ...candidate,
+                    key: `university:${key}`,
+                    sourcePrograms: [candidate],
+                    programCount: 1
+                });
+                return;
+            }
+
+            const sourcePrograms = [...current.sourcePrograms, candidate];
+            const currentScore = Number(current.row._score);
+            const candidateScore = Number(candidate.row._score);
+            const useCandidate = Number.isFinite(candidateScore) && (!Number.isFinite(currentScore) || candidateScore > currentScore);
+            universities.set(key, {
+                ...(useCandidate ? candidate : current),
+                key: current.key,
+                sourcePrograms,
+                programCount: sourcePrograms.length
+            });
+        });
+
+        return Array.from(universities.values());
     }
 
     function universityKey(item) {
-        const university = localizedValue(item.normalized.universityName) || item.normalized.id || item.key;
-        return String(university).trim().toLocaleLowerCase('en-US');
+        return universityIdentity(item.normalized);
+    }
+
+    function countUniversities(data) {
+        const identities = new Set();
+        data.forEach(row => {
+            const normalized = window.uniDataAdapter
+                ? window.uniDataAdapter.normalizeUniversityRecord(row)
+                : null;
+            if (normalized) identities.add(universityIdentity(normalized));
+        });
+        return identities.size;
     }
 
     function formatCost(value) {
@@ -296,6 +389,18 @@ function initUniRankMap() {
         if (icon) icon.textContent = isCollapsed ? '›' : '‹';
 
         window.setTimeout(() => map.invalidateSize(), 220);
+    }
+
+    function setMapFullscreen(fullscreen) {
+        if (!mapStage || !fullscreenButton) return;
+        const active = Boolean(fullscreen);
+        mapStage.classList.toggle('is-fullscreen', active);
+        document.body.classList.toggle('map-fullscreen-active', active);
+        fullscreenButton.textContent = active
+            ? (isTurkish() ? 'Tam ekrandan Ã§Ä±k' : 'Exit full screen')
+            : (isTurkish() ? 'Tam ekran' : 'Full screen');
+        fullscreenButton.setAttribute('aria-pressed', String(active));
+        window.setTimeout(() => map.invalidateSize(), 120);
     }
 
     function openDrawerForRow(row, id) {
@@ -406,7 +511,7 @@ function initUniRankMap() {
     function updateSummary(locatedData, totalScore) {
         const locatedCount = locatedData.length;
         const universityCount = new Set(locatedData.map(universityKey)).size;
-        const missingCount = Math.max(0, currentData.length - locatedCount);
+        const missingCount = Math.max(0, countUniversities(currentData) - locatedCount);
         const visibleListCount = Math.min(6, locatedCount);
 
         const countElement = document.getElementById('map-kpi-count');
@@ -557,12 +662,28 @@ function initUniRankMap() {
         });
     }
 
+    if (fullscreenButton) {
+        fullscreenButton.addEventListener('click', () => {
+            setMapFullscreen(!mapStage?.classList.contains('is-fullscreen'));
+        });
+        document.addEventListener('keydown', event => {
+            if (event.key === 'Escape' && mapStage?.classList.contains('is-fullscreen')) {
+                setMapFullscreen(false);
+            }
+        });
+    }
+
     window.addEventListener('unirank:dataUpdated', event => {
         updateMap(event.detail?.filteredData || []);
     });
 
     document.addEventListener('languageChanged', () => {
         updateModeText();
+        if (fullscreenButton) {
+            fullscreenButton.textContent = mapStage?.classList.contains('is-fullscreen')
+                ? (isTurkish() ? 'Tam ekrandan Ã§Ä±k' : 'Exit full screen')
+                : (isTurkish() ? 'Tam ekran' : 'Full screen');
+        }
         setMapPanelCollapsed(mapWorkspace?.classList.contains('map-panel-collapsed'), false);
         updateMap(currentData);
     });

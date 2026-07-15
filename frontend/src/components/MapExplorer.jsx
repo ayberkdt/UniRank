@@ -20,7 +20,6 @@ const BASEMAPS = {
   street: {
     label: 'Harita',
     url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
-    cleanUrl: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png',
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
   },
   satellite: {
@@ -396,7 +395,7 @@ export default function MapExplorer({ programs, showLabels, showMapContext, sele
         <TileLayer
           key={`${basemap}-${showMapContext}`}
           attribution={BASEMAPS[basemap].attribution}
-          url={basemap === 'street' && !showMapContext ? BASEMAPS.street.cleanUrl : BASEMAPS[basemap].url}
+          url={BASEMAPS[basemap].url}
           subdomains="abcd"
           maxZoom={19}
         />
