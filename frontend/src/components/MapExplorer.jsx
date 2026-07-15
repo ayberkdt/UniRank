@@ -5,21 +5,30 @@ import {
   GeoJSON,
   MapContainer,
   Marker,
+  Polyline,
   Popup,
   TileLayer,
   useMap,
   useMapEvents,
   ZoomControl,
 } from 'react-leaflet'
-import { Focus, Layers3, MapPin, Minus, Palette, Plus, Route } from 'lucide-react'
+import { Focus, Map as MapIcon, MapPin, Route, Satellite, X } from 'lucide-react'
 import './MapExplorer.css'
 
 const WORLD_BORDERS_URL = 'https://cdn.jsdelivr.net/gh/johan/world.geo.json@master/countries.geo.json'
-const TILE_URLS = {
-  clean: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png',
-  detailed: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+const BASEMAPS = {
+  street: {
+    label: 'Harita',
+    url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
+  },
+  satellite: {
+    label: 'Uydu',
+    url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+    attribution: 'Tiles &copy; Esri',
+  },
 }
-const TILE_ATTRIBUTION = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
+
 const COUNTRY_TONES = [
   { fill: '#ffe8a8', stroke: '#cf9731', accent: '#dfaa3f' },
   { fill: '#ccebc8', stroke: '#61a46c', accent: '#55a763' },
@@ -52,15 +61,25 @@ function escapeHtml(value) {
     .replace(/'/g, '&#039;')
 }
 
-function pointIcon(score, count) {
+function precision(program) {
+  return String(program?.location?.locationConfidence || '').toLowerCase() === 'exact' ? 'exact' : 'city'
+}
+
+function precisionLabel(program) {
+  return precision(program) === 'exact' ? 'Kampüs konumu' : 'Şehir seviyesi'
+}
+
+function pointIcon(score, count, locationLevel, compareIndex) {
   const band = score == null ? 'unknown' : score >= 7 ? 'great' : score >= 5.5 ? 'good' : 'consider'
   const label = score == null ? '—' : score.toFixed(1)
+  const context = locationLevel === 'exact' ? 'KAMPÜS' : 'ŞEHİR'
+  const badge = compareIndex || (count > 1 ? count : '')
   return L.divIcon({
     className: 'map-point-icon',
-    iconSize: [50, 60],
-    iconAnchor: [25, 54],
-    popupAnchor: [0, -52],
-    html: `<span class="map-pin map-pin--${band}"><small>UYUM</small><b>${label}</b>${count > 1 ? `<em>${count}</em>` : ''}</span>`,
+    iconSize: [52, 62],
+    iconAnchor: [26, 55],
+    popupAnchor: [0, -53],
+    html: `<span class="map-pin map-pin--${band} map-pin--${locationLevel}"><small>${context}</small><b>${label}</b>${badge ? `<em>${badge}</em>` : ''}</span>`,
   })
 }
 
@@ -112,7 +131,7 @@ function groupPrograms(programs) {
       key,
       latitude: Number(top.location.latitude),
       longitude: Number(top.location.longitude),
-      city: top.location.city || top.city || 'Unknown city',
+      city: top.location.city || top.city || 'Bilinmeyen şehir',
       country: top.location.country || top.country || '',
       top,
       programs: sorted,
@@ -151,25 +170,32 @@ function clusterPoints(points, zoom) {
   })
 }
 
-function MapViewport({ points, selectedProgram, fitSignal }) {
+function fitMapTo(map, positions, maxZoom, duration = 0.55) {
+  if (!positions.length) return
+  if (positions.length === 1) {
+    map.flyTo(positions[0], maxZoom, { duration })
+    return
+  }
+  map.flyToBounds(L.latLngBounds(positions), { padding: [60, 60], maxZoom, duration })
+}
+
+function MapViewport({ points, selectedProgram, comparedPrograms, viewRequest }) {
   const map = useMap()
 
   useEffect(() => {
     if (!points.length) return
-    const selectedPoint = selectedProgram && points.find((point) => point.programs.some((program) => program.key === selectedProgram.key))
-    if (selectedPoint) {
-      map.flyTo([selectedPoint.latitude, selectedPoint.longitude], Math.max(map.getZoom(), 7), { duration: 0.55 })
+    if (viewRequest.mode === 'detail' && selectedProgram?.location) {
+      const zoom = precision(selectedProgram) === 'exact' ? 15 : 12
+      fitMapTo(map, [[selectedProgram.location.latitude, selectedProgram.location.longitude]], zoom)
       return
     }
-
-    if (points.length === 1) {
-      map.flyTo([points[0].latitude, points[0].longitude], 6, { duration: 0.55 })
+    if (viewRequest.mode === 'compare' && comparedPrograms.length) {
+      const positions = comparedPrograms.map((program) => [program.location.latitude, program.location.longitude])
+      fitMapTo(map, positions, comparedPrograms.length === 1 ? (precision(comparedPrograms[0]) === 'exact' ? 15 : 12) : 6)
       return
     }
-
-    const bounds = L.latLngBounds(points.map((point) => [point.latitude, point.longitude]))
-    map.fitBounds(bounds, { padding: [54, 54], maxZoom: 5, animate: Boolean(fitSignal) })
-  }, [map, points, selectedProgram, fitSignal])
+    fitMapTo(map, points.map((point) => [point.latitude, point.longitude]), 5)
+  }, [map, points, selectedProgram, comparedPrograms, viewRequest])
 
   return null
 }
@@ -201,7 +227,7 @@ function CountryBorders() {
       data={borders}
       pane="country-outlines"
       interactive={false}
-      style={{ color: '#fffdf5', weight: 4.2, opacity: 0.92, fillOpacity: 0, lineCap: 'round', lineJoin: 'round' }}
+      style={{ color: '#fffdf5', weight: 3.5, opacity: 0.72, fillOpacity: 0, lineCap: 'round', lineJoin: 'round' }}
     />
     <GeoJSON
       data={borders}
@@ -211,10 +237,10 @@ function CountryBorders() {
         const tone = countryTone(geoCountryName(feature))
         return {
           color: tone.stroke,
-          weight: 1.35,
-          opacity: 0.9,
+          weight: 0.9,
+          opacity: 0.35,
           fillColor: tone.fill,
-          fillOpacity: 0.82,
+          fillOpacity: 0.16,
           lineCap: 'round',
           lineJoin: 'round',
         }
@@ -223,29 +249,39 @@ function CountryBorders() {
   </>
 }
 
-function ProgramPopup({ point, onSelectProgram }) {
+function ProgramPopup({ point, comparedPrograms, onSelectProgram, onToggleCompare }) {
   const top = point.top
   const annualCost = top.totalAcademicCost ?? top.tuitionPerYear
+  const isCompared = comparedPrograms.some((program) => program.key === top.key)
+  const locationLevel = precision(top)
 
   return (
     <div className="program-popup">
       <span className="popup-place"><MapPin size={13} /> {point.city}, {point.country}</span>
+      <div className={`popup-precision popup-precision--${locationLevel}`}>{precisionLabel(top)}</div>
       <h3>{top.universityName}</h3>
       <p>{top.programName}</p>
       <div className="popup-meta">
         <span><b>{top.score ?? '—'}</b> uyum</span>
         <span>{annualCost == null ? 'Ücret bilinmiyor' : `€${Number(annualCost).toLocaleString('tr-TR')}/yıl`}</span>
       </div>
+      {locationLevel === 'city' && <small className="popup-location-note">Kampüs içi konum doğrulanmadı; şehir bağlamını inceleyebilirsin.</small>}
       {point.programs.length > 1 && <small className="popup-count">Bu konumda {point.programs.length} program</small>}
       <div className="popup-actions">
-        <button type="button" onClick={() => onSelectProgram(top)}>Programı seç</button>
-        {top.programUrl && <a href={top.programUrl} target="_blank" rel="noreferrer">Resmi sayfa ↗</a>}
+        <button type="button" onClick={() => onSelectProgram(top)}>Yakın çevreyi gör</button>
+        <button className="popup-compare" type="button" onClick={() => onToggleCompare(top)}>{isCompared ? 'Listeden çıkar' : 'Kıyasla'}</button>
       </div>
     </div>
   )
 }
 
-function MapMarkers({ points, showLabels, selectedProgram, onSelectProgram }) {
+function ComparisonRoute({ comparedPrograms }) {
+  const positions = comparedPrograms.map((program) => [program.location.latitude, program.location.longitude])
+  if (positions.length < 2) return null
+  return <Polyline positions={positions} pathOptions={{ color: '#213c55', weight: 2.5, opacity: 0.74, dashArray: '8 9', lineCap: 'round' }} />
+}
+
+function MapMarkers({ points, showLabels, selectedProgram, comparedPrograms, onSelectProgram, onToggleCompare }) {
   const map = useMap()
   const [zoom, setZoom] = useState(map.getZoom())
   useMapEvents({ zoomend: () => setZoom(map.getZoom()) })
@@ -255,13 +291,14 @@ function MapMarkers({ points, showLabels, selectedProgram, onSelectProgram }) {
     .slice(0, 22) : [], [points, zoom])
 
   return <>
+    <ComparisonRoute comparedPrograms={comparedPrograms} />
     {zoom >= 6 && points.map((point) => {
       const tone = countryTone(point.country)
       return <CircleMarker
         key={`zone-${point.key}`}
         center={[point.latitude, point.longitude]}
         radius={Math.min(24, 9 + (point.programs.length * 3))}
-        pathOptions={{ color: tone.accent, weight: 1.2, opacity: 0.62, fillColor: tone.fill, fillOpacity: 0.44 }}
+        pathOptions={{ color: tone.accent, weight: 1.2, opacity: 0.46, fillColor: tone.fill, fillOpacity: 0.25 }}
         interactive={false}
       />
     })}
@@ -278,70 +315,92 @@ function MapMarkers({ points, showLabels, selectedProgram, onSelectProgram }) {
         key={point.key}
         position={[point.latitude, point.longitude]}
         icon={clusterIcon(point.count, point.country)}
-        title={`${point.count} programs in this area`}
-        alt={`${point.count} programs in this area`}
+        title={`${point.count} program bu alanda`}
+        alt={`${point.count} program bu alanda`}
         keyboard
         eventHandlers={{ click: () => map.flyTo([point.latitude, point.longitude], Math.min(zoom + 2, 6), { duration: 0.45 }) }}
       />
-    ) : (
-      <Marker
+    ) : (() => {
+      const compareIndex = point.programs.reduce((index, program) => index || (comparedPrograms.findIndex((candidate) => candidate.key === program.key) + 1), 0)
+      return <Marker
         key={point.key}
         position={[point.latitude, point.longitude]}
-        icon={pointIcon(point.score, point.programs.length)}
+        icon={pointIcon(point.score, point.programs.length, precision(point.top), compareIndex)}
         title={`${point.top.universityName}, ${point.top.programName}`}
         alt={`${point.top.universityName}, ${point.top.programName}`}
         riseOnHover
         keyboard
         eventHandlers={{ click: () => onSelectProgram(point.top) }}
       >
-        <Popup closeButton={false} offset={[0, -5]}><ProgramPopup point={point} onSelectProgram={onSelectProgram} /></Popup>
+        <Popup closeButton={false} offset={[0, -5]}><ProgramPopup point={point} comparedPrograms={comparedPrograms} onSelectProgram={onSelectProgram} onToggleCompare={onToggleCompare} /></Popup>
       </Marker>
-    ))}
+    })())}
     {selectedProgram && <Marker
       position={[selectedProgram.location.latitude, selectedProgram.location.longitude]}
-      icon={L.divIcon({ className: 'selected-program-halo', iconSize: [72, 72], iconAnchor: [36, 36], html: '<span />' })}
+      icon={L.divIcon({ className: 'selected-program-halo', iconSize: [76, 76], iconAnchor: [38, 38], html: '<span />' })}
       interactive={false}
     />}
   </>
 }
 
-export default function MapExplorer({ programs, showLabels, selectedProgram, onSelectProgram }) {
-  const [detailedBasemap, setDetailedBasemap] = useState(true)
-  const [fitSignal, setFitSignal] = useState(0)
+export default function MapExplorer({ programs, showLabels, selectedProgram, comparedPrograms, onSelectProgram, onToggleCompare }) {
+  const [basemap, setBasemap] = useState('street')
+  const [viewRequest, setViewRequest] = useState({ mode: 'all', id: 0 })
   const points = useMemo(() => groupPrograms(programs), [programs])
+
+  useEffect(() => {
+    if (selectedProgram) setViewRequest((current) => ({ mode: 'detail', id: current.id + 1 }))
+  }, [selectedProgram])
+
+  const focusAll = () => {
+    onSelectProgram(null)
+    setViewRequest((current) => ({ mode: 'all', id: current.id + 1 }))
+  }
+  const focusCompared = () => setViewRequest((current) => ({ mode: 'compare', id: current.id + 1 }))
+  const selectedPrecision = selectedProgram ? precision(selectedProgram) : null
 
   return (
     <div className="map-explorer">
       <MapContainer
-        className="unirank-map"
+        className={`unirank-map unirank-map--${basemap}`}
         center={[34, 15]}
         zoom={3}
         minZoom={2}
-        maxZoom={12}
+        maxZoom={18}
         zoomControl={false}
         worldCopyJump
       >
         <TileLayer
-          attribution={TILE_ATTRIBUTION}
-          url={detailedBasemap ? TILE_URLS.detailed : TILE_URLS.clean}
+          key={basemap}
+          attribution={BASEMAPS[basemap].attribution}
+          url={BASEMAPS[basemap].url}
           subdomains="abcd"
           maxZoom={19}
         />
-        <CountryBorders />
-        <MapViewport points={points} selectedProgram={selectedProgram} fitSignal={fitSignal} />
+        {basemap === 'street' && <CountryBorders />}
+        <MapViewport points={points} selectedProgram={selectedProgram} comparedPrograms={comparedPrograms} viewRequest={viewRequest} />
         <ZoomControl position="bottomright" />
-        <MapMarkers points={points} showLabels={showLabels} selectedProgram={selectedProgram} onSelectProgram={onSelectProgram} />
+        <MapMarkers points={points} showLabels={showLabels} selectedProgram={selectedProgram} comparedPrograms={comparedPrograms} onSelectProgram={onSelectProgram} onToggleCompare={onToggleCompare} />
       </MapContainer>
 
-      <div className="map-toolbar" aria-label="Harita kontrolleri">
-        <button type="button" className="map-focus" onClick={() => { onSelectProgram(null); setFitSignal((value) => value + 1) }}><Focus size={15} /> Sonuçlara odaklan</button>
-        <label className="map-layer-toggle"><Layers3 size={15} /><span><strong>Yer adları</strong><small>{detailedBasemap ? 'Şehirler & yollar' : 'Sade atlas'}</small></span><input type="checkbox" checked={detailedBasemap} onChange={(event) => setDetailedBasemap(event.target.checked)} /><i /></label>
+      <div className="map-reading-card">
+        <span><MapPin size={17} /></span>
+        <div><small>KONUM OKUMASI</small><strong>İğneye dokun, sonra çevreyi incele.</strong></div>
       </div>
-      <div className="map-atlas-note"><span><Palette size={17} /></span><div><small>PASTEL ATLAS</small><strong>Ülkeler ayrı tonda</strong></div></div>
-      <div className="map-key"><span><i className="key-country" /> Ülke tonları</span><span><i className="key-dot key-dot--great" /> Güçlü uyum</span><span><i className="key-dot key-dot--good" /> İyi uyum</span><span><i className="key-dot key-dot--consider" /> Değerlendir</span><span><i className="key-cluster" /> Yakındaki programlar</span></div>
-      <div className="map-decoration map-decoration--one"><Plus size={14} /></div>
-      <div className="map-decoration map-decoration--two"><Minus size={14} /></div>
-      <div className="map-route" aria-hidden="true"><Route size={17} /></div>
+      <div className="map-toolbar" aria-label="Harita kontrolleri">
+        <div className="basemap-toggle" aria-label="Harita katmanı">
+          <button className={basemap === 'street' ? 'is-active' : ''} type="button" onClick={() => setBasemap('street')}><MapIcon size={14} /> Harita</button>
+          <button className={basemap === 'satellite' ? 'is-active' : ''} type="button" onClick={() => setBasemap('satellite')}><Satellite size={14} /> Uydu</button>
+        </div>
+        <button type="button" className="map-focus" onClick={focusAll}><Focus size={15} /> Tüm sonuçlar</button>
+        <button type="button" className="map-compare-focus" disabled={comparedPrograms.length === 0} onClick={focusCompared}><Route size={15} /> Kıyaslamaya odaklan</button>
+      </div>
+      {selectedProgram && <div className="map-selection-card">
+        <button type="button" onClick={() => onSelectProgram(null)} aria-label="Konum kartını kapat"><X size={14} /></button>
+        <span className={`selection-marker selection-marker--${selectedPrecision}`}><MapPin size={15} /></span>
+        <div><small>{precisionLabel(selectedProgram)}</small><strong>{selectedProgram.universityName}</strong><em>{selectedProgram.location.city}, {selectedProgram.location.country}</em></div>
+      </div>}
+      <div className="map-key"><span><i className="key-exact" /> Kampüs konumu</span><span><i className="key-city" /> Şehir seviyesi</span><span><i className="key-route" /> Kıyas mesafesi</span></div>
     </div>
   )
 }
