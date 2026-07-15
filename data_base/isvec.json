@@ -509,7 +509,7 @@
       "tuition_eur_per_year_min": null,
       "tuition_eur_per_year_max": null,
       "tuition_eur_per_year_estimated": null,
-      "tuition_basis": "programme_price_needs_verification",
+      "tuition_basis": "published programme price for fee-paying students",
       "non_eu_flat_fee": null,
       "source_notes": null,
       "regional_tax_eur": null,
@@ -519,13 +519,21 @@
       "scholarship_availability": "Bilinmiyor / Resmi Veri Yok",
       "scholarship_risk": "Bilinmiyor / Resmi Veri Yok",
       "verification_notes": {
-        "en": "Chalmers confirms that non-EU/EEA/Swiss students normally pay tuition, but the checked sources did not expose the Mobility Engineering programme amount.",
-        "tr": "Chalmers, AB/AEA/İsviçre dışı öğrencilerin normalde ücret ödediğini doğrular; ancak kontrol edilen kaynaklarda Mobility Engineering program tutarı görünmedi."
+        "en": "Chalmers confirms that non-EU/EEA/Swiss students normally pay tuition. The official Swedish Institute course listing for this specific 120-ECTS Mobility Engineering programme states SEK 80,000 per semester; the two-year total is shown only as four published semester charges, with no currency conversion.",
+        "tr": "Chalmers, AB/AEA/İsviçre dışı öğrencilerin normalde öğrenim ücreti ödediğini doğrular. Bu belirli 120 AKTS Mobility Engineering programı için resmî Swedish Institute ders kaydı dönem başına 80.000 SEK belirtir; iki yıllık toplam, kur dönüşümü olmadan yalnızca dört yayımlanmış dönem ücreti olarak gösterilir."
       },
       "total_academic_cost_eur_per_year_estimated": null,
       "student_contribution_eur": null,
       "application_fee_eur": null,
-      "enrollment_fee_eur": null
+      "enrollment_fee_eur": null,
+      "tuition_sek_per_year_min": 160000,
+      "tuition_sek_per_year_max": 160000,
+      "tuition_sek_per_term": 80000,
+      "tuition_non_eu_full_program": {
+        "amount": 320000,
+        "currency": "SEK",
+        "basis": "four semesters at SEK 80,000; published programme price"
+      }
     },
     "scholarship_profile": {
       "available_types": [],
@@ -664,7 +672,7 @@
         "https://www.chalmers.se/en/education/application-and-admission/",
         "https://www.chalmers.se/en/education/tuition-fees-and-scholarships/"
       ],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-07-15",
       "field_confidence": {
         "program_basic_info": "high",
         "language": "high",
@@ -735,22 +743,6 @@
           "notes": ""
         },
         {
-          "url": "https://www.chalmers.se/en/education/application-and-admission/tuition-fees/",
-          "title": "Chalmers tuition fees",
-          "source_type": "official_tuition_page",
-          "access_status": "ok",
-          "last_checked": "2026-07-14",
-          "relevant_fields": [
-            "tuition",
-            "non_eu_eligibility"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Official page checked directly on 14 July 2026.",
-            "tr": "Resmî sayfa 14 Temmuz 2026 tarihinde doğrudan kontrol edildi."
-          }
-        },
-        {
           "url": "https://www.chalmers.se/en/education/study-at-chalmers/living-in-sweden/cost-of-living/",
           "title": "Chalmers cost of living",
           "source_type": "official_housing_page",
@@ -781,9 +773,41 @@
             "en": "Official page checked directly on 14 July 2026.",
             "tr": "Resmî sayfa 14 Temmuz 2026 tarihinde doğrudan kontrol edildi."
           }
+        },
+        {
+          "url": "https://www.chalmers.se/en/education/application-and-admission/tuition-fees/",
+          "title": "Chalmers tuition fees",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "tuition",
+            "non_eu_eligibility"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Chalmers confirms that fee-paying students are normally from outside the EU/EEA/Switzerland, but the page does not publish this programme's numeric price.",
+            "tr": "Chalmers, ücret ödeyen öğrencilerin normalde AB/AEA/İsviçre dışından olduğunu doğrular; ancak sayfa bu programın sayısal fiyatını yayımlamaz."
+          }
+        },
+        {
+          "url": "https://apply-scholarships.si.se/courses/course/715",
+          "title": "Swedish Institute official course listing: Mobility Engineering at Chalmers",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "tuition"
+          ],
+          "confidence": "medium",
+          "notes": {
+            "en": "The official Swedish Institute course listing gives SEK 80,000 per semester for this 120-ECTS English-taught programme. It is an official government course listing rather than Chalmers' own price table.",
+            "tr": "Resmî Swedish Institute ders kaydı, bu 120 AKTS ve İngilizce program için dönem başına 80.000 SEK verir. Chalmers'ın kendi fiyat tablosu değil, resmî bir devlet ders kaydıdır."
+          }
         }
       ],
-      "needs_verification": true
+      "needs_verification": true,
+      "official_tuition_page": "https://www.chalmers.se/en/education/application-and-admission/tuition-fees/"
     },
     "decision_summary": {
       "pros": [],
@@ -802,7 +826,7 @@
     "qs_ranking": 129,
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 7,
+      "checked_official_source_count": 8,
       "verified_fields": [
         "program",
         "language",

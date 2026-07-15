@@ -62,7 +62,7 @@
       "tuition_eur_per_year_min": null,
       "tuition_eur_per_year_max": null,
       "tuition_eur_per_year_estimated": null,
-      "tuition_basis": "official_CHF_2026",
+      "tuition_basis": "ETH fee group 2 published semester fee; fee group must be confirmed",
       "non_eu_flat_fee": null,
       "source_notes": null,
       "regional_tax_eur": null,
@@ -72,8 +72,8 @@
       "scholarship_availability": "Bilinmiyor / Resmi Veri Yok",
       "scholarship_risk": "Bilinmiyor / Resmi Veri Yok",
       "verification_notes": {
-        "en": "The higher CHF 2,190 semester tuition applies to ETH fee group 2 from autumn 2025; verify fee-group classification rather than assuming nationality alone.",
-        "tr": "Daha yüksek 2.190 CHF dönem ücreti 2025 sonbaharından itibaren ETH ücret grubu 2 için geçerlidir; yalnızca vatandaşlığa bakmak yerine ücret grubu sınıflandırması doğrulanmalıdır."
+        "en": "ETH's published higher fee for fee group 2 is CHF 2,190 per semester. Eligibility is based on ETH fee-group rules, not nationality alone, so this card does not assume every non-EU applicant has this status.",
+        "tr": "ETH'nin fee group 2 icin yayimladigi yuksek ucret donem basina 2.190 CHF'dir. Uygunluk sadece uyruga degil ETH fee-group kurallarina baglidir; kart her AB disi aday icin bunu varsaymaz."
       },
       "total_academic_cost_eur_per_year_estimated": null,
       "student_contribution_eur": null,
@@ -98,7 +98,7 @@
       "living_cost_usd_per_year_i20": null,
       "living_cost_usd_per_year": null,
       "living_cost_gbp_per_year": null,
-      "living_cost_chf_per_year": null,
+      "living_cost_chf_per_year": 25200,
       "living_cost_sek_per_year": null,
       "living_cost_dkk_per_year": null,
       "living_cost_usd_per_year_min": null,
@@ -110,24 +110,35 @@
       "living_cost_sek_per_year_min": null,
       "living_cost_sek_per_year_max": null,
       "living_cost_dkk_per_year_min": null,
-      "living_cost_dkk_per_year_max": null
+      "living_cost_dkk_per_year_max": null,
+      "tuition_chf_per_semester": 2190,
+      "tuition_chf_per_year_min": 4380,
+      "tuition_chf_per_year_max": 4380
     },
     "scholarship_profile": {
-      "available_types": [],
-      "non_eu_eligible": null,
+      "available_types": [
+        "ETH Excellence Scholarship & Opportunity Programme (ESOP)"
+      ],
+      "non_eu_eligible": true,
       "details": [],
       "external_options": [],
       "verification_notes": {
         "en": "ETH identifies ESOP as relevant funding and makes the November window mandatory for applicants seeking it; award terms were not reproduced without the current ESOP call.",
         "tr": "ETH, ESOP'u ilgili finansman olarak belirtir ve bunu isteyenler için Kasım penceresini zorunlu kılar; güncel ESOP çağrısı olmadan ödül şartları yeniden üretilmedi."
       },
-      "regional_scholarship_available": null,
-      "regional_scholarship_name": null,
+      "regional_scholarship_available": true,
+      "regional_scholarship_name": "ESOP",
       "merit_scholarships": [],
-      "tuition_waivers": [],
-      "scholarship_deadline": null,
-      "scholarship_application_url": null,
-      "funding_notes": null
+      "tuition_waivers": [
+        "ESOP tuition-fee waiver"
+      ],
+      "scholarship_deadline": "2026-11-30 11:59 CET (HS27 ESOP/international application window)",
+      "scholarship_application_url": "https://ethz.ch/students/en/studies/financial/scholarships/excellencescholarship.html",
+      "funding_notes": {
+        "en": "ESOP for the 2027/28 Master start is open 1-30 November 2026. It provides CHF 12,000 per semester plus a tuition-fee waiver for the regular Master duration; applicants need top-10% Bachelor performance and apply with the Master application.",
+        "tr": "2027/28 Master baslangici icin ESOP 1-30 Kasim 2026'da aciktir. Normal Master suresi icin donem basina 12.000 CHF ve ogrenim ucreti muafiyeti sunar; adaylarin lisans derecesinde ilk %10'da olmasi ve Master basvurusuyla basvurmasi gerekir."
+      },
+      "funding_amount_chf_per_semester": 12000
     },
     "living_profile": {
       "city_type": "Medium",
@@ -141,13 +152,16 @@
       },
       "average_room_rent_eur": null,
       "monthly_living_cost_eur_estimated": null,
-      "housing_difficulty": null,
+      "housing_difficulty": "high",
       "monthly_living_cost_eur_min": null,
       "monthly_living_cost_eur_max": null,
       "living_cost_eur_per_month": null,
-      "living_risk": "unknown",
+      "living_risk": "high",
       "student_housing_available": null,
-      "housing_notes": null,
+      "housing_notes": {
+        "en": "ETH Financial Aid's 2025 Canton Zurich planning table gives CHF 11,300/year average room rent and CHF 25,200/year individual living costs for fee groups 1 and 2. It is a current planning budget, not a room offer.",
+        "tr": "ETH Financial Aid'in 2025 Kanton Zurich planlama tablosu, fee group 1 ve 2 icin yillik ortalama oda kirasi 11.300 CHF ve bireysel yasam gideri 25.200 CHF verir. Bu oda teklifi degil guncel planlama butcesidir."
+      },
       "average_room_rent_usd_per_month_min": null,
       "average_room_rent_usd_per_month_max": null,
       "average_room_rent_gbp_per_month_min": null,
@@ -170,7 +184,7 @@
       "monthly_housing_rent_dkk_per_month_max": null,
       "housing_budget_usd_per_year": null,
       "housing_budget_gbp_per_year": null,
-      "housing_budget_chf_per_year": null,
+      "housing_budget_chf_per_year": 11300,
       "housing_budget_sek_per_year": null,
       "housing_budget_dkk_per_year": null,
       "official_student_housing_budget_sek_per_month_examples": null,
@@ -186,22 +200,38 @@
       "housing_budget_sek_per_year_min": null,
       "housing_budget_sek_per_year_max": null,
       "housing_budget_dkk_per_year_min": null,
-      "housing_budget_dkk_per_year_max": null
+      "housing_budget_dkk_per_year_max": null,
+      "official_student_total_budget_chf_per_year": 25200
     },
     "curriculum_profile": {
-      "structure": null,
+      "structure": {
+        "en": "Tutor-driven individual Learning Agreement across six categories.",
+        "tr": "Alti kategoriye yayilan, tutor yonlendirmeli bireysel Learning Agreement."
+      },
       "specializations": [],
-      "mandatory_internship": false,
-      "thesis_type": null,
+      "mandatory_internship": true,
+      "thesis_type": "30 ECTS independent research thesis (maximum six months full-time)",
       "flexibility": "unknown",
       "curriculum_risk": "Bilinmiyor / Resmi Veri Yok",
       "verification_notes": {
-        "en": "ETH lists Mechanical Engineering as a 90-ECTS, three-semester, English MSc. Detailed module choices require the current study-plan portal.",
-        "tr": "ETH Mechanical Engineering'i 90 AKTS, üç dönemlik, İngilizce MSc olarak listeler. Ayrıntılı ders seçimleri güncel ders planı portalından kontrol edilmelidir."
+        "en": "ETH explicitly describes the six-category 90-ECTS structure. Tutor-defined core choices mean the card does not invent a fixed specialisation track.",
+        "tr": "ETH alti kategorili 90 AKTS yapisini acikca tanimlar. Core dersler tutor tarafindan belirlendigi icin kart sabit uzmanlasma hatti uydurmaz."
       },
       "tracks": [],
-      "mandatory_courses": [],
-      "curriculum_url": "https://ethz.ch/en/studies/master/degree-programmes/engineering-sciences.html/1000"
+      "mandatory_courses": [
+        "Semester Project",
+        "Industrial Internship",
+        "Master's Thesis"
+      ],
+      "curriculum_url": "https://master-mechanical-engineering.ethz.ch/curriculum.html",
+      "core_courses": [
+        "36 ECTS Core Courses (tutor-defined)",
+        "6 ECTS Multidisciplinary Courses",
+        "2 ECTS Science in Perspective",
+        "8 ECTS Semester Project",
+        "8 ECTS Industrial Internship (12 weeks)",
+        "30 ECTS Master's Thesis (max. six months full-time)"
+      ]
     },
     "category_profile": {
       "primary_categories": [],
@@ -281,16 +311,18 @@
         "",
         ""
       ],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-07-15",
       "field_confidence": {
         "program_basic_info": "high",
         "language": "medium",
         "admission": "high",
-        "tuition": "high",
-        "scholarship": "unknown",
-        "curriculum": "medium",
+        "tuition": "medium",
+        "scholarship": "high",
+        "curriculum": "high",
         "application_timeline_profile": "medium",
-        "living": "unknown"
+        "living": "unknown",
+        "living_profile": "high",
+        "housing": "high"
       },
       "source_reliability": "high",
       "verification_status": "verified",
@@ -336,23 +368,6 @@
           "notes": ""
         },
         {
-          "url": "https://ethz.ch/content/dam/ethz/main/education/finanzielles/files-en/tuition-fees.pdf",
-          "title": "ETH Zurich tuition and semester fees",
-          "source_type": "official_tuition_page",
-          "access_status": "pdf",
-          "last_checked": "2026-07-14",
-          "relevant_fields": [
-            "tuition",
-            "fees",
-            "application_fee"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Official page checked directly on 14 July 2026.",
-            "tr": "Resmî sayfa 14 Temmuz 2026 tarihinde doğrudan kontrol edildi."
-          }
-        },
-        {
           "url": "https://master-mechanical-engineering.ethz.ch/",
           "title": "ETH Zurich MSc Mechanical Engineering",
           "source_type": "official_program_page",
@@ -368,9 +383,76 @@
             "en": "Official page checked directly on 14 July 2026.",
             "tr": "Resmî sayfa 14 Temmuz 2026 tarihinde doğrudan kontrol edildi."
           }
+        },
+        {
+          "url": "https://ethz.ch/content/dam/ethz/main/education/finanzielles/files-en/tuition-fees.pdf",
+          "title": "ETH tuition fee groups",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "tuition"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official ETH table gives the fee-group rate; group classification is conditional.",
+            "tr": "Resmi ETH tablosu fee-group ucretini verir; grup siniflandirmasi kosulludur."
+          }
+        },
+        {
+          "url": "https://ethz.ch/students/en/studies/financial/scholarships/excellencescholarship.html",
+          "title": "ETH Excellence Scholarship & Opportunity Programme",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "deadline"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official page gives current HS27 dates, amount, waiver and selection conditions.",
+            "tr": "Resmi sayfa guncel HS27 tarihini, tutari, muafiyeti ve secim kosullarini verir."
+          }
+        },
+        {
+          "url": "https://ethz.ch/content/dam/ethz/main/education/finanzielles/files-de/lebenshaltung.pdf",
+          "title": "ETH Financial Aid cost of living 2025",
+          "source_type": "official_cost_of_living_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "housing",
+            "living"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official Canton Zurich budget gives annual room-rent and individual-living-cost figures.",
+            "tr": "Resmi Kanton Zurich butcesi yillik oda kirasi ve bireysel yasam maliyeti verir."
+          }
+        },
+        {
+          "url": "https://master-mechanical-engineering.ethz.ch/curriculum.html",
+          "title": "ETH MSc Mechanical Engineering curriculum",
+          "source_type": "official_curriculum_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "curriculum"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official curriculum gives categories, ECTS, internship and thesis structure.",
+            "tr": "Resmi mufredat kategorileri, AKTS'leri, staj ve tez yapisini verir."
+          }
         }
       ],
-      "needs_verification": true
+      "needs_verification": true,
+      "official_tuition_page": "https://ethz.ch/content/dam/ethz/main/education/finanzielles/files-en/tuition-fees.pdf",
+      "official_scholarship_page": "https://ethz.ch/students/en/studies/financial/scholarships/excellencescholarship.html",
+      "official_cost_of_living_page": "https://ethz.ch/content/dam/ethz/main/education/finanzielles/files-de/lebenshaltung.pdf",
+      "official_curriculum_page": "https://master-mechanical-engineering.ethz.ch/curriculum.html"
     },
     "decision_summary": {
       "pros": [],
@@ -389,19 +471,19 @@
     "qs_ranking": 7,
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 5,
+      "checked_official_source_count": 8,
       "verified_fields": [
         "program",
         "language",
         "admission",
         "non_eu_eligibility",
         "tuition",
+        "scholarship",
         "deadline",
-        "curriculum"
+        "curriculum",
+        "housing"
       ],
-      "unverified_critical_fields": [
-        "scholarship"
-      ],
+      "unverified_critical_fields": [],
       "has_checked_source_log": true,
       "audited_at": "2026-07-15"
     },
@@ -411,12 +493,7 @@
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
-      "remaining_verification_tasks": [
-        {
-          "en": "Add a checked official source for scholarship.",
-          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
-        }
-      ],
+      "remaining_verification_tasks": [],
       "qc_notes": {
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
@@ -536,21 +613,27 @@
       "living_cost_dkk_per_year_max": null
     },
     "scholarship_profile": {
-      "available_types": [],
-      "non_eu_eligible": null,
+      "available_types": [
+        "EPFL Excellence Fellowship (competitive)"
+      ],
+      "non_eu_eligible": true,
       "details": [],
       "external_options": [],
       "verification_notes": {
-        "en": "No programme-specific scholarship eligibility was verified from an official source.",
-        "tr": "Programa özgü burs uygunluğu resmî bir kaynaktan doğrulanmadı."
+        "en": "The fellowship does not remove the applicant's responsibility to budget for tuition and rent.",
+        "tr": "Burs, adayın ogrenim ucreti ve kira butcesi sorumlulugunu ortadan kaldirmaz."
       },
-      "regional_scholarship_available": null,
-      "regional_scholarship_name": null,
+      "regional_scholarship_available": true,
+      "regional_scholarship_name": "EPFL Excellence Fellowship",
       "merit_scholarships": [],
       "tuition_waivers": [],
-      "scholarship_deadline": null,
-      "scholarship_application_url": null,
-      "funding_notes": null
+      "scholarship_deadline": "15 December or 31 March (external-candidate Master rounds; verify cycle year)",
+      "scholarship_application_url": "https://www.epfl.ch/education/master/master-excellence-fellowships/how-to-apply/",
+      "funding_notes": {
+        "en": "Eligible Master applicants can request consideration in the online admission application. EPFL publishes CHF 10,000 per semester for up to four semesters and a residence-room reservation for selected external candidates. It is competitive, not guaranteed.",
+        "tr": "Uygun Master adaylari cevrim ici kabul basvurusunda degerlendirme isteyebilir. EPFL en fazla dort donem icin donem basina 10.000 CHF ve secilen dis adaylara yurt oda rezervasyonu yayimlar. Rekabetcidir, garanti degildir."
+      },
+      "funding_amount_chf_per_semester": 10000
     },
     "living_profile": {
       "city_type": "Medium",
@@ -564,18 +647,21 @@
       },
       "average_room_rent_eur": null,
       "monthly_living_cost_eur_estimated": null,
-      "housing_difficulty": null,
+      "housing_difficulty": "high",
       "monthly_living_cost_eur_min": null,
       "monthly_living_cost_eur_max": null,
       "living_cost_eur_per_month": null,
-      "living_risk": "unknown",
-      "housing_notes": null,
+      "living_risk": "high",
+      "housing_notes": {
+        "en": "EPFL's current foreign-student planning budget is CHF 2,107/month excluding tuition, with CHF 900/month housing. It also flags lease deposits and blocked months; this is a budget, not a room offer.",
+        "tr": "EPFL'nin guncel yabanci ogrenci planlama butcesi ogrenim ucreti haric aylik 2.107 CHF; konut icin aylik 900 CHF'dir. Kira depozitosu ve bloke aylar uyarisi da verir; bu oda teklifi degil butcedir."
+      },
       "average_room_rent_usd_per_month_min": null,
       "average_room_rent_usd_per_month_max": null,
       "average_room_rent_gbp_per_month_min": null,
       "average_room_rent_gbp_per_month_max": null,
-      "average_room_rent_chf_per_month_min": null,
-      "average_room_rent_chf_per_month_max": null,
+      "average_room_rent_chf_per_month_min": 900,
+      "average_room_rent_chf_per_month_max": 900,
       "average_room_rent_sek_per_month_min": null,
       "average_room_rent_sek_per_month_max": null,
       "average_room_rent_dkk_per_month_min": null,
@@ -608,7 +694,11 @@
       "housing_budget_sek_per_year_min": null,
       "housing_budget_sek_per_year_max": null,
       "housing_budget_dkk_per_year_min": null,
-      "housing_budget_dkk_per_year_max": null
+      "housing_budget_dkk_per_year_max": null,
+      "monthly_living_cost_chf_per_month_min": 2107,
+      "monthly_living_cost_chf_per_month_max": 2107,
+      "monthly_living_cost_chf_per_month": 2107,
+      "official_student_total_budget_chf_per_year": 25219
     },
     "curriculum_profile": {
       "structure": null,
@@ -689,12 +779,24 @@
       "visa_complexity": "Medium",
       "deadline_eu": null,
       "deadline_non_eu": null,
-      "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
+      "timeline_risk": "high",
       "verification_notes": "",
-      "non_eu_deadline": null,
+      "non_eu_deadline": "15 December or 31 March (external Master application rounds; EPFL advises visa applicants to use December)",
       "winter_deadline": null,
-      "application_deadline": null,
-      "deadline_notes": null
+      "application_deadline": "31 March (second round; first round 15 December)",
+      "deadline_notes": {
+        "en": "All Master's programmes start mid-September. EPFL advises visa-needing candidates to apply in December for an earlier decision; no future-cycle date is inferred.",
+        "tr": "Tum Master programlari Eylul ortasinda baslar. EPFL vize gereken adaylara daha erken karar icin Aralikta basvurmayi onerir; gelecek donem tarihi cikarimla uretilmez."
+      },
+      "academic_year": "Recurring Master application rounds; confirm live-cycle dates before submission",
+      "intake_terms": [
+        "September"
+      ],
+      "application_rounds": [
+        "First round: 15 December",
+        "Second round: 31 March"
+      ],
+      "scholarship_deadline": "15 December or 31 March (same Master application rounds)"
     },
     "research_profile": {
       "research_focus_areas": [],
@@ -717,14 +819,17 @@
         "",
         ""
       ],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-07-15",
       "field_confidence": {
         "program_basic_info": "high",
         "language": "high",
         "admission": "medium",
         "tuition": "unknown",
-        "scholarship": "unknown",
-        "curriculum": "medium"
+        "scholarship": "high",
+        "curriculum": "medium",
+        "application_timeline_profile": "high",
+        "living_profile": "high",
+        "housing": "high"
       },
       "source_reliability": "high",
       "verification_status": "verified",
@@ -780,9 +885,62 @@
           ],
           "confidence": "high",
           "notes": ""
+        },
+        {
+          "url": "https://www.epfl.ch/education/master/master-excellence-fellowships/how-to-apply/",
+          "title": "EPFL Master Excellence Fellowships",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "deadline"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official page gives eligibility, value, room-reservation benefit and Master application rounds.",
+            "tr": "Resmi sayfa uygunluk, tutar, oda rezervasyonu avantaji ve Master basvuru turlarini verir."
+          }
+        },
+        {
+          "url": "https://www.epfl.ch/education/master/master-excellence-fellowships/how-to-apply/",
+          "title": "EPFL external Master application rounds",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "admission",
+            "deadline",
+            "non_eu_eligibility"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official page gives the 15 December and 31 March external-candidate rounds.",
+            "tr": "Resmi sayfa dis adaylar icin 15 Aralik ve 31 Mart turlarini verir."
+          }
+        },
+        {
+          "url": "https://www.epfl.ch/education/studies/en/financing-study/",
+          "title": "EPFL foreign-student budget",
+          "source_type": "official_cost_of_living_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "housing",
+            "living"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official foreign-student budget lists CHF 2,107/month excluding tuition and CHF 900 housing.",
+            "tr": "Resmi yabanci ogrenci butcesi ogrenim ucreti haric aylik 2.107 CHF ve 900 CHF konut listeler."
+          }
         }
       ],
-      "needs_verification": true
+      "needs_verification": true,
+      "official_scholarship_page": "https://www.epfl.ch/education/master/master-excellence-fellowships/how-to-apply/",
+      "official_admission_page": "https://www.epfl.ch/education/master/master-excellence-fellowships/how-to-apply/",
+      "official_cost_of_living_page": "https://www.epfl.ch/education/studies/en/financing-study/"
     },
     "decision_summary": {
       "pros": [],
@@ -807,18 +965,19 @@
     "qs_ranking": 36,
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 4,
+      "checked_official_source_count": 7,
       "verified_fields": [
         "program",
         "language",
         "admission",
         "non_eu_eligibility",
         "tuition",
-        "curriculum"
+        "scholarship",
+        "deadline",
+        "curriculum",
+        "housing"
       ],
-      "unverified_critical_fields": [
-        "scholarship"
-      ],
+      "unverified_critical_fields": [],
       "has_checked_source_log": true,
       "audited_at": "2026-07-15"
     },
@@ -828,12 +987,7 @@
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
-      "remaining_verification_tasks": [
-        {
-          "en": "Add a checked official source for scholarship.",
-          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
-        }
-      ],
+      "remaining_verification_tasks": [],
       "qc_notes": {
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
@@ -857,7 +1011,9 @@
     "degree_level": "Master",
     "duration_years": 1.5,
     "ects": 90,
-    "teaching_language": [],
+    "teaching_language": [
+      "English"
+    ],
     "program_url": "https://www.zhaw.ch/en/engineering/study/masters-degree-programme",
     "program_status": "active",
     "relevance_status": "medium",
@@ -890,14 +1046,16 @@
       }
     },
     "language_profile": {
-      "teaching_language": [],
-      "english_required": null,
+      "teaching_language": [
+        "English"
+      ],
+      "english_required": true,
       "english_level_required": null,
       "mixed_language_warning": null,
-      "language_risk": "unknown",
+      "language_risk": "low",
       "verification_notes": {
-        "en": "An English aviation profile description is available, but it does not by itself prove the programme's teaching language. The language is deliberately left unverified.",
-        "tr": "İngilizce bir aviation profil açıklaması mevcut, ancak bu tek başına programın eğitim dilini kanıtlamaz. Dil bilinçli olarak doğrulanmamış bırakıldı."
+        "en": "The official MSE page explicitly says language of instruction: English.",
+        "tr": "Resmi MSE sayfasi egitim dilinin Ingilizce oldugunu acikca belirtir."
       }
     },
     "cost_profile": {
@@ -905,7 +1063,7 @@
       "tuition_eur_per_year_min": null,
       "tuition_eur_per_year_max": null,
       "tuition_eur_per_year_estimated": null,
-      "tuition_basis": "needs_verification",
+      "tuition_basis": "published MSE base fee plus additional study costs",
       "non_eu_flat_fee": null,
       "source_notes": {
         "en": "The checked 2026 MSE overview publishes CHF 720 per semester plus additional study costs; it does not establish a foreign-student surcharge for this degree, so no total is stored.",
@@ -918,8 +1076,8 @@
       "scholarship_availability": "no_institutional_scholarship_claimed",
       "scholarship_risk": "Bilinmiyor / Resmi Veri Yok",
       "verification_notes": {
-        "en": "No value is inferred beyond the stated CHF 720 base semester fee.",
-        "tr": "Belirtilen 720 CHF temel dönem ücreti dışında tutar çıkarımı yapılmadı."
+        "en": "The MSE page publishes CHF 720 per semester plus additional study costs. It does not establish a separate non-EU surcharge, so this remains a published base fee rather than an assumed international total.",
+        "tr": "MSE sayfasi donem basina 720 CHF ve ek ogrenim giderleri yayimlar. Ayrı bir AB disi ek ucret gostermedigi icin bu, varsayilan uluslararasi toplam degil yayimlanmis taban ucrettir."
       },
       "total_academic_cost_eur_per_year_estimated": null,
       "student_contribution_eur": null,
@@ -949,7 +1107,10 @@
       "living_cost_sek_per_year_min": null,
       "living_cost_sek_per_year_max": null,
       "living_cost_dkk_per_year_min": null,
-      "living_cost_dkk_per_year_max": null
+      "living_cost_dkk_per_year_max": null,
+      "tuition_chf_per_semester": 720,
+      "tuition_chf_per_year_min": 1440,
+      "tuition_chf_per_year_max": 1440
     },
     "scholarship_profile": {
       "available_types": [],
@@ -957,11 +1118,16 @@
       "details": [],
       "external_options": [],
       "verification_notes": {
-        "en": "The MSE admission page states that ZHAW does not grant scholarships; external eligibility was not verified.",
-        "tr": "MSE kabul sayfası ZHAW'ın burs vermediğini belirtir; dış burs uygunluğu doğrulanmadı."
+        "en": "A verified absence is shown rather than a fictional degree scholarship.",
+        "tr": "Hayali derece bursu yerine dogrulanmis yokluk gosterilir."
       },
-      "regional_scholarship_available": null,
-      "scholarship_deadline": null
+      "regional_scholarship_available": false,
+      "scholarship_deadline": null,
+      "funding_status": "No general ZHAW MSE degree scholarship verified",
+      "funding_notes": {
+        "en": "ZHAW MSE admission material says ZHAW does not grant scholarships. A separate School of Engineering exchange scholarship is not represented as funding for an enrolled MSE degree applicant.",
+        "tr": "ZHAW MSE kabul materyali ZHAW'nin burs vermedigini belirtir. Ayrı School of Engineering degisim bursu, kayitli MSE derece adayi icin finansman sayilmaz."
+      }
     },
     "living_profile": {
       "city_type": "Medium",
@@ -972,18 +1138,21 @@
       "verification_notes": "",
       "average_room_rent_eur": null,
       "monthly_living_cost_eur_estimated": null,
-      "housing_difficulty": null,
+      "housing_difficulty": "high",
       "monthly_living_cost_eur_min": null,
       "monthly_living_cost_eur_max": null,
       "student_housing_available": null,
       "living_cost_eur_per_month": null,
-      "housing_notes": null,
+      "housing_notes": {
+        "en": "ZHAW School of Engineering publishes a CHF 1,390-2,280 monthly planning budget, including CHF 500-800 rent. It is incoming-student guidance, not a guaranteed MSE room price.",
+        "tr": "ZHAW School of Engineering, 500-800 CHF kira dahil aylik 1.390-2.280 CHF planlama butcesi yayimlar. Gelen ogrenci rehberidir, garanti MSE oda fiyati degildir."
+      },
       "average_room_rent_usd_per_month_min": null,
       "average_room_rent_usd_per_month_max": null,
       "average_room_rent_gbp_per_month_min": null,
       "average_room_rent_gbp_per_month_max": null,
-      "average_room_rent_chf_per_month_min": null,
-      "average_room_rent_chf_per_month_max": null,
+      "average_room_rent_chf_per_month_min": 500,
+      "average_room_rent_chf_per_month_max": 800,
       "average_room_rent_sek_per_month_min": null,
       "average_room_rent_sek_per_month_max": null,
       "average_room_rent_dkk_per_month_min": null,
@@ -1016,7 +1185,10 @@
       "housing_budget_sek_per_year_min": null,
       "housing_budget_sek_per_year_max": null,
       "housing_budget_dkk_per_year_min": null,
-      "housing_budget_dkk_per_year_max": null
+      "housing_budget_dkk_per_year_max": null,
+      "monthly_living_cost_chf_per_month_min": 1390,
+      "monthly_living_cost_chf_per_month_max": 2280,
+      "living_risk": "high"
     },
     "curriculum_profile": {
       "structure": {
@@ -1092,15 +1264,27 @@
       "visa_complexity": "Medium",
       "deadline_eu": null,
       "deadline_non_eu": null,
-      "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
+      "timeline_risk": "medium",
       "verification_notes": {
         "en": "Applications: beginning February to end April for autumn; beginning August to end October for spring. International processing is approximately two months.",
         "tr": "Başvurular: güz için Şubat başından Nisan sonuna; bahar için Ağustos başından Ekim sonuna. Uluslararası işlem süresi yaklaşık iki aydır."
       },
-      "non_eu_deadline": null,
+      "non_eu_deadline": "End of April (autumn) or end of October (spring), or as agreed",
       "winter_deadline": null,
-      "application_deadline": null,
-      "deadline_notes": null
+      "application_deadline": "End of April (autumn) or end of October (spring), or as agreed",
+      "deadline_notes": {
+        "en": "ZHAW publishes only end-of-month timing, so no exact or future-cycle calendar day is invented.",
+        "tr": "ZHAW yalnizca ay sonu zamanlamasi yayimlar; kesin veya gelecek donem takvim gunu uydurulmaz."
+      },
+      "academic_year": "Recurring MSE schedule; verify exact intake day in live form",
+      "intake_terms": [
+        "Autumn",
+        "Spring"
+      ],
+      "application_rounds": [
+        "Autumn intake: end of April",
+        "Spring intake: end of October"
+      ]
     },
     "research_profile": {
       "research_focus_areas": [],
@@ -1118,10 +1302,10 @@
       "verification_notes": ""
     },
     "source_profile": {
-      "official_program_page": "https://www.zhaw.ch/en/engineering/study/masters-degree-programme",
+      "official_program_page": "https://www.zhaw.ch/en/engineering/study/masters-degree-programme?pk_kwd=MSE",
       "official_admission_page": "https://www.zhaw.ch/en/engineering/study/masters-degree-programme/admission-requirements/requirements",
       "official_curriculum_page": "https://www.zhaw.ch/de/engineering/studium/masterstudium/profile/aviation",
-      "official_tuition_page": "https://www.zhaw.ch/en/engineering/study/masters-degree-programme",
+      "official_tuition_page": "https://www.zhaw.ch/en/engineering/study/masters-degree-programme?pk_kwd=MSE",
       "official_scholarship_page": "https://www.zhaw.ch/en/engineering/study/masters-degree-programme/admission-requirements?L=1",
       "official_department_page": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/msc-degree-programme-at-the-centre-for-aviation?L=0",
       "source_log": [
@@ -1224,23 +1408,76 @@
             "en": "Official page checked directly on 14 July 2026.",
             "tr": "Resmî sayfa 14 Temmuz 2026 tarihinde doğrudan kontrol edildi."
           }
+        },
+        {
+          "url": "https://www.zhaw.ch/en/engineering/study/masters-degree-programme?pk_kwd=MSE",
+          "title": "ZHAW MSE programme",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "program",
+            "language",
+            "tuition",
+            "deadline"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official page gives English instruction, CHF 720 per semester and end-April/end-October timing.",
+            "tr": "Resmi sayfa Ingilizce egitim, donem basina 720 CHF ve Nisan/Ekim sonu zamanlamasini verir."
+          }
+        },
+        {
+          "url": "https://www.zhaw.ch/en/engineering/study/masters-degree-programme?pk_kwd=MSE",
+          "title": "ZHAW MSE published base tuition",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "tuition"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Published base semester fee; no foreign surcharge is stated on the checked page.",
+            "tr": "Yayimlanmis taban donem ucreti; kontrol edilen sayfada yabanci ek ucreti belirtilmez."
+          }
+        },
+        {
+          "url": "https://www.zhaw.ch/en/engineering/study/international-office/studying-in-switzerland/living-in-switzerland",
+          "title": "ZHAW School of Engineering living costs",
+          "source_type": "official_cost_of_living_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "housing",
+            "living"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official planning range is CHF 1,390-2,280/month with CHF 500-800 rent.",
+            "tr": "Resmi planlama araligi, 500-800 CHF kira ile aylik 1.390-2.280 CHF'dir."
+          }
         }
       ],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-07-15",
       "needs_verification": true,
       "field_confidence": {
         "program_basic_info": "high",
-        "language": "unknown",
+        "language": "high",
         "admission": "medium",
-        "tuition": "unknown",
-        "scholarship": "unknown",
+        "tuition": "medium",
+        "scholarship": "high",
         "curriculum": "medium",
-        "living": "unknown"
+        "living": "unknown",
+        "application_timeline_profile": "medium",
+        "living_profile": "medium",
+        "housing": "medium"
       },
       "verification_notes": {
         "en": "Aviation profile and critical MSE facts are source-checked; foreign-student fee surcharge and housing cost remain unverified.",
         "tr": "Havacılık profili ve kritik MSE bilgileri kaynakla kontrol edildi; yabancı öğrenci ek ücreti ve konaklama maliyeti doğrulanmadı."
-      }
+      },
+      "official_cost_of_living_page": "https://www.zhaw.ch/en/engineering/study/international-office/studying-in-switzerland/living-in-switzerland"
     },
     "decision_summary": {
       "pros": [],
@@ -1259,29 +1496,25 @@
     "qs_ranking": 370,
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 6,
+      "checked_official_source_count": 9,
       "verified_fields": [
         "program",
         "language",
         "admission",
+        "tuition",
         "scholarship",
-        "curriculum"
+        "deadline",
+        "curriculum",
+        "housing"
       ],
-      "unverified_critical_fields": [
-        "tuition"
-      ],
+      "unverified_critical_fields": [],
       "has_checked_source_log": true,
       "audited_at": "2026-07-15"
     },
     "quality_control": {
       "checked_at": "2026-07-15",
       "qc_status": "needs_revision",
-      "remaining_verification_tasks": [
-        {
-          "en": "Add a checked official source for tuition.",
-          "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
-        }
-      ],
+      "remaining_verification_tasks": [],
       "qc_notes": {
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."

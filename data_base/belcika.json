@@ -92,7 +92,7 @@
     "program_url": "https://www.kuleuven.be/opleidingen/programmes/master-space-studies",
     "program_status": "active",
     "teaching_language": [
-      "Unknown"
+      "English"
     ],
     "eligibility_profile": {
       "eligible_for_non_eu": true,
@@ -115,15 +115,21 @@
     },
     "language_profile": {
       "teaching_language": [
-        "Unknown"
+        "English"
       ],
-      "english_required": null,
-      "english_level_required": null,
-      "language_risk": "unknown",
+      "english_required": true,
+      "english_level_required": "IELTS Academic 6.5; TOEFL iBT 79; or Cambridge Advanced/Proficiency 185 (no subscore below 170)",
+      "language_risk": "low",
       "verification_notes": {
-        "en": "Teaching language was not explicitly verified from the checked programme and curriculum pages.",
-        "tr": "Eğitim dili kontrol edilen program ve müfredat sayfalarından açıkça doğrulanmadı."
-      }
+        "en": "KU Leuven's current programme record labels the Advanced Master's language as English and publishes the listed English-proficiency thresholds. Exemptions remain case-specific.",
+        "tr": "KU Leuven'in güncel program kaydı ileri yüksek lisansın dilini İngilizce olarak etiketler ve belirtilen İngilizce yeterlilik eşiklerini yayımlar. Muafiyetler aday durumuna göre değişir."
+      },
+      "accepted_english_tests": [
+        "IELTS Academic",
+        "TOEFL iBT",
+        "Cambridge Advanced",
+        "Cambridge Proficiency"
+      ]
     },
     "cost_profile": {
       "academic_year": "2026/2027",
@@ -166,27 +172,36 @@
       "tuition_waivers": [],
       "non_eu_eligible": null,
       "scholarship_deadline": null,
-      "scholarship_application_url": null,
+      "scholarship_application_url": "https://www.kuleuven.be/scholarships",
       "verification_notes": {
-        "en": "No programme-specific scholarship eligibility was verified from an official source.",
-        "tr": "Programa özgü burs uygunluğu resmî bir kaynaktan doğrulanmadı."
+        "en": "Availability is intentionally recorded as a searchable official route rather than an unsourced programme-wide award claim.",
+        "tr": "Uygunluk, kaynaksız bir program-geneli ödül iddiası yerine aranabilir resmî başvuru yolu olarak kaydedilir."
       },
-      "funding_notes": null
+      "funding_notes": {
+        "en": "KU Leuven's official scholarship finder includes Master of Space Studies and academic-year/nationality filters. The finder must be checked for each applicant; this card does not claim that any one award is available to every nationality or that funding is guaranteed.",
+        "tr": "KU Leuven'in resmî burs bulucusu Master of Space Studies ile akademik yıl ve uyruk filtrelerini içerir. Her aday için bulucu kontrol edilmelidir; bu kart belirli bir ödülün her uyruğa açık olduğunu veya finansmanın garanti edildiğini iddia etmez."
+      },
+      "available_types": [
+        "KU Leuven scholarship finder for Master of Space Studies (2026/27 filters)"
+      ]
     },
     "living_profile": {
       "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
       "housing_difficulty": null,
       "living_risk": "unknown",
       "verification_notes": {
-        "en": "No current official housing or living-cost amount was verified for this record.",
-        "tr": "Bu kayıt için güncel resmî konaklama veya yaşam gideri tutarı doğrulanmadı."
+        "en": "This is an official total-living-cost planning range, not a claim that every Space Studies student will pay the same rent.",
+        "tr": "Bu, her Space Studies öğrencisinin aynı kirayı ödeyeceği iddiası değil, resmî toplam yaşam maliyeti planlama aralığıdır."
       },
       "average_room_rent_eur": null,
       "monthly_living_cost_eur_estimated": null,
-      "monthly_living_cost_eur_min": null,
-      "monthly_living_cost_eur_max": null,
-      "living_cost_eur_per_month": null,
-      "housing_notes": null,
+      "monthly_living_cost_eur_min": 1050,
+      "monthly_living_cost_eur_max": 1400,
+      "living_cost_eur_per_month": 1050,
+      "housing_notes": {
+        "en": "KU Leuven's 13 February 2026 planning range is EUR 1,050–1,400/month and includes rent, utilities, food, study materials, insurance, transport and other expenses. It is a Belgium-wide planning estimate; individual Leuven costs vary.",
+        "tr": "KU Leuven'in 13 Şubat 2026 planlama aralığı aylık 1.050–1.400 EUR'dur; kira, faturalar, yemek, öğrenim malzemeleri, sigorta, ulaşım ve diğer giderleri içerir. Bu Belçika geneli planlama tahminidir; Leuven'deki bireysel maliyetler değişir."
+      },
       "average_room_rent_usd_per_month_min": null,
       "average_room_rent_usd_per_month_max": null,
       "average_room_rent_gbp_per_month_min": null,
@@ -314,10 +329,10 @@
     },
     "source_profile": {
       "official_program_page": "https://www.kuleuven.be/opleidingen/programmes/master-space-studies",
-      "official_admission_page": null,
+      "official_admission_page": "https://onderwijsaanbod.kuleuven.be/2025/opleidingen/e/SC_51016979/toelatingsvoorwaarden",
       "official_curriculum_page": null,
       "official_tuition_page": null,
-      "official_scholarship_page": null,
+      "official_scholarship_page": "https://www.kuleuven.be/scholarships",
       "official_department_page": null,
       "source_log": [
         {
@@ -328,19 +343,6 @@
           "last_checked": "2026-07-14",
           "relevant_fields": [
             "program"
-          ],
-          "confidence": "high",
-          "notes": ""
-        },
-        {
-          "url": "https://onderwijsaanbod.kuleuven.be/2025/opleidingen/e/SC_51016979/toelatingsvoorwaarden",
-          "title": "KU Leuven Master of Space Studies admission requirements",
-          "source_type": "official_admission_page",
-          "access_status": "ok",
-          "last_checked": "2026-07-14",
-          "relevant_fields": [
-            "admission",
-            "non_eu_eligibility"
           ],
           "confidence": "high",
           "notes": ""
@@ -417,9 +419,58 @@
             "en": "Official source checked for the stated fields.",
             "tr": "Resmî kaynak belirtilen alanlar için kontrol edildi."
           }
+        },
+        {
+          "url": "https://onderwijsaanbod.kuleuven.be/2025/opleidingen/e/SC_51016979/toelatingsvoorwaarden",
+          "title": "KU Leuven Master of Space Studies admission requirements (2026/27)",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "language",
+            "admission",
+            "non_eu_eligibility"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official programme record labels the 60-ECTS Advanced Master's language as English and gives the published English test thresholds.",
+            "tr": "Resmî program kaydı 60 AKTS'lik ileri yüksek lisansın dilini İngilizce olarak etiketler ve yayımlanmış İngilizce sınav eşiklerini verir."
+          }
+        },
+        {
+          "url": "https://www.kuleuven.be/scholarships",
+          "title": "KU Leuven Scholarships finder",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "scholarship",
+            "funding"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official finder offers programme, nationality and 2026/27 academic-year filters and includes Master of Space Studies.",
+            "tr": "Resmî bulucu program, uyruk ve 2026/27 akademik yılı filtreleri sunar; Master of Space Studies'i içerir."
+          }
+        },
+        {
+          "url": "https://www.kuleuven.be/english/life-at-ku-leuven/money-matters/cost-of-living-in-belgium",
+          "title": "KU Leuven cost of living in Belgium (updated 13 February 2026)",
+          "source_type": "official_cost_of_living_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "housing",
+            "living"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official planning range is EUR 1,050–1,400/month including housing and core student expenses.",
+            "tr": "Resmî planlama aralığı konaklama ve temel öğrenci giderleri dahil aylık 1.050–1.400 EUR'dur."
+          }
         }
       ],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-07-15",
       "needs_verification": true,
       "verification_notes": {
         "en": "Only facts supported by the checked official source log are retained; funding and housing eligibility remain programme- and applicant-specific unless explicitly stated.",
@@ -427,13 +478,15 @@
       },
       "field_confidence": {
         "program_basic_info": "high",
-        "language": "unknown",
+        "language": "high",
         "admission": "medium",
         "tuition": "medium",
-        "scholarship": "medium",
+        "scholarship": "high",
         "curriculum": "medium",
-        "living_profile": "unknown"
-      }
+        "living_profile": "high",
+        "housing": "high"
+      },
+      "official_cost_of_living_page": "https://www.kuleuven.be/english/life-at-ku-leuven/money-matters/cost-of-living-in-belgium"
     },
     "decision_summary": {
       "main_strengths": [
@@ -458,12 +511,7 @@
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
-      "remaining_verification_tasks": [
-        {
-          "en": "Add a checked official source for language.",
-          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
-        }
-      ],
+      "remaining_verification_tasks": [],
       "qc_notes": {
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
@@ -471,18 +519,18 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 7,
+      "checked_official_source_count": 9,
       "verified_fields": [
         "program",
+        "language",
         "admission",
         "non_eu_eligibility",
         "tuition",
         "scholarship",
-        "curriculum"
+        "curriculum",
+        "housing"
       ],
-      "unverified_critical_fields": [
-        "language"
-      ],
+      "unverified_critical_fields": [],
       "has_checked_source_log": true,
       "audited_at": "2026-07-15"
     }
@@ -584,15 +632,24 @@
       "English"
     ],
     "eligibility_profile": {
-      "eligible_for_non_eu": null,
-      "required_previous_degree": null,
-      "accepted_backgrounds": [],
-      "admission_mode": "unknown",
-      "admission_risk": "unknown",
+      "eligible_for_non_eu": true,
+      "required_previous_degree": {
+        "en": "A foreign degree judged equivalent/comparable by the admission jury to the specified 180-ECTS engineering Bachelor's route; the programme lists civil engineering sciences directly and identifies possible bridging for some other backgrounds.",
+        "tr": "Kabul jürisinin belirtilen 180 AKTS'lik mühendislik lisans yoluna eşdeğer/karşılaştırılabilir bulduğu yabancı derece; program sivil mühendislik bilimlerini doğrudan listeler ve bazı diğer altyapılar için tamamlama dersleri öngörür."
+      },
+      "accepted_backgrounds": [
+        "Civil engineering sciences / engineering",
+        "Comparable foreign engineering degree subject to jury assessment"
+      ],
+      "admission_mode": "foreign-degree equivalency and jury assessment",
+      "admission_risk": "medium",
       "required_documents": [],
       "verification_notes": {
-        "en": "The checked programme page confirms the programme and credits but its detailed admission route should be verified separately for a foreign degree.",
-        "tr": "Kontrol edilen program sayfası programı ve kredileri doğrular; yabancı derece için ayrıntılı kabul yolu ayrıca doğrulanmalıdır."
+        "en": "ULiège's 2026/27 programme page states the 120-credit Aerospace Engineering Master's entry route and that a foreign degree must be recognised as equivalent/comparable by the jury. It also requires B2 English; final admission remains an individual jury decision.",
+        "tr": "ULiège'in 2026/27 program sayfası 120 kredilik Aerospace Engineering yüksek lisansına giriş yolunu ve yabancı derecenin jüri tarafından eşdeğer/karşılaştırılabilir bulunması gerektiğini belirtir. B2 İngilizce de gerekir; nihai kabul aday bazında jüri kararıdır."
+      },
+      "required_ects": {
+        "total": "180 ECTS (foreign-degree equivalency assessed by jury)"
       }
     },
     "language_profile": {
@@ -639,33 +696,42 @@
       "living_cost_dkk_per_year_max": null
     },
     "scholarship_profile": {
-      "regional_scholarship_available": null,
-      "regional_scholarship_name": null,
+      "regional_scholarship_available": true,
+      "regional_scholarship_name": "Master.IN WBI",
       "merit_scholarships": [],
       "tuition_waivers": [],
-      "non_eu_eligible": null,
-      "scholarship_deadline": null,
-      "scholarship_application_url": null,
+      "non_eu_eligible": true,
+      "scholarship_deadline": "2026-03-31 (published Master.IN WBI call; closed when checked)",
+      "scholarship_application_url": "https://www.international.uliege.be/cms/c_19399082/en/faq-master-in-wbi-scholarships",
       "verification_notes": {
-        "en": "No programme-specific scholarship eligibility was verified from an official source.",
-        "tr": "Programa özgü burs uygunluğu resmî bir kaynaktan doğrulanmadı."
+        "en": "The record describes eligibility for a competitive official funding route, not a grant guarantee or an assumed next-cycle deadline.",
+        "tr": "Kayıt, hibe garantisi veya varsayımsal sonraki dönem son tarihi değil; rekabetçi resmî bir finansman yoluna uygunluğu açıklar."
       },
-      "funding_notes": null
+      "funding_notes": {
+        "en": "ULiège states that admitted non-EU candidates may apply to Master.IN WBI, subject to the published conditions, including a recent entrance degree and two academic support letters. It is competitive, not automatic, and the checked 2026 call is closed.",
+        "tr": "ULiège, kabul edilen AB dışı adayların yakın tarihli giriş derecesi ve iki akademik destek mektubu dahil yayımlanan koşullarla Master.IN WBI'ye başvurabileceğini belirtir. Burs rekabetçidir, otomatik değildir ve kontrol edilen 2026 çağrısı kapanmıştır."
+      },
+      "available_types": [
+        "Master.IN WBI scholarship (competitive; published 2026 call closed)"
+      ]
     },
     "living_profile": {
       "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
       "housing_difficulty": null,
-      "living_risk": "unknown",
+      "living_risk": "medium",
       "verification_notes": {
-        "en": "No current official housing or living-cost amount was verified for this record.",
-        "tr": "Bu kayıt için güncel resmî konaklama veya yaşam gideri tutarı doğrulanmadı."
+        "en": "The range is an official ULiège international-guide planning amount; it should not be treated as an all-in first-month or guaranteed-housing cost.",
+        "tr": "Aralık, ULiège uluslararası rehberindeki resmî planlama tutarıdır; ilk ayın tüm gideri veya garanti konaklama maliyeti olarak ele alınmamalıdır."
       },
       "average_room_rent_eur": null,
       "monthly_living_cost_eur_estimated": null,
-      "monthly_living_cost_eur_min": null,
-      "monthly_living_cost_eur_max": null,
-      "living_cost_eur_per_month": null,
-      "housing_notes": null,
+      "monthly_living_cost_eur_min": 700,
+      "monthly_living_cost_eur_max": 1000,
+      "living_cost_eur_per_month": 700,
+      "housing_notes": {
+        "en": "ULiège's international guide estimates student living costs in Liège at EUR 700–1,000/month, excluding the typically higher first month and study-related costs such as books. It is a planning estimate, not a rent offer.",
+        "tr": "ULiège'in uluslararası rehberi Liège'de öğrenciler için yaşam maliyetini, genellikle daha yüksek olan ilk ay ve kitap gibi öğrenim giderleri hariç, aylık 700–1.000 EUR olarak tahmin eder. Bu planlama tahminidir, kira teklifi değildir."
+      },
       "average_room_rent_usd_per_month_min": null,
       "average_room_rent_usd_per_month_max": null,
       "average_room_rent_gbp_per_month_min": null,
@@ -785,10 +851,10 @@
     },
     "source_profile": {
       "official_program_page": "https://www.programmes.uliege.be/cocoon/20252026/en/programmes/A2SAER01_S.html",
-      "official_admission_page": null,
+      "official_admission_page": "https://www.programmes.uliege.be/cocoon/20262027/formations/condac/A2SAER01.html",
       "official_curriculum_page": null,
       "official_tuition_page": "https://www.uliege.be/cms/c_17627581/en/tuition-fees-amounts",
-      "official_scholarship_page": null,
+      "official_scholarship_page": "https://www.international.uliege.be/cms/c_19399082/en/faq-master-in-wbi-scholarships",
       "official_department_page": null,
       "source_log": [
         {
@@ -865,9 +931,61 @@
             "en": "Official source checked for the stated fields.",
             "tr": "Resmî kaynak belirtilen alanlar için kontrol edildi."
           }
+        },
+        {
+          "url": "https://www.programmes.uliege.be/cocoon/20262027/formations/condac/A2SAER01.html",
+          "title": "ULiège MSc Aerospace Engineering programme 2026/27",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "program",
+            "admission",
+            "language",
+            "non_eu_eligibility"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official programme page confirms the 120-credit Master's route, English requirement and jury assessment of comparable foreign degrees.",
+            "tr": "Resmî program sayfası 120 kredilik yüksek lisans yolunu, İngilizce koşulunu ve karşılaştırılabilir yabancı derecelerin jüri tarafından değerlendirilmesini doğrular."
+          }
+        },
+        {
+          "url": "https://www.international.uliege.be/cms/c_19399082/en/faq-master-in-wbi-scholarships",
+          "title": "ULiège FAQ: Master.IN WBI scholarships",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "deadline",
+            "non_eu_eligibility"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official FAQ describes the closed 2026 call, conditions and admitted non-EU eligibility; it does not guarantee funding.",
+            "tr": "Resmî SSS kapalı 2026 çağrısını, koşulları ve kabul edilmiş AB dışı aday uygunluğunu açıklar; finansman garantisi vermez."
+          }
+        },
+        {
+          "url": "https://www.international.uliege.be/books/ErasmusGuideEn/11/",
+          "title": "ULiège Erasmus Guide: estimated Liège student living costs",
+          "source_type": "official_cost_of_living_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "housing",
+            "living"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official international guide gives EUR 700–1,000/month for Liège students except the first month, plus separate study-related costs.",
+            "tr": "Resmî uluslararası rehber ilk ay hariç Liège öğrencileri için aylık 700–1.000 EUR; ayrıca öğrenimle ilgili giderler belirtir."
+          }
         }
       ],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-07-15",
       "needs_verification": true,
       "verification_notes": {
         "en": "Only facts supported by the checked official source log are retained; funding and housing eligibility remain programme- and applicant-specific unless explicitly stated.",
@@ -876,12 +994,15 @@
       "field_confidence": {
         "program_basic_info": "high",
         "language": "high",
-        "admission": "medium",
+        "admission": "high",
         "tuition": "medium",
-        "scholarship": "medium",
+        "scholarship": "high",
         "curriculum": "medium",
-        "living_profile": "unknown"
-      }
+        "living_profile": "high",
+        "non_eu_eligibility": "medium",
+        "housing": "high"
+      },
+      "official_cost_of_living_page": "https://www.international.uliege.be/books/ErasmusGuideEn/11/"
     },
     "decision_summary": {
       "main_strengths": [
@@ -914,7 +1035,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 5,
+      "checked_official_source_count": 8,
       "verified_fields": [
         "program",
         "language",
@@ -922,7 +1043,8 @@
         "non_eu_eligibility",
         "tuition",
         "scholarship",
-        "curriculum"
+        "curriculum",
+        "housing"
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
@@ -1094,7 +1216,10 @@
       "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
       "housing_difficulty": null,
       "living_risk": "Bilinmiyor / Resmi Veri Yok",
-      "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
+      "verification_notes": {
+        "en": "Belgium's 2026/27 visa proof-of-subsistence threshold is EUR 1,062/month. It is a legal financial-means minimum, not an observed Brussels living-cost or VKI housing price, so it is kept separate and the actual local cost remains unknown.",
+        "tr": "Belçika'nın 2026/27 vize geçim yeterliliği eşiği aylık 1.062 EUR'dur. Bu hukuki mali yeterlilik asgarisidir; gözlemlenmiş Brüksel yaşam maliyeti veya VKI konut fiyatı değildir. Bu nedenle ayrı tutulur ve gerçek yerel maliyet bilinmiyor olarak kalır."
+      },
       "average_room_rent_eur": null,
       "monthly_living_cost_eur_estimated": null,
       "living_cost_eur_per_month": null,
@@ -1139,7 +1264,8 @@
       "housing_budget_sek_per_year_min": null,
       "housing_budget_sek_per_year_max": null,
       "housing_budget_dkk_per_year_min": null,
-      "housing_budget_dkk_per_year_max": null
+      "housing_budget_dkk_per_year_max": null,
+      "visa_financial_requirement_eur_per_month": 1062
     },
     "curriculum_profile": {
       "tracks": [
@@ -1312,9 +1438,24 @@
             "en": "Official source checked for the stated fields.",
             "tr": "Resmî kaynak belirtilen alanlar için kontrol edildi."
           }
+        },
+        {
+          "url": "https://dofi.ibz.be/en/themes/ressortissants-dun-pays-tiers/etudes/favoris/sufficient-means-subsistence",
+          "title": "Belgian Immigration Office: sufficient means of subsistence for students",
+          "source_type": "official_visa_or_government_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "visa"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official Belgian Immigration Office page gives EUR 1,062/month for the 2026/27 academic year; it is not represented as a living-cost estimate.",
+            "tr": "Resmî Belçika Göçmenlik Ofisi sayfası 2026/27 akademik yılı için aylık 1.062 EUR verir; yaşam maliyeti tahmini olarak sunulmaz."
+          }
         }
       ],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-07-15",
       "needs_verification": true,
       "verification_notes": {
         "en": "Only facts supported by the checked official source log are retained; funding and housing eligibility remain programme- and applicant-specific unless explicitly stated.",
@@ -1371,7 +1512,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 5,
+      "checked_official_source_count": 6,
       "verified_fields": [
         "program",
         "language",
@@ -2438,32 +2579,42 @@
       "living_cost_dkk_per_year_max": null
     },
     "scholarship_profile": {
-      "regional_scholarship_available": null,
-      "regional_scholarship_name": null,
+      "regional_scholarship_available": true,
+      "regional_scholarship_name": "ULB international funding information / ARES and WBI routes",
       "merit_scholarships": [],
       "tuition_waivers": [],
       "non_eu_eligible": null,
       "scholarship_deadline": null,
-      "scholarship_application_url": null,
+      "scholarship_application_url": "https://www.ulb.be/en/non-exchange-international-students",
       "verification_notes": {
         "en": "No programme-specific scholarship eligibility was verified.",
         "tr": "Programa özgü burs uygunluğu doğrulanmadı."
+      },
+      "available_types": [
+        "ULB international-funding information and external ARES/Wallonia-Brussels scholarship routes (eligibility depends on nationality, level and project)"
+      ],
+      "funding_notes": {
+        "en": "ULB directs international students to its scholarship information and to ARES and Wallonia-Brussels International routes, which depend on nationality, study level and project. This is a verified route, not a universal award or a guarantee for the BRUfACE option.",
+        "tr": "ULB, uluslararasi ogrencileri burs bilgilerine ve uyruk, egitim duzeyi ve projeye bagli ARES ile Wallonia-Brussels International yollarina yonlendirir. Bu dogrulanmis bir yoldur; evrensel odul veya BRUfACE secenegi icin garanti degildir."
       }
     },
     "living_profile": {
       "city_cost_level": "unknown",
-      "monthly_living_cost_eur_min": null,
-      "monthly_living_cost_eur_max": null,
+      "monthly_living_cost_eur_min": 800,
+      "monthly_living_cost_eur_max": 800,
       "monthly_living_cost_eur_estimated": null,
-      "housing_difficulty": null,
+      "housing_difficulty": "high",
       "average_room_rent_eur": null,
-      "living_risk": "unknown",
+      "living_risk": "high",
       "verification_notes": {
-        "en": "No official local living-cost amount was verified.",
-        "tr": "Resmî yerel yaşam maliyeti tutarı doğrulanmadı."
+        "en": "This current ULB estimate is published for incoming exchange students, so the scope is stated rather than silently generalised. ULB also says the EUR 1,062/month 2026/27 visa proof-of-funds minimum can be below actual Brussels costs.",
+        "tr": "Bu güncel ULB tahmini gelen değişim öğrencileri için yayımlandığından, kapsamı sessizce genellenmek yerine açıkça belirtilir. ULB ayrıca 2026/27 için aylık 1.062 EUR vize mali yeterlilik asgarisinin gerçek Brüksel maliyetlerinin altında kalabileceğini söyler."
       },
       "living_cost_eur_per_month": null,
-      "housing_notes": null,
+      "housing_notes": {
+        "en": "ULB's current international practical-information page estimates a Brussels student budget at about EUR 800/month, with roughly half for housing. The page warns its exchange students that no hall rooms are available this academic year and they must use the private market; use this as a Brussels planning signal, not a room guarantee.",
+        "tr": "ULB'nin güncel uluslararası pratik bilgiler sayfası Brüksel'de öğrenci bütçesini aylık yaklaşık 800 EUR; bunun yaklaşık yarısını konut olarak tahmin eder. Sayfa değişim öğrencilerine bu akademik yılda yurt odası bulunmadığını ve özel piyasayı kullanmaları gerektiğini bildirir; bunu oda garantisi değil, Brüksel planlama sinyali olarak kullanın."
+      },
       "average_room_rent_usd_per_month_min": null,
       "average_room_rent_usd_per_month_max": null,
       "average_room_rent_gbp_per_month_min": null,
@@ -2491,8 +2642,8 @@
       "housing_budget_dkk_per_year": null,
       "official_student_housing_budget_sek_per_month_examples": null,
       "official_student_total_budget_sek_per_month_examples": null,
-      "average_room_rent_eur_min": null,
-      "average_room_rent_eur_max": null,
+      "average_room_rent_eur_min": 400,
+      "average_room_rent_eur_max": 400,
       "housing_budget_usd_per_year_min": null,
       "housing_budget_usd_per_year_max": null,
       "housing_budget_gbp_per_year_min": null,
@@ -2502,7 +2653,8 @@
       "housing_budget_sek_per_year_min": null,
       "housing_budget_sek_per_year_max": null,
       "housing_budget_dkk_per_year_min": null,
-      "housing_budget_dkk_per_year_max": null
+      "housing_budget_dkk_per_year_max": null,
+      "visa_financial_requirement_eur_per_month": 1062
     },
     "curriculum_profile": {
       "tracks": [
@@ -2595,7 +2747,7 @@
       "official_admission_page": "https://www.ulb.be/en/prepare-your-application/submission-deadlines",
       "official_curriculum_page": "https://catfront.ulb.be/progpdf/generate?anac=2025&anet=MA-IREM&area=M-IREMR&ext=.pdf&gen=prod&lang=en&mode=programme",
       "official_tuition_page": "https://www.ulb.be/en/enrolment/tuitions-fees",
-      "official_scholarship_page": null,
+      "official_scholarship_page": "https://www.ulb.be/en/non-exchange-international-students",
       "official_department_page": "https://atm.polytech.ulb.be/",
       "source_log": [
         {
@@ -2738,9 +2890,57 @@
             "en": "Official source checked for the stated fields.",
             "tr": "Resmî kaynak belirtilen alanlar için kontrol edildi."
           }
+        },
+        {
+          "url": "https://www.ulb.be/en/incoming-mobility/practical-information-for-incoming-students",
+          "title": "ULB practical information for incoming students: Brussels cost of living",
+          "source_type": "official_cost_of_living_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "housing",
+            "living"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Current ULB page estimates EUR 800/month, with roughly half for housing, and reports no hall rooms for its exchange students this academic year.",
+            "tr": "Güncel ULB sayfası aylık 800 EUR tahmin eder; bunun yaklaşık yarısı konuttur ve bu akademik yılda değişim öğrencileri için yurt odası bulunmadığını belirtir."
+          }
+        },
+        {
+          "url": "https://www.ulb.be/en/non-exchange-international-students/information-about-blocked-accounts-for-visa-or-residence-permit-renewal",
+          "title": "ULB blocked accounts: 2026/27 financial means",
+          "source_type": "official_visa_or_government_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "visa",
+            "living"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "ULB publishes the EUR 1,062/month 2026/27 visa proof-of-funds minimum and warns actual Brussels living costs can be higher.",
+            "tr": "ULB, 2026/27 için aylık 1.062 EUR vize mali yeterlilik asgarisini yayımlar ve gerçek Brüksel yaşam maliyetlerinin daha yüksek olabileceği uyarısını yapar."
+          }
+        },
+        {
+          "url": "https://www.ulb.be/en/non-exchange-international-students",
+          "title": "ULB international students: scholarships and support",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "scholarship",
+            "funding"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official ULB page directs international students to ULB scholarship information and ARES/WBI routes with eligibility-dependent scope.",
+            "tr": "Resmi ULB sayfasi uluslararasi ogrencileri uygunluga bagli kapsamdaki ULB burs bilgisi ve ARES/WBI yollarina yonlendirir."
+          }
         }
       ],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-07-15",
       "needs_verification": true,
       "verification_notes": {
         "en": "Only facts supported by the checked official source log are retained; funding and housing eligibility remain programme- and applicant-specific unless explicitly stated.",
@@ -2756,8 +2956,10 @@
         "research_profile": "high",
         "industry_ecosystem_profile": "unknown",
         "application_timeline_profile": "high",
-        "living_profile": "unknown"
-      }
+        "living_profile": "medium",
+        "housing": "medium"
+      },
+      "official_cost_of_living_page": "https://www.ulb.be/en/incoming-mobility/practical-information-for-incoming-students"
     },
     "decision_summary": {
       "main_strengths": [
@@ -2790,7 +2992,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 9,
+      "checked_official_source_count": 12,
       "verified_fields": [
         "program",
         "language",
@@ -2800,7 +3002,8 @@
         "scholarship",
         "deadline",
         "curriculum",
-        "research"
+        "research",
+        "housing"
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,

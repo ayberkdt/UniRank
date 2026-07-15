@@ -127,13 +127,13 @@
       "student_contribution_eur": null,
       "total_academic_cost_eur_per_year_estimated": null,
       "verification_notes": {
-        "en": "No current, programme-specific tuition amount was retained without a checked official publication.",
-        "tr": "Kontrol edilmiş resmî yayın olmadan güncel, programa özgü öğrenim ücreti tutulmadı."
+        "en": "Cambridge's 2026/27 published maintenance estimate for a full-time student without dependants is GBP 19,860 per year. It is a living-cost estimate, separate from programme fees and arrival/visa costs.",
+        "tr": "Cambridge'in 2026/27 için bakmakla yükümlü kişisi olmayan tam zamanlı öğrenciye yönelik yayımladığı geçim gideri tahmini yıllık 19.860 GBP'dir. Bu, program ücretinden ve varış/vize maliyetlerinden ayrı bir yaşam gideri tahminidir."
       },
       "tuition_non_eu_full_program": null,
       "living_cost_usd_per_year_i20": null,
       "living_cost_usd_per_year": null,
-      "living_cost_gbp_per_year": null,
+      "living_cost_gbp_per_year": 19860,
       "living_cost_chf_per_year": null,
       "living_cost_sek_per_year": null,
       "living_cost_dkk_per_year": null,
@@ -154,11 +154,19 @@
       "merit_scholarships": [],
       "tuition_waivers": [],
       "non_eu_eligible": null,
-      "scholarship_deadline": null,
-      "scholarship_application_url": null,
+      "scholarship_deadline": "2026-01-07 (2026/27 main University funding deadline; past published cycle)",
+      "scholarship_application_url": "https://www.postgraduate.study.cam.ac.uk/funding/applying-university-funding",
       "verification_notes": {
-        "en": "No programme-specific scholarship eligibility was verified.",
-        "tr": "Programa özgü burs uygunluğu doğrulanmadı."
+        "en": "The card describes a funding route and dated published deadlines, not a programme-specific award or a promise of funding.",
+        "tr": "Kart, programa özgü bir ödül veya finansman taahhüdü değil, finansman başvuru yolunu ve tarihli yayımlanmış son tarihleri açıklar."
+      },
+      "available_types": [
+        "University postgraduate funding via Applicant Portal",
+        "Course-/college-/department-specific funding found through Cambridge Funding Search"
+      ],
+      "funding_notes": {
+        "en": "Cambridge says eligible applicants can be considered for a range of funds by selecting funding in the Applicant Portal; some funds require separate applications. For 2026/27, the main University deadlines were 2 December 2025 and 7 January 2026, while specific funds can differ. Funding is not guaranteed.",
+        "tr": "Cambridge, uygun adayların Applicant Portal'da finansman seçeneğini işaretleyerek çeşitli fonlar için değerlendirilebileceğini; bazı fonların ayrı başvuru gerektirdiğini belirtir. 2026/27 için ana Üniversite tarihleri 2 Aralık 2025 ve 7 Ocak 2026'ydı; belirli fonların tarihi farklı olabilir. Finansman garanti değildir."
       }
     },
     "living_profile": {
@@ -170,11 +178,14 @@
       "average_room_rent_eur": null,
       "living_risk": "unknown",
       "verification_notes": {
-        "en": "No official local living-cost amount was verified.",
-        "tr": "Resmî yerel yaşam maliyeti tutarı doğrulanmadı."
+        "en": "The official annual estimate is GBP 19,860 (GBP 1,655/month) for a full-time student without dependants. It is based on a postgraduate-spending survey and is not a price guarantee.",
+        "tr": "Resmî yıllık tahmin, bakmakla yükümlü kişisi olmayan tam zamanlı öğrenci için 19.860 GBP (aylık 1.655 GBP)'dir. Lisansüstü öğrenci harcama anketine dayanır ve fiyat garantisi değildir."
       },
       "living_cost_eur_per_month": null,
-      "housing_notes": null,
+      "housing_notes": {
+        "en": "The GBP 895/month accommodation component is Cambridge's 2026/27 median student estimate and includes rent, utilities, furniture and routine maintenance. College and private-rental costs can differ.",
+        "tr": "Aylık 895 GBP konaklama bileşeni, Cambridge'in 2026/27 medyan öğrenci tahminidir; kira, faturalar, mobilya ve rutin bakım dahildir. Kolej ve özel kira maliyetleri farklı olabilir."
+      },
       "average_room_rent_usd_per_month_min": null,
       "average_room_rent_usd_per_month_max": null,
       "average_room_rent_gbp_per_month_min": null,
@@ -187,8 +198,8 @@
       "average_room_rent_dkk_per_month_max": null,
       "monthly_housing_rent_usd_per_month_min": null,
       "monthly_housing_rent_usd_per_month_max": null,
-      "monthly_housing_rent_gbp_per_month_min": null,
-      "monthly_housing_rent_gbp_per_month_max": null,
+      "monthly_housing_rent_gbp_per_month_min": 895,
+      "monthly_housing_rent_gbp_per_month_max": 895,
       "monthly_housing_rent_chf_per_month_min": null,
       "monthly_housing_rent_chf_per_month_max": null,
       "monthly_housing_rent_sek_per_month_min": null,
@@ -196,7 +207,7 @@
       "monthly_housing_rent_dkk_per_month_min": null,
       "monthly_housing_rent_dkk_per_month_max": null,
       "housing_budget_usd_per_year": null,
-      "housing_budget_gbp_per_year": null,
+      "housing_budget_gbp_per_year": 10740,
       "housing_budget_chf_per_year": null,
       "housing_budget_sek_per_year": null,
       "housing_budget_dkk_per_year": null,
@@ -213,7 +224,9 @@
       "housing_budget_sek_per_year_min": null,
       "housing_budget_sek_per_year_max": null,
       "housing_budget_dkk_per_year_min": null,
-      "housing_budget_dkk_per_year_max": null
+      "housing_budget_dkk_per_year_max": null,
+      "monthly_living_cost_gbp_per_month_min": 1655,
+      "monthly_living_cost_gbp_per_month_max": 1655
     },
     "curriculum_profile": {
       "tracks": [
@@ -310,7 +323,7 @@
       "official_admission_page": "https://www.postgraduate.study.cam.ac.uk/courses/directory/egegmpmeg/requirements",
       "official_curriculum_page": null,
       "official_tuition_page": null,
-      "official_scholarship_page": null,
+      "official_scholarship_page": "https://www.postgraduate.study.cam.ac.uk/funding/applying-university-funding",
       "official_department_page": null,
       "source_log": [
         {
@@ -411,9 +424,42 @@
             "en": "Official source checked for the stated fields.",
             "tr": "Resmî kaynak belirtilen alanlar için kontrol edildi."
           }
+        },
+        {
+          "url": "https://www.postgraduate.study.cam.ac.uk/finance/maintenance",
+          "title": "University of Cambridge postgraduate living costs (2026/27)",
+          "source_type": "official_cost_of_living_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "housing",
+            "living"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official 2026/27 maintenance page gives GBP 19,860/year and GBP 1,655/month for a full-time student without dependants, including a GBP 895/month accommodation component.",
+            "tr": "Resmî 2026/27 geçim gideri sayfası, bakmakla yükümlü kişisi olmayan tam zamanlı öğrenci için yıllık 19.860 GBP ve aylık 1.655 GBP; bunun içinde aylık 895 GBP konaklama bileşeni verir."
+          }
+        },
+        {
+          "url": "https://www.postgraduate.study.cam.ac.uk/funding/applying-university-funding",
+          "title": "University of Cambridge: Applying for University funding",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "deadline"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official page explains Applicant Portal and separate-form funding routes and lists the published 2026/27 main University funding deadlines.",
+            "tr": "Resmî sayfa Applicant Portal ve ayrı form finansman yollarını açıklar; yayımlanan 2026/27 ana Üniversite finansman son tarihlerini listeler."
+          }
         }
       ],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-07-15",
       "needs_verification": true,
       "verification_notes": {
         "en": "Only facts supported by the checked official source log are retained; funding and housing eligibility remain programme- and applicant-specific unless explicitly stated.",
@@ -424,13 +470,15 @@
         "language": "high",
         "admission": "medium",
         "tuition": "high",
-        "scholarship": "medium",
+        "scholarship": "high",
         "curriculum": "high",
         "research_profile": "high",
         "industry_ecosystem_profile": "unknown",
         "application_timeline_profile": "high",
-        "living_profile": "unknown"
-      }
+        "living_profile": "high",
+        "housing": "high"
+      },
+      "official_cost_of_living_page": "https://www.postgraduate.study.cam.ac.uk/finance/maintenance"
     },
     "decision_summary": {
       "main_strengths": [
@@ -463,7 +511,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 6,
+      "checked_official_source_count": 8,
       "verified_fields": [
         "program",
         "language",
@@ -472,7 +520,8 @@
         "tuition",
         "scholarship",
         "deadline",
-        "curriculum"
+        "curriculum",
+        "housing"
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
@@ -575,7 +624,7 @@
     "program_url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/advanced-aeronautical-engineering/",
     "program_status": "active",
     "teaching_language": [
-      "Unknown"
+      "English"
     ],
     "eligibility_profile": {
       "eligible_for_non_eu": true,
@@ -591,14 +640,14 @@
     },
     "language_profile": {
       "teaching_language": [
-        "Unknown"
+        "English"
       ],
       "english_required": true,
       "english_level_required": null,
-      "language_risk": "unknown",
+      "language_risk": "low",
       "verification_notes": {
-        "en": "The English-taught course and entry-language requirement are stated on the official course page.",
-        "tr": "İngilizce yürütülen ders ve giriş dil şartı resmî ders sayfasında belirtilir."
+        "en": "Imperial's taught regulations state that, except for specified modules, instruction is in English. The course page requires the standard English admission level and does not identify a non-English module.",
+        "tr": "Imperial'in taught yonetmeligi, belirtilmis moduller disinda egitimin Ingilizce oldugunu soyler. Ders sayfasi standart Ingilizce kabul seviyesini ister ve Ingilizce disi modul belirtmez."
       }
     },
     "cost_profile": {
@@ -660,8 +709,8 @@
     },
     "living_profile": {
       "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
-      "housing_difficulty": null,
-      "living_risk": "unknown",
+      "housing_difficulty": "high",
+      "living_risk": "high",
       "verification_notes": {
         "en": "No current official housing or living-cost amount was verified for this record.",
         "tr": "Bu kayıt için güncel resmî konaklama veya yaşam gideri tutarı doğrulanmadı."
@@ -671,11 +720,14 @@
       "monthly_living_cost_eur_min": null,
       "monthly_living_cost_eur_max": null,
       "living_cost_eur_per_month": null,
-      "housing_notes": null,
+      "housing_notes": {
+        "en": "Imperial's 2026 London guide gives a GBP 1,264 lower to GBP 2,118 upper monthly student-spending range. Its practical planning table gives GBP 1,084/month College-run accommodation or GBP 1,114 private sector; tuition and study materials are excluded.",
+        "tr": "Imperial'in 2026 Londra rehberi aylik 1.264 GBP alt ve 2.118 GBP ust ogrenci harcama araligi verir. Pratik planlama tablosu College-run konut icin 1.084 GBP/ay, ozel sektor icin 1.114 GBP/ay verir; ogrenim ucreti ve ders malzemeleri harictir."
+      },
       "average_room_rent_usd_per_month_min": null,
       "average_room_rent_usd_per_month_max": null,
-      "average_room_rent_gbp_per_month_min": null,
-      "average_room_rent_gbp_per_month_max": null,
+      "average_room_rent_gbp_per_month_min": 1084,
+      "average_room_rent_gbp_per_month_max": 1114,
       "average_room_rent_chf_per_month_min": null,
       "average_room_rent_chf_per_month_max": null,
       "average_room_rent_sek_per_month_min": null,
@@ -710,7 +762,9 @@
       "housing_budget_sek_per_year_min": null,
       "housing_budget_sek_per_year_max": null,
       "housing_budget_dkk_per_year_min": null,
-      "housing_budget_dkk_per_year_max": null
+      "housing_budget_dkk_per_year_max": null,
+      "monthly_living_cost_gbp_per_month_min": 1264,
+      "monthly_living_cost_gbp_per_month_max": 2118
     },
     "curriculum_profile": {
       "tracks": [],
@@ -751,15 +805,21 @@
       "ecosystem_strength_score": null
     },
     "application_timeline_profile": {
-      "academic_year": null,
-      "intake_terms": [],
+      "academic_year": "2026 entry (closed when checked)",
+      "intake_terms": [
+        "September 2026"
+      ],
       "application_rounds": [],
-      "non_eu_deadline": null,
+      "non_eu_deadline": "2026 entry closed (live course page does not display an exact closing date)",
       "eu_deadline": null,
       "scholarship_deadline": null,
       "pre_enrolment_required": null,
-      "timeline_risk": "unknown",
-      "deadline_notes": null
+      "timeline_risk": "high",
+      "deadline_notes": {
+        "en": "The live course page states that 2026 entry is closed. It does not show a calendar-day deadline, so the card preserves this limit and does not invent a 2027 date.",
+        "tr": "Canli ders sayfasi 2026 girisinin kapali oldugunu belirtir. Takvim gunu son tarihi gostermez; kart bu siniri korur ve 2027 tarihi uydurmaz."
+      },
+      "application_deadline": "2026 entry closed (live course page does not display an exact closing date)"
     },
     "student_sentiment_profile": {
       "student_satisfaction_score": null,
@@ -790,10 +850,10 @@
     },
     "source_profile": {
       "official_program_page": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/advanced-aeronautical-engineering/",
-      "official_admission_page": null,
-      "official_curriculum_page": null,
-      "official_tuition_page": null,
-      "official_scholarship_page": null,
+      "official_admission_page": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/advanced-aeronautical-engineering/",
+      "official_curriculum_page": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/advanced-aeronautical-engineering/",
+      "official_tuition_page": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/advanced-aeronautical-engineering/",
+      "official_scholarship_page": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/advanced-aeronautical-engineering/",
       "official_department_page": null,
       "source_log": [
         {
@@ -801,73 +861,112 @@
           "title": "Imperial Advanced Aeronautical Engineering MSc",
           "source_type": "official_program_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-07-15",
           "relevant_fields": [
             "program",
-            "admission",
-            "curriculum"
-          ],
-          "confidence": "high",
-          "notes": ""
-        },
-        {
-          "url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/advanced-aeronautical-engineering/",
-          "title": "Imperial Advanced Aeronautical Engineering MSc fees",
-          "source_type": "official_tuition_page",
-          "access_status": "ok",
-          "last_checked": "2026-07-14",
-          "relevant_fields": [
-            "tuition"
-          ],
-          "confidence": "high",
-          "notes": ""
-        },
-        {
-          "url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/advanced-aeronautical-engineering/",
-          "title": "Imperial Advanced Aeronautical Engineering MSc funding",
-          "source_type": "official_scholarship_page",
-          "access_status": "ok",
-          "last_checked": "2026-07-14",
-          "relevant_fields": [
-            "scholarship"
-          ],
-          "confidence": "medium",
-          "notes": ""
-        },
-        {
-          "url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/advanced-aeronautical-engineering/",
-          "title": "Imperial College London course admission",
-          "source_type": "official_admission_page",
-          "access_status": "ok",
-          "last_checked": "2026-07-14",
-          "relevant_fields": [
-            "admission",
-            "non_eu_eligibility",
             "deadline"
           ],
           "confidence": "high",
           "notes": {
-            "en": "Official source checked for the stated fields.",
-            "tr": "Resmî kaynak belirtilen alanlar için kontrol edildi."
+            "en": "Live course page says 2026 entry is closed without a calendar-day deadline.",
+            "tr": "Canli ders sayfasi takvim gunu olmadan 2026 girisinin kapali oldugunu soyler."
           }
         },
         {
           "url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/advanced-aeronautical-engineering/",
-          "title": "Imperial College London course structure",
+          "title": "Imperial Advanced Aeronautical Engineering admission",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "admission",
+            "non_eu_eligibility"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official course page gives academic requirements, English requirement and overseas-candidate ATAS information.",
+            "tr": "Resmi ders sayfasi akademik kosullari, Ingilizce kosulunu ve yurtdisi aday ATAS bilgisini verir."
+          }
+        },
+        {
+          "url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/advanced-aeronautical-engineering/",
+          "title": "Imperial Advanced Aeronautical Engineering fees",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "tuition"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official course page publishes 2026 home and overseas fees.",
+            "tr": "Resmi ders sayfasi 2026 ev ve yurtdisi ucretlerini yayimlar."
+          }
+        },
+        {
+          "url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/advanced-aeronautical-engineering/",
+          "title": "Imperial Advanced Aeronautical Engineering funding",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "scholarship",
+            "funding"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official course page names the Department of Aeronautics MSc Scholarship route.",
+            "tr": "Resmi ders sayfasi Department of Aeronautics MSc Scholarship yolunu adlandirir."
+          }
+        },
+        {
+          "url": "https://www.imperial.ac.uk/study/courses/postgraduate-taught/advanced-aeronautical-engineering/",
+          "title": "Imperial Advanced Aeronautical Engineering structure",
           "source_type": "official_curriculum_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-07-15",
           "relevant_fields": [
             "curriculum"
           ],
           "confidence": "high",
           "notes": {
-            "en": "Official source checked for the stated fields.",
-            "tr": "Resmî kaynak belirtilen alanlar için kontrol edildi."
+            "en": "Official course page describes course structure and individual research project.",
+            "tr": "Resmi ders sayfasi ders yapisini ve bireysel arastirma projesini aciklar."
+          }
+        },
+        {
+          "url": "https://www.imperial.ac.uk/study/pg/fees-and-funding/living-costs/",
+          "title": "Imperial London living costs 2026",
+          "source_type": "official_cost_of_living_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "housing",
+            "living"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official page provides 2026 monthly planning ranges and accommodation components.",
+            "tr": "Resmi sayfa 2026 aylik planlama araliklari ve konaklama bilesenleri verir."
+          }
+        },
+        {
+          "url": "https://www.imperial.ac.uk/media/imperial-college/administration-and-support-services/registry/academic-governance/public/regulations/2021-22/Single_Set_Taught_Academic_Regulations_2021_22.pdf",
+          "title": "Imperial taught academic regulations",
+          "source_type": "official_university_policy_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "language"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official regulations establish English as instruction language except specified modules.",
+            "tr": "Resmi yonetmelik, belirtilmis moduller disinda egitim dilini Ingilizce yapar."
           }
         }
       ],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-07-15",
       "needs_verification": true,
       "verification_notes": {
         "en": "Only facts supported by the checked official source log are retained; funding and housing eligibility remain programme- and applicant-specific unless explicitly stated.",
@@ -875,13 +974,17 @@
       },
       "field_confidence": {
         "program_basic_info": "high",
-        "language": "unknown",
+        "language": "medium",
         "admission": "medium",
         "tuition": "high",
         "scholarship": "medium",
         "curriculum": "high",
-        "living_profile": "unknown"
-      }
+        "living_profile": "high",
+        "application_timeline_profile": "medium",
+        "housing": "high"
+      },
+      "official_cost_of_living_page": "https://www.imperial.ac.uk/study/pg/fees-and-funding/living-costs/",
+      "official_language_policy_page": "https://www.imperial.ac.uk/media/imperial-college/administration-and-support-services/registry/academic-governance/public/regulations/2021-22/Single_Set_Taught_Academic_Regulations_2021_22.pdf"
     },
     "decision_summary": {
       "main_strengths": [
@@ -906,12 +1009,7 @@
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
-      "remaining_verification_tasks": [
-        {
-          "en": "Add a checked official source for language.",
-          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
-        }
-      ],
+      "remaining_verification_tasks": [],
       "qc_notes": {
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
@@ -919,19 +1017,19 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 5,
+      "checked_official_source_count": 7,
       "verified_fields": [
         "program",
+        "language",
         "admission",
         "non_eu_eligibility",
         "tuition",
         "scholarship",
         "deadline",
-        "curriculum"
+        "curriculum",
+        "housing"
       ],
-      "unverified_critical_fields": [
-        "language"
-      ],
+      "unverified_critical_fields": [],
       "has_checked_source_log": true,
       "audited_at": "2026-07-15"
     },
@@ -1066,15 +1164,15 @@
       "tuition_eur_per_year_min": null,
       "tuition_eur_per_year_max": null,
       "tuition_eur_per_year_estimated": null,
-      "tuition_basis": "needs_verification",
+      "tuition_basis": "2026/27 published overseas annual fee; course has 2–3 year expected duration",
       "regional_tax_eur": null,
       "student_contribution_eur": null,
       "application_fee_eur": null,
       "enrollment_fee_eur": null,
       "total_academic_cost_eur_per_year_estimated": null,
       "verification_notes": {
-        "en": "No current, programme-specific tuition amount was retained without a checked official publication.",
-        "tr": "Kontrol edilmiş resmî yayın olmadan güncel, programa özgü öğrenim ücreti tutulmadı."
+        "en": "Oxford's live 2026/27 course page lists GBP 34,700 overseas tuition per year and GBP 10,470 home tuition per year. The degree is expected to last two to three years, so the card does not multiply this into an assumed programme total.",
+        "tr": "Oxford'un canlı 2026/27 ders sayfası yurtdışı için yıllık 34.700 GBP, ev ücreti için yıllık 10.470 GBP listeler. Derecenin iki ila üç yıl sürmesi beklendiğinden kart bunu varsayımsal bir program toplamına çarpmaz."
       },
       "non_eu_flat_fee": null,
       "source_notes": {
@@ -1092,7 +1190,9 @@
       "living_cost_gbp_per_year": null,
       "living_cost_chf_per_year": null,
       "living_cost_sek_per_year": null,
-      "living_cost_dkk_per_year": null
+      "living_cost_dkk_per_year": null,
+      "tuition_gbp_per_year_min": 34700,
+      "tuition_gbp_per_year_max": 34700
     },
     "scholarship_profile": {
       "regional_scholarship_available": null,
@@ -1225,15 +1325,16 @@
         "October"
       ],
       "application_rounds": [],
-      "non_eu_deadline": null,
+      "non_eu_deadline": "December deadline (same course deadline applies to Oxford scholarship consideration; exact calendar day not displayed on live closed page)",
       "eu_deadline": null,
-      "scholarship_deadline": null,
+      "scholarship_deadline": "December deadline (course page; exact calendar day not displayed; 2026/27 entry closed)",
       "pre_enrolment_required": null,
       "timeline_risk": "high",
       "deadline_notes": {
-        "en": "The official page says the 2026/27 course is closed to applications. Check the next cycle's course page; applicants seeking Oxford scholarships need the course's December deadline.",
-        "tr": "Resmî sayfa 2026/27 programının başvurulara kapalı olduğunu belirtir. Sonraki dönem için ders sayfasını kontrol edin; Oxford bursu isteyen adayların programın Aralık son tarihine uyması gerekir."
-      }
+        "en": "The 2026/27 course is closed. Oxford explicitly says applicants who meet this course's December deadline and receive an offer are considered for Oxford scholarships, but the live closed page does not show a calendar date. The record deliberately preserves that precision limit and does not project a 2027/28 date.",
+        "tr": "2026/27 programı başvurulara kapalıdır. Oxford, bu dersin Aralık son tarihine uyan ve teklif alan adayların Oxford bursları için değerlendirildiğini açıkça belirtir; ancak canlı kapalı sayfa takvim gününü göstermez. Kayıt bu hassasiyet sınırını korur ve 2027/28 tarihi tahmin etmez."
+      },
+      "application_deadline": "December deadline (2026/27 course funding deadline; exact calendar day is not displayed on the live closed course page)"
     },
     "student_sentiment_profile": {
       "student_satisfaction_score": null,
@@ -1270,21 +1371,6 @@
       "official_scholarship_page": null,
       "official_department_page": null,
       "source_log": [
-        {
-          "url": "https://www.ox.ac.uk/admissions/graduate/courses/msc-research-engineering-science",
-          "title": "Oxford MSc by Research in Engineering Science",
-          "source_type": "official_program_page",
-          "access_status": "ok",
-          "last_checked": "2026-07-14",
-          "relevant_fields": [
-            "program",
-            "admission",
-            "curriculum",
-            "deadline"
-          ],
-          "confidence": "high",
-          "notes": ""
-        },
         {
           "url": "https://www.ox.ac.uk/admissions/graduate/courses/msc-research-engineering-science",
           "title": "Oxford MSc by Research Engineering Science fees and living costs",
@@ -1368,9 +1454,29 @@
             "en": "Oxford publishes GBP 1,405–2,105 monthly living costs for a single full-time graduate in 2026–27, including GBP 825–990 monthly accommodation.",
             "tr": "Oxford, 2026–27 için tek ve tam zamanlı bir lisansüstü öğrenciye aylık 1.405–2.105 GBP yaşam maliyeti, bunun içinde aylık 825–990 GBP konaklama yayımlar."
           }
+        },
+        {
+          "url": "https://www.ox.ac.uk/admissions/graduate/courses/msc-research-engineering-science",
+          "title": "University of Oxford MSc by Research in Engineering Science 2026/27",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "program",
+            "tuition",
+            "deadline",
+            "scholarship",
+            "housing",
+            "living"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Live course page confirms the course is closed for 2026/27, publishes annual home/overseas fees and living costs, and refers to the course's December funding deadline without a calendar day.",
+            "tr": "Canlı ders sayfası programın 2026/27 için kapalı olduğunu doğrular; yıllık ev/yurtdışı ücretlerini ve yaşam maliyetlerini yayımlar, fakat dersin Aralık finansman son tarihi için takvim günü belirtmez."
+          }
         }
       ],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-07-15",
       "needs_verification": true,
       "verification_notes": {
         "en": "Only facts supported by the checked official source log are retained; funding and housing eligibility remain programme- and applicant-specific unless explicitly stated.",
@@ -1383,9 +1489,10 @@
         "tuition": "high",
         "scholarship": "medium",
         "curriculum": "high",
-        "application_timeline_profile": "high",
+        "application_timeline_profile": "medium",
         "living_profile": "unknown",
-        "housing": "high"
+        "housing": "high",
+        "deadline": "medium"
       }
     },
     "decision_summary": {
@@ -2002,7 +2109,7 @@
     "program_url": "https://www.cranfield.ac.uk/Courses/Taught/Aerospace-Vehicle-Design",
     "program_status": "active",
     "teaching_language": [
-      "Unknown"
+      "English"
     ],
     "eligibility_profile": {
       "eligible_for_non_eu": true,
@@ -2018,14 +2125,14 @@
     },
     "language_profile": {
       "teaching_language": [
-        "Unknown"
+        "English"
       ],
       "english_required": true,
-      "english_level_required": null,
-      "language_risk": "unknown",
+      "english_level_required": "IELTS Academic 6.5 overall, minimum 5.5 in each component",
+      "language_risk": "low",
       "verification_notes": {
-        "en": "The English-taught course and entry-language requirement are stated on the official course page.",
-        "tr": "İngilizce yürütülen ders ve giriş dil şartı resmî ders sayfasında belirtilir."
+        "en": "Cranfield's official terms say courses are taught in English unless stated otherwise; the Aerospace Vehicle Design page publishes its course-specific English-test thresholds.",
+        "tr": "Cranfield'in resmi kosullari, aksi belirtilmedikce derslerin Ingilizce oldugunu soyler; Aerospace Vehicle Design sayfasi programa ozgu Ingilizce sinav esiklerini yayimlar."
       }
     },
     "cost_profile": {
@@ -2087,8 +2194,8 @@
     },
     "living_profile": {
       "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
-      "housing_difficulty": null,
-      "living_risk": "unknown",
+      "housing_difficulty": "medium",
+      "living_risk": "medium",
       "verification_notes": {
         "en": "No current official housing or living-cost amount was verified for this record.",
         "tr": "Bu kayıt için güncel resmî konaklama veya yaşam gideri tutarı doğrulanmadı."
@@ -2098,11 +2205,14 @@
       "monthly_living_cost_eur_min": null,
       "monthly_living_cost_eur_max": null,
       "living_cost_eur_per_month": null,
-      "housing_notes": null,
+      "housing_notes": {
+        "en": "Cranfield's single-student guide lists monthly accommodation GBP 620-1,400, food GBP 300-400, travel GBP 39-85 and general expenses GBP 300-400. The summed guide range is GBP 1,259-2,285; it excludes childcare and varies with lifestyle.",
+        "tr": "Cranfield'in tek ogrenci rehberi aylik konaklama 620-1.400 GBP, yemek 300-400 GBP, ulasim 39-85 GBP ve genel gider 300-400 GBP listeler. Toplanan rehber araligi 1.259-2.285 GBP'dir; cocuk bakimini kapsamaz ve yasam tarzina gore degisir."
+      },
       "average_room_rent_usd_per_month_min": null,
       "average_room_rent_usd_per_month_max": null,
-      "average_room_rent_gbp_per_month_min": null,
-      "average_room_rent_gbp_per_month_max": null,
+      "average_room_rent_gbp_per_month_min": 620,
+      "average_room_rent_gbp_per_month_max": 1400,
       "average_room_rent_chf_per_month_min": null,
       "average_room_rent_chf_per_month_max": null,
       "average_room_rent_sek_per_month_min": null,
@@ -2137,7 +2247,9 @@
       "housing_budget_sek_per_year_min": null,
       "housing_budget_sek_per_year_max": null,
       "housing_budget_dkk_per_year_min": null,
-      "housing_budget_dkk_per_year_max": null
+      "housing_budget_dkk_per_year_max": null,
+      "monthly_living_cost_gbp_per_month_min": 1259,
+      "monthly_living_cost_gbp_per_month_max": 2285
     },
     "curriculum_profile": {
       "tracks": [],
@@ -2299,9 +2411,40 @@
             "en": "Official source checked for the stated fields.",
             "tr": "Resmî kaynak belirtilen alanlar için kontrol edildi."
           }
+        },
+        {
+          "url": "https://www.cranfield.ac.uk/-/media/files/short_courses_files/short-course-terms-and-conditions.ashx?hash=FA4CD369C6C35CDF62BFE532B3B3132A1D8F6952&la=en",
+          "title": "Cranfield course terms: language of instruction",
+          "source_type": "official_university_policy_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "language"
+          ],
+          "confidence": "medium",
+          "notes": {
+            "en": "Official terms state courses are taught in English unless otherwise specified.",
+            "tr": "Resmi kosullar, aksi belirtilmedikce derslerin Ingilizce oldugunu belirtir."
+          }
+        },
+        {
+          "url": "https://www.cranfield.ac.uk/study/life-on-campus/managing-money",
+          "title": "Cranfield managing money: single-student costs",
+          "source_type": "official_cost_of_living_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "housing",
+            "living"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official guide lists monthly accommodation and other single-student planning components.",
+            "tr": "Resmi rehber aylik konaklama ve diger tek ogrenci planlama bilesenlerini listeler."
+          }
         }
       ],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-07-15",
       "needs_verification": true,
       "verification_notes": {
         "en": "Only facts supported by the checked official source log are retained; funding and housing eligibility remain programme- and applicant-specific unless explicitly stated.",
@@ -2309,13 +2452,16 @@
       },
       "field_confidence": {
         "program_basic_info": "high",
-        "language": "unknown",
+        "language": "medium",
         "admission": "medium",
         "tuition": "high",
         "scholarship": "medium",
         "curriculum": "high",
-        "living_profile": "unknown"
-      }
+        "living_profile": "high",
+        "housing": "high"
+      },
+      "official_language_policy_page": "https://www.cranfield.ac.uk/-/media/files/short_courses_files/short-course-terms-and-conditions.ashx?hash=FA4CD369C6C35CDF62BFE532B3B3132A1D8F6952&la=en",
+      "official_cost_of_living_page": "https://www.cranfield.ac.uk/study/life-on-campus/managing-money"
     },
     "decision_summary": {
       "main_strengths": [
@@ -2340,12 +2486,7 @@
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
-      "remaining_verification_tasks": [
-        {
-          "en": "Add a checked official source for language.",
-          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
-        }
-      ],
+      "remaining_verification_tasks": [],
       "qc_notes": {
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
@@ -2353,19 +2494,19 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 5,
+      "checked_official_source_count": 7,
       "verified_fields": [
         "program",
+        "language",
         "admission",
         "non_eu_eligibility",
         "tuition",
         "scholarship",
         "deadline",
-        "curriculum"
+        "curriculum",
+        "housing"
       ],
-      "unverified_critical_fields": [
-        "language"
-      ],
+      "unverified_critical_fields": [],
       "has_checked_source_log": true,
       "audited_at": "2026-07-15"
     },

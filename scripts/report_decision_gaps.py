@@ -67,14 +67,16 @@ def decision_value_gaps(record: dict[str, Any]) -> list[str]:
         cost.get("tuition_eur_per_year_max"), cost.get("tuition_non_eu_full_program"),
         cost.get("tuition_usd_per_year"), cost.get("tuition_usd_per_year_at_three_quarters"), cost.get("tuition_usd_per_quarter"),
         cost.get("tuition_gbp_per_year"), cost.get("tuition_chf_per_year"),
-        cost.get("tuition_sek_per_year"), cost.get("tuition_dkk_per_year"),
+        cost.get("tuition_gbp_per_year_min"), cost.get("tuition_gbp_per_year_max"),
+        cost.get("tuition_chf_per_year_min"), cost.get("tuition_chf_per_year_max"), cost.get("tuition_chf_per_semester"),
+        cost.get("tuition_sek_per_year"), cost.get("tuition_dkk_per_year"), cost.get("tuition_sek_per_term"),
         record.get("tuition_eur_per_year"), record.get("Cost_Tuition"),
     ):
         gaps.append("tuition_or_fee")
     if not any_present(
         scholarships.get("scholarship_names"), scholarships.get("merit_scholarships"),
         scholarships.get("funding_notes"), scholarships.get("regional_scholarship_name"),
-        scholarships.get("available_types"), scholarships.get("details"),
+        scholarships.get("available_types"), scholarships.get("details"), scholarships.get("funding_status"),
         record.get("Scholarships"),
     ):
         gaps.append("scholarship_or_funding")
@@ -121,7 +123,7 @@ def decision_value_gaps(record: dict[str, Any]) -> list[str]:
         living.get("monthly_housing_rent_dkk_per_month_min"), living.get("monthly_housing_rent_dkk_per_month_max"),
         living.get("monthly_living_cost_usd_per_month_min"), living.get("monthly_living_cost_usd_per_month_max"),
         living.get("monthly_living_cost_gbp_per_month_min"), living.get("monthly_living_cost_gbp_per_month_max"),
-        living.get("monthly_living_cost_chf_per_month_min"), living.get("monthly_living_cost_chf_per_month_max"),
+        living.get("monthly_living_cost_chf_per_month_min"), living.get("monthly_living_cost_chf_per_month_max"), living.get("monthly_living_cost_chf_per_month"),
         living.get("monthly_living_cost_sek_per_month_min"), living.get("monthly_living_cost_sek_per_month_max"),
         living.get("monthly_living_cost_dkk_per_month_min"), living.get("monthly_living_cost_dkk_per_month_max"),
         cost.get("living_cost_usd_per_year_i20"), cost.get("living_cost_usd_per_year"), cost.get("living_cost_usd_per_year_min"), cost.get("living_cost_usd_per_year_max"),

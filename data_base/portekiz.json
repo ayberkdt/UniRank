@@ -151,13 +151,19 @@
     },
     "living_profile": {
       "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
-      "housing_difficulty": null,
+      "housing_difficulty": "high",
       "living_risk": "Bilinmiyor / Resmi Veri Yok",
-      "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
+      "verification_notes": {
+        "en": "No all-in Lisbon total is calculated: the official brochure publishes component costs, and the housing notice warns that private-market pricing changes quickly.",
+        "tr": "Tüm giderleri kapsayan Lizbon toplamı hesaplanmaz: resmî broşür bileşen maliyetlerini yayımlar, konaklama duyurusu ise özel piyasa fiyatlarının hızlı değiştiği uyarısını yapar."
+      },
       "average_room_rent_eur": null,
       "monthly_living_cost_eur_estimated": null,
       "living_cost_eur_per_month": null,
-      "housing_notes": null,
+      "housing_notes": {
+        "en": "Técnico's 2026/27 international-student brochure lists room rent at EUR 350–550/month, average monthly meals around EUR 200 and a monthly transport pass at EUR 40. A separate official housing notice warns that residences are extremely limited and a room can cost EUR 350–500 or more; deposit plus advance rent is normally required.",
+        "tr": "Técnico'nun 2026/27 uluslararası öğrenci broşürü oda kirasını aylık 350–550 EUR, ortalama aylık yemek giderini yaklaşık 200 EUR ve aylık ulaşım kartını 40 EUR olarak listeler. Ayrı bir resmî konaklama duyurusu yurt kontenjanının son derece sınırlı olduğunu; bir odanın 350–500 EUR veya daha fazlasına mal olabileceğini ve genellikle depozito ile peşin kira gerektiğini belirtir."
+      },
       "average_room_rent_usd_per_month_min": null,
       "average_room_rent_usd_per_month_max": null,
       "average_room_rent_gbp_per_month_min": null,
@@ -185,8 +191,8 @@
       "housing_budget_dkk_per_year": null,
       "official_student_housing_budget_sek_per_month_examples": null,
       "official_student_total_budget_sek_per_month_examples": null,
-      "average_room_rent_eur_min": null,
-      "average_room_rent_eur_max": null,
+      "average_room_rent_eur_min": 350,
+      "average_room_rent_eur_max": 550,
       "monthly_living_cost_eur_min": null,
       "monthly_living_cost_eur_max": null,
       "housing_budget_usd_per_year_min": null,
@@ -198,7 +204,9 @@
       "housing_budget_sek_per_year_min": null,
       "housing_budget_sek_per_year_max": null,
       "housing_budget_dkk_per_year_min": null,
-      "housing_budget_dkk_per_year_max": null
+      "housing_budget_dkk_per_year_max": null,
+      "food_cost_eur_month": 200,
+      "public_transport_cost_eur_month": 40
     },
     "curriculum_profile": {
       "tracks": [
@@ -244,17 +252,27 @@
       "ecosystem_strength_score": null
     },
     "application_timeline_profile": {
-      "academic_year": "2026/2027",
-      "intake_terms": [],
-      "application_rounds": [],
-      "non_eu_deadline": null,
+      "academic_year": "2026/2027 published international-student cycle (all calls passed when checked)",
+      "intake_terms": [
+        "September 2026"
+      ],
+      "application_rounds": [
+        "1st call: 2 January–6 February 2026, 17:00 WET",
+        "2nd call: 6 April–22 May 2026, 17:00 WET",
+        "3rd call: 6–17 July 2026, 17:00 WET"
+      ],
+      "non_eu_deadline": "2026-07-17 (third 2026/27 international-student call, 17:00 WET; passed when checked)",
       "eu_deadline": null,
+      "application_deadline": "2026-07-17 (third 2026/27 international-student call, 17:00 WET; passed when checked)",
       "scholarship_deadline": null,
-      "pre_enrolment_required": null,
-      "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
+      "pre_enrolment_required": true,
+      "visa_sensitive_deadline": "2026-07-17 (published third international call; do not rely on it for a future cycle)",
+      "application_result_timing": "Third-call results published by 28 July 2026",
+      "enrollment_deadline": null,
+      "timeline_risk": "high",
       "deadline_notes": {
-        "en": "The checked general Master's page is not an international-student application deadline source. No non-EU programme deadline is shown until Técnico publishes the applicable call.",
-        "tr": "Kontrol edilen genel yuksek lisans sayfasi uluslararasi ogrenci basvuru son tarihi kaynagi degildir. Tecnico gecerli cagrisi yayinlayana kadar AB-disi program son tarihi gosterilmez."
+        "en": "The dates are for the Special Admission Regime for non-EU international students applying to 2026/27. They are recorded as a closed, dated reference only; Técnico has not yet published the next-cycle timetable. EU/national applicants use another admission route.",
+        "tr": "Tarihler, 2026/27 için AB dışı uluslararası öğrencilerin Özel Kabul Rejimine aittir. Yalnızca kapanmış ve tarihli referans olarak kaydedilir; Técnico sonraki dönem takvimini henüz yayımlamamıştır. AB/ulusal adaylar başka bir kabul yolunu kullanır."
       }
     },
     "student_sentiment_profile": {
@@ -295,7 +313,7 @@
     },
     "source_profile": {
       "official_program_page": "https://tecnico.ulisboa.pt/en/education/courses/masters-programmes/aerospace-engineering/",
-      "official_admission_page": "https://tecnico.ulisboa.pt/en/news/masters-programmes-2026-2027-tecnico-opens-2nd-call-for-applications-until-3-july/",
+      "official_admission_page": "https://tecnico.ulisboa.pt/en/education/study-at-tecnico/applications/international-students/",
       "official_curriculum_page": "https://tecnico.ulisboa.pt/en/education/courses/masters-programmes/aerospace-engineering/",
       "official_tuition_page": "https://tecnico.ulisboa.pt/en/education/study-at-tecnico/applications/international-students/",
       "official_scholarship_page": "https://tt.tecnico.ulisboa.pt/en/parcerias-empresariais/aproximacao-ao-talento/premios-de-merito-alunos/premio-de-merito-academico-tekever-em-engenharia-aeroespacial/",
@@ -357,22 +375,71 @@
         },
         {
           "url": "https://tecnico.ulisboa.pt/en/education/study-at-tecnico/applications/international-students/",
-          "title": "International Students — Técnico Lisboa",
-          "source_type": "official_tuition_page",
+          "title": "Técnico Lisboa: International Students applications 2026/27",
+          "source_type": "official_admission_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-07-15",
           "relevant_fields": [
-            "tuition",
-            "non_eu_eligibility"
+            "admission",
+            "non_eu_eligibility",
+            "deadline",
+            "tuition"
           ],
           "confidence": "high",
           "notes": {
-            "en": "The official page is for non-EU international applicants to second-cycle programmes and publishes the EUR 7,000 annual fee.",
-            "tr": "Resmi sayfa ikinci donem programlarina basvuran AB-disi uluslararasi adaylar icindir ve yillik EUR 7.000 ucreti yayinlar."
+            "en": "Official page gives the three 2026/27 international-student application windows, required second-cycle documents, the EUR 100 application fee and EUR 7,000/year international fee.",
+            "tr": "Resmî sayfa üç adet 2026/27 uluslararası öğrenci başvuru dönemini, ikinci döngü gerekli belgelerini, 100 EUR başvuru ücretini ve yıllık 7.000 EUR uluslararası öğrenci ücretini verir."
+          }
+        },
+        {
+          "url": "https://tecnico.ulisboa.pt/en/education/study-at-tecnico/applications/international-students/",
+          "title": "Técnico Lisboa: International Students fees 2026/27",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "tuition"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official page publishes EUR 7,000/year for international students in first and second study cycles, with EUR 2,000 due on vacancy reservation.",
+            "tr": "Resmî sayfa birinci ve ikinci döngüdeki uluslararası öğrenciler için yıllık 7.000 EUR; kontenjan rezervasyonunda 2.000 EUR ödeme yayımlar."
+          }
+        },
+        {
+          "url": "https://aai.tecnico.ulisboa.pt/files/sites/52/brochura_estudantes_internacionais_26_27_set_25.pdf",
+          "title": "Técnico Lisboa International Students 2026/27 brochure: Lisbon cost components",
+          "source_type": "official_cost_of_living_page",
+          "access_status": "pdf",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "housing",
+            "living"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official 2026/27 brochure gives room, flat and residence ranges plus average meals and transport costs.",
+            "tr": "Resmî 2026/27 broşür oda, daire ve yurt aralıkları ile ortalama yemek ve ulaşım maliyetlerini verir."
+          }
+        },
+        {
+          "url": "https://aai.tecnico.ulisboa.pt/files/sites/52/housing-information-en.pdf",
+          "title": "Técnico Lisboa Housing Information: private accommodation in Lisbon",
+          "source_type": "official_housing_page",
+          "access_status": "pdf",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "housing",
+            "living"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official notice says student residences are extremely limited and warns that rooms cost EUR 350–500 or more, usually with a deposit and advance rent.",
+            "tr": "Resmî duyuru öğrenci yurtlarının son derece sınırlı olduğunu; odaların 350–500 EUR veya daha fazlasına mal olduğunu ve genellikle depozito ile peşin kira gerektiğini belirtir."
           }
         }
       ],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-07-15",
       "needs_verification": true,
       "verification_notes": {
         "en": "Programme facts are checked. Current second-cycle international tuition, next international deadline, housing and prospective-student scholarship eligibility were not verified from a direct official source.",
@@ -381,15 +448,19 @@
       "field_confidence": {
         "program_basic_info": "high",
         "language": "high",
-        "admission": "medium",
+        "admission": "high",
         "tuition": "high",
         "scholarship": "Bilinmiyor / Resmi Veri Yok",
         "curriculum": "high",
         "research_profile": "medium",
         "industry_ecosystem_profile": "Bilinmiyor / Resmi Veri Yok",
-        "application_timeline_profile": "Bilinmiyor / Resmi Veri Yok",
-        "living_profile": "Bilinmiyor / Resmi Veri Yok"
-      }
+        "application_timeline_profile": "high",
+        "living_profile": "high",
+        "deadlines": "high",
+        "housing": "high"
+      },
+      "official_cost_of_living_page": "https://aai.tecnico.ulisboa.pt/files/sites/52/brochura_estudantes_internacionais_26_27_set_25.pdf",
+      "official_housing_page": "https://aai.tecnico.ulisboa.pt/files/sites/52/housing-information-en.pdf"
     },
     "decision_summary": {
       "main_strengths": [],
@@ -417,15 +488,17 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 4,
+      "checked_official_source_count": 7,
       "verified_fields": [
         "program",
         "language",
         "admission",
+        "non_eu_eligibility",
         "tuition",
         "scholarship",
         "deadline",
-        "curriculum"
+        "curriculum",
+        "housing"
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
@@ -2631,15 +2704,21 @@
       }
     },
     "scholarship_profile": {
-      "regional_scholarship_available": null,
-      "regional_scholarship_name": null,
+      "regional_scholarship_available": true,
+      "regional_scholarship_name": "UC International Student Awards and Scholarships",
       "merit_scholarships": [],
       "tuition_waivers": [],
-      "non_eu_eligible": null,
+      "non_eu_eligible": true,
       "scholarship_deadline": null,
-      "scholarship_application_url": null,
+      "scholarship_application_url": "https://www.uc.pt/en/academic-services/awards-scholarships-uc/",
       "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
-      "funding_notes": null
+      "funding_notes": {
+        "en": "UC lists merit scholarships and awards regulated for international students. The page is an official availability route, not a promise that every new Aerospace applicant receives an award; each call's rules must be checked.",
+        "tr": "UC, uluslararasi ogrenciler icin duzenlenmis basari burslarini ve odullerini listeler. Sayfa resmi bir uygunluk yoludur; her yeni Aerospace adayina odul vaadi degildir ve her cagrinin kurallari kontrol edilmelidir."
+      },
+      "available_types": [
+        "University of Coimbra international-student merit scholarships and awards (eligibility/call dependent)"
+      ]
     },
     "living_profile": {
       "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
@@ -2695,17 +2774,27 @@
       "ecosystem_strength_score": null
     },
     "application_timeline_profile": {
-      "academic_year": null,
-      "intake_terms": [],
-      "application_rounds": [],
-      "non_eu_deadline": null,
+      "academic_year": "2026/2027 international-student call",
+      "intake_terms": [
+        "Autumn 2026"
+      ],
+      "application_rounds": [
+        "15 December 2025-26 January 2026",
+        "16 February-15 April 2026",
+        "20 May-17 July 2026",
+        "Extra call: 7-14 August 2026"
+      ],
+      "non_eu_deadline": "2026-08-14 (extra international-student call; all listed 2026/27 calls passed when checked)",
       "eu_deadline": null,
       "scholarship_deadline": null,
       "pre_enrolment_required": null,
-      "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
-      "deadline_notes": null,
+      "timeline_risk": "high",
+      "deadline_notes": {
+        "en": "Dates are the official 2026/27 special competition for international students in the Aerospace Engineering Bachelor's degree. They are recorded as a closed reference only.",
+        "tr": "Tarihler Aerospace Engineering lisans programi icin resmi 2026/27 uluslararasi ogrenci ozel yarismasina aittir. Yalnizca kapanmis referans olarak kaydedilir."
+      },
       "winter_deadline": null,
-      "application_deadline": null
+      "application_deadline": "2026-08-14 (extra call; verify future cycle)"
     },
     "student_sentiment_profile": {
       "student_satisfaction_score": null,
@@ -2732,10 +2821,10 @@
     },
     "source_profile": {
       "official_program_page": "https://apps.uc.pt/courses/PT/course/13241",
-      "official_admission_page": null,
+      "official_admission_page": "https://inforestudante.uc.pt/nonio/util/downloadPublicoFicheiroEdital.do?anoLectivo=2026%2F2027&curId=13241&fichId=6636652",
       "official_curriculum_page": "https://apps.uc.pt/courses/PT/programme/13241/2026-2027",
       "official_tuition_page": "https://www.uc.pt/es/gestion-academica/matricula-tasas/internacional/matricula-25-26/",
-      "official_scholarship_page": null,
+      "official_scholarship_page": "https://www.uc.pt/en/academic-services/awards-scholarships-uc/",
       "official_department_page": null,
       "source_log": [
         {
@@ -2813,9 +2902,42 @@
             "en": "Official source checked for the listed fields.",
             "tr": "Resm? kaynak listelenen alanlar i?in kontrol edildi."
           }
+        },
+        {
+          "url": "https://inforestudante.uc.pt/nonio/util/downloadPublicoFicheiroEdital.do?anoLectivo=2026%2F2027&curId=13241&fichId=6636652",
+          "title": "University of Coimbra 2026/27 international Aerospace Engineering call",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "admission",
+            "deadline",
+            "non_eu_eligibility"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official notice gives programme-specific rounds and dates.",
+            "tr": "Resmi duyuru programa ozgu turlari ve tarihleri verir."
+          }
+        },
+        {
+          "url": "https://www.uc.pt/en/academic-services/awards-scholarships-uc/",
+          "title": "University of Coimbra awards and scholarships for international students",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "scholarship",
+            "funding"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official UC page describes its regulated international-student scholarships and awards.",
+            "tr": "Resmi UC sayfasi duzenlenmis uluslararasi ogrenci burslarini ve odullerini aciklar."
+          }
         }
       ],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-07-15",
       "needs_verification": true,
       "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
       "field_confidence": {
@@ -2823,11 +2945,11 @@
         "language": "medium",
         "admission": "medium",
         "tuition": "medium",
-        "scholarship": "unknown",
+        "scholarship": "medium",
         "curriculum": "high",
         "research_profile": "Bilinmiyor / Resmi Veri Yok",
         "industry_ecosystem_profile": "Bilinmiyor / Resmi Veri Yok",
-        "application_timeline_profile": "Bilinmiyor / Resmi Veri Yok",
+        "application_timeline_profile": "high",
         "living_profile": "Bilinmiyor / Resmi Veri Yok",
         "program_status": "high",
         "living": "medium",
@@ -2846,12 +2968,7 @@
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
-      "remaining_verification_tasks": [
-        {
-          "en": "Add a checked official source for scholarship.",
-          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
-        }
-      ],
+      "remaining_verification_tasks": [],
       "qc_notes": {
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
@@ -2859,18 +2976,19 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 4,
+      "checked_official_source_count": 6,
       "verified_fields": [
         "program",
         "language",
         "admission",
+        "non_eu_eligibility",
         "tuition",
+        "scholarship",
+        "deadline",
         "curriculum",
         "housing"
       ],
-      "unverified_critical_fields": [
-        "scholarship"
-      ],
+      "unverified_critical_fields": [],
       "has_checked_source_log": true,
       "audited_at": "2026-07-15"
     },

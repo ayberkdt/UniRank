@@ -839,31 +839,37 @@
         "living_cost_dkk_per_year_max": null
       },
       "scholarship_profile": {
-        "regional_scholarship_available": null,
-        "regional_scholarship_name": null,
+        "regional_scholarship_available": true,
+        "regional_scholarship_name": "Eiffel / Campus France external funding routes",
         "dsu_or_equivalent": "",
         "merit_scholarships": [],
         "tuition_waivers": [],
         "housing_support": false,
         "meal_support": null,
         "cash_grant_possible": true,
-        "non_eu_eligible": null,
+        "non_eu_eligible": true,
         "income_based": false,
         "scholarship_deadline": null,
-        "scholarship_application_url": null,
+        "scholarship_application_url": "https://www.estaca.fr/en/international/come-to-estaca/",
         "funding_competitiveness": "high",
-        "funding_notes": null,
+        "funding_notes": {
+          "en": "ESTACA directs international students to the French-government Eiffel scholarship and Campus France search tool. It does not claim every Post-Master applicant is eligible or funded.",
+          "tr": "ESTACA uluslararasi ogrencileri Fransiz hukumetinin Eiffel bursuna ve Campus France arama aracina yonlendirir. Her Post-Master adayinin uygun veya fonlanmis oldugunu iddia etmez."
+        },
         "verification_notes": {
           "en": "No programme-specific scholarship eligibility was verified from an official source.",
           "tr": "Programa özgü burs uygunluğu resmî bir kaynaktan doğrulanmadı."
-        }
+        },
+        "available_types": [
+          "Eiffel scholarship route and Campus France scholarship search (eligibility depends on nationality and call)"
+        ]
       },
       "living_profile": {
         "city_cost_level": "high",
-        "monthly_living_cost_eur_min": null,
-        "monthly_living_cost_eur_max": null,
+        "monthly_living_cost_eur_min": 800,
+        "monthly_living_cost_eur_max": 1200,
         "monthly_living_cost_eur_estimated": null,
-        "housing_difficulty": null,
+        "housing_difficulty": "high",
         "student_housing_available": true,
         "student_housing_competitiveness": "high",
         "average_room_rent_eur": null,
@@ -871,7 +877,7 @@
         "food_cost_eur_month": null,
         "city_safety_note": "",
         "part_time_work_possibility": "",
-        "living_risk": "unknown",
+        "living_risk": "high",
         "housing_difficulty_score": 85,
         "living_risk_score": 80,
         "verification_notes": {
@@ -879,7 +885,10 @@
           "tr": "Bu kayıt için güncel resmî konaklama veya yaşam gideri tutarı doğrulanmadı."
         },
         "living_cost_eur_per_month": null,
-        "housing_notes": null,
+        "housing_notes": {
+          "en": "Campus France's current national planning guidance gives EUR 800-1,200/month for Paris, while ESTACA states it has no dedicated residence and tells foreign Master students to arrange housing before arrival via its platforms. The range is Paris planning guidance, not an ESTACA rent quote.",
+          "tr": "Campus France'in guncel ulusal planlama rehberi Paris icin aylik 800-1.200 EUR verir; ESTACA ise ozel yurdu olmadigini ve yabanci Master ogrencilerinin varistan once platformlariyla konut ayarlamasini soyler. Aralik ESTACA kira teklifi degil Paris planlama rehberidir."
+        },
         "average_room_rent_usd_per_month_min": null,
         "average_room_rent_usd_per_month_max": null,
         "average_room_rent_gbp_per_month_min": null,
@@ -907,8 +916,8 @@
         "housing_budget_dkk_per_year": null,
         "official_student_housing_budget_sek_per_month_examples": null,
         "official_student_total_budget_sek_per_month_examples": null,
-        "average_room_rent_eur_min": null,
-        "average_room_rent_eur_max": null,
+        "average_room_rent_eur_min": 450,
+        "average_room_rent_eur_max": 800,
         "housing_budget_usd_per_year_min": null,
         "housing_budget_usd_per_year_max": null,
         "housing_budget_gbp_per_year_min": null,
@@ -1071,7 +1080,7 @@
         "official_program_page": "https://www.estaca.fr/en/programs/master-aeronautical-operations-maintenance.html",
         "official_admission_page": "",
         "official_tuition_page": "",
-        "official_scholarship_page": "",
+        "official_scholarship_page": "https://www.estaca.fr/en/international/come-to-estaca/",
         "official_curriculum_page": "",
         "official_department_page": "",
         "official_lab_pages": [],
@@ -1118,9 +1127,56 @@
             ],
             "confidence": "high",
             "notes": ""
+          },
+          {
+            "url": "https://www.estaca.fr/en/international/come-to-estaca/",
+            "title": "ESTACA international students and scholarships",
+            "source_type": "official_scholarship_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-15",
+            "relevant_fields": [
+              "scholarship",
+              "funding"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Official ESTACA page names Eiffel and Campus France search routes without a universal eligibility claim.",
+              "tr": "Resmi ESTACA sayfasi evrensel uygunluk iddiasi olmadan Eiffel ve Campus France yollarini adlandirir."
+            }
+          },
+          {
+            "url": "https://www.estaca.fr/en/campus-life/paris-saclay/housing-dining/",
+            "title": "ESTACA Paris-Saclay housing guidance",
+            "source_type": "official_housing_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-15",
+            "relevant_fields": [
+              "housing"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Official page says there is no dedicated residence and advises early private-market search.",
+              "tr": "Resmi sayfa ozel yurt olmadigini ve erken ozel piyasa aramasini onerir."
+            }
+          },
+          {
+            "url": "https://www.campusfrance.org/en/preparing-budget-student-France",
+            "title": "Campus France student budget preparation",
+            "source_type": "official_cost_of_living_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-15",
+            "relevant_fields": [
+              "living",
+              "housing"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Official French-government guidance supplies planning context; it is not a school-specific price.",
+              "tr": "Resmi Fransiz hukumeti rehberi planlama baglami verir; okula ozgu fiyat degildir."
+            }
           }
         ],
-        "last_verified": "2026-07-14",
+        "last_verified": "2026-07-15",
         "needs_verification": true,
         "verification_notes": {
           "en": "The programme is aerospace-relevant, but current official 2026 tuition, language, admission and housing details were not revalidated in this pass; do not display old values as current.",
@@ -1131,11 +1187,15 @@
           "language": "unknown",
           "admission": "unknown",
           "tuition": "unknown",
-          "scholarship": "unknown",
+          "scholarship": "medium",
           "curriculum": "medium",
           "application_timeline_profile": "medium",
-          "living": "unknown"
-        }
+          "living": "unknown",
+          "living_profile": "medium",
+          "housing": "medium"
+        },
+        "official_housing_page": "https://www.estaca.fr/en/campus-life/paris-saclay/housing-dining/",
+        "official_cost_of_living_page": "https://www.campusfrance.org/en/preparing-budget-student-France"
       },
       "decision_summary": {
         "best_for": [
@@ -1179,12 +1239,7 @@
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
-        "remaining_verification_tasks": [
-          {
-            "en": "Add a checked official source for scholarship.",
-            "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
-          }
-        ],
+        "remaining_verification_tasks": [],
         "qc_notes": {
           "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
           "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
@@ -1193,19 +1248,19 @@
       "qs_ranking": 217,
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 3,
+        "checked_official_source_count": 6,
         "verified_fields": [
           "program",
           "language",
           "admission",
           "non_eu_eligibility",
           "tuition",
+          "scholarship",
           "deadline",
-          "curriculum"
+          "curriculum",
+          "housing"
         ],
-        "unverified_critical_fields": [
-          "scholarship"
-        ],
+        "unverified_critical_fields": [],
         "has_checked_source_log": true,
         "audited_at": "2026-07-15"
       }

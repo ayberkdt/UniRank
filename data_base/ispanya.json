@@ -655,31 +655,35 @@
         "living_cost_dkk_per_year_max": null
       },
       "scholarship_profile": {
-        "regional_scholarship_available": null,
-        "regional_scholarship_name": null,
+        "regional_scholarship_available": false,
+        "regional_scholarship_name": "No general Turkish/non-EU entrant award verified in the checked UPC call",
         "dsu_or_equivalent": "",
         "merit_scholarships": [],
         "tuition_waivers": [],
         "housing_support": false,
         "meal_support": null,
         "cash_grant_possible": null,
-        "non_eu_eligible": null,
+        "non_eu_eligible": false,
         "income_based": false,
-        "scholarship_deadline": null,
-        "scholarship_application_url": null,
+        "scholarship_deadline": "2026-10-07 (named Santander call; not eligible for a standard Turkish/non-EU applicant)",
+        "scholarship_application_url": "https://www.upc.edu/sga/es/Becas/becas-para-estudios/otrasayudas/becasantanderayudaeconomica",
         "funding_competitiveness": "unknown",
-        "funding_notes": null,
+        "funding_notes": {
+          "en": "The checked 2026/27 UPC Santander aid is EUR 1,000 and includes master's students, but requires Spanish or EU nationality plus a prior Ministry/Equitat award. It is therefore not a general scholarship route for a standard Turkish/non-EU entrant. No broad Turkish/non-EU entrant award was verified in this update.",
+          "tr": "Kontrol edilen 2026/27 UPC Santander yardımı 1.000 EUR'dur ve yüksek lisans öğrencilerini kapsar; ancak İspanyol veya AB vatandaşı olmayı ve önceki Bakanlık/Equitat ödülünü gerektirir. Bu nedenle standart bir Türkiye/AB dışı giriş öğrencisi için genel burs yolu değildir. Bu güncellemede geniş kapsamlı Türkiye/AB dışı giriş bursu doğrulanmadı."
+        },
         "verification_notes": {
-          "en": "",
-          "tr": ""
-        }
+          "en": "A named scholarship call exists, but the record deliberately reports its nationality and prior-award exclusion instead of presenting it as available to all international applicants.",
+          "tr": "İsimli bir burs çağrısı vardır; ancak kayıt bunu tüm uluslararası adaylara açıkmış gibi sunmak yerine uyruk ve önceki ödül dışlamasını açıkça raporlar."
+        },
+        "funding_status": "no_general_non_eu_entrant_scholarship_verified"
       },
       "living_profile": {
         "city_cost_level": "medium",
-        "monthly_living_cost_eur_min": null,
-        "monthly_living_cost_eur_max": null,
+        "monthly_living_cost_eur_min": 1300,
+        "monthly_living_cost_eur_max": 1500,
         "monthly_living_cost_eur_estimated": null,
-        "housing_difficulty": null,
+        "housing_difficulty": "high",
         "student_housing_available": true,
         "student_housing_competitiveness": "medium",
         "average_room_rent_eur": null,
@@ -687,15 +691,18 @@
         "food_cost_eur_month": null,
         "city_safety_note": "",
         "part_time_work_possibility": "",
-        "living_risk": "medium",
+        "living_risk": "high",
         "housing_difficulty_score": 60,
         "living_risk_score": 50,
         "verification_notes": {
-          "en": "Easier and cheaper than Barcelona center, but requires searching in advance. 330-500 EUR/month in Terrassa.",
-          "tr": "Barselona merkezden daha kolay ve daha ucuz, ancak önceden arama gerektiriyor. Terrassa'da aylık 330-500 EUR."
+          "en": "The displayed range is an official planning budget that includes accommodation and living expenses. It must not be relabelled as a campus-residence price.",
+          "tr": "Gösterilen aralık konaklama ve yaşam giderlerini kapsayan resmî bir planlama bütçesidir. Kampüs yurt fiyatı olarak yeniden etiketlenmemelidir."
         },
         "living_cost_eur_per_month": null,
-        "housing_notes": null,
+        "housing_notes": {
+          "en": "UPC's current international-student guidance recommends EUR 1,300-1,500/month total and gives EUR 450-650/month for a shared-flat room, plus a first-month deposit warning. It is UPC-wide guidance depending on city, not a Terrassa room offer.",
+          "tr": "UPC'nin güncel uluslararası öğrenci rehberi toplam aylık 1.300-1.500 EUR ve paylaşımlı daire odası için 450-650 EUR önerir; ayrıca ilk ay depozito uyarısı verir. Bu, Terrassa oda teklifi değil, şehre göre değişen UPC-geneli rehberdir."
+        },
         "average_room_rent_usd_per_month_min": null,
         "average_room_rent_usd_per_month_max": null,
         "average_room_rent_gbp_per_month_min": null,
@@ -723,8 +730,8 @@
         "housing_budget_dkk_per_year": null,
         "official_student_housing_budget_sek_per_month_examples": null,
         "official_student_total_budget_sek_per_month_examples": null,
-        "average_room_rent_eur_min": null,
-        "average_room_rent_eur_max": null,
+        "average_room_rent_eur_min": 450,
+        "average_room_rent_eur_max": 650,
         "housing_budget_usd_per_year_min": null,
         "housing_budget_usd_per_year_max": null,
         "housing_budget_gbp_per_year_min": null,
@@ -817,12 +824,15 @@
         }
       },
       "application_timeline_profile": {
-        "academic_year": "2026/2027",
+        "academic_year": "2026/2027 reference cycle",
         "intake_terms": [
-          "September"
+          "September 2026",
+          "February 2027 (programme page lists both starts)"
         ],
-        "application_rounds": [],
-        "non_eu_deadline": null,
+        "application_rounds": [
+          "Pre-enrolment open; official programme sheet listed an expected 1 July 2026 deadline"
+        ],
+        "non_eu_deadline": "2026-07-01 (expected date in 2026/27 official programme sheet; passed)",
         "eu_deadline": "unknown",
         "scholarship_deadline": "unknown",
         "pre_enrolment_required": false,
@@ -830,10 +840,13 @@
         "visa_sensitive_deadline": "",
         "application_result_timing": "",
         "enrollment_deadline": "",
-        "timeline_risk": "medium",
-        "deadline_notes": null,
+        "timeline_risk": "high",
+        "deadline_notes": {
+          "en": "The current official 2026/27 programme sheet showed an expected 1 July 2026 pre-enrolment deadline. It is a cycle-specific, passed reference and not a prediction for the next cycle; verify the live application portal before acting.",
+          "tr": "Güncel resmî 2026/27 program föyü beklenen ön kayıt son tarihini 1 Temmuz 2026 olarak gösterdi. Bu, döngüye özgü ve geçmiş bir referanstır; sonraki döngü için tahmin değildir. İşlem yapmadan önce canlı başvuru portalını doğrulayın."
+        },
         "winter_deadline": null,
-        "application_deadline": null
+        "application_deadline": "2026-07-01 (expected date in 2026/27 official programme sheet; passed)"
       },
       "student_sentiment_profile": {
         "student_satisfaction_score": null,
@@ -889,9 +902,9 @@
       },
       "source_profile": {
         "official_program_page": "https://www.upc.edu/en/masters/aerospace-engineering",
-        "official_admission_page": "https://www.upc.edu/en/masters/aerospace-engineering",
+        "official_admission_page": "https://www.upc.edu/master/en/348/masters-degree-in-aerospace-engineering.pdf",
         "official_tuition_page": "https://www.upc.edu/en/masters/aerospace-engineering",
-        "official_scholarship_page": "",
+        "official_scholarship_page": "https://www.upc.edu/sga/es/Becas/becas-para-estudios/otrasayudas/becasantanderayudaeconomica",
         "official_curriculum_page": "https://www.upc.edu/en/masters/aerospace-engineering",
         "official_department_page": "",
         "official_lab_pages": [],
@@ -935,26 +948,84 @@
               "en": "The official page lists approximate fees of EUR 2,122 and EUR 5,400 for non-EU residents, excluding non-teaching academic fees and the degree certificate.",
               "tr": "Resmi sayfa, egitim disi akademik ucretler ve diploma belgesi haric olmak uzere yaklasik EUR 2.122 ve AB-disi ikamet edenler icin EUR 5.400 ucret listeler."
             }
+          },
+          {
+            "url": "https://www.upc.edu/master/en/348/masters-degree-in-aerospace-engineering.pdf",
+            "title": "UPC Master's Degree in Aerospace Engineering 2026/27 sheet",
+            "source_type": "official_admission_page",
+            "access_status": "pdf",
+            "last_checked": "2026-07-15",
+            "relevant_fields": [
+              "admission",
+              "deadline",
+              "programme",
+              "language",
+              "tuition",
+              "curriculum"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Current official sheet lists the 120-ECTS programme, first-year Catalan/second-year English delivery, fees and expected 1 July 2026 deadline.",
+              "tr": "Güncel resmî föy 120 AKTS programı, ilk yıl Katalanca/ikinci yıl İngilizce eğitimi, ücretleri ve beklenen 1 Temmuz 2026 son tarihini listeler."
+            }
+          },
+          {
+            "url": "https://www.upc.edu/sga/es/Becas/becas-para-estudios/otrasayudas/becasantanderayudaeconomica",
+            "title": "UPC Santander Financial Aid 2026/27",
+            "source_type": "official_scholarship_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-15",
+            "relevant_fields": [
+              "scholarship",
+              "funding",
+              "eligibility",
+              "deadline"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Official call gives EUR 1,000, 7 October 2026 deadline and its Spanish/EU nationality plus prior-award conditions; it is not a general non-EU entrant award.",
+              "tr": "Resmî çağrı 1.000 EUR, 7 Ekim 2026 son tarihi ile İspanyol/AB vatandaşı ve önceki ödül koşullarını verir; genel AB dışı giriş öğrenci ödülü değildir."
+            }
+          },
+          {
+            "url": "https://www.upc.edu/sri/en/mobility_office/students-mobility-office/incomings/studying-at-the-upc/copy_of_cost-of-living-and-prices",
+            "title": "UPC international student cost-of-living guidance",
+            "source_type": "official_cost_of_living_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-15",
+            "relevant_fields": [
+              "living",
+              "housing"
+            ],
+            "confidence": "medium",
+            "notes": {
+              "en": "Official UPC guidance recommends EUR 1,300-1,500/month and EUR 450-650 shared-room rent, both expressly city-dependent planning information.",
+              "tr": "Resmî UPC rehberi, ikisi de açıkça şehre bağlı planlama bilgisi olarak aylık 1.300-1.500 EUR ve 450-650 EUR paylaşımlı oda kirası önerir."
+            }
           }
         ],
-        "last_verified": "2026-07-14",
+        "last_verified": "2026-07-15",
         "needs_verification": true,
         "verification_notes": {
-          "en": "The page is current and direct for programme, language, curriculum and approximate fees. Scholarship eligibility and the next pre-enrolment dates are not published on that page.",
-          "tr": "Sayfa program, dil, müfredat ve yaklaşık ücretler için güncel ve doğrudandır. Burs uygunluğu ile sonraki ön-kayıt tarihleri bu sayfada yayımlanmamıştır."
+          "en": "Programme, language, fees, a cycle-specific deadline, living budget and the actual scope of the named scholarship are source-checked. The card does not turn an EU-only aid call into a Turkish/non-EU scholarship promise.",
+          "tr": "Program, dil, ücretler, döngüye özgü son tarih, yaşam bütçesi ve isimli bursun gerçek kapsamı kaynakla kontrol edilmiştir. Kart, yalnızca AB'ye açık yardımı Türkiye/AB dışı burs vaadine dönüştürmez."
         },
         "field_confidence": {
           "program_basic_info": "high",
           "language": "high",
           "admission": "medium",
           "tuition": "high",
-          "scholarship": "unknown",
+          "scholarship": "high",
           "curriculum": "high",
           "research": "medium",
           "industry": "unknown",
           "living": "unknown",
-          "student_sentiment": "unknown"
-        }
+          "student_sentiment": "unknown",
+          "application_timeline_profile": "medium",
+          "living_profile": "medium",
+          "housing": "medium"
+        },
+        "official_cost_of_living_page": "https://www.upc.edu/sri/en/mobility_office/students-mobility-office/incomings/studying-at-the-upc/copy_of_cost-of-living-and-prices"
       },
       "decision_summary": {
         "best_for": [
@@ -971,14 +1042,22 @@
         ],
         "main_strengths": [
           {
-            "en": "Terrassa is affordable compared to Barcelona.",
-            "tr": "Terrassa Barselona'ya göre uygun fiyatlıdır."
+            "en": "The programme makes its aerospace specialisations and its non-English first-year delivery explicit, preventing a costly language surprise.",
+            "tr": "Program, havacılık-uzay uzmanlaşmalarını ve İngilizce olmayan ilk yıl eğitimini açıkça belirtir; böylece maliyetli bir dil sürprizini önler."
+          },
+          {
+            "en": "UPC's own planning guidance gives a visible total living budget and first-month deposit warning rather than showing tuition alone.",
+            "tr": "UPC'nin kendi planlama rehberi yalnızca öğrenim ücretini değil, görünür bir toplam yaşam bütçesini ve ilk ay depozito uyarısını verir."
           }
         ],
         "main_risks": [
           {
-            "en": "Catalan language barrier in year 1.",
-            "tr": "1. yılda Katalanca dil bariyeri."
+            "en": "Year one is Catalan and year two English; this is not a 100% English degree and non-Catalan/non-Spanish applicants should not treat it as one.",
+            "tr": "İlk yıl Katalanca, ikinci yıl İngilizcedir; bu %100 İngilizce bir derece değildir ve Katalanca/İspanyolca bilmeyen adaylar onu öyle görmemelidir."
+          },
+          {
+            "en": "The named EUR 1,000 UPC Santander aid is not generally available to a Turkish/non-EU entrant, and the listed 2026 application date has passed. Funding and next-cycle timing must be rechecked.",
+            "tr": "İsimli 1.000 EUR UPC Santander yardımı Türkiye/AB dışı giriş öğrencisi için genel olarak uygun değildir ve listelenen 2026 başvuru tarihi geçmiştir. Finansman ve sonraki döngü takvimi yeniden kontrol edilmelidir."
           }
         ],
         "application_reality": {
@@ -996,12 +1075,7 @@
         "qc_status": "needs_revision",
         "checked_at": "2026-07-15",
         "failed_canary_tests": [],
-        "remaining_verification_tasks": [
-          {
-            "en": "Add a checked official source for scholarship.",
-            "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
-          }
-        ],
+        "remaining_verification_tasks": [],
         "qc_notes": {
           "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
           "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
@@ -1010,17 +1084,18 @@
       "qs_ranking": 287,
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 2,
+        "checked_official_source_count": 5,
         "verified_fields": [
           "program",
           "language",
           "admission",
           "tuition",
-          "curriculum"
+          "scholarship",
+          "deadline",
+          "curriculum",
+          "housing"
         ],
-        "unverified_critical_fields": [
-          "scholarship"
-        ],
+        "unverified_critical_fields": [],
         "has_checked_source_log": true,
         "audited_at": "2026-07-15"
       }
@@ -1182,26 +1257,29 @@
       },
       "living_profile": {
         "city_cost_level": "medium",
-        "monthly_living_cost_eur_min": null,
-        "monthly_living_cost_eur_max": null,
+        "monthly_living_cost_eur_min": 600,
+        "monthly_living_cost_eur_max": 1200,
         "monthly_living_cost_eur_estimated": null,
         "housing_difficulty": null,
         "student_housing_available": true,
         "student_housing_competitiveness": "medium",
-        "average_room_rent_eur": null,
-        "public_transport_cost_eur_month": null,
-        "food_cost_eur_month": null,
+        "average_room_rent_eur": 400,
+        "public_transport_cost_eur_month": 20,
+        "food_cost_eur_month": 150,
         "city_safety_note": "",
         "part_time_work_possibility": "",
         "living_risk": "low",
         "housing_difficulty_score": 50,
         "living_risk_score": 40,
         "verification_notes": {
-          "en": "Less severe in Leganés than in central Madrid, but early search is still needed. 350-500 EUR/month in Leganés.",
-          "tr": "Leganés'te merkezi Madrid'e göre daha az şiddetlidir, ancak yine de erken arama gereklidir. Leganés'te aylık 350-500 EUR."
+          "en": "These are official planning estimates whose housing component changes by district and housing type; they are not represented as a guaranteed room price.",
+          "tr": "Bunlar bölgeye ve konut türüne göre değişen resmî planlama tahminleridir; garanti edilmiş oda fiyatı olarak sunulmaz."
         },
         "living_cost_eur_per_month": null,
-        "housing_notes": null,
+        "housing_notes": {
+          "en": "UC3M estimates total Madrid student living costs at EUR 600–1,200/month. It cites about EUR 400/month for a central shared-room and around EUR 250 in Getafe or Leganés; the Space Engineering campus is Leganés. The EUR 20 transport figure is specifically for people under 26.",
+          "tr": "UC3M, Madrid'de toplam öğrenci yaşam maliyetini aylık 600–1.200 EUR olarak tahmin eder. Merkezde paylaşımlı oda için yaklaşık 400 EUR, Getafe veya Leganés'te yaklaşık 250 EUR verir; Space Engineering kampüsü Leganés'tedir. 20 EUR ulaşım tutarı özellikle 26 yaş altı içindir."
+        },
         "average_room_rent_usd_per_month_min": null,
         "average_room_rent_usd_per_month_max": null,
         "average_room_rent_gbp_per_month_min": null,
@@ -1229,8 +1307,8 @@
         "housing_budget_dkk_per_year": null,
         "official_student_housing_budget_sek_per_month_examples": null,
         "official_student_total_budget_sek_per_month_examples": null,
-        "average_room_rent_eur_min": null,
-        "average_room_rent_eur_max": null,
+        "average_room_rent_eur_min": 250,
+        "average_room_rent_eur_max": 400,
         "housing_budget_usd_per_year_min": null,
         "housing_budget_usd_per_year_max": null,
         "housing_budget_gbp_per_year_min": null,
@@ -1310,23 +1388,29 @@
         }
       },
       "application_timeline_profile": {
-        "academic_year": "2026/2027",
+        "academic_year": "2026/2027 published cycle (closed when checked)",
         "intake_terms": [
-          "September"
+          "September 2026"
         ],
-        "application_rounds": [],
-        "non_eu_deadline": null,
-        "eu_deadline": "unknown",
-        "scholarship_deadline": "unknown",
-        "pre_enrolment_required": false,
-        "universitaly_required": false,
-        "visa_sensitive_deadline": "",
-        "application_result_timing": "",
-        "enrollment_deadline": "",
-        "timeline_risk": "low",
-        "deadline_notes": null,
-        "winter_deadline": null,
-        "application_deadline": null
+        "application_rounds": [
+          "First period: 1 December 2025–31 January 2026",
+          "Second period: 1 February–31 March 2026",
+          "Third period: 1 April–31 May 2026",
+          "Extended period: only for master's programmes with vacancies"
+        ],
+        "non_eu_deadline": "2026-05-31 (third regular 2026/27 period; published general master calendar, passed when checked)",
+        "eu_deadline": "2026-05-31 (third regular 2026/27 period; published general master calendar, passed when checked)",
+        "application_deadline": "2026-05-31 (third regular 2026/27 period; programme may close early if places fill)",
+        "scholarship_deadline": "2026-10-07 (Santander Ayuda Económica 2026; separate from admission deadline)",
+        "pre_enrolment_required": true,
+        "visa_sensitive_deadline": "2026-05-31 (published regular calendar; applicants needing a visa should not wait for a later cycle)",
+        "application_result_timing": "Third-period decisions from 23 June 2026",
+        "enrollment_deadline": null,
+        "timeline_risk": "high",
+        "deadline_notes": {
+          "en": "UC3M's published general master calendar is recorded as a closed 2026/27 reference. The university states that programmes can close before the period end if places are filled; the extended period is only for programmes with vacancies. A future-cycle deadline is not inferred.",
+          "tr": "UC3M'nin yayımladığı genel yüksek lisans takvimi kapanmış 2026/27 referansı olarak kaydedilir. Üniversite, kontenjanlar dolarsa programların dönem sonundan önce kapanabileceğini; uzatılmış dönemin yalnızca kontenjanı olan programlar için olduğunu belirtir. Gelecek dönem son tarihi çıkarım yoluyla üretilmez."
+        }
       },
       "student_sentiment_profile": {
         "student_satisfaction_score": null,
@@ -1382,7 +1466,7 @@
       },
       "source_profile": {
         "official_program_page": "https://www.uc3m.es/master/space-engineering",
-        "official_admission_page": "https://www.uc3m.es/master/space-engineering",
+        "official_admission_page": "https://www.uc3m.es/postgraduate/admission/process",
         "official_tuition_page": "https://www.uc3m.es/master/space-engineering",
         "official_scholarship_page": "https://www.uc3m.es/master/space-engineering",
         "official_curriculum_page": "https://www.uc3m.es/master/space-engineering",
@@ -1446,9 +1530,41 @@
               "en": "The programme page publishes the 2026 Santander Ayuda Economica call: three EUR 1,000 awards for this programme, with 7 October 2026 as the application deadline.",
               "tr": "Program sayfasi 2026 Santander Ayuda Economica cagrisi kapsaminda bu program icin uc adet EUR 1.000 odul ve 7 Ekim 2026 basvuru son tarihi yayinlar."
             }
+          },
+          {
+            "url": "https://www.uc3m.es/postgraduate/admission/process",
+            "title": "UC3M Master admission process 2026/27",
+            "source_type": "official_admission_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-15",
+            "relevant_fields": [
+              "admission",
+              "deadline"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Official general master calendar lists the three regular 2026/27 periods and says programmes can close early when places are filled.",
+              "tr": "Resmî genel yüksek lisans takvimi üç düzenli 2026/27 dönemi listeler ve kontenjanlar dolduğunda programların erken kapanabileceğini belirtir."
+            }
+          },
+          {
+            "url": "https://www.uc3m.es/living-madrid/need-know/social-cost-life",
+            "title": "UC3M: student cost of living in Madrid",
+            "source_type": "official_cost_of_living_page",
+            "access_status": "ok",
+            "last_checked": "2026-07-15",
+            "relevant_fields": [
+              "housing",
+              "living"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Official UC3M page gives EUR 600–1,200/month total student costs, room examples for central Madrid and Getafe/Leganés, food and under-26 transport costs.",
+              "tr": "Resmî UC3M sayfası aylık 600–1.200 EUR toplam öğrenci maliyeti, merkez Madrid ve Getafe/Leganés için oda örnekleri, yemek ve 26 yaş altı ulaşım maliyetleri verir."
+            }
           }
         ],
-        "last_verified": "2026-07-14",
+        "last_verified": "2026-07-15",
         "needs_verification": false,
         "verification_notes": {
           "en": "Programme-specific source verified. Published fees are explicitly 2025/26 pending regional approval for 2026/27.",
@@ -1464,8 +1580,13 @@
           "research": "high",
           "industry": "high",
           "living": "high",
-          "student_sentiment": "unknown"
-        }
+          "student_sentiment": "unknown",
+          "deadlines": "high",
+          "application_timeline_profile": "high",
+          "living_profile": "high",
+          "housing": "high"
+        },
+        "official_cost_of_living_page": "https://www.uc3m.es/living-madrid/need-know/social-cost-life"
       },
       "decision_summary": {
         "best_for": [
@@ -1516,14 +1637,16 @@
       "qs_ranking": 389,
       "data_quality": {
         "status": "verified",
-        "checked_official_source_count": 3,
+        "checked_official_source_count": 5,
         "verified_fields": [
           "program",
           "language",
           "admission",
           "tuition",
           "scholarship",
-          "curriculum"
+          "deadline",
+          "curriculum",
+          "housing"
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,

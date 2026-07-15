@@ -1701,20 +1701,20 @@
       "monthly_living_cost_eur_max": null,
       "monthly_living_cost_eur_estimated": null,
       "average_room_rent_eur": null,
-      "average_room_rent_eur_min": null,
-      "average_room_rent_eur_max": null,
+      "average_room_rent_eur_min": 219,
+      "average_room_rent_eur_max": 310,
       "student_housing_available": true,
-      "student_housing_competitiveness": "unknown",
-      "housing_difficulty": "unknown",
-      "living_risk": "high",
+      "student_housing_competitiveness": "high",
+      "housing_difficulty": "high",
+      "living_risk": "medium",
       "housing_sentiment": null,
       "housing_notes": {
-        "en": "Forlì has two ER.GO residence options identified by the University: Sassi Masini in the city centre (120 beds) and Ex-ENAV near the Engineering campus (64 beds, including eight accessible beds). Places require an ER.GO application and are not guaranteed. The University also points students to a checked Accommodation Showcase and local search services. No current official Forlì rent range was found, so the card does not substitute a Bologna price.",
-        "tr": "Üniversitenin belirttiği üzere Forlì'de iki ER.GO yurt seçeneği vardır: şehir merkezindeki Sassi Masini (120 yatak) ve Mühendislik kampüsü yakınındaki Ex-ENAV (sekizi erişilebilir olmak üzere 64 yatak). Yerler ER.GO başvurusu gerektirir ve garantili değildir. Üniversite ayrıca kontrol edilen Accommodation Showcase'e ve yerel arama hizmetlerine yönlendirir. Güncel resmî Forlì kira aralığı bulunmadığı için kart Bologna fiyatı yerine bunu koymaz."
+        "en": "Forli-specific, utilities-included ER.GO 2026/27 ranked-accommodation rates are EUR 219/month for an Ex ENAV double room up to EUR 310/month for a Palazzo Sassi Masini single studio. These are income/merit-ranked residence rates, not a private-market average or a room guarantee.",
+        "tr": "Forli'ye özgü, faturalar dahil ER.GO 2026/27 sıralama usulü yurt ücretleri Ex ENAV çift kişilik oda için ayda 219 EUR ile Palazzo Sassi Masini tek kişilik stüdyo için ayda 310 EUR arasındadır. Bunlar gelir/başarı sıralamasına bağlı yurt ücretidir; özel piyasa ortalaması veya oda garantisi değildir."
       },
       "verification_notes": {
-        "en": "Housing availability and services are official, but no official Forlì room-rent or all-in monthly budget was located. Keeping the price null is intentional rather than an omission filled with a city-level estimate.",
-        "tr": "Konaklama uygunluğu ve hizmetleri resmîdir; ancak resmî Forlì oda kirası veya tüm kalemleri içeren aylık bütçe bulunamadı. Fiyatın null tutulması kasıtlıdır; şehir düzeyi tahminle doldurulmaz."
+        "en": "This replaces the former price gap with current, city-specific official residence prices. Total monthly living cost remains unknown because the source prices housing only.",
+        "tr": "Bu güncelleme önceki fiyat boşluğunu güncel, şehre özgü resmî yurt ücretleriyle doldurur. Kaynak yalnızca konaklamayı fiyatladığı için toplam aylık yaşam gideri bilinmiyor kalır."
       }
     },
     "curriculum_profile": {
@@ -1803,7 +1803,7 @@
       "official_department_page": "needs_verification",
       "official_lab_pages": [],
       "third_party_sources": [],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-07-15",
       "needs_verification": false,
       "verification_notes": {
         "en": "Application dates and housing access are source-checked. The card retains the Forlì price gap as unknown instead of filling it with Bologna-city estimates.",
@@ -1818,10 +1818,10 @@
         "curriculum": "high",
         "research": "medium",
         "industry": "medium",
-        "living": "medium",
+        "living": "high",
         "application_timeline_profile": "high",
         "housing": "high",
-        "living_profile": "unknown",
+        "living_profile": "high",
         "deadlines": "high"
       },
       "source_log": [
@@ -1933,14 +1933,31 @@
             "en": "Current University housing page identifies Forlì's Sassi Masini and Ex-ENAV residences, ER.GO application route, Accommodation Showcase and local search support, but does not publish a Forlì rent amount.",
             "tr": "Güncel Üniversite konaklama sayfası Forlì'nin Sassi Masini ve Ex-ENAV yurtlarını, ER.GO başvuru yolunu, Accommodation Showcase'i ve yerel arama desteğini tanımlar; ancak Forlì kira tutarı yayımlamaz."
           }
+        },
+        {
+          "url": "https://www.er-go.it/cosa-fare-per/bandi-di-concorso/leggi-il-bando/bando-di-concorso-benefici-dsu-a-a-2026_2027.pdf/%40%40display-file/file/bando-di-concorso-benefici-dsu-a-a-2026_2027.pdf",
+          "title": "ER.GO 2026/27 accommodation rates — Forli",
+          "source_type": "official_housing_page",
+          "access_status": "pdf",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "housing",
+            "housing_cost",
+            "living"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "The official 2026/27 ER.GO call lists utilities-included Forli residence rates: EUR 219 double room to EUR 310 single studio under ranked access; eligibility and assignment are not guaranteed.",
+            "tr": "Resmî 2026/27 ER.GO çağrısı, sıralama usulünde faturalar dahil Forli yurt ücretlerini 219 EUR çift kişilik odadan 310 EUR tek kişilik stüdyoya kadar listeler; uygunluk ve yerleşim garanti değildir."
+          }
         }
       ],
-      "official_housing_page": "https://www.unibo.it/en/study/life-at-university-and-in-the-city/housing-and-residences/housing?scope=Current"
+      "official_housing_page": "https://www.er-go.it/cosa-fare-per/bandi-di-concorso/leggi-il-bando/bando-di-concorso-benefici-dsu-a-a-2026_2027.pdf/%40%40display-file/file/bando-di-concorso-benefici-dsu-a-a-2026_2027.pdf"
     },
     "qs_ranking": 154,
     "data_quality": {
       "status": "verified",
-      "checked_official_source_count": 6,
+      "checked_official_source_count": 7,
       "verified_fields": [
         "program",
         "language",
@@ -2005,16 +2022,16 @@
       ],
       "main_risks": [
         {
-          "en": "Forlì rent is unknown from the official sources checked. Do not use the University of Bologna city-centre price examples for this Romagna-campus programme; budget independently until a Forlì offer is secured.",
-          "tr": "Kontrol edilen resmî kaynaklarda Forlì kirası bilinmiyor. Bologna merkez fiyat örneklerini bu Romagna kampüsü programı için kullanmayın; Forlì teklifi güvenceye alınana kadar bağımsız bütçe yapın."
-        },
-        {
           "en": "The final 2026 Intake III deadline is 10 September, but a non-EU applicant should not treat the final round as a safe visa schedule because Universitaly validation and August office closures create timing risk.",
           "tr": "Son 2026 Intake III son tarihi 10 Eylül'dür; ancak AB dışı aday Universitaly doğrulaması ve Ağustos ofis kapanışları zamanlama riski yarattığından son turu güvenli vize takvimi saymamalıdır."
         },
         {
           "en": "Italian B2 is a meaningful requirement or study-plan obligation despite English delivery. It must not be hidden by the English programme label.",
           "tr": "Program İngilizce yürütülse de İtalyanca B2 anlamlı bir koşul veya ders planı yükümlülüğüdür. İngilizce program etiketiyle gizlenmemelidir."
+        },
+        {
+          "en": "The EUR 219-310/month figures are ER.GO ranked-residence prices with utilities, not an open-market rent prediction. Secure eligibility and an actual assignment before relying on them.",
+          "tr": "Aylık 219-310 EUR tutarlar faturalar dahil ER.GO sıralama-yurt ücretleridir; serbest piyasa kira tahmini değildir. Bunlara güvenmeden önce uygunluğu ve gerçek yerleşimi güvenceye alın."
         }
       ],
       "best_for": [
