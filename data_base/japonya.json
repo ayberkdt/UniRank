@@ -1792,7 +1792,34 @@
     },
     {
         "Country": "Japan",
-        "City": "şokohama",
+    "City": "Yokohama",
+    "location": {
+      "country": "Japan",
+      "city": "Yokohama",
+      "latitude": 35.43333,
+      "longitude": 139.65,
+      "locationConfidence": "city",
+      "source": {
+        "url": "https://www.keio.ac.jp/en/about/campus/yagami/",
+        "source_type": "official_campus_page",
+        "title": "Keio University Yagami Campus",
+        "access_status": "ok",
+        "last_checked": "2026-07-15",
+        "relevant_fields": ["location"],
+        "confidence": "medium",
+        "notes": {
+          "en": "Official Keio campus page confirms the Yokohama campus. The displayed point is city-level, not a campus pin.",
+          "tr": "Resmî Keio kampüs sayfası Yokohama kampüsünü doğrular. Gösterilen nokta kampüs iğnesi değil, şehir seviyesindedir."
+        },
+        "coordinate_reference": {
+          "url": "https://geocoding-api.open-meteo.com/v1/search?name=Yokohama%2C%20Japan&count=1&language=en&format=json",
+          "source_type": "third_party_geocoding_reference",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "confidence": "medium"
+        }
+      }
+    },
         "State_Region": "Kanagawa",
         "Uni_ID": "keio-u",
         "University_Name": "Keio University",

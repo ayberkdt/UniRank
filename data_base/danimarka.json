@@ -5,6 +5,28 @@
     "university": "Technical University of Denmark (DTU)",
     "university_native_name": "Danmarks Tekniske Universitet",
     "city": "Kongens Lyngby",
+    "location": {
+      "country": "Denmark",
+      "city": "Kongens Lyngby",
+      "latitude": 55.77044,
+      "longitude": 12.50378,
+      "locationConfidence": "city",
+      "source": {
+        "url": "https://geocoding-api.open-meteo.com/v1/search?name=Kongens%20Lyngby%2C%20Denmark&count=1&language=en&format=json",
+        "source_type": "third_party_geocoding_reference",
+        "title": "Open-Meteo city geocoding — Kongens Lyngby",
+        "access_status": "ok",
+        "last_checked": "2026-07-15",
+        "relevant_fields": [
+          "location"
+        ],
+        "confidence": "medium",
+        "notes": {
+          "en": "City-level map reference only; it is not an exact campus coordinate.",
+          "tr": "Yalnızca şehir seviyesi harita referansıdır; kesin kampüs koordinatı değildir."
+        }
+      }
+    },
     "region": "Capital Region of Denmark",
     "program_name": "MSc in Earth and Space Physics and Engineering",
     "program_native_name": "MSc in Earth and Space Physics and Engineering",
@@ -177,7 +199,8 @@
         "scholarship": "high",
         "curriculum": "high",
         "application_timeline_profile": "high",
-        "living": "high"
+        "living": "high",
+        "location": "medium"
       },
       "source_log": [
         {
