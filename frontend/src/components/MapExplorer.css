@@ -10,6 +10,9 @@
   box-shadow: 0 26px 62px rgba(24, 63, 74, .18), 0 3px 0 #b8deda;
 }
 
+body.map-fullscreen-active { overflow: hidden; }
+.map-explorer.is-fullscreen { position: fixed; inset: clamp(10px, 2vw, 28px); z-index: 2500; height: auto; min-height: 0; border-radius: 24px; box-shadow: 0 28px 80px rgba(12, 31, 41, .34); }
+
 .unirank-map {
   width: 100%;
   height: 100%;
@@ -112,18 +115,17 @@
 .popup-actions { display: flex; align-items: center; gap: 7px; margin-top: 11px; }
 .popup-actions button { padding: 7px 8px; border: 0; border-radius: 8px; background: #59b85c; box-shadow: 0 2px 0 #419747; color: white; font-size: 9px; font-weight: 1000; }.popup-actions .popup-compare { background: #eff5f1; box-shadow: none; color: #4c7758; }
 
-.map-toolbar { position: absolute; z-index: 700; top: 13px; right: 13px; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 7px; max-width: min(550px, calc(100% - 190px)); }
+.map-toolbar { position: absolute; z-index: 700; top: 13px; right: 13px; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 7px; max-width: calc(100% - 26px); }
 .map-focus,
 .map-compare-focus,
+.map-fullscreen,
 .basemap-toggle,
-.map-reading-card,
 .map-selection-card { border: 1px solid rgba(200,227,215,.9); border-radius: 12px; background: rgba(255,254,249,.88); box-shadow: 0 8px 22px rgba(38,82,60,.15); backdrop-filter: blur(14px); color: #496750; }
-.map-focus, .map-compare-focus { display: inline-flex; align-items: center; gap: 6px; padding: 9px 10px; font-size: 10px; font-weight: 1000; }
-.map-focus:hover, .map-compare-focus:hover:not(:disabled) { background: #edf9e9; color: #398741; }
+.map-focus, .map-compare-focus, .map-fullscreen { display: inline-flex; align-items: center; gap: 6px; padding: 9px 10px; font-size: 10px; font-weight: 1000; }
+.map-focus:hover, .map-compare-focus:hover:not(:disabled), .map-fullscreen:hover { background: #edf9e9; color: #398741; }
 .map-compare-focus { color: #36536b; }.map-compare-focus:disabled { cursor: not-allowed; opacity: .52; }
+.map-fullscreen { color: #46627a; }
 .basemap-toggle { display: inline-flex; padding: 3px; gap: 2px; }.basemap-toggle button { display: inline-flex; align-items: center; gap: 4px; padding: 6px 8px; border: 0; border-radius: 8px; background: transparent; color: #668079; font-size: 9px; font-weight: 1000; }.basemap-toggle button:hover { color: #398741; }.basemap-toggle button.is-active { background: linear-gradient(135deg, #dff5e0, #e7f6ec); box-shadow: inset 0 0 0 1px rgba(101,177,107,.22); color: #367d41; }
-
-.map-reading-card { position: absolute; z-index: 700; top: 13px; left: 13px; display: flex; align-items: center; gap: 8px; padding: 8px 12px 8px 8px; }.map-reading-card > span { display: grid; width: 29px; height: 29px; place-items: center; border-radius: 9px 9px 9px 3px; background: linear-gradient(135deg, #5ab5dd, #61b96a); color: white; }.map-reading-card small, .map-reading-card strong { display: block; }.map-reading-card small { color: #6c8778; font-size: 7px; font-weight: 1000; letter-spacing: .1em; }.map-reading-card strong { margin-top: 1px; color: #385442; font-size: 10px; font-weight: 1000; }
 
 .map-selection-card { position: absolute; z-index: 700; right: 13px; bottom: 61px; display: grid; grid-template-columns: 31px minmax(0, 1fr) 18px; align-items: center; gap: 8px; width: min(260px, calc(100% - 26px)); padding: 8px; }.map-selection-card > button { align-self: start; padding: 1px; border: 0; background: transparent; color: #82958a; }.selection-marker { display: grid; width: 31px; height: 31px; place-items: center; border-radius: 9px 9px 9px 4px; color: white; }.selection-marker--exact { background: #55af5a; }.selection-marker--city { background: #e5a437; }.map-selection-card div { min-width: 0; }.map-selection-card small, .map-selection-card strong, .map-selection-card em { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }.map-selection-card small { color: #6d8e76; font-size: 7px; font-weight: 1000; letter-spacing: .08em; text-transform: uppercase; }.map-selection-card strong { margin-top: 2px; color: #3b5443; font-size: 10px; font-weight: 1000; }.map-selection-card em { margin-top: 2px; color: #70867a; font-size: 8px; font-style: normal; font-weight: 800; }
 
@@ -133,10 +135,10 @@
 
 @media (max-width: 800px) {
   .map-explorer { height: 545px; min-height: 0; border-radius: 18px; }
+  .map-explorer.is-fullscreen { inset: 8px; border-radius: 18px; }
   .map-toolbar { top: 10px; right: 10px; max-width: calc(100% - 60px); gap: 5px; }
-  .map-focus, .map-compare-focus { width: 33px; height: 33px; justify-content: center; padding: 0; font-size: 0; }.map-focus svg, .map-compare-focus svg { width: 15px; }
+  .map-focus, .map-compare-focus, .map-fullscreen { width: 33px; height: 33px; justify-content: center; padding: 0; font-size: 0; }.map-focus svg, .map-compare-focus svg, .map-fullscreen svg { width: 15px; }
   .basemap-toggle button { font-size: 0; }.basemap-toggle button svg { width: 15px; }
-  .map-reading-card { top: 10px; left: 10px; padding-right: 8px; }.map-reading-card div { display: none; }
   .map-key { gap: 6px; padding: 7px; }.map-key span { font-size: 8px; }
   .map-selection-card { right: 10px; bottom: 57px; }.city-label { margin-top: -43px; font-size: 8px; }.map-pin { transform: rotate(-45deg) scale(.88); }.leaflet-marker-icon:hover .map-pin { transform: rotate(-45deg) translate(-3px, -3px) scale(.96); }
 }

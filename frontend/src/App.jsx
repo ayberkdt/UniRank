@@ -133,6 +133,7 @@ function App() {
   const [englishOnly, setEnglishOnly] = useState(Boolean(initialFilters.englishOnly))
   const [exactOnly, setExactOnly] = useState(Boolean(initialFilters.exactOnly))
   const [showLabels, setShowLabels] = useState(initialFilters.showLabels !== false)
+  const [showMapContext, setShowMapContext] = useState(initialFilters.showMapContext !== false)
   const [selectedProgram, setSelectedProgram] = useState(null)
   const [comparedPrograms, setComparedPrograms] = useState([])
 
@@ -186,8 +187,9 @@ function App() {
       englishOnly,
       exactOnly,
       showLabels,
+      showMapContext,
     }))
-  }, [search, country, englishOnly, exactOnly, showLabels])
+  }, [search, country, englishOnly, exactOnly, showLabels, showMapContext])
 
   const countries = useMemo(() => Array.from(new Set(
     programs.map((program) => text(program.location?.country || program.country)).filter(Boolean),
@@ -328,6 +330,19 @@ function App() {
             <div className={unmappedUniversities.length ? 'stats-pending' : ''}><strong>{unmappedUniversities.length}</strong><span>Konum bekliyor</span></div>
           </div>
 
+          <div className="map-context-strip">
+            <label className="map-context-control">
+              <span className="map-context-icon"><MapIcon size={17} /></span>
+              <span><strong>Harita bağlamı</strong><small>Pastel ülke renkleri, sınırlar ve yer adları</small></span>
+              <input checked={showMapContext} onChange={(event) => setShowMapContext(event.target.checked)} type="checkbox" />
+              <i aria-hidden="true" />
+            </label>
+            <div className="map-guidance-card">
+              <MapPinned size={18} />
+              <p><strong>Konumu nasıl oku?</strong> Kampüs işareti hassas konumu; şehir seviyesi işareti ise yalnızca şehir bağlamını gösterir.</p>
+            </div>
+          </div>
+
           {status === 'loading' && <div className="map-state"><span className="loading-orb" /> Harita verisi hazırlanıyor…</div>}
           {status === 'error' && (
             <div className="map-state map-state--error">
@@ -338,6 +353,7 @@ function App() {
             <MapExplorer
               programs={mappedUniversities}
               showLabels={showLabels}
+              showMapContext={showMapContext}
               selectedProgram={selectedProgram}
               comparedPrograms={comparedPrograms}
               onSelectProgram={selectProgram}

@@ -12,7 +12,7 @@ import {
   useMapEvents,
   ZoomControl,
 } from 'react-leaflet'
-import { Focus, Map as MapIcon, MapPin, Route, Satellite, X } from 'lucide-react'
+import { Focus, Map as MapIcon, MapPin, Maximize2, Minimize2, Route, Satellite, X } from 'lucide-react'
 import './MapExplorer.css'
 
 const WORLD_BORDERS_URL = 'https://cdn.jsdelivr.net/gh/johan/world.geo.json@master/countries.geo.json'
@@ -20,6 +20,7 @@ const BASEMAPS = {
   street: {
     label: 'Harita',
     url: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+    cleanUrl: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png',
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>',
   },
   satellite: {
@@ -29,22 +30,18 @@ const BASEMAPS = {
   },
 }
 
-const COUNTRY_TONES = [
-  { fill: '#ffe8a8', stroke: '#cf9731', accent: '#dfaa3f' },
-  { fill: '#ccebc8', stroke: '#61a46c', accent: '#55a763' },
-  { fill: '#cce8f8', stroke: '#5d9cc0', accent: '#5aa4ce' },
-  { fill: '#e5d5f5', stroke: '#9875b5', accent: '#9c75bd' },
-  { fill: '#ffd8cf', stroke: '#ca7c69', accent: '#d88270' },
-  { fill: '#cef0e8', stroke: '#55a794', accent: '#53ab99' },
-  { fill: '#f7dfc4', stroke: '#c98e50', accent: '#d59652' },
-  { fill: '#d9e1f6', stroke: '#778bc3', accent: '#738bc4' },
-]
+const PASTEL_HUES = [8, 20, 34, 47, 61, 77, 91, 106, 122, 139, 157, 173, 190, 207, 222, 238, 254, 270, 286, 302, 318, 334, 348]
 
 function countryTone(value) {
   const name = String(value || 'world')
   let hash = 0
   for (let index = 0; index < name.length; index += 1) hash = ((hash << 5) - hash) + name.charCodeAt(index)
-  return COUNTRY_TONES[Math.abs(hash) % COUNTRY_TONES.length]
+  const hue = PASTEL_HUES[Math.abs(hash) % PASTEL_HUES.length]
+  return {
+    fill: `hsl(${hue} 79% 86%)`,
+    stroke: `hsl(${hue} 55% 58%)`,
+    accent: `hsl(${hue} 62% 50%)`,
+  }
 }
 
 function geoCountryName(feature) {
@@ -200,6 +197,17 @@ function MapViewport({ points, selectedProgram, comparedPrograms, viewRequest })
   return null
 }
 
+function MapResizer({ isFullscreen }) {
+  const map = useMap()
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => map.invalidateSize({ pan: false }), 90)
+    return () => window.clearTimeout(timer)
+  }, [map, isFullscreen])
+
+  return null
+}
+
 function CountryBorders() {
   const [borders, setBorders] = useState(null)
   const map = useMap()
@@ -237,10 +245,10 @@ function CountryBorders() {
         const tone = countryTone(geoCountryName(feature))
         return {
           color: tone.stroke,
-          weight: 0.9,
-          opacity: 0.35,
+          weight: 1.2,
+          opacity: 0.9,
           fillColor: tone.fill,
-          fillOpacity: 0.16,
+          fillOpacity: 0.52,
           lineCap: 'round',
           lineJoin: 'round',
         }
@@ -344,14 +352,28 @@ function MapMarkers({ points, showLabels, selectedProgram, comparedPrograms, onS
   </>
 }
 
-export default function MapExplorer({ programs, showLabels, selectedProgram, comparedPrograms, onSelectProgram, onToggleCompare }) {
+export default function MapExplorer({ programs, showLabels, showMapContext, selectedProgram, comparedPrograms, onSelectProgram, onToggleCompare }) {
   const [basemap, setBasemap] = useState('street')
+  const [isFullscreen, setIsFullscreen] = useState(false)
   const [viewRequest, setViewRequest] = useState({ mode: 'all', id: 0 })
   const points = useMemo(() => groupUniversitiesByCoordinate(programs), [programs])
 
   useEffect(() => {
     if (selectedProgram) setViewRequest((current) => ({ mode: 'detail', id: current.id + 1 }))
   }, [selectedProgram])
+
+  useEffect(() => {
+    if (!isFullscreen) return undefined
+    const onKeyDown = (event) => {
+      if (event.key === 'Escape') setIsFullscreen(false)
+    }
+    document.body.classList.add('map-fullscreen-active')
+    window.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.body.classList.remove('map-fullscreen-active')
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [isFullscreen])
 
   const focusAll = () => {
     onSelectProgram(null)
@@ -361,7 +383,7 @@ export default function MapExplorer({ programs, showLabels, selectedProgram, com
   const selectedPrecision = selectedProgram ? precision(selectedProgram) : null
 
   return (
-    <div className="map-explorer">
+    <div className={`map-explorer ${isFullscreen ? 'is-fullscreen' : ''}`}>
       <MapContainer
         className={`unirank-map unirank-map--${basemap}`}
         center={[34, 15]}
@@ -372,22 +394,19 @@ export default function MapExplorer({ programs, showLabels, selectedProgram, com
         worldCopyJump
       >
         <TileLayer
-          key={basemap}
+          key={`${basemap}-${showMapContext}`}
           attribution={BASEMAPS[basemap].attribution}
-          url={BASEMAPS[basemap].url}
+          url={basemap === 'street' && !showMapContext ? BASEMAPS.street.cleanUrl : BASEMAPS[basemap].url}
           subdomains="abcd"
           maxZoom={19}
         />
-        {basemap === 'street' && <CountryBorders />}
+        {basemap === 'street' && showMapContext && <CountryBorders />}
         <MapViewport points={points} selectedProgram={selectedProgram} comparedPrograms={comparedPrograms} viewRequest={viewRequest} />
+        <MapResizer isFullscreen={isFullscreen} />
         <ZoomControl position="bottomright" />
         <MapMarkers points={points} showLabels={showLabels} selectedProgram={selectedProgram} comparedPrograms={comparedPrograms} onSelectProgram={onSelectProgram} onToggleCompare={onToggleCompare} />
       </MapContainer>
 
-      <div className="map-reading-card">
-        <span><MapPin size={17} /></span>
-        <div><small>KONUM OKUMASI</small><strong>İğneye dokun, sonra çevreyi incele.</strong></div>
-      </div>
       <div className="map-toolbar" aria-label="Harita kontrolleri">
         <div className="basemap-toggle" aria-label="Harita katmanı">
           <button className={basemap === 'street' ? 'is-active' : ''} type="button" onClick={() => setBasemap('street')}><MapIcon size={14} /> Harita</button>
@@ -395,6 +414,7 @@ export default function MapExplorer({ programs, showLabels, selectedProgram, com
         </div>
         <button type="button" className="map-focus" onClick={focusAll}><Focus size={15} /> Tüm sonuçlar</button>
         <button type="button" className="map-compare-focus" disabled={comparedPrograms.length === 0} onClick={focusCompared}><Route size={15} /> Kıyaslamaya odaklan</button>
+        <button type="button" className="map-fullscreen" onClick={() => setIsFullscreen((current) => !current)} aria-pressed={isFullscreen}>{isFullscreen ? <Minimize2 size={16} /> : <Maximize2 size={16} />}<span>{isFullscreen ? 'Tam ekrandan çık' : 'Tam ekran'}</span></button>
       </div>
       {selectedProgram && <div className="map-selection-card">
         <button type="button" onClick={() => onSelectProgram(null)} aria-label="Konum kartını kapat"><X size={14} /></button>
