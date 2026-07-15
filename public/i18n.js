@@ -102,7 +102,7 @@ window.I18N = {
     preset_career: "Career-Oriented",
     preset_custom: "Custom",
 
-    w_academic: "Academic / Field Fit",
+    w_academic: "Academic Strength",
     w_eligibility: "Eligibility & Language",
     w_cost: "Cost & Funding",
     w_career: "Career / Research",
@@ -369,7 +369,7 @@ window.I18N = {
     preset_career: "Kariyer Odaklı",
     preset_custom: "Özel",
 
-    w_academic: "Akademik / Alan Uyumu",
+    w_academic: "Akademik Güç",
     w_eligibility: "Uygunluk ve Dil",
     w_cost: "Maliyet ve Fonlama",
     w_career: "Kariyer / Araştırma",

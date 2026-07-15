@@ -41,6 +41,45 @@ function bounded(value, fallback = 50) {
   return number === null ? fallback : Math.min(100, Math.max(0, number));
 }
 
+function stringEntries(value) {
+  if (Array.isArray(value)) return value.filter((item) => typeof item === "string" && item.trim());
+  return typeof value === "string" && value.trim() ? [value] : [];
+}
+
+function documentedAcademicStrength(record, normalized, hasCurriculumEvidence, hasResearchEvidence) {
+  const research = record?.research_profile || {};
+  const curriculum = record?.curriculum_profile || {};
+  const categories = normalized?.categoryProfile || {};
+  const documentedTopics = new Set([
+    ...stringEntries(categories.primary_categories),
+    ...stringEntries(categories.secondary_categories),
+    ...stringEntries(categories.subcategories),
+    ...stringEntries(categories.normalized_tags),
+    ...stringEntries(curriculum.specializations),
+    ...stringEntries(research.research_focus_areas),
+    ...stringEntries(research.department_research_areas)
+  ].map((item) => normalizeText(item)).filter(Boolean));
+
+  // A high result must be traceable to checked curriculum/research evidence.
+  // Legacy prestige, ranking and self-entered numeric seeds are intentionally excluded.
+  let score = hasCurriculumEvidence ? 50 : 30;
+  score += Math.min(14, documentedTopics.size * 2);
+  if (!hasResearchEvidence) return bounded(score);
+
+  const labs = stringEntries(research.labs).length;
+  const centers = stringEntries(research.research_centers).length;
+  const projects = stringEntries(research.space_or_aerospace_projects).length
+    + stringEntries(research.satellite_or_flight_projects).length;
+  const teams = stringEntries(research.student_teams).length;
+
+  score += 15;
+  score += Math.min(14, labs * 1.5);
+  score += Math.min(6, centers * 1.5);
+  score += Math.min(4, projects * 2);
+  score += Math.min(2, teams);
+  return bounded(score);
+}
+
 function calculateScore(record, preferences, weights) {
   const explanation = [];
   const warnings = [];
@@ -90,7 +129,8 @@ function calculateScore(record, preferences, weights) {
 
   const hasCurriculumEvidence = hasVerifiedField(normalized, "curriculum");
   const hasResearchEvidence = hasVerifiedField(normalized, "research");
-  let academicFit = hasCurriculumEvidence ? 60 : 40;
+  const academicStrength = documentedAcademicStrength(record, normalized, hasCurriculumEvidence, hasResearchEvidence);
+  let technicalMatch = hasCurriculumEvidence ? 60 : 40;
   if (profileMatch.enabled && Array.isArray(profile?.interests) && profile.interests.length > 0 && window.buildExpandedInterestProfile) {
     const expandedInterests = window.buildExpandedInterestProfile(profile.interests, window.INTEREST_GRAPH || {});
     let score = 0;
@@ -118,15 +158,15 @@ function calculateScore(record, preferences, weights) {
       }
     }
 
-    academicFit = maxPossible > 0 ? Math.round((score / maxPossible) * 100) : 40;
+    technicalMatch = maxPossible > 0 ? Math.round((score / maxPossible) * 100) : 40;
     if (!hasCurriculumEvidence) {
-      academicFit = Math.min(academicFit, 40);
+      technicalMatch = Math.min(technicalMatch, 40);
       warnings.push("Technical tags are not yet backed by a checked curriculum source.");
     }
-    profileMatch.personal_field_fit = academicFit;
-    explanation.push(academicFit >= 80
+    profileMatch.personal_field_fit = technicalMatch;
+    explanation.push(technicalMatch >= 80
       ? "Strong personalized match with your interest graph."
-      : academicFit >= 40
+      : technicalMatch >= 40
         ? "Partial match with your expanded interest fields."
         : "Weak match with your stated academic interests.");
   } else {
@@ -138,29 +178,25 @@ function calculateScore(record, preferences, weights) {
         else if (subcategories.includes(category)) scoreSum += 100;
         else if (normalizedTags.includes(category)) scoreSum += 60;
       }
-      academicFit = Math.min(100, Math.max(0, scoreSum / selectedCategories.length));
+      technicalMatch = Math.min(100, Math.max(0, scoreSum / selectedCategories.length));
       if (!hasCurriculumEvidence) {
-        academicFit = Math.min(academicFit, 40);
+        technicalMatch = Math.min(technicalMatch, 40);
         warnings.push("Technical match is capped until the curriculum source is checked.");
       }
-      explanation.push(academicFit >= 80
+      explanation.push(technicalMatch >= 80
         ? "Strong academic match for your selected fields."
-        : academicFit >= 40
+        : technicalMatch >= 40
           ? "Partial academic match for your selected fields."
           : "No strong match found for your selected fields.");
-    } else if (hasCurriculumEvidence) {
-      // This is an evidence-breadth score, not a prestige score.  It only
-      // rewards distinct technical areas documented in an official curriculum
-      // (and, separately, official research/lab evidence).
-      const technicalAreas = new Set([...normalizedTags, ...subcategories]).size;
-      const documentedLabs = Array.isArray(normalized?.labs) ? normalized.labs.length : 0;
-      academicFit = Math.min(100, 60 + Math.min(30, technicalAreas * 6) + (hasResearchEvidence ? Math.min(10, documentedLabs * 2) : 0));
-      explanation.push("Academic score uses documented curriculum breadth, not university prestige.");
     } else {
-      warnings.push("Academic score is conservative because curriculum evidence is incomplete.");
+      if (!hasCurriculumEvidence) warnings.push("Academic strength is conservative because curriculum evidence is incomplete.");
     }
   }
-  if (preferences.minFieldFit && academicFit < preferences.minFieldFit) passed = false;
+  // This slider is deliberately academic strength first. A selected technical
+  // field can refine it, but cannot make an undocumented prestige claim win.
+  const academicFit = Math.round((academicStrength * 0.8) + (technicalMatch * 0.2));
+  explanation.push(`Academic strength ${academicStrength}/100 is based on checked curriculum and research evidence.`);
+  if (preferences.minFieldFit && technicalMatch < preferences.minFieldFit) passed = false;
 
   let eligibilityFit = 55;
   if (languages.length > 0) {

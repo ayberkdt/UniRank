@@ -87,6 +87,22 @@ def _programme_identity(row: Dict[str, Any]) -> tuple[str, str, str, str]:
     )
 
 
+def _is_undergraduate_programme(row: Dict[str, Any]) -> bool:
+    """Exclude first-cycle choices from the Master's decision dataset.
+
+    This is intentionally an exclusion check rather than a guess that every
+    unknown degree is a Master's.  It catches explicit Bachelor's/BSc labels
+    and direct-entry Diplom programmes, while leaving unverified degree levels
+    available for source review instead of silently relabelling them.
+    """
+    degree_text = " ".join(str(row.get(key) or "") for key in (
+        "degree_level", "program_degree", "target_program_degree", "Program_Degree", "degree", "level"
+    )).lower()
+    return bool(re.search(r"\b(bachelor|b\.\s*sc\.?|bsc|undergraduate|first[- ]cycle|lisans)\b", degree_text)) or (
+        "diplom" in degree_text and "direct" in degree_text
+    )
+
+
 def _record_preference(row: Dict[str, Any]) -> tuple[int, int, int, str]:
     """Prefer the most complete source-grounded representation of one programme."""
     quality = row.get("data_quality") or {}
@@ -101,6 +117,13 @@ def _deduplicate_programme_rows(rows: List[Dict[str, Any]], report: LoadReport) 
     """Keep one record only for an exact country/university/programme/degree clone."""
     grouped: Dict[tuple[str, str, str, str], List[Dict[str, Any]]] = {}
     for row in rows:
+        if _is_undergraduate_programme(row):
+            report.add(LoadIssue.warn(
+                str(row.get("source_file") or "data_base"),
+                "Suppressed undergraduate programme from the Master's-only dataset.",
+                record_id=str(row.get("id") or "") or None,
+            ))
+            continue
         key = _programme_identity(row)
         # Do not merge incomplete legacy rows that lack the identifying fields.
         if not all(key):

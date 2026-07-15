@@ -21,10 +21,18 @@ function validateRecordShape(record) {
 
 // Utility Functions
 function formatMoney(amount) {
+    return formatMoneySafe(amount);
     const val = parseFloat(amount);
     if (isNaN(val)) return '—';
     if (val === 0) return window.t ? window.t('free') : 'Free';
     return '€' + val.toLocaleString('en-US');
+}
+
+function formatMoneySafe(amount) {
+    const value = parseFloat(amount);
+    if (!Number.isFinite(value)) return "\u2014";
+    if (value === 0) return window.t ? window.t('free') : 'Free';
+    return `\u20AC${value.toLocaleString('en-US')}`;
 }
 
 function duplicateProgrammeKey(record) {
@@ -73,7 +81,23 @@ function deduplicateProgrammeRecords(records) {
     return [...selected.values()];
 }
 
+function isUndergraduateProgramme(record) {
+    const normalized = window.uniDataAdapter?.normalizeUniversityRecord(record);
+    const degreeText = [
+        record?.degree_level,
+        record?.program_degree,
+        record?.target_program_degree,
+        record?.Program_Degree,
+        record?.degree,
+        normalized?.degreeLevel,
+        normalized?.degree,
+    ].map(value => String(value || '')).join(' ').toLowerCase();
+    return /\b(bachelor|b\.\s*sc\.?|bsc|undergraduate|first[- ]cycle|lisans)\b/.test(degreeText)
+        || (degreeText.includes('diplom') && degreeText.includes('direct'));
+}
+
 function formatPublishedMoney(money) {
+    return formatPublishedMoneySafe(money);
     if (!money || money.amount === null || money.amount === undefined || !money.currency) return 'â€”';
     const amount = Number(money.amount);
     if (!Number.isFinite(amount)) return 'â€”';
@@ -85,13 +109,35 @@ function formatPublishedMoney(money) {
     }
 }
 
+function formatPublishedMoneySafe(money) {
+    if (!money || money.amount === null || money.amount === undefined || !money.currency) return "\u2014";
+    const amount = Number(money.amount);
+    if (!Number.isFinite(amount)) return "\u2014";
+    const currency = String(money.currency).toUpperCase();
+    try {
+        return new Intl.NumberFormat('en-US', { style: 'currency', currency, maximumFractionDigits: 2 }).format(amount);
+    } catch {
+        return `${amount.toLocaleString('en-US')} ${currency}`;
+    }
+}
+
 function formatPublishedRange(range) {
+    return formatPublishedRangeSafe(range);
     if (!range || !range.currency || range.min === null || range.min === undefined) return 'â€”';
     const start = formatPublishedMoney({ amount: range.min, currency: range.currency });
     const end = range.max !== null && range.max !== undefined && Number(range.max) !== Number(range.min)
         ? formatPublishedMoney({ amount: range.max, currency: range.currency })
         : '';
     return end ? `${start}–${end}` : start;
+}
+
+function formatPublishedRangeSafe(range) {
+    if (!range || !range.currency || range.min === null || range.min === undefined) return "\u2014";
+    const start = formatPublishedMoneySafe({ amount: range.min, currency: range.currency });
+    const end = range.max !== null && range.max !== undefined && Number(range.max) !== Number(range.min)
+        ? formatPublishedMoneySafe({ amount: range.max, currency: range.currency })
+        : '';
+    return end ? `${start}\u2013${end}` : start;
 }
 
 function escapeHtml(value) {
@@ -121,6 +167,7 @@ function getAnnualCost(record) {
 }
 
 function displayValue(val) {
+    if (val === null || val === undefined || val === '') return "\u2014";
     if (val === null || val === undefined || val === '') return '—';
     if (window.localizedField) {
         const loc = window.localizedField(val);
@@ -343,7 +390,7 @@ async function fetchData() {
             
             // The API already removes exact programme clones. This client-side
             // guard also protects people viewing an older cached deployment.
-            rawData = deduplicateProgrammeRecords(json.data);
+            rawData = deduplicateProgrammeRecords(json.data.filter(record => !isUndergraduateProgramme(record)));
             rawData.slice(0, 20).forEach((r) => {
               const issues = validateRecordShape(r);
               if (issues.length) console.warn("Record shape issues:", r.id || r.name, issues);
@@ -1086,7 +1133,7 @@ function openDrawer(data) {
 
         const weighted = data._scoringDetails?.weighted_components || {};
         const impactLabels = {
-            academic_fit: isTurkish ? 'Akademik / alan uyumu' : 'Academic / field fit',
+            academic_fit: isTurkish ? 'Akademik güç' : 'Academic strength',
             eligibility_language: isTurkish ? 'Uygunluk ve dil' : 'Eligibility & language',
             cost_funding: isTurkish ? 'Maliyet ve burs' : 'Cost & funding',
             career_research: isTurkish ? 'Kariyer / araştırma' : 'Career / research',
@@ -1101,7 +1148,7 @@ function openDrawer(data) {
             <section class="score-impact-card">
                 <div><span class="evidence-strip__eyebrow">${isTurkish ? 'AĞIRLIK ETKİSİ' : 'WEIGHT IMPACT'}</span><strong>${isTurkish ? 'Bu puanı hangi ağırlıklar taşıyor?' : 'Which weights drive this score?'}</strong></div>
                 <ol>${impactRows}</ol>
-                <small>${isTurkish ? 'Katkılar, seçtiğiniz ağırlıklarla 100 üzerinden puana yapılan katkıdır; akademik katkı yalnızca kaynaklı müfredat kapsamını kullanır.' : 'Contributions are points toward the 100-point result at your selected weights; academic contribution uses source-backed curriculum coverage only.'}</small>
+                <small>${isTurkish ? 'Katkılar, seçtiğiniz ağırlıklarla 100 üzerinden puana yapılan katkıdır; akademik katkı kaynaklı müfredat ve araştırma kanıtından hesaplanır.' : 'Contributions are points toward the 100-point result at your selected weights; academic contribution uses source-backed curriculum and research evidence.'}</small>
             </section>` : '';
 
         // 2. Temel Bilgiler (Basic Info)
@@ -1394,7 +1441,7 @@ function openDrawer(data) {
             window.uniChart = new Chart(ctx.getContext('2d'), {
                 type: 'radar',
                 data: {
-                    labels: ['Academic Fit', 'Eligibility', 'Cost & Fund.', 'Career', 'Living Risk', 'Data Conf.'],
+                    labels: [isTurkish ? 'Akademik Güç' : 'Academic Strength', isTurkish ? 'Uygunluk' : 'Eligibility', isTurkish ? 'Maliyet & Fon' : 'Cost & Fund.', isTurkish ? 'Kariyer' : 'Career', isTurkish ? 'Yaşam Riski' : 'Living Risk', isTurkish ? 'Veri Güveni' : 'Data Conf.'],
                     datasets: [{
                         data: [fitMetric, eligMetric, costMetric, careerMetric, livingMetric, confMetric],
                         backgroundColor: 'rgba(99, 102, 241, 0.25)',

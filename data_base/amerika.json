@@ -186,12 +186,47 @@
     },
     "research_profile": {
       "research_focus_areas": [
-        "Astrodynamics, Autonomous Systems, Propulsion, Human Spaceflight, Systems Architecture"
+        "Autonomous Systems & Decision-Making",
+        "Computational Science & Engineering",
+        "Earth & Space Sciences",
+        "Human-System Collaboration",
+        "Systems Design & Engineering",
+        "Transportation & Exploration",
+        "Vehicle Design & Engineering"
+      ],
+      "labs": [
+        "Aerospace Computational Science & Engineering Laboratory",
+        "Aerospace Controls Lab",
+        "Aerospace Materials and Structures Lab",
+        "Gas Turbine Lab",
+        "Small Satellite Collaborative",
+        "Space Propulsion Laboratory",
+        "Space Systems Lab",
+        "Space Telecom, Astronomy & Radiation Laboratory (STAR Lab)"
+      ],
+      "research_centers": [
+        "International Center for Air Transportation"
+      ],
+      "space_or_aerospace_projects": [
+        "STAR Lab nanosatellite research, including MicroMAS-1, MicroMAS-2A and MiRaTA missions",
+        "STAR Lab ongoing distributed-space-platform sensing and CubeSat-component research"
       ],
       "key_institutes": [],
       "research_funding_level": "very_high",
       "research_risk": "low",
-      "verification_notes": "Needs specific lab mapping."
+      "research_strength_score": null,
+      "research_sources": [
+        "https://aeroastro.mit.edu/research/",
+        "https://aeroastro.mit.edu/starlab/starlab-research/"
+      ],
+      "research_strength_summary": {
+        "en": "Official AeroAstro sources document seven department research areas, a broad list of labs and centers, and STAR Lab satellite research. The score is derived from this documented breadth, not from a prestige ranking.",
+        "tr": "Resmî AeroAstro kaynakları bölümün yedi araştırma alanını, çok sayıda laboratuvar ve merkezi ile STAR Lab uydu araştırmasını belgeliyor. Puan, prestij sıralamasından değil bu doğrulanmış kapsamdan türetilir."
+      },
+      "verification_notes": {
+        "en": "Research areas, listed labs/centers and the STAR Lab research examples were checked on official MIT AeroAstro pages.",
+        "tr": "Araştırma alanları, listelenen laboratuvar/merkezler ve STAR Lab araştırma örnekleri resmî MIT AeroAstro sayfalarında kontrol edildi."
+      }
     },
     "industry_ecosystem_profile": {
       "local_industry_strength": "very_high",
@@ -211,15 +246,17 @@
       "primary_url": "https://aeroastro.mit.edu/education/graduate-admission/",
       "secondary_urls": [
         "https://aeroastro.mit.edu/education/graduate-fields/",
-        "https://aeroastro.mit.edu/education/funding/"
+        "https://aeroastro.mit.edu/education/funding/",
+        "https://aeroastro.mit.edu/research/"
       ],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-07-15",
       "field_confidence": {
         "program_basic_info": "high",
         "admission": "high",
         "deadlines": "medium",
         "scholarship": "high",
         "curriculum": "high",
+        "research": "high",
         "tuition": "medium",
         "language": "high",
         "sentiment": "unknown"
@@ -347,6 +384,39 @@
             "en": "Explicitly states that English is the language of instruction in all MIT subjects and gives international graduate English-proficiency requirements.",
             "tr": "MIT'teki tüm derslerin eğitim dilinin İngilizce olduğunu açıkça belirtir ve uluslararası lisansüstü İngilizce yeterlilik şartlarını verir."
           }
+        },
+        {
+          "url": "https://aeroastro.mit.edu/research/",
+          "title": "MIT AeroAstro Research",
+          "source_type": "official_department_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "research",
+            "labs",
+            "research_centers"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official department page listing seven research areas and its labs and centers.",
+            "tr": "Yedi araştırma alanını ve laboratuvar/merkezlerini listeleyen resmî bölüm sayfası."
+          }
+        },
+        {
+          "url": "https://aeroastro.mit.edu/starlab/starlab-research/",
+          "title": "MIT AeroAstro STAR Lab Research",
+          "source_type": "official_lab_page",
+          "access_status": "ok",
+          "last_checked": "2026-07-15",
+          "relevant_fields": [
+            "research",
+            "satellite_projects"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official STAR Lab page documenting nanosatellite, CubeSat and distributed-space-platform research examples.",
+            "tr": "Nanosatellit, CubeSat ve dağıtık uzay platformu araştırma örneklerini belgeleyen resmî STAR Lab sayfası."
+          }
         }
       ],
       "needs_verification": true
@@ -386,7 +456,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 7,
+      "checked_official_source_count": 9,
       "verified_fields": [
         "program",
         "language",
@@ -396,6 +466,7 @@
         "scholarship",
         "deadline",
         "curriculum",
+        "research",
         "housing"
       ],
       "unverified_critical_fields": [],

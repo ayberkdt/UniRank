@@ -173,6 +173,19 @@ function programName(record) {
   );
 }
 
+function isUndergraduateProgramme(record) {
+  const degreeText = [
+    record?.degree_level,
+    record?.program_degree,
+    record?.target_program_degree,
+    record?.Program_Degree,
+    record?.degree,
+    record?.level,
+  ].map(displayText).join(' ').toLowerCase();
+  return /\b(bachelor|b\.\s*sc\.?|bsc|undergraduate|first[- ]cycle|lisans)\b/.test(degreeText)
+    || (degreeText.includes('diplom') && degreeText.includes('direct'));
+}
+
 function duplicateProgrammeKey(record) {
   const compact = (value) => displayText(value).toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
   const key = [
@@ -325,6 +338,10 @@ async function loadPrograms() {
         }
         if (!displayText(programName(record))) {
           skipped.push({ file: fileName, record_index: index, id, message: 'Program name is missing.' });
+          return;
+        }
+        if (isUndergraduateProgramme(record)) {
+          skipped.push({ file: fileName, record_index: index, id, message: 'Undergraduate programme excluded from the Master\'s-only dataset.' });
           return;
         }
 

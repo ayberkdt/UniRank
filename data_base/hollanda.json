@@ -389,9 +389,9 @@
       },
       "student_sentiment_profile": {
         "student_satisfaction_score": null,
-        "sentiment_confidence": "unknown",
+        "sentiment_confidence": "low",
         "sample_size_estimate": null,
-        "date_range": "",
+        "date_range": "2025-03 to 2025-12",
         "teaching_quality_sentiment": "unknown",
         "workload_sentiment": "unknown",
         "administration_sentiment": "unknown",
@@ -403,11 +403,46 @@
         "negative_themes": [],
         "recurring_complaints": [],
         "recurring_strengths": [],
+        "sentiment_summary": {
+          "en": "Three direct MSc Aerospace discussions describe substantial workload, track-dependent experience and difficult housing. These are individual, low-confidence perceptions and do not replace TU Delft's official curriculum, housing or career information.",
+          "tr": "Üç doğrudan MSc Aerospace tartışması yüksek iş yükü, izlere göre değişen deneyim ve zor konaklamadan bahsediyor. Bunlar bireysel ve düşük güvenli algılardır; TU Delft'in resmî müfredat, konaklama veya kariyer bilgisinin yerine geçmez."
+        },
         "student_sentiment_summary": {
           "en": "No dated, adequately sampled student-review set has been verified for this record. The official housing warning is presented as an institutional risk, not as student sentiment.",
           "tr": "Bu kayıt için tarihli ve yeterli örneklem içeren öğrenci yorumu kümesi doğrulanmadı. Resmî konut uyarısı öğrenci duygusu olarak değil, kurumsal risk olarak sunulur."
         },
-        "student_sentiment_sources": [],
+        "student_sentiment_sources": [
+          {
+            "title": "TU Delft MSc Aerospace: first-year contact hours and workload",
+            "url": "https://www.reddit.com/r/TUDelft/comments/1ptb33c/firstyear_msc_aerospace_engineering_typical/",
+            "source_type": "student_forum",
+            "access_status": "ok",
+            "last_checked": "2026-07-15",
+            "relevant_fields": ["workload_sentiment"],
+            "confidence": "low",
+            "notes": "MSc Aerospace discussion; reported workload varies by track and individual study pattern."
+          },
+          {
+            "title": "TU Delft MSc Aerospace Space track: workload, teaching and career discussion",
+            "url": "https://www.reddit.com/r/TUDelft/comments/1j36cyo",
+            "source_type": "student_forum",
+            "access_status": "ok",
+            "last_checked": "2026-07-15",
+            "relevant_fields": ["workload_sentiment", "teaching_quality_sentiment", "career_support_sentiment"],
+            "confidence": "low",
+            "notes": "Single Space-track discussion; it is not a representative employment outcome dataset."
+          },
+          {
+            "title": "TU Delft MSc Aerospace international-student housing discussion",
+            "url": "https://www.reddit.com/r/TUDelft/comments/1kp9ek5",
+            "source_type": "student_forum",
+            "access_status": "ok",
+            "last_checked": "2026-07-15",
+            "relevant_fields": ["housing_sentiment", "international_student_sentiment"],
+            "confidence": "low",
+            "notes": "Student discussion; it does not establish an official housing guarantee or rent figure."
+          }
+        ],
         "verification_notes": {
           "en": "Unverified Reddit search links and attributed quotations were removed rather than presented as reviews.",
           "tr": "Doğrulanmamış Reddit arama bağlantıları ve atfedilmiş alıntılar, yorum olarak sunulmak yerine kaldırıldı."
