@@ -1,12 +1,13 @@
 .map-explorer {
   position: relative;
-  height: min(63vh, 660px);
+  isolation: isolate;
+  height: min(65vh, 680px);
   min-height: 540px;
   overflow: hidden;
-  border: 1px solid #d6e6e4;
+  border: 1px solid rgba(154, 203, 197, .78);
   border-radius: 26px;
-  background: #d8edf0;
-  box-shadow: 0 24px 55px rgba(31, 70, 73, .16), 0 3px 0 #b8deda;
+  background: #c5e8ed;
+  box-shadow: 0 26px 62px rgba(24, 63, 74, .18), 0 3px 0 #b8deda;
 }
 
 .unirank-map {
@@ -16,7 +17,7 @@
   font-family: "Nunito", "Avenir Next", sans-serif;
 }
 
-.unirank-map--street .leaflet-tile-pane { filter: saturate(.76) contrast(.94) brightness(1.08) hue-rotate(-7deg); }
+.unirank-map--street .leaflet-tile-pane { filter: saturate(.78) contrast(.98) brightness(1.05) hue-rotate(-7deg); }
 .unirank-map--satellite .leaflet-tile-pane { filter: saturate(.82) contrast(.97) brightness(1.02); }
 .unirank-map .leaflet-control-zoom { overflow: hidden; border: 1px solid #b8d9db; border-radius: 14px; box-shadow: 0 6px 16px rgba(35,85,89,.16); }
 .unirank-map .leaflet-control-zoom a { width: 34px; height: 34px; border: 0; border-bottom: 1px solid #d5eced; background: #fffefa; color: #437473; font-size: 20px; line-height: 33px; }
@@ -47,7 +48,7 @@
 
 .map-cluster::before { position: absolute; inset: -6px; border: 2px dashed color-mix(in srgb, var(--cluster-tone), #fff 25%); border-radius: 50%; content: ''; }
 .map-cluster b { font-size: 17px; font-weight: 1000; line-height: 1; }
-.map-cluster small { margin-top: 2px; font-size: 6px; font-weight: 1000; letter-spacing: .1em; }
+.map-cluster small { margin-top: 2px; font-size: 5.2px; font-weight: 1000; letter-spacing: .08em; }
 .leaflet-marker-icon:hover .map-cluster { transform: scale(1.1); }
 
 .selected-program-halo span { display: block; width: 74px; height: 74px; margin: 1px; border: 3px solid #f3bf47; border-radius: 50%; background: rgba(255,219,98,.16); animation: selected-pulse 1.65s ease-out infinite; }
@@ -116,11 +117,11 @@
 .map-compare-focus,
 .basemap-toggle,
 .map-reading-card,
-.map-selection-card { border: 1px solid #c8e3d7; border-radius: 12px; background: rgba(255,254,249,.96); box-shadow: 0 5px 16px rgba(38,82,60,.13); color: #496750; }
+.map-selection-card { border: 1px solid rgba(200,227,215,.9); border-radius: 12px; background: rgba(255,254,249,.88); box-shadow: 0 8px 22px rgba(38,82,60,.15); backdrop-filter: blur(14px); color: #496750; }
 .map-focus, .map-compare-focus { display: inline-flex; align-items: center; gap: 6px; padding: 9px 10px; font-size: 10px; font-weight: 1000; }
 .map-focus:hover, .map-compare-focus:hover:not(:disabled) { background: #edf9e9; color: #398741; }
 .map-compare-focus { color: #36536b; }.map-compare-focus:disabled { cursor: not-allowed; opacity: .52; }
-.basemap-toggle { display: inline-flex; padding: 3px; gap: 2px; }.basemap-toggle button { display: inline-flex; align-items: center; gap: 4px; padding: 6px 8px; border: 0; border-radius: 8px; background: transparent; color: #668079; font-size: 9px; font-weight: 1000; }.basemap-toggle button:hover { color: #398741; }.basemap-toggle button.is-active { background: #e0f4e1; color: #367d41; }
+.basemap-toggle { display: inline-flex; padding: 3px; gap: 2px; }.basemap-toggle button { display: inline-flex; align-items: center; gap: 4px; padding: 6px 8px; border: 0; border-radius: 8px; background: transparent; color: #668079; font-size: 9px; font-weight: 1000; }.basemap-toggle button:hover { color: #398741; }.basemap-toggle button.is-active { background: linear-gradient(135deg, #dff5e0, #e7f6ec); box-shadow: inset 0 0 0 1px rgba(101,177,107,.22); color: #367d41; }
 
 .map-reading-card { position: absolute; z-index: 700; top: 13px; left: 13px; display: flex; align-items: center; gap: 8px; padding: 8px 12px 8px 8px; }.map-reading-card > span { display: grid; width: 29px; height: 29px; place-items: center; border-radius: 9px 9px 9px 3px; background: linear-gradient(135deg, #5ab5dd, #61b96a); color: white; }.map-reading-card small, .map-reading-card strong { display: block; }.map-reading-card small { color: #6c8778; font-size: 7px; font-weight: 1000; letter-spacing: .1em; }.map-reading-card strong { margin-top: 1px; color: #385442; font-size: 10px; font-weight: 1000; }
 

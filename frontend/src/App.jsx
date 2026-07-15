@@ -82,6 +82,47 @@ function distanceKm(first, second) {
   return Math.round(6371 * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)))
 }
 
+function universityIdentity(program) {
+  const normalized = [
+    text(program.universityName),
+    text(program.location?.city || program.city),
+    text(program.location?.country || program.country),
+  ].map((value) => value
+    .trim()
+    .toLocaleLowerCase('en-US')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, ''))
+  return normalized.join('|')
+}
+
+function groupUniversities(programs) {
+  const groups = new Map()
+  programs.forEach((program) => {
+    const key = universityIdentity(program)
+    const current = groups.get(key) || []
+    current.push(program)
+    groups.set(key, current)
+  })
+
+  return Array.from(groups.entries()).map(([identity, group]) => {
+    const sorted = [...group].sort((left, right) => (right.score ?? -1) - (left.score ?? -1))
+    const withCoordinates = sorted.filter((program) => program.location)
+    const representative = withCoordinates.find((program) => String(program.location?.locationConfidence).toLowerCase() === 'exact')
+      || withCoordinates[0]
+      || sorted[0]
+    const top = sorted[0]
+    return {
+      ...top,
+      key: `university-${identity}`,
+      location: representative.location || null,
+      city: representative.city || top.city,
+      country: representative.country || top.country,
+      sourcePrograms: sorted,
+      programCount: sorted.length,
+    }
+  }).sort((left, right) => (right.score ?? -1) - (left.score ?? -1))
+}
+
 function App() {
   const initialFilters = loadSavedFilters()
   const [programs, setPrograms] = useState([])
@@ -117,7 +158,6 @@ function App() {
         const normalized = payload.data
           .map((record, index) => {
             const program = uniDataAdapter.normalizeUniversityRecord(record)
-            if (!program.location) return null
             return {
               ...program,
               key: `${program.id || program.universityName || 'program'}-${index}`,
@@ -175,16 +215,20 @@ function App() {
       .sort((left, right) => (right.score ?? -1) - (left.score ?? -1))
   }, [programs, search, country, englishOnly, exactOnly])
 
+  const visibleUniversities = useMemo(() => groupUniversities(visiblePrograms), [visiblePrograms])
+  const mappedUniversities = useMemo(() => visibleUniversities.filter((university) => university.location), [visibleUniversities])
+  const unmappedUniversities = useMemo(() => visibleUniversities.filter((university) => !university.location), [visibleUniversities])
+
   useEffect(() => {
-    if (selectedProgram && !visiblePrograms.some((program) => program.key === selectedProgram.key)) {
+    if (selectedProgram && !visibleUniversities.some((university) => university.key === selectedProgram.key)) {
       setSelectedProgram(null)
     }
-    setComparedPrograms((current) => current.filter((program) => visiblePrograms.some((candidate) => candidate.key === program.key)))
-  }, [visiblePrograms, selectedProgram])
+    setComparedPrograms((current) => current.filter((program) => visibleUniversities.some((candidate) => candidate.key === program.key)))
+  }, [visibleUniversities, selectedProgram])
 
-  const mappedCities = new Set(visiblePrograms.map((program) => `${program.location.city}-${program.location.country}`)).size
-  const mappedCountries = new Set(visiblePrograms.map((program) => program.location.country || program.country).filter(Boolean)).size
-  const exactLocations = visiblePrograms.filter((program) => String(program.location?.locationConfidence || '').toLowerCase() === 'exact').length
+  const mappedCities = new Set(mappedUniversities.map((university) => `${university.location.city}-${university.location.country}`)).size
+  const mappedCountries = new Set(mappedUniversities.map((university) => university.location.country || university.country).filter(Boolean)).size
+  const exactLocations = mappedUniversities.filter((university) => String(university.location?.locationConfidence || '').toLowerCase() === 'exact').length
 
   const selectProgram = (program) => setSelectedProgram(program)
   const toggleCompare = (program) => {
@@ -277,10 +321,11 @@ function App() {
           </div>
 
           <div className="stats" aria-live="polite">
-            <div><strong>{visiblePrograms.length}</strong><span>Program</span></div>
+            <div><strong>{visibleUniversities.length}</strong><span>Üniversite</span></div>
             <div><strong>{mappedCities}</strong><span>Şehir</span></div>
             <div><strong>{exactLocations}</strong><span>Kampüs konumu</span></div>
             <div><strong>{mappedCountries}</strong><span>Ülke</span></div>
+            <div className={unmappedUniversities.length ? 'stats-pending' : ''}><strong>{unmappedUniversities.length}</strong><span>Konum bekliyor</span></div>
           </div>
 
           {status === 'loading' && <div className="map-state"><span className="loading-orb" /> Harita verisi hazırlanıyor…</div>}
@@ -291,7 +336,7 @@ function App() {
           )}
           {status === 'ready' && (
             <MapExplorer
-              programs={visiblePrograms}
+              programs={mappedUniversities}
               showLabels={showLabels}
               selectedProgram={selectedProgram}
               comparedPrograms={comparedPrograms}
@@ -328,7 +373,7 @@ function App() {
         <aside className="results-panel" aria-label="Konum sonuçları">
           <div className="results-heading"><span className="eyebrow">KONUM LİSTESİ</span><h2>Haritadaki seçenekler</h2><p>Bir seçeneği odağa al veya kıyas listene ekle.</p></div>
           <div className="result-list">
-            {visiblePrograms.slice(0, 8).map((program, index) => {
+            {mappedUniversities.slice(0, 8).map((program, index) => {
               const precision = locationPrecision(program)
               const isCompared = comparedPrograms.some((item) => item.key === program.key)
               const isFull = comparedPrograms.length >= MAX_COMPARE && !isCompared
@@ -347,15 +392,23 @@ function App() {
                 </button>
                 <footer className="result-card-footer">
                   <span className={`precision-chip precision-chip--${precision.tone}`}>{precision.label}</span>
+                  <span className="program-count">{program.programCount} program</span>
                   <button className={`compare-toggle ${isCompared ? 'is-added' : ''}`} type="button" disabled={isFull} onClick={() => toggleCompare(program)}>
                     {isCompared ? <><Check size={13} /> Eklendi</> : <><Plus size={13} /> Kıyasla</>}
                   </button>
                 </footer>
               </motion.article>
             })}
-            {status === 'ready' && !visiblePrograms.length && <p className="empty-results">Bu filtrelerle eşleşen konumlu program bulunamadı.</p>}
+            {status === 'ready' && !mappedUniversities.length && <p className="empty-results">Bu filtrelerle eşleşen konumlu üniversite bulunamadı.</p>}
           </div>
-          {visiblePrograms.length > 8 && <a className="all-results" href="#top">Filtrelerle sonuçları daralt <ArrowUpRight size={16} /></a>}
+          {mappedUniversities.length > 8 && <a className="all-results" href="#top">Filtrelerle sonuçları daralt <ArrowUpRight size={16} /></a>}
+          {!!unmappedUniversities.length && <section className="missing-locations" aria-label="Konumu doğrulanması gereken üniversiteler">
+            <div><span className="eyebrow">HARİTA KAPSAMI</span><strong>{unmappedUniversities.length} üniversitenin konumu doğrulanmalı</strong></div>
+            <p>Bu üniversiteler sonuçlardan çıkarılmadı; resmi koordinat kaynağı olmadığı için haritaya tahmini bir iğne koymuyoruz.</p>
+            <div className="missing-location-list">
+              {unmappedUniversities.slice(0, 4).map((university) => <span key={university.key}>{text(university.universityName)}<small>{text(university.city || university.country || 'Konum bilgisi bekleniyor')}</small></span>)}
+            </div>
+          </section>}
           <div className="results-bento" aria-label="Konum veri rehberi">
             <div><span>KONUM VERİSİ</span><strong>Hassasiyeti gör</strong><small>“Kampüs konumu” tam nokta; “Şehir seviyesi” ise kampüs içi konum doğrulanmadığı anlamına gelir.</small></div>
             <i aria-hidden="true"><span /><span /><span /></i>

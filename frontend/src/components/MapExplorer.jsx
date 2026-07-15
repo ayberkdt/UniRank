@@ -99,28 +99,28 @@ function clusterIcon(count, country) {
     className: 'map-cluster-icon',
     iconSize: [54, 54],
     iconAnchor: [27, 27],
-    html: `<span class="map-cluster" style="--cluster-tone:${tone.accent};--cluster-shadow:${tone.stroke}"><b>${count}</b><small>PROGRAM</small></span>`,
+    html: `<span class="map-cluster" style="--cluster-tone:${tone.accent};--cluster-shadow:${tone.stroke}"><b>${count}</b><small>ÜNİVERSİTE</small></span>`,
   })
 }
 
-function dominantCountry(programs) {
+function dominantCountry(universities) {
   const counts = new Map()
-  programs.forEach((program) => {
-    const country = program.location?.country || program.country || ''
+  universities.forEach((university) => {
+    const country = university.location?.country || university.country || ''
     counts.set(country, (counts.get(country) || 0) + 1)
   })
   return Array.from(counts.entries()).sort((left, right) => right[1] - left[1])[0]?.[0] || ''
 }
 
-function groupPrograms(programs) {
+function groupUniversitiesByCoordinate(universities) {
   const groups = new Map()
-  programs.forEach((program) => {
-    const latitude = Number(program.location?.latitude)
-    const longitude = Number(program.location?.longitude)
+  universities.forEach((university) => {
+    const latitude = Number(university.location?.latitude)
+    const longitude = Number(university.location?.longitude)
     if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) return
     const key = `${latitude.toFixed(4)}:${longitude.toFixed(4)}`
     const current = groups.get(key) || []
-    current.push(program)
+    current.push(university)
     groups.set(key, current)
   })
 
@@ -134,7 +134,7 @@ function groupPrograms(programs) {
       city: top.location.city || top.city || 'Bilinmeyen şehir',
       country: top.location.country || top.country || '',
       top,
-      programs: sorted,
+      universities: sorted,
       score: top.score,
     }
   })
@@ -154,18 +154,18 @@ function clusterPoints(points, zoom) {
 
   return Array.from(clusters.entries()).map(([key, cluster]) => {
     if (cluster.length === 1) return { ...cluster[0], type: 'point' }
-    const allPrograms = cluster.flatMap((point) => point.programs)
-    const top = [...allPrograms].sort((left, right) => (right.score ?? -1) - (left.score ?? -1))[0]
-    const totalPrograms = allPrograms.length
+    const allUniversities = cluster.flatMap((point) => point.universities)
+    const top = [...allUniversities].sort((left, right) => (right.score ?? -1) - (left.score ?? -1))[0]
+    const totalUniversities = allUniversities.length
     return {
       key: `cluster-${key}`,
       type: 'cluster',
-      latitude: cluster.reduce((sum, point) => sum + (point.latitude * point.programs.length), 0) / totalPrograms,
-      longitude: cluster.reduce((sum, point) => sum + (point.longitude * point.programs.length), 0) / totalPrograms,
-      programs: allPrograms,
+      latitude: cluster.reduce((sum, point) => sum + (point.latitude * point.universities.length), 0) / totalUniversities,
+      longitude: cluster.reduce((sum, point) => sum + (point.longitude * point.universities.length), 0) / totalUniversities,
+      universities: allUniversities,
       top,
-      count: totalPrograms,
-      country: dominantCountry(allPrograms),
+      count: totalUniversities,
+      country: dominantCountry(allUniversities),
     }
   })
 }
@@ -266,7 +266,8 @@ function ProgramPopup({ point, comparedPrograms, onSelectProgram, onToggleCompar
         <span>{annualCost == null ? 'Ücret bilinmiyor' : `€${Number(annualCost).toLocaleString('tr-TR')}/yıl`}</span>
       </div>
       {locationLevel === 'city' && <small className="popup-location-note">Kampüs içi konum doğrulanmadı; şehir bağlamını inceleyebilirsin.</small>}
-      {point.programs.length > 1 && <small className="popup-count">Bu konumda {point.programs.length} program</small>}
+      {top.programCount > 1 && <small className="popup-count">Bu üniversitede {top.programCount} program kaydı</small>}
+      {point.universities.length > 1 && <small className="popup-count">Aynı koordinatta {point.universities.length} üniversite</small>}
       <div className="popup-actions">
         <button type="button" onClick={() => onSelectProgram(top)}>Yakın çevreyi gör</button>
         <button className="popup-compare" type="button" onClick={() => onToggleCompare(top)}>{isCompared ? 'Listeden çıkar' : 'Kıyasla'}</button>
@@ -287,7 +288,7 @@ function MapMarkers({ points, showLabels, selectedProgram, comparedPrograms, onS
   useMapEvents({ zoomend: () => setZoom(map.getZoom()) })
   const displayedPoints = useMemo(() => clusterPoints(points, zoom), [points, zoom])
   const cityLabels = useMemo(() => zoom >= 6 ? [...points]
-    .sort((left, right) => right.programs.length - left.programs.length)
+    .sort((left, right) => right.universities.length - left.universities.length)
     .slice(0, 22) : [], [points, zoom])
 
   return <>
@@ -297,7 +298,7 @@ function MapMarkers({ points, showLabels, selectedProgram, comparedPrograms, onS
       return <CircleMarker
         key={`zone-${point.key}`}
         center={[point.latitude, point.longitude]}
-        radius={Math.min(24, 9 + (point.programs.length * 3))}
+        radius={Math.min(24, 9 + (point.universities.length * 3))}
         pathOptions={{ color: tone.accent, weight: 1.2, opacity: 0.46, fillColor: tone.fill, fillOpacity: 0.25 }}
         interactive={false}
       />
@@ -315,17 +316,17 @@ function MapMarkers({ points, showLabels, selectedProgram, comparedPrograms, onS
         key={point.key}
         position={[point.latitude, point.longitude]}
         icon={clusterIcon(point.count, point.country)}
-        title={`${point.count} program bu alanda`}
-        alt={`${point.count} program bu alanda`}
+        title={`${point.count} üniversite bu alanda`}
+        alt={`${point.count} üniversite bu alanda`}
         keyboard
         eventHandlers={{ click: () => map.flyTo([point.latitude, point.longitude], Math.min(zoom + 2, 6), { duration: 0.45 }) }}
       />
     ) : (() => {
-      const compareIndex = point.programs.reduce((index, program) => index || (comparedPrograms.findIndex((candidate) => candidate.key === program.key) + 1), 0)
+      const compareIndex = point.universities.reduce((index, university) => index || (comparedPrograms.findIndex((candidate) => candidate.key === university.key) + 1), 0)
       return <Marker
         key={point.key}
         position={[point.latitude, point.longitude]}
-        icon={pointIcon(point.score, point.programs.length, precision(point.top), compareIndex)}
+        icon={pointIcon(point.score, point.universities.length, precision(point.top), compareIndex)}
         title={`${point.top.universityName}, ${point.top.programName}`}
         alt={`${point.top.universityName}, ${point.top.programName}`}
         riseOnHover
@@ -346,7 +347,7 @@ function MapMarkers({ points, showLabels, selectedProgram, comparedPrograms, onS
 export default function MapExplorer({ programs, showLabels, selectedProgram, comparedPrograms, onSelectProgram, onToggleCompare }) {
   const [basemap, setBasemap] = useState('street')
   const [viewRequest, setViewRequest] = useState({ mode: 'all', id: 0 })
-  const points = useMemo(() => groupPrograms(programs), [programs])
+  const points = useMemo(() => groupUniversitiesByCoordinate(programs), [programs])
 
   useEffect(() => {
     if (selectedProgram) setViewRequest((current) => ({ mode: 'detail', id: current.id + 1 }))
