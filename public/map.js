@@ -119,7 +119,10 @@ function initUniRankMap() {
         return properties.ADMIN || properties.name || properties.NAME_EN || properties.NAME || properties.sovereignt || 'world';
     }
 
-    const calmTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    // Calm mode hides street-level labels so the score markers stay readable;
+    // detailed mode uses the fully labelled basemap. They must differ, or the
+    // "More map context" toggle silently does nothing.
+    const calmTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
         attribution: tileAttribution,
         subdomains: 'abcd',
         maxZoom: 20
@@ -186,6 +189,11 @@ function initUniRankMap() {
     let allMarkers = [];
     let isDetailed = false;
     const markerByKey = new Map();
+    // The side panel is scrollable, so it can list far more than the old
+    // six results; the cap only guards against absurdly long DOM lists.
+    const MAX_LISTED_RESULTS = 30;
+    let lastFittedSignature = '';
+    let pendingFitSignature = '';
 
     function escapeHtml(value) {
         return String(value ?? '')
@@ -204,9 +212,9 @@ function initUniRankMap() {
     }
 
     function scoreBand(score) {
-        if (score >= 6.0) return 'excellent';
+        if (score >= 6.5) return 'excellent';
         if (score >= 5.5) return 'strong';
-        if (score >= 5.0) return 'moderate';
+        if (score >= 4.5) return 'moderate';
         return 'weak';
     }
 
@@ -397,7 +405,7 @@ function initUniRankMap() {
         mapStage.classList.toggle('is-fullscreen', active);
         document.body.classList.toggle('map-fullscreen-active', active);
         fullscreenButton.textContent = active
-            ? (isTurkish() ? 'Tam ekrandan Ã§Ä±k' : 'Exit full screen')
+            ? (isTurkish() ? 'Tam ekrandan çık' : 'Exit full screen')
             : (isTurkish() ? 'Tam ekran' : 'Full screen');
         fullscreenButton.setAttribute('aria-pressed', String(active));
         window.setTimeout(() => map.invalidateSize(), 120);
@@ -446,7 +454,7 @@ function initUniRankMap() {
             return;
         }
 
-        locatedData.slice(0, 6).forEach(item => {
+        locatedData.slice(0, MAX_LISTED_RESULTS).forEach(item => {
             const n = item.normalized;
             const title = localizedValue(n.universityName) || String(n.id || '—');
             const program = localizedValue(n.programName) || '—';
@@ -512,7 +520,7 @@ function initUniRankMap() {
         const locatedCount = locatedData.length;
         const universityCount = new Set(locatedData.map(universityKey)).size;
         const missingCount = Math.max(0, countUniversities(currentData) - locatedCount);
-        const visibleListCount = Math.min(6, locatedCount);
+        const visibleListCount = Math.min(MAX_LISTED_RESULTS, locatedCount);
 
         const countElement = document.getElementById('map-kpi-count');
         const universityElement = document.getElementById('map-kpi-universities');
@@ -632,6 +640,21 @@ function initUniRankMap() {
 
         renderResultsList(currentLocatedData);
         updateSummary(currentLocatedData, totalScore);
+
+        // Bring new result sets into view automatically. The signature check
+        // keeps language switches and re-renders from resetting a view the
+        // user has already panned or zoomed. While the map tab is hidden the
+        // container has no size, so the fit is deferred until it is visible.
+        const signature = currentLocatedData.map(item => item.key).sort().join(';');
+        if (signature && signature !== lastFittedSignature) {
+            if (mapElement.offsetParent === null) {
+                pendingFitSignature = signature;
+            } else {
+                lastFittedSignature = signature;
+                pendingFitSignature = '';
+                window.fitMapToResults();
+            }
+        }
     }
 
     window.openDrawerById = function (id) {
@@ -677,11 +700,21 @@ function initUniRankMap() {
         updateMap(event.detail?.filteredData || []);
     });
 
+    // switchView fires a resize event right after the map tab becomes
+    // visible; that is the first safe moment to run a deferred fit.
+    window.addEventListener('resize', () => {
+        if (!pendingFitSignature || mapElement.offsetParent === null) return;
+        map.invalidateSize();
+        lastFittedSignature = pendingFitSignature;
+        pendingFitSignature = '';
+        window.fitMapToResults();
+    });
+
     document.addEventListener('languageChanged', () => {
         updateModeText();
         if (fullscreenButton) {
             fullscreenButton.textContent = mapStage?.classList.contains('is-fullscreen')
-                ? (isTurkish() ? 'Tam ekrandan Ã§Ä±k' : 'Exit full screen')
+                ? (isTurkish() ? 'Tam ekrandan çık' : 'Exit full screen')
                 : (isTurkish() ? 'Tam ekran' : 'Full screen');
         }
         setMapPanelCollapsed(mapWorkspace?.classList.contains('map-panel-collapsed'), false);

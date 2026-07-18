@@ -211,12 +211,43 @@
     },
     "student_sentiment_profile": {
       "student_satisfaction_score": null,
-      "student_sentiment_sources": [],
-      "sentiment_confidence": "unknown",
+      "sentiment_confidence": "low",
+      "sample_size_estimate": 12,
+      "date_range": "reviews collected up to 2026-07",
+      "student_sentiment_summary": {
+        "en": "The review sample is small (EDUopinions, 4.7/5 from 12 reviews), so no numeric score is shown. Reviewers highlight world-class research facilities, an inclusive international environment and strong industry networking; the recurring criticism is that some research-oriented professors give teaching less attention and several courses are intense.",
+        "tr": "Yorum örneklemi küçük olduğundan (EDUopinions, 12 yorumda 4.7/5) sayısal puan gösterilmiyor. Değerlendirmeler dünya standardında araştırma olanaklarını, kapsayıcı uluslararası ortamı ve güçlü sektör ağını öne çıkarıyor; tekrarlayan eleştiri, araştırma odaklı bazı hocaların öğretime daha az önem vermesi ve bazı derslerin yoğunluğu."
+      },
       "verification_notes": {
-        "en": "Legacy forum-search snippets lacked dated, independently reviewable observations, so no student-sentiment claim is shown.",
-        "tr": "Eski forum arama alıntılarında tarihli ve bağımsız doğrulanabilir gözlemler bulunmadığından öğrenci görüşü iddiası gösterilmez."
-      }
+        "en": "Sample too small for a score (12 reviews, one platform). Reddit thread verified by title only.",
+        "tr": "Puan için örneklem çok küçük (tek platformda 12 yorum). Reddit başlığı yalnızca başlık düzeyinde doğrulandı."
+      },
+      "student_sentiment_sources": [
+        {
+          "platform": "eduopinions",
+          "title": "EDUopinions – KTH student reviews (4.7/5, 12 reviews)",
+          "url": "https://www.eduopinions.com/universities/universities-in-sweden/royal-institute-technology-kth/",
+          "source_type": "third_party_reviews",
+          "access_status": "ok",
+          "last_checked": "2026-07-18",
+          "notes": {
+            "en": "Aggregate read in full on the check date.",
+            "tr": "Toplu değerlendirme sayfası kontrol tarihinde tam okundu."
+          }
+        },
+        {
+          "platform": "reddit",
+          "title": "r/AerospaceEngineering – Thoughts on MSc at KTH",
+          "url": "https://www.reddit.com/r/AerospaceEngineering/comments/ddkrm8/thoughts_on_msc_at_kth/",
+          "source_type": "student_forum",
+          "access_status": "requires_js",
+          "last_checked": "2026-07-18",
+          "notes": {
+            "en": "Thread located via search; topic title verified, content not machine-readable.",
+            "tr": "Başlık arama ile bulundu ve doğrulandı; içerik makine tarafından okunamadı."
+          }
+        }
+      ]
     },
     "application_timeline_profile": {
       "application_period": "Winter",

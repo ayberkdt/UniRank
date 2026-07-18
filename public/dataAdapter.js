@@ -271,7 +271,13 @@ function summarizeConfidence(fieldConfidence) {
     .map(value => Object.prototype.hasOwnProperty.call(rank, value) ? value : "unknown");
 
   if (levels.length === 0) return "unknown";
-  return levels.reduce((lowest, level) => rank[level] < rank[lowest] ? level : lowest, "high");
+  // This summary is only computed for records whose critical fields are all
+  // verified. A single optional field without a source ("unknown") must not
+  // drag the whole record's badge down to "unknown confidence"; the weakest
+  // *known* level is the honest summary. All-unknown still reports unknown.
+  const knownLevels = levels.filter(level => level !== "unknown");
+  if (knownLevels.length === 0) return "unknown";
+  return knownLevels.reduce((lowest, level) => rank[level] < rank[lowest] ? level : lowest, "high");
 }
 
 function getCategoryProfile(record) {

@@ -20,7 +20,9 @@
           "title": "Open-Meteo city geocoding — Toulouse",
           "access_status": "ok",
           "last_checked": "2026-07-15",
-          "relevant_fields": ["location"],
+          "relevant_fields": [
+            "location"
+          ],
           "confidence": "medium",
           "notes": {
             "en": "City-level map reference only; it is not an exact campus coordinate.",
@@ -464,18 +466,55 @@
       },
       "student_sentiment_profile": {
         "student_satisfaction_score": null,
-        "sentiment_confidence": "unknown",
-        "sample_size_estimate": null,
-        "date_range": "",
-        "student_sentiment_sources": [],
+        "sentiment_confidence": "low",
+        "sample_size_estimate": 7,
+        "date_range": "reviews collected up to 2026-07",
         "student_sentiment_summary": {
-          "en": "No sufficiently documented, independent student-sentiment sample was retained; no sentiment score is shown.",
-          "tr": "Yeterince belgelenmiş bağımsız öğrenci görüşü örneklemi tutulmadı; duygu puanı gösterilmez."
+          "en": "Only a small review sample exists (EDUopinions, 4.6/5 from 7 reviews), so no numeric score is shown. Reviewers consistently praise Toulouse's aerospace industry connections, internship access and industry-focused software teaching; the recurring criticism is that some industry lecturers teach poorly and lecture blocks are long and draining.",
+          "tr": "Yorum örneklemi küçük olduğundan (EDUopinions, 7 yorumda 4.6/5) sayısal puan gösterilmiyor. Değerlendirmeler Toulouse'un havacılık-uzay sanayi bağlantılarını, staj erişimini ve sektör yazılımlarına dayalı öğretimi tutarlı biçimde övüyor; tekrarlayan eleştiri, sektörden gelen bazı eğitmenlerin ders anlatımının zayıf ve ders bloklarının uzun/yorucu olması."
         },
         "verification_notes": {
-          "en": "Student sentiment remains separate from official facts and is not fabricated to fill the card.",
-          "tr": "Öğrenci görüşleri resmî bilgilerden ayrı tutulur ve kartı doldurmak için uydurulmaz."
-        }
+          "en": "Sample too small for a score (7 reviews, one platform). Reddit threads verified by title only.",
+          "tr": "Puan için örneklem çok küçük (tek platformda 7 yorum). Reddit başlıkları yalnızca başlık düzeyinde doğrulandı."
+        },
+        "student_sentiment_sources": [
+          {
+            "platform": "eduopinions",
+            "title": "EDUopinions – ISAE-SUPAERO student reviews (4.6/5, 7 reviews)",
+            "url": "https://www.eduopinions.com/universities/universities-in-france/institut-superieur-de-laeronautique-et-de-lespace-isae-supaero/",
+            "source_type": "third_party_reviews",
+            "access_status": "ok",
+            "last_checked": "2026-07-18",
+            "notes": {
+              "en": "Aggregate read in full on the check date.",
+              "tr": "Toplu değerlendirme sayfası kontrol tarihinde tam okundu."
+            }
+          },
+          {
+            "platform": "reddit",
+            "title": "r/AerospaceEngineering – Experience in ISAE SUPAERO",
+            "url": "https://www.reddit.com/r/AerospaceEngineering/comments/l8ou8k/experience_in_isae_supaero/",
+            "source_type": "student_forum",
+            "access_status": "requires_js",
+            "last_checked": "2026-07-18",
+            "notes": {
+              "en": "Thread located via search; topic title verified, content not machine-readable.",
+              "tr": "Başlık arama ile bulundu ve doğrulandı; içerik makine tarafından okunamadı."
+            }
+          },
+          {
+            "platform": "reddit",
+            "title": "r/aerospace – MSc at ISAE SUPAERO?",
+            "url": "https://www.reddit.com/r/aerospace/comments/1cwrm53/msc_at_isae_supaero/",
+            "source_type": "student_forum",
+            "access_status": "requires_js",
+            "last_checked": "2026-07-18",
+            "notes": {
+              "en": "Thread located via search; topic title verified, content not machine-readable.",
+              "tr": "Başlık arama ile bulundu ve doğrulandı; içerik makine tarafından okunamadı."
+            }
+          }
+        ]
       },
       "source_profile": {
         "official_program_page": "https://www.isae-supaero.fr/en/programmes/masters-degree-in-aerospace-engineering/",
@@ -739,7 +778,9 @@
           "title": "Open-Meteo city geocoding — Saint-Quentin-en-Yvelines",
           "access_status": "ok",
           "last_checked": "2026-07-15",
-          "relevant_fields": ["location"],
+          "relevant_fields": [
+            "location"
+          ],
           "confidence": "medium",
           "notes": {
             "en": "City-level map reference for the Paris-Saclay campus area; it is not an exact campus coordinate.",
@@ -1325,7 +1366,9 @@
           "title": "Open-Meteo city geocoding — Évry",
           "access_status": "ok",
           "last_checked": "2026-07-15",
-          "relevant_fields": ["location"],
+          "relevant_fields": [
+            "location"
+          ],
           "confidence": "medium",
           "notes": {
             "en": "City-level map reference for Évry-Courcouronnes; it is not an exact campus coordinate.",

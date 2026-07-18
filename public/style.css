@@ -1392,6 +1392,13 @@ input[type=range] {
   font-weight: 700;
 }
 
+/* Severity colours for translated level badges (housing, admission, …). */
+.risk-badge { border: 1px solid transparent; }
+.risk-badge.risk-low { border-color: rgba(24, 160, 116, 0.45); background: rgba(24, 160, 116, 0.14); color: #2fbd8f; }
+.risk-badge.risk-medium { border-color: rgba(222, 168, 37, 0.45); background: rgba(222, 168, 37, 0.14); color: #e3b341; }
+.risk-badge.risk-high { border-color: rgba(224, 82, 82, 0.45); background: rgba(224, 82, 82, 0.14); color: #ef6a6a; }
+.risk-badge.risk-unknown { border-color: rgba(148, 163, 184, 0.4); background: rgba(148, 163, 184, 0.12); color: #94a3b8; }
+
 @media (max-width: 768px) {
   .detail-grid {
     grid-template-columns: 1fr;

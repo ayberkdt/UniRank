@@ -4319,18 +4319,43 @@
     },
     "student_sentiment_profile": {
       "student_satisfaction_score": null,
-      "sentiment_confidence": "unknown",
-      "sample_size_estimate": null,
-      "date_range": "",
-      "student_sentiment_sources": [],
+      "sentiment_confidence": "low",
+      "sample_size_estimate": 9,
+      "date_range": "reviews collected up to 2026-07",
       "student_sentiment_summary": {
-        "en": "No sufficiently documented, independent student-sentiment sample was retained; no sentiment score is shown.",
-        "tr": "Yeterince belgelenmis bagimsiz ogrenci gorusu orneklemi tutulmadi; duygu puani gosterilmez."
+        "en": "The review sample is small (EDUopinions, 4.2/5 from 9 reviews), so no numeric score is shown. Reviewers praise the research-oriented environment, modern laboratories and a student-friendly city near Frankfurt; recurring notes are a demanding workload and an adjustment period for internationals entering the German academic system.",
+        "tr": "Yorum örneklemi küçük olduğundan (EDUopinions, 9 yorumda 4.2/5) sayısal puan gösterilmiyor. Değerlendirmeler araştırma odaklı ortamı, modern laboratuvarları ve Frankfurt'a yakın öğrenci dostu şehri övüyor; tekrarlayan notlar, iş yükünün ağırlığı ve uluslararası öğrenciler için Alman akademik sistemine uyum süreci."
       },
       "verification_notes": {
-        "en": "Student sentiment remains separate from official facts and is not fabricated to fill the card.",
-        "tr": "Ogrenci gorusleri resmi bilgilerden ayri tutulur ve karti doldurmak icin uydurulmaz."
-      }
+        "en": "Sample too small for a score (9 reviews, one platform). Reddit thread verified by title only.",
+        "tr": "Puan için örneklem çok küçük (tek platformda 9 yorum). Reddit başlığı yalnızca başlık düzeyinde doğrulandı."
+      },
+      "student_sentiment_sources": [
+        {
+          "platform": "eduopinions",
+          "title": "EDUopinions – TU Darmstadt student reviews (4.2/5, 9 reviews)",
+          "url": "https://www.eduopinions.com/universities/universities-in-germany/darmstadt-university-technology-tu-darmstadt/",
+          "source_type": "third_party_reviews",
+          "access_status": "ok",
+          "last_checked": "2026-07-18",
+          "notes": {
+            "en": "Aggregate read in full on the check date.",
+            "tr": "Toplu değerlendirme sayfası kontrol tarihinde tam okundu."
+          }
+        },
+        {
+          "platform": "reddit",
+          "title": "r/tudarmstadt – TU Darmstadt msc aerospace",
+          "url": "https://www.reddit.com/r/tudarmstadt/comments/v9fwj4/tu_darmstadt_msc_aerospace/",
+          "source_type": "student_forum",
+          "access_status": "requires_js",
+          "last_checked": "2026-07-18",
+          "notes": {
+            "en": "Thread located via search; topic title verified, content not machine-readable.",
+            "tr": "Başlık arama ile bulundu ve doğrulandı; içerik makine tarafından okunamadı."
+          }
+        }
+      ]
     },
     "quality_control": {
       "qc_status": "passed",

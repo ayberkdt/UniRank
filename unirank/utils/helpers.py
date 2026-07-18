@@ -8,30 +8,15 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 LOG_PATH = BASE_DIR / "unirank.log"
 
-# ---------------------------------------------------------------------
-# Theme & Widget Loader (assets.* varsa onu kullan; yoksa local)
-# ---------------------------------------------------------------------
 
-# Package layout: assets/theme.py, assets/widgets.py, assets/json_loader.py
-from unirank.ui.theme import apply_theme, ThemeConfig
-from unirank.ui.widgets import (
-    Sidebar,
-    PrimaryButton,
-    SecondaryButton,
-    TableSettingsButton,
-    DetailsDrawer,
-    DetailHoverButton,
-    WeightSliderRow,
-    HashtagFilterPanel,
-    apply_hashtag_filters,
-    apply_ranking_delegates,
-    apply_shadow,
-    clamp01 as clamp01,
-    ModernCard,
-    KPICard,
-    SearchBar,
-)
-from unirank.core.json_loader import load_database, LoadReport, LoadIssue
+def clamp01(value: float) -> float:
+    try:
+        value = float(value)
+    except Exception:
+        return 0.0
+    if value != value:  # NaN
+        return 0.0
+    return min(1.0, max(0.0, value))
 
 
 # ===================================================================

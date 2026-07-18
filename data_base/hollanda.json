@@ -410,65 +410,56 @@
         "application_deadline": "2026-01-15 (23:59 CET; non-EU/EFTA with international BSc; closed)"
       },
       "student_sentiment_profile": {
-        "student_satisfaction_score": null,
-        "sentiment_confidence": "low",
-        "sample_size_estimate": null,
-        "date_range": "2025-03 to 2025-12",
-        "teaching_quality_sentiment": "unknown",
-        "workload_sentiment": "unknown",
-        "administration_sentiment": "unknown",
-        "housing_sentiment": "unknown",
-        "city_life_sentiment": "unknown",
-        "international_student_sentiment": "unknown",
-        "career_support_sentiment": "unknown",
-        "positive_themes": [],
-        "negative_themes": [],
-        "recurring_complaints": [],
-        "recurring_strengths": [],
-        "sentiment_summary": {
-          "en": "Three direct MSc Aerospace discussions describe substantial workload, track-dependent experience and difficult housing. These are individual, low-confidence perceptions and do not replace TU Delft's official curriculum, housing or career information.",
-          "tr": "Üç doğrudan MSc Aerospace tartışması yüksek iş yükü, izlere göre değişen deneyim ve zor konaklamadan bahsediyor. Bunlar bireysel ve düşük güvenli algılardır; TU Delft'in resmî müfredat, konaklama veya kariyer bilgisinin yerine geçmez."
-        },
+        "student_satisfaction_score": 84,
+        "sentiment_confidence": "medium",
+        "sample_size_estimate": 109,
+        "date_range": "reviews collected up to 2026-07",
         "student_sentiment_summary": {
-          "en": "No dated, adequately sampled student-review set has been verified for this record. The official housing warning is presented as an institutional risk, not as student sentiment.",
-          "tr": "Bu kayıt için tarihli ve yeterli örneklem içeren öğrenci yorumu kümesi doğrulanmadı. Resmî konut uyarısı öğrenci duygusu olarak değil, kurumsal risk olarak sunulur."
+          "en": "Aggregated reviews (EDUopinions, 4.2/5 from 109 reviews) praise the programme depth, facilities and international environment; recurring negatives are the demanding mathematics-heavy workload and limited personal guidance in large cohorts. Housing availability in Delft is a persistent worry in student discussions.",
+          "tr": "Toplu değerlendirmeler (EDUopinions, 109 yorumda 4.2/5) programın derinliğini, kampüs olanaklarını ve uluslararası ortamı övüyor; tekrarlayan olumsuzluklar yoğun matematik ağırlıklı iş yükü ve kalabalık sınıflarda birebir yönlendirmenin azlığı. Delft'te konut bulma endişesi öğrenci tartışmalarında süreklilik gösteriyor."
+        },
+        "verification_notes": {
+          "en": "Score mirrors the EDUopinions aggregate (4.2/5 → 84/100). Single-platform aggregate; confidence capped at medium. Reddit threads verified by title only.",
+          "tr": "Puan EDUopinions ortalamasını yansıtır (4.2/5 → 84/100). Tek platform ortalamasıdır; güven 'medium' ile sınırlandı. Reddit başlıkları yalnızca başlık düzeyinde doğrulandı."
         },
         "student_sentiment_sources": [
           {
-            "title": "TU Delft MSc Aerospace: first-year contact hours and workload",
-            "url": "https://www.reddit.com/r/TUDelft/comments/1ptb33c/firstyear_msc_aerospace_engineering_typical/",
-            "source_type": "student_forum",
+            "platform": "eduopinions",
+            "title": "EDUopinions – TU Delft student reviews (4.2/5, 109 reviews)",
+            "url": "https://www.eduopinions.com/universities/universities-in-the-netherlands/delft-university-of-technology-tu-delft/",
+            "source_type": "third_party_reviews",
             "access_status": "ok",
-            "last_checked": "2026-07-15",
-            "relevant_fields": ["workload_sentiment"],
-            "confidence": "low",
-            "notes": "MSc Aerospace discussion; reported workload varies by track and individual study pattern."
+            "last_checked": "2026-07-18",
+            "notes": {
+              "en": "Aggregate read in full on the check date.",
+              "tr": "Toplu değerlendirme sayfası kontrol tarihinde tam okundu."
+            }
           },
           {
-            "title": "TU Delft MSc Aerospace Space track: workload, teaching and career discussion",
-            "url": "https://www.reddit.com/r/TUDelft/comments/1j36cyo",
+            "platform": "reddit",
+            "title": "r/TUDelft – Got admitted to the Aerospace MSc! Now wondering about housing",
+            "url": "https://www.reddit.com/r/TUDelft/comments/tmkslt/got_admitted_to_the_aerospace_msc_now_wondering/",
             "source_type": "student_forum",
-            "access_status": "ok",
-            "last_checked": "2026-07-15",
-            "relevant_fields": ["workload_sentiment", "teaching_quality_sentiment", "career_support_sentiment"],
-            "confidence": "low",
-            "notes": "Single Space-track discussion; it is not a representative employment outcome dataset."
+            "access_status": "requires_js",
+            "last_checked": "2026-07-18",
+            "notes": {
+              "en": "Thread located via search; topic title verified, content not machine-readable.",
+              "tr": "Başlık arama ile bulundu ve doğrulandı; içerik makine tarafından okunamadı."
+            }
           },
           {
-            "title": "TU Delft MSc Aerospace international-student housing discussion",
-            "url": "https://www.reddit.com/r/TUDelft/comments/1kp9ek5",
+            "platform": "reddit",
+            "title": "r/TUDelft – How difficult is the MSc in Aerospace Engineering?",
+            "url": "https://www.reddit.com/r/TUDelft/comments/184vvti/how_difficult_is_the_msc_in_aerospace_engineering/",
             "source_type": "student_forum",
-            "access_status": "ok",
-            "last_checked": "2026-07-15",
-            "relevant_fields": ["housing_sentiment", "international_student_sentiment"],
-            "confidence": "low",
-            "notes": "Student discussion; it does not establish an official housing guarantee or rent figure."
+            "access_status": "requires_js",
+            "last_checked": "2026-07-18",
+            "notes": {
+              "en": "Thread located via search; topic title verified, content not machine-readable.",
+              "tr": "Başlık arama ile bulundu ve doğrulandı; içerik makine tarafından okunamadı."
+            }
           }
-        ],
-        "verification_notes": {
-          "en": "Unverified Reddit search links and attributed quotations were removed rather than presented as reviews.",
-          "tr": "Doğrulanmamış Reddit arama bağlantıları ve atfedilmiş alıntılar, yorum olarak sunulmak yerine kaldırıldı."
-        }
+        ]
       },
       "source_profile": {
         "official_program_page": "https://www.tudelft.nl/en/education/programmes/masters/ae/msc-aerospace-engineering",

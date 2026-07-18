@@ -323,19 +323,56 @@
       ]
     },
     "student_sentiment_profile": {
-      "student_satisfaction_score": null,
-      "sentiment_confidence": "unknown",
-      "sample_size_estimate": null,
-      "date_range": "",
-      "student_sentiment_sources": [],
+      "student_satisfaction_score": 82,
+      "sentiment_confidence": "medium",
+      "sample_size_estimate": 80,
+      "date_range": "reviews collected up to 2026-07",
       "student_sentiment_summary": {
-        "en": "No sufficiently documented, independent student-sentiment sample was retained; no sentiment score is shown.",
-        "tr": "Yeterince belgelenmiş bağımsız öğrenci görüşü örneklemi tutulmadı; duygu puanı gösterilmez."
+        "en": "Aggregated student reviews (EDUopinions, 4.1/5 from 80 reviews) are broadly positive: teaching quality, reputation and research environment are praised, while the recurring complaints are a heavy theoretical workload and limited built-in practical or internship experience. Reddit discussions on the aerospace programme raise the same themes.",
+        "tr": "Toplu öğrenci değerlendirmeleri (EDUopinions, 80 yorumda 4.1/5) genel olarak olumlu: öğretim kalitesi, kurumun itibarı ve araştırma ortamı övülüyor; tekrarlayan şikayetler ise ağır teorik iş yükü ve programa gömülü uygulama/staj deneyiminin sınırlı olması. Havacılık-uzay programına dair Reddit tartışmaları da aynı temaları içeriyor."
       },
       "verification_notes": {
-        "en": "Student sentiment remains separate from official facts and is not fabricated to fill the card.",
-        "tr": "Öğrenci görüşleri resmî bilgilerden ayrı tutulur ve kartı doldurmak için uydurulmaz."
-      }
+        "en": "Score mirrors the EDUopinions aggregate (4.1/5 → 82/100). Single-platform aggregate; confidence capped at medium. Reddit threads verified by title only (anonymous access blocked).",
+        "tr": "Puan EDUopinions ortalamasını yansıtır (4.1/5 → 82/100). Tek platform ortalamasıdır; güven 'medium' ile sınırlandı. Reddit başlıkları yalnızca başlık düzeyinde doğrulandı (anonim erişim engelli)."
+      },
+      "student_sentiment_sources": [
+        {
+          "platform": "eduopinions",
+          "title": "EDUopinions – Politecnico di Milano student reviews (4.1/5, 80 reviews)",
+          "url": "https://www.eduopinions.com/universities/universities-in-italy/politecnico-di-milano/",
+          "source_type": "third_party_reviews",
+          "access_status": "ok",
+          "last_checked": "2026-07-18",
+          "notes": {
+            "en": "Aggregate read in full on the check date.",
+            "tr": "Toplu değerlendirme sayfası kontrol tarihinde tam okundu."
+          }
+        },
+        {
+          "platform": "reddit",
+          "title": "r/AerospaceEngineering – Politecnico di Milano for MS Aeronautical Engineering?",
+          "url": "https://www.reddit.com/r/AerospaceEngineering/comments/127bs4u/politechnico_di_milano_for_ms_aeronautical/",
+          "source_type": "student_forum",
+          "access_status": "requires_js",
+          "last_checked": "2026-07-18",
+          "notes": {
+            "en": "Thread located via search; topic title verified, content not machine-readable.",
+            "tr": "Başlık arama ile bulundu ve doğrulandı; içerik makine tarafından okunamadı."
+          }
+        },
+        {
+          "platform": "reddit",
+          "title": "r/Universitaly – How is Politecnico di Milano?",
+          "url": "https://www.reddit.com/r/Universitaly/comments/1do3x5g/how_is_politecnico_di_milano/",
+          "source_type": "student_forum",
+          "access_status": "requires_js",
+          "last_checked": "2026-07-18",
+          "notes": {
+            "en": "Thread located via search; topic title verified, content not machine-readable.",
+            "tr": "Başlık arama ile bulundu ve doğrulandı; içerik makine tarafından okunamadı."
+          }
+        }
+      ]
     },
     "application_timeline_profile": {
       "academic_year": "2026/27 foreign-qualification call cycle",

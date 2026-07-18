@@ -62,8 +62,10 @@ function documentedAcademicStrength(record, normalized, hasCurriculumEvidence, h
 
   // A high result must be traceable to checked curriculum/research evidence.
   // Legacy prestige, ranking and self-entered numeric seeds are intentionally excluded.
-  let score = hasCurriculumEvidence ? 50 : 30;
-  score += Math.min(14, documentedTopics.size * 2);
+  // The multipliers below are deliberately steep: two labs and eight labs are
+  // very different research environments and must not land on the same score.
+  let score = hasCurriculumEvidence ? 42 : 25;
+  score += Math.min(12, documentedTopics.size * 1.5);
   if (!hasResearchEvidence) return bounded(score);
 
   const labs = stringEntries(research.labs).length;
@@ -72,11 +74,11 @@ function documentedAcademicStrength(record, normalized, hasCurriculumEvidence, h
     + stringEntries(research.satellite_or_flight_projects).length;
   const teams = stringEntries(research.student_teams).length;
 
-  score += 15;
-  score += Math.min(14, labs * 1.5);
-  score += Math.min(6, centers * 1.5);
-  score += Math.min(4, projects * 2);
-  score += Math.min(2, teams);
+  score += 10;
+  score += Math.min(24, labs * 3);
+  score += Math.min(6, centers * 2);
+  score += Math.min(12, projects * 4);
+  score += Math.min(4, teams * 1.5);
   return bounded(score);
 }
 
@@ -244,13 +246,27 @@ function calculateScore(record, preferences, weights) {
   }
   costFit = Math.min(100, Math.max(0, costFit));
 
-  let careerFit = hasResearchEvidence ? 55 : 45;
-  const partnerText = normalizeText((normalized?.confirmedPartners || []).map((partner) => typeof partner === "object" ? partner.name || partner.en || "" : partner).join(" "));
-  const premiumPartners = ["esa", "dlr", "nasa", "jaxa", "airbus", "cern", "onera", "isae", "estec"];
-  const partnerMatches = hasVerifiedField(normalized, "industry") ? premiumPartners.filter((partner) => partnerText.includes(partner)).length : 0;
-  careerFit += partnerMatches * 15;
+  let careerFit = hasResearchEvidence ? 50 : 40;
+  const confirmedPartners = normalized?.confirmedPartners || [];
+  const partnerText = normalizeText(confirmedPartners.map((partner) => typeof partner === "object" ? partner.name || partner.en || "" : partner).join(" "));
+  const premiumPartners = ["esa", "dlr", "nasa", "jaxa", "airbus", "cern", "onera", "isae", "estec", "boeing", "safran", "thales", "leonardo", "ohb"];
+  // Curated partner lists on a fully verified record are usable evidence even
+  // when the dedicated "industry" flag was never set by the research pipeline.
+  const partnersUsable = hasVerifiedField(normalized, "industry")
+    || (normalized?.dataQuality?.status === "verified" && confirmedPartners.length > 0);
+  if (partnersUsable) {
+    const premiumMatches = premiumPartners.filter((partner) => partnerText.includes(partner)).length;
+    careerFit += Math.min(12, confirmedPartners.length * 3);
+    careerFit += Math.min(24, premiumMatches * 8);
+    if (premiumMatches > 0) explanation.push("Documented partnerships with major aerospace organisations.");
+  }
+  if (hasResearchEvidence) {
+    const careerProjects = stringEntries(record?.research_profile?.space_or_aerospace_projects).length
+      + stringEntries(record?.research_profile?.satellite_or_flight_projects).length;
+    careerFit += Math.min(10, careerProjects * 3);
+  }
   if (normalized?.internshipMandatory === true && hasCurriculumEvidence) {
-    careerFit += 10;
+    careerFit += 8;
     explanation.push("A documented mandatory internship supports industry exposure.");
   }
   careerFit = Math.min(100, Math.max(0, careerFit));
