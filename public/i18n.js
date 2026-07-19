@@ -27,7 +27,7 @@ window.I18N = {
     app_subtitle: "Analyze and compare universities based on your personal criteria",
     brand_tagline: "Aerospace decision lab",
     profile_cta_desc: "Field, budget, and risk preferences",
-    english_filter_desc: "Hide mixed or unverified language options",
+    english_filter_desc: "Show programmes with a verified English-taught route; bilingual options are included",
     dashboard_eyebrow: "Aerospace & space master's programs",
     dashboard_title: "Find Your Aerospace or Space Master's",
     dashboard_subtitle: "Compare technical fit, admission reality, costs, and data confidence in one place.",
@@ -69,6 +69,15 @@ window.I18N = {
     filters: "Filters",
     countries_regions: "Countries & Regions",
     search_country: "Search country...",
+    country_picker_hint: "Choose one or more",
+    country_picker_all: "All countries",
+    country_picker_title: "Select countries",
+    country_picker_clear: "Clear",
+    country_picker_search_placeholder: "Search by country name",
+    country_picker_no_results: "No matching country",
+    country_picker_selected: "countries selected",
+    country_picker_programme: "programme",
+    country_picker_programmes: "programmes",
     search_manual: "Or type manual search...",
     clear: "Clear",
     reset: "Reset",
@@ -85,11 +94,11 @@ window.I18N = {
     no_category_results: "No matching categories found",
 
     degree_level: "Degree Level",
-    all_degrees: "All Degrees",
+    all_degrees: "All Postgraduate Degrees",
     bsc: "Bachelor (BSc)",
     msc: "Master (MSc)",
     phd: "Doctorate (PhD)",
-    only_english: "Only English-taught",
+    only_english: "English study option",
     max_tuition: "Max Tuition",
     show_favorites: "⭐ Show Favorites",
 
@@ -98,7 +107,7 @@ window.I18N = {
     preset_balanced: "Balanced",
     preset_low_cost: "Low Cost Priority",
     preset_best_fit: "Best Aerospace / Space Fit",
-    preset_safe_choice: "English-Only Safe Choice",
+    preset_safe_choice: "English-Option Safe Choice",
     preset_career: "Career-Oriented",
     preset_custom: "Custom",
 
@@ -204,7 +213,7 @@ window.I18N = {
     none: "None",
     strict_budget: "Strict Budget",
     any_language: "Any Language",
-    strictly_english_only: "Strictly English-Only",
+    strictly_english_only: "English study option required",
     admission_risk_tolerance: "Admission Risk Tolerance",
     housing_risk_tolerance: "Housing Risk Tolerance",
     cancel: "Cancel",
@@ -214,7 +223,7 @@ window.I18N = {
     sign_in_create: "Sign In / Create Account",
     complete_profile: "Complete your profile...",
     target_degree: "Target Degree",
-    any_degree: "Any Degree",
+    any_degree: "Any Postgraduate Degree",
 
     overview: "Overview",
     program_admission: "Program & Admission",
@@ -300,7 +309,7 @@ window.I18N = {
     app_subtitle: "Üniversiteleri kişisel ölçütlerine göre analiz et ve karşılaştır",
     brand_tagline: "Havacılık karar laboratuvarı",
     profile_cta_desc: "Alan, bütçe ve risk tercihleri",
-    english_filter_desc: "Karma veya doğrulanmamış dil seçeneklerini gizle",
+    english_filter_desc: "Doğrulanmış İngilizce eğitim yolu olan programları gösterir; iki dilli seçenekler dahildir",
     dashboard_eyebrow: "Havacılık ve uzay yüksek lisans programları",
     dashboard_title: "Havacılık veya Uzay Yüksek Lisansını Bul",
     dashboard_subtitle: "Teknik uyumu, kabul gerçekliğini, maliyetleri ve veri güvenini tek yerde karşılaştır.",
@@ -342,6 +351,15 @@ window.I18N = {
     filters: "Filtreler",
     countries_regions: "Ülkeler ve Bölgeler",
     search_country: "Ülke ara...",
+    country_picker_hint: "Bir veya daha fazla ülke seç",
+    country_picker_all: "Tüm ülkeler",
+    country_picker_title: "Ülke seç",
+    country_picker_clear: "Temizle",
+    country_picker_search_placeholder: "Ülke adına göre ara",
+    country_picker_no_results: "Eşleşen ülke yok",
+    country_picker_selected: "ülke seçili",
+    country_picker_programme: "program",
+    country_picker_programmes: "program",
     search_manual: "Veya manuel arama yapın...",
     clear: "Temizle",
     reset: "Sıfırla",
@@ -358,11 +376,11 @@ window.I18N = {
     no_category_results: "Eşleşen kategori bulunamadı",
 
     degree_level: "Derece Seviyesi",
-    all_degrees: "Tüm Dereceler",
+    all_degrees: "Tüm Lisansüstü Dereceler",
     bsc: "Lisans (BSc)",
     msc: "Yüksek Lisans (MSc)",
     phd: "Doktora (PhD)",
-    only_english: "Sadece İngilizce Eğitim",
+    only_english: "İngilizce eğitim seçeneği",
     max_tuition: "Maksimum Ücret",
     show_favorites: "⭐ Favorileri Göster",
 
@@ -371,7 +389,7 @@ window.I18N = {
     preset_balanced: "Dengeli",
     preset_low_cost: "Düşük Maliyet Önceliği",
     preset_best_fit: "En İyi Havacılık / Uzay Uyumu",
-    preset_safe_choice: "Sadece İngilizce Güvenli Seçim",
+    preset_safe_choice: "İngilizce Seçenekli Güvenli Seçim",
     preset_career: "Kariyer Odaklı",
     preset_custom: "Özel",
 
@@ -477,7 +495,7 @@ window.I18N = {
     none: "Yok",
     strict_budget: "Kesin Bütçe Sınırı",
     any_language: "Farketmez (Her Dil)",
-    strictly_english_only: "Kesinlikle Sadece İngilizce",
+    strictly_english_only: "İngilizce eğitim seçeneği gerekli",
     admission_risk_tolerance: "Kabul Risk Toleransı",
     housing_risk_tolerance: "Barınma Risk Toleransı",
     cancel: "İptal",
@@ -487,7 +505,7 @@ window.I18N = {
     sign_in_create: "Giriş Yap / Hesap Oluştur",
     complete_profile: "Profilinizi tamamlayın...",
     target_degree: "Hedef Derece",
-    any_degree: "Herhangi Bir Derece",
+    any_degree: "Herhangi Bir Lisansüstü Derece",
 
     overview: "Genel Bakış",
     program_admission: "Program ve Kabul",
@@ -564,7 +582,16 @@ window.COUNTRY_LABELS = {
   "South Korea": { en: "South Korea", tr: "Güney Kore" },
   China: { en: "China", tr: "Çin" },
   Austria: { en: "Austria", tr: "Avusturya" },
-  Russia: { en: "Russia", tr: "Rusya" }
+  Russia: { en: "Russia", tr: "Rusya" },
+  Czechia: { en: "Czechia", tr: "Çekya" },
+  "Czech Republic": { en: "Czech Republic", tr: "Çek Cumhuriyeti" },
+  Greece: { en: "Greece", tr: "Yunanistan" },
+  Turkey: { en: "Türkiye", tr: "Türkiye" },
+  Türkiye: { en: "Türkiye", tr: "Türkiye" },
+  Finland: { en: "Finland", tr: "Finlandiya" },
+  Poland: { en: "Poland", tr: "Polonya" },
+  Norway: { en: "Norway", tr: "Norveç" },
+  Ireland: { en: "Ireland", tr: "İrlanda" }
 };
 
 window.I18N = I18N;
@@ -744,4 +771,3 @@ window.getCategoryLabel = function(key) {
         .replace(/[_-]+/g, ' ')
         .replace(/\b\w/g, character => character.toUpperCase());
 };
-

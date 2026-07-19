@@ -28,6 +28,10 @@ const requiredIds = [
   'filter-toggle',
   'search-input',
   'country-filter',
+  'country-picker-trigger',
+  'country-picker-popover',
+  'country-picker-search',
+  'country-picker-options',
   'categorySearchInput',
   'degree-filter',
   'english-only-filter',
@@ -49,6 +53,12 @@ const requiredIds = [
 ];
 const missingIds = requiredIds.filter((id) => !ids.includes(id));
 if (missingIds.length) failures.push(`Missing UI contract ids: ${missingIds.join(', ')}`);
+if (/value="BSc"|Bachelor \(BSc\)/i.test(html)) {
+  failures.push('Undergraduate degree option is exposed in the postgraduate UI.');
+}
+if (!html.includes('value="english_available"')) {
+  failures.push('Profile language preference does not expose the English-study-option semantic.');
+}
 
 const sandbox = {
   window: null,
@@ -84,9 +94,12 @@ if (openingBraces !== closingBraces) failures.push(`CSS brace mismatch: ${openin
 
 for (const contract of [
   ['responsive filter drawer', css.includes('.filters-open .sidebar')],
+  ['custom country picker', html.includes('class="country-picker-native" hidden') && scriptCode.includes('renderCountryFlag') && css.includes('.country-picker-popover')],
+  ['country picker accessibility', html.includes('aria-multiselectable="true"') && scriptCode.includes("setAttribute('aria-selected'")],
+  ['fixed filter rail controls', html.includes('class="sidebar__scroll"') && css.includes('.sidebar__scroll')],
   ['reduced motion support', css.includes('@media (prefers-reduced-motion: reduce)')],
   ['map result cards', css.includes('.map-result-card') && mapCode.includes('map-result-card')],
-  ['shared map score thresholds', mapCode.includes('score >= 6.0') && scriptCode.includes('value >= 6')],
+  ['shared map score thresholds', [6.5, 5.5, 4.5].every((value) => mapCode.includes(`score >= ${value}`) && scriptCode.includes(`value >= ${value}`))],
   ['list/map aria state', scriptCode.includes("setAttribute('aria-pressed'")],
   ['drawer aria state', scriptCode.includes("setAttribute('aria-hidden'")],
 ]) {

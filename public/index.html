@@ -51,6 +51,7 @@
                 <span aria-hidden="true">→</span>
             </button>
 
+            <div class="sidebar__scroll">
             <section class="filter-card" aria-labelledby="quick-filters-title">
                 <div class="filter-card__header">
                     <div>
@@ -68,11 +69,20 @@
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label for="country-filter" data-i18n="countries_regions">Countries & Regions</label>
-                    <select id="country-filter">
+                <div class="form-group country-picker-field">
+                    <span class="field-label" id="country-filter-label" data-i18n="countries_regions">Countries & Regions</span>
+                    <select id="country-filter" class="country-picker-native" hidden tabindex="-1" aria-hidden="true">
                         <option value="" data-i18n="search_country">Search country...</option>
                     </select>
+                    <button class="country-picker-trigger" id="country-picker-trigger" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="country-picker-popover" aria-labelledby="country-filter-label country-picker-value">
+                        <span class="country-picker-trigger__flag" id="country-picker-trigger-flag" aria-hidden="true">🌍</span>
+                        <span class="country-picker-trigger__copy">
+                            <small data-i18n="country_picker_hint">Choose one or more</small>
+                            <strong id="country-picker-value" data-i18n="country_picker_all">All countries</strong>
+                        </span>
+                        <span class="country-picker-trigger__count" id="country-picker-count" hidden>0</span>
+                        <span class="country-picker-trigger__chevron" aria-hidden="true"></span>
+                    </button>
                     <div id="country-tags" class="tag-list"></div>
                 </div>
 
@@ -95,7 +105,6 @@
                         <select id="degree-filter">
                             <option value="All" data-i18n="all_degrees">All Degrees</option>
                             <option value="MSc" data-i18n="msc">Master (MSc)</option>
-                            <option value="BSc" data-i18n="bsc">Bachelor (BSc)</option>
                             <option value="PhD" data-i18n="phd">Doctorate (PhD)</option>
                         </select>
                     </div>
@@ -103,8 +112,8 @@
 
                 <label class="filter-toggle-row" for="english-only-filter">
                     <span>
-                        <strong data-i18n="only_english">Only English-taught</strong>
-                        <small data-i18n="english_filter_desc">Hide mixed or unverified language options</small>
+                        <strong data-i18n="only_english">English study option</strong>
+                        <small data-i18n="english_filter_desc">Show programmes with a verified English-taught route; bilingual options are included</small>
                     </span>
                     <span class="custom-switch">
                         <input type="checkbox" id="english-only-filter">
@@ -146,7 +155,7 @@
                             <option value="balanced" data-i18n="preset_balanced">Balanced</option>
                             <option value="low_cost" data-i18n="preset_low_cost">Low Cost Priority</option>
                             <option value="best_fit" data-i18n="preset_best_fit">Best Aerospace / Space Fit</option>
-                            <option value="safe_choice" data-i18n="preset_safe_choice">English-Only Safe Choice</option>
+                            <option value="safe_choice" data-i18n="preset_safe_choice">English-Option Safe Choice</option>
                             <option value="career" data-i18n="preset_career">Career-Oriented</option>
                             <option value="custom" data-i18n="preset_custom">Custom</option>
                         </select>
@@ -161,7 +170,24 @@
                     </div>
                 </div>
             </details>
+            </div>
         </aside>
+
+        <div class="country-picker-popover" id="country-picker-popover" role="dialog" aria-modal="false" aria-labelledby="country-picker-title" hidden>
+            <div class="country-picker-popover__header">
+                <div>
+                    <span class="country-picker-popover__eyebrow" data-i18n="countries_regions">Countries & Regions</span>
+                    <strong id="country-picker-title" data-i18n="country_picker_title">Select countries</strong>
+                </div>
+                <button class="country-picker-clear" id="country-picker-clear" type="button" data-i18n="country_picker_clear">Clear</button>
+            </div>
+            <div class="country-picker-search">
+                <span aria-hidden="true">⌕</span>
+                <input id="country-picker-search" type="search" autocomplete="off" data-i18n-placeholder="country_picker_search_placeholder" placeholder="Search by country name">
+            </div>
+            <div class="country-picker-options" id="country-picker-options" role="listbox" aria-multiselectable="true"></div>
+            <p class="country-picker-empty" id="country-picker-empty" data-i18n="country_picker_no_results" hidden>No matching country</p>
+        </div>
 
         <main class="main-content">
             <header class="top-header">
@@ -348,7 +374,6 @@
                         <label for="profile-target-degree" data-i18n="target_degree">Target Degree</label>
                         <select id="profile-target-degree" class="modern-input" style="width:100%;">
                             <option value="All" data-i18n="any_degree">Any Degree</option>
-                            <option value="BSc">Bachelor (BSc)</option>
                             <option value="MSc" selected>Master (MSc)</option>
                             <option value="PhD">Doctorate (PhD)</option>
                         </select>
@@ -403,7 +428,7 @@
                         <label data-i18n="language_preferences">Language Preferences</label>
                         <select id="profile-lang-filter" class="modern-input" style="width:100%;">
                             <option value="any" data-i18n="any_language">Any Language</option>
-                            <option value="english_only" data-i18n="strictly_english_only">Strictly English-Only</option>
+                            <option value="english_available" data-i18n="strictly_english_only">English study option required</option>
                         </select>
                     </div>
                     <div class="form-group detail-item">

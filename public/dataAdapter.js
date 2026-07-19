@@ -336,6 +336,8 @@ function normalizeUniversityRecord(record) {
 
   const eligibilityProfile = record.eligibility_profile || {};
   const sourceProfile = record.source_profile || {};
+  const rankingProfile = record.ranking_profile || {};
+  const qsProfile = rankingProfile.qs_world_university_rankings || {};
   const costProfile = record.cost_profile || {};
   const languageProfile = record.language_profile || {};
   const livingProfile = record.living_profile || {};
@@ -506,7 +508,10 @@ function normalizeUniversityRecord(record) {
     },
     categoryProfile,
     location: normalizeLocation(record),
-    qsRanking: firstFiniteNumber(record.qs_ranking),
+    qsRanking: firstFiniteNumber(record.qs_ranking, qsProfile.rank),
+    qsRankDisplay: firstValue(record.qs_ranking_display, qsProfile.display_rank, record.qs_ranking),
+    qsRankYear: firstFiniteNumber(record.qs_ranking_year, qsProfile.edition),
+    qsRankSource: firstValue(qsProfile.source_url),
     engineeringRanking: firstValue(record.engineering_ranking, record.field_recognition) || null,
     labs: Array.isArray(researchProfile.labs) ? researchProfile.labs : [],
     professors: Array.isArray(researchProfile.notable_professors) ? researchProfile.notable_professors : [],

@@ -88,7 +88,7 @@ def _programme_identity(row: Dict[str, Any]) -> tuple[str, str, str, str]:
 
 
 def _is_undergraduate_programme(row: Dict[str, Any]) -> bool:
-    """Exclude first-cycle choices from the Master's decision dataset.
+    """Exclude first-cycle choices from the postgraduate decision dataset.
 
     This is intentionally an exclusion check rather than a guess that every
     unknown degree is a Master's.  It catches explicit Bachelor's/BSc labels
@@ -120,7 +120,7 @@ def _deduplicate_programme_rows(rows: List[Dict[str, Any]], report: LoadReport) 
         if _is_undergraduate_programme(row):
             report.add(LoadIssue.warn(
                 str(row.get("source_file") or "data_base"),
-                "Suppressed undergraduate programme from the Master's-only dataset.",
+                "Suppressed undergraduate programme from the postgraduate-only dataset.",
                 record_id=str(row.get("id") or "") or None,
             ))
             continue
@@ -198,6 +198,8 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
                 cost_profile = entry.get("cost_profile", {})
                 living_profile = entry.get("living_profile", {})
                 source_profile = entry.get("source_profile", {})
+                ranking_profile = entry.get("ranking_profile", {})
+                qs_profile = ranking_profile.get("qs_world_university_rankings", {})
                 categories = cat_prof.get("primary_categories", []) + cat_prof.get("secondary_categories", [])
                 
                 tuit_eur = cost_profile.get("tuition_eur_per_year_estimated")
@@ -261,7 +263,10 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
                     "scholarship_names": entry.get("scholarship_profile", {}).get("regional_scholarship_name", ""),
                     "scholarships_json": "[]",
                     "sources_json": "[]",
-                    "qs_ranking": None,
+                    "qs_ranking": entry.get("qs_ranking") if isinstance(entry.get("qs_ranking"), int) else qs_profile.get("rank"),
+                    "qs_ranking_display": entry.get("qs_ranking_display") or qs_profile.get("display_rank"),
+                    "qs_ranking_year": entry.get("qs_ranking_year") or qs_profile.get("edition"),
+                    "ranking_profile": ranking_profile,
                     "global_recognition": "",
                     "field_recognition": "",
                     "source_file": file.name,

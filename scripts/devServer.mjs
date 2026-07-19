@@ -341,7 +341,7 @@ async function loadPrograms() {
           return;
         }
         if (isUndergraduateProgramme(record)) {
-          skipped.push({ file: fileName, record_index: index, id, message: 'Undergraduate programme excluded from the Master\'s-only dataset.' });
+          skipped.push({ file: fileName, record_index: index, id, message: 'Undergraduate programme excluded from the postgraduate-only dataset.' });
           return;
         }
 

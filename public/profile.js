@@ -90,7 +90,7 @@ function populateProfileForm() {
   
   // Background
   const targetDegree = document.getElementById('profile-target-degree');
-  if (targetDegree) targetDegree.value = p.target_degree || '';
+  if (targetDegree) targetDegree.value = String(p.target_degree || '').toLowerCase() === 'bsc' ? 'MSc' : (p.target_degree || 'MSc');
   
   // Budget
   const maxTuition = document.getElementById('profile-max-tuition');
@@ -101,7 +101,7 @@ function populateProfileForm() {
   
   // Language & Risk
   const langFilter = document.getElementById('profile-lang-filter');
-  if (langFilter) langFilter.value = p.language_filter || 'any';
+  if (langFilter) langFilter.value = p.language_filter === 'english_only' ? 'english_available' : (p.language_filter || 'any');
   
   const admissionRisk = document.getElementById('profile-admission-risk');
   if (admissionRisk) admissionRisk.value = p.admission_risk_tolerance || 'medium';

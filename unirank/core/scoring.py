@@ -36,16 +36,37 @@ def calculate_score(record: Dict[str, Any], preferences: Dict[str, Any], weights
     
     # 1. Degree Filter
     target_degree = preferences.get('degreeFilter', 'All')
+    if str(target_degree).lower() in {'bsc', 'bachelor', 'bachelor (bsc)'}:
+        target_degree = 'MSc'
     rec_degree = str(get_val(['Program_Degree', 'program_degree'])).lower()
     if target_degree != 'All' and rec_degree:
         if target_degree.lower() not in rec_degree:
             passed = False
 
-    # 2. English Only Filter
-    lang_req = str(get_val(['Admission_Language_Req', 'admission_language_req'])).lower()
-    if preferences.get('onlyEnglish', False):
-        if 'german' in lang_req or 'french' in lang_req or 'dutch' in lang_req:
-            passed = False
+    # 2. Verified English-study-option filter. Bilingual programmes remain
+    # eligible when they expose an English-taught route; programmes with no
+    # documented English option are excluded.
+    language_profile = record.get('language_profile') or {}
+    teaching_language = get_val(['teaching_language', 'Admission_Language_Req', 'admission_language_req'])
+    if isinstance(teaching_language, list):
+        lang_req = ' '.join(str(value) for value in teaching_language).lower()
+    else:
+        lang_req = str(teaching_language).lower()
+    if not lang_req:
+        profile_languages = language_profile.get('teaching_language') or []
+        lang_req = ' '.join(str(value) for value in profile_languages).lower() if isinstance(profile_languages, list) else str(profile_languages).lower()
+    flags = ((record.get('scoring_inputs') or {}).get('hard_filter_flags') or {})
+    verified_fields = (record.get('data_quality') or {}).get('verified_fields') or []
+    language_verified = 'language' in verified_fields
+    english_option = language_verified and (
+        bool(re.search(r'\benglish\b', lang_req))
+        or language_profile.get('english_study_option_available') is True
+        or flags.get('english_study_option_available') is True
+        or ('mixed' in lang_req and flags.get('english_only_compatible') is True)
+        or ('mixed' in lang_req and language_profile.get('english_required') is True)
+    )
+    if preferences.get('onlyEnglish', False) and not english_option:
+        passed = False
 
     # 3. Max Tuition
     tuit_raw = get_val(['tuition_eur_per_year', 'Tuition_Fee'])

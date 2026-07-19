@@ -36,6 +36,25 @@ function hasVerifiedField(normalized, field) {
   return Array.isArray(normalized?.dataQuality?.verifiedFields) && normalized.dataQuality.verifiedFields.includes(field);
 }
 
+function hasVerifiedEnglishStudyOption(record, normalized) {
+  if (!hasVerifiedField(normalized, "language")) return false;
+
+  const languages = normalized?.teachingLanguage || [];
+  const languageText = languages.join(" ").toLowerCase();
+  if (/\benglish\b/.test(languageText)) return true;
+
+  const languageProfile = record?.language_profile || {};
+  const flags = record?.scoring_inputs?.hard_filter_flags || record?._scoring_inputs?.hard_filter_flags || {};
+  if (languageProfile.english_study_option_available === true || flags.english_study_option_available === true) return true;
+
+  // Legacy records used this flag for programmes such as TUM where an
+  // English-completable specialisation exists even though the top-level
+  // language value is "Mixed". A false value must not reject bilingual
+  // records whose explicit language list contains English.
+  if (languageText.includes("mixed") && flags.english_only_compatible === true) return true;
+  return languageText.includes("mixed") && languageProfile.english_required === true;
+}
+
 function bounded(value, fallback = 50) {
   const number = finiteNumber(value);
   return number === null ? fallback : Math.min(100, Math.max(0, number));
@@ -104,18 +123,20 @@ function calculateScore(record, preferences, weights) {
   const normalizedTags = Array.isArray(categoryProfile.normalized_tags) ? categoryProfile.normalized_tags : [];
   let passed = true;
 
-  const targetDegree = degreeKey(profile?.target_degree || preferences.degreeFilter || "All");
+  const requestedDegree = degreeKey(profile?.target_degree || preferences.degreeFilter || "All");
+  const targetDegree = requestedDegree === "bsc" ? "msc" : requestedDegree;
   const recordDegree = degreeKey(normalized?.degreeLevel || normalized?.degree || record.Program_Degree);
   if (targetDegree !== "all" && recordDegree !== targetDegree) passed = false;
 
   const languages = normalized?.teachingLanguage || [];
   const languageText = languages.join(" ").toLowerCase();
-  const hasEnglishTeaching = /\benglish\b/.test(languageText);
+  const hasEnglishStudyOption = hasVerifiedEnglishStudyOption(record, normalized);
   const hasOtherTeachingLanguage = /\b(german|french|dutch|italian|spanish|portuguese|swedish|japanese|korean|chinese|russian|turkish)\b/.test(languageText);
-  const isEnglishOnlyPref = profile ? profile.language_filter === "english_only" : Boolean(preferences.onlyEnglish);
-  if (isEnglishOnlyPref && (!hasEnglishTeaching || hasOtherTeachingLanguage)) {
+  const requiresEnglishOption = Boolean(preferences.onlyEnglish)
+    || Boolean(profile && ["english_available", "english_only"].includes(profile.language_filter));
+  if (requiresEnglishOption && !hasEnglishStudyOption) {
     passed = false;
-    profileMatch.profile_penalties.push({ type: "language", reason: "Teaching language is not verified as English-only." });
+    profileMatch.profile_penalties.push({ type: "language", reason: "No verified English-taught route or option is available." });
   }
 
   const annualCost = finiteNumber(normalized?.totalAcademicCost ?? normalized?.tuitionPerYear);
@@ -201,11 +222,12 @@ function calculateScore(record, preferences, weights) {
   if (preferences.minFieldFit && technicalMatch < preferences.minFieldFit) passed = false;
 
   let eligibilityFit = 55;
-  if (languages.length > 0) {
-    eligibilityFit += hasEnglishTeaching ? 20 : 0;
-    eligibilityFit += hasOtherTeachingLanguage ? -10 : 10;
+  if (hasEnglishStudyOption) {
+    eligibilityFit += 30;
+  } else if (hasOtherTeachingLanguage) {
+    eligibilityFit -= 10;
   } else {
-    warnings.push("Teaching language is unknown.");
+    warnings.push("No verified English study option is documented.");
   }
   const admissionMode = String(normalized?.admissionMode || "").toLowerCase();
   if (admissionMode.includes("direct")) {

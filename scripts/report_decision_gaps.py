@@ -23,7 +23,8 @@ TARGET_FILES = (
     "almanya.json", "austria.json", "belcika.json", "danimarka.json",
     "fransa.json", "hollanda.json", "ingiltere.json", "isvec.json",
     "isvicre.json", "italy.json", "italya.json", "ispanya.json",
-    "portekiz.json", "amerika.json",
+    "portekiz.json", "polonya.json", "finlandiya.json", "cekya.json",
+    "yunanistan.json", "turkiye.json", "amerika.json",
 )
 
 
@@ -67,6 +68,7 @@ def decision_value_gaps(record: dict[str, Any]) -> list[str]:
         cost.get("tuition_eur_per_year_max"), cost.get("tuition_non_eu_full_program"),
         cost.get("tuition_usd_per_year"), cost.get("tuition_usd_per_year_at_three_quarters"), cost.get("tuition_usd_per_quarter"),
         cost.get("tuition_gbp_per_year"), cost.get("tuition_chf_per_year"),
+        cost.get("tuition_eur_total"), cost.get("tuition_czk_per_year"),
         cost.get("tuition_gbp_per_year_min"), cost.get("tuition_gbp_per_year_max"),
         cost.get("tuition_chf_per_year_min"), cost.get("tuition_chf_per_year_max"), cost.get("tuition_chf_per_semester"),
         cost.get("tuition_sek_per_year"), cost.get("tuition_dkk_per_year"), cost.get("tuition_sek_per_term"),
