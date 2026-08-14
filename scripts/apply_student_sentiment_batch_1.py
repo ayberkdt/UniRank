@@ -36,7 +36,7 @@ def src(url, title, platform, notes_en, notes_tr, access="ok"):
 
 SENTIMENTS = {
     # ------------------------------------------------------------------
-    ("italya.json", "it-polimi-aero-msc"): None,  # filled below (shared)
+    ("italy.json", "polimi-msc-aeronautical"): None,  # filled below (shared)
 }
 
 POLIMI = {
@@ -258,7 +258,7 @@ DARMSTADT = {
 }
 
 TARGETS = [
-    ("italya.json", "it-polimi-aero-msc", POLIMI),
+    ("italy.json", "polimi-msc-aeronautical", POLIMI),
     ("italy.json", "polimi-msc-aeronautical", POLIMI),
     ("italy.json", "polimi-msc-space", POLIMI),
     ("hollanda.json", "netherlands_delft_msc_aerospace", DELFT),

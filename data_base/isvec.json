@@ -43,7 +43,7 @@
     ],
     "program_url": "https://www.kth.se/en/studies/master/aerospace-engineering",
     "program_status": "active",
-    "relevance_status": "high",
+    "relevance_status": "needs_review",
     "eligibility_profile": {
       "eligible_for_non_eu": true,
       "required_previous_degree": {
@@ -56,7 +56,7 @@
       },
       "minimum_gpa": null,
       "admission_mode": "unknown",
-      "admission_risk": "Bilinmiyor / Resmi Veri Yok",
+      "admission_risk": "unknown",
       "accepted_backgrounds": [],
       "required_documents": [],
       "verification_notes": {
@@ -64,7 +64,16 @@
         "tr": "KTH 2026 ders planı hem alan ön koşullarını hem de başarı temelli seçimi belgeliyor."
       },
       "english_required": true,
-      "motivation_letter_required": true
+      "motivation_letter_required": true,
+      "gre": {
+        "policy": "unknown",
+        "test_type": "unknown",
+        "minimum_scores": {},
+        "recommended_scores": {},
+        "validity_rule": "",
+        "waiver_rules": [],
+        "source_ids": []
+      }
     },
     "language_profile": {
       "teaching_language": [
@@ -136,7 +145,10 @@
         }
       ],
       "scholarship_deadline": null,
-      "scholarship_application_url": "https://www.kth.se/en/studies/master/aerospace-engineering/2.25746/scholarship-opportunities-for-master-s-studies-1.860447"
+      "scholarship_application_url": "https://www.kth.se/en/studies/master/aerospace-engineering/2.25746/scholarship-opportunities-for-master-s-studies-1.860447",
+      "application_mode": "unknown",
+      "automatic_consideration": null,
+      "separate_application_required": null
     },
     "living_profile": {
       "city_type": "Medium",
@@ -164,7 +176,10 @@
       "housing_difficulty": "high",
       "student_housing_available": true,
       "monthly_living_cost_eur_min": null,
-      "monthly_living_cost_eur_max": null
+      "monthly_living_cost_eur_max": null,
+      "living_risk": "unknown",
+      "housing_access": "unknown",
+      "housing_application_separate": null
     },
     "curriculum_profile": {
       "structure": null,
@@ -316,7 +331,7 @@
           "title": "KTH MSc Aerospace Engineering",
           "source_type": "official_program_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program",
             "language",
@@ -332,7 +347,7 @@
           "title": "KTH fees and scholarships for Aerospace Engineering",
           "source_type": "official_tuition_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "tuition"
           ],
@@ -344,7 +359,7 @@
           "title": "KTH fees and scholarships for Aerospace Engineering",
           "source_type": "official_scholarship_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "scholarship"
           ],
@@ -356,7 +371,7 @@
           "title": "KTH Aerospace Engineering courses",
           "source_type": "official_curriculum_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "curriculum"
           ],
@@ -368,7 +383,7 @@
           "title": "KTH Aerospace Engineering courses",
           "source_type": "official_curriculum_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "curriculum",
             "tracks",
@@ -386,7 +401,7 @@
           "title": "KTH master's scholarships",
           "source_type": "official_scholarship_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "scholarship",
             "eligibility"
@@ -402,7 +417,7 @@
           "title": "KTH accommodation for new students",
           "source_type": "official_housing_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "housing",
             "eligibility"
@@ -418,7 +433,7 @@
           "title": "KTH cost of living and student budget",
           "source_type": "official_housing_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "housing",
             "living"
@@ -434,7 +449,7 @@
           "title": "KTH Aerospace Engineering 2026 eligibility",
           "source_type": "official_admission_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "admission",
             "eligibility",
@@ -480,16 +495,17 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-15"
+      "audited_at": "2026-08-14"
     },
     "quality_control": {
-      "checked_at": "2026-07-15",
+      "checked_at": "2026-08-14",
       "qc_status": "passed",
       "remaining_verification_tasks": [],
       "qc_notes": {
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
-      }
+      },
+      "failed_canary_tests": []
     },
     "qs_ranking_display": "=82",
     "qs_ranking_year": 2027,
@@ -589,6 +605,15 @@
       "verification_notes": {
         "en": "Chalmers publishes the general Master's threshold and document list. The Mobility Engineering programme page directs applicants to its programme-specific requirements; an applicant must check those before applying.",
         "tr": "Chalmers genel yüksek lisans eşiğini ve belge listesini yayımlar. Mobility Engineering program sayfası başvuru sahiplerini programa özgü şartlara yönlendirir; aday bunları başvurmadan önce kontrol etmelidir."
+      },
+      "gre": {
+        "policy": "unknown",
+        "test_type": "unknown",
+        "minimum_scores": {},
+        "recommended_scores": {},
+        "validity_rule": "",
+        "waiver_rules": [],
+        "source_ids": []
       }
     },
     "language_profile": {
@@ -653,7 +678,10 @@
       "funding_notes": {
         "en": "Chalmers lists scholarships for prospective tuition-fee-paying Master's applicants. The scholarship application is separate and its deadline aligns with the programme-application deadline.",
         "tr": "Chalmers, öğrenim ücreti ödeyen aday yüksek lisans öğrencileri için burslar listeler. Burs başvurusu ayrıdır ve son tarihi program başvuru son tarihiyle aynıdır."
-      }
+      },
+      "application_mode": "unknown",
+      "automatic_consideration": null,
+      "separate_application_required": null
     },
     "living_profile": {
       "city_type": "Medium",
@@ -688,7 +716,9 @@
         "currency": "SEK",
         "basis": "official monthly accommodation estimate"
       },
-      "student_housing_available": true
+      "student_housing_available": true,
+      "housing_access": "unknown",
+      "housing_application_separate": null
     },
     "curriculum_profile": {
       "structure": null,
@@ -792,7 +822,7 @@
           "title": "Chalmers: apply for Master's programmes",
           "source_type": "official_admission_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "admission",
             "language",
@@ -810,7 +840,7 @@
           "title": "Chalmers Mobility Engineering MSc",
           "source_type": "official_program_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program",
             "language",
@@ -824,7 +854,7 @@
           "title": "Chalmers Mobility Engineering programme overview",
           "source_type": "official_curriculum_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "curriculum"
           ],
@@ -836,7 +866,7 @@
           "title": "Chalmers scholarships for fee-paying students",
           "source_type": "official_scholarship_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "scholarship"
           ],
@@ -848,7 +878,7 @@
           "title": "Chalmers cost of living",
           "source_type": "official_housing_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "living_cost",
             "housing_cost"
@@ -864,7 +894,7 @@
           "title": "Chalmers housing in Gothenburg",
           "source_type": "official_housing_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "housing",
             "housing_eligibility"
@@ -880,7 +910,7 @@
           "title": "Chalmers tuition fees",
           "source_type": "official_tuition_page",
           "access_status": "ok",
-          "last_checked": "2026-07-15",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "tuition",
             "non_eu_eligibility"
@@ -895,8 +925,8 @@
           "url": "https://apply-scholarships.si.se/courses/course/715",
           "title": "Swedish Institute official course listing: Mobility Engineering at Chalmers",
           "source_type": "official_tuition_page",
-          "access_status": "ok",
-          "last_checked": "2026-07-15",
+          "access_status": "redirects",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "tuition"
           ],
@@ -904,7 +934,8 @@
           "notes": {
             "en": "The official Swedish Institute course listing gives SEK 80,000 per semester for this 120-ECTS English-taught programme. It is an official government course listing rather than Chalmers' own price table.",
             "tr": "Resmî Swedish Institute ders kaydı, bu 120 AKTS ve İngilizce program için dönem başına 80.000 SEK verir. Chalmers'ın kendi fiyat tablosu değil, resmî bir devlet ders kaydıdır."
-          }
+          },
+          "final_url": "https://apply-scholarships.si.se/courses/course/715-mobility-engineering"
         }
       ],
       "needs_verification": true,
@@ -940,14 +971,12 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-15"
+      "audited_at": "2026-08-14"
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-15",
-      "failed_canary_tests": [
-        "missing_or_unverified_critical_fields"
-      ],
+      "checked_at": "2026-08-14",
+      "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "qc_notes": {
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
@@ -1024,7 +1053,7 @@
     ],
     "program_url": "https://liu.se/en/education/program/6maer",
     "program_status": "active",
-    "relevance_status": "high",
+    "relevance_status": "needs_review",
     "eligibility_profile": {
       "eligible_for_non_eu": null,
       "required_previous_degree": {
@@ -1053,7 +1082,16 @@
         "tr": "Bu İngilizce program için İsveççe açıkça muaf tutulur."
       },
       "english_required": true,
-      "english_level_required": "Swedish upper-secondary English 6 / English level 2 equivalent"
+      "english_level_required": "Swedish upper-secondary English 6 / English level 2 equivalent",
+      "gre": {
+        "policy": "unknown",
+        "test_type": "unknown",
+        "minimum_scores": {},
+        "recommended_scores": {},
+        "validity_rule": "",
+        "waiver_rules": [],
+        "source_ids": []
+      }
     },
     "language_profile": {
       "teaching_language": [
@@ -1122,7 +1160,10 @@
       "funding_notes": {
         "en": "For 2026, LiU opened its scholarship application after the admission result (26–30 March) and announced recipients on 10 April. Do not treat this as a guaranteed or recurring date without checking the next cycle.",
         "tr": "LiU, 2026 için burs başvurusunu kabul sonucundan sonra 26–30 Mart'ta açtı ve alıcıları 10 Nisan'da açıkladı. Sonraki dönemi kontrol etmeden bunu garanti veya sabit tarih olarak kabul etmeyin."
-      }
+      },
+      "application_mode": "unknown",
+      "automatic_consideration": null,
+      "separate_application_required": null
     },
     "living_profile": {
       "city_type": "Medium",
@@ -1145,7 +1186,9 @@
       "monthly_living_cost_eur_max": null,
       "living_cost_eur_per_month": null,
       "living_risk": "medium",
-      "student_housing_available": true
+      "student_housing_available": true,
+      "housing_access": "unknown",
+      "housing_application_separate": null
     },
     "curriculum_profile": {
       "structure": null,
@@ -1258,7 +1301,7 @@
           "title": "LiU scholarships",
           "source_type": "official_scholarship_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "scholarship",
             "eligibility"
@@ -1274,7 +1317,7 @@
           "title": "LiU living costs",
           "source_type": "official_housing_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "housing",
             "living"
@@ -1290,7 +1333,7 @@
           "title": "Linköping Aeronautical Engineering Master's Programme",
           "source_type": "official_program_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program",
             "language",
@@ -1306,7 +1349,7 @@
           "title": "Linköping Aeronautical Engineering tuition",
           "source_type": "official_tuition_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "tuition"
           ],
@@ -1318,7 +1361,7 @@
           "title": "How to apply for Master's degree studies at LiU",
           "source_type": "official_admission_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "admission",
             "deadline",
@@ -1365,14 +1408,12 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-15"
+      "audited_at": "2026-08-14"
     },
     "quality_control": {
       "qc_status": "passed",
-      "checked_at": "2026-07-15",
-      "failed_canary_tests": [
-        "missing_or_unverified_critical_fields"
-      ],
+      "checked_at": "2026-08-14",
+      "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "qc_notes": {
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
@@ -1448,7 +1489,16 @@
       "ranking_or_selection": "academic qualifications; quality and quantity aspects",
       "admission_mode": "national application portal and academic selection",
       "admission_risk": "high",
-      "required_documents": []
+      "required_documents": [],
+      "gre": {
+        "policy": "unknown",
+        "test_type": "unknown",
+        "minimum_scores": {},
+        "recommended_scores": {},
+        "validity_rule": "",
+        "waiver_rules": [],
+        "source_ids": []
+      }
     },
     "language_profile": {
       "teaching_language": [
@@ -1496,7 +1546,10 @@
       "funding_notes": {
         "en": "LTU does not publish a general first-year SpaceMaster award; the university waiver is for current Master's students and covers at most one forthcoming semester.",
         "tr": "LTU genel bir birinci yıl SpaceMaster bursu yayımlamaz; üniversite muafiyeti mevcut yüksek lisans öğrencileri içindir ve en fazla sonraki bir dönemi kapsar."
-      }
+      },
+      "application_mode": "unknown",
+      "automatic_consideration": null,
+      "separate_application_required": null
     },
     "living_profile": {
       "city_cost_level": "unknown",
@@ -1510,7 +1563,9 @@
       "housing_notes": {
         "en": "LTU's official exchange guide gives a sample Sweden budget of about SEK 10,000/month including SEK 4,000 accommodation. This is planning guidance, not a Kiruna rent guarantee; LTU points Kiruna students to Kirunabostäder.",
         "tr": "LTU'nun resmî değişim rehberi konaklama için 4.000 SEK dahil yaklaşık aylık 10.000 SEK İsveç örnek bütçesi verir. Bu Kiruna kira garantisi değil planlama rehberidir; LTU Kiruna öğrencilerini Kirunabostäder'e yönlendirir."
-      }
+      },
+      "housing_access": "unknown",
+      "housing_application_separate": null
     },
     "curriculum_profile": {
       "tracks": [
@@ -1597,7 +1652,7 @@
           "source_type": "official_program_page",
           "title": "LTU SpaceMaster — Autumn 2027",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program",
             "language",
@@ -1615,7 +1670,7 @@
           "source_type": "official_admission_page",
           "title": "LTU SpaceMaster entry requirements",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "admission",
             "non_eu_eligibility",
@@ -1633,7 +1688,7 @@
           "source_type": "official_tuition_page",
           "title": "LTU tuition and application fees",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "tuition"
           ],
@@ -1648,7 +1703,7 @@
           "source_type": "official_scholarship_page",
           "title": "LTU scholarship opportunities",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "scholarship",
             "funding"
@@ -1664,7 +1719,7 @@
           "source_type": "official_curriculum_page",
           "title": "LTU SpaceMaster curriculum and mobility",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "curriculum",
             "tracks",
@@ -1682,7 +1737,7 @@
           "source_type": "official_cost_of_living_page",
           "title": "LTU practical guide sample living budget",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "housing",
             "living"
@@ -1698,7 +1753,7 @@
           "source_type": "official_housing_page",
           "title": "LTU housing tips — Kiruna",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "housing"
           ],
@@ -1847,16 +1902,16 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-19"
+      "audited_at": "2026-08-14"
     },
     "quality_control": {
       "qc_status": "passed",
-      "checked_at": "2026-07-19",
+      "checked_at": "2026-08-14",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "qc_notes": {
-        "en": "Source-evidence audit completed; unknown fields remain explicit and sentiment is not scored.",
-        "tr": "Kaynak-kanıt denetimi tamamlandı; bilinmeyen alanlar açık bırakıldı ve öğrenci görüşü puanlanmadı."
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
       }
     },
     "qs_ranking": null,

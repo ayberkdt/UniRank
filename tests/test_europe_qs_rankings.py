@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 EUROPE = {
     "almanya.json", "austria.json", "belcika.json", "cekya.json", "danimarka.json",
     "finlandiya.json", "fransa.json", "hollanda.json", "ingiltere.json", "ispanya.json",
-    "isvec.json", "isvicre.json", "italya.json", "italy.json", "polonya.json",
+    "isvec.json", "isvicre.json", "italy.json", "polonya.json",
     "portekiz.json", "turkiye.json", "yunanistan.json",
 }
 

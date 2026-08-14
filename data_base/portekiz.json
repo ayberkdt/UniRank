@@ -1,60 +1,6 @@
 [
   {
-    "Country": "Portugal",
-    "City": "Lisbon",
-    "State_Region": "Lisbon",
-    "Uni_ID": "ist-lisbon",
-    "University_Name": "Instituto Superior Técnico",
-    "University_Display_Name": "Instituto Superior Técnico (Técnico Lisboa)",
-    "University_Short_Name": "IST",
-    "Cost_Tuition": [
-      {
-        "scope": "non_eu",
-        "program": null,
-        "amount": null,
-        "currency": "EUR",
-        "period": "year",
-        "raw": "Legacy tuition value removed; verify from the current official fee page.",
-        "effective_from_term_code": null
-      }
-    ],
-    "Cost_Semester_Fees": [],
-    "Scholarships_Info": [],
-    "Cost_City_Living": "Bilinmiyor / Resmi Veri Yok",
-    "Cost_City_Rank": null,
-    "Living_Housing_Difficulty": "Bilinmiyor / Resmi Veri Yok",
-    "Living_Housing_Score": null,
-    "Program_Name": "Mestrado em Engenharia Aeroespacial / Master's Degree in Aerospace Engineering",
-    "Program_Degree": "MSc",
-    "Program_ECTS": 120,
-    "Program_URL": "https://tecnico.ulisboa.pt/en/education/courses/masters-programmes/aerospace-engineering/",
-    "Program_Scope": "Aerospace Engineering",
-    "Admission_Mode": null,
-    "Admission_Language_Req": null,
-    "Analysis_Strong_Areas": null,
-    "Analysis_Pros": [],
-    "Analysis_Cons": [],
-    "Analysis_Tags": [],
-    "Industry_Ecosystem": null,
-    "Industry_Comp_Intensity": null,
-    "Industry_Partners": [],
-    "Internship_Mandatory": null,
-    "Internship_Notes": null,
-    "Deadline_Winter_Open": null,
-    "Deadline_Winter_Close": null,
-    "Deadline_Winter_Note": "Legacy deadline removed; verify current official programme deadline.",
-    "Deadline_Summer_Open": null,
-    "Deadline_Summer_Close": null,
-    "Deadline_Summer_Note": null,
-    "Deadline_General_Note": null,
-    "Meta_Sources": [
-      "https://tecnico.ulisboa.pt/en/education/study-at-tecnico/tuition-fees/"
-    ],
-    "Meta_Updated_At": "2026-01-27",
-    "Meta_Needs_Verification": true,
     "qs_ranking": 237,
-    "global_recognition": "Well known internationally",
-    "field_recognition": "Strong engineering programs",
     "location": {
       "country": "Portugal",
       "city": "Lisbon",
@@ -82,9 +28,18 @@
       "required_previous_degree": null,
       "accepted_backgrounds": [],
       "admission_mode": "Bilinmiyor / Resmi Veri Yok",
-      "admission_risk": "Bilinmiyor / Resmi Veri Yok",
+      "admission_risk": "unknown",
       "required_documents": [],
-      "verification_notes": "Legacy record was not fully reverified from current official programme sources."
+      "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
+      "gre": {
+        "policy": "unknown",
+        "test_type": "unknown",
+        "minimum_scores": {},
+        "recommended_scores": {},
+        "validity_rule": "",
+        "waiver_rules": [],
+        "source_ids": []
+      }
     },
     "language_profile": {
       "teaching_language": [
@@ -147,12 +102,15 @@
       "funding_notes": {
         "en": "The checked award is for already-enrolled Aerospace MSc students who have completed 90 ECTS; it is not an entry scholarship and nationality eligibility is not published.",
         "tr": "Kontrol edilen odul, 90 AKTS tamamlamis kayitli Havacilik ve Uzay MSc ogrencileri icindir; giris bursu degildir ve uyruk uygunlugu yayinlanmamistir."
-      }
+      },
+      "application_mode": "unknown",
+      "automatic_consideration": null,
+      "separate_application_required": null
     },
     "living_profile": {
       "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
       "housing_difficulty": "high",
-      "living_risk": "Bilinmiyor / Resmi Veri Yok",
+      "living_risk": "unknown",
       "verification_notes": {
         "en": "No all-in Lisbon total is calculated: the official brochure publishes component costs, and the housing notice warns that private-market pricing changes quickly.",
         "tr": "Tüm giderleri kapsayan Lizbon toplamı hesaplanmaz: resmî broşür bileşen maliyetlerini yayımlar, konaklama duyurusu ise özel piyasa fiyatlarının hızlı değiştiği uyarısını yapar."
@@ -206,7 +164,9 @@
       "housing_budget_dkk_per_year_min": null,
       "housing_budget_dkk_per_year_max": null,
       "food_cost_eur_month": 200,
-      "public_transport_cost_eur_month": 40
+      "public_transport_cost_eur_month": 40,
+      "housing_access": "unknown",
+      "housing_application_separate": null
     },
     "curriculum_profile": {
       "tracks": [
@@ -324,7 +284,7 @@
           "title": "Aerospace Engineering — Técnico Lisboa",
           "source_type": "official_program_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program",
             "program_status",
@@ -346,7 +306,7 @@
           "title": "Técnico master's 2026/27 second call",
           "source_type": "official_admission_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "admission",
             "deadline",
@@ -363,7 +323,7 @@
           "title": "Tekever Merit Award in Aerospace Engineering",
           "source_type": "official_scholarship_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "scholarship"
           ],
@@ -378,7 +338,7 @@
           "title": "Técnico Lisboa: International Students applications 2026/27",
           "source_type": "official_admission_page",
           "access_status": "ok",
-          "last_checked": "2026-07-15",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "admission",
             "non_eu_eligibility",
@@ -396,7 +356,7 @@
           "title": "Técnico Lisboa: International Students fees 2026/27",
           "source_type": "official_tuition_page",
           "access_status": "ok",
-          "last_checked": "2026-07-15",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "tuition"
           ],
@@ -411,7 +371,7 @@
           "title": "Técnico Lisboa International Students 2026/27 brochure: Lisbon cost components",
           "source_type": "official_cost_of_living_page",
           "access_status": "pdf",
-          "last_checked": "2026-07-15",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "housing",
             "living"
@@ -427,7 +387,7 @@
           "title": "Técnico Lisboa Housing Information: private accommodation in Lisbon",
           "source_type": "official_housing_page",
           "access_status": "pdf",
-          "last_checked": "2026-07-15",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "housing",
             "living"
@@ -450,10 +410,10 @@
         "language": "high",
         "admission": "high",
         "tuition": "high",
-        "scholarship": "Bilinmiyor / Resmi Veri Yok",
+        "scholarship": "unknown",
         "curriculum": "high",
         "research_profile": "medium",
-        "industry_ecosystem_profile": "Bilinmiyor / Resmi Veri Yok",
+        "industry_ecosystem_profile": "unknown",
         "application_timeline_profile": "high",
         "living_profile": "high",
         "deadlines": "high",
@@ -476,10 +436,8 @@
     "scoring_inputs": {},
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-15",
-      "failed_canary_tests": [
-        "missing_or_unverified_critical_fields"
-      ],
+      "checked_at": "2026-08-14",
+      "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "qc_notes": {
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
@@ -502,7 +460,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-15"
+      "audited_at": "2026-08-14"
     },
     "qs_ranking_display": "=237",
     "qs_ranking_year": 2027,
@@ -528,64 +486,11 @@
           "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
         }
       }
-    }
+    },
+    "relevance_status": "needs_review"
   },
   {
-    "Country": "Portugal",
-    "City": "Covilhã",
-    "State_Region": "Castelo Branco",
-    "Uni_ID": "ubi-covilha",
-    "University_Name": "University of Beira Interior",
-    "University_Display_Name": "University of Beira Interior (UBI)",
-    "University_Short_Name": "UBI",
-    "Cost_Tuition": [
-      {
-        "scope": "other_nationals",
-        "program": "Master in Aeronautical Engineering",
-        "amount": 1500,
-        "currency": "EUR",
-        "period": "year",
-        "raw": "Official 2025/26 World Masters fee for other nationals.",
-        "effective_from_term_code": "2025/2026"
-      }
-    ],
-    "Cost_Semester_Fees": [],
-    "Scholarships_Info": [],
-    "Cost_City_Living": "Bilinmiyor / Resmi Veri Yok",
-    "Cost_City_Rank": null,
-    "Living_Housing_Difficulty": "Bilinmiyor / Resmi Veri Yok",
-    "Living_Housing_Score": null,
-    "Program_Name": "Master in Aeronautical Engineering",
-    "Program_Degree": "MSc",
-    "Program_ECTS": 120,
-    "Program_URL": "https://www.ubi.pt/en/course/1103",
-    "Program_Scope": "Active second-cycle aerospace programme.",
-    "Admission_Mode": null,
-    "Admission_Language_Req": null,
-    "Analysis_Strong_Areas": null,
-    "Analysis_Pros": [],
-    "Analysis_Cons": [],
-    "Analysis_Tags": [],
-    "Industry_Ecosystem": null,
-    "Industry_Comp_Intensity": null,
-    "Industry_Partners": [],
-    "Internship_Mandatory": null,
-    "Internship_Notes": null,
-    "Deadline_Winter_Open": null,
-    "Deadline_Winter_Close": null,
-    "Deadline_Winter_Note": "Legacy deadline removed; verify current official programme deadline.",
-    "Deadline_Summer_Open": null,
-    "Deadline_Summer_Close": null,
-    "Deadline_Summer_Note": null,
-    "Deadline_General_Note": null,
-    "Meta_Sources": [
-      "https://www.ubi.pt/en/page/tuition_fees"
-    ],
-    "Meta_Updated_At": "2026-07-14",
-    "Meta_Needs_Verification": true,
     "qs_ranking": null,
-    "global_recognition": "Not ranked in QS",
-    "field_recognition": "Specialized institution (unranked overall)",
     "location": {
       "country": "Portugal",
       "city": "Covilhã",
@@ -603,13 +508,13 @@
     "degree_level": "Master",
     "duration_years": 2,
     "ects": 120,
-    "program_url": "https://www.ubi.pt/en/course/1103",
+    "program_url": "https://www.ubi.pt/curso/1103",
     "program_status": "active",
     "teaching_language": [
       "Portuguese"
     ],
     "eligibility_profile": {
-      "eligible_for_non_eu": null,
+      "eligible_for_non_eu": true,
       "required_previous_degree": {
         "en": "First-cycle degree required; current call defines documents.",
         "tr": "Birinci d?ng? diploma gerekir; g?ncel ?a?r? belgeleri tan?mlar."
@@ -625,7 +530,16 @@
       },
       "admission_risk": "medium",
       "required_documents": [],
-      "verification_notes": "Legacy record was not fully reverified from current official programme sources."
+      "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
+      "gre": {
+        "policy": "unknown",
+        "test_type": "unknown",
+        "minimum_scores": {},
+        "recommended_scores": {},
+        "validity_rule": "",
+        "waiver_rules": [],
+        "source_ids": []
+      }
     },
     "language_profile": {
       "teaching_language": [
@@ -637,6 +551,10 @@
       "verification_notes": {
         "en": "Current course page lists Portuguese.",
         "tr": "G?ncel ders sayfas? Portekizceyi listeler."
+      },
+      "mixed_language_warning": {
+        "en": "A current required-module record shows Portuguese teaching; do not treat an English catalogue interface as proof of an English-taught programme.",
+        "tr": "Güncel bir zorunlu modül kaydı Portekizce öğretimi gösterir; İngilizce katalog arayüzünü İngilizce programın kanıtı saymayın."
       }
     },
     "cost_profile": {
@@ -654,7 +572,23 @@
       "source_notes": {
         "en": "Other nationals ?1,500/year, CPLP/OEI ?1,200, application ?50, enrolment ?25; ?1,575 is tuition plus stated one-time fees only.",
         "tr": "Di?er uyruklar ?1.500/y?l, CPLP/OEI ?1.200, ba?vuru ?50, kay?t ?25; ?1.575 yaln?zca ??renim ?creti ve belirtilen tek seferlik ?cretlerdir."
-      }
+      },
+      "living_cost_usd_per_year_i20": null,
+      "living_cost_usd_per_year": null,
+      "living_cost_usd_per_year_min": null,
+      "living_cost_usd_per_year_max": null,
+      "living_cost_gbp_per_year": null,
+      "living_cost_gbp_per_year_min": null,
+      "living_cost_gbp_per_year_max": null,
+      "living_cost_chf_per_year": null,
+      "living_cost_chf_per_year_min": null,
+      "living_cost_chf_per_year_max": null,
+      "living_cost_sek_per_year": null,
+      "living_cost_sek_per_year_min": null,
+      "living_cost_sek_per_year_max": null,
+      "living_cost_dkk_per_year": null,
+      "living_cost_dkk_per_year_min": null,
+      "living_cost_dkk_per_year_max": null
     },
     "scholarship_profile": {
       "regional_scholarship_available": null,
@@ -665,28 +599,100 @@
       "scholarship_deadline": null,
       "scholarship_application_url": null,
       "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
-      "funding_notes": null
+      "funding_notes": null,
+      "application_mode": "unknown",
+      "automatic_consideration": null,
+      "separate_application_required": null,
+      "opportunities": []
     },
     "living_profile": {
       "city_cost_level": "low",
-      "housing_difficulty": "medium",
+      "housing_difficulty": "unknown",
       "living_risk": "medium",
       "verification_notes": {
         "en": "Official residence: ?100 shared double or ?125 private single monthly; not citywide rent average.",
         "tr": "Resm? yurt: payla??ml? ?ift ki?ilik ?100 veya ?zel tek ki?ilik ?125 ayl?k; ?ehir geneli kira ortalamas? de?ildir."
       },
-      "average_room_rent_eur": 125,
-      "monthly_living_cost_eur_estimated": 800,
-      "student_housing_available": true
+      "average_room_rent_eur": null,
+      "monthly_living_cost_eur_estimated": null,
+      "student_housing_available": true,
+      "housing_access": "priority",
+      "housing_application_separate": true,
+      "average_room_rent_eur_min": 100,
+      "average_room_rent_eur_max": 125,
+      "monthly_living_cost_eur_min": null,
+      "monthly_living_cost_eur_max": null,
+      "living_cost_eur_per_month": null,
+      "housing_notes": {
+        "en": "UBI lists seven residences and 808 beds. Published examples include EUR 100/month for a double room, EUR 125 for a single room and EUR 220 for a one-bedroom apartment; some utilities vary by unit. These are residence prices, not a guarantee of allocation.",
+        "tr": "UBI yedi yurt ve 808 yatak listeler. Yayımlanan örnekler çift kişilik oda için aylık 100 EUR, tek kişilik oda için 125 EUR ve tek yatak odalı daire için 220 EUR'dur; bazı birimlerde faturalar değişir. Bunlar yurt fiyatıdır, tahsis garantisi değildir."
+      },
+      "average_room_rent_usd_per_month_min": null,
+      "average_room_rent_usd_per_month_max": null,
+      "average_room_rent_gbp_per_month_min": null,
+      "average_room_rent_gbp_per_month_max": null,
+      "average_room_rent_chf_per_month_min": null,
+      "average_room_rent_chf_per_month_max": null,
+      "average_room_rent_sek_per_month_min": null,
+      "average_room_rent_sek_per_month_max": null,
+      "average_room_rent_dkk_per_month_min": null,
+      "average_room_rent_dkk_per_month_max": null,
+      "monthly_housing_rent_usd_per_month_min": null,
+      "monthly_housing_rent_usd_per_month_max": null,
+      "monthly_housing_rent_gbp_per_month_min": null,
+      "monthly_housing_rent_gbp_per_month_max": null,
+      "monthly_housing_rent_chf_per_month_min": null,
+      "monthly_housing_rent_chf_per_month_max": null,
+      "monthly_housing_rent_sek_per_month_min": null,
+      "monthly_housing_rent_sek_per_month_max": null,
+      "monthly_housing_rent_dkk_per_month_min": null,
+      "monthly_housing_rent_dkk_per_month_max": null,
+      "housing_budget_usd_per_year": null,
+      "housing_budget_usd_per_year_min": null,
+      "housing_budget_usd_per_year_max": null,
+      "housing_budget_gbp_per_year": null,
+      "housing_budget_gbp_per_year_min": null,
+      "housing_budget_gbp_per_year_max": null,
+      "housing_budget_chf_per_year": null,
+      "housing_budget_chf_per_year_min": null,
+      "housing_budget_chf_per_year_max": null,
+      "housing_budget_sek_per_year": null,
+      "housing_budget_sek_per_year_min": null,
+      "housing_budget_sek_per_year_max": null,
+      "housing_budget_dkk_per_year": null,
+      "housing_budget_dkk_per_year_min": null,
+      "housing_budget_dkk_per_year_max": null,
+      "official_student_housing_budget_sek_per_month_examples": null,
+      "official_student_total_budget_sek_per_month_examples": null,
+      "student_housing_competitiveness": "Availability must be confirmed with UBI accommodation services; preference rules apply.",
+      "average_room_rent_scope_label": "UBI residence room examples; not private-market rent"
     },
     "curriculum_profile": {
       "tracks": [],
       "specializations": [],
-      "mandatory_courses": [],
-      "elective_courses": [],
-      "thesis_required": null,
+      "mandatory_courses": [
+        "Engineering Optimisation",
+        "Aerospace Materials",
+        "Aircraft Operations and Flight Safety",
+        "Computational Fluid Dynamics",
+        "Astrodynamics",
+        "Navigation and Avionics",
+        "Rotorcraft Devices",
+        "Gas Dynamics",
+        "Air Transport Economics and Management",
+        "Dissertation or Project (42 ECTS)"
+      ],
+      "elective_courses": [
+        "Space Systems Engineering",
+        "Propulsion III",
+        "Flight Identification and Control",
+        "Advanced Structural Analysis",
+        "Trajectory Optimisation and Control",
+        "Turbulence and Combustion"
+      ],
+      "thesis_required": true,
       "internship_required": null,
-      "curriculum_url": "https://www.ubi.pt/en/course/1103",
+      "curriculum_url": "https://www.ubi.pt/PlanoDeEstudos/1103/1686/2025",
       "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
       "study_plan_url": "https://www.ubi.pt/en/course/1103"
     },
@@ -720,10 +726,11 @@
       "eu_deadline": null,
       "scholarship_deadline": null,
       "pre_enrolment_required": null,
-      "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
+      "timeline_risk": "unknown",
       "deadline_notes": null,
       "winter_deadline": null,
-      "application_deadline": null
+      "application_deadline": null,
+      "deadline_events": []
     },
     "student_sentiment_profile": {
       "student_satisfaction_score": null,
@@ -749,9 +756,9 @@
       }
     },
     "source_profile": {
-      "official_program_page": "https://www.ubi.pt/en/course/1103",
+      "official_program_page": "https://www.ubi.pt/curso/1103",
       "official_admission_page": null,
-      "official_curriculum_page": "https://www.ubi.pt/en/course/1103",
+      "official_curriculum_page": "https://www.ubi.pt/PlanoDeEstudos/1103/1686/2025",
       "official_tuition_page": "https://www.ubi.pt/entidade/world_masters_fees",
       "official_scholarship_page": null,
       "official_department_page": "https://aerospace.ubi.pt/?page_id=10",
@@ -761,7 +768,7 @@
           "title": "Departamento de Ciências Aeroespaciais — University of Beira Interior",
           "source_type": "official_program_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program",
             "program_status",
@@ -779,7 +786,7 @@
           "title": "UBI restructure announcement for Aeronautical Engineering",
           "source_type": "other",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program_status"
           ],
@@ -790,31 +797,11 @@
           }
         },
         {
-          "url": "https://www.ubi.pt/en/course/1103",
-          "title": "Master in Aeronautical Engineering ? University of Beira Interior",
-          "source_type": "official_program_page",
-          "access_status": "ok",
-          "last_checked": "2026-07-14",
-          "relevant_fields": [
-            "program",
-            "program_status",
-            "degree_level",
-            "ects",
-            "language",
-            "curriculum"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Official source checked for the listed fields.",
-            "tr": "Resm? kaynak listelenen alanlar i?in kontrol edildi."
-          }
-        },
-        {
           "url": "https://www.ubi.pt/entidade/world_masters_fees",
           "title": "World Masters fees ? University of Beira Interior",
           "source_type": "official_tuition_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "tuition"
           ],
@@ -825,26 +812,11 @@
           }
         },
         {
-          "url": "https://www.ubi.pt/en/page/living_covilha",
-          "title": "Living in Covilh? / residences ? University of Beira Interior",
-          "source_type": "official_housing_page",
-          "access_status": "ok",
-          "last_checked": "2026-07-14",
-          "relevant_fields": [
-            "housing"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Official source checked for the listed fields.",
-            "tr": "Resm? kaynak listelenen alanlar i?in kontrol edildi."
-          }
-        },
-        {
           "url": "https://aerospace.ubi.pt/?page_id=10",
           "title": "C-MAST research areas ? University of Beira Interior",
           "source_type": "official_lab_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "research"
           ],
@@ -852,6 +824,70 @@
           "notes": {
             "en": "Official source checked for the listed fields.",
             "tr": "Resm? kaynak listelenen alanlar i?in kontrol edildi."
+          }
+        },
+        {
+          "url": "https://www.ubi.pt/curso/1103",
+          "title": "UBI Aeronautical Engineering second-cycle programme 2026",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-14",
+          "relevant_fields": [
+            "program",
+            "admission",
+            "non_eu_eligibility"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "The current official programme identifies the second-cycle Aeronautical Engineering degree, 60 places for 2026, its aerospace department and laboratories. UBI's current programme catalogue states that holders of a national or foreign first-cycle equivalent may apply.",
+            "tr": "Güncel resmî program ikinci kademe Aeronautical Engineering derecesini, 2026 için 60 kontenjanı, havacılık-uzay bölümünü ve laboratuvarlarını tanımlar. UBI'nin güncel program kataloğu ulusal veya yabancı birinci kademe eşdeğer diploma sahiplerinin başvurabileceğini belirtir."
+          }
+        },
+        {
+          "url": "https://www.ubi.pt/PlanoDeEstudos/1103/1686/2025",
+          "title": "UBI Aeronautical Engineering second-cycle study plan 2025/26",
+          "source_type": "official_curriculum_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-14",
+          "relevant_fields": [
+            "curriculum"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "The official 120-ECTS study plan lists CFD, astrodynamics, navigation and avionics, gas dynamics, a 42-ECTS dissertation/project and optional space systems, propulsion, structures and trajectory control.",
+            "tr": "Resmî 120 AKTS çalışma planı HAD, astrodinamik, seyrüsefer ve aviyonik, gaz dinamiği, 42 AKTS tez/proje ile uzay sistemleri, itki, yapılar ve yörünge kontrolü seçeneklerini listeler."
+          }
+        },
+        {
+          "url": "https://www.ubi.pt/Disciplina/10412/2025/",
+          "title": "UBI Aeronautical Engineering dissertation/project language 2025/26 (Portuguese)",
+          "source_type": "official_curriculum_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-14",
+          "relevant_fields": [
+            "language",
+            "curriculum"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "The current required dissertation/project module states Portuguese delivery. This does not establish an English-taught degree.",
+            "tr": "Güncel zorunlu tez/proje modülü Portekizce yürütümü belirtir. Bu, İngilizce yürütülen bir derece anlamına gelmez."
+          }
+        },
+        {
+          "url": "https://www.ubi.pt/Entidade/living_covilha",
+          "title": "UBI living in Covilhã and student residences",
+          "source_type": "official_housing_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-14",
+          "relevant_fields": [
+            "housing",
+            "living"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "The current page lists seven residences, 808 beds and published student price examples. Availability must be requested; the figures do not guarantee a room.",
+            "tr": "Güncel sayfa yedi yurdu, 808 yatağı ve yayımlanmış öğrenci fiyat örneklerini listeler. Müsaitlik ayrıca sorulmalıdır; rakamlar oda garantisi değildir."
           }
         }
       ],
@@ -863,29 +899,37 @@
       },
       "field_confidence": {
         "program_basic_info": "high",
-        "language": "high",
-        "admission": "unknown",
+        "language": "medium",
+        "admission": "medium",
         "tuition": "medium",
         "scholarship": "unknown",
         "curriculum": "high",
-        "research_profile": "Bilinmiyor / Resmi Veri Yok",
-        "industry_ecosystem_profile": "Bilinmiyor / Resmi Veri Yok",
-        "application_timeline_profile": "Bilinmiyor / Resmi Veri Yok",
-        "living_profile": "Bilinmiyor / Resmi Veri Yok",
+        "research_profile": "unknown",
+        "industry_ecosystem_profile": "unknown",
+        "application_timeline_profile": "unknown",
+        "living_profile": "unknown",
         "living": "high",
         "research": "medium",
-        "student_sentiment": "unknown"
+        "student_sentiment": "unknown",
+        "deadlines": "unknown",
+        "housing": "high",
+        "deadline": "unknown"
       },
-      "official_housing_page": "https://www.ubi.pt/en/page/living_covilha"
+      "official_housing_page": "https://www.ubi.pt/Entidade/living_covilha"
     },
     "decision_summary": {
       "en": "Listed 120-ECTS Aeronautical Engineering master with transparent international tuition/residence prices. Portuguese delivery is the practical constraint for a Turkish applicant.",
       "tr": "Uluslararas? ??renim ?creti/yurt fiyat? ?effaf 120 AKTS Havac?l?k M?hendisli?i y?ksek lisans?. T?rk aday i?in pratik k?s?t Portekizce e?itimdir."
     },
-    "scoring_inputs": {},
+    "scoring_inputs": {
+      "hard_filter_flags": {
+        "english_only_compatible": false,
+        "requires_local_language": true
+      }
+    },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-15",
+      "checked_at": "2026-08-14",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
@@ -895,8 +939,8 @@
           "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
         },
         {
-          "en": "Add a checked official source for admission.",
-          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          "en": "Add a checked official source for deadline.",
+          "tr": "deadline için kontrol edilmiş resmî kaynak ekleyin."
         }
       ],
       "qc_notes": {
@@ -906,10 +950,12 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 5,
+      "checked_official_source_count": 7,
       "verified_fields": [
         "program",
         "language",
+        "admission",
+        "non_eu_eligibility",
         "tuition",
         "curriculum",
         "research",
@@ -917,10 +963,10 @@
       ],
       "unverified_critical_fields": [
         "scholarship",
-        "admission"
+        "deadline"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-15"
+      "audited_at": "2026-08-14"
     },
     "relevance_status": "strong",
     "program_native_name": "Mestrado em Engenharia Aeron?utica",
@@ -951,61 +997,7 @@
     }
   },
   {
-    "Country": "Portugal",
-    "City": "Porto",
-    "State_Region": "Porto",
-    "Uni_ID": "feup-porto",
-    "University_Name": "University of Porto (FEUP)",
-    "University_Display_Name": "University of Porto (FEUP)",
-    "University_Short_Name": "FEUP",
-    "Cost_Tuition": [
-      {
-        "scope": "historical_international",
-        "program": "Master in Aerospace Engineering",
-        "amount": 6000,
-        "currency": "EUR",
-        "period": "year",
-        "raw": "Official inactive programme page, 2025/26 historical value only; not current offer.",
-        "effective_from_term_code": "2025/2026"
-      }
-    ],
-    "Cost_Semester_Fees": [],
-    "Scholarships_Info": [],
-    "Cost_City_Living": "Bilinmiyor / Resmi Veri Yok",
-    "Cost_City_Rank": null,
-    "Living_Housing_Difficulty": "Bilinmiyor / Resmi Veri Yok",
-    "Living_Housing_Score": null,
-    "Program_Name": "Master in Aerospace Engineering",
-    "Program_Degree": "MSc",
-    "Program_ECTS": 120,
-    "Program_URL": "https://www.up.pt/portal/pt/feup/feup/33581/",
-    "Program_Scope": "Official portal marks programme inactive.",
-    "Admission_Mode": null,
-    "Admission_Language_Req": null,
-    "Analysis_Strong_Areas": null,
-    "Analysis_Pros": [],
-    "Analysis_Cons": [],
-    "Analysis_Tags": [],
-    "Industry_Ecosystem": null,
-    "Industry_Comp_Intensity": null,
-    "Industry_Partners": [],
-    "Internship_Mandatory": null,
-    "Internship_Notes": null,
-    "Deadline_Winter_Open": null,
-    "Deadline_Winter_Close": null,
-    "Deadline_Winter_Note": "Legacy deadline removed; verify current official programme deadline.",
-    "Deadline_Summer_Open": null,
-    "Deadline_Summer_Close": null,
-    "Deadline_Summer_Note": null,
-    "Deadline_General_Note": null,
-    "Meta_Sources": [
-      "https://sigarra.up.pt/feup/en/WEB_BASE.GERA_PAGINA?p_pagina=propinas-internacional"
-    ],
-    "Meta_Updated_At": "2026-07-14",
-    "Meta_Needs_Verification": true,
     "qs_ranking": 255,
-    "global_recognition": "Well known internationally",
-    "field_recognition": "Strong engineering programs",
     "location": {
       "country": "Portugal",
       "city": "Porto",
@@ -1038,7 +1030,16 @@
       },
       "admission_risk": "high",
       "required_documents": [],
-      "verification_notes": "Legacy record was not fully reverified from current official programme sources."
+      "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
+      "gre": {
+        "policy": "unknown",
+        "test_type": "unknown",
+        "minimum_scores": {},
+        "recommended_scores": {},
+        "validity_rule": "",
+        "waiver_rules": [],
+        "source_ids": []
+      }
     },
     "language_profile": {
       "teaching_language": [
@@ -1098,7 +1099,8 @@
       "living_cost_sek_per_year_min": null,
       "living_cost_sek_per_year_max": null,
       "living_cost_dkk_per_year_min": null,
-      "living_cost_dkk_per_year_max": null
+      "living_cost_dkk_per_year_max": null,
+      "tuition_items": []
     },
     "scholarship_profile": {
       "regional_scholarship_available": null,
@@ -1109,7 +1111,11 @@
       "scholarship_deadline": null,
       "scholarship_application_url": null,
       "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
-      "funding_notes": null
+      "funding_notes": null,
+      "application_mode": "unknown",
+      "automatic_consideration": null,
+      "separate_application_required": null,
+      "opportunities": []
     },
     "living_profile": {
       "city_cost_level": "unknown",
@@ -1163,7 +1169,12 @@
       "housing_budget_sek_per_year_min": null,
       "housing_budget_sek_per_year_max": null,
       "housing_budget_dkk_per_year_min": null,
-      "housing_budget_dkk_per_year_max": null
+      "housing_budget_dkk_per_year_max": null,
+      "housing_access": "unknown",
+      "housing_application_separate": null,
+      "housing_options": [],
+      "official_living_cost_items": [],
+      "official_rent_items": []
     },
     "curriculum_profile": {
       "tracks": [],
@@ -1206,10 +1217,11 @@
       "eu_deadline": null,
       "scholarship_deadline": null,
       "pre_enrolment_required": null,
-      "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
+      "timeline_risk": "unknown",
       "deadline_notes": null,
       "winter_deadline": null,
-      "application_deadline": null
+      "application_deadline": null,
+      "deadline_events": []
     },
     "student_sentiment_profile": {
       "student_satisfaction_score": null,
@@ -1246,8 +1258,8 @@
           "url": "https://sigarra.up.pt/feup/en/WEB_BASE.GERA_PAGINA?p_pagina=propinas-internacional",
           "title": "",
           "source_type": "official_tuition_page",
-          "access_status": "Bilinmiyor / Resmi Veri Yok",
-          "last_checked": null,
+          "access_status": "blocked",
+          "last_checked": "2026-08-14",
           "relevant_fields": [],
           "confidence": "Bilinmiyor / Resmi Veri Yok",
           "notes": "Existing source retained but not rechecked in this audit."
@@ -1257,7 +1269,7 @@
           "title": "Master in Aerospace Engineering ? FEUP / University of Porto",
           "source_type": "official_program_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program",
             "program_status",
@@ -1284,13 +1296,17 @@
         "tuition": "unknown",
         "scholarship": "unknown",
         "curriculum": "medium",
-        "research_profile": "Bilinmiyor / Resmi Veri Yok",
-        "industry_ecosystem_profile": "Bilinmiyor / Resmi Veri Yok",
-        "application_timeline_profile": "Bilinmiyor / Resmi Veri Yok",
-        "living_profile": "Bilinmiyor / Resmi Veri Yok",
+        "research_profile": "unknown",
+        "industry_ecosystem_profile": "unknown",
+        "application_timeline_profile": "unknown",
+        "living_profile": "unknown",
         "program_status": "high",
         "living": "unknown",
-        "student_sentiment": "unknown"
+        "student_sentiment": "unknown",
+        "deadlines": "unknown",
+        "housing": "unknown",
+        "non_eu_eligibility": "unknown",
+        "deadline": "unknown"
       }
     },
     "decision_summary": {
@@ -1300,11 +1316,19 @@
     "scoring_inputs": {},
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-15",
+      "checked_at": "2026-08-14",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
       "remaining_verification_tasks": [
+        {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for non_eu_eligibility.",
+          "tr": "non_eu_eligibility için kontrol edilmiş resmî kaynak ekleyin."
+        },
         {
           "en": "Add a checked official source for tuition.",
           "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
@@ -1314,8 +1338,12 @@
           "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
         },
         {
-          "en": "Add a checked official source for admission.",
-          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          "en": "Add a checked official source for deadline.",
+          "tr": "deadline için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for housing.",
+          "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
         }
       ],
       "qc_notes": {
@@ -1332,12 +1360,15 @@
         "curriculum"
       ],
       "unverified_critical_fields": [
+        "admission",
+        "non_eu_eligibility",
         "tuition",
         "scholarship",
-        "admission"
+        "deadline",
+        "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-15"
+      "audited_at": "2026-08-14"
     },
     "relevance_status": "strong",
     "program_native_name": "Mestrado em Engenharia Aeroespacial",
@@ -1370,61 +1401,7 @@
     }
   },
   {
-    "Country": "Portugal",
-    "City": "Aveiro",
-    "State_Region": "Aveiro",
-    "Uni_ID": "ua-aveiro",
-    "University_Name": "University of Aveiro",
-    "University_Display_Name": "University of Aveiro",
-    "University_Short_Name": "Aveiro",
-    "Cost_Tuition": [
-      {
-        "scope": "non_eu",
-        "program": null,
-        "amount": null,
-        "currency": "EUR",
-        "period": "year",
-        "raw": "Legacy tuition value removed; verify from the current official fee page.",
-        "effective_from_term_code": null
-      }
-    ],
-    "Cost_Semester_Fees": [],
-    "Scholarships_Info": [],
-    "Cost_City_Living": "Bilinmiyor / Resmi Veri Yok",
-    "Cost_City_Rank": null,
-    "Living_Housing_Difficulty": "Bilinmiyor / Resmi Veri Yok",
-    "Living_Housing_Score": null,
-    "Program_Name": "Mestrado em Engenharia Aeroespacial / Master's in Aerospace Engineering",
-    "Program_Degree": "MSc",
-    "Program_ECTS": 120,
-    "Program_URL": "https://api-portal.ua.pt/api/v1/file/RelCurso_9332_2024_2025.pdf",
-    "Program_Scope": "Aerospace Engineering",
-    "Admission_Mode": null,
-    "Admission_Language_Req": null,
-    "Analysis_Strong_Areas": null,
-    "Analysis_Pros": [],
-    "Analysis_Cons": [],
-    "Analysis_Tags": [],
-    "Industry_Ecosystem": null,
-    "Industry_Comp_Intensity": null,
-    "Industry_Partners": [],
-    "Internship_Mandatory": null,
-    "Internship_Notes": null,
-    "Deadline_Winter_Open": null,
-    "Deadline_Winter_Close": null,
-    "Deadline_Winter_Note": "Legacy deadline removed; verify current official programme deadline.",
-    "Deadline_Summer_Open": null,
-    "Deadline_Summer_Close": null,
-    "Deadline_Summer_Note": null,
-    "Deadline_General_Note": null,
-    "Meta_Sources": [
-      "https://www.ua.pt/en/tuition-fee"
-    ],
-    "Meta_Updated_At": "2026-01-27",
-    "Meta_Needs_Verification": true,
     "qs_ranking": 425,
-    "global_recognition": "Well known internationally",
-    "field_recognition": "Strong engineering programs",
     "location": {
       "country": "Portugal",
       "city": "Aveiro",
@@ -1452,9 +1429,18 @@
       "required_previous_degree": null,
       "accepted_backgrounds": [],
       "admission_mode": "Bilinmiyor / Resmi Veri Yok",
-      "admission_risk": "Bilinmiyor / Resmi Veri Yok",
+      "admission_risk": "unknown",
       "required_documents": [],
-      "verification_notes": "Legacy record was not fully reverified from current official programme sources."
+      "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
+      "gre": {
+        "policy": "unknown",
+        "test_type": "unknown",
+        "minimum_scores": {},
+        "recommended_scores": {},
+        "validity_rule": "",
+        "waiver_rules": [],
+        "source_ids": []
+      }
     },
     "language_profile": {
       "teaching_language": [
@@ -1463,7 +1449,10 @@
       "english_required": null,
       "english_level_required": null,
       "language_risk": "unknown",
-      "verification_notes": "Legacy record was not fully reverified from current official programme sources."
+      "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
+      "teaching_languages": [
+        "Unknown"
+      ]
     },
     "cost_profile": {
       "academic_year": null,
@@ -1502,7 +1491,8 @@
       "living_cost_sek_per_year_min": null,
       "living_cost_sek_per_year_max": null,
       "living_cost_dkk_per_year_min": null,
-      "living_cost_dkk_per_year_max": null
+      "living_cost_dkk_per_year_max": null,
+      "tuition_items": []
     },
     "scholarship_profile": {
       "regional_scholarship_available": null,
@@ -1513,12 +1503,16 @@
       "scholarship_deadline": null,
       "scholarship_application_url": null,
       "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
-      "funding_notes": null
+      "funding_notes": null,
+      "application_mode": "unknown",
+      "automatic_consideration": null,
+      "separate_application_required": null,
+      "opportunities": []
     },
     "living_profile": {
       "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
       "housing_difficulty": null,
-      "living_risk": "Bilinmiyor / Resmi Veri Yok",
+      "living_risk": "unknown",
       "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
       "average_room_rent_eur": null,
       "monthly_living_cost_eur_estimated": null,
@@ -1564,7 +1558,12 @@
       "housing_budget_sek_per_year_min": null,
       "housing_budget_sek_per_year_max": null,
       "housing_budget_dkk_per_year_min": null,
-      "housing_budget_dkk_per_year_max": null
+      "housing_budget_dkk_per_year_max": null,
+      "housing_access": "unknown",
+      "housing_application_separate": null,
+      "housing_options": [],
+      "official_living_cost_items": [],
+      "official_rent_items": []
     },
     "curriculum_profile": {
       "tracks": [],
@@ -1606,10 +1605,11 @@
       "eu_deadline": null,
       "scholarship_deadline": null,
       "pre_enrolment_required": null,
-      "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
+      "timeline_risk": "unknown",
       "deadline_notes": null,
       "winter_deadline": null,
-      "application_deadline": null
+      "application_deadline": null,
+      "deadline_events": []
     },
     "student_sentiment_profile": {
       "student_satisfaction_score": null,
@@ -1660,7 +1660,7 @@
           "title": "Course report: Master's in Aerospace Engineering — University of Aveiro",
           "source_type": "official_curriculum_page",
           "access_status": "pdf",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program",
             "program_status",
@@ -1687,10 +1687,15 @@
         "tuition": "unknown",
         "scholarship": "unknown",
         "curriculum": "medium",
-        "research_profile": "Bilinmiyor / Resmi Veri Yok",
-        "industry_ecosystem_profile": "Bilinmiyor / Resmi Veri Yok",
-        "application_timeline_profile": "Bilinmiyor / Resmi Veri Yok",
-        "living_profile": "Bilinmiyor / Resmi Veri Yok"
+        "research_profile": "unknown",
+        "industry_ecosystem_profile": "unknown",
+        "application_timeline_profile": "unknown",
+        "living_profile": "unknown",
+        "deadlines": "unknown",
+        "housing": "unknown",
+        "program": "unknown",
+        "non_eu_eligibility": "unknown",
+        "deadline": "unknown"
       }
     },
     "decision_summary": {
@@ -1707,7 +1712,7 @@
     "scoring_inputs": {},
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-15",
+      "checked_at": "2026-08-14",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
@@ -1721,6 +1726,14 @@
           "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
         },
         {
+          "en": "Add a checked official source for admission.",
+          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for non_eu_eligibility.",
+          "tr": "non_eu_eligibility için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
           "en": "Add a checked official source for tuition.",
           "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
         },
@@ -1729,8 +1742,12 @@
           "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
         },
         {
-          "en": "Add a checked official source for admission.",
-          "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          "en": "Add a checked official source for deadline.",
+          "tr": "deadline için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for housing.",
+          "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
         }
       ],
       "qc_notes": {
@@ -1747,12 +1764,15 @@
       "unverified_critical_fields": [
         "program",
         "language",
+        "admission",
+        "non_eu_eligibility",
         "tuition",
         "scholarship",
-        "admission"
+        "deadline",
+        "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-15"
+      "audited_at": "2026-08-14"
     },
     "tuition_eur_per_year": null,
     "annual_fee_eur": null,
@@ -1780,64 +1800,11 @@
           "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
         }
       }
-    }
+    },
+    "relevance_status": "needs_review"
   },
   {
-    "Country": "Portugal",
-    "City": "Guimarães / Braga",
-    "State_Region": "Braga",
-    "Uni_ID": "uminho-guimaraes",
-    "University_Name": "University of Minho",
-    "University_Display_Name": "University of Minho",
-    "University_Short_Name": "UMinho",
-    "Cost_Tuition": [
-      {
-        "scope": "non_eu",
-        "program": null,
-        "amount": null,
-        "currency": "EUR",
-        "period": "year",
-        "raw": "Legacy tuition value removed; verify from the current official fee page.",
-        "effective_from_term_code": null
-      }
-    ],
-    "Cost_Semester_Fees": [],
-    "Scholarships_Info": [],
-    "Cost_City_Living": "Bilinmiyor / Resmi Veri Yok",
-    "Cost_City_Rank": null,
-    "Living_Housing_Difficulty": "Bilinmiyor / Resmi Veri Yok",
-    "Living_Housing_Score": null,
-    "Program_Name": "Mestrado em Engenharia Aeroespacial / Master's in Aerospace Engineering",
-    "Program_Degree": "MSc",
-    "Program_ECTS": 120,
-    "Program_URL": "https://www.eng.uminho.pt/pt/Estudar/_layouts/15/UMinho.PortaisUOEI.UI/Pages/CatalogoCursoDetail.aspx?catId=14&itemId=4747",
-    "Program_Scope": "Aerospace Engineering",
-    "Admission_Mode": null,
-    "Admission_Language_Req": null,
-    "Analysis_Strong_Areas": null,
-    "Analysis_Pros": [],
-    "Analysis_Cons": [],
-    "Analysis_Tags": [],
-    "Industry_Ecosystem": null,
-    "Industry_Comp_Intensity": null,
-    "Industry_Partners": [],
-    "Internship_Mandatory": null,
-    "Internship_Notes": null,
-    "Deadline_Winter_Open": null,
-    "Deadline_Winter_Close": null,
-    "Deadline_Winter_Note": "Legacy deadline removed; verify current official programme deadline.",
-    "Deadline_Summer_Open": null,
-    "Deadline_Summer_Close": null,
-    "Deadline_Summer_Note": null,
-    "Deadline_General_Note": null,
-    "Meta_Sources": [
-      "https://www.uminho.pt/EN/education/prospectivestudents/Pages/Tuition-Fees.aspx"
-    ],
-    "Meta_Updated_At": "2026-01-27",
-    "Meta_Needs_Verification": true,
     "qs_ranking": 572,
-    "global_recognition": "Recognized globally",
-    "field_recognition": "Good engineering programs",
     "location": {
       "country": "Portugal",
       "city": "Guimarães / Braga",
@@ -1868,7 +1835,7 @@
         "en": "Master's application; current call includes international candidates.",
         "tr": "Yuksek lisans basvurusu; guncel cagrida uluslararasi adaylar yer alir."
       },
-      "admission_risk": "Bilinmiyor / Resmi Veri Yok",
+      "admission_risk": "unknown",
       "required_documents": [
         "Detailed curriculum vitae",
         "Degree/transcript certificate"
@@ -1876,6 +1843,15 @@
       "verification_notes": {
         "en": "The programme page and the official application document support programme status and the listed application documents. Teaching language and fee remain unknown.",
         "tr": "Program sayfasi ve resmi basvuru belgesi, program durumunu ve listelenen basvuru belgelerini destekler. Egitim dili ve ucret bilinmiyor."
+      },
+      "gre": {
+        "policy": "unknown",
+        "test_type": "unknown",
+        "minimum_scores": {},
+        "recommended_scores": {},
+        "validity_rule": "",
+        "waiver_rules": [],
+        "source_ids": []
       }
     },
     "language_profile": {
@@ -1885,7 +1861,10 @@
       "english_required": null,
       "english_level_required": null,
       "language_risk": "unknown",
-      "verification_notes": "Legacy record was not fully reverified from current official programme sources."
+      "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
+      "teaching_languages": [
+        "Unknown"
+      ]
     },
     "cost_profile": {
       "academic_year": null,
@@ -1924,7 +1903,8 @@
       "living_cost_sek_per_year_min": null,
       "living_cost_sek_per_year_max": null,
       "living_cost_dkk_per_year_min": null,
-      "living_cost_dkk_per_year_max": null
+      "living_cost_dkk_per_year_max": null,
+      "tuition_items": []
     },
     "scholarship_profile": {
       "regional_scholarship_available": null,
@@ -1935,12 +1915,16 @@
       "scholarship_deadline": null,
       "scholarship_application_url": null,
       "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
-      "funding_notes": null
+      "funding_notes": null,
+      "application_mode": "unknown",
+      "automatic_consideration": null,
+      "separate_application_required": null,
+      "opportunities": []
     },
     "living_profile": {
       "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
       "housing_difficulty": null,
-      "living_risk": "Bilinmiyor / Resmi Veri Yok",
+      "living_risk": "unknown",
       "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
       "average_room_rent_eur": null,
       "monthly_living_cost_eur_estimated": null,
@@ -1986,7 +1970,12 @@
       "housing_budget_sek_per_year_min": null,
       "housing_budget_sek_per_year_max": null,
       "housing_budget_dkk_per_year_min": null,
-      "housing_budget_dkk_per_year_max": null
+      "housing_budget_dkk_per_year_max": null,
+      "housing_access": "unknown",
+      "housing_application_separate": null,
+      "housing_options": [],
+      "official_living_cost_items": [],
+      "official_rent_items": []
     },
     "curriculum_profile": {
       "tracks": [
@@ -2045,10 +2034,11 @@
       "eu_deadline": null,
       "scholarship_deadline": null,
       "pre_enrolment_required": null,
-      "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
+      "timeline_risk": "unknown",
       "deadline_notes": null,
       "winter_deadline": null,
-      "application_deadline": null
+      "application_deadline": null,
+      "deadline_events": []
     },
     "student_sentiment_profile": {
       "student_satisfaction_score": null,
@@ -2099,7 +2089,7 @@
           "title": "Mestrado em Engenharia Aeroespacial — University of Minho",
           "source_type": "official_program_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program",
             "degree_level",
@@ -2120,7 +2110,7 @@
           "title": "Mestrado em Engenharia Aeroespacial — Universidade do Minho",
           "source_type": "official_program_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program",
             "program_status",
@@ -2138,7 +2128,7 @@
           "title": "2nd-cycle application documents — Universidade do Minho",
           "source_type": "official_admission_page",
           "access_status": "pdf",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "admission",
             "non_eu_eligibility",
@@ -2164,10 +2154,13 @@
         "tuition": "unknown",
         "scholarship": "unknown",
         "curriculum": "medium",
-        "research_profile": "Bilinmiyor / Resmi Veri Yok",
-        "industry_ecosystem_profile": "Bilinmiyor / Resmi Veri Yok",
-        "application_timeline_profile": "Bilinmiyor / Resmi Veri Yok",
-        "living_profile": "Bilinmiyor / Resmi Veri Yok"
+        "research_profile": "unknown",
+        "industry_ecosystem_profile": "unknown",
+        "application_timeline_profile": "unknown",
+        "living_profile": "unknown",
+        "deadlines": "unknown",
+        "housing": "unknown",
+        "deadline": "unknown"
       }
     },
     "decision_summary": {
@@ -2184,7 +2177,7 @@
     "scoring_inputs": {},
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-15",
+      "checked_at": "2026-08-14",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
@@ -2200,6 +2193,14 @@
         {
           "en": "Add a checked official source for scholarship.",
           "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for deadline.",
+          "tr": "deadline için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for housing.",
+          "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
         }
       ],
       "qc_notes": {
@@ -2219,10 +2220,12 @@
       "unverified_critical_fields": [
         "language",
         "tuition",
-        "scholarship"
+        "scholarship",
+        "deadline",
+        "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-15"
+      "audited_at": "2026-08-14"
     },
     "tuition_eur_per_year": null,
     "annual_fee_eur": null,
@@ -2250,65 +2253,11 @@
           "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
         }
       }
-    }
+    },
+    "relevance_status": "needs_review"
   },
   {
-    "Country": "Portugal",
-    "City": "Almada (Lisbon Area)",
-    "State_Region": "Setúbal",
-    "Uni_ID": "nova-fct",
-    "University_Name": "NOVA School of Science and Technology",
-    "University_Display_Name": "NOVA School of Science and Technology (FCT NOVA)",
-    "University_Short_Name": "NOVA FCT",
-    "Cost_Tuition": [
-      {
-        "scope": "non_eu",
-        "program": null,
-        "amount": null,
-        "currency": "EUR",
-        "period": "year",
-        "raw": "Legacy tuition value removed; verify from the current official fee page.",
-        "effective_from_term_code": null
-      }
-    ],
-    "Cost_Semester_Fees": [],
-    "Scholarships_Info": [],
-    "Cost_City_Living": "Bilinmiyor / Resmi Veri Yok",
-    "Cost_City_Rank": null,
-    "Living_Housing_Difficulty": "Bilinmiyor / Resmi Veri Yok",
-    "Living_Housing_Score": null,
-    "Program_Name": "Mestrado em Engenharia Aeroespacial / Master's in Aerospace Engineering",
-    "Program_Degree": "MSc",
-    "Program_ECTS": 120,
-    "Program_URL": "https://www.fct.unl.pt/ensino/curso/mestrado-em-engenharia-aeroespacial",
-    "Program_Scope": "Aerospace Engineering",
-    "Admission_Mode": null,
-    "Admission_Language_Req": null,
-    "Analysis_Strong_Areas": null,
-    "Analysis_Pros": [],
-    "Analysis_Cons": [],
-    "Analysis_Tags": [],
-    "Industry_Ecosystem": null,
-    "Industry_Comp_Intensity": null,
-    "Industry_Partners": [],
-    "Internship_Mandatory": null,
-    "Internship_Notes": null,
-    "Deadline_Winter_Open": null,
-    "Deadline_Winter_Close": null,
-    "Deadline_Winter_Note": "Legacy deadline removed; verify current official programme deadline.",
-    "Deadline_Summer_Open": null,
-    "Deadline_Summer_Close": null,
-    "Deadline_Summer_Note": null,
-    "Deadline_General_Note": null,
-    "Meta_Sources": [
-      "https://www.fct.unl.pt/en/education/prospectivestudents/tuition-fees",
-      "https://nominatim.openstreetmap.org/"
-    ],
-    "Meta_Updated_At": "2026-01-27",
-    "Meta_Needs_Verification": true,
     "qs_ranking": 337,
-    "global_recognition": "Well known internationally",
-    "field_recognition": "Strong engineering programs",
     "id": "nova-fct",
     "university": "NOVA School of Science and Technology (FCT NOVA)",
     "university_native_name": "NOVA School of Science and Technology (FCT NOVA)",
@@ -2345,6 +2294,15 @@
       "verification_notes": {
         "en": "The official page explicitly accepts foreign degrees following a Bologna first cycle in the listed fields; similar profiles are subject to academic review and may be interviewed.",
         "tr": "Resmî sayfa, listelenen alanlarda Bologna birinci döngüsünü takiben alınmış yabancı dereceleri açıkça kabul eder; benzer profiller akademik incelemeye tabidir ve mülakata alınabilir."
+      },
+      "gre": {
+        "policy": "unknown",
+        "test_type": "unknown",
+        "minimum_scores": {},
+        "recommended_scores": {},
+        "validity_rule": "",
+        "waiver_rules": [],
+        "source_ids": []
       }
     },
     "language_profile": {
@@ -2400,7 +2358,8 @@
       "living_cost_sek_per_year_min": null,
       "living_cost_sek_per_year_max": null,
       "living_cost_dkk_per_year_min": null,
-      "living_cost_dkk_per_year_max": null
+      "living_cost_dkk_per_year_max": null,
+      "tuition_items": []
     },
     "scholarship_profile": {
       "regional_scholarship_available": null,
@@ -2414,12 +2373,16 @@
         "en": "The page offers a €450 Impulso Mestre scholarship to first-year second-cycle students with final bachelor's grade at least 15/20 whose degree is from Portugal or an EU member state. This is not verified as open to non-EU degrees outside the EU.",
         "tr": "Sayfa, lisans notu en az 15/20 olan ve derecesi Portekiz veya AB üyesi bir devletten alınmış ilk yıl ikinci döngü öğrencilerine 450 € Impulso Mestre bursu sunar. Bu burs AB dışındaki dereceler için açık olarak doğrulanmamıştır."
       },
-      "funding_notes": null
+      "funding_notes": null,
+      "application_mode": "unknown",
+      "automatic_consideration": null,
+      "separate_application_required": null,
+      "opportunities": []
     },
     "living_profile": {
       "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
       "housing_difficulty": null,
-      "living_risk": "Bilinmiyor / Resmi Veri Yok",
+      "living_risk": "unknown",
       "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
       "average_room_rent_eur": null,
       "monthly_living_cost_eur_estimated": null,
@@ -2465,7 +2428,12 @@
       "housing_budget_sek_per_year_min": null,
       "housing_budget_sek_per_year_max": null,
       "housing_budget_dkk_per_year_min": null,
-      "housing_budget_dkk_per_year_max": null
+      "housing_budget_dkk_per_year_max": null,
+      "housing_access": "unknown",
+      "housing_application_separate": null,
+      "housing_options": [],
+      "official_living_cost_items": [],
+      "official_rent_items": []
     },
     "curriculum_profile": {
       "tracks": [
@@ -2589,7 +2557,7 @@
           "title": "Mestrado em Engenharia Aeroespacial — NOVA FCT",
           "source_type": "official_program_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program",
             "program_status",
@@ -2615,13 +2583,14 @@
           "url": "https://nominatim.openstreetmap.org/",
           "title": "OpenStreetMap Nominatim geocoding service",
           "source_type": "other",
-          "access_status": "ok",
-          "last_checked": "2026-07-10",
+          "access_status": "redirects",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "location"
           ],
           "confidence": "medium",
-          "notes": "Resolved using alternate query: NOVA School of Science and Technology, Caparica, Portugal"
+          "notes": "Resolved using alternate query: NOVA School of Science and Technology, Caparica, Portugal",
+          "final_url": "https://nominatim.openstreetmap.org/ui/search.html"
         }
       ],
       "last_verified": "2026-07-14",
@@ -2638,9 +2607,10 @@
         "scholarship": "unknown",
         "curriculum": "high",
         "research_profile": "high",
-        "industry_ecosystem_profile": "Bilinmiyor / Resmi Veri Yok",
-        "application_timeline_profile": "Bilinmiyor / Resmi Veri Yok",
-        "living_profile": "Bilinmiyor / Resmi Veri Yok"
+        "industry_ecosystem_profile": "unknown",
+        "application_timeline_profile": "unknown",
+        "living_profile": "unknown",
+        "housing": "unknown"
       }
     },
     "decision_summary": {
@@ -2657,7 +2627,7 @@
     "scoring_inputs": {},
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-15",
+      "checked_at": "2026-08-14",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
@@ -2669,6 +2639,10 @@
         {
           "en": "Add a checked official source for scholarship.",
           "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for housing.",
+          "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
         }
       ],
       "qc_notes": {
@@ -2690,15 +2664,17 @@
         "program",
         "language",
         "admission",
+        "non_eu_eligibility",
         "deadline",
         "curriculum"
       ],
       "unverified_critical_fields": [
         "tuition",
-        "scholarship"
+        "scholarship",
+        "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-15"
+      "audited_at": "2026-08-14"
     },
     "tuition_eur_per_year": null,
     "annual_fee_eur": null,
@@ -2726,64 +2702,11 @@
           "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
         }
       }
-    }
+    },
+    "relevance_status": "needs_review"
   },
   {
-    "Country": "Portugal",
-    "City": "Oeiras (Lisbon)",
-    "State_Region": "Lisbon",
-    "Uni_ID": "atlantica-lisbon",
-    "University_Name": "Atlântica – Instituto Universitário",
-    "University_Display_Name": "Atlântica University Institute",
-    "University_Short_Name": "Atlântica",
-    "Cost_Tuition": [
-      {
-        "scope": "non_eu",
-        "program": null,
-        "amount": null,
-        "currency": "EUR",
-        "period": "year",
-        "raw": "Legacy tuition value removed; verify from the current official fee page.",
-        "effective_from_term_code": null
-      }
-    ],
-    "Cost_Semester_Fees": [],
-    "Scholarships_Info": [],
-    "Cost_City_Living": "Bilinmiyor / Resmi Veri Yok",
-    "Cost_City_Rank": null,
-    "Living_Housing_Difficulty": "Bilinmiyor / Resmi Veri Yok",
-    "Living_Housing_Score": null,
-    "Program_Name": "Mestrado em Engenharia e Gestão de Manutenção Aeronáutica / Master's in Aeronautical Maintenance Engineering and Management",
-    "Program_Degree": "MSc",
-    "Program_ECTS": null,
-    "Program_URL": "https://uatlantica.pt/cursos/mestrado-em-engenharia-e-gestao-de-manutencao-aeronautica/",
-    "Program_Scope": "Aeronautical Maintenance Engineering and Management",
-    "Admission_Mode": null,
-    "Admission_Language_Req": null,
-    "Analysis_Strong_Areas": null,
-    "Analysis_Pros": [],
-    "Analysis_Cons": [],
-    "Analysis_Tags": [],
-    "Industry_Ecosystem": null,
-    "Industry_Comp_Intensity": null,
-    "Industry_Partners": [],
-    "Internship_Mandatory": null,
-    "Internship_Notes": null,
-    "Deadline_Winter_Open": null,
-    "Deadline_Winter_Close": null,
-    "Deadline_Winter_Note": "Legacy deadline removed; verify current official programme deadline.",
-    "Deadline_Summer_Open": null,
-    "Deadline_Summer_Close": null,
-    "Deadline_Summer_Note": null,
-    "Deadline_General_Note": null,
-    "Meta_Sources": [
-      "https://www.uatlantica.pt/index.php/en/study-at-atlantica/"
-    ],
-    "Meta_Updated_At": "2026-01-27",
-    "Meta_Needs_Verification": true,
     "qs_ranking": null,
-    "global_recognition": "Not ranked in QS",
-    "field_recognition": "Specialized institution (unranked overall)",
     "location": {
       "country": "Portugal",
       "city": "Oeiras (Lisbon)",
@@ -2818,7 +2741,16 @@
       "required_documents": [
         "identity_or_passport_copy"
       ],
-      "verification_notes": "Legacy record was not fully reverified from current official programme sources."
+      "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
+      "gre": {
+        "policy": "unknown",
+        "test_type": "unknown",
+        "minimum_scores": {},
+        "recommended_scores": {},
+        "validity_rule": "",
+        "waiver_rules": [],
+        "source_ids": []
+      }
     },
     "language_profile": {
       "teaching_language": [
@@ -2827,7 +2759,10 @@
       "english_required": null,
       "english_level_required": null,
       "language_risk": "unknown",
-      "verification_notes": "Legacy record was not fully reverified from current official programme sources."
+      "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
+      "teaching_languages": [
+        "Unknown"
+      ]
     },
     "cost_profile": {
       "academic_year": null,
@@ -2866,7 +2801,8 @@
       "living_cost_sek_per_year_min": null,
       "living_cost_sek_per_year_max": null,
       "living_cost_dkk_per_year_min": null,
-      "living_cost_dkk_per_year_max": null
+      "living_cost_dkk_per_year_max": null,
+      "tuition_items": []
     },
     "scholarship_profile": {
       "regional_scholarship_available": null,
@@ -2877,12 +2813,16 @@
       "scholarship_deadline": null,
       "scholarship_application_url": null,
       "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
-      "funding_notes": null
+      "funding_notes": null,
+      "application_mode": "unknown",
+      "automatic_consideration": null,
+      "separate_application_required": null,
+      "opportunities": []
     },
     "living_profile": {
       "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
       "housing_difficulty": null,
-      "living_risk": "Bilinmiyor / Resmi Veri Yok",
+      "living_risk": "unknown",
       "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
       "average_room_rent_eur": null,
       "monthly_living_cost_eur_estimated": null,
@@ -2928,7 +2868,12 @@
       "housing_budget_sek_per_year_min": null,
       "housing_budget_sek_per_year_max": null,
       "housing_budget_dkk_per_year_min": null,
-      "housing_budget_dkk_per_year_max": null
+      "housing_budget_dkk_per_year_max": null,
+      "housing_access": "unknown",
+      "housing_application_separate": null,
+      "housing_options": [],
+      "official_living_cost_items": [],
+      "official_rent_items": []
     },
     "curriculum_profile": {
       "tracks": [],
@@ -3027,7 +2972,7 @@
           "title": "Mestrado em Engenharia e Gestão de Manutenção Aeronáutica — Atlântica",
           "source_type": "official_program_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program",
             "program_status",
@@ -3057,10 +3002,11 @@
         "tuition": "unknown",
         "scholarship": "unknown",
         "curriculum": "medium",
-        "research_profile": "Bilinmiyor / Resmi Veri Yok",
+        "research_profile": "unknown",
         "industry_ecosystem_profile": "medium",
-        "application_timeline_profile": "Bilinmiyor / Resmi Veri Yok",
-        "living_profile": "Bilinmiyor / Resmi Veri Yok"
+        "application_timeline_profile": "unknown",
+        "living_profile": "unknown",
+        "housing": "unknown"
       }
     },
     "decision_summary": {
@@ -3077,7 +3023,7 @@
     "scoring_inputs": {},
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-15",
+      "checked_at": "2026-08-14",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
@@ -3093,6 +3039,10 @@
         {
           "en": "Add a checked official source for scholarship.",
           "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for housing.",
+          "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
         }
       ],
       "qc_notes": {
@@ -3106,16 +3056,18 @@
       "verified_fields": [
         "program",
         "admission",
+        "non_eu_eligibility",
         "deadline",
         "curriculum"
       ],
       "unverified_critical_fields": [
         "language",
         "tuition",
-        "scholarship"
+        "scholarship",
+        "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-15"
+      "audited_at": "2026-08-14"
     },
     "tuition_eur_per_year": null,
     "annual_fee_eur": null,
@@ -3143,6 +3095,7 @@
           "tr": "Bu veri tabanı kurumu için bağımsız bir 2027 QS WUR sırası doğrulanmadı; değer türetilmedi."
         }
       }
-    }
+    },
+    "relevance_status": "needs_review"
   }
 ]

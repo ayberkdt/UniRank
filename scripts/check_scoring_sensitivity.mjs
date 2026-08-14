@@ -25,7 +25,7 @@ const academicHeavy = { ...balanced, academic_fit: 100 };
 const records = await Promise.all([
   loadJson('isvec.json').then((payload) => programme(payload, 'se-kth-aero-msc')),
   loadJson('almanya.json').then((payload) => programme(payload, 'germany-stuttgart-msc-aerospace')),
-  loadJson('italya.json').then((payload) => programme(payload, 'it-padova-aero-msc')),
+  loadJson('italy.json').then((payload) => programme(payload, 'unipd_aerospace')),
   loadJson('hollanda.json').then((payload) => programme(payload, 'netherlands_delft_msc_aerospace')),
   loadJson('amerika.json').then((payload) => programme(payload, 'mit-aeroastro')),
 ]);

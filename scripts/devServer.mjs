@@ -5,6 +5,7 @@ import { extname, normalize } from 'node:path';
 const root = new URL('../', import.meta.url);
 const publicDir = new URL('../public/', import.meta.url);
 const dataDir = new URL('../data_base/', import.meta.url);
+const catalogScopeUrl = new URL('../config/catalog_scope.json', import.meta.url);
 const port = Number(process.env.PORT || 8765);
 
 const mimeTypes = {
@@ -54,7 +55,7 @@ function annualTuition(entries) {
     if (amount === null) continue;
 
     const period = String(entry.period || '').trim().toLowerCase();
-    if (['year', 'annual', 'annually', 'yr'].includes(period)) return { amount, entry };
+    if (['year', 'annual', 'annually', 'yr', 'academic_year'].includes(period)) return { amount, entry };
     if (['semester', 'term'].includes(period)) return { amount: amount * 2, entry };
   }
   return { amount: null, entry: null };
@@ -72,6 +73,11 @@ function semesterFee(entries) {
 
 function isStructuredRecord(record) {
   return Boolean(record?.eligibility_profile && record?.cost_profile);
+}
+
+function isV2Record(record) {
+  return String(record?.schema_version || '').startsWith('2.')
+    && Boolean(record?.institution_profile && record?.program_profile);
 }
 
 function isLegacyRecord(record) {
@@ -156,6 +162,7 @@ function recordId(record) {
 
 function universityName(record) {
   return firstDisplayValue(
+    record?.institution_profile?.name,
     record?.university,
     record?.University_Display_Name,
     record?.University_Name,
@@ -166,6 +173,7 @@ function universityName(record) {
 
 function programName(record) {
   return firstDisplayValue(
+    record?.program_profile?.name,
     record?.program_name,
     record?.Program_Name,
     record?.target_program_name,
@@ -181,6 +189,8 @@ function isUndergraduateProgramme(record) {
     record?.Program_Degree,
     record?.degree,
     record?.level,
+    record?.program_profile?.degree_level,
+    record?.program_profile?.degree_award,
   ].map(displayText).join(' ').toLowerCase();
   return /\b(bachelor|b\.\s*sc\.?|bsc|undergraduate|first[- ]cycle|lisans)\b/.test(degreeText)
     || (degreeText.includes('diplom') && degreeText.includes('direct'));
@@ -297,7 +307,87 @@ function normalizeLegacyRecord(record, sourceFile) {
   };
 }
 
+function normalizeV2Record(record, sourceFile) {
+  const institution = record.institution_profile || {};
+  const programme = record.program_profile || {};
+  const language = record.language_profile || {};
+  const cost = record.cost_profile || {};
+  const curriculum = record.curriculum_profile || {};
+  const timeline = record.application_timeline_profile || {};
+  const scholarship = record.scholarship_profile || {};
+  const living = record.living_profile || {};
+  const categories = [
+    ...(record.category_profile?.primary_categories || []),
+    ...(record.category_profile?.secondary_categories || []),
+  ];
+  const tuition = annualTuition(cost.tuition_items);
+  const tuitionEur = String(tuition.entry?.currency || '').toUpperCase() === 'EUR' ? tuition.amount : null;
+  const currentDeadline = (timeline.deadline_events || []).find(event =>
+    event?.date_status === 'current'
+    && ['non_eu', 'international', 'all', undefined, null].includes(event?.applicant_scope)
+  );
+  const languageRequirement = (language.accepted_tests || [])
+    .map(test => {
+      const score = test?.minimum_overall ?? test?.minimum_score;
+      return [displayText(test?.test), score].filter(value => value !== '' && value !== null && value !== undefined).join(' ');
+    })
+    .filter(Boolean)
+    .join(' / ');
+
+  return {
+    ...record,
+    name: institution.name || '',
+    display_name: institution.native_name || institution.name || '',
+    short: institution.short_name || '',
+    university: institution.name || '',
+    city: record.location?.city || '',
+    state: record.location?.region || '',
+    scope: 'non_eu',
+    needs_verification: record.source_profile?.needs_verification === true,
+    tuition_eur_per_year: tuitionEur,
+    annual_fee_eur: tuitionEur,
+    tuition_raw: tuition.entry?.basis || '',
+    tuition_program: programme.name || '',
+    tuition_period: tuition.entry?.period || '',
+    tuition_scope: tuition.entry?.applicant_scope || '',
+    strong_areas_summary: record.research_profile?.summary || '',
+    strength: record.research_profile?.summary || '',
+    focus: categories.join(', '),
+    pros: record.decision_summary?.main_strengths || [],
+    cons: record.decision_summary?.main_risks || [],
+    tags: categories,
+    tags_raw: categories.join(', '),
+    target_program_name: programme.name || '',
+    target_program_degree: programme.degree_award || '',
+    target_program_ects: finiteNumber(programme.credits?.value),
+    target_program_url: programme.official_url || '',
+    admission_mode: record.eligibility_profile?.selection_method || '',
+    language_req: languageRequirement,
+    internship_mandatory: curriculum.internship?.required === true,
+    internship_notes: curriculum.internship?.notes || '',
+    deadline_winter_closes: currentDeadline?.date || '',
+    deadlines_note: timeline.planning_advice || '',
+    housing_difficulty: living.housing_risk || '',
+    scholarship_names: (scholarship.opportunities || []).map(item => displayText(item?.name)).filter(Boolean).join(', '),
+    source_file: sourceFile,
+    updated_at: record.source_profile?.last_verified || '',
+    program_name: programme.name || '',
+    program_degree: programme.degree_award || '',
+    degree_level: programme.degree_level || '',
+    duration_years: programme.duration?.unit === 'years' ? finiteNumber(programme.duration?.value) : null,
+    ects: finiteNumber(programme.credits?.value),
+    teaching_language: language.teaching_languages || [],
+    program_url: programme.official_url || '',
+    program_status: programme.program_status || '',
+  };
+}
+
 async function loadPrograms() {
+  const catalogScope = JSON.parse(await readFile(catalogScopeUrl, 'utf8'));
+  const countryAliases = catalogScope.country_aliases || {};
+  const excludedCountries = new Set(
+    (catalogScope.excluded_countries || []).map(country => countryAliases[country] || country)
+  );
   const fileNames = (await readdir(dataDir, { withFileTypes: true }))
     .filter((entry) => entry.isFile() && entry.name.endsWith('.json') && entry.name !== 'taxonomy.json')
     .map((entry) => entry.name)
@@ -323,6 +413,13 @@ async function loadPrograms() {
       rows.forEach((record, index) => {
         recordsSeen += 1;
         const id = recordId(record);
+        const rawCountry = displayText(firstDisplayValue(record?.country, record?.Country));
+        const catalogCountry = countryAliases[rawCountry] || rawCountry;
+
+        if (excludedCountries.has(catalogCountry)) {
+          skipped.push({ file: fileName, record_index: index, id, message: `Outside active catalogue scope: ${catalogCountry}` });
+          return;
+        }
 
         if (isStructuredRecord(record) && record.eligibility_profile.eligible_for_non_eu === false) {
           skipped.push({ file: fileName, record_index: index, id, message: 'Explicitly ineligible for non-EU applicants.' });
@@ -345,7 +442,12 @@ async function loadPrograms() {
           return;
         }
 
-        records.push(applySourceGuard(isLegacyRecord(record) ? normalizeLegacyRecord(record, fileName) : record));
+        const normalized = isLegacyRecord(record)
+          ? normalizeLegacyRecord(record, fileName)
+          : isV2Record(record)
+            ? normalizeV2Record(record, fileName)
+            : record;
+        records.push(applySourceGuard(normalized));
       });
     } catch (error) {
       skipped.push({ file: fileName, message: error.message });

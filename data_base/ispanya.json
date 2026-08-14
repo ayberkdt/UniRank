@@ -1,6 +1,6 @@
 {
   "country": "Spain",
-  "last_updated": "2026-07-11",
+  "last_updated": "2026-08-14",
   "programs": [
     {
       "id": "spain_upm_muse_aerospace",
@@ -41,51 +41,129 @@
       "teaching_language": [
         "Spanish"
       ],
-      "program_url": "http://muse.idr.upm.es/",
-      "department": "Escuela Técnica Superior de Ingeniería Aeronáutica y del Espacio (ETSIAE)",
-      "faculty_or_school": "",
-      "campus": "Madrid",
+      "program_url": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?fmt=detail&id=14.2",
+      "department": "Instituto Universitario de Microgravedad Ignacio Da Riva (IDR/UPM)",
+      "faculty_or_school": "Escuela Técnica Superior de Ingeniería Aeronáutica y del Espacio (ETSIAE)",
+      "campus": "Moncloa, Madrid",
       "program_status": "active",
       "relevance_status": "strong",
       "eligibility_profile": {
         "eligible_for_non_eu": true,
         "non_eu_quota": null,
         "required_previous_degree": {
-          "en": "Bachelor's in Aerospace Engineering or related field",
-          "tr": "Havacılık ve Uzay Mühendisliği veya ilgili bir alanda lisans derecesi"
+          "en": "A university degree that gives access to postgraduate study; MUSE only considers the listed engineering/science profiles.",
+          "tr": "Lisansüstü eğitime erişim sağlayan bir üniversite derecesi; MUSE yalnızca listelenen mühendislik/fen profillerini değerlendirir."
         },
         "accepted_backgrounds": [
           {
-            "en": "Aerospace Engineering",
-            "tr": "Havacılık ve Uzay Mühendisliği"
+            "en": "Aeronautical/Aerospace Engineering",
+            "tr": "Havacılık/Uzay Mühendisliği"
+          },
+          {
+            "en": "Industrial Technologies Engineering or Naval Engineering (no bridging courses stated)",
+            "tr": "Endüstriyel Teknolojiler Mühendisliği veya Gemi Mühendisliği (tamamlama dersi belirtilmiyor)"
+          },
+          {
+            "en": "Telecommunications Engineering, Mechanical Engineering, Physics or Mathematics (6–18 ECTS bridging courses may apply)",
+            "tr": "Telekomünikasyon Mühendisliği, Makine Mühendisliği, Fizik veya Matematik (6–18 AKTS tamamlama dersi uygulanabilir)"
           }
         ],
-        "required_ects": {},
+        "excluded_backgrounds": [
+          {
+            "en": "Degrees outside the profiles listed by MUSE",
+            "tr": "MUSE tarafından listelenen profiller dışındaki dereceler"
+          }
+        ],
+        "required_ects": {
+          "bridging_courses_ects_min": 6,
+          "bridging_courses_ects_max": 18,
+          "applies_to": "telecommunications, mechanical engineering, physics and mathematics profiles"
+        },
         "minimum_gpa": {
-          "en": "Not strictly specified; highly competitive.",
-          "tr": "Kesin olarak belirtilmemiş; oldukça rekabetçi."
+          "en": "No numeric minimum is published.",
+          "tr": "Sayısal bir asgari not ortalaması yayımlanmamıştır."
         },
         "gpa_scale": "",
         "ranking_or_selection": {
-          "en": "Merit-based admission",
-          "tr": "Başarıya dayalı kabul"
+          "en": "Selection considers prior academic fit, space-related academic/professional experience, grade average, motivation letter and recommendation letters. First-choice applicants receive preference; the 2026/27 first-round notice also mentions a video when requested.",
+          "tr": "Seçimde önceki eğitimin uygunluğu, uzayla ilgili akademik/mesleki deneyim, not ortalaması, motivasyon mektubu ve referans mektupları değerlendirilir. Programı ilk tercih olarak yazanlara öncelik verilir; 2026/27 ilk tur duyurusu ayrıca talep edilmişse video değerlendirmesini belirtir."
         },
         "admission_mode": "selective",
         "admission_risk": "high",
-        "required_documents": [],
+        "cohort_size_max": 20,
+        "required_documents": [
+          {
+            "en": "Passport, DNI or NIE",
+            "tr": "Pasaport, DNI veya NIE"
+          },
+          {
+            "en": "Curriculum vitae",
+            "tr": "Özgeçmiş"
+          },
+          {
+            "en": "Official university degree or proof that it has been requested",
+            "tr": "Resmî üniversite diploması veya diploma talep belgesi"
+          },
+          {
+            "en": "Official transcript showing credits and grades",
+            "tr": "Kredileri ve notları gösteren resmî transkript"
+          },
+          {
+            "en": "Final Spanish Ministry grade-average equivalence certificate for foreign degrees",
+            "tr": "Yabancı diplomalar için İspanya Bakanlığı kesin not ortalaması eşdeğerlik belgesi"
+          },
+          {
+            "en": "Legalisation/Apostille for non-EHEA academic documents, as applicable",
+            "tr": "EEES dışı akademik belgeler için gerektiğinde tasdik/Apostil"
+          },
+          {
+            "en": "Official translation when documents are not in Spanish or English",
+            "tr": "Belgeler İspanyolca veya İngilizce değilse resmî tercüme"
+          },
+          {
+            "en": "Motivation letter",
+            "tr": "Motivasyon mektubu"
+          },
+          {
+            "en": "Recommendation letter(s)",
+            "tr": "Referans mektubu/mektupları"
+          }
+        ],
         "motivation_letter_required": true,
         "cv_required": true,
-        "recommendation_required": null,
-        "portfolio_required": null,
+        "recommendation_required": true,
+        "portfolio_required": false,
         "interview_required": false,
+        "interview_policy": "optional_at_academic_committee_discretion",
         "test_required": false,
+        "test_policy": {
+          "en": "A bachelor-level mathematics and physics entrance test may be convened if demand is far above available places.",
+          "tr": "Talebin kontenjanın çok üzerine çıkması hâlinde lisans düzeyinde matematik ve fizik giriş sınavı düzenlenebilir."
+        },
+        "video_requirement": "only_if_requested_in_the_call",
         "notes_for_turkish_students": {
-          "en": "Homologation is not required for academic enrollment. Equivalence, sworn translation, and Hague Apostille legalization of the Turkish degree are sufficient.",
-          "tr": "Akademik kayıt için denklik (homologación) gerekli değildir. Türk diplomasının akademik eşdeğerliği, yeminli tercümesi ve Lahey Apostil onayı yeterlidir."
+          "en": "MUSE is a non-profession-qualifying official master's. The checked UPM route for non-EHEA degrees requires legalised academic documents, the final grade-average equivalence certificate and translations when needed; it does not list Spanish degree homologation as a normal MUSE application requirement. Apply early for visa time.",
+          "tr": "MUSE mesleki yetki veren bir resmî yüksek lisans değildir. EEES dışı dereceler için kontrol edilen UPM yolu; tasdikli akademik belgeler, kesin not ortalaması eşdeğerlik belgesi ve gerektiğinde tercüme ister; İspanyol diploma homologasyonunu normal MUSE başvuru şartı olarak listelemez. Vize süresi için erken başvurun."
         },
         "verification_notes": {
-          "en": "Official university degree granting access to master's studies, official academic transcript.",
-          "tr": "Yüksek lisans eğitimine erişim sağlayan resmi üniversite diploması, resmi not dökümü."
+          "en": "Non-EHEA graduates may apply. MUSE states that applicants from non-EHEA universities with a UPM agreement receive preference; this is not an exclusion of other applicants.",
+          "tr": "EEES dışı üniversite mezunları başvurabilir. MUSE, UPM anlaşması bulunan EEES dışı üniversitelerden gelenlere öncelik verildiğini belirtir; bu diğer adayların dışlandığı anlamına gelmez."
+        },
+        "gre": {
+          "policy": "not_listed_as_required",
+          "test_type": "none_specified",
+          "minimum_scores": {},
+          "recommended_scores": {},
+          "validity_rule": "",
+          "waiver_rules": [],
+          "source_ids": [
+            "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/preguntas_frecuentes",
+            "https://muse.idr.upm.es/es/master?catid=8&id=4%3Aadmision-al-muse&view=article"
+          ],
+          "notes": {
+            "en": "GRE is not listed in the checked UPM or MUSE requirements. A separate MUSE mathematics/physics entrance test may be introduced under exceptional excess demand; it is not the GRE.",
+            "tr": "Kontrol edilen UPM veya MUSE şartlarında GRE listelenmemiştir. Olağanüstü yoğun talepte ayrı bir MUSE matematik/fizik sınavı konabilir; bu GRE değildir."
+          }
         }
       },
       "language_profile": {
@@ -96,44 +174,45 @@
         "english_level_required": "",
         "accepted_english_tests": [],
         "english_exemptions": [],
-        "italian_required": null,
-        "italian_level_required": "",
-        "italian_needed_for_life_or_internship": "",
+        "spanish_required": true,
+        "spanish_level_required": "B2",
+        "spanish_requirement_scope": "applicants from non-Spanish-speaking countries",
+        "accepted_spanish_tests": [],
         "mixed_language_warning": {
-          "en": "The program is strictly taught in Spanish. English is not the language of instruction. B2 Spanish proficiency is expected.",
-          "tr": "Program kesinlikle İspanyolca olarak verilmektedir. Eğitim dili İngilizce değildir. B2 seviyesinde İspanyolca yeterliliği beklenir."
+          "en": "The official teaching language is Spanish. MUSE requires B2 Spanish from applicants coming from non-Spanish-speaking countries; the checked page does not publish a closed list of accepted certificates.",
+          "tr": "Resmî eğitim dili İspanyolcadır. MUSE, İspanyolca konuşulmayan ülkelerden gelen adaylardan B2 İspanyolca ister; kontrol edilen sayfa kabul edilen sertifikaların kapalı bir listesini yayımlamaz."
         },
-        "language_risk": "critical",
+        "language_risk": "high",
         "verification_notes": {
-          "en": "Language risk is critical for non-Spanish speakers.",
-          "tr": "İspanyolca bilmeyenler için dil riski kritiktir."
+          "en": "UPM's general B2 English rule applies to Appendix-I professional master's degrees; MUSE is not in that category. No English test is listed for MUSE admission.",
+          "tr": "UPM'nin genel B2 İngilizce kuralı Ek-I mesleki yetki veren yüksek lisanslara uygulanır; MUSE bu kategoride değildir. MUSE kabulü için İngilizce sınavı listelenmemiştir."
         }
       },
       "cost_profile": {
         "academic_year": "2026/2027",
-        "tuition_eur_per_year_min": null,
-        "tuition_eur_per_year_max": null,
+        "tuition_eur_per_year_min": 2701.2,
+        "tuition_eur_per_year_max": 5044.2,
         "tuition_eur_per_year_estimated": null,
-        "tuition_basis": "needs_verification",
+        "tuition_basis": "official_first-enrolment_per-credit_rate_multiplied_by_the_standard_60_ECTS_year",
         "regional_tax_eur": null,
         "student_contribution_eur": null,
         "application_fee_eur": null,
-        "enrollment_fee_eur": null,
+        "enrollment_fee_eur": 33.65,
         "total_academic_cost_eur_per_year_estimated": null,
         "isee_or_income_based": false,
         "non_eu_flat_fee": null,
-        "payment_installments": "",
+        "payment_installments": "unknown",
         "refund_policy": {
-          "en": "",
-          "tr": ""
+          "en": "The €150 place reservation is deducted from enrolment but is not refunded if the admitted applicant does not enrol.",
+          "tr": "150 € yer ayırma bedeli kayıttan düşülür; kabul edilen aday kayıt yaptırmazsa iade edilmez."
         },
         "source_notes": {
-          "en": "No current MUSE-specific official tuition table was located; a programme fee is intentionally not displayed.",
-          "tr": "MUSE'e özgü güncel resmî ücret tablosu bulunamadı; program ücreti bilinçli olarak gösterilmiyor."
+          "en": "MUSE is classified under 'other official master's degrees': €45.02/ECTS for Spanish/EU students and €84.07/ECTS for non-EU adults without resident status or EU-regime coverage. A standard 60-ECTS year therefore gives €2,701.20 or €5,044.20 in first-enrolment tuition. Student stay authorisation is not treated as residence for this tariff.",
+          "tr": "MUSE 'diğer resmî yüksek lisanslar' sınıfındadır: İspanyol/AB öğrencileri için 45,02 €/AKTS; ikamet statüsü veya AB rejimi kapsamı bulunmayan yetişkin AB dışı öğrenciler için 84,07 €/AKTS. Standart 60 AKTS yılın ilk kayıt öğrenim ücreti bu nedenle 2.701,20 € veya 5.044,20 € olur. Öğrenci kalış izni bu tarife bakımından ikamet sayılmaz."
         },
         "verification_notes": {
-          "en": "",
-          "tr": ""
+          "en": "The annual figures are transparent arithmetic from the official per-credit rate and 60 ECTS per academic year, not a forecast. Repeated-subject rates and optional personal expenses are excluded.",
+          "tr": "Yıllık rakamlar resmî kredi başı ücret ile yıllık 60 AKTS'nin şeffaf çarpımıdır; tahmin değildir. Tekrar alınan ders ücretleri ve kişisel giderler hariçtir."
         },
         "tuition_usd_per_year": null,
         "tuition_usd_per_year_at_three_quarters": null,
@@ -160,7 +239,34 @@
         "living_cost_sek_per_year_min": null,
         "living_cost_sek_per_year_max": null,
         "living_cost_dkk_per_year_min": null,
-        "living_cost_dkk_per_year_max": null
+        "living_cost_dkk_per_year_max": null,
+        "tuition_items": [
+          {
+            "student_category": "Spanish_or_EU",
+            "enrolment_attempt": "first",
+            "rate_eur_per_ects": 45.02,
+            "standard_annual_ects": 60,
+            "annual_tuition_eur": 2701.2
+          },
+          {
+            "student_category": "non_EU_nonresident_not_under_EU_regime",
+            "enrolment_attempt": "first",
+            "rate_eur_per_ects": 84.07,
+            "standard_annual_ects": 60,
+            "annual_tuition_eur": 5044.2
+          },
+          {
+            "item": "opening_academic_record",
+            "amount_eur": 27.54
+          },
+          {
+            "item": "secretariat_fee",
+            "amount_eur": 6.11
+          }
+        ],
+        "reservation_deposit_eur": 150,
+        "reservation_deposit_deducted_from_tuition": true,
+        "tuition_eur_per_year_non_eu_nonresident": 5044.2
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
@@ -168,42 +274,72 @@
         "dsu_or_equivalent": "",
         "merit_scholarships": [],
         "tuition_waivers": [],
-        "housing_support": false,
+        "housing_support": null,
         "meal_support": null,
-        "cash_grant_possible": null,
+        "cash_grant_possible": true,
         "non_eu_eligible": null,
         "income_based": false,
-        "scholarship_deadline": null,
-        "scholarship_application_url": null,
-        "funding_competitiveness": "unknown",
-        "funding_notes": null,
+        "scholarship_deadline": "2026-10-07",
+        "scholarship_application_url": "https://app.santanderopenacademy.com/es/program/ayuda-economica-2026",
+        "funding_competitiveness": "competitive",
+        "funding_notes": {
+          "en": "The current verified opportunity is a post-enrolment €1,000 Santander economic-aid call, not automatic admission funding and not a tuition guarantee. The checked public summary does not establish eligibility for a newly arrived non-EU student on a study-stay permit.",
+          "tr": "Doğrulanan güncel fırsat, kayıt sonrası 1.000 € Santander ekonomik destek çağrısıdır; otomatik kabul bursu veya öğrenim ücreti garantisi değildir. Kontrol edilen kamu özeti, öğrenci kalış izniyle yeni gelen AB dışı öğrencinin uygunluğunu kesinleştirmez."
+        },
         "verification_notes": {
-          "en": "",
-          "tr": ""
-        }
+          "en": "UPM directs master's applicants to its live calls and to the programme secretariat. No current MUSE-specific admission scholarship for 2026/27 was found on the official MUSE news page; the older 2023/24 MUSE prizes are not represented as active.",
+          "tr": "UPM yüksek lisans adaylarını canlı çağrılar sayfasına ve program sekreterliğine yönlendirir. Resmî MUSE haberlerinde 2026/27 için güncel, MUSE'ye özgü kabul bursu bulunmadı; eski 2023/24 MUSE ödülleri aktifmiş gibi gösterilmez."
+        },
+        "application_mode": "separate",
+        "automatic_consideration": false,
+        "separate_application_required": true,
+        "opportunities": [
+          {
+            "name": "Becas Santander Estudios / Ayuda Económica 2026",
+            "academic_year": "2026/2027",
+            "amount_eur": 1000,
+            "total_awards": 465,
+            "new_master_awards": 50,
+            "continuing_master_awards": 30,
+            "eligibility_summary": {
+              "en": "Must be enrolled in an official UPM bachelor's or master's programme and meet the call conditions.",
+              "tr": "Resmî bir UPM lisans veya yüksek lisans programına kayıtlı olmak ve çağrı koşullarını karşılamak gerekir."
+            },
+            "non_eu_eligibility": "needs_verification",
+            "application_mode": "separate",
+            "automatic": false,
+            "requires_upm_email": true,
+            "opens": "2026-04-21",
+            "deadline": "2026-10-07",
+            "url": "https://app.santanderopenacademy.com/es/program/ayuda-economica-2026"
+          }
+        ]
       },
       "living_profile": {
         "city_cost_level": "high",
         "monthly_living_cost_eur_min": null,
         "monthly_living_cost_eur_max": null,
         "monthly_living_cost_eur_estimated": null,
-        "housing_difficulty": null,
-        "student_housing_available": true,
-        "student_housing_competitiveness": "high",
+        "housing_difficulty": "high",
+        "student_housing_available": false,
+        "student_housing_competitiveness": "not_applicable",
         "average_room_rent_eur": null,
         "public_transport_cost_eur_month": null,
         "food_cost_eur_month": null,
         "city_safety_note": "",
         "part_time_work_possibility": "",
         "living_risk": "high",
-        "housing_difficulty_score": 90,
-        "living_risk_score": 85,
+        "housing_difficulty_score": null,
+        "living_risk_score": null,
         "verification_notes": {
-          "en": "Madrid is facing a competitive housing market. Early search 2-3 months prior is highly recommended. Average room is 500-900 EUR/month in central Madrid.",
-          "tr": "Madrid rekabetçi bir konut piyasası ile karşı karşıyadır. 2-3 ay önceden erken arama yapılması şiddetle tavsiye edilir. Madrid merkezinde oda kirası 500-900 EUR/aydır."
+          "en": "The €650–1,000 figure is retained only as a dated September 2024 official welcome-guide reference. It is not treated as a 2026 market quote, room average or guaranteed budget; a current complete monthly living-cost total remains unknown.",
+          "tr": "650–1.000 € rakamı yalnızca Eylül 2024 tarihli resmî karşılama rehberi referansı olarak tutulur. 2026 piyasa fiyatı, oda ortalaması veya garantili bütçe sayılmaz; güncel tam aylık yaşam maliyeti bilinmiyor."
         },
         "living_cost_eur_per_month": null,
-        "housing_notes": null,
+        "housing_notes": {
+          "en": "UPM's current incoming-student page states that UPM has no student residences and only links to external shared-flat services and independent residences. No place is allocated with admission.",
+          "tr": "UPM'nin güncel gelen öğrenci sayfası UPM'nin öğrenci yurdu olmadığını ve yalnızca harici ortak daire hizmetleri ile bağımsız yurtlara bağlantı verdiğini belirtir. Kabulle birlikte konut tahsis edilmez."
+        },
         "average_room_rent_usd_per_month_min": null,
         "average_room_rent_usd_per_month_max": null,
         "average_room_rent_gbp_per_month_min": null,
@@ -242,282 +378,984 @@
         "housing_budget_sek_per_year_min": null,
         "housing_budget_sek_per_year_max": null,
         "housing_budget_dkk_per_year_min": null,
-        "housing_budget_dkk_per_year_max": null
+        "housing_budget_dkk_per_year_max": null,
+        "housing_access": "not_offered",
+        "housing_application_separate": true,
+        "housing_options": [
+          {
+            "provider": "External shared-flat platforms listed by UPM",
+            "institution_owned": false,
+            "guaranteed": false,
+            "application_separate": true
+          },
+          {
+            "provider": "External student residences listed by UPM",
+            "institution_owned": false,
+            "guaranteed": false,
+            "application_separate": true
+          }
+        ],
+        "official_living_cost_items": [
+          {
+            "item": "UPM welcome-guide accommodation reference range",
+            "amount_eur_min": 650,
+            "amount_eur_max": 1000,
+            "period": "monthly",
+            "guide_date": "2024-09",
+            "scope": "general Madrid accommodation guidance; not a current private-room average or offer",
+            "confidence": "medium"
+          }
+        ],
+        "official_rent_items": [],
+        "housing_allocation_mode": "external_market_and_independent_residences"
       },
       "curriculum_profile": {
         "tracks": [],
         "specializations": [],
-        "mandatory_courses": [],
+        "mandatory_courses": [
+          {
+            "name": {
+              "en": "Advanced Mathematics 1",
+              "tr": "İleri Matematik 1"
+            },
+            "native_name": "Ampliación de matemáticas 1",
+            "ects": 6,
+            "semester": 1,
+            "required": true
+          },
+          {
+            "name": {
+              "en": "Space Environment and Mission Analysis",
+              "tr": "Uzay Ortamı ve Görev Analizi"
+            },
+            "native_name": "Entorno espacial y análisis de misión",
+            "ects": 3,
+            "semester": 1,
+            "required": true
+          },
+          {
+            "name": {
+              "en": "Systems Engineering and Project Management",
+              "tr": "Sistem Mühendisliği ve Proje Yönetimi"
+            },
+            "native_name": "Ingeniería de sistemas y gestión de proyectos",
+            "ects": 6,
+            "semester": 1,
+            "required": true
+          },
+          {
+            "name": {
+              "en": "Vibrations and Aeroacoustics",
+              "tr": "Titreşimler ve Aeroakustik"
+            },
+            "native_name": "Vibraciones y aeroacústica",
+            "ects": 4.5,
+            "semester": 1,
+            "required": true
+          },
+          {
+            "name": {
+              "en": "Engineering Graphics for Aerospace Mechanical Design",
+              "tr": "Havacılık-Uzay Mekanik Tasarımı için Mühendislik Grafiği"
+            },
+            "native_name": "Ingeniería gráfica para diseño mecánico aeroespacial",
+            "ects": 4.5,
+            "semester": 1,
+            "required": true
+          },
+          {
+            "name": {
+              "en": "Space Propulsion and Launchers",
+              "tr": "Uzay İtkisi ve Fırlatıcılar"
+            },
+            "native_name": "Propulsión espacial y lanzadores",
+            "ects": 4.5,
+            "semester": 1,
+            "required": true
+          },
+          {
+            "name": {
+              "en": "Advanced Mathematics 2",
+              "tr": "İleri Matematik 2"
+            },
+            "native_name": "Ampliación de matemáticas 2",
+            "ects": 6,
+            "semester": 2,
+            "required": true
+          },
+          {
+            "name": {
+              "en": "High-Speed Aerodynamics and Re-entry Phenomena",
+              "tr": "Yüksek Hız Aerodinamiği ve Yeniden Giriş Olayları"
+            },
+            "native_name": "Aerodinámica de altas velocidades y fenómenos de reentrada",
+            "ects": 3,
+            "semester": 2,
+            "required": true
+          },
+          {
+            "name": {
+              "en": "Heat Transfer and Thermal Control",
+              "tr": "Isı Transferi ve Isıl Kontrol"
+            },
+            "native_name": "Transferencia de calor y control térmico",
+            "ects": 6,
+            "semester": 2,
+            "required": true
+          },
+          {
+            "name": {
+              "en": "Electrical Power Generation and Management",
+              "tr": "Elektrik Gücü Üretimi ve Yönetimi"
+            },
+            "native_name": "Generación y gestión de potencia eléctrica",
+            "ects": 3,
+            "semester": 2,
+            "required": true
+          },
+          {
+            "name": {
+              "en": "Space Structures",
+              "tr": "Uzay Yapıları"
+            },
+            "native_name": "Estructuras de uso espacial",
+            "ects": 4.5,
+            "semester": 2,
+            "required": true
+          },
+          {
+            "name": {
+              "en": "Case Study 1",
+              "tr": "Vaka Çalışması 1"
+            },
+            "native_name": "Caso de estudio 1",
+            "ects": 1.5,
+            "semester": 2,
+            "required": true
+          },
+          {
+            "name": {
+              "en": "Communications",
+              "tr": "Haberleşme"
+            },
+            "native_name": "Comunicaciones",
+            "ects": 4.5,
+            "semester": 2,
+            "required": true
+          },
+          {
+            "name": {
+              "en": "Data Management",
+              "tr": "Veri Yönetimi"
+            },
+            "native_name": "Gestión de datos",
+            "ects": 4.5,
+            "semester": 2,
+            "required": true
+          },
+          {
+            "name": {
+              "en": "Orbital Dynamics and Attitude Control",
+              "tr": "Yörünge Dinamiği ve Tutum Kontrolü"
+            },
+            "native_name": "Dinámica orbital y control de actitud",
+            "ects": 4.5,
+            "semester": 3,
+            "required": true
+          },
+          {
+            "name": {
+              "en": "Space Materials",
+              "tr": "Uzay Malzemeleri"
+            },
+            "native_name": "Materiales de uso espacial",
+            "ects": 4.5,
+            "semester": 3,
+            "required": true
+          },
+          {
+            "name": {
+              "en": "Quality Assurance",
+              "tr": "Kalite Güvencesi"
+            },
+            "native_name": "Garantía de calidad",
+            "ects": 4.5,
+            "semester": 3,
+            "required": true
+          },
+          {
+            "name": {
+              "en": "Production Technologies",
+              "tr": "Üretim Teknolojileri"
+            },
+            "native_name": "Tecnologías de producción",
+            "ects": 4.5,
+            "semester": 3,
+            "required": true
+          },
+          {
+            "name": {
+              "en": "Integration and Testing",
+              "tr": "Entegrasyon ve Testler"
+            },
+            "native_name": "Integración y ensayos",
+            "ects": 4.5,
+            "semester": 3,
+            "required": true
+          },
+          {
+            "name": {
+              "en": "Case Study 2",
+              "tr": "Vaka Çalışması 2"
+            },
+            "native_name": "Caso de estudio 2",
+            "ects": 7.5,
+            "semester": 3,
+            "required": true
+          },
+          {
+            "name": {
+              "en": "Seminar on Space Industry and Institutions",
+              "tr": "Uzay Endüstrisi ve Kurumları Semineri"
+            },
+            "native_name": "Seminario sobre industria e instituciones espaciales",
+            "ects": 1.5,
+            "semester": 4,
+            "required": true
+          },
+          {
+            "name": {
+              "en": "Case Study 3",
+              "tr": "Vaka Çalışması 3"
+            },
+            "native_name": "Caso de estudio 3",
+            "ects": 9,
+            "semester": 4,
+            "required": true
+          }
+        ],
         "elective_courses": [],
+        "course_count_total_including_thesis": 23,
+        "taught_project_and_seminar_component_count": 22,
+        "elective_course_count": 0,
+        "course_count_basis": "complete published Plan 14SA table cross-checked against 2025/26 course guides",
         "course_language_notes": {
-          "en": "Spanish.",
-          "tr": "İspanyolca."
+          "en": "The programme and checked 2025/26 guides state Spanish.",
+          "tr": "Program ve kontrol edilen 2025/26 ders rehberleri İspanyolca belirtir."
         },
         "thesis_required": true,
-        "internship_required": true,
-        "lab_courses": [],
-        "project_based_courses": [],
+        "thesis_ects": 18,
+        "thesis_title": {
+          "en": "Master's Thesis",
+          "tr": "Yüksek Lisans Tezi"
+        },
+        "internship_required": false,
+        "internship_notes": {
+          "en": "There is no separate compulsory internship module in the complete plan. Case Study 2 may be carried out with an external company in a practice-like arrangement, with an academic supervisor.",
+          "tr": "Eksiksiz planda ayrı bir zorunlu staj modülü yoktur. Case Study 2, akademik danışman eşliğinde staj benzeri biçimde harici bir şirketle yürütülebilir."
+        },
+        "lab_courses": [
+          {
+            "en": "Integration and Testing",
+            "tr": "Entegrasyon ve Test"
+          },
+          {
+            "en": "Case Study 2",
+            "tr": "Case Study 2"
+          }
+        ],
+        "project_based_courses": [
+          {
+            "en": "Case Study 1",
+            "tr": "Case Study 1"
+          },
+          {
+            "en": "Case Study 2",
+            "tr": "Case Study 2"
+          },
+          {
+            "en": "Case Study 3",
+            "tr": "Case Study 3"
+          }
+        ],
         "mobility_options": [],
         "double_degree_options": [],
-        "curriculum_url": "http://muse.idr.upm.es/",
-        "study_plan_url": "",
+        "curriculum_url": "https://muse.idr.upm.es/es/ordenacion-academica/general",
+        "study_plan_url": "https://muse.idr.upm.es/index.php/2021-2022?catid=11&id=17%3Aplan-14sa-2020-2021&view=article",
         "verification_notes": {
-          "en": "Professional orientation, highly specialized in space sub-systems.",
-          "tr": "Profesyonel odaklı, uzay alt sistemlerinde yüksek uzmanlık."
+          "en": "The newest fully indexed tabular plan located is the 2020/21 Plan 14SA. Its course codes and structure are corroborated by the current 2025/26 learning-guide index and individual guides. Any 2026/27 timetable-level change should be rechecked when UPM publishes that cycle's guides.",
+          "tr": "Bulunan en yeni eksiksiz ve dizinlenmiş tablo 2020/21 Plan 14SA'dır. Ders kodları ve yapı, güncel 2025/26 öğrenme rehberi dizini ve tekil rehberlerle doğrulanmıştır. 2026/27 ders programı düzeyindeki değişiklikler UPM o dönemin rehberlerini yayımladığında yeniden kontrol edilmelidir."
         }
       },
       "category_profile": {
         "primary_categories": [
-          "Space Systems",
-          "Systems Engineering"
+          "Space Systems & Astronautics"
         ],
-        "secondary_categories": [],
-        "subcategories": [],
-        "normalized_tags": [],
-        "category_scores": {}
+        "secondary_categories": [
+          "Flight Mechanics, Control & Autonomy",
+          "Propulsion, Energy & Thermal Systems",
+          "Structures, Materials & Mechanical Design",
+          "Systems Engineering, Design & Optimization",
+          "Avionics, Software & Digital Technologies",
+          "Manufacturing, Testing & Industrial Applications",
+          "Fluid Mechanics & Aerodynamics"
+        ],
+        "subcategories": [
+          "space_systems",
+          "spacecraft_design",
+          "astrodynamics",
+          "mission_analysis",
+          "space_environment",
+          "gnc",
+          "rocket_propulsion",
+          "thermal_management",
+          "energy_systems",
+          "aerospace_structures",
+          "materials",
+          "systems_engineering",
+          "verification_validation",
+          "embedded_systems",
+          "testing",
+          "manufacturing",
+          "industrial_projects",
+          "internship_thesis",
+          "aerothermodynamics",
+          "aeroacoustics"
+        ],
+        "normalized_tags": [
+          "space_systems",
+          "spacecraft_design",
+          "astrodynamics",
+          "mission_analysis",
+          "space_environment",
+          "gnc",
+          "rocket_propulsion",
+          "thermal_management",
+          "energy_systems",
+          "aerospace_structures",
+          "materials",
+          "systems_engineering",
+          "verification_validation",
+          "embedded_systems",
+          "testing",
+          "manufacturing",
+          "industrial_projects",
+          "internship_thesis",
+          "aerothermodynamics",
+          "aeroacoustics"
+        ],
+        "category_scores": {},
+        "category_evidence": [
+          {
+            "en": "The official 120-ECTS plan directly covers mission analysis, orbital and attitude dynamics, propulsion/launchers, thermal and power subsystems, structures/materials, communications/data, systems engineering, production, integration and testing.",
+            "tr": "Resmî 120 AKTS planı görev analizini, yörünge ve tutum dinamiğini, itki/fırlatıcıları, ısıl ve güç alt sistemlerini, yapı/malzemeyi, haberleşme/veriyi, sistem mühendisliğini, üretimi, entegrasyonu ve testi doğrudan kapsar."
+          }
+        ]
       },
       "research_profile": {
-        "department_research_areas": [],
-        "labs": [],
-        "research_centers": [],
+        "department_research_areas": [
+          {
+            "en": "Spacecraft and mission design",
+            "tr": "Uzay aracı ve görev tasarımı"
+          },
+          {
+            "en": "Space environment, orbital dynamics and attitude control",
+            "tr": "Uzay ortamı, yörünge dinamiği ve tutum kontrolü"
+          },
+          {
+            "en": "Thermal, power, communications and data subsystems",
+            "tr": "Isıl, güç, haberleşme ve veri alt sistemleri"
+          },
+          {
+            "en": "Spacecraft integration and environmental testing",
+            "tr": "Uzay aracı entegrasyonu ve çevresel testler"
+          }
+        ],
+        "labs": [
+          {
+            "name": "Concurrent Design Facility",
+            "officially_described": true,
+            "esa_supported": true,
+            "student_access": "used in Case Study 2 according to the 2025/26 guide"
+          },
+          {
+            "name": "Thermal-vacuum laboratory",
+            "officially_described": true,
+            "student_access": "used in Case Study 2 according to the 2025/26 guide"
+          },
+          {
+            "name": "Prototype-modelling laboratory",
+            "officially_described": true,
+            "student_access": "used in Case Study 2 according to the 2025/26 guide"
+          },
+          {
+            "name": "Space-environment integration and testing facility",
+            "officially_described": true,
+            "student_access": "programme page states availability; access conditions are not published"
+          }
+        ],
+        "research_centers": [
+          "Instituto Universitario de Microgravedad Ignacio Da Riva (IDR/UPM)"
+        ],
         "notable_professors": [],
-        "space_or_aerospace_projects": [],
-        "student_teams": [],
-        "satellite_or_flight_projects": [],
+        "space_or_aerospace_projects": [
+          "UPMSat-2",
+          "UPMSat-3",
+          "OAPES"
+        ],
+        "student_teams": [
+          "Student Aerospace Challenge team (2024 ESA Grand Prix)"
+        ],
+        "satellite_or_flight_projects": [
+          "UPMSat-2",
+          "UPMSat-3"
+        ],
         "research_strength_summary": {
-          "en": "Instituto Universitario de Microgravedad 'Ignacio Da Riva' (IDR/UPM).",
-          "tr": "Mikroyerçekimi Üniversite Enstitüsü 'Ignacio Da Riva' (IDR/UPM)."
+          "en": "MUSE is organised by the IDR/UPM research institute and explicitly gives students project-based work with concurrent-design and space-environment integration/testing facilities. The official page also states participation in IDR space projects; individual project placement is not guaranteed.",
+          "tr": "MUSE, IDR/UPM araştırma enstitüsü tarafından düzenlenir ve öğrencilere eşzamanlı tasarım ile uzay ortamı entegrasyon/test tesisleriyle proje tabanlı çalışma sunar. Resmî sayfa ayrıca IDR uzay projelerine katılımı belirtir; tek tek projelere yerleştirme garanti değildir."
         },
-        "research_strength_score": 85,
-        "research_sources": []
+        "research_strength_score": null,
+        "research_sources": [
+          "https://muse.idr.upm.es/index.php/es/master",
+          "https://muse.idr.upm.es/images/Guias%20Aprendizaje%20202526/GA_14SA_143000133_1S_2025-26.pdf",
+          "https://muse.idr.upm.es/es/ultimasnoticias"
+        ]
       },
       "industry_ecosystem_profile": {
         "nearby_companies": [],
         "confirmed_partners": [],
-        "space_agencies_or_public_bodies": [],
-        "research_institutes": [],
+        "space_agencies_or_public_bodies": [
+          "European Space Agency"
+        ],
+        "research_institutes": [
+          "IDR/UPM"
+        ],
         "startup_or_incubator_ecosystem": [],
-        "internship_possibility": "high",
-        "thesis_with_industry_possibility": "high",
+        "internship_possibility": "optional_through_case_study_2",
+        "thesis_with_industry_possibility": "unknown",
         "career_relevance": "strong",
-        "ecosystem_strength_score": 90,
+        "ecosystem_strength_score": null,
         "ecosystem_notes": {
-          "en": "Madrid is Spain's primary aerospace hub, hosting Airbus, ESA facilities, INTA, and Thales Alenia Space.",
-          "tr": "Madrid, Airbus, ESA tesisleri, INTA ve Thales Alenia Space'e ev sahipliği yapan İspanya'nın ana havacılık ve uzay merkezidir."
+          "en": "The verified industry-facing elements are the second-year industry/institutions seminar and the option to conduct Case Study 2 with an external company. No named employer is represented as a formal programme partner without an official partnership source.",
+          "tr": "Doğrulanan sektör temasları ikinci yıl sektör/kurumlar semineri ve Case Study 2'yi harici bir şirketle yürütme seçeneğidir. Resmî ortaklık kaynağı olmadan hiçbir işveren resmî program ortağı olarak gösterilmez."
         }
       },
       "application_timeline_profile": {
         "academic_year": "2026/2027",
         "intake_terms": [
-          "September"
+          "September 2026"
         ],
-        "application_rounds": [],
-        "non_eu_deadline": null,
-        "eu_deadline": "unknown",
-        "scholarship_deadline": "unknown",
-        "pre_enrolment_required": false,
+        "application_rounds": [
+          {
+            "round": 1,
+            "opens": "2026-01-26",
+            "deadline": "2026-03-12",
+            "decision": "2026-03-20",
+            "place_reservation": "2026-03-23/2026-04-08"
+          },
+          {
+            "round": 2,
+            "opens": "2026-03-13",
+            "deadline": "2026-05-12",
+            "decision": "2026-05-22",
+            "place_reservation": "2026-05-25/2026-06-08"
+          },
+          {
+            "round": 3,
+            "opens": "2026-05-13",
+            "deadline": "2026-07-01",
+            "decision": "2026-07-17",
+            "place_reservation": null
+          },
+          {
+            "round": "extraordinary_if_places_remain",
+            "opens": "2026-08-31",
+            "deadline": "2026-09-04",
+            "decision": "2026-09-09",
+            "place_reservation": null
+          }
+        ],
+        "non_eu_deadline": "2026-07-01",
+        "eu_deadline": "2026-07-01",
+        "scholarship_deadline": "2026-10-07",
+        "pre_enrolment_required": true,
         "universitaly_required": false,
-        "visa_sensitive_deadline": "",
-        "application_result_timing": "",
-        "enrollment_deadline": "",
+        "visa_sensitive_deadline": {
+          "en": "UPM advises applicants outside the EHEA or EU to use the first application period and apply as early as possible for document and visa processing.",
+          "tr": "UPM, EEES veya AB dışındaki adaylara belge ve vize işlemleri için ilk başvuru dönemini kullanmalarını ve mümkün olduğunca erken başvurmalarını önerir."
+        },
+        "application_result_timing": "2026-03-20; 2026-05-22; 2026-07-17; 2026-09-09 if extraordinary call opens",
+        "enrollment_deadline": "2026-07-22/2026-07-30 or 2026-09-03/2026-09-11",
+        "document_completion_deadline": "2026-09-30",
         "timeline_risk": "medium",
-        "deadline_notes": null,
+        "deadline_notes": {
+          "en": "The extraordinary call only exists for programmes with vacant places. MUSE has a small cohort and reported very high first-round demand in 2026, so it should not be treated as a dependable deadline.",
+          "tr": "Olağanüstü çağrı yalnızca boş kontenjanı kalan programlarda açılır. MUSE'nin kontenjanı küçüktür ve 2026 ilk turunda çok yüksek talep bildirmiştir; bu tarih güvenilir ana son tarih sayılmamalıdır."
+        },
         "winter_deadline": null,
-        "application_deadline": null
+        "application_deadline": "2026-07-01",
+        "deadline_events": [
+          {
+            "event": "recommended_non_EU_action",
+            "date": "2026-03-12",
+            "notes": "Use first call where possible for documents and visa"
+          },
+          {
+            "event": "regular_final_application_deadline",
+            "date": "2026-07-01"
+          },
+          {
+            "event": "ordinary_enrollment_window",
+            "start": "2026-07-22",
+            "end": "2026-07-30"
+          },
+          {
+            "event": "extraordinary_application_if_places_remain",
+            "start": "2026-08-31",
+            "end": "2026-09-04"
+          },
+          {
+            "event": "extraordinary_enrollment_window",
+            "start": "2026-09-03",
+            "end": "2026-09-11"
+          },
+          {
+            "event": "foreign_document_completion",
+            "date": "2026-09-30"
+          },
+          {
+            "event": "Santander_economic_aid_deadline",
+            "date": "2026-10-07"
+          }
+        ]
       },
       "student_sentiment_profile": {
         "student_satisfaction_score": null,
-        "sentiment_confidence": "unknown",
-        "sample_size_estimate": null,
-        "date_range": "",
-        "teaching_quality_sentiment": "positive",
-        "workload_sentiment": "extremely_high",
-        "administration_sentiment": "neutral",
-        "housing_sentiment": "negative",
-        "city_life_sentiment": "positive",
-        "international_student_support_sentiment": "neutral",
-        "career_support_sentiment": "positive",
-        "positive_themes": [],
-        "negative_themes": [],
+        "sentiment_confidence": "low",
+        "sample_size_estimate": 9,
+        "date_range": "2021-2025",
+        "teaching_quality_sentiment": "mixed",
+        "workload_sentiment": "negative_high_workload",
+        "administration_sentiment": "unknown",
+        "housing_sentiment": "unknown",
+        "city_life_sentiment": "mixed_positive",
+        "international_student_support_sentiment": "unknown",
+        "career_support_sentiment": "unknown",
+        "positive_themes": [
+          {
+            "en": "Some comments value the people, Madrid and the theoretical foundation.",
+            "tr": "Bazı yorumlar insanları, Madrid'i ve teorik temeli olumlu değerlendiriyor."
+          }
+        ],
+        "negative_themes": [
+          {
+            "en": "Repeated perception that aerospace/engineering study at UPM is unusually demanding, especially without strong Spanish.",
+            "tr": "UPM'de havacılık-uzay/mühendislik eğitiminin, özellikle güçlü İspanyolca olmadan, olağandışı derecede zor olduğu yönünde tekrarlanan algı."
+          }
+        ],
         "recurring_complaints": [
           {
-            "en": "High difficulty due to central Madrid location, costs, and scarcity. Workload is crazy high.",
-            "tr": "Merkezi Madrid konumu, maliyetler ve kıtlık nedeniyle yüksek zorluk. İş yükü çılgınca yüksek."
+            "en": "Heavy workload and difficult examinations are recurring institution/ETSIAE-level perceptions.",
+            "tr": "Yoğun iş yükü ve zor sınavlar kurum/ETSIAE düzeyinde tekrarlanan algılardır."
           }
         ],
         "recurring_strengths": [
           {
-            "en": "High prestige, deep industry ties.",
-            "tr": "Yüksek prestij, derin endüstri bağları."
+            "en": "Madrid location, peers and theoretical preparation receive some positive comments.",
+            "tr": "Madrid konumu, öğrenci çevresi ve teorik hazırlık bazı olumlu yorumlar alır."
           }
         ],
         "sentiment_summary": {
-          "en": "Extremely high workload. Described by students as having a 'crazy high level' of difficulty and intense academic pace. High prestige, but the demanding nature of the school causes high stress.",
-          "tr": "Son derece yüksek iş yükü. Öğrenciler tarafından 'çılgınca yüksek bir zorluk seviyesi' ve yoğun bir akademik tempo olarak tanımlanmaktadır. Yüksek prestij, ancak okulun talepkar yapısı yüksek strese neden oluyor."
+          "en": "The available recent comments concern UPM/ETSIAE aerospace study broadly, not MUSE specifically. They consistently signal high workload and language sensitivity, while some praise Madrid, peers and theoretical depth. No MUSE satisfaction score is computed from this weak, non-program-specific sample.",
+          "tr": "Bulunan güncel yorumlar doğrudan MUSE'yi değil, genel olarak UPM/ETSIAE havacılık-uzay eğitimini ele alır. Yüksek iş yükü ve dil hassasiyeti tutarlı biçimde belirtilirken bazıları Madrid'i, öğrenci çevresini ve teorik derinliği över. Bu zayıf ve program dışı örneklemden MUSE memnuniyet puanı hesaplanmaz."
         },
         "student_sentiment_sources": [
           {
-            "quote": "Exams can be rigorous, but the alumni network is incredibly strong and supportive.",
-            "source": "Reddit",
-            "url": "https://www.reddit.com/search/?q=Universidad+Politécnica+de+Madrid+aerospace"
+            "source": "Reddit r/askspain",
+            "url": "https://www.reddit.com/r/askspain/comments/1i1u3v7",
+            "date": "2025-01-15",
+            "scope": "UPM aerospace/Erasmus, not MUSE",
+            "observations_used": 5
           },
           {
-            "quote": "Lots of group projects and continuous assessment. Time management is crucial.",
-            "source": "Reddit",
-            "url": "https://www.reddit.com/search/?q=Universidad+Politécnica+de+Madrid+aerospace"
+            "source": "Reddit r/AerospaceEngineering",
+            "url": "https://www.reddit.com/r/AerospaceEngineering/comments/lgb9k6",
+            "date": "2021-02-11",
+            "scope": "UPM aerospace undergraduate, not MUSE",
+            "observations_used": 1
           },
           {
-            "quote": "Joining a student association or a project team is the best way to make friends.",
-            "source": "Reddit",
-            "url": "https://www.reddit.com/search/?q=Universidad+Politécnica+de+Madrid+aerospace"
+            "source": "Reddit r/askspain",
+            "url": "https://www.reddit.com/r/askspain/comments/13h3r94",
+            "date": "2023-05-14",
+            "scope": "UPM/ETSIAE graduate discussion, not MUSE",
+            "observations_used": 3
           }
         ],
         "verification_notes": {
-          "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
-          "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+          "en": "Sentiment is a low-confidence perception signal only. It does not prove MUSE workload, teaching quality, administration, housing or career outcomes.",
+          "tr": "Duygu analizi yalnızca düşük güvenli bir algı sinyalidir. MUSE iş yükünü, öğretim kalitesini, idareyi, konutu veya kariyer sonuçlarını kanıtlamaz."
         }
       },
       "source_profile": {
         "official_program_page": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?fmt=detail&id=14.2",
         "official_admission_page": "https://muse.idr.upm.es/es/master?catid=8&id=4%3Aadmision-al-muse&view=article",
-        "official_tuition_page": "",
-        "official_scholarship_page": "",
-        "official_curriculum_page": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?fmt=detail&id=14.2",
+        "official_tuition_page": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Admision?fmt=detail&id=0f9a705e2b58d110VgnVCM10000009c7648a____&prefmt=articulo",
+        "official_scholarship_page": "https://www.upm.es/Estudiantes/Practicas/COIE?fmt=detail&id=CON11140&prefmt=articulo",
+        "official_curriculum_page": "https://muse.idr.upm.es/es/ordenacion-academica/general",
         "official_department_page": "https://muse.idr.upm.es/index.php/es/master",
-        "official_lab_pages": [],
+        "official_lab_pages": [
+          "https://muse.idr.upm.es/images/Guias%20Aprendizaje%20202526/GA_14SA_143000133_1S_2025-26.pdf"
+        ],
         "third_party_sources": [],
-        "student_sentiment_sources": [],
+        "student_sentiment_sources": [
+          "https://www.reddit.com/r/askspain/comments/1i1u3v7",
+          "https://www.reddit.com/r/AerospaceEngineering/comments/lgb9k6",
+          "https://www.reddit.com/r/askspain/comments/13h3r94"
+        ],
         "source_log": [
           {
             "url": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?fmt=detail&id=14.2",
-            "title": "Sistemas Espaciales — UPM official master's catalogue",
             "source_type": "official_program_page",
+            "title": "Sistemas Espaciales — UPM official master's catalogue",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "program",
               "program_status",
               "degree_level",
               "ects",
-              "teaching_language",
-              "curriculum",
-              "research"
-            ],
-            "confidence": "high",
-            "notes": {
-              "en": "2026/27 catalogue: 120 ECTS, Spanish, on-campus; curriculum lists orbital mechanics, attitude control, thermal control, launchers and spacecraft subsystems.",
-              "tr": "2026/27 kataloğu: 120 AKTS, İspanyolca, yüz yüze; müfredatta yörünge mekaniği, tutum kontrolü, ısıl kontrol, fırlatıcılar ve uzay aracı alt sistemleri yer alıyor."
-            }
-          },
-          {
-            "url": "https://muse.idr.upm.es/es/master?catid=8&id=4%3Aadmision-al-muse&view=article",
-            "title": "Admisión al MUSE — UPM/IDR",
-            "source_type": "official_admission_page",
-            "access_status": "ok",
-            "last_checked": "2026-07-14",
-            "relevant_fields": [
-              "admission",
-              "non_eu_eligibility",
-              "teaching_language",
-              "required_previous_degree"
-            ],
-            "confidence": "high",
-            "notes": {
-              "en": "States Spanish B2 for students from non-Spanish-speaking countries; aerospace is the primary profile and other listed backgrounds may require 6–18 ECTS complements.",
-              "tr": "İspanyolca konuşulmayan ülkelerden gelenler için B2 İspanyolca belirtir; ana profil havacılık-uzaydır ve listelenen diğer geçmişler için 6–18 AKTS tamamlama gerekebilir."
-            }
-          },
-          {
-            "url": "https://muse.idr.upm.es/index.php/es/master",
-            "title": "MUSE objectives and facilities — IDR/UPM",
-            "source_type": "official_department_page",
-            "access_status": "ok",
-            "last_checked": "2026-07-14",
-            "relevant_fields": [
-              "research",
+              "language",
               "curriculum"
             ],
             "confidence": "high",
             "notes": {
-              "en": "Official IDR page describes a Concurrent Design Facility supported by ESA and space-environment integration/testing facilities.",
-              "tr": "Resmî IDR sayfası, ESA destekli Concurrent Design Facility'yi ve uzay ortamı entegrasyon/test tesislerini açıklar."
+              "en": "Current UPM catalogue identifies the active 120-ECTS, two-year, Spanish, on-campus MUSE programme.",
+              "tr": "Güncel UPM kataloğu aktif, 120 AKTS, iki yıllık, İspanyolca ve yüz yüze MUSE programını tanımlar."
+            }
+          },
+          {
+            "url": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/preguntas_frecuentes",
+            "source_type": "official_admission_page",
+            "title": "UPM official master's admission requirements and FAQ 2026/27",
+            "access_status": "ok",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "admission",
+              "non_eu_eligibility",
+              "required_documents",
+              "deadline"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Current rules for foreign degrees, translations, legalisation, grade equivalence, conditional admission, place reservation and document completion.",
+              "tr": "Yabancı dereceler, tercüme, tasdik, not eşdeğerliği, şartlı kabul, yer ayırma ve belge tamamlama için güncel kurallar."
+            }
+          },
+          {
+            "url": "https://muse.idr.upm.es/es/master?catid=8&id=4%3Aadmision-al-muse&view=article",
+            "source_type": "official_admission_page",
+            "title": "Admission to MUSE — IDR/UPM",
+            "access_status": "ok",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "admission",
+              "non_eu_eligibility",
+              "language",
+              "required_previous_degree"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Programme-specific B2 Spanish rule, accepted backgrounds, 6–18 ECTS bridging courses, selection evidence and optional interview/test policy.",
+              "tr": "Programa özgü B2 İspanyolca kuralı, kabul edilen geçmişler, 6–18 AKTS tamamlama dersleri, seçim kanıtları ve isteğe bağlı mülakat/sınav politikası."
+            }
+          },
+          {
+            "url": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Calendario?fmt=detail&id=CON03072",
+            "source_type": "official_admission_page",
+            "title": "UPM official master's calendar 2026/27",
+            "access_status": "ok",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "deadline",
+              "application_timeline"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Publishes four first-period calls, decisions, place-reservation windows, enrolment and foreign-document deadline.",
+              "tr": "Dört ilk dönem çağrısını, kararları, yer ayırma pencerelerini, kaydı ve yabancı belge son tarihini yayımlar."
+            }
+          },
+          {
+            "url": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Admision?fmt=detail&id=0f9a705e2b58d110VgnVCM10000009c7648a____&prefmt=articulo",
+            "source_type": "official_tuition_page",
+            "title": "UPM 2026/27 official master's public prices",
+            "access_status": "ok",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "tuition",
+              "non_eu_eligibility"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Publishes first-enrolment per-credit rates and administrative fees, including the non-EU nonresident tariff.",
+              "tr": "AB dışı ikamet etmeyen öğrenci tarifesi dâhil ilk kayıt kredi başı ücretleri ve idari ücretleri yayımlar."
+            }
+          },
+          {
+            "url": "https://www.upm.es/Estudiantes/Practicas/COIE?fmt=detail&id=CON11140&prefmt=articulo",
+            "source_type": "official_scholarship_page",
+            "title": "UPM Santander scholarships 2026/27",
+            "access_status": "ok",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "scholarship",
+              "funding"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Current €1,000 economic-aid call for enrolled UPM degree and master's students; 465 awards and a separate 21 April–7 October 2026 application.",
+              "tr": "Kayıtlı UPM lisans ve yüksek lisans öğrencileri için güncel 1.000 € ekonomik destek çağrısı; 465 burs ve 21 Nisan–7 Ekim 2026 ayrı başvuru."
+            }
+          },
+          {
+            "url": "https://www.upm.es/Estudiantes/Movilidad/Programas_Internacionales/Erasmus?fmt=detail&id=CON24663&prefmt=articulo",
+            "source_type": "official_housing_page",
+            "title": "UPM incoming students 2026/27 — accommodation",
+            "access_status": "ok",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "housing",
+              "living"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Current page states UPM has no student residences and lists external accommodation routes only.",
+              "tr": "Güncel sayfa UPM'nin öğrenci yurdu olmadığını ve yalnızca harici konaklama yollarını listelediğini belirtir."
+            }
+          },
+          {
+            "url": "https://web.upm.es/hrs4r/sites/default/files/2024-09/01_welcome_guide_upm_es.pdf",
+            "source_type": "official_cost_of_living_page",
+            "title": "UPM welcome guide — Madrid accommodation reference",
+            "access_status": "pdf",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "housing",
+              "living"
+            ],
+            "confidence": "medium",
+            "notes": {
+              "en": "September 2024 institutional guide gives a €650–1,000 accommodation reference; retained only as dated guidance, not a current market quote.",
+              "tr": "Eylül 2024 kurumsal rehberi 650–1.000 € konaklama referansı verir; yalnızca tarihli rehberlik olarak tutulur, güncel piyasa fiyatı değildir."
+            }
+          },
+          {
+            "url": "https://muse.idr.upm.es/es/ordenacion-academica/general",
+            "source_type": "official_curriculum_page",
+            "title": "MUSE academic organisation and 2025/26 learning guides",
+            "access_status": "ok",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "curriculum",
+              "courses",
+              "language"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Current academic page links the 2025/26 course list and learning guides.",
+              "tr": "Güncel akademik sayfa 2025/26 ders listesine ve öğrenme rehberlerine bağlantı verir."
+            }
+          },
+          {
+            "url": "https://muse.idr.upm.es/index.php/2021-2022?catid=11&id=17%3Aplan-14sa-2020-2021&view=article",
+            "source_type": "official_curriculum_page",
+            "title": "MUSE Plan 14SA complete course table",
+            "access_status": "ok",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "curriculum",
+              "courses"
+            ],
+            "confidence": "medium",
+            "notes": {
+              "en": "Most recent complete tabular plan located: 23 components totalling 120 ECTS; titles and codes are cross-checked against 2025/26 guides.",
+              "tr": "Bulunan en yeni eksiksiz tablo: 120 AKTS toplamlı 23 bileşen; adlar ve kodlar 2025/26 rehberleriyle çapraz kontrol edildi."
+            }
+          },
+          {
+            "url": "https://muse.idr.upm.es/index.php/es/master",
+            "source_type": "official_department_page",
+            "title": "MUSE objectives, format and facilities — IDR/UPM",
+            "access_status": "ok",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "research",
+              "curriculum",
+              "labs"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Maximum 20 places, project-based learning, IDR project participation, ESA-supported concurrent design and space-environment test facilities.",
+              "tr": "Azami 20 kontenjan, proje tabanlı öğrenme, IDR projelerine katılım, ESA destekli eşzamanlı tasarım ve uzay ortamı test tesisleri."
+            }
+          },
+          {
+            "url": "https://muse.idr.upm.es/images/Guias%20Aprendizaje%20202526/GA_14SA_143000133_1S_2025-26.pdf",
+            "source_type": "official_curriculum_page",
+            "title": "MUSE Case Study 2 learning guide 2025/26",
+            "access_status": "pdf",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "curriculum",
+              "courses",
+              "industry_exposure",
+              "research",
+              "labs"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Verifies optional external-company collaboration and student use of the ESA-agreement concurrent-design installation, thermal-vacuum lab, prototype lab and UPMSat harness; it does not name an employer as a formal programme partner.",
+              "tr": "İsteğe bağlı harici şirket işbirliğini ve öğrencilerin ESA anlaşmalı eşzamanlı tasarım tesisi, termal-vakum laboratuvarı, prototip laboratuvarı ve UPMSat kablo sistemini kullandığını doğrular; herhangi bir işvereni resmî program ortağı olarak adlandırmaz."
+            }
+          },
+          {
+            "url": "https://muse.idr.upm.es/es/ultimasnoticias",
+            "source_type": "official_department_page",
+            "title": "MUSE official news and 2026/27 admission notice",
+            "access_status": "ok",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "program_status",
+              "admission",
+              "research",
+              "student_projects"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Confirms active 2026/27 admissions, high first-round demand, current selection evidence and recent student space projects.",
+              "tr": "Aktif 2026/27 kabulünü, yüksek ilk tur talebini, güncel seçim kanıtlarını ve yakın tarihli öğrenci uzay projelerini doğrular."
             }
           }
         ],
-        "last_verified": "2026-07-14",
-        "needs_verification": true,
+        "last_verified": "2026-08-14",
+        "needs_verification": false,
         "verification_notes": {
-          "en": "Programme, curriculum and admission are checked. Tuition, funding and current application deadline still need programme-specific official evidence.",
-          "tr": "Program, müfredat ve kabul kontrol edildi. Öğrenim ücreti, finansman ve güncel başvuru son tarihi için hâlâ programa özgü resmî kanıt gerekiyor."
+          "en": "All decision-critical groups have checked official evidence. Deliberate unknowns remain where the university does not publish a value: numeric GPA floor, GRE score, accepted Spanish certificate list, automatic admission funding, newly arrived non-EU eligibility for the current Santander aid, and a current complete Madrid living-cost total.",
+          "tr": "Tüm karar-kritik gruplarda kontrol edilmiş resmî kanıt vardır. Üniversitenin değer yayımlamadığı alanlar bilinçli olarak bilinmiyor bırakılmıştır: sayısal GNO alt sınırı, GRE puanı, kabul edilen İspanyolca sertifika listesi, otomatik kabul bursu, yeni gelen AB dışı öğrencinin güncel Santander desteğine uygunluğu ve Madrid için güncel tam yaşam maliyeti."
         },
         "field_confidence": {
           "program_basic_info": "high",
+          "program": "high",
           "language": "high",
           "admission": "high",
-          "tuition": "unknown",
-          "scholarship": "unknown",
+          "non_eu_eligibility": "high",
+          "tuition": "high",
+          "scholarship": "high",
           "curriculum": "high",
           "research": "high",
-          "industry": "medium",
-          "living": "unknown",
-          "student_sentiment": "unknown",
-          "location": "medium"
-        }
+          "industry": "high",
+          "living": "medium",
+          "housing": "high",
+          "student_sentiment": "low",
+          "location": "medium",
+          "deadline": "high",
+          "deadlines": "high"
+        },
+        "official_housing_page": "https://www.upm.es/Estudiantes/Movilidad/Programas_Internacionales/Erasmus?fmt=detail&id=CON24663&prefmt=articulo",
+        "official_cost_of_living_page": "https://web.upm.es/hrs4r/sites/default/files/2024-09/01_welcome_guide_upm_es.pdf"
       },
       "decision_summary": {
         "best_for": [
           {
-            "en": "Students fluent in Spanish looking for an intense, prestigious degree near Airbus.",
-            "tr": "İspanyolcayı akıcı konuşan, Airbus yakınında yoğun ve prestijli bir eğitim arayan öğrenciler."
+            "en": "Spanish-B2-or-stronger students seeking a direct, system-level spacecraft engineering master's.",
+            "tr": "Doğrudan, sistem düzeyinde uzay aracı mühendisliği yüksek lisansı arayan B2 veya daha iyi İspanyolcalı öğrenciler."
+          },
+          {
+            "en": "Applicants who value small cohorts, project-based work and access to concurrent-design and environmental-test facilities.",
+            "tr": "Küçük sınıfı, proje tabanlı çalışmayı ve eşzamanlı tasarım/çevresel test tesislerine erişimi önemseyen adaylar."
           }
         ],
         "not_ideal_for": [
           {
-            "en": "Students who don't speak Spanish or cannot handle an extreme workload.",
-            "tr": "İspanyolca bilmeyen veya aşırı iş yüküyle başa çıkamayacak öğrenciler."
+            "en": "English-only applicants.",
+            "tr": "Yalnızca İngilizce eğitim arayan adaylar."
+          },
+          {
+            "en": "Students needing guaranteed university housing or automatic admission funding.",
+            "tr": "Garantili üniversite yurdu veya otomatik kabul bursu gereken öğrenciler."
           }
         ],
         "main_strengths": [
           {
-            "en": "Madrid aerospace hub integration.",
-            "tr": "Madrid havacılık ve uzay merkezi entegrasyonu."
+            "en": "A 120-ECTS curriculum dedicated to space systems, with 23 assessed components including three case studies and an 18-ECTS thesis.",
+            "tr": "Üç case study ve 18 AKTS tez dâhil 23 değerlendirilen bileşenli, uzay sistemlerine adanmış 120 AKTS müfredat."
+          },
+          {
+            "en": "IDR/UPM research setting with ESA-supported concurrent-design and integration/testing infrastructure.",
+            "tr": "ESA destekli eşzamanlı tasarım ve entegrasyon/test altyapısına sahip IDR/UPM araştırma ortamı."
+          },
+          {
+            "en": "Small advertised cohort (maximum 20 places) and verified project-based learning.",
+            "tr": "İlan edilen küçük sınıf (azami 20 kontenjan) ve doğrulanmış proje tabanlı öğrenme."
           }
         ],
         "main_risks": [
           {
-            "en": "Strict Spanish language requirement.",
-            "tr": "Kesin İspanyolca dil gereksinimi."
+            "en": "Spanish B2 is required for applicants from non-Spanish-speaking countries; the programme is not English-taught.",
+            "tr": "İspanyolca konuşulmayan ülkelerden gelenler için B2 İspanyolca gerekir; program İngilizce değildir."
           },
           {
-            "en": "Grueling workload.",
-            "tr": "Yorucu iş yükü."
+            "en": "Non-EU students without resident/EU-regime status pay €84.07 per ECTS, and a study-stay permit does not count as residence for the fee tariff.",
+            "tr": "İkamet/AB rejimi statüsü olmayan AB dışı öğrenciler AKTS başına 84,07 € öder; öğrenci kalış izni ücret tarifesinde ikamet sayılmaz."
+          },
+          {
+            "en": "UPM does not allocate university housing; Madrid accommodation must be arranged independently.",
+            "tr": "UPM üniversite yurdu tahsis etmez; Madrid konaklaması bağımsız olarak ayarlanmalıdır."
+          },
+          {
+            "en": "Selective small-cohort admission; interview, requested video or a mathematics/physics test may enter the process.",
+            "tr": "Küçük sınıf için seçici kabul; mülakat, talep edilen video veya matematik/fizik sınavı sürece girebilir."
           }
         ],
         "application_reality": {
-          "en": "Highly prestigious program with deep industry ties in Madrid, but the strict Spanish language requirement, high non-EU tuition fees, and grueling workload make it a high-risk choice for international students without native-level Spanish.",
-          "tr": "Madrid'de derin endüstri bağlarına sahip oldukça prestijli bir program, ancak kesin İspanyolca dil gereksinimi, yüksek AB dışı eğitim ücretleri ve yorucu iş yükü, ana dil seviyesinde İspanyolcası olmayan uluslararası öğrenciler için onu yüksek riskli bir seçim haline getiriyor."
+          "en": "For a Turkish applicant, the realistic path is: document legalisation/Apostille and grade-equivalence preparation, B2 Spanish evidence, a strong first-choice MUSE application with motivation and references, and an early first-round submission for visa time. Budget roughly €5,044.20 first-enrolment tuition for a 60-ECTS year plus published administrative charges if classified as a non-EU nonresident; do not assume a scholarship or UPM housing place.",
+          "tr": "Türk bir aday için gerçekçi yol: belge tasdiki/Apostil ve not eşdeğerliği hazırlığı, B2 İspanyolca kanıtı, motivasyon ve referanslarla güçlü bir ilk-tercih MUSE başvurusu ve vize süresi için erken ilk tur başvurusu. AB dışı ikamet etmeyen olarak sınıflandırılırsanız 60 AKTS yıllık ilk kayıt öğrenim ücreti yaklaşık 5.044,20 € artı yayımlanan idari ücretleri bütçeleyin; burs veya UPM yurt yeri varsaymayın."
         },
         "overall_recommendation": {
-          "en": "Only consider if you have B2/C1 Spanish.",
-          "tr": "Sadece B2/C1 İspanyolcanız varsa değerlendirin."
+          "en": "A technically strong direct-space option for applicants who already meet the Spanish requirement and can carry the non-EU fee and independent-housing risk.",
+          "tr": "İspanyolca şartını halihazırda karşılayan ve AB dışı ücret ile bağımsız konut riskini taşıyabilen adaylar için teknik olarak güçlü, doğrudan uzay odaklı bir seçenek."
         },
-        "recommended_user_profile": ""
+        "recommended_user_profile": {
+          "en": "Spanish-capable aerospace/related engineering graduate targeting spacecraft systems and applied project work.",
+          "tr": "Uzay aracı sistemleri ve uygulamalı proje çalışmasını hedefleyen, İspanyolca bilen havacılık-uzay/ilgili mühendislik mezunu."
+        }
       },
-      "scoring_inputs": {},
+      "scoring_inputs": {
+        "academic_field_fit_score_seed": null,
+        "eligibility_language_score_seed": null,
+        "cost_funding_score_seed": null,
+        "career_research_score_seed": null,
+        "living_risk_score_seed": null,
+        "data_confidence_score_seed": null,
+        "hard_filter_flags": {
+          "english_only_compatible": false,
+          "requires_spanish": true,
+          "requires_italian": false,
+          "non_eu_eligible": true,
+          "tuition_above_5000": true,
+          "tuition_above_10000": false,
+          "deadline_unclear": false,
+          "university_housing_offered": false,
+          "automatic_admission_scholarship_verified": false,
+          "needs_verification": false
+        }
+      },
       "quality_control": {
-        "qc_status": "needs_revision",
-        "checked_at": "2026-07-15",
+        "qc_status": "passed",
+        "checked_at": "2026-08-14",
         "failed_canary_tests": [],
-        "remaining_verification_tasks": [
-          {
-            "en": "Add a checked official source for tuition.",
-            "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
-            "en": "Add a checked official source for scholarship.",
-            "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
-          }
-        ],
+        "remaining_verification_tasks": [],
         "qc_notes": {
           "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
           "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
@@ -525,25 +1363,26 @@
       },
       "qs_ranking": 364,
       "data_quality": {
-        "status": "partial",
-        "checked_official_source_count": 3,
+        "status": "verified",
+        "checked_official_source_count": 13,
         "verified_fields": [
           "program",
           "language",
           "admission",
           "non_eu_eligibility",
-          "curriculum",
-          "research"
-        ],
-        "unverified_critical_fields": [
           "tuition",
-          "scholarship"
+          "scholarship",
+          "deadline",
+          "curriculum",
+          "research",
+          "housing"
         ],
+        "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-07-15"
+        "audited_at": "2026-08-14"
       },
-      "tuition_eur_per_year": null,
-      "annual_fee_eur": null,
+      "tuition_eur_per_year": 5044.2,
+      "annual_fee_eur": 33.65,
       "qs_ranking_display": "=364",
       "qs_ranking_year": 2027,
       "ranking_profile": {
@@ -656,6 +1495,15 @@
         "verification_notes": {
           "en": "Official transcript, legalized degree certificate.",
           "tr": "Resmi not dökümü, onaylı diploma belgesi."
+        },
+        "gre": {
+          "policy": "unknown",
+          "test_type": "unknown",
+          "minimum_scores": {},
+          "recommended_scores": {},
+          "validity_rule": "",
+          "waiver_rules": [],
+          "source_ids": []
         }
       },
       "language_profile": {
@@ -675,7 +1523,7 @@
           "en": "1st year predominantly in Catalan/Spanish, 2nd year in English. International students without Catalan or Spanish proficiency face severe difficulties understanding lectures in the first year.",
           "tr": "1. yıl ağırlıklı olarak Katalanca/İspanyolca, 2. yıl İngilizce. Katalanca veya İspanyolca yeterliliği olmayan uluslararası öğrenciler, ilk yıldaki dersleri anlamakta ciddi zorluklarla karşılaşmaktadır."
         },
-        "language_risk": "critical",
+        "language_risk": "unknown",
         "verification_notes": {
           "en": "Major language barrier verified.",
           "tr": "Büyük dil bariyeri doğrulandı."
@@ -746,7 +1594,10 @@
           "en": "A named scholarship call exists, but the record deliberately reports its nationality and prior-award exclusion instead of presenting it as available to all international applicants.",
           "tr": "İsimli bir burs çağrısı vardır; ancak kayıt bunu tüm uluslararası adaylara açıkmış gibi sunmak yerine uyruk ve önceki ödül dışlamasını açıkça raporlar."
         },
-        "funding_status": "no_general_non_eu_entrant_scholarship_verified"
+        "funding_status": "no_general_non_eu_entrant_scholarship_verified",
+        "application_mode": "unknown",
+        "automatic_consideration": null,
+        "separate_application_required": null
       },
       "living_profile": {
         "city_cost_level": "medium",
@@ -811,7 +1662,9 @@
         "housing_budget_sek_per_year_min": null,
         "housing_budget_sek_per_year_max": null,
         "housing_budget_dkk_per_year_min": null,
-        "housing_budget_dkk_per_year_max": null
+        "housing_budget_dkk_per_year_max": null,
+        "housing_access": "unknown",
+        "housing_application_separate": null
       },
       "curriculum_profile": {
         "tracks": [
@@ -986,7 +1839,7 @@
             "title": "Master's degree in Aerospace Engineering — UPC",
             "source_type": "official_program_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "program",
               "program_status",
@@ -1009,7 +1862,7 @@
             "title": "Master's degree in Aerospace Engineering — UPC",
             "source_type": "official_tuition_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "tuition"
             ],
@@ -1024,7 +1877,7 @@
             "title": "UPC Master's Degree in Aerospace Engineering 2026/27 sheet",
             "source_type": "official_admission_page",
             "access_status": "pdf",
-            "last_checked": "2026-07-15",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "admission",
               "deadline",
@@ -1044,7 +1897,7 @@
             "title": "UPC Santander Financial Aid 2026/27",
             "source_type": "official_scholarship_page",
             "access_status": "ok",
-            "last_checked": "2026-07-15",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "scholarship",
               "funding",
@@ -1062,7 +1915,7 @@
             "title": "UPC international student cost-of-living guidance",
             "source_type": "official_cost_of_living_page",
             "access_status": "ok",
-            "last_checked": "2026-07-15",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "living",
               "housing"
@@ -1144,7 +1997,7 @@
       "scoring_inputs": {},
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-07-15",
+        "checked_at": "2026-08-14",
         "failed_canary_tests": [],
         "remaining_verification_tasks": [],
         "qc_notes": {
@@ -1160,6 +2013,7 @@
           "program",
           "language",
           "admission",
+          "non_eu_eligibility",
           "tuition",
           "scholarship",
           "deadline",
@@ -1168,7 +2022,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-07-15"
+        "audited_at": "2026-08-14"
       },
       "qs_ranking_display": "=434",
       "qs_ranking_year": 2027,
@@ -1280,6 +2134,15 @@
         "verification_notes": {
           "en": "Proof of English proficiency, official transcripts, legalized degree.",
           "tr": "İngilizce yeterlilik belgesi, resmi not dökümü, onaylı diploma."
+        },
+        "gre": {
+          "policy": "unknown",
+          "test_type": "unknown",
+          "minimum_scores": {},
+          "recommended_scores": {},
+          "validity_rule": "",
+          "waiver_rules": [],
+          "source_ids": []
         }
       },
       "language_profile": {
@@ -1371,7 +2234,10 @@
         "verification_notes": {
           "en": "Scholarship amount and deadline are supported by the official programme page; award is competitive and not a tuition waiver.",
           "tr": "Burs tutarı ve son tarihi resmî program sayfasıyla desteklenir; ödül rekabetçidir ve öğrenim ücreti muafiyeti değildir."
-        }
+        },
+        "application_mode": "unknown",
+        "automatic_consideration": null,
+        "separate_application_required": null
       },
       "living_profile": {
         "city_cost_level": "medium",
@@ -1436,7 +2302,9 @@
         "housing_budget_sek_per_year_min": null,
         "housing_budget_sek_per_year_max": null,
         "housing_budget_dkk_per_year_min": null,
-        "housing_budget_dkk_per_year_max": null
+        "housing_budget_dkk_per_year_max": null,
+        "housing_access": "unknown",
+        "housing_application_separate": null
       },
       "curriculum_profile": {
         "tracks": [],
@@ -1598,7 +2466,7 @@
             "title": "Master in Space Engineering — UC3M",
             "source_type": "official_program_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "program",
               "program_status",
@@ -1623,7 +2491,7 @@
             "title": "Master in Space Engineering — UC3M",
             "source_type": "official_tuition_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "tuition"
             ],
@@ -1638,7 +2506,7 @@
             "title": "Master in Space Engineering — UC3M",
             "source_type": "official_scholarship_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "scholarship",
               "scholarship_deadline"
@@ -1654,7 +2522,7 @@
             "title": "UC3M Master admission process 2026/27",
             "source_type": "official_admission_page",
             "access_status": "ok",
-            "last_checked": "2026-07-15",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "admission",
               "deadline"
@@ -1670,7 +2538,7 @@
             "title": "UC3M: student cost of living in Madrid",
             "source_type": "official_cost_of_living_page",
             "access_status": "ok",
-            "last_checked": "2026-07-15",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "housing",
               "living"
@@ -1745,7 +2613,7 @@
       "scoring_inputs": {},
       "quality_control": {
         "qc_status": "passed",
-        "checked_at": "2026-07-15",
+        "checked_at": "2026-08-14",
         "failed_canary_tests": [],
         "remaining_verification_tasks": [],
         "qc_notes": {
@@ -1761,6 +2629,7 @@
           "program",
           "language",
           "admission",
+          "non_eu_eligibility",
           "tuition",
           "scholarship",
           "deadline",
@@ -1769,7 +2638,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-07-15"
+        "audited_at": "2026-08-14"
       },
       "qs_ranking_display": "=314",
       "qs_ranking_year": 2027,

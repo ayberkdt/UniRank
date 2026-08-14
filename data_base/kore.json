@@ -124,16 +124,19 @@
             "unverified_critical_fields": [
                 "program",
                 "language",
+                "admission",
+                "non_eu_eligibility",
                 "tuition",
                 "scholarship",
+                "deadline",
                 "curriculum",
-                "admission"
+                "housing"
             ],
             "has_checked_source_log": false,
-            "audited_at": "2026-07-14"
+            "audited_at": "2026-08-14"
         },
         "quality_control": {
-            "checked_at": "2026-07-14",
+            "checked_at": "2026-08-14",
             "qc_status": "needs_revision",
             "remaining_verification_tasks": [
                 {
@@ -145,6 +148,14 @@
                     "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
+                    "en": "Add a checked official source for admission.",
+                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for non_eu_eligibility.",
+                    "tr": "non_eu_eligibility için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
                     "en": "Add a checked official source for tuition.",
                     "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
                 },
@@ -153,18 +164,161 @@
                     "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
+                    "en": "Add a checked official source for deadline.",
+                    "tr": "deadline için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
                     "en": "Add a checked official source for curriculum.",
                     "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
-                    "en": "Add a checked official source for admission.",
-                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                    "en": "Add a checked official source for housing.",
+                    "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
                 }
             ],
             "qc_notes": {
                 "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
                 "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
-            }
+            },
+            "failed_canary_tests": [
+                "missing_or_unverified_critical_fields"
+            ]
+        },
+        "student_sentiment_profile": {},
+        "source_profile": {
+            "field_confidence": {
+                "program_basic_info": "unknown",
+                "language": "unknown",
+                "tuition": "unknown",
+                "scholarship": "unknown",
+                "curriculum": "unknown",
+                "admission": "unknown",
+                "deadlines": "unknown",
+                "housing": "unknown",
+                "program": "unknown",
+                "non_eu_eligibility": "unknown",
+                "deadline": "unknown"
+            },
+            "needs_verification": true
+        },
+        "teaching_language": [
+            "Unknown"
+        ],
+        "tuition_eur_per_year": null,
+        "annual_fee_eur": null,
+        "language_profile": {
+            "teaching_language": [
+                "Unknown"
+            ],
+            "language_risk": "unknown",
+            "teaching_languages": [
+                "Unknown"
+            ]
+        },
+        "cost_profile": {
+            "tuition_eur_per_year_estimated": null,
+            "tuition_eur_per_year_min": null,
+            "tuition_eur_per_year_max": null,
+            "total_academic_cost_eur_per_year_estimated": null,
+            "regional_tax_eur": null,
+            "student_contribution_eur": null,
+            "enrollment_fee_eur": null,
+            "tuition_usd_per_year": null,
+            "tuition_usd_per_year_at_three_quarters": null,
+            "tuition_usd_per_quarter": null,
+            "tuition_usd_per_quarter_nonresident_full_time": null,
+            "tuition_gbp_per_year": null,
+            "tuition_chf_per_year": null,
+            "tuition_sek_per_year": null,
+            "tuition_dkk_per_year": null,
+            "mandatory_fees_usd_per_year": null,
+            "total_cost_of_attendance_usd_per_year": null,
+            "living_cost_usd_per_year_i20": null,
+            "living_cost_usd_per_year": null,
+            "living_cost_usd_per_year_min": null,
+            "living_cost_usd_per_year_max": null,
+            "living_cost_gbp_per_year": null,
+            "living_cost_gbp_per_year_min": null,
+            "living_cost_gbp_per_year_max": null,
+            "living_cost_chf_per_year": null,
+            "living_cost_chf_per_year_min": null,
+            "living_cost_chf_per_year_max": null,
+            "living_cost_sek_per_year": null,
+            "living_cost_sek_per_year_min": null,
+            "living_cost_sek_per_year_max": null,
+            "living_cost_dkk_per_year": null,
+            "living_cost_dkk_per_year_min": null,
+            "living_cost_dkk_per_year_max": null,
+            "tuition_items": []
+        },
+        "scholarship_profile": {
+            "regional_scholarship_available": null,
+            "regional_scholarship_name": null,
+            "non_eu_eligible": null,
+            "scholarship_deadline": null,
+            "funding_notes": null,
+            "opportunities": []
+        },
+        "application_timeline_profile": {
+            "non_eu_deadline": null,
+            "winter_deadline": null,
+            "application_deadline": null,
+            "deadline_notes": null,
+            "deadline_events": []
+        },
+        "eligibility_profile": {
+            "eligible_for_non_eu": null
+        },
+        "living_profile": {
+            "average_room_rent_eur": null,
+            "average_room_rent_eur_min": null,
+            "average_room_rent_eur_max": null,
+            "monthly_living_cost_eur_min": null,
+            "monthly_living_cost_eur_max": null,
+            "monthly_living_cost_eur_estimated": null,
+            "living_cost_eur_per_month": null,
+            "housing_difficulty": null,
+            "housing_notes": null,
+            "average_room_rent_usd_per_month_min": null,
+            "average_room_rent_usd_per_month_max": null,
+            "average_room_rent_gbp_per_month_min": null,
+            "average_room_rent_gbp_per_month_max": null,
+            "average_room_rent_chf_per_month_min": null,
+            "average_room_rent_chf_per_month_max": null,
+            "average_room_rent_sek_per_month_min": null,
+            "average_room_rent_sek_per_month_max": null,
+            "average_room_rent_dkk_per_month_min": null,
+            "average_room_rent_dkk_per_month_max": null,
+            "monthly_housing_rent_usd_per_month_min": null,
+            "monthly_housing_rent_usd_per_month_max": null,
+            "monthly_housing_rent_gbp_per_month_min": null,
+            "monthly_housing_rent_gbp_per_month_max": null,
+            "monthly_housing_rent_chf_per_month_min": null,
+            "monthly_housing_rent_chf_per_month_max": null,
+            "monthly_housing_rent_sek_per_month_min": null,
+            "monthly_housing_rent_sek_per_month_max": null,
+            "monthly_housing_rent_dkk_per_month_min": null,
+            "monthly_housing_rent_dkk_per_month_max": null,
+            "housing_budget_usd_per_year": null,
+            "housing_budget_usd_per_year_min": null,
+            "housing_budget_usd_per_year_max": null,
+            "housing_budget_gbp_per_year": null,
+            "housing_budget_gbp_per_year_min": null,
+            "housing_budget_gbp_per_year_max": null,
+            "housing_budget_chf_per_year": null,
+            "housing_budget_chf_per_year_min": null,
+            "housing_budget_chf_per_year_max": null,
+            "housing_budget_sek_per_year": null,
+            "housing_budget_sek_per_year_min": null,
+            "housing_budget_sek_per_year_max": null,
+            "housing_budget_dkk_per_year": null,
+            "housing_budget_dkk_per_year_min": null,
+            "housing_budget_dkk_per_year_max": null,
+            "official_student_housing_budget_sek_per_month_examples": null,
+            "official_student_total_budget_sek_per_month_examples": null,
+            "housing_options": [],
+            "official_living_cost_items": [],
+            "official_rent_items": []
         }
     },
     {
@@ -289,16 +443,19 @@
             "unverified_critical_fields": [
                 "program",
                 "language",
+                "admission",
+                "non_eu_eligibility",
                 "tuition",
                 "scholarship",
+                "deadline",
                 "curriculum",
-                "admission"
+                "housing"
             ],
             "has_checked_source_log": false,
-            "audited_at": "2026-07-14"
+            "audited_at": "2026-08-14"
         },
         "quality_control": {
-            "checked_at": "2026-07-14",
+            "checked_at": "2026-08-14",
             "qc_status": "needs_revision",
             "remaining_verification_tasks": [
                 {
@@ -310,6 +467,14 @@
                     "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
+                    "en": "Add a checked official source for admission.",
+                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for non_eu_eligibility.",
+                    "tr": "non_eu_eligibility için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
                     "en": "Add a checked official source for tuition.",
                     "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
                 },
@@ -318,18 +483,161 @@
                     "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
+                    "en": "Add a checked official source for deadline.",
+                    "tr": "deadline için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
                     "en": "Add a checked official source for curriculum.",
                     "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
-                    "en": "Add a checked official source for admission.",
-                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                    "en": "Add a checked official source for housing.",
+                    "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
                 }
             ],
             "qc_notes": {
                 "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
                 "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
-            }
+            },
+            "failed_canary_tests": [
+                "missing_or_unverified_critical_fields"
+            ]
+        },
+        "student_sentiment_profile": {},
+        "source_profile": {
+            "field_confidence": {
+                "program_basic_info": "unknown",
+                "language": "unknown",
+                "tuition": "unknown",
+                "scholarship": "unknown",
+                "curriculum": "unknown",
+                "admission": "unknown",
+                "deadlines": "unknown",
+                "housing": "unknown",
+                "program": "unknown",
+                "non_eu_eligibility": "unknown",
+                "deadline": "unknown"
+            },
+            "needs_verification": true
+        },
+        "teaching_language": [
+            "Unknown"
+        ],
+        "tuition_eur_per_year": null,
+        "annual_fee_eur": null,
+        "language_profile": {
+            "teaching_language": [
+                "Unknown"
+            ],
+            "language_risk": "unknown",
+            "teaching_languages": [
+                "Unknown"
+            ]
+        },
+        "cost_profile": {
+            "tuition_eur_per_year_estimated": null,
+            "tuition_eur_per_year_min": null,
+            "tuition_eur_per_year_max": null,
+            "total_academic_cost_eur_per_year_estimated": null,
+            "regional_tax_eur": null,
+            "student_contribution_eur": null,
+            "enrollment_fee_eur": null,
+            "tuition_usd_per_year": null,
+            "tuition_usd_per_year_at_three_quarters": null,
+            "tuition_usd_per_quarter": null,
+            "tuition_usd_per_quarter_nonresident_full_time": null,
+            "tuition_gbp_per_year": null,
+            "tuition_chf_per_year": null,
+            "tuition_sek_per_year": null,
+            "tuition_dkk_per_year": null,
+            "mandatory_fees_usd_per_year": null,
+            "total_cost_of_attendance_usd_per_year": null,
+            "living_cost_usd_per_year_i20": null,
+            "living_cost_usd_per_year": null,
+            "living_cost_usd_per_year_min": null,
+            "living_cost_usd_per_year_max": null,
+            "living_cost_gbp_per_year": null,
+            "living_cost_gbp_per_year_min": null,
+            "living_cost_gbp_per_year_max": null,
+            "living_cost_chf_per_year": null,
+            "living_cost_chf_per_year_min": null,
+            "living_cost_chf_per_year_max": null,
+            "living_cost_sek_per_year": null,
+            "living_cost_sek_per_year_min": null,
+            "living_cost_sek_per_year_max": null,
+            "living_cost_dkk_per_year": null,
+            "living_cost_dkk_per_year_min": null,
+            "living_cost_dkk_per_year_max": null,
+            "tuition_items": []
+        },
+        "scholarship_profile": {
+            "regional_scholarship_available": null,
+            "regional_scholarship_name": null,
+            "non_eu_eligible": null,
+            "scholarship_deadline": null,
+            "funding_notes": null,
+            "opportunities": []
+        },
+        "application_timeline_profile": {
+            "non_eu_deadline": null,
+            "winter_deadline": null,
+            "application_deadline": null,
+            "deadline_notes": null,
+            "deadline_events": []
+        },
+        "eligibility_profile": {
+            "eligible_for_non_eu": null
+        },
+        "living_profile": {
+            "average_room_rent_eur": null,
+            "average_room_rent_eur_min": null,
+            "average_room_rent_eur_max": null,
+            "monthly_living_cost_eur_min": null,
+            "monthly_living_cost_eur_max": null,
+            "monthly_living_cost_eur_estimated": null,
+            "living_cost_eur_per_month": null,
+            "housing_difficulty": null,
+            "housing_notes": null,
+            "average_room_rent_usd_per_month_min": null,
+            "average_room_rent_usd_per_month_max": null,
+            "average_room_rent_gbp_per_month_min": null,
+            "average_room_rent_gbp_per_month_max": null,
+            "average_room_rent_chf_per_month_min": null,
+            "average_room_rent_chf_per_month_max": null,
+            "average_room_rent_sek_per_month_min": null,
+            "average_room_rent_sek_per_month_max": null,
+            "average_room_rent_dkk_per_month_min": null,
+            "average_room_rent_dkk_per_month_max": null,
+            "monthly_housing_rent_usd_per_month_min": null,
+            "monthly_housing_rent_usd_per_month_max": null,
+            "monthly_housing_rent_gbp_per_month_min": null,
+            "monthly_housing_rent_gbp_per_month_max": null,
+            "monthly_housing_rent_chf_per_month_min": null,
+            "monthly_housing_rent_chf_per_month_max": null,
+            "monthly_housing_rent_sek_per_month_min": null,
+            "monthly_housing_rent_sek_per_month_max": null,
+            "monthly_housing_rent_dkk_per_month_min": null,
+            "monthly_housing_rent_dkk_per_month_max": null,
+            "housing_budget_usd_per_year": null,
+            "housing_budget_usd_per_year_min": null,
+            "housing_budget_usd_per_year_max": null,
+            "housing_budget_gbp_per_year": null,
+            "housing_budget_gbp_per_year_min": null,
+            "housing_budget_gbp_per_year_max": null,
+            "housing_budget_chf_per_year": null,
+            "housing_budget_chf_per_year_min": null,
+            "housing_budget_chf_per_year_max": null,
+            "housing_budget_sek_per_year": null,
+            "housing_budget_sek_per_year_min": null,
+            "housing_budget_sek_per_year_max": null,
+            "housing_budget_dkk_per_year": null,
+            "housing_budget_dkk_per_year_min": null,
+            "housing_budget_dkk_per_year_max": null,
+            "official_student_housing_budget_sek_per_month_examples": null,
+            "official_student_total_budget_sek_per_month_examples": null,
+            "housing_options": [],
+            "official_living_cost_items": [],
+            "official_rent_items": []
         }
     },
     {
@@ -453,16 +761,19 @@
             "unverified_critical_fields": [
                 "program",
                 "language",
+                "admission",
+                "non_eu_eligibility",
                 "tuition",
                 "scholarship",
+                "deadline",
                 "curriculum",
-                "admission"
+                "housing"
             ],
             "has_checked_source_log": false,
-            "audited_at": "2026-07-14"
+            "audited_at": "2026-08-14"
         },
         "quality_control": {
-            "checked_at": "2026-07-14",
+            "checked_at": "2026-08-14",
             "qc_status": "needs_revision",
             "remaining_verification_tasks": [
                 {
@@ -474,6 +785,14 @@
                     "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
+                    "en": "Add a checked official source for admission.",
+                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for non_eu_eligibility.",
+                    "tr": "non_eu_eligibility için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
                     "en": "Add a checked official source for tuition.",
                     "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
                 },
@@ -482,18 +801,161 @@
                     "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
+                    "en": "Add a checked official source for deadline.",
+                    "tr": "deadline için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
                     "en": "Add a checked official source for curriculum.",
                     "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
-                    "en": "Add a checked official source for admission.",
-                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                    "en": "Add a checked official source for housing.",
+                    "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
                 }
             ],
             "qc_notes": {
                 "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
                 "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
-            }
+            },
+            "failed_canary_tests": [
+                "missing_or_unverified_critical_fields"
+            ]
+        },
+        "student_sentiment_profile": {},
+        "source_profile": {
+            "field_confidence": {
+                "program_basic_info": "unknown",
+                "language": "unknown",
+                "tuition": "unknown",
+                "scholarship": "unknown",
+                "curriculum": "unknown",
+                "admission": "unknown",
+                "deadlines": "unknown",
+                "housing": "unknown",
+                "program": "unknown",
+                "non_eu_eligibility": "unknown",
+                "deadline": "unknown"
+            },
+            "needs_verification": true
+        },
+        "teaching_language": [
+            "Unknown"
+        ],
+        "tuition_eur_per_year": null,
+        "annual_fee_eur": null,
+        "language_profile": {
+            "teaching_language": [
+                "Unknown"
+            ],
+            "language_risk": "unknown",
+            "teaching_languages": [
+                "Unknown"
+            ]
+        },
+        "cost_profile": {
+            "tuition_eur_per_year_estimated": null,
+            "tuition_eur_per_year_min": null,
+            "tuition_eur_per_year_max": null,
+            "total_academic_cost_eur_per_year_estimated": null,
+            "regional_tax_eur": null,
+            "student_contribution_eur": null,
+            "enrollment_fee_eur": null,
+            "tuition_usd_per_year": null,
+            "tuition_usd_per_year_at_three_quarters": null,
+            "tuition_usd_per_quarter": null,
+            "tuition_usd_per_quarter_nonresident_full_time": null,
+            "tuition_gbp_per_year": null,
+            "tuition_chf_per_year": null,
+            "tuition_sek_per_year": null,
+            "tuition_dkk_per_year": null,
+            "mandatory_fees_usd_per_year": null,
+            "total_cost_of_attendance_usd_per_year": null,
+            "living_cost_usd_per_year_i20": null,
+            "living_cost_usd_per_year": null,
+            "living_cost_usd_per_year_min": null,
+            "living_cost_usd_per_year_max": null,
+            "living_cost_gbp_per_year": null,
+            "living_cost_gbp_per_year_min": null,
+            "living_cost_gbp_per_year_max": null,
+            "living_cost_chf_per_year": null,
+            "living_cost_chf_per_year_min": null,
+            "living_cost_chf_per_year_max": null,
+            "living_cost_sek_per_year": null,
+            "living_cost_sek_per_year_min": null,
+            "living_cost_sek_per_year_max": null,
+            "living_cost_dkk_per_year": null,
+            "living_cost_dkk_per_year_min": null,
+            "living_cost_dkk_per_year_max": null,
+            "tuition_items": []
+        },
+        "scholarship_profile": {
+            "regional_scholarship_available": null,
+            "regional_scholarship_name": null,
+            "non_eu_eligible": null,
+            "scholarship_deadline": null,
+            "funding_notes": null,
+            "opportunities": []
+        },
+        "application_timeline_profile": {
+            "non_eu_deadline": null,
+            "winter_deadline": null,
+            "application_deadline": null,
+            "deadline_notes": null,
+            "deadline_events": []
+        },
+        "eligibility_profile": {
+            "eligible_for_non_eu": null
+        },
+        "living_profile": {
+            "average_room_rent_eur": null,
+            "average_room_rent_eur_min": null,
+            "average_room_rent_eur_max": null,
+            "monthly_living_cost_eur_min": null,
+            "monthly_living_cost_eur_max": null,
+            "monthly_living_cost_eur_estimated": null,
+            "living_cost_eur_per_month": null,
+            "housing_difficulty": null,
+            "housing_notes": null,
+            "average_room_rent_usd_per_month_min": null,
+            "average_room_rent_usd_per_month_max": null,
+            "average_room_rent_gbp_per_month_min": null,
+            "average_room_rent_gbp_per_month_max": null,
+            "average_room_rent_chf_per_month_min": null,
+            "average_room_rent_chf_per_month_max": null,
+            "average_room_rent_sek_per_month_min": null,
+            "average_room_rent_sek_per_month_max": null,
+            "average_room_rent_dkk_per_month_min": null,
+            "average_room_rent_dkk_per_month_max": null,
+            "monthly_housing_rent_usd_per_month_min": null,
+            "monthly_housing_rent_usd_per_month_max": null,
+            "monthly_housing_rent_gbp_per_month_min": null,
+            "monthly_housing_rent_gbp_per_month_max": null,
+            "monthly_housing_rent_chf_per_month_min": null,
+            "monthly_housing_rent_chf_per_month_max": null,
+            "monthly_housing_rent_sek_per_month_min": null,
+            "monthly_housing_rent_sek_per_month_max": null,
+            "monthly_housing_rent_dkk_per_month_min": null,
+            "monthly_housing_rent_dkk_per_month_max": null,
+            "housing_budget_usd_per_year": null,
+            "housing_budget_usd_per_year_min": null,
+            "housing_budget_usd_per_year_max": null,
+            "housing_budget_gbp_per_year": null,
+            "housing_budget_gbp_per_year_min": null,
+            "housing_budget_gbp_per_year_max": null,
+            "housing_budget_chf_per_year": null,
+            "housing_budget_chf_per_year_min": null,
+            "housing_budget_chf_per_year_max": null,
+            "housing_budget_sek_per_year": null,
+            "housing_budget_sek_per_year_min": null,
+            "housing_budget_sek_per_year_max": null,
+            "housing_budget_dkk_per_year": null,
+            "housing_budget_dkk_per_year_min": null,
+            "housing_budget_dkk_per_year_max": null,
+            "official_student_housing_budget_sek_per_month_examples": null,
+            "official_student_total_budget_sek_per_month_examples": null,
+            "housing_options": [],
+            "official_living_cost_items": [],
+            "official_rent_items": []
         }
     },
     {
@@ -618,16 +1080,19 @@
             "unverified_critical_fields": [
                 "program",
                 "language",
+                "admission",
+                "non_eu_eligibility",
                 "tuition",
                 "scholarship",
+                "deadline",
                 "curriculum",
-                "admission"
+                "housing"
             ],
             "has_checked_source_log": false,
-            "audited_at": "2026-07-14"
+            "audited_at": "2026-08-14"
         },
         "quality_control": {
-            "checked_at": "2026-07-14",
+            "checked_at": "2026-08-14",
             "qc_status": "needs_revision",
             "remaining_verification_tasks": [
                 {
@@ -639,6 +1104,14 @@
                     "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
+                    "en": "Add a checked official source for admission.",
+                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for non_eu_eligibility.",
+                    "tr": "non_eu_eligibility için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
                     "en": "Add a checked official source for tuition.",
                     "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
                 },
@@ -647,18 +1120,161 @@
                     "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
+                    "en": "Add a checked official source for deadline.",
+                    "tr": "deadline için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
                     "en": "Add a checked official source for curriculum.",
                     "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
-                    "en": "Add a checked official source for admission.",
-                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                    "en": "Add a checked official source for housing.",
+                    "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
                 }
             ],
             "qc_notes": {
                 "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
                 "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
-            }
+            },
+            "failed_canary_tests": [
+                "missing_or_unverified_critical_fields"
+            ]
+        },
+        "student_sentiment_profile": {},
+        "source_profile": {
+            "field_confidence": {
+                "program_basic_info": "unknown",
+                "language": "unknown",
+                "tuition": "unknown",
+                "scholarship": "unknown",
+                "curriculum": "unknown",
+                "admission": "unknown",
+                "deadlines": "unknown",
+                "housing": "unknown",
+                "program": "unknown",
+                "non_eu_eligibility": "unknown",
+                "deadline": "unknown"
+            },
+            "needs_verification": true
+        },
+        "teaching_language": [
+            "Unknown"
+        ],
+        "tuition_eur_per_year": null,
+        "annual_fee_eur": null,
+        "language_profile": {
+            "teaching_language": [
+                "Unknown"
+            ],
+            "language_risk": "unknown",
+            "teaching_languages": [
+                "Unknown"
+            ]
+        },
+        "cost_profile": {
+            "tuition_eur_per_year_estimated": null,
+            "tuition_eur_per_year_min": null,
+            "tuition_eur_per_year_max": null,
+            "total_academic_cost_eur_per_year_estimated": null,
+            "regional_tax_eur": null,
+            "student_contribution_eur": null,
+            "enrollment_fee_eur": null,
+            "tuition_usd_per_year": null,
+            "tuition_usd_per_year_at_three_quarters": null,
+            "tuition_usd_per_quarter": null,
+            "tuition_usd_per_quarter_nonresident_full_time": null,
+            "tuition_gbp_per_year": null,
+            "tuition_chf_per_year": null,
+            "tuition_sek_per_year": null,
+            "tuition_dkk_per_year": null,
+            "mandatory_fees_usd_per_year": null,
+            "total_cost_of_attendance_usd_per_year": null,
+            "living_cost_usd_per_year_i20": null,
+            "living_cost_usd_per_year": null,
+            "living_cost_usd_per_year_min": null,
+            "living_cost_usd_per_year_max": null,
+            "living_cost_gbp_per_year": null,
+            "living_cost_gbp_per_year_min": null,
+            "living_cost_gbp_per_year_max": null,
+            "living_cost_chf_per_year": null,
+            "living_cost_chf_per_year_min": null,
+            "living_cost_chf_per_year_max": null,
+            "living_cost_sek_per_year": null,
+            "living_cost_sek_per_year_min": null,
+            "living_cost_sek_per_year_max": null,
+            "living_cost_dkk_per_year": null,
+            "living_cost_dkk_per_year_min": null,
+            "living_cost_dkk_per_year_max": null,
+            "tuition_items": []
+        },
+        "scholarship_profile": {
+            "regional_scholarship_available": null,
+            "regional_scholarship_name": null,
+            "non_eu_eligible": null,
+            "scholarship_deadline": null,
+            "funding_notes": null,
+            "opportunities": []
+        },
+        "application_timeline_profile": {
+            "non_eu_deadline": null,
+            "winter_deadline": null,
+            "application_deadline": null,
+            "deadline_notes": null,
+            "deadline_events": []
+        },
+        "eligibility_profile": {
+            "eligible_for_non_eu": null
+        },
+        "living_profile": {
+            "average_room_rent_eur": null,
+            "average_room_rent_eur_min": null,
+            "average_room_rent_eur_max": null,
+            "monthly_living_cost_eur_min": null,
+            "monthly_living_cost_eur_max": null,
+            "monthly_living_cost_eur_estimated": null,
+            "living_cost_eur_per_month": null,
+            "housing_difficulty": null,
+            "housing_notes": null,
+            "average_room_rent_usd_per_month_min": null,
+            "average_room_rent_usd_per_month_max": null,
+            "average_room_rent_gbp_per_month_min": null,
+            "average_room_rent_gbp_per_month_max": null,
+            "average_room_rent_chf_per_month_min": null,
+            "average_room_rent_chf_per_month_max": null,
+            "average_room_rent_sek_per_month_min": null,
+            "average_room_rent_sek_per_month_max": null,
+            "average_room_rent_dkk_per_month_min": null,
+            "average_room_rent_dkk_per_month_max": null,
+            "monthly_housing_rent_usd_per_month_min": null,
+            "monthly_housing_rent_usd_per_month_max": null,
+            "monthly_housing_rent_gbp_per_month_min": null,
+            "monthly_housing_rent_gbp_per_month_max": null,
+            "monthly_housing_rent_chf_per_month_min": null,
+            "monthly_housing_rent_chf_per_month_max": null,
+            "monthly_housing_rent_sek_per_month_min": null,
+            "monthly_housing_rent_sek_per_month_max": null,
+            "monthly_housing_rent_dkk_per_month_min": null,
+            "monthly_housing_rent_dkk_per_month_max": null,
+            "housing_budget_usd_per_year": null,
+            "housing_budget_usd_per_year_min": null,
+            "housing_budget_usd_per_year_max": null,
+            "housing_budget_gbp_per_year": null,
+            "housing_budget_gbp_per_year_min": null,
+            "housing_budget_gbp_per_year_max": null,
+            "housing_budget_chf_per_year": null,
+            "housing_budget_chf_per_year_min": null,
+            "housing_budget_chf_per_year_max": null,
+            "housing_budget_sek_per_year": null,
+            "housing_budget_sek_per_year_min": null,
+            "housing_budget_sek_per_year_max": null,
+            "housing_budget_dkk_per_year": null,
+            "housing_budget_dkk_per_year_min": null,
+            "housing_budget_dkk_per_year_max": null,
+            "official_student_housing_budget_sek_per_month_examples": null,
+            "official_student_total_budget_sek_per_month_examples": null,
+            "housing_options": [],
+            "official_living_cost_items": [],
+            "official_rent_items": []
         }
     },
     {
@@ -773,16 +1389,19 @@
             "unverified_critical_fields": [
                 "program",
                 "language",
+                "admission",
+                "non_eu_eligibility",
                 "tuition",
                 "scholarship",
+                "deadline",
                 "curriculum",
-                "admission"
+                "housing"
             ],
             "has_checked_source_log": false,
-            "audited_at": "2026-07-14"
+            "audited_at": "2026-08-14"
         },
         "quality_control": {
-            "checked_at": "2026-07-14",
+            "checked_at": "2026-08-14",
             "qc_status": "needs_revision",
             "remaining_verification_tasks": [
                 {
@@ -794,6 +1413,14 @@
                     "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
+                    "en": "Add a checked official source for admission.",
+                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for non_eu_eligibility.",
+                    "tr": "non_eu_eligibility için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
                     "en": "Add a checked official source for tuition.",
                     "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
                 },
@@ -802,18 +1429,161 @@
                     "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
+                    "en": "Add a checked official source for deadline.",
+                    "tr": "deadline için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
                     "en": "Add a checked official source for curriculum.",
                     "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
-                    "en": "Add a checked official source for admission.",
-                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                    "en": "Add a checked official source for housing.",
+                    "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
                 }
             ],
             "qc_notes": {
                 "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
                 "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
-            }
+            },
+            "failed_canary_tests": [
+                "missing_or_unverified_critical_fields"
+            ]
+        },
+        "student_sentiment_profile": {},
+        "source_profile": {
+            "field_confidence": {
+                "program_basic_info": "unknown",
+                "language": "unknown",
+                "tuition": "unknown",
+                "scholarship": "unknown",
+                "curriculum": "unknown",
+                "admission": "unknown",
+                "deadlines": "unknown",
+                "housing": "unknown",
+                "program": "unknown",
+                "non_eu_eligibility": "unknown",
+                "deadline": "unknown"
+            },
+            "needs_verification": true
+        },
+        "teaching_language": [
+            "Unknown"
+        ],
+        "tuition_eur_per_year": null,
+        "annual_fee_eur": null,
+        "language_profile": {
+            "teaching_language": [
+                "Unknown"
+            ],
+            "language_risk": "unknown",
+            "teaching_languages": [
+                "Unknown"
+            ]
+        },
+        "cost_profile": {
+            "tuition_eur_per_year_estimated": null,
+            "tuition_eur_per_year_min": null,
+            "tuition_eur_per_year_max": null,
+            "total_academic_cost_eur_per_year_estimated": null,
+            "regional_tax_eur": null,
+            "student_contribution_eur": null,
+            "enrollment_fee_eur": null,
+            "tuition_usd_per_year": null,
+            "tuition_usd_per_year_at_three_quarters": null,
+            "tuition_usd_per_quarter": null,
+            "tuition_usd_per_quarter_nonresident_full_time": null,
+            "tuition_gbp_per_year": null,
+            "tuition_chf_per_year": null,
+            "tuition_sek_per_year": null,
+            "tuition_dkk_per_year": null,
+            "mandatory_fees_usd_per_year": null,
+            "total_cost_of_attendance_usd_per_year": null,
+            "living_cost_usd_per_year_i20": null,
+            "living_cost_usd_per_year": null,
+            "living_cost_usd_per_year_min": null,
+            "living_cost_usd_per_year_max": null,
+            "living_cost_gbp_per_year": null,
+            "living_cost_gbp_per_year_min": null,
+            "living_cost_gbp_per_year_max": null,
+            "living_cost_chf_per_year": null,
+            "living_cost_chf_per_year_min": null,
+            "living_cost_chf_per_year_max": null,
+            "living_cost_sek_per_year": null,
+            "living_cost_sek_per_year_min": null,
+            "living_cost_sek_per_year_max": null,
+            "living_cost_dkk_per_year": null,
+            "living_cost_dkk_per_year_min": null,
+            "living_cost_dkk_per_year_max": null,
+            "tuition_items": []
+        },
+        "scholarship_profile": {
+            "regional_scholarship_available": null,
+            "regional_scholarship_name": null,
+            "non_eu_eligible": null,
+            "scholarship_deadline": null,
+            "funding_notes": null,
+            "opportunities": []
+        },
+        "application_timeline_profile": {
+            "non_eu_deadline": null,
+            "winter_deadline": null,
+            "application_deadline": null,
+            "deadline_notes": null,
+            "deadline_events": []
+        },
+        "eligibility_profile": {
+            "eligible_for_non_eu": null
+        },
+        "living_profile": {
+            "average_room_rent_eur": null,
+            "average_room_rent_eur_min": null,
+            "average_room_rent_eur_max": null,
+            "monthly_living_cost_eur_min": null,
+            "monthly_living_cost_eur_max": null,
+            "monthly_living_cost_eur_estimated": null,
+            "living_cost_eur_per_month": null,
+            "housing_difficulty": null,
+            "housing_notes": null,
+            "average_room_rent_usd_per_month_min": null,
+            "average_room_rent_usd_per_month_max": null,
+            "average_room_rent_gbp_per_month_min": null,
+            "average_room_rent_gbp_per_month_max": null,
+            "average_room_rent_chf_per_month_min": null,
+            "average_room_rent_chf_per_month_max": null,
+            "average_room_rent_sek_per_month_min": null,
+            "average_room_rent_sek_per_month_max": null,
+            "average_room_rent_dkk_per_month_min": null,
+            "average_room_rent_dkk_per_month_max": null,
+            "monthly_housing_rent_usd_per_month_min": null,
+            "monthly_housing_rent_usd_per_month_max": null,
+            "monthly_housing_rent_gbp_per_month_min": null,
+            "monthly_housing_rent_gbp_per_month_max": null,
+            "monthly_housing_rent_chf_per_month_min": null,
+            "monthly_housing_rent_chf_per_month_max": null,
+            "monthly_housing_rent_sek_per_month_min": null,
+            "monthly_housing_rent_sek_per_month_max": null,
+            "monthly_housing_rent_dkk_per_month_min": null,
+            "monthly_housing_rent_dkk_per_month_max": null,
+            "housing_budget_usd_per_year": null,
+            "housing_budget_usd_per_year_min": null,
+            "housing_budget_usd_per_year_max": null,
+            "housing_budget_gbp_per_year": null,
+            "housing_budget_gbp_per_year_min": null,
+            "housing_budget_gbp_per_year_max": null,
+            "housing_budget_chf_per_year": null,
+            "housing_budget_chf_per_year_min": null,
+            "housing_budget_chf_per_year_max": null,
+            "housing_budget_sek_per_year": null,
+            "housing_budget_sek_per_year_min": null,
+            "housing_budget_sek_per_year_max": null,
+            "housing_budget_dkk_per_year": null,
+            "housing_budget_dkk_per_year_min": null,
+            "housing_budget_dkk_per_year_max": null,
+            "official_student_housing_budget_sek_per_month_examples": null,
+            "official_student_total_budget_sek_per_month_examples": null,
+            "housing_options": [],
+            "official_living_cost_items": [],
+            "official_rent_items": []
         }
     },
     {
@@ -938,16 +1708,19 @@
             "unverified_critical_fields": [
                 "program",
                 "language",
+                "admission",
+                "non_eu_eligibility",
                 "tuition",
                 "scholarship",
+                "deadline",
                 "curriculum",
-                "admission"
+                "housing"
             ],
             "has_checked_source_log": false,
-            "audited_at": "2026-07-14"
+            "audited_at": "2026-08-14"
         },
         "quality_control": {
-            "checked_at": "2026-07-14",
+            "checked_at": "2026-08-14",
             "qc_status": "needs_revision",
             "remaining_verification_tasks": [
                 {
@@ -959,6 +1732,14 @@
                     "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
+                    "en": "Add a checked official source for admission.",
+                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for non_eu_eligibility.",
+                    "tr": "non_eu_eligibility için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
                     "en": "Add a checked official source for tuition.",
                     "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
                 },
@@ -967,18 +1748,161 @@
                     "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
+                    "en": "Add a checked official source for deadline.",
+                    "tr": "deadline için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
                     "en": "Add a checked official source for curriculum.",
                     "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
-                    "en": "Add a checked official source for admission.",
-                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                    "en": "Add a checked official source for housing.",
+                    "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
                 }
             ],
             "qc_notes": {
                 "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
                 "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
-            }
+            },
+            "failed_canary_tests": [
+                "missing_or_unverified_critical_fields"
+            ]
+        },
+        "student_sentiment_profile": {},
+        "source_profile": {
+            "field_confidence": {
+                "program_basic_info": "unknown",
+                "language": "unknown",
+                "tuition": "unknown",
+                "scholarship": "unknown",
+                "curriculum": "unknown",
+                "admission": "unknown",
+                "deadlines": "unknown",
+                "housing": "unknown",
+                "program": "unknown",
+                "non_eu_eligibility": "unknown",
+                "deadline": "unknown"
+            },
+            "needs_verification": true
+        },
+        "teaching_language": [
+            "Unknown"
+        ],
+        "tuition_eur_per_year": null,
+        "annual_fee_eur": null,
+        "language_profile": {
+            "teaching_language": [
+                "Unknown"
+            ],
+            "language_risk": "unknown",
+            "teaching_languages": [
+                "Unknown"
+            ]
+        },
+        "cost_profile": {
+            "tuition_eur_per_year_estimated": null,
+            "tuition_eur_per_year_min": null,
+            "tuition_eur_per_year_max": null,
+            "total_academic_cost_eur_per_year_estimated": null,
+            "regional_tax_eur": null,
+            "student_contribution_eur": null,
+            "enrollment_fee_eur": null,
+            "tuition_usd_per_year": null,
+            "tuition_usd_per_year_at_three_quarters": null,
+            "tuition_usd_per_quarter": null,
+            "tuition_usd_per_quarter_nonresident_full_time": null,
+            "tuition_gbp_per_year": null,
+            "tuition_chf_per_year": null,
+            "tuition_sek_per_year": null,
+            "tuition_dkk_per_year": null,
+            "mandatory_fees_usd_per_year": null,
+            "total_cost_of_attendance_usd_per_year": null,
+            "living_cost_usd_per_year_i20": null,
+            "living_cost_usd_per_year": null,
+            "living_cost_usd_per_year_min": null,
+            "living_cost_usd_per_year_max": null,
+            "living_cost_gbp_per_year": null,
+            "living_cost_gbp_per_year_min": null,
+            "living_cost_gbp_per_year_max": null,
+            "living_cost_chf_per_year": null,
+            "living_cost_chf_per_year_min": null,
+            "living_cost_chf_per_year_max": null,
+            "living_cost_sek_per_year": null,
+            "living_cost_sek_per_year_min": null,
+            "living_cost_sek_per_year_max": null,
+            "living_cost_dkk_per_year": null,
+            "living_cost_dkk_per_year_min": null,
+            "living_cost_dkk_per_year_max": null,
+            "tuition_items": []
+        },
+        "scholarship_profile": {
+            "regional_scholarship_available": null,
+            "regional_scholarship_name": null,
+            "non_eu_eligible": null,
+            "scholarship_deadline": null,
+            "funding_notes": null,
+            "opportunities": []
+        },
+        "application_timeline_profile": {
+            "non_eu_deadline": null,
+            "winter_deadline": null,
+            "application_deadline": null,
+            "deadline_notes": null,
+            "deadline_events": []
+        },
+        "eligibility_profile": {
+            "eligible_for_non_eu": null
+        },
+        "living_profile": {
+            "average_room_rent_eur": null,
+            "average_room_rent_eur_min": null,
+            "average_room_rent_eur_max": null,
+            "monthly_living_cost_eur_min": null,
+            "monthly_living_cost_eur_max": null,
+            "monthly_living_cost_eur_estimated": null,
+            "living_cost_eur_per_month": null,
+            "housing_difficulty": null,
+            "housing_notes": null,
+            "average_room_rent_usd_per_month_min": null,
+            "average_room_rent_usd_per_month_max": null,
+            "average_room_rent_gbp_per_month_min": null,
+            "average_room_rent_gbp_per_month_max": null,
+            "average_room_rent_chf_per_month_min": null,
+            "average_room_rent_chf_per_month_max": null,
+            "average_room_rent_sek_per_month_min": null,
+            "average_room_rent_sek_per_month_max": null,
+            "average_room_rent_dkk_per_month_min": null,
+            "average_room_rent_dkk_per_month_max": null,
+            "monthly_housing_rent_usd_per_month_min": null,
+            "monthly_housing_rent_usd_per_month_max": null,
+            "monthly_housing_rent_gbp_per_month_min": null,
+            "monthly_housing_rent_gbp_per_month_max": null,
+            "monthly_housing_rent_chf_per_month_min": null,
+            "monthly_housing_rent_chf_per_month_max": null,
+            "monthly_housing_rent_sek_per_month_min": null,
+            "monthly_housing_rent_sek_per_month_max": null,
+            "monthly_housing_rent_dkk_per_month_min": null,
+            "monthly_housing_rent_dkk_per_month_max": null,
+            "housing_budget_usd_per_year": null,
+            "housing_budget_usd_per_year_min": null,
+            "housing_budget_usd_per_year_max": null,
+            "housing_budget_gbp_per_year": null,
+            "housing_budget_gbp_per_year_min": null,
+            "housing_budget_gbp_per_year_max": null,
+            "housing_budget_chf_per_year": null,
+            "housing_budget_chf_per_year_min": null,
+            "housing_budget_chf_per_year_max": null,
+            "housing_budget_sek_per_year": null,
+            "housing_budget_sek_per_year_min": null,
+            "housing_budget_sek_per_year_max": null,
+            "housing_budget_dkk_per_year": null,
+            "housing_budget_dkk_per_year_min": null,
+            "housing_budget_dkk_per_year_max": null,
+            "official_student_housing_budget_sek_per_month_examples": null,
+            "official_student_total_budget_sek_per_month_examples": null,
+            "housing_options": [],
+            "official_living_cost_items": [],
+            "official_rent_items": []
         }
     },
     {
@@ -1094,16 +2018,19 @@
             "unverified_critical_fields": [
                 "program",
                 "language",
+                "admission",
+                "non_eu_eligibility",
                 "tuition",
                 "scholarship",
+                "deadline",
                 "curriculum",
-                "admission"
+                "housing"
             ],
             "has_checked_source_log": false,
-            "audited_at": "2026-07-14"
+            "audited_at": "2026-08-14"
         },
         "quality_control": {
-            "checked_at": "2026-07-14",
+            "checked_at": "2026-08-14",
             "qc_status": "needs_revision",
             "remaining_verification_tasks": [
                 {
@@ -1115,6 +2042,14 @@
                     "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
+                    "en": "Add a checked official source for admission.",
+                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for non_eu_eligibility.",
+                    "tr": "non_eu_eligibility için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
                     "en": "Add a checked official source for tuition.",
                     "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
                 },
@@ -1123,18 +2058,161 @@
                     "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
+                    "en": "Add a checked official source for deadline.",
+                    "tr": "deadline için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
                     "en": "Add a checked official source for curriculum.",
                     "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
-                    "en": "Add a checked official source for admission.",
-                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                    "en": "Add a checked official source for housing.",
+                    "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
                 }
             ],
             "qc_notes": {
                 "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
                 "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
-            }
+            },
+            "failed_canary_tests": [
+                "missing_or_unverified_critical_fields"
+            ]
+        },
+        "student_sentiment_profile": {},
+        "source_profile": {
+            "field_confidence": {
+                "program_basic_info": "unknown",
+                "language": "unknown",
+                "tuition": "unknown",
+                "scholarship": "unknown",
+                "curriculum": "unknown",
+                "admission": "unknown",
+                "deadlines": "unknown",
+                "housing": "unknown",
+                "program": "unknown",
+                "non_eu_eligibility": "unknown",
+                "deadline": "unknown"
+            },
+            "needs_verification": true
+        },
+        "teaching_language": [
+            "Unknown"
+        ],
+        "tuition_eur_per_year": null,
+        "annual_fee_eur": null,
+        "language_profile": {
+            "teaching_language": [
+                "Unknown"
+            ],
+            "language_risk": "unknown",
+            "teaching_languages": [
+                "Unknown"
+            ]
+        },
+        "cost_profile": {
+            "tuition_eur_per_year_estimated": null,
+            "tuition_eur_per_year_min": null,
+            "tuition_eur_per_year_max": null,
+            "total_academic_cost_eur_per_year_estimated": null,
+            "regional_tax_eur": null,
+            "student_contribution_eur": null,
+            "enrollment_fee_eur": null,
+            "tuition_usd_per_year": null,
+            "tuition_usd_per_year_at_three_quarters": null,
+            "tuition_usd_per_quarter": null,
+            "tuition_usd_per_quarter_nonresident_full_time": null,
+            "tuition_gbp_per_year": null,
+            "tuition_chf_per_year": null,
+            "tuition_sek_per_year": null,
+            "tuition_dkk_per_year": null,
+            "mandatory_fees_usd_per_year": null,
+            "total_cost_of_attendance_usd_per_year": null,
+            "living_cost_usd_per_year_i20": null,
+            "living_cost_usd_per_year": null,
+            "living_cost_usd_per_year_min": null,
+            "living_cost_usd_per_year_max": null,
+            "living_cost_gbp_per_year": null,
+            "living_cost_gbp_per_year_min": null,
+            "living_cost_gbp_per_year_max": null,
+            "living_cost_chf_per_year": null,
+            "living_cost_chf_per_year_min": null,
+            "living_cost_chf_per_year_max": null,
+            "living_cost_sek_per_year": null,
+            "living_cost_sek_per_year_min": null,
+            "living_cost_sek_per_year_max": null,
+            "living_cost_dkk_per_year": null,
+            "living_cost_dkk_per_year_min": null,
+            "living_cost_dkk_per_year_max": null,
+            "tuition_items": []
+        },
+        "scholarship_profile": {
+            "regional_scholarship_available": null,
+            "regional_scholarship_name": null,
+            "non_eu_eligible": null,
+            "scholarship_deadline": null,
+            "funding_notes": null,
+            "opportunities": []
+        },
+        "application_timeline_profile": {
+            "non_eu_deadline": null,
+            "winter_deadline": null,
+            "application_deadline": null,
+            "deadline_notes": null,
+            "deadline_events": []
+        },
+        "eligibility_profile": {
+            "eligible_for_non_eu": null
+        },
+        "living_profile": {
+            "average_room_rent_eur": null,
+            "average_room_rent_eur_min": null,
+            "average_room_rent_eur_max": null,
+            "monthly_living_cost_eur_min": null,
+            "monthly_living_cost_eur_max": null,
+            "monthly_living_cost_eur_estimated": null,
+            "living_cost_eur_per_month": null,
+            "housing_difficulty": null,
+            "housing_notes": null,
+            "average_room_rent_usd_per_month_min": null,
+            "average_room_rent_usd_per_month_max": null,
+            "average_room_rent_gbp_per_month_min": null,
+            "average_room_rent_gbp_per_month_max": null,
+            "average_room_rent_chf_per_month_min": null,
+            "average_room_rent_chf_per_month_max": null,
+            "average_room_rent_sek_per_month_min": null,
+            "average_room_rent_sek_per_month_max": null,
+            "average_room_rent_dkk_per_month_min": null,
+            "average_room_rent_dkk_per_month_max": null,
+            "monthly_housing_rent_usd_per_month_min": null,
+            "monthly_housing_rent_usd_per_month_max": null,
+            "monthly_housing_rent_gbp_per_month_min": null,
+            "monthly_housing_rent_gbp_per_month_max": null,
+            "monthly_housing_rent_chf_per_month_min": null,
+            "monthly_housing_rent_chf_per_month_max": null,
+            "monthly_housing_rent_sek_per_month_min": null,
+            "monthly_housing_rent_sek_per_month_max": null,
+            "monthly_housing_rent_dkk_per_month_min": null,
+            "monthly_housing_rent_dkk_per_month_max": null,
+            "housing_budget_usd_per_year": null,
+            "housing_budget_usd_per_year_min": null,
+            "housing_budget_usd_per_year_max": null,
+            "housing_budget_gbp_per_year": null,
+            "housing_budget_gbp_per_year_min": null,
+            "housing_budget_gbp_per_year_max": null,
+            "housing_budget_chf_per_year": null,
+            "housing_budget_chf_per_year_min": null,
+            "housing_budget_chf_per_year_max": null,
+            "housing_budget_sek_per_year": null,
+            "housing_budget_sek_per_year_min": null,
+            "housing_budget_sek_per_year_max": null,
+            "housing_budget_dkk_per_year": null,
+            "housing_budget_dkk_per_year_min": null,
+            "housing_budget_dkk_per_year_max": null,
+            "official_student_housing_budget_sek_per_month_examples": null,
+            "official_student_total_budget_sek_per_month_examples": null,
+            "housing_options": [],
+            "official_living_cost_items": [],
+            "official_rent_items": []
         }
     },
     {
@@ -1251,16 +2329,19 @@
             "unverified_critical_fields": [
                 "program",
                 "language",
+                "admission",
+                "non_eu_eligibility",
                 "tuition",
                 "scholarship",
+                "deadline",
                 "curriculum",
-                "admission"
+                "housing"
             ],
             "has_checked_source_log": false,
-            "audited_at": "2026-07-14"
+            "audited_at": "2026-08-14"
         },
         "quality_control": {
-            "checked_at": "2026-07-14",
+            "checked_at": "2026-08-14",
             "qc_status": "needs_revision",
             "remaining_verification_tasks": [
                 {
@@ -1272,6 +2353,14 @@
                     "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
+                    "en": "Add a checked official source for admission.",
+                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for non_eu_eligibility.",
+                    "tr": "non_eu_eligibility için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
                     "en": "Add a checked official source for tuition.",
                     "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
                 },
@@ -1280,18 +2369,161 @@
                     "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
+                    "en": "Add a checked official source for deadline.",
+                    "tr": "deadline için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
                     "en": "Add a checked official source for curriculum.",
                     "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
-                    "en": "Add a checked official source for admission.",
-                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                    "en": "Add a checked official source for housing.",
+                    "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
                 }
             ],
             "qc_notes": {
                 "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
                 "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
-            }
+            },
+            "failed_canary_tests": [
+                "missing_or_unverified_critical_fields"
+            ]
+        },
+        "student_sentiment_profile": {},
+        "source_profile": {
+            "field_confidence": {
+                "program_basic_info": "unknown",
+                "language": "unknown",
+                "tuition": "unknown",
+                "scholarship": "unknown",
+                "curriculum": "unknown",
+                "admission": "unknown",
+                "deadlines": "unknown",
+                "housing": "unknown",
+                "program": "unknown",
+                "non_eu_eligibility": "unknown",
+                "deadline": "unknown"
+            },
+            "needs_verification": true
+        },
+        "teaching_language": [
+            "Unknown"
+        ],
+        "tuition_eur_per_year": null,
+        "annual_fee_eur": null,
+        "language_profile": {
+            "teaching_language": [
+                "Unknown"
+            ],
+            "language_risk": "unknown",
+            "teaching_languages": [
+                "Unknown"
+            ]
+        },
+        "cost_profile": {
+            "tuition_eur_per_year_estimated": null,
+            "tuition_eur_per_year_min": null,
+            "tuition_eur_per_year_max": null,
+            "total_academic_cost_eur_per_year_estimated": null,
+            "regional_tax_eur": null,
+            "student_contribution_eur": null,
+            "enrollment_fee_eur": null,
+            "tuition_usd_per_year": null,
+            "tuition_usd_per_year_at_three_quarters": null,
+            "tuition_usd_per_quarter": null,
+            "tuition_usd_per_quarter_nonresident_full_time": null,
+            "tuition_gbp_per_year": null,
+            "tuition_chf_per_year": null,
+            "tuition_sek_per_year": null,
+            "tuition_dkk_per_year": null,
+            "mandatory_fees_usd_per_year": null,
+            "total_cost_of_attendance_usd_per_year": null,
+            "living_cost_usd_per_year_i20": null,
+            "living_cost_usd_per_year": null,
+            "living_cost_usd_per_year_min": null,
+            "living_cost_usd_per_year_max": null,
+            "living_cost_gbp_per_year": null,
+            "living_cost_gbp_per_year_min": null,
+            "living_cost_gbp_per_year_max": null,
+            "living_cost_chf_per_year": null,
+            "living_cost_chf_per_year_min": null,
+            "living_cost_chf_per_year_max": null,
+            "living_cost_sek_per_year": null,
+            "living_cost_sek_per_year_min": null,
+            "living_cost_sek_per_year_max": null,
+            "living_cost_dkk_per_year": null,
+            "living_cost_dkk_per_year_min": null,
+            "living_cost_dkk_per_year_max": null,
+            "tuition_items": []
+        },
+        "scholarship_profile": {
+            "regional_scholarship_available": null,
+            "regional_scholarship_name": null,
+            "non_eu_eligible": null,
+            "scholarship_deadline": null,
+            "funding_notes": null,
+            "opportunities": []
+        },
+        "application_timeline_profile": {
+            "non_eu_deadline": null,
+            "winter_deadline": null,
+            "application_deadline": null,
+            "deadline_notes": null,
+            "deadline_events": []
+        },
+        "eligibility_profile": {
+            "eligible_for_non_eu": null
+        },
+        "living_profile": {
+            "average_room_rent_eur": null,
+            "average_room_rent_eur_min": null,
+            "average_room_rent_eur_max": null,
+            "monthly_living_cost_eur_min": null,
+            "monthly_living_cost_eur_max": null,
+            "monthly_living_cost_eur_estimated": null,
+            "living_cost_eur_per_month": null,
+            "housing_difficulty": null,
+            "housing_notes": null,
+            "average_room_rent_usd_per_month_min": null,
+            "average_room_rent_usd_per_month_max": null,
+            "average_room_rent_gbp_per_month_min": null,
+            "average_room_rent_gbp_per_month_max": null,
+            "average_room_rent_chf_per_month_min": null,
+            "average_room_rent_chf_per_month_max": null,
+            "average_room_rent_sek_per_month_min": null,
+            "average_room_rent_sek_per_month_max": null,
+            "average_room_rent_dkk_per_month_min": null,
+            "average_room_rent_dkk_per_month_max": null,
+            "monthly_housing_rent_usd_per_month_min": null,
+            "monthly_housing_rent_usd_per_month_max": null,
+            "monthly_housing_rent_gbp_per_month_min": null,
+            "monthly_housing_rent_gbp_per_month_max": null,
+            "monthly_housing_rent_chf_per_month_min": null,
+            "monthly_housing_rent_chf_per_month_max": null,
+            "monthly_housing_rent_sek_per_month_min": null,
+            "monthly_housing_rent_sek_per_month_max": null,
+            "monthly_housing_rent_dkk_per_month_min": null,
+            "monthly_housing_rent_dkk_per_month_max": null,
+            "housing_budget_usd_per_year": null,
+            "housing_budget_usd_per_year_min": null,
+            "housing_budget_usd_per_year_max": null,
+            "housing_budget_gbp_per_year": null,
+            "housing_budget_gbp_per_year_min": null,
+            "housing_budget_gbp_per_year_max": null,
+            "housing_budget_chf_per_year": null,
+            "housing_budget_chf_per_year_min": null,
+            "housing_budget_chf_per_year_max": null,
+            "housing_budget_sek_per_year": null,
+            "housing_budget_sek_per_year_min": null,
+            "housing_budget_sek_per_year_max": null,
+            "housing_budget_dkk_per_year": null,
+            "housing_budget_dkk_per_year_min": null,
+            "housing_budget_dkk_per_year_max": null,
+            "official_student_housing_budget_sek_per_month_examples": null,
+            "official_student_total_budget_sek_per_month_examples": null,
+            "housing_options": [],
+            "official_living_cost_items": [],
+            "official_rent_items": []
         }
     },
     {
@@ -1408,16 +2640,19 @@
             "unverified_critical_fields": [
                 "program",
                 "language",
+                "admission",
+                "non_eu_eligibility",
                 "tuition",
                 "scholarship",
+                "deadline",
                 "curriculum",
-                "admission"
+                "housing"
             ],
             "has_checked_source_log": false,
-            "audited_at": "2026-07-14"
+            "audited_at": "2026-08-14"
         },
         "quality_control": {
-            "checked_at": "2026-07-14",
+            "checked_at": "2026-08-14",
             "qc_status": "needs_revision",
             "remaining_verification_tasks": [
                 {
@@ -1429,6 +2664,14 @@
                     "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
+                    "en": "Add a checked official source for admission.",
+                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for non_eu_eligibility.",
+                    "tr": "non_eu_eligibility için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
                     "en": "Add a checked official source for tuition.",
                     "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
                 },
@@ -1437,18 +2680,161 @@
                     "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
+                    "en": "Add a checked official source for deadline.",
+                    "tr": "deadline için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
                     "en": "Add a checked official source for curriculum.",
                     "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
-                    "en": "Add a checked official source for admission.",
-                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                    "en": "Add a checked official source for housing.",
+                    "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
                 }
             ],
             "qc_notes": {
                 "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
                 "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
-            }
+            },
+            "failed_canary_tests": [
+                "missing_or_unverified_critical_fields"
+            ]
+        },
+        "student_sentiment_profile": {},
+        "source_profile": {
+            "field_confidence": {
+                "program_basic_info": "unknown",
+                "language": "unknown",
+                "tuition": "unknown",
+                "scholarship": "unknown",
+                "curriculum": "unknown",
+                "admission": "unknown",
+                "deadlines": "unknown",
+                "housing": "unknown",
+                "program": "unknown",
+                "non_eu_eligibility": "unknown",
+                "deadline": "unknown"
+            },
+            "needs_verification": true
+        },
+        "teaching_language": [
+            "Unknown"
+        ],
+        "tuition_eur_per_year": null,
+        "annual_fee_eur": null,
+        "language_profile": {
+            "teaching_language": [
+                "Unknown"
+            ],
+            "language_risk": "unknown",
+            "teaching_languages": [
+                "Unknown"
+            ]
+        },
+        "cost_profile": {
+            "tuition_eur_per_year_estimated": null,
+            "tuition_eur_per_year_min": null,
+            "tuition_eur_per_year_max": null,
+            "total_academic_cost_eur_per_year_estimated": null,
+            "regional_tax_eur": null,
+            "student_contribution_eur": null,
+            "enrollment_fee_eur": null,
+            "tuition_usd_per_year": null,
+            "tuition_usd_per_year_at_three_quarters": null,
+            "tuition_usd_per_quarter": null,
+            "tuition_usd_per_quarter_nonresident_full_time": null,
+            "tuition_gbp_per_year": null,
+            "tuition_chf_per_year": null,
+            "tuition_sek_per_year": null,
+            "tuition_dkk_per_year": null,
+            "mandatory_fees_usd_per_year": null,
+            "total_cost_of_attendance_usd_per_year": null,
+            "living_cost_usd_per_year_i20": null,
+            "living_cost_usd_per_year": null,
+            "living_cost_usd_per_year_min": null,
+            "living_cost_usd_per_year_max": null,
+            "living_cost_gbp_per_year": null,
+            "living_cost_gbp_per_year_min": null,
+            "living_cost_gbp_per_year_max": null,
+            "living_cost_chf_per_year": null,
+            "living_cost_chf_per_year_min": null,
+            "living_cost_chf_per_year_max": null,
+            "living_cost_sek_per_year": null,
+            "living_cost_sek_per_year_min": null,
+            "living_cost_sek_per_year_max": null,
+            "living_cost_dkk_per_year": null,
+            "living_cost_dkk_per_year_min": null,
+            "living_cost_dkk_per_year_max": null,
+            "tuition_items": []
+        },
+        "scholarship_profile": {
+            "regional_scholarship_available": null,
+            "regional_scholarship_name": null,
+            "non_eu_eligible": null,
+            "scholarship_deadline": null,
+            "funding_notes": null,
+            "opportunities": []
+        },
+        "application_timeline_profile": {
+            "non_eu_deadline": null,
+            "winter_deadline": null,
+            "application_deadline": null,
+            "deadline_notes": null,
+            "deadline_events": []
+        },
+        "eligibility_profile": {
+            "eligible_for_non_eu": null
+        },
+        "living_profile": {
+            "average_room_rent_eur": null,
+            "average_room_rent_eur_min": null,
+            "average_room_rent_eur_max": null,
+            "monthly_living_cost_eur_min": null,
+            "monthly_living_cost_eur_max": null,
+            "monthly_living_cost_eur_estimated": null,
+            "living_cost_eur_per_month": null,
+            "housing_difficulty": null,
+            "housing_notes": null,
+            "average_room_rent_usd_per_month_min": null,
+            "average_room_rent_usd_per_month_max": null,
+            "average_room_rent_gbp_per_month_min": null,
+            "average_room_rent_gbp_per_month_max": null,
+            "average_room_rent_chf_per_month_min": null,
+            "average_room_rent_chf_per_month_max": null,
+            "average_room_rent_sek_per_month_min": null,
+            "average_room_rent_sek_per_month_max": null,
+            "average_room_rent_dkk_per_month_min": null,
+            "average_room_rent_dkk_per_month_max": null,
+            "monthly_housing_rent_usd_per_month_min": null,
+            "monthly_housing_rent_usd_per_month_max": null,
+            "monthly_housing_rent_gbp_per_month_min": null,
+            "monthly_housing_rent_gbp_per_month_max": null,
+            "monthly_housing_rent_chf_per_month_min": null,
+            "monthly_housing_rent_chf_per_month_max": null,
+            "monthly_housing_rent_sek_per_month_min": null,
+            "monthly_housing_rent_sek_per_month_max": null,
+            "monthly_housing_rent_dkk_per_month_min": null,
+            "monthly_housing_rent_dkk_per_month_max": null,
+            "housing_budget_usd_per_year": null,
+            "housing_budget_usd_per_year_min": null,
+            "housing_budget_usd_per_year_max": null,
+            "housing_budget_gbp_per_year": null,
+            "housing_budget_gbp_per_year_min": null,
+            "housing_budget_gbp_per_year_max": null,
+            "housing_budget_chf_per_year": null,
+            "housing_budget_chf_per_year_min": null,
+            "housing_budget_chf_per_year_max": null,
+            "housing_budget_sek_per_year": null,
+            "housing_budget_sek_per_year_min": null,
+            "housing_budget_sek_per_year_max": null,
+            "housing_budget_dkk_per_year": null,
+            "housing_budget_dkk_per_year_min": null,
+            "housing_budget_dkk_per_year_max": null,
+            "official_student_housing_budget_sek_per_month_examples": null,
+            "official_student_total_budget_sek_per_month_examples": null,
+            "housing_options": [],
+            "official_living_cost_items": [],
+            "official_rent_items": []
         }
     },
     {
@@ -1563,16 +2949,19 @@
             "unverified_critical_fields": [
                 "program",
                 "language",
+                "admission",
+                "non_eu_eligibility",
                 "tuition",
                 "scholarship",
+                "deadline",
                 "curriculum",
-                "admission"
+                "housing"
             ],
             "has_checked_source_log": false,
-            "audited_at": "2026-07-14"
+            "audited_at": "2026-08-14"
         },
         "quality_control": {
-            "checked_at": "2026-07-14",
+            "checked_at": "2026-08-14",
             "qc_status": "needs_revision",
             "remaining_verification_tasks": [
                 {
@@ -1584,6 +2973,14 @@
                     "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
+                    "en": "Add a checked official source for admission.",
+                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
+                    "en": "Add a checked official source for non_eu_eligibility.",
+                    "tr": "non_eu_eligibility için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
                     "en": "Add a checked official source for tuition.",
                     "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
                 },
@@ -1592,18 +2989,161 @@
                     "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
+                    "en": "Add a checked official source for deadline.",
+                    "tr": "deadline için kontrol edilmiş resmî kaynak ekleyin."
+                },
+                {
                     "en": "Add a checked official source for curriculum.",
                     "tr": "curriculum için kontrol edilmiş resmî kaynak ekleyin."
                 },
                 {
-                    "en": "Add a checked official source for admission.",
-                    "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+                    "en": "Add a checked official source for housing.",
+                    "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
                 }
             ],
             "qc_notes": {
                 "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
                 "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
-            }
+            },
+            "failed_canary_tests": [
+                "missing_or_unverified_critical_fields"
+            ]
+        },
+        "student_sentiment_profile": {},
+        "source_profile": {
+            "field_confidence": {
+                "program_basic_info": "unknown",
+                "language": "unknown",
+                "tuition": "unknown",
+                "scholarship": "unknown",
+                "curriculum": "unknown",
+                "admission": "unknown",
+                "deadlines": "unknown",
+                "housing": "unknown",
+                "program": "unknown",
+                "non_eu_eligibility": "unknown",
+                "deadline": "unknown"
+            },
+            "needs_verification": true
+        },
+        "teaching_language": [
+            "Unknown"
+        ],
+        "tuition_eur_per_year": null,
+        "annual_fee_eur": null,
+        "language_profile": {
+            "teaching_language": [
+                "Unknown"
+            ],
+            "language_risk": "unknown",
+            "teaching_languages": [
+                "Unknown"
+            ]
+        },
+        "cost_profile": {
+            "tuition_eur_per_year_estimated": null,
+            "tuition_eur_per_year_min": null,
+            "tuition_eur_per_year_max": null,
+            "total_academic_cost_eur_per_year_estimated": null,
+            "regional_tax_eur": null,
+            "student_contribution_eur": null,
+            "enrollment_fee_eur": null,
+            "tuition_usd_per_year": null,
+            "tuition_usd_per_year_at_three_quarters": null,
+            "tuition_usd_per_quarter": null,
+            "tuition_usd_per_quarter_nonresident_full_time": null,
+            "tuition_gbp_per_year": null,
+            "tuition_chf_per_year": null,
+            "tuition_sek_per_year": null,
+            "tuition_dkk_per_year": null,
+            "mandatory_fees_usd_per_year": null,
+            "total_cost_of_attendance_usd_per_year": null,
+            "living_cost_usd_per_year_i20": null,
+            "living_cost_usd_per_year": null,
+            "living_cost_usd_per_year_min": null,
+            "living_cost_usd_per_year_max": null,
+            "living_cost_gbp_per_year": null,
+            "living_cost_gbp_per_year_min": null,
+            "living_cost_gbp_per_year_max": null,
+            "living_cost_chf_per_year": null,
+            "living_cost_chf_per_year_min": null,
+            "living_cost_chf_per_year_max": null,
+            "living_cost_sek_per_year": null,
+            "living_cost_sek_per_year_min": null,
+            "living_cost_sek_per_year_max": null,
+            "living_cost_dkk_per_year": null,
+            "living_cost_dkk_per_year_min": null,
+            "living_cost_dkk_per_year_max": null,
+            "tuition_items": []
+        },
+        "scholarship_profile": {
+            "regional_scholarship_available": null,
+            "regional_scholarship_name": null,
+            "non_eu_eligible": null,
+            "scholarship_deadline": null,
+            "funding_notes": null,
+            "opportunities": []
+        },
+        "application_timeline_profile": {
+            "non_eu_deadline": null,
+            "winter_deadline": null,
+            "application_deadline": null,
+            "deadline_notes": null,
+            "deadline_events": []
+        },
+        "eligibility_profile": {
+            "eligible_for_non_eu": null
+        },
+        "living_profile": {
+            "average_room_rent_eur": null,
+            "average_room_rent_eur_min": null,
+            "average_room_rent_eur_max": null,
+            "monthly_living_cost_eur_min": null,
+            "monthly_living_cost_eur_max": null,
+            "monthly_living_cost_eur_estimated": null,
+            "living_cost_eur_per_month": null,
+            "housing_difficulty": null,
+            "housing_notes": null,
+            "average_room_rent_usd_per_month_min": null,
+            "average_room_rent_usd_per_month_max": null,
+            "average_room_rent_gbp_per_month_min": null,
+            "average_room_rent_gbp_per_month_max": null,
+            "average_room_rent_chf_per_month_min": null,
+            "average_room_rent_chf_per_month_max": null,
+            "average_room_rent_sek_per_month_min": null,
+            "average_room_rent_sek_per_month_max": null,
+            "average_room_rent_dkk_per_month_min": null,
+            "average_room_rent_dkk_per_month_max": null,
+            "monthly_housing_rent_usd_per_month_min": null,
+            "monthly_housing_rent_usd_per_month_max": null,
+            "monthly_housing_rent_gbp_per_month_min": null,
+            "monthly_housing_rent_gbp_per_month_max": null,
+            "monthly_housing_rent_chf_per_month_min": null,
+            "monthly_housing_rent_chf_per_month_max": null,
+            "monthly_housing_rent_sek_per_month_min": null,
+            "monthly_housing_rent_sek_per_month_max": null,
+            "monthly_housing_rent_dkk_per_month_min": null,
+            "monthly_housing_rent_dkk_per_month_max": null,
+            "housing_budget_usd_per_year": null,
+            "housing_budget_usd_per_year_min": null,
+            "housing_budget_usd_per_year_max": null,
+            "housing_budget_gbp_per_year": null,
+            "housing_budget_gbp_per_year_min": null,
+            "housing_budget_gbp_per_year_max": null,
+            "housing_budget_chf_per_year": null,
+            "housing_budget_chf_per_year_min": null,
+            "housing_budget_chf_per_year_max": null,
+            "housing_budget_sek_per_year": null,
+            "housing_budget_sek_per_year_min": null,
+            "housing_budget_sek_per_year_max": null,
+            "housing_budget_dkk_per_year": null,
+            "housing_budget_dkk_per_year_min": null,
+            "housing_budget_dkk_per_year_max": null,
+            "official_student_housing_budget_sek_per_month_examples": null,
+            "official_student_total_budget_sek_per_month_examples": null,
+            "housing_options": [],
+            "official_living_cost_items": [],
+            "official_rent_items": []
         }
     }
 ]

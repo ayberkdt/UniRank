@@ -37,6 +37,15 @@
       "verification_notes": {
         "en": "",
         "tr": ""
+      },
+      "gre": {
+        "policy": "unknown",
+        "test_type": "unknown",
+        "minimum_scores": {},
+        "recommended_scores": {},
+        "validity_rule": "",
+        "waiver_rules": [],
+        "source_ids": []
       }
     },
     "language_profile": {
@@ -47,7 +56,10 @@
       "english_level_required": null,
       "accepted_english_tests": [],
       "mixed_language_warning": "",
-      "language_risk": "unknown"
+      "language_risk": "unknown",
+      "teaching_languages": [
+        "Unknown"
+      ]
     },
     "cost_profile": {
       "academic_year": "2026/2027 Fall admission; 2025/2026 tuition",
@@ -60,7 +72,23 @@
       "source_notes": {
         "en": "The official 2025/26 table lists TRY 33,300 for international postgraduate entrants in 2024/25 or 2025/26; the 2026/27 amount must be rechecked.",
         "tr": "Resmî 2025/26 tablosu 2024/25 veya 2025/26 girişli uluslararası lisansüstü öğrenciler için 33.300 TL gösterir; 2026/27 tutarı yeniden kontrol edilmelidir."
-      }
+      },
+      "living_cost_usd_per_year_i20": null,
+      "living_cost_usd_per_year": null,
+      "living_cost_usd_per_year_min": null,
+      "living_cost_usd_per_year_max": null,
+      "living_cost_gbp_per_year": null,
+      "living_cost_gbp_per_year_min": null,
+      "living_cost_gbp_per_year_max": null,
+      "living_cost_chf_per_year": null,
+      "living_cost_chf_per_year_min": null,
+      "living_cost_chf_per_year_max": null,
+      "living_cost_sek_per_year": null,
+      "living_cost_sek_per_year_min": null,
+      "living_cost_sek_per_year_max": null,
+      "living_cost_dkk_per_year": null,
+      "living_cost_dkk_per_year_min": null,
+      "living_cost_dkk_per_year_max": null
     },
     "scholarship_profile": {
       "regional_scholarship_available": null,
@@ -71,25 +99,67 @@
       "scholarship_deadline": null,
       "scholarship_application_url": null,
       "funding_competitiveness": "unknown",
-      "funding_notes": {
-        "en": "No current programme-specific funding was verified.",
-        "tr": "Güncel programa özgü finansman doğrulanamadı."
-      }
+      "funding_notes": null,
+      "application_mode": "unknown",
+      "automatic_consideration": null,
+      "separate_application_required": null,
+      "opportunities": []
     },
     "living_profile": {
       "city_cost_level": "unknown",
       "monthly_living_cost_eur_min": null,
       "monthly_living_cost_eur_max": null,
       "monthly_living_cost_eur_estimated": null,
-      "housing_difficulty": "unknown",
+      "housing_difficulty": null,
       "student_housing_available": null,
       "average_room_rent_eur_min": null,
       "average_room_rent_eur_max": null,
       "living_risk": "unknown",
-      "housing_notes": {
-        "en": "No current official housing budget was retained.",
-        "tr": "Güncel resmî konut bütçesi kaydedilmedi."
-      }
+      "housing_notes": null,
+      "average_room_rent_eur": null,
+      "living_cost_eur_per_month": null,
+      "average_room_rent_usd_per_month_min": null,
+      "average_room_rent_usd_per_month_max": null,
+      "average_room_rent_gbp_per_month_min": null,
+      "average_room_rent_gbp_per_month_max": null,
+      "average_room_rent_chf_per_month_min": null,
+      "average_room_rent_chf_per_month_max": null,
+      "average_room_rent_sek_per_month_min": null,
+      "average_room_rent_sek_per_month_max": null,
+      "average_room_rent_dkk_per_month_min": null,
+      "average_room_rent_dkk_per_month_max": null,
+      "monthly_housing_rent_usd_per_month_min": null,
+      "monthly_housing_rent_usd_per_month_max": null,
+      "monthly_housing_rent_gbp_per_month_min": null,
+      "monthly_housing_rent_gbp_per_month_max": null,
+      "monthly_housing_rent_chf_per_month_min": null,
+      "monthly_housing_rent_chf_per_month_max": null,
+      "monthly_housing_rent_sek_per_month_min": null,
+      "monthly_housing_rent_sek_per_month_max": null,
+      "monthly_housing_rent_dkk_per_month_min": null,
+      "monthly_housing_rent_dkk_per_month_max": null,
+      "housing_budget_usd_per_year": null,
+      "housing_budget_usd_per_year_min": null,
+      "housing_budget_usd_per_year_max": null,
+      "housing_budget_gbp_per_year": null,
+      "housing_budget_gbp_per_year_min": null,
+      "housing_budget_gbp_per_year_max": null,
+      "housing_budget_chf_per_year": null,
+      "housing_budget_chf_per_year_min": null,
+      "housing_budget_chf_per_year_max": null,
+      "housing_budget_sek_per_year": null,
+      "housing_budget_sek_per_year_min": null,
+      "housing_budget_sek_per_year_max": null,
+      "housing_budget_dkk_per_year": null,
+      "housing_budget_dkk_per_year_min": null,
+      "housing_budget_dkk_per_year_max": null,
+      "official_student_housing_budget_sek_per_month_examples": null,
+      "official_student_total_budget_sek_per_month_examples": null,
+      "housing_access": "unknown",
+      "housing_application_separate": null,
+      "housing_options": [],
+      "official_living_cost_items": [],
+      "official_rent_items": []
     },
     "curriculum_profile": {
       "tracks": [
@@ -225,7 +295,7 @@
           "source_type": "official_program_page",
           "title": "ITU Aeronautics and Astronautics Engineering MSc",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program"
           ],
@@ -240,7 +310,7 @@
           "source_type": "official_curriculum_page",
           "title": "ITU Aeronautics and Astronautics Engineering study areas",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "curriculum"
           ],
@@ -255,7 +325,7 @@
           "source_type": "official_admission_page",
           "title": "ITU 2026/27 Aeronautics and Astronautics admission conditions",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "admission",
             "non_eu_eligibility",
@@ -272,7 +342,7 @@
           "source_type": "official_tuition_page",
           "title": "ITU 2025/26 tuition fees",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "tuition"
           ],
@@ -287,7 +357,7 @@
           "source_type": "official_department_page",
           "title": "ITU Aeronautics and Astronautics programme profile",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "research",
             "department"
@@ -314,7 +384,8 @@
         "research": "high",
         "industry": "unknown",
         "living": "unknown",
-        "student_sentiment": "unknown"
+        "student_sentiment": "unknown",
+        "housing": "unknown"
       },
       "needs_verification": true
     },
@@ -373,30 +444,35 @@
       ],
       "unverified_critical_fields": [
         "language",
-        "scholarship"
+        "scholarship",
+        "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-19"
+      "audited_at": "2026-08-14"
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-19",
+      "checked_at": "2026-08-14",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
       "remaining_verification_tasks": [
         {
-          "en": "Add current official evidence for language.",
-          "tr": "language için güncel resmî kanıt ekleyin."
+          "en": "Add a checked official source for language.",
+          "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
         },
         {
-          "en": "Add current official evidence for scholarship.",
-          "tr": "scholarship için güncel resmî kanıt ekleyin."
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for housing.",
+          "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
         }
       ],
       "qc_notes": {
-        "en": "Source audit completed; unsupported decision fields remain unknown and sentiment is not scored.",
-        "tr": "Kaynak denetimi tamamlandı; desteklenmeyen karar alanları bilinmiyor olarak kaldı ve öğrenci görüşü puanlanmadı."
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
       }
     },
     "qs_ranking": 279,
@@ -466,6 +542,15 @@
       "verification_notes": {
         "en": "",
         "tr": ""
+      },
+      "gre": {
+        "policy": "unknown",
+        "test_type": "unknown",
+        "minimum_scores": {},
+        "recommended_scores": {},
+        "validity_rule": "",
+        "waiver_rules": [],
+        "source_ids": []
       }
     },
     "language_profile": {
@@ -489,7 +574,23 @@
       "source_notes": {
         "en": "The official 2025/26 table lists TRY 33,300 for recent-entry international postgraduate students; 2026/27 must be rechecked.",
         "tr": "Resmî 2025/26 tablosu yakın dönem girişli uluslararası lisansüstü öğrenciler için 33.300 TL gösterir; 2026/27 yeniden kontrol edilmelidir."
-      }
+      },
+      "living_cost_usd_per_year_i20": null,
+      "living_cost_usd_per_year": null,
+      "living_cost_usd_per_year_min": null,
+      "living_cost_usd_per_year_max": null,
+      "living_cost_gbp_per_year": null,
+      "living_cost_gbp_per_year_min": null,
+      "living_cost_gbp_per_year_max": null,
+      "living_cost_chf_per_year": null,
+      "living_cost_chf_per_year_min": null,
+      "living_cost_chf_per_year_max": null,
+      "living_cost_sek_per_year": null,
+      "living_cost_sek_per_year_min": null,
+      "living_cost_sek_per_year_max": null,
+      "living_cost_dkk_per_year": null,
+      "living_cost_dkk_per_year_min": null,
+      "living_cost_dkk_per_year_max": null
     },
     "scholarship_profile": {
       "regional_scholarship_available": null,
@@ -500,25 +601,67 @@
       "scholarship_deadline": null,
       "scholarship_application_url": null,
       "funding_competitiveness": "unknown",
-      "funding_notes": {
-        "en": "No current programme-specific funding was verified.",
-        "tr": "Güncel programa özgü finansman doğrulanamadı."
-      }
+      "funding_notes": null,
+      "application_mode": "unknown",
+      "automatic_consideration": null,
+      "separate_application_required": null,
+      "opportunities": []
     },
     "living_profile": {
       "city_cost_level": "unknown",
       "monthly_living_cost_eur_min": null,
       "monthly_living_cost_eur_max": null,
       "monthly_living_cost_eur_estimated": null,
-      "housing_difficulty": "unknown",
+      "housing_difficulty": null,
       "student_housing_available": null,
       "average_room_rent_eur_min": null,
       "average_room_rent_eur_max": null,
       "living_risk": "unknown",
-      "housing_notes": {
-        "en": "No current official housing budget was retained.",
-        "tr": "Güncel resmî konut bütçesi kaydedilmedi."
-      }
+      "housing_notes": null,
+      "average_room_rent_eur": null,
+      "living_cost_eur_per_month": null,
+      "average_room_rent_usd_per_month_min": null,
+      "average_room_rent_usd_per_month_max": null,
+      "average_room_rent_gbp_per_month_min": null,
+      "average_room_rent_gbp_per_month_max": null,
+      "average_room_rent_chf_per_month_min": null,
+      "average_room_rent_chf_per_month_max": null,
+      "average_room_rent_sek_per_month_min": null,
+      "average_room_rent_sek_per_month_max": null,
+      "average_room_rent_dkk_per_month_min": null,
+      "average_room_rent_dkk_per_month_max": null,
+      "monthly_housing_rent_usd_per_month_min": null,
+      "monthly_housing_rent_usd_per_month_max": null,
+      "monthly_housing_rent_gbp_per_month_min": null,
+      "monthly_housing_rent_gbp_per_month_max": null,
+      "monthly_housing_rent_chf_per_month_min": null,
+      "monthly_housing_rent_chf_per_month_max": null,
+      "monthly_housing_rent_sek_per_month_min": null,
+      "monthly_housing_rent_sek_per_month_max": null,
+      "monthly_housing_rent_dkk_per_month_min": null,
+      "monthly_housing_rent_dkk_per_month_max": null,
+      "housing_budget_usd_per_year": null,
+      "housing_budget_usd_per_year_min": null,
+      "housing_budget_usd_per_year_max": null,
+      "housing_budget_gbp_per_year": null,
+      "housing_budget_gbp_per_year_min": null,
+      "housing_budget_gbp_per_year_max": null,
+      "housing_budget_chf_per_year": null,
+      "housing_budget_chf_per_year_min": null,
+      "housing_budget_chf_per_year_max": null,
+      "housing_budget_sek_per_year": null,
+      "housing_budget_sek_per_year_min": null,
+      "housing_budget_sek_per_year_max": null,
+      "housing_budget_dkk_per_year": null,
+      "housing_budget_dkk_per_year_min": null,
+      "housing_budget_dkk_per_year_max": null,
+      "official_student_housing_budget_sek_per_month_examples": null,
+      "official_student_total_budget_sek_per_month_examples": null,
+      "housing_access": "unknown",
+      "housing_application_separate": null,
+      "housing_options": [],
+      "official_living_cost_items": [],
+      "official_rent_items": []
     },
     "curriculum_profile": {
       "tracks": [
@@ -664,7 +807,7 @@
           "source_type": "official_program_page",
           "title": "ITU Astronautical Engineering MSc",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program",
             "language"
@@ -680,7 +823,7 @@
           "source_type": "official_curriculum_page",
           "title": "ITU Astronautical Engineering curriculum",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "curriculum"
           ],
@@ -695,7 +838,7 @@
           "source_type": "official_admission_page",
           "title": "ITU 2026/27 Astronautical Engineering admission conditions",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "admission",
             "non_eu_eligibility",
@@ -712,7 +855,7 @@
           "source_type": "official_tuition_page",
           "title": "ITU 2025/26 tuition fees",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "tuition"
           ],
@@ -727,7 +870,7 @@
           "source_type": "official_department_page",
           "title": "ITU Astronautical Engineering programme profile",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "research",
             "department"
@@ -754,7 +897,8 @@
         "research": "high",
         "industry": "unknown",
         "living": "unknown",
-        "student_sentiment": "unknown"
+        "student_sentiment": "unknown",
+        "housing": "unknown"
       },
       "needs_verification": true
     },
@@ -813,26 +957,31 @@
         "research"
       ],
       "unverified_critical_fields": [
-        "scholarship"
+        "scholarship",
+        "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-19"
+      "audited_at": "2026-08-14"
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-19",
+      "checked_at": "2026-08-14",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
       "remaining_verification_tasks": [
         {
-          "en": "Add current official evidence for scholarship.",
-          "tr": "scholarship için güncel resmî kanıt ekleyin."
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for housing.",
+          "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
         }
       ],
       "qc_notes": {
-        "en": "Source audit completed; unsupported decision fields remain unknown and sentiment is not scored.",
-        "tr": "Kaynak denetimi tamamlandı; desteklenmeyen karar alanları bilinmiyor olarak kaldı ve öğrenci görüşü puanlanmadı."
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
       }
     },
     "qs_ranking": 279,
@@ -902,6 +1051,15 @@
       "verification_notes": {
         "en": "",
         "tr": ""
+      },
+      "gre": {
+        "policy": "unknown",
+        "test_type": "unknown",
+        "minimum_scores": {},
+        "recommended_scores": {},
+        "validity_rule": "",
+        "waiver_rules": [],
+        "source_ids": []
       }
     },
     "language_profile": {
@@ -928,7 +1086,23 @@
       "source_notes": {
         "en": "The official 2025/26 table lists USD 375 per semester for foreign graduate students who started in Fall 2023/24 or later; 2026/27 must be rechecked.",
         "tr": "Resmî 2025/26 tablosu 2023/24 güz veya sonrasında başlayan yabancı lisansüstü öğrenciler için dönem başına 375 USD gösterir; 2026/27 yeniden kontrol edilmelidir."
-      }
+      },
+      "living_cost_usd_per_year_i20": null,
+      "living_cost_usd_per_year": null,
+      "living_cost_usd_per_year_min": null,
+      "living_cost_usd_per_year_max": null,
+      "living_cost_gbp_per_year": null,
+      "living_cost_gbp_per_year_min": null,
+      "living_cost_gbp_per_year_max": null,
+      "living_cost_chf_per_year": null,
+      "living_cost_chf_per_year_min": null,
+      "living_cost_chf_per_year_max": null,
+      "living_cost_sek_per_year": null,
+      "living_cost_sek_per_year_min": null,
+      "living_cost_sek_per_year_max": null,
+      "living_cost_dkk_per_year": null,
+      "living_cost_dkk_per_year_min": null,
+      "living_cost_dkk_per_year_max": null
     },
     "scholarship_profile": {
       "regional_scholarship_available": null,
@@ -939,25 +1113,67 @@
       "scholarship_deadline": null,
       "scholarship_application_url": null,
       "funding_competitiveness": "unknown",
-      "funding_notes": {
-        "en": "No current programme-specific funding was verified.",
-        "tr": "Güncel programa özgü finansman doğrulanamadı."
-      }
+      "funding_notes": null,
+      "application_mode": "unknown",
+      "automatic_consideration": null,
+      "separate_application_required": null,
+      "opportunities": []
     },
     "living_profile": {
       "city_cost_level": "unknown",
       "monthly_living_cost_eur_min": null,
       "monthly_living_cost_eur_max": null,
       "monthly_living_cost_eur_estimated": null,
-      "housing_difficulty": "unknown",
+      "housing_difficulty": null,
       "student_housing_available": null,
       "average_room_rent_eur_min": null,
       "average_room_rent_eur_max": null,
       "living_risk": "unknown",
-      "housing_notes": {
-        "en": "No current official housing budget was retained.",
-        "tr": "Güncel resmî konut bütçesi kaydedilmedi."
-      }
+      "housing_notes": null,
+      "average_room_rent_eur": null,
+      "living_cost_eur_per_month": null,
+      "average_room_rent_usd_per_month_min": null,
+      "average_room_rent_usd_per_month_max": null,
+      "average_room_rent_gbp_per_month_min": null,
+      "average_room_rent_gbp_per_month_max": null,
+      "average_room_rent_chf_per_month_min": null,
+      "average_room_rent_chf_per_month_max": null,
+      "average_room_rent_sek_per_month_min": null,
+      "average_room_rent_sek_per_month_max": null,
+      "average_room_rent_dkk_per_month_min": null,
+      "average_room_rent_dkk_per_month_max": null,
+      "monthly_housing_rent_usd_per_month_min": null,
+      "monthly_housing_rent_usd_per_month_max": null,
+      "monthly_housing_rent_gbp_per_month_min": null,
+      "monthly_housing_rent_gbp_per_month_max": null,
+      "monthly_housing_rent_chf_per_month_min": null,
+      "monthly_housing_rent_chf_per_month_max": null,
+      "monthly_housing_rent_sek_per_month_min": null,
+      "monthly_housing_rent_sek_per_month_max": null,
+      "monthly_housing_rent_dkk_per_month_min": null,
+      "monthly_housing_rent_dkk_per_month_max": null,
+      "housing_budget_usd_per_year": null,
+      "housing_budget_usd_per_year_min": null,
+      "housing_budget_usd_per_year_max": null,
+      "housing_budget_gbp_per_year": null,
+      "housing_budget_gbp_per_year_min": null,
+      "housing_budget_gbp_per_year_max": null,
+      "housing_budget_chf_per_year": null,
+      "housing_budget_chf_per_year_min": null,
+      "housing_budget_chf_per_year_max": null,
+      "housing_budget_sek_per_year": null,
+      "housing_budget_sek_per_year_min": null,
+      "housing_budget_sek_per_year_max": null,
+      "housing_budget_dkk_per_year": null,
+      "housing_budget_dkk_per_year_min": null,
+      "housing_budget_dkk_per_year_max": null,
+      "official_student_housing_budget_sek_per_month_examples": null,
+      "official_student_total_budget_sek_per_month_examples": null,
+      "housing_access": "unknown",
+      "housing_application_separate": null,
+      "housing_options": [],
+      "official_living_cost_items": [],
+      "official_rent_items": []
     },
     "curriculum_profile": {
       "tracks": [
@@ -1057,10 +1273,10 @@
       "non_eu_deadline": null,
       "eu_deadline": null,
       "timeline_risk": "high",
-      "deadline_notes": {
-        "en": "No current deadline was verified.",
-        "tr": "Güncel son başvuru tarihi doğrulanamadı."
-      }
+      "deadline_notes": null,
+      "winter_deadline": null,
+      "application_deadline": null,
+      "deadline_events": []
     },
     "student_sentiment_profile": {
       "student_satisfaction_score": null,
@@ -1097,7 +1313,7 @@
           "source_type": "official_program_page",
           "title": "METU Aerospace Engineering graduate programmes",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program"
           ],
@@ -1112,7 +1328,7 @@
           "source_type": "official_university_policy_page",
           "title": "METU language of instruction",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "language"
           ],
@@ -1127,7 +1343,7 @@
           "source_type": "official_admission_page",
           "title": "METU Aerospace Engineering graduate admission requirements",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "admission"
           ],
@@ -1142,7 +1358,7 @@
           "source_type": "official_admission_page",
           "title": "METU international graduate registration",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "non_eu_eligibility"
           ],
@@ -1157,7 +1373,7 @@
           "source_type": "official_curriculum_page",
           "title": "METU Aerospace Engineering MSc curriculum",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "curriculum"
           ],
@@ -1172,7 +1388,7 @@
           "source_type": "official_tuition_page",
           "title": "METU 2025/26 foreign graduate tuition",
           "access_status": "pdf",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "tuition"
           ],
@@ -1187,7 +1403,7 @@
           "source_type": "official_department_page",
           "title": "METU Aerospace Engineering graduate research areas",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "research",
             "department"
@@ -1214,7 +1430,10 @@
         "research": "high",
         "industry": "unknown",
         "living": "unknown",
-        "student_sentiment": "unknown"
+        "student_sentiment": "unknown",
+        "deadlines": "unknown",
+        "housing": "unknown",
+        "deadline": "unknown"
       },
       "needs_verification": true
     },
@@ -1272,26 +1491,36 @@
         "research"
       ],
       "unverified_critical_fields": [
-        "scholarship"
+        "scholarship",
+        "deadline",
+        "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-19"
+      "audited_at": "2026-08-14"
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-19",
+      "checked_at": "2026-08-14",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
       "remaining_verification_tasks": [
         {
-          "en": "Add current official evidence for scholarship.",
-          "tr": "scholarship için güncel resmî kanıt ekleyin."
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for deadline.",
+          "tr": "deadline için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for housing.",
+          "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
         }
       ],
       "qc_notes": {
-        "en": "Source audit completed; unsupported decision fields remain unknown and sentiment is not scored.",
-        "tr": "Kaynak denetimi tamamlandı; desteklenmeyen karar alanları bilinmiyor olarak kaldı ve öğrenci görüşü puanlanmadı."
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
       }
     },
     "qs_ranking": 305,
@@ -1367,6 +1596,15 @@
       "verification_notes": {
         "en": "",
         "tr": ""
+      },
+      "gre": {
+        "policy": "unknown",
+        "test_type": "unknown",
+        "minimum_scores": {},
+        "recommended_scores": {},
+        "validity_rule": "",
+        "waiver_rules": [],
+        "source_ids": []
       }
     },
     "language_profile": {
@@ -1394,7 +1632,23 @@
       "source_notes": {
         "en": "The official 2025/26 table lists USD 500 per semester for MA and PhD students with foreign citizenship; the 2026/27 amount must be rechecked.",
         "tr": "Resmî 2025/26 tablosu yabancı uyruklu yüksek lisans ve doktora öğrencileri için dönem başına 500 USD gösterir; 2026/27 tutarı yeniden kontrol edilmelidir."
-      }
+      },
+      "living_cost_usd_per_year_i20": null,
+      "living_cost_usd_per_year": null,
+      "living_cost_usd_per_year_min": null,
+      "living_cost_usd_per_year_max": null,
+      "living_cost_gbp_per_year": null,
+      "living_cost_gbp_per_year_min": null,
+      "living_cost_gbp_per_year_max": null,
+      "living_cost_chf_per_year": null,
+      "living_cost_chf_per_year_min": null,
+      "living_cost_chf_per_year_max": null,
+      "living_cost_sek_per_year": null,
+      "living_cost_sek_per_year_min": null,
+      "living_cost_sek_per_year_max": null,
+      "living_cost_dkk_per_year": null,
+      "living_cost_dkk_per_year_min": null,
+      "living_cost_dkk_per_year_max": null
     },
     "scholarship_profile": {
       "regional_scholarship_available": null,
@@ -1405,25 +1659,67 @@
       "scholarship_deadline": null,
       "scholarship_application_url": null,
       "funding_competitiveness": "unknown",
-      "funding_notes": {
-        "en": "No current programme-specific funding was verified.",
-        "tr": "Güncel programa özgü finansman doğrulanamadı."
-      }
+      "funding_notes": null,
+      "application_mode": "unknown",
+      "automatic_consideration": null,
+      "separate_application_required": null,
+      "opportunities": []
     },
     "living_profile": {
       "city_cost_level": "unknown",
       "monthly_living_cost_eur_min": null,
       "monthly_living_cost_eur_max": null,
       "monthly_living_cost_eur_estimated": null,
-      "housing_difficulty": "unknown",
+      "housing_difficulty": null,
       "student_housing_available": null,
       "average_room_rent_eur_min": null,
       "average_room_rent_eur_max": null,
       "living_risk": "unknown",
-      "housing_notes": {
-        "en": "No current official housing budget was retained.",
-        "tr": "Güncel resmî konut bütçesi kaydedilmedi."
-      }
+      "housing_notes": null,
+      "average_room_rent_eur": null,
+      "living_cost_eur_per_month": null,
+      "average_room_rent_usd_per_month_min": null,
+      "average_room_rent_usd_per_month_max": null,
+      "average_room_rent_gbp_per_month_min": null,
+      "average_room_rent_gbp_per_month_max": null,
+      "average_room_rent_chf_per_month_min": null,
+      "average_room_rent_chf_per_month_max": null,
+      "average_room_rent_sek_per_month_min": null,
+      "average_room_rent_sek_per_month_max": null,
+      "average_room_rent_dkk_per_month_min": null,
+      "average_room_rent_dkk_per_month_max": null,
+      "monthly_housing_rent_usd_per_month_min": null,
+      "monthly_housing_rent_usd_per_month_max": null,
+      "monthly_housing_rent_gbp_per_month_min": null,
+      "monthly_housing_rent_gbp_per_month_max": null,
+      "monthly_housing_rent_chf_per_month_min": null,
+      "monthly_housing_rent_chf_per_month_max": null,
+      "monthly_housing_rent_sek_per_month_min": null,
+      "monthly_housing_rent_sek_per_month_max": null,
+      "monthly_housing_rent_dkk_per_month_min": null,
+      "monthly_housing_rent_dkk_per_month_max": null,
+      "housing_budget_usd_per_year": null,
+      "housing_budget_usd_per_year_min": null,
+      "housing_budget_usd_per_year_max": null,
+      "housing_budget_gbp_per_year": null,
+      "housing_budget_gbp_per_year_min": null,
+      "housing_budget_gbp_per_year_max": null,
+      "housing_budget_chf_per_year": null,
+      "housing_budget_chf_per_year_min": null,
+      "housing_budget_chf_per_year_max": null,
+      "housing_budget_sek_per_year": null,
+      "housing_budget_sek_per_year_min": null,
+      "housing_budget_sek_per_year_max": null,
+      "housing_budget_dkk_per_year": null,
+      "housing_budget_dkk_per_year_min": null,
+      "housing_budget_dkk_per_year_max": null,
+      "official_student_housing_budget_sek_per_month_examples": null,
+      "official_student_total_budget_sek_per_month_examples": null,
+      "housing_access": "unknown",
+      "housing_application_separate": null,
+      "housing_options": [],
+      "official_living_cost_items": [],
+      "official_rent_items": []
     },
     "curriculum_profile": {
       "tracks": [
@@ -1565,7 +1861,7 @@
           "source_type": "official_program_page",
           "title": "Boğaziçi Mechanical Engineering graduate programme",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program",
             "curriculum"
@@ -1581,7 +1877,7 @@
           "source_type": "official_curriculum_page",
           "title": "Boğaziçi Mechanical Engineering graduate curriculum",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "curriculum"
           ],
@@ -1596,7 +1892,7 @@
           "source_type": "official_admission_page",
           "title": "Boğaziçi Mechanical Engineering graduate applications",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "admission",
             "non_eu_eligibility",
@@ -1613,7 +1909,7 @@
           "source_type": "official_university_policy_page",
           "title": "Boğaziçi University academic policy",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "language"
           ],
@@ -1628,7 +1924,7 @@
           "source_type": "official_tuition_page",
           "title": "Boğaziçi 2025/26 foreign graduate tuition table",
           "access_status": "pdf",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "tuition"
           ],
@@ -1643,7 +1939,7 @@
           "source_type": "official_lab_page",
           "title": "Boğaziçi Mechanical Engineering laboratories",
           "access_status": "ok",
-          "last_checked": "2026-07-19",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "research",
             "labs"
@@ -1670,7 +1966,8 @@
         "research": "high",
         "industry": "unknown",
         "living": "unknown",
-        "student_sentiment": "unknown"
+        "student_sentiment": "unknown",
+        "housing": "unknown"
       },
       "needs_verification": true
     },
@@ -1729,26 +2026,31 @@
         "research"
       ],
       "unverified_critical_fields": [
-        "scholarship"
+        "scholarship",
+        "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-19"
+      "audited_at": "2026-08-14"
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-19",
+      "checked_at": "2026-08-14",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
       "remaining_verification_tasks": [
         {
-          "en": "Add current official evidence for scholarship.",
-          "tr": "scholarship için güncel resmî kanıt ekleyin."
+          "en": "Add a checked official source for scholarship.",
+          "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
+        },
+        {
+          "en": "Add a checked official source for housing.",
+          "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
         }
       ],
       "qc_notes": {
-        "en": "Source audit completed; unsupported decision fields remain unknown and sentiment is not scored.",
-        "tr": "Kaynak denetimi tamamlandı; desteklenmeyen karar alanları bilinmiyor olarak kaldı ve öğrenci görüşü puanlanmadı."
+        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
+        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
       }
     },
     "qs_ranking": 345,

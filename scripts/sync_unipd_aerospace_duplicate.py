@@ -32,4 +32,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    print("Retired: Italy records were consolidated into data_base/italy.json.")

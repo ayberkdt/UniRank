@@ -21,7 +21,7 @@ EUROPE_FILES = {
     "almanya.json", "austria.json", "belcika.json", "cekya.json",
     "danimarka.json", "finlandiya.json", "fransa.json", "hollanda.json",
     "ingiltere.json", "ispanya.json", "isvec.json", "isvicre.json",
-    "italya.json", "italy.json", "polonya.json", "portekiz.json",
+    "italy.json", "polonya.json", "portekiz.json",
     "turkiye.json", "yunanistan.json",
 }
 

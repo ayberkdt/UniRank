@@ -26,25 +26,55 @@ OFFICIAL_SOURCE_TYPES = {
     "official_industry_partner_page",
     "official_university_policy_page",
     "official_cost_of_living_page",
+    "official_ranking_page",
+    "official_national_education_portal",
+    "official_student_housing_provider",
 }
 
 # A source type can support a field even when the older source log did not
 # include ``relevant_fields``.  It may *not* support unrelated fields.
 FIELD_SOURCE_TYPES = {
-    "program": {"official_program_page", "official_admission_page"},
-    "language": {"official_program_page", "official_admission_page", "official_university_policy_page"},
+    "program": {"official_program_page", "official_admission_page", "official_national_education_portal"},
+    "language": {"official_program_page", "official_admission_page", "official_curriculum_page", "official_university_policy_page", "official_national_education_portal"},
     "admission": {"official_admission_page", "official_program_page"},
-    "non_eu_eligibility": {"official_admission_page", "official_visa_or_government_page"},
-    "tuition": {"official_tuition_page"},
-    "scholarship": {"official_scholarship_page"},
-    "deadline": {"official_admission_page", "official_program_page"},
-    "curriculum": {"official_curriculum_page", "official_program_page"},
+    "non_eu_eligibility": {
+        "official_admission_page",
+        "official_visa_or_government_page",
+        "official_program_page",
+        "official_tuition_page",
+        "official_university_policy_page",
+        "official_national_education_portal",
+    },
+    "tuition": {"official_tuition_page", "official_admission_page", "official_national_education_portal"},
+    "scholarship": {"official_scholarship_page", "official_national_education_portal"},
+    "deadline": {"official_admission_page", "official_program_page", "official_national_education_portal"},
+    "curriculum": {"official_curriculum_page", "official_program_page", "official_national_education_portal"},
     "research": {"official_department_page", "official_lab_page"},
     "industry": {"official_industry_partner_page"},
     # An official cost-of-attendance/financial-aid page can directly publish a
     # housing allowance.  It is valid evidence for that budget figure, but
     # must not be mistaken for a rent quote or an availability guarantee.
-    "housing": {"official_housing_page", "official_visa_or_government_page", "official_tuition_page", "official_cost_of_living_page"},
+    "housing": {"official_housing_page", "official_visa_or_government_page", "official_tuition_page", "official_cost_of_living_page", "official_student_housing_provider"},
+}
+
+# A programme page or fee table may directly prove that non-EU applicants are
+# admitted (for example, by publishing a programme-specific non-EU fee), but
+# those source types must never establish eligibility merely because an older
+# record omitted ``relevant_fields``.  Require an explicit field mapping for
+# these broader evidence types.
+FIELD_REQUIRES_EXPLICIT_RELEVANCE = {
+    "non_eu_eligibility": {
+        "official_program_page",
+        "official_tuition_page",
+        "official_university_policy_page",
+    },
+    "tuition": {"official_admission_page"},
+    "program": {"official_national_education_portal"},
+    "language": {"official_national_education_portal"},
+    "scholarship": {"official_national_education_portal"},
+    "deadline": {"official_national_education_portal"},
+    "curriculum": {"official_national_education_portal"},
+    "housing": {"official_student_housing_provider"},
 }
 
 FIELD_ALIASES = {
@@ -93,6 +123,10 @@ def has_checked_source(record: dict[str, Any], field: str) -> bool:
         if source_type not in allowed_types:
             continue
         relevant = {_normalise(item) for item in (source.get("relevant_fields") or [])}
+        if source_type in FIELD_REQUIRES_EXPLICIT_RELEVANCE.get(field, set()):
+            if not relevant.intersection(aliases):
+                continue
+            return True
         # Older records frequently have a correctly typed source but an empty
         # relevant_fields list.  The type is sufficiently direct in that case.
         if not relevant or relevant.intersection(aliases):
@@ -103,19 +137,53 @@ def has_checked_source(record: dict[str, Any], field: str) -> bool:
 def evidence_summary(record: dict[str, Any]) -> dict[str, Any]:
     checked_sources = [source for source in _source_log(record) if _is_checked_official(source)]
     verified_fields = [field for field in FIELD_SOURCE_TYPES if has_checked_source(record, field)]
-    required = ["program", "language", "tuition", "scholarship", "curriculum", "admission"]
+    language_profile = record.get("language_profile") or {}
+    teaching_languages = (
+        language_profile.get("teaching_languages")
+        or language_profile.get("teaching_language")
+        or record.get("teaching_language")
+        or []
+    )
+    if not isinstance(teaching_languages, list):
+        teaching_languages = [teaching_languages]
+    known_teaching_languages = {
+        _normalise(value)
+        for value in teaching_languages
+        if _normalise(value) not in {"", "unknown", "needs_verification", "not_verified", "null", "none"}
+    }
+    # An English-test/admission page proves an English-proficiency rule, not
+    # necessarily the programme's teaching language.  Preserve that distinction.
+    if "language" in verified_fields and not known_teaching_languages:
+        verified_fields.remove("language")
+    # These are the minimum decision-critical evidence groups for a non-EU
+    # applicant.  A record must not be called verified while the applicant's
+    # eligibility, deadline, or housing/living budget is still unsupported.
+    required = [
+        "program",
+        "language",
+        "admission",
+        "non_eu_eligibility",
+        "tuition",
+        "scholarship",
+        "deadline",
+        "curriculum",
+        "housing",
+    ]
     missing = [field for field in required if field not in verified_fields]
     confidence = record.get("source_profile", {}).get("field_confidence", {})
     confidence_keys = {
-        "program": "program_basic_info",
-        "language": "language",
-        "tuition": "tuition",
-        "scholarship": "scholarship",
-        "curriculum": "curriculum",
-        "admission": "admission",
+        "program": ("program", "program_basic_info"),
+        "language": ("language",),
+        "tuition": ("tuition",),
+        "scholarship": ("scholarship",),
+        "curriculum": ("curriculum",),
+        "admission": ("admission",),
+        "non_eu_eligibility": ("non_eu_eligibility", "admission"),
+        "deadline": ("deadline", "deadlines"),
+        "housing": ("housing",),
     }
     has_non_high_critical_confidence = any(
-        confidence_keys[field] in confidence and _normalise(confidence.get(confidence_keys[field])) != "high"
+        any(key in confidence and _normalise(confidence.get(key)) != "high" for key in confidence_keys[field])
         for field in required
         if field in verified_fields
     )
@@ -148,12 +216,14 @@ def _clear_unverified_values(record: dict[str, Any], quality: dict[str, Any]) ->
     if "language" not in quality["verified_fields"]:
         record["teaching_language"] = ["Unknown"]
         profiles["language"]["teaching_language"] = ["Unknown"]
+        profiles["language"]["teaching_languages"] = ["Unknown"]
         profiles["language"]["language_risk"] = "unknown"
 
     if "non_eu_eligibility" not in quality["verified_fields"]:
         profiles["eligibility"]["eligible_for_non_eu"] = None
 
     if "tuition" not in quality["verified_fields"]:
+        profiles["cost"]["tuition_items"] = []
         for key in (
             "tuition_eur_per_year_estimated",
             "tuition_eur_per_year_min",
@@ -178,6 +248,7 @@ def _clear_unverified_values(record: dict[str, Any], quality: dict[str, Any]) ->
         record["annual_fee_eur"] = None
 
     if "scholarship" not in quality["verified_fields"]:
+        profiles["scholarship"]["opportunities"] = []
         for key in (
             "regional_scholarship_available",
             "regional_scholarship_name",
@@ -188,10 +259,14 @@ def _clear_unverified_values(record: dict[str, Any], quality: dict[str, Any]) ->
             profiles["scholarship"][key] = None
 
     if "deadline" not in quality["verified_fields"]:
+        profiles["timeline"]["deadline_events"] = []
         for key in ("non_eu_deadline", "winter_deadline", "application_deadline", "deadline_notes"):
             profiles["timeline"][key] = None
 
     if "housing" not in quality["verified_fields"]:
+        profiles["living"]["housing_options"] = []
+        profiles["living"]["official_living_cost_items"] = []
+        profiles["living"]["official_rent_items"] = []
         for key in (
             "average_room_rent_eur",
             "average_room_rent_eur_min",
@@ -318,18 +393,19 @@ def apply_integrity_gate(record: dict[str, Any], *, strip_unverified: bool = Tru
     # raw export look more certain than the public decision card.
     confidence = source_profile.setdefault("field_confidence", {})
     confidence_keys = {
-        "program": "program_basic_info",
-        "language": "language",
-        "admission": "admission",
-        "tuition": "tuition",
-        "scholarship": "scholarship",
-        "curriculum": "curriculum",
-        "deadline": "deadlines",
-        "housing": "housing",
+        "program": ("program", "program_basic_info"),
+        "language": ("language",),
+        "admission": ("admission", "non_eu_eligibility"),
+        "non_eu_eligibility": ("non_eu_eligibility", "admission"),
+        "tuition": ("tuition",),
+        "scholarship": ("scholarship",),
+        "curriculum": ("curriculum",),
+        "deadline": ("deadline", "deadlines"),
+        "housing": ("housing",),
     }
     for field in quality["unverified_critical_fields"]:
-        key = confidence_keys.get(field)
-        if key:
+        keys = confidence_keys.get(field, ())
+        for key in keys:
             confidence[key] = "unknown"
     source_profile["needs_verification"] = quality["status"] != "verified"
     gated["data_quality"] = quality

@@ -26,7 +26,7 @@
       "program_status": "active",
       "relevance_status": "strong",
       "eligibility_profile": {
-        "eligible_for_non_eu": null,
+        "eligible_for_non_eu": true,
         "required_previous_degree": {
           "en": "A relevant engineering degree is required. The programme specifically requires at least 30 ECTS in core engineering topics such as mathematics, mechanics, thermo- and fluid dynamics.",
           "tr": "İlgili bir mühendislik diploması gerekir. Program özellikle matematik, mekanik, termo- ve akışkanlar dinamiği gibi temel mühendislik konularında en az 30 AKTS ister."
@@ -52,6 +52,15 @@
         "verification_notes": {
           "en": "The official programme page does not publish a universal GPA cut-off. It does publish the engineering-ECTS threshold, English proof routes and interview process.",
           "tr": "Resmî program sayfası evrensel bir GPA eşiği yayımlamaz. Buna karşılık mühendislik-AKTS eşiğini, İngilizce kanıt yollarını ve mülakat sürecini yayımlar."
+        },
+        "gre": {
+          "policy": "unknown",
+          "test_type": "unknown",
+          "minimum_scores": {},
+          "recommended_scores": {},
+          "validity_rule": "",
+          "waiver_rules": [],
+          "source_ids": []
         }
       },
       "language_profile": {
@@ -121,7 +130,10 @@
         "verification_notes": {
           "en": "Funding is presented with its actual scope. Programme-specific tuition support and individual third-country eligibility remain unknown until a named call is checked.",
           "tr": "Finansman gerçek kapsamıyla sunulur. Programa özgü öğrenim ücreti desteği ve bireysel üçüncü ülke uygunluğu, isimli bir çağrı kontrol edilene kadar bilinmiyor kalır."
-        }
+        },
+        "application_mode": "unknown",
+        "automatic_consideration": null,
+        "separate_application_required": null
       },
       "living_profile": {
         "city_cost_level": "medium",
@@ -147,7 +159,9 @@
         "verification_notes": {
           "en": "No official all-in monthly living budget was found, so the card shows only the checked residence rent range and does not turn it into a total cost estimate.",
           "tr": "Resmî, tüm kalemleri içeren aylık yaşam bütçesi bulunmadığından kart yalnızca doğrulanmış yurt kira aralığını gösterir; bunu toplam maliyet tahminine dönüştürmez."
-        }
+        },
+        "housing_access": "unknown",
+        "housing_application_separate": null
       },
       "curriculum_profile": {
         "tracks": [
@@ -317,7 +331,7 @@
             "title": "FHWN Master Aerospace Engineering",
             "source_type": "official_program_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "program",
               "language",
@@ -337,7 +351,7 @@
             "title": "FHWN Costs for Prospective Students",
             "source_type": "official_tuition_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "tuition",
               "fees"
@@ -353,7 +367,7 @@
             "title": "FHWN Accommodation",
             "source_type": "official_housing_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "housing",
               "living"
@@ -369,7 +383,7 @@
             "title": "FHWN Semester Abroad",
             "source_type": "official_scholarship_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "scholarship",
               "funding"
@@ -385,7 +399,7 @@
             "title": "OeAD Grants and Scholarships",
             "source_type": "official_scholarship_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "scholarship",
               "funding"
@@ -397,18 +411,39 @@
             }
           },
           {
-            "url": "https://www.fhwn.ac.at/en/news/neue-studiengangsleitung-fuer-aerospace-engineering",
-            "title": "FHWN Aerospace Engineering research and teaching announcement",
-            "source_type": "official_department_page",
+            "url": "https://www.fhwn.ac.at/en/studyprogramme/master-aerospace-engineering",
+            "title": "FHWN Aerospace Engineering 2026/27 admission and non-EU route",
+            "source_type": "official_admission_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
-              "research"
+              "admission",
+              "non_eu_eligibility",
+              "language",
+              "deadline"
             ],
             "confidence": "high",
             "notes": {
-              "en": "FHWN's April 2026 announcement says students working on satellite systems and space components engage directly with current research; it identifies the programme head's space-instrumentation background.",
-              "tr": "FHWN'nin Nisan 2026 duyurusu, uydu sistemleri ve uzay bileşenleri üzerinde çalışan öğrencilerin güncel araştırmayla doğrudan ilgilendiğini söyler ve program yöneticisinin uzay enstrümantasyonu geçmişini belirtir."
+              "en": "The programme page publishes the third-country fee and deadline, English thresholds, engineering prerequisites and interview route, establishing a direct non-EU application path.",
+              "tr": "Program sayfası üçüncü ülke ücretini ve son tarihini, İngilizce eşiklerini, mühendislik ön koşullarını ve mülakat yolunu yayımlayarak doğrudan AB dışı başvuru yolunu doğrular."
+            }
+          },
+          {
+            "url": "https://www.fhwn.ac.at/en/studyprogramme/master-aerospace-engineering",
+            "title": "FHWN Aerospace Engineering curriculum, laboratories and projects 2026/27",
+            "source_type": "official_department_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "research",
+              "department",
+              "labs",
+              "industry"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "The current page lists the complete 120-ECTS curriculum, laboratories, CubeSat/aircraft projects and named FOTEC/ESA-linked activity. Company employment examples are not treated as partnership proof beyond explicitly described cooperation.",
+              "tr": "Güncel sayfa 120 AKTS'lik tam ders planını, laboratuvarları, CubeSat/uçak projelerini ve adı verilen FOTEC/ESA bağlantılı faaliyeti listeler. Şirket istihdam örnekleri, açıkça açıklanan iş birliğinin ötesinde ortaklık kanıtı sayılmaz."
             }
           }
         ],
@@ -430,7 +465,8 @@
           "application_timeline_profile": "high",
           "living_profile": "high",
           "housing": "high",
-          "deadlines": "high"
+          "deadlines": "high",
+          "research": "high"
         }
       },
       "decision_summary": {
@@ -469,7 +505,11 @@
             "en": "Applicants needing a guaranteed pre-enrolment scholarship, an English score below the published threshold, or a research-intensive PhD-style environment inferred solely from company names.",
             "tr": "Kayıt öncesi garantili burs, yayımlanan eşiğin altında İngilizce puanı veya yalnızca şirket adlarından çıkarılmış araştırma yoğun PhD tarzı ortam bekleyen adaylar."
           }
-        ]
+        ],
+        "application_reality": {
+          "en": "A third-country applicant is eligible through the published route, but the 31 March 2026 deadline has passed and must not be reused for a later intake.",
+          "tr": "Üçüncü ülke adayı yayımlanmış yoldan uygundur; ancak 31 Mart 2026 son tarihi geçmiştir ve sonraki dönem için yeniden kullanılamaz."
+        }
       },
       "scoring_inputs": {
         "academic_field_fit_score_seed": null,
@@ -512,10 +552,8 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-07-15",
-        "failed_canary_tests": [
-          "missing_or_unverified_critical_fields"
-        ],
+        "checked_at": "2026-08-14",
+        "failed_canary_tests": [],
         "remaining_verification_tasks": [],
         "qc_notes": {
           "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
@@ -532,11 +570,12 @@
       "qs_ranking": null,
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 6,
+        "checked_official_source_count": 7,
         "verified_fields": [
           "program",
           "language",
           "admission",
+          "non_eu_eligibility",
           "tuition",
           "scholarship",
           "deadline",
@@ -546,7 +585,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-07-15"
+        "audited_at": "2026-08-14"
       },
       "financials": {
         "tuition_fee_per_year": null,
@@ -632,7 +671,7 @@
         "gpa_scale": "",
         "ranking_or_selection": "Interview",
         "admission_mode": "Bilinmiyor / Resmi Veri Yok",
-        "admission_risk": "Bilinmiyor / Resmi Veri Yok",
+        "admission_risk": "unknown",
         "required_documents": [
           "Motivation letter",
           "CV",
@@ -653,7 +692,16 @@
           "tr": "Kabul, yeterlilik incelemesi ve çevrim içi mülakat içerir; denklik değerlendirmesi ek sınavlara yol açabilir."
         },
         "english_required": true,
-        "english_level_required": "CEFR B2; TOEFL iBT 87 / PTE 59 or listed equivalents"
+        "english_level_required": "CEFR B2; TOEFL iBT 87 / PTE 59 or listed equivalents",
+        "gre": {
+          "policy": "unknown",
+          "test_type": "unknown",
+          "minimum_scores": {},
+          "recommended_scores": {},
+          "validity_rule": "",
+          "waiver_rules": [],
+          "source_ids": []
+        }
       },
       "language_profile": {
         "teaching_language": [
@@ -736,7 +784,10 @@
         "verification_notes": {
           "en": "Eligibility is nationality-limited; it is not a general scholarship for every non-EU applicant.",
           "tr": "Uygunluk vatandaşlıkla sınırlıdır; her AB dışı başvuru sahibi için genel bir burs değildir."
-        }
+        },
+        "application_mode": "unknown",
+        "automatic_consideration": null,
+        "separate_application_required": null
       },
       "living_profile": {
         "city_cost_level": "medium",
@@ -770,7 +821,9 @@
         "verification_notes": {
           "en": "The displayed EUR 1,000-1,100 is a current official planning budget with stated components, not a student-review average or a rent-only quote.",
           "tr": "Gösterilen 1.000-1.100 EUR, belirtilmiş kalemleri olan güncel resmî planlama bütçesidir; öğrenci yorumu ortalaması veya yalnızca kira tutarı değildir."
-        }
+        },
+        "housing_access": "unknown",
+        "housing_application_separate": null
       },
       "curriculum_profile": {
         "tracks": [
@@ -950,7 +1003,7 @@
             "title": "FH JOANNEUM Aviation MSc",
             "source_type": "official_program_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "program",
               "language",
@@ -968,7 +1021,7 @@
             "title": "FH JOANNEUM Aviation MSc curriculum",
             "source_type": "official_curriculum_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "curriculum",
               "language"
@@ -984,7 +1037,7 @@
             "title": "FH JOANNEUM Aviation MSc degree programme",
             "source_type": "official_department_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "curriculum",
               "research"
@@ -1000,7 +1053,7 @@
             "title": "FH JOANNEUM Aviation MSc graduation",
             "source_type": "official_curriculum_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "curriculum",
               "industry"
@@ -1016,7 +1069,7 @@
             "title": "FH JOANNEUM Aviation admission requirements",
             "source_type": "official_admission_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "admission",
               "language"
@@ -1032,7 +1085,7 @@
             "title": "FH JOANNEUM international Master's applicants",
             "source_type": "official_admission_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "admission",
               "non_eu",
@@ -1049,7 +1102,7 @@
             "title": "FH JOANNEUM international tuition 2026/27",
             "source_type": "official_tuition_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "tuition",
               "fees"
@@ -1065,7 +1118,7 @@
             "title": "FH JOANNEUM Aviation international applicants and TECH!Southeast",
             "source_type": "official_scholarship_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "scholarship",
               "non_eu"
@@ -1081,7 +1134,7 @@
             "title": "FH JOANNEUM Aviation dates 2026",
             "source_type": "official_admission_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "deadline"
             ],
@@ -1095,8 +1148,8 @@
             "url": "https://cdn3.fh-joanneum.at/media/2025/11/Non-EU_Handout_2026-27.pdf",
             "title": "FH JOANNEUM non-EU handout 2026/27",
             "source_type": "official_cost_of_living_page",
-            "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "access_status": "pdf",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "living",
               "housing"
@@ -1112,7 +1165,7 @@
             "title": "FH JOANNEUM Flight Simulation Laboratory",
             "source_type": "official_lab_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "research"
             ],
@@ -1216,10 +1269,8 @@
       },
       "quality_control": {
         "qc_status": "passed",
-        "checked_at": "2026-07-15",
-        "failed_canary_tests": [
-          "missing_or_unverified_critical_fields"
-        ],
+        "checked_at": "2026-08-14",
+        "failed_canary_tests": [],
         "remaining_verification_tasks": [],
         "qc_notes": {
           "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
@@ -1251,7 +1302,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-07-15"
+        "audited_at": "2026-08-14"
       },
       "qs_ranking_display": null,
       "qs_ranking_year": 2027,
@@ -1353,6 +1404,15 @@
         "verification_notes": {
           "en": "The programme page lists direct-entry TU Graz degrees and directs other domestic/international degree holders to exact curriculum requirements. The international Master's page makes clear that complete applications and both academic and language requirements are needed; it does not publish a universal GPA cut-off.",
           "tr": "Program sayfası doğrudan giriş yapan TU Graz derecelerini listeler ve diğer yerli/uluslararası diploma sahiplerini kesin müfredat koşullarına yönlendirir. Uluslararası yüksek lisans sayfası eksiksiz başvuru ile akademik ve dil koşullarının birlikte gerektiğini açıklar; evrensel GPA eşiği yayımlamaz."
+        },
+        "gre": {
+          "policy": "unknown",
+          "test_type": "unknown",
+          "minimum_scores": {},
+          "recommended_scores": {},
+          "validity_rule": "",
+          "waiver_rules": [],
+          "source_ids": []
         }
       },
       "language_profile": {
@@ -1449,7 +1509,10 @@
         "verification_notes": {
           "en": "No programme-specific scholarship eligibility was verified from an official source.",
           "tr": "Programa özgü burs uygunluğu resmî bir kaynaktan doğrulanmadı."
-        }
+        },
+        "application_mode": "unknown",
+        "automatic_consideration": null,
+        "separate_application_required": null
       },
       "living_profile": {
         "city_cost_level": "medium",
@@ -1527,7 +1590,9 @@
           "en": "TU Graz official Graz shared-flat room guidance",
           "tr": "TU Graz resmî Graz paylaşımlı daire oda rehberi"
         },
-        "housing_sentiment": null
+        "housing_sentiment": null,
+        "housing_access": "unknown",
+        "housing_application_separate": null
       },
       "curriculum_profile": {
         "tracks": [
@@ -1681,7 +1746,7 @@
             "title": "TU Graz Space Sciences and Earth from Space MSc",
             "source_type": "official_program_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "program",
               "degree",
@@ -1703,7 +1768,7 @@
             "title": "TU Graz International Master's Admission",
             "source_type": "official_admission_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "admission",
               "non_eu",
@@ -1719,8 +1784,8 @@
             "url": "https://www.tugraz.at/en/studying-and-teaching/studying-at-tu-graz/prospective-students/registration-and-admission/admission-of-international-degree-programme-applicants/proof-of-german-language-competence/",
             "title": "TU Graz Proof of German Language Competence",
             "source_type": "official_admission_page",
-            "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "access_status": "blocked",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "language",
               "admission"
@@ -1736,7 +1801,7 @@
             "title": "TU Graz Tuition Fees and Austrian Student Union Fee",
             "source_type": "official_tuition_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "tuition",
               "fees"
@@ -1752,7 +1817,7 @@
             "title": "TU Graz High Potentials",
             "source_type": "official_scholarship_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "scholarship",
               "funding"
@@ -1768,7 +1833,7 @@
             "title": "TU Graz Master's Scholarship Application",
             "source_type": "official_scholarship_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "scholarship",
               "deadline",
@@ -1784,8 +1849,8 @@
             "url": "https://www.tugraz.at/fileadmin/user_upload/tugrazInternal/Studium/International_studieren_und_lehren/Mobilitaetsprogramme/OverSEAs_Factsheet.pdf",
             "title": "TU Graz Incoming Fact Sheet 2026/27",
             "source_type": "official_cost_of_living_page",
-            "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "access_status": "pdf",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "living",
               "housing"
@@ -1800,8 +1865,8 @@
             "url": "https://www.tugraz.at/en/news/blog/detail/article/which-austrian-technical-university-suits-you-best",
             "title": "TU Graz Graz vs Vienna Student-Cost Guide",
             "source_type": "official_cost_of_living_page",
-            "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "access_status": "blocked",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "housing"
             ],
@@ -1905,10 +1970,8 @@
       },
       "quality_control": {
         "qc_status": "passed",
-        "checked_at": "2026-07-15",
-        "failed_canary_tests": [
-          "missing_or_unverified_critical_fields"
-        ],
+        "checked_at": "2026-08-14",
+        "failed_canary_tests": [],
         "remaining_verification_tasks": [],
         "qc_notes": {
           "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
@@ -1925,7 +1988,7 @@
       "qs_ranking": 409,
       "data_quality": {
         "status": "verified",
-        "checked_official_source_count": 8,
+        "checked_official_source_count": 6,
         "verified_fields": [
           "program",
           "language",
@@ -1939,7 +2002,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-07-15"
+        "audited_at": "2026-08-14"
       },
       "financials": {
         "tuition_fee_per_year": null,
@@ -1994,13 +2057,15 @@
       "degree_class": "MSc",
       "duration_years": 2,
       "ects": 120,
-      "teaching_language": [],
+      "teaching_language": [
+        "Unknown"
+      ],
       "program_url": "https://www.tugraz.at",
       "department": "Mechanical Engineering",
       "faculty_or_school": "",
       "campus": "Graz",
-      "program_status": "active_but_not_aerospace_path",
-      "relevance_status": "low_relevance",
+      "program_status": "active",
+      "relevance_status": "weak",
       "eligibility_profile": {
         "eligible_for_non_eu": null,
         "non_eu_quota": null,
@@ -2021,7 +2086,7 @@
         "gpa_scale": "",
         "ranking_or_selection": "Direct admission if matching bachelor",
         "admission_mode": "Bilinmiyor / Resmi Veri Yok",
-        "admission_risk": "Bilinmiyor / Resmi Veri Yok",
+        "admission_risk": "unknown",
         "required_documents": [],
         "motivation_letter_required": false,
         "cv_required": false,
@@ -2030,10 +2095,21 @@
         "interview_required": false,
         "test_required": null,
         "notes_for_turkish_students": "",
-        "verification_notes": "Admission facts were not retained without a checked official source."
+        "verification_notes": "Admission facts were not retained without a checked official source.",
+        "gre": {
+          "policy": "unknown",
+          "test_type": "unknown",
+          "minimum_scores": {},
+          "recommended_scores": {},
+          "validity_rule": "",
+          "waiver_rules": [],
+          "source_ids": []
+        }
       },
       "language_profile": {
-        "teaching_language": [],
+        "teaching_language": [
+          "Unknown"
+        ],
         "english_required": null,
         "english_level_required": null,
         "accepted_english_tests": [],
@@ -2042,8 +2118,11 @@
         "italian_level_required": "",
         "italian_needed_for_life_or_internship": "",
         "mixed_language_warning": "",
-        "language_risk": "Bilinmiyor / Resmi Veri Yok",
-        "verification_notes": "Teaching language was not retained without a checked official source."
+        "language_risk": "unknown",
+        "verification_notes": "Teaching language was not retained without a checked official source.",
+        "teaching_languages": [
+          "Unknown"
+        ]
       },
       "cost_profile": {
         "tuition_eur_per_year_min": null,
@@ -2086,7 +2165,8 @@
         "living_cost_sek_per_year_min": null,
         "living_cost_sek_per_year_max": null,
         "living_cost_dkk_per_year_min": null,
-        "living_cost_dkk_per_year_max": null
+        "living_cost_dkk_per_year_max": null,
+        "tuition_items": []
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
@@ -2103,7 +2183,11 @@
         "scholarship_application_url": null,
         "funding_competitiveness": "",
         "funding_notes": null,
-        "verification_notes": "Scholarship claims were not retained without a checked official scholarship source."
+        "verification_notes": "Scholarship claims were not retained without a checked official scholarship source.",
+        "application_mode": "unknown",
+        "automatic_consideration": null,
+        "separate_application_required": null,
+        "opportunities": []
       },
       "living_profile": {
         "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
@@ -2118,7 +2202,7 @@
         "food_cost_eur_month": 300,
         "city_safety_note": "Safe city.",
         "part_time_work_possibility": "medium",
-        "living_risk": "Bilinmiyor / Resmi Veri Yok",
+        "living_risk": "unknown",
         "housing_difficulty_score": null,
         "living_risk_score": null,
         "verification_notes": "Living and housing values were not retained without a checked official or clearly labelled sentiment source.",
@@ -2162,7 +2246,12 @@
         "housing_budget_sek_per_year_min": null,
         "housing_budget_sek_per_year_max": null,
         "housing_budget_dkk_per_year_min": null,
-        "housing_budget_dkk_per_year_max": null
+        "housing_budget_dkk_per_year_max": null,
+        "housing_access": "unknown",
+        "housing_application_separate": null,
+        "housing_options": [],
+        "official_living_cost_items": [],
+        "official_rent_items": []
       },
       "curriculum_profile": {
         "tracks": [],
@@ -2225,10 +2314,11 @@
         "visa_sensitive_deadline": "",
         "application_result_timing": "",
         "enrollment_deadline": "",
-        "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
+        "timeline_risk": "unknown",
         "deadline_notes": null,
         "winter_deadline": null,
-        "application_deadline": null
+        "application_deadline": null,
+        "deadline_events": []
       },
       "source_profile": {
         "official_program_page": "https://www.tugraz.at",
@@ -2244,46 +2334,52 @@
         "verification_notes": "",
         "field_confidence": {
           "program_basic_info": "high",
-          "language": "high",
+          "language": "unknown",
           "admission": "unknown",
           "tuition": "unknown",
           "scholarship": "unknown",
           "curriculum": "medium",
           "research": "medium",
           "industry": "medium",
-          "living": "medium"
+          "living": "medium",
+          "deadlines": "unknown",
+          "housing": "unknown",
+          "non_eu_eligibility": "unknown",
+          "deadline": "unknown"
         },
         "source_log": [
           {
             "url": "https://www.tugraz.at",
             "title": "",
             "source_type": "official_program_page",
-            "access_status": "Bilinmiyor / Resmi Veri Yok",
-            "last_checked": null,
+            "access_status": "redirects",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "program_basic_info"
             ],
             "confidence": "Bilinmiyor / Resmi Veri Yok",
-            "notes": "Existing source retained but not rechecked in this audit."
+            "notes": "Existing source retained but not rechecked in this audit.",
+            "final_url": "https://www.tugraz.at/home"
           },
           {
             "url": "https://nominatim.openstreetmap.org/",
             "title": "OpenStreetMap Nominatim geocoding service",
             "source_type": "other",
-            "access_status": "ok",
-            "last_checked": "2026-07-10",
+            "access_status": "redirects",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "location"
             ],
             "confidence": "medium",
-            "notes": "Coordinates resolved at exact confidence; this is a map placement signal, not an official programme fact."
+            "notes": "Coordinates resolved at exact confidence; this is a map placement signal, not an official programme fact.",
+            "final_url": "https://nominatim.openstreetmap.org/ui/search.html"
           },
           {
             "url": "https://www.tugraz.at/en/studying-and-teaching/degree-and-certificate-programmes/masters-degree-programmes/mechanical-engineering",
             "title": "TU Graz Mechanical Engineering MSc",
             "source_type": "official_program_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "program",
               "degree",
@@ -2368,11 +2464,23 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-07-15",
+        "checked_at": "2026-08-14",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
         "remaining_verification_tasks": [
+          {
+            "en": "Add a checked official source for language.",
+            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for admission.",
+            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for non_eu_eligibility.",
+            "tr": "non_eu_eligibility için kontrol edilmiş resmî kaynak ekleyin."
+          },
           {
             "en": "Add a checked official source for tuition.",
             "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
@@ -2382,8 +2490,12 @@
             "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
           },
           {
-            "en": "Add a checked official source for admission.",
-            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+            "en": "Add a checked official source for deadline.",
+            "tr": "deadline için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for housing.",
+            "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
           }
         ],
         "qc_notes": {
@@ -2401,19 +2513,22 @@
       "qs_ranking": 409,
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 1,
+        "checked_official_source_count": 2,
         "verified_fields": [
           "program",
-          "language",
           "curriculum"
         ],
         "unverified_critical_fields": [
+          "language",
+          "admission",
+          "non_eu_eligibility",
           "tuition",
           "scholarship",
-          "admission"
+          "deadline",
+          "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-07-15"
+        "audited_at": "2026-08-14"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -2457,13 +2572,15 @@
       "degree_class": "MSc",
       "duration_years": 2,
       "ects": 120,
-      "teaching_language": [],
+      "teaching_language": [
+        "Unknown"
+      ],
       "program_url": "https://www.tuwien.at",
       "department": "Mechanical Engineering",
       "faculty_or_school": "",
       "campus": "Vienna",
-      "program_status": "active_but_not_aerospace_path",
-      "relevance_status": "low_relevance",
+      "program_status": "active",
+      "relevance_status": "weak",
       "eligibility_profile": {
         "eligible_for_non_eu": null,
         "non_eu_quota": null,
@@ -2484,7 +2601,7 @@
         "gpa_scale": "",
         "ranking_or_selection": "Direct admission for equivalent degrees",
         "admission_mode": "Bilinmiyor / Resmi Veri Yok",
-        "admission_risk": "Bilinmiyor / Resmi Veri Yok",
+        "admission_risk": "unknown",
         "required_documents": [],
         "motivation_letter_required": false,
         "cv_required": false,
@@ -2493,10 +2610,21 @@
         "interview_required": false,
         "test_required": null,
         "notes_for_turkish_students": "",
-        "verification_notes": "Admission facts were not retained without a checked official source."
+        "verification_notes": "Admission facts were not retained without a checked official source.",
+        "gre": {
+          "policy": "unknown",
+          "test_type": "unknown",
+          "minimum_scores": {},
+          "recommended_scores": {},
+          "validity_rule": "",
+          "waiver_rules": [],
+          "source_ids": []
+        }
       },
       "language_profile": {
-        "teaching_language": [],
+        "teaching_language": [
+          "Unknown"
+        ],
         "english_required": null,
         "english_level_required": null,
         "accepted_english_tests": [],
@@ -2505,8 +2633,11 @@
         "italian_level_required": "",
         "italian_needed_for_life_or_internship": "",
         "mixed_language_warning": "",
-        "language_risk": "Bilinmiyor / Resmi Veri Yok",
-        "verification_notes": "Teaching language was not retained without a checked official source."
+        "language_risk": "unknown",
+        "verification_notes": "Teaching language was not retained without a checked official source.",
+        "teaching_languages": [
+          "Unknown"
+        ]
       },
       "cost_profile": {
         "tuition_eur_per_year_min": null,
@@ -2549,7 +2680,8 @@
         "living_cost_sek_per_year_min": null,
         "living_cost_sek_per_year_max": null,
         "living_cost_dkk_per_year_min": null,
-        "living_cost_dkk_per_year_max": null
+        "living_cost_dkk_per_year_max": null,
+        "tuition_items": []
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
@@ -2566,7 +2698,11 @@
         "scholarship_application_url": null,
         "funding_competitiveness": "",
         "funding_notes": null,
-        "verification_notes": "Scholarship claims were not retained without a checked official scholarship source."
+        "verification_notes": "Scholarship claims were not retained without a checked official scholarship source.",
+        "application_mode": "unknown",
+        "automatic_consideration": null,
+        "separate_application_required": null,
+        "opportunities": []
       },
       "living_profile": {
         "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
@@ -2581,7 +2717,7 @@
         "food_cost_eur_month": 350,
         "city_safety_note": "Vienna is very safe.",
         "part_time_work_possibility": "high",
-        "living_risk": "Bilinmiyor / Resmi Veri Yok",
+        "living_risk": "unknown",
         "housing_difficulty_score": null,
         "living_risk_score": null,
         "verification_notes": "Living and housing values were not retained without a checked official or clearly labelled sentiment source.",
@@ -2625,7 +2761,12 @@
         "housing_budget_sek_per_year_min": null,
         "housing_budget_sek_per_year_max": null,
         "housing_budget_dkk_per_year_min": null,
-        "housing_budget_dkk_per_year_max": null
+        "housing_budget_dkk_per_year_max": null,
+        "housing_access": "unknown",
+        "housing_application_separate": null,
+        "housing_options": [],
+        "official_living_cost_items": [],
+        "official_rent_items": []
       },
       "curriculum_profile": {
         "tracks": [],
@@ -2693,10 +2834,11 @@
         "visa_sensitive_deadline": "",
         "application_result_timing": "",
         "enrollment_deadline": "",
-        "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
+        "timeline_risk": "unknown",
         "deadline_notes": null,
         "winter_deadline": null,
-        "application_deadline": null
+        "application_deadline": null,
+        "deadline_events": []
       },
       "source_profile": {
         "official_program_page": "https://www.tuwien.at",
@@ -2712,22 +2854,26 @@
         "verification_notes": "",
         "field_confidence": {
           "program_basic_info": "high",
-          "language": "high",
+          "language": "unknown",
           "admission": "unknown",
           "tuition": "unknown",
           "scholarship": "unknown",
           "curriculum": "medium",
           "research": "high",
           "industry": "medium",
-          "living": "medium"
+          "living": "medium",
+          "deadlines": "unknown",
+          "housing": "unknown",
+          "non_eu_eligibility": "unknown",
+          "deadline": "unknown"
         },
         "source_log": [
           {
             "url": "https://www.tuwien.at",
             "title": "",
             "source_type": "official_program_page",
-            "access_status": "Bilinmiyor / Resmi Veri Yok",
-            "last_checked": null,
+            "access_status": "ok",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "program_basic_info"
             ],
@@ -2738,20 +2884,21 @@
             "url": "https://nominatim.openstreetmap.org/",
             "title": "OpenStreetMap Nominatim geocoding service",
             "source_type": "other",
-            "access_status": "ok",
-            "last_checked": "2026-07-10",
+            "access_status": "redirects",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "location"
             ],
             "confidence": "medium",
-            "notes": "Coordinates resolved at exact confidence; this is a map placement signal, not an official programme fact."
+            "notes": "Coordinates resolved at exact confidence; this is a map placement signal, not an official programme fact.",
+            "final_url": "https://nominatim.openstreetmap.org/ui/search.html"
           },
           {
             "url": "https://www.tuwien.at/en/studies/studies/master-programmes/mechanical-engineering/mechanical-engineering",
             "title": "TU Wien Mechanical Engineering MSc",
             "source_type": "official_program_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "program",
               "degree",
@@ -2836,11 +2983,23 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-07-15",
+        "checked_at": "2026-08-14",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
         "remaining_verification_tasks": [
+          {
+            "en": "Add a checked official source for language.",
+            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for admission.",
+            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for non_eu_eligibility.",
+            "tr": "non_eu_eligibility için kontrol edilmiş resmî kaynak ekleyin."
+          },
           {
             "en": "Add a checked official source for tuition.",
             "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
@@ -2850,8 +3009,12 @@
             "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
           },
           {
-            "en": "Add a checked official source for admission.",
-            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+            "en": "Add a checked official source for deadline.",
+            "tr": "deadline için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for housing.",
+            "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
           }
         ],
         "qc_notes": {
@@ -2869,19 +3032,22 @@
       "qs_ranking": 191,
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 1,
+        "checked_official_source_count": 2,
         "verified_fields": [
           "program",
-          "language",
           "curriculum"
         ],
         "unverified_critical_fields": [
+          "language",
+          "admission",
+          "non_eu_eligibility",
           "tuition",
           "scholarship",
-          "admission"
+          "deadline",
+          "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-07-15"
+        "audited_at": "2026-08-14"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -2925,13 +3091,15 @@
       "degree_class": "066 507",
       "duration_years": 2,
       "ects": 120,
-      "teaching_language": [],
-      "program_url": "https://www.tuwien.at/en/studies/studies/master-programmes/information-and-communication-engineering",
+      "teaching_language": [
+        "Unknown"
+      ],
+      "program_url": "https://www.tuwien.at/en/studies/studies/master-programmes/electrical-engineering/information-and-communication-engineering",
       "department": "Faculty of Electrical Engineering and Information Technology",
       "faculty_or_school": "Faculty of Electrical Engineering and Information Technology",
       "campus": "Vienna Campus",
-      "program_status": "active_but_not_aerospace_path",
-      "relevance_status": "low_relevance",
+      "program_status": "active",
+      "relevance_status": "weak",
       "eligibility_profile": {
         "eligible_for_non_eu": null,
         "non_eu_quota": null,
@@ -2952,7 +3120,7 @@
         "gpa_scale": "",
         "ranking_or_selection": "",
         "admission_mode": "Bilinmiyor / Resmi Veri Yok",
-        "admission_risk": "Bilinmiyor / Resmi Veri Yok",
+        "admission_risk": "unknown",
         "required_documents": [],
         "motivation_letter_required": false,
         "cv_required": true,
@@ -2961,10 +3129,21 @@
         "interview_required": false,
         "test_required": false,
         "notes_for_turkish_students": "Usually requires checking specific previous degrees. Process may take several weeks.",
-        "verification_notes": "Admission facts were not retained without a checked official source."
+        "verification_notes": "Admission facts were not retained without a checked official source.",
+        "gre": {
+          "policy": "unknown",
+          "test_type": "unknown",
+          "minimum_scores": {},
+          "recommended_scores": {},
+          "validity_rule": "",
+          "waiver_rules": [],
+          "source_ids": []
+        }
       },
       "language_profile": {
-        "teaching_language": [],
+        "teaching_language": [
+          "Unknown"
+        ],
         "english_required": null,
         "english_level_required": null,
         "accepted_english_tests": [
@@ -2976,8 +3155,11 @@
         "italian_level_required": "",
         "italian_needed_for_life_or_internship": "",
         "mixed_language_warning": "",
-        "language_risk": "Bilinmiyor / Resmi Veri Yok",
-        "verification_notes": "Teaching language was not retained without a checked official source."
+        "language_risk": "unknown",
+        "verification_notes": "Teaching language was not retained without a checked official source.",
+        "teaching_languages": [
+          "Unknown"
+        ]
       },
       "cost_profile": {
         "tuition_eur_per_year_min": null,
@@ -3020,7 +3202,8 @@
         "living_cost_sek_per_year_min": null,
         "living_cost_sek_per_year_max": null,
         "living_cost_dkk_per_year_min": null,
-        "living_cost_dkk_per_year_max": null
+        "living_cost_dkk_per_year_max": null,
+        "tuition_items": []
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
@@ -3037,7 +3220,11 @@
         "scholarship_application_url": null,
         "funding_competitiveness": "high",
         "funding_notes": null,
-        "verification_notes": "Scholarship claims were not retained without a checked official scholarship source."
+        "verification_notes": "Scholarship claims were not retained without a checked official scholarship source.",
+        "application_mode": "unknown",
+        "automatic_consideration": null,
+        "separate_application_required": null,
+        "opportunities": []
       },
       "living_profile": {
         "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
@@ -3052,7 +3239,7 @@
         "food_cost_eur_month": 300,
         "city_safety_note": "Vienna is extremely safe.",
         "part_time_work_possibility": "moderate",
-        "living_risk": "Bilinmiyor / Resmi Veri Yok",
+        "living_risk": "unknown",
         "housing_difficulty_score": null,
         "living_risk_score": null,
         "verification_notes": "Living and housing values were not retained without a checked official or clearly labelled sentiment source.",
@@ -3096,7 +3283,12 @@
         "housing_budget_sek_per_year_min": null,
         "housing_budget_sek_per_year_max": null,
         "housing_budget_dkk_per_year_min": null,
-        "housing_budget_dkk_per_year_max": null
+        "housing_budget_dkk_per_year_max": null,
+        "housing_access": "unknown",
+        "housing_application_separate": null,
+        "housing_options": [],
+        "official_living_cost_items": [],
+        "official_rent_items": []
       },
       "curriculum_profile": {
         "tracks": [],
@@ -3160,13 +3352,14 @@
         "visa_sensitive_deadline": "Apply early for visa processing",
         "application_result_timing": "",
         "enrollment_deadline": "",
-        "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
+        "timeline_risk": "unknown",
         "deadline_notes": null,
         "winter_deadline": null,
-        "application_deadline": null
+        "application_deadline": null,
+        "deadline_events": []
       },
       "source_profile": {
-        "official_program_page": "https://www.tuwien.at/en/studies/studies/master-programmes/information-and-communication-engineering",
+        "official_program_page": "https://www.tuwien.at/en/studies/studies/master-programmes/electrical-engineering/information-and-communication-engineering",
         "official_admission_page": "",
         "official_tuition_page": "",
         "official_scholarship_page": "",
@@ -3179,46 +3372,39 @@
         "verification_notes": "",
         "field_confidence": {
           "program_basic_info": "high",
-          "language": "high",
+          "language": "unknown",
           "admission": "unknown",
           "tuition": "unknown",
           "scholarship": "unknown",
           "curriculum": "medium",
           "research": "medium",
           "industry": "medium",
-          "living": "high"
+          "living": "high",
+          "deadlines": "unknown",
+          "housing": "unknown",
+          "non_eu_eligibility": "unknown",
+          "deadline": "unknown"
         },
         "source_log": [
-          {
-            "url": "https://www.tuwien.at/en/studies/studies/master-programmes/information-and-communication-engineering",
-            "title": "",
-            "source_type": "official_program_page",
-            "access_status": "Bilinmiyor / Resmi Veri Yok",
-            "last_checked": null,
-            "relevant_fields": [
-              "program_basic_info"
-            ],
-            "confidence": "Bilinmiyor / Resmi Veri Yok",
-            "notes": "Existing source retained but not rechecked in this audit."
-          },
           {
             "url": "https://nominatim.openstreetmap.org/",
             "title": "OpenStreetMap Nominatim geocoding service",
             "source_type": "other",
-            "access_status": "ok",
-            "last_checked": "2026-07-10",
+            "access_status": "redirects",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "location"
             ],
             "confidence": "medium",
-            "notes": "Coordinates resolved at exact confidence; this is a map placement signal, not an official programme fact."
+            "notes": "Coordinates resolved at exact confidence; this is a map placement signal, not an official programme fact.",
+            "final_url": "https://nominatim.openstreetmap.org/ui/search.html"
           },
           {
             "url": "https://www.tuwien.at/en/studies/studies/master-programmes/electrical-engineering/information-and-communication-engineering",
             "title": "TU Wien Information and Communication Engineering MSc",
             "source_type": "official_program_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "program",
               "degree",
@@ -3303,11 +3489,23 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-07-15",
+        "checked_at": "2026-08-14",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
         "remaining_verification_tasks": [
+          {
+            "en": "Add a checked official source for language.",
+            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for admission.",
+            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for non_eu_eligibility.",
+            "tr": "non_eu_eligibility için kontrol edilmiş resmî kaynak ekleyin."
+          },
           {
             "en": "Add a checked official source for tuition.",
             "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
@@ -3317,8 +3515,12 @@
             "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
           },
           {
-            "en": "Add a checked official source for admission.",
-            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+            "en": "Add a checked official source for deadline.",
+            "tr": "deadline için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for housing.",
+            "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
           }
         ],
         "qc_notes": {
@@ -3339,16 +3541,19 @@
         "checked_official_source_count": 1,
         "verified_fields": [
           "program",
-          "language",
           "curriculum"
         ],
         "unverified_critical_fields": [
+          "language",
+          "admission",
+          "non_eu_eligibility",
           "tuition",
           "scholarship",
-          "admission"
+          "deadline",
+          "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-07-15"
+        "audited_at": "2026-08-14"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -3399,8 +3604,8 @@
       "department": "Institute for Astro- and Particle Physics",
       "faculty_or_school": "Faculty of Mathematics, Computer Science and Physics",
       "campus": "Innsbruck",
-      "program_status": "active_but_not_aerospace_path",
-      "relevance_status": "low_relevance",
+      "program_status": "active",
+      "relevance_status": "weak",
       "eligibility_profile": {
         "eligible_for_non_eu": null,
         "non_eu_quota": null,
@@ -3421,7 +3626,7 @@
         "gpa_scale": "",
         "ranking_or_selection": "",
         "admission_mode": "Bilinmiyor / Resmi Veri Yok",
-        "admission_risk": "Bilinmiyor / Resmi Veri Yok",
+        "admission_risk": "unknown",
         "required_documents": [],
         "motivation_letter_required": false,
         "cv_required": true,
@@ -3430,7 +3635,16 @@
         "interview_required": false,
         "test_required": false,
         "notes_for_turkish_students": "",
-        "verification_notes": "Admission facts were not retained without a checked official source."
+        "verification_notes": "Admission facts were not retained without a checked official source.",
+        "gre": {
+          "policy": "unknown",
+          "test_type": "unknown",
+          "minimum_scores": {},
+          "recommended_scores": {},
+          "validity_rule": "",
+          "waiver_rules": [],
+          "source_ids": []
+        }
       },
       "language_profile": {
         "teaching_language": [
@@ -3448,7 +3662,10 @@
         "italian_needed_for_life_or_internship": "",
         "mixed_language_warning": "",
         "language_risk": "unknown",
-        "verification_notes": "Teaching language was not retained without a checked official source."
+        "verification_notes": "Teaching language was not retained without a checked official source.",
+        "teaching_languages": [
+          "Unknown"
+        ]
       },
       "cost_profile": {
         "tuition_eur_per_year_min": null,
@@ -3491,7 +3708,8 @@
         "living_cost_sek_per_year_min": null,
         "living_cost_sek_per_year_max": null,
         "living_cost_dkk_per_year_min": null,
-        "living_cost_dkk_per_year_max": null
+        "living_cost_dkk_per_year_max": null,
+        "tuition_items": []
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
@@ -3508,7 +3726,11 @@
         "scholarship_application_url": null,
         "funding_competitiveness": "high",
         "funding_notes": null,
-        "verification_notes": "Scholarship claims were not retained without a checked official scholarship source."
+        "verification_notes": "Scholarship claims were not retained without a checked official scholarship source.",
+        "application_mode": "unknown",
+        "automatic_consideration": null,
+        "separate_application_required": null,
+        "opportunities": []
       },
       "living_profile": {
         "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
@@ -3523,7 +3745,7 @@
         "food_cost_eur_month": 350,
         "city_safety_note": "Very safe",
         "part_time_work_possibility": "moderate",
-        "living_risk": "Bilinmiyor / Resmi Veri Yok",
+        "living_risk": "unknown",
         "housing_difficulty_score": null,
         "living_risk_score": null,
         "verification_notes": "Living and housing values were not retained without a checked official or clearly labelled sentiment source.",
@@ -3567,7 +3789,12 @@
         "housing_budget_sek_per_year_min": null,
         "housing_budget_sek_per_year_max": null,
         "housing_budget_dkk_per_year_min": null,
-        "housing_budget_dkk_per_year_max": null
+        "housing_budget_dkk_per_year_max": null,
+        "housing_access": "unknown",
+        "housing_application_separate": null,
+        "housing_options": [],
+        "official_living_cost_items": [],
+        "official_rent_items": []
       },
       "curriculum_profile": {
         "tracks": [],
@@ -3634,10 +3861,11 @@
         "visa_sensitive_deadline": "Yes",
         "application_result_timing": "",
         "enrollment_deadline": "",
-        "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
+        "timeline_risk": "unknown",
         "deadline_notes": null,
         "winter_deadline": null,
-        "application_deadline": null
+        "application_deadline": null,
+        "deadline_events": []
       },
       "source_profile": {
         "official_program_page": "https://www.uibk.ac.at/en/programmes/ma-physics/",
@@ -3660,7 +3888,11 @@
           "curriculum": "medium",
           "research": "high",
           "industry": "medium",
-          "living": "high"
+          "living": "high",
+          "deadlines": "unknown",
+          "housing": "unknown",
+          "non_eu_eligibility": "unknown",
+          "deadline": "unknown"
         },
         "source_log": [
           {
@@ -3668,7 +3900,7 @@
             "title": "University of Innsbruck Physics MSc",
             "source_type": "official_program_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "program",
               "degree",
@@ -3686,13 +3918,14 @@
             "url": "https://nominatim.openstreetmap.org/",
             "title": "OpenStreetMap Nominatim geocoding service",
             "source_type": "other",
-            "access_status": "ok",
-            "last_checked": "2026-07-10",
+            "access_status": "redirects",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "location"
             ],
             "confidence": "medium",
-            "notes": "Coordinates resolved at exact confidence; this is a map placement signal, not an official programme fact."
+            "notes": "Coordinates resolved at exact confidence; this is a map placement signal, not an official programme fact.",
+            "final_url": "https://nominatim.openstreetmap.org/ui/search.html"
           }
         ]
       },
@@ -3765,7 +3998,7 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-07-15",
+        "checked_at": "2026-08-14",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
@@ -3773,6 +4006,14 @@
           {
             "en": "Add a checked official source for language.",
             "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for admission.",
+            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for non_eu_eligibility.",
+            "tr": "non_eu_eligibility için kontrol edilmiş resmî kaynak ekleyin."
           },
           {
             "en": "Add a checked official source for tuition.",
@@ -3783,8 +4024,12 @@
             "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
           },
           {
-            "en": "Add a checked official source for admission.",
-            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+            "en": "Add a checked official source for deadline.",
+            "tr": "deadline için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for housing.",
+            "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
           }
         ],
         "qc_notes": {
@@ -3809,12 +4054,15 @@
         ],
         "unverified_critical_fields": [
           "language",
+          "admission",
+          "non_eu_eligibility",
           "tuition",
           "scholarship",
-          "admission"
+          "deadline",
+          "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-07-15"
+        "audited_at": "2026-08-14"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -3858,13 +4106,15 @@
       "degree_class": "",
       "duration_years": 2,
       "ects": 120,
-      "teaching_language": [],
+      "teaching_language": [
+        "Unknown"
+      ],
       "program_url": "https://www.jku.at/en/degree-programs/types-of-degree-programs/masters-degree-programs/ma-mechatronics/",
       "department": "Faculty of Engineering & Natural Sciences",
       "faculty_or_school": "",
       "campus": "Linz Campus",
-      "program_status": "active_but_not_aerospace_path",
-      "relevance_status": "low_relevance",
+      "program_status": "active",
+      "relevance_status": "weak",
       "eligibility_profile": {
         "eligible_for_non_eu": null,
         "non_eu_quota": null,
@@ -3885,7 +4135,7 @@
         "gpa_scale": "",
         "ranking_or_selection": "",
         "admission_mode": "Bilinmiyor / Resmi Veri Yok",
-        "admission_risk": "Bilinmiyor / Resmi Veri Yok",
+        "admission_risk": "unknown",
         "required_documents": [],
         "motivation_letter_required": false,
         "cv_required": true,
@@ -3894,10 +4144,21 @@
         "interview_required": false,
         "test_required": false,
         "notes_for_turkish_students": "German language certificate is mandatory.",
-        "verification_notes": "Admission facts were not retained without a checked official source."
+        "verification_notes": "Admission facts were not retained without a checked official source.",
+        "gre": {
+          "policy": "unknown",
+          "test_type": "unknown",
+          "minimum_scores": {},
+          "recommended_scores": {},
+          "validity_rule": "",
+          "waiver_rules": [],
+          "source_ids": []
+        }
       },
       "language_profile": {
-        "teaching_language": [],
+        "teaching_language": [
+          "Unknown"
+        ],
         "english_required": null,
         "english_level_required": null,
         "accepted_english_tests": [],
@@ -3906,8 +4167,11 @@
         "italian_level_required": "",
         "italian_needed_for_life_or_internship": "",
         "mixed_language_warning": "Program is taught primarily in German. C1 German may be required.",
-        "language_risk": "Bilinmiyor / Resmi Veri Yok",
-        "verification_notes": "Teaching language was not retained without a checked official source."
+        "language_risk": "unknown",
+        "verification_notes": "Teaching language was not retained without a checked official source.",
+        "teaching_languages": [
+          "Unknown"
+        ]
       },
       "cost_profile": {
         "tuition_eur_per_year_min": null,
@@ -3950,7 +4214,8 @@
         "living_cost_sek_per_year_min": null,
         "living_cost_sek_per_year_max": null,
         "living_cost_dkk_per_year_min": null,
-        "living_cost_dkk_per_year_max": null
+        "living_cost_dkk_per_year_max": null,
+        "tuition_items": []
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
@@ -3967,7 +4232,11 @@
         "scholarship_application_url": null,
         "funding_competitiveness": "high",
         "funding_notes": null,
-        "verification_notes": "Scholarship claims were not retained without a checked official scholarship source."
+        "verification_notes": "Scholarship claims were not retained without a checked official scholarship source.",
+        "application_mode": "unknown",
+        "automatic_consideration": null,
+        "separate_application_required": null,
+        "opportunities": []
       },
       "living_profile": {
         "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
@@ -3982,7 +4251,7 @@
         "food_cost_eur_month": 300,
         "city_safety_note": "Safe",
         "part_time_work_possibility": "moderate",
-        "living_risk": "Bilinmiyor / Resmi Veri Yok",
+        "living_risk": "unknown",
         "housing_difficulty_score": null,
         "living_risk_score": null,
         "verification_notes": "Living and housing values were not retained without a checked official or clearly labelled sentiment source.",
@@ -4026,7 +4295,12 @@
         "housing_budget_sek_per_year_min": null,
         "housing_budget_sek_per_year_max": null,
         "housing_budget_dkk_per_year_min": null,
-        "housing_budget_dkk_per_year_max": null
+        "housing_budget_dkk_per_year_max": null,
+        "housing_access": "unknown",
+        "housing_application_separate": null,
+        "housing_options": [],
+        "official_living_cost_items": [],
+        "official_rent_items": []
       },
       "curriculum_profile": {
         "tracks": [],
@@ -4090,10 +4364,11 @@
         "visa_sensitive_deadline": "Yes",
         "application_result_timing": "",
         "enrollment_deadline": "",
-        "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
+        "timeline_risk": "unknown",
         "deadline_notes": null,
         "winter_deadline": null,
-        "application_deadline": null
+        "application_deadline": null,
+        "deadline_events": []
       },
       "source_profile": {
         "official_program_page": "https://www.jku.at/en/degree-programs/types-of-degree-programs/masters-degree-programs/ma-mechatronics/",
@@ -4109,14 +4384,18 @@
         "verification_notes": "German taught.",
         "field_confidence": {
           "program_basic_info": "high",
-          "language": "high",
+          "language": "unknown",
           "admission": "unknown",
           "tuition": "unknown",
           "scholarship": "unknown",
           "curriculum": "medium",
           "research": "medium",
           "industry": "medium",
-          "living": "high"
+          "living": "high",
+          "deadlines": "unknown",
+          "housing": "unknown",
+          "non_eu_eligibility": "unknown",
+          "deadline": "unknown"
         },
         "source_log": [
           {
@@ -4124,7 +4403,7 @@
             "title": "JKU Mechatronics MSc",
             "source_type": "official_program_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "program",
               "degree",
@@ -4143,13 +4422,14 @@
             "url": "https://nominatim.openstreetmap.org/",
             "title": "OpenStreetMap Nominatim geocoding service",
             "source_type": "other",
-            "access_status": "ok",
-            "last_checked": "2026-07-10",
+            "access_status": "redirects",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "location"
             ],
             "confidence": "low",
-            "notes": "Coordinates resolved at city confidence; this is a map placement signal, not an official programme fact."
+            "notes": "Coordinates resolved at city confidence; this is a map placement signal, not an official programme fact.",
+            "final_url": "https://nominatim.openstreetmap.org/ui/search.html"
           }
         ]
       },
@@ -4222,11 +4502,23 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-07-15",
+        "checked_at": "2026-08-14",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
         "remaining_verification_tasks": [
+          {
+            "en": "Add a checked official source for language.",
+            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for admission.",
+            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for non_eu_eligibility.",
+            "tr": "non_eu_eligibility için kontrol edilmiş resmî kaynak ekleyin."
+          },
           {
             "en": "Add a checked official source for tuition.",
             "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
@@ -4236,8 +4528,12 @@
             "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
           },
           {
-            "en": "Add a checked official source for admission.",
-            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+            "en": "Add a checked official source for deadline.",
+            "tr": "deadline için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for housing.",
+            "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
           }
         ],
         "qc_notes": {
@@ -4258,16 +4554,19 @@
         "checked_official_source_count": 1,
         "verified_fields": [
           "program",
-          "language",
           "curriculum"
         ],
         "unverified_critical_fields": [
+          "language",
+          "admission",
+          "non_eu_eligibility",
           "tuition",
           "scholarship",
-          "admission"
+          "deadline",
+          "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-07-15"
+        "audited_at": "2026-08-14"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -4311,13 +4610,15 @@
       "degree_class": "",
       "duration_years": 2,
       "ects": 120,
-      "teaching_language": [],
-      "program_url": "https://www.unileoben.ac.at/en/studies/master-programmes/advanced-materials-science/",
+      "teaching_language": [
+        "Unknown"
+      ],
+      "program_url": "https://www.unileoben.ac.at/en/studying/graduate-studies/materials/advanced-materials-science-and-engineering-en/",
       "department": "Materials Science",
       "faculty_or_school": "",
       "campus": "Leoben Campus",
-      "program_status": "active_but_not_aerospace_path",
-      "relevance_status": "low_relevance",
+      "program_status": "active",
+      "relevance_status": "weak",
       "eligibility_profile": {
         "eligible_for_non_eu": null,
         "non_eu_quota": null,
@@ -4338,7 +4639,7 @@
         "gpa_scale": "",
         "ranking_or_selection": "",
         "admission_mode": "Bilinmiyor / Resmi Veri Yok",
-        "admission_risk": "Bilinmiyor / Resmi Veri Yok",
+        "admission_risk": "unknown",
         "required_documents": [],
         "motivation_letter_required": false,
         "cv_required": true,
@@ -4347,10 +4648,21 @@
         "interview_required": false,
         "test_required": false,
         "notes_for_turkish_students": "",
-        "verification_notes": "Admission facts were not retained without a checked official source."
+        "verification_notes": "Admission facts were not retained without a checked official source.",
+        "gre": {
+          "policy": "unknown",
+          "test_type": "unknown",
+          "minimum_scores": {},
+          "recommended_scores": {},
+          "validity_rule": "",
+          "waiver_rules": [],
+          "source_ids": []
+        }
       },
       "language_profile": {
-        "teaching_language": [],
+        "teaching_language": [
+          "Unknown"
+        ],
         "english_required": null,
         "english_level_required": null,
         "accepted_english_tests": [
@@ -4362,8 +4674,11 @@
         "italian_level_required": "",
         "italian_needed_for_life_or_internship": "",
         "mixed_language_warning": "",
-        "language_risk": "Bilinmiyor / Resmi Veri Yok",
-        "verification_notes": "Teaching language was not retained without a checked official source."
+        "language_risk": "unknown",
+        "verification_notes": "Teaching language was not retained without a checked official source.",
+        "teaching_languages": [
+          "Unknown"
+        ]
       },
       "cost_profile": {
         "tuition_eur_per_year_min": null,
@@ -4406,7 +4721,8 @@
         "living_cost_sek_per_year_min": null,
         "living_cost_sek_per_year_max": null,
         "living_cost_dkk_per_year_min": null,
-        "living_cost_dkk_per_year_max": null
+        "living_cost_dkk_per_year_max": null,
+        "tuition_items": []
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
@@ -4423,7 +4739,11 @@
         "scholarship_application_url": null,
         "funding_competitiveness": "high",
         "funding_notes": null,
-        "verification_notes": "Scholarship claims were not retained without a checked official scholarship source."
+        "verification_notes": "Scholarship claims were not retained without a checked official scholarship source.",
+        "application_mode": "unknown",
+        "automatic_consideration": null,
+        "separate_application_required": null,
+        "opportunities": []
       },
       "living_profile": {
         "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
@@ -4438,7 +4758,7 @@
         "food_cost_eur_month": 250,
         "city_safety_note": "Very safe, small student town.",
         "part_time_work_possibility": "low",
-        "living_risk": "Bilinmiyor / Resmi Veri Yok",
+        "living_risk": "unknown",
         "housing_difficulty_score": null,
         "living_risk_score": null,
         "verification_notes": "Living and housing values were not retained without a checked official or clearly labelled sentiment source.",
@@ -4482,7 +4802,12 @@
         "housing_budget_sek_per_year_min": null,
         "housing_budget_sek_per_year_max": null,
         "housing_budget_dkk_per_year_min": null,
-        "housing_budget_dkk_per_year_max": null
+        "housing_budget_dkk_per_year_max": null,
+        "housing_access": "unknown",
+        "housing_application_separate": null,
+        "housing_options": [],
+        "official_living_cost_items": [],
+        "official_rent_items": []
       },
       "curriculum_profile": {
         "tracks": [],
@@ -4548,13 +4873,14 @@
         "visa_sensitive_deadline": "Yes",
         "application_result_timing": "",
         "enrollment_deadline": "",
-        "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
+        "timeline_risk": "unknown",
         "deadline_notes": null,
         "winter_deadline": null,
-        "application_deadline": null
+        "application_deadline": null,
+        "deadline_events": []
       },
       "source_profile": {
-        "official_program_page": "https://www.unileoben.ac.at/en/studies/master-programmes/advanced-materials-science/",
+        "official_program_page": "https://www.unileoben.ac.at/en/studying/graduate-studies/materials/advanced-materials-science-and-engineering-en/",
         "official_admission_page": "",
         "official_tuition_page": "",
         "official_scholarship_page": "",
@@ -4567,46 +4893,39 @@
         "verification_notes": "",
         "field_confidence": {
           "program_basic_info": "high",
-          "language": "high",
+          "language": "unknown",
           "admission": "unknown",
           "tuition": "unknown",
           "scholarship": "unknown",
           "curriculum": "medium",
           "research": "medium",
           "industry": "medium",
-          "living": "high"
+          "living": "high",
+          "deadlines": "unknown",
+          "housing": "unknown",
+          "non_eu_eligibility": "unknown",
+          "deadline": "unknown"
         },
         "source_log": [
-          {
-            "url": "https://www.unileoben.ac.at/en/studies/master-programmes/advanced-materials-science/",
-            "title": "",
-            "source_type": "official_program_page",
-            "access_status": "Bilinmiyor / Resmi Veri Yok",
-            "last_checked": null,
-            "relevant_fields": [
-              "program_basic_info"
-            ],
-            "confidence": "Bilinmiyor / Resmi Veri Yok",
-            "notes": "Existing source retained but not rechecked in this audit."
-          },
           {
             "url": "https://nominatim.openstreetmap.org/",
             "title": "OpenStreetMap Nominatim geocoding service",
             "source_type": "other",
-            "access_status": "ok",
-            "last_checked": "2026-07-10",
+            "access_status": "redirects",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "location"
             ],
             "confidence": "medium",
-            "notes": "Coordinates resolved at exact confidence; this is a map placement signal, not an official programme fact."
+            "notes": "Coordinates resolved at exact confidence; this is a map placement signal, not an official programme fact.",
+            "final_url": "https://nominatim.openstreetmap.org/ui/search.html"
           },
           {
             "url": "https://www.unileoben.ac.at/en/studying/graduate-studies/materials/advanced-materials-science-and-engineering-en/",
             "title": "Montanuniversität Leoben AMASE MSc",
             "source_type": "official_program_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "program",
               "degree",
@@ -4691,11 +5010,23 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-07-15",
+        "checked_at": "2026-08-14",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
         "remaining_verification_tasks": [
+          {
+            "en": "Add a checked official source for language.",
+            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for admission.",
+            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for non_eu_eligibility.",
+            "tr": "non_eu_eligibility için kontrol edilmiş resmî kaynak ekleyin."
+          },
           {
             "en": "Add a checked official source for tuition.",
             "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
@@ -4705,8 +5036,12 @@
             "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
           },
           {
-            "en": "Add a checked official source for admission.",
-            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+            "en": "Add a checked official source for deadline.",
+            "tr": "deadline için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for housing.",
+            "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
           }
         ],
         "qc_notes": {
@@ -4727,16 +5062,19 @@
         "checked_official_source_count": 1,
         "verified_fields": [
           "program",
-          "language",
           "curriculum"
         ],
         "unverified_critical_fields": [
+          "language",
+          "admission",
+          "non_eu_eligibility",
           "tuition",
           "scholarship",
-          "admission"
+          "deadline",
+          "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-07-15"
+        "audited_at": "2026-08-14"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -4780,13 +5118,15 @@
       "degree_class": "",
       "duration_years": 2,
       "ects": 120,
-      "teaching_language": [],
-      "program_url": "https://www.fh-ooe.at/en/wels-campus/degree-programmes/master/mechanical-engineering/",
+      "teaching_language": [
+        "Unknown"
+      ],
+      "program_url": "https://fh-ooe.at/en/degree-programs/mechanical-engineering-master",
       "department": "Engineering",
       "faculty_or_school": "Wels Campus",
       "campus": "Wels Campus",
-      "program_status": "active_but_not_aerospace_path",
-      "relevance_status": "low_relevance",
+      "program_status": "active",
+      "relevance_status": "weak",
       "eligibility_profile": {
         "eligible_for_non_eu": null,
         "non_eu_quota": null,
@@ -4807,7 +5147,7 @@
         "gpa_scale": "",
         "ranking_or_selection": "",
         "admission_mode": "Bilinmiyor / Resmi Veri Yok",
-        "admission_risk": "Bilinmiyor / Resmi Veri Yok",
+        "admission_risk": "unknown",
         "required_documents": [],
         "motivation_letter_required": false,
         "cv_required": true,
@@ -4816,10 +5156,21 @@
         "interview_required": false,
         "test_required": false,
         "notes_for_turkish_students": "German proficiency required.",
-        "verification_notes": "Admission facts were not retained without a checked official source."
+        "verification_notes": "Admission facts were not retained without a checked official source.",
+        "gre": {
+          "policy": "unknown",
+          "test_type": "unknown",
+          "minimum_scores": {},
+          "recommended_scores": {},
+          "validity_rule": "",
+          "waiver_rules": [],
+          "source_ids": []
+        }
       },
       "language_profile": {
-        "teaching_language": [],
+        "teaching_language": [
+          "Unknown"
+        ],
         "english_required": null,
         "english_level_required": null,
         "accepted_english_tests": [],
@@ -4828,8 +5179,11 @@
         "italian_level_required": "",
         "italian_needed_for_life_or_internship": "",
         "mixed_language_warning": "Program is taught primarily in German.",
-        "language_risk": "Bilinmiyor / Resmi Veri Yok",
-        "verification_notes": "Teaching language was not retained without a checked official source."
+        "language_risk": "unknown",
+        "verification_notes": "Teaching language was not retained without a checked official source.",
+        "teaching_languages": [
+          "Unknown"
+        ]
       },
       "cost_profile": {
         "tuition_eur_per_year_min": null,
@@ -4872,7 +5226,8 @@
         "living_cost_sek_per_year_min": null,
         "living_cost_sek_per_year_max": null,
         "living_cost_dkk_per_year_min": null,
-        "living_cost_dkk_per_year_max": null
+        "living_cost_dkk_per_year_max": null,
+        "tuition_items": []
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
@@ -4889,7 +5244,11 @@
         "scholarship_application_url": null,
         "funding_competitiveness": "high",
         "funding_notes": null,
-        "verification_notes": "Scholarship claims were not retained without a checked official scholarship source."
+        "verification_notes": "Scholarship claims were not retained without a checked official scholarship source.",
+        "application_mode": "unknown",
+        "automatic_consideration": null,
+        "separate_application_required": null,
+        "opportunities": []
       },
       "living_profile": {
         "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
@@ -4904,7 +5263,7 @@
         "food_cost_eur_month": 300,
         "city_safety_note": "Safe, industrial town.",
         "part_time_work_possibility": "moderate",
-        "living_risk": "Bilinmiyor / Resmi Veri Yok",
+        "living_risk": "unknown",
         "housing_difficulty_score": null,
         "living_risk_score": null,
         "verification_notes": "Living and housing values were not retained without a checked official or clearly labelled sentiment source.",
@@ -4948,7 +5307,12 @@
         "housing_budget_sek_per_year_min": null,
         "housing_budget_sek_per_year_max": null,
         "housing_budget_dkk_per_year_min": null,
-        "housing_budget_dkk_per_year_max": null
+        "housing_budget_dkk_per_year_max": null,
+        "housing_access": "unknown",
+        "housing_application_separate": null,
+        "housing_options": [],
+        "official_living_cost_items": [],
+        "official_rent_items": []
       },
       "curriculum_profile": {
         "tracks": [],
@@ -5011,13 +5375,14 @@
         "visa_sensitive_deadline": "Yes",
         "application_result_timing": "",
         "enrollment_deadline": "",
-        "timeline_risk": "Bilinmiyor / Resmi Veri Yok",
+        "timeline_risk": "unknown",
         "deadline_notes": null,
         "winter_deadline": null,
-        "application_deadline": null
+        "application_deadline": null,
+        "deadline_events": []
       },
       "source_profile": {
-        "official_program_page": "https://www.fh-ooe.at/en/wels-campus/degree-programmes/master/mechanical-engineering/",
+        "official_program_page": "https://fh-ooe.at/en/degree-programs/mechanical-engineering-master",
         "official_admission_page": "",
         "official_tuition_page": "",
         "official_scholarship_page": "",
@@ -5030,46 +5395,39 @@
         "verification_notes": "German taught program. Might lack English courses.",
         "field_confidence": {
           "program_basic_info": "high",
-          "language": "high",
+          "language": "unknown",
           "admission": "unknown",
           "tuition": "unknown",
           "scholarship": "unknown",
           "curriculum": "medium",
           "research": "low",
           "industry": "medium",
-          "living": "high"
+          "living": "high",
+          "deadlines": "unknown",
+          "housing": "unknown",
+          "non_eu_eligibility": "unknown",
+          "deadline": "unknown"
         },
         "source_log": [
-          {
-            "url": "https://www.fh-ooe.at/en/wels-campus/degree-programmes/master/mechanical-engineering/",
-            "title": "",
-            "source_type": "official_program_page",
-            "access_status": "Bilinmiyor / Resmi Veri Yok",
-            "last_checked": null,
-            "relevant_fields": [
-              "program_basic_info"
-            ],
-            "confidence": "Bilinmiyor / Resmi Veri Yok",
-            "notes": "Existing source retained but not rechecked in this audit."
-          },
           {
             "url": "https://nominatim.openstreetmap.org/",
             "title": "OpenStreetMap Nominatim geocoding service",
             "source_type": "other",
-            "access_status": "ok",
-            "last_checked": "2026-07-10",
+            "access_status": "redirects",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "location"
             ],
             "confidence": "low",
-            "notes": "Coordinates resolved at city confidence; this is a map placement signal, not an official programme fact."
+            "notes": "Coordinates resolved at city confidence; this is a map placement signal, not an official programme fact.",
+            "final_url": "https://nominatim.openstreetmap.org/ui/search.html"
           },
           {
             "url": "https://fh-ooe.at/en/degree-programs/mechanical-engineering-master",
             "title": "FH Upper Austria Mechanical Engineering MSc",
             "source_type": "official_program_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "program",
               "degree",
@@ -5154,11 +5512,23 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-07-15",
+        "checked_at": "2026-08-14",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
         "remaining_verification_tasks": [
+          {
+            "en": "Add a checked official source for language.",
+            "tr": "language için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for admission.",
+            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for non_eu_eligibility.",
+            "tr": "non_eu_eligibility için kontrol edilmiş resmî kaynak ekleyin."
+          },
           {
             "en": "Add a checked official source for tuition.",
             "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
@@ -5168,8 +5538,12 @@
             "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
           },
           {
-            "en": "Add a checked official source for admission.",
-            "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
+            "en": "Add a checked official source for deadline.",
+            "tr": "deadline için kontrol edilmiş resmî kaynak ekleyin."
+          },
+          {
+            "en": "Add a checked official source for housing.",
+            "tr": "housing için kontrol edilmiş resmî kaynak ekleyin."
           }
         ],
         "qc_notes": {
@@ -5190,16 +5564,19 @@
         "checked_official_source_count": 1,
         "verified_fields": [
           "program",
-          "language",
           "curriculum"
         ],
         "unverified_critical_fields": [
+          "language",
+          "admission",
+          "non_eu_eligibility",
           "tuition",
           "scholarship",
-          "admission"
+          "deadline",
+          "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-07-15"
+        "audited_at": "2026-08-14"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,

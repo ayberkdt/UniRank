@@ -63,8 +63,10 @@ function firstFiniteNumber(...values) {
 
 function foreignAnnualTuition(costProfile) {
   const exactFields = [
+    ["tuition_and_program_fees_usd_nonresident", "USD", "academic_year"],
     ["tuition_usd_per_year", "USD", "year"],
     ["tuition_usd_per_year_at_three_quarters", "USD", "year"],
+    ["tuition_usd_first_year_example", "USD", "year"],
     ["tuition_gbp_per_year", "GBP", "year"],
     ["tuition_chf_per_year", "CHF", "year"],
     ["tuition_sek_per_year", "SEK", "year"],
@@ -74,13 +76,47 @@ function foreignAnnualTuition(costProfile) {
   ];
   for (const [key, currency, period] of exactFields) {
     const amount = finiteNumber(costProfile?.[key]);
-    if (amount !== null) return { amount, currency, period };
+    if (amount !== null) {
+      return {
+        amount,
+        currency,
+        period,
+        academicYear: valueText(costProfile?.academic_year),
+        isHistorical: costProfile?.current_for_fall_2027 === false
+      };
+    }
+  }
+  for (const currency of ["usd", "gbp", "chf", "sek", "dkk"]) {
+    const min = finiteNumber(costProfile?.[`tuition_${currency}_per_year_min`]);
+    const max = finiteNumber(costProfile?.[`tuition_${currency}_per_year_max`]);
+    if (min !== null || max !== null) {
+      return {
+        min: min ?? max,
+        max: max ?? min,
+        currency: currency.toUpperCase(),
+        period: "year",
+        kind: "published_range",
+        academicYear: valueText(costProfile?.academic_year),
+        isHistorical: costProfile?.current_for_fall_2027 === false
+      };
+    }
   }
   return null;
 }
 
 function foreignMonthlyRoomRent(livingProfile) {
   for (const currency of ["usd", "gbp", "chf", "sek", "dkk"]) {
+    const graduateMin = finiteNumber(livingProfile?.[`graduate_housing_rate_${currency}_per_person_month_min`]);
+    const graduateMax = finiteNumber(livingProfile?.[`graduate_housing_rate_${currency}_per_person_month_max`]);
+    if (graduateMin !== null || graduateMax !== null) {
+      return {
+        min: graduateMin ?? graduateMax,
+        max: graduateMax ?? graduateMin,
+        currency: currency.toUpperCase(),
+        kind: "official_graduate_housing_rate",
+        academicYear: valueText(livingProfile?.rates_academic_year)
+      };
+    }
     const min = finiteNumber(livingProfile?.[`average_room_rent_${currency}_per_month_min`]);
     const max = finiteNumber(livingProfile?.[`average_room_rent_${currency}_per_month_max`]);
     const exact = finiteNumber(livingProfile?.[`average_room_rent_${currency}_per_month`]);
@@ -135,7 +171,9 @@ function foreignAnnualHousingBudget(livingProfile) {
 
 function foreignCompulsoryFee(costProfile) {
   const exactFields = [
+    ["institutional_resilience_enhancement_fee_usd", "USD", "academic_year"],
     ["mandatory_fees_usd_per_year", "USD", "year"],
+    ["mandatory_fees_usd_first_year_example", "USD", "year"],
     ["mandatory_fees_gbp_per_year", "GBP", "year"],
     ["mandatory_fees_chf_per_year", "CHF", "year"],
     ["mandatory_fees_sek_per_year", "SEK", "year"],
@@ -143,7 +181,15 @@ function foreignCompulsoryFee(costProfile) {
   ];
   for (const [key, currency, period] of exactFields) {
     const amount = finiteNumber(costProfile?.[key]);
-    if (amount !== null) return { amount, currency, period };
+    if (amount !== null) {
+      return {
+        amount,
+        currency,
+        period,
+        academicYear: valueText(costProfile?.academic_year),
+        isHistorical: costProfile?.current_for_fall_2027 === false
+      };
+    }
   }
   return null;
 }
@@ -266,7 +312,11 @@ function summarizeConfidence(fieldConfidence) {
   if (!fieldConfidence || typeof fieldConfidence !== "object" || Array.isArray(fieldConfidence)) return "unknown";
 
   const rank = { unknown: 0, low: 1, medium: 2, high: 3 };
-  const levels = Object.values(fieldConfidence)
+  const levels = Object.entries(fieldConfidence)
+    // Student sentiment is intentionally a separate perception signal. A
+    // low-confidence forum sample must not downgrade verified official facts.
+    .filter(([key]) => !["student_sentiment", "sentiment"].includes(key))
+    .map(([, value]) => value)
     .map(value => String(value || "").trim().toLowerCase())
     .map(value => Object.prototype.hasOwnProperty.call(rank, value) ? value : "unknown");
 
@@ -364,6 +414,16 @@ function normalizeUniversityRecord(record) {
     record.display_name,
     record.name
   ) || "";
+  const universityAliases = Array.from(new Set([
+    ...stringList(record.institution_profile?.alternate_names),
+    ...stringList(record.institution_profile?.aliases),
+    ...stringList(record.institution_profile?.short_name),
+    ...stringList(record.university_aliases),
+    ...stringList(record.alternate_names),
+    ...stringList(record.short_name),
+    ...stringList(record.short),
+    ...stringList(record.University_Short_Name)
+  ]));
   const programName = firstValue(record.program_name, record.Program_Name, record.target_program_name, record.Target_Program_Name) || "";
   const city = valueText(firstValue(record.city, record.City));
   const country = valueText(firstValue(record.country, record.Country));
@@ -372,7 +432,9 @@ function normalizeUniversityRecord(record) {
   const ects = firstFiniteNumber(record.ects, record.Program_ECTS, record.target_program_ects);
   const duration = normalizeDuration(record);
   const teachingLanguage = stringList(firstKnownValue(
+    record.teaching_languages,
     record.teaching_language,
+    languageProfile.teaching_languages,
     languageProfile.teaching_language,
     record.Admission_Language_Req,
     record.admission_language_req,
@@ -381,7 +443,12 @@ function normalizeUniversityRecord(record) {
   ));
   const legacyTuitionPerYear = hasStructuredCostProfile ? null : legacyAnnualTuition(record.Cost_Tuition);
   const legacySemesterFee = hasStructuredCostProfile ? null : firstObjectNumber(record.Cost_Semester_Fees);
+  const explicitNonEuEuroTuition = firstFiniteNumber(
+    costProfile.tuition_eur_per_year_non_eu_nonresident,
+    Number(costProfile.non_eu_flat_fee) > 0 ? costProfile.non_eu_flat_fee : null
+  );
   const tuitionPerYear = firstFiniteNumber(
+    explicitNonEuEuroTuition,
     costProfile.tuition_eur_per_year_estimated,
     costProfile.tuition_eur_per_year_min,
     record.tuition_eur_per_year,
@@ -397,6 +464,11 @@ function normalizeUniversityRecord(record) {
     hasStructuredCostProfile ? null : financials.semester_fee,
     legacySemesterFee
   );
+  const feeScope = finiteNumber(costProfile.enrollment_fee_eur) !== null
+    && finiteNumber(costProfile.regional_tax_eur) === null
+    && finiteNumber(costProfile.student_contribution_eur) === null
+      ? "enrollment"
+      : "term_or_published_period";
   // Some universities publish an explicitly approximate planning contribution
   // rather than an invoice. Keep that useful figure visible, but expose its
   // status so cards never make it look exact.
@@ -408,9 +480,9 @@ function normalizeUniversityRecord(record) {
     : null;
   const totalAcademicCost = firstFiniteNumber(
     costProfile.total_academic_cost_eur_per_year_estimated,
-    record.annual_fee_eur,
     legacyAcademicCost,
-    tuitionPerYear
+    tuitionPerYear,
+    hasStructuredCostProfile ? null : record.annual_fee_eur
   );
   const publishedForeignTuition = foreignAnnualTuition(costProfile);
   const publishedEuroRoomRent = euroMonthlyRoomRent(livingProfile, record);
@@ -446,6 +518,7 @@ function normalizeUniversityRecord(record) {
   return {
     id,
     universityName,
+    universityAliases,
     programName,
     city,
     country,
@@ -456,7 +529,9 @@ function normalizeUniversityRecord(record) {
     teachingLanguage,
     programUrl: firstValue(record.program_url, record.Program_URL, record.target_program_url, urls.program, record.url) || "",
     tuitionPerYear,
+    tuitionScope: explicitNonEuEuroTuition !== null ? "non_eu_target" : "general_or_lowest_published",
     semesterFee,
+    feeScope,
     semesterFeeApproximate,
     totalAcademicCost,
     foreignTuition: publishedForeignTuition,
@@ -466,7 +541,12 @@ function normalizeUniversityRecord(record) {
     deadline,
     eligibleForNonEu,
     languageRisk: firstKnownValue(languageProfile.language_risk, record.language_risk) || "unknown",
-    housingDifficulty: firstKnownValue(livingProfile.housing_difficulty) || "unknown",
+    housingDifficulty: firstKnownValue(
+      livingProfile.housing_difficulty,
+      livingProfile.housing_search_difficulty,
+      livingProfile.living_risk,
+      record.living_risk
+    ) || "unknown",
     livingRisk: firstKnownValue(livingProfile.living_risk, record.living_risk, record.Cost_City_Living) || "unknown",
     cityCostLevel: firstKnownValue(livingProfile.cost_city_living, livingProfile.city_cost_level, record.cost_city_raw, record.Cost_City_Living) || "unknown",
     scholarshipSummary: firstValue(
@@ -478,6 +558,8 @@ function normalizeUniversityRecord(record) {
     ) || "",
     researchSummary: firstValue(
       researchProfile.research_strength_summary,
+      researchProfile.research_access_note,
+      researchProfile.verification_notes,
       record.strong_areas_summary,
       record.Analysis_Strong_Areas,
       record.research_strength,
@@ -485,6 +567,7 @@ function normalizeUniversityRecord(record) {
     ) || "",
     industrySummary: firstValue(
       industryProfile.ecosystem_notes,
+      industryProfile.verification_notes,
       record.aerospace_ecosystem,
       record.Industry_Ecosystem,
       record.industry_ecosystem
@@ -513,14 +596,18 @@ function normalizeUniversityRecord(record) {
     qsRankYear: firstFiniteNumber(record.qs_ranking_year, qsProfile.edition),
     qsRankSource: firstValue(qsProfile.source_url),
     engineeringRanking: firstValue(record.engineering_ranking, record.field_recognition) || null,
-    labs: Array.isArray(researchProfile.labs) ? researchProfile.labs : [],
+    labs: Array.isArray(researchProfile.labs)
+      ? researchProfile.labs
+      : (Array.isArray(researchProfile.key_institutes) ? researchProfile.key_institutes : []),
     professors: Array.isArray(researchProfile.notable_professors) ? researchProfile.notable_professors : [],
     strongAreas: categoryProfile.normalized_tags.length
       ? categoryProfile.normalized_tags
-      : stringList(firstValue(record.Analysis_Tags, record.tags)),
+      : stringList(firstValue(researchProfile.research_focus_areas, record.Analysis_Tags, record.tags)),
     confirmedPartners: Array.isArray(industryProfile.confirmed_partners)
       ? industryProfile.confirmed_partners
-      : (Array.isArray(record.Industry_Partners) ? record.Industry_Partners : []),
+      : (Array.isArray(industryProfile.verified_partnerships)
+        ? industryProfile.verified_partnerships
+        : (Array.isArray(record.Industry_Partners) ? record.Industry_Partners : [])),
     internshipMandatory: firstValue(curriculumProfile.internship_required, record.internship_mandatory, record.Internship_Mandatory),
     averageRoomRent: firstFiniteNumber(livingProfile.average_room_rent_eur),
     euroRoomRent: publishedEuroRoomRent,
@@ -538,6 +625,10 @@ function normalizeUniversityRecord(record) {
     scholarshipDetails: scholarshipProfile,
     costDetails: costProfile,
     livingDetails: livingProfile,
+    eligibilityDetails: eligibilityProfile,
+    languageDetails: languageProfile,
+    curriculumDetails: curriculumProfile,
+    timelineDetails: timelineProfile,
     admissionUrl: firstValue(sourceProfile.official_admission_page, urls.admission, record.admission_url) || "",
     tuitionUrl: firstValue(sourceProfile.official_tuition_page, urls.tuition, record.tuition_url) || "",
     scholarshipUrl: firstValue(sourceProfile.official_scholarship_page, scholarshipProfile.scholarship_application_url, record.scholarship_url) || "",

@@ -10,6 +10,54 @@ from pydantic import ValidationError
 from unirank.core.schema import UniversityRecord
 from unirank.core.integrity import apply_integrity_gate
 
+
+def _load_catalog_scope() -> tuple[set[str], dict[str, str]]:
+    """Load the single catalogue-scope policy shared by data consumers."""
+    path = Path(__file__).resolve().parents[2] / "config" / "catalog_scope.json"
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError, TypeError):
+        return set(), {}
+    excluded = {str(value).strip() for value in payload.get("excluded_countries", []) if str(value).strip()}
+    aliases = {
+        str(key).strip(): str(value).strip()
+        for key, value in (payload.get("country_aliases") or {}).items()
+        if str(key).strip() and str(value).strip()
+    }
+    return excluded, aliases
+
+
+CATALOG_EXCLUDED_COUNTRIES, CATALOG_COUNTRY_ALIASES = _load_catalog_scope()
+
+
+def _catalog_country(record: Dict[str, Any]) -> str:
+    country = record.get("country") or record.get("Country") or ""
+    if isinstance(country, dict):
+        country = country.get("en") or country.get("tr") or ""
+    value = str(country).strip()
+    return CATALOG_COUNTRY_ALIASES.get(value, value)
+
+
+def _is_catalog_country_allowed(record: Dict[str, Any]) -> bool:
+    country = _catalog_country(record)
+    return country not in {CATALOG_COUNTRY_ALIASES.get(value, value) for value in CATALOG_EXCLUDED_COUNTRIES}
+
+
+def _has_programme_identity(record: Dict[str, Any]) -> bool:
+    """Return true only for records tied to a named degree programme.
+
+    Institution-level discovery candidates remain in the research files, but
+    UniRank is a programme decision tool and must not surface those candidates
+    as if an eligible Master's degree had already been verified.
+    """
+    if any(
+        isinstance(record.get(key), str) and record.get(key).strip()
+        for key in ("program_name", "target_program_name", "Program_Name")
+    ):
+        return True
+    programme = record.get("program_profile") or {}
+    return isinstance(programme.get("name"), str) and bool(programme["name"].strip())
+
 @dataclass(frozen=True, slots=True)
 class LoadIssue:
     level: str
@@ -60,7 +108,7 @@ def _json_compact(obj: Any) -> str:
 def _city_name(value: Any) -> str:
     """Return a displayable city name without discarding the original record."""
     if isinstance(value, dict):
-        for key in ("name", "city", "City", "label"):
+        for key in ("name", "city", "City", "label", "en", "tr"):
             candidate = value.get(key)
             if isinstance(candidate, str) and candidate.strip():
                 return candidate.strip()
@@ -79,11 +127,13 @@ def _identity_text(value: Any) -> str:
 
 
 def _programme_identity(row: Dict[str, Any]) -> tuple[str, str, str, str]:
+    institution = row.get("institution_profile") or {}
+    programme = row.get("program_profile") or {}
     return (
         _identity_text(row.get("country")),
-        _identity_text(row.get("university") or row.get("name")),
-        _identity_text(row.get("program_name") or row.get("target_program_name")),
-        _identity_text(row.get("degree_level") or row.get("program_degree") or row.get("target_program_degree")),
+        _identity_text(row.get("university") or row.get("name") or institution.get("name")),
+        _identity_text(row.get("program_name") or row.get("target_program_name") or programme.get("name")),
+        _identity_text(row.get("degree_level") or row.get("program_degree") or row.get("target_program_degree") or programme.get("degree_level")),
     )
 
 
@@ -95,9 +145,11 @@ def _is_undergraduate_programme(row: Dict[str, Any]) -> bool:
     and direct-entry Diplom programmes, while leaving unverified degree levels
     available for source review instead of silently relabelling them.
     """
+    programme = row.get("program_profile") or {}
     degree_text = " ".join(str(row.get(key) or "") for key in (
         "degree_level", "program_degree", "target_program_degree", "Program_Degree", "degree", "level"
-    )).lower()
+    )) + " " + str(programme.get("degree_level") or "") + " " + str(programme.get("degree_award") or "")
+    degree_text = degree_text.lower()
     return bool(re.search(r"\b(bachelor|b\.\s*sc\.?|bsc|undergraduate|first[- ]cycle|lisans)\b", degree_text)) or (
         "diplom" in degree_text and "direct" in degree_text
     )
@@ -113,10 +165,46 @@ def _record_preference(row: Dict[str, Any]) -> tuple[int, int, int, str]:
     return status_rank, verified_count, source_count, str(row.get("updated_at") or "")
 
 
+def _v2_annual_tuition(cost_profile: Dict[str, Any]) -> Optional[float]:
+    """Return a directly published annual non-EU tuition value when present."""
+    for item in cost_profile.get("tuition_items") or []:
+        if not isinstance(item, dict):
+            continue
+        if item.get("currency") != "EUR" or item.get("period") not in {"academic_year", "year", "annual"}:
+            continue
+        if item.get("mandatory") is False:
+            continue
+        applicant_scope = str(item.get("applicant_scope") or "all").strip().lower()
+        if applicant_scope != "all" and applicant_scope != "non_eu" and not applicant_scope.startswith("non_eu_"):
+            continue
+        amount = item.get("amount")
+        if isinstance(amount, (int, float)):
+            return float(amount)
+    return None
+
+
+def _v2_current_deadline(timeline: Dict[str, Any]) -> str:
+    for event in timeline.get("deadline_events") or []:
+        if not isinstance(event, dict) or event.get("date_status") != "current":
+            continue
+        if event.get("applicant_scope") in {"non_eu", "international", "all", None}:
+            return str(event.get("date") or "")
+    return ""
+
+
 def _deduplicate_programme_rows(rows: List[Dict[str, Any]], report: LoadReport) -> List[Dict[str, Any]]:
     """Keep one record only for an exact country/university/programme/degree clone."""
     grouped: Dict[tuple[str, str, str, str], List[Dict[str, Any]]] = {}
     for row in rows:
+        relationship = row.get("catalogue_relationship") or {}
+        if relationship.get("rankable_as_independent_choice") is False:
+            canonical = str(relationship.get("canonical_record_id") or "unknown")
+            report.add(LoadIssue.warn(
+                str(row.get("source_file") or "data_base"),
+                f"Suppressed non-independent joint-programme manifestation; use canonical record {canonical}.",
+                record_id=str(row.get("id") or "") or None,
+            ))
+            continue
         if _is_undergraduate_programme(row):
             report.add(LoadIssue.warn(
                 str(row.get("source_file") or "data_base"),
@@ -180,6 +268,24 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
         
         for i, entry in enumerate(data):
             report.records_seen += 1
+
+            if not _is_catalog_country_allowed(entry):
+                report.add(LoadIssue.warn(
+                    file.name,
+                    f"Skipped record outside active catalogue scope: {_catalog_country(entry)}",
+                    record_index=i,
+                    record_id=entry.get("id") or entry.get("Uni_ID"),
+                ))
+                continue
+
+            if not _has_programme_identity(entry):
+                report.add(LoadIssue.warn(
+                    file.name,
+                    "Skipped institution-level research candidate without a verified programme name.",
+                    record_index=i,
+                    record_id=entry.get("id") or entry.get("Uni_ID"),
+                ))
+                continue
             
             # Intercept new 14-profile schema without Pydantic validation
             if "eligibility_profile" in entry and "cost_profile" in entry:
@@ -199,24 +305,60 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
                 living_profile = entry.get("living_profile", {})
                 source_profile = entry.get("source_profile", {})
                 ranking_profile = entry.get("ranking_profile", {})
+                institution_profile = entry.get("institution_profile", {})
+                program_profile = entry.get("program_profile", {})
+                timeline_profile = entry.get("application_timeline_profile", {})
+                curriculum_profile = entry.get("curriculum_profile", {})
                 qs_profile = ranking_profile.get("qs_world_university_rankings", {})
                 categories = cat_prof.get("primary_categories", []) + cat_prof.get("secondary_categories", [])
-                
+
+                university = entry.get("university") or institution_profile.get("name", "")
+                university_native = entry.get("university_native_name") or institution_profile.get("native_name") or university
+                program_name = entry.get("program_name") or program_profile.get("name", "")
+                program_degree = entry.get("program_degree") or program_profile.get("degree_award", "")
+                degree_level = entry.get("degree_level") or program_profile.get("degree_level", "")
+                duration = program_profile.get("duration") or {}
+                credits = program_profile.get("credits") or {}
+                duration_years = entry.get("duration_years")
+                if duration_years is None and duration.get("unit") == "years":
+                    duration_years = duration.get("value")
+                ects = entry.get("ects") if entry.get("ects") is not None else credits.get("value")
+                program_url = entry.get("program_url") or program_profile.get("official_url", "")
+                program_status = entry.get("program_status") or program_profile.get("program_status", "")
+                location = entry.get("location") or {}
+                city = entry.get("city") or location.get("city", "")
+                region = entry.get("region") or location.get("region", "")
+                teaching_languages = (
+                    entry.get("teaching_language")
+                    or language_profile.get("teaching_languages")
+                    or language_profile.get("teaching_language", [])
+                )
                 tuit_eur = cost_profile.get("tuition_eur_per_year_estimated")
+                if tuit_eur is None:
+                    tuit_eur = _v2_annual_tuition(cost_profile)
+                scholarship_names = entry.get("scholarship_profile", {}).get("regional_scholarship_name", "")
+                if not scholarship_names:
+                    scholarship_names = ", ".join(
+                        text for text in (
+                            _city_name(item.get("name"))
+                            for item in entry.get("scholarship_profile", {}).get("opportunities") or []
+                            if isinstance(item, dict)
+                        ) if text
+                    )
                 
                 row = {
                     "id": entry.get("id", ""),
-                    "name": entry.get("university", ""),
-                    "display_name": entry.get("university_native_name") or entry.get("university", ""),
-                    "short": "",
-                    "university": entry.get("university", ""),
-                    "city": _city_name(entry.get("city", "")),
-                    "state": entry.get("region", ""),
+                    "name": university,
+                    "display_name": university_native,
+                    "short": institution_profile.get("short_name", ""),
+                    "university": university,
+                    "city": _city_name(city),
+                    "state": region,
                     "country": entry.get("country", ""),
                     # Keep the source location object intact for map consumers.
                     # The web API serializes this DataFrame row, so dropping it
                     # here makes every otherwise valid coordinate disappear.
-                    "location": entry.get("location"),
+                    "location": location,
                     "scope": "non_eu",
                     "needs_verification": source_profile.get("needs_verification", False),
                     "cost_city": living_profile.get("cost_city_living") or living_profile.get("city_cost_level", ""),
@@ -239,17 +381,17 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
                     "cons": entry.get("decision_summary", {}).get("main_risks", []),
                     "tags": categories,
                     "tags_raw": ", ".join(categories),
-                    "target_program_name": entry.get("program_name", ""),
-                    "target_program_degree": entry.get("program_degree", ""),
-                    "target_program_ects": entry.get("ects"),
-                    "target_program_url": entry.get("program_url", ""),
+                    "target_program_name": program_name,
+                    "target_program_degree": program_degree,
+                    "target_program_ects": ects,
+                    "target_program_url": program_url,
                     "target_program_json": "{}",
                     "admission_mode": entry.get("eligibility_profile", {}).get("admission_mode", ""),
                     "language_req": language_profile.get("english_level_required", ""),
-                    "internship_mandatory": entry.get("curriculum_profile", {}).get("internship_required", False),
+                    "internship_mandatory": curriculum_profile.get("internship_required", (curriculum_profile.get("internship") or {}).get("required", False)),
                     "internship_notes": "",
                     "deadline_winter_opens": "",
-                    "deadline_winter_closes": entry.get("application_timeline_profile", {}).get("non_eu_deadline", ""),
+                    "deadline_winter_closes": timeline_profile.get("non_eu_deadline") or _v2_current_deadline(timeline_profile),
                     "deadline_summer_opens": "",
                     "deadline_summer_closes": "",
                     "deadlines_note": "",
@@ -260,7 +402,7 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
                     "industry_focus_json": "{}",
                     "logistics_json": "{}",
                     "admission_details_json": "{}",
-                    "scholarship_names": entry.get("scholarship_profile", {}).get("regional_scholarship_name", ""),
+                    "scholarship_names": scholarship_names,
                     "scholarships_json": "[]",
                     "sources_json": "[]",
                     "qs_ranking": entry.get("qs_ranking") if isinstance(entry.get("qs_ranking"), int) else qs_profile.get("rank"),
@@ -271,20 +413,22 @@ def load_database_folder(folder: str | Path, strict: bool = False) -> Tuple[pd.D
                     "field_recognition": "",
                     "source_file": file.name,
                     "updated_at": source_profile.get("last_verified", ""),
-                    "program_name": entry.get("program_name", ""),
-                    "program_degree": entry.get("program_degree", ""),
-                    "degree_level": entry.get("degree_level", ""),
-                    "duration_years": entry.get("duration_years"),
-                    "ects": entry.get("ects"),
-                    "teaching_language": entry.get("teaching_language") or language_profile.get("teaching_language", []),
-                    "program_url": entry.get("program_url", ""),
-                    "program_status": entry.get("program_status", ""),
+                    "program_name": program_name,
+                    "program_degree": program_degree,
+                    "degree_level": degree_level,
+                    "duration_years": duration_years,
+                    "ects": ects,
+                    "teaching_language": teaching_languages,
+                    "program_url": program_url,
+                    "program_status": program_status,
+                    "joint_program_id": entry.get("joint_program_id"),
+                    "catalogue_relationship": entry.get("catalogue_relationship", {}),
                     "eligibility_profile": entry.get("eligibility_profile", {}),
                     "language_profile": language_profile,
                     "cost_profile": cost_profile,
                     "scholarship_profile": entry.get("scholarship_profile", {}),
                     "living_profile": living_profile,
-                    "curriculum_profile": entry.get("curriculum_profile", {}),
+                    "curriculum_profile": curriculum_profile,
                     "category_profile": cat_prof,
                     "research_profile": entry.get("research_profile", {}),
                     "industry_ecosystem_profile": entry.get("industry_ecosystem_profile", {}),

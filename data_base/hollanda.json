@@ -46,7 +46,7 @@
       "faculty_or_school": "",
       "campus": "Delft",
       "program_status": "active",
-      "relevance_status": "high",
+      "relevance_status": "needs_review",
       "eligibility_profile": {
         "eligible_for_non_eu": true,
         "non_eu_quota": null,
@@ -110,6 +110,22 @@
         "verification_notes": {
           "en": "General MSc requirements, documents and the Aerospace-specific GRE rule are separately published by TU Delft. The programme-specific page is for the 2026/27 intake; check the next intake before applying.",
           "tr": "Genel yüksek lisans şartları, belgeler ve Havacılık ve Uzay Mühendisliğine özgü GRE kuralı TU Delft tarafından ayrı sayfalarda yayımlanır. Programa özgü sayfa 2026/27 alımına aittir; başvuru öncesinde sonraki alımı kontrol edin."
+        },
+        "gre": {
+          "policy": "required_for_international_bsc_applicants_to_aerospace_engineering_in_the_2026_27_cycle",
+          "test_type": "GRE General Test",
+          "minimum_scores": {
+            "verbal_reasoning": 154,
+            "quantitative_reasoning": 163,
+            "analytical_writing": 4.0
+          },
+          "recommended_scores": {},
+          "validity_rule": "unknown",
+          "waiver_rules": [],
+          "cycle_status": "closed_past_cycle_recheck_next_intake",
+          "source_ids": [
+            "https://www.tudelft.nl/en/education/programmes/masters/ae/msc-aerospace-engineering/admission-and-application"
+          ]
         }
       },
       "language_profile": {
@@ -204,17 +220,52 @@
         "cash_grant_possible": true,
         "non_eu_eligible": true,
         "income_based": false,
-        "scholarship_deadline": "2025-12-01 (2026–2028 cycle; closed)",
+        "scholarship_deadline": "2025-12-01T23:59:00+01:00",
         "scholarship_application_url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/scholarships/justus-louise-van-effen-excellence-scholarships",
         "funding_competitiveness": "extremely_high",
         "funding_notes": {
-          "en": "The 2026–2028 Justus & Louise van Effen cycle has already been awarded. Its official page listed a 1 December 2025 deadline, two awards per faculty and an indicative top-10% academic standard. The next-cycle deadline is not yet verified, so do not infer it from the past cycle.",
-          "tr": "2026–2028 Justus & Louise van Effen dönemi zaten sonuçlandırılmıştır. Resmî sayfa 1 Aralık 2025 son tarihini, fakülte başına iki ödülü ve gösterge niteliğinde ilk %10 başarı standardını yayımlamıştır. Sonraki dönemin son tarihi henüz doğrulanmadığından geçmiş dönemden çıkarım yapılmamalıdır."
+          "en": "This was not automatic consideration. The applicant had to add a scholarship form and two references to the complete MSc application before 1 December 2025 at 23:59 CET. The page now says the 2026-2028 awards have been made; no future deadline is inferred.",
+          "tr": "Bu burs otomatik deÄŸerlendirme deÄŸildi. AdayÄ±n 1 AralÄ±k 2025 saat 23.59 CET'ten Ã¶nce eksiksiz MSc baÅŸvurusuna burs formu ve iki referans eklemesi gerekiyordu. Sayfa artÄ±k 2026-2028 Ã¶dÃ¼llerinin verildiÄŸini belirtiyor; gelecek dÃ¶nem tarihi Ã§Ä±karÄ±lmÄ±yor."
         },
         "verification_notes": {
-          "en": "Eligibility and award scope are official; this record deliberately labels the published deadline as a closed past cycle.",
-          "tr": "Uygunluk ve burs kapsamı resmîdir; bu kayıt yayımlanmış son tarihi bilinçli olarak kapanmış geçmiş dönem şeklinde etiketler."
-        }
+          "en": "The current official URL was checked but returned 403 to both automated and interactive research access. Its indexed current text supports the award scope, international eligibility, two-per-faculty count and closed 2025 deadline; an accessible secondary listing corroborates the embedded scholarship form and two-reference workflow. Confidence is therefore medium, not high.",
+          "tr": "GÃ¼ncel resmÃ® URL kontrol edildi ancak hem otomatik hem etkileÅŸimli araÅŸtÄ±rma eriÅŸimine 403 verdi. Dizine alÄ±nmÄ±ÅŸ gÃ¼ncel metin Ã¶dÃ¼l kapsamÄ±nÄ±, uluslararasÄ± uygunluÄŸu, fakÃ¼lte baÅŸÄ±na iki kontenjanÄ± ve kapanmÄ±ÅŸ 2025 tarihini; eriÅŸilebilir ikincil liste ise baÅŸvuruya eklenen burs formu ve iki referans sÃ¼recini destekliyor. Bu nedenle gÃ¼ven yÃ¼ksek deÄŸil, ortadÄ±r."
+        },
+        "application_mode": "separate",
+        "automatic_consideration": false,
+        "separate_application_required": true,
+        "opportunities": [
+          {
+            "name": "Justus & Louise van Effen Excellence Scholarship",
+            "academic_year": "2026/2027",
+            "award_period": "2026-2028 MSc cohort",
+            "status": "closed_awards_made",
+            "number_of_awards": "two per TU Delft faculty",
+            "award": {
+              "type": "full_tuition_plus_living_expense_contribution",
+              "tuition_scope": "full annual MSc tuition at the statutory or institutional rate according to registered nationality",
+              "living_expense_amount": null,
+              "living_expense_amount_status": "not_published_in_accessible_current_official_evidence"
+            },
+            "international_applicants_eligible": true,
+            "turkey_nationality_eligible": true,
+            "programme_scope": "regular two-year TU Delft MSc; Joint Education Programmes excluded",
+            "academic_competitiveness_indicator": "approximately top 10% of graduates in the relevant previous programme; proof of ranking not required",
+            "application_mode": "scholarship_materials_submitted_with_complete_msc_application",
+            "separate_application_required": true,
+            "automatic_consideration": false,
+            "required_scholarship_materials": [
+              "Scholarship Application Form",
+              "two reference letters",
+              "English-language certificate with the MSc application for non-EU/EFTA applicants when required"
+            ],
+            "submission_warning": "Scholarship materials and the complete MSc application had to be submitted before the scholarship deadline; late reference letters were not accepted.",
+            "deadline": "2025-12-01T23:59:00+01:00",
+            "deadline_status": "closed_past_cycle_do_not_reuse_for_next_intake",
+            "official_source_url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/scholarships/justus-louise-van-effen-excellence-scholarships",
+            "secondary_cross_check_url": "https://www.mastersportal.com/scholarships/10291/justus-louise-van-effen-excellence-scholarships.html"
+          }
+        ]
       },
       "living_profile": {
         "city_cost_level": "high",
@@ -291,7 +342,9 @@
         "average_room_rent_scope_label": {
           "en": "Netherlands-wide average, not Delft-specific",
           "tr": "Hollanda geneli ortalama, Delft'e özgü değil"
-        }
+        },
+        "housing_access": "unknown",
+        "housing_application_separate": null
       },
       "curriculum_profile": {
         "tracks": [
@@ -395,7 +448,7 @@
         "application_rounds": [],
         "non_eu_deadline": "2026-01-15 (23:59 CET; non-EU/EFTA with international BSc; closed)",
         "eu_deadline": "2026-04-01 (23:59 CEST; EU/EFTA with international BSc; closed)",
-        "scholarship_deadline": "December 1",
+        "scholarship_deadline": "2025-12-01T23:59:00+01:00 (closed; 2026-2028 award cohort)",
         "pre_enrolment_required": false,
         "universitaly_required": false,
         "visa_sensitive_deadline": "2026-07-01 request / 2026-07-11 payment for applicants without a valid Dutch residence permit (September start; closed)",
@@ -407,7 +460,9 @@
           "tr": "Bunlar 2026/27 Havacılık ve Uzay Mühendisliği alımının resmî tarihleri olup açıkça kapanmış olarak işaretlenmiştir. Kontrol edilen sayfada sonraki alım için tarih yayımlanmamıştır; adaylar bu tarihleri yeniden kullanmamalıdır."
         },
         "winter_deadline": "2026-01-15 (23:59 CET; non-EU/EFTA with international BSc; closed)",
-        "application_deadline": "2026-01-15 (23:59 CET; non-EU/EFTA with international BSc; closed)"
+        "application_deadline": "2026-01-15 (23:59 CET; non-EU/EFTA with international BSc; closed)",
+        "scholarship_deadline_status": "closed_awards_made",
+        "future_scholarship_deadline": null
       },
       "student_sentiment_profile": {
         "student_satisfaction_score": 84,
@@ -480,7 +535,7 @@
             "title": "TU Delft Aerospace Engineering MSc tracks and courses",
             "source_type": "official_curriculum_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "curriculum"
             ],
@@ -492,7 +547,7 @@
             "title": "TU Delft Aerospace Engineering MSc curriculum overview",
             "source_type": "official_curriculum_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "curriculum"
             ],
@@ -504,7 +559,7 @@
             "title": "TU Delft MSc Aerospace Engineering",
             "source_type": "official_program_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "program",
               "language",
@@ -521,7 +576,7 @@
             "title": "TU Delft Aerospace Engineering: Admission and application",
             "source_type": "official_admission_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "admission",
               "deadline",
@@ -538,7 +593,7 @@
             "title": "TU Delft MSc International Diploma: Admission Requirements",
             "source_type": "official_admission_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "admission",
               "language",
@@ -555,7 +610,7 @@
             "title": "TU Delft MSc International Diploma: Required Documents",
             "source_type": "official_admission_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "admission"
             ],
@@ -570,7 +625,7 @@
             "title": "TU Delft MSc International Diploma: Dates and Deadlines",
             "source_type": "official_admission_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "deadline"
             ],
@@ -585,7 +640,7 @@
             "title": "TU Delft Tuition Fee & Finances",
             "source_type": "official_tuition_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "tuition"
             ],
@@ -599,23 +654,26 @@
             "url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/scholarships/justus-louise-van-effen-excellence-scholarships",
             "title": "TU Delft Justus & Louise van Effen Excellence Scholarships",
             "source_type": "official_scholarship_page",
-            "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "access_status": "blocked",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
-              "scholarship"
+              "scholarship",
+              "funding",
+              "eligibility",
+              "deadline"
             ],
-            "confidence": "high",
+            "confidence": "medium",
             "notes": {
-              "en": "Current page says the 2026–2028 awards have been made, and documents two awards per faculty, international eligibility, the 1 December 2025 past deadline, full tuition and a living-expense contribution.",
-              "tr": "Güncel sayfa 2026–2028 ödüllerinin verildiğini belirtir; fakülte başına iki ödülü, uluslararası uygunluğu, geçmiş 1 Aralık 2025 son tarihini, tam öğrenim ücretini ve yaşam gideri katkısını belgeler."
+              "en": "The URL returned 403 to automated and interactive access. Indexed current text says the 2026-2028 awards have been made and supports international eligibility, two awards per faculty, full tuition plus a living contribution, and the past 1 December 2025 deadline.",
+              "tr": "URL otomatik ve etkileÅŸimli eriÅŸime 403 verdi. Dizine alÄ±nmÄ±ÅŸ gÃ¼ncel metin 2026-2028 Ã¶dÃ¼llerinin verildiÄŸini belirtir; uluslararasÄ± uygunluk, fakÃ¼lte baÅŸÄ±na iki Ã¶dÃ¼l, tam Ã¶ÄŸrenim artÄ± yaÅŸam katkÄ±sÄ± ve geÃ§miÅŸ 1 AralÄ±k 2025 tarihini destekler."
             }
           },
           {
             "url": "https://www.tudelft.nl/en/education/programmes/masters/ae/msc-aerospace-engineering/programme-structure",
             "title": "TU Delft Aerospace Engineering: Programme Structure",
             "source_type": "official_curriculum_page",
-            "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "access_status": "blocked",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "curriculum"
             ],
@@ -630,7 +688,7 @@
             "title": "TU Delft Aerospace Engineering: Master Tracks",
             "source_type": "official_curriculum_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "curriculum"
             ],
@@ -645,7 +703,7 @@
             "title": "TU Delft Housing for Incoming International Students",
             "source_type": "official_housing_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "housing"
             ],
@@ -660,7 +718,7 @@
             "title": "Study in NL: Daily Student Expenses and Cost of Living",
             "source_type": "official_cost_of_living_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "housing",
               "living"
@@ -676,7 +734,7 @@
             "title": "TU Delft Research Portal: Space Engineering",
             "source_type": "official_department_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "research"
             ],
@@ -691,7 +749,7 @@
             "title": "TU Delft Research Portal: Aerospace Engineering Cleanroom",
             "source_type": "official_lab_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "research"
             ],
@@ -706,7 +764,7 @@
             "title": "TU Delft Research Portal: Cessna Citation II PH-LAB",
             "source_type": "official_lab_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "research"
             ],
@@ -715,19 +773,39 @@
               "en": "Official facility page documents the jointly operated Cessna Citation II PH-LAB as an Aerospace Engineering research aircraft and airborne research platform.",
               "tr": "Resmî tesis sayfası ortak işletilen Cessna Citation II PH-LAB'i Havacılık ve Uzay Mühendisliği araştırma uçağı ve havadan araştırma platformu olarak belgeler."
             }
+          },
+          {
+            "url": "https://www.mastersportal.com/scholarships/10291/justus-louise-van-effen-excellence-scholarships.html",
+            "title": "Mastersportal: Justus & Louise van Effen Excellence Scholarships",
+            "source_type": "reliable_secondary_scholarship_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "scholarship",
+              "application_process",
+              "deadline"
+            ],
+            "confidence": "medium",
+            "notes": {
+              "en": "Accessible secondary cross-check for the scholarship form, two-reference submission workflow, international scope, award coverage and 1 December 2025 deadline. It does not replace the blocked official source.",
+              "tr": "Burs formu, iki referanslÄ± teslim sÃ¼reci, uluslararasÄ± kapsam, Ã¶dÃ¼l iÃ§eriÄŸi ve 1 AralÄ±k 2025 tarihi iÃ§in eriÅŸilebilir ikincil Ã§apraz kontroldÃ¼r. Engellenen resmÃ® kaynaÄŸÄ±n yerini almaz."
+            }
           }
         ],
-        "last_verified": "2026-07-14",
-        "needs_verification": false,
-        "verification_notes": "",
+        "last_verified": "2026-08-14",
+        "needs_verification": true,
+        "verification_notes": {
+          "en": "Critical fields have current checked evidence except that the official scholarship page blocks research access. Keep scholarship confidence at medium and recheck the next intake directly before advice or application.",
+          "tr": "Kritik alanlarda gÃ¼ncel kontrol edilmiÅŸ kanÄ±t vardÄ±r; ancak resmÃ® burs sayfasÄ± araÅŸtÄ±rma eriÅŸimini engeller. Burs gÃ¼venini orta tutun ve tavsiye ya da baÅŸvuru Ã¶ncesi sonraki alÄ±mÄ± doÄŸrudan yeniden kontrol edin."
+        },
         "field_confidence": {
           "program_basic_info": "high",
           "language": "high",
           "admission": "high",
           "tuition": "high",
-          "scholarship": "high",
+          "scholarship": "medium",
           "curriculum": "high",
-          "living": "unknown",
+          "living": "medium",
           "housing": "high",
           "research": "high",
           "industry": "high",
@@ -777,36 +855,42 @@
       },
       "scoring_inputs": {},
       "quality_control": {
-        "qc_status": "passed",
-        "checked_at": "2026-07-15",
+        "qc_status": "needs_revision",
+        "checked_at": "2026-08-14",
         "failed_canary_tests": [
-          "missing_or_unverified_critical_fields"
+          "official_scholarship_source_not_accessible"
         ],
-        "remaining_verification_tasks": [],
+        "remaining_verification_tasks": [
+          {
+            "en": "Recheck the official scholarship page when it becomes accessible and replace the closed 2026-2028 cycle with the next published cycle; never roll the 1 December date forward by assumption.",
+            "tr": "ResmÃ® burs sayfasÄ± eriÅŸilebilir olduÄŸunda yeniden kontrol edin ve kapanmÄ±ÅŸ 2026-2028 dÃ¶nemini yayÄ±mlanan sonraki dÃ¶nemle deÄŸiÅŸtirin; 1 AralÄ±k tarihini varsayÄ±mla ileri taÅŸÄ±mayÄ±n."
+          }
+        ],
         "qc_notes": {
-          "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
-          "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+          "en": "The record now answers eligibility, amount scope, application mode, documents and deadline without falsely treating a blocked official page as accessible evidence.",
+          "tr": "KayÄ±t artÄ±k uygunluk, kapsam, baÅŸvuru biÃ§imi, belgeler ve tarihi yanÄ±tlarken engellenen resmÃ® sayfayÄ± eriÅŸilebilir kanÄ±t gibi gÃ¶stermez."
         }
       },
       "qs_ranking": 48,
       "data_quality": {
-        "status": "verified",
-        "checked_official_source_count": 16,
+        "status": "partial",
+        "checked_official_source_count": 14,
         "verified_fields": [
           "program",
           "language",
           "admission",
           "non_eu_eligibility",
           "tuition",
-          "scholarship",
           "deadline",
           "curriculum",
           "research",
           "housing"
         ],
-        "unverified_critical_fields": [],
+        "unverified_critical_fields": [
+          "scholarship"
+        ],
         "has_checked_source_log": true,
-        "audited_at": "2026-07-15"
+        "audited_at": "2026-08-14"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -879,39 +963,45 @@
       "department": "Department of Mechanical Engineering",
       "faculty_or_school": "",
       "campus": "Eindhoven",
-      "program_status": "active_but_not_aerospace_path",
-      "relevance_status": "low_relevance",
+      "program_status": "active",
+      "relevance_status": "weak",
       "eligibility_profile": {
-        "eligible_for_non_eu": null,
+        "eligible_for_non_eu": true,
         "non_eu_quota": null,
         "required_previous_degree": null,
         "accepted_backgrounds": [],
         "required_ects": {},
-        "minimum_gpa": {
-          "en": "GPA ≥ 7.5/10 expected for scholarships",
-          "tr": "Burslar için ≥ 7.5/10 GPA beklenmektedir"
-        },
+        "minimum_gpa": null,
         "gpa_scale": "10",
-        "ranking_or_selection": {
-          "en": "Competitive selection based on academic excellence",
-          "tr": "Akademik mükemmelliğe dayalı rekabetçi seçim"
-        },
+        "ranking_or_selection": null,
         "admission_mode": "needs_official_programme_specific_check",
         "admission_risk": "unknown",
         "required_documents": [],
-        "motivation_letter_required": true,
-        "cv_required": true,
-        "recommendation_required": true,
+        "motivation_letter_required": null,
+        "cv_required": null,
+        "recommendation_required": null,
         "portfolio_required": null,
-        "interview_required": false,
-        "test_required": false,
+        "interview_required": null,
+        "test_required": null,
         "notes_for_turkish_students": {
-          "en": "Strong academic record is necessary. Scholarships like ASML require top percentiles.",
-          "tr": "Güçlü akademik geçmiş gereklidir. ASML gibi burslar en üst yüzdelik dilimleri gerektirir."
+          "en": "The current national catalogue publishes a non-EU application route but says programme admission requirements are unavailable. Do not infer Turkish degree equivalence, GPA, documents or GRE rules from scholarship pages.",
+          "tr": "GÃ¼ncel ulusal katalog AB dÄ±ÅŸÄ± baÅŸvuru rotasÄ±nÄ± yayÄ±mlar ancak program kabul koÅŸullarÄ±nÄ± 'mevcut deÄŸil' gÃ¶sterir. TÃ¼rk diploma denkliÄŸi, GPA, belgeler veya GRE kurallarÄ±nÄ± burs sayfalarÄ±ndan Ã§Ä±karmayÄ±n."
         },
         "verification_notes": {
-          "en": "The checked programme page links to admissions information but does not itself provide a programme-specific non-EU eligibility decision or prior-degree equivalency rule.",
-          "tr": "Kontrol edilen program sayfası kabul bilgilerine bağlantı verir ancak programa özgü AB dışı uygunluk kararı veya önceki derece denkliği kuralı sunmaz."
+          "en": "Non-EU application is explicitly supported by the official national catalogue. Academic prerequisite, equivalency and document details remain unknown because the linked TU/e admission page blocked research access and the catalogue does not reproduce them.",
+          "tr": "AB dÄ±ÅŸÄ± baÅŸvuru resmÃ® ulusal katalogda aÃ§Ä±kÃ§a desteklenir. BaÄŸlÄ± TU/e kabul sayfasÄ± araÅŸtÄ±rma eriÅŸimini engellediÄŸi ve katalog bunlarÄ± aktarmadÄ±ÄŸÄ± iÃ§in akademik Ã¶nkoÅŸul, denklik ve belge ayrÄ±ntÄ±larÄ± bilinmiyor."
+        },
+        "gre": {
+          "policy": "unknown_not_published_in_accessible_checked_requirements",
+          "test_type": "unknown",
+          "minimum_scores": {},
+          "recommended_scores": {},
+          "validity_rule": "",
+          "waiver_rules": [],
+          "source_ids": [
+            "https://www.studyinnl.org/dutch-education/studies/mechanical-engineering-857-eindhoven-university-of-technology",
+            "https://www.tue.nl/en/education/graduate-school/master-mechanical-engineering"
+          ]
         }
       },
       "language_profile": {
@@ -919,20 +1009,30 @@
           "English"
         ],
         "english_required": true,
-        "english_level_required": null,
+        "english_level_required": "IELTS 6.5 overall; TOEFL iBT 90; Cambridge C1 Advanced or C2 Proficiency",
         "accepted_english_tests": [
-          "IELTS",
-          "TOEFL iBT"
+          "IELTS Academic",
+          "TOEFL iBT",
+          "Cambridge C1 Advanced",
+          "Cambridge C2 Proficiency"
         ],
         "english_exemptions": [],
         "italian_required": null,
         "italian_level_required": "",
         "italian_needed_for_life_or_internship": "",
         "mixed_language_warning": "",
-        "language_risk": "low",
+        "language_risk": "medium",
         "verification_notes": {
-          "en": "TU/e's Mechanical Engineering programme page lists English as the language.",
-          "tr": "TU/e Mechanical Engineering program sayfası dili İngilizce olarak listeler."
+          "en": "The current national programme catalogue publishes the overall IELTS and TOEFL thresholds and Cambridge levels. It does not publish component minima or exemptions, so none are inferred.",
+          "tr": "GÃ¼ncel ulusal program kataloÄŸu toplam IELTS ve TOEFL eÅŸiklerini ve Cambridge dÃ¼zeylerini yayÄ±mlar. BÃ¶lÃ¼m alt puanlarÄ± veya muafiyetler yayÄ±mlanmadÄ±ÄŸÄ±ndan bunlar Ã§Ä±karÄ±lmaz."
+        },
+        "minimum_scores": {
+          "ielts_academic": {
+            "overall": 6.5
+          },
+          "toefl_ibt": {
+            "overall": 90
+          }
         }
       },
       "cost_profile": {
@@ -940,7 +1040,7 @@
         "tuition_eur_per_year_min": null,
         "tuition_eur_per_year_max": null,
         "tuition_eur_per_year_estimated": null,
-        "tuition_basis": "2026_2027_non_eu_eea_full_time_institutional_fee",
+        "tuition_basis": "current_official_national_catalogue_reports_non_eu_amount_unavailable",
         "regional_tax_eur": null,
         "student_contribution_eur": null,
         "application_fee_eur": null,
@@ -953,10 +1053,13 @@
           "en": "Standard refund policies apply",
           "tr": "Standart iade politikaları geçerlidir"
         },
-        "source_notes": null,
+        "source_notes": {
+          "en": "Study in NL publishes EUR 2,694 for EU/EEA students in 2026/27 but explicitly shows the non-EU amount as unavailable. TU/e university media reports EUR 21,000 for non-EU master's students in 2025/26; it is retained only as historical context and is not rolled forward.",
+          "tr": "Study in NL 2026/27 AB/AEA iÃ§in 2.694 EUR yayÄ±mlar ancak AB dÄ±ÅŸÄ± tutarÄ± aÃ§Ä±kÃ§a mevcut deÄŸil gÃ¶sterir. TU/e Ã¼niversite medyasÄ± 2025/26 AB dÄ±ÅŸÄ± yÃ¼ksek lisans iÃ§in 21.000 EUR bildirir; yalnÄ±zca tarihsel baÄŸlam olarak tutulur ve ileri taÅŸÄ±nmaz."
+        },
         "verification_notes": {
-          "en": "Tuition verified officially for 26/27.",
-          "tr": "Eğitim ücreti 26/27 için resmi olarak doğrulanmıştır."
+          "en": "The decision-critical 2026/27 non-EU tuition remains unknown; no estimate is stored.",
+          "tr": "Karar-kritik 2026/27 AB dÄ±ÅŸÄ± Ã¶ÄŸrenim Ã¼creti bilinmiyor; tahmin tutulmaz."
         },
         "tuition_usd_per_year": null,
         "tuition_usd_per_year_at_three_quarters": null,
@@ -983,34 +1086,67 @@
         "living_cost_sek_per_year_min": null,
         "living_cost_sek_per_year_max": null,
         "living_cost_dkk_per_year_min": null,
-        "living_cost_dkk_per_year_max": null
+        "living_cost_dkk_per_year_max": null,
+        "tuition_items": [],
+        "eu_eea_statutory_tuition_eur_per_year": 2694,
+        "historical_non_eu_master_tuition_reference": {
+          "amount": 21000,
+          "currency": "EUR",
+          "academic_year": "2025/2026",
+          "use_for_2026_27": false
+        }
       },
       "scholarship_profile": {
-        "regional_scholarship_available": null,
-        "regional_scholarship_name": null,
+        "regional_scholarship_available": true,
+        "regional_scholarship_name": "Amandus H. Lundqvist Scholarship Program / NL Scholarship",
         "dsu_or_equivalent": "",
         "merit_scholarships": [],
         "tuition_waivers": [],
         "housing_support": false,
         "meal_support": null,
         "cash_grant_possible": true,
-        "non_eu_eligible": null,
+        "non_eu_eligible": true,
         "income_based": false,
         "scholarship_deadline": null,
-        "scholarship_application_url": null,
+        "scholarship_application_url": "https://www.tue.nl/en/education/become-a-tue-student/scholarships-and-grants",
         "funding_competitiveness": "high",
-        "funding_notes": null,
+        "funding_notes": {
+          "en": "The current national programme catalogue lists both scholarships for this programme and states that the NL Scholarship targets non-EEA students. The linked TU/e scholarship pages blocked access, so old claims about a 1 February deadline, automatic consideration or award values are not treated as current facts.",
+          "tr": "GÃ¼ncel ulusal program kataloÄŸu iki bursu da bu program iÃ§in listeler ve NL Scholarship'ın AB/AEA dÄ±ÅŸÄ± Ã¶ÄŸrencileri hedeflediÄŸini belirtir. BaÄŸlÄ± TU/e burs sayfalarÄ± eriÅŸimi engellediÄŸinden eski 1 Åžubat tarihi, otomatik deÄŸerlendirme veya Ã¶dÃ¼l tutarÄ± iddialarÄ± gÃ¼ncel gerÃ§ek kabul edilmez."
+        },
         "verification_notes": {
-          "en": "No programme-specific scholarship eligibility was verified from an official source.",
-          "tr": "Programa özgü burs uygunluğu resmî bir kaynaktan doğrulanmadı."
-        }
+          "en": "Scholarship existence and non-EEA targeting are current; mechanics, amounts and deadline need direct TU/e confirmation.",
+          "tr": "BurslarÄ±n varlÄ±ÄŸÄ± ve AB/AEA dÄ±ÅŸÄ± hedefi gÃ¼nceldir; sÃ¼reÃ§, tutar ve son tarih doÄŸrudan TU/e doÄŸrulamasÄ± gerektirir."
+        },
+        "application_mode": "unknown",
+        "automatic_consideration": null,
+        "separate_application_required": null,
+        "opportunities": [
+          {
+            "name": "Amandus H. Lundqvist Scholarship Program",
+            "current_programme_catalogue_listing": true,
+            "application_mode": "needs_current_official_verification",
+            "deadline": null,
+            "award": null,
+            "source_url": "https://www.studyinnl.org/dutch-education/studies/mechanical-engineering-857-eindhoven-university-of-technology"
+          },
+          {
+            "name": "NL Scholarship",
+            "current_programme_catalogue_listing": true,
+            "non_eea_target_group": true,
+            "application_mode": "needs_current_official_verification",
+            "deadline": null,
+            "award": null,
+            "source_url": "https://www.studyinnl.org/dutch-education/studies/mechanical-engineering-857-eindhoven-university-of-technology"
+          }
+        ]
       },
       "living_profile": {
-        "city_cost_level": "high",
-        "monthly_living_cost_eur_min": null,
-        "monthly_living_cost_eur_max": null,
+        "city_cost_level": "high_national_budget_reference",
+        "monthly_living_cost_eur_min": 1000,
+        "monthly_living_cost_eur_max": 1500,
         "monthly_living_cost_eur_estimated": null,
-        "housing_difficulty": null,
+        "housing_difficulty": "high_no_guarantee",
         "student_housing_available": true,
         "student_housing_competitiveness": "high",
         "average_room_rent_eur": null,
@@ -1018,15 +1154,18 @@
         "food_cost_eur_month": null,
         "city_safety_note": "",
         "part_time_work_possibility": "",
-        "living_risk": "unknown",
+        "living_risk": "high",
         "housing_difficulty_score": 90,
         "living_risk_score": 85,
         "verification_notes": {
-          "en": "No current official housing or living-cost amount was verified for this record.",
-          "tr": "Bu kayıt için güncel resmî konaklama veya yaşam gideri tutarı doğrulanmadı."
+          "en": "The EUR 1,000-1,500 monthly budget is an official Netherlands-wide planning range, not an Eindhoven quote. TU/e university media still described housing as a major problem in 2025.",
+          "tr": "AylÄ±k 1.000-1.500 EUR bÃ¼tÃ§e resmÃ® Hollanda geneli planlama aralÄ±ÄŸÄ±dÄ±r; Eindhoven fiyatÄ± deÄŸildir. TU/e Ã¼niversite medyasÄ± 2025'te konutu hÃ¢lÃ¢ bÃ¼yÃ¼k bir sorun olarak tanÄ±mlÄ±yordu."
         },
         "living_cost_eur_per_month": null,
-        "housing_notes": null,
+        "housing_notes": {
+          "en": "A current Vestide example was restricted to international full-time TU/e-campus students and required an admission/confirmation statement; international students receive priority for this room type, but applicants still had to respond to the listing. It is an example, not a guarantee or market average.",
+          "tr": "GÃ¼ncel Vestide Ã¶rneÄŸi uluslararasÄ± tam zamanlÄ± TU/e kampÃ¼sÃ¼ Ã¶ÄŸrencileriyle sÄ±nÄ±rlÄ±ydÄ± ve kabul/onay belgesi istiyordu; bu oda tipinde uluslararasÄ±lara Ã¶ncelik vardÄ± ancak adayÄ±n ilana ayrÄ±ca yanÄ±t vermesi gerekiyordu. Bu bir Ã¶rnek olup garanti veya piyasa ortalamasÄ± deÄŸildir."
+        },
         "average_room_rent_usd_per_month_min": null,
         "average_room_rent_usd_per_month_max": null,
         "average_room_rent_gbp_per_month_min": null,
@@ -1065,125 +1204,180 @@
         "housing_budget_sek_per_year_min": null,
         "housing_budget_sek_per_year_max": null,
         "housing_budget_dkk_per_year_min": null,
-        "housing_budget_dkk_per_year_max": null
-      },
-      "curriculum_profile": {
-        "tracks": [
-          "Advanced Manufacturing across the Scales",
-          "Computational Engineering",
-          "Energy Conversion and Storage",
-          "Engineering Fluid Mechanics",
-          "Engineering Solid Mechanics",
-          "Materials for High Tech Systems Design",
-          "Mechatronic Systems Design",
-          "Robotics",
-          "High-Tech Systems"
-        ],
-        "specializations": [
+        "housing_budget_dkk_per_year_max": null,
+        "housing_access": "not_guaranteed",
+        "housing_application_separate": true,
+        "housing_options": [],
+        "official_living_cost_items": [],
+        "official_rent_items": [
           {
-            "en": "Systems and Control",
-            "tr": "Sistemler ve Kontrol"
+            "provider": "Vestide",
+            "residence": "Haven, TU/e campus",
+            "room_type": "furnished private room with shared facilities",
+            "area_sqm": 14.9,
+            "monthly_total_eur": 606.33,
+            "basic_rent_eur": 364.23,
+            "service_costs_eur": 152.21,
+            "other_costs_eur": 89.89,
+            "listing_date_context": "tenancy entered 2026-07-22",
+            "source_url": "https://rooms.vestide.nl/en/find-room/detail-accommodation/?detailId=13408"
           }
         ],
+        "housing_guarantee": {
+          "available": false,
+          "basis": "no guarantee found; current Vestide listing requires a separate response and documentation"
+        },
+        "housing_access_notes": "Eligible international full-time TU/e-campus students can respond to designated Vestide listings; eligibility is not an allocation guarantee."
+      },
+      "curriculum_profile": {
+        "tracks": [],
+        "specializations": [],
         "mandatory_courses": [],
         "elective_courses": [],
         "course_language_notes": {
           "en": "Taught entirely in English.",
           "tr": "Tamamen İngilizce öğretilmektedir."
         },
-        "thesis_required": null,
+        "thesis_required": true,
         "internship_required": true,
         "lab_courses": [],
         "project_based_courses": [],
         "mobility_options": [],
         "double_degree_options": [],
-        "curriculum_url": "https://www.tue.nl/en/education/graduate-school/master-mechanical-engineering",
+        "curriculum_url": "https://www.studyinnl.org/dutch-education/studies/mechanical-engineering-857-eindhoven-university-of-technology",
         "study_plan_url": "",
         "verification_notes": {
-          "en": "The official page lists 120 ECTS over two years and the published Mechanical Engineering tracks. The prior record's standalone 'Systems and Control' label was not verified as a current programme title, so it is not retained.",
-          "tr": "Resmî sayfa iki yılda 120 AKTS ve yayımlanmış Mechanical Engineering izlerini listeler. Önceki kayıttaki bağımsız 'Systems and Control' etiketi güncel bir program adı olarak doğrulanmadığından korunmadı."
-        }
+          "en": "The official national catalogue verifies the three clusters and broad two-year structure. It does not publish an exact course list or number, so the old nine-track list is removed rather than presented as a current study plan.",
+          "tr": "ResmÃ® ulusal katalog Ã¼Ã§ kÃ¼meyi ve genel iki yÄ±llÄ±k yapÄ±yÄ± doÄŸrular. Kesin ders listesi veya sayÄ±sÄ± yayÄ±mlanmadÄ±ÄŸÄ±ndan eski dokuz iz listesi gÃ¼ncel plan gibi sunulmak yerine kaldÄ±rÄ±lÄ±r."
+        },
+        "research_clusters": [
+          "Dynamical Systems Design",
+          "Computational and Experimental Mechanics",
+          "Thermo Fluids Engineering"
+        ],
+        "programme_structure": {
+          "year_1": [
+            "core programme",
+            "specialization courses",
+            "professional skills",
+            "electives"
+          ],
+          "year_2": [
+            "internship",
+            "graduation project"
+          ]
+        },
+        "exact_course_count": null
       },
       "category_profile": {
         "primary_categories": [
-          "Mechanical Engineering",
-          "Systems and Control"
+          "Mechanical Engineering"
         ],
-        "secondary_categories": [],
+        "secondary_categories": [
+          "Systems and Control",
+          "Thermo Fluids",
+          "Mechanics and Materials"
+        ],
         "subcategories": [],
-        "normalized_tags": [],
-        "category_scores": {}
+        "normalized_tags": [
+          "control_systems",
+          "robotics",
+          "mechatronics",
+          "cfd",
+          "thermofluids",
+          "structures_materials"
+        ],
+        "category_scores": {
+          "aerospace_engineering": 45,
+          "space_engineering": 15,
+          "guidance_navigation_control": 60,
+          "cfd_fluid_dynamics": 50,
+          "structures_materials": 55,
+          "propulsion": 25
+        }
       },
       "research_profile": {
-        "department_research_areas": [],
+        "department_research_areas": [
+          "Computational and Experimental Mechanics",
+          "Dynamical Systems Design",
+          "Thermo Fluids Engineering"
+        ],
         "labs": [],
-        "research_centers": [],
+        "research_centers": [
+          "Control Systems Technology",
+          "Mechanics of Materials",
+          "Autonomous and Complex Systems"
+        ],
         "notable_professors": [],
-        "space_or_aerospace_projects": [],
+        "space_or_aerospace_projects": [
+          "lightweight and high-strength aerospace materials, composite damage/failure, jet-engine high-temperature materials and landing-gear reliability",
+          "integrated design and control methods applied to drones, aircraft and electric aircraft",
+          "learning control collaborations spanning space and astronomy",
+          "master's thesis example in free-space optical communication using iterative learning control"
+        ],
         "student_teams": [],
         "satellite_or_flight_projects": [],
         "research_strength_summary": {
-          "en": "Excellent research linked to microchip and high-tech semiconductor industries.",
-          "tr": "Mikroçip ve yüksek teknoloji yarı iletken endüstrileri ile bağlantılı mükemmel araştırma."
+          "en": "TU/e has credible aerospace-adjacent research in structures/materials, controls, drones/e-aircraft and precision mechatronics for space/astronomy, but no dedicated space-engineering department or programme was verified.",
+          "tr": "TU/e; yapÄ±lar/malzemeler, kontrol, Ä°HA/e-uÃ§ak ve uzay/astronomi iÃ§in hassas mekatronikte gÃ¼venilir havacÄ±lÄ±k-yan alan araÅŸtÄ±rmasÄ±na sahiptir; ancak Ã¶zel uzay mÃ¼hendisliÄŸi bÃ¶lÃ¼mÃ¼ veya programÄ± doÄŸrulanmadÄ±."
         },
-        "research_strength_score": 90,
-        "research_sources": []
+        "research_strength_score": 70,
+        "research_sources": [
+          "https://research.tue.nl/en/organisations/mechanical-engineering",
+          "https://research.tue.nl/en/impacts/aerospace/",
+          "https://research.tue.nl/en/organisations/group-hofman/",
+          "https://research.tue.nl/en/organisations/group-oomen/",
+          "https://research.tue.nl/en/organisations/autonomous-and-complex-systems/studentTheses/"
+        ]
       },
       "industry_ecosystem_profile": {
-        "nearby_companies": [
-          {
-            "en": "ASML",
-            "tr": "ASML"
-          },
-          {
-            "en": "Philips",
-            "tr": "Philips"
-          },
-          {
-            "en": "NXP",
-            "tr": "NXP"
-          }
-        ],
-        "confirmed_partners": [
-          {
-            "en": "ASML",
-            "tr": "ASML"
-          },
-          {
-            "en": "Philips",
-            "tr": "Philips"
-          }
-        ],
+        "nearby_companies": [],
+        "confirmed_partners": [],
         "space_agencies_or_public_bodies": [],
         "research_institutes": [],
         "startup_or_incubator_ecosystem": [],
-        "internship_possibility": "extremely_high",
-        "thesis_with_industry_possibility": "extremely_high",
-        "career_relevance": "very_strong",
-        "ecosystem_strength_score": 100,
+        "internship_possibility": "programme_structure_includes_internship",
+        "thesis_with_industry_possibility": "possible_not_guaranteed",
+        "career_relevance": "strong_for_high_tech_mechanical_and_control_roles",
+        "ecosystem_strength_score": null,
         "ecosystem_notes": {
-          "en": "Located in the Brainport region, extremely strong ties to ASML and Philips.",
-          "tr": "Brainport bölgesinde yer alır, ASML ve Philips ile son derece güçlü bağlara sahiptir."
+          "en": "The programme catalogue says the department works intensively with many high-tech companies, but it does not name them. ASML, Philips or NXP are therefore not stored as programme partners without a direct current confirmation.",
+          "tr": "Program kataloÄŸu bÃ¶lÃ¼mÃ¼n Ã§ok sayÄ±da yÃ¼ksek teknoloji ÅŸirketiyle yoÄŸun Ã§alÄ±ÅŸtÄ±ÄŸÄ±nÄ± belirtir ancak ad vermez. Bu nedenle ASML, Philips veya NXP doÄŸrudan gÃ¼ncel teyit olmadan program ortaÄŸÄ± olarak tutulmaz."
         }
       },
       "application_timeline_profile": {
-        "academic_year": "2026/2027",
+        "academic_year": "2027/2028 planning; 2026/2027 closed reference",
         "intake_terms": [
-          "September"
+          "September 2027"
         ],
         "application_rounds": [],
-        "non_eu_deadline": null,
-        "eu_deadline": null,
-        "scholarship_deadline": "February 1",
+        "non_eu_deadline": "2027-05-01",
+        "eu_deadline": "2027-05-01",
+        "scholarship_deadline": null,
         "pre_enrolment_required": false,
         "universitaly_required": false,
         "visa_sensitive_deadline": "",
         "application_result_timing": "",
         "enrollment_deadline": "",
         "timeline_risk": "medium",
-        "deadline_notes": null,
+        "deadline_notes": {
+          "en": "Study in NL currently publishes 1 May for both EU/EEA and non-EU/EEA applicants for the September 2027 start. Scholarship timing is not inferred from old ALSP cycles.",
+          "tr": "Study in NL EylÃ¼l 2027 baÅŸlangÄ±cÄ± iÃ§in hem AB/AEA hem AB/AEA dÄ±ÅŸÄ± adaylara 1 MayÄ±s tarihini yayÄ±mlar. Burs takvimi eski ALSP dÃ¶nemlerinden Ã§Ä±karÄ±lmaz."
+        },
         "winter_deadline": null,
-        "application_deadline": null
+        "application_deadline": "2027-05-01",
+        "deadline_events": [
+          {
+            "event": "September 2026 programme application",
+            "date": "2026-05-01",
+            "status": "closed"
+          },
+          {
+            "event": "September 2027 programme application",
+            "date": "2027-05-01",
+            "status": "future_published"
+          }
+        ]
       },
       "student_sentiment_profile": {
         "student_satisfaction_score": null,
@@ -1199,134 +1393,270 @@
         "career_support_sentiment": "extremely_positive",
         "positive_themes": [],
         "negative_themes": [],
-        "recurring_complaints": [
-          {
-            "en": "Housing is very hard to find.",
-            "tr": "Konaklama bulmak çok zordur."
-          }
-        ],
-        "recurring_strengths": [
-          {
-            "en": "Unmatched career prospects in the Brainport tech hub.",
-            "tr": "Brainport teknoloji merkezinde eşsiz kariyer fırsatları."
-          }
-        ],
+        "recurring_complaints": [],
+        "recurring_strengths": [],
         "sentiment_summary": {
-          "en": "Exceptional career outcomes overshadow the housing issues for most students.",
-          "tr": "Çoğu öğrenci için olağanüstü kariyer sonuçları barınma sorunlarını gölgede bırakıyor."
+          "en": "Insufficient programme-specific, attributable recent student evidence; no sentiment conclusion is stored.",
+          "tr": "Programa Ã¶zgÃ¼, atfedilebilir gÃ¼ncel Ã¶ÄŸrenci kanÄ±tÄ± yetersizdir; duygu sonucu tutulmaz."
         },
-        "student_sentiment_sources": [
-          {
-            "quote": "Extremely fast-paced quarters system. You have to stay on top of your work constantly.",
-            "source": "Reddit",
-            "url": "https://www.reddit.com/search/?q=Eindhoven+University+of+Technology+aerospace"
-          },
-          {
-            "quote": "Some modules have extremely harsh grading curves, prepare to study hard.",
-            "source": "Reddit",
-            "url": "https://www.reddit.com/search/?q=Eindhoven+University+of+Technology+aerospace"
-          },
-          {
-            "quote": "Housing market is brutal, start looking at least 3-4 months in advance.",
-            "source": "Reddit",
-            "url": "https://www.reddit.com/search/?q=Eindhoven+University+of+Technology+aerospace"
-          }
-        ],
+        "student_sentiment_sources": [],
         "verification_notes": {
-          "en": "Score removed during evidence audit: sample size, date range, or cited sentiment sources are insufficient.",
-          "tr": "Kanıt denetiminde puan kaldırıldı: örneklem büyüklüğü, tarih aralığı veya atıflı duygu analizi kaynağı yetersiz."
+          "en": "Prior unattributed Reddit search-result quotations were removed.",
+          "tr": "Ã–nceki atÄ±fsÄ±z Reddit arama-sonucu alÄ±ntÄ±larÄ± kaldÄ±rÄ±ldÄ±."
         }
       },
       "source_profile": {
-        "official_program_page": "https://www.tue.nl/en/education/master-colleges/mechanical-engineering",
-        "official_admission_page": "",
-        "official_tuition_page": "https://www.tue.nl",
-        "official_scholarship_page": "https://www.tue.nl",
-        "official_curriculum_page": "",
-        "official_department_page": "",
+        "official_program_page": "https://www.tue.nl/en/education/graduate-school/master-mechanical-engineering",
+        "official_admission_page": "https://www.tue.nl/en/education/graduate-school/master-mechanical-engineering",
+        "official_tuition_page": "https://www.studyinnl.org/dutch-education/studies/mechanical-engineering-857-eindhoven-university-of-technology",
+        "official_scholarship_page": "https://www.studyinnl.org/dutch-education/studies/mechanical-engineering-857-eindhoven-university-of-technology",
+        "official_curriculum_page": "https://www.studyinnl.org/dutch-education/studies/mechanical-engineering-857-eindhoven-university-of-technology",
+        "official_department_page": "https://research.tue.nl/en/organisations/mechanical-engineering",
         "official_lab_pages": [],
         "third_party_sources": [],
         "student_sentiment_sources": [],
         "source_log": [
           {
-            "url": "https://www.tue.nl/en/education/graduate-school/master-mechanical-engineering",
-            "title": "TU/e Master Mechanical Engineering",
-            "source_type": "official_program_page",
+            "url": "https://www.studyinnl.org/dutch-education/studies/mechanical-engineering-857-eindhoven-university-of-technology",
+            "title": "Study in NL: Mechanical Engineering at Eindhoven University of Technology",
+            "source_type": "official_national_education_portal",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "program",
               "language",
+              "non_eu_eligibility",
+              "tuition",
+              "scholarship",
+              "deadline",
               "curriculum"
             ],
             "confidence": "high",
-            "notes": ""
+            "notes": {
+              "en": "Current Nuffic initiative page verifies 120 ECTS, two years, English, clusters, broad study structure, language scores, 2026/27 EU fee, non-EU fee unavailable, programme deadlines and scholarship listings.",
+              "tr": "Kaynak, belirtilen alanlar ve kapsam sÄ±nÄ±rlarÄ± iÃ§in kontrol edildi."
+            }
+          },
+          {
+            "url": "https://www.studyinnl.org/finances/daily-student-expenses-and-cost-of-living-in-the-netherlands",
+            "title": "Study in NL: Daily student expenses and cost of living",
+            "source_type": "official_cost_of_living_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "living",
+              "housing"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Official Netherlands-wide monthly student budget and room-cost range; not Eindhoven-specific.",
+              "tr": "Kaynak, belirtilen alanlar ve kapsam sÄ±nÄ±rlarÄ± iÃ§in kontrol edildi."
+            }
+          },
+          {
+            "url": "https://rooms.vestide.nl/en/find-room/detail-accommodation/?detailId=13408",
+            "title": "Vestide furnished room on the TU/e campus",
+            "source_type": "official_student_housing_provider",
+            "access_status": "ok",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "housing",
+              "living"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Current room example with full cost breakdown, international eligibility, required documents and non-guaranteed response workflow.",
+              "tr": "Kaynak, belirtilen alanlar ve kapsam sÄ±nÄ±rlarÄ± iÃ§in kontrol edildi."
+            }
+          },
+          {
+            "url": "https://research.tue.nl/en/organisations/mechanical-engineering",
+            "title": "TU/e Research Portal: Mechanical Engineering",
+            "source_type": "official_department_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "research"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Department divisions, active facilities and research structure.",
+              "tr": "Kaynak, belirtilen alanlar ve kapsam sÄ±nÄ±rlarÄ± iÃ§in kontrol edildi."
+            }
+          },
+          {
+            "url": "https://research.tue.nl/en/impacts/aerospace/",
+            "title": "TU/e Research Portal: Aerospace impact",
+            "source_type": "official_department_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "research"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Direct aerospace materials, composites, jet-engine materials and landing-gear research evidence.",
+              "tr": "Kaynak, belirtilen alanlar ve kapsam sÄ±nÄ±rlarÄ± iÃ§in kontrol edildi."
+            }
+          },
+          {
+            "url": "https://research.tue.nl/en/organisations/group-hofman/",
+            "title": "TU/e Research Portal: Group Hofman",
+            "source_type": "official_department_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "research"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Integrated design and control applications explicitly spanning drones, aircraft and e-aircraft.",
+              "tr": "Kaynak, belirtilen alanlar ve kapsam sÄ±nÄ±rlarÄ± iÃ§in kontrol edildi."
+            }
+          },
+          {
+            "url": "https://research.tue.nl/en/organisations/group-oomen/",
+            "title": "TU/e Research Portal: Group Oomen",
+            "source_type": "official_department_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "research"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Learning-control research and collaborations covering precision mechatronics, space and astronomy.",
+              "tr": "Kaynak, belirtilen alanlar ve kapsam sÄ±nÄ±rlarÄ± iÃ§in kontrol edildi."
+            }
+          },
+          {
+            "url": "https://research.tue.nl/en/organisations/autonomous-and-complex-systems/studentTheses/",
+            "title": "TU/e Research Portal: Autonomous and Complex Systems student theses",
+            "source_type": "official_department_page",
+            "access_status": "blocked",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "research",
+              "curriculum"
+            ],
+            "confidence": "medium",
+            "notes": {
+              "en": "Search-indexed programme-level thesis evidence includes free-space optical communication control; direct link checking returned HTTP 403.",
+              "tr": "Kaynak, belirtilen alanlar ve kapsam sÄ±nÄ±rlarÄ± iÃ§in kontrol edildi."
+            }
+          },
+          {
+            "url": "https://www.cursor.tue.nl/en/news/jaarmap-om-te-kopieren/januari/week-1-2-1/university-fund-launches-crowdfunding-for-students-in-need",
+            "title": "Cursor: University fund launches crowdfunding for students in need",
+            "source_type": "official_university_media",
+            "access_status": "ok",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "tuition"
+            ],
+            "confidence": "medium",
+            "notes": {
+              "en": "January 2026 university-media context for the 2025/26 EUR 21,000 non-EU master's fee; not used as a 2026/27 amount.",
+              "tr": "Kaynak, belirtilen alanlar ve kapsam sÄ±nÄ±rlarÄ± iÃ§in kontrol edildi."
+            }
+          },
+          {
+            "url": "https://www.cursor.tue.nl/en/background/2025/april/week-2/full-speed-ahead-on-recruiting-masters-students-beethoven",
+            "title": "Cursor: Full speed ahead on recruiting master's students",
+            "source_type": "official_university_media",
+            "access_status": "ok",
+            "last_checked": "2026-08-14",
+            "relevant_fields": [
+              "housing",
+              "programme_context"
+            ],
+            "confidence": "medium",
+            "notes": {
+              "en": "April 2025 programme context explicitly calling housing a major problem.",
+              "tr": "Kaynak, belirtilen alanlar ve kapsam sÄ±nÄ±rlarÄ± iÃ§in kontrol edildi."
+            }
           }
         ],
-        "last_verified": "2026-07-14",
+        "last_verified": "2026-08-14",
         "needs_verification": true,
-        "verification_notes": "",
+        "verification_notes": {
+          "en": "Accessible national and provider sources support programme, language, dates, scholarship listing, structure and housing examples. Programme admission, 2026/27 non-EU tuition and scholarship mechanics remain unresolved because TU/e pages blocked access.",
+          "tr": "EriÅŸilebilir ulusal ve saÄŸlayÄ±cÄ± kaynaklar program, dil, tarihler, burs listesi, yapÄ± ve konut Ã¶rneklerini destekler. TU/e sayfalarÄ± eriÅŸimi engellediÄŸinden program kabulÃ¼, 2026/27 AB dÄ±ÅŸÄ± Ã¼cret ve burs sÃ¼reci Ã§Ã¶zÃ¼msÃ¼z kalÄ±r."
+        },
         "field_confidence": {
           "program_basic_info": "high",
           "language": "high",
           "admission": "unknown",
           "tuition": "unknown",
-          "scholarship": "unknown",
+          "scholarship": "medium",
           "curriculum": "medium",
-          "location": "medium"
-        }
+          "location": "medium",
+          "deadlines": "high",
+          "housing": "high",
+          "non_eu_eligibility": "unknown",
+          "deadline": "high",
+          "living": "medium",
+          "research": "high",
+          "industry": "medium"
+        },
+        "official_housing_page": "https://rooms.vestide.nl/en/find-room/detail-accommodation/?detailId=13408",
+        "official_cost_of_living_page": "https://www.studyinnl.org/finances/daily-student-expenses-and-cost-of-living-in-the-netherlands"
       },
       "decision_summary": {
         "best_for": [
           {
-            "en": "Students wanting to work at ASML, Philips, or the European semiconductor industry.",
-            "tr": "ASML, Philips veya Avrupa yarı iletken endüstrisinde çalışmak isteyen öğrenciler."
+            "en": "Students targeting control, mechatronics, CFD/thermofluids or aerospace structures/materials who accept a general Mechanical Engineering degree title.",
+            "tr": "Genel Mechanical Engineering derece adÄ±nÄ± kabul ederek kontrol, mekatronik, HAD/termofluid veya havacÄ±lÄ±k yapÄ±larÄ±/malzemelerini hedefleyen Ã¶ÄŸrenciler."
           }
         ],
         "not_ideal_for": [
           {
-            "en": "Students interested strictly in traditional aerospace flight dynamics.",
-            "tr": "Sadece geleneksel havacılık uçuş dinamiğiyle ilgilenen öğrenciler."
+            "en": "Students seeking a dedicated spacecraft, satellite, orbital mechanics, astrodynamics, mission design or propulsion curriculum.",
+            "tr": "Ã–zel uzay aracÄ±, uydu, yÃ¶rÃ¼nge mekaniÄŸi, astrodinamik, gÃ¶rev tasarÄ±mÄ± veya itki mÃ¼fredatÄ± arayan Ã¶ÄŸrenciler."
           }
         ],
         "main_strengths": [
           {
-            "en": "High-tech Brainport ecosystem and deep ASML/Philips connections.",
-            "tr": "Yüksek teknolojili Brainport ekosistemi ve derin ASML/Philips bağlantıları."
+            "en": "A broad 120-ECTS Mechanical Engineering degree with control, mechanics/materials and thermofluid clusters plus a programme internship and graduation project.",
+            "tr": "Kontrol, mekanik/malzemeler ve termofluid kÃ¼meleri ile program stajÄ± ve mezuniyet projesi iÃ§eren geniÅŸ 120 AKTS Mechanical Engineering derecesi."
+          },
+          {
+            "en": "Official research evidence supports aerospace materials, aircraft/drone control applications and space/astronomy precision mechatronics.",
+            "tr": "ResmÃ® araÅŸtÄ±rma kanÄ±tÄ± havacÄ±lÄ±k malzemeleri, uÃ§ak/Ä°HA kontrol uygulamalarÄ± ve uzay/astronomi hassas mekatroniÄŸini destekler."
           }
         ],
         "main_risks": [
           {
-            "en": "The record is a general mechanical-engineering programme; no official aerospace/space track was verified for this programme record.",
-            "tr": "Bu program doğrudan havacılık/uzay mühendisliği yolu değildir; teknik uygunluğu yalnızca ilgili tez veya seçmeli derslerle ayrıca doğrulanmalıdır."
+            "en": "This is not an Aerospace or Space Engineering degree; no orbital mechanics, spacecraft systems, mission design or dedicated space track was verified.",
+            "tr": "Bu bir Aerospace veya Space Engineering derecesi deÄŸildir; yÃ¶rÃ¼nge mekaniÄŸi, uzay aracÄ± sistemleri, gÃ¶rev tasarÄ±mÄ± veya Ã¶zel uzay izi doÄŸrulanmadÄ±."
+          },
+          {
+            "en": "The 2026/27 non-EU tuition, academic admission rules and current scholarship mechanics remain unknown because TU/e's linked pages blocked research access.",
+            "tr": "TU/e'nin baÄŸlÄ± sayfalarÄ± araÅŸtÄ±rma eriÅŸimini engellediÄŸinden 2026/27 AB dÄ±ÅŸÄ± Ã¼cret, akademik kabul kurallarÄ± ve gÃ¼ncel burs sÃ¼reci bilinmiyor."
+          },
+          {
+            "en": "Housing is not guaranteed; the current room is a single Vestide example and university reporting still describes a serious shortage.",
+            "tr": "Konut garantili deÄŸildir; gÃ¼ncel oda tek bir Vestide Ã¶rneÄŸidir ve Ã¼niversite haberciliÄŸi hÃ¢lÃ¢ ciddi eksiklik bildirir."
           }
         ],
         "application_reality": {
-          "en": "Secure funding and housing as early as possible.",
-          "tr": "Mümkün olduğunca erken finansman ve barınma güvencesi sağlayın."
+          "en": "The next published programme deadline is 1 May 2027, but applicants need direct TU/e confirmation of academic eligibility, non-EU tuition and scholarship timing before spending money.",
+          "tr": "YayÄ±mlanmÄ±ÅŸ sonraki program tarihi 1 MayÄ±s 2027'dir; ancak adaylar para harcamadan Ã¶nce akademik uygunluk, AB dÄ±ÅŸÄ± Ã¼cret ve burs takvimini doÄŸrudan TU/e'den doÄŸrulamalÄ±dÄ±r."
         },
         "overall_recommendation": {
-          "en": "A premier choice for Systems & Control driven by the best tech ecosystem in Europe.",
-          "tr": "Avrupa'nın en iyi teknoloji ekosistemi tarafından yönlendirilen Sistem ve Kontrol için birinci sınıf bir seçim."
+          "en": "A credible adjacent option for control, fluids and structures, not a substitute for a dedicated aerospace/space master's.",
+          "tr": "Kontrol, akÄ±ÅŸkanlar ve yapÄ±lar iÃ§in gÃ¼venilir yan alan seÃ§eneÄŸidir; Ã¶zel havacÄ±lÄ±k/uzay yÃ¼ksek lisansÄ±nÄ±n yerine geÃ§mez."
         },
         "recommended_user_profile": ""
       },
       "scoring_inputs": {},
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-07-15",
+        "checked_at": "2026-08-14",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
         "remaining_verification_tasks": [
-          {
-            "en": "Add a checked official source for tuition.",
-            "tr": "tuition için kontrol edilmiş resmî kaynak ekleyin."
-          },
-          {
-            "en": "Add a checked official source for scholarship.",
-            "tr": "scholarship için kontrol edilmiş resmî kaynak ekleyin."
-          },
           {
             "en": "Add a checked official source for admission.",
             "tr": "admission için kontrol edilmiş resmî kaynak ekleyin."
@@ -1340,19 +1670,23 @@
       "qs_ranking": 152,
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 1,
+        "checked_official_source_count": 7,
         "verified_fields": [
           "program",
           "language",
-          "curriculum"
-        ],
-        "unverified_critical_fields": [
+          "non_eu_eligibility",
           "tuition",
           "scholarship",
+          "deadline",
+          "curriculum",
+          "research",
+          "housing"
+        ],
+        "unverified_critical_fields": [
           "admission"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-07-15"
+        "audited_at": "2026-08-14"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -1380,7 +1714,8 @@
             "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
           }
         }
-      }
+      },
+      "programme_fit_class": "adjacent_mechanical_degree_with_aerospace_applications_not_aerospace_or_space_degree"
     },
     {
       "id": "netherlands_utwente_msc_robotics",
@@ -1425,8 +1760,8 @@
       "department": "Faculty of Engineering Technology / EEMCS",
       "faculty_or_school": "",
       "campus": "Enschede",
-      "program_status": "active_but_not_aerospace_path",
-      "relevance_status": "low_relevance",
+      "program_status": "active",
+      "relevance_status": "weak",
       "eligibility_profile": {
         "eligible_for_non_eu": true,
         "non_eu_quota": null,
@@ -1458,6 +1793,15 @@
         "verification_notes": {
           "en": "UT states that the application route depends on nationality and educational background. The checked FAQ confirms an application fee for applicants with a non-Dutch higher-education degree; programme-specific academic equivalence must be checked in the admissions route.",
           "tr": "UT başvuru yolunun uyruk ve eğitim geçmişine bağlı olduğunu belirtir. Kontrol edilen SSS, Hollanda dışı yükseköğretim derecesi olan adaylar için başvuru ücretini doğrular; programa özgü akademik denklik kabul yolunda kontrol edilmelidir."
+        },
+        "gre": {
+          "policy": "unknown",
+          "test_type": "unknown",
+          "minimum_scores": {},
+          "recommended_scores": {},
+          "validity_rule": "",
+          "waiver_rules": [],
+          "source_ids": []
         }
       },
       "language_profile": {
@@ -1540,7 +1884,10 @@
         "verification_notes": {
           "en": "Robotics appears in the UTS qualifying-programme list. UTS is limited to excellent, fee-paying non-EU/EEA applicants and is not a full scholarship.",
           "tr": "Robotics, UTS uygun program listesindedir. UTS yalnızca başarılı, ücret ödeyen AB/AEA dışı adaylara yöneliktir ve tam burs değildir."
-        }
+        },
+        "application_mode": "unknown",
+        "automatic_consideration": null,
+        "separate_application_required": null
       },
       "living_profile": {
         "city_cost_level": "medium",
@@ -1562,7 +1909,9 @@
           "en": "UT's Enschede budget, published on a Master's financial page, gives €561 rent and €1,311 total monthly living costs excluding tuition. It is an estimate, and UT states that rent varies by accommodation type.",
           "tr": "UT'nin bir yüksek lisans finans sayfasında yayımlanan Enschede bütçesi, öğrenim ücreti hariç 561 € kira ve aylık toplam 1.311 € yaşam gideri verir. Bu bir tahmindir; UT, kiranın konaklama türüne göre değiştiğini belirtir."
         },
-        "living_cost_eur_per_month": 1311
+        "living_cost_eur_per_month": 1311,
+        "housing_access": "unknown",
+        "housing_application_separate": null
       },
       "curriculum_profile": {
         "tracks": [
@@ -1682,7 +2031,7 @@
             "title": "University of Twente MSc Robotics",
             "source_type": "official_program_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "program",
               "language",
@@ -1696,7 +2045,7 @@
             "title": "University of Twente MSc Robotics tuition fees",
             "source_type": "official_tuition_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "tuition"
             ],
@@ -1708,7 +2057,7 @@
             "title": "University of Twente MSc Robotics FAQ",
             "source_type": "official_admission_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "admission",
               "non_eu_eligibility"
@@ -1721,7 +2070,7 @@
             "title": "University of Twente MSc Robotics factsheet",
             "source_type": "official_tuition_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "tuition",
               "deadline",
@@ -1738,7 +2087,7 @@
             "title": "University of Twente Scholarship (UTS)",
             "source_type": "official_scholarship_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "scholarship",
               "eligibility"
@@ -1754,7 +2103,7 @@
             "title": "University of Twente Enschede living-cost budget",
             "source_type": "official_housing_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "housing",
               "living"
@@ -1770,7 +2119,7 @@
             "title": "University of Twente Robotics factsheet: 2026/27 and February 2027 intake dates",
             "source_type": "official_admission_page",
             "access_status": "ok",
-            "last_checked": "2026-07-14",
+            "last_checked": "2026-08-14",
             "relevant_fields": [
               "program",
               "admission",
@@ -1840,10 +2189,8 @@
       "scoring_inputs": {},
       "quality_control": {
         "qc_status": "passed",
-        "checked_at": "2026-07-15",
-        "failed_canary_tests": [
-          "missing_or_unverified_critical_fields"
-        ],
+        "checked_at": "2026-08-14",
+        "failed_canary_tests": [],
         "remaining_verification_tasks": [],
         "qc_notes": {
           "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
@@ -1867,7 +2214,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-07-15"
+        "audited_at": "2026-08-14"
       },
       "qs_ranking_display": "=223",
       "qs_ranking_year": 2027,

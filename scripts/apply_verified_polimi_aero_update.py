@@ -15,7 +15,6 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 PATHS = (
     (ROOT / "data_base" / "italy.json", "polimi-msc-aeronautical", True),
-    (ROOT / "data_base" / "italya.json", "it-polimi-aero-msc", False),
 )
 CHECKED = "2026-07-14"
 

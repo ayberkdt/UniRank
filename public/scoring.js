@@ -61,8 +61,25 @@ function bounded(value, fallback = 50) {
 }
 
 function stringEntries(value) {
-  if (Array.isArray(value)) return value.filter((item) => typeof item === "string" && item.trim());
+  if (Array.isArray(value)) {
+    return value.map((item) => {
+      if (typeof item === "string") return item.trim();
+      if (!item || typeof item !== "object") return "";
+      const candidate = item.en
+        ?? item.name?.en
+        ?? item.name
+        ?? item.label?.en
+        ?? item.label
+        ?? item.title?.en
+        ?? item.title;
+      return typeof candidate === "string" ? candidate.trim() : "";
+    }).filter(Boolean);
+  }
   return typeof value === "string" && value.trim() ? [value] : [];
+}
+
+function uniqueDocumentedEntries(...values) {
+  return [...new Set(values.flatMap(stringEntries).map((item) => normalizeText(item)).filter(Boolean))];
 }
 
 function documentedAcademicStrength(record, normalized, hasCurriculumEvidence, hasResearchEvidence) {
@@ -87,8 +104,8 @@ function documentedAcademicStrength(record, normalized, hasCurriculumEvidence, h
   score += Math.min(12, documentedTopics.size * 1.5);
   if (!hasResearchEvidence) return bounded(score);
 
-  const labs = stringEntries(research.labs).length;
-  const centers = stringEntries(research.research_centers).length;
+  const labs = uniqueDocumentedEntries(research.labs, research.named_facilities).length;
+  const centers = uniqueDocumentedEntries(research.research_centers, research.key_institutes).length;
   const projects = stringEntries(research.space_or_aerospace_projects).length
     + stringEntries(research.satellite_or_flight_projects).length;
   const teams = stringEntries(research.student_teams).length;
@@ -215,9 +232,27 @@ function calculateScore(record, preferences, weights) {
       if (!hasCurriculumEvidence) warnings.push("Academic strength is conservative because curriculum evidence is incomplete.");
     }
   }
+  // Programme-level relevance is an evidence-backed scope judgement. A well
+  // documented aviation-management curriculum must not outrank direct space
+  // engineering merely because it has many checked courses and research credits.
+  const relevanceStatus = String(
+    record?.program_profile?.relevance_status || record?.relevance_status || ""
+  ).toLowerCase();
+  const technicalRelevanceCaps = { strong: 100, medium: 70, weak: 25, needs_review: 100 };
+  const academicRelevanceCaps = { strong: 100, medium: 78, weak: 45, needs_review: 100 };
+  const technicalRelevanceCap = technicalRelevanceCaps[relevanceStatus] ?? 100;
+  const academicRelevanceCap = academicRelevanceCaps[relevanceStatus] ?? 100;
+  if (technicalMatch > technicalRelevanceCap) {
+    technicalMatch = technicalRelevanceCap;
+    warnings.push(`Technical fit is capped because programme relevance is classified as ${relevanceStatus}.`);
+  }
+  if (profileMatch.enabled) profileMatch.personal_field_fit = technicalMatch;
   // This slider is deliberately academic strength first. A selected technical
   // field can refine it, but cannot make an undocumented prestige claim win.
-  const academicFit = Math.round((academicStrength * 0.8) + (technicalMatch * 0.2));
+  const academicFit = Math.min(
+    academicRelevanceCap,
+    Math.round((academicStrength * 0.8) + (technicalMatch * 0.2))
+  );
   explanation.push(`Academic strength ${academicStrength}/100 is based on checked curriculum and research evidence.`);
   if (preferences.minFieldFit && technicalMatch < preferences.minFieldFit) passed = false;
 

@@ -42,6 +42,15 @@
       "verification_notes": {
         "en": "International bachelor's-degree holders use the November application window; exact programme requirement profile remains linked in the official Mechanical Engineering site.",
         "tr": "Uluslararası lisans mezunları Kasım başvuru penceresini kullanır; kesin program gereklilik profili resmî Mechanical Engineering sitesinde bağlantılı kalır."
+      },
+      "gre": {
+        "policy": "unknown",
+        "test_type": "unknown",
+        "minimum_scores": {},
+        "recommended_scores": {},
+        "validity_rule": "",
+        "waiver_rules": [],
+        "source_ids": []
       }
     },
     "language_profile": {
@@ -138,7 +147,10 @@
         "en": "ESOP for the 2027/28 Master start is open 1-30 November 2026. It provides CHF 12,000 per semester plus a tuition-fee waiver for the regular Master duration; applicants need top-10% Bachelor performance and apply with the Master application.",
         "tr": "2027/28 Master baslangici icin ESOP 1-30 Kasim 2026'da aciktir. Normal Master suresi icin donem basina 12.000 CHF ve ogrenim ucreti muafiyeti sunar; adaylarin lisans derecesinde ilk %10'da olmasi ve Master basvurusuyla basvurmasi gerekir."
       },
-      "funding_amount_chf_per_semester": 12000
+      "funding_amount_chf_per_semester": 12000,
+      "application_mode": "unknown",
+      "automatic_consideration": null,
+      "separate_application_required": null
     },
     "living_profile": {
       "city_type": "Medium",
@@ -201,7 +213,9 @@
       "housing_budget_sek_per_year_max": null,
       "housing_budget_dkk_per_year_min": null,
       "housing_budget_dkk_per_year_max": null,
-      "official_student_total_budget_chf_per_year": 25200
+      "official_student_total_budget_chf_per_year": 25200,
+      "housing_access": "unknown",
+      "housing_application_separate": null
     },
     "curriculum_profile": {
       "structure": {
@@ -333,7 +347,7 @@
           "title": "ETH Zurich Engineering Sciences master's overview",
           "source_type": "official_program_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program",
             "curriculum"
@@ -346,7 +360,7 @@
           "title": "ETH Zurich Mechanical Engineering MSc admission appendix",
           "source_type": "official_admission_page",
           "access_status": "pdf",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "language",
             "admission",
@@ -360,7 +374,7 @@
           "title": "ETH Zurich Master application dates autumn 2026",
           "source_type": "official_admission_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "deadline"
           ],
@@ -372,7 +386,7 @@
           "title": "ETH Zurich MSc Mechanical Engineering",
           "source_type": "official_program_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program",
             "curriculum",
@@ -388,8 +402,8 @@
           "url": "https://ethz.ch/content/dam/ethz/main/education/finanzielles/files-en/tuition-fees.pdf",
           "title": "ETH tuition fee groups",
           "source_type": "official_tuition_page",
-          "access_status": "ok",
-          "last_checked": "2026-07-15",
+          "access_status": "pdf",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "tuition"
           ],
@@ -404,7 +418,7 @@
           "title": "ETH Excellence Scholarship & Opportunity Programme",
           "source_type": "official_scholarship_page",
           "access_status": "ok",
-          "last_checked": "2026-07-15",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "scholarship",
             "funding",
@@ -420,8 +434,8 @@
           "url": "https://ethz.ch/content/dam/ethz/main/education/finanzielles/files-de/lebenshaltung.pdf",
           "title": "ETH Financial Aid cost of living 2025",
           "source_type": "official_cost_of_living_page",
-          "access_status": "ok",
-          "last_checked": "2026-07-15",
+          "access_status": "pdf",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "housing",
             "living"
@@ -437,7 +451,7 @@
           "title": "ETH MSc Mechanical Engineering curriculum",
           "source_type": "official_curriculum_page",
           "access_status": "ok",
-          "last_checked": "2026-07-15",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "curriculum"
           ],
@@ -467,7 +481,9 @@
       "admission_chance": 30,
       "living_quality": 80
     },
-    "location": {},
+    "location": {
+      "country": "Switzerland"
+    },
     "qs_ranking": 8,
     "data_quality": {
       "status": "partial",
@@ -485,14 +501,12 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-15"
+      "audited_at": "2026-08-14"
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-15",
-      "failed_canary_tests": [
-        "missing_or_unverified_critical_fields"
-      ],
+      "checked_at": "2026-08-14",
+      "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "qc_notes": {
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
@@ -546,8 +560,8 @@
       "Mixed"
     ],
     "program_url": "https://www.epfl.ch/education/master/programs/mechanical-engineering/",
-    "program_status": "active_but_not_aerospace_path",
-    "relevance_status": "low_relevance",
+    "program_status": "active",
+    "relevance_status": "weak",
     "eligibility_profile": {
       "eligible_for_non_eu": true,
       "required_previous_degree": "Related university Bachelor's degree; applications from non-EPFL institutions are dossier-based and require excellent academic records.",
@@ -569,6 +583,15 @@
       "verification_notes": {
         "en": "EPFL says meeting eligibility criteria is not a guarantee of admission.",
         "tr": "EPFL uygunluk kriterlerini karşılamanın kabul garantisi olmadığını belirtir."
+      },
+      "gre": {
+        "policy": "unknown",
+        "test_type": "unknown",
+        "minimum_scores": {},
+        "recommended_scores": {},
+        "validity_rule": "",
+        "waiver_rules": [],
+        "source_ids": []
       }
     },
     "language_profile": {
@@ -658,7 +681,10 @@
         "en": "Eligible Master applicants can request consideration in the online admission application. EPFL publishes CHF 10,000 per semester for up to four semesters and a residence-room reservation for selected external candidates. It is competitive, not guaranteed.",
         "tr": "Uygun Master adaylari cevrim ici kabul basvurusunda degerlendirme isteyebilir. EPFL en fazla dort donem icin donem basina 10.000 CHF ve secilen dis adaylara yurt oda rezervasyonu yayimlar. Rekabetcidir, garanti degildir."
       },
-      "funding_amount_chf_per_semester": 10000
+      "funding_amount_chf_per_semester": 10000,
+      "application_mode": "unknown",
+      "automatic_consideration": null,
+      "separate_application_required": null
     },
     "living_profile": {
       "city_type": "Medium",
@@ -723,7 +749,9 @@
       "monthly_living_cost_chf_per_month_min": 2107,
       "monthly_living_cost_chf_per_month_max": 2107,
       "monthly_living_cost_chf_per_month": 2107,
-      "official_student_total_budget_chf_per_year": 25219
+      "official_student_total_budget_chf_per_year": 25219,
+      "housing_access": "unknown",
+      "housing_application_separate": null
     },
     "curriculum_profile": {
       "structure": null,
@@ -865,7 +893,7 @@
           "title": "EPFL Master in Mechanical Engineering",
           "source_type": "official_program_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program",
             "language",
@@ -879,7 +907,7 @@
           "title": "EPFL Mechanical Engineering study plan",
           "source_type": "official_curriculum_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "curriculum"
           ],
@@ -891,7 +919,7 @@
           "title": "EPFL tuition fee and other fees",
           "source_type": "official_tuition_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "tuition"
           ],
@@ -903,7 +931,7 @@
           "title": "EPFL Master admission criteria and application",
           "source_type": "official_admission_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "admission",
             "non_eu_eligibility"
@@ -916,7 +944,7 @@
           "title": "EPFL Master Excellence Fellowships",
           "source_type": "official_scholarship_page",
           "access_status": "ok",
-          "last_checked": "2026-07-15",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "scholarship",
             "funding",
@@ -933,7 +961,7 @@
           "title": "EPFL external Master application rounds",
           "source_type": "official_admission_page",
           "access_status": "ok",
-          "last_checked": "2026-07-15",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "admission",
             "deadline",
@@ -950,7 +978,7 @@
           "title": "EPFL foreign-student budget",
           "source_type": "official_cost_of_living_page",
           "access_status": "ok",
-          "last_checked": "2026-07-15",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "housing",
             "living"
@@ -986,7 +1014,9 @@
       "admission_chance": 30,
       "living_quality": 80
     },
-    "location": {},
+    "location": {
+      "country": "Switzerland"
+    },
     "qs_ranking": 22,
     "data_quality": {
       "status": "partial",
@@ -1004,14 +1034,12 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-15"
+      "audited_at": "2026-08-14"
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-07-15",
-      "failed_canary_tests": [
-        "missing_or_unverified_critical_fields"
-      ],
+      "checked_at": "2026-08-14",
+      "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "qc_notes": {
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
@@ -1068,7 +1096,7 @@
     "program_status": "active",
     "relevance_status": "medium",
     "eligibility_profile": {
-      "eligible_for_non_eu": null,
+      "eligible_for_non_eu": true,
       "required_previous_degree": {
         "en": "BSc in Aviation or Transport Systems generally meets the profile entry skills; other backgrounds are assessed individually by the relevant university of applied sciences.",
         "tr": "Aviation veya Transport Systems lisansı genel olarak profil giriş becerilerini karşılar; diğer altyapılar ilgili uygulamalı bilimler üniversitesi tarafından bireysel değerlendirilir."
@@ -1084,15 +1112,33 @@
         "Technical Engineering"
       ],
       "required_documents": [
-        "Bachelor degree and transcripts",
-        "CV",
-        "Statement of purpose",
-        "English language proof",
-        "Two references"
+        "bachelor_diploma_and_official_transcripts",
+        "grading_system_and_final_grade",
+        "certified_translation_into_english_french_or_german_if_needed",
+        "curriculum_vitae",
+        "statement_of_purpose_maximum_500_words_with_preferred_institute_or_centre",
+        "c1_english_language_proof_or_documented_waiver",
+        "two_academic_or_supervisor_recommendation_letters",
+        "bachelor_thesis_copy_if_requested"
       ],
       "verification_notes": {
-        "en": "ZHAW says foreign applicants need an excellent relevant degree (normally top 35% / CGPA 80%); Aviation-specific availability is selected through an institute/centre after review.",
-        "tr": "ZHAW, yabancı adaylar için mükemmel ilgili derece (genellikle ilk %35 / CGPA %80) ister; Havacılık profili kurum/merkez incelemesi sonrası belirlenir."
+        "en": "Applicants with foreign bachelor's degrees, including degrees outside the EU/EFTA, are eligible for the admission procedure. ZHAW expects a recognised relevant engineering degree, normally top 35% / CGPA 80%, then conducts a formal review and institute/centre selection; admission is competitive and not guaranteed.",
+        "tr": "AB/EFTA dışındaki dereceler dahil yabancı lisans derecesi sahipleri kabul sürecine başvurabilir. ZHAW, genellikle ilk %35 / CGPA %80 düzeyinde tanınmış ve ilgili bir mühendislik derecesi bekler; ardından biçimsel inceleme ve enstitü/merkez seçimi yapar. Kabul rekabetçidir ve garanti değildir."
+      },
+      "gre": {
+        "policy": "recommended_for_bachelor_degrees_outside_eu_efta",
+        "test_type": "GRE General Test",
+        "minimum_scores": {},
+        "recommended_scores": {},
+        "validity_rule": "not_published",
+        "waiver_rules": [],
+        "source_ids": [
+          "https://www.zhaw.ch/en/engineering/study/masters-degree-programme/admission-requirements/requirements"
+        ],
+        "notes": {
+          "en": "ZHAW says the GRE General Test is considered an advantage for applicants with a bachelor's degree outside the EU/EFTA; it does not call it mandatory or publish a minimum score.",
+          "tr": "ZHAW, AB/EFTA dışından lisans derecesi bulunan adaylar için GRE General Test'in avantaj sayıldığını belirtir; sınavı zorunlu tutmaz veya asgari puan yayımlamaz."
+        }
       }
     },
     "language_profile": {
@@ -1100,13 +1146,23 @@
         "English"
       ],
       "english_required": true,
-      "english_level_required": null,
+      "english_level_required": "C1",
       "mixed_language_warning": null,
       "language_risk": "low",
       "verification_notes": {
-        "en": "The official MSE page explicitly says language of instruction: English.",
-        "tr": "Resmi MSE sayfasi egitim dilinin Ingilizce oldugunu acikca belirtir."
-      }
+        "en": "The foreign-degree requirements page requires C1 English and lists CAE, BEC Higher, IELTS 7 and TOEFL 95 as examples. Native English speakers and applicants who completed an English-taught bachelor's programme do not need an English certificate.",
+        "tr": "Yabancı derece şartları sayfası C1 İngilizce ister ve CAE, BEC Higher, IELTS 7 ile TOEFL 95'i örnek olarak listeler. Ana dili İngilizce olanlar ve İngilizce yürütülen bir lisans programını tamamlayanlar İngilizce belgesinden muaftır."
+      },
+      "accepted_english_evidence": [
+        "Cambridge Advanced (CAE)",
+        "BEC Higher",
+        "IELTS 7",
+        "TOEFL 95"
+      ],
+      "english_waiver_rules": [
+        "native_english_speaker",
+        "completed_bachelor_degree_in_an_english_taught_undergraduate_programme"
+      ]
     },
     "cost_profile": {
       "academic_year": "2026/2027",
@@ -1160,7 +1216,20 @@
       "living_cost_dkk_per_year_max": null,
       "tuition_chf_per_semester": 720,
       "tuition_chf_per_year_min": 1440,
-      "tuition_chf_per_year_max": 1440
+      "tuition_chf_per_year_max": 1440,
+      "application_fee_items": [
+        {
+          "amount": 100,
+          "currency": "CHF",
+          "period": "one_time",
+          "applicant_scope": "mse_applicant",
+          "mandatory": true,
+          "basis": "Application is processed only after the admission processing fee is paid",
+          "source_ids": [
+            "https://www.zhaw.ch/en/engineering/study/masters-degree-programme/admission-requirements?L=1"
+          ]
+        }
+      ]
     },
     "scholarship_profile": {
       "available_types": [],
@@ -1177,7 +1246,10 @@
       "funding_notes": {
         "en": "ZHAW MSE admission material says ZHAW does not grant scholarships. A separate School of Engineering exchange scholarship is not represented as funding for an enrolled MSE degree applicant.",
         "tr": "ZHAW MSE kabul materyali ZHAW'nin burs vermedigini belirtir. Ayrı School of Engineering degisim bursu, kayitli MSE derece adayi icin finansman sayilmaz."
-      }
+      },
+      "application_mode": "unknown",
+      "automatic_consideration": null,
+      "separate_application_required": null
     },
     "living_profile": {
       "city_type": "Medium",
@@ -1238,7 +1310,9 @@
       "housing_budget_dkk_per_year_max": null,
       "monthly_living_cost_chf_per_month_min": 1390,
       "monthly_living_cost_chf_per_month_max": 2280,
-      "living_risk": "high"
+      "living_risk": "high",
+      "housing_access": "unknown",
+      "housing_application_separate": null
     },
     "curriculum_profile": {
       "structure": {
@@ -1353,7 +1427,7 @@
     },
     "source_profile": {
       "official_program_page": "https://www.zhaw.ch/en/engineering/study/masters-degree-programme?pk_kwd=MSE",
-      "official_admission_page": "https://www.zhaw.ch/en/engineering/study/masters-degree-programme/admission-requirements/requirements",
+      "official_admission_page": "https://www.zhaw.ch/en/engineering/study/masters-degree-programme/admission-requirements?L=1",
       "official_curriculum_page": "https://www.zhaw.ch/de/engineering/studium/masterstudium/profile/aviation",
       "official_tuition_page": "https://www.zhaw.ch/en/engineering/study/masters-degree-programme?pk_kwd=MSE",
       "official_scholarship_page": "https://www.zhaw.ch/en/engineering/study/masters-degree-programme/admission-requirements?L=1",
@@ -1364,7 +1438,7 @@
           "title": "ZHAW Master of Science in Engineering",
           "source_type": "official_program_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program_basic_info",
             "language",
@@ -1382,16 +1456,19 @@
           "title": "ZHAW MSE requirements for foreign degrees",
           "source_type": "official_admission_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "admission",
             "language",
-            "required_documents"
+            "required_documents",
+            "non_eu_eligibility",
+            "gre",
+            "documents"
           ],
           "confidence": "high",
           "notes": {
-            "en": "Details foreign-degree requirements and C1 English evidence.",
-            "tr": "Yabancı derece gereklilikleri ve C1 İngilizce kanıtını açıklar."
+            "en": "Current official requirements explicitly cover foreign bachelor's degrees, including the outside-EU/EFTA GRE guidance, C1 English evidence and waivers, and the full application document list.",
+            "tr": "Güncel resmî şartlar yabancı lisans derecelerini, AB/EFTA dışı GRE rehberini, C1 İngilizce kanıtı ve muafiyetlerini ve tam başvuru belge listesini açıkça kapsar."
           }
         },
         {
@@ -1399,7 +1476,7 @@
           "title": "ZHAW MSE Aviation profile",
           "source_type": "official_curriculum_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program_status",
             "curriculum",
@@ -1416,7 +1493,7 @@
           "title": "ZHAW MSE admission process",
           "source_type": "official_scholarship_page",
           "access_status": "ok",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "scholarship"
           ],
@@ -1431,7 +1508,7 @@
           "title": "ZHAW MSE programme brochure 2026",
           "source_type": "official_program_page",
           "access_status": "pdf",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program",
             "profile"
@@ -1447,7 +1524,7 @@
           "title": "ZHAW MSE Aviation profile description",
           "source_type": "official_curriculum_page",
           "access_status": "pdf",
-          "last_checked": "2026-07-14",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "curriculum",
             "admission",
@@ -1464,7 +1541,7 @@
           "title": "ZHAW MSE programme",
           "source_type": "official_program_page",
           "access_status": "ok",
-          "last_checked": "2026-07-15",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "program",
             "language",
@@ -1482,7 +1559,7 @@
           "title": "ZHAW MSE published base tuition",
           "source_type": "official_tuition_page",
           "access_status": "ok",
-          "last_checked": "2026-07-15",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "tuition"
           ],
@@ -1497,7 +1574,7 @@
           "title": "ZHAW School of Engineering living costs",
           "source_type": "official_cost_of_living_page",
           "access_status": "ok",
-          "last_checked": "2026-07-15",
+          "last_checked": "2026-08-14",
           "relevant_fields": [
             "housing",
             "living"
@@ -1507,25 +1584,45 @@
             "en": "Official planning range is CHF 1,390-2,280/month with CHF 500-800 rent.",
             "tr": "Resmi planlama araligi, 500-800 CHF kira ile aylik 1.390-2.280 CHF'dir."
           }
+        },
+        {
+          "url": "https://www.zhaw.ch/en/engineering/study/masters-degree-programme/admission-requirements?L=1",
+          "title": "ZHAW MSE admission process for Swiss and foreign bachelor's degrees",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-14",
+          "relevant_fields": [
+            "admission",
+            "non_eu_eligibility",
+            "application_fee",
+            "deadline",
+            "scholarship"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "The current page admits foreign-degree applicants to review, describes competitive institute/centre selection, publishes the CHF 100 processing fee and recurring application windows, and states that ZHAW does not grant scholarships.",
+            "tr": "Güncel sayfa yabancı derece sahiplerini değerlendirmeye kabul eder, rekabetçi enstitü/merkez seçimini açıklar, 100 CHF işlem bedelini ve yinelenen başvuru dönemlerini yayımlar ve ZHAW'nin burs vermediğini belirtir."
+          }
         }
       ],
-      "last_verified": "2026-07-15",
+      "last_verified": "2026-08-14",
       "needs_verification": true,
       "field_confidence": {
         "program_basic_info": "high",
         "language": "high",
-        "admission": "medium",
+        "admission": "high",
         "tuition": "medium",
         "scholarship": "high",
         "curriculum": "medium",
         "living": "unknown",
         "application_timeline_profile": "medium",
         "living_profile": "medium",
-        "housing": "medium"
+        "housing": "medium",
+        "non_eu_eligibility": "high"
       },
       "verification_notes": {
-        "en": "Aviation profile and critical MSE facts are source-checked; foreign-student fee surcharge and housing cost remain unverified.",
-        "tr": "Havacılık profili ve kritik MSE bilgileri kaynakla kontrol edildi; yabancı öğrenci ek ücreti ve konaklama maliyeti doğrulanmadı."
+        "en": "All critical decision fields now have checked official evidence. The record remains partial because tuition, curriculum and housing/living evidence still includes medium-confidence interpretation or non-programme-specific guidance.",
+        "tr": "Tüm kritik karar alanları artık kontrol edilmiş resmî kanıta sahiptir. Ücret, müfredat ve konut/yaşam kanıtlarında orta güvenli yorum veya programa özgü olmayan rehber bulunduğu için kayıt yine de kısmi kalır."
       },
       "official_cost_of_living_page": "https://www.zhaw.ch/en/engineering/study/international-office/studying-in-switzerland/living-in-switzerland"
     },
@@ -1542,15 +1639,18 @@
       "admission_chance": 30,
       "living_quality": 80
     },
-    "location": {},
+    "location": {
+      "country": "Switzerland"
+    },
     "qs_ranking": null,
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 9,
+      "checked_official_source_count": 10,
       "verified_fields": [
         "program",
         "language",
         "admission",
+        "non_eu_eligibility",
         "tuition",
         "scholarship",
         "deadline",
@@ -1559,16 +1659,17 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-07-15"
+      "audited_at": "2026-08-14"
     },
     "quality_control": {
-      "checked_at": "2026-07-15",
+      "checked_at": "2026-08-14",
       "qc_status": "needs_revision",
       "remaining_verification_tasks": [],
       "qc_notes": {
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
-      }
+      },
+      "failed_canary_tests": []
     },
     "tuition_eur_per_year": null,
     "annual_fee_eur": null,

@@ -89,6 +89,7 @@ def main() -> None:
             qc["checked_at"] = TODAY
             missing = quality["unverified_critical_fields"]
             qc["qc_status"] = "passed" if quality["status"] == "verified" else "needs_revision"
+            qc["failed_canary_tests"] = [] if not missing else ["missing_or_unverified_critical_fields"]
             qc["remaining_verification_tasks"] = [
                 {
                     "en": f"Add a checked official source for {field}.",

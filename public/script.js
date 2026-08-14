@@ -5,6 +5,7 @@ let selectedCategoryKeys = new Set();
 let favorites = new Set(JSON.parse(localStorage.getItem('unirank_favorites') || '[]'));
 let countryPickerEntries = [];
 let countryPickerOpen = false;
+let activeDrawerData = null;
 
 
 function validateRecordShape(record) {
@@ -207,6 +208,26 @@ function formatPublishedRange(range) {
     return end ? `${start}–${end}` : start;
 }
 
+function formatPublishedTuition(value) {
+    if (!value) return '\u2014';
+    const amount = value.amount !== null && value.amount !== undefined
+        ? formatPublishedMoney(value)
+        : formatPublishedRange(value);
+    if (!value.isHistorical) return amount;
+    const year = value.academicYear ? `${value.academicYear} ` : '';
+    const context = window.currentLanguage === 'tr'
+        ? `${year}tarihsel ölçüt; güncel değil`
+        : `${year}historical benchmark; not current`;
+    return `${amount} · ${context}`;
+}
+
+function publishedTuitionPeriodSuffix(value, isTurkish) {
+    if (!value) return '';
+    if (value.period === 'quarter') return isTurkish ? ' / dönem' : ' / quarter';
+    if (value.period === 'academic_year') return isTurkish ? ' / akademik yıl' : ' / academic year';
+    return isTurkish ? ' / yıl' : ' / year';
+}
+
 function formatPublishedRangeSafe(range) {
     if (!range || !range.currency || range.min === null || range.min === undefined) return "\u2014";
     const start = formatPublishedMoneySafe({ amount: range.min, currency: range.currency });
@@ -274,15 +295,32 @@ function formatRiskBadge(risk) {
 
 function scoreBand(score) {
     const value = Number(score) || 0;
-    if (value >= 6.5) return { key: 'excellent', label: window.currentLanguage === 'tr' ? 'Yüksek uyum' : 'High fit' };
-    if (value >= 5.5) return { key: 'strong', label: window.currentLanguage === 'tr' ? 'İyi uyum' : 'Good fit' };
-    if (value >= 4.5) return { key: 'moderate', label: window.currentLanguage === 'tr' ? 'Orta uyum' : 'Moderate fit' };
-    return { key: 'weak', label: window.currentLanguage === 'tr' ? 'Düşük uyum' : 'Lower fit' };
+    if (value >= 6.5) return { key: 'excellent', label: window.currentLanguage === 'tr' ? 'Güçlü genel sonuç' : 'Strong overall result' };
+    if (value >= 5.5) return { key: 'strong', label: window.currentLanguage === 'tr' ? 'İyi genel sonuç' : 'Good overall result' };
+    if (value >= 4.5) return { key: 'moderate', label: window.currentLanguage === 'tr' ? 'Orta genel sonuç' : 'Moderate overall result' };
+    return { key: 'weak', label: window.currentLanguage === 'tr' ? 'Sınırlı genel sonuç' : 'Limited overall result' };
 }
 
 function compactList(value) {
     if (Array.isArray(value)) return value.map(displayValue).filter(Boolean).join(', ');
     return displayValue(value);
+}
+
+function formatTeachingLanguages(value) {
+    const values = Array.isArray(value) ? value : [value];
+    const turkishLabels = {
+        English: 'İngilizce', Spanish: 'İspanyolca', German: 'Almanca', French: 'Fransızca',
+        Italian: 'İtalyanca', Portuguese: 'Portekizce', Dutch: 'Felemenkçe', Swedish: 'İsveççe',
+        Danish: 'Danca', Norwegian: 'Norveççe', Finnish: 'Fince', Romanian: 'Romence',
+        Greek: 'Yunanca', Polish: 'Lehçe', Czech: 'Çekçe', Russian: 'Rusça', Turkish: 'Türkçe',
+        Estonian: 'Estonca', Lithuanian: 'Litvanca', Unknown: 'Bilinmiyor',
+        needs_verification: 'Doğrulama gerekli', not_verified: 'Doğrulanmadı'
+    };
+    return values
+        .map(displayValue)
+        .filter(Boolean)
+        .map(language => window.currentLanguage === 'tr' ? (turkishLabels[language] || language) : language)
+        .join(', ');
 }
 
 function confidenceLabel(value) {
@@ -1120,6 +1158,7 @@ function processAndRender() {
         if (search) {
             const text = [
                 n?.universityName,
+                n?.universityAliases?.join(' '),
                 n?.programName,
                 n?.city,
                 n?.country,
@@ -1268,6 +1307,7 @@ function renderKPIs() {
     const countriesSet = new Set();
     let totalTuition = 0;
     let validTuitionCount = 0;
+    let knownTuitionCount = 0;
     let totalScore = 0;
 
     filteredData.forEach(record => {
@@ -1278,6 +1318,7 @@ function renderKPIs() {
             totalTuition += record._costNum;
             validTuitionCount += 1;
         }
+        if (normalized?.hasKnownTuition) knownTuitionCount += 1;
         totalScore += Number(record._score) || 0;
     });
 
@@ -1293,7 +1334,7 @@ function renderKPIs() {
     const costCoverage = document.getElementById('kpi-cost-coverage');
     if (costCoverage) {
         costCoverage.textContent = filteredData.length
-            ? `${Math.round((validTuitionCount / filteredData.length) * 100)}%`
+            ? `${Math.round((knownTuitionCount / filteredData.length) * 100)}%`
             : '0%';
     }
 }
@@ -1325,10 +1366,10 @@ function renderTable() {
         const displayCountry = window.getCountryName ? window.getCountryName(cleanCountry) : cleanCountry;
         const band = scoreBand(row._score);
         const confidence = confidenceLabel(n.confidenceSummary);
-        const language = compactList(n.teachingLanguage) || (window.t ? window.t('unknown_value') : 'Unknown');
+        const language = formatTeachingLanguages(n.teachingLanguage) || (window.t ? window.t('unknown_value') : 'Unknown');
         const annualCost = n.totalAcademicCost !== null || n.tuitionPerYear !== null
             ? formatMoney(n.totalAcademicCost ?? n.tuitionPerYear)
-            : formatPublishedMoney(n.foreignTuition);
+            : formatPublishedTuition(n.foreignTuition);
         const city = displayValue(n.city);
         const degree = displayValue(n.degree);
         const admissionHTML = n.eligibleForNonEu === true
@@ -1390,6 +1431,7 @@ function renderTable() {
 
 function openDrawer(data) {
     try {
+        activeDrawerData = data;
         window.lastDrawerTrigger = document.activeElement;
         const n = window.uniDataAdapter ? window.uniDataAdapter.normalizeUniversityRecord(data) : null;
         if (!n) return;
@@ -1419,12 +1461,12 @@ function openDrawer(data) {
         const isTurkish = window.currentLanguage === 'tr';
         const band = scoreBand(data._score);
         const confidence = confidenceLabel(n.confidenceSummary);
-        const languageText = compactList(n.teachingLanguage) || (window.t ? window.t('unknown_value') : 'Unknown');
+        const languageText = formatTeachingLanguages(n.teachingLanguage) || (window.t ? window.t('unknown_value') : 'Unknown');
         const publishedProgrammeFee = n.costDetails?.tuition_non_eu_full_program;
         const headlineCost = n.totalAcademicCost != null || n.tuitionPerYear != null
             ? formatMoney(n.totalAcademicCost ?? n.tuitionPerYear)
             : n.foreignTuition
-                ? `${formatPublishedMoney(n.foreignTuition)}${n.foreignTuition.period === 'quarter' ? ` (${isTurkish ? 'dönem' : 'quarter'})` : ` (${isTurkish ? 'yıllık' : 'annual'})`}`
+                ? `${formatPublishedTuition(n.foreignTuition)}${publishedTuitionPeriodSuffix(n.foreignTuition, isTurkish)}`
             : publishedProgrammeFee?.amount != null && publishedProgrammeFee?.currency
                 ? `${Number(publishedProgrammeFee.amount).toLocaleString('en-US')} ${publishedProgrammeFee.currency} (${isTurkish ? 'program toplamı' : 'full programme'})`
                 : '—';
@@ -1438,9 +1480,9 @@ function openDrawer(data) {
                 <div class="drawer-score-line"><strong class="fit-score fit-score--${band.key}">${escapeHtml(scoreVal)}</strong><span><b>${escapeHtml(band.label)}</b><small>${escapeHtml(window.t ? window.t('technical_match') : 'Technical match')}</small></span></div>
                 <dl class="drawer-decision-grid">
                     <div><dt>${escapeHtml(window.t ? window.t('teaching_language') : 'Teaching language')}</dt><dd>${escapeHtml(languageText)}</dd></div>
-                    <div><dt>${escapeHtml(window.t ? window.t('annual_cost') : 'Annual cost')}</dt><dd>${escapeHtml(headlineCost)}</dd></div>
+                    <div><dt>${escapeHtml(window.t ? window.t('annual_cost') : 'Annual cost')}</dt><dd>${escapeHtml(headlineCost)}${n.tuitionScope === 'non_eu_target' ? ` <small>(${isTurkish ? 'AB dışı hedef ücret' : 'non-EU target fee'})</small>` : ''}</dd></div>
                     <div><dt>ECTS / ${escapeHtml(window.t ? window.t('degree') : 'Degree')}</dt><dd>${escapeHtml([n.ects ? `${n.ects} ECTS` : '', displayValue(n.degree)].filter(Boolean).join(' · ') || '—')}</dd></div>
-                    <div><dt>${escapeHtml(window.t ? window.t('winter_deadline') : 'Deadline')}</dt><dd>${escapeHtml(n.deadline ? displayValue(n.deadline) : '—')}</dd></div>
+                    <div><dt>${escapeHtml(isTurkish ? 'Başvuru son tarihi' : 'Application deadline')}</dt><dd>${escapeHtml(n.deadline ? displayValue(n.deadline) : '—')}</dd></div>
                 </dl>
                 ${n.lastVerified ? `<p class="drawer-verified">${escapeHtml(window.t ? window.t('last_verified') : 'Last verified')}: ${escapeHtml(n.lastVerified)}</p>` : ''}
             </section>`;
@@ -1495,7 +1537,7 @@ function openDrawer(data) {
         // 2. Basic info card. Every label follows the active language: mixed
         // Turkish labels inside the English UI read like leaked internals.
         const qsBadge = n.qsRankDisplay
-            ? `<span class="rank-badge qs-rank" title="QS World University Rankings ${escapeHtml(n.qsRankYear || '')}">QS: #${escapeHtml(n.qsRankDisplay)}</span>`
+            ? `<span class="rank-badge qs-rank" title="QS World University Rankings ${escapeHtml(n.qsRankYear || '')}">QS: #${escapeHtml(String(n.qsRankDisplay).replace(/^#/, ''))}</span>`
             : '';
         const engBadge = n.engineeringRanking ? `<span class="rank-badge eng-rank">${isTurkish ? 'Müh' : 'Eng'}: #${escapeHtml(displayValue(n.engineeringRanking))}</span>` : '';
 
@@ -1520,7 +1562,7 @@ function openDrawer(data) {
                     </div>
                     <div class="premium-item">
                         <label>${isTurkish ? 'Öğretim Dili' : 'Teaching Language'}</label>
-                        <span>${escapeHtml(Array.isArray(n.teachingLanguage) ? n.teachingLanguage.join(', ') : displayValue(n.teachingLanguage))}</span>
+                        <span>${escapeHtml(formatTeachingLanguages(n.teachingLanguage))}</span>
                     </div>
                     ${qsBadge || engBadge ? `
                     <div class="premium-item full-span ranking-container">
@@ -1532,6 +1574,195 @@ function openDrawer(data) {
         `;
 
         // 3. Bölüm / Araştırma Bilgileri (Department Info)
+        // Practical admissions are shown before prestige/research information.
+        const admission = n.eligibilityDetails || {};
+        const languageDetails = n.languageDetails || {};
+        const yesNoUnknown = (value) => value === true
+            ? (isTurkish ? 'Evet' : 'Yes')
+            : value === false ? (isTurkish ? 'Hayır' : 'No') : (isTurkish ? 'Bilinmiyor' : 'Unknown');
+        const admissionList = (values) => (Array.isArray(values) ? values : [])
+            .map((value) => `<li>${escapeHtml(displayValue(value))}</li>`).join('');
+        const backgroundsHTML = admissionList(admission.accepted_backgrounds);
+        const documentsHTML = admissionList(admission.required_documents);
+        const grePolicyLabel = {
+            required: isTurkish ? 'Zorunlu' : 'Required',
+            required_with_waivers: isTurkish ? 'Zorunlu; sınırlı muafiyetler var' : 'Required; limited waivers available',
+            optional: isTurkish ? 'İsteğe bağlı' : 'Optional',
+            optional_not_required: isTurkish ? 'İsteğe bağlı · zorunlu değil' : 'Optional · not required',
+            optional_waived: isTurkish ? 'Şart kaldırıldı; gönderilirse değerlendirilir' : 'Waived; evaluated if submitted',
+            not_required: isTurkish ? 'Gerekli değil' : 'Not required',
+            not_required_and_not_considered: isTurkish ? 'Gerekli değil · değerlendirmeye alınmıyor' : 'Not required · not considered',
+            not_accepted: isTurkish ? 'Kabul edilmiyor · değerlendirmeye alınmıyor' : 'Not accepted · not considered',
+            not_required_but_encouraged: isTurkish ? 'Zorunlu değil; rekabetçi başvuru için teşvik ediliyor' : 'Not required; encouraged for a more competitive application',
+            not_listed_as_required: isTurkish ? 'Resmî şartlarda listelenmiyor' : 'Not listed in the official requirements',
+            unknown: isTurkish ? 'Bilinmiyor' : 'Unknown'
+        }[String(admission.gre?.policy || 'unknown')] || displayValue(admission.gre?.policy);
+        const interviewText = admission.interview_policy === 'optional_at_academic_committee_discretion'
+            ? (isTurkish ? 'Komisyonun takdirinde isteğe bağlı' : 'Optional at the committee’s discretion')
+            : admission.interview_policy === 'may_be_invited_not_required_for_all'
+                ? (isTurkish ? 'Bazı adaylar davet edilebilir; herkes için zorunlu değil' : 'Some applicants may be invited; not required for everyone')
+                : yesNoUnknown(admission.interview_required);
+        const testText = admission.test_policy ? displayValue(admission.test_policy) : yesNoUnknown(admission.test_required);
+        const englishTests = Array.isArray(languageDetails.accepted_english_tests) ? languageDetails.accepted_english_tests : [];
+        const englishTestText = englishTests.map((test) => {
+            const testName = test.test || test.name || '';
+            const minimum = test.minimum_score ?? test.minimum_overall;
+            const oldScale = test.minimum_score_old_scale;
+            const newScale = test.minimum_score_new_scale ?? test.minimum_score_2026_scale;
+            const newSpeaking = test.minimum_speaking_new_scale;
+            const newWriting = test.minimum_writing_new_scale;
+            const datedSpeaking = test.minimum_speaking_from_2026_01_21;
+            const datedWriting = test.minimum_writing_from_2026_01_21;
+            const score = oldScale != null || newScale != null
+                ? [
+                    oldScale != null ? `${oldScale} (${isTurkish ? 'eski ölçek' : 'old scale'})` : '',
+                    newScale != null
+                        ? `${newScale} ${isTurkish ? 'toplam' : 'total'}${newSpeaking != null || newWriting != null ? `; S/W ${newSpeaking ?? '—'}/${newWriting ?? '—'}` : ''} (${isTurkish ? '21 Ocak 2026 sonrası' : 'from 21 Jan 2026'})`
+                        : ''
+                ].filter(Boolean).join(' / ')
+                : minimum != null
+                    ? `${minimum}${datedSpeaking != null || datedWriting != null ? `; S/W ${datedSpeaking ?? '—'}/${datedWriting ?? '—'} (${isTurkish ? '21 Ocak 2026 sonrası' : 'from 21 Jan 2026'})` : ''}`
+                    : '';
+            return [testName, score].filter(Boolean).join(' ');
+        }).filter(Boolean).join(' · ');
+        const applicationFeeUsd = admission.application_fee_usd ?? admission.application_fee_usd_international;
+        const applicationFeeText = Number.isFinite(Number(applicationFeeUsd))
+            ? formatPublishedMoney({ amount: Number(applicationFeeUsd), currency: 'USD' })
+            : '';
+        const languageRequirement = languageDetails.spanish_required
+            ? `${isTurkish ? 'İspanyolca' : 'Spanish'} ${escapeHtml(languageDetails.spanish_level_required || '')}`.trim()
+            : languageDetails.italian_required
+                ? `${isTurkish ? 'İtalyanca' : 'Italian'} ${escapeHtml(languageDetails.italian_level_required || '')}`.trim()
+                : languageDetails.german_required
+                    ? `${isTurkish ? 'Almanca' : 'German'} ${escapeHtml(languageDetails.german_level_required || '')}`.trim()
+                    : languageDetails.english_required
+                        ? `${isTurkish ? 'İngilizce yeterlilik gerekli' : 'English proficiency required'}${languageDetails.english_level_required ? ` · ${escapeHtml(displayValue(languageDetails.english_level_required))}` : ''}`
+                        : languageDetails.english_proficiency_required_conditionally
+                            ? (isTurkish ? 'Muafiyet yoksa İngilizce yeterlilik kanıtı gerekli' : 'English-proficiency evidence required unless exempt')
+                        : (isTurkish ? 'Ek program dili şartı yayımlanmamış' : 'No additional programme-language requirement published');
+        const admissionsHTML = `
+            <div class="drawer-section premium-card admission-card">
+                <div class="premium-header"><span class="premium-icon">🧾</span><h4 class="premium-title">${isTurkish ? 'Kabul & Dil Gereklilikleri' : 'Admission & Language Requirements'}</h4></div>
+                <div class="premium-grid">
+                    <div class="premium-item"><label>${isTurkish ? 'AB dışı başvuru' : 'Non-EU application'}</label><span>${yesNoUnknown(n.eligibleForNonEu)}</span></div>
+                    <div class="premium-item"><label>${isTurkish ? 'Program dili şartı' : 'Programme language requirement'}</label><span>${languageRequirement}</span></div>
+                    <div class="premium-item"><label>GRE</label><span>${escapeHtml(grePolicyLabel)}</span></div>
+                    <div class="premium-item"><label>${isTurkish ? 'Mülakat' : 'Interview'}</label><span>${escapeHtml(interviewText)}</span></div>
+                    <div class="premium-item full-span"><label>${isTurkish ? 'Program sınavı' : 'Programme test'}</label><span>${escapeHtml(testText)}</span></div>
+                    ${applicationFeeText ? `<div class="premium-item"><label>${isTurkish ? 'Başvuru ücreti' : 'Application fee'}</label><span>${escapeHtml(applicationFeeText)}</span></div>` : ''}
+                    ${englishTestText ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Kabul edilen İngilizce sınavları ve asgariler' : 'Accepted English tests and minimums'}</label><span>${escapeHtml(englishTestText)}</span></div>` : ''}
+                    ${admission.cohort_size_max ? `<div class="premium-item"><label>${isTurkish ? 'Azami kontenjan' : 'Maximum cohort'}</label><span>${escapeHtml(admission.cohort_size_max)}</span></div>` : ''}
+                    ${admission.video_requirement ? `<div class="premium-item"><label>Video</label><span>${admission.video_requirement === 'only_if_requested_in_the_call' ? (isTurkish ? 'Yalnızca çağrıda istenirse' : 'Only if requested in the call') : escapeHtml(displayValue(admission.video_requirement))}</span></div>` : ''}
+                    ${admission.ranking_or_selection ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Seçim ölçütleri' : 'Selection criteria'}</label><span>${escapeHtml(displayValue(admission.ranking_or_selection))}</span></div>` : ''}
+                    ${admission.notes_for_turkish_students ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Türkiye’den başvuran için' : 'For an applicant from Turkey'}</label><span>${escapeHtml(displayValue(admission.notes_for_turkish_students))}</span></div>` : ''}
+                </div>
+                ${backgroundsHTML ? `<details class="detail-disclosure"><summary>${isTurkish ? 'Kabul edilen akademik geçmişler' : 'Accepted academic backgrounds'}</summary><ul>${backgroundsHTML}</ul></details>` : ''}
+                ${documentsHTML ? `<details class="detail-disclosure"><summary>${isTurkish ? `Gerekli belgeler (${admission.required_documents.length})` : `Required documents (${admission.required_documents.length})`}</summary><ul>${documentsHTML}</ul></details>` : ''}
+            </div>`;
+
+        const curriculum = n.curriculumDetails || {};
+        const mandatoryCourses = Array.isArray(curriculum.mandatory_courses)
+            ? curriculum.mandatory_courses
+            : (Array.isArray(curriculum.core_courses) ? curriculum.core_courses : []);
+        const requirementComponents = Array.isArray(curriculum.requirement_components) ? curriculum.requirement_components : [];
+        const curriculumTracks = Array.isArray(curriculum.tracks)
+            ? curriculum.tracks
+            : (Array.isArray(curriculum.specializations) ? curriculum.specializations : []);
+        const publishedComponents = mandatoryCourses.length ? mandatoryCourses : requirementComponents;
+        const courseRows = publishedComponents.map((item) => {
+            const name = displayValue(typeof item === 'object' ? item.name : item);
+            const ectsLabel = item && typeof item === 'object' && item.ects != null ? `${item.ects} ECTS` : '';
+            const creditHoursLabel = item && typeof item === 'object' && item.credit_hours != null
+                ? `${displayValue(item.credit_hours)} ${isTurkish ? 'kredi saati' : 'credit hours'}` : '';
+            const semesterLabel = item && typeof item === 'object' && item.semester != null
+                ? `${isTurkish ? 'Yarıyıl' : 'Semester'} ${item.semester}` : '';
+            return `<li><span>${escapeHtml(name)}</span><small>${escapeHtml([ectsLabel, creditHoursLabel, semesterLabel].filter(Boolean).join(' · '))}</small></li>`;
+        }).join('');
+        const trackRows = curriculumTracks.map((track) =>
+            `<li><span>${escapeHtml(displayValue(track))}</span></li>`
+        ).join('');
+        const totalComponentCount = curriculum.course_count_summary
+            ? displayValue(curriculum.course_count_summary)
+            : curriculum.course_count_total_including_thesis
+                ?? ((curriculum.total_credit_hours ?? curriculum.credit_hours_total) != null
+                    ? `${displayValue(curriculum.total_credit_hours ?? curriculum.credit_hours_total)} ${isTurkish ? 'kredi' : 'credits'}`
+                    : (mandatoryCourses.length || null));
+        const taughtComponentCount = curriculum.course_count_fixed === false
+            ? (isTurkish ? 'Programa göre değişir' : 'Pathway-dependent')
+            : curriculum.taught_project_and_seminar_component_count
+                ?? (curriculum.typical_course_equivalent != null
+                    ? `${isTurkish ? 'Yaklaşık' : 'About'} ${displayValue(curriculum.typical_course_equivalent)} ${isTurkish ? 'ders; yola göre değişir' : 'classes; pathway-dependent'}`
+                    : curriculum.typical_three_unit_course_equivalent != null
+                        ? `${displayValue(curriculum.typical_three_unit_course_equivalent)} ${isTurkish ? 'adet üç kredilik ders' : 'three-unit courses'}`
+                    : (mandatoryCourses.length || '—'));
+        const hasThesisAndNonThesisRoutes = curriculum.thesis_required === false
+            && Array.isArray(curriculum.tracks)
+            && curriculum.tracks.includes('thesis')
+            && curriculum.tracks.includes('non_thesis');
+        const thesisLabel = curriculum.thesis_requirement_summary
+            ? displayValue(curriculum.thesis_requirement_summary)
+            : (curriculum.thesis_route_available === true || curriculum.thesis_option_available_by_request === true || hasThesisAndNonThesisRoutes) && curriculum.thesis_required === false
+                ? (curriculum.thesis_option_guaranteed === false
+                    ? (isTurkish ? 'İsteğe bağlı talep edilebilir · garanti değil' : 'Optional by request · not guaranteed')
+                    : (isTurkish ? 'İsteğe bağlı · tezli ve tezsiz yollar var' : 'Optional · thesis and non-thesis routes available'))
+            : curriculum.thesis_required === true
+                ? `${isTurkish ? 'Zorunlu' : 'Required'}${curriculum.thesis_ects ? ` · ${curriculum.thesis_ects} ECTS` : ''}`
+                : yesNoUnknown(curriculum.thesis_required);
+        const internshipRequired = curriculum.internship_required ?? curriculum.mandatory_internship;
+        const internshipLabel = internshipRequired === true
+            ? (isTurkish ? 'Zorunlu' : 'Required')
+            : internshipRequired === false ? (isTurkish ? 'Zorunlu değil' : 'Not compulsory') : (isTurkish ? 'Bilinmiyor' : 'Unknown');
+        const curriculumHTML = `
+            <div class="drawer-section premium-card curriculum-card">
+                <div class="premium-header"><span class="premium-icon">📚</span><h4 class="premium-title">${isTurkish ? 'Müfredat & Ders Yükü' : 'Curriculum & Course Load'}</h4></div>
+                <div class="premium-grid">
+                    <div class="premium-item"><label>${curriculum.course_count_fixed === false ? (isTurkish ? 'Ders sayısı yapısı' : 'Course-count structure') : (isTurkish ? 'Toplam değerlendirilen bileşen' : 'Total assessed components')}</label><span>${escapeHtml(totalComponentCount ?? '—')}</span></div>
+                    <div class="premium-item"><label>${isTurkish ? 'Ders / proje / seminer' : 'Courses / projects / seminar'}</label><span>${escapeHtml(taughtComponentCount)}</span></div>
+                    <div class="premium-item"><label>${isTurkish ? 'Tez' : 'Thesis'}</label><span>${escapeHtml(thesisLabel)}</span></div>
+                    <div class="premium-item"><label>${isTurkish ? 'Zorunlu staj' : 'Compulsory internship'}</label><span>${internshipLabel}</span></div>
+                    ${curriculum.internship_notes ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Staj / şirket çalışması notu' : 'Internship / company-work note'}</label><span>${escapeHtml(displayValue(curriculum.internship_notes))}</span></div>` : ''}
+                    ${curriculum.track_selection_policy ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Alan / alt plan seçimi' : 'Track / subplan selection'}</label><span>${escapeHtml(displayValue(curriculum.track_selection_policy))}</span></div>` : ''}
+                    ${curriculum.verification_notes ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Müfredat doğrulama notu' : 'Curriculum verification note'}</label><span>${escapeHtml(displayValue(curriculum.verification_notes))}</span></div>` : ''}
+                </div>
+                ${courseRows ? `<details class="detail-disclosure"><summary>${mandatoryCourses.length ? (isTurkish ? `Zorunlu ders/proje listesi (${mandatoryCourses.length})` : `Mandatory course/project list (${mandatoryCourses.length})`) : (isTurkish ? `Yayımlanmış şart yapısı (${requirementComponents.length})` : `Published requirement structure (${requirementComponents.length})`)}</summary><ul class="course-detail-list">${courseRows}</ul></details>` : ''}
+                ${trackRows ? `<details class="detail-disclosure"><summary>${isTurkish ? `Yayımlanmış alanlar / alt planlar (${curriculumTracks.length})` : `Published tracks / subplans (${curriculumTracks.length})`}</summary><ul class="course-detail-list">${trackRows}</ul></details>` : ''}
+            </div>`;
+
+        const timeline = n.timelineDetails || {};
+        const applicationRounds = Array.isArray(timeline.application_rounds) ? timeline.application_rounds : [];
+        const roundRows = applicationRounds.map((round) => {
+            const roundKey = round.round ?? round.intake;
+            const roundName = roundKey === 'extraordinary_if_places_remain'
+                ? (isTurkish ? 'Ek çağrı (yalnızca boş kontenjan varsa)' : 'Extraordinary call (only if places remain)')
+                : displayValue(roundKey);
+            const dates = [round.opens, round.deadline].filter(Boolean).join(' → ');
+            const result = round.decision ? `${isTurkish ? 'Sonuç' : 'Decision'}: ${displayValue(round.decision)}` : '';
+            return `<li><strong>${escapeHtml(roundName)}</strong><span>${escapeHtml(dates)}</span><small>${escapeHtml(result)}</small></li>`;
+        }).join('');
+        const timelineHTML = `
+            <div class="drawer-section premium-card timeline-card">
+                <div class="premium-header"><span class="premium-icon">🗓️</span><h4 class="premium-title">${isTurkish ? 'Başvuru Takvimi' : 'Application Timeline'}</h4></div>
+                <div class="premium-grid">
+                    ${timeline.intake ? `<div class="premium-item"><label>${isTurkish ? 'Başlangıç dönemi' : 'Intake'}</label><span>${escapeHtml(displayValue(timeline.intake))}</span></div>` : ''}
+                    ${timeline.application_opens ? `<div class="premium-item"><label>${isTurkish ? 'Başvuru açılışı' : 'Application opens'}</label><span>${escapeHtml(displayValue(timeline.application_opens))}</span></div>` : ''}
+                    <div class="premium-item"><label>${isTurkish ? 'AB dışı olağan son tarih' : 'Regular non-EU deadline'}</label><span>${escapeHtml(displayValue(timeline.non_eu_deadline ?? timeline.deadline_non_eu))}</span></div>
+                    <div class="premium-item"><label>${isTurkish ? 'Burs son tarihi' : 'Scholarship deadline'}</label><span>${escapeHtml(displayValue(timeline.scholarship_deadline))}</span></div>
+                    ${timeline.english_score_deadline_if_required ? `<div class="premium-item"><label>${isTurkish ? 'İngilizce puanı son tarihi' : 'English-score deadline'}</label><span>${escapeHtml(displayValue(timeline.english_score_deadline_if_required))}</span></div>` : ''}
+                    ${timeline.recommendation_deadline ? `<div class="premium-item"><label>${isTurkish ? 'Referans mektubu son tarihi' : 'Recommendation deadline'}</label><span>${escapeHtml(displayValue(timeline.recommendation_deadline))}</span></div>` : ''}
+                    <div class="premium-item"><label>${isTurkish ? 'Kayıt dönemi' : 'Enrollment window'}</label><span>${escapeHtml(displayValue(timeline.enrollment_deadline))}</span></div>
+                    <div class="premium-item"><label>${isTurkish ? 'Belge tamamlama' : 'Document completion'}</label><span>${escapeHtml(displayValue(timeline.document_completion_deadline))}</span></div>
+                    ${timeline.decision_timing ? `<div class="premium-item"><label>${isTurkish ? 'Karar zamanı' : 'Decision timing'}</label><span>${escapeHtml(displayValue(timeline.decision_timing))}</span></div>` : ''}
+                    ${timeline.offer_reply_deadline ? `<div class="premium-item"><label>${isTurkish ? 'Teklif yanıt tarihi' : 'Offer reply deadline'}</label><span>${escapeHtml(displayValue(timeline.offer_reply_deadline))}</span></div>` : ''}
+                    ${timeline.visa_document_path ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Göçmenlik belgesi adımları' : 'Immigration-document steps'}</label><span>${escapeHtml(displayValue(timeline.visa_document_path))}</span></div>` : ''}
+                    ${timeline.visa_document_request_system ? `<div class="premium-item"><label>${isTurkish ? 'Göçmenlik belgesi yolu' : 'Immigration-document route'}</label><span>${escapeHtml(displayValue(timeline.visa_document_request_system))}</span></div>` : ''}
+                    ${timeline.visa_document_processing_time_business_days_max != null ? `<div class="premium-item"><label>${isTurkish ? 'I-20 / DS-2019 işlem süresi' : 'I-20 / DS-2019 processing'}</label><span>${escapeHtml(`${timeline.visa_document_processing_time_business_days_min ?? '—'}–${timeline.visa_document_processing_time_business_days_max} ${isTurkish ? 'iş günü' : 'business days'}`)}</span></div>` : ''}
+                    ${timeline.financial_proof_required_before_i20_or_ds2019 === true ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Mali kanıt' : 'Financial proof'}</label><span>${escapeHtml(isTurkish ? `I-20 / DS-2019 öncesi zorunlu; tutar ${timeline.financial_proof_amount_location ? displayValue(timeline.financial_proof_amount_location) : 'başvuru sisteminde gösterilir'}.` : `Required before I-20 / DS-2019; amount ${timeline.financial_proof_amount_location ? displayValue(timeline.financial_proof_amount_location) : 'is shown in the application system'}.`)}</span></div>` : ''}
+                    ${timeline.visa_sensitive_deadline ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Vize açısından' : 'Visa-sensitive advice'}</label><span>${escapeHtml(displayValue(timeline.visa_sensitive_deadline))}</span></div>` : ''}
+                    ${timeline.deadline_notes ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Takvim riski' : 'Timeline risk'}</label><span>${escapeHtml(displayValue(timeline.deadline_notes))}</span></div>` : ''}
+                </div>
+                ${roundRows ? `<ol class="timeline-round-list">${roundRows}</ol>` : ''}
+            </div>`;
+
         let strongAreasHTML = '';
         if (n.strongAreas && n.strongAreas.length > 0) {
             strongAreasHTML = n.strongAreas.map(a => `<li>${escapeHtml(window.getCategoryLabel ? window.getCategoryLabel(a) : a)}</li>`).join('');
@@ -1549,6 +1780,15 @@ function openDrawer(data) {
                 </div>
             `).join('');
         }
+        const researchSummaryHTML = n.researchSummary
+            ? `<div class="dept-block"><label>${isTurkish ? 'Araştırma erişimi notu' : 'Research access note'}</label><p>${escapeHtml(displayValue(n.researchSummary))}</p></div>`
+            : '';
+        const industrySummaryHTML = n.industrySummary
+            ? `<div class="dept-block"><label>${isTurkish ? 'Endüstri ekosistemi notu' : 'Industry ecosystem note'}</label><p>${escapeHtml(displayValue(n.industrySummary))}</p></div>`
+            : '';
+        const partnersHTML = Array.isArray(n.confirmedPartners) && n.confirmedPartners.length
+            ? n.confirmedPartners.map((partner) => `<span class="lab-chip">${escapeHtml(displayValue(typeof partner === 'object' ? (partner.partner || partner.name || partner.label) : partner))}</span>`).join('')
+            : '';
 
         let deptHTML = `
             <div class="drawer-section premium-card">
@@ -1557,6 +1797,7 @@ function openDrawer(data) {
                     <h4 class="premium-title">${isTurkish ? 'Bölüm & Araştırma Bilgileri' : 'Department & Research'}</h4>
                 </div>
                 <div class="dept-content">
+                    ${researchSummaryHTML}
                     ${strongAreasHTML ? `
                     <div class="dept-block">
                         <label>${isTurkish ? 'Güçlü Alanlar' : 'Strong Areas'}</label>
@@ -1572,6 +1813,12 @@ function openDrawer(data) {
                         <label>${isTurkish ? 'Önemli Profesörler' : 'Notable Professors'}</label>
                         <div class="prof-grid">${profsHTML}</div>
                     </div>` : ''}
+                    ${partnersHTML ? `
+                    <div class="dept-block">
+                        <label>${isTurkish ? 'Doğrulanmış ortaklar' : 'Verified partners'}</label>
+                        <div class="chip-container">${partnersHTML}</div>
+                    </div>` : ''}
+                    ${industrySummaryHTML}
                 </div>
             </div>
         `;
@@ -1594,24 +1841,101 @@ function openDrawer(data) {
                     ? (isTurkish ? 'Normal süre içinde genel öğrenim ücreti yok' : 'No general tuition within standard period')
                     : `${formatMoney(n.tuitionPerYear)}${isTurkish ? ' / yıl' : ' / year'}`)
                 : n.foreignTuition
-                    ? `${formatPublishedMoney(n.foreignTuition)}${n.foreignTuition.period === 'quarter' ? (isTurkish ? ' / dönem' : ' / quarter') : (isTurkish ? ' / yıl' : ' / year')}`
+                    ? `${formatPublishedTuition(n.foreignTuition)}${publishedTuitionPeriodSuffix(n.foreignTuition, isTurkish)}`
                     : (foreignProgrammeFee || (isTurkish ? 'Tutar yayımlanmış para biriminde belirtilmemiş' : 'Amount is not stated in a published currency')))
             : unknownMoney;
         const feeText = tuitionVerified && n.semesterFee !== null
-            ? `${n.semesterFeeApproximate ? '≈ ' : ''}${formatMoney(n.semesterFee)}${isTurkish ? ' / dönem' : ' / term'}`
+            ? `${n.semesterFeeApproximate ? '≈ ' : ''}${formatMoney(n.semesterFee)}${n.feeScope === 'enrollment' ? (isTurkish ? ' · kayıt sırasında' : ' · at enrolment') : (isTurkish ? ' / dönem' : ' / term')}`
             : tuitionVerified && n.foreignCompulsoryFee
-                ? `${formatPublishedMoney(n.foreignCompulsoryFee)}${n.foreignCompulsoryFee.period === 'quarter' ? (isTurkish ? ' / dönem' : ' / quarter') : (isTurkish ? ' / yıl' : ' / year')}`
+                ? `${formatPublishedTuition(n.foreignCompulsoryFee)}${publishedTuitionPeriodSuffix(n.foreignCompulsoryFee, isTurkish)}`
             : (tuitionVerified ? '—' : unknownMoney);
+        const scholarshipModeLabel = {
+            automatic: isTurkish ? 'Otomatik değerlendirme' : 'Automatic consideration',
+            separate: isTurkish ? 'Ayrı başvuru gerekir' : 'Separate application required',
+            mixed: isTurkish ? 'Fırsata göre otomatik veya ayrı' : 'Automatic or separate, depending on the opportunity',
+            nomination: isTurkish ? 'Aday gösterme' : 'Nomination',
+            invitation_only: isTurkish ? 'Yalnızca davet' : 'Invitation only',
+            not_available: isTurkish ? 'Mevcut değil' : 'Not available',
+            unknown: isTurkish ? 'Bilinmiyor' : 'Unknown'
+        }[String(n.scholarshipDetails?.application_mode || 'unknown')] || displayValue(n.scholarshipDetails?.application_mode);
+        const fundingOpportunities = Array.isArray(n.scholarshipDetails?.opportunities) ? n.scholarshipDetails.opportunities : [];
+        const fundingRows = fundingOpportunities.map((opportunity) => {
+            const amountUsdMin = Number(opportunity.amount_usd_min);
+            const amountUsdMax = Number(opportunity.amount_usd_max);
+            const amount = Number.isFinite(amountUsdMin)
+                ? formatPublishedRange({ min: amountUsdMin, max: Number.isFinite(amountUsdMax) ? amountUsdMax : amountUsdMin, currency: 'USD' })
+                : opportunity.amount_eur != null
+                ? formatMoney(opportunity.amount_eur)
+                : opportunity.amount != null && opportunity.currency
+                    ? formatPublishedMoney({ amount: opportunity.amount, currency: opportunity.currency })
+                    : '—';
+            const deadline = opportunity.deadline ? `${isTurkish ? 'Son tarih' : 'Deadline'}: ${displayValue(opportunity.deadline)}` : '';
+            const eligibility = opportunity.eligibility_summary ? displayValue(opportunity.eligibility_summary) : '';
+            return `<li><strong>${escapeHtml(opportunity.name || (isTurkish ? 'Burs fırsatı' : 'Funding opportunity'))}</strong><span>${escapeHtml(amount)}</span><small>${escapeHtml([deadline, eligibility].filter(Boolean).join(' · '))}</small></li>`;
+        }).join('');
+        const totalAttendanceCostRaw = n.costDetails?.total_cost_of_attendance_usd_per_year
+            ?? n.costDetails?.total_cost_of_attendance_usd_per_academic_year;
+        const totalAttendanceCost = Number(totalAttendanceCostRaw);
+        const totalAttendanceCostMin = Number(n.costDetails?.total_cost_of_attendance_usd_per_year_min);
+        const totalAttendanceCostMax = Number(n.costDetails?.total_cost_of_attendance_usd_per_year_max);
+        const attendanceCostText = totalAttendanceCostRaw !== null
+            && totalAttendanceCostRaw !== undefined
+            && Number.isFinite(totalAttendanceCost)
+            && totalAttendanceCost >= 0
+            ? `${formatPublishedMoney({ amount: totalAttendanceCost, currency: 'USD' })}${isTurkish ? ' / akademik yıl' : ' / academic year'}`
+            : Number.isFinite(totalAttendanceCostMin) && totalAttendanceCostMin >= 0
+                ? `${formatPublishedRange({ min: totalAttendanceCostMin, max: Number.isFinite(totalAttendanceCostMax) ? totalAttendanceCostMax : totalAttendanceCostMin, currency: 'USD' })}${isTurkish ? ' / akademik yıl' : ' / academic year'}`
+                : '';
+        const twoTermBillingBaselineRaw = n.costDetails?.academic_billed_baseline_usd_per_two_terms;
+        const firstYearBillingBaselineRaw = n.costDetails?.first_year_direct_university_cost_with_ship_usd
+            ?? n.costDetails?.first_year_tuition_and_mandatory_fees_usd_example
+            ?? n.costDetails?.total_tuition_and_required_fees_usd_nonresident;
+        const academicBillingBaseline = Number(twoTermBillingBaselineRaw ?? firstYearBillingBaselineRaw);
+        const academicBillingPeriodLabel = twoTermBillingBaselineRaw !== null
+            && twoTermBillingBaselineRaw !== undefined
+            ? (isTurkish ? ' / iki tam zamanlı dönem' : ' / two full-time terms')
+            : (isTurkish ? ' / ilk yıl' : ' / first year');
+        const academicBillingIsHistorical = n.costDetails?.current_for_fall_2027 === false;
+        const academicBillingContext = academicBillingIsHistorical
+            ? ` · ${n.costDetails?.academic_year ? `${n.costDetails.academic_year} ` : ''}${isTurkish ? 'tarihsel ölçüt; güncel değil' : 'historical benchmark; not current'}`
+            : '';
+        const academicBillingBaselineText = Number.isFinite(academicBillingBaseline) && academicBillingBaseline >= 0
+            ? `${formatPublishedMoney({ amount: academicBillingBaseline, currency: 'USD' })}${academicBillingPeriodLabel}${academicBillingContext}`
+            : '';
+        const insurancePremiumRaw = n.costDetails?.health_insurance_premium_usd
+            ?? n.costDetails?.health_insurance_usd_per_year
+            ?? n.costDetails?.anthem_gold_ship_usd_per_year_fall_and_spring
+            ?? n.costDetails?.ship_health_insurance_usd;
+        const insurancePremium = Number(insurancePremiumRaw);
+        const insurancePremiumVerified = insurancePremiumRaw !== null
+            && insurancePremiumRaw !== undefined
+            && Number.isFinite(insurancePremium)
+            && insurancePremium >= 0;
+        const insuranceRequired = n.costDetails?.health_insurance_required_for_international_students === true
+            || n.costDetails?.health_insurance_required_for_f_or_j_students === true
+            || n.costDetails?.health_insurance_required === true;
+        const insuranceText = insuranceRequired
+            ? insurancePremiumVerified
+                ? `${formatPublishedMoney({ amount: insurancePremium, currency: 'USD' })}${isTurkish ? ' · zorunlu' : ' · required'}${academicBillingContext}`
+                : (isTurkish ? 'Zorunlu; 2026/27 primi doğrulanamadı' : 'Required; 2026/27 premium not verified')
+            : '';
         const financeHTML = `
             <div class="drawer-section premium-card financial-card">
                 <div class="premium-header"><span class="premium-icon">💰</span><h4 class="premium-title">${isTurkish ? 'Maliyet & Burs Gerçeği' : 'Cost & Funding Reality'}</h4></div>
                 <p class="card-disclaimer">${isTurkish ? 'Tutarlar yalnızca kontrol edilmiş resmi kaynak bulunduğunda gösterilir. Konaklama ve yaşam bütçesi okul ücretinden ayrıdır.' : 'Amounts are displayed only with a checked official source. Housing and living budget are separate from tuition.'}</p>
                 <div class="premium-grid">
-                    <div class="premium-item"><label>${isTurkish ? 'Öğrenim ücreti' : 'Tuition'}</label><span class="finance-val tuition">${tuitionText}</span></div>
+                    <div class="premium-item"><label>${isTurkish ? 'Öğrenim ücreti' : 'Tuition'}${n.tuitionScope === 'non_eu_target' ? ` · ${isTurkish ? 'AB dışı hedef' : 'non-EU target'}` : ''}</label><span class="finance-val tuition">${tuitionText}</span></div>
                     <div class="premium-item"><label>${isTurkish ? 'Zorunlu ek ücret' : 'Compulsory fee'}</label><span class="finance-val fee">${feeText}</span></div>
+                    ${attendanceCostText ? `<div class="premium-item"><label>${isTurkish ? 'Resmî toplam katılım bütçesi' : 'Official total cost of attendance'}</label><span class="finance-val">${attendanceCostText}</span></div>` : ''}
+                    ${academicBillingBaselineText ? `<div class="premium-item"><label>${academicBillingIsHistorical ? (isTurkish ? 'Tarihsel akademik faturalama tabanı' : 'Historical academic billing baseline') : (isTurkish ? 'Güncel akademik faturalama tabanı' : 'Current academic billing baseline')}</label><span class="finance-val">${academicBillingBaselineText}</span></div>` : ''}
+                    ${insuranceText ? `<div class="premium-item"><label>${isTurkish ? 'Sağlık sigortası' : 'Health insurance'}</label><span class="finance-val">${escapeHtml(insuranceText)}</span></div>` : ''}
                     <div class="premium-item full-span scholarship-box"><label>${isTurkish ? 'Burs / ücret muafiyeti' : 'Scholarship / fee waiver'}</label><span class="scholarship-text">${scholarshipVerified ? escapeHtml(compactList(n.scholarshipSummary) || '—') : unknownMoney}</span></div>
+                    ${scholarshipVerified ? `<div class="premium-item"><label>${isTurkish ? 'Burs değerlendirme biçimi' : 'Funding consideration'}</label><span>${escapeHtml(scholarshipModeLabel)}</span></div>` : ''}
+                    ${scholarshipVerified && (n.scholarshipDetails?.scholarship_deadline || n.scholarshipDetails?.funding_deadline || n.scholarshipDetails?.deadline) ? `<div class="premium-item"><label>${isTurkish ? 'Güncel burs son tarihi' : 'Current funding deadline'}</label><span>${escapeHtml(displayValue(n.scholarshipDetails.scholarship_deadline || n.scholarshipDetails.funding_deadline || n.scholarshipDetails.deadline))}</span></div>` : ''}
                     ${n.costDetails?.cost_notes ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Maliyet notu' : 'Cost note'}</label><span>${escapeHtml(displayValue(n.costDetails.cost_notes))}</span></div>` : ''}
+                    ${n.costDetails?.verification_notes ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Maliyet doğrulama notu' : 'Cost verification note'}</label><span>${escapeHtml(displayValue(n.costDetails.verification_notes))}</span></div>` : ''}
                 </div>
+                ${fundingRows ? `<details class="detail-disclosure"><summary>${isTurkish ? `Doğrulanan güncel fırsatlar (${fundingOpportunities.length})` : `Verified current opportunities (${fundingOpportunities.length})`}</summary><ul class="funding-detail-list">${fundingRows}</ul></details>` : ''}
             </div>`;
 
         const roomRentText = housingVerified && n.euroRoomRent
@@ -1619,10 +1943,10 @@ function openDrawer(data) {
             : housingVerified && n.averageRoomRent !== null
             ? `${formatMoney(n.averageRoomRent)}${isTurkish ? ' / ay (oda)' : ' / month (room)'}`
             : housingVerified && n.foreignRoomRent
-                ? `${formatPublishedRange(n.foreignRoomRent)}${isTurkish ? ' / ay (oda)' : ' / month (room)'}`
+                ? `${formatPublishedRange(n.foreignRoomRent)}${n.foreignRoomRent.kind === 'housing_estimate' ? (isTurkish ? ' / ay' : ' / month') : (isTurkish ? ' / ay (oda)' : ' / month (room)')}${n.foreignRoomRent.kind === 'official_graduate_housing_rate' ? ` · ${n.foreignRoomRent.academicYear ? `${n.foreignRoomRent.academicYear} ` : ''}${isTurkish ? 'resmî lisansüstü konutu' : 'official graduate housing'}` : ''}`
             : unknownMoney;
         const housingAmountLabel = n.foreignRoomRent?.kind === 'housing_estimate'
-            ? (isTurkish ? 'Konut tahmini' : 'Housing estimate')
+            ? (isTurkish ? 'Üniversite dairesi kirası' : 'University apartment rent')
             : (isTurkish ? 'Oda kirası' : 'Room rent');
         // A checked national average is useful for planning, but must never
         // look like a city-specific rent quote.  The database may therefore
@@ -1646,12 +1970,44 @@ function openDrawer(data) {
         const monthlyLivingLabel = monthlyLivingScope
             ? `${isTurkish ? 'Aylık toplam yaşam bütçesi' : 'Monthly living budget'} · ${monthlyLivingScope}`
             : (isTurkish ? 'Aylık toplam yaşam bütçesi' : 'Monthly living budget');
+        const housingAccessLabel = n.livingDetails?.housing_guarantee_type === 'conditional_first_year_guarantee'
+            ? (isTurkish ? 'İlk yıl koşullu garanti' : 'Conditional first-year guarantee')
+            : ({
+            guaranteed: isTurkish ? 'Garantili' : 'Guaranteed',
+            priority: isTurkish ? 'Öncelik veriliyor; garanti değil' : 'Priority, not guaranteed',
+            lottery: isTurkish ? 'Kura' : 'Lottery',
+            waitlist: isTurkish ? 'Bekleme listesi' : 'Waitlist',
+            first_come_first_served: isTurkish ? 'İlk gelen alır' : 'First come, first served',
+            not_guaranteed: isTurkish ? 'Sunuluyor; garanti değil' : 'Offered, not guaranteed',
+            available_not_guaranteed: isTurkish ? 'Mevcut; garanti değil' : 'Available, not guaranteed',
+            not_offered: isTurkish ? 'Üniversite yurdu sunulmuyor' : 'University housing not offered',
+            unknown: isTurkish ? 'Bilinmiyor' : 'Unknown'
+        }[String(n.livingDetails?.housing_access || 'unknown')] || displayValue(n.livingDetails?.housing_access));
+        const officialRentItems = Array.isArray(n.livingDetails?.official_rent_items) ? n.livingDetails.official_rent_items : [];
+        const officialRentRows = officialRentItems.map((item) => {
+            const label = displayValue(item.item || item.name);
+            const min = Number(item.amount_usd_min);
+            const max = Number(item.amount_usd_max);
+            const range = Number.isFinite(min)
+                ? formatPublishedRange({ min, max: Number.isFinite(max) ? max : min, currency: 'USD' })
+                : '—';
+            const periodLabels = {
+                academic_year: isTurkish ? 'akademik yıl' : 'academic year',
+                '12_month_contract': isTurkish ? '12 aylık sözleşme' : '12-month contract',
+                month: isTurkish ? 'ay' : 'month'
+            };
+            return `<li><strong>${escapeHtml(label)}</strong><span>${escapeHtml(range)}</span><small>${escapeHtml(periodLabels[item.period] || item.period || '')}</small></li>`;
+        }).join('');
         const livingHTML = `
             <div class="drawer-section premium-card">
                 <div class="premium-header"><span class="premium-icon">🏙️</span><h4 class="premium-title">${isTurkish ? 'Konaklama & Yaşam' : 'Housing & Living'}</h4></div>
                 <div class="premium-grid">
                     <div class="premium-item"><label>${roomRentLabel}</label><span class="finance-val">${roomRentText}</span></div>
                     <div class="premium-item"><label>${monthlyLivingLabel}</label><span class="finance-val">${monthlyLivingText}</span></div>
+                    <div class="premium-item"><label>${isTurkish ? 'Üniversite konutu' : 'University housing'}</label><span>${escapeHtml(housingAccessLabel)}</span></div>
+                    <div class="premium-item"><label>${isTurkish ? 'Konaklama başvurusu' : 'Housing application'}</label><span>${n.livingDetails?.housing_access === 'not_offered'
+                        ? (isTurkish ? 'Harici sağlayıcıya ayrı başvuru gerekir' : 'Separate application to an external provider')
+                        : yesNoUnknown(n.livingDetails?.housing_application_separate)}</span></div>
                     <div class="premium-item"><label>${isTurkish ? 'Konut bulma riski' : 'Housing availability risk'}</label>${housingVerified ? formatRiskBadge(n.housingDifficulty) : `<span class="risk-badge risk-unknown">${unknownMoney}</span>`}</div>
                     ${housingVerified && n.foreignAnnualLivingBudget ? `<div class="premium-item"><label>${isTurkish ? 'Resmî yıllık yaşam bütçesi' : 'Official annual living budget'}</label><span class="finance-val">${formatPublishedRange(n.foreignAnnualLivingBudget)}</span></div>` : ''}
                     ${housingVerified && n.foreignAnnualHousingBudget ? `<div class="premium-item"><label>${isTurkish ? 'Resmî yıllık konut bütçesi' : 'Official annual housing budget'}</label><span class="finance-val">${formatPublishedRange(n.foreignAnnualHousingBudget)}</span></div>` : ''}
@@ -1659,6 +2015,7 @@ function openDrawer(data) {
                     ${n.monthlyLivingCostBasis ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Bütçe kapsamı' : 'Budget basis'}</label><span>${escapeHtml(displayValue(n.monthlyLivingCostBasis))}</span></div>` : ''}
                     ${n.livingDetails?.housing_notes ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Konut notu' : 'Housing note'}</label><span>${escapeHtml(displayValue(n.livingDetails.housing_notes))}</span></div>` : ''}
                 </div>
+                ${officialRentRows ? `<details class="detail-disclosure"><summary>${isTurkish ? `Resmî konut ve yemek fiyatları (${officialRentItems.length})` : `Official housing and meal rates (${officialRentItems.length})`}</summary><ul class="funding-detail-list">${officialRentRows}</ul></details>` : ''}
             </div>`;
 
         // 6. Avantaj ve Dezavantajlar (Pros & Cons)
@@ -1693,7 +2050,7 @@ function openDrawer(data) {
         // Search result pages and platform homepages are not student comments.
         // Only render direct, accessible discussion/review URLs as evidence.
         const directSentimentSources = sentimentSources.map((review) => {
-            if (typeof review === 'string') return { title: review, url: '' };
+            if (typeof review === 'string') return { title: isTurkish ? 'Öğrenci deneyimi kaynağı' : 'Student-experience source', url: review };
             return review && typeof review === 'object' ? review : {};
         }).filter((review) => {
             const url = safeUrl(review.url);
@@ -1797,10 +2154,13 @@ function openDrawer(data) {
             qualityHTML +
             scoreImpactHTML +
             basicInfoHTML +
-            studentReviewsHTML +
-            deptHTML +
+            admissionsHTML +
+            timelineHTML +
+            curriculumHTML +
             financeHTML +
             livingHTML +
+            deptHTML +
+            studentReviewsHTML +
             prosConsHTML +
             sourcesHTML +
             linksHTML;
@@ -1873,6 +2233,7 @@ function closeDrawer() {
     els.drawer.overlay.classList.remove('active');
     els.drawer.panel.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('drawer-open');
+    activeDrawerData = null;
     if (window.lastDrawerTrigger instanceof HTMLElement) window.lastDrawerTrigger.focus();
 }
 
@@ -1895,13 +2256,15 @@ document.addEventListener('languageChanged', async () => {
 
         }
 
+        const drawerDataToRender = activeDrawerData;
+        const drawerWasOpen = els.drawer.panel.classList.contains('active');
+        const drawerScrollTop = els.drawer.body.scrollTop;
         processAndRender();
         
-        // If drawer is open, re-render it
-        if (els.drawer.panel.classList.contains('active')) {
-            const openId = els.drawer.title.textContent; // kinda hacky but we can just use the currently selected row or close it
-            // It's safer to close drawer on language change, or we can just leave it to user
-            closeDrawer();
+        // Re-render the open record so bilingual programme data changes immediately too.
+        if (drawerWasOpen && drawerDataToRender) {
+            openDrawer(drawerDataToRender);
+            els.drawer.body.scrollTop = drawerScrollTop;
         }
     }
 });

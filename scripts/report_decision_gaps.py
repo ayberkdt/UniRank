@@ -22,9 +22,11 @@ from unirank.core.integrity import audit_record
 TARGET_FILES = (
     "almanya.json", "austria.json", "belcika.json", "danimarka.json",
     "fransa.json", "hollanda.json", "ingiltere.json", "isvec.json",
-    "isvicre.json", "italy.json", "italya.json", "ispanya.json",
+    "isvicre.json", "italy.json", "ispanya.json",
     "portekiz.json", "polonya.json", "finlandiya.json", "cekya.json",
-    "yunanistan.json", "turkiye.json", "amerika.json",
+    "estonia.json", "ireland.json", "lithuania.json", "norway.json", "romania.json",
+    "yunanistan.json", "turkiye.json", "rusya.json", "amerika.json",
+    "master_research_batch.json",
 )
 
 
@@ -61,7 +63,7 @@ def decision_value_gaps(record: dict[str, Any]) -> list[str]:
     living = record.get("living_profile") or {}
 
     gaps: list[str] = []
-    if not any_present(record.get("teaching_language"), (record.get("language_profile") or {}).get("teaching_language"), record.get("Admission_Language_Req")):
+    if not any_present(record.get("teaching_language"), (record.get("language_profile") or {}).get("teaching_language"), (record.get("language_profile") or {}).get("teaching_languages"), record.get("Admission_Language_Req")):
         gaps.append("teaching_language")
     if not any_present(
         cost.get("tuition_eur_per_year_estimated"), cost.get("tuition_eur_per_year_min"),
@@ -72,14 +74,14 @@ def decision_value_gaps(record: dict[str, Any]) -> list[str]:
         cost.get("tuition_gbp_per_year_min"), cost.get("tuition_gbp_per_year_max"),
         cost.get("tuition_chf_per_year_min"), cost.get("tuition_chf_per_year_max"), cost.get("tuition_chf_per_semester"),
         cost.get("tuition_sek_per_year"), cost.get("tuition_dkk_per_year"), cost.get("tuition_sek_per_term"),
-        record.get("tuition_eur_per_year"), record.get("Cost_Tuition"),
+        cost.get("tuition_items"), record.get("tuition_eur_per_year"), record.get("Cost_Tuition"),
     ):
         gaps.append("tuition_or_fee")
     if not any_present(
         scholarships.get("scholarship_names"), scholarships.get("merit_scholarships"),
         scholarships.get("funding_notes"), scholarships.get("regional_scholarship_name"),
         scholarships.get("available_types"), scholarships.get("details"), scholarships.get("funding_status"),
-        record.get("Scholarships"),
+        scholarships.get("opportunities"), scholarships.get("application_mode"), record.get("Scholarships"),
     ):
         gaps.append("scholarship_or_funding")
     if not any_present(
@@ -96,7 +98,7 @@ def decision_value_gaps(record: dict[str, Any]) -> list[str]:
         gaps.append("admission_requirements")
     if not any_present(
         timeline.get("non_eu_deadline"), timeline.get("deadline_non_eu"), timeline.get("winter_deadline"),
-        timeline.get("application_deadline"), record.get("deadline"), record.get("Deadline_Winter_Close"),
+        timeline.get("application_deadline"), timeline.get("deadline_events"), record.get("deadline"), record.get("Deadline_Winter_Close"),
     ):
         gaps.append("application_timeline")
     if not any_present(
@@ -133,7 +135,7 @@ def decision_value_gaps(record: dict[str, Any]) -> list[str]:
         cost.get("living_cost_chf_per_year"), cost.get("living_cost_chf_per_year_min"), cost.get("living_cost_chf_per_year_max"),
         cost.get("living_cost_sek_per_year"), cost.get("living_cost_sek_per_year_min"), cost.get("living_cost_sek_per_year_max"),
         cost.get("living_cost_dkk_per_year"), cost.get("living_cost_dkk_per_year_min"), cost.get("living_cost_dkk_per_year_max"),
-        record.get("Living_Cost_EUR_Month"),
+        living.get("official_living_cost_items"), living.get("official_rent_items"), record.get("Living_Cost_EUR_Month"),
     ):
         gaps.append("living_or_housing_cost")
     return gaps

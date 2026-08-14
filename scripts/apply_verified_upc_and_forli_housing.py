@@ -215,6 +215,5 @@ def update_upc() -> None:
 
 
 update_forli("italy.json", "unibo_aerospace_forli")
-update_forli("italya.json", "it-bologna-aero-msc")
 update_upc()
 print("Updated both Forli record variants and UPC with current scoped housing, funding, living and timeline evidence.")
