@@ -1,0 +1,347 @@
+:root {
+    color-scheme: dark;
+    --canvas: #101115;
+    --canvas-deep: #0b0c10;
+    --panel: #17191f;
+    --panel-soft: #1d2029;
+    --ink: #f4efe5;
+    --ink-soft: #d8d3ca;
+    --muted: #9c9b9a;
+    --rule: rgba(244, 239, 229, 0.14);
+    --rule-soft: rgba(244, 239, 229, 0.08);
+    --orange: #f18046;
+    --orange-soft: #ffad83;
+    --blue: #8fa8e8;
+    --teal: #55d6c2;
+    --gold: #d7c765;
+    --coral: #ef8675;
+    --display: "Space Grotesk", sans-serif;
+    --body: "Source Sans 3", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+    min-width: 320px;
+    margin: 0;
+    background: var(--canvas);
+    color: var(--ink);
+    font-family: var(--body);
+    line-height: 1.5;
+}
+
+button,
+input,
+select { font: inherit; }
+
+button,
+a { -webkit-tap-highlight-color: transparent; }
+
+a { color: inherit; }
+
+.skip-link {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 50;
+    padding: 9px 12px;
+    border-radius: 6px;
+    background: var(--ink);
+    color: var(--canvas);
+    transform: translateY(-160%);
+}
+
+.skip-link:focus { transform: none; }
+
+.funding-aurora {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.funding-aurora::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 82% -8%, rgba(73, 82, 137, 0.28), transparent 36%), radial-gradient(circle at 4% 42%, rgba(123, 67, 46, 0.15), transparent 28%);
+}
+
+.funding-aurora span {
+    position: absolute;
+    width: 42rem;
+    height: 42rem;
+    border: 1px solid rgba(143, 168, 232, 0.07);
+    border-radius: 50%;
+}
+
+.funding-aurora span:first-child { top: -26rem; right: -8rem; }
+.funding-aurora span:last-child { top: -18rem; right: -16rem; }
+
+.funding-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: grid;
+    min-height: 76px;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 28px;
+    padding: 12px clamp(20px, 4vw, 70px);
+    border-bottom: 1px solid var(--rule);
+    background: rgba(15, 16, 20, 0.92);
+    backdrop-filter: blur(18px);
+}
+
+.funding-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.funding-brand__mark {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    place-items: center;
+    border-radius: 11px;
+    background: var(--orange);
+    color: white;
+}
+
+.funding-brand__mark svg { width: 25px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.6; }
+.funding-brand > span:last-child { display: grid; }
+.funding-brand strong { font: 700 20px/1.1 var(--display); }
+.funding-brand small { color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+
+.funding-nav { display: flex; justify-content: center; gap: 4px; }
+.funding-nav a,
+.funding-nav button {
+    min-height: 38px;
+    padding: 8px 13px;
+    border: 0;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+}
+.funding-nav a:hover,
+.funding-nav button:hover,
+.funding-nav .is-active { background: rgba(244, 239, 229, 0.08); color: var(--ink); }
+.funding-nav .is-active { box-shadow: inset 0 -2px var(--orange); }
+
+.funding-language { display: flex; padding: 3px; border: 1px solid var(--rule); border-radius: 7px; background: var(--canvas-deep); }
+.funding-language button { width: 38px; height: 32px; border: 0; border-radius: 5px; background: transparent; color: var(--muted); cursor: pointer; font-weight: 700; }
+.funding-language button.active { background: var(--ink); color: var(--canvas); }
+
+main { display: grid; width: min(1500px, calc(100% - 40px)); margin: 0 auto; gap: 32px; padding: 34px 0 60px; }
+
+.funding-hero {
+    position: relative;
+    display: grid;
+    min-height: 390px;
+    grid-template-columns: minmax(0, 1.3fr) minmax(320px, 0.7fr);
+    align-items: end;
+    gap: clamp(30px, 6vw, 90px);
+    padding: clamp(34px, 5vw, 74px);
+    border: 1px solid #3c4050;
+    border-radius: 16px;
+    background: linear-gradient(118deg, rgba(38, 33, 40, 0.98), rgba(28, 32, 55, 0.96) 62%, rgba(38, 44, 74, 0.94));
+    overflow: hidden;
+}
+
+.funding-hero::after {
+    content: "";
+    position: absolute;
+    right: -10rem;
+    bottom: -21rem;
+    width: 46rem;
+    height: 46rem;
+    border: 5.5rem solid rgba(143, 168, 232, 0.05);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.funding-hero__copy,
+.funding-next { position: relative; z-index: 1; }
+.funding-kicker { color: var(--orange-soft); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.funding-hero h1 { max-width: 850px; margin: 12px 0 20px; font: 600 clamp(42px, 5vw, 78px)/0.98 var(--display); letter-spacing: -0.055em; }
+.funding-hero__copy > p { max-width: 740px; margin: 0; color: #c8c5c1; font-size: clamp(17px, 1.5vw, 21px); }
+.funding-hero__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.funding-button { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; padding: 10px 16px; border: 1px solid var(--rule); border-radius: 7px; background: rgba(16, 17, 21, 0.5); color: var(--ink); font-weight: 700; text-decoration: none; }
+.funding-button:hover { border-color: rgba(241, 128, 70, 0.55); transform: translateY(-1px); }
+.funding-button--primary { border-color: var(--orange); background: var(--orange); color: #15100d; }
+
+.funding-next {
+    align-self: stretch;
+    display: grid;
+    align-content: end;
+    padding: 24px;
+    border: 1px solid rgba(215, 199, 101, 0.34);
+    border-radius: 12px;
+    background: rgba(10, 11, 15, 0.6);
+    box-shadow: inset 3px 0 var(--gold);
+}
+.funding-next > span { color: var(--gold); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+.funding-next h2 { margin: 10px 0 4px; font: 600 24px/1.15 var(--display); }
+.funding-next p { margin: 0; color: var(--muted); }
+.funding-next time { margin-top: 24px; color: var(--ink); font: 600 clamp(28px, 3.4vw, 48px)/1 var(--display); letter-spacing: -0.04em; }
+.funding-next b { width: fit-content; margin-top: 12px; padding: 7px 10px; border-radius: 5px; background: rgba(215, 199, 101, 0.13); color: #eadf8d; font-size: 12px; }
+
+.funding-stats { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--rule); border-radius: 11px; background: rgba(22, 24, 30, 0.72); overflow: hidden; }
+.funding-stat { display: grid; min-height: 116px; align-content: center; gap: 3px; padding: 22px; border-right: 1px solid var(--rule); }
+.funding-stat:last-child { border-right: 0; }
+.funding-stat span { color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.funding-stat strong { font: 600 30px/1 var(--display); }
+.funding-stat small { color: var(--muted); }
+
+.funding-calendar,
+.funding-workspace,
+.funding-mismatch { display: grid; gap: 20px; padding: clamp(22px, 3vw, 38px); border: 1px solid var(--rule); border-radius: 13px; background: rgba(18, 19, 24, 0.76); }
+.section-heading { display: flex; align-items: end; justify-content: space-between; gap: 28px; }
+.section-heading h2 { margin: 4px 0 0; font: 600 clamp(24px, 2.4vw, 36px)/1.1 var(--display); letter-spacing: -0.035em; }
+.section-heading > p { max-width: 550px; margin: 0; color: var(--muted); text-align: right; }
+
+.funding-calendar__legend { display: flex; flex-wrap: wrap; gap: 18px; padding: 11px 14px; border: 1px solid var(--rule-soft); border-radius: 8px; background: var(--canvas-deep); }
+.funding-calendar__legend > span { display: flex; align-items: center; gap: 7px; color: var(--ink-soft); font-size: 12px; }
+.legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+.legend-dot--open { background: var(--teal); }
+.legend-dot--watch { background: var(--gold); }
+.legend-dot--reference { background: var(--blue); }
+.funding-calendar__track { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; }
+.funding-date-card { position: relative; display: grid; min-width: 0; gap: 12px; padding: 18px; border: 1px solid var(--rule); border-radius: 9px; background: var(--canvas-deep); overflow: hidden; }
+.funding-date-card::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 3px; background: var(--date-color, var(--blue)); }
+.funding-date-card--open { --date-color: var(--teal); }
+.funding-date-card--watch { --date-color: var(--gold); }
+.funding-date-card--reference { --date-color: var(--blue); }
+.funding-date-card__top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.funding-date-card__top > span:first-child { font-size: 25px; }
+.funding-date-card__status { padding: 4px 7px; border-radius: 4px; background: color-mix(in srgb, var(--date-color) 12%, transparent); color: var(--date-color); font-size: 10px; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; }
+.funding-date-card h3 { margin: 0; font: 600 17px/1.2 var(--display); }
+.funding-date-card p { margin: -8px 0 0; color: var(--muted); font-size: 12px; }
+.funding-date-card time { color: var(--ink); font: 600 22px/1.15 var(--display); }
+.funding-date-card b { color: var(--date-color); font-size: 12px; }
+.funding-date-card small { color: var(--muted); }
+
+.funding-filters { display: grid; grid-template-columns: minmax(260px, 1.4fr) repeat(3, minmax(150px, 0.6fr)); gap: 10px; padding: 14px; border: 1px solid var(--rule); border-radius: 9px; background: var(--canvas-deep); }
+.funding-filters label { display: grid; gap: 5px; }
+.funding-filters label > span { color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.funding-filters input,
+.funding-filters select { width: 100%; min-height: 42px; padding: 8px 11px; border: 1px solid var(--rule); border-radius: 6px; background: #16181e; color: var(--ink); outline: 0; }
+.funding-filters input:focus,
+.funding-filters select:focus { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(241, 128, 70, 0.11); }
+.funding-search { position: relative; align-self: end; }
+.funding-search > span { position: absolute; z-index: 1; top: 34px; left: 12px; color: var(--muted); font-size: 17px; }
+.funding-search input { padding-left: 36px; }
+
+.scholarship-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.scholarship-card { position: relative; display: grid; min-width: 0; grid-template-rows: auto auto auto 1fr auto; border: 1px solid var(--rule); border-radius: 11px; background: linear-gradient(145deg, rgba(29, 32, 41, 0.94), rgba(14, 15, 19, 0.96)); overflow: hidden; }
+.scholarship-card::before { content: ""; position: absolute; inset: 0 0 auto; height: 3px; background: linear-gradient(90deg, var(--country-accent, var(--blue)), transparent 70%); }
+.scholarship-card__header { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: start; gap: 14px; padding: 22px 22px 16px; }
+.scholarship-card__flag { display: grid; width: 48px; height: 40px; place-items: center; border: 1px solid var(--rule); border-radius: 7px; background: rgba(244, 239, 229, 0.05); font-size: 25px; }
+.scholarship-card__header h3 { margin: 2px 0 3px; font: 600 20px/1.15 var(--display); }
+.scholarship-card__header p { margin: 0; color: var(--muted); font-size: 12px; }
+.scholarship-status { padding: 5px 8px; border: 1px solid currentColor; border-radius: 5px; font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.scholarship-status--open { color: var(--teal); }
+.scholarship-status--awaiting { color: var(--gold); }
+.scholarship-status--closed { color: var(--blue); }
+.scholarship-status--conditional { color: var(--coral); }
+.scholarship-card__route { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 22px 16px; }
+.scholarship-card__route span { padding: 5px 8px; border-radius: 5px; background: rgba(143, 168, 232, 0.09); color: #b8c7ee; font-size: 10px; font-weight: 700; }
+.scholarship-card__deadline { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 16px; padding: 16px 22px; border-block: 1px solid var(--rule-soft); background: rgba(8, 9, 12, 0.42); }
+.scholarship-card__deadline > div { display: grid; gap: 3px; }
+.scholarship-card__deadline span { color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+.scholarship-card__deadline time { font: 600 22px/1.15 var(--display); }
+.scholarship-card__deadline small { color: var(--muted); }
+.scholarship-card__deadline b { max-width: 180px; color: var(--country-accent, var(--blue)); font-size: 11px; text-align: right; }
+.scholarship-card__body { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 20px 22px; }
+.scholarship-card__body section { min-width: 0; }
+.scholarship-card__body h4 { margin: 0 0 9px; color: var(--muted); font-size: 10px; letter-spacing: 0.09em; text-transform: uppercase; }
+.scholarship-card__body ul { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
+.scholarship-card__body li { position: relative; padding-left: 13px; color: var(--ink-soft); font-size: 12px; }
+.scholarship-card__body li::before { content: ""; position: absolute; top: 0.58em; left: 0; width: 5px; height: 5px; border-radius: 50%; background: var(--country-accent, var(--blue)); }
+.scholarship-card__risk { margin: 0 22px 18px; padding: 10px 12px; border-left: 2px solid var(--coral); background: rgba(239, 134, 117, 0.07); color: #dbb2aa; font-size: 11px; }
+.scholarship-card details { border-top: 1px solid var(--rule); }
+.scholarship-card summary { display: flex; min-height: 48px; align-items: center; justify-content: space-between; gap: 12px; padding: 11px 22px; color: var(--ink-soft); cursor: pointer; font-weight: 700; list-style: none; }
+.scholarship-card summary::-webkit-details-marker { display: none; }
+.scholarship-card details[open] summary { border-bottom: 1px solid var(--rule-soft); }
+.scholarship-card details[open] summary > span:last-child { transform: rotate(180deg); }
+.scholarship-detail { display: grid; gap: 18px; padding: 18px 22px 22px; }
+.scholarship-detail h4 { margin: 0 0 8px; color: var(--muted); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+.scholarship-detail ol { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; counter-reset: docs; }
+.scholarship-detail ol li { display: grid; grid-template-columns: 27px 1fr; gap: 8px; color: var(--ink-soft); font-size: 12px; counter-increment: docs; }
+.scholarship-detail ol li::before { content: counter(docs, decimal-leading-zero); color: var(--orange-soft); font-weight: 700; }
+.scholarship-detail__note { margin: 0; color: var(--muted); font-size: 12px; }
+.scholarship-sources { display: flex; flex-wrap: wrap; gap: 7px; }
+.scholarship-sources a { display: inline-flex; align-items: center; gap: 6px; padding: 7px 9px; border: 1px solid var(--rule); border-radius: 5px; color: var(--ink-soft); font-size: 11px; text-decoration: none; }
+.scholarship-sources a:hover { border-color: var(--country-accent, var(--blue)); color: var(--ink); }
+.scholarship-confidence { color: var(--muted); font-size: 10px; }
+
+.scholarship-empty { grid-column: 1 / -1; display: grid; min-height: 220px; place-items: center; padding: 30px; border: 1px dashed var(--rule); border-radius: 10px; color: var(--muted); text-align: center; }
+
+.mismatch-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.mismatch-card { display: grid; grid-template-columns: auto 1fr auto; align-items: start; gap: 13px; padding: 18px; border: 1px solid rgba(239, 134, 117, 0.24); border-radius: 9px; background: rgba(239, 134, 117, 0.055); }
+.mismatch-card > span { display: grid; width: 34px; height: 34px; place-items: center; border-radius: 50%; background: rgba(239, 134, 117, 0.13); color: var(--coral); font-weight: 700; }
+.mismatch-card h3 { margin: 1px 0 4px; font: 600 16px var(--display); }
+.mismatch-card p { margin: 0; color: #c8aaa4; font-size: 12px; }
+.mismatch-card a { color: var(--coral); font-size: 18px; text-decoration: none; }
+
+.funding-footer { display: flex; justify-content: space-between; gap: 20px; width: min(1500px, calc(100% - 40px)); margin: 0 auto; padding: 24px 0 38px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 12px; }
+
+@media (max-width: 1100px) {
+    .funding-hero { grid-template-columns: 1fr; }
+    .funding-next { min-height: 250px; }
+    .funding-stats { grid-template-columns: repeat(2, 1fr); }
+    .funding-stat:nth-child(2) { border-right: 0; }
+    .funding-stat:nth-child(-n+2) { border-bottom: 1px solid var(--rule); }
+    .funding-filters { grid-template-columns: repeat(2, 1fr); }
+    .scholarship-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 760px) {
+    .funding-header { position: relative; grid-template-columns: 1fr auto; gap: 12px; padding-inline: 16px; }
+    .funding-nav { grid-column: 1 / -1; justify-content: flex-start; overflow-x: auto; }
+    main,
+    .funding-footer { width: min(100% - 24px, 1500px); }
+    main { padding-top: 14px; }
+    .funding-hero { min-height: 0; padding: 28px 22px; border-radius: 11px; }
+    .funding-hero h1 { font-size: clamp(38px, 12vw, 58px); }
+    .section-heading { align-items: flex-start; flex-direction: column; gap: 8px; }
+    .section-heading > p { text-align: left; }
+    .funding-filters { grid-template-columns: 1fr; }
+    .scholarship-card__header { grid-template-columns: auto 1fr; }
+    .scholarship-status { grid-column: 1 / -1; width: fit-content; }
+    .scholarship-card__body { grid-template-columns: 1fr; }
+    .mismatch-grid { grid-template-columns: 1fr; }
+    .funding-footer { flex-direction: column; }
+}
+
+@media (max-width: 480px) {
+    .funding-brand small { display: none; }
+    .funding-nav a,
+    .funding-nav button { padding-inline: 9px; font-size: 13px; }
+    .funding-stats { grid-template-columns: 1fr; }
+    .funding-stat { border-right: 0; border-bottom: 1px solid var(--rule); }
+    .funding-stat:last-child { border-bottom: 0; }
+    .funding-calendar,
+    .funding-workspace,
+    .funding-mismatch { padding: 18px 14px; }
+    .scholarship-card__header,
+    .scholarship-card__route,
+    .scholarship-card__deadline,
+    .scholarship-card__body,
+    .scholarship-card summary,
+    .scholarship-detail { padding-inline: 16px; }
+    .scholarship-card__deadline { grid-template-columns: 1fr; }
+    .scholarship-card__deadline b { max-width: none; text-align: left; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}

@@ -65,6 +65,11 @@ window.I18N = {
     deadline_calendar_loading: "Loading deadlines…",
     deadline_workspace_kicker: "Application command center",
     deadline_calendar_desc: "See every verified date, remaining time, and required document in one place.",
+    deadline_runway_eyebrow: "2027 intake runway",
+    deadline_runway_title: "Verified dates by month",
+    deadline_runway_desc: "Only exact target-cycle dates appear here; reference dates stay in programme cards.",
+    scholarship_hub: "Scholarships",
+    scholarship_hub_desc: "Funding routes for applicants from Türkiye",
     deadline_search_placeholder: "Search university, program, country or document",
     deadline_favorites_only: "Favorites only",
 
@@ -358,6 +363,11 @@ window.I18N = {
     deadline_calendar_loading: "Tarihler yükleniyor…",
     deadline_workspace_kicker: "Başvuru kontrol merkezi",
     deadline_calendar_desc: "Doğrulanmış tarihleri, kalan süreyi ve istenen belgeleri tek yerde gör.",
+    deadline_runway_eyebrow: "2027 dönemi yol haritası",
+    deadline_runway_title: "Aylara göre doğrulanmış tarihler",
+    deadline_runway_desc: "Burada yalnızca hedef dönemin kesin tarihleri görünür; eski referanslar program kartlarında kalır.",
+    scholarship_hub: "Burslar",
+    scholarship_hub_desc: "Türkiye’den başvurulabilen finansman rotaları",
     deadline_search_placeholder: "Üniversite, program, ülke veya belge ara",
     deadline_favorites_only: "Yalnız favoriler",
 

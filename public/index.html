@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="i18n.js?v=7"></script>
+    <script src="i18n.js?v=8"></script>
     <script src="taxonomy.js?v=3"></script>
 </head>
 <body>
@@ -212,6 +212,14 @@
                         </span>
                         <span class="deadline-launcher__badge" id="deadline-launcher-badge" aria-label="0 urgent deadlines">0</span>
                     </button>
+                    <a class="scholarship-launcher" href="scholarships.html">
+                        <span class="scholarship-launcher__icon" aria-hidden="true">◇</span>
+                        <span class="scholarship-launcher__copy">
+                            <strong data-i18n="scholarship_hub">Scholarships</strong>
+                            <small data-i18n="scholarship_hub_desc">Funding routes for applicants from Türkiye</small>
+                        </span>
+                        <span class="scholarship-launcher__arrow" aria-hidden="true">→</span>
+                    </a>
                     <div class="auth-section">
                         <div id="auth-links">
                             <button onclick="window.openLoginModal()" class="btn btn-outline" data-i18n="sign_in">Sign in</button>
@@ -355,6 +363,13 @@
 
                 <div class="deadline-modal-body">
                     <div class="deadline-summary-grid" id="deadline-summary-grid" aria-live="polite"></div>
+                    <section class="deadline-runway" aria-labelledby="deadline-runway-title">
+                        <div class="deadline-runway__heading">
+                            <div><span class="deadline-runway__eyebrow" data-i18n="deadline_runway_eyebrow">2027 intake runway</span><h3 id="deadline-runway-title" data-i18n="deadline_runway_title">Verified dates by month</h3></div>
+                            <p data-i18n="deadline_runway_desc">Only exact target-cycle dates appear here; reference dates stay in programme cards.</p>
+                        </div>
+                        <div class="deadline-runway__track" id="deadline-runway-track"></div>
+                    </section>
                     <div class="deadline-toolbar">
                         <label class="deadline-search" for="deadline-search-input">
                             <span aria-hidden="true">⌕</span>
@@ -391,7 +406,7 @@
 
     <script src="dataAdapter.js?v=11"></script>
     <script src="scoring.js?v=7"></script>
-    <script src="deadlineDashboard.js?v=5"></script>
+    <script src="deadlineDashboard.js?v=6"></script>
     <script src="script.js?v=31"></script>
     <script src="map.js?v=9"></script>
 

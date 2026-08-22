@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Source-verified scholarships and funding routes for applicants from Türkiye.">
+    <title>UniRank | Scholarship Radar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="scholarships.css?v=1">
+    <script src="i18n.js?v=8"></script>
+</head>
+<body>
+    <a class="skip-link" href="#scholarship-results">Skip to scholarships</a>
+    <div class="funding-aurora" aria-hidden="true"><span></span><span></span></div>
+
+    <header class="funding-header">
+        <a class="funding-brand" href="index.html" aria-label="UniRank home">
+            <span class="funding-brand__mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 18c4-8 10-12 20-13-1 10-5 16-13 20l-2-5-5-2Z"></path><path d="m13 19 6-6"></path><circle cx="21.5" cy="10.5" r="2"></circle></svg></span>
+            <span><strong>UniRank</strong><small>Scholarship radar</small></span>
+        </a>
+        <nav class="funding-nav" aria-label="Primary">
+            <a href="index.html" data-copy="programmes">Programmes</a>
+            <button type="button" id="open-main-calendar" data-copy="calendar">Application calendar</button>
+            <a class="is-active" href="scholarships.html" aria-current="page" data-copy="scholarships">Scholarships</a>
+        </nav>
+        <div class="funding-language" role="group" aria-label="Language">
+            <button type="button" data-lang="en" onclick="window.setLanguage('en')">EN</button>
+            <button type="button" data-lang="tr" onclick="window.setLanguage('tr')">TR</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="funding-hero">
+            <div class="funding-hero__copy">
+                <span class="funding-kicker" data-copy="heroKicker">Türkiye → world funding map</span>
+                <h1 data-copy="heroTitle">Build the funding plan before the application rush.</h1>
+                <p data-copy="heroText">Compare who can apply, what is covered, exact or reference deadlines, required documents and the official route—without treating last year's call as a current deadline.</p>
+                <div class="funding-hero__actions">
+                    <a href="#scholarship-results" class="funding-button funding-button--primary" data-copy="browse">Browse scholarships</a>
+                    <a href="index.html" class="funding-button" data-copy="backPrograms">Back to programmes</a>
+                </div>
+            </div>
+            <aside class="funding-next" id="funding-next" aria-live="polite"></aside>
+        </section>
+
+        <section class="funding-stats" id="funding-stats" aria-label="Scholarship data summary"></section>
+
+        <section class="funding-calendar" aria-labelledby="funding-calendar-title">
+            <div class="section-heading">
+                <div><span class="funding-kicker" data-copy="calendarKicker">Deadline runway</span><h2 id="funding-calendar-title" data-copy="calendarTitle">What happens next?</h2></div>
+                <p data-copy="calendarText">Confirmed dates use live countdowns. Previous calls are visibly marked as reference only.</p>
+            </div>
+            <div class="funding-calendar__legend">
+                <span><i class="legend-dot legend-dot--open"></i><span data-copy="legendOpen">Open / current</span></span>
+                <span><i class="legend-dot legend-dot--watch"></i><span data-copy="legendWatch">Date to confirm</span></span>
+                <span><i class="legend-dot legend-dot--reference"></i><span data-copy="legendReference">Previous-cycle reference</span></span>
+            </div>
+            <div class="funding-calendar__track" id="funding-calendar-track"></div>
+        </section>
+
+        <section class="funding-workspace" id="scholarship-results" aria-labelledby="results-title">
+            <div class="section-heading">
+                <div><span class="funding-kicker" data-copy="resultsKicker">Verified opportunity library</span><h2 id="results-title" data-copy="resultsTitle">Scholarships you can realistically investigate</h2></div>
+                <p id="results-meta" aria-live="polite"></p>
+            </div>
+            <div class="funding-filters">
+                <label class="funding-search"><span aria-hidden="true">⌕</span><input id="scholarship-search" type="search" autocomplete="off" data-placeholder="searchPlaceholder" placeholder="Search scholarship, country, condition or document"></label>
+                <label><span data-copy="levelLabel">Level</span><select id="level-filter"><option value="all" data-copy="allLevels">All levels</option><option value="master" data-copy="master">Master</option><option value="phd" data-copy="phd">PhD</option><option value="research" data-copy="research">Research</option></select></label>
+                <label><span data-copy="statusLabel">Cycle status</span><select id="status-filter"><option value="all" data-copy="allStatuses">All statuses</option><option value="open" data-copy="openStatus">Open / current</option><option value="awaiting" data-copy="awaitingStatus">Awaiting publication</option><option value="closed" data-copy="closedStatus">Closed reference</option><option value="conditional" data-copy="conditionalStatus">Needs route confirmation</option></select></label>
+                <label><span data-copy="fitLabel">Aerospace fit</span><select id="fit-filter"><option value="all" data-copy="allFits">All relevance</option><option value="high" data-copy="highFit">High / STEM</option><option value="low" data-copy="lowFit">Special-purpose</option></select></label>
+            </div>
+            <div class="scholarship-grid" id="scholarship-grid"></div>
+        </section>
+
+        <section class="funding-mismatch" aria-labelledby="mismatch-title">
+            <div class="section-heading">
+                <div><span class="funding-kicker" data-copy="mismatchKicker">Avoid false leads</span><h2 id="mismatch-title" data-copy="mismatchTitle">Frequently confused, but currently not available to Turkish citizens</h2></div>
+                <p data-copy="mismatchText">Country eligibility can change. These exclusions reflect the latest official call checked on 22 August 2026.</p>
+            </div>
+            <div class="mismatch-grid" id="mismatch-grid"></div>
+        </section>
+    </main>
+
+    <footer class="funding-footer"><span data-copy="footerPolicy">No guessed deadlines. Every critical field links to an official source.</span><span id="last-verified"></span></footer>
+    <script src="scholarships.js?v=2"></script>
+</body>
+</html>

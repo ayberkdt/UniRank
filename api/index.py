@@ -4,6 +4,7 @@ from fastapi.responses import JSONResponse
 import sys
 import os
 from pathlib import Path
+import json
 import pandas as pd
 import numpy as np
 
@@ -36,6 +37,15 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+def _project_file(*parts):
+    candidates = [
+        Path(os.getcwd()).joinpath(*parts),
+        Path(__file__).parent.parent.joinpath(*parts),
+        Path("/var/task").joinpath(*parts),
+    ]
+    return next((path for path in candidates if path.exists() and path.is_file()), None)
 
 @app.get("/api/universities")
 def get_universities():
@@ -85,7 +95,6 @@ def get_universities():
 
 @app.get("/api/taxonomy")
 def get_taxonomy():
-    import json
     possible_paths = [
         Path(os.getcwd()) / "data_base",
         Path(__file__).parent.parent / "data_base",
@@ -111,3 +120,17 @@ def get_taxonomy():
         return JSONResponse(data)
     except Exception:
         return JSONResponse({"status": "error", "message": "The taxonomy data could not be loaded."})
+
+
+@app.get("/api/scholarships")
+def get_scholarships():
+    catalog_path = _project_file("scholarships", "catalog.json")
+    headers = {"Cache-Control": "no-store, no-cache, must-revalidate, max-age=0"}
+    if not catalog_path:
+        return JSONResponse({"status": "error", "message": "Scholarship catalog not found.", "data": {}}, status_code=404, headers=headers)
+    try:
+        with open(catalog_path, "r", encoding="utf-8") as catalog_file:
+            catalog = json.load(catalog_file)
+        return JSONResponse({"status": "success", "data": catalog}, headers=headers)
+    except (OSError, json.JSONDecodeError):
+        return JSONResponse({"status": "error", "message": "Scholarship catalog could not be loaded.", "data": {}}, status_code=500, headers=headers)

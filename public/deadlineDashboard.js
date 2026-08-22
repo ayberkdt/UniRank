@@ -28,7 +28,8 @@
       currentFilters: '2027 intake watch · exact dates are never inferred', openNewTab: 'opens in a new tab',
       autoUpdated: 'Auto-updated at {time} · every 15 min', syncing: 'Checking for updates…', syncFailed: 'Update check failed · cached data shown',
       officialWording: 'Official wording', targetCycle: '2027 intake', cyclePublished: '2027 cycle published', cycleAnnual: 'Standing annual rule', cycleAwaiting: '2027 cycle awaiting publication', cycleUnknown: '2027 date not verified',
-      previousCycle: 'Previous cycle · reference only', lastPublishedDate: 'Last published application date', referenceWarning: '{cycle} reference · not a 2027 deadline', openOfficialStep: 'Open official step', applicationLinkHint: 'Deadline and application instructions', documentLinkHint: 'Official checklist and eligibility evidence'
+      previousCycle: 'Previous cycle · reference only', lastPublishedDate: 'Last published application date', referenceWarning: '{cycle} reference · not a 2027 deadline', openOfficialStep: 'Open official step', applicationLinkHint: 'Deadline and application instructions', documentLinkHint: 'Official checklist and eligibility evidence',
+      runwayEmpty: 'No exact target-cycle date has been verified yet', runwayEmptyHint: 'Programs awaiting publication remain visible below with their previous-cycle reference.', runwayEvents: '{count} milestone(s)'
     },
     tr: {
       urgent: 'Acil', soon: 'Yaklaşıyor', later: 'Daha sonra', verify: 'Tarihi doğrula', closed: 'Kapanan dönem', all: 'Tümü', upcoming: 'Tüm yaklaşanlar',
@@ -48,7 +49,8 @@
       currentFilters: '2027 dönemi takibi · kesin tarihler tahmin edilmez', openNewTab: 'yeni sekmede açılır',
       autoUpdated: 'Otomatik güncellendi: {time} · 15 dakikada bir', syncing: 'Güncellemeler kontrol ediliyor…', syncFailed: 'Güncelleme kontrolü başarısız · kayıtlı veri gösteriliyor',
       officialWording: 'Resmî ifade', targetCycle: '2027 dönemi', cyclePublished: '2027 dönemi yayımlandı', cycleAnnual: 'Her yıl geçerli resmî kural', cycleAwaiting: '2027 dönemi henüz yayımlanmadı', cycleUnknown: '2027 tarihi doğrulanmadı',
-      previousCycle: 'Önceki dönem · yalnızca referans', lastPublishedDate: 'Son yayımlanan başvuru tarihi', referenceWarning: '{cycle} referansı · 2027 son tarihi değildir', openOfficialStep: 'Resmî adıma git', applicationLinkHint: 'Son tarih ve başvuru yönergeleri', documentLinkHint: 'Resmî belge listesi ve uygunluk kanıtları'
+      previousCycle: 'Önceki dönem · yalnızca referans', lastPublishedDate: 'Son yayımlanan başvuru tarihi', referenceWarning: '{cycle} referansı · 2027 son tarihi değildir', openOfficialStep: 'Resmî adıma git', applicationLinkHint: 'Son tarih ve başvuru yönergeleri', documentLinkHint: 'Resmî belge listesi ve uygunluk kanıtları',
+      runwayEmpty: 'Hedef dönem için kesin bir tarih henüz doğrulanmadı', runwayEmptyHint: 'Yayın bekleyen programlar, önceki dönem referanslarıyla aşağıda görünmeye devam eder.', runwayEvents: '{count} aşama'
     }
   };
 
@@ -538,6 +540,29 @@
       <button type="button" class="deadline-filter-chip${state.filter === value ? ' is-active' : ''}" data-deadline-filter="${value}" aria-pressed="${state.filter === value}">${escapeHtml(label)}</button>`).join('');
   }
 
+  function renderRunway() {
+    if (!elements.runway) return;
+    const milestones = state.models
+      .flatMap(model => model.upcomingEvents.map(event => ({ model, event })))
+      .filter(item => item.event.exact && item.event.datePart.year >= TARGET_INTAKE_YEAR)
+      .sort((left, right) => left.event.datePart.date - right.event.datePart.date);
+    if (!milestones.length) {
+      elements.runway.innerHTML = `<div class="deadline-runway__empty"><span aria-hidden="true">◎</span><div><strong>${escapeHtml(tr('runwayEmpty'))}</strong><small>${escapeHtml(tr('runwayEmptyHint'))}</small></div></div>`;
+      return;
+    }
+    const grouped = new Map();
+    milestones.forEach(item => {
+      const key = `${item.event.datePart.year}-${String(item.event.datePart.month).padStart(2, '0')}`;
+      if (!grouped.has(key)) grouped.set(key, []);
+      grouped.get(key).push(item);
+    });
+    elements.runway.innerHTML = [...grouped.values()].map(items => {
+      const month = new Intl.DateTimeFormat(lang() === 'tr' ? 'tr-TR' : 'en-GB', { month: 'long', year: 'numeric' }).format(items[0].event.datePart.date);
+      const rows = items.slice(0, 4).map(({ model, event }) => `<li><span class="deadline-runway-date"><strong>${String(event.datePart.day).padStart(2, '0')}</strong><small>${escapeHtml(remainingLabel(event.days))}</small></span><span><b>${escapeHtml(model.university)}</b><small>${escapeHtml(eventDisplayLabel(event))}</small></span></li>`).join('');
+      return `<article class="deadline-runway-month"><header><span>${escapeHtml(month)}</span><b>${escapeHtml(tr('runwayEvents', { count: items.length }))}</b></header><ol>${rows}</ol></article>`;
+    }).join('');
+  }
+
   function favoritesSet() {
     try {
       return new Set(JSON.parse(localStorage.getItem('unirank_favorites') || '[]'));
@@ -696,6 +721,7 @@
 
   function render() {
     renderSummary();
+    renderRunway();
     renderFilters();
     renderList();
   }
@@ -713,7 +739,10 @@
     if (!state.records.length && Array.isArray(window.uniRankRecords)) state.records = window.uniRankRecords;
     rebuildModels();
     renderSummary();
-    if (modalIsOpen()) renderList();
+    if (modalIsOpen()) {
+      renderRunway();
+      renderList();
+    }
   }
 
   async function requestDataRefresh() {
@@ -803,6 +832,7 @@
     elements.badge = document.getElementById('deadline-launcher-badge');
     elements.close = document.getElementById('deadline-modal-close');
     elements.summary = document.getElementById('deadline-summary-grid');
+    elements.runway = document.getElementById('deadline-runway-track');
     elements.filters = document.getElementById('deadline-filter-chips');
     elements.search = document.getElementById('deadline-search-input');
     elements.favorites = document.getElementById('deadline-favorites-only');
@@ -838,7 +868,10 @@
       state.syncFailed = false;
       rebuildModels();
       renderSummary();
-      if (modalIsOpen()) renderList();
+      if (modalIsOpen()) {
+        renderRunway();
+        renderList();
+      }
     });
     document.addEventListener('languageChanged', () => {
       if (!state.records.length && Array.isArray(window.uniRankRecords)) state.records = window.uniRankRecords;
@@ -862,6 +895,10 @@
       state.records = window.uniRankRecords;
       rebuildModels();
       renderSummary();
+    }
+
+    if (new URLSearchParams(window.location.search).get('calendar') === 'open') {
+      window.requestAnimationFrame(open);
     }
   }
 

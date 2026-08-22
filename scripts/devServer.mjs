@@ -5,6 +5,7 @@ import { extname, normalize } from 'node:path';
 const root = new URL('../', import.meta.url);
 const publicDir = new URL('../public/', import.meta.url);
 const dataDir = new URL('../data_base/', import.meta.url);
+const scholarshipCatalogUrl = new URL('../scholarships/catalog.json', import.meta.url);
 const catalogScopeUrl = new URL('../config/catalog_scope.json', import.meta.url);
 const port = Number(process.env.PORT || 8765);
 
@@ -485,6 +486,12 @@ const server = createServer(async (request, response) => {
     if (url.pathname === '/api/taxonomy') {
       const taxonomy = JSON.parse(await readFile(new URL('taxonomy.json', dataDir), 'utf8'));
       sendJson(response, taxonomy);
+      return;
+    }
+
+    if (url.pathname === '/api/scholarships') {
+      const catalog = JSON.parse(await readFile(scholarshipCatalogUrl, 'utf8'));
+      sendJson(response, { status: 'success', data: catalog });
       return;
     }
 
