@@ -269,7 +269,10 @@ function normalizeDuration(record) {
 }
 
 function normalizeDeadline(record, timelineProfile) {
+  const nextCycleStatus = String(timelineProfile.next_cycle_status || '').toLowerCase();
+  if (/not[_ -]published|awaiting[_ -]publication|needs[_ -]verification/.test(nextCycleStatus)) return null;
   return firstKnownValue(
+    timelineProfile.next_cycle_deadline,
     timelineProfile.non_eu_deadline,
     timelineProfile.deadline_non_eu,
     timelineProfile.winter_deadline,

@@ -4,6 +4,7 @@
   const DAY_MS = 24 * 60 * 60 * 1000;
   const AUTO_REFRESH_MS = 15 * 60 * 1000;
   const REFRESH_CHECK_MS = 60 * 1000;
+  const TARGET_INTAKE_YEAR = 2027;
   const VALID_SOURCE_STATUSES = new Set(['ok', 'redirects', 'pdf', 'requires_js']);
   const CLOSED_WORDS = /closed|passed|expired|historical|cancelled|canceled|deadline_passed|kapand|geçti/i;
   const GENERIC_EVENT_LABELS = /^(application|non-eu|international|final|regular|document|scholarship|funding|visa|enrolment|enrollment|housing).*(deadline|close)$/i;
@@ -24,9 +25,10 @@
       applicationDeadline: 'Application deadline', nonEuDeadline: 'Non-EU deadline', finalDeadline: 'Final application deadline', documentDeadline: 'Document completion',
       englishDeadline: 'English-score deadline', recommendationDeadline: 'Recommendation deadline', feeWaiverDeadline: 'Fee-waiver deadline', scholarshipDeadline: 'Scholarship deadline',
       fundingDeadline: 'Funding priority', visaDeadline: 'Visa / pre-enrolment milestone', enrolmentDeadline: 'Enrolment deadline', housingDeadline: 'Housing deadline', applicationRound: 'Application round', otherDeadline: 'Application milestone',
-      currentFilters: 'Current database · exact dates are never inferred', openNewTab: 'opens in a new tab',
+      currentFilters: '2027 intake watch · exact dates are never inferred', openNewTab: 'opens in a new tab',
       autoUpdated: 'Auto-updated at {time} · every 15 min', syncing: 'Checking for updates…', syncFailed: 'Update check failed · cached data shown',
-      officialWording: 'Official wording'
+      officialWording: 'Official wording', targetCycle: '2027 intake', cyclePublished: '2027 cycle published', cycleAnnual: 'Standing annual rule', cycleAwaiting: '2027 cycle awaiting publication', cycleUnknown: '2027 date not verified',
+      previousCycle: 'Previous cycle · reference only', lastPublishedDate: 'Last published application date', referenceWarning: '{cycle} reference · not a 2027 deadline', openOfficialStep: 'Open official step', applicationLinkHint: 'Deadline and application instructions', documentLinkHint: 'Official checklist and eligibility evidence'
     },
     tr: {
       urgent: 'Acil', soon: 'Yaklaşıyor', later: 'Daha sonra', verify: 'Tarihi doğrula', closed: 'Kapanan dönem', all: 'Tümü', upcoming: 'Tüm yaklaşanlar',
@@ -43,9 +45,10 @@
       applicationDeadline: 'Başvuru son tarihi', nonEuDeadline: 'AB dışı son tarih', finalDeadline: 'Nihai başvuru tarihi', documentDeadline: 'Belge tamamlama',
       englishDeadline: 'İngilizce puanı tarihi', recommendationDeadline: 'Referans mektubu tarihi', feeWaiverDeadline: 'Ücret muafiyeti tarihi', scholarshipDeadline: 'Burs son tarihi',
       fundingDeadline: 'Fonlama öncelik tarihi', visaDeadline: 'Vize / ön kayıt aşaması', enrolmentDeadline: 'Kayıt son tarihi', housingDeadline: 'Konut son tarihi', applicationRound: 'Başvuru turu', otherDeadline: 'Başvuru aşaması',
-      currentFilters: 'Güncel veritabanı · kesin tarihler tahmin edilmez', openNewTab: 'yeni sekmede açılır',
+      currentFilters: '2027 dönemi takibi · kesin tarihler tahmin edilmez', openNewTab: 'yeni sekmede açılır',
       autoUpdated: 'Otomatik güncellendi: {time} · 15 dakikada bir', syncing: 'Güncellemeler kontrol ediliyor…', syncFailed: 'Güncelleme kontrolü başarısız · kayıtlı veri gösteriliyor',
-      officialWording: 'Resmî ifade'
+      officialWording: 'Resmî ifade', targetCycle: '2027 dönemi', cyclePublished: '2027 dönemi yayımlandı', cycleAnnual: 'Her yıl geçerli resmî kural', cycleAwaiting: '2027 dönemi henüz yayımlanmadı', cycleUnknown: '2027 tarihi doğrulanmadı',
+      previousCycle: 'Önceki dönem · yalnızca referans', lastPublishedDate: 'Son yayımlanan başvuru tarihi', referenceWarning: '{cycle} referansı · 2027 son tarihi değildir', openOfficialStep: 'Resmî adıma git', applicationLinkHint: 'Son tarih ve başvuru yönergeleri', documentLinkHint: 'Resmî belge listesi ve uygunluk kanıtları'
     }
   };
 
@@ -140,6 +143,28 @@
     return Math.round((Date.UTC(datePart.year, datePart.month - 1, datePart.day) - todayUtcDay()) / DAY_MS);
   }
 
+  function cycleInfo(record, events) {
+    const timeline = record.application_timeline_profile || {};
+    const academicYear = localized(timeline.target_academic_year || timeline.academic_year);
+    const intake = localized(timeline.intake_terms || timeline.intake || timeline.start_term);
+    const searchable = `${academicYear} ${intake} ${JSON.stringify(timeline)}`.toLowerCase();
+    const explicitAwaiting = /not[_ -]published|awaiting[_ -]publication|next[_ -]cycle[_ -]not[_ -]published/.test(String(timeline.next_cycle_status || '').toLowerCase());
+    const explicitTarget = /2027\s*\/\s*2028|2027\s*\/\s*28|2027 entry|fall 2027|autumn 2027|september 2027|spring 2027|summer 2027|february 2027/.test(searchable);
+    const exactTargetApplication = events.some(event => event.exact && event.datePart.year >= TARGET_INTAKE_YEAR && ['application', 'documents', 'scholarship'].includes(event.kind));
+    const annual = /recurring|standing annual|annual application|annual deadline|current application rules|every year|yearly/.test(searchable);
+
+    if (!explicitAwaiting && (explicitTarget || exactTargetApplication)) {
+      return { key: 'published', label: tr('cyclePublished'), academicYear: academicYear || tr('targetCycle'), targetReady: true };
+    }
+    if (!explicitAwaiting && annual) {
+      return { key: 'annual', label: tr('cycleAnnual'), academicYear: academicYear || tr('targetCycle'), targetReady: true };
+    }
+    if (explicitAwaiting || academicYear || events.length) {
+      return { key: 'awaiting', label: tr('cycleAwaiting'), academicYear: academicYear || tr('previousCycle'), targetReady: false };
+    }
+    return { key: 'unknown', label: tr('cycleUnknown'), academicYear: tr('targetCycle'), targetReady: false };
+  }
+
   function inferKind(text) {
     const value = String(text || '').toLowerCase();
     if (/scholar|fund|fellow|burs/.test(value)) return 'scholarship';
@@ -178,7 +203,8 @@
       statusText: localized(config.status),
       priority: Number(config.priority) || 0,
       sourceIds: Array.isArray(config.sourceIds) ? config.sourceIds : [],
-      applicantScope: localized(config.applicantScope)
+      applicantScope: localized(config.applicantScope),
+      sourceUrl: safeUrl(config.sourceUrl)
     };
     if (dates.length === 0) {
       target.push({ ...base, exact: false, datePart: null, days: null, closed: CLOSED_WORDS.test(`${base.statusText} ${raw}`) });
@@ -239,6 +265,7 @@
         kind: inferKind(label),
         status: event.status_as_of_last_checked || event.status || event.date_status,
         sourceIds: event.source_ids,
+        sourceUrl: event.source_url,
         applicantScope: event.applicant_scope,
         priority: 4
       });
@@ -255,7 +282,7 @@
       addEvent(events, {
         value: round.international_deadline || round.non_eu_deadline || round.deadline,
         label: roundName ? `${tr('applicationRound')} · ${roundName}` : `${tr('applicationRound')} ${index + 1}`,
-        kind: 'application', status: round.status, priority: 3
+        kind: 'application', status: round.status, sourceUrl: round.source_url, priority: 3
       });
     });
 
@@ -336,15 +363,27 @@
 
   function programModel(record, index) {
     const normalized = window.uniDataAdapter?.normalizeUniversityRecord(record) || {};
-    const events = collectDeadlineEvents(record);
-    const upcomingEvents = events.filter(event => event.exact && !event.closed && event.days >= 0);
+    const collectedEvents = collectDeadlineEvents(record);
+    const cycle = cycleInfo(record, collectedEvents);
+    const events = collectedEvents.map(event => ({ ...event, referenceOnly: !cycle.targetReady }));
+    const upcomingEvents = cycle.targetReady
+      ? events.filter(event => event.exact && !event.closed && event.days >= 0)
+      : [];
     const next = upcomingEvents[0] || null;
+    const referenceDeadline = !cycle.targetReady
+      ? events
+        .filter(event => event.exact && event.kind === 'application')
+        .sort((left, right) => right.datePart.date - left.datePart.date)[0] || null
+      : null;
     let status = 'missing';
     if (next) status = next.days <= 30 ? 'urgent' : next.days <= 90 ? 'soon' : 'later';
-    else if (events.some(event => !event.exact && !event.closed)) status = 'undated';
+    else if (!cycle.targetReady || events.some(event => !event.exact && !event.closed)) status = 'undated';
     else if (events.length) status = 'closed';
 
     const cleanCountry = String(normalized.country || record.country || '').replace(/^[^a-zA-ZçğıöşüÇĞİÖŞÜ]+/, '').trim();
+    const visual = typeof window.uniCountryVisual === 'function'
+      ? window.uniCountryVisual(cleanCountry)
+      : { key: 'global', code: '', accent: '#6f85a2', rgb: '111, 133, 162' };
     return {
       index,
       record,
@@ -352,12 +391,17 @@
       university: localized(normalized.universityName) || localized(record.university) || tr('deadlineUnknown'),
       program: localized(normalized.programName) || localized(record.program_name) || '—',
       country: window.getCountryName ? window.getCountryName(cleanCountry) : cleanCountry,
+      countryRaw: cleanCountry,
+      countryVisual: visual,
       city: localized(normalized.city),
       degree: localized(normalized.degree),
       events,
       upcomingEvents,
       next,
       status,
+      cycle,
+      referenceDeadline,
+      referenceAcademicYear: localized(record.application_timeline_profile?.academic_year) || tr('previousCycle'),
       documents: documentItems(record),
       deadlineSource: relevantSource(record, 'deadline'),
       documentSource: relevantSource(record, 'documents'),
@@ -466,14 +510,14 @@
       return result;
     }, { urgent: 0, soon: 0, later: 0, undated: 0, missing: 0, closed: 0 });
     const cards = [
-      ['urgent', tr('urgent'), counts.urgent, tr('urgentHint')],
-      ['soon', tr('soon'), counts.soon, tr('soonHint')],
-      ['later', tr('later'), counts.later, tr('laterHint')],
-      ['undated', tr('verify'), counts.undated + counts.missing, tr('verifyHint')]
+      ['urgent', '!', tr('urgent'), counts.urgent, tr('urgentHint')],
+      ['soon', '◷', tr('soon'), counts.soon, tr('soonHint')],
+      ['later', '↗', tr('later'), counts.later, tr('laterHint')],
+      ['undated', '?', tr('verify'), counts.undated + counts.missing, tr('verifyHint')]
     ];
-    elements.summary.innerHTML = cards.map(([filter, label, count, hint]) => `
+    elements.summary.innerHTML = cards.map(([filter, icon, label, count, hint]) => `
       <button class="deadline-summary-card deadline-summary-card--${filter}${state.filter === filter ? ' is-active' : ''}" type="button" data-deadline-filter="${filter}">
-        <span>${escapeHtml(label)}</span><strong>${count}</strong><small>${escapeHtml(hint)}</small>
+        <i aria-hidden="true">${escapeHtml(icon)}</i><span>${escapeHtml(label)}</span><strong>${count}</strong><small>${escapeHtml(hint)}</small>
       </button>`).join('');
 
     const upcoming = counts.urgent + counts.soon + counts.later;
@@ -511,41 +555,55 @@
       if (state.filter === 'undated' && !['undated', 'missing'].includes(model.status)) return false;
       if (!['all', 'upcoming', 'undated'].includes(state.filter) && model.status !== state.filter) return false;
       if (!query) return true;
-      const haystack = [model.university, model.program, model.country, model.city, ...model.documents, ...model.events.map(event => `${event.label} ${event.raw}`)]
+      const haystack = [model.university, model.program, model.country, model.city, model.cycle.label, model.cycle.academicYear, ...model.documents, ...model.events.map(event => `${event.label} ${event.raw}`)]
         .join(' ').toLocaleLowerCase(lang() === 'tr' ? 'tr-TR' : 'en-US');
       return haystack.includes(query);
     });
   }
 
   function eventState(event) {
+    if (event.referenceOnly) return { key: 'reference', label: tr('previousCycle') };
     if (!event.exact) return { key: 'undated', label: tr('undated') };
     if (event.closed) return { key: 'past', label: tr('past') };
     return { key: 'current', label: tr('current') };
   }
 
-  function sourceLink(source, label) {
+  function sourceLink(source, label, hint = '') {
     if (!source?.url) return `<span class="deadline-source-unavailable">${escapeHtml(tr('sourceUnavailable'))}</span>`;
-    return `<a class="deadline-source-link" href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(label)} <span aria-hidden="true">↗</span><span class="sr-only"> (${escapeHtml(tr('openNewTab'))})</span></a>`;
+    return `<a class="deadline-source-link" href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer"><span class="deadline-source-link__icon" aria-hidden="true">↗</span><span><strong>${escapeHtml(label)}</strong>${hint ? `<small>${escapeHtml(hint)}</small>` : ''}</span><span class="sr-only"> (${escapeHtml(tr('openNewTab'))})</span></a>`;
   }
 
   function renderEvent(event) {
     const stateInfo = eventState(event);
     const dateText = event.exact ? formatDate(event.datePart) : tr('exactDateMissing');
-    const countdown = event.exact ? remainingLabel(event.days, event.closed) : tr('undated');
+    const countdown = event.referenceOnly ? tr('previousCycle') : (event.exact ? remainingLabel(event.days, event.closed) : tr('undated'));
     const officialNote = eventOfficialNote(event);
-    return `<li class="deadline-event deadline-event--${stateInfo.key}">
+    const stepLink = event.sourceUrl
+      ? `<a class="deadline-event__source" href="${escapeHtml(event.sourceUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(`${tr('openOfficialStep')} · ${eventDisplayLabel(event)}`)}">↗</a>`
+      : '';
+    return `<li class="deadline-event deadline-event--${stateInfo.key} deadline-event--kind-${escapeHtml(event.kind)}">
       <span class="deadline-event__dot" aria-hidden="true"></span>
       <div><strong>${escapeHtml(eventDisplayLabel(event))}</strong>${officialNote ? `<small>${escapeHtml(officialNote)}</small>` : ''}</div>
       <div class="deadline-event__date"><strong>${escapeHtml(dateText)}</strong><span>${escapeHtml(countdown)}</span></div>
-      <span class="deadline-event__state">${escapeHtml(stateInfo.label)}</span>
+      <span class="deadline-event__state">${escapeHtml(stateInfo.label)}</span>${stepLink}
     </li>`;
   }
 
   function renderProgramCard(model) {
     const next = model.next;
-    const nextDate = next ? formatDate(next.datePart) : '—';
-    const nextLabel = next ? eventDisplayLabel(next) : (model.status === 'closed' ? tr('noFuture') : tr('deadlineUnknown'));
-    const remaining = next ? remainingLabel(next.days) : (model.status === 'closed' ? tr('closed') : tr('verify'));
+    const reference = !next ? model.referenceDeadline : null;
+    const displayedEvent = next || reference;
+    const nextDate = displayedEvent ? formatDate(displayedEvent.datePart) : (model.cycle.key === 'awaiting' ? String(TARGET_INTAKE_YEAR) : '—');
+    const nextLabel = next
+      ? eventDisplayLabel(next)
+      : reference
+        ? `${tr('lastPublishedDate')} · ${eventDisplayLabel(reference)}`
+        : (model.cycle.key === 'awaiting' ? model.cycle.label : (model.status === 'closed' ? tr('noFuture') : tr('deadlineUnknown')));
+    const remaining = next
+      ? remainingLabel(next.days)
+      : reference
+        ? tr('referenceWarning', { cycle: model.referenceAcademicYear })
+        : (model.cycle.key === 'awaiting' ? tr('exactDateMissing') : (model.status === 'closed' ? tr('closed') : tr('verify')));
     const location = [model.city, model.country].filter(Boolean).join(' · ') || '—';
     const previewDocuments = model.documents.slice(0, 3);
     const extraDocuments = Math.max(0, model.documents.length - previewDocuments.length);
@@ -553,30 +611,37 @@
     const pastEvents = model.events.filter(event => event.closed);
     const timelineEvents = [...futureEvents, ...pastEvents];
     const verifiedText = formatStoredDate(model.lastVerified);
+    const flagCode = String(model.countryVisual?.code || '').toLowerCase();
+    const flag = flagCode
+      ? `<span class="deadline-country-flag"><img src="https://flagcdn.com/w80/${escapeHtml(flagCode)}.png" alt="" width="40" height="28" loading="lazy"></span>`
+      : '<span class="deadline-country-flag" aria-hidden="true">🌐</span>';
+    const accent = /^#[0-9a-f]{6}$/i.test(String(model.countryVisual?.accent || '')) ? model.countryVisual.accent : '#6f85a2';
+    const rgb = /^\d{1,3},\s*\d{1,3},\s*\d{1,3}$/.test(String(model.countryVisual?.rgb || '')) ? model.countryVisual.rgb : '111, 133, 162';
 
-    return `<article class="deadline-program-card deadline-program-card--${model.status}" data-deadline-model="${model.index}">
+    return `<article class="deadline-program-card deadline-program-card--${model.status} deadline-cycle--${escapeHtml(model.cycle.key)}" data-deadline-model="${model.index}" data-country-theme="${escapeHtml(model.countryVisual?.key || 'global')}" style="--deadline-country-accent:${escapeHtml(accent)};--deadline-country-rgb:${escapeHtml(rgb)}">
       <div class="deadline-program-card__accent" aria-hidden="true"></div>
       <div class="deadline-program-card__main">
         <div class="deadline-program-card__identity">
-          <div class="deadline-program-card__eyebrow"><span>${escapeHtml(location)}</span><span class="deadline-status-pill deadline-status-pill--${model.status}">${escapeHtml(statusLabel(model.status))}</span></div>
+          <div class="deadline-program-card__identity-head">${flag}<div><div class="deadline-program-card__eyebrow"><span>${escapeHtml(location)}</span><span class="deadline-status-pill deadline-status-pill--${model.status}">${escapeHtml(statusLabel(model.status))}</span></div>
           <h3>${escapeHtml(model.university)}</h3>
-          <p>${escapeHtml(model.program)}</p>
+          <p>${escapeHtml(model.program)}</p></div></div>
           <div class="deadline-program-card__facts">
             ${model.degree ? `<span>${escapeHtml(model.degree)}</span>` : ''}
+            <span class="deadline-cycle-pill deadline-cycle-pill--${escapeHtml(model.cycle.key)}">${escapeHtml(model.cycle.label)}</span>
             <span>${escapeHtml(tr('documentsCount', { count: model.documents.length }))}</span>
             <span>${escapeHtml(tr('confidence'))}: ${escapeHtml(confidenceLabel(model.confidence))}</span>
           </div>
         </div>
-        <div class="deadline-program-card__next">
-          <span>${escapeHtml(next ? tr('current') : statusLabel(model.status))}</span>
+        <div class="deadline-program-card__next${reference ? ' deadline-program-card__next--reference' : ''}">
+          <span>${escapeHtml(next ? tr('current') : (reference ? tr('previousCycle') : statusLabel(model.status)))}</span>
           <strong>${escapeHtml(nextLabel)}</strong>
-          <time${next ? ` datetime="${escapeHtml(next.datePart.key)}"` : ''}>${escapeHtml(nextDate)}</time>
+          <time${displayedEvent ? ` datetime="${escapeHtml(displayedEvent.datePart.key)}"` : ''}>${escapeHtml(nextDate)}</time>
           <b>${escapeHtml(remaining)}</b>
           ${model.upcomingEvents.length > 1 ? `<small>+${model.upcomingEvents.length - 1} ${escapeHtml(lang() === 'tr' ? 'yaklaşan aşama' : 'upcoming milestone(s)')}</small>` : ''}
         </div>
         <div class="deadline-program-card__documents">
           <span class="deadline-section-label">${escapeHtml(tr('documents'))}</span>
-          ${previewDocuments.length ? `<ul>${previewDocuments.map(document => `<li><span aria-hidden="true">✓</span>${escapeHtml(document)}</li>`).join('')}</ul>` : `<p>${escapeHtml(tr('documentsUnknown'))}</p>`}
+          ${previewDocuments.length ? `<ul>${previewDocuments.map((document, index) => `<li><span class="deadline-document-index" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span><span>${escapeHtml(document)}</span></li>`).join('')}</ul>` : `<p>${escapeHtml(tr('documentsUnknown'))}</p>`}
           ${extraDocuments ? `<small>+${extraDocuments} ${escapeHtml(lang() === 'tr' ? 'belge daha' : 'more document(s)')}</small>` : ''}
         </div>
       </div>
@@ -584,18 +649,18 @@
         <summary><span>${escapeHtml(tr('expand'))}</span><span aria-hidden="true">⌄</span></summary>
         <div class="deadline-program-details__body">
           <section>
-            <h4>${escapeHtml(tr('timeline'))}</h4>
+            <h4>${escapeHtml(tr('timeline'))} <span class="deadline-detail-cycle">${escapeHtml(model.cycle.label)}</span></h4>
             ${timelineEvents.length ? `<ol class="deadline-event-list">${timelineEvents.map(renderEvent).join('')}</ol>` : `<p class="deadline-empty-copy">${escapeHtml(tr('deadlineUnknown'))}</p>`}
           </section>
           <section>
             <h4>${escapeHtml(tr('documents'))}</h4>
-            ${model.documents.length ? `<ul class="deadline-document-list">${model.documents.map(document => `<li><span aria-hidden="true">✓</span><span>${escapeHtml(document)}</span></li>`).join('')}</ul>` : `<p class="deadline-empty-copy">${escapeHtml(tr('documentsUnknown'))}</p>`}
+            ${model.documents.length ? `<ul class="deadline-document-list">${model.documents.map((document, index) => `<li><span class="deadline-document-index" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span><span>${escapeHtml(document)}</span></li>`).join('')}</ul>` : `<p class="deadline-empty-copy">${escapeHtml(tr('documentsUnknown'))}</p>`}
           </section>
           <footer class="deadline-program-details__footer">
             <div class="deadline-verification-meta"><span>${escapeHtml(tr('verified'))}: <strong>${escapeHtml(verifiedText)}</strong></span><span>${escapeHtml(tr('confidence'))}: <strong>${escapeHtml(confidenceLabel(model.confidence))}</strong></span></div>
             <div class="deadline-program-actions">
-              ${sourceLink(model.deadlineSource, tr('applicationSource'))}
-              ${model.documentSource?.url && model.documentSource.url !== model.deadlineSource?.url ? sourceLink(model.documentSource, tr('documentSource')) : ''}
+              ${sourceLink(model.deadlineSource, tr('applicationSource'), tr('applicationLinkHint'))}
+              ${model.documentSource?.url && model.documentSource.url !== model.deadlineSource?.url ? sourceLink(model.documentSource, tr('documentSource'), tr('documentLinkHint')) : ''}
               <button type="button" class="deadline-program-open" data-open-deadline-program="${model.index}">${escapeHtml(tr('programDetails'))} <span aria-hidden="true">→</span></button>
             </div>
           </footer>
@@ -806,6 +871,7 @@
     programModel,
     daysFromToday,
     datePartsFromIso,
+    cycleInfo,
     formatDate,
     eventDisplayLabel,
     eventOfficialNote,

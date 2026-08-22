@@ -1761,6 +1761,11 @@
       },
       "application_timeline_profile": {
         "academic_year": "2026/2027",
+        "target_intake_year": 2027,
+        "target_academic_year": "2027/2028",
+        "next_cycle_status": "not_published_as_of_2026-08-22",
+        "next_cycle_deadline": null,
+        "next_cycle_monitor_url": "https://www.uniroma1.it/en/pagina/applying-sapienza-international-student",
         "intake_terms": [
           "Autumn 2026; classes begin 24 September 2026"
         ],
@@ -1822,11 +1827,11 @@
         "official_department_page": "https://www.dima.uniroma1.it/",
         "official_lab_pages": [],
         "third_party_sources": [],
-        "last_verified": "2026-08-14",
+        "last_verified": "2026-08-22",
         "needs_verification": true,
         "verification_notes": {
-          "en": "Current official 2026/27 sources now cover non-EU eligibility, the three-stage visa-applicant timeline, programme admission, English evidence and enrolment documents. Closed dates are not projected forward.",
-          "tr": "Güncel resmî 2026/27 kaynakları artık non‑EU uygunluğu, vize adayının üç aşamalı takvimini, program kabulünü, İngilizce kanıtını ve kayıt belgelerini kapsar. Kapanmış tarihler ileri taşınmaz."
+          "en": "The official international-admissions and programme pages were rechecked on 2026-08-22. They still publish only the closed 2026/27 route; no 2027/28 deadline is published or projected forward.",
+          "tr": "Resmî uluslararası kabul ve program sayfaları 22 Ağustos 2026'da yeniden kontrol edildi. Sayfalar hâlâ yalnızca kapanmış 2026/27 yolunu yayımlıyor; 2027/28 tarihi yayımlanmadı ve ileriye taşınmadı."
         },
         "field_confidence": {
           "program_basic_info": "high",
@@ -1838,11 +1843,28 @@
           "research": "high",
           "industry": "high",
           "living": "medium",
-          "deadlines": "high",
+          "deadlines": "unknown",
           "non_eu_eligibility": "high",
-          "deadline": "high"
+          "deadline": "unknown"
         },
         "source_log": [
+          {
+            "url": "https://www.uniroma1.it/en/pagina/applying-sapienza-international-student",
+            "title": "Sapienza International Admissions monitoring page — 2027/28 not yet published",
+            "source_type": "official_admission_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-22",
+            "relevant_fields": [
+              "admission",
+              "deadline",
+              "non_eu_eligibility"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "The live official hub describes the international route and links to the currently published cycle, but it does not publish a 2027/28 deadline. The target-cycle deadline remains null.",
+              "tr": "Canlı resmî merkez uluslararası başvuru yolunu açıklar ve güncel yayımlanmış döneme bağlanır; ancak 2027/28 tarihi yayımlamaz. Hedef dönem son tarihi null olarak korunur."
+            }
+          },
           {
             "url": "https://corsidilaurea.uniroma1.it/en/corso/2024/30423/home",
             "title": "",
@@ -7525,6 +7547,11 @@
       },
       "application_timeline_profile": {
         "academic_year": "2026/2027",
+        "target_intake_year": 2027,
+        "target_academic_year": "2027/2028",
+        "next_cycle_status": "not_published_as_of_2026-08-22",
+        "next_cycle_deadline": null,
+        "next_cycle_monitor_url": "https://corsi.unitn.it/en/intelligent-mechatronics-engineering/enrollment/admission-and-enrollment-non-europeans",
         "intake_terms": [
           "Autumn 2026"
         ],
@@ -7604,8 +7631,8 @@
         "official_program_page": "https://corsi.unitn.it/en/intelligent-mechatronics-engineering/programme/overview",
         "official_curriculum_page": "https://corsi.unitn.it/sites/cds/files/2026-03/manifesto-lm-intelligent-mechatronics-engineering-26-27.pdf",
         "official_tuition_page": "https://www.unitn.it/en/study/fees-scholarships-accommodation/tuition-fees",
-        "last_verified": "2026-08-14",
-        "needs_verification": false,
+        "last_verified": "2026-08-22",
+        "needs_verification": true,
         "field_confidence": {
           "program_basic_info": "high",
           "program": "high",
@@ -7619,10 +7646,28 @@
           "industry": "medium",
           "living": "unknown",
           "housing": "high",
-          "deadlines": "high",
-          "deadline": "high"
+          "deadlines": "unknown",
+          "deadline": "unknown"
         },
         "source_log": [
+          {
+            "url": "https://corsi.unitn.it/en/intelligent-mechatronics-engineering/enrollment/admission-and-enrollment-non-europeans",
+            "title": "UniTrento Intelligent Mechatronics non-European admission page — 2027/28 not yet published",
+            "source_type": "official_admission_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-22",
+            "relevant_fields": [
+              "admission",
+              "deadline",
+              "non_eu_eligibility",
+              "required_documents"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "The live official page still labels the call and all exact dates as 2026/27. No 2027/28 non-European call is published, so the next-cycle deadline remains null.",
+              "tr": "Canlı resmî sayfa çağrıyı ve tüm kesin tarihleri hâlâ 2026/27 olarak etiketliyor. 2027/28 AB-dışı çağrısı yayımlanmadığından sonraki dönem tarihi null kalır."
+            }
+          },
           {
             "url": "https://corsi.unitn.it/en/intelligent-mechatronics-engineering/programme/overview",
             "title": "Intelligent Mechatronics Engineering overview and four curricula — UniTrento",
@@ -8091,8 +8136,8 @@
         }
       },
       "data_quality": {
-        "status": "verified",
-        "checked_official_source_count": 21,
+        "status": "partial",
+        "checked_official_source_count": 22,
         "verified_fields": [
           "program",
           "language",
@@ -8107,13 +8152,18 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-14"
+        "audited_at": "2026-08-22"
       },
       "quality_control": {
-        "qc_status": "passed",
-        "checked_at": "2026-08-14",
+        "qc_status": "needs_revision",
+        "checked_at": "2026-08-22",
         "failed_canary_tests": [],
-        "remaining_verification_tasks": [],
+        "remaining_verification_tasks": [
+          {
+            "en": "Verify the 2027/28 non-European call and exact deadline when UniTrento publishes them.",
+            "tr": "UniTrento yayımladığında 2027/28 AB-dışı çağrısını ve kesin son tarihi doğrulayın."
+          }
+        ],
         "monitoring_tasks": [
           {
             "en": "When published, replace the closed 2026/27 call with the next non-EU cycle rather than projecting its deadline.",

@@ -265,12 +265,47 @@ function getAnnualCost(record) {
 
 function displayValue(val) {
     if (val === null || val === undefined || val === '') return "\u2014";
-    if (val === null || val === undefined || val === '') return '—';
+    let output;
     if (window.localizedField) {
         const loc = window.localizedField(val);
-        return loc ? loc : '—';
+        output = loc ? loc : '—';
+    } else {
+        output = String(val);
     }
-    return String(val);
+
+    if (typeof output !== 'string' || output.includes('://')) return output;
+    const token = output.trim();
+    if (!/^[a-z0-9]+(?:_[a-z0-9]+)+$/i.test(token)) return token;
+
+    const normalized = token.toLowerCase();
+    const labels = window.currentLanguage === 'tr'
+        ? {
+            not_listed_as_required_or_scored_in_checked_2026_27_programme_sources: 'Kontrol edilen 2026/27 program kaynaklarında zorunlu veya puanlanan bir ölçüt olarak listelenmiyor',
+            not_listed_as_required_or_recommended_for_this_programme: 'Bu program için zorunlu veya önerilen bir ölçüt olarak listelenmiyor',
+            limited_place_merit_ranking: 'Kontenjanı sınırlı başarı sıralaması',
+            conditional_if_documents_are_insufficient: 'Yalnızca belgeler değerlendirme için yetersizse koşullu mülakat',
+            document_based_competitive_selection: 'Belge temelli rekabetçi seçim',
+            possible_but_not_guaranteed: 'Mümkün, ancak garanti değil',
+            individual_email_deadline: 'Tarih kabul sonrası kişisel e-postayla bildirilir',
+            individual_relative_deadline: 'Kabul sonrası bildirilen göreli süre'
+        }
+        : {
+            not_listed_as_required_or_scored_in_checked_2026_27_programme_sources: 'Not listed as required or scored in the checked 2026/27 programme sources',
+            not_listed_as_required_or_recommended_for_this_programme: 'Not listed as required or recommended for this programme',
+            limited_place_merit_ranking: 'Limited-place merit ranking',
+            conditional_if_documents_are_insufficient: 'Conditional interview only when documents are insufficient for assessment',
+            document_based_competitive_selection: 'Document-based competitive selection',
+            possible_but_not_guaranteed: 'Possible, but not guaranteed',
+            individual_email_deadline: 'Date is communicated individually after admission',
+            individual_relative_deadline: 'Relative deadline communicated after admission'
+        };
+    if (labels[normalized]) return labels[normalized];
+
+    return token
+        .replace(/_+/g, ' ')
+        .replace(/\bnon eu\b/gi, window.currentLanguage === 'tr' ? 'AB dışı' : 'non-EU')
+        .replace(/\bprogramme\b/gi, window.currentLanguage === 'tr' ? 'program' : 'programme')
+        .replace(/^./, character => character.toUpperCase());
 }
 
 function formatCalendarValue(value) {
@@ -445,6 +480,14 @@ const COUNTRY_FLAG_CODES = {
 function countryFlagCode(country) {
     return COUNTRY_FLAG_CODES[countryVisualKey(country)] || '';
 }
+
+function countryVisualMeta(country) {
+    const key = countryVisualKey(country);
+    const visual = COUNTRY_VISUALS[key] || { accent: '#6f85a2', rgb: '111, 133, 162', flag: 'linear-gradient(135deg, #274261, #162a42)' };
+    return { key, code: COUNTRY_FLAG_CODES[key] || '', ...visual };
+}
+
+window.uniCountryVisual = countryVisualMeta;
 
 function renderCountryFlag(container, country) {
     if (!container) return;
@@ -1827,7 +1870,16 @@ function openDrawer(data) {
 
         const timeline = n.timelineDetails || {};
         const applicationRounds = Array.isArray(timeline.application_rounds) ? timeline.application_rounds : [];
-        const roundRows = applicationRounds.map((round) => {
+        const nextCycleStatus = String(timeline.next_cycle_status || '').toLowerCase();
+        const nextCyclePending = /not[_ -]published|awaiting[_ -]publication|needs[_ -]verification/.test(nextCycleStatus);
+        const targetAcademicYear = displayValue(timeline.target_academic_year || timeline.academic_year);
+        const targetCycleStatusText = nextCyclePending
+            ? (isTurkish ? 'Kesin 2027/28 tarihi henüz resmî olarak yayımlanmadı' : 'The exact 2027/28 date has not yet been officially published')
+            : (isTurkish ? 'Yayımlanmış dönem bilgisi' : 'Published cycle information');
+        const roundRows = applicationRounds.map((round, index) => {
+            if (typeof round === 'string') {
+                return `<li><strong>${escapeHtml(nextCyclePending ? (isTurkish ? `Önceki dönem turu ${index + 1}` : `Previous-cycle round ${index + 1}`) : (isTurkish ? `Başvuru turu ${index + 1}` : `Application round ${index + 1}`))}</strong><span>${escapeHtml(formatCalendarValue(round))}</span></li>`;
+            }
             const roundKey = round.round ?? round.intake;
             const roundName = roundKey === 'extraordinary_if_places_remain'
                 ? (isTurkish ? 'Ek çağrı (yalnızca boş kontenjan varsa)' : 'Extraordinary call (only if places remain)')
@@ -1840,14 +1892,16 @@ function openDrawer(data) {
             <div class="drawer-section premium-card timeline-card">
                 <div class="premium-header"><span class="premium-icon">🗓️</span><h4 class="premium-title">${isTurkish ? 'Başvuru Takvimi' : 'Application Timeline'}</h4></div>
                 <div class="premium-grid">
+                    ${timeline.target_academic_year ? `<div class="premium-item"><label>${isTurkish ? 'Hedef dönem' : 'Target cycle'}</label><span>${escapeHtml(targetAcademicYear)}</span></div>` : ''}
+                    ${timeline.next_cycle_status ? `<div class="premium-item ${nextCyclePending ? 'timeline-cycle-pending' : ''}"><label>${isTurkish ? '2027 yayın durumu' : '2027 publication status'}</label><span>${escapeHtml(targetCycleStatusText)}</span></div>` : ''}
                     ${timeline.intake ? `<div class="premium-item"><label>${isTurkish ? 'Başlangıç dönemi' : 'Intake'}</label><span>${escapeHtml(displayValue(timeline.intake))}</span></div>` : ''}
-                    ${timeline.application_opens ? `<div class="premium-item"><label>${isTurkish ? 'Başvuru açılışı' : 'Application opens'}</label><span>${escapeHtml(formatCalendarValue(timeline.application_opens))}</span></div>` : ''}
-                    <div class="premium-item"><label>${isTurkish ? 'AB dışı olağan son tarih' : 'Regular non-EU deadline'}</label><span>${escapeHtml(formatCalendarValue(timeline.non_eu_deadline ?? timeline.deadline_non_eu))}</span></div>
-                    <div class="premium-item"><label>${isTurkish ? 'Burs son tarihi' : 'Scholarship deadline'}</label><span>${escapeHtml(formatCalendarValue(timeline.scholarship_deadline))}</span></div>
-                    ${timeline.english_score_deadline_if_required ? `<div class="premium-item"><label>${isTurkish ? 'İngilizce puanı son tarihi' : 'English-score deadline'}</label><span>${escapeHtml(formatCalendarValue(timeline.english_score_deadline_if_required))}</span></div>` : ''}
-                    ${timeline.recommendation_deadline ? `<div class="premium-item"><label>${isTurkish ? 'Referans mektubu son tarihi' : 'Recommendation deadline'}</label><span>${escapeHtml(formatCalendarValue(timeline.recommendation_deadline))}</span></div>` : ''}
-                    <div class="premium-item"><label>${isTurkish ? 'Kayıt dönemi' : 'Enrollment window'}</label><span>${escapeHtml(formatCalendarValue(timeline.enrollment_deadline))}</span></div>
-                    <div class="premium-item"><label>${isTurkish ? 'Belge tamamlama' : 'Document completion'}</label><span>${escapeHtml(formatCalendarValue(timeline.document_completion_deadline))}</span></div>
+                    ${!nextCyclePending && timeline.application_opens ? `<div class="premium-item"><label>${isTurkish ? 'Başvuru açılışı' : 'Application opens'}</label><span>${escapeHtml(formatCalendarValue(timeline.application_opens))}</span></div>` : ''}
+                    ${!nextCyclePending && (timeline.non_eu_deadline || timeline.deadline_non_eu) ? `<div class="premium-item"><label>${isTurkish ? 'AB dışı olağan son tarih' : 'Regular non-EU deadline'}</label><span>${escapeHtml(formatCalendarValue(timeline.non_eu_deadline ?? timeline.deadline_non_eu))}</span></div>` : ''}
+                    ${!nextCyclePending && timeline.scholarship_deadline ? `<div class="premium-item"><label>${isTurkish ? 'Burs son tarihi' : 'Scholarship deadline'}</label><span>${escapeHtml(formatCalendarValue(timeline.scholarship_deadline))}</span></div>` : ''}
+                    ${!nextCyclePending && timeline.english_score_deadline_if_required ? `<div class="premium-item"><label>${isTurkish ? 'İngilizce puanı son tarihi' : 'English-score deadline'}</label><span>${escapeHtml(formatCalendarValue(timeline.english_score_deadline_if_required))}</span></div>` : ''}
+                    ${!nextCyclePending && timeline.recommendation_deadline ? `<div class="premium-item"><label>${isTurkish ? 'Referans mektubu son tarihi' : 'Recommendation deadline'}</label><span>${escapeHtml(formatCalendarValue(timeline.recommendation_deadline))}</span></div>` : ''}
+                    ${!nextCyclePending && timeline.enrollment_deadline ? `<div class="premium-item"><label>${isTurkish ? 'Kayıt dönemi' : 'Enrollment window'}</label><span>${escapeHtml(formatCalendarValue(timeline.enrollment_deadline))}</span></div>` : ''}
+                    ${!nextCyclePending && timeline.document_completion_deadline ? `<div class="premium-item"><label>${isTurkish ? 'Belge tamamlama' : 'Document completion'}</label><span>${escapeHtml(formatCalendarValue(timeline.document_completion_deadline))}</span></div>` : ''}
                     ${timeline.decision_timing ? `<div class="premium-item"><label>${isTurkish ? 'Karar zamanı' : 'Decision timing'}</label><span>${escapeHtml(displayValue(timeline.decision_timing))}</span></div>` : ''}
                     ${timeline.offer_reply_deadline ? `<div class="premium-item"><label>${isTurkish ? 'Teklif yanıt tarihi' : 'Offer reply deadline'}</label><span>${escapeHtml(formatCalendarValue(timeline.offer_reply_deadline))}</span></div>` : ''}
                     ${timeline.visa_document_path ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Göçmenlik belgesi adımları' : 'Immigration-document steps'}</label><span>${escapeHtml(displayValue(timeline.visa_document_path))}</span></div>` : ''}
@@ -1857,7 +1911,9 @@ function openDrawer(data) {
                     ${timeline.visa_sensitive_deadline ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Vize açısından' : 'Visa-sensitive advice'}</label><span>${escapeHtml(displayValue(timeline.visa_sensitive_deadline))}</span></div>` : ''}
                     ${timeline.deadline_notes ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Takvim riski' : 'Timeline risk'}</label><span>${escapeHtml(displayValue(timeline.deadline_notes))}</span></div>` : ''}
                 </div>
-                ${roundRows ? `<ol class="timeline-round-list">${roundRows}</ol>` : ''}
+                ${roundRows ? (nextCyclePending
+                    ? `<details class="detail-disclosure timeline-history"><summary>${isTurkish ? 'Önceki dönemin tarihlerini yalnızca referans için göster' : 'Show previous-cycle dates for reference only'}</summary><ol class="timeline-round-list">${roundRows}</ol></details>`
+                    : `<ol class="timeline-round-list">${roundRows}</ol>`) : ''}
             </div>`;
 
         let strongAreasHTML = '';

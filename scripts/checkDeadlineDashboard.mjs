@@ -101,6 +101,24 @@ if (unverifiedDocuments.length !== 0) failures.push('Unverified required documen
 
 const model = dashboard.programModel(record, 0);
 if (!model.deadlineSource?.url || model.confidence !== 'high' || model.documents.length !== 2) failures.push('Program calendar model lost verified source metadata.');
+if (model.cycle.key !== 'published' || !model.cycle.targetReady) failures.push('A verified Fall 2027 date was not classified as a published target cycle.');
+
+const unpublishedModel = dashboard.programModel({
+  ...record,
+  id: 'waiting-program',
+  application_timeline_profile: {
+    academic_year: '2026/2027',
+    target_academic_year: '2027/2028',
+    next_cycle_status: 'not_published_as_of_2026-08-22',
+    non_eu_deadline: '2026-05-15',
+  },
+}, 1);
+if (unpublishedModel.cycle.key !== 'awaiting' || unpublishedModel.next || unpublishedModel.status !== 'undated') {
+  failures.push('A closed reference cycle was incorrectly promoted to a 2027 countdown.');
+}
+if (!unpublishedModel.referenceDeadline || unpublishedModel.referenceDeadline.datePart.key !== '2026-05-15') {
+  failures.push('The latest verified previous-cycle deadline was not preserved as a labelled reference date.');
+}
 
 let refreshCalls = 0;
 sandbox.document.hidden = false;
