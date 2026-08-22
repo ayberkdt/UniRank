@@ -6,7 +6,7 @@
         },
         "parent": {
             "en": "Fluid Mechanics & Aerodynamics",
-            "tr": "AkÄ±ÅŸkanlar MekaniÄŸi ve Aerodinamik"
+            "tr": "Akışkanlar Mekaniği ve Aerodinamik"
         },
         "aliases": [
             "aerodynamics",
@@ -21,7 +21,7 @@
         },
         "parent": {
             "en": "Fluid Mechanics & Aerodynamics",
-            "tr": "AkÄ±ÅŸkanlar MekaniÄŸi ve Aerodinamik"
+            "tr": "Akışkanlar Mekaniği ve Aerodinamik"
         },
         "aliases": [
             "cfd",
@@ -37,7 +37,7 @@
         },
         "parent": {
             "en": "Fluid Mechanics & Aerodynamics",
-            "tr": "AkÄ±ÅŸkanlar MekaniÄŸi ve Aerodinamik"
+            "tr": "Akışkanlar Mekaniği ve Aerodinamik"
         },
         "aliases": [
             "hypersonics",
@@ -53,7 +53,7 @@
         },
         "parent": {
             "en": "Fluid Mechanics & Aerodynamics",
-            "tr": "AkÄ±ÅŸkanlar MekaniÄŸi ve Aerodinamik"
+            "tr": "Akışkanlar Mekaniği ve Aerodinamik"
         },
         "aliases": [
             "turbulence",
@@ -69,7 +69,7 @@
         },
         "parent": {
             "en": "Fluid Mechanics & Aerodynamics",
-            "tr": "AkÄ±ÅŸkanlar MekaniÄŸi ve Aerodinamik"
+            "tr": "Akışkanlar Mekaniği ve Aerodinamik"
         },
         "aliases": [
             "aeroacoustics",
@@ -80,11 +80,11 @@
     "experimental_fluids": {
         "label": {
             "en": "Experimental Fluids",
-            "tr": "Deneysel AkÄ±ÅŸkanlar"
+            "tr": "Deneysel Akışkanlar"
         },
         "parent": {
             "en": "Fluid Mechanics & Aerodynamics",
-            "tr": "AkÄ±ÅŸkanlar MekaniÄŸi ve Aerodinamik"
+            "tr": "Akışkanlar Mekaniği ve Aerodinamik"
         },
         "aliases": [
             "experimental fluids",
@@ -98,7 +98,7 @@
         },
         "parent": {
             "en": "Fluid Mechanics & Aerodynamics",
-            "tr": "AkÄ±ÅŸkanlar MekaniÄŸi ve Aerodinamik"
+            "tr": "Akışkanlar Mekaniği ve Aerodinamik"
         },
         "aliases": [
             "wind tunnel",
@@ -109,11 +109,11 @@
     "heat_transfer": {
         "label": {
             "en": "Heat Transfer / Thermal Flows",
-            "tr": "IsÄ± Transferi / Termal AkÄ±ÅŸlar"
+            "tr": "Isı Transferi / Termal Akışlar"
         },
         "parent": {
             "en": "Fluid Mechanics & Aerodynamics",
-            "tr": "AkÄ±ÅŸkanlar MekaniÄŸi ve Aerodinamik"
+            "tr": "Akışkanlar Mekaniği ve Aerodinamik"
         },
         "aliases": [
             "heat transfer",
@@ -128,7 +128,7 @@
         },
         "parent": {
             "en": "Fluid Mechanics & Aerodynamics",
-            "tr": "AkÄ±ÅŸkanlar MekaniÄŸi ve Aerodinamik"
+            "tr": "Akışkanlar Mekaniği ve Aerodinamik"
         },
         "aliases": [
             "aerothermodynamics"
@@ -137,11 +137,11 @@
     "flight_mechanics": {
         "label": {
             "en": "Flight Mechanics",
-            "tr": "UÃ§uÅŸ MekaniÄŸi"
+            "tr": "Uçuş Mekaniği"
         },
         "parent": {
             "en": "Flight Mechanics, Control & Autonomy",
-            "tr": "UÃ§uÅŸ MekaniÄŸi, Kontrol ve Otonomi"
+            "tr": "Uçuş Mekaniği, Kontrol ve Otonomi"
         },
         "aliases": [
             "flight mechanics",
@@ -151,36 +151,45 @@
     },
     "stability_control": {
         "label": {
-            "en": "Stability & Control",
-            "tr": "Kararlılık ve Kontrol"
+            "en": "Aircraft Stability & Flight Control",
+            "tr": "Uçak Kararlılığı ve Uçuş Kontrolü"
         },
         "parent": {
             "en": "Flight Mechanics, Control & Autonomy",
-            "tr": "UÃ§uÅŸ MekaniÄŸi, Kontrol ve Otonomi"
+            "tr": "Uçuş Mekaniği, Kontrol ve Otonomi"
         },
         "aliases": [
-            "stability",
-            "control",
+            "aircraft stability",
             "flight control",
-            "stability and control"
-        ]
+            "stability and control",
+            "aircraft dynamics and control"
+        ],
+        "definition": {
+            "en": "Aircraft dynamic stability, handling qualities and flight-control design; not a catch-all label for every control topic.",
+            "tr": "Uçağın dinamik kararlılığı, kullanım nitelikleri ve uçuş kontrol tasarımı; her kontrol konusu için genel etiket değildir."
+        }
     },
     "gnc": {
         "label": {
-            "en": "GNC",
-            "tr": "GNC"
+            "en": "Guidance, Navigation & Control (GNC)",
+            "tr": "Güdüm, Seyrüsefer ve Kontrol (GNC)"
         },
         "parent": {
             "en": "Flight Mechanics, Control & Autonomy",
-            "tr": "UÃ§uÅŸ MekaniÄŸi, Kontrol ve Otonomi"
+            "tr": "Uçuş Mekaniği, Kontrol ve Otonomi"
         },
         "aliases": [
             "gnc",
+            "guidance navigation and control",
             "guidance navigation control",
-            "guidance",
-            "navigation",
-            "spacecraft gnc"
-        ]
+            "spacecraft gnc",
+            "flight guidance navigation and control",
+            "integrated gnc"
+        ],
+        "definition": {
+            "en": "Integrated guidance-command generation, navigation/state estimation and feedback-control chain.",
+            "tr": "Bütünleşik güdüm/komut üretimi, seyrüsefer/durum kestirimi ve geri beslemeli kontrol zinciri."
+        }
     },
     "autonomy": {
         "label": {
@@ -189,7 +198,7 @@
         },
         "parent": {
             "en": "Flight Mechanics, Control & Autonomy",
-            "tr": "UÃ§uÅŸ MekaniÄŸi, Kontrol ve Otonomi"
+            "tr": "Uçuş Mekaniği, Kontrol ve Otonomi"
         },
         "aliases": [
             "autonomy",
@@ -203,7 +212,7 @@
         },
         "parent": {
             "en": "Flight Mechanics, Control & Autonomy",
-            "tr": "UÃ§uÅŸ MekaniÄŸi, Kontrol ve Otonomi"
+            "tr": "Uçuş Mekaniği, Kontrol ve Otonomi"
         },
         "aliases": [
             "uav",
@@ -219,7 +228,7 @@
         },
         "parent": {
             "en": "Flight Mechanics, Control & Autonomy",
-            "tr": "UÃ§uÅŸ MekaniÄŸi, Kontrol ve Otonomi"
+            "tr": "Uçuş Mekaniği, Kontrol ve Otonomi"
         },
         "aliases": [
             "robotics",
@@ -274,8 +283,8 @@
     },
     "astrodynamics": {
         "label": {
-            "en": "Astrodynamics",
-            "tr": "Astrodinamik"
+            "en": "Astrodynamics & Orbital Mechanics",
+            "tr": "Astrodinamik ve Yörünge Mekaniği"
         },
         "parent": {
             "en": "Space Systems & Astronautics",
@@ -284,13 +293,20 @@
         "aliases": [
             "astrodynamics",
             "orbital mechanics",
-            "orbit propagation"
-        ]
+            "orbital dynamics",
+            "orbit propagation",
+            "multi-body dynamics",
+            "celestial mechanics"
+        ],
+        "definition": {
+            "en": "Motion of natural and artificial bodies in space, including perturbations, multi-body dynamics and orbital transfers.",
+            "tr": "Doğal ve yapay cisimlerin uzaydaki hareketi; pertürbasyonlar, çok cisim dinamiği ve yörünge transferleri dâhil."
+        }
     },
     "mission_analysis": {
         "label": {
-            "en": "Mission Analysis",
-            "tr": "Görev Analizi"
+            "en": "Mission Analysis & Trajectory Design",
+            "tr": "Görev Analizi ve Yörünge Tasarımı"
         },
         "parent": {
             "en": "Space Systems & Astronautics",
@@ -300,13 +316,19 @@
             "mission analysis",
             "mission design",
             "trajectory design",
-            "space mission design"
-        ]
+            "space mission design",
+            "trajectory optimization",
+            "trajectory optimisation"
+        ],
+        "definition": {
+            "en": "Design and optimisation of mission sequences, transfers, manoeuvres and operational constraints.",
+            "tr": "Görev dizilerinin, transferlerin, manevraların ve operasyonel kısıtların tasarımı ve optimizasyonu."
+        }
     },
     "orbit_determination": {
         "label": {
-            "en": "Orbit Determination",
-            "tr": "Yörünge Belirleme"
+            "en": "Orbit Determination & State Estimation",
+            "tr": "Yörünge Belirleme ve Durum Kestirimi"
         },
         "parent": {
             "en": "Space Systems & Astronautics",
@@ -314,8 +336,58 @@
         },
         "aliases": [
             "orbit determination",
-            "spacecraft navigation"
-        ]
+            "spacecraft navigation",
+            "orbit estimation",
+            "state estimation",
+            "orbit tracking"
+        ],
+        "definition": {
+            "en": "Estimating position, velocity and uncertainty from tracking, navigation and sensor measurements.",
+            "tr": "Takip, seyrüsefer ve sensör ölçümlerinden konum, hız ve belirsizliğin kestirilmesi."
+        }
+    },
+    "attitude_dynamics_control": {
+        "label": {
+            "en": "Spacecraft Attitude Dynamics & Control",
+            "tr": "Uzay Aracı Yönelim Dinamiği ve Kontrolü"
+        },
+        "parent": {
+            "en": "Space Systems & Astronautics",
+            "tr": "Uzay Sistemleri ve Astronotik"
+        },
+        "aliases": [
+            "spacecraft attitude dynamics",
+            "attitude determination and control",
+            "attitude control",
+            "adcs",
+            "spacecraft pointing"
+        ],
+        "definition": {
+            "en": "Rotational dynamics, attitude determination and control of spacecraft pointing and angular motion.",
+            "tr": "Uzay aracının yönelimi ve açısal hareketi için dönme dinamiği, yönelim belirleme ve kontrol."
+        }
+    },
+    "space_domain_awareness": {
+        "label": {
+            "en": "Space Domain Awareness & Traffic Management",
+            "tr": "Uzay Alan Farkındalığı ve Trafik Yönetimi"
+        },
+        "parent": {
+            "en": "Space Systems & Astronautics",
+            "tr": "Uzay Sistemleri ve Astronotik"
+        },
+        "aliases": [
+            "space domain awareness",
+            "space situational awareness",
+            "space traffic management",
+            "space object tracking",
+            "conjunction assessment",
+            "orbital debris tracking"
+        ],
+        "definition": {
+            "en": "Detection, tracking, characterisation and decision support for space objects, debris and conjunction risk.",
+            "tr": "Uzay cisimleri, enkaz ve yakınlaşma riski için tespit, takip, karakterizasyon ve karar desteği."
+        }
     },
     "space_environment": {
         "label": {
@@ -581,7 +653,7 @@
         },
         "parent": {
             "en": "Systems Engineering, Design & Optimization",
-            "tr": "Sistem MÃ¼hendisliÄŸi, TasarÄ±m ve Optimizasyon"
+            "tr": "Sistem Mühendisliği, Tasarım ve Optimizasyon"
         },
         "aliases": [
             "aircraft design",
@@ -596,7 +668,7 @@
         },
         "parent": {
             "en": "Systems Engineering, Design & Optimization",
-            "tr": "Sistem MÃ¼hendisliÄŸi, TasarÄ±m ve Optimizasyon"
+            "tr": "Sistem Mühendisliği, Tasarım ve Optimizasyon"
         },
         "aliases": [
             "systems engineering",
@@ -610,7 +682,7 @@
         },
         "parent": {
             "en": "Systems Engineering, Design & Optimization",
-            "tr": "Sistem MÃ¼hendisliÄŸi, TasarÄ±m ve Optimizasyon"
+            "tr": "Sistem Mühendisliği, Tasarım ve Optimizasyon"
         },
         "aliases": [
             "mbse",
@@ -624,7 +696,7 @@
         },
         "parent": {
             "en": "Systems Engineering, Design & Optimization",
-            "tr": "Sistem MÃ¼hendisliÄŸi, TasarÄ±m ve Optimizasyon"
+            "tr": "Sistem Mühendisliği, Tasarım ve Optimizasyon"
         },
         "aliases": [
             "optimization",
@@ -640,7 +712,7 @@
         },
         "parent": {
             "en": "Systems Engineering, Design & Optimization",
-            "tr": "Sistem MÃ¼hendisliÄŸi, TasarÄ±m ve Optimizasyon"
+            "tr": "Sistem Mühendisliği, Tasarım ve Optimizasyon"
         },
         "aliases": [
             "simulation",
@@ -655,7 +727,7 @@
         },
         "parent": {
             "en": "Systems Engineering, Design & Optimization",
-            "tr": "Sistem MÃ¼hendisliÄŸi, TasarÄ±m ve Optimizasyon"
+            "tr": "Sistem Mühendisliği, Tasarım ve Optimizasyon"
         },
         "aliases": [
             "verification",
@@ -670,7 +742,7 @@
         },
         "parent": {
             "en": "Systems Engineering, Design & Optimization",
-            "tr": "Sistem MÃ¼hendisliÄŸi, TasarÄ±m ve Optimizasyon"
+            "tr": "Sistem Mühendisliği, Tasarım ve Optimizasyon"
         },
         "aliases": [
             "certification",
@@ -754,7 +826,7 @@
     "machine_learning": {
         "label": {
             "en": "Machine Learning",
-            "tr": "Makine Ã–ÄŸrenmesi"
+            "tr": "Makine Öğrenmesi"
         },
         "parent": {
             "en": "Scientific AI, Computational Science & Digital Engineering",
@@ -788,7 +860,7 @@
     "hpc": {
         "label": {
             "en": "High Performance Computing",
-            "tr": "YÃ¼ksek BaÅŸarÄ±mlÄ± Hesaplama"
+            "tr": "Yüksek Başarımlı Hesaplama"
         },
         "parent": {
             "en": "Scientific AI, Computational Science & Digital Engineering",
@@ -809,7 +881,7 @@
         },
         "parent": {
             "en": "Manufacturing, Testing & Industrial Applications",
-            "tr": "Ãœretim, Test ve EndÃ¼striyel Uygulamalar"
+            "tr": "Üretim, Test ve Endüstriyel Uygulamalar"
         },
         "aliases": [
             "manufacturing",
@@ -825,7 +897,7 @@
         },
         "parent": {
             "en": "Manufacturing, Testing & Industrial Applications",
-            "tr": "Ãœretim, Test ve EndÃ¼striyel Uygulamalar"
+            "tr": "Üretim, Test ve Endüstriyel Uygulamalar"
         },
         "aliases": [
             "testing",
@@ -839,7 +911,7 @@
         },
         "parent": {
             "en": "Manufacturing, Testing & Industrial Applications",
-            "tr": "Ãœretim, Test ve EndÃ¼striyel Uygulamalar"
+            "tr": "Üretim, Test ve Endüstriyel Uygulamalar"
         },
         "aliases": [
             "flight test",
@@ -853,7 +925,7 @@
         },
         "parent": {
             "en": "Manufacturing, Testing & Industrial Applications",
-            "tr": "Ãœretim, Test ve EndÃ¼striyel Uygulamalar"
+            "tr": "Üretim, Test ve Endüstriyel Uygulamalar"
         },
         "aliases": [
             "laboratory",
@@ -868,7 +940,7 @@
         },
         "parent": {
             "en": "Manufacturing, Testing & Industrial Applications",
-            "tr": "Ãœretim, Test ve EndÃ¼striyel Uygulamalar"
+            "tr": "Üretim, Test ve Endüstriyel Uygulamalar"
         },
         "aliases": [
             "industrial projects",
@@ -883,7 +955,7 @@
         },
         "parent": {
             "en": "Manufacturing, Testing & Industrial Applications",
-            "tr": "Ãœretim, Test ve EndÃ¼striyel Uygulamalar"
+            "tr": "Üretim, Test ve Endüstriyel Uygulamalar"
         },
         "aliases": [
             "internship",
@@ -894,7 +966,7 @@
     "scientific_ai": {
         "label": {
             "en": "Scientific AI",
-            "tr": "Bilimsel Yapay ZekÃ¢"
+            "tr": "Bilimsel Yapay Zekâ"
         },
         "parent": {
             "en": "Scientific AI, Computational Science & Digital Engineering",
@@ -912,7 +984,7 @@
     "physics_informed_ml": {
         "label": {
             "en": "Physics-Informed ML",
-            "tr": "Fizik Bilgili Makine Ã–ÄŸrenmesi"
+            "tr": "Fizik Bilgili Makine Öğrenmesi"
         },
         "parent": {
             "en": "Scientific AI, Computational Science & Digital Engineering",

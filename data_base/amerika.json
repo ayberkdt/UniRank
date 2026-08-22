@@ -450,6 +450,19 @@
         "materials and structures",
         "communications and networks"
       ],
+      "normalized_tags": [
+        "space_systems",
+        "astrodynamics",
+        "mission_analysis",
+        "orbit_determination",
+        "gnc",
+        "attitude_dynamics_control",
+        "space_domain_awareness",
+        "autonomy",
+        "aerodynamics",
+        "rocket_propulsion",
+        "aerospace_structures"
+      ],
       "verification_notes": {
         "en": "Categories follow the official 13 graduate fields and department research areas, not the institutional ranking.",
         "tr": "Kategoriler kurum sırasına değil, resmî 13 lisansüstü alana ve bölüm araştırma alanlarına dayanır."
@@ -653,6 +666,43 @@
       ],
       "individual_lab_place_guaranteed": false,
       "advisor_or_ra_match_required_for_funded_lab_access": true,
+      "faculty_contact_policy": "contact_after_admission_for_ra",
+      "faculty_contact_note": {
+        "en": "Advisor capacity affects admission, but MIT's official funding guidance places direct RA outreach after admission. Before applying, use faculty work to make the objective statements specific; do not treat cold-email approval as a required gate.",
+        "tr": "Danışman kapasitesi kabulü etkiler; ancak MIT'nin resmî finansman rehberi doğrudan RA iletişimini kabul sonrasına yerleştirir. Başvuru öncesinde hoca çalışmalarını amaç beyanını özelleştirmek için kullan; soğuk e-posta onayını zorunlu kapı gibi görme."
+      },
+      "notable_professors": [
+        {
+          "name": "Richard Linares",
+          "role": {"en": "Director, ARCLab", "tr": "ARCLab Direktörü"},
+          "focus": {"en": "Astrodynamics, space situational awareness, satellite GNC, estimation, optimal control and space traffic management.", "tr": "Astrodinamik, uzay durumsal farkındalığı, uydu GNC, kestirim, optimal kontrol ve uzay trafik yönetimi."},
+          "fit_tags": ["astrodynamics", "orbit_determination", "gnc", "space_domain_awareness"],
+          "email": "linaresr@mit.edu",
+          "profile_url": "https://aeroastro.mit.edu/people/richard-linares/",
+          "contact_timing": "after_admission_for_ra_or_specific_research_question",
+          "last_verified": "2026-08-22"
+        },
+        {
+          "name": "Jonathan P. How",
+          "role": {"en": "Director, Aerospace Controls Laboratory", "tr": "Aerospace Controls Laboratory Direktörü"},
+          "focus": {"en": "Navigation and control, robust planning under uncertainty, multi-agent autonomy, adaptive flight control and estimation.", "tr": "Seyrüsefer ve kontrol, belirsizlik altında dayanıklı planlama, çok etmenli otonomi, uyarlamalı uçuş kontrolü ve kestirim."},
+          "fit_tags": ["gnc", "orbit_determination", "autonomy"],
+          "email": "jhow@mit.edu",
+          "profile_url": "https://aeroastro.mit.edu/people/jonathan-p-how/",
+          "contact_timing": "after_admission_for_ra_or_specific_research_question",
+          "last_verified": "2026-08-22"
+        },
+        {
+          "name": "Sertac Karaman",
+          "role": {"en": "Director, AERA and LEAN", "tr": "AERA ve LEAN Direktörü"},
+          "focus": {"en": "Robotics, embedded systems, autonomous vehicles, motion planning, stochastic systems and control.", "tr": "Robotik, gömülü sistemler, otonom araçlar, hareket planlama, stokastik sistemler ve kontrol."},
+          "fit_tags": ["gnc", "autonomy"],
+          "email": "sertac@mit.edu",
+          "profile_url": "https://aeroastro.mit.edu/people/sertac-karaman/",
+          "contact_timing": "after_admission_for_ra_or_specific_research_question",
+          "last_verified": "2026-08-22"
+        }
+      ],
       "research_sources": [
         "https://aeroastro.mit.edu/research/",
         "https://aeroastro.mit.edu/about-us/facilities/",
@@ -712,7 +762,7 @@
       "official_scholarship_page": "https://aeroastro.mit.edu/education/funding/",
       "official_housing_page": "https://graduatehousing.mit.edu/get-housing/",
       "official_department_page": "https://aeroastro.mit.edu/research/",
-      "last_verified": "2026-08-14",
+      "last_verified": "2026-08-22",
       "field_confidence": {
         "program_basic_info": "high",
         "admission": "high",
@@ -825,8 +875,38 @@
           "confidence": "high",
           "notes": {
             "en": "Official RA/TA/fellowship coverage, proactive-search rule, timing and sponsor examples.",
-            "tr": "Resmî RA/TA/fellowship kapsamı, proaktif arama kuralı, zamanlama ve sponsor örnekleri."
-          }
+              "tr": "Resmî RA/TA/fellowship kapsamı, proaktif arama kuralı, zamanlama ve sponsor örnekleri."
+            }
+          },
+        {
+          "url": "https://aeroastro.mit.edu/people/richard-linares/",
+          "title": "MIT AeroAstro — Richard Linares",
+          "source_type": "official_faculty_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-22",
+          "relevant_fields": ["faculty", "astrodynamics", "gnc", "space_domain_awareness"],
+          "confidence": "high",
+          "notes": {"en": "Current official profile verifies ARCLab leadership, contact details and the published astrodynamics, satellite-GNC, estimation and space-traffic research scope.", "tr": "Güncel resmî profil ARCLab liderliğini, iletişim bilgisini ve yayımlanan astrodinamik, uydu-GNC, kestirim ve uzay trafik araştırma kapsamını doğrular."}
+        },
+        {
+          "url": "https://aeroastro.mit.edu/people/jonathan-p-how/",
+          "title": "MIT AeroAstro — Jonathan P. How",
+          "source_type": "official_faculty_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-22",
+          "relevant_fields": ["faculty", "gnc", "autonomy", "estimation"],
+          "confidence": "high",
+          "notes": {"en": "Current official profile verifies Aerospace Controls Lab leadership, contact details and research in navigation, control, estimation and robust multi-agent planning.", "tr": "Güncel resmî profil Aerospace Controls Lab liderliğini, iletişim bilgisini ve seyrüsefer, kontrol, kestirim ve dayanıklı çok etmenli planlama araştırmalarını doğrular."}
+        },
+        {
+          "url": "https://aeroastro.mit.edu/people/sertac-karaman/",
+          "title": "MIT AeroAstro — Sertac Karaman",
+          "source_type": "official_faculty_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-22",
+          "relevant_fields": ["faculty", "autonomy", "control"],
+          "confidence": "high",
+          "notes": {"en": "Current official profile verifies contact details and research in robotics, embedded autonomy, motion planning and control.", "tr": "Güncel resmî profil iletişim bilgisini ve robotik, gömülü otonomi, hareket planlama ve kontrol araştırmalarını doğrular."}
         },
         {
           "url": "https://oge.mit.edu/graduate-admissions/applications/application-fee-waiver/",

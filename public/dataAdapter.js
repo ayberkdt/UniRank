@@ -333,13 +333,77 @@ function summarizeConfidence(fieldConfidence) {
   return knownLevels.reduce((lowest, level) => rank[level] < rank[lowest] ? level : lowest, "high");
 }
 
-function getCategoryProfile(record) {
+const TECHNICAL_TAG_RULES = [
+  { pattern: /\b(astrodynamics?|orbital mechanics|orbital dynamics|celestial mechanics|multi[- ]body dynamics|orbit propagation)\b/i, tags: ["astrodynamics"] },
+  { pattern: /\b(mission analysis|mission design|trajectory design|trajectory optimi[sz]ation|low[- ]energy transfer)\b/i, tags: ["mission_analysis"] },
+  { pattern: /\b(orbit determination|orbit estimation|state estimation|spacecraft navigation|orbit tracking)\b/i, tags: ["orbit_determination"] },
+  { pattern: /\b(gnc|guidance navigation (and )?control|integrated gnc|spacecraft gnc)\b/i, tags: ["gnc"] },
+  { pattern: /\b(attitude determination and control|attitude dynamics|attitude control|adcs|spacecraft pointing)\b/i, tags: ["attitude_dynamics_control"] },
+  { pattern: /\b(space domain awareness|space situational awareness|space traffic management|space object tracking|conjunction assessment|orbital debris)\b/i, tags: ["space_domain_awareness"] },
+  { pattern: /\b(autonomous systems?|autonomy|autonomous vehicles?|space robotics)\b/i, tags: ["autonomy"] },
+  { pattern: /\b(space systems?|spacecraft systems?|space engineering|satellite systems?)\b/i, tags: ["space_systems"] },
+  { pattern: /\b(computational fluid dynamics|cfd)\b/i, tags: ["cfd"] },
+  { pattern: /\b(aerodynamics?)\b/i, tags: ["aerodynamics"] },
+  { pattern: /\b(propulsion)\b/i, tags: ["rocket_propulsion"] },
+  { pattern: /\b(structures?|structural|materials?)\b/i, tags: ["aerospace_structures"] }
+];
+
+const DIRECT_TECHNICAL_TAG_ALIASES = {
+  orbital_mechanics: "astrodynamics",
+  orbital_dynamics: "astrodynamics",
+  mission_design: "mission_analysis",
+  space_mission_design: "mission_analysis",
+  space_mission_analysis: "mission_analysis",
+  scientific_mission_design: "mission_analysis",
+  guidance_navigation_control: "gnc",
+  spacecraft_gnc: "gnc",
+  gnc_autonomy: "gnc",
+  adcs: "attitude_dynamics_control",
+  spacecraft_attitude_control: "attitude_dynamics_control",
+  spacecraft_attitude_dynamics: "attitude_dynamics_control",
+  spacecraft_systems: "space_systems",
+  satellite_systems: "satellite_systems",
+  space_systems_astrodynamics_sda: "space_domain_awareness"
+};
+
+const AMBIGUOUS_TECHNICAL_TAGS = new Set(["control", "controls", "navigation", "guidance"]);
+
+function canonicalTechnicalTags(values, { preserveUnmatched = false } = {}) {
+  const tags = new Set();
+  for (const value of stringList(values)) {
+    const slug = value.trim().toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "");
+    let matched = false;
+    if (DIRECT_TECHNICAL_TAG_ALIASES[slug]) {
+      tags.add(DIRECT_TECHNICAL_TAG_ALIASES[slug]);
+      matched = true;
+    }
+    for (const rule of TECHNICAL_TAG_RULES) {
+      if (rule.pattern.test(value.replaceAll("_", " "))) {
+        rule.tags.forEach(tag => tags.add(tag));
+        matched = true;
+      }
+    }
+    if (preserveUnmatched && !matched && slug && !AMBIGUOUS_TECHNICAL_TAGS.has(slug)) tags.add(slug);
+  }
+  return Array.from(tags);
+}
+
+function getCategoryProfile(record, researchProfile = {}) {
   const profile = record.category_profile || record.Category_Profile || {};
+  const normalizedTags = Array.from(new Set([
+    ...canonicalTechnicalTags(Array.isArray(profile.normalized_tags) ? profile.normalized_tags : [], { preserveUnmatched: true }),
+    ...canonicalTechnicalTags([
+    ...(Array.isArray(profile.technical_focus) ? profile.technical_focus : []),
+    ...(Array.isArray(profile.subcategories) ? profile.subcategories : []),
+    ...(Array.isArray(researchProfile.research_focus_areas) ? researchProfile.research_focus_areas : []),
+    ...(Array.isArray(researchProfile.department_research_areas) ? researchProfile.department_research_areas : [])
+    ])
+  ]));
   return {
     primary_categories: Array.isArray(profile.primary_categories) ? profile.primary_categories : [],
     secondary_categories: Array.isArray(profile.secondary_categories) ? profile.secondary_categories : [],
     subcategories: Array.isArray(profile.subcategories) ? profile.subcategories : [],
-    normalized_tags: Array.isArray(profile.normalized_tags) ? profile.normalized_tags : [],
+    normalized_tags: normalizedTags,
     category_scores: profile.category_scores && typeof profile.category_scores === "object" ? profile.category_scores : {}
   };
 }
@@ -403,7 +467,7 @@ function normalizeUniversityRecord(record) {
   const dataQuality = record.data_quality || {};
   const financials = record.financials || {};
   const urls = record.urls || {};
-  const categoryProfile = getCategoryProfile(record);
+  const categoryProfile = getCategoryProfile(record, researchProfile);
   const hasStructuredCostProfile = Boolean(
     record.cost_profile && typeof record.cost_profile === "object" && !Array.isArray(record.cost_profile)
   );

@@ -134,3 +134,17 @@ def get_scholarships():
         return JSONResponse({"status": "success", "data": catalog}, headers=headers)
     except (OSError, json.JSONDecodeError):
         return JSONResponse({"status": "error", "message": "Scholarship catalog could not be loaded.", "data": {}}, status_code=500, headers=headers)
+
+
+@app.get("/api/research-pathways")
+def get_research_pathways():
+    catalog_path = _project_file("research_fields", "catalog.json")
+    headers = {"Cache-Control": "no-store, no-cache, must-revalidate, max-age=0"}
+    if not catalog_path:
+        return JSONResponse({"status": "error", "message": "Research pathway catalog not found.", "data": {}}, status_code=404, headers=headers)
+    try:
+        with open(catalog_path, "r", encoding="utf-8") as catalog_file:
+            catalog = json.load(catalog_file)
+        return JSONResponse({"status": "success", "data": catalog}, headers=headers)
+    except (OSError, json.JSONDecodeError):
+        return JSONResponse({"status": "error", "message": "Research pathway catalog could not be loaded.", "data": {}}, status_code=500, headers=headers)

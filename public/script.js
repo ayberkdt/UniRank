@@ -6,6 +6,7 @@ let favorites = new Set(JSON.parse(localStorage.getItem('unirank_favorites') || 
 let countryPickerEntries = [];
 let countryPickerOpen = false;
 let activeDrawerData = null;
+let initialResearchDeepLinkHandled = false;
 
 
 function validateRecordShape(record) {
@@ -670,6 +671,7 @@ async function fetchData({ silent = false } = {}) {
                 }
             }
             
+            await applyInitialResearchDeepLink();
             processAndRender();
             return true;
         } else {
@@ -688,6 +690,26 @@ async function fetchData({ silent = false } = {}) {
         dataRefreshInFlight = false;
         if (loader && !silent) loader.classList.remove('active');
     }
+}
+
+async function applyInitialResearchDeepLink() {
+    if (initialResearchDeepLinkHandled) return;
+    initialResearchDeepLinkHandled = true;
+    const params = new URLSearchParams(window.location.search);
+    const requestedProgram = params.get('program');
+    const requestedField = params.get('field');
+
+    if (requestedField) {
+        const taxonomy = await window.loadTaxonomy?.();
+        if (taxonomy?.[requestedField]) selectedCategoryKeys.add(requestedField);
+    }
+
+    if (!requestedProgram) return;
+    const record = rawData.find((item) => {
+        const normalized = window.uniDataAdapter?.normalizeUniversityRecord(item);
+        return normalized?.id === requestedProgram || item.id === requestedProgram || item.programme_id === requestedProgram;
+    });
+    if (record) window.requestAnimationFrame(() => openDrawer(record));
 }
 
 window.refreshUniRankData = function() {
@@ -1926,13 +1948,32 @@ function openDrawer(data) {
         }
         let profsHTML = '';
         if (n.professors && n.professors.length > 0) {
-            profsHTML = n.professors.map(p => `
-                <div class="prof-card">
-                    <span class="prof-name">${escapeHtml(displayValue(typeof p === 'object' ? p.name : p))}</span>
-                    ${p.focus ? `<span class="prof-focus">${escapeHtml(displayValue(p.focus))}</span>` : ''}
-                </div>
-            `).join('');
+            profsHTML = n.professors.map(p => {
+                const professor = typeof p === 'object' ? p : { name: p };
+                const fitTags = Array.isArray(professor.fit_tags)
+                    ? professor.fit_tags.map(tag => `<span class="prof-fit-tag">${escapeHtml(window.getCategoryLabel ? window.getCategoryLabel(tag) : tag)}</span>`).join('')
+                    : '';
+                const timingLabel = professor.contact_timing
+                    ? (String(professor.contact_timing).includes('after_admission')
+                        ? (isTurkish ? 'RA iletişimi: kabul sonrası' : 'RA outreach: after admission')
+                        : (isTurkish ? 'Yalnızca belirli araştırma sorusuyla yaz' : 'Contact only with a specific research question'))
+                    : '';
+                return `
+                    <article class="prof-card">
+                        <div class="prof-card__top">
+                            <div><strong class="prof-name">${escapeHtml(displayValue(professor.name))}</strong>${professor.role ? `<span class="prof-role">${escapeHtml(displayValue(professor.role))}</span>` : ''}</div>
+                            ${professor.profile_url ? `<a class="prof-profile-link" href="${escapeHtml(professor.profile_url)}" target="_blank" rel="noopener noreferrer">${isTurkish ? 'Resmî profil' : 'Official profile'} ↗</a>` : ''}
+                        </div>
+                        ${professor.focus ? `<p class="prof-focus">${escapeHtml(displayValue(professor.focus))}</p>` : ''}
+                        ${fitTags ? `<div class="prof-fit-tags">${fitTags}</div>` : ''}
+                        <div class="prof-card__contact">
+                            ${professor.email ? `<a href="mailto:${escapeHtml(professor.email)}">${escapeHtml(professor.email)}</a>` : ''}
+                            ${timingLabel ? `<span>${escapeHtml(timingLabel)}</span>` : ''}
+                        </div>
+                    </article>`;
+            }).join('');
         }
+        const facultyContactNote = n.raw?.research_profile?.faculty_contact_note;
         const researchSummaryHTML = n.researchSummary
             ? `<div class="dept-block"><label>${isTurkish ? 'Araştırma erişimi notu' : 'Research access note'}</label><p>${escapeHtml(displayValue(n.researchSummary))}</p></div>`
             : '';
@@ -1963,7 +2004,8 @@ function openDrawer(data) {
                     </div>` : ''}
                     ${profsHTML ? `
                     <div class="dept-block">
-                        <label>${isTurkish ? 'Önemli Profesörler' : 'Notable Professors'}</label>
+                        <label>${isTurkish ? 'Araştırma uyumu olan hocalar' : 'Faculty matched to this research area'}</label>
+                        ${facultyContactNote ? `<p class="faculty-contact-note"><strong>${isTurkish ? 'Ne zaman yazmalı?' : 'When should you contact them?'}</strong>${escapeHtml(displayValue(facultyContactNote))}</p>` : ''}
                         <div class="prof-grid">${profsHTML}</div>
                     </div>` : ''}
                     ${partnersHTML ? `

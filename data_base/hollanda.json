@@ -382,12 +382,40 @@
       },
       "category_profile": {
         "primary_categories": [
-          "Aerospace Engineering"
+          "space_systems_astronautics",
+          "flight_control_autonomy"
         ],
-        "secondary_categories": [],
-        "subcategories": [],
-        "normalized_tags": [],
-        "category_scores": {}
+        "secondary_categories": [
+          "aerospace_engineering"
+        ],
+        "subcategories": [
+          "Astrodynamics & Orbital Mechanics",
+          "Mission Analysis & Trajectory Design",
+          "Orbit Determination & State Estimation",
+          "Guidance, Navigation & Control (GNC)",
+          "Spacecraft Attitude Dynamics & Control",
+          "Space Systems"
+        ],
+        "normalized_tags": [
+          "astrodynamics",
+          "mission_analysis",
+          "orbit_determination",
+          "gnc",
+          "attitude_dynamics_control",
+          "space_systems"
+        ],
+        "category_scores": {
+          "astrodynamics": 100,
+          "mission_analysis": 100,
+          "orbit_determination": 80,
+          "gnc": 80,
+          "attitude_dynamics_control": 80,
+          "space_systems": 100
+        },
+        "verification_notes": {
+          "en": "Canonical tags are backed by the official Space track, Astrodynamics & Space Missions group, current faculty profiles and a 45 ECTS thesis; they are not inferred from the university name.",
+          "tr": "Kanonik etiketler resmî Uzay izi, Astrodynamics & Space Missions grubu, güncel hoca profilleri ve 45 AKTS tezle desteklenir; üniversite adından çıkarılmamıştır."
+        }
       },
       "research_profile": {
         "department_research_areas": [
@@ -403,7 +431,53 @@
         "research_centers": [
           "TU Delft Space Engineering"
         ],
-        "notable_professors": [],
+        "faculty_contact_policy": "supervisor_match_during_msc_not_preapplication_gate",
+        "faculty_contact_note": {
+          "en": "A supervisor's pre-approval is not published as an MSc application requirement. Apply to the programme and choose the relevant track; use early faculty contact only for a specific research-fit question, then narrow thesis supervision during the MSc.",
+          "tr": "Danışman ön onayı MSc başvuru şartı olarak yayımlanmıyor. Programa başvurup ilgili izi seç; erken hoca iletişimini yalnızca belirli bir araştırma uyumu sorusu için kullan, tez danışmanlığını MSc içinde daralt."
+        },
+        "notable_professors": [
+          {
+            "name": "Erwin Mooij",
+            "role": {"en": "Astrodynamics & Space Missions", "tr": "Astrodynamics & Space Missions"},
+            "focus": {"en": "Launch/re-entry guidance, trajectory optimisation, integrated GNC, vision-based navigation and debris-removal rendezvous.", "tr": "Fırlatma/yeniden giriş güdümü, yörünge optimizasyonu, bütünleşik GNC, görsel seyrüsefer ve enkaz giderme buluşması."},
+            "fit_tags": ["gnc", "mission_analysis", "attitude_dynamics_control"],
+            "email": "e.mooij@tudelft.nl",
+            "profile_url": "https://research.tudelft.nl/en/persons/e-mooij/",
+            "contact_timing": "specific_research_question_before_or_thesis_matching_during_msc",
+            "last_verified": "2026-08-22"
+          },
+          {
+            "name": "Dominic Dirkx",
+            "role": {"en": "Astrodynamics & Space Missions", "tr": "Astrodynamics & Space Missions"},
+            "focus": {"en": "Planetary mission dynamics, trajectory optimisation, interplanetary tracking, orbit determination and numerical simulation tools.", "tr": "Gezegen görevi dinamiği, yörünge optimizasyonu, gezegenler arası takip, yörünge belirleme ve sayısal benzetim araçları."},
+            "fit_tags": ["astrodynamics", "mission_analysis", "orbit_determination"],
+            "email": "d.dirkx@tudelft.nl",
+            "profile_url": "https://research.tudelft.nl/en/persons/d-dirkx/",
+            "contact_timing": "specific_research_question_before_or_thesis_matching_during_msc",
+            "last_verified": "2026-08-22"
+          },
+          {
+            "name": "Jeannette Heiligers",
+            "role": {"en": "Astrodynamics & Space Missions", "tr": "Astrodynamics & Space Missions"},
+            "focus": {"en": "Solar sailing, low-thrust trajectory design, orbital control and space-debris-removal concepts.", "tr": "Güneş yelkenleri, düşük itki yörünge tasarımı, yörünge kontrolü ve uzay enkazı giderme kavramları."},
+            "fit_tags": ["astrodynamics", "mission_analysis"],
+            "email": "m.j.heiligers@tudelft.nl",
+            "profile_url": "https://research.tudelft.nl/en/persons/mj-heiligers/",
+            "contact_timing": "specific_research_question_before_or_thesis_matching_during_msc",
+            "last_verified": "2026-08-22"
+          },
+          {
+            "name": "Stefano Speretta",
+            "role": {"en": "Space Systems Engineering", "tr": "Space Systems Engineering"},
+            "focus": {"en": "Small satellites, autonomous formation flying, cislunar navigation, inter-satellite ranging and CubeSat systems.", "tr": "Küçük uydular, otonom formasyon uçuşu, ayötesi seyrüsefer, uydular arası mesafe ölçümü ve CubeSat sistemleri."},
+            "fit_tags": ["orbit_determination", "gnc", "attitude_dynamics_control"],
+            "email": "s.speretta@tudelft.nl",
+            "profile_url": "https://research.tudelft.nl/en/persons/s-speretta/",
+            "contact_timing": "specific_research_question_before_or_thesis_matching_during_msc",
+            "last_verified": "2026-08-22"
+          }
+        ],
         "space_or_aerospace_projects": [
           "Delfi-C3 and Delfi-N3xt CubeSats were built and tested in the Aerospace Engineering Cleanroom."
         ],
@@ -775,6 +849,56 @@
             }
           },
           {
+            "url": "https://research.tudelft.nl/en/organisations/astrodynamics-space-missions/",
+            "title": "TU Delft Astrodynamics & Space Missions",
+            "source_type": "official_research_group_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-22",
+            "relevant_fields": ["research", "technical_fit", "faculty"],
+            "confidence": "high",
+            "notes": {"en": "Current group page verifies the named research unit, active researchers and current astrodynamics output.", "tr": "Güncel grup sayfası adı yayımlanan araştırma birimini, aktif araştırmacıları ve güncel astrodinamik çıktılarını doğrular."}
+          },
+          {
+            "url": "https://research.tudelft.nl/en/persons/e-mooij/",
+            "title": "TU Delft Research Portal — Erwin Mooij",
+            "source_type": "official_faculty_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-22",
+            "relevant_fields": ["faculty", "gnc", "mission_analysis"],
+            "confidence": "high",
+            "notes": {"en": "Current profile and 2025–26 outputs verify integrated GNC, navigation, trajectory guidance and debris-removal work.", "tr": "Güncel profil ve 2025–26 çıktıları bütünleşik GNC, seyrüsefer, yörünge güdümü ve enkaz giderme çalışmalarını doğrular."}
+          },
+          {
+            "url": "https://research.tudelft.nl/en/persons/d-dirkx/",
+            "title": "TU Delft Research Portal — Dominic Dirkx",
+            "source_type": "official_faculty_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-22",
+            "relevant_fields": ["faculty", "astrodynamics", "orbit_determination"],
+            "confidence": "high",
+            "notes": {"en": "Current profile verifies work in planetary mission dynamics, tracking, ephemerides and numerical astrodynamics tools.", "tr": "Güncel profil gezegen görevi dinamiği, takip, efemeris ve sayısal astrodinamik araç çalışmalarını doğrular."}
+          },
+          {
+            "url": "https://research.tudelft.nl/en/persons/mj-heiligers/",
+            "title": "TU Delft Research Portal — Jeannette Heiligers",
+            "source_type": "official_faculty_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-22",
+            "relevant_fields": ["faculty", "astrodynamics", "mission_analysis"],
+            "confidence": "high",
+            "notes": {"en": "Current profile and 2026 output verify solar-sail trajectory design, orbital control and debris-removal research.", "tr": "Güncel profil ve 2026 çıktıları güneş yelkeni yörünge tasarımı, yörünge kontrolü ve enkaz giderme araştırmalarını doğrular."}
+          },
+          {
+            "url": "https://research.tudelft.nl/en/persons/s-speretta/",
+            "title": "TU Delft Research Portal — Stefano Speretta",
+            "source_type": "official_faculty_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-22",
+            "relevant_fields": ["faculty", "navigation", "space_systems"],
+            "confidence": "high",
+            "notes": {"en": "Current profile verifies small-satellite systems, autonomous formation-flying and cislunar-navigation work.", "tr": "Güncel profil küçük uydu sistemleri, otonom formasyon uçuşu ve ayötesi seyrüsefer çalışmalarını doğrular."}
+          },
+          {
             "url": "https://www.mastersportal.com/scholarships/10291/justus-louise-van-effen-excellence-scholarships.html",
             "title": "Mastersportal: Justus & Louise van Effen Excellence Scholarships",
             "source_type": "reliable_secondary_scholarship_page",
@@ -792,7 +916,7 @@
             }
           }
         ],
-        "last_verified": "2026-08-14",
+        "last_verified": "2026-08-22",
         "needs_verification": true,
         "verification_notes": {
           "en": "Critical fields have current checked evidence except that the official scholarship page blocks research access. Keep scholarship confidence at medium and recheck the next intake directly before advice or application.",

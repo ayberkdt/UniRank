@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Evidence-backed GNC, astrodynamics and orbital mechanics research-fit guide with official faculty profiles.">
+    <title>UniRank | Research Fit</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="research.css?v=1">
+    <script src="i18n.js?v=9"></script>
+</head>
+<body>
+    <a class="skip-link" href="#research-programmes" data-copy="skip">Skip to research matches</a>
+    <div class="research-aurora" aria-hidden="true"><span></span><span></span></div>
+
+    <header class="research-header">
+        <a class="research-brand" href="index.html" aria-label="UniRank home">
+            <span class="research-brand__mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 18c4-8 10-12 20-13-1 10-5 16-13 20l-2-5-5-2Z"></path><path d="m13 19 6-6"></path><circle cx="21.5" cy="10.5" r="2"></circle></svg></span>
+            <span><strong>UniRank</strong><small data-copy="brand">Research fit</small></span>
+        </a>
+        <nav class="research-nav" aria-label="Primary">
+            <a href="index.html" data-copy="programmes">Programmes</a>
+            <a href="index.html#deadline-runway" data-copy="calendar">Application calendar</a>
+            <a href="scholarships.html" data-copy="scholarships">Scholarships</a>
+            <a class="is-active" href="research.html" aria-current="page" data-copy="researchFit">Research fit</a>
+        </nav>
+        <div class="research-language" role="group" aria-label="Language">
+            <button type="button" data-lang="en" onclick="window.setLanguage('en')">EN</button>
+            <button type="button" data-lang="tr" onclick="window.setLanguage('tr')">TR</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="research-hero">
+            <div class="research-hero__copy">
+                <span class="research-kicker" data-copy="heroKicker">FROM VAGUE LABELS TO RESEARCH EVIDENCE</span>
+                <h1 data-copy="heroTitle">Choose the lab, not just the university name.</h1>
+                <p data-copy="heroText">Separate orbital mechanics, trajectory design, estimation and GNC; then compare programmes and faculty using current official evidence.</p>
+                <div class="research-hero__actions">
+                    <a class="research-button research-button--primary" href="#research-programmes" data-copy="browse">Explore matches</a>
+                    <a class="research-button" href="#advisor-guide" data-copy="contactGuide">When should I contact faculty?</a>
+                </div>
+            </div>
+            <aside class="research-hero__aside">
+                <span class="aside-index">01</span>
+                <p data-copy="heroAside">A strong programme here means the official department publishes a relevant group, lab or research area. It is not a prestige ranking or an admission guarantee.</p>
+                <div class="verified-stamp"><i>✓</i><span><strong data-copy="officialEvidence">Official evidence only</strong><small id="last-verified"></small></span></div>
+            </aside>
+        </section>
+
+        <section class="research-stats" id="research-stats" aria-label="Research guide data summary"></section>
+
+        <section class="field-workbench" aria-labelledby="field-title">
+            <div class="section-heading">
+                <div><span class="research-kicker" data-copy="fieldKicker">Canonical field system</span><h2 id="field-title" data-copy="fieldTitle">Start by naming the problem correctly.</h2></div>
+                <p data-copy="fieldText">These filters are deliberately narrower than “space” or “control”. Select one to update programmes and faculty together.</p>
+            </div>
+            <div class="field-tabs" id="field-tabs" role="list" aria-label="Research fields"></div>
+            <div class="field-definition" id="field-definition" aria-live="polite"></div>
+        </section>
+
+        <section class="programme-section" id="research-programmes" aria-labelledby="programmes-title">
+            <div class="section-heading">
+                <div><span class="research-kicker" data-copy="programmeKicker">Evidence-led shortlist</span><h2 id="programmes-title" data-copy="programmeTitle">Strong programmes for the selected field</h2></div>
+                <p id="programme-meta" aria-live="polite"></p>
+            </div>
+            <div class="programme-grid" id="programme-grid"></div>
+        </section>
+
+        <section class="advisor-section" id="advisor-guide" aria-labelledby="advisor-title">
+            <div class="section-heading">
+                <div><span class="research-kicker" data-copy="advisorKicker">Practical application note</span><h2 id="advisor-title" data-copy="advisorTitle">Do I need to find a professor first?</h2></div>
+                <p data-copy="advisorText">The answer changes by programme and stage. The cards below distinguish an application requirement from useful research networking.</p>
+            </div>
+            <div class="advisor-grid" id="advisor-grid"></div>
+        </section>
+
+        <section class="faculty-section" aria-labelledby="faculty-title">
+            <div class="section-heading">
+                <div><span class="research-kicker" data-copy="facultyKicker">Named research matches</span><h2 id="faculty-title" data-copy="facultyTitle">Faculty worth investigating</h2></div>
+                <p id="faculty-meta" aria-live="polite"></p>
+            </div>
+            <div class="faculty-grid" id="faculty-grid"></div>
+        </section>
+
+        <section class="outreach-section" aria-labelledby="outreach-title">
+            <div class="outreach-copy">
+                <span class="research-kicker" data-copy="outreachKicker">A focused first contact</span>
+                <h2 id="outreach-title" data-copy="outreachTitle">Write one useful email, not ten generic ones.</h2>
+                <p data-copy="outreachText">Use this only when the programme timing and your technical overlap make contact appropriate.</p>
+                <div class="subject-line"><span data-copy="subject">Subject</span><code id="outreach-subject"></code></div>
+            </div>
+            <ol class="outreach-steps" id="outreach-steps"></ol>
+            <p class="outreach-avoid" id="outreach-avoid"></p>
+        </section>
+    </main>
+
+    <footer class="research-footer"><span data-copy="footerPolicy">No invented faculty match. Every named person and programme claim links to an official source.</span><span id="footer-verified"></span></footer>
+    <script src="research.js?v=1"></script>
+</body>
+</html>

@@ -70,6 +70,8 @@ window.I18N = {
     deadline_runway_desc: "Only exact target-cycle dates appear here; reference dates stay in programme cards.",
     scholarship_hub: "Scholarships",
     scholarship_hub_desc: "Funding routes for applicants from Türkiye",
+    research_hub: "Research fit",
+    research_hub_desc: "GNC, astrodynamics & faculty guide",
     deadline_search_placeholder: "Search university, program, country or document",
     deadline_favorites_only: "Favorites only",
 
@@ -368,6 +370,8 @@ window.I18N = {
     deadline_runway_desc: "Burada yalnızca hedef dönemin kesin tarihleri görünür; eski referanslar program kartlarında kalır.",
     scholarship_hub: "Burslar",
     scholarship_hub_desc: "Türkiye’den başvurulabilen finansman rotaları",
+    research_hub: "Araştırma uyumu",
+    research_hub_desc: "GNC, astrodinamik ve hoca rehberi",
     deadline_search_placeholder: "Üniversite, program, ülke veya belge ara",
     deadline_favorites_only: "Yalnız favoriler",
 
