@@ -6,15 +6,16 @@
     <title>UniRank | Aerospace & Space Master's Finder</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=17">
+    <link rel="stylesheet" href="redesign.css?v=3">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="i18n.js?v=6"></script>
+    <script src="i18n.js?v=7"></script>
     <script src="taxonomy.js?v=3"></script>
 </head>
 <body>
@@ -160,6 +161,10 @@
                             <option value="custom" data-i18n="preset_custom">Custom</option>
                         </select>
                     </div>
+                    <div class="weight-normalization-note">
+                        <span data-i18n="weight_normalization_desc">Weights are redistributed automatically and always total 100%.</span>
+                        <strong id="weight-total">100%</strong>
+                    </div>
                     <div class="weight-sliders">
                         <div class="slider-group"><label for="w-academic"><span data-i18n="w_academic">Academic Strength</span> <span id="val-academic">30</span></label><input type="range" id="w-academic" min="0" max="100" step="1" value="30"></div>
                         <div class="slider-group"><label for="w-eligibility"><span data-i18n="w_eligibility">Eligibility & Language</span> <span id="val-eligibility">20</span></label><input type="range" id="w-eligibility" min="0" max="100" step="1" value="20"></div>
@@ -197,6 +202,16 @@
                     <p data-i18n="dashboard_subtitle">Compare technical fit, eligibility, cost and source confidence in one clear view.</p>
                 </div>
                 <div class="header-actions">
+                    <button class="deadline-launcher" id="deadline-launcher" type="button" aria-controls="deadline-modal" aria-haspopup="dialog">
+                        <span class="deadline-launcher__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" role="img"><path d="M7 3v3M17 3v3M4.5 9h15M6 5h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/><path d="M8 13h3v3H8z"/></svg>
+                        </span>
+                        <span class="deadline-launcher__copy">
+                            <strong data-i18n="deadline_calendar">Application calendar</strong>
+                            <small id="deadline-launcher-summary" data-i18n="deadline_calendar_loading">Loading deadlines…</small>
+                        </span>
+                        <span class="deadline-launcher__badge" id="deadline-launcher-badge" aria-label="0 urgent deadlines">0</span>
+                    </button>
                     <div class="auth-section">
                         <div id="auth-links">
                             <button onclick="window.openLoginModal()" class="btn btn-outline" data-i18n="sign_in">Sign in</button>
@@ -252,16 +267,16 @@
                         <div class="kpi-data"><span class="kpi-label" data-i18n="result_programs">Programs</span><strong class="kpi-value" id="kpi-total">0</strong><small><span id="kpi-countries">0</span> <span data-i18n="kpi_countries">countries</span></small></div>
                     </article>
                     <article class="kpi-card">
-                        <span class="kpi-icon kpi-icon--teal" aria-hidden="true">€</span>
-                        <div class="kpi-data"><span class="kpi-label" data-i18n="kpi_avg_tuition">Avg. Yearly Tuition</span><strong class="kpi-value" id="kpi-tuition">—</strong><small data-i18n="cost_data_desc">Known tuition records only</small></div>
+                        <span class="kpi-icon kpi-icon--teal" aria-hidden="true">✓</span>
+                        <div class="kpi-data"><span class="kpi-label" data-i18n="kpi_source_coverage">Official-source coverage</span><strong class="kpi-value" id="kpi-source-coverage">0%</strong><small data-i18n="kpi_source_coverage_desc">Programs with at least one accessible official source</small></div>
                     </article>
                     <article class="kpi-card">
                         <span class="kpi-icon kpi-icon--amber" aria-hidden="true">◎</span>
                         <div class="kpi-data"><span class="kpi-label" data-i18n="kpi_avg_score">Avg. Overall Score</span><strong class="kpi-value"><span id="kpi-score">0.0</span><small> / 10</small></strong><small data-i18n="technical_match">Technical match</small></div>
                     </article>
                     <article class="kpi-card">
-                        <span class="kpi-icon kpi-icon--slate" aria-hidden="true">%</span>
-                        <div class="kpi-data"><span class="kpi-label" data-i18n="cost_data">Cost data</span><strong class="kpi-value" id="kpi-cost-coverage">0%</strong><small data-i18n="cost_data_desc">Known tuition records only</small></div>
+                        <span class="kpi-icon kpi-icon--slate" aria-hidden="true">⌖</span>
+                        <div class="kpi-data"><span class="kpi-label" data-i18n="kpi_map_coverage">Map coverage</span><strong class="kpi-value" id="kpi-map-coverage">0%</strong><small data-i18n="kpi_map_coverage_desc">Programs with verified coordinates</small></div>
                     </article>
                 </div>
 
@@ -322,6 +337,42 @@
             </section>
         </main>
 
+        <div class="deadline-modal-overlay" id="deadline-modal" role="dialog" aria-modal="true" aria-labelledby="deadline-modal-title" aria-hidden="true" hidden>
+            <section class="deadline-modal-shell">
+                <header class="deadline-modal-header">
+                    <div class="deadline-modal-heading">
+                        <span class="deadline-modal-heading__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M7 3v3M17 3v3M4.5 9h15M6 5h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/><path d="M8 13h3v3H8z"/></svg>
+                        </span>
+                        <div>
+                            <span class="deadline-modal-kicker" data-i18n="deadline_workspace_kicker">Application command center</span>
+                            <h2 id="deadline-modal-title" data-i18n="deadline_calendar">Application calendar</h2>
+                            <p id="deadline-modal-subtitle" data-i18n="deadline_calendar_desc">See every verified date, remaining time, and required document in one place.</p>
+                        </div>
+                    </div>
+                    <button class="deadline-modal-close" id="deadline-modal-close" type="button" data-i18n-aria-label="close_dialog" aria-label="Close dialog">&times;</button>
+                </header>
+
+                <div class="deadline-modal-body">
+                    <div class="deadline-summary-grid" id="deadline-summary-grid" aria-live="polite"></div>
+                    <div class="deadline-toolbar">
+                        <label class="deadline-search" for="deadline-search-input">
+                            <span aria-hidden="true">⌕</span>
+                            <input id="deadline-search-input" type="search" autocomplete="off" data-i18n-placeholder="deadline_search_placeholder" placeholder="Search university, program, country or document">
+                        </label>
+                        <label class="deadline-favorite-toggle" for="deadline-favorites-only">
+                            <input id="deadline-favorites-only" type="checkbox">
+                            <span aria-hidden="true">★</span>
+                            <span data-i18n="deadline_favorites_only">Favorites only</span>
+                        </label>
+                    </div>
+                    <div class="deadline-filter-chips" id="deadline-filter-chips" role="group" aria-label="Deadline status"></div>
+                    <div class="deadline-results-meta" id="deadline-results-meta" aria-live="polite"></div>
+                    <div class="deadline-program-list" id="deadline-program-list"></div>
+                </div>
+            </section>
+        </div>
+
         <div class="drawer-overlay" id="drawer-overlay"></div>
         <aside class="drawer" id="detail-drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
             <div class="drawer-header">
@@ -339,9 +390,10 @@
     </div>
 
     <script src="dataAdapter.js?v=10"></script>
-    <script src="scoring.js?v=6"></script>
-    <script src="script.js?v=25"></script>
-    <script src="map.js?v=8"></script>
+    <script src="scoring.js?v=7"></script>
+    <script src="deadlineDashboard.js?v=3"></script>
+    <script src="script.js?v=30"></script>
+    <script src="map.js?v=9"></script>
 
     <!-- Login Modal -->
     <div id="login-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="login-modal-title" aria-hidden="true" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:2000; align-items:center; justify-content:center;">

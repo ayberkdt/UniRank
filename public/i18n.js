@@ -61,6 +61,12 @@ window.I18N = {
     no_results_title: "No matching programs",
     no_results_desc: "Try broadening or clearing some filters.",
     reset_filters: "Reset filters",
+    deadline_calendar: "Application calendar",
+    deadline_calendar_loading: "Loading deadlines…",
+    deadline_workspace_kicker: "Application command center",
+    deadline_calendar_desc: "See every verified date, remaining time, and required document in one place.",
+    deadline_search_placeholder: "Search university, program, country or document",
+    deadline_favorites_only: "Favorites only",
 
     nav_dashboard: "Dashboard",
     nav_favorites: "Favorites",
@@ -118,6 +124,7 @@ window.I18N = {
     w_living: "Living Risk",
     w_confidence: "Data Confidence",
     weight_desc: "Scores are normalized automatically. Higher weight means this criterion affects ranking more.",
+    weight_normalization_desc: "Weights are redistributed automatically and always total 100%.",
 
     sorting: "Sorting",
     sort_score_desc: "Score (High → Low)",
@@ -133,6 +140,10 @@ window.I18N = {
     kpi_avg_tuition: "Avg. Yearly Tuition",
     avg_yearly_tuition: "Avg. Yearly Tuition",
     kpi_avg_score: "Avg. Overall Score",
+    kpi_source_coverage: "Official-source coverage",
+    kpi_source_coverage_desc: "Programs with at least one accessible official source",
+    kpi_map_coverage: "Map coverage",
+    kpi_map_coverage_desc: "Programs with verified coordinates",
 
     ranked_results: "Ranked Results",
     col_num: "#",
@@ -343,6 +354,12 @@ window.I18N = {
     no_results_title: "Eşleşen program bulunamadı",
     no_results_desc: "Bazı filtreleri genişletmeyi veya temizlemeyi dene.",
     reset_filters: "Filtreleri sıfırla",
+    deadline_calendar: "Başvuru takvimi",
+    deadline_calendar_loading: "Tarihler yükleniyor…",
+    deadline_workspace_kicker: "Başvuru kontrol merkezi",
+    deadline_calendar_desc: "Doğrulanmış tarihleri, kalan süreyi ve istenen belgeleri tek yerde gör.",
+    deadline_search_placeholder: "Üniversite, program, ülke veya belge ara",
+    deadline_favorites_only: "Yalnız favoriler",
 
     nav_dashboard: "Panel",
     nav_favorites: "Favoriler",
@@ -400,6 +417,7 @@ window.I18N = {
     w_living: "Yaşam Riski",
     w_confidence: "Veri Güveni",
     weight_desc: "Puanlar otomatik olarak normalize edilir. Yüksek ağırlık, o kriterin sıralamayı daha çok etkilemesi demektir.",
+    weight_normalization_desc: "Ağırlıklar otomatik dağıtılır ve toplam her zaman %100 kalır.",
 
     sorting: "Sıralama",
     sort_score_desc: "Puan (Yüksek → Düşük)",
@@ -415,6 +433,10 @@ window.I18N = {
     kpi_avg_tuition: "Ort. Yıllık Ücret",
     avg_yearly_tuition: "Ort. Yıllık Ücret",
     kpi_avg_score: "Ort. Genel Puan",
+    kpi_source_coverage: "Resmî kaynak kapsamı",
+    kpi_source_coverage_desc: "En az bir erişilebilir resmî kaynağı olan programlar",
+    kpi_map_coverage: "Harita kapsamı",
+    kpi_map_coverage_desc: "Doğrulanmış koordinatı olan programlar",
 
     ranked_results: "Sıralı Sonuçlar",
     col_num: "#",
@@ -591,7 +613,10 @@ window.COUNTRY_LABELS = {
   Finland: { en: "Finland", tr: "Finlandiya" },
   Poland: { en: "Poland", tr: "Polonya" },
   Norway: { en: "Norway", tr: "Norveç" },
-  Ireland: { en: "Ireland", tr: "İrlanda" }
+  Ireland: { en: "Ireland", tr: "İrlanda" },
+  Estonia: { en: "Estonia", tr: "Estonya" },
+  Lithuania: { en: "Lithuania", tr: "Litvanya" },
+  Romania: { en: "Romania", tr: "Romanya" }
 };
 
 window.I18N = I18N;

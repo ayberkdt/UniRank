@@ -273,6 +273,20 @@ function displayValue(val) {
     return String(val);
 }
 
+function formatCalendarValue(value) {
+    const text = displayValue(value);
+    return text.replace(/\b(20\d{2})-(\d{2})-(\d{2})(?:T\d{2}:\d{2}(?::\d{2})?(?:Z|[+-]\d{2}:?\d{2})?)?/g, (raw, yearText, monthText, dayText) => {
+        const year = Number(yearText);
+        const month = Number(monthText);
+        const day = Number(dayText);
+        const date = new Date(year, month - 1, day, 12, 0, 0);
+        if (date.getFullYear() !== year || date.getMonth() !== month - 1 || date.getDate() !== day) return raw;
+        return new Intl.DateTimeFormat(window.currentLanguage === 'tr' ? 'tr-TR' : 'en-GB', {
+            weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+        }).format(date);
+    });
+}
+
 // Database enum values ("high", "Moderate", "Bilinmiyor / Resmi Veri Yok",
 // "nightmare"…) must never reach the screen raw: they are mapped to a
 // severity key and shown as a translated, colour-coded badge.
@@ -340,14 +354,22 @@ const COUNTRY_VISUALS = {
     austria: { accent: '#ed2939', rgb: '237, 41, 57', flag: 'linear-gradient(to bottom, #ed2939 0 33%, #ffffff 33% 66%, #ed2939 66% 100%)' },
     belgium: { accent: '#f2bd28', rgb: '242, 189, 40', flag: 'linear-gradient(90deg, #191919 0 33%, #f2bd28 33% 66%, #d4303d 66% 100%)' },
     china: { accent: '#e53a3e', rgb: '229, 58, 62', flag: 'url("https://flagcdn.com/w320/cn.png") center right / cover no-repeat' },
+    czechia: { accent: '#d73445', rgb: '215, 52, 69', flag: 'url("https://flagcdn.com/w320/cz.png") center right / cover no-repeat' },
     denmark: { accent: '#c8102e', rgb: '200, 16, 46', flag: 'linear-gradient(90deg, transparent 0 29%, #ffffff 29% 40%, transparent 40% 100%), linear-gradient(transparent 0 41%, #ffffff 41% 58%, transparent 58% 100%), #c8102e' },
+    estonia: { accent: '#4891d9', rgb: '72, 145, 217', flag: 'linear-gradient(to bottom, #4891d9 0 33%, #17191e 33% 66%, #f7f7f3 66% 100%)' },
+    finland: { accent: '#2f70b7', rgb: '47, 112, 183', flag: 'linear-gradient(90deg, transparent 0 30%, #2f70b7 30% 43%, transparent 43% 100%), linear-gradient(transparent 0 40%, #2f70b7 40% 57%, transparent 57% 100%), #f7f7f3' },
     france: { accent: '#2d57a1', rgb: '45, 87, 161', flag: 'linear-gradient(90deg, #21468b 0 33%, #f7f8fa 33% 66%, #ef4135 66% 100%)' },
     germany: { accent: '#d9a620', rgb: '217, 166, 32', flag: 'linear-gradient(to bottom, #1a1a1a 0 33%, #d83232 33% 66%, #e2b42a 66% 100%)' },
+    greece: { accent: '#3474bb', rgb: '52, 116, 187', flag: 'url("https://flagcdn.com/w320/gr.png") center right / cover no-repeat' },
+    ireland: { accent: '#169b62', rgb: '22, 155, 98', flag: 'linear-gradient(90deg, #169b62 0 33%, #f7f7f3 33% 66%, #ff883e 66% 100%)' },
     italy: { accent: '#159447', rgb: '21, 148, 71', flag: 'linear-gradient(90deg, #009246 0 33%, #f7f8f6 33% 66%, #ce2b37 66% 100%)' },
     japan: { accent: '#dc3044', rgb: '220, 48, 68', flag: 'radial-gradient(circle at 50% 50%, #cf2738 0 22%, transparent 22.5%), #f8f8f4' },
+    lithuania: { accent: '#f3b61f', rgb: '243, 182, 31', flag: 'linear-gradient(to bottom, #fdb913 0 33%, #006a44 33% 66%, #c1272d 66% 100%)' },
     netherlands: { accent: '#2d62ad', rgb: '45, 98, 173', flag: 'linear-gradient(to bottom, #ae1c28 0 33%, #f7f8f6 33% 66%, #21468b 66% 100%)' },
+    norway: { accent: '#ba0c2f', rgb: '186, 12, 47', flag: 'url("https://flagcdn.com/w320/no.png") center right / cover no-repeat' },
     poland: { accent: '#d92b48', rgb: '217, 43, 72', flag: 'linear-gradient(to bottom, #fafafa 0 50%, #d22645 50% 100%)' },
     portugal: { accent: '#d84536', rgb: '216, 69, 54', flag: 'url("https://flagcdn.com/w320/pt.png") center right / cover no-repeat' },
+    romania: { accent: '#f7c600', rgb: '247, 198, 0', flag: 'linear-gradient(90deg, #002b7f 0 33%, #fcd116 33% 66%, #ce1126 66% 100%)' },
     russia: { accent: '#4366ae', rgb: '67, 102, 174', flag: 'linear-gradient(to bottom, #f7f7f5 0 33%, #3156a6 33% 66%, #ce303c 66% 100%)' },
     south_korea: { accent: '#d43848', rgb: '212, 56, 72', flag: 'url("https://flagcdn.com/w320/kr.png") center right / cover no-repeat' },
     spain: { accent: '#efb933', rgb: '239, 185, 51', flag: 'linear-gradient(to bottom, #aa151b 0 25%, #f1bf36 25% 75%, #aa151b 75% 100%)' },
@@ -396,6 +418,7 @@ const COUNTRY_FLAG_CODES = {
     czech_republic: 'CZ',
     czechia: 'CZ',
     denmark: 'DK',
+    estonia: 'EE',
     finland: 'FI',
     france: 'FR',
     germany: 'DE',
@@ -403,10 +426,12 @@ const COUNTRY_FLAG_CODES = {
     ireland: 'IE',
     italy: 'IT',
     japan: 'JP',
+    lithuania: 'LT',
     netherlands: 'NL',
     norway: 'NO',
     poland: 'PL',
     portugal: 'PT',
+    romania: 'RO',
     russia: 'RU',
     south_korea: 'KR',
     spain: 'ES',
@@ -496,7 +521,8 @@ const els = {
     },
     kpi: {
         total: document.getElementById('kpi-total'),
-        tuition: document.getElementById('kpi-tuition'),
+        sourceCoverage: document.getElementById('kpi-source-coverage'),
+        mapCoverage: document.getElementById('kpi-map-coverage'),
         score: document.getElementById('kpi-score')
     },
     tableBody: document.getElementById('table-body'),
@@ -552,11 +578,16 @@ function initSpotlightCards() {
 }
 
 // Fetch Data
-async function fetchData() {
+let dataRefreshInFlight = false;
+
+async function fetchData({ silent = false } = {}) {
+    if (dataRefreshInFlight) return false;
+    dataRefreshInFlight = true;
     const loader = document.getElementById('loader');
-    if (loader) loader.classList.add('active');
+    if (loader && !silent) loader.classList.add('active');
     try {
         const res = await fetch('/api/universities');
+        if (!res.ok) throw new Error(`API request failed (${res.status})`);
         const json = await res.json();
         
         if (json.status === 'success') {
@@ -564,6 +595,10 @@ async function fetchData() {
             // The API already removes exact programme clones. This client-side
             // guard also protects people viewing an older cached deployment.
             rawData = deduplicateProgrammeRecords(json.data.filter(record => !isUndergraduateProgramme(record)));
+            window.uniRankRecords = rawData;
+            window.dispatchEvent(new CustomEvent('unirank:recordsLoaded', {
+                detail: { records: rawData, refreshedAt: new Date().toISOString(), silent }
+            }));
             rawData.slice(0, 20).forEach((r) => {
               const issues = validateRecordShape(r);
               if (issues.length) console.warn("Record shape issues:", r.id || r.name, issues);
@@ -593,17 +628,79 @@ async function fetchData() {
             }
             
             processAndRender();
+            return true;
         } else {
             console.error("API Error:", json.message);
-            els.tableBody.innerHTML = `<div class="empty-results-card" role="alert"><h3>${escapeHtml(json.message || 'API request failed.')}</h3></div>`;
+            if (!silent) els.tableBody.innerHTML = `<div class="empty-results-card" role="alert"><h3>${escapeHtml(json.message || 'API request failed.')}</h3></div>`;
+            return false;
         }
     } catch (err) {
-        console.error("Fetch Error:", err);
-        els.tableBody.innerHTML = `<div class="empty-results-card" role="alert"><h3>${escapeHtml(err.message || 'Network request failed.')}</h3></div>`;
+        if (silent) console.warn("Background data refresh failed:", err);
+        else {
+            console.error("Fetch Error:", err);
+            els.tableBody.innerHTML = `<div class="empty-results-card" role="alert"><h3>${escapeHtml(err.message || 'Network request failed.')}</h3></div>`;
+        }
+        return false;
     } finally {
-        if (loader) loader.classList.remove('active');
+        dataRefreshInFlight = false;
+        if (loader && !silent) loader.classList.remove('active');
     }
 }
+
+window.refreshUniRankData = function() {
+    return fetchData({ silent: true });
+};
+
+const UI_WEIGHT_KEYS = ['academic', 'eligibility', 'cost', 'career', 'living', 'confidence'];
+const DEFAULT_UI_WEIGHTS = { academic: 30, eligibility: 20, cost: 20, career: 15, living: 10, confidence: 5 };
+
+function sanitizeUiWeight(value) {
+    const numeric = Number(value);
+    return Number.isFinite(numeric) ? Math.min(100, Math.max(0, Math.round(numeric))) : 0;
+}
+
+function distributeIntegerWeight(total, keys, basis) {
+    if (!keys.length) return {};
+    const basisTotal = keys.reduce((sum, key) => sum + sanitizeUiWeight(basis[key]), 0);
+    const allocations = keys.map((key, index) => {
+        const ratio = basisTotal > 0 ? sanitizeUiWeight(basis[key]) / basisTotal : 1 / keys.length;
+        const raw = ratio * total;
+        return { key, index, value: Math.floor(raw), fraction: raw - Math.floor(raw) };
+    });
+    let remainder = total - allocations.reduce((sum, item) => sum + item.value, 0);
+    allocations.sort((left, right) => right.fraction - left.fraction || left.index - right.index);
+    for (let index = 0; index < allocations.length && remainder > 0; index += 1, remainder -= 1) {
+        allocations[index].value += 1;
+    }
+    return Object.fromEntries(allocations.map(item => [item.key, item.value]));
+}
+
+function readUiWeights() {
+    return Object.fromEntries(UI_WEIGHT_KEYS.map(key => [key, sanitizeUiWeight(els.weights[key]?.value)]));
+}
+
+function applyUiWeights(weights) {
+    UI_WEIGHT_KEYS.forEach(key => {
+        const value = sanitizeUiWeight(weights[key]);
+        if (els.weights[key]) els.weights[key].value = String(value);
+        if (els.vals[key]) els.vals[key].textContent = `${value}%`;
+    });
+    const total = UI_WEIGHT_KEYS.reduce((sum, key) => sum + sanitizeUiWeight(weights[key]), 0);
+    const totalElement = document.getElementById('weight-total');
+    if (totalElement) totalElement.textContent = `${total}%`;
+}
+
+function rebalanceUiWeights(changedKey, requestedValue) {
+    const changedValue = sanitizeUiWeight(requestedValue);
+    const current = readUiWeights();
+    const otherKeys = UI_WEIGHT_KEYS.filter(key => key !== changedKey);
+    const redistributed = distributeIntegerWeight(100 - changedValue, otherKeys, current);
+    const next = { ...redistributed, [changedKey]: changedValue };
+    applyUiWeights(next);
+    return next;
+}
+
+window.uniWeighting = { read: readUiWeights, rebalance: rebalanceUiWeights };
 
 function setupEventListeners() {
     initCountryPicker();
@@ -620,12 +717,7 @@ function setupEventListeners() {
             else if (p === 'career') w = { academic: 25, eligibility: 15, cost: 10, career: 35, living: 10, confidence: 5 };
             
             if (p !== 'custom' && Object.keys(w).length > 0) {
-                Object.keys(w).forEach(k => {
-                    if (els.weights[k]) {
-                        els.weights[k].value = w[k];
-                        if (els.vals[k]) els.vals[k].textContent = w[k];
-                    }
-                });
+                applyUiWeights(w);
                 clearTimeout(window.renderTimeout);
                 window.renderTimeout = setTimeout(processAndRender, 100);
             }
@@ -636,7 +728,7 @@ function setupEventListeners() {
     Object.keys(els.weights).forEach(k => {
         if (els.weights[k]) {
             els.weights[k].addEventListener('input', (e) => {
-                if (els.vals[k]) els.vals[k].textContent = Number(e.target.value);
+                rebalanceUiWeights(k, e.target.value);
                 if (els.preset) els.preset.value = 'custom';
                 // Debounce re-render slightly
                 clearTimeout(window.renderTimeout);
@@ -644,6 +736,8 @@ function setupEventListeners() {
             });
         }
     });
+
+    applyUiWeights(DEFAULT_UI_WEIGHTS);
 
     // Hard Filters
     Object.keys(els.hardFilters).forEach(k => {
@@ -1297,46 +1391,49 @@ window.switchView = function(view) {
     if (showMap) {
         setTimeout(() => {
             if (window.unirankMap) window.unirankMap.invalidateSize();
-            window.dispatchEvent(new Event('resize'));
+            window.dispatchEvent(new CustomEvent('unirank:viewChanged', { detail: { view: 'map' } }));
         }, 80);
+    } else {
+        window.dispatchEvent(new CustomEvent('unirank:viewChanged', { detail: { view: 'list' } }));
     }
 }
 
 function renderKPIs() {
     els.kpi.total.textContent = filteredData.length;
     const countriesSet = new Set();
-    let totalTuition = 0;
-    let validTuitionCount = 0;
-    let knownTuitionCount = 0;
+    let officialSourceCount = 0;
+    let mappedCount = 0;
     let totalScore = 0;
 
     filteredData.forEach(record => {
         const normalized = window.uniDataAdapter ? window.uniDataAdapter.normalizeUniversityRecord(record) : null;
         const country = normalized?.country || record.country;
         if (country) countriesSet.add(country);
-        if (record._costNum !== null) {
-            totalTuition += record._costNum;
-            validTuitionCount += 1;
-        }
-        if (normalized?.hasKnownTuition) knownTuitionCount += 1;
+        const hasOfficialSource = (normalized?.sources || []).some(source => (
+            String(source?.source_type || '').toLowerCase().startsWith('official_') &&
+            ['ok', 'redirects', 'pdf', 'requires_js'].includes(String(source?.access_status || '').toLowerCase())
+        ));
+        if (hasOfficialSource) officialSourceCount += 1;
+        if (Number.isFinite(normalized?.location?.latitude) && Number.isFinite(normalized?.location?.longitude)) mappedCount += 1;
         totalScore += Number(record._score) || 0;
     });
 
-    els.kpi.tuition.textContent = validTuitionCount
-        ? formatMoney(Math.round(totalTuition / validTuitionCount))
-        : '—';
+    if (els.kpi.sourceCoverage) {
+        els.kpi.sourceCoverage.textContent = filteredData.length
+            ? `${Math.round((officialSourceCount / filteredData.length) * 100)}%`
+            : '0%';
+    }
+    if (els.kpi.mapCoverage) {
+        els.kpi.mapCoverage.textContent = filteredData.length
+            ? `${Math.round((mappedCount / filteredData.length) * 100)}%`
+            : '0%';
+    }
     els.kpi.score.textContent = filteredData.length
         ? (totalScore / filteredData.length).toFixed(2)
         : '0.0';
 
     const kpiCountries = document.getElementById('kpi-countries');
     if (kpiCountries) kpiCountries.textContent = countriesSet.size;
-    const costCoverage = document.getElementById('kpi-cost-coverage');
-    if (costCoverage) {
-        costCoverage.textContent = filteredData.length
-            ? `${Math.round((knownTuitionCount / filteredData.length) * 100)}%`
-            : '0%';
-    }
 }
 
 
@@ -1378,7 +1475,7 @@ function renderTable() {
                 ? escapeHtml(window.currentLanguage === 'tr' ? 'AB dışı uygun değil' : 'Not Non-EU eligible')
                 : formatRiskBadge(n.admissionRisk);
         const housingHTML = formatRiskBadge(n.housingDifficulty);
-        const deadline = n.deadline ? displayValue(n.deadline) : '';
+        const deadline = n.deadline ? formatCalendarValue(n.deadline) : '';
         const profileMatch = row._scoringDetails?.personalized_match?.personal_field_fit;
         const university = window.localizedField(n.universityName) || (window.currentLanguage === 'tr' ? 'Üniversite adı doğrulanmalı' : 'University name needs verification');
         const program = window.localizedField(n.programName) || (window.currentLanguage === 'tr' ? 'Program adı doğrulanmalı' : 'Program name needs verification');
@@ -1402,7 +1499,7 @@ function renderTable() {
                     <span>${escapeHtml(degree)}</span>
                     ${n.ects ? `<span>${escapeHtml(n.ects)} ECTS</span>` : ''}
                     ${n.duration ? `<span>${escapeHtml(n.duration)}</span>` : ''}
-                    ${deadline ? `<span>${escapeHtml(deadline)}</span>` : ''}
+                    ${deadline ? `<span class="program-card__meta-date">${escapeHtml(window.currentLanguage === 'tr' ? 'Son başvuru' : 'Deadline')} · ${escapeHtml(deadline)}</span>` : ''}
                 </div>
                 <dl class="decision-grid">
                     <div class="decision-item decision-item--score"><dt>${escapeHtml(window.t ? window.t('technical_match') : 'Technical match')}</dt><dd><span class="fit-score fit-score--${band.key}">${Number(row._score).toFixed(1)}</span><small>${escapeHtml(band.label)}</small>${window.personalizationEnabled && Number.isFinite(profileMatch) ? `<em>${Math.round(profileMatch)}% ${escapeHtml(window.t('profile_match'))}</em>` : ''}</dd></div>
@@ -1484,7 +1581,7 @@ function openDrawer(data) {
                     <div><dt>ECTS / ${escapeHtml(window.t ? window.t('degree') : 'Degree')}</dt><dd>${escapeHtml([n.ects ? `${n.ects} ECTS` : '', displayValue(n.degree)].filter(Boolean).join(' · ') || '—')}</dd></div>
                     <div><dt>${escapeHtml(isTurkish ? 'Başvuru son tarihi' : 'Application deadline')}</dt><dd>${escapeHtml(n.deadline ? displayValue(n.deadline) : '—')}</dd></div>
                 </dl>
-                ${n.lastVerified ? `<p class="drawer-verified">${escapeHtml(window.t ? window.t('last_verified') : 'Last verified')}: ${escapeHtml(n.lastVerified)}</p>` : ''}
+                ${n.lastVerified ? `<p class="drawer-verified">${escapeHtml(window.t ? window.t('last_verified') : 'Last verified')}: ${escapeHtml(formatCalendarValue(n.lastVerified))}</p>` : ''}
             </section>`;
         const verificationBanner = n.needsVerification
             ? `<div class="verification-banner warning"><strong>${isTurkish ? 'Doğrulama gerekli' : 'Verification required'}</strong><span>${isTurkish ? 'Kritik kayıt alanları resmi kaynaklarla yeniden kontrol edilmelidir.' : 'Critical record fields should be rechecked against official sources.'}</span></div>`
@@ -1735,8 +1832,8 @@ function openDrawer(data) {
             const roundName = roundKey === 'extraordinary_if_places_remain'
                 ? (isTurkish ? 'Ek çağrı (yalnızca boş kontenjan varsa)' : 'Extraordinary call (only if places remain)')
                 : displayValue(roundKey);
-            const dates = [round.opens, round.deadline].filter(Boolean).join(' → ');
-            const result = round.decision ? `${isTurkish ? 'Sonuç' : 'Decision'}: ${displayValue(round.decision)}` : '';
+            const dates = [round.opens, round.deadline].filter(Boolean).map(formatCalendarValue).join(' → ');
+            const result = round.decision ? `${isTurkish ? 'Sonuç' : 'Decision'}: ${formatCalendarValue(round.decision)}` : '';
             return `<li><strong>${escapeHtml(roundName)}</strong><span>${escapeHtml(dates)}</span><small>${escapeHtml(result)}</small></li>`;
         }).join('');
         const timelineHTML = `
@@ -1744,15 +1841,15 @@ function openDrawer(data) {
                 <div class="premium-header"><span class="premium-icon">🗓️</span><h4 class="premium-title">${isTurkish ? 'Başvuru Takvimi' : 'Application Timeline'}</h4></div>
                 <div class="premium-grid">
                     ${timeline.intake ? `<div class="premium-item"><label>${isTurkish ? 'Başlangıç dönemi' : 'Intake'}</label><span>${escapeHtml(displayValue(timeline.intake))}</span></div>` : ''}
-                    ${timeline.application_opens ? `<div class="premium-item"><label>${isTurkish ? 'Başvuru açılışı' : 'Application opens'}</label><span>${escapeHtml(displayValue(timeline.application_opens))}</span></div>` : ''}
-                    <div class="premium-item"><label>${isTurkish ? 'AB dışı olağan son tarih' : 'Regular non-EU deadline'}</label><span>${escapeHtml(displayValue(timeline.non_eu_deadline ?? timeline.deadline_non_eu))}</span></div>
-                    <div class="premium-item"><label>${isTurkish ? 'Burs son tarihi' : 'Scholarship deadline'}</label><span>${escapeHtml(displayValue(timeline.scholarship_deadline))}</span></div>
-                    ${timeline.english_score_deadline_if_required ? `<div class="premium-item"><label>${isTurkish ? 'İngilizce puanı son tarihi' : 'English-score deadline'}</label><span>${escapeHtml(displayValue(timeline.english_score_deadline_if_required))}</span></div>` : ''}
-                    ${timeline.recommendation_deadline ? `<div class="premium-item"><label>${isTurkish ? 'Referans mektubu son tarihi' : 'Recommendation deadline'}</label><span>${escapeHtml(displayValue(timeline.recommendation_deadline))}</span></div>` : ''}
-                    <div class="premium-item"><label>${isTurkish ? 'Kayıt dönemi' : 'Enrollment window'}</label><span>${escapeHtml(displayValue(timeline.enrollment_deadline))}</span></div>
-                    <div class="premium-item"><label>${isTurkish ? 'Belge tamamlama' : 'Document completion'}</label><span>${escapeHtml(displayValue(timeline.document_completion_deadline))}</span></div>
+                    ${timeline.application_opens ? `<div class="premium-item"><label>${isTurkish ? 'Başvuru açılışı' : 'Application opens'}</label><span>${escapeHtml(formatCalendarValue(timeline.application_opens))}</span></div>` : ''}
+                    <div class="premium-item"><label>${isTurkish ? 'AB dışı olağan son tarih' : 'Regular non-EU deadline'}</label><span>${escapeHtml(formatCalendarValue(timeline.non_eu_deadline ?? timeline.deadline_non_eu))}</span></div>
+                    <div class="premium-item"><label>${isTurkish ? 'Burs son tarihi' : 'Scholarship deadline'}</label><span>${escapeHtml(formatCalendarValue(timeline.scholarship_deadline))}</span></div>
+                    ${timeline.english_score_deadline_if_required ? `<div class="premium-item"><label>${isTurkish ? 'İngilizce puanı son tarihi' : 'English-score deadline'}</label><span>${escapeHtml(formatCalendarValue(timeline.english_score_deadline_if_required))}</span></div>` : ''}
+                    ${timeline.recommendation_deadline ? `<div class="premium-item"><label>${isTurkish ? 'Referans mektubu son tarihi' : 'Recommendation deadline'}</label><span>${escapeHtml(formatCalendarValue(timeline.recommendation_deadline))}</span></div>` : ''}
+                    <div class="premium-item"><label>${isTurkish ? 'Kayıt dönemi' : 'Enrollment window'}</label><span>${escapeHtml(formatCalendarValue(timeline.enrollment_deadline))}</span></div>
+                    <div class="premium-item"><label>${isTurkish ? 'Belge tamamlama' : 'Document completion'}</label><span>${escapeHtml(formatCalendarValue(timeline.document_completion_deadline))}</span></div>
                     ${timeline.decision_timing ? `<div class="premium-item"><label>${isTurkish ? 'Karar zamanı' : 'Decision timing'}</label><span>${escapeHtml(displayValue(timeline.decision_timing))}</span></div>` : ''}
-                    ${timeline.offer_reply_deadline ? `<div class="premium-item"><label>${isTurkish ? 'Teklif yanıt tarihi' : 'Offer reply deadline'}</label><span>${escapeHtml(displayValue(timeline.offer_reply_deadline))}</span></div>` : ''}
+                    ${timeline.offer_reply_deadline ? `<div class="premium-item"><label>${isTurkish ? 'Teklif yanıt tarihi' : 'Offer reply deadline'}</label><span>${escapeHtml(formatCalendarValue(timeline.offer_reply_deadline))}</span></div>` : ''}
                     ${timeline.visa_document_path ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Göçmenlik belgesi adımları' : 'Immigration-document steps'}</label><span>${escapeHtml(displayValue(timeline.visa_document_path))}</span></div>` : ''}
                     ${timeline.visa_document_request_system ? `<div class="premium-item"><label>${isTurkish ? 'Göçmenlik belgesi yolu' : 'Immigration-document route'}</label><span>${escapeHtml(displayValue(timeline.visa_document_request_system))}</span></div>` : ''}
                     ${timeline.visa_document_processing_time_business_days_max != null ? `<div class="premium-item"><label>${isTurkish ? 'I-20 / DS-2019 işlem süresi' : 'I-20 / DS-2019 processing'}</label><span>${escapeHtml(`${timeline.visa_document_processing_time_business_days_min ?? '—'}–${timeline.visa_document_processing_time_business_days_max} ${isTurkish ? 'iş günü' : 'business days'}`)}</span></div>` : ''}
@@ -2186,12 +2283,12 @@ function openDrawer(data) {
                     labels: [isTurkish ? 'Akademik Güç' : 'Academic Strength', isTurkish ? 'Uygunluk' : 'Eligibility', isTurkish ? 'Maliyet & Fon' : 'Cost & Fund.', isTurkish ? 'Kariyer' : 'Career', isTurkish ? 'Yaşam Riski' : 'Living Risk', isTurkish ? 'Veri Güveni' : 'Data Conf.'],
                     datasets: [{
                         data: [fitMetric, eligMetric, costMetric, careerMetric, livingMetric, confMetric],
-                        backgroundColor: 'rgba(99, 102, 241, 0.25)',
-                        borderColor: 'rgba(99, 102, 241, 1)',
-                        pointBackgroundColor: 'rgba(139, 92, 246, 1)',
-                        pointBorderColor: '#fff',
-                        pointHoverBackgroundColor: '#fff',
-                        pointHoverBorderColor: 'rgba(139, 92, 246, 1)'
+                        backgroundColor: 'rgba(232, 128, 74, 0.18)',
+                        borderColor: '#e8804a',
+                        pointBackgroundColor: '#d7c765',
+                        pointBorderColor: '#141519',
+                        pointHoverBackgroundColor: '#f4efe5',
+                        pointHoverBorderColor: '#e8804a'
                     }]
                 },
                 options: {
@@ -2199,7 +2296,7 @@ function openDrawer(data) {
                         r: {
                             angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
                             grid: { color: 'rgba(255, 255, 255, 0.1)' },
-                            pointLabels: { color: '#94a3b8', font: { family: 'Inter', size: 11 } },
+                            pointLabels: { color: '#aaa9a8', font: { family: 'Source Sans 3', size: 11 } },
                             ticks: { display: false, min: 0, max: 10 }
                         }
                     },

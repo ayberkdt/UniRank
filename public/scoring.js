@@ -60,6 +60,36 @@ function bounded(value, fallback = 50) {
   return number === null ? fallback : Math.min(100, Math.max(0, number));
 }
 
+const DEFAULT_SCORE_WEIGHTS = {
+  academic_fit: 30,
+  eligibility_language: 20,
+  cost_funding: 20,
+  career_research: 15,
+  living_risk: 10,
+  confidence_deadline: 5
+};
+
+function normalizeWeights(input = {}) {
+  const sanitized = Object.fromEntries(Object.keys(DEFAULT_SCORE_WEIGHTS).map((key) => {
+    const value = finiteNumber(input?.[key]);
+    return [key, value === null ? 0 : Math.max(0, value)];
+  }));
+  const total = Object.values(sanitized).reduce((sum, value) => sum + value, 0);
+  const basis = total > 0 ? sanitized : DEFAULT_SCORE_WEIGHTS;
+  const basisTotal = Object.values(basis).reduce((sum, value) => sum + value, 0);
+  return Object.fromEntries(Object.entries(basis).map(([key, value]) => [key, (value / basisTotal) * 100]));
+}
+
+function annualTuitionScore(value) {
+  if (value === null) return 50;
+  if (value <= 0) return 95;
+  if (value <= 2000) return 85;
+  if (value <= 5000) return 70;
+  if (value <= 10000) return 55;
+  if (value <= 20000) return 35;
+  return 15;
+}
+
 function stringEntries(value) {
   if (Array.isArray(value)) {
     return value.map((item) => {
@@ -119,6 +149,7 @@ function documentedAcademicStrength(record, normalized, hasCurriculumEvidence, h
 }
 
 function calculateScore(record, preferences, weights) {
+  weights = normalizeWeights(weights);
   const explanation = [];
   const warnings = [];
   const profileMatch = {
@@ -156,7 +187,12 @@ function calculateScore(record, preferences, weights) {
     profileMatch.profile_penalties.push({ type: "language", reason: "No verified English-taught route or option is available." });
   }
 
-  const annualCost = finiteNumber(normalized?.totalAcademicCost ?? normalized?.tuitionPerYear);
+  // Only a verified annual tuition value enters the affordability score and
+  // hard cap. Semester fees, one-off enrolment fees and full-program totals
+  // stay visible in details but are never mixed into the same numeric scale.
+  const annualCost = hasVerifiedField(normalized, "tuition")
+    ? finiteNumber(normalized?.tuitionPerYear)
+    : null;
   const sliderCap = finiteNumber(preferences.maxTuition);
   const profileCap = finiteNumber(profile?.max_tuition_eur_per_year);
   const activeHardCap = sliderCap && sliderCap > 0
@@ -274,10 +310,8 @@ function calculateScore(record, preferences, weights) {
   }
   eligibilityFit = Math.min(100, Math.max(0, eligibilityFit));
 
-  const semesterFee = finiteNumber(normalized?.semesterFee);
-  const tuitionScore = annualCost === null ? 45 : (1 - Math.min(1, annualCost / 20000)) * 100;
-  const semesterFeeScore = semesterFee === null ? 50 : (1 - Math.min(1, semesterFee / 1000)) * 100;
-  let scholarshipScore = 40;
+  const tuitionScore = annualTuitionScore(annualCost);
+  let scholarshipScore = 50;
   const scholarshipProfile = record.scholarship_profile || {};
   const scholarshipVerified = hasVerifiedField(normalized, "scholarship");
   if (scholarshipVerified && scholarshipProfile.non_eu_eligible === true) {
@@ -289,9 +323,9 @@ function calculateScore(record, preferences, weights) {
   } else if (normalized?.scholarshipSummary) {
     warnings.push("Scholarship information needs verification.");
   }
-  let costFit = (tuitionScore * 0.7) + (semesterFeeScore * 0.2) + (scholarshipScore * 0.1);
+  let costFit = (tuitionScore * 0.75) + (scholarshipScore * 0.25);
   if (annualCost === null) {
-    warnings.push("Tuition is unknown, so the cost score is neutral.");
+    warnings.push("Comparable verified annual tuition is unavailable, so tuition is neutral in the cost score.");
   } else if (annualCost > 10000) {
     warnings.push(`High yearly tuition (€${annualCost.toFixed(0)}).`);
   } else if (annualCost <= 2000) {
@@ -394,6 +428,7 @@ function calculateScore(record, preferences, weights) {
       confidence_deadline: confidenceFit
     },
     weighted_components: weightedComponents,
+    normalized_weights: weights,
     explanation,
     warnings,
     personalized_match: profileMatch
@@ -401,7 +436,7 @@ function calculateScore(record, preferences, weights) {
 }
 
 if (typeof module !== "undefined" && module.exports) {
-  module.exports = { calculateScore };
+  module.exports = { calculateScore, normalizeWeights };
 } else {
-  window.unirankScoring = { calculateScore };
+  window.unirankScoring = { calculateScore, normalizeWeights };
 }

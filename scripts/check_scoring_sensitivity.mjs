@@ -18,9 +18,13 @@ vm.runInContext(await readFile(new URL('public/scoring.js', root), 'utf8'), sand
 
 const preferences = { degreeFilter: 'All', onlyEnglish: false, maxTuition: 0 };
 const balanced = { academic_fit: 30, eligibility_language: 20, cost_funding: 20, career_research: 15, living_risk: 10, confidence_deadline: 5 };
-// This mirrors moving only the visible Academic Strength slider to its maximum
-// while leaving the other sliders at their balanced values.
-const academicHeavy = { ...balanced, academic_fit: 100 };
+// Moving one UI slider to 100% now redistributes the others to zero so the
+// visible percentages and the scoring shares always describe the same model.
+const academicHeavy = { academic_fit: 100, eligibility_language: 0, cost_funding: 0, career_research: 0, living_risk: 0, confidence_deadline: 0 };
+
+const normalizedBalanced = sandbox.unirankScoring.normalizeWeights(balanced);
+const normalizedTotal = Object.values(normalizedBalanced).reduce((sum, value) => sum + value, 0);
+if (Math.abs(normalizedTotal - 100) > 1e-9) throw new Error(`Normalized weights total ${normalizedTotal}, not 100.`);
 
 const records = await Promise.all([
   loadJson('isvec.json').then((payload) => programme(payload, 'se-kth-aero-msc')),
@@ -33,6 +37,10 @@ const records = await Promise.all([
 const results = records.map((record) => {
   const normal = sandbox.unirankScoring.calculateScore(record, preferences, balanced);
   const heavy = sandbox.unirankScoring.calculateScore(record, preferences, academicHeavy);
+  const scaled = sandbox.unirankScoring.calculateScore(record, preferences, Object.fromEntries(Object.entries(balanced).map(([key, value]) => [key, value * 10])));
+  if (Math.abs(normal.total_score - scaled.total_score) > 1e-9) {
+    throw new Error(`Weight scaling changed ${record.id}: ${normal.total_score} vs ${scaled.total_score}.`);
+  }
   return {
     id: record.id,
     academic_component: normal.components.academic_fit,

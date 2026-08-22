@@ -5,17 +5,21 @@ const root = new URL('../', import.meta.url);
 const files = {
   html: new URL('public/index.html', root),
   css: new URL('public/style.css', root),
+  redesign: new URL('public/redesign.css', root),
   i18n: new URL('public/i18n.js', root),
   map: new URL('public/map.js', root),
   script: new URL('public/script.js', root),
+  deadline: new URL('public/deadlineDashboard.js', root),
 };
 
-const [html, css, i18nCode, mapCode, scriptCode] = await Promise.all([
+const [html, css, redesignCss, i18nCode, mapCode, scriptCode, deadlineCode] = await Promise.all([
   readFile(files.html, 'utf8'),
   readFile(files.css, 'utf8'),
+  readFile(files.redesign, 'utf8'),
   readFile(files.i18n, 'utf8'),
   readFile(files.map, 'utf8'),
   readFile(files.script, 'utf8'),
+  readFile(files.deadline, 'utf8'),
 ]);
 
 const failures = [];
@@ -50,6 +54,13 @@ const requiredIds = [
   'map-kpi-missing',
   'detail-drawer',
   'drawer-overlay',
+  'deadline-launcher',
+  'deadline-modal',
+  'deadline-summary-grid',
+  'deadline-program-list',
+  'kpi-source-coverage',
+  'kpi-map-coverage',
+  'weight-total',
 ];
 const missingIds = requiredIds.filter((id) => !ids.includes(id));
 if (missingIds.length) failures.push(`Missing UI contract ids: ${missingIds.join(', ')}`);
@@ -87,7 +98,7 @@ for (const key of translationKeys) {
   if (!sandbox.I18N?.tr?.[key]) failures.push(`Missing Turkish translation: ${key}`);
 }
 
-const cssWithoutComments = css.replace(/\/\*[\s\S]*?\*\//g, '');
+const cssWithoutComments = `${css}\n${redesignCss}`.replace(/\/\*[\s\S]*?\*\//g, '');
 const openingBraces = (cssWithoutComments.match(/{/g) || []).length;
 const closingBraces = (cssWithoutComments.match(/}/g) || []).length;
 if (openingBraces !== closingBraces) failures.push(`CSS brace mismatch: ${openingBraces} opening / ${closingBraces} closing`);
@@ -102,6 +113,15 @@ for (const contract of [
   ['shared map score thresholds', [6.5, 5.5, 4.5].every((value) => mapCode.includes(`score >= ${value}`) && scriptCode.includes(`value >= ${value}`))],
   ['list/map aria state', scriptCode.includes("setAttribute('aria-pressed'")],
   ['drawer aria state', scriptCode.includes("setAttribute('aria-hidden'")],
+  ['deadline dashboard', html.includes('deadlineDashboard.js') && deadlineCode.includes('collectDeadlineEvents') && css.includes('.deadline-modal-shell')],
+  ['deadline source integrity', deadlineCode.includes('VALID_SOURCE_STATUSES') && deadlineCode.includes('documentsVerified')],
+  ['deadline automatic refresh', deadlineCode.includes('AUTO_REFRESH_MS') && deadlineCode.includes('visibilitychange') && deadlineCode.includes('scheduleMidnightRefresh') && scriptCode.includes('refreshUniRankData') && css.includes('.deadline-auto-sync')],
+  ['Sunumatik editorial redesign', html.includes('redesign.css') && redesignCss.includes('--ui-ember') && redesignCss.includes('Space Grotesk') && redesignCss.includes('.deadline-program-card__next time')],
+  ['natural deadline dates', deadlineCode.includes("weekday: 'long'") && deadlineCode.includes('eventDisplayLabel')],
+  ['normalized weighting UI', scriptCode.includes('rebalanceUiWeights') && scriptCode.includes('distributeIntegerWeight') && html.includes('weight-normalization-note')],
+  ['non-tuition overview KPIs', !html.includes('id="kpi-tuition"') && html.includes('id="kpi-source-coverage"') && html.includes('id="kpi-map-coverage"')],
+  ['reliable map sizing', mapCode.includes("unirank:viewChanged") && mapCode.includes('ResizeObserver') && redesignCss.includes('grid-template-rows: minmax(0, 1fr)')],
+  ['no decorative GeoJSON dependency', !mapCode.includes('raw.githubusercontent.com/johan/world.geo.json')],
 ]) {
   if (!contract[1]) failures.push(`Missing contract: ${contract[0]}`);
 }

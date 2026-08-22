@@ -98,27 +98,6 @@ function initUniRankMap() {
     const map = window.unirankMap;
     L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
-    const PASTEL_HUES = [8, 20, 34, 47, 61, 77, 91, 106, 122, 139, 157, 173, 190, 207, 222, 238, 254, 270, 286, 302, 318, 334, 348];
-
-    function countryTone(value) {
-        const name = String(value || 'world');
-        let hash = 0;
-        for (let index = 0; index < name.length; index += 1) {
-            hash = ((hash << 5) - hash) + name.charCodeAt(index);
-            hash |= 0;
-        }
-        const hue = PASTEL_HUES[Math.abs(hash) % PASTEL_HUES.length];
-        return {
-            fill: `hsl(${hue} 77% 83%)`,
-            stroke: `hsl(${hue} 56% 54%)`
-        };
-    }
-
-    function geoCountryName(feature) {
-        const properties = feature?.properties || {};
-        return properties.ADMIN || properties.name || properties.NAME_EN || properties.NAME || properties.sovereignt || 'world';
-    }
-
     // Calm mode hides street-level labels so the score markers stay readable;
     // detailed mode uses the fully labelled basemap. They must differ, or the
     // "More map context" toggle silently does nothing.
@@ -133,26 +112,9 @@ function initUniRankMap() {
         maxZoom: 20
     });
 
-    fetch('https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json')
-        .then(response => response.json())
-        .then(data => {
-            L.geoJSON(data, {
-                style: feature => {
-                    const tone = countryTone(geoCountryName(feature));
-                    return {
-                        color: tone.stroke,
-                        weight: 1.3,
-                        opacity: 0.84,
-                        fillColor: tone.fill,
-                        fillOpacity: 0.42,
-                        lineCap: 'round',
-                        lineJoin: 'round'
-                    };
-                },
-                interactive: false
-            }).addTo(map);
-        })
-        .catch(err => console.error('Failed to load country borders GeoJSON:', err));
+    // The tile layer already contains borders. Keeping a second remote GeoJSON
+    // dependency made the entire map look broken whenever GitHub raw content
+    // was blocked, despite markers and tiles being usable.
 
     const toggle = document.getElementById('map-detail-toggle');
     const modeBadge = document.getElementById('map-mode-badge');
@@ -325,6 +287,15 @@ function initUniRankMap() {
             if (normalized) identities.add(universityIdentity(normalized));
         });
         return identities.size;
+    }
+
+    function countLocatedPrograms(data) {
+        return data.reduce((count, row) => {
+            const normalized = window.uniDataAdapter
+                ? window.uniDataAdapter.normalizeUniversityRecord(row)
+                : null;
+            return count + (Number.isFinite(normalized?.location?.latitude) && Number.isFinite(normalized?.location?.longitude) ? 1 : 0);
+        }, 0);
     }
 
     function formatCost(value) {
@@ -517,21 +488,21 @@ function initUniRankMap() {
     }
 
     function updateSummary(locatedData, totalScore) {
-        const locatedCount = locatedData.length;
         const universityCount = new Set(locatedData.map(universityKey)).size;
-        const missingCount = Math.max(0, countUniversities(currentData) - locatedCount);
-        const visibleListCount = Math.min(MAX_LISTED_RESULTS, locatedCount);
+        const locatedProgramCount = countLocatedPrograms(currentData);
+        const missingProgramCount = Math.max(0, currentData.length - locatedProgramCount);
+        const visibleListCount = Math.min(MAX_LISTED_RESULTS, universityCount);
 
         const countElement = document.getElementById('map-kpi-count');
         const universityElement = document.getElementById('map-kpi-universities');
         const missingElement = document.getElementById('map-kpi-missing');
         const averageScoreElement = document.getElementById('map-kpi-avg-score');
 
-        if (countElement) countElement.textContent = String(locatedCount);
+        if (countElement) countElement.textContent = String(locatedProgramCount);
         if (universityElement) universityElement.textContent = String(universityCount);
-        if (missingElement) missingElement.textContent = String(missingCount);
+        if (missingElement) missingElement.textContent = String(missingProgramCount);
         if (averageScoreElement) {
-            averageScoreElement.textContent = locatedCount ? (totalScore / locatedCount).toFixed(1) : '—';
+            averageScoreElement.textContent = universityCount ? (totalScore / universityCount).toFixed(1) : '—';
         }
 
         if (!resultsStatusElement) return;
@@ -543,18 +514,18 @@ function initUniRankMap() {
             resultsStatusElement.textContent = isTurkish()
                 ? 'Filtrelerle eşleşen program yok.'
                 : 'No programs match the current filters.';
-        } else if (!locatedCount) {
+        } else if (!universityCount) {
             resultsStatusElement.textContent = isTurkish()
-                ? `${missingCount} programın harita koordinatı yok; sonuçlar liste görünümünde kullanılabilir.`
-                : `${missingCount} programs have no map coordinates; they remain available in list view.`;
+                ? `${missingProgramCount} programın harita koordinatı yok; sonuçlar liste görünümünde kullanılabilir.`
+                : `${missingProgramCount} programs have no map coordinates; they remain available in list view.`;
         } else {
             const base = isTurkish()
-                ? `${locatedCount} koordinatlı program, ${universityCount} üniversite. İlk ${visibleListCount} sonuç gösteriliyor.`
-                : `${locatedCount} mapped programs across ${universityCount} universities. Showing the first ${visibleListCount}.`;
-            const missing = missingCount
+                ? `${locatedProgramCount} koordinatlı program, ${universityCount} üniversite. İlk ${visibleListCount} üniversite gösteriliyor.`
+                : `${locatedProgramCount} mapped programs across ${universityCount} universities. Showing the first ${visibleListCount} universities.`;
+            const missing = missingProgramCount
                 ? (isTurkish()
-                    ? ` ${missingCount} programın koordinatı eksik.`
-                    : ` ${missingCount} programs are missing coordinates.`)
+                    ? ` ${missingProgramCount} programın koordinatı eksik.`
+                    : ` ${missingProgramCount} programs are missing coordinates.`)
                 : '';
             resultsStatusElement.textContent = `${base}${missing}`;
         }
@@ -671,8 +642,10 @@ function initUniRankMap() {
 
     window.fitMapToResults = function () {
         if (!allMarkers.length) return;
+        map.invalidateSize({ pan: false });
         const group = L.featureGroup(allMarkers);
-        map.fitBounds(group.getBounds(), { padding: [50, 50], maxZoom: 8 });
+        const bounds = group.getBounds();
+        if (bounds.isValid()) map.fitBounds(bounds, { padding: [50, 50], maxZoom: 8, animate: false });
     };
 
     if (toggle) {
@@ -709,6 +682,25 @@ function initUniRankMap() {
         pendingFitSignature = '';
         window.fitMapToResults();
     });
+
+    window.addEventListener('unirank:viewChanged', event => {
+        if (event.detail?.view !== 'map') return;
+        window.requestAnimationFrame(() => {
+            map.invalidateSize({ pan: false });
+            if (pendingFitSignature) {
+                lastFittedSignature = pendingFitSignature;
+                pendingFitSignature = '';
+            }
+            window.fitMapToResults();
+        });
+    });
+
+    if (typeof ResizeObserver === 'function' && mapCanvasShell) {
+        const mapResizeObserver = new ResizeObserver(() => {
+            if (mapElement.offsetParent !== null) map.invalidateSize({ pan: false });
+        });
+        mapResizeObserver.observe(mapCanvasShell);
+    }
 
     document.addEventListener('languageChanged', () => {
         updateModeText();
