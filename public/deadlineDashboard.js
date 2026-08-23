@@ -565,7 +565,7 @@
 
   function favoritesSet() {
     try {
-      return new Set(JSON.parse(localStorage.getItem('unirank_favorites') || '[]'));
+      return new Set(window.uniStorage.readArray('unirank_favorites'));
     } catch {
       return new Set();
     }

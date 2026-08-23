@@ -37,9 +37,7 @@ window.openLoginModal = function() {
   showModal(modal, '#login-email', 'flex');
   
   const demoWarning = document.getElementById('demo-auth-warning');
-  if (demoWarning && window.AUTH_MODE === 'demo') {
-      demoWarning.style.display = 'block';
-  }
+  if (demoWarning) demoWarning.hidden = window.AUTH_MODE !== 'demo';
 };
 
 window.closeLoginModal = function() {
@@ -65,7 +63,7 @@ window.handleLoginSubmit = async function(e) {
   const email = document.getElementById('login-email').value;
   if (email) {
     await window.login(email, "demo-password");
-    const storedFavorites = JSON.parse(localStorage.getItem('unirank_demo_favs') || '[]');
+    const storedFavorites = window.uniStorage.readArray('unirank_demo_favs');
     storedFavorites.forEach((id) => favorites.add(id));
     window.closeLoginModal();
     window.updateAuthUI();
@@ -121,39 +119,102 @@ function populateProfileForm() {
 // Format: [{key: 'cfd', weight: 1.0}]
 let currentInterests = [];
 
+function normalizeInterestWeight(value, fallback = 0.8) {
+  const numeric = Number(value);
+  const safe = Number.isFinite(numeric) ? numeric : fallback;
+  return Math.min(1, Math.max(0.3, Math.round(safe * 10) / 10));
+}
+
+function parseNonNegativeNumber(value) {
+  if (value === '' || value == null) return null;
+  const numeric = Number(value);
+  return Number.isFinite(numeric) && numeric >= 0 ? numeric : null;
+}
+
+function interestLabel(key) {
+  const graphItem = window.INTEREST_GRAPH?.[key];
+  return graphItem ? window.localizedValue(graphItem.label) : String(key || '');
+}
+
+function interestWeightLabel(weight) {
+  if (weight >= 1.0) return window.t('core_interest');
+  if (weight >= 0.8) return window.t('high_interest');
+  if (weight >= 0.5) return window.t('medium_interest');
+  return window.t('low_interest');
+}
+
+function createProfileEmptyState(key) {
+  const empty = document.createElement('span');
+  empty.className = 'profile-empty-state';
+  empty.textContent = window.t(key);
+  return empty;
+}
+
 function renderProfileInterests(interests) {
-  currentInterests = [...interests];
+  const seenKeys = new Set();
+  currentInterests = (Array.isArray(interests) ? interests : [])
+    .filter(interest => {
+      const key = interest && String(interest.key || '').trim();
+      if (!key || seenKeys.has(key)) return false;
+      seenKeys.add(key);
+      return true;
+    })
+    .map(interest => ({
+      key: String(interest.key).trim(),
+      weight: normalizeInterestWeight(interest.weight)
+    }));
   const container = document.getElementById('profile-interests-list');
   if (!container) return;
-  
-  container.innerHTML = '';
+
+  container.replaceChildren();
+  if (!currentInterests.length) {
+    container.appendChild(createProfileEmptyState('no_selected_interests'));
+  }
+
   currentInterests.forEach((interest, index) => {
     const item = document.createElement('div');
-    item.className = 'interest-item';
-    
-    // Label
-    const label = window.INTEREST_GRAPH[interest.key] ? window.localizedValue(window.INTEREST_GRAPH[interest.key].label) : interest.key;
-    
-    // Weight Dropdown
-    let wLabel = "Low";
-    if (interest.weight >= 1.0) wLabel = window.t("core_interest");
-    else if (interest.weight >= 0.8) wLabel = window.t("high_interest");
-    else if (interest.weight >= 0.5) wLabel = window.t("medium_interest");
-    else wLabel = window.t("low_interest");
-    
-    item.innerHTML = `
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 8px;">
-        <span style="font-weight:600;">${label}</span>
-        <button type="button" class="btn btn-sm btn-danger" onclick="window.removeProfileInterest(${index})">X</button>
-      </div>
-      <div style="display:flex; gap: 8px; align-items:center;">
-        <input type="range" min="0.3" max="1.0" step="0.1" value="${interest.weight}" onchange="window.updateProfileInterestWeight(${index}, this.value)" style="flex:1">
-        <span style="font-size:12px; min-width:80px; text-align:right;">${wLabel} (${interest.weight})</span>
-      </div>
-    `;
+    item.className = 'profile-interest-item';
+
+    const label = interestLabel(interest.key);
+    const header = document.createElement('div');
+    header.className = 'profile-interest-item__header';
+    const name = document.createElement('span');
+    name.className = 'profile-interest-item__name';
+    name.textContent = label;
+    const remove = document.createElement('button');
+    remove.type = 'button';
+    remove.className = 'profile-interest-remove';
+    remove.setAttribute('aria-label', `${window.t('remove_interest')}: ${label}`);
+    remove.textContent = '×';
+    remove.addEventListener('click', () => window.removeProfileInterest(index));
+    header.append(name, remove);
+
+    const controls = document.createElement('div');
+    controls.className = 'profile-interest-item__controls';
+    const range = document.createElement('input');
+    range.type = 'range';
+    range.min = '0.3';
+    range.max = '1.0';
+    range.step = '0.1';
+    range.value = String(interest.weight);
+    range.setAttribute('aria-label', `${window.t('interest_weight')}: ${label}`);
+    const value = document.createElement('span');
+    value.className = 'profile-interest-item__value';
+    const updateValue = () => {
+      const nextWeight = normalizeInterestWeight(range.value, interest.weight);
+      currentInterests[index].weight = nextWeight;
+      value.textContent = `${interestWeightLabel(nextWeight)} · ${nextWeight.toFixed(1)}`;
+    };
+    updateValue();
+    range.addEventListener('input', () => {
+      updateValue();
+      updateRelatedFields();
+    });
+    controls.append(range, value);
+    item.append(header, controls);
     container.appendChild(item);
   });
-  
+
   updateRelatedFields();
 }
 
@@ -171,21 +232,24 @@ window.addProfileInterest = function() {
 };
 
 window.removeProfileInterest = function(index) {
+  if (!Number.isInteger(index) || index < 0 || index >= currentInterests.length) return;
   currentInterests.splice(index, 1);
   renderProfileInterests(currentInterests);
 };
 
 window.updateProfileInterestWeight = function(index, val) {
-  currentInterests[index].weight = parseFloat(val);
+  if (!Number.isInteger(index) || index < 0 || index >= currentInterests.length) return;
+  currentInterests[index].weight = normalizeInterestWeight(val, currentInterests[index].weight);
   renderProfileInterests(currentInterests);
 };
 
 function updateRelatedFields() {
   const relatedContainer = document.getElementById('profile-related-fields');
   if (!relatedContainer) return;
-  
+
+  relatedContainer.replaceChildren();
   if (currentInterests.length === 0) {
-    relatedContainer.innerHTML = `<span style="font-size:12px; color:var(--text-muted);">${window.t('no_category_results')}</span>`;
+    relatedContainer.appendChild(createProfileEmptyState('no_related_fields'));
     return;
   }
   
@@ -198,26 +262,29 @@ function updateRelatedFields() {
     .sort((a, b) => b[1] - a[1]);
     
   if (related.length === 0) {
-    relatedContainer.innerHTML = `<span style="font-size:12px; color:var(--text-muted);">None</span>`;
+    relatedContainer.appendChild(createProfileEmptyState('no_related_fields'));
     return;
   }
-  
-  relatedContainer.innerHTML = '';
+
   related.forEach(([k, v]) => {
-    const label = window.INTEREST_GRAPH[k] ? window.localizedValue(window.INTEREST_GRAPH[k].label) : k;
-    const pct = Math.round(v * 100);
-    const div = document.createElement('div');
-    div.style = "display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px;";
-    div.innerHTML = `<span>${label}</span> <span style="color:var(--accent-primary);">${pct}%</span>`;
-    
-    const barWrap = document.createElement('div');
-    barWrap.style = "width:100%; height:4px; background:rgba(255,255,255,0.1); border-radius:2px; margin-bottom:8px;";
-    const bar = document.createElement('div');
-    bar.style = `width:${pct}%; height:100%; background:var(--accent-primary); border-radius:2px;`;
-    barWrap.appendChild(bar);
-    
-    relatedContainer.appendChild(div);
-    relatedContainer.appendChild(barWrap);
+    const pct = Math.min(100, Math.max(0, Math.round(Number(v) * 100)));
+    const entry = document.createElement('div');
+    entry.className = 'profile-related-entry';
+    const row = document.createElement('div');
+    row.className = 'profile-related-row';
+    const name = document.createElement('span');
+    name.textContent = interestLabel(k);
+    const percentage = document.createElement('strong');
+    percentage.textContent = `${pct}%`;
+    row.append(name, percentage);
+    const track = document.createElement('div');
+    track.className = 'profile-related-track';
+    const fill = document.createElement('div');
+    fill.className = 'profile-related-fill';
+    fill.style.width = `${pct}%`;
+    track.appendChild(fill);
+    entry.append(row, track);
+    relatedContainer.appendChild(entry);
   });
 }
 
@@ -226,7 +293,7 @@ window.handleProfileSubmit = async function(e) {
   
   const profileData = {
     target_degree: document.getElementById('profile-target-degree')?.value,
-    max_tuition_eur_per_year: parseFloat(document.getElementById('profile-max-tuition')?.value) || null,
+    max_tuition_eur_per_year: parseNonNegativeNumber(document.getElementById('profile-max-tuition')?.value),
     strict_budget: document.getElementById('profile-strict-budget')?.checked || false,
     language_filter: document.getElementById('profile-lang-filter')?.value || 'any',
     admission_risk_tolerance: document.getElementById('profile-admission-risk')?.value || 'medium',
@@ -249,6 +316,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+document.addEventListener('languageChanged', () => {
+  window.populateProfileInterestOptions();
+  renderProfileInterests(currentInterests);
+});
+
 
 window.populateProfileInterestOptions = function() {
     const select = document.getElementById('profile-interest-select');
@@ -257,7 +329,13 @@ window.populateProfileInterestOptions = function() {
     // Save current selected value if any
     const currentVal = select.value;
     
-    select.innerHTML = `<option value="" disabled selected data-i18n="select_field_of_interest">${window.t ? window.t('select_field_of_interest') : 'Select a field of interest...'}</option>`;
+    select.replaceChildren();
+    const placeholder = document.createElement('option');
+    placeholder.value = '';
+    placeholder.disabled = true;
+    placeholder.selected = true;
+    placeholder.textContent = window.t ? window.t('select_field_of_interest') : 'Select a field of interest...';
+    select.appendChild(placeholder);
     
     Object.entries(window.INTEREST_GRAPH).forEach(([key, data]) => {
         const opt = document.createElement('option');

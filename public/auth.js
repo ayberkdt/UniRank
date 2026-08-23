@@ -15,14 +15,14 @@ window.personalizationEnabled = false;
 
 async function initAuth() {
   // Simulate restoring session
-  const storedUser = localStorage.getItem(DEMO_USER_KEY);
+  const storedUser = window.uniStorage.readObject(DEMO_USER_KEY);
   if (storedUser) {
-    window.currentUser = JSON.parse(storedUser);
+    window.currentUser = storedUser;
     await loadUserProfile();
   }
   
   // Sync personalization state
-  const perfEnabled = localStorage.getItem("unirank_personalization_enabled");
+  const perfEnabled = window.uniStorage.read("unirank_personalization_enabled");
   if (perfEnabled === "true" && window.userProfile) {
     window.personalizationEnabled = true;
   } else {
@@ -37,7 +37,7 @@ async function login(email, password) {
     email: email,
     display_name: email.split("@")[0]
   };
-  localStorage.setItem(DEMO_USER_KEY, JSON.stringify(window.currentUser));
+  window.uniStorage.writeJSON(DEMO_USER_KEY, window.currentUser);
   await loadUserProfile();
   return window.currentUser;
 }
@@ -46,17 +46,17 @@ async function logout() {
   window.currentUser = null;
   window.userProfile = null;
   window.personalizationEnabled = false;
-  localStorage.removeItem(DEMO_USER_KEY);
-  localStorage.removeItem("unirank_personalization_enabled");
+  window.uniStorage.remove(DEMO_USER_KEY);
+  window.uniStorage.remove("unirank_personalization_enabled");
   // Don't remove profile/prefs from localstorage to simulate persistence across logouts for demo
 }
 
 async function loadUserProfile() {
   if (!window.currentUser) return null;
 
-  const storedProfile = localStorage.getItem(DEMO_PROFILE_KEY);
+  const storedProfile = window.uniStorage.readObject(DEMO_PROFILE_KEY);
   if (storedProfile) {
-    window.userProfile = JSON.parse(storedProfile);
+    window.userProfile = storedProfile;
   } else {
     window.userProfile = null;
   }
@@ -72,7 +72,7 @@ async function saveUserProfile(profileData) {
     ...profileData,
     updated_at: new Date().toISOString()
   };
-  localStorage.setItem(DEMO_PROFILE_KEY, JSON.stringify(window.userProfile));
+  window.uniStorage.writeJSON(DEMO_PROFILE_KEY, window.userProfile);
   
   // Automatically enable personalization upon profile save
   setPersonalization(true);
@@ -82,7 +82,7 @@ async function saveUserProfile(profileData) {
 
 function setPersonalization(enabled) {
   window.personalizationEnabled = enabled;
-  localStorage.setItem("unirank_personalization_enabled", enabled ? "true" : "false");
+  window.uniStorage.write("unirank_personalization_enabled", enabled ? "true" : "false");
   
   if (window.processAndRender) {
     window.processAndRender();
@@ -91,19 +91,18 @@ function setPersonalization(enabled) {
 
 async function addFavorite(programId) {
   if (window.currentUser) {
-    let favs = JSON.parse(localStorage.getItem(DEMO_FAVS_KEY) || "[]");
+    const favs = window.uniStorage.readArray(DEMO_FAVS_KEY);
     if (!favs.includes(programId)) {
       favs.push(programId);
-      localStorage.setItem(DEMO_FAVS_KEY, JSON.stringify(favs));
+      window.uniStorage.writeJSON(DEMO_FAVS_KEY, favs);
     }
   }
 }
 
 async function removeFavorite(programId) {
   if (window.currentUser) {
-    let favs = JSON.parse(localStorage.getItem(DEMO_FAVS_KEY) || "[]");
-    favs = favs.filter(id => id !== programId);
-    localStorage.setItem(DEMO_FAVS_KEY, JSON.stringify(favs));
+    const favs = window.uniStorage.readArray(DEMO_FAVS_KEY).filter(id => id !== programId);
+    window.uniStorage.writeJSON(DEMO_FAVS_KEY, favs);
   }
 }
 

@@ -2,7 +2,7 @@ let rawData = [];
 let filteredData = [];
 let selectedCountries = new Set();
 let selectedCategoryKeys = new Set();
-let favorites = new Set(JSON.parse(localStorage.getItem('unirank_favorites') || '[]'));
+let favorites = new Set(window.uniStorage.readArray('unirank_favorites'));
 let countryPickerEntries = [];
 let countryPickerOpen = false;
 let activeDrawerData = null;
@@ -588,7 +588,7 @@ function toggleFavorite(id) {
         favorites.add(id);
         if (window.addFavorite) window.addFavorite(id);
     }
-localStorage.setItem('unirank_favorites', JSON.stringify(Array.from(favorites)));
+window.uniStorage.writeJSON('unirank_favorites', Array.from(favorites));
     processAndRender();
 }
 
@@ -597,7 +597,7 @@ async function init() {
     if (window.initAuth) await window.initAuth();
 
     if (window.currentUser) {
-        const authFavs = JSON.parse(localStorage.getItem('unirank_demo_favs') || '[]');
+        const authFavs = window.uniStorage.readArray('unirank_demo_favs');
         authFavs.forEach(id => favorites.add(id));
     }
 

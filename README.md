@@ -53,6 +53,15 @@ node scripts/devServer.mjs
 ```
 Tarayıcıda `http://localhost:8765` adresini açın. Alternatif olarak yalnızca API için: `uvicorn api.index:app --reload`.
 
+Dağıtım öncesi temel frontend sözleşmeleri:
+```bash
+node scripts/checkStaticAssets.mjs
+node scripts/checkWebUi.mjs
+node scripts/checkDeadlineDashboard.mjs
+node scripts/checkScholarships.mjs
+node scripts/checkResearchPathways.mjs
+```
+
 ## ☁️ Dağıtım (Vercel)
 
 Proje, Vercel üzerinde barındırılmaya hazırdır. `vercel.json` dosyası, `api/` klasöründeki Python dosyalarını Serverless Fonksiyon, `public/` klasöründeki dosyaları ise statik içerik olarak sunacak şekilde yapılandırılmıştır.

@@ -53,36 +53,19 @@ function initUniRankMap() {
     }
 
     function readDetailedPreference() {
-        try {
-            const stored = localStorage.getItem('unirank_map_detailed');
-            return stored === null ? true : stored === 'true';
-        } catch (error) {
-            return true;
-        }
+        return window.uniStorage.read('unirank_map_detailed', 'true') === 'true';
     }
 
     function persistDetailedPreference(value) {
-        try {
-            localStorage.setItem('unirank_map_detailed', String(value));
-        } catch (error) {
-            // The map remains usable when storage is unavailable.
-        }
+        window.uniStorage.write('unirank_map_detailed', String(value));
     }
 
     function readPanelPreference() {
-        try {
-            return localStorage.getItem('unirank_map_panel_collapsed') === 'true';
-        } catch (error) {
-            return false;
-        }
+        return window.uniStorage.read('unirank_map_panel_collapsed', 'false') === 'true';
     }
 
     function persistPanelPreference(value) {
-        try {
-            localStorage.setItem('unirank_map_panel_collapsed', String(value));
-        } catch (error) {
-            // The panel remains usable when storage is unavailable.
-        }
+        window.uniStorage.write('unirank_map_panel_collapsed', String(value));
     }
 
     const initialDetailedMode = readDetailedPreference();
@@ -117,7 +100,6 @@ function initUniRankMap() {
     // was blocked, despite markers and tiles being usable.
 
     const toggle = document.getElementById('map-detail-toggle');
-    const modeBadge = document.getElementById('map-mode-badge');
     const detailStatus = document.getElementById('map-detail-status');
     const resultsListElement = document.getElementById('map-results-list');
     const resultsHeaderElement = document.querySelector('#map-results-panel .map-results-header');
@@ -307,17 +289,10 @@ function initUniRankMap() {
     }
 
     function updateModeText() {
-        const badgeFallback = isDetailed
-            ? (isTurkish() ? 'Daha fazla yer etiketi' : 'More place labels')
-            : (isTurkish() ? 'Sakin harita' : 'Calm map');
         const statusFallback = isDetailed
             ? (isTurkish() ? 'Daha fazla yol ve yer etiketi gösteriliyor.' : 'More roads and place labels are shown.')
             : (isTurkish() ? 'Sade ve dikkat dağıtmayan harita açık.' : 'A clean, low-distraction map is on.');
 
-        if (modeBadge) {
-            modeBadge.removeAttribute('data-i18n');
-            modeBadge.textContent = badgeFallback;
-        }
         if (detailStatus) {
             detailStatus.removeAttribute('data-i18n');
             detailStatus.textContent = statusFallback;
@@ -517,7 +492,7 @@ function initUniRankMap() {
         });
     }
 
-    function updateSummary(locatedData, totalScore) {
+    function updateSummary(locatedData) {
         const universityCount = new Set(locatedData.map(universityKey)).size;
         const locatedProgramCount = countLocatedPrograms(currentData);
         const missingProgramCount = Math.max(0, currentData.length - locatedProgramCount);
@@ -526,15 +501,10 @@ function initUniRankMap() {
         const countElement = document.getElementById('map-kpi-count');
         const universityElement = document.getElementById('map-kpi-universities');
         const missingElement = document.getElementById('map-kpi-missing');
-        const averageScoreElement = document.getElementById('map-kpi-avg-score');
 
         if (countElement) countElement.textContent = String(locatedProgramCount);
         if (universityElement) universityElement.textContent = String(universityCount);
         if (missingElement) missingElement.textContent = String(missingProgramCount);
-        if (averageScoreElement) {
-            averageScoreElement.textContent = universityCount ? (totalScore / universityCount).toFixed(1) : '—';
-        }
-
         if (!resultsStatusElement) return;
         resultsStatusElement.setAttribute('role', 'status');
         resultsStatusElement.setAttribute('aria-live', 'polite');
@@ -567,8 +537,6 @@ function initUniRankMap() {
         markers.clearLayers();
         markerByKey.clear();
         allMarkers = [];
-        let totalScore = 0;
-
         currentLocatedData.forEach(item => {
             const { row, normalized: n, latitude, longitude } = item;
             const rawScore = Number(row._score);
@@ -636,11 +604,10 @@ function initUniRankMap() {
             markers.addLayer(marker);
             markerByKey.set(item.key, marker);
             allMarkers.push(marker);
-            totalScore += score;
         });
 
         renderResultsList(currentLocatedData);
-        updateSummary(currentLocatedData, totalScore);
+        updateSummary(currentLocatedData);
 
         // Bring new result sets into view automatically. The signature check
         // keeps language switches and re-renders from resetting a view the

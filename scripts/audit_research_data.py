@@ -1,9 +1,10 @@
-"""Audit the JSON data store and persist its source-safe research state.
+"""Audit the JSON data store and optionally persist its source-safe state.
 
-The API applies the same integrity gate at read time.  Persisting the gated
-state here prevents raw JSON from retaining high-stakes values that have no
-checked official evidence, so exports and future tooling cannot accidentally
-present them as facts.
+The API applies the same integrity gate at read time. The default command is a
+safe dry run; pass ``--write`` to persist the gated state. Persisting prevents
+raw JSON from retaining high-stakes values that have no checked official
+evidence, so exports and future tooling cannot accidentally present them as
+facts.
 """
 
 from __future__ import annotations
@@ -11,6 +12,7 @@ from __future__ import annotations
 import json
 import re
 import sys
+from argparse import ArgumentParser
 from datetime import date
 from pathlib import Path
 from typing import Any
@@ -46,6 +48,16 @@ def detected_indent(source_text: str) -> int:
 
 
 def main() -> None:
+    parser = ArgumentParser(
+        description="Audit research records without rewriting the database unless --write is supplied."
+    )
+    parser.add_argument(
+        "--write",
+        action="store_true",
+        help="Persist integrity-gated records and refreshed quality-control metadata.",
+    )
+    args = parser.parse_args()
+
     changed_files = 0
     audited_records = 0
     invalid_scores = 0
@@ -103,9 +115,17 @@ def main() -> None:
             }
 
         serialised = json.dumps(payload, ensure_ascii=False, indent=indent)
-        path.write_bytes((serialised.replace("\n", newline) + newline).encode("utf-8"))
-        changed_files += 1
-    print(f"Audited {audited_records} records in {changed_files} files; removed {invalid_scores} unsupported sentiment scores.")
+        rendered = (serialised.replace("\n", newline) + newline).encode("utf-8")
+        if rendered != source_text.encode("utf-8"):
+            changed_files += 1
+            if args.write:
+                path.write_bytes(rendered)
+
+    action = "updated" if args.write else "would update"
+    print(
+        f"Audited {audited_records} records; {action} {changed_files} files; "
+        f"removed {invalid_scores} unsupported sentiment scores in the audited view."
+    )
 
 
 if __name__ == "__main__":

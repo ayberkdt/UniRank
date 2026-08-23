@@ -6,26 +6,43 @@ const files = {
   html: new URL('public/index.html', root),
   css: new URL('public/style.css', root),
   redesign: new URL('public/redesign.css', root),
+  profileCss: new URL('public/profile.css', root),
   i18n: new URL('public/i18n.js', root),
   map: new URL('public/map.js', root),
   script: new URL('public/script.js', root),
   deadline: new URL('public/deadlineDashboard.js', root),
+  profile: new URL('public/profile.js', root),
+  storage: new URL('public/storage.js', root),
 };
 
-const [html, css, redesignCss, i18nCode, mapCode, scriptCode, deadlineCode] = await Promise.all([
+const [html, css, redesignCss, profileCss, i18nCode, mapCode, scriptCode, deadlineCode, profileCode, storageCode] = await Promise.all([
   readFile(files.html, 'utf8'),
   readFile(files.css, 'utf8'),
   readFile(files.redesign, 'utf8'),
+  readFile(files.profileCss, 'utf8'),
   readFile(files.i18n, 'utf8'),
   readFile(files.map, 'utf8'),
   readFile(files.script, 'utf8'),
   readFile(files.deadline, 'utf8'),
+  readFile(files.profile, 'utf8'),
+  readFile(files.storage, 'utf8'),
 ]);
 
 const failures = [];
 const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
 const duplicateIds = ids.filter((id, index) => ids.indexOf(id) !== index);
 if (duplicateIds.length) failures.push(`Duplicate HTML ids: ${[...new Set(duplicateIds)].join(', ')}`);
+
+const literalDomRefs = new Set();
+for (const code of [scriptCode, mapCode, deadlineCode, profileCode]) {
+  for (const match of code.matchAll(/getElementById\(\s*['"]([^'"]+)['"]\s*\)/g)) {
+    literalDomRefs.add(match[1]);
+  }
+}
+const missingLiteralDomRefs = [...literalDomRefs].filter((id) => !ids.includes(id)).sort();
+if (missingLiteralDomRefs.length) {
+  failures.push(`JavaScript references missing HTML ids: ${missingLiteralDomRefs.join(', ')}`);
+}
 
 const requiredIds = [
   'filter-sidebar',
@@ -74,6 +91,7 @@ if (!html.includes('value="english_available"')) {
 const sandbox = {
   window: null,
   localStorage: { getItem: () => null, setItem: () => {} },
+  uniStorage: { read: (_key, fallback) => fallback, write: () => true },
   document: {
     documentElement: {},
     querySelectorAll: () => [],
@@ -84,6 +102,24 @@ const sandbox = {
 };
 sandbox.window = sandbox;
 vm.runInNewContext(i18nCode, sandbox, { filename: 'i18n.js' });
+
+const storageMemory = new Map([['broken', '{not-json']]);
+const storageSandbox = {
+  window: null,
+  localStorage: {
+    getItem: (key) => storageMemory.has(key) ? storageMemory.get(key) : null,
+    setItem: (key, value) => storageMemory.set(key, String(value)),
+    removeItem: (key) => storageMemory.delete(key),
+  },
+};
+storageSandbox.window = storageSandbox;
+vm.runInNewContext(storageCode, storageSandbox, { filename: 'storage.js' });
+if (storageSandbox.uniStorage.readArray('broken').length || storageMemory.has('broken')) {
+  failures.push('Shared storage does not recover from malformed JSON.');
+}
+if (!storageSandbox.uniStorage.writeJSON('valid', ['ok']) || storageSandbox.uniStorage.readArray('valid')[0] !== 'ok') {
+  failures.push('Shared storage JSON round-trip failed.');
+}
 
 const translationKeys = new Set();
 for (const pattern of [
@@ -98,7 +134,7 @@ for (const key of translationKeys) {
   if (!sandbox.I18N?.tr?.[key]) failures.push(`Missing Turkish translation: ${key}`);
 }
 
-const cssWithoutComments = `${css}\n${redesignCss}`.replace(/\/\*[\s\S]*?\*\//g, '');
+const cssWithoutComments = `${css}\n${redesignCss}\n${profileCss}`.replace(/\/\*[\s\S]*?\*\//g, '');
 const openingBraces = (cssWithoutComments.match(/{/g) || []).length;
 const closingBraces = (cssWithoutComments.match(/}/g) || []).length;
 if (openingBraces !== closingBraces) failures.push(`CSS brace mismatch: ${openingBraces} opening / ${closingBraces} closing`);
@@ -123,6 +159,8 @@ for (const contract of [
   ['structured workspace header', html.includes('class="header-destinations"') && html.includes('class="header-accountbar"') && html.includes('class="account-profile-button"') && !html.includes('class="user-avatar"')],
   ['hierarchical detail rail', scriptCode.includes('class="ranking-list"') && scriptCode.includes('isTiedQsRank') && redesignCss.includes('counter-reset: drawer-section') && redesignCss.includes('counter(drawer-section, decimal-leading-zero)')],
   ['true map fullscreen', mapCode.includes('requestFullscreen') && mapCode.includes('fullscreenchange') && redesignCss.includes('.map-stage:fullscreen') && redesignCss.includes('inset: 0 !important')],
+  ['modular profile workspace', html.includes('profile.css') && profileCss.includes('.profile-interest-item') && profileCode.includes('normalizeInterestWeight') && profileCode.includes('parseNonNegativeNumber') && profileCode.includes('replaceChildren') && !profileCode.includes('innerHTML')],
+  ['resilient shared storage', html.indexOf('storage.js') < html.indexOf('i18n.js') && storageCode.includes('readJSON') && storageCode.includes('readArray') && scriptCode.includes("uniStorage.readArray('unirank_favorites')") && profileCode.includes('uniStorage.readArray') && mapCode.includes("uniStorage.read('unirank_map_detailed'")],
   ['compact university cards', redesignCss.includes('grid-template-columns: 34px minmax(0, 1fr) 116px') && redesignCss.includes('min-height: 60px') && redesignCss.includes('The rank marker is hidden here')],
   ['natural deadline dates', deadlineCode.includes("weekday: 'long'") && deadlineCode.includes('eventDisplayLabel')],
   ['normalized weighting UI', scriptCode.includes('rebalanceUiWeights') && scriptCode.includes('distributeIntegerWeight') && html.includes('weight-normalization-note')],

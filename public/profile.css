@@ -1,0 +1,179 @@
+/* Profile workspace -------------------------------------------------------
+   Component-local styling for profile interests. Dynamic values remain in
+   profile.js; layout and visual hierarchy live here instead of inline HTML. */
+
+.profile-interest-panel {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding: 16px;
+    border: 1px solid #353840;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #1d1f24, #191b20);
+}
+
+.auth-demo-warning {
+    margin: -12px 0 18px;
+    padding: 10px 11px;
+    border: 1px solid rgba(215, 199, 101, 0.3);
+    border-radius: 7px;
+    background: rgba(215, 199, 101, 0.08);
+    color: #d9cc82;
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.profile-interest-adder {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 10px;
+}
+
+.profile-interest-adder .modern-input {
+    width: 100%;
+    min-width: 0;
+}
+
+.profile-interests-list {
+    display: grid;
+    gap: 10px;
+}
+
+.profile-interest-item {
+    display: grid;
+    gap: 11px;
+    padding: 12px;
+    border: 1px solid #3b3e47;
+    border-radius: 8px;
+    background: #17191e;
+}
+
+.profile-interest-item__header,
+.profile-interest-item__controls,
+.profile-related-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.profile-interest-item__name {
+    min-width: 0;
+    overflow: hidden;
+    color: var(--ui-ink, #f1f0eb);
+    font-size: 13px;
+    font-weight: 650;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.profile-interest-remove {
+    display: grid;
+    width: 28px;
+    height: 28px;
+    flex: 0 0 auto;
+    place-items: center;
+    border: 1px solid #464a54;
+    border-radius: 6px;
+    background: #1d1f24;
+    color: #a6a9b1;
+    font-size: 17px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.profile-interest-remove:hover {
+    border-color: rgba(239, 134, 117, 0.5);
+    background: rgba(239, 134, 117, 0.1);
+    color: #ffb1a4;
+}
+
+.profile-interest-item__controls input[type="range"] {
+    min-width: 0;
+    flex: 1 1 auto;
+    accent-color: var(--ui-ember, #e8804a);
+}
+
+.profile-interest-item__value {
+    min-width: 104px;
+    color: #b8bbc3;
+    font-size: 10px;
+    font-weight: 600;
+    text-align: right;
+}
+
+.profile-related-heading {
+    margin: 2px 0 -8px;
+    color: #a6a9b1;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+}
+
+.profile-related-fields {
+    display: grid;
+    gap: 8px;
+    padding: 12px;
+    border: 1px solid #353840;
+    border-radius: 8px;
+    background: #141519;
+}
+
+.profile-related-entry {
+    display: grid;
+    gap: 5px;
+}
+
+.profile-related-row {
+    color: #c8c8c4;
+    font-size: 11px;
+}
+
+.profile-related-row strong {
+    color: var(--ui-ember-soft, #f3a076);
+    font-size: 10px;
+}
+
+.profile-related-track {
+    height: 4px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #292c33;
+}
+
+.profile-related-fill {
+    height: 100%;
+    border-radius: inherit;
+    background: var(--ui-ember, #e8804a);
+}
+
+.profile-empty-state {
+    padding: 8px;
+    color: #858992;
+    font-size: 11px;
+    text-align: center;
+}
+
+@media (max-width: 560px) {
+    .profile-interest-adder {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .profile-interest-item__controls {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .profile-interest-item__value {
+        min-width: 0;
+        text-align: left;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .profile-interest-remove {
+        transition: none;
+    }
+}

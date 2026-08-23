@@ -21,6 +21,11 @@ window.I18N = {
     high_interest: "High Interest",
     medium_interest: "Medium Interest",
     low_interest: "Low Interest",
+    add_interest: "Add",
+    remove_interest: "Remove interest",
+    no_selected_interests: "No interests selected yet",
+    no_related_fields: "No related fields yet",
+    interest_weight: "Interest weight",
     profile_match: "Profile Match",
     sync_favorites: "Do you want to sync your local favorites to your account?",
     app_title: "UniRank",
@@ -114,6 +119,8 @@ window.I18N = {
     phd: "Doctorate (PhD)",
     only_english: "English study option",
     max_tuition: "Max Tuition",
+    max_tuition_year: "Maximum tuition (EUR/year)",
+    tuition_example: "e.g. 5000",
     show_favorites: "⭐ Show Favorites",
 
     ranking_weights: "Ranking Weights",
@@ -322,6 +329,11 @@ window.I18N = {
     high_interest: "Yüksek İlgi",
     medium_interest: "Orta İlgi",
     low_interest: "Düşük İlgi",
+    add_interest: "Ekle",
+    remove_interest: "İlgi alanını kaldır",
+    no_selected_interests: "Henüz ilgi alanı seçilmedi",
+    no_related_fields: "Henüz ilişkili alan yok",
+    interest_weight: "İlgi ağırlığı",
     profile_match: "Profil Uyumu",
     sync_favorites: "Yerel favorilerini hesabına aktarmak ister misin?",
     app_title: "UniRank",
@@ -415,6 +427,8 @@ window.I18N = {
     phd: "Doktora (PhD)",
     only_english: "İngilizce eğitim seçeneği",
     max_tuition: "Maksimum Ücret",
+    max_tuition_year: "Maksimum öğrenim ücreti (EUR/yıl)",
+    tuition_example: "ör. 5000",
     show_favorites: "⭐ Favorileri Göster",
 
     ranking_weights: "Sıralama Ağırlıkları",
@@ -637,14 +651,15 @@ window.COUNTRY_LABELS = {
 
 window.I18N = I18N;
 window.COUNTRY_LABELS = COUNTRY_LABELS;
-window.currentLanguage = localStorage.getItem("unirank_language") || "en";
+const storedLanguage = window.uniStorage.read("unirank_language", "en");
+window.currentLanguage = ["tr", "en"].includes(storedLanguage) ? storedLanguage : "en";
 document.documentElement.lang = window.currentLanguage;
 
 window.setLanguage = function(lang) {
   if (!["tr", "en"].includes(lang)) return;
 
   window.currentLanguage = lang;
-  localStorage.setItem("unirank_language", lang);
+  window.uniStorage.write("unirank_language", lang);
   document.documentElement.lang = lang;
 
   window.applyTranslations();

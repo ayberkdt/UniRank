@@ -872,7 +872,12 @@ def test_unitn_space_track_keeps_new_programme_delivery_risk_and_noneu_mechanics
     assert timeline["visa_sensitive_deadline"] == "2026-10-31"
 
     assert unitn["data_quality"]["unverified_critical_fields"] == []
-    assert unitn["data_quality"]["status"] == "verified"
+    # The checked 2026/27 call is historical and the next cycle is intentionally
+    # not projected. The record is decision-usable but must remain partial until
+    # the next non-EU deadline and second-year delivery are published.
+    assert unitn["data_quality"]["status"] == "partial"
+    assert unitn["source_profile"]["needs_verification"] is True
+    assert unitn["source_profile"]["field_confidence"]["deadline"] == "unknown"
 
 
 def test_ctu_avionics_uses_current_czk_dorm_examples_without_eur_conversion_or_guarantee():

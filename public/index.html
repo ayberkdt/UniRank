@@ -9,13 +9,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css?v=17">
     <link rel="stylesheet" href="redesign.css?v=7">
+    <link rel="stylesheet" href="profile.css?v=1">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="i18n.js?v=10"></script>
+    <script src="storage.js?v=1"></script>
+    <script src="i18n.js?v=11"></script>
     <script src="taxonomy.js?v=3"></script>
 </head>
 <body>
@@ -422,9 +424,9 @@
 
     <script src="dataAdapter.js?v=12"></script>
     <script src="scoring.js?v=7"></script>
-    <script src="deadlineDashboard.js?v=6"></script>
-    <script src="script.js?v=33"></script>
-    <script src="map.js?v=10"></script>
+    <script src="deadlineDashboard.js?v=7"></script>
+    <script src="script.js?v=34"></script>
+    <script src="map.js?v=11"></script>
 
     <!-- Login Modal -->
     <div id="login-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="login-modal-title" aria-hidden="true" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:2000; align-items:center; justify-content:center;">
@@ -432,6 +434,7 @@
             <button data-modal-close onclick="window.closeLoginModal()" aria-label="Close dialog" data-i18n-aria-label="close_dialog" style="position:absolute; top:16px; right:16px; background:none; border:none; font-size:20px; cursor:pointer; color:var(--text-muted);">&times;</button>
             <h2 id="login-modal-title" style="margin-bottom: 8px;" data-i18n="welcome">Welcome</h2>
             <p style="font-size:14px; color:var(--text-muted); margin-bottom: 24px;" data-i18n="sign_in_save">Sign in to save your profile and preferences.</p>
+            <p id="demo-auth-warning" class="auth-demo-warning" data-i18n="demo_warning" hidden>Demo mode: profile data is stored locally in this browser.</p>
             <form id="login-form" onsubmit="window.handleLoginSubmit(event)">
                 <div class="form-group">
                     <label for="login-email" data-i18n="email_address">Email Address</label>
@@ -464,9 +467,9 @@
                 </div>
 
                 <h3 style="margin-bottom:12px; color:var(--primary); font-size:16px;" data-i18n="academic_interests">Academic Interests</h3>
-                <div style="background: rgba(0,0,0,0.2); padding: 16px; border-radius: 12px; margin-bottom: 24px;">
-                    <div style="display:flex; gap:12px; margin-bottom:16px;">
-                        <select id="profile-interest-select" class="modern-input" style="flex:1;">
+                <div class="profile-interest-panel">
+                    <div class="profile-interest-adder">
+                        <select id="profile-interest-select" class="modern-input">
                             <option value="">Select a field of interest...</option>
                             <option value="orbital_mechanics">Orbital Mechanics</option>
                             <option value="gnc">GNC (Guidance, Navigation, Control)</option>
@@ -478,29 +481,29 @@
                             <option value="mission_analysis">Mission Analysis</option>
                             <option value="space_systems">Space Systems</option>
                         </select>
-                        <button type="button" class="btn btn-outline" onclick="window.addProfileInterest()">Add</button>
+                        <button type="button" class="btn btn-outline" onclick="window.addProfileInterest()" data-i18n="add_interest">Add</button>
                     </div>
-                    
-                    <div id="profile-interests-list" style="display:flex; flex-direction:column; gap:16px; margin-bottom: 24px;">
+
+                    <div id="profile-interests-list" class="profile-interests-list" aria-live="polite">
                         <!-- JS injected -->
                     </div>
 
-                    <h4 style="font-size:14px; margin-bottom:8px; color:var(--text-muted);" data-i18n="related_fields">Related Fields (Auto-inferred)</h4>
-                    <div id="profile-related-fields" style="display:flex; flex-direction:column; gap:4px; padding:12px; background:rgba(255,255,255,0.02); border-radius:8px; border:1px solid rgba(255,255,255,0.05);">
-                        <span style="font-size:12px; color:var(--text-muted);">None</span>
+                    <h4 class="profile-related-heading" data-i18n="related_fields">Related Fields</h4>
+                    <div id="profile-related-fields" class="profile-related-fields" aria-live="polite">
+                        <span class="profile-empty-state" data-i18n="no_related_fields">No related fields yet</span>
                     </div>
                 </div>
 
                 <h3 style="margin-bottom:12px; color:var(--primary); font-size:16px;" data-i18n="budget_preferences">Budget Preferences</h3>
                 <div class="detail-grid" style="margin-bottom:24px;">
                     <div class="form-group detail-item">
-                        <label>Max Tuition (EUR/Year)</label>
-                        <input type="number" id="profile-max-tuition" placeholder="e.g. 5000" class="modern-input" style="width:100%;">
+                        <label for="profile-max-tuition" data-i18n="max_tuition_year">Maximum tuition (EUR/year)</label>
+                        <input type="number" id="profile-max-tuition" min="0" step="100" inputmode="numeric" placeholder="e.g. 5000" data-i18n-placeholder="tuition_example" class="modern-input" style="width:100%;">
                     </div>
                     <div class="form-group detail-item" style="justify-content:center;">
                         <label style="display:flex; align-items:center; gap:8px; cursor:pointer;">
                             <input type="checkbox" id="profile-strict-budget">
-                            <span>Strict Budget (Filter out expensive programs)</span>
+                            <span data-i18n="strict_budget">Strict Budget</span>
                         </label>
                     </div>
                 </div>
@@ -517,23 +520,23 @@
                     <div class="form-group detail-item">
                         <label data-i18n="admission_risk_tolerance">Admission Risk Tolerance</label>
                         <select id="profile-admission-risk" class="modern-input" style="width:100%;">
-                            <option value="low">Low (Prefer direct admission)</option>
-                            <option value="medium" selected>Medium</option>
-                            <option value="high">High (Open to rigorous selection)</option>
+                            <option value="low" data-i18n="risk_low">Low risk</option>
+                            <option value="medium" selected data-i18n="risk_medium">Medium risk</option>
+                            <option value="high" data-i18n="risk_high">High risk</option>
                         </select>
                     </div>
                     <div class="form-group detail-item">
                         <label data-i18n="housing_risk_tolerance">Housing Risk Tolerance</label>
                         <select id="profile-housing-risk" class="modern-input" style="width:100%;">
-                            <option value="low">Low (Avoid nightmare housing markets)</option>
-                            <option value="medium" selected>Medium</option>
-                            <option value="high">High (Willing to struggle for housing)</option>
+                            <option value="low" data-i18n="risk_low">Low risk</option>
+                            <option value="medium" selected data-i18n="risk_medium">Medium risk</option>
+                            <option value="high" data-i18n="risk_high">High risk</option>
                         </select>
                     </div>
                 </div>
 
                 <div style="display:flex; justify-content:flex-end; gap:12px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.1);">
-                    <button type="button" class="btn btn-outline" onclick="window.closeProfileModal()">Cancel</button>
+                    <button type="button" class="btn btn-outline" onclick="window.closeProfileModal()" data-i18n="cancel">Cancel</button>
                     <button type="submit" class="btn btn-primary" data-i18n="save_profile">Save Profile</button>
                 </div>
             </form>
@@ -542,8 +545,8 @@
 
     <!-- Custom Scripts -->
     <script src="interestGraph.js?v=1"></script>
-    <script src="auth.js?v=2"></script>
-    <script src="profile.js?v=2"></script>
+    <script src="auth.js?v=3"></script>
+    <script src="profile.js?v=3"></script>
 
 </body>
 </html>
