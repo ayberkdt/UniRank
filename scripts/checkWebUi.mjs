@@ -117,6 +117,8 @@ for (const contract of [
   ['deadline source integrity', deadlineCode.includes('VALID_SOURCE_STATUSES') && deadlineCode.includes('documentsVerified')],
   ['deadline automatic refresh', deadlineCode.includes('AUTO_REFRESH_MS') && deadlineCode.includes('visibilitychange') && deadlineCode.includes('scheduleMidnightRefresh') && scriptCode.includes('refreshUniRankData') && css.includes('.deadline-auto-sync')],
   ['Sunumatik editorial redesign', html.includes('redesign.css') && redesignCss.includes('--ui-ember') && redesignCss.includes('Space Grotesk') && redesignCss.includes('.deadline-program-card__next time')],
+  ['Sunumatik Graphite Ember rails', redesignCss.includes('--ui-signal: #2fa98c') && redesignCss.includes('#detail-drawer.drawer.country-themed') && redesignCss.includes('.country-picker-popover')],
+  ['compact university cards', redesignCss.includes('grid-template-columns: 34px minmax(0, 1fr) 116px') && redesignCss.includes('min-height: 60px') && redesignCss.includes('The rank marker is hidden here')],
   ['natural deadline dates', deadlineCode.includes("weekday: 'long'") && deadlineCode.includes('eventDisplayLabel')],
   ['normalized weighting UI', scriptCode.includes('rebalanceUiWeights') && scriptCode.includes('distributeIntegerWeight') && html.includes('weight-normalization-note')],
   ['non-tuition overview KPIs', !html.includes('id="kpi-tuition"') && html.includes('id="kpi-source-coverage"') && html.includes('id="kpi-map-coverage"')],
