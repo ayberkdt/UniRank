@@ -99,7 +99,7 @@ window.I18N = {
     excluded: "excluded",
 
     academic_categories: "Academic / Field Categories",
-    academic_field_categories: "Academic / Field Categories",
+    academic_field_categories: "Technical focus",
     search_categories: "Search field, method, technology or keyword...",
     category_suggestions: "Category Suggestions",
     selected_categories: "Selected Categories",
@@ -399,7 +399,7 @@ window.I18N = {
     excluded: "hariç",
 
     academic_categories: "Akademik / Alan Kategorileri",
-    academic_field_categories: "Akademik / Teknik Alan Kategorileri",
+    academic_field_categories: "Teknik odak",
     search_categories: "Alan, yöntem, teknoloji veya anahtar kelime ara...",
     category_suggestions: "Kategori Önerileri",
     selected_categories: "Seçili Kategoriler",

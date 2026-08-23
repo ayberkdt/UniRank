@@ -2961,3 +2961,290 @@ input[type="range"]::-webkit-slider-thumb {
         grid-column: 1;
     }
 }
+
+/* Premium filter rail ----------------------------------------------------
+   A single 20px alignment rail controls the brand, CTA and every filter.
+   The scrolling viewport spans the full sidebar so its scrollbar stays on
+   the physical edge instead of stealing width from the form controls. */
+:root {
+    --ui-filter-rail-width: 320px;
+    --ui-filter-rail-inset: 20px;
+}
+
+@media (min-width: 1101px) {
+    .app-container {
+        grid-template-columns: var(--ui-filter-rail-width) minmax(0, 1fr);
+    }
+}
+
+.sidebar {
+    width: var(--ui-filter-rail-width);
+    gap: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #181a1f;
+}
+
+.sidebar-brand {
+    min-height: 76px;
+    margin-inline: var(--ui-filter-rail-inset);
+    padding: 13px 0 12px;
+    border-bottom-color: #343740;
+}
+
+.brand-lockup {
+    min-width: 0;
+    gap: 12px;
+}
+
+.brand-mark {
+    width: 40px;
+    height: 40px;
+    border-radius: 9px;
+}
+
+.brand-lockup strong {
+    font-size: 20px;
+    letter-spacing: -0.025em;
+}
+
+.brand-lockup small {
+    margin-top: 2px;
+    color: #92959e;
+    font-size: 9.5px;
+    letter-spacing: 0.105em;
+}
+
+.sidebar > .profile-cta {
+    width: auto;
+    min-height: 58px;
+    margin: 12px var(--ui-filter-rail-inset) 0 !important;
+    gap: 10px;
+    padding: 9px 10px;
+    border: 1px solid #3b3e47 !important;
+    border-radius: 9px;
+    background: linear-gradient(180deg, #23252b, #1f2127) !important;
+    box-shadow: inset 2px 0 0 var(--ui-ember) !important;
+    transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+.sidebar > .profile-cta:hover {
+    border-color: #555963 !important;
+    background: linear-gradient(180deg, #292b32, #23252b) !important;
+    transform: translateY(-1px);
+}
+
+.sidebar > .profile-cta.active {
+    border-color: rgba(47, 169, 140, 0.48) !important;
+    background: linear-gradient(180deg, rgba(47, 169, 140, 0.12), #1f2427) !important;
+    box-shadow: inset 2px 0 0 var(--ui-signal) !important;
+}
+
+.profile-cta__icon {
+    width: 32px;
+    height: 32px;
+    border: 1px solid #3f424c;
+    border-radius: 7px;
+    background: #191a1f;
+    color: var(--ui-ember-soft);
+    font-size: 17px;
+}
+
+.profile-cta.active .profile-cta__icon {
+    border-color: rgba(47, 169, 140, 0.42);
+    color: #78cdb8;
+}
+
+.profile-cta__copy {
+    min-width: 0;
+    gap: 2px;
+}
+
+.profile-cta__copy strong {
+    overflow: hidden;
+    color: var(--ui-ink);
+    font-size: 13px;
+    font-weight: 650;
+    line-height: 1.15;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.profile-cta__copy small {
+    overflow: hidden;
+    color: #888b94;
+    font-size: 9.5px;
+    line-height: 1.25;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.profile-cta__arrow {
+    display: grid;
+    width: 24px;
+    height: 24px;
+    flex: 0 0 auto;
+    place-items: center;
+    border-radius: 6px;
+    color: #858992;
+    font-size: 14px;
+    transition: color 160ms ease, transform 160ms ease;
+}
+
+.profile-cta:hover .profile-cta__arrow {
+    color: var(--ui-ember-soft);
+    transform: translateX(2px);
+}
+
+.sidebar__scroll {
+    width: 100%;
+    gap: 0;
+    margin: 14px 0 0;
+    padding: 0 0 28px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-color: transparent transparent;
+    scrollbar-gutter: auto;
+    scrollbar-width: none;
+}
+
+.sidebar__scroll::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.sidebar__scroll > .filter-card {
+    width: auto;
+    margin-inline: var(--ui-filter-rail-inset);
+    padding: 6px 0 20px;
+}
+
+.sidebar__scroll .filter-card__header {
+    top: 0;
+    margin: 0 0 16px;
+    padding: 4px 0 10px;
+    background: linear-gradient(180deg, #181a1f 78%, rgba(24, 26, 31, 0));
+}
+
+.filter-card__header > div {
+    gap: 8px;
+}
+
+.filter-card h2 {
+    font-size: 17px;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+}
+
+.section-kicker {
+    font-size: 10px;
+    letter-spacing: 0.11em;
+}
+
+.text-button {
+    min-height: 28px;
+    padding: 4px 0;
+    font-size: 11px;
+    text-decoration: none;
+}
+
+.text-button:hover {
+    color: #ffc09d;
+    text-decoration: none;
+}
+
+.sidebar .form-group {
+    gap: 7px;
+    margin-bottom: 16px;
+}
+
+.sidebar .form-group label,
+.sidebar .field-label,
+.sidebar .tuition-control label {
+    color: #c5c4bf;
+    font-size: 11.5px;
+    font-weight: 620;
+    letter-spacing: 0.015em;
+}
+
+.sidebar .search-field input,
+.sidebar .category-search-box input,
+.sidebar select {
+    width: 100%;
+    min-height: 44px;
+    border-color: #3b3e47 !important;
+    border-radius: 8px;
+    background: #17181d !important;
+    font-size: 13px;
+    transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.sidebar .search-field input:hover,
+.sidebar .category-search-box input:hover,
+.sidebar select:hover {
+    border-color: #4c505a !important;
+    background: #1b1d22 !important;
+}
+
+.sidebar .search-field > span {
+    left: 12px;
+    color: #8c8f98;
+    font-size: 15px;
+}
+
+.country-picker-trigger {
+    min-height: 50px;
+    grid-template-columns: 32px minmax(0, 1fr) auto 9px;
+    gap: 9px;
+    padding: 8px 10px 8px 8px;
+    border-color: #3b3e47;
+    border-radius: 8px;
+    background: linear-gradient(180deg, #22242a, #1d1f24);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.025);
+    transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.country-picker-trigger:hover {
+    border-color: #555963;
+    background: linear-gradient(180deg, #282a31, #22242a);
+}
+
+.country-picker-trigger__flag {
+    width: 32px;
+    height: 32px;
+    border-radius: 7px;
+    font-size: 18px;
+}
+
+.country-picker-trigger__copy small {
+    font-size: 8.5px;
+    letter-spacing: 0.08em;
+}
+
+.country-picker-trigger__copy strong {
+    font-size: 11.5px;
+    font-weight: 650;
+}
+
+.sidebar .filter-toggle-row,
+.sidebar .tuition-control {
+    border-radius: 8px;
+    background: linear-gradient(180deg, #202228, #1d1f24) !important;
+}
+
+@media (max-width: 1100px) {
+    .sidebar {
+        width: min(360px, 92vw);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sidebar > .profile-cta,
+    .profile-cta__arrow,
+    .sidebar .search-field input,
+    .sidebar .category-search-box input,
+    .sidebar select,
+    .country-picker-trigger {
+        transition: none;
+    }
+}

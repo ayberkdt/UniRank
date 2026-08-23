@@ -1131,7 +1131,9 @@ function positionCountryPickerPopover() {
     const margin = 12;
     const gap = 8;
     const rect = trigger.getBoundingClientRect();
-    const width = Math.min(Math.max(rect.width, 320), window.innerWidth - (margin * 2));
+    // Match the control rail instead of forcing a 320px panel that protrudes
+    // beyond the sidebar. Keep only a small usability floor on narrow screens.
+    const width = Math.min(Math.max(rect.width, Math.min(260, window.innerWidth - (margin * 2))), window.innerWidth - (margin * 2));
     const left = Math.min(Math.max(rect.left, margin), window.innerWidth - width - margin);
     popover.style.width = `${width}px`;
     popover.style.left = `${left}px`;
@@ -2502,13 +2504,19 @@ window.updateAuthUI = function() {
     // Update Use My Profile button state
     const useProfileBtn = document.getElementById('btn-use-profile');
     if (useProfileBtn) {
-        if (window.personalizationEnabled) {
-            useProfileBtn.classList.add('active');
-            useProfileBtn.innerHTML = `<span class="icon">✨</span> ${window.t('profile_applied')}`;
-        } else {
-            useProfileBtn.classList.remove('active');
-            useProfileBtn.innerHTML = `<span class="icon">⚙️</span> ${window.t('use_my_profile')}`;
-        }
+        const isApplied = Boolean(window.personalizationEnabled);
+        useProfileBtn.classList.toggle('active', isApplied);
+        useProfileBtn.setAttribute('aria-pressed', String(isApplied));
+
+        // Keep the authored component structure intact. Replacing the entire
+        // button with a text node made its spacing and hierarchy collapse after
+        // every auth refresh.
+        const icon = useProfileBtn.querySelector('.profile-cta__icon');
+        const title = useProfileBtn.querySelector('.profile-cta__copy strong');
+        const description = useProfileBtn.querySelector('.profile-cta__copy small');
+        if (icon) icon.textContent = isApplied ? '✓' : '◎';
+        if (title) title.textContent = window.t(isApplied ? 'profile_applied' : 'use_my_profile');
+        if (description) description.textContent = window.t('profile_cta_desc');
     }
 };
 
