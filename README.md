@@ -62,6 +62,12 @@ node scripts/checkScholarships.mjs
 node scripts/checkResearchPathways.mjs
 ```
 
+Veri bütünlüğü denetimi varsayılan olarak salt okunurdur:
+```bash
+python scripts/audit_research_data.py
+```
+Denetlenen bütünlük durumunu JSON dosyalarına bilinçli olarak yazmak için ayrıca `--write` kullanın.
+
 ## ☁️ Dağıtım (Vercel)
 
 Proje, Vercel üzerinde barındırılmaya hazırdır. `vercel.json` dosyası, `api/` klasöründeki Python dosyalarını Serverless Fonksiyon, `public/` klasöründeki dosyaları ise statik içerik olarak sunacak şekilde yapılandırılmıştır.
