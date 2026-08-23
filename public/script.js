@@ -1700,15 +1700,19 @@ function openDrawer(data) {
 
         // 2. Basic info card. Every label follows the active language: mixed
         // Turkish labels inside the English UI read like leaked internals.
-        const qsBadge = n.qsRankDisplay
-            ? `<span class="rank-badge qs-rank" title="QS World University Rankings ${escapeHtml(n.qsRankYear || '')}">QS: #${escapeHtml(String(n.qsRankDisplay).replace(/^#/, ''))}</span>`
-            : '';
-        const engBadge = n.engineeringRanking ? `<span class="rank-badge eng-rank">${isTurkish ? 'Müh' : 'Eng'}: #${escapeHtml(displayValue(n.engineeringRanking))}</span>` : '';
+        const rawQsRank = String(n.qsRankDisplay || '').trim();
+        const isTiedQsRank = rawQsRank.startsWith('=');
+        const cleanQsRank = rawQsRank.replace(/^[#=\s]+/, '');
+        const rawEngineeringRank = n.engineeringRanking ? displayValue(n.engineeringRanking) : '';
+        const rankingItems = [
+            cleanQsRank ? `<div><dt>QS World University Rankings${n.qsRankYear ? ` · ${escapeHtml(n.qsRankYear)}` : ''}</dt><dd>#${escapeHtml(cleanQsRank)}${isTiedQsRank ? `<small>${isTurkish ? 'eşit sıra' : 'tied'}</small>` : ''}</dd></div>` : '',
+            rawEngineeringRank ? `<div><dt>${isTurkish ? 'Mühendislik sıralaması' : 'Engineering ranking'}</dt><dd>#${escapeHtml(String(rawEngineeringRank).replace(/^[#=\s]+/, ''))}</dd></div>` : ''
+        ].filter(Boolean).join('');
 
         let basicInfoHTML = `
             <div class="drawer-section premium-card">
                 <div class="premium-header">
-                    <span class="premium-icon">🎓</span>
+                    <span class="premium-icon" aria-hidden="true"></span>
                     <h4 class="premium-title">${isTurkish ? 'Temel Bilgiler' : 'Overview'}</h4>
                 </div>
                 <div class="premium-grid">
@@ -1728,10 +1732,10 @@ function openDrawer(data) {
                         <label>${isTurkish ? 'Öğretim Dili' : 'Teaching Language'}</label>
                         <span>${escapeHtml(formatTeachingLanguages(n.teachingLanguage))}</span>
                     </div>
-                    ${qsBadge || engBadge ? `
+                    ${rankingItems ? `
                     <div class="premium-item full-span ranking-container">
                         <label>${isTurkish ? 'Sıralamalar' : 'Rankings'}</label>
-                        <div class="badges-wrapper">${qsBadge}${engBadge}</div>
+                        <dl class="ranking-list">${rankingItems}</dl>
                     </div>` : ''}
                 </div>
             </div>
@@ -1806,7 +1810,7 @@ function openDrawer(data) {
                         : (isTurkish ? 'Ek program dili şartı yayımlanmamış' : 'No additional programme-language requirement published');
         const admissionsHTML = `
             <div class="drawer-section premium-card admission-card">
-                <div class="premium-header"><span class="premium-icon">🧾</span><h4 class="premium-title">${isTurkish ? 'Kabul & Dil Gereklilikleri' : 'Admission & Language Requirements'}</h4></div>
+                <div class="premium-header"><span class="premium-icon" aria-hidden="true"></span><h4 class="premium-title">${isTurkish ? 'Kabul & Dil Gereklilikleri' : 'Admission & Language Requirements'}</h4></div>
                 <div class="premium-grid">
                     <div class="premium-item"><label>${isTurkish ? 'AB dışı başvuru' : 'Non-EU application'}</label><span>${yesNoUnknown(n.eligibleForNonEu)}</span></div>
                     <div class="premium-item"><label>${isTurkish ? 'Program dili şartı' : 'Programme language requirement'}</label><span>${languageRequirement}</span></div>
@@ -1878,7 +1882,7 @@ function openDrawer(data) {
             : internshipRequired === false ? (isTurkish ? 'Zorunlu değil' : 'Not compulsory') : (isTurkish ? 'Bilinmiyor' : 'Unknown');
         const curriculumHTML = `
             <div class="drawer-section premium-card curriculum-card">
-                <div class="premium-header"><span class="premium-icon">📚</span><h4 class="premium-title">${isTurkish ? 'Müfredat & Ders Yükü' : 'Curriculum & Course Load'}</h4></div>
+                <div class="premium-header"><span class="premium-icon" aria-hidden="true"></span><h4 class="premium-title">${isTurkish ? 'Müfredat & Ders Yükü' : 'Curriculum & Course Load'}</h4></div>
                 <div class="premium-grid">
                     <div class="premium-item"><label>${curriculum.course_count_fixed === false ? (isTurkish ? 'Ders sayısı yapısı' : 'Course-count structure') : (isTurkish ? 'Toplam değerlendirilen bileşen' : 'Total assessed components')}</label><span>${escapeHtml(totalComponentCount ?? '—')}</span></div>
                     <div class="premium-item"><label>${isTurkish ? 'Ders / proje / seminer' : 'Courses / projects / seminar'}</label><span>${escapeHtml(taughtComponentCount)}</span></div>
@@ -1914,7 +1918,7 @@ function openDrawer(data) {
         }).join('');
         const timelineHTML = `
             <div class="drawer-section premium-card timeline-card">
-                <div class="premium-header"><span class="premium-icon">🗓️</span><h4 class="premium-title">${isTurkish ? 'Başvuru Takvimi' : 'Application Timeline'}</h4></div>
+                <div class="premium-header"><span class="premium-icon" aria-hidden="true"></span><h4 class="premium-title">${isTurkish ? 'Başvuru Takvimi' : 'Application Timeline'}</h4></div>
                 <div class="premium-grid">
                     ${timeline.target_academic_year ? `<div class="premium-item"><label>${isTurkish ? 'Hedef dönem' : 'Target cycle'}</label><span>${escapeHtml(targetAcademicYear)}</span></div>` : ''}
                     ${timeline.next_cycle_status ? `<div class="premium-item ${nextCyclePending ? 'timeline-cycle-pending' : ''}"><label>${isTurkish ? '2027 yayın durumu' : '2027 publication status'}</label><span>${escapeHtml(targetCycleStatusText)}</span></div>` : ''}
@@ -1989,7 +1993,7 @@ function openDrawer(data) {
         let deptHTML = `
             <div class="drawer-section premium-card">
                 <div class="premium-header">
-                    <span class="premium-icon">🔬</span>
+                    <span class="premium-icon" aria-hidden="true"></span>
                     <h4 class="premium-title">${isTurkish ? 'Bölüm & Araştırma Bilgileri' : 'Department & Research'}</h4>
                 </div>
                 <div class="dept-content">
@@ -2118,7 +2122,7 @@ function openDrawer(data) {
             : '';
         const financeHTML = `
             <div class="drawer-section premium-card financial-card">
-                <div class="premium-header"><span class="premium-icon">💰</span><h4 class="premium-title">${isTurkish ? 'Maliyet & Burs Gerçeği' : 'Cost & Funding Reality'}</h4></div>
+                <div class="premium-header"><span class="premium-icon" aria-hidden="true"></span><h4 class="premium-title">${isTurkish ? 'Maliyet & Burs Gerçeği' : 'Cost & Funding Reality'}</h4></div>
                 <p class="card-disclaimer">${isTurkish ? 'Tutarlar yalnızca kontrol edilmiş resmi kaynak bulunduğunda gösterilir. Konaklama ve yaşam bütçesi okul ücretinden ayrıdır.' : 'Amounts are displayed only with a checked official source. Housing and living budget are separate from tuition.'}</p>
                 <div class="premium-grid">
                     <div class="premium-item"><label>${isTurkish ? 'Öğrenim ücreti' : 'Tuition'}${n.tuitionScope === 'non_eu_target' ? ` · ${isTurkish ? 'AB dışı hedef' : 'non-EU target'}` : ''}</label><span class="finance-val tuition">${tuitionText}</span></div>
@@ -2197,7 +2201,7 @@ function openDrawer(data) {
         }).join('');
         const livingHTML = `
             <div class="drawer-section premium-card">
-                <div class="premium-header"><span class="premium-icon">🏙️</span><h4 class="premium-title">${isTurkish ? 'Konaklama & Yaşam' : 'Housing & Living'}</h4></div>
+                <div class="premium-header"><span class="premium-icon" aria-hidden="true"></span><h4 class="premium-title">${isTurkish ? 'Konaklama & Yaşam' : 'Housing & Living'}</h4></div>
                 <div class="premium-grid">
                     <div class="premium-item"><label>${roomRentLabel}</label><span class="finance-val">${roomRentText}</span></div>
                     <div class="premium-item"><label>${monthlyLivingLabel}</label><span class="finance-val">${monthlyLivingText}</span></div>
@@ -2230,7 +2234,7 @@ function openDrawer(data) {
             prosConsHTML = `
             <div class="drawer-section premium-card pros-cons-card">
                 <div class="premium-header">
-                    <span class="premium-icon">⚖️</span>
+                    <span class="premium-icon" aria-hidden="true"></span>
                     <h4 class="premium-title">${isTurkish ? 'Avantaj & Dezavantaj Analizi' : 'Strengths & Risks'}</h4>
                 </div>
                 <div class="pros-cons-grid">
@@ -2266,7 +2270,7 @@ function openDrawer(data) {
         }).join('');
         const studentReviewsHTML = `
             <div class="drawer-section premium-card student-reviews-card">
-                <div class="premium-header"><span class="premium-icon">💬</span><h4 class="premium-title">${isTurkish ? 'Öğrenci Deneyimi Sinyali' : 'Student Experience Signal'}</h4></div>
+                <div class="premium-header"><span class="premium-icon" aria-hidden="true"></span><h4 class="premium-title">${isTurkish ? 'Öğrenci Deneyimi Sinyali' : 'Student Experience Signal'}</h4></div>
                 <p class="card-disclaimer">${isTurkish ? 'Bu bölüm resmi bilgi değildir; sınırlı öğrenci deneyimlerinin ihtiyatlı bir özetidir.' : 'This section is not official fact; it is a cautious summary of student-experience evidence.'}</p>
                 <div class="sentiment-facts">
                     <span><b>${sentimentScore === null ? '—' : `${sentimentScore}/100`}</b><small>${isTurkish ? 'memnuniyet sinyali' : 'satisfaction signal'}</small></span>
@@ -2328,7 +2332,7 @@ function openDrawer(data) {
         }).join('');
         const sourcesHTML = `
             <div class="drawer-section premium-card sources-card">
-                <div class="premium-header"><span class="premium-icon">🔗</span><h4 class="premium-title">${isTurkish ? 'Kaynak Günlüğü' : 'Source Log'}</h4></div>
+                <div class="premium-header"><span class="premium-icon" aria-hidden="true"></span><h4 class="premium-title">${isTurkish ? 'Kaynak Günlüğü' : 'Source Log'}</h4></div>
                 <p class="card-disclaimer">${isTurkish ? 'Her sayı veya iddia için kaynak türünü ve erişim durumunu görün. “unknown”, “broken” veya “requires js” durumları karar kanıtı değildir.' : 'Inspect the source type and access status behind each claim. “unknown”, “broken” and “requires js” are not decision evidence.'}</p>
                 ${sourceRows ? `<ul class="source-log-list">${sourceRows}</ul>` : `<p class="empty-source-note">${isTurkish ? 'Kaynak günlüğü henüz yok.' : 'No source log yet.'}</p>`}
             </div>`;

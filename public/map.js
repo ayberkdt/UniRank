@@ -144,6 +144,7 @@ function initUniRankMap() {
         fullscreenButton.type = 'button';
         fullscreenButton.className = 'btn map-fullscreen-button';
         fullscreenButton.textContent = isTurkish() ? 'Tam ekran' : 'Full screen';
+        fullscreenButton.setAttribute('aria-pressed', 'false');
         mapToolbarActions.appendChild(fullscreenButton);
     }
     let currentData = [];
@@ -370,7 +371,7 @@ function initUniRankMap() {
         window.setTimeout(() => map.invalidateSize(), 220);
     }
 
-    function setMapFullscreen(fullscreen) {
+    function applyMapFullscreenState(fullscreen) {
         if (!mapStage || !fullscreenButton) return;
         const active = Boolean(fullscreen);
         mapStage.classList.toggle('is-fullscreen', active);
@@ -379,7 +380,36 @@ function initUniRankMap() {
             ? (isTurkish() ? 'Tam ekrandan çık' : 'Exit full screen')
             : (isTurkish() ? 'Tam ekran' : 'Full screen');
         fullscreenButton.setAttribute('aria-pressed', String(active));
+        fullscreenButton.setAttribute('aria-label', fullscreenButton.textContent);
         window.setTimeout(() => map.invalidateSize(), 120);
+    }
+
+    async function setMapFullscreen(fullscreen) {
+        if (!mapStage || !fullscreenButton) return;
+        const active = Boolean(fullscreen);
+
+        if (active) {
+            // Apply a viewport-filling fallback immediately. When supported,
+            // the native Fullscreen API then removes browser chrome as well.
+            applyMapFullscreenState(true);
+            if (document.fullscreenElement !== mapStage && typeof mapStage.requestFullscreen === 'function') {
+                try {
+                    await mapStage.requestFullscreen();
+                } catch (error) {
+                    console.warn('Native map fullscreen unavailable; using viewport fallback.', error);
+                }
+            }
+            return;
+        }
+
+        if (document.fullscreenElement === mapStage && typeof document.exitFullscreen === 'function') {
+            try {
+                await document.exitFullscreen();
+            } catch (error) {
+                console.warn('Could not exit native map fullscreen cleanly.', error);
+            }
+        }
+        applyMapFullscreenState(false);
     }
 
     function openDrawerForRow(row, id) {
@@ -661,6 +691,11 @@ function initUniRankMap() {
     if (fullscreenButton) {
         fullscreenButton.addEventListener('click', () => {
             setMapFullscreen(!mapStage?.classList.contains('is-fullscreen'));
+        });
+        document.addEventListener('fullscreenchange', () => {
+            if (!document.fullscreenElement || document.fullscreenElement === mapStage) {
+                applyMapFullscreenState(document.fullscreenElement === mapStage);
+            }
         });
         document.addEventListener('keydown', event => {
             if (event.key === 'Escape' && mapStage?.classList.contains('is-fullscreen')) {
