@@ -150,6 +150,27 @@ def get_research_pathways():
         return JSONResponse({"status": "error", "message": "Research pathway catalog could not be loaded.", "data": {}}, status_code=500, headers=headers)
 
 
+@app.get("/api/visa-requirements")
+def get_visa_requirements():
+    """Serve the permit, funds and clearance rules a Turkish applicant faces.
+
+    This was the only decision field with zero coverage: nothing in the
+    database said which permit a country issues, how much money has to be
+    proven, or which clearances gate the visa.  Those questions sent the
+    reader to a search engine at the point where a wrong answer costs an
+    application cycle.
+    """
+    visa_path = _project_file("config", "visa_requirements.json")
+    headers = {"Cache-Control": "no-store, no-cache, must-revalidate, max-age=0"}
+    if not visa_path:
+        return JSONResponse({"status": "error", "message": "Visa requirements file not found.", "data": {}}, status_code=404, headers=headers)
+    try:
+        with open(visa_path, "r", encoding="utf-8") as visa_file:
+            requirements = json.load(visa_file)
+        return JSONResponse({"status": "success", "data": requirements}, headers=headers)
+    except (OSError, json.JSONDecodeError):
+        return JSONResponse({"status": "error", "message": "Visa requirements could not be loaded.", "data": {}}, status_code=500, headers=headers)
+
 @app.get("/api/standards")
 def get_standards():
     """Serve the categorical-scale definitions used across the database.

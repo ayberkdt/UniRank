@@ -1,0 +1,173 @@
+{
+  "standard": "visa_residence@1.0.0",
+  "last_updated": "2026-08-30",
+  "applicant_profile": {
+    "nationality": "Turkey",
+    "note": {
+      "en": "Every rule here is written for a Turkish citizen applying from Türkiye for a taught master's. Nationality changes these answers more than any other variable, so nothing in this file is safe to reuse for another passport.",
+      "tr": "Buradaki her kural, Türkiye'den ders programlı bir yüksek lisansa başvuran Türk vatandaşı için yazılmıştır. Uyruk, bu cevapları diğer tüm değişkenlerden daha çok değiştirir; bu yüzden buradaki hiçbir şey başka bir pasaport için yeniden kullanılamaz."
+    }
+  },
+  "purpose": {
+    "en": "The permit, the money you must prove, and the clearances that gate the visa. These were the questions the tool could not answer at all, so every one of them sent you to a search engine at exactly the point where a wrong answer costs a cycle.",
+    "tr": "Hangi izin, ne kadar parayı kanıtlaman gerektiği ve vizeyi kilitleyen ön izinler. Araç bu soruların hiçbirini cevaplayamıyordu; dolayısıyla her biri, yanlış cevabın bir başvuru dönemine mal olduğu noktada seni arama motoruna gönderiyordu."
+  },
+  "status_values": [
+    {
+      "code": "verified",
+      "label": { "en": "Verified from the official source", "tr": "Resmî kaynaktan doğrulandı" }
+    },
+    {
+      "code": "needs_research",
+      "label": { "en": "Not yet verified — do not plan against this", "tr": "Henüz doğrulanmadı — buna göre plan yapma" },
+      "note": {
+        "en": "The country is in the database but its immigration rules have not been read from an official source yet. Nothing is guessed: an empty field here means unknown, never zero.",
+        "tr": "Ülke veritabanında var ancak göçmenlik kuralları henüz resmî bir kaynaktan okunmadı. Hiçbir şey tahmin edilmemiştir: buradaki boş bir alan sıfır değil, bilinmiyor demektir."
+      }
+    }
+  ],
+  "countries": {
+    "United Kingdom": {
+      "status": "verified",
+      "permit_name": {
+        "en": "Student visa (replaced the Tier 4 General student visa)",
+        "tr": "Student visa (Tier 4 General öğrenci vizesinin yerini aldı)"
+      },
+      "apply_from": {
+        "earliest": "6 months before the course starts, when applying from outside the UK",
+        "note": {
+          "en": "The earliest you can apply from outside the UK is six months before your course starts. That window matters here because the ATAS certificate below has to be in hand first.",
+          "tr": "Birleşik Krallık dışından en erken, dersin başlamasından altı ay önce başvurabilirsin. Bu pencere burada önemlidir çünkü aşağıdaki ATAS belgesinin önce elinde olması gerekir."
+        }
+      },
+      "financial_requirement": {
+        "applies_to_turkish_citizens": true,
+        "amounts": [
+          { "scope": "Courses in London", "amount_gbp_per_month": 1529, "months": 9 },
+          { "scope": "Courses outside London", "amount_gbp_per_month": 1171, "months": 9 }
+        ],
+        "plus_course_fees": {
+          "en": "On top of living costs you must show the course fee for one academic year, up to nine months. The exact figure is printed on your CAS.",
+          "tr": "Yaşam giderlerine ek olarak, dokuz aya kadar bir akademik yıllık ders ücretini de göstermelisin. Kesin rakam CAS belgende yazılıdır."
+        },
+        "holding_period": {
+          "en": "The money must sit in the account for 28 days in a row, and that 28-day period must end within 31 days of the date you apply. Moving funds in shortly before you apply restarts the clock.",
+          "tr": "Para hesapta ardışık 28 gün durmalı ve bu 28 günlük dönem, başvuru tarihinden itibaren 31 gün içinde sona ermelidir. Başvurudan kısa süre önce para aktarmak süreyi baştan başlatır."
+        },
+        "turkish_citizen_note": {
+          "en": "Decisive detail. The Home Office exempts a list of nationalities from proving these funds up front — the 'differential evidence requirement'. Türkiye is not on that list. A Turkish applicant must have the money and the 28-day statement ready, unlike an applicant from any EU state, the USA, Japan or South Korea.",
+          "tr": "Belirleyici ayrıntı. İçişleri Bakanlığı bir uyruk listesini bu fonları önden kanıtlamaktan muaf tutar — 'differential evidence requirement'. Türkiye o listede değildir. Bir Türk aday, herhangi bir AB ülkesinden, ABD'den, Japonya'dan ya da Güney Kore'den gelen bir adayın aksine, parayı ve 28 günlük hesap dökümünü hazır bulundurmak zorundadır."
+        }
+      },
+      "special_clearance": {
+        "name": "ATAS — Academic Technology Approval Scheme",
+        "required_for_turkish_citizens": true,
+        "why_it_matters_here": {
+          "en": "This is the single most schedule-critical item in the UK block, and it exists precisely because of what this database is about. ATAS covers sensitive technology subjects, and aerospace engineering sits inside that scope. The exemption list is nationality-based and Türkiye is not on it, so it applies to you on courses where an exempt classmate would need nothing.",
+          "tr": "Bu, Birleşik Krallık bloğundaki takvim açısından en kritik maddedir ve tam olarak bu veritabanının konusu yüzünden vardır. ATAS hassas teknoloji konularını kapsar ve havacılık mühendisliği bu kapsamın içindedir. Muafiyet listesi uyruk temellidir ve Türkiye o listede değildir; dolayısıyla muaf bir sınıf arkadaşının hiçbir şeye ihtiyaç duymayacağı derslerde sana uygulanır."
+        },
+        "processing_time": {
+          "en": "At least 30 working days — about six weeks — and the Foreign Office states there is no fast-track service. Applications from April to August take longer, which is exactly when master's applicants apply.",
+          "tr": "En az 30 iş günü — yaklaşık altı hafta — ve Dışişleri Bakanlığı hızlandırılmış hizmet olmadığını belirtir. Nisan–Ağustos arası başvurular daha uzun sürer; yüksek lisans adaylarının başvurduğu dönem tam da budur."
+        },
+        "sequencing": {
+          "en": "For some visas the certificate must exist before the visa application, so it can be checked as part of it. Treat ATAS as the first thing you start after an offer, not something you handle alongside the visa.",
+          "tr": "Bazı vizelerde belgenin vize başvurusundan önce var olması gerekir ki başvurunun parçası olarak kontrol edilebilsin. ATAS'ı, vizeyle birlikte hallettiğin bir iş değil, teklif aldıktan sonra başlattığın ilk iş olarak gör."
+        },
+        "what_you_need_first": {
+          "en": "Your CAH3 subject code, which the university normally prints on the offer letter or will confirm separately. You cannot apply without it.",
+          "tr": "Üniversitenin normalde teklif mektubuna yazdığı ya da ayrıca teyit edeceği CAH3 konu kodun. Onsuz başvuramazsın."
+        },
+        "contact": "ATAS@fcdo.gov.uk",
+        "not_required_if": {
+          "en": "Postgraduate diplomas and PGCEs are outside the scheme, as is anyone with Indefinite Leave to Remain. Neither applies to a Turkish applicant coming for a taught MSc.",
+          "tr": "Lisansüstü diplomalar ve PGCE programları kapsam dışıdır; Süresiz Oturma İzni olanlar da öyle. İkisi de ders programlı bir MSc için gelen Türk aday için geçerli değildir."
+        }
+      },
+      "documents": [
+        { "en": "A current passport or other valid travel document", "tr": "Geçerli bir pasaport ya da başka geçerli seyahat belgesi" },
+        { "en": "Confirmation of Acceptance for Studies (CAS) from the university", "tr": "Üniversiteden Confirmation of Acceptance for Studies (CAS)" },
+        { "en": "Proof of funds meeting the financial requirement above", "tr": "Yukarıdaki mali şartı karşılayan fon kanıtı" },
+        { "en": "A valid ATAS certificate, which your course and nationality require", "tr": "Dersinin ve uyruğunun gerektirdiği geçerli ATAS belgesi" },
+        { "en": "Tuberculosis test results", "tr": "Tüberküloz testi sonuçları" },
+        { "en": "Written consent from a financial sponsor, if one has covered your fees or living costs in the last 12 months", "tr": "Son 12 ayda ücretlerini ya da yaşam giderlerini karşılayan bir mali sponsor varsa, ondan yazılı onay" }
+      ],
+      "sources": [
+        {
+          "url": "https://www.gov.uk/student-visa/money",
+          "title": "GOV.UK — Student visa: Money you need",
+          "relevant_fields": ["financial_requirement"],
+          "last_checked": "2026-08-30",
+          "notes": {
+            "en": "States the London and non-London monthly amounts, the nine-month cap, the 28-day holding rule and the full differential-evidence nationality list, which does not include Türkiye.",
+            "tr": "Londra ve Londra dışı aylık tutarları, dokuz aylık üst sınırı, 28 günlük tutma kuralını ve Türkiye'yi içermeyen tam differential-evidence uyruk listesini belirtir."
+          }
+        },
+        {
+          "url": "https://www.gov.uk/guidance/academic-technology-approval-scheme",
+          "title": "GOV.UK — Academic Technology Approval Scheme (ATAS)",
+          "relevant_fields": ["special_clearance"],
+          "last_checked": "2026-08-30",
+          "notes": {
+            "en": "Publishes the exemption list, which does not include Türkiye, the minimum 30 working day processing time, the absence of a fast track and the April-to-August slowdown.",
+            "tr": "Türkiye'yi içermeyen muafiyet listesini, en az 30 iş günlük işlem süresini, hızlandırılmış hizmet olmadığını ve Nisan–Ağustos yavaşlamasını yayımlar."
+          }
+        },
+        {
+          "url": "https://www.gov.uk/student-visa/documents-you-must-provide",
+          "title": "GOV.UK — Student visa: Documents you'll need to apply",
+          "relevant_fields": ["documents"],
+          "last_checked": "2026-08-30"
+        },
+        {
+          "url": "https://www.gov.uk/student-visa",
+          "title": "GOV.UK — Student visa: Overview",
+          "relevant_fields": ["apply_from"],
+          "last_checked": "2026-08-30"
+        }
+      ],
+      "last_verified": "2026-08-30"
+    },
+    "Germany": {
+      "status": "needs_research",
+      "known_shape": {
+        "en": "A national visa for study purposes, then a residence permit after arrival, with proof of financial resources normally satisfied through a blocked account. The current blocked-account figure is set annually and was not verified here, so it is deliberately absent rather than estimated.",
+        "tr": "Önce eğitim amaçlı ulusal vize, ardından varıştan sonra oturma izni; mali kaynak kanıtı normalde bloke hesapla karşılanır. Güncel bloke hesap tutarı her yıl belirlenir ve burada doğrulanmadı; bu yüzden tahmin edilmek yerine bilinçli olarak boş bırakılmıştır."
+      },
+      "blocked_source_note": {
+        "en": "The official portal that publishes the figure refused automated access during this pass, and the Federal Foreign Office FAQ carries EU Blue Card salary thresholds rather than the student amount. Read it from the German mission in Türkiye before budgeting.",
+        "tr": "Rakamı yayımlayan resmî portal bu turda otomatik erişimi reddetti ve Dışişleri Bakanlığı SSS'si öğrenci tutarını değil AB Mavi Kart maaş eşiklerini taşıyor. Bütçelemeden önce Türkiye'deki Alman temsilciliğinden oku."
+      },
+      "last_verified": null
+    },
+    "Netherlands": { "status": "needs_research", "last_verified": null },
+    "Italy": { "status": "needs_research", "last_verified": null },
+    "United States": { "status": "needs_research", "last_verified": null },
+    "Austria": { "status": "needs_research", "last_verified": null },
+    "Belgium": { "status": "needs_research", "last_verified": null },
+    "France": { "status": "needs_research", "last_verified": null },
+    "Sweden": { "status": "needs_research", "last_verified": null },
+    "Switzerland": { "status": "needs_research", "last_verified": null },
+    "Spain": { "status": "needs_research", "last_verified": null },
+    "Portugal": { "status": "needs_research", "last_verified": null },
+    "Poland": { "status": "needs_research", "last_verified": null },
+    "Czechia": { "status": "needs_research", "last_verified": null },
+    "Greece": { "status": "needs_research", "last_verified": null },
+    "Romania": { "status": "needs_research", "last_verified": null },
+    "Denmark": { "status": "needs_research", "last_verified": null },
+    "Finland": { "status": "needs_research", "last_verified": null },
+    "Norway": { "status": "needs_research", "last_verified": null },
+    "Ireland": { "status": "needs_research", "last_verified": null },
+    "Estonia": { "status": "needs_research", "last_verified": null },
+    "Lithuania": { "status": "needs_research", "last_verified": null },
+    "Russia": { "status": "needs_research", "last_verified": null },
+    "Turkey": {
+      "status": "not_applicable",
+      "note": {
+        "en": "No student visa or residence permit is needed to study in your own country.",
+        "tr": "Kendi ülkende okumak için öğrenci vizesi ya da oturma izni gerekmez."
+      },
+      "last_verified": "2026-08-30"
+    }
+  }
+}

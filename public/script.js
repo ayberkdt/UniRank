@@ -608,8 +608,10 @@ async function init() {
     // The categorical definitions back every ordinal label in the drawer, so
     // they are fetched alongside the data rather than on first drawer open.
     const standardsReady = window.uniStandards ? window.uniStandards.load() : Promise.resolve();
+    const visaReady = window.uniVisaPanel ? window.uniVisaPanel.load() : Promise.resolve();
     await fetchData();
     await standardsReady;
+    await visaReady;
     window.applyTranslations();
 }
 
@@ -2389,6 +2391,9 @@ function openDrawer(data) {
         const panels = window.uniDecisionPanels;
         const record = n.raw || data;
         const countdownHTML = panels ? panels.countdownPanel(record) : '';
+        // Permit, funds and clearances: the only decision field that had no
+        // coverage at all, so it always meant leaving the tool.
+        const visaHTML = window.uniVisaPanel ? window.uniVisaPanel.panel(record) : '';
         const matchHTML = panels ? panels.academicMatchPanel(record) : '';
         const unitsHTML = panels ? panels.researchUnitsPanel(record) : '';
         const facultyHTML = panels ? panels.facultyPanel(record) : '';
@@ -2413,6 +2418,7 @@ function openDrawer(data) {
             playbookHTML +
             livingHTML +
             housingRubricHTML +
+            visaHTML +
             unitsHTML +
             facultyHTML +
             deptHTML +
