@@ -2457,10 +2457,12 @@ input:checked + .switch-slider::before {
 }
 
 .tuition-control output {
+    /* Was a near-white mint pill carrying teal text: 1.6:1, effectively
+       unreadable. */
     padding: 3px 7px;
     border-radius: 7px;
-    background: #e7f4ef;
-    color: var(--success);
+    background: rgba(95, 203, 178, 0.14);
+    color: var(--ge-signal);
     font-size: 10px;
     font-weight: 800;
 }
@@ -2969,10 +2971,13 @@ input[type="range"]::-webkit-slider-thumb {
     white-space: nowrap;
 }
 
-.confidence-badge--high { border-color: #b9decf; background: #e7f5f0; color: #0b6a51; }
-.confidence-badge--medium { border-color: #ead59f; background: #fff7df; color: #7b5300; }
-.confidence-badge--low { border-color: #e7c0c2; background: #fff0f0; color: #993a40; }
-.confidence-badge--unknown { border-color: #d7e0ea; background: #f3f6f9; color: #65758a; }
+/* These were pale light-theme chips - mint, cream, pink, ice - sitting on the
+   dark card surface. The medium variant alone rendered on 115 cards. Semantic
+   colour now lives in the text and the border, on a dark ground. */
+.confidence-badge--high { border-color: rgba(95, 203, 178, 0.42); background: rgba(95, 203, 178, 0.12); color: var(--ge-signal); }
+.confidence-badge--medium { border-color: rgba(220, 201, 95, 0.42); background: rgba(220, 201, 95, 0.12); color: var(--ge-gold); }
+.confidence-badge--low { border-color: rgba(240, 121, 106, 0.42); background: rgba(240, 121, 106, 0.12); color: var(--ge-danger); }
+.confidence-badge--unknown { border-color: var(--ge-rule); background: var(--ge-surface-raised); color: var(--ge-muted); }
 
 .decision-grid {
     display: grid;
@@ -3557,7 +3562,9 @@ input[type="range"]::-webkit-slider-thumb {
     align-content: center;
     gap: 7px;
     padding: 30px;
-    background: #f4f7fb;
+    /* Near-white panel behind near-white text: the fallback message could not
+       be read at all when the map failed. */
+    background: var(--ge-canvas);
     text-align: center;
 }
 
@@ -4392,9 +4399,9 @@ option {
 
 .language-toggle button.active,
 .view-toggle button.active {
-    background: rgba(95, 143, 255, 0.22) !important;
-    color: #b7d1ff !important;
-    box-shadow: inset 0 0 0 1px rgba(133, 177, 255, 0.18) !important;
+    background: var(--ge-ember-wash) !important;
+    color: var(--ge-ink) !important;
+    box-shadow: inset 0 0 0 1px var(--ge-ember-deep) !important;
 }
 
 .view-toggle,
@@ -4554,7 +4561,11 @@ option {
 }
 
 .country-card .program-card__rank span {
-    color: var(--country-accent);
+    /* Raw national colours are chosen for flags, not for 11px text on a dark
+       card: Norway's #ba0c2f measured 2.6:1 and the navies were worse. Mixed
+       toward the ink so the country still reads but the number is legible. */
+    color: var(--ui-ink-soft);
+    color: color-mix(in oklab, var(--country-accent) 40%, var(--ui-ink));
 }
 
 .country-card .program-card__meta span {

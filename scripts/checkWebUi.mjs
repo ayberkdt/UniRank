@@ -157,6 +157,17 @@ for (const contract of [
   ['Sunumatik editorial redesign', html.includes('redesign.css') && redesignCss.includes('.deadline-program-card__next time')],
   // Tokens live in the shared foundation now, not per page. One palette, one
   // header, loaded by index, research and scholarships alike.
+  // A dark product kept shipping light-theme chips: the confidence badges alone
+  // painted a pale-cream pill onto 115 cards, the tuition readout was teal on
+  // near-white at 1.6:1, and the map fallback was white text on a white panel.
+  // Grep for the specific literals rather than "any light colour", because flag
+  // stripe gradients legitimately use them.
+  ['no light-theme chips left in the dark UI', ![
+    '#fff7df', '#e7f5f0', '#fff0f0', '#f3f6f9', '#e7f4ef', '#f4f7fb',
+  ].some((literal) => css.includes(literal))],
+  // Raw national colours are picked for flags, not for small text on a dark
+  // card; they measured 2.5-4.0:1 until they were mixed toward the ink.
+  ['country accents are mixed before use as text', css.includes('color-mix(in oklab, var(--country-accent)') && redesignCss.includes('color-mix(in oklab, var(--deadline-country-accent)')],
   ['shared Graphite Ember foundation', html.includes('site.css') && siteCss.includes('--ge-ember') && siteCss.includes('--ui-ember: var(--ge-ember)') && siteCss.includes('--orange: var(--ge-ember)') && siteCss.includes('Space Grotesk') && siteCss.includes('.site-bar__nav') && !redesignCss.includes('--ui-canvas: #')],
   ['Sunumatik Graphite Ember rails', redesignCss.includes('--ui-signal: var(--ge-signal)') && redesignCss.includes('#detail-drawer.drawer.country-themed') && redesignCss.includes('.country-picker-popover')],
   ['pixel-aligned premium filter rail', redesignCss.includes('--ui-filter-rail-inset: 20px') && redesignCss.includes('.sidebar__scroll > .filter-card') && redesignCss.includes('scrollbar-width: none')],
