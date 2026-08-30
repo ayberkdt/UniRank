@@ -805,6 +805,33 @@
     }, Math.max(1000, nextMidnight.getTime() - now.getTime()));
   }
 
+  // The site bar stays visible above this modal, so its active mark has to tell
+  // the truth: while the calendar is open, the calendar is where you are.
+  function markNavForCalendar(isOpen) {
+    const nav = document.querySelector('.site-bar__nav');
+    if (!nav) return;
+    const calendar = nav.querySelector('[data-open-calendar], [data-copy="calendar"], [data-i18n="deadline_calendar"]');
+    if (!calendar) return;
+    nav.querySelectorAll('.is-active, [aria-current="page"]').forEach(item => {
+      if (item === calendar) return;
+      if (isOpen) {
+        item.dataset.pageActive = 'true';
+        item.classList.remove('is-active');
+        item.removeAttribute('aria-current');
+      }
+    });
+    if (isOpen) {
+      calendar.classList.add('is-active');
+    } else {
+      calendar.classList.remove('is-active');
+      nav.querySelectorAll('[data-page-active="true"]').forEach(item => {
+        item.classList.add('is-active');
+        item.setAttribute('aria-current', 'page');
+        delete item.dataset.pageActive;
+      });
+    }
+  }
+
   function open() {
     state.lastFocus = document.activeElement;
     state.records = Array.isArray(window.uniRankRecords) ? window.uniRankRecords : state.records;
@@ -813,6 +840,7 @@
     elements.modal.hidden = false;
     elements.modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('deadline-modal-open');
+    markNavForCalendar(true);
     requestAnimationFrame(() => elements.close.focus());
     if (dataIsStale()) requestDataRefresh();
   }
@@ -821,6 +849,7 @@
     elements.modal.hidden = true;
     elements.modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('deadline-modal-open');
+    markNavForCalendar(false);
     if (state.lastFocus instanceof HTMLElement) state.lastFocus.focus();
   }
 

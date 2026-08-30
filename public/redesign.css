@@ -1172,6 +1172,8 @@ option {
 
 /* Application calendar: readable master list, no dense three-column grid. */
 .deadline-modal-overlay {
+    /* Was inset:0, so it covered the site bar. */
+    inset: var(--site-bar-h) 0 0 0;
     padding: 20px;
     background: rgba(8, 9, 11, 0.82);
     backdrop-filter: none;
@@ -1179,7 +1181,7 @@ option {
 
 .deadline-modal-shell {
     width: min(1480px, 100%);
-    max-height: calc(100dvh - 40px);
+    max-height: calc(100dvh - var(--site-bar-h) - 40px);
     border: 1px solid #484b55;
     border-radius: 12px;
     background: var(--ui-canvas);
