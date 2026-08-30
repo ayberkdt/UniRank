@@ -5,7 +5,12 @@
       "src": "api/index.py",
       "use": "@vercel/python",
       "config": {
-        "includeFiles": "data_base/**"
+        "includeFiles": [
+          "data_base/**",
+          "config/**",
+          "scholarships/**",
+          "research_fields/**"
+        ]
       }
     },
     {
