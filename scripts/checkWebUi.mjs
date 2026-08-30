@@ -6,6 +6,7 @@ const files = {
   html: new URL('public/index.html', root),
   css: new URL('public/style.css', root),
   redesign: new URL('public/redesign.css', root),
+  site: new URL('public/site.css', root),
   profileCss: new URL('public/profile.css', root),
   i18n: new URL('public/i18n.js', root),
   map: new URL('public/map.js', root),
@@ -15,10 +16,11 @@ const files = {
   storage: new URL('public/storage.js', root),
 };
 
-const [html, css, redesignCss, profileCss, i18nCode, mapCode, scriptCode, deadlineCode, profileCode, storageCode] = await Promise.all([
+const [html, css, redesignCss, siteCss, profileCss, i18nCode, mapCode, scriptCode, deadlineCode, profileCode, storageCode] = await Promise.all([
   readFile(files.html, 'utf8'),
   readFile(files.css, 'utf8'),
   readFile(files.redesign, 'utf8'),
+  readFile(files.site, 'utf8'),
   readFile(files.profileCss, 'utf8'),
   readFile(files.i18n, 'utf8'),
   readFile(files.map, 'utf8'),
@@ -152,8 +154,11 @@ for (const contract of [
   ['deadline dashboard', html.includes('deadlineDashboard.js') && deadlineCode.includes('collectDeadlineEvents') && css.includes('.deadline-modal-shell')],
   ['deadline source integrity', deadlineCode.includes('VALID_SOURCE_STATUSES') && deadlineCode.includes('documentsVerified')],
   ['deadline automatic refresh', deadlineCode.includes('AUTO_REFRESH_MS') && deadlineCode.includes('visibilitychange') && deadlineCode.includes('scheduleMidnightRefresh') && scriptCode.includes('refreshUniRankData') && css.includes('.deadline-auto-sync')],
-  ['Sunumatik editorial redesign', html.includes('redesign.css') && redesignCss.includes('--ui-ember') && redesignCss.includes('Space Grotesk') && redesignCss.includes('.deadline-program-card__next time')],
-  ['Sunumatik Graphite Ember rails', redesignCss.includes('--ui-signal: #2fa98c') && redesignCss.includes('#detail-drawer.drawer.country-themed') && redesignCss.includes('.country-picker-popover')],
+  ['Sunumatik editorial redesign', html.includes('redesign.css') && redesignCss.includes('.deadline-program-card__next time')],
+  // Tokens live in the shared foundation now, not per page. One palette, one
+  // header, loaded by index, research and scholarships alike.
+  ['shared Graphite Ember foundation', html.includes('site.css') && siteCss.includes('--ge-ember') && siteCss.includes('--ui-ember: var(--ge-ember)') && siteCss.includes('--orange: var(--ge-ember)') && siteCss.includes('Space Grotesk') && siteCss.includes('.site-bar__nav') && !redesignCss.includes('--ui-canvas: #')],
+  ['Sunumatik Graphite Ember rails', redesignCss.includes('--ui-signal: var(--ge-signal)') && redesignCss.includes('#detail-drawer.drawer.country-themed') && redesignCss.includes('.country-picker-popover')],
   ['pixel-aligned premium filter rail', redesignCss.includes('--ui-filter-rail-inset: 20px') && redesignCss.includes('.sidebar__scroll > .filter-card') && redesignCss.includes('scrollbar-width: none')],
   ['stable profile CTA structure', html.includes('class="profile-cta__arrow"') && scriptCode.includes("querySelector('.profile-cta__copy strong')") && !scriptCode.includes('useProfileBtn.innerHTML')],
   ['structured workspace header', html.includes('class="header-destinations"') && html.includes('class="header-accountbar"') && html.includes('class="account-profile-button"') && !html.includes('class="user-avatar"')],

@@ -1,22 +1,8 @@
+/* Palette, type and elevation tokens live in site.css, which every page loads
+   first. They were duplicated here with different values, which is how the
+   three views ended up with three different greys and three different oranges. */
 :root {
     color-scheme: dark;
-    --canvas: #101115;
-    --canvas-deep: #0b0c10;
-    --panel: #17191f;
-    --panel-soft: #1d2029;
-    --ink: #f4efe5;
-    --ink-soft: #d8d3ca;
-    --muted: #9c9b9a;
-    --rule: rgba(244, 239, 229, 0.14);
-    --rule-soft: rgba(244, 239, 229, 0.08);
-    --orange: #f18046;
-    --orange-soft: #ffad83;
-    --blue: #8fa8e8;
-    --teal: #55d6c2;
-    --gold: #d7c765;
-    --coral: #ef8675;
-    --display: "Space Grotesk", sans-serif;
-    --body: "Source Sans 3", sans-serif;
 }
 
 * { box-sizing: border-box; }
@@ -80,65 +66,6 @@ a { color: inherit; }
 
 .funding-aurora span:first-child { top: -26rem; right: -8rem; }
 .funding-aurora span:last-child { top: -18rem; right: -16rem; }
-
-.funding-header {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    display: grid;
-    min-height: 76px;
-    grid-template-columns: auto 1fr auto;
-    align-items: center;
-    gap: 28px;
-    padding: 12px clamp(20px, 4vw, 70px);
-    border-bottom: 1px solid var(--rule);
-    background: rgba(15, 16, 20, 0.92);
-    backdrop-filter: blur(18px);
-}
-
-.funding-brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-}
-
-.funding-brand__mark {
-    display: grid;
-    width: 42px;
-    height: 42px;
-    place-items: center;
-    border-radius: 11px;
-    background: var(--orange);
-    color: white;
-}
-
-.funding-brand__mark svg { width: 25px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.6; }
-.funding-brand > span:last-child { display: grid; }
-.funding-brand strong { font: 700 20px/1.1 var(--display); }
-.funding-brand small { color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
-
-.funding-nav { display: flex; justify-content: center; gap: 4px; }
-.funding-nav a,
-.funding-nav button {
-    min-height: 38px;
-    padding: 8px 13px;
-    border: 0;
-    border-radius: 6px;
-    background: transparent;
-    color: var(--muted);
-    cursor: pointer;
-    font-weight: 600;
-    text-decoration: none;
-}
-.funding-nav a:hover,
-.funding-nav button:hover,
-.funding-nav .is-active { background: rgba(244, 239, 229, 0.08); color: var(--ink); }
-.funding-nav .is-active { box-shadow: inset 0 -2px var(--orange); }
-
-.funding-language { display: flex; padding: 3px; border: 1px solid var(--rule); border-radius: 7px; background: var(--canvas-deep); }
-.funding-language button { width: 38px; height: 32px; border: 0; border-radius: 5px; background: transparent; color: var(--muted); cursor: pointer; font-weight: 700; }
-.funding-language button.active { background: var(--ink); color: var(--canvas); }
 
 main { display: grid; width: min(1500px, calc(100% - 40px)); margin: 0 auto; gap: 32px; padding: 34px 0 60px; }
 
@@ -304,10 +231,7 @@ main { display: grid; width: min(1500px, calc(100% - 40px)); margin: 0 auto; gap
     .scholarship-grid { grid-template-columns: 1fr; }
 }
 
-@media (max-width: 760px) {
-    .funding-header { position: relative; grid-template-columns: 1fr auto; gap: 12px; padding-inline: 16px; }
-    .funding-nav { grid-column: 1 / -1; justify-content: flex-start; overflow-x: auto; }
-    main,
+@media (max-width: 760px) {    main,
     .funding-footer { width: min(100% - 24px, 1500px); }
     main { padding-top: 14px; }
     .funding-hero { min-height: 0; padding: 28px 22px; border-radius: 11px; }
@@ -322,11 +246,7 @@ main { display: grid; width: min(1500px, calc(100% - 40px)); margin: 0 auto; gap
     .funding-footer { flex-direction: column; }
 }
 
-@media (max-width: 480px) {
-    .funding-brand small { display: none; }
-    .funding-nav a,
-    .funding-nav button { padding-inline: 9px; font-size: 13px; }
-    .funding-stats { grid-template-columns: 1fr; }
+@media (max-width: 480px) {    .funding-stats { grid-template-columns: 1fr; }
     .funding-stat { border-right: 0; border-bottom: 1px solid var(--rule); }
     .funding-stat:last-child { border-bottom: 0; }
     .funding-calendar,

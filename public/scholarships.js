@@ -14,7 +14,7 @@
 
     const copy = {
         en: {
-            programmes: "Programmes", calendar: "Application calendar", scholarships: "Scholarships", researchFit: "Research fit",
+            brand: "Scholarship radar", programmes: "Programmes", calendar: "Application calendar", scholarships: "Scholarships", researchFit: "Research fit",
             heroKicker: "Türkiye → world funding map", heroTitle: "Build the funding plan before the application rush.",
             heroText: "Compare who can apply, what is covered, exact or reference deadlines, required documents and the official route—without treating last year's call as a current deadline.",
             browse: "Browse scholarships", backPrograms: "Back to programmes", calendarKicker: "Deadline runway",
@@ -43,7 +43,7 @@
             updatedAutomatically: "Countdown updates automatically from today's date.", levels: { bachelor: "Bachelor", master: "Master", phd: "PhD", research: "Research", partial_study: "Partial study", postgraduate: "Postgraduate", graduate_study: "Graduate study" }
         },
         tr: {
-            programmes: "Programlar", calendar: "Başvuru takvimi", scholarships: "Burslar", researchFit: "Araştırma uyumu",
+            brand: "Burs radarı", programmes: "Programlar", calendar: "Başvuru takvimi", scholarships: "Burslar", researchFit: "Araştırma uyumu",
             heroKicker: "Türkiye → dünya burs haritası", heroTitle: "Başvuru yoğunluğu başlamadan burs planını kur.",
             heroText: "Kimlerin başvurabileceğini, kapsamı, kesin veya referans tarihleri, gerekli belgeleri ve resmî başvuru yolunu karşılaştır; geçen yılın çağrısını güncel son tarih sanma.",
             browse: "Bursları incele", backPrograms: "Programlara dön", calendarKicker: "Son tarih rotası",

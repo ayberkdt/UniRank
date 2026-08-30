@@ -3,39 +3,9 @@
    Cosmic Scholar references. Country and flag components intentionally keep
    their existing visual treatment. */
 
-:root {
-    --ui-canvas: #141519;
-    --ui-canvas-deep: #101115;
-    --ui-surface: #1e2026;
-    --ui-surface-raised: #262931;
-    --ui-surface-soft: #22242b;
-    --ui-ink: #f4efe5;
-    --ui-ink-soft: #d8d2c7;
-    --ui-muted: #aaa9a8;
-    --ui-rule: #3b3e47;
-    --ui-rule-soft: #30323a;
-    --ui-ember: #e8804a;
-    --ui-ember-soft: #f0a171;
-    --ui-gold: #d7c765;
-    --ui-sage: #78c4b4;
-    --ui-blue: #8fa8e8;
-    --ui-danger: #ef8675;
-    --ui-display: "Space Grotesk", "Segoe UI", sans-serif;
-    --ui-body: "Source Sans 3", "Segoe UI", sans-serif;
-
-    --bg-dark: var(--ui-canvas);
-    --bg-card: var(--ui-surface);
-    --bg-card-hover: var(--ui-surface-raised);
-    --text-main: var(--ui-ink);
-    --text-muted: var(--ui-muted);
-    --primary: var(--ui-ember);
-    --accent-primary: var(--ui-ember);
-    --accent-secondary: var(--ui-sage);
-    --border-color: var(--ui-rule);
-    --success: var(--ui-sage);
-    --warning: var(--ui-gold);
-    --danger: var(--ui-danger);
-}
+/* Palette, type and elevation tokens live in site.css, which every page loads
+   first. They were duplicated here with different values, which is how the
+   three views ended up with three different greys and three different oranges. */
 
 html,
 body {
@@ -1310,10 +1280,43 @@ option {
     font-size: 11px;
 }
 
-.deadline-summary-card--urgent > strong { color: #f3a092; }
-.deadline-summary-card--soon > strong { color: #e2d587; }
-.deadline-summary-card--later > strong { color: #9bd8cb; }
-.deadline-summary-card--undated > strong { color: #b7c4e8; }
+/* Reading order, not four equal shouts.
+   These four buckets were rendered at one size in four saturated colours, so
+   the largest number won the eye - and the largest number is "verify date",
+   which is a gap in the data rather than something to act on. Emphasis now
+   descends with urgency: only the urgent bucket is hot, and the undated one
+   recedes to muted text. */
+.deadline-summary-card--urgent {
+    background: linear-gradient(180deg, rgba(239, 127, 69, 0.09), transparent 70%);
+    box-shadow: inset 3px 0 0 var(--ge-ember);
+}
+
+.deadline-summary-card--urgent > strong {
+    color: var(--ge-ember-soft);
+    font-size: 34px;
+}
+
+.deadline-summary-card--soon > strong {
+    color: var(--ge-gold);
+    font-size: 28px;
+}
+
+.deadline-summary-card--later > strong {
+    color: var(--ui-ink-soft);
+    font-size: 26px;
+}
+
+.deadline-summary-card--undated > strong {
+    color: var(--ui-muted);
+    font-size: 24px;
+    font-weight: 560;
+}
+
+.deadline-summary-card--urgent > span {
+    color: var(--ge-ember-soft);
+    font-weight: 620;
+    letter-spacing: 0.02em;
+}
 
 .deadline-toolbar {
     display: grid;
@@ -1710,9 +1713,31 @@ option {
 }
 
 .deadline-program-details__footer {
+    display: grid;
+    /* An inherited justify-content:space-between from the old flex layout was
+       collapsing the single track to its content width, so the action row sat
+       at ~330px inside an 1100px footer. */
     grid-column: 1 / -1;
-    padding-top: 18px;
+    grid-template-columns: minmax(0, 1fr);
+    justify-content: stretch;
+    gap: 12px;
+    margin-top: 16px;
+    padding-top: 16px;
     border-top: 1px solid var(--ui-rule-soft);
+}
+
+/* Used by the dashboard's source links; it was referenced in markup but never
+   defined, so "(opens in a new tab)" rendered as visible body text and wrapped
+   one word per line inside the link. */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 .deadline-verification-meta,
@@ -1951,18 +1976,13 @@ option {
 
 /* Sunumatik Graphite Ember alignment -------------------------------------
    One matte graphite system now spans both side rails. Country colours stay
-   as identity accents; they no longer replace the product palette. */
+   as identity accents; they no longer replace the product palette.
+
+   This block used to redeclare the palette with its own literals, overriding
+   whatever came before it - a fourth copy of the same greys and orange. It now
+   only names the one token the shared foundation does not carry. */
 :root {
-    --ui-canvas: #141519;
-    --ui-canvas-deep: #101115;
-    --ui-surface: #1e2026;
-    --ui-surface-raised: #262931;
-    --ui-surface-soft: #22242b;
-    --ui-ink: #f1f0eb;
-    --ui-muted: #a6a9b1;
-    --ui-ember: #e8804a;
-    --ui-signal: #2fa98c;
-    --ui-sage: #2fa98c;
+    --ui-signal: var(--ge-signal);
 }
 
 /* Filter rail: graphite elevation steps instead of the inherited navy. */
@@ -2689,10 +2709,10 @@ input[type="range"]::-webkit-slider-thumb {
     height: 40px;
     place-items: center;
     overflow: hidden;
-    border: 1px solid rgba(var(--deadline-country-rgb), 0.58);
+    border: 1px solid rgba(var(--deadline-country-rgb), 0.74);
     border-radius: 7px;
     background: #121419;
-    box-shadow: 0 0 0 3px rgba(var(--deadline-country-rgb), 0.08);
+    box-shadow: 0 0 0 3px rgba(var(--deadline-country-rgb), 0.16);
     font-size: 21px;
 }
 
@@ -2700,6 +2720,10 @@ input[type="range"]::-webkit-slider-thumb {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* Flags are small and sit on a near-black canvas, which reads them as
+       washed out. A light saturation lift brings them back without changing
+       the hues themselves. */
+    filter: saturate(1.2) contrast(1.06);
 }
 
 .deadline-program-card__identity-head .deadline-program-card__eyebrow {
@@ -2789,9 +2813,12 @@ input[type="range"]::-webkit-slider-thumb {
     background: #2a2323;
 }
 
+/* The document source only renders when it differs from the deadline source,
+   so this row usually has two children, not three. A fixed three-track grid
+   left an empty column and squeezed the two real ones. */
 .deadline-program-actions {
     display: grid;
-    grid-template-columns: repeat(2, minmax(220px, 1fr)) auto;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     width: 100%;
     gap: 10px;
 }

@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="scholarships.css?v=1">
+    <link rel="stylesheet" href="site.css?v=1"><link rel="stylesheet" href="scholarships.css?v=2">
     <script src="storage.js?v=1"></script>
     <script src="i18n.js?v=11"></script>
 </head>
@@ -16,18 +16,18 @@
     <a class="skip-link" href="#scholarship-results">Skip to scholarships</a>
     <div class="funding-aurora" aria-hidden="true"><span></span><span></span></div>
 
-    <header class="funding-header">
-        <a class="funding-brand" href="index.html" aria-label="UniRank home">
-            <span class="funding-brand__mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 18c4-8 10-12 20-13-1 10-5 16-13 20l-2-5-5-2Z"></path><path d="m13 19 6-6"></path><circle cx="21.5" cy="10.5" r="2"></circle></svg></span>
-            <span><strong>UniRank</strong><small>Scholarship radar</small></span>
+    <header class="site-bar">
+        <a class="site-bar__brand" href="index.html" aria-label="UniRank home">
+            <span class="site-bar__mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 18c4-8 10-12 20-13-1 10-5 16-13 20l-2-5-5-2Z"></path><path d="m13 19 6-6"></path><circle cx="21.5" cy="10.5" r="2"></circle></svg></span>
+            <span><strong>UniRank</strong><small data-copy="brand">Scholarship radar</small></span>
         </a>
-        <nav class="funding-nav" aria-label="Primary">
+        <nav class="site-bar__nav" aria-label="Primary">
             <a href="index.html" data-copy="programmes">Programmes</a>
             <button type="button" id="open-main-calendar" data-copy="calendar">Application calendar</button>
             <a class="is-active" href="scholarships.html" aria-current="page" data-copy="scholarships">Scholarships</a>
             <a href="research.html" data-copy="researchFit">Research fit</a>
         </nav>
-        <div class="funding-language" role="group" aria-label="Language">
+        <div class="site-bar__lang" role="group" aria-label="Language">
             <button type="button" data-lang="en" onclick="window.setLanguage('en')">EN</button>
             <button type="button" data-lang="tr" onclick="window.setLanguage('tr')">TR</button>
         </div>

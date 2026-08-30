@@ -1,0 +1,299 @@
+/* UniRank shared foundation — Sunumatik "Graphite Ember"
+   ==========================================================================
+   Single source of truth for the palette, elevation, type scale and the site
+   bar. Every page loads this first.
+
+   It exists because the three pages had drifted into three palettes: the
+   programmes view was built on #141519 / #e8804a, while the research and
+   scholarship views each carried their own copy of #101115 / #f18046. Three
+   greys and three oranges read as three products.
+
+   Both naming schemes are defined here — the --ui-* names used by the
+   programmes view and the bare names used by the other two — so existing page
+   stylesheets keep working while resolving to one palette.
+
+   Hierarchy rule this palette encodes: ember is reserved for what the reader
+   must act on. Structure is carried by elevation and rules, never by accent
+   colour. When everything is highlighted, nothing is. */
+
+:root {
+    color-scheme: dark;
+
+    /* Ground and elevation ------------------------------------------------
+       Five deliberate steps. Each is ~4-6% lighter than the one below it, so
+       a card reads as raised without needing a border to prove it. */
+    --ge-ground: #0c0d11;
+    --ge-canvas: #111318;
+    --ge-surface: #181b21;
+    --ge-surface-soft: #1c1f26;
+    --ge-surface-raised: #20242c;
+
+    /* Rules ---------------------------------------------------------------- */
+    --ge-rule: #343843;
+    --ge-rule-soft: #282c34;
+
+    /* Ink — three steps, with real distance between them. The old muted greys
+       sat too close to body text, which flattened the hierarchy. */
+    --ge-ink: #f5f1e8;
+    --ge-ink-soft: #cfc9bf;
+    --ge-muted: #918f8b;
+
+    /* Accent — one ember, not three ---------------------------------------- */
+    --ge-ember: #ef7f45;
+    --ge-ember-soft: #ffa877;
+    --ge-ember-deep: #c85f2c;
+    --ge-ember-wash: rgba(239, 127, 69, 0.12);
+
+    /* Supporting signals. Used for meaning (safe / caution / info), never for
+       decoration. */
+    --ge-signal: #5fcbb2;
+    --ge-gold: #dcc95f;
+    --ge-blue: #8fa8e8;
+    --ge-danger: #f0796a;
+
+    /* Elevation ------------------------------------------------------------ */
+    --ge-shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --ge-shadow-2: 0 6px 18px rgba(0, 0, 0, 0.36);
+    --ge-shadow-3: 0 18px 44px rgba(0, 0, 0, 0.46);
+
+    /* Type ----------------------------------------------------------------- */
+    --ge-display: "Space Grotesk", "Segoe UI", sans-serif;
+    --ge-body: "Source Sans 3", "Segoe UI", sans-serif;
+
+    /* --- Aliases: programmes view (--ui-*) ------------------------------- */
+    --ui-canvas: var(--ge-canvas);
+    --ui-canvas-deep: var(--ge-ground);
+    --ui-surface: var(--ge-surface);
+    --ui-surface-raised: var(--ge-surface-raised);
+    --ui-surface-soft: var(--ge-surface-soft);
+    --ui-ink: var(--ge-ink);
+    --ui-ink-soft: var(--ge-ink-soft);
+    --ui-muted: var(--ge-muted);
+    --ui-rule: var(--ge-rule);
+    --ui-rule-soft: var(--ge-rule-soft);
+    --ui-ember: var(--ge-ember);
+    --ui-ember-soft: var(--ge-ember-soft);
+    --ui-gold: var(--ge-gold);
+    --ui-sage: var(--ge-signal);
+    --ui-blue: var(--ge-blue);
+    --ui-danger: var(--ge-danger);
+    --ui-display: var(--ge-display);
+    --ui-body: var(--ge-body);
+
+    /* --- Aliases: research and scholarship views ------------------------- */
+    --canvas: var(--ge-canvas);
+    --canvas-deep: var(--ge-ground);
+    --panel: var(--ge-surface);
+    --panel-soft: var(--ge-surface-soft);
+    --ink: var(--ge-ink);
+    --ink-soft: var(--ge-ink-soft);
+    --muted: var(--ge-muted);
+    --rule: var(--ge-rule);
+    --rule-soft: var(--ge-rule-soft);
+    --orange: var(--ge-ember);
+    --orange-soft: var(--ge-ember-soft);
+    --blue: var(--ge-blue);
+    --teal: var(--ge-signal);
+    --gold: var(--ge-gold);
+    --coral: var(--ge-danger);
+    --display: var(--ge-display);
+    --body: var(--ge-body);
+
+    /* --- Aliases: legacy names still referenced by style.css ------------- */
+    --bg-dark: var(--ge-canvas);
+    --bg-card: var(--ge-surface);
+    --bg-card-hover: var(--ge-surface-raised);
+    --text-main: var(--ge-ink);
+    --text-muted: var(--ge-muted);
+    --primary: var(--ge-ember);
+    --accent-primary: var(--ge-ember);
+    --accent-secondary: var(--ge-signal);
+    --border-color: var(--ge-rule);
+    --success: var(--ge-signal);
+    --warning: var(--ge-gold);
+    --danger: var(--ge-danger);
+}
+
+/* Screen-reader-only utility. Referenced by the dashboard's source links. */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ==========================================================================
+   Site bar
+   One header on every page. Previously each page shipped its own — .top-header
+   on programmes, .research-header, .funding-header — which meant the bar
+   changed shape as you moved through the product.
+   ========================================================================== */
+
+.site-bar {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 12px clamp(16px, 4vw, 40px);
+    border-bottom: 1px solid var(--ge-rule-soft);
+    background: rgba(12, 13, 17, 0.86);
+    backdrop-filter: blur(10px);
+}
+
+.site-bar__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--ge-ink);
+    text-decoration: none;
+}
+
+.site-bar__mark {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border: 1px solid var(--ge-ember-deep);
+    border-radius: 9px;
+    background: var(--ge-ember-wash);
+    color: var(--ge-ember-soft);
+}
+
+.site-bar__mark svg {
+    width: 19px;
+    height: 19px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.site-bar__brand > span:last-child {
+    display: grid;
+    line-height: 1.15;
+}
+
+.site-bar__brand strong {
+    font-family: var(--ge-display);
+    font-size: 16px;
+    font-weight: 640;
+    letter-spacing: -0.01em;
+}
+
+.site-bar__brand small {
+    color: var(--ge-muted);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+}
+
+.site-bar__nav {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 2px;
+}
+
+.site-bar__nav a,
+.site-bar__nav button {
+    padding: 8px 14px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: none;
+    color: var(--ge-muted);
+    font-family: var(--ge-body);
+    font-size: 14px;
+    font-weight: 560;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 130ms ease, background-color 130ms ease, border-color 130ms ease;
+}
+
+.site-bar__nav a:hover,
+.site-bar__nav button:hover {
+    background: var(--ge-surface-soft);
+    color: var(--ge-ink);
+}
+
+/* Ember marks the page you are on and nothing else in this bar. */
+.site-bar__nav .is-active,
+.site-bar__nav [aria-current="page"] {
+    border-color: var(--ge-ember-deep);
+    background: var(--ge-ember-wash);
+    color: var(--ge-ink);
+}
+
+.site-bar__nav a:focus-visible,
+.site-bar__nav button:focus-visible,
+.site-bar__brand:focus-visible,
+.site-bar__lang button:focus-visible {
+    outline: 2px solid var(--ge-ember);
+    outline-offset: 2px;
+}
+
+.site-bar__lang {
+    display: inline-flex;
+    overflow: hidden;
+    border: 1px solid var(--ge-rule);
+    border-radius: 8px;
+}
+
+.site-bar__lang button {
+    padding: 6px 12px;
+    border: 0;
+    background: none;
+    color: var(--ge-muted);
+    font-family: var(--ge-body);
+    font-size: 12px;
+    font-weight: 620;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    transition: color 130ms ease, background-color 130ms ease;
+}
+
+.site-bar__lang button:hover {
+    color: var(--ge-ink);
+}
+
+.site-bar__lang button.active,
+.site-bar__lang button[aria-pressed="true"] {
+    background: var(--ge-surface-raised);
+    color: var(--ge-ink);
+}
+
+@media (max-width: 860px) {
+    .site-bar {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .site-bar__nav {
+        order: 3;
+        width: 100%;
+        overflow-x: auto;
+        flex: none;
+    }
+
+    .site-bar__nav a,
+    .site-bar__nav button {
+        white-space: nowrap;
+    }
+
+    .site-bar__lang {
+        margin-left: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-bar__nav a,
+    .site-bar__nav button,
+    .site-bar__lang button {
+        transition: none;
+    }
+}

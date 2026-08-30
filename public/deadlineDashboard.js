@@ -869,6 +869,10 @@
     if (!elements.modal || !elements.launcher) return;
 
     elements.launcher.addEventListener('click', open);
+    // The shared site bar carries its own calendar entry on this page.
+    document.querySelectorAll('[data-open-calendar]').forEach(button => {
+      button.addEventListener('click', open);
+    });
     elements.close.addEventListener('click', close);
     elements.modal.addEventListener('click', event => {
       if (event.target === elements.modal) close();

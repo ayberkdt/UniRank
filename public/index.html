@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css?v=17">
+    <link rel="stylesheet" href="site.css?v=1"><link rel="stylesheet" href="style.css?v=17">
     <link rel="stylesheet" href="redesign.css?v=7">
     <link rel="stylesheet" href="profile.css?v=1">
     <link rel="stylesheet" href="decisionPanels.css?v=4">
@@ -199,6 +199,23 @@
         </div>
 
         <main class="main-content">
+            <header class="site-bar">
+        <a class="site-bar__brand" href="index.html" aria-label="UniRank home">
+            <span class="site-bar__mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 18c4-8 10-12 20-13-1 10-5 16-13 20l-2-5-5-2Z"></path><path d="m13 19 6-6"></path><circle cx="21.5" cy="10.5" r="2"></circle></svg></span>
+            <span><strong>UniRank</strong><small data-i18n="nav_programmes">Programmes</small></span>
+        </a>
+        <nav class="site-bar__nav" aria-label="Primary">
+            <a class="is-active" href="index.html" aria-current="page" data-i18n="nav_programmes">Programmes</a>
+            <button type="button" data-open-calendar data-i18n="deadline_calendar">Application calendar</button>
+            <a href="scholarships.html" data-i18n="scholarship_hub">Scholarships</a>
+            <a href="research.html" data-i18n="research_hub">Research fit</a>
+        </nav>
+        <div class="site-bar__lang" role="group" aria-label="Language">
+            <button type="button" data-lang="en" onclick="window.setLanguage('en')">EN</button>
+            <button type="button" data-lang="tr" onclick="window.setLanguage('tr')">TR</button>
+        </div>
+    </header>
+    
             <header class="top-header">
                 <div class="header-copy">
                     <span class="eyebrow" data-i18n="dashboard_eyebrow">Aerospace & space decision workspace</span>
@@ -250,10 +267,6 @@
                             </button>
                             <button onclick="window.handleLogout()" class="btn btn-quiet" data-i18n="logout">Log out</button>
                         </div>
-                    </div>
-                    <div class="language-toggle" role="group" aria-label="Language">
-                        <button type="button" data-lang="en" onclick="window.setLanguage('en')">EN</button>
-                        <button type="button" data-lang="tr" onclick="window.setLanguage('tr')">TR</button>
                     </div>
                     </div>
                 </div>
