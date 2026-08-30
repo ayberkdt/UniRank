@@ -489,7 +489,9 @@
           "status": "not_published",
           "confidence": "unknown",
           "reason": "no_iso_dated_deadline_in_record",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-08-30",
+          "audience": "new_applicants",
+          "other_milestones": []
         }
       },
       "student_sentiment_profile": {
@@ -1492,19 +1494,21 @@
         },
         "primary_deadline": {
           "standard": "application_countdown@3.0.0",
-          "date": "2026-05-15",
+          "date": "2026-04-30",
           "next_expected_date": null,
           "time": null,
           "timezone": null,
-          "applies_to": "all_applicants",
+          "applies_to": "non_eu",
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closed",
-          "days_remaining_at_evaluation": -107,
-          "derived_from": "application_timeline_profile.deadline_events[]",
+          "days_remaining_at_evaluation": -122,
+          "derived_from": "application_timeline_profile.deadline_events[] (jcmm_scholarship)",
           "confidence": "high",
           "source_url": "https://www.vut.cz/en/board/internal-legislation-fme/-d294652/s-5-25-aj-p307841",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-08-30",
+          "audience": "new_applicants",
+          "other_milestones": []
         }
       },
       "student_sentiment_profile": {

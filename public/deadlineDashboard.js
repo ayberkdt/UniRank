@@ -29,7 +29,7 @@
       autoUpdated: 'Auto-updated at {time} · every 15 min', syncing: 'Checking for updates…', syncFailed: 'Update check failed · cached data shown',
       officialWording: 'Official wording', targetCycle: '2027 intake', cyclePublished: '2027 cycle published', cycleAnnual: 'Standing annual rule', cycleAwaiting: '2027 cycle awaiting publication', cycleUnknown: '2027 date not verified',
       previousCycle: 'Previous cycle · reference only', lastPublishedDate: 'Last published application date', referenceWarning: '{cycle} reference · not a 2027 deadline', openOfficialStep: 'Open official step', applicationLinkHint: 'Deadline and application instructions', documentLinkHint: 'Official checklist and eligibility evidence',
-      runwayEmpty: 'No exact target-cycle date has been verified yet', runwayEmptyHint: 'Programs awaiting publication remain visible below with their previous-cycle reference.', runwayEvents: '{count} milestone(s)'
+      runwayEmpty: 'No exact target-cycle date has been verified yet', runwayEmptyHint: 'Programs awaiting publication remain visible below with their previous-cycle reference.', runwayEvents: '{count} milestone(s)', admittedOnly: 'Application window closed · remaining dates apply to admitted students'
     },
     tr: {
       urgent: 'Acil', soon: 'Yaklaşıyor', later: 'Daha sonra', verify: 'Tarihi doğrula', closed: 'Kapanan dönem', all: 'Tümü', upcoming: 'Tüm yaklaşanlar',
@@ -50,7 +50,7 @@
       autoUpdated: 'Otomatik güncellendi: {time} · 15 dakikada bir', syncing: 'Güncellemeler kontrol ediliyor…', syncFailed: 'Güncelleme kontrolü başarısız · kayıtlı veri gösteriliyor',
       officialWording: 'Resmî ifade', targetCycle: '2027 dönemi', cyclePublished: '2027 dönemi yayımlandı', cycleAnnual: 'Her yıl geçerli resmî kural', cycleAwaiting: '2027 dönemi henüz yayımlanmadı', cycleUnknown: '2027 tarihi doğrulanmadı',
       previousCycle: 'Önceki dönem · yalnızca referans', lastPublishedDate: 'Son yayımlanan başvuru tarihi', referenceWarning: '{cycle} referansı · 2027 son tarihi değildir', openOfficialStep: 'Resmî adıma git', applicationLinkHint: 'Son tarih ve başvuru yönergeleri', documentLinkHint: 'Resmî belge listesi ve uygunluk kanıtları',
-      runwayEmpty: 'Hedef dönem için kesin bir tarih henüz doğrulanmadı', runwayEmptyHint: 'Yayın bekleyen programlar, önceki dönem referanslarıyla aşağıda görünmeye devam eder.', runwayEvents: '{count} aşama'
+      runwayEmpty: 'Hedef dönem için kesin bir tarih henüz doğrulanmadı', runwayEmptyHint: 'Yayın bekleyen programlar, önceki dönem referanslarıyla aşağıda görünmeye devam eder.', runwayEvents: '{count} aşama', admittedOnly: 'Başvuru dönemi kapandı · kalan tarihler kabul edilmiş öğrenciler için'
     }
   };
 
@@ -191,6 +191,27 @@
     const isOpeningOrOutcome = /\b(open|opened|opening|start|starts|begin|begins|result|results|decision|publication|classes|orientation|arrival|check in)\b/.test(label);
     const hasDeadlineSignal = /deadline|close|closing|due|selection|registration|enrol|enroll|application|visa|document|fee|deposit|scholar|fund|housing|accommodation|offer reply/.test(label);
     return hasDeadlineSignal && (!isOpeningOrOutcome || /deadline|close|closing|due|selection|registration/.test(label));
+  }
+
+  // An event can be a real milestone worth listing and still be the wrong thing
+  // to headline.  A deposit due date, a CAS issue date, an enrolment window or
+  // the first day of teaching only binds somebody who already holds an offer -
+  // showing one as the countdown made closed programmes look open.
+  const ADMITTED_ONLY_EVENT = /offer holder|existing offer|admitted|enrolled|matriculated/i;
+  // Deliberately narrow: only steps that cannot exist before an offer.  A
+  // scholarship or funding deadline stays eligible, because an applicant does
+  // act on it - the defect was never that funding dates showed, it was that
+  // deposits, enrolment windows and the first day of term did.
+  const NOT_AN_APPLICATION_STEP = /deposit|conditions deadline|\bcas\b|atas|visa(?! required)|pre ?enrol|enrol|enroll|matricul|immatricul|commence|begin|start|teaching|induction|orientation|arrival|housing|accommodation|residence|deferral|verification|verify|offer reply|offer acceptance|opened|opens/i;
+  const APPLICATION_STEP = /applica|apply|admission|call for|intake|round|selection|competition|scholarship|funding|bursary|fellowship|fee waiver/i;
+
+  function isNewApplicantEvent(event) {
+    const text = `${event?.label || ''} ${event?.statusText || ''} ${event?.applicantScope || ''}`
+      .replace(/[_-]+/g, ' ');
+    if (!text.trim()) return false;
+    if (ADMITTED_ONLY_EVENT.test(text)) return false;
+    if (!APPLICATION_STEP.test(text)) return false;
+    return !NOT_AN_APPLICATION_STEP.test(text);
   }
 
   function addEvent(target, config) {
@@ -371,7 +392,11 @@
     const upcomingEvents = cycle.targetReady
       ? events.filter(event => event.exact && !event.closed && event.days >= 0)
       : [];
-    const next = upcomingEvents[0] || null;
+    // The headline date has to be one a new applicant can still act on; the
+    // remaining milestones stay in upcomingEvents for the timeline and count.
+    const applicantEvents = upcomingEvents.filter(isNewApplicantEvent);
+    const next = applicantEvents[0] || null;
+    const admittedOnlyAhead = !next && upcomingEvents.length > 0;
     const referenceDeadline = !cycle.targetReady
       ? events
         .filter(event => event.exact && event.kind === 'application')
@@ -399,6 +424,8 @@
       degree: localized(normalized.degree),
       events,
       upcomingEvents,
+      applicantEvents,
+      admittedOnlyAhead,
       next,
       status,
       cycle,
@@ -648,7 +675,7 @@
       <div class="deadline-program-card__main">
         <div class="deadline-program-card__identity">
           <div class="deadline-program-card__identity-head">${flag}<div><div class="deadline-program-card__eyebrow"><span>${escapeHtml(location)}</span><span class="deadline-status-pill deadline-status-pill--${model.status}">${escapeHtml(statusLabel(model.status))}</span></div>
-          <h3>${escapeHtml(model.university)}</h3>
+          <h3><button type="button" class="deadline-program-title" data-open-deadline-program="${model.index}" title="${escapeHtml(tr('programDetails'))}">${escapeHtml(model.university)}<span class="deadline-program-title__cue" aria-hidden="true">→</span></button></h3>
           <p>${escapeHtml(model.program)}</p></div></div>
           <div class="deadline-program-card__facts">
             ${model.degree ? `<span>${escapeHtml(model.degree)}</span>` : ''}
@@ -662,6 +689,7 @@
           <strong>${escapeHtml(nextLabel)}</strong>
           <time${displayedEvent ? ` datetime="${escapeHtml(displayedEvent.datePart.key)}"` : ''}>${escapeHtml(nextDate)}</time>
           <b>${escapeHtml(remaining)}</b>
+          ${model.admittedOnlyAhead ? `<small class="deadline-admitted-only">${escapeHtml(tr('admittedOnly'))}</small>` : ''}
           ${model.upcomingEvents.length > 1 ? `<small>+${model.upcomingEvents.length - 1} ${escapeHtml(lang() === 'tr' ? 'yaklaşan aşama' : 'upcoming milestone(s)')}</small>` : ''}
         </div>
         <div class="deadline-program-card__documents">

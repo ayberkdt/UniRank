@@ -705,6 +705,92 @@ DEADLINE_FIELDS = [
     ("deadline_eu", "eu_eea"),
 ]
 
+# A record's deadline_events[] mixes three different kinds of date: dates a new
+# applicant can still act on, dates that only bind someone who already holds an
+# offer, and dates that are simply the calendar of the term.  Treating them
+# alike is what makes a closed programme advertise a countdown - a deposit due
+# date or the first day of teaching is not an invitation to apply.
+#
+# An event has to look like an application step AND not be aimed at someone
+# already admitted before it can become the headline countdown.
+APPLICATION_EVENT_WORDS = re.compile(
+    # "applica" is the common prefix of application and applicant; separators
+    # are normalised to spaces by event_text, so patterns are space-separated.
+    r"applica|apply|admission|call for|intake|round|selection|competition|"
+    r"scholarship|funding|bursary|fellowship|fee waiver",
+    re.IGNORECASE,
+)
+# Checked after the words above, so "application" in "housing application" or
+# "scholarship application" does not smuggle a non-application step through.
+NON_APPLICATION_EVENT_WORDS = re.compile(
+    # Deliberately narrow: only steps that cannot exist before an offer.
+    # "visa required applicant ..." names who may apply rather than a visa
+    # milestone, so only a visa step about the visa itself is excluded.  A
+    # scholarship or funding deadline stays eligible - an applicant acts on it.
+    r"deposit|conditions?\s+deadline|\bcas\b|atas|visa(?!\s+required)|"
+    r"pre ?enrol|enrol|enroll|matricul|immatricul|"
+    r"commence|begin|start|teaching|induction|orientation|arrival|"
+    r"housing|accommodation|residence|"
+    r"deferral|verification|verify|offer reply|offer acceptance|opened|opens",
+    re.IGNORECASE,
+)
+# Explicit audience markers some records carry alongside the event.
+ADMITTED_SCOPE_WORDS = re.compile(
+    r"admitted|offer_holder|offer holders|existing_offer|enrolled|matriculated",
+    re.IGNORECASE,
+)
+
+
+def event_text(event: dict[str, Any]) -> str:
+    """Every field that could name the event or its audience, as one string."""
+    parts = [
+        event.get("event"),
+        event.get("name"),
+        event.get("label"),
+        event.get("applicant_scope"),
+        event.get("audience"),
+        event.get("status"),
+        event.get("status_as_of_last_checked"),
+        event.get("date_status"),
+    ]
+    joined = " ".join(str(p) for p in parts if isinstance(p, str))
+    # Event names are snake_case, and "_" counts as a word character, so a
+    # pattern like \bUK\b would never match inside "UK_course_application".
+    return re.sub(r"[_\-]+", " ", joined)
+
+
+def event_is_new_applicant_deadline(event: dict[str, Any]) -> bool:
+    """True when a person who has not applied yet could still act on this date."""
+    text = event_text(event)
+    if not text.strip():
+        return False
+    if ADMITTED_SCOPE_WORDS.search(text):
+        return False
+    if not APPLICATION_EVENT_WORDS.search(text):
+        return False
+    if NON_APPLICATION_EVENT_WORDS.search(text):
+        return False
+    return True
+
+
+def event_audience(event: dict[str, Any]) -> str:
+    text = event_text(event)
+    if ADMITTED_SCOPE_WORDS.search(text):
+        return "admitted_or_offer_holders"
+    if re.search(r"non ?eu|overseas|international|visa required", text, re.IGNORECASE):
+        return "non_eu"
+    if re.search(r"\beu\b|eea|home|\buk\b|domestic", text, re.IGNORECASE):
+        return "eu_eea"
+    return "all_applicants"
+
+
+def event_label(event: dict[str, Any]) -> str | None:
+    for key in ("event", "name", "label"):
+        value = event.get(key)
+        if isinstance(value, str) and value.strip():
+            return value.strip()
+    return None
+
 
 def build_primary_deadline(record: dict[str, Any]) -> dict[str, Any]:
     timeline = record.setdefault("application_timeline_profile", {})
@@ -720,14 +806,35 @@ def build_primary_deadline(record: dict[str, Any]) -> dict[str, Any]:
         parsed = iso_date(timeline.get(field))
         if parsed:
             candidates.append((parsed, audience, f"application_timeline_profile.{field}"))
+
+    today = date.today()
+
+    # Events are split rather than pooled: only the ones a new applicant could
+    # act on may set the countdown, and the rest are kept as milestones so the
+    # dates stay available to somebody who is already admitted.
+    other_milestones: list[dict[str, Any]] = []
     for event in non_empty_list(timeline.get("deadline_events")):
         if not isinstance(event, dict):
             continue
         parsed = iso_date(event.get("date") or event.get("deadline"))
-        if parsed:
-            candidates.append((parsed, "all_applicants", "application_timeline_profile.deadline_events[]"))
+        if not parsed:
+            continue
+        label = event_label(event)
+        if event_is_new_applicant_deadline(event):
+            origin = "application_timeline_profile.deadline_events[]"
+            if label:
+                origin += f" ({label})"
+            candidates.append((parsed, event_audience(event), origin))
+        elif date.fromisoformat(parsed) >= today:
+            other_milestones.append(
+                {
+                    "date": parsed,
+                    "event": label,
+                    "audience": event_audience(event),
+                    "source_url": event.get("source_url"),
+                }
+            )
 
-    today = date.today()
     upcoming = sorted(c for c in candidates if date.fromisoformat(c[0]) >= today)
     if upcoming:
         chosen_date, applies_to, origin = upcoming[0]
@@ -783,6 +890,11 @@ def build_primary_deadline(record: dict[str, Any]) -> dict[str, Any]:
             "source_url": source,
             "evaluated_at": TODAY,
         }
+    # Kept on every record, including the ones with no application date left, so
+    # a closed cycle can still explain what the remaining published dates are
+    # instead of silently borrowing one of them for the countdown.
+    primary["audience"] = "new_applicants"
+    primary["other_milestones"] = sorted(other_milestones, key=lambda item: item["date"])
     timeline["primary_deadline"] = primary
     return primary
 

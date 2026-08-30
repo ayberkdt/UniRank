@@ -632,19 +632,28 @@
       },
       "primary_deadline": {
         "standard": "application_countdown@3.0.0",
-        "date": "2026-09-01",
+        "date": "2026-06-15",
         "next_expected_date": null,
         "time": null,
         "timezone": null,
-        "applies_to": "all_applicants",
+        "applies_to": "non_eu",
         "cycle_label": null,
         "is_recurring_annual": false,
-        "status": "closing_soon",
-        "days_remaining_at_evaluation": 2,
-        "derived_from": "application_timeline_profile.deadline_events[]",
+        "status": "closed",
+        "days_remaining_at_evaluation": -76,
+        "derived_from": "application_timeline_profile.deadline_events[] (Degree application deadline)",
         "confidence": "high",
         "source_url": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-08-30",
+        "audience": "new_applicants",
+        "other_milestones": [
+          {
+            "date": "2026-09-01",
+            "event": "Studies commence",
+            "audience": "admitted_or_offer_holders",
+            "source_url": null
+          }
+        ]
       }
     },
     "ranking_profile": {

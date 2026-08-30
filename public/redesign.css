@@ -1497,6 +1497,55 @@ option {
     line-height: 1.2;
 }
 
+/* The card title opens the programme drawer directly.  The same action used to
+   exist only at the bottom of the collapsed details panel, which meant leaving
+   the dashboard and finding the university again by hand. */
+.deadline-program-card__identity h3 .deadline-program-title {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35em;
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+}
+
+/* Visible at rest, not only on hover: the whole point of this control is that
+   the card announces it can be opened. */
+.deadline-program-title__cue {
+    color: var(--ui-ember-soft);
+    font-size: 0.7em;
+    opacity: 0.5;
+    transform: translateX(0);
+    transition: opacity 140ms ease, transform 140ms ease;
+}
+
+.deadline-program-title:hover,
+.deadline-program-title:focus-visible {
+    color: var(--ui-ember-soft);
+}
+
+.deadline-program-title:hover .deadline-program-title__cue,
+.deadline-program-title:focus-visible .deadline-program-title__cue {
+    opacity: 1;
+    transform: translateX(3px);
+}
+
+.deadline-program-title:focus-visible {
+    outline: 2px solid var(--ui-ember);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .deadline-program-title__cue {
+        transition: none;
+    }
+}
+
 .deadline-program-card__identity > p {
     margin-top: 5px;
     color: var(--ui-ink-soft);
@@ -3734,4 +3783,13 @@ input[type="range"]::-webkit-slider-thumb {
     #detail-drawer .premium-grid {
         grid-template-columns: minmax(0, 1fr);
     }
+}
+
+/* A programme whose only remaining dates bind admitted students, not applicants. */
+.deadline-admitted-only {
+    display: block;
+    margin-top: 6px;
+    color: var(--ui-ink-soft);
+    font-size: 12px;
+    line-height: 1.35;
 }

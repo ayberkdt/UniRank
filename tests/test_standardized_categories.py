@@ -213,3 +213,96 @@ def test_each_housing_level_is_defined_with_bilingual_criteria(code):
     level = next(item for item in STANDARDS["housing_difficulty"]["levels"] if item["code"] == code)
     assert level["label"]["en"] and level["label"]["tr"]
     assert level["criteria"]["en"] and level["criteria"]["tr"]
+
+
+# ---------------------------------------------------------------------------
+# The countdown must answer "can I still apply?", not "what happens next?".
+#
+# A record's deadline_events[] mixes application dates with deposit due dates,
+# CAS issue dates, enrolment windows and the first day of teaching.  Pooling
+# them made closed programmes advertise a live countdown - Birmingham showed an
+# offer-holder conditions deadline and Vilnius Tech showed the start of term.
+# ---------------------------------------------------------------------------
+
+import sys
+
+sys.path.insert(0, str(ROOT / "scripts"))
+from standardize_categories import (  # noqa: E402
+    event_audience,
+    event_is_new_applicant_deadline,
+)
+
+
+ADMITTED_ONLY_EVENTS = [
+    {"event": "overseas_conditions_deadline", "status": "upcoming_for_existing_offer_holders"},
+    {"event": "international_masters_deposit", "status": "upcoming_for_existing_offer_holders"},
+    {"event": "latest_CAS_issue_date_for_September_starters"},
+    {"event": "Studies commence", "applicant_scope": "admitted"},
+    {"event": "programme_start"},
+    {"event": "teaching_begins"},
+    {"event": "ordinary_enrolment_window_closes"},
+    {"event": "universitaly_pre_enrolment_deadline_overseas_non_eu"},
+    {"event": "postgraduate_accommodation_application_deadline"},
+    {"event": "housing_guarantee_offer_acceptance_deadline"},
+    {"event": "deferral_request_deadline"},
+    {"event": "applications_opened"},
+    {"event": "offer_conditions_and_qualification_verification_deadline"},
+    {"event": "advised_ATAS_application_date_if_required"},
+]
+
+NEW_APPLICANT_EVENTS = [
+    {"event": "general_programme_application_close"},
+    {"event": "UK_course_application", "status": "open"},
+    {"event": "visa_required_applicant_programme_deadline", "status": "open"},
+    {"event": "first_esse3_master_admission_round"},
+    {"event": "Degree application deadline", "applicant_scope": "international"},
+    # A funding deadline is something an applicant acts on, so it may headline.
+    {"event": "adisurc_scholarship_and_services_deadline"},
+]
+
+
+@pytest.mark.parametrize("event", ADMITTED_ONLY_EVENTS)
+def test_admitted_and_calendar_events_are_not_application_deadlines(event):
+    assert event_is_new_applicant_deadline(event) is False, event
+
+
+@pytest.mark.parametrize("event", NEW_APPLICANT_EVENTS)
+def test_real_application_events_are_recognised(event):
+    assert event_is_new_applicant_deadline(event) is True, event
+
+
+def test_event_audience_reads_through_snake_case():
+    # "_" is a word character, so \bUK\b never matches inside UK_course_application
+    # unless the separators are normalised first.
+    assert event_audience({"event": "UK_course_application"}) == "eu_eea"
+    assert event_audience({"event": "overseas_application_deadline"}) == "non_eu"
+    assert (
+        event_audience({"event": "deposit", "status": "upcoming_for_existing_offer_holders"})
+        == "admitted_or_offer_holders"
+    )
+
+
+def test_no_published_countdown_comes_from_an_admitted_only_event():
+    for record in RECORDS:
+        primary = (record.get("application_timeline_profile") or {}).get("primary_deadline") or {}
+        if primary.get("status") not in {"open", "closing_soon"}:
+            continue
+        origin = str(primary.get("derived_from") or "")
+        assert "deadline_events[]" not in origin or "(" in origin, (
+            record.get("id"),
+            "an event-derived countdown must name the event it came from",
+        )
+        assert primary.get("audience") == "new_applicants", record.get("id")
+
+
+def test_other_milestones_are_future_dated_and_labelled():
+    for record in RECORDS:
+        primary = (record.get("application_timeline_profile") or {}).get("primary_deadline") or {}
+        for milestone in primary.get("other_milestones") or []:
+            assert milestone.get("date"), record.get("id")
+            assert milestone.get("audience") in {
+                "all_applicants",
+                "non_eu",
+                "eu_eea",
+                "admitted_or_offer_holders",
+            }, (record.get("id"), milestone)

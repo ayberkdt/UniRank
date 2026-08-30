@@ -896,7 +896,9 @@
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-magistrale/foreign-qualification/application/list-of-documents-required-by-the-admissions-office",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-08-30",
+          "audience": "new_applicants",
+          "other_milestones": []
         }
       },
       "source_profile": {
@@ -2286,19 +2288,34 @@
         },
         "primary_deadline": {
           "standard": "application_countdown@3.0.0",
-          "date": "2026-10-05",
+          "date": "2026-04-20",
           "next_expected_date": null,
           "time": null,
           "timezone": null,
-          "applies_to": "all_applicants",
+          "applies_to": "non_eu",
           "cycle_label": null,
           "is_recurring_annual": false,
-          "status": "open",
-          "days_remaining_at_evaluation": 36,
-          "derived_from": "application_timeline_profile.deadline_events[]",
+          "status": "closed",
+          "days_remaining_at_evaluation": -132,
+          "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://www.polito.it/en/education/applying-studying-graduating/admissions-and-enrolment/master-s-degree-programmes/applicants-with-a-non-italian-qualification",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-08-30",
+          "audience": "new_applicants",
+          "other_milestones": [
+            {
+              "date": "2026-10-05",
+              "event": "online_enrolment_close",
+              "audience": "all_applicants",
+              "source_url": null
+            },
+            {
+              "date": "2026-11-30",
+              "event": "study_visa_upload_deadline",
+              "audience": "all_applicants",
+              "source_url": null
+            }
+          ]
         }
       },
       "source_profile": {
@@ -3364,19 +3381,34 @@
         },
         "primary_deadline": {
           "standard": "application_countdown@3.0.0",
-          "date": "2026-09-15",
+          "date": "2026-05-15",
           "next_expected_date": null,
           "time": null,
           "timezone": null,
-          "applies_to": "all_applicants",
+          "applies_to": "non_eu",
           "cycle_label": null,
           "is_recurring_annual": false,
-          "status": "closing_soon",
-          "days_remaining_at_evaluation": 16,
-          "derived_from": "application_timeline_profile.deadline_events[]",
+          "status": "closed",
+          "days_remaining_at_evaluation": -107,
+          "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://corsidilaurea.uniroma1.it/sites/default/files/offertaformativa/documenti_ufficiali/187/33484_e_0.pdf",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-08-30",
+          "audience": "new_applicants",
+          "other_milestones": [
+            {
+              "date": "2026-09-15",
+              "event": "infostud_non_eu_visa_deadline",
+              "audience": "non_eu",
+              "source_url": null
+            },
+            {
+              "date": "2026-09-24",
+              "event": "classes_begin",
+              "audience": "all_applicants",
+              "source_url": null
+            }
+          ]
         }
       },
       "source_profile": {
@@ -4449,10 +4481,37 @@
           "is_recurring_annual": false,
           "status": "closing_soon",
           "days_remaining_at_evaluation": 11,
-          "derived_from": "application_timeline_profile.deadline_events[]",
+          "derived_from": "application_timeline_profile.deadline_events[] (adisurc_scholarship_and_services_deadline)",
           "confidence": "high",
           "source_url": "https://aerospaziale.dii.unina.it/it/info-lm",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-08-30",
+          "audience": "new_applicants",
+          "other_milestones": [
+            {
+              "date": "2026-09-20",
+              "event": "recommended_university_enrolment_for_adisurc_housing_priority",
+              "audience": "all_applicants",
+              "source_url": null
+            },
+            {
+              "date": "2026-11-02",
+              "event": "ordinary_enrolment_window_closes",
+              "audience": "all_applicants",
+              "source_url": null
+            },
+            {
+              "date": "2026-11-30",
+              "event": "visa_application_submission_deadline",
+              "audience": "all_applicants",
+              "source_url": null
+            },
+            {
+              "date": "2027-03-31",
+              "event": "adisurc_equivalent_isee_and_absolute_competition_enrolment_deadline",
+              "audience": "all_applicants",
+              "source_url": null
+            }
+          ]
         }
       },
       "student_sentiment_profile": {
@@ -5364,7 +5423,9 @@
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://msse.ing.unipi.it/applications/",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-08-30",
+          "audience": "new_applicants",
+          "other_milestones": []
         }
       },
       "source_profile": {
@@ -6419,10 +6480,37 @@
           "is_recurring_annual": false,
           "status": "closing_soon",
           "days_remaining_at_evaluation": 16,
-          "derived_from": "application_timeline_profile.deadline_events[]",
+          "derived_from": "application_timeline_profile.deadline_events[] (first_esse3_master_admission_window)",
           "confidence": "high",
           "source_url": "https://develop.poliba.it/it/node/14994",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-08-30",
+          "audience": "new_applicants",
+          "other_milestones": [
+            {
+              "date": "2026-09-22",
+              "event": "master_enrolment_window_opens",
+              "audience": "all_applicants",
+              "source_url": null
+            },
+            {
+              "date": "2026-11-30",
+              "event": "visa_application_submission_target",
+              "audience": "all_applicants",
+              "source_url": null
+            },
+            {
+              "date": "2027-02-01",
+              "event": "part_time_enrolment_becomes_mandatory",
+              "audience": "all_applicants",
+              "source_url": null
+            },
+            {
+              "date": "2027-05-20",
+              "event": "master_enrolment_window_closes",
+              "audience": "all_applicants",
+              "source_url": null
+            }
+          ]
         }
       },
       "source_profile": {
@@ -7629,19 +7717,40 @@
         ],
         "primary_deadline": {
           "standard": "application_countdown@3.0.0",
-          "date": "2026-09-10",
+          "date": "2026-11-30",
           "next_expected_date": null,
           "time": null,
           "timezone": null,
-          "applies_to": "all_applicants",
+          "applies_to": "non_eu",
           "cycle_label": null,
           "is_recurring_annual": false,
-          "status": "closing_soon",
-          "days_remaining_at_evaluation": 11,
-          "derived_from": "application_timeline_profile.deadline_events[]",
+          "status": "open",
+          "days_remaining_at_evaluation": 92,
+          "derived_from": "application_timeline_profile.deadline_events[] (ersu_final_international_regularisation)",
           "confidence": "high",
           "source_url": "https://www.unipa.it/mobilita/new-students/new-students---enrolment/enrolment-procedures-for-extra-eu-foreign-students/index.html",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-08-30",
+          "audience": "new_applicants",
+          "other_milestones": [
+            {
+              "date": "2026-09-10",
+              "event": "ersu_isee_for_housing_ranking",
+              "audience": "all_applicants",
+              "source_url": "https://backoffice.lumsa.it/sites/default/files/file/4176/2026-06/Bando%20di%20Concorso%20dell%27ERSU%20di%20Palermo%20a.a.%202026_2027%20%281%29.pdf"
+            },
+            {
+              "date": "2026-11-30",
+              "event": "unipa_fee_payment",
+              "audience": "admitted_or_offer_holders",
+              "source_url": "https://www.unipa.it/mobilita/new-students/new-students---enrolment/enrolment-procedures-for-extra-eu-foreign-students/index.html"
+            },
+            {
+              "date": "2026-12-22",
+              "event": "late_unipa_fee_payment_with_surcharge",
+              "audience": "admitted_or_offer_holders",
+              "source_url": "https://www.unipa.it/mobilita/new-students/new-students---enrolment/enrolment-procedures-for-extra-eu-foreign-students/index.html"
+            }
+          ]
         }
       },
       "source_profile": {
@@ -8622,7 +8731,9 @@
           "derived_from": "application_timeline_profile.application_deadline",
           "confidence": "high",
           "source_url": "https://corsi.unibo.it/2cycle/AerospaceEngineering/how-to-enrol",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-08-30",
+          "audience": "new_applicants",
+          "other_milestones": []
         }
       },
       "source_profile": {
@@ -9488,7 +9599,9 @@
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://apply.unipd.it/courses/course/232-aerospace-engineering?search=2301888",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-08-30",
+          "audience": "new_applicants",
+          "other_milestones": []
         }
       },
       "source_profile": {
@@ -10839,19 +10952,28 @@
         "enrollment_deadline": "communicated individually after ranking",
         "primary_deadline": {
           "standard": "application_countdown@3.0.0",
-          "date": "2026-10-31",
+          "date": "2026-05-20",
           "next_expected_date": null,
           "time": null,
           "timezone": null,
           "applies_to": "all_applicants",
           "cycle_label": null,
           "is_recurring_annual": false,
-          "status": "open",
-          "days_remaining_at_evaluation": 62,
-          "derived_from": "application_timeline_profile.deadline_events[]",
+          "status": "closed",
+          "days_remaining_at_evaluation": -102,
+          "derived_from": "application_timeline_profile.deadline_events[] (ranking_and_scholarship_assignment_publication)",
           "confidence": "high",
           "source_url": "https://corsi.unitn.it/en/intelligent-mechatronics-engineering/enrollment/admission-and-enrollment-non-europeans",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-08-30",
+          "audience": "new_applicants",
+          "other_milestones": [
+            {
+              "date": "2026-10-31",
+              "event": "latest_visa_and_arrival_condition",
+              "audience": "admitted_or_offer_holders",
+              "source_url": "https://corsi.unitn.it/sites/cds/files/2026-05/ranking-eu-intelligent-mechatronics-engineering-26-27.pdf"
+            }
+          ]
         }
       },
       "student_sentiment_profile": {
@@ -12564,7 +12686,9 @@
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-magistrale/foreign-qualification/application/list-of-documents-required-by-the-admissions-office",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-08-30",
+          "audience": "new_applicants",
+          "other_milestones": []
         }
       },
       "source_profile": {
@@ -13734,19 +13858,34 @@
         },
         "primary_deadline": {
           "standard": "application_countdown@3.0.0",
-          "date": "2026-11-30",
+          "date": "2026-08-25",
           "next_expected_date": null,
           "time": null,
           "timezone": null,
           "applies_to": "all_applicants",
           "cycle_label": null,
           "is_recurring_annual": false,
-          "status": "open",
-          "days_remaining_at_evaluation": 92,
-          "derived_from": "application_timeline_profile.deadline_events[]",
+          "status": "closed",
+          "days_remaining_at_evaluation": -5,
+          "derived_from": "application_timeline_profile.deadline_events[] (isufi_second_level_selection)",
           "confidence": "high",
           "source_url": "https://international.unisalento.it/en/admission/masters-degree",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-08-30",
+          "audience": "new_applicants",
+          "other_milestones": [
+            {
+              "date": "2026-11-30",
+              "event": "study_visa_application",
+              "audience": "non_eu",
+              "source_url": null
+            },
+            {
+              "date": "2027-01-31",
+              "event": "final_enrolment",
+              "audience": "non_eu",
+              "source_url": null
+            }
+          ]
         }
       },
       "student_sentiment_profile": {

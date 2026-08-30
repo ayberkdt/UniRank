@@ -1126,19 +1126,34 @@
         ],
         "primary_deadline": {
           "standard": "application_countdown@3.0.0",
-          "date": "2026-09-30",
+          "date": "2026-07-01",
           "next_expected_date": null,
           "time": null,
           "timezone": null,
-          "applies_to": "all_applicants",
+          "applies_to": "non_eu",
           "cycle_label": null,
           "is_recurring_annual": false,
-          "status": "open",
-          "days_remaining_at_evaluation": 31,
-          "derived_from": "application_timeline_profile.deadline_events[]",
+          "status": "closed",
+          "days_remaining_at_evaluation": -60,
+          "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://muse.idr.upm.es/es/master?catid=8&id=4%3Aadmision-al-muse&view=article",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-08-30",
+          "audience": "new_applicants",
+          "other_milestones": [
+            {
+              "date": "2026-09-30",
+              "event": "foreign_document_completion",
+              "audience": "all_applicants",
+              "source_url": null
+            },
+            {
+              "date": "2026-10-07",
+              "event": "Santander_economic_aid_deadline",
+              "audience": "all_applicants",
+              "source_url": null
+            }
+          ]
         }
       },
       "student_sentiment_profile": {
@@ -2203,7 +2218,9 @@
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://www.upc.edu/master/en/348/masters-degree-in-aerospace-engineering.pdf",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-08-30",
+          "audience": "new_applicants",
+          "other_milestones": []
         }
       },
       "student_sentiment_profile": {
@@ -3149,7 +3166,9 @@
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://www.uc3m.es/postgraduate/admission/process",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-08-30",
+          "audience": "new_applicants",
+          "other_milestones": []
         }
       },
       "student_sentiment_profile": {
