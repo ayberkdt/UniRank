@@ -1119,25 +1119,51 @@ option {
 .deadline-runway__eyebrow { color: var(--ge-muted); font-size: 10px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; }
 .deadline-runway__track { display: flex; gap: 10px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: thin; }
 
+/* The month strip is a calendar, so it should read like one: a labelled month
+   header sitting on a slightly raised surface, then rows where the numeral is
+   the anchor. Previously the header and the rows shared one flat ground and the
+   numerals were periwinkle, which made the whole strip read as decoration. */
 .deadline-runway-month {
     min-width: 250px;
     border: 1px solid var(--ge-rule-soft);
-    border-radius: 8px;
-    background: rgba(12, 14, 18, 0.56);
+    border-radius: 10px;
+    background: var(--ge-surface);
     overflow: hidden;
 }
 
-.deadline-runway-month > header { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-bottom: 1px solid var(--ui-rule-soft); }
-.deadline-runway-month > header span { color: var(--ui-ink); font-weight: 700; text-transform: capitalize; }
-.deadline-runway-month > header b { color: var(--ui-muted); font-size: 10px; font-weight: 600; }
+.deadline-runway-month > header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 11px 13px;
+    border-bottom: 1px solid var(--ge-rule);
+    background: var(--ge-surface-raised);
+}
+
+.deadline-runway-month > header span {
+    color: var(--ui-ink);
+    font-family: var(--ui-display);
+    font-size: 14px;
+    font-weight: 620;
+    letter-spacing: -0.01em;
+    text-transform: capitalize;
+}
+
+.deadline-runway-month > header b {
+    color: var(--ge-muted);
+    font-size: 10px;
+    font-weight: 600;
+}
 .deadline-runway-month ol { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; }
-.deadline-runway-month li { display: grid; grid-template-columns: 56px minmax(0, 1fr); gap: 10px; padding: 10px 12px; border-bottom: 1px solid rgba(244, 239, 229, 0.07); }
+.deadline-runway-month li { display: grid; grid-template-columns: 52px minmax(0, 1fr); gap: 12px; padding: 11px 13px; border-bottom: 1px solid var(--ge-rule-soft); transition: background-color 120ms ease; }
 .deadline-runway-month li:last-child { border-bottom: 0; }
-.deadline-runway-month li > span:last-child { display: grid; min-width: 0; }
-.deadline-runway-month li b { overflow: hidden; color: var(--ui-ink-soft); font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
-.deadline-runway-month li small { color: var(--ui-muted); font-size: 10px; }
-.deadline-runway-date strong { display: block; color: var(--ui-ink-soft); font: 700 20px/1 var(--ui-display); }
-.deadline-runway-date small { display: block; margin-top: 4px; }
+.deadline-runway-month li:hover { background: var(--ge-surface-soft); }
+.deadline-runway-month li > span:last-child { display: grid; min-width: 0; align-content: center; gap: 2px; }
+.deadline-runway-month li b { overflow: hidden; color: var(--ui-ink); font-size: 12px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.deadline-runway-month li small { color: var(--ge-muted); font-size: 10px; line-height: 1.35; }
+.deadline-runway-date { text-align: right; }
+.deadline-runway-date strong { display: block; color: var(--ui-ink); font: 620 22px/1 var(--ui-display); letter-spacing: -0.02em; }
+.deadline-runway-date small { display: block; margin-top: 3px; color: var(--ge-muted); font-size: 9px; }
 .deadline-runway__empty { display: flex; min-height: 76px; align-items: center; gap: 14px; padding: 14px; border: 1px dashed var(--ge-rule); border-radius: 8px; color: var(--ge-muted); }
 .deadline-runway__empty > span { font-size: 26px; }
 .deadline-runway__empty div { display: grid; gap: 3px; }
