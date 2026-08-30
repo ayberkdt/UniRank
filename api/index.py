@@ -148,3 +148,24 @@ def get_research_pathways():
         return JSONResponse({"status": "success", "data": catalog}, headers=headers)
     except (OSError, json.JSONDecodeError):
         return JSONResponse({"status": "error", "message": "Research pathway catalog could not be loaded.", "data": {}}, status_code=500, headers=headers)
+
+
+@app.get("/api/standards")
+def get_standards():
+    """Serve the categorical-scale definitions used across the database.
+
+    Every category shown to a student (housing difficulty, cost basis,
+    academic-match tier, faculty contact timing, scholarship step timing)
+    is defined once in config/standards.json so the interface can explain
+    what a label means instead of asserting it.
+    """
+    standards_path = _project_file("config", "standards.json")
+    headers = {"Cache-Control": "no-store, no-cache, must-revalidate, max-age=0"}
+    if not standards_path:
+        return JSONResponse({"status": "error", "message": "Standards file not found.", "data": {}}, status_code=404, headers=headers)
+    try:
+        with open(standards_path, "r", encoding="utf-8") as standards_file:
+            standards = json.load(standards_file)
+        return JSONResponse({"status": "success", "data": standards}, headers=headers)
+    except (OSError, json.JSONDecodeError):
+        return JSONResponse({"status": "error", "message": "Standards could not be loaded.", "data": {}}, status_code=500, headers=headers)

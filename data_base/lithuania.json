@@ -261,6 +261,24 @@
       "notes": {
         "en": "Amounts are recorded in the official source currency.",
         "tr": "Tutarlar resmî kaynak para biriminde kaydedilmiştir."
+      },
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -341,6 +359,61 @@
       "notes": {
         "en": "Housing requires a separate application and deposit; publication of rooms does not establish a guarantee.",
         "tr": "Yurt için ayrı başvuru ve depozito gerekir; odaların yayımlanması tahsis garantisi oluşturmaz."
+      },
+      "housing_difficulty": "unknown",
+      "housing_search_difficulty": "unknown",
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": 4,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 2,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": "not_guaranteed",
+            "points": 3,
+            "derived_from": "living_profile.housing_access"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": "separate_application_generous_window",
+            "points": 1,
+            "derived_from": "living_profile.housing_application_separate"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
       }
     },
     "curriculum_profile": {
@@ -556,6 +629,22 @@
       "planning_advice": {
         "en": "The published 2026 dates have passed. Use them only to start preparing earlier; wait for the next official cycle rather than projecting a deadline.",
         "tr": "Yayımlanan 2026 tarihleri geçmiştir. Bunları yalnız daha erken hazırlanmaya başlamak için kullanın; tarih tahmin etmek yerine sonraki resmî dönemi bekleyin."
+      },
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": "2026-09-01",
+        "next_expected_date": null,
+        "time": null,
+        "timezone": null,
+        "applies_to": "all_applicants",
+        "cycle_label": null,
+        "is_recurring_annual": false,
+        "status": "closing_soon",
+        "days_remaining_at_evaluation": 2,
+        "derived_from": "application_timeline_profile.deadline_events[]",
+        "confidence": "high",
+        "source_url": null,
+        "evaluated_at": "2026-08-30"
       }
     },
     "ranking_profile": {
@@ -894,11 +983,11 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "quality_control": {
       "qc_status": "passed",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "perspective_reviews": {
@@ -911,6 +1000,53 @@
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
       }
+    },
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "unknown",
+      "score": null,
+      "score_basis_weight": 30,
+      "evidenced_dimensions": 1,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "strong",
+          "basis": "4_named_items",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "uav",
+        "microsatellite",
+        "astrodynamics",
+        "spacecraft_systems",
+        "aerospace_structures",
+        "control",
+        "communications"
+      ],
+      "confidence": "unknown",
+      "legacy_relevance_status": null,
+      "evaluated_at": "2026-08-30"
     }
   }
 ]

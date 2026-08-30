@@ -1,0 +1,87 @@
+{
+  "checked": "2026-08-29",
+  "note": "University of Stuttgart: the Baden-Württemberg non-EU tuition fee, which distinguishes it sharply from the tuition-free German states, and the exemption route with its hard deadline.",
+  "records": [
+    {
+      "id": "germany-stuttgart-msc-aerospace",
+      "cost_profile": {
+        "currency": "EUR",
+        "tuition_eur_per_semester_non_eu": 1500,
+        "tuition_eur_per_year_estimated": 3000,
+        "tuition_eur_per_year_min": 0,
+        "tuition_eur_per_year_max": 3000,
+        "tuition_basis": "official_baden_wuerttemberg_non_eu_rate_since_ws_2017_18",
+        "semester_fee_eur": 184,
+        "eu_tuition_eur_per_year": 0,
+        "cost_notes": {
+          "en": "Stuttgart is in Baden-Württemberg, one of the German states that does charge non-EU students: €1,500 per semester, so €3,000 per year, on top of the €184 semester fee. EU/EEA students and several other categories pay only the semester fee. This is the single largest cost difference between Stuttgart and a North Rhine-Westphalia university such as RWTH Aachen, where the same degree carries no tuition at all.",
+          "tr": "Stuttgart, AB dışı öğrencilerden ücret alan Alman eyaletlerinden biri olan Baden-Württemberg'dedir: dönem başına 1.500 avro, yani yılda 3.000 avro; ayrıca 184 avroluk dönem ücreti. AB/AEA öğrencileri ve birkaç kategori daha yalnızca dönem ücretini öder. Bu, Stuttgart ile aynı derecenin hiç öğrenim ücreti taşımadığı RWTH Aachen gibi bir Kuzey Ren-Vestfalya üniversitesi arasındaki en büyük maliyet farkıdır."
+        }
+      },
+      "scholarship_profile": {
+        "application_mode": "separate",
+        "automatic_consideration": false,
+        "playbook": [
+          {
+            "opportunity": "Exemption from the Baden-Württemberg non-EU tuition fee",
+            "competitiveness": "open_to_all_eligible",
+            "eligibility_gates": [
+              { "en": "You fall into one of the published exemption categories — for example a settlement or permanent EU residence permit, refugee status under the Geneva Convention, fifteen months or more of legal residence in Germany, five or more years of legal employment in Germany, or a parent with three or more years of legal German employment.", "tr": "Yayımlanmış muafiyet kategorilerinden birine giriyorsun — örneğin yerleşim veya kalıcı AB oturum izni, Cenevre Sözleşmesi kapsamında mülteci statüsü, Almanya'da on beş ay veya daha uzun yasal ikamet, beş yıl veya daha fazla yasal çalışma ya da Almanya'da üç yıl veya daha fazla yasal çalışmış bir ebeveyn." },
+              { "en": "Some categories are waived automatically — EU/EEA citizens, holders of a German university entrance qualification, and continuing-education Master's or doctoral students — and need no application at all.", "tr": "Bazı kategoriler otomatik olarak muaf tutulur — AB/AEA vatandaşları, Alman üniversite giriş yeterliliği sahipleri ve sürekli eğitim yüksek lisansı veya doktora öğrencileri — ve hiç başvuru gerektirmez." }
+            ],
+            "selection_criteria": [
+              { "en": "This is not a competition. It is a documentary check against the published categories, so the only thing that decides it is whether your evidence arrives complete and on time.", "tr": "Bu bir yarışma değildir. Yayımlanmış kategorilere karşı yapılan bir belge kontrolüdür; sonucu belirleyen tek şey, kanıtının eksiksiz ve zamanında ulaşıp ulaşmadığıdır." }
+            ],
+            "typical_award": { "coverage": ["tuition_waiver"], "amount_note": { "en": "€1,500 per semester.", "tr": "Dönem başına 1.500 avro." } },
+            "steps": [
+              {
+                "order": 1,
+                "action": {
+                  "en": "Check the published exemption list before you budget €3,000 a year — several categories that people assume do not apply to them, such as a parent's long employment in Germany, do.",
+                  "tr": "Yılda 3.000 avroluk bütçe yapmadan önce yayımlanmış muafiyet listesini kontrol et — insanların kendilerine uymadığını varsaydığı bazı kategoriler, örneğin bir ebeveynin Almanya'da uzun süreli çalışması, aslında uyar."
+                },
+                "owner": "applicant",
+                "timing": "before_application_opens",
+                "hard_requirement": false
+              },
+              {
+                "order": 2,
+                "action": {
+                  "en": "Submit the Application for Exemption together with the Information Form for International Students and your proof documents no later than the day of enrolment. The university states that the date of receipt is decisive — 15 February for the summer semester and 15 August for the winter semester.",
+                  "tr": "Muafiyet Başvurusu'nu, Uluslararası Öğrenciler için Bilgi Formu ve kanıt belgelerinle birlikte en geç kayıt gününde gönder. Üniversite, teslim alma tarihinin belirleyici olduğunu belirtir — yaz dönemi için 15 Şubat, kış dönemi için 15 Ağustos."
+                },
+                "owner": "applicant",
+                "timing": "separate_before_deadline",
+                "required_documents": [
+                  { "en": "Application for Exemption", "tr": "Muafiyet Başvurusu" },
+                  { "en": "Information Form for International Students", "tr": "Uluslararası Öğrenciler için Bilgi Formu" },
+                  { "en": "Proof of residence — residence card, permit, registration confirmation or passport", "tr": "İkamet kanıtı — ikamet kartı, izin, kayıt belgesi veya pasaport" },
+                  { "en": "Employment verification or tax assessment notices where the category depends on employment", "tr": "Kategorinin çalışmaya bağlı olduğu durumlarda çalışma belgesi veya vergi tarhiyat bildirimleri" }
+                ],
+                "hard_requirement": true
+              }
+            ],
+            "evidence_url": "https://www.student.uni-stuttgart.de/en/organizing-studies/formalities/tuition-and-fees/tuition-fee/"
+          }
+        ],
+        "funding_notes": {
+          "en": "At Stuttgart the first funding question is not a scholarship but an exemption: the €1,500-per-semester Baden-Württemberg fee is waived for a long list of categories, some automatically and some on application with a receipt-date deadline. Check that list before treating €3,000 a year as fixed.",
+          "tr": "Stuttgart'ta ilk finansman sorusu burs değil muafiyettir: dönem başına 1.500 avroluk Baden-Württemberg ücreti, bazıları otomatik bazıları teslim tarihi son tarihli başvuruyla olmak üzere uzun bir kategori listesi için kaldırılır. Yılda 3.000 avroyu sabit kabul etmeden önce bu listeyi kontrol et."
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.student.uni-stuttgart.de/en/organizing-studies/formalities/tuition-and-fees/tuition-fee/",
+          "title": "University of Stuttgart — Tuition fees for international students",
+          "source_type": "official_tuition_page",
+          "relevant_fields": ["tuition", "cost", "scholarship", "funding"],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes the €1,500 per semester non-EU fee, the €184 semester fee, the exemption categories and the exemption deadlines of 15 February and 15 August.",
+            "tr": "Dönem başına 1.500 avroluk AB dışı ücreti, 184 avroluk dönem ücretini, muafiyet kategorilerini ve 15 Şubat ile 15 Ağustos muafiyet son tarihlerini yayımlar."
+          }
+        }
+      ]
+    }
+  ]
+}

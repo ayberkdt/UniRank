@@ -51,7 +51,14 @@
       "verification_notes": {
         "en": "The master's programme is taught in Portuguese. The official page says curricular units may be taught in English when international or mobility students are enrolled; this is not a guarantee of an English-taught route.",
         "tr": "Yüksek lisans programı Portekizce verilir. Resmî sayfa, uluslararası veya hareketlilik öğrencileri kayıtlı olduğunda ders birimlerinin İngilizce verilebileceğini söyler; bu, İngilizce bir rota garantisi değildir."
-      }
+      },
+      "language_of_instruction": "Portuguese, switching to English when international or mobility students are enrolled",
+      "language_note": {
+        "en": "Técnico states it plainly: the programme is taught in Portuguese, however if international or mobility students are enrolled, the curricular units will be taught in English. That is a conditional guarantee, not an unconditional one — your delivery language depends on who else is in the room. Ask the department, for the specific units you care about, how often that switch actually happens before you commit.",
+        "tr": "Técnico bunu açıkça belirtir: program Portekizce verilir, ancak uluslararası ya da değişim öğrencileri kayıtlıysa ders birimleri İngilizce verilecektir. Bu koşulsuz değil, koşullu bir güvencedir — verilme dilin, odadaki diğer kişilere bağlıdır. Karar vermeden önce, önem verdiğin belirli birimler için bu geçişin gerçekte ne sıklıkla olduğunu bölüme sor."
+      },
+      "verified_from": "https://tecnico.ulisboa.pt/en/education/courses/masters-programmes/aerospace-engineering/",
+      "last_verified": "2026-08-30"
     },
     "cost_profile": {
       "academic_year": "2026/2027",
@@ -83,7 +90,26 @@
       "living_cost_sek_per_year_min": null,
       "living_cost_sek_per_year_max": null,
       "living_cost_dkk_per_year_min": null,
-      "living_cost_dkk_per_year_max": null
+      "living_cost_dkk_per_year_max": null,
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": "EUR",
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [
+          "tuition"
+        ],
+        "missing_mandatory_components": [
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
+      }
     },
     "scholarship_profile": {
       "regional_scholarship_available": null,
@@ -109,7 +135,7 @@
     },
     "living_profile": {
       "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
-      "housing_difficulty": "high",
+      "housing_difficulty": "unknown",
       "living_risk": "unknown",
       "verification_notes": {
         "en": "No all-in Lisbon total is calculated: the official brochure publishes component costs, and the housing notice warns that private-market pricing changes quickly.",
@@ -166,7 +192,63 @@
       "food_cost_eur_month": 200,
       "public_transport_cost_eur_month": 40,
       "housing_access": "unknown",
-      "housing_application_separate": null
+      "housing_application_separate": null,
+      "housing_search_difficulty": "unknown",
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": null,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 0,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
+      }
     },
     "curriculum_profile": {
       "tracks": [
@@ -187,6 +269,10 @@
       "verification_notes": {
         "en": "The official structure includes 24 ECTS of free options and a 30-ECTS dissertation, which may be a scientific thesis, company internship or capstone project.",
         "tr": "Resmî yapı 24 AKTS serbest seçmeli ve bilimsel tez, şirket stajı veya bitirme projesi olabilen 30 AKTS tez içerir."
+      },
+      "specialisation_note": {
+        "en": "120 ECTS over four semesters at the Alameda campus, structured as 66 ECTS of core, 24 ECTS of entirely free options and a 30 ECTS dissertation. The core is organised into three main study streams, each with two secondary streams. Aircraft: Aerodynamics and Propulsion, and Structures and Materials. Avionics: Control and Systems, and Electronics and Telecommunications. Space: Vehicles and Missions, and Multidisciplinary Modelling. The free options may be taken in any scientific field at Técnico and can include an 18 ECTS Minor; extra-curricular activities are creditable up to 6 ECTS, and a 6 ECTS Project course is available. The dissertation may be a scientific thesis, an internship at a company, or a capstone project — three genuinely different final-year shapes, which few programmes offer as equals.",
+        "tr": "Alameda kampüsünde dört dönemde 120 AKTS; 66 AKTS çekirdek, 24 AKTS tamamen serbest seçmeli ve 30 AKTS tez olarak yapılandırılmıştır. Çekirdek, her biri iki ikincil akışa sahip üç ana çalışma akışında örgütlenir. Uçak: Aerodinamik ve İtki ile Yapılar ve Malzemeler. Aviyonik: Kontrol ve Sistemler ile Elektronik ve Telekomünikasyon. Uzay: Araçlar ve Görevler ile Çok Disiplinli Modelleme. Serbest seçmeliler Técnico'daki herhangi bir bilim alanında alınabilir ve 18 AKTS'lik bir Minor içerebilir; ders dışı etkinlikler 6 AKTS'ye kadar kredilendirilebilir ve 6 AKTS'lik bir Proje dersi vardır. Tez; bilimsel bir tez, bir şirkette staj ya da bir capstone projesi olabilir — az sayıda programın eşdeğer olarak sunduğu, gerçekten farklı üç son yıl biçimi."
       }
     },
     "category_profile": {
@@ -202,7 +288,121 @@
       "research_centers": [],
       "research_strength_summary": "",
       "research_strength_score": null,
-      "research_sources": []
+      "research_sources": [],
+      "department": "Instituto Superior Técnico, Alameda campus — research through IdMEC and IPFN",
+      "department_url": "https://tecnico.ulisboa.pt/en/research-and-innovation/rd/centres-and-institutes/",
+      "department_note": {
+        "en": "Técnico publishes 25 research units, and two of them carry the aerospace work. IdMEC, the Mechanical Engineering Institute founded in 1992, names aerospace science and technology as one of its focus areas and states its vision is to be among the most internationally renowned mechanical engineering research centres in energy, transport technologies and aeronautics. IPFN, the Institute for Plasmas and Nuclear Fusion, lists space propulsion among its activities. Between them you get the conventional and the electric propulsion routes in one institution.",
+        "tr": "Técnico 25 araştırma birimi yayımlar ve bunlardan ikisi havacılık çalışmasını taşır. 1992'de kurulan Makine Mühendisliği Enstitüsü IdMEC, havacılık ve uzay bilimi ile teknolojisini odak alanlarından biri olarak adlandırır ve vizyonunun enerji, ulaşım teknolojileri ve havacılıkta uluslararası olarak en tanınmış makine mühendisliği araştırma merkezleri arasında olmak olduğunu belirtir. Plazma ve Nükleer Füzyon Enstitüsü IPFN ise faaliyetleri arasında uzay itkisini listeler. İkisi arasında, geleneksel ve elektrikli itki rotalarını tek bir kurumda elde edersin."
+      },
+      "faculty_contact_policy": "only_with_specific_research_question",
+      "research_units": [
+        {
+          "name": "IdMEC — Mechanical Engineering Institute",
+          "unit_type": "institute",
+          "url": "https://tecnico.ulisboa.pt/en/research-and-innovation/rd/centres-and-institutes/",
+          "topics": [
+            "aerospace_general",
+            "aerodynamics",
+            "energy_systems",
+            "aircraft_design",
+            "manufacturing",
+            "simulation_modelling",
+            "cfd"
+          ],
+          "stated_research_areas": [
+            "Mechanical design",
+            "Intelligent systems",
+            "Manufacturing and industrial management",
+            "Energy and fluid mechanics",
+            "Aerospace science and technology"
+          ],
+          "student_access": "msc_thesis_open",
+          "why_it_fits": {
+            "en": "The unit that owns aerospace at Técnico, and it says so in its own focus list rather than leaving you to infer it. Its stated vision names aeronautics explicitly alongside energy and transport technologies — so a thesis in aerodynamics, aircraft structures or propulsion has a defined institutional home here, which is more than the programme page alone tells you.",
+            "tr": "Técnico'da havacılığın sahibi olan birim ve bunu çıkarımına bırakmak yerine kendi odak listesinde söyler. Beyan ettiği vizyon, enerji ve ulaşım teknolojilerinin yanında havacılığı açıkça adlandırır — yani aerodinamik, uçak yapıları veya itki alanındaki bir tez burada tanımlı bir kurumsal eve sahiptir; bu, program sayfasının tek başına söylediğinden fazlasıdır."
+          },
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "IPFN — Institute for Plasmas and Nuclear Fusion",
+          "unit_type": "institute",
+          "url": "https://tecnico.ulisboa.pt/en/research-and-innovation/rd/centres-and-institutes/",
+          "topics": [
+            "electric_propulsion",
+            "sensors",
+            "signal_processing",
+            "energy_systems",
+            "space_environment"
+          ],
+          "stated_research_areas": [
+            "Plasma physics and engineering",
+            "Nuclear fusion and associated technologies",
+            "Diagnostics and instrumentation",
+            "Microwave and radiofrequency technologies",
+            "Space propulsion",
+            "Biomedical applications"
+          ],
+          "student_access": "msc_thesis_open",
+          "why_it_fits": {
+            "en": "Space propulsion sits inside a plasma and fusion institute, which is exactly where electric propulsion belongs — an ion or Hall thruster is a plasma device. If electric_propulsion is one of your tags, this is a rare case where the host unit has the plasma diagnostics and instrumentation to actually characterise what you build. IPFN also ensures Portuguese participation in EUROfusion.",
+            "tr": "Uzay itkisi bir plazma ve füzyon enstitüsünün içinde yer alır; elektrikli itkinin ait olduğu yer tam da burasıdır — bir iyon ya da Hall iticisi bir plazma cihazıdır. Etiketlerinden biri electric_propulsion ise, bu, ev sahibi birimin inşa ettiğin şeyi gerçekten karakterize edecek plazma teşhis ve enstrümantasyonuna sahip olduğu nadir bir durumdur. IPFN ayrıca Portekiz'in EUROfusion'a katılımını sağlar."
+          },
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "ISR-Lisboa — Institute for Systems and Robotics, part of LARSyS",
+          "unit_type": "institute",
+          "url": "https://tecnico.ulisboa.pt/en/research-and-innovation/rd/centres-and-institutes/",
+          "topics": [
+            "robotics",
+            "autonomy",
+            "gnc",
+            "signal_processing",
+            "machine_learning"
+          ],
+          "student_access": "msc_thesis_open",
+          "why_it_fits": {
+            "en": "Founded in 1992, with five research groups and over a hundred researchers in robotic systems and information processing. The natural home for the programme's Control and Systems study stream if you want autonomy rather than classical flight control.",
+            "tr": "1992'de kurulmuş; robotik sistemler ve bilgi işlemede beş araştırma grubu ve yüzden fazla araştırmacıyla. Klasik uçuş kontrolü yerine otonomi istiyorsan, programın Kontrol ve Sistemler çalışma akışının doğal evi."
+          },
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "CeFEMA — Center of Physics and Engineering of Advanced Materials, and Instituto de Telecomunicações (IT)",
+          "unit_type": "institute",
+          "url": "https://tecnico.ulisboa.pt/en/research-and-innovation/rd/centres-and-institutes/",
+          "topics": [
+            "materials",
+            "composites",
+            "signal_processing",
+            "avionics",
+            "sensors"
+          ],
+          "student_access": "msc_thesis_open",
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "CENTRA — Center for Astrophysics and Gravitation",
+          "unit_type": "institute",
+          "url": "https://tecnico.ulisboa.pt/en/research-and-innovation/rd/centres-and-institutes/",
+          "topics": [
+            "space_environment",
+            "space_general",
+            "simulation_modelling"
+          ],
+          "student_access": "msc_thesis_open",
+          "last_verified": "2026-08-30"
+        }
+      ],
+      "faculty_email_availability": {
+        "status": "not_published",
+        "note": {
+          "en": "Técnico publishes its research units with descriptions and links to their own websites, but names no academics and publishes no addresses on the central research index or the programme page.",
+          "tr": "Técnico araştırma birimlerini açıklamalar ve kendi web sitelerine bağlantılarla yayımlar, ancak merkezî araştırma dizininde veya program sayfasında hiçbir akademisyen adlandırmaz ve adres vermez."
+        },
+        "directory_url": "https://tecnico.ulisboa.pt/en/contacts/#research-centres"
+      }
     },
     "industry_ecosystem_profile": {
       "nearby_companies": [],
@@ -233,6 +433,22 @@
       "deadline_notes": {
         "en": "The dates are for the Special Admission Regime for non-EU international students applying to 2026/27. They are recorded as a closed, dated reference only; Técnico has not yet published the next-cycle timetable. EU/national applicants use another admission route.",
         "tr": "Tarihler, 2026/27 için AB dışı uluslararası öğrencilerin Özel Kabul Rejimine aittir. Yalnızca kapanmış ve tarihli referans olarak kaydedilir; Técnico sonraki dönem takvimini henüz yayımlamamıştır. AB/ulusal adaylar başka bir kabul yolunu kullanır."
+      },
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": "2026-07-17",
+        "next_expected_date": null,
+        "time": null,
+        "timezone": null,
+        "applies_to": "non_eu",
+        "cycle_label": null,
+        "is_recurring_annual": false,
+        "status": "closed",
+        "days_remaining_at_evaluation": -44,
+        "derived_from": "application_timeline_profile.non_eu_deadline",
+        "confidence": "high",
+        "source_url": "https://tecnico.ulisboa.pt/en/education/study-at-tecnico/applications/international-students/",
+        "evaluated_at": "2026-08-30"
       }
     },
     "student_sentiment_profile": {
@@ -279,28 +495,6 @@
       "official_scholarship_page": "https://tt.tecnico.ulisboa.pt/en/parcerias-empresariais/aproximacao-ao-talento/premios-de-merito-alunos/premio-de-merito-academico-tekever-em-engenharia-aeroespacial/",
       "official_department_page": "https://tecnico.ulisboa.pt/en/education/courses/masters-programmes/aerospace-engineering/",
       "source_log": [
-        {
-          "url": "https://tecnico.ulisboa.pt/en/education/courses/masters-programmes/aerospace-engineering/",
-          "title": "Aerospace Engineering — Técnico Lisboa",
-          "source_type": "official_program_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "program",
-            "program_status",
-            "degree_level",
-            "duration",
-            "ects",
-            "teaching_language",
-            "curriculum",
-            "admission"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Official programme page: four semesters, two years, 120 ECTS; programme language is Portuguese, with curriculum units taught in English when international or mobility students are enrolled.",
-            "tr": "Resmî program sayfası: dört yarıyıl, iki yıl, 120 AKTS; program dili Portekizcedir, uluslararası veya hareketlilik öğrencisi kayıtlı olduğunda ders birimleri İngilizce verilir."
-          }
-        },
         {
           "url": "https://tecnico.ulisboa.pt/en/news/masters-programmes-2026-2027-tecnico-opens-2nd-call-for-applications-until-3-july/",
           "title": "Técnico master's 2026/27 second call",
@@ -397,9 +591,44 @@
             "en": "Official notice says student residences are extremely limited and warns that rooms cost EUR 350–500 or more, usually with a deposit and advance rent.",
             "tr": "Resmî duyuru öğrenci yurtlarının son derece sınırlı olduğunu; odaların 350–500 EUR veya daha fazlasına mal olduğunu ve genellikle depozito ile peşin kira gerektiğini belirtir."
           }
+        },
+        {
+          "url": "https://tecnico.ulisboa.pt/en/education/courses/masters-programmes/aerospace-engineering/",
+          "title": "Instituto Superior Técnico — MSc in Aerospace Engineering",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "curriculum",
+            "program",
+            "language",
+            "admission"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "States the ECTS structure, the three study streams and their secondary streams, the free-option and Minor rules, the three dissertation formats and the conditional English delivery.",
+            "tr": "AKTS yapısını, üç çalışma akışını ve ikincil akışlarını, serbest seçmeli ile Minor kurallarını, üç tez biçimini ve koşullu İngilizce verilişi belirtir."
+          }
+        },
+        {
+          "url": "https://tecnico.ulisboa.pt/en/research-and-innovation/rd/centres-and-institutes/",
+          "title": "Instituto Superior Técnico — Research Units",
+          "source_type": "official_department_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "research",
+            "labs",
+            "department"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes all 25 research units with a described scope for each, including IdMEC's aerospace science and technology focus and IPFN's space propulsion activity.",
+            "tr": "25 araştırma biriminin tamamını her biri için tanımlanmış bir kapsamla yayımlar; IdMEC'in havacılık ve uzay bilimi ile teknolojisi odağı ve IPFN'in uzay itkisi faaliyeti dâhil."
+          }
         }
       ],
-      "last_verified": "2026-07-15",
+      "last_verified": "2026-08-30",
       "needs_verification": true,
       "verification_notes": {
         "en": "Programme facts are checked. Current second-cycle international tuition, next international deadline, housing and prospective-student scholarship eligibility were not verified from a direct official source.",
@@ -436,7 +665,7 @@
     "scoring_inputs": {},
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "qc_notes": {
@@ -446,7 +675,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 7,
+      "checked_official_source_count": 8,
       "verified_fields": [
         "program",
         "language",
@@ -456,11 +685,12 @@
         "scholarship",
         "deadline",
         "curriculum",
+        "research",
         "housing"
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-30"
     },
     "qs_ranking_display": "=237",
     "qs_ranking_year": 2027,
@@ -487,7 +717,60 @@
         }
       }
     },
-    "relevance_status": "needs_review"
+    "relevance_status": "needs_review",
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "strong_adjacent",
+      "score": 61,
+      "score_basis_weight": 90,
+      "evidenced_dimensions": 4,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "strong",
+          "basis": "three study streams with six named secondary streams, 66/24/30 ECTS split published, and three alternative dissertation formats",
+          "weight": 30,
+          "source_url": "https://tecnico.ulisboa.pt/en/education/courses/masters-programmes/aerospace-engineering/"
+        },
+        "research_group_evidence": {
+          "level": "strong",
+          "basis": "25 research units published with descriptions, two of which name aerospace science and technology and space propulsion respectively as focus areas",
+          "weight": 25,
+          "source_url": "https://tecnico.ulisboa.pt/en/research-and-innovation/rd/centres-and-institutes/"
+        },
+        "faculty_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [],
+      "confidence": "medium",
+      "legacy_relevance_status": "needs_review",
+      "evaluated_at": "2026-08-30"
+    },
+    "academic_match_evidence": {
+      "curriculum_evidence": {
+        "level": "strong",
+        "basis": "three study streams with six named secondary streams, 66/24/30 ECTS split published, and three alternative dissertation formats",
+        "source_url": "https://tecnico.ulisboa.pt/en/education/courses/masters-programmes/aerospace-engineering/"
+      },
+      "research_group_evidence": {
+        "level": "strong",
+        "basis": "25 research units published with descriptions, two of which name aerospace science and technology and space propulsion respectively as focus areas",
+        "source_url": "https://tecnico.ulisboa.pt/en/research-and-innovation/rd/centres-and-institutes/"
+      }
+    }
   },
   {
     "qs_ranking": null,
@@ -588,7 +871,26 @@
       "living_cost_sek_per_year_max": null,
       "living_cost_dkk_per_year": null,
       "living_cost_dkk_per_year_min": null,
-      "living_cost_dkk_per_year_max": null
+      "living_cost_dkk_per_year_max": null,
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": "EUR",
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [
+          "tuition"
+        ],
+        "missing_mandatory_components": [
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
+      }
     },
     "scholarship_profile": {
       "regional_scholarship_available": null,
@@ -665,7 +967,61 @@
       "official_student_housing_budget_sek_per_month_examples": null,
       "official_student_total_budget_sek_per_month_examples": null,
       "student_housing_competitiveness": "Availability must be confirmed with UBI accommodation services; preference rules apply.",
-      "average_room_rent_scope_label": "UBI residence room examples; not private-market rent"
+      "average_room_rent_scope_label": "UBI residence room examples; not private-market rent",
+      "housing_search_difficulty": "unknown",
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": 2,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 2,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": "priority",
+            "points": 1,
+            "derived_from": "living_profile.housing_access"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": "separate_application_generous_window",
+            "points": 1,
+            "derived_from": "living_profile.housing_application_separate"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
+      }
     },
     "curriculum_profile": {
       "tracks": [],
@@ -694,7 +1050,11 @@
       "internship_required": null,
       "curriculum_url": "https://www.ubi.pt/PlanoDeEstudos/1103/1686/2025",
       "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
-      "study_plan_url": "https://www.ubi.pt/en/course/1103"
+      "study_plan_url": "https://www.ubi.pt/en/course/1103",
+      "specialisation_note": {
+        "en": "A second-cycle degree run by the Department of Aerospace Sciences, with 60 places for 2026. UBI states the aim is to complete the competences of the first cycle needed to practise as an aeronautical engineer — design, study, project, manufacture, construction, production, inspection, quality control and management in the aeronautical sector, as well as research and development — and to qualify graduates for doctoral study. Declared competences include organising technical and scientific information for submission to regulatory authorities in order to certify new products and services, which is a certification-literacy outcome few programmes state explicitly.",
+        "tr": "Havacılık ve Uzay Bilimleri Bölümü tarafından yürütülen, 2026 için 60 kontenjanlı bir ikinci devre derecesi. UBI, amacın havacılık mühendisi olarak çalışmak için gereken birinci devre yetkinliklerini tamamlamak — havacılık sektöründe tasarım, etüt, proje, imalat, inşa, üretim, denetim, kalite kontrol ve yönetim ile araştırma geliştirme — ve mezunları doktora eğitimine hazırlamak olduğunu belirtir. Beyan edilen yetkinlikler arasında, yeni ürün ve hizmetleri belgelendirmek amacıyla düzenleyici otoritelere sunulmak üzere teknik ve bilimsel bilgiyi örgütlemek de vardır; bu, az sayıda programın açıkça belirttiği bir sertifikasyon okuryazarlığı çıktısıdır."
+      }
     },
     "category_profile": {
       "primary_categories": [],
@@ -709,7 +1069,142 @@
       "research_centers": [],
       "research_strength_summary": "",
       "research_strength_score": null,
-      "research_sources": []
+      "research_sources": [],
+      "department": "Departamento de Ciências Aeroespaciais (Department of Aerospace Sciences)",
+      "department_url": "https://www.ubi.pt/curso/1103",
+      "department_note": {
+        "en": "UBI is the rare case of a small university with a department dedicated entirely to aerospace sciences, and it publishes its laboratory inventory with floor areas rather than adjectives. Covilhã is also where Portugal's aeronautical maintenance cluster sits. Note that the official course page is published only in Portuguese; no English delivery statement was found, so treat Portuguese as the working assumption until the department confirms otherwise.",
+        "tr": "UBI, tamamen havacılık ve uzay bilimlerine adanmış bir bölüme sahip küçük bir üniversite olarak nadir bir örnektir ve laboratuvar envanterini sıfatlarla değil taban alanlarıyla yayımlar. Covilhã aynı zamanda Portekiz'in havacılık bakım kümesinin bulunduğu yerdir. Resmî ders sayfasının yalnızca Portekizce yayımlandığını not et; İngilizce veriliş beyanı bulunamamıştır, bu yüzden bölüm aksini teyit edene kadar Portekizceyi çalışma varsayımı olarak al."
+      },
+      "faculty_contact_policy": "before_application_optional",
+      "research_units": [
+        {
+          "name": "Laboratório de Aerodinâmica e Propulsão — Aerodynamics and Propulsion Laboratory",
+          "unit_type": "facility",
+          "url": "https://www.ubi.pt/curso/1103",
+          "topics": [
+            "aerodynamics",
+            "jet_propulsion",
+            "experimental_fluids",
+            "wind_tunnel",
+            "testing"
+          ],
+          "facilities": [
+            "367 m² of dedicated floor area, the largest single laboratory the department publishes"
+          ],
+          "student_access": "msc_thesis_open",
+          "why_it_fits": {
+            "en": "UBI publishes floor areas for every laboratory, and this one is 367 m² — larger than the next four combined. That is not a teaching bench; it is a hall sized for propulsion rigs and flow apparatus. If aerodynamics or jet_propulsion is your tag, the physical commitment here is unusually visible for a university of this size.",
+            "tr": "UBI her laboratuvar için taban alanı yayımlar ve bu laboratuvar 367 m²'dir — sonraki dördünün toplamından büyük. Bu bir öğretim tezgâhı değil; itki düzenekleri ve akış aparatı için boyutlandırılmış bir salondur. Etiketin aerodynamics veya jet_propulsion ise, buradaki fiziksel bağlılık bu büyüklükteki bir üniversite için olağandışı biçimde görünürdür."
+          },
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "Laboratório de Anemometria — Anemometry Laboratory",
+          "unit_type": "facility",
+          "url": "https://www.ubi.pt/curso/1103",
+          "topics": [
+            "experimental_fluids",
+            "sensors",
+            "turbulence",
+            "aerodynamics"
+          ],
+          "facilities": [
+            "65 m² dedicated to flow velocity measurement"
+          ],
+          "student_access": "msc_thesis_open",
+          "why_it_fits": {
+            "en": "A laboratory devoted specifically to anemometry — velocity measurement — separate from the aerodynamics hall. Departments that separate the measurement technique from the test facility usually do so because the measurement is itself a research activity, which is a good sign if your work is experimental.",
+            "tr": "Özellikle anemometriye — hız ölçümüne — ayrılmış, aerodinamik salonundan ayrı bir laboratuvar. Ölçüm tekniğini test tesisinden ayıran bölümler bunu genellikle ölçümün kendisi bir araştırma faaliyeti olduğu için yapar; çalışman deneyselse bu iyi bir işarettir."
+          },
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "Laboratório de Aviónica e Controlo and Laboratório de Sistemas Digitais",
+          "unit_type": "facility",
+          "url": "https://www.ubi.pt/curso/1103",
+          "topics": [
+            "avionics",
+            "stability_control",
+            "embedded_systems",
+            "gnc",
+            "signal_processing"
+          ],
+          "facilities": [
+            "82 m² avionics and control laboratory",
+            "95 m² digital systems laboratory",
+            "130 m² electronics laboratory"
+          ],
+          "student_access": "msc_thesis_open",
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "Laboratório de CFD and Laboratório de Estruturas e Vibração",
+          "unit_type": "facility",
+          "url": "https://www.ubi.pt/curso/1103",
+          "topics": [
+            "cfd",
+            "simulation_modelling",
+            "structural_mechanics",
+            "fea",
+            "testing"
+          ],
+          "facilities": [
+            "52 m² CFD laboratory",
+            "50 m² structures and vibration laboratory"
+          ],
+          "student_access": "msc_thesis_open",
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "Laboratório de Termodinâmica Aplicada e Transmissão de Calor, Laboratório de Mecânica dos Materiais e Tecnologia Mecânica, and Laboratório de Fabrico Assistido por Computador",
+          "unit_type": "facility",
+          "url": "https://www.ubi.pt/curso/1103",
+          "topics": [
+            "heat_transfer",
+            "materials",
+            "manufacturing",
+            "thermal_management",
+            "fatigue_damage"
+          ],
+          "facilities": [
+            "120 m² applied thermodynamics and heat transfer laboratory",
+            "120 m² materials mechanics and mechanical technology laboratory",
+            "52 m² computer-aided manufacturing laboratory"
+          ],
+          "student_access": "msc_thesis_open",
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "Sala de Projeto and Sala de projeto colaborativo — design and collaborative design rooms",
+          "unit_type": "facility",
+          "url": "https://www.ubi.pt/curso/1103",
+          "topics": [
+            "aircraft_design",
+            "systems_engineering",
+            "mdo"
+          ],
+          "facilities": [
+            "81 m² project room",
+            "36 m² collaborative design room",
+            "Technical support office and a tooling and materials room"
+          ],
+          "student_access": "project_course_open",
+          "why_it_fits": {
+            "en": "Dedicated design rooms plus a tooling and materials store, listed as departmental infrastructure. That combination is what a student team needs to actually build something rather than only model it.",
+            "tr": "Bölüm altyapısı olarak listelenen özel tasarım odaları ile bir takım ve malzeme deposu. Bu birleşim, bir öğrenci takımının bir şeyi yalnızca modellemek yerine gerçekten inşa etmesi için gerekli olandır."
+          },
+          "last_verified": "2026-08-30"
+        }
+      ],
+      "faculty_email_availability": {
+        "status": "not_published",
+        "note": {
+          "en": "The course page carries Contactos, Responsáveis and Comissões sections that would name the people responsible, but no addresses appear in the content read.",
+          "tr": "Ders sayfası, sorumlu kişileri adlandıracak Contactos, Responsáveis ve Comissões bölümleri taşır, ancak okunan içerikte adres görünmez."
+        },
+        "directory_url": "https://www.ubi.pt/curso/1103"
+      }
     },
     "industry_ecosystem_profile": {
       "nearby_companies": [],
@@ -730,7 +1225,15 @@
       "deadline_notes": null,
       "winter_deadline": null,
       "application_deadline": null,
-      "deadline_events": []
+      "deadline_events": [],
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": null,
+        "status": "not_published",
+        "confidence": "unknown",
+        "reason": "no_iso_dated_deadline_in_record",
+        "evaluated_at": "2026-08-30"
+      }
     },
     "student_sentiment_profile": {
       "student_satisfaction_score": null,
@@ -827,23 +1330,6 @@
           }
         },
         {
-          "url": "https://www.ubi.pt/curso/1103",
-          "title": "UBI Aeronautical Engineering second-cycle programme 2026",
-          "source_type": "official_program_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "program",
-            "admission",
-            "non_eu_eligibility"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "The current official programme identifies the second-cycle Aeronautical Engineering degree, 60 places for 2026, its aerospace department and laboratories. UBI's current programme catalogue states that holders of a national or foreign first-cycle equivalent may apply.",
-            "tr": "Güncel resmî program ikinci kademe Aeronautical Engineering derecesini, 2026 için 60 kontenjanı, havacılık-uzay bölümünü ve laboratuvarlarını tanımlar. UBI'nin güncel program kataloğu ulusal veya yabancı birinci kademe eşdeğer diploma sahiplerinin başvurabileceğini belirtir."
-          }
-        },
-        {
           "url": "https://www.ubi.pt/PlanoDeEstudos/1103/1686/2025",
           "title": "UBI Aeronautical Engineering second-cycle study plan 2025/26",
           "source_type": "official_curriculum_page",
@@ -889,9 +1375,29 @@
             "en": "The current page lists seven residences, 808 beds and published student price examples. Availability must be requested; the figures do not guarantee a room.",
             "tr": "Güncel sayfa yedi yurdu, 808 yatağı ve yayımlanmış öğrenci fiyat örneklerini listeler. Müsaitlik ayrıca sorulmalıdır; rakamlar oda garantisi değildir."
           }
+        },
+        {
+          "url": "https://www.ubi.pt/curso/1103",
+          "title": "Universidade da Beira Interior — 2.º Ciclo em Engenharia Aeronáutica",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "research",
+            "labs",
+            "curriculum",
+            "program",
+            "department",
+            "admission"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes the owning department, the 60 places for 2026, the programme objectives and competences, and the complete laboratory inventory with floor areas.",
+            "tr": "Sahibi bölümü, 2026 için 60 kontenjanı, program hedefleri ile yetkinliklerini ve taban alanlarıyla birlikte tam laboratuvar envanterini yayımlar."
+          }
         }
       ],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-08-30",
       "needs_verification": true,
       "verification_notes": {
         "en": "A candidate second-cycle programme is evidenced, but its current activation is inconsistent across official UBI pages. No cost, language, scholarship, admission or housing claim is displayed.",
@@ -929,7 +1435,7 @@
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
@@ -955,18 +1461,18 @@
         "program",
         "language",
         "admission",
-        "non_eu_eligibility",
         "tuition",
         "curriculum",
         "research",
         "housing"
       ],
       "unverified_critical_fields": [
+        "non_eu_eligibility",
         "scholarship",
         "deadline"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-30"
     },
     "relevance_status": "strong",
     "program_native_name": "Mestrado em Engenharia Aeron?utica",
@@ -993,6 +1499,65 @@
           "en": "No independent 2027 QS WUR rank was verified for this database institution; no value is inferred.",
           "tr": "Bu veri tabanı kurumu için bağımsız bir 2027 QS WUR sırası doğrulanmadı; değer türetilmedi."
         }
+      }
+    },
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "partial_match",
+      "score": 48,
+      "score_basis_weight": 90,
+      "evidenced_dimensions": 4,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "moderate",
+          "basis": "objectives, declared competences and career outcomes are published with a link to the study plan by academic year, but no course list was read on the checked page",
+          "weight": 30,
+          "source_url": "https://www.ubi.pt/curso/1103"
+        },
+        "research_group_evidence": {
+          "level": "moderate",
+          "basis": "a department dedicated entirely to aerospace sciences is named and its infrastructure listed, but no research groups or academics are named on the course page",
+          "weight": 25,
+          "source_url": "https://www.ubi.pt/curso/1103"
+        },
+        "faculty_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "strong",
+          "basis": "the department publishes its full laboratory inventory with floor areas, including a 367 m² aerodynamics and propulsion laboratory and dedicated anemometry, CFD, avionics and structures laboratories",
+          "weight": 10,
+          "source_url": "https://www.ubi.pt/curso/1103"
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [],
+      "confidence": "medium",
+      "legacy_relevance_status": "strong",
+      "evaluated_at": "2026-08-30"
+    },
+    "academic_match_evidence": {
+      "facility_evidence": {
+        "level": "strong",
+        "basis": "the department publishes its full laboratory inventory with floor areas, including a 367 m² aerodynamics and propulsion laboratory and dedicated anemometry, CFD, avionics and structures laboratories",
+        "source_url": "https://www.ubi.pt/curso/1103"
+      },
+      "research_group_evidence": {
+        "level": "moderate",
+        "basis": "a department dedicated entirely to aerospace sciences is named and its infrastructure listed, but no research groups or academics are named on the course page",
+        "source_url": "https://www.ubi.pt/curso/1103"
+      },
+      "curriculum_evidence": {
+        "level": "moderate",
+        "basis": "objectives, declared competences and career outcomes are published with a link to the study plan by academic year, but no course list was read on the checked page",
+        "source_url": "https://www.ubi.pt/curso/1103"
       }
     }
   },
@@ -1100,7 +1665,25 @@
       "living_cost_sek_per_year_max": null,
       "living_cost_dkk_per_year_min": null,
       "living_cost_dkk_per_year_max": null,
-      "tuition_items": []
+      "tuition_items": [],
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
+      }
     },
     "scholarship_profile": {
       "regional_scholarship_available": null,
@@ -1119,7 +1702,7 @@
     },
     "living_profile": {
       "city_cost_level": "unknown",
-      "housing_difficulty": null,
+      "housing_difficulty": "unknown",
       "living_risk": "unknown",
       "average_room_rent_eur": null,
       "monthly_living_cost_eur_estimated": null,
@@ -1174,7 +1757,63 @@
       "housing_application_separate": null,
       "housing_options": [],
       "official_living_cost_items": [],
-      "official_rent_items": []
+      "official_rent_items": [],
+      "housing_search_difficulty": "unknown",
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": null,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 0,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
+      }
     },
     "curriculum_profile": {
       "tracks": [],
@@ -1221,7 +1860,15 @@
       "deadline_notes": null,
       "winter_deadline": null,
       "application_deadline": null,
-      "deadline_events": []
+      "deadline_events": [],
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": null,
+        "status": "not_published",
+        "confidence": "unknown",
+        "reason": "no_iso_dated_deadline_in_record",
+        "evaluated_at": "2026-08-30"
+      }
     },
     "student_sentiment_profile": {
       "student_satisfaction_score": null,
@@ -1316,7 +1963,7 @@
     "scoring_inputs": {},
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
@@ -1368,7 +2015,7 @@
         "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "relevance_status": "strong",
     "program_native_name": "Mestrado em Engenharia Aeroespacial",
@@ -1398,6 +2045,45 @@
           "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
         }
       }
+    },
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "unknown",
+      "score": null,
+      "score_basis_weight": 30,
+      "evidenced_dimensions": 1,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [],
+      "confidence": "unknown",
+      "legacy_relevance_status": "strong",
+      "evaluated_at": "2026-08-30"
     }
   },
   {
@@ -1492,7 +2178,25 @@
       "living_cost_sek_per_year_max": null,
       "living_cost_dkk_per_year_min": null,
       "living_cost_dkk_per_year_max": null,
-      "tuition_items": []
+      "tuition_items": [],
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
+      }
     },
     "scholarship_profile": {
       "regional_scholarship_available": null,
@@ -1511,7 +2215,7 @@
     },
     "living_profile": {
       "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
-      "housing_difficulty": null,
+      "housing_difficulty": "unknown",
       "living_risk": "unknown",
       "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
       "average_room_rent_eur": null,
@@ -1563,7 +2267,63 @@
       "housing_application_separate": null,
       "housing_options": [],
       "official_living_cost_items": [],
-      "official_rent_items": []
+      "official_rent_items": [],
+      "housing_search_difficulty": "unknown",
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": null,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 0,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
+      }
     },
     "curriculum_profile": {
       "tracks": [],
@@ -1609,7 +2369,15 @@
       "deadline_notes": null,
       "winter_deadline": null,
       "application_deadline": null,
-      "deadline_events": []
+      "deadline_events": [],
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": null,
+        "status": "not_published",
+        "confidence": "unknown",
+        "reason": "no_iso_dated_deadline_in_record",
+        "evaluated_at": "2026-08-30"
+      }
     },
     "student_sentiment_profile": {
       "student_satisfaction_score": null,
@@ -1712,7 +2480,7 @@
     "scoring_inputs": {},
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
@@ -1772,7 +2540,7 @@
         "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "tuition_eur_per_year": null,
     "annual_fee_eur": null,
@@ -1801,7 +2569,46 @@
         }
       }
     },
-    "relevance_status": "needs_review"
+    "relevance_status": "needs_review",
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "unknown",
+      "score": null,
+      "score_basis_weight": 30,
+      "evidenced_dimensions": 1,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [],
+      "confidence": "unknown",
+      "legacy_relevance_status": "needs_review",
+      "evaluated_at": "2026-08-30"
+    }
   },
   {
     "qs_ranking": 572,
@@ -1904,7 +2711,25 @@
       "living_cost_sek_per_year_max": null,
       "living_cost_dkk_per_year_min": null,
       "living_cost_dkk_per_year_max": null,
-      "tuition_items": []
+      "tuition_items": [],
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
+      }
     },
     "scholarship_profile": {
       "regional_scholarship_available": null,
@@ -1923,7 +2748,7 @@
     },
     "living_profile": {
       "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
-      "housing_difficulty": null,
+      "housing_difficulty": "unknown",
       "living_risk": "unknown",
       "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
       "average_room_rent_eur": null,
@@ -1975,7 +2800,63 @@
       "housing_application_separate": null,
       "housing_options": [],
       "official_living_cost_items": [],
-      "official_rent_items": []
+      "official_rent_items": [],
+      "housing_search_difficulty": "unknown",
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": null,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 0,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
+      }
     },
     "curriculum_profile": {
       "tracks": [
@@ -2038,7 +2919,15 @@
       "deadline_notes": null,
       "winter_deadline": null,
       "application_deadline": null,
-      "deadline_events": []
+      "deadline_events": [],
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": null,
+        "status": "not_published",
+        "confidence": "unknown",
+        "reason": "no_iso_dated_deadline_in_record",
+        "evaluated_at": "2026-08-30"
+      }
     },
     "student_sentiment_profile": {
       "student_satisfaction_score": null,
@@ -2177,7 +3066,7 @@
     "scoring_inputs": {},
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
@@ -2225,7 +3114,7 @@
         "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "tuition_eur_per_year": null,
     "annual_fee_eur": null,
@@ -2254,7 +3143,46 @@
         }
       }
     },
-    "relevance_status": "needs_review"
+    "relevance_status": "needs_review",
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "unknown",
+      "score": null,
+      "score_basis_weight": 30,
+      "evidenced_dimensions": 1,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "strong",
+          "basis": "8_named_items",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [],
+      "confidence": "unknown",
+      "legacy_relevance_status": "needs_review",
+      "evaluated_at": "2026-08-30"
+    }
   },
   {
     "qs_ranking": 337,
@@ -2359,7 +3287,25 @@
       "living_cost_sek_per_year_max": null,
       "living_cost_dkk_per_year_min": null,
       "living_cost_dkk_per_year_max": null,
-      "tuition_items": []
+      "tuition_items": [],
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
+      }
     },
     "scholarship_profile": {
       "regional_scholarship_available": null,
@@ -2381,7 +3327,7 @@
     },
     "living_profile": {
       "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
-      "housing_difficulty": null,
+      "housing_difficulty": "unknown",
       "living_risk": "unknown",
       "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
       "average_room_rent_eur": null,
@@ -2433,7 +3379,63 @@
       "housing_application_separate": null,
       "housing_options": [],
       "official_living_cost_items": [],
-      "official_rent_items": []
+      "official_rent_items": [],
+      "housing_search_difficulty": "unknown",
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": null,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 0,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
+      }
     },
     "curriculum_profile": {
       "tracks": [
@@ -2506,6 +3508,22 @@
       "deadline_notes": {
         "en": "2026/27 national phases: 4 Feb–27 Mar, 1 Jun–17 Jul, and 19 Aug–4 Sep. The page specifies a single international-student phase, 4 Feb–27 Mar 2026; use that deadline for non-EU applicants unless the university publishes a new call.",
         "tr": "2026/27 ulusal aşamaları: 4 Şubat–27 Mart, 1 Haziran–17 Temmuz ve 19 Ağustos–4 Eylül. Sayfa uluslararası öğrencilere tek aşama olarak 4 Şubat–27 Mart 2026'yı belirtir; üniversite yeni çağrı yayımlamadıkça AB dışı adaylar için bu son tarihi kullanın."
+      },
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": "2026-03-27",
+        "next_expected_date": null,
+        "time": null,
+        "timezone": null,
+        "applies_to": "non_eu",
+        "cycle_label": null,
+        "is_recurring_annual": false,
+        "status": "closed",
+        "days_remaining_at_evaluation": -156,
+        "derived_from": "application_timeline_profile.non_eu_deadline",
+        "confidence": "high",
+        "source_url": "https://www.fct.unl.pt/ensino/curso/mestrado-em-engenharia-aeroespacial",
+        "evaluated_at": "2026-08-30"
       }
     },
     "student_sentiment_profile": {
@@ -2627,7 +3645,7 @@
     "scoring_inputs": {},
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
@@ -2674,7 +3692,7 @@
         "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "tuition_eur_per_year": null,
     "annual_fee_eur": null,
@@ -2703,7 +3721,46 @@
         }
       }
     },
-    "relevance_status": "needs_review"
+    "relevance_status": "needs_review",
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "unknown",
+      "score": null,
+      "score_basis_weight": 30,
+      "evidenced_dimensions": 1,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "strong",
+          "basis": "4_named_items",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [],
+      "confidence": "unknown",
+      "legacy_relevance_status": "needs_review",
+      "evaluated_at": "2026-08-30"
+    }
   },
   {
     "qs_ranking": null,
@@ -2802,7 +3859,25 @@
       "living_cost_sek_per_year_max": null,
       "living_cost_dkk_per_year_min": null,
       "living_cost_dkk_per_year_max": null,
-      "tuition_items": []
+      "tuition_items": [],
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
+      }
     },
     "scholarship_profile": {
       "regional_scholarship_available": null,
@@ -2821,7 +3896,7 @@
     },
     "living_profile": {
       "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
-      "housing_difficulty": null,
+      "housing_difficulty": "unknown",
       "living_risk": "unknown",
       "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
       "average_room_rent_eur": null,
@@ -2873,7 +3948,63 @@
       "housing_application_separate": null,
       "housing_options": [],
       "official_living_cost_items": [],
-      "official_rent_items": []
+      "official_rent_items": [],
+      "housing_search_difficulty": "unknown",
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": null,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 0,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
+      }
     },
     "curriculum_profile": {
       "tracks": [],
@@ -2921,6 +4052,22 @@
       "deadline_notes": {
         "en": "Official 2026 phase 1: applications 2 Feb–31 Mar, results 10 Apr, enrolment 10–17 Apr. Phase 2 (remaining places): 6 Apr–5 Jun, results 12 Jun, enrolment 12–22 Jun. The page says teaching is planned to start in late October; it does not publish a separate international deadline.",
         "tr": "Resmî 2026 1. aşama: başvuru 2 Şubat–31 Mart, sonuç 10 Nisan, kayıt 10–17 Nisan. 2. aşama (kalan kontenjan): 6 Nisan–5 Haziran, sonuç 12 Haziran, kayıt 12–22 Haziran. Sayfa eğitimin Ekim sonuna doğru başlamasının planlandığını söyler; ayrı uluslararası son tarih yayımlamaz."
+      },
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": "2026-03-31",
+        "next_expected_date": null,
+        "time": null,
+        "timezone": null,
+        "applies_to": "non_eu",
+        "cycle_label": null,
+        "is_recurring_annual": false,
+        "status": "closed",
+        "days_remaining_at_evaluation": -152,
+        "derived_from": "application_timeline_profile.non_eu_deadline",
+        "confidence": "high",
+        "source_url": "https://uatlantica.pt/cursos/mestrado-em-engenharia-e-gestao-de-manutencao-aeronautica/",
+        "evaluated_at": "2026-08-30"
       }
     },
     "student_sentiment_profile": {
@@ -3023,7 +4170,7 @@
     "scoring_inputs": {},
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
@@ -3067,7 +4214,7 @@
         "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "tuition_eur_per_year": null,
     "annual_fee_eur": null,
@@ -3096,6 +4243,45 @@
         }
       }
     },
-    "relevance_status": "needs_review"
+    "relevance_status": "needs_review",
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "unknown",
+      "score": null,
+      "score_basis_weight": 30,
+      "evidenced_dimensions": 1,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [],
+      "confidence": "unknown",
+      "legacy_relevance_status": "needs_review",
+      "evaluated_at": "2026-08-30"
+    }
   }
 ]

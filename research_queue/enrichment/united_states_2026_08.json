@@ -1,0 +1,534 @@
+{
+  "checked": "2026-08-29",
+  "note": "United States priority records: named laboratories with URLs, faculty with published university email addresses, assistantship playbooks and housing-lottery evidence.",
+  "records": [
+    {
+      "id": "mit-aeroastro",
+      "research_profile": {
+        "department_research_areas": [
+          "Autonomous Systems & Decision-Making",
+          "Computational Science & Engineering",
+          "Earth & Space Sciences",
+          "Human-System Collaboration",
+          "Systems Design & Engineering",
+          "Transportation & Exploration",
+          "Vehicle Design & Engineering"
+        ],
+        "research_units": [
+          {
+            "name": "ARCLab — Astrodynamics, Space Robotics, and Controls Laboratory",
+            "unit_type": "laboratory",
+            "url": "http://arclab.mit.edu/",
+            "lead": "Prof. Richard Linares",
+            "topics": ["astrodynamics", "space_domain_awareness", "orbit_determination", "gnc"],
+            "student_access": "ra_position_only",
+            "why_it_fits": {
+              "en": "The astrodynamics home at MIT and the group behind its space-traffic-management work. If your tags are astrodynamics plus space_domain_awareness, this is the one lab where both are the main subject rather than a side application.",
+              "tr": "MIT'de astrodinamiğin adresi ve uzay trafiği yönetimi çalışmalarının arkasındaki grup. Etiketlerin astrodynamics ve space_domain_awareness ise, ikisinin de yan uygulama değil ana konu olduğu tek laboratuvar burasıdır."
+            },
+            "last_verified": "2026-08-29"
+          },
+          {
+            "name": "Aerospace Controls Laboratory (ACL)",
+            "unit_type": "laboratory",
+            "url": "http://acl.mit.edu/",
+            "lead": "Prof. Jonathan P. How",
+            "topics": ["gnc", "autonomy", "stability_control", "uav"],
+            "student_access": "ra_position_only",
+            "why_it_fits": {
+              "en": "Planning and control under uncertainty for multi-agent systems. Choose this over ARCLab if your gnc interest is decision-making and autonomy rather than orbital dynamics.",
+              "tr": "Çok etmenli sistemler için belirsizlik altında planlama ve kontrol. gnc ilgin yörünge dinamiği yerine karar verme ve otonomiyse, ARCLab yerine burayı seç."
+            },
+            "last_verified": "2026-08-29"
+          },
+          {
+            "name": "Space Propulsion Laboratory",
+            "unit_type": "laboratory",
+            "url": "https://spacepropulsion.mit.edu/",
+            "lead": null,
+            "topics": ["electric_propulsion", "rocket_propulsion", "space_environment"],
+            "student_access": "ra_position_only",
+            "why_it_fits": {
+              "en": "Electric propulsion and plasma-based thrusters. The natural target if your electric_propulsion tag needs a lab with its own vacuum facilities rather than a propulsion course.",
+              "tr": "Elektrikli itki ve plazma tabanlı iticiler. electric_propulsion etiketin bir itki dersi değil, kendi vakum tesisleri olan bir laboratuvar gerektiriyorsa doğal hedef burasıdır."
+            },
+            "last_verified": "2026-08-29"
+          },
+          {
+            "name": "Space Systems Laboratory (SSL)",
+            "unit_type": "laboratory",
+            "url": "http://ssl.scripts.mit.edu/www/",
+            "topics": ["space_systems", "satellite_systems", "spacecraft_design", "systems_engineering"],
+            "student_access": "ra_position_only",
+            "why_it_fits": {
+              "en": "Whole-spacecraft design and flight projects. Pair it with the Small Satellite Collaborative if you want a space_systems thesis with hardware you actually build.",
+              "tr": "Bütün uzay aracı tasarımı ve uçuş projeleri. Gerçekten inşa ettiğin donanımla bir space_systems tezi istiyorsan Small Satellite Collaborative ile birlikte değerlendir."
+            },
+            "last_verified": "2026-08-29"
+          },
+          {
+            "name": "Gas Turbine Laboratory",
+            "unit_type": "laboratory",
+            "url": "https://www.gas-turbine-lab.mit.edu/",
+            "topics": ["turbomachinery", "jet_propulsion", "aerodynamics", "energy_systems"],
+            "student_access": "ra_position_only",
+            "why_it_fits": {
+              "en": "The air-breathing propulsion side of the department, and one of the oldest continuously operating turbomachinery labs anywhere. Relevant if your tags are turbomachinery or jet_propulsion rather than rockets.",
+              "tr": "Bölümün hava soluyan itki tarafı ve dünyanın kesintisiz çalışan en eski turbomakine laboratuvarlarından biri. Etiketlerin roketler değil turbomachinery veya jet_propulsion ise önemlidir."
+            },
+            "last_verified": "2026-08-29"
+          },
+          {
+            "name": "Hypersonics Research Laboratory",
+            "unit_type": "laboratory",
+            "url": "https://hrl.mit.edu/",
+            "topics": ["hypersonics", "aerothermodynamics", "aerodynamics"],
+            "student_access": "ra_position_only",
+            "why_it_fits": {
+              "en": "A dedicated hypersonics lab, which most aerospace departments do not have. Directly relevant if your hypersonics or aerothermodynamics tag is a primary interest rather than an elective topic.",
+              "tr": "Çoğu havacılık bölümünde bulunmayan, hipersoniğe ayrılmış bir laboratuvar. hypersonics veya aerothermodynamics etiketin bir seçmeli konu değil birincil ilgi alanıysa doğrudan önemlidir."
+            },
+            "last_verified": "2026-08-29"
+          },
+          {
+            "name": "Aerospace Computational Science & Engineering Laboratory (ACDL)",
+            "unit_type": "laboratory",
+            "url": "http://acdl-web.mit.edu/",
+            "topics": ["cfd", "simulation_modelling", "uncertainty_quantification", "surrogate_modeling", "hpc"],
+            "student_access": "ra_position_only",
+            "why_it_fits": {
+              "en": "Numerical methods, uncertainty quantification and reduced-order modelling for aerospace. The right lab if your interest is scientific computing applied to flight physics rather than the physics itself.",
+              "tr": "Havacılık için sayısal yöntemler, belirsizlik nicelemesi ve indirgenmiş mertebe modelleme. İlgin, fiziğin kendisi yerine uçuş fiziğine uygulanan bilimsel hesaplamaysa doğru laboratuvar burasıdır."
+            },
+            "last_verified": "2026-08-29"
+          },
+          {
+            "name": "Wright Brothers Wind Tunnel",
+            "unit_type": "facility",
+            "url": "https://aeroastro.mit.edu/wbwt-homepage/",
+            "topics": ["experimental_fluids", "wind_tunnel", "aerodynamics"],
+            "student_access": "project_course_open",
+            "why_it_fits": {
+              "en": "The department's experimental aerodynamics facility. It is the difference between an aerodynamics thesis you simulate and one you measure.",
+              "tr": "Bölümün deneysel aerodinamik tesisi. Simüle ettiğin bir aerodinamik tezi ile ölçtüğün bir tez arasındaki farkı yaratır."
+            },
+            "last_verified": "2026-08-29"
+          }
+        ]
+      },
+      "academic_match_evidence": {
+        "research_group_evidence": {
+          "level": "strong",
+          "basis": "over thirty named laboratories and research groups published with their own URLs",
+          "source_url": "https://aeroastro.mit.edu/research/"
+        },
+        "facility_evidence": {
+          "level": "strong",
+          "basis": "Wright Brothers Wind Tunnel, Gas Turbine Laboratory, Space Propulsion Laboratory and the Hypersonics Research Laboratory",
+          "source_url": "https://aeroastro.mit.edu/research/"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://aeroastro.mit.edu/research/",
+          "title": "MIT AeroAstro — Research areas, laboratories and groups",
+          "source_type": "official_lab_page",
+          "relevant_fields": ["research", "labs", "department"],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes the department's seven research areas and every named laboratory with its own URL.",
+            "tr": "Bölümün yedi araştırma alanını ve adlandırılmış her laboratuvarı kendi adresiyle yayımlar."
+          }
+        }
+      ]
+    },
+    {
+      "id": "georgia-tech-ae",
+      "research_profile": {
+        "department": "Daniel Guggenheim School of Aerospace Engineering",
+        "department_url": "https://ae.gatech.edu/ae-labs-centers-collaborative-groups",
+        "faculty_contact_policy": "after_admission_for_ra",
+        "faculty_contact_note": {
+          "en": "Georgia Tech admits by committee, so writing to a professor before you apply does not affect admission. It matters afterwards, and the school says so plainly: if your offer letter contains no funding, you are allowed to approach individual AE faculty directly for a research assistantship, and the individual professor makes that call based on whether you fit a funded project. That is the conversation worth preparing for — with a specific project, not a general request.",
+            "tr": "Georgia Tech kabulü komiteyle verir; bu yüzden başvuru öncesi bir profesöre yazmak kabulü etkilemez. Önemi sonrasındadır ve okul bunu açıkça söyler: teklif mektubunda finansman yoksa araştırma asistanlığı için doğrudan AE öğretim üyeleriyle temas kurabilirsin ve kararı, fonlanmış bir projeye uyup uymadığına bakarak ilgili profesör verir. Hazırlanmaya değer görüşme budur — genel bir talep değil, belirli bir projeyle."
+        },
+        "research_units": [
+          {
+            "name": "Space Systems Design Laboratory (SSDL)",
+            "unit_type": "laboratory",
+            "url": "https://ssdl.gatech.edu/",
+            "topics": ["space_systems", "spacecraft_design", "mission_analysis", "satellite_systems"],
+            "student_access": "ra_position_only",
+            "why_it_fits": {
+              "en": "Design of launch vehicles and interplanetary spacecraft. The main space_systems route at Georgia Tech, and the lab most likely to have a funded CubeSat or mission-design project running.",
+              "tr": "Fırlatma araçları ve gezegenler arası uzay araçlarının tasarımı. Georgia Tech'te ana space_systems rotasıdır ve fonlanmış bir CubeSat veya görev tasarımı projesi yürütme olasılığı en yüksek laboratuvardır."
+            },
+            "last_verified": "2026-08-29"
+          },
+          {
+            "name": "Space Systems Optimization Group (SSOG)",
+            "unit_type": "research_group",
+            "url": "https://ssog.ae.gatech.edu/",
+            "lead": "Prof. Koki Ho",
+            "topics": ["mission_analysis", "mdo", "optimization_ai", "space_domain_awareness"],
+            "student_access": "ra_position_only",
+            "why_it_fits": {
+              "en": "Space logistics and constellation design treated as a mathematical optimisation problem. Distinctive if your tags combine mdo or optimization_ai with space — few groups anywhere frame in-space infrastructure this way.",
+              "tr": "Uzay lojistiği ve takımyıldız tasarımını matematiksel bir optimizasyon problemi olarak ele alır. Etiketlerin mdo veya optimization_ai ile uzayı birleştiriyorsa ayırt edicidir — çok az grup uzaydaki altyapıyı bu şekilde kurgular."
+            },
+            "last_verified": "2026-08-29"
+          },
+          {
+            "name": "Space Exploration Analysis Laboratory (SEAL)",
+            "unit_type": "laboratory",
+            "url": "https://seal.ae.gatech.edu/",
+            "topics": ["orbit_determination", "sensors", "gnc", "space_domain_awareness"],
+            "student_access": "ra_position_only",
+            "why_it_fits": {
+              "en": "How sensor data becomes spacecraft navigation. The natural fit if your tags pair sensors with orbit_determination — optical navigation rather than trajectory optimisation.",
+              "tr": "Sensör verisinin uzay aracı seyrüseferine nasıl dönüştüğü. Etiketlerin sensors ile orbit_determination'ı birleştiriyorsa doğal uyum — yörünge optimizasyonu değil, optik seyrüsefer."
+            },
+            "last_verified": "2026-08-29"
+          },
+          {
+            "name": "Dynamics and Control Systems Laboratory (DCSL)",
+            "unit_type": "laboratory",
+            "url": "https://dcsl.gatech.edu/",
+            "lead": "Prof. Panagiotis Tsiotras",
+            "topics": ["gnc", "stability_control", "autonomy", "robotics"],
+            "student_access": "ra_position_only",
+            "why_it_fits": {
+              "en": "Control of aerospace and mechanical systems, including an autonomous racetrack facility. Strong choice if your gnc tag is about control design and you want hardware to test it on.",
+              "tr": "Otonom bir yarış pisti tesisi dâhil olmak üzere havacılık ve mekanik sistemlerin kontrolü. gnc etiketin kontrol tasarımıyla ilgiliyse ve test edecek donanım istiyorsan güçlü bir tercihtir."
+            },
+            "last_verified": "2026-08-29"
+          },
+          {
+            "name": "Aerospace Systems Design Laboratory (ASDL)",
+            "unit_type": "laboratory",
+            "url": "http://www.asdl.gatech.edu/",
+            "topics": ["systems_engineering", "mdo", "aircraft_design", "digital_twin"],
+            "student_access": "ra_position_only",
+            "why_it_fits": {
+              "en": "One of the largest systems-design labs in US aerospace, working on complex systems and systems-of-systems. This is where the systems_engineering and mdo tags turn into funded industry projects.",
+              "tr": "ABD havacılığındaki en büyük sistem tasarımı laboratuvarlarından biri; karmaşık sistemler ve sistemlerin sistemleri üzerine çalışır. systems_engineering ve mdo etiketlerinin fonlanmış sanayi projelerine dönüştüğü yer burasıdır."
+            },
+            "last_verified": "2026-08-29"
+          },
+          {
+            "name": "High-Power Electric Propulsion Laboratory (HPEPL)",
+            "unit_type": "laboratory",
+            "url": "http://mwalker.gatech.edu/hpepl/",
+            "topics": ["electric_propulsion", "space_environment", "testing"],
+            "student_access": "ra_position_only",
+            "why_it_fits": {
+              "en": "Plasmadynamics and electric propulsion with its own test facility in the Research Park. Relevant if electric_propulsion is a primary tag and you want thruster testing, not just modelling.",
+              "tr": "Research Park'ta kendi test tesisi olan plazma dinamiği ve elektrikli itki. electric_propulsion birincil etiketinse ve yalnızca modelleme değil itici testi istiyorsan önemlidir."
+            },
+            "last_verified": "2026-08-29"
+          },
+          {
+            "name": "Ben T. Zinn Combustion Laboratory",
+            "unit_type": "laboratory",
+            "url": "http://www.comblab.gatech.edu/",
+            "topics": ["combustion", "jet_propulsion", "energy_systems", "testing"],
+            "student_access": "ra_position_only",
+            "why_it_fits": {
+              "en": "A multi-million-dollar experimental combustion facility for propulsion and energy conversion. The combustion tag here means rigs and laser diagnostics, not a simulation course.",
+              "tr": "İtki ve enerji dönüşümü için milyonlarca dolarlık deneysel yanma tesisi. Buradaki combustion etiketi bir simülasyon dersini değil, test düzeneklerini ve lazer teşhisini ifade eder."
+            },
+            "last_verified": "2026-08-29"
+          },
+          {
+            "name": "Vertical Lift Research Center of Excellence (VLRCOE)",
+            "unit_type": "centre",
+            "url": "https://ae.gatech.edu/georgia-tech-rotorcraft-center-excellence",
+            "topics": ["aerodynamics", "flight_mechanics", "aeroelasticity", "aircraft_design"],
+            "student_access": "ra_position_only",
+            "why_it_fits": {
+              "en": "A US Army-designated centre for rotary-wing technology. If rotorcraft is your target, a Center of Excellence designation is what keeps a steady stream of funded thesis topics available.",
+              "tr": "ABD Kara Kuvvetleri tarafından döner kanat teknolojisi için belirlenmiş bir merkez. Hedefin döner kanatsa, Mükemmeliyet Merkezi statüsü fonlanmış tez konularının sürekli akmasını sağlayan şeydir."
+            },
+            "last_verified": "2026-08-29"
+          },
+          {
+            "name": "John J. Harper Wind Tunnel",
+            "unit_type": "facility",
+            "url": "https://ae.gatech.edu/john-j-harper-wind-tunnel",
+            "topics": ["wind_tunnel", "experimental_fluids", "aerodynamics"],
+            "student_access": "project_course_open",
+            "last_verified": "2026-08-29"
+          }
+        ],
+        "notable_professors": [
+          {
+            "name": "Panagiotis Tsiotras",
+            "role": { "en": "David & Andrew Lewis Endowed Chair; director of the Dynamics and Control Systems Laboratory", "tr": "David & Andrew Lewis Kürsü Profesörü; Dinamik ve Kontrol Sistemleri Laboratuvarı direktörü" },
+            "focus": {
+              "en": "Control of aerospace and mechanical systems, autonomous vehicles, motion planning and optimal control.",
+              "tr": "Havacılık ve mekanik sistemlerin kontrolü, otonom araçlar, hareket planlama ve optimal kontrol."
+            },
+            "fit_tags": ["gnc", "stability_control", "autonomy", "robotics"],
+            "email": "tsiotras@gatech.edu",
+            "email_source": "https://ae.gatech.edu/people/panagiotis-tsiotras",
+            "profile_url": "https://ae.gatech.edu/people/panagiotis-tsiotras",
+            "lab": "Dynamics and Control Systems Laboratory (DCSL)",
+            "contact_timing": "after_admission_for_ra",
+            "accepting_students_signal": "not_stated",
+            "last_verified": "2026-08-29"
+          },
+          {
+            "name": "E. Glenn Lightsey",
+            "role": { "en": "John W. Young Chair Professor; former director of the Space Systems Design Laboratory", "tr": "John W. Young Kürsü Profesörü; Uzay Sistemleri Tasarım Laboratuvarı eski direktörü" },
+            "focus": {
+              "en": "Spacecraft systems engineering, guidance, navigation and control, small-satellite technology, attitude determination and control, and space systems design and optimisation.",
+              "tr": "Uzay aracı sistem mühendisliği, güdüm, seyrüsefer ve kontrol, küçük uydu teknolojisi, yönelim belirleme ve kontrolü ile uzay sistemleri tasarımı ve optimizasyonu."
+            },
+            "fit_tags": ["spacecraft_design", "satellite_systems", "gnc", "attitude_dynamics_control"],
+            "email": "glenn.lightsey@gatech.edu",
+            "email_source": "https://ae.gatech.edu/people/edgar-glenn-lightsey",
+            "phone": "+1 404-385-4146",
+            "profile_url": "https://ae.gatech.edu/people/edgar-glenn-lightsey",
+            "lab": "Space Systems Design Laboratory (SSDL)",
+            "contact_timing": "after_admission_for_ra",
+            "accepting_students_signal": "not_stated",
+            "last_verified": "2026-08-29"
+          },
+          {
+            "name": "Koki Ho",
+            "role": { "en": "Dutton-Ducoffe Professor and Associate Professor; leads the Space Systems Optimization Group", "tr": "Dutton-Ducoffe Profesörü ve Doçent; Uzay Sistemleri Optimizasyon Grubu'nu yönetir" },
+            "focus": {
+              "en": "Network modelling for campaign-level space mission design, optimisation and probabilistic modelling for in-space logistics, mega-constellation deployment and maintenance, and sensor management for space domain awareness.",
+              "tr": "Kampanya düzeyinde uzay görevi tasarımı için ağ modelleme, uzaydaki lojistik altyapı için optimizasyon ve olasılıksal modelleme, mega takımyıldız konuşlandırma ve bakımı ile uzay alanı farkındalığı için sensör yönetimi."
+            },
+            "fit_tags": ["mission_analysis", "mdo", "optimization_ai", "space_domain_awareness", "satellite_systems"],
+            "email": "kokiho@gatech.edu",
+            "email_source": "https://ae.gatech.edu/people/koki-ho",
+            "phone": "+1 404-894-3078",
+            "profile_url": "https://ae.gatech.edu/people/koki-ho",
+            "lab": "Space Systems Optimization Group (SSOG)",
+            "contact_timing": "after_admission_for_ra",
+            "accepting_students_signal": "not_stated",
+            "last_verified": "2026-08-29"
+          },
+          {
+            "name": "Marilyn J. Smith",
+            "role": { "en": "David S. Lewis Professor; director of the Vertical Lift Research Center of Excellence", "tr": "David S. Lewis Profesörü; Dikey Kalkış Araştırma Mükemmeliyet Merkezi direktörü" },
+            "focus": {
+              "en": "Advanced numerical methods for unsteady fluid mechanics and aeroelasticity, applied to rotary-wing configurations.",
+              "tr": "Döner kanat konfigürasyonlarına uygulanan, kararsız akışkanlar mekaniği ve aeroelastisite için ileri sayısal yöntemler."
+            },
+            "fit_tags": ["aeroelasticity", "cfd", "aerodynamics", "flight_mechanics"],
+            "email": null,
+            "email_source": null,
+            "profile_url": "http://www.msmith.gatech.edu/",
+            "lab": "Nonlinear Computational Aeroelasticity Lab / VLRCOE",
+            "contact_timing": "after_admission_for_ra",
+            "accepting_students_signal": "not_stated",
+            "last_verified": "2026-08-29"
+          }
+        ],
+        "faculty_email_availability": {
+          "status": "published_on_individual_profiles",
+          "note": {
+            "en": "The school's faculty directory lists names and titles only; each person's own profile page publishes their email and phone. Only addresses read from those individual pages are stored here.",
+            "tr": "Okulun öğretim üyesi rehberi yalnızca ad ve unvan listeler; her kişinin kendi profil sayfası e-postasını ve telefonunu yayımlar. Burada yalnızca o bireysel sayfalardan okunan adresler saklanır."
+          },
+          "directory_url": "https://ae.gatech.edu/directory/category/academic-faculty"
+        }
+      },
+      "academic_match_evidence": {
+        "research_group_evidence": {
+          "level": "strong",
+          "basis": "twenty-nine named laboratories, centres and collaborative groups published with URLs and faculty leads",
+          "source_url": "https://ae.gatech.edu/ae-labs-centers-collaborative-groups"
+        },
+        "faculty_evidence": {
+          "level": "strong",
+          "basis": "named faculty with published university email addresses across control, space systems and space optimisation",
+          "source_url": "https://ae.gatech.edu/people/edgar-glenn-lightsey"
+        },
+        "facility_evidence": {
+          "level": "strong",
+          "basis": "John J. Harper Wind Tunnel, Ben T. Zinn Combustion Laboratory, High-Power Electric Propulsion Laboratory, Indoor Flight Lab and a new aircraft hangar",
+          "source_url": "https://ae.gatech.edu/ae-labs-centers-collaborative-groups"
+        }
+      },
+      "scholarship_profile": {
+        "application_mode": "mixed",
+        "automatic_consideration": false,
+        "separate_application_required": true,
+        "funding_guaranteed_at_admission": false,
+        "playbook": [
+          {
+            "opportunity": "Graduate Research Assistantship (GRA) in the School of Aerospace Engineering",
+            "competitiveness": "selective",
+            "eligibility_gates": [
+              { "en": "Admitted to an AE graduate programme.", "tr": "Bir AE lisansüstü programına kabul edilmiş olmak." },
+              { "en": "A faculty member has a sponsored project whose work matches you.", "tr": "Bir öğretim üyesinin, yaptığın işe uyan fonlanmış bir projesi olması." }
+            ],
+            "selection_criteria": [
+              { "en": "Alignment with a specific funded research project — the individual professor makes the decision, not the school.", "tr": "Belirli bir fonlanmış araştırma projesiyle uyum — kararı okul değil, ilgili profesör verir." }
+            ],
+            "typical_award": {
+              "coverage": ["monthly_stipend", "tuition_support"],
+              "amount_note": {
+                "en": "Institute policy sets a minimum of $1,184 per month for a master's assistantship at one-third time or greater, plus tuition support.",
+                "tr": "Kurum politikası, üçte bir veya daha fazla zamanlı bir yüksek lisans asistanlığı için aylık asgari 1.184 doları, artı öğrenim ücreti desteğini belirler."
+              }
+            },
+            "steps": [
+              {
+                "order": 1,
+                "action": {
+                  "en": "Read your admission letter first. Some students are offered a GRA or GTA in the letter itself; if yours includes funding, the rest of this list is optional.",
+                  "tr": "Önce kabul mektubunu oku. Bazı öğrencilere GRA veya GTA doğrudan mektupta teklif edilir; mektubunda finansman varsa bu listenin geri kalanı isteğe bağlıdır."
+                },
+                "owner": "university",
+                "timing": "after_admission",
+                "hard_requirement": false
+              },
+              {
+                "order": 2,
+                "action": {
+                  "en": "If the letter has no funding, contact individual AE faculty directly — the school explicitly permits this. Write to the professor whose funded project matches your background, naming the project and what you can do on it.",
+                  "tr": "Mektupta finansman yoksa doğrudan AE öğretim üyeleriyle iletişime geç — okul buna açıkça izin verir. Fonlanmış projesi geçmişinle örtüşen profesöre, projeyi ve orada ne yapabileceğini adlandırarak yaz."
+                },
+                "owner": "applicant",
+                "timing": "after_admission",
+                "hard_requirement": true
+              },
+              {
+                "order": 3,
+                "action": {
+                  "en": "Apply separately for a GTA in the semester before you want it — applications are usually requested about two months before the semester starts, and first-semester students are generally not eligible.",
+                  "tr": "GTA için, istediğin dönemden bir önceki dönemde ayrıca başvur — başvurular genellikle dönem başlamadan yaklaşık iki ay önce istenir ve birinci dönem öğrencileri genellikle uygun değildir."
+                },
+                "owner": "applicant",
+                "timing": "after_enrolment",
+                "hard_requirement": false
+              },
+              {
+                "order": 4,
+                "action": {
+                  "en": "Budget for the possibility of no funding. The school states it cannot guarantee an assistantship, so treat the first semester as potentially self-funded even though over 70% of AE graduate students held a tuition waiver as of Fall 2021.",
+                  "tr": "Finansman çıkmaması ihtimaline göre bütçe yap. Okul asistanlığı garanti edemeyeceğini belirtir; 2021 Güz itibarıyla AE lisansüstü öğrencilerinin %70'inden fazlası öğrenim ücreti muafiyetine sahip olsa da ilk dönemi kendi finansmanınla geçirmeye hazırlan."
+                },
+                "owner": "applicant",
+                "timing": "after_admission",
+                "hard_requirement": false
+              }
+            ],
+            "evidence_url": "https://ae.gatech.edu/graduate-research-and-teaching-opportunities"
+          }
+        ],
+        "funding_notes": {
+          "en": "Georgia Tech AE states plainly that it cannot guarantee an assistantship, but also that over 70% of its graduate students held a tuition waiver through a GRA, GTA or fellowship as of Fall 2021. The route for an unfunded admit is explicit and unusual in its openness: the school tells you that you may approach individual faculty directly, and that the professor makes the decision.",
+          "tr": "Georgia Tech AE, asistanlığı garanti edemeyeceğini açıkça belirtir; ancak 2021 Güz itibarıyla lisansüstü öğrencilerinin %70'inden fazlasının GRA, GTA veya burs yoluyla öğrenim ücreti muafiyeti aldığını da söyler. Finansmansız kabul alanlar için rota açık ve alışılmadık ölçüde nettir: okul, doğrudan öğretim üyeleriyle temas kurabileceğini ve kararı profesörün vereceğini söyler."
+        }
+      },
+      "living_profile": {
+        "housing_access": "lottery",
+        "housing_guaranteed": false,
+        "student_housing_available": true,
+        "housing_application_separate": true,
+        "housing_difficulty_evidence": {
+          "guarantee_status": {
+            "value": "lottery",
+            "source_url": "https://w3.housing.gatech.edu/applicants/grad-family",
+            "quote": "Housing is not guaranteed and not required for any student at Georgia Tech. Housing is limited and will be awarded via the housing lottery process."
+          },
+          "supply_pressure": {
+            "value": "published_waiting_list",
+            "source_url": "https://w3.housing.gatech.edu/applicants/grad-family",
+            "quote": "Students who do not secure housing from the lottery will be assigned to the waitlist based on their lottery number; late applicants are placed on a waitlist in the order they apply."
+          },
+          "timing_sensitivity": {
+            "value": "separate_application_hard_deadline",
+            "source_url": "https://w3.housing.gatech.edu/applicants/grad-family",
+            "quote": "New graduate students must apply by the published lottery deadline (31 May for the 2025 cycle) to be included in the lottery and receive a randomised lottery number."
+          }
+        },
+        "housing_contract_limit": {
+          "en": "Graduate students are limited to one academic-year contract plus one summer contract, so on-campus housing is a first-year solution, not a two-year one.",
+          "tr": "Lisansüstü öğrenciler bir akademik yıl sözleşmesi artı bir yaz sözleşmesiyle sınırlıdır; yani kampüs içi konut iki yıllık değil, birinci yıllık bir çözümdür."
+        }
+      },
+      "sources": [
+        {
+          "url": "https://ae.gatech.edu/ae-labs-centers-collaborative-groups",
+          "title": "Georgia Tech AE — Labs, centers and collaborative groups",
+          "source_type": "official_lab_page",
+          "relevant_fields": ["research", "labs", "department"],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes twenty-nine named laboratories and centres with their research focus, faculty leads and URLs.",
+            "tr": "Yirmi dokuz adlandırılmış laboratuvar ve merkezi araştırma odağı, öğretim üyesi liderleri ve adresleriyle yayımlar."
+          }
+        },
+        {
+          "url": "https://ae.gatech.edu/directory/category/academic-faculty",
+          "title": "Georgia Tech AE — Academic faculty directory",
+          "source_type": "official_department_page",
+          "relevant_fields": ["research", "department"],
+          "confidence": "high",
+          "notes": { "en": "Names and titles only; emails live on the individual profile pages.", "tr": "Yalnızca ad ve unvan; e-postalar bireysel profil sayfalarındadır." }
+        },
+        {
+          "url": "https://ae.gatech.edu/people/edgar-glenn-lightsey",
+          "title": "Georgia Tech AE — E. Glenn Lightsey profile",
+          "source_type": "official_department_page",
+          "relevant_fields": ["research", "department"],
+          "confidence": "high"
+        },
+        {
+          "url": "https://ae.gatech.edu/people/koki-ho",
+          "title": "Georgia Tech AE — Koki Ho profile",
+          "source_type": "official_department_page",
+          "relevant_fields": ["research", "department"],
+          "confidence": "high"
+        },
+        {
+          "url": "https://ae.gatech.edu/people/panagiotis-tsiotras",
+          "title": "Georgia Tech AE — Panagiotis Tsiotras profile",
+          "source_type": "official_department_page",
+          "relevant_fields": ["research", "department"],
+          "confidence": "high"
+        },
+        {
+          "url": "https://ae.gatech.edu/graduate-research-and-teaching-opportunities",
+          "title": "Georgia Tech AE — Graduate research and teaching opportunities",
+          "source_type": "official_scholarship_page",
+          "relevant_fields": ["scholarship", "funding"],
+          "confidence": "high",
+          "notes": {
+            "en": "States that assistantships are not guaranteed, that students may approach faculty directly for a GRA, and how GTA applications run.",
+            "tr": "Asistanlıkların garanti olmadığını, öğrencilerin GRA için doğrudan öğretim üyelerine başvurabileceğini ve GTA başvurularının nasıl işlediğini belirtir."
+          }
+        },
+        {
+          "url": "https://policylibrary.gatech.edu/academic-affairs/stipends-graduate-assistantships",
+          "title": "Georgia Tech Policy Library — Stipends for graduate assistantships",
+          "source_type": "official_university_policy_page",
+          "relevant_fields": ["scholarship", "funding"],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes the minimum master's assistantship stipend of $1,184 per month at one-third time or greater.",
+            "tr": "Üçte bir veya daha fazla zamanlı yüksek lisans asistanlığı için aylık asgari 1.184 dolarlık ücreti yayımlar."
+          }
+        },
+        {
+          "url": "https://w3.housing.gatech.edu/applicants/grad-family",
+          "title": "Georgia Tech Housing — Graduate and family housing applications",
+          "source_type": "official_housing_page",
+          "relevant_fields": ["housing", "living"],
+          "confidence": "high",
+          "notes": {
+            "en": "States that housing is not guaranteed and limited, describes the lottery and waitlist, and gives the application deadline.",
+            "tr": "Konutun garanti olmadığını ve sınırlı olduğunu belirtir, kura ve bekleme listesini anlatır ve başvuru son tarihini verir."
+          }
+        }
+      ]
+    }
+  ]
+}

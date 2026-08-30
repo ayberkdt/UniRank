@@ -286,6 +286,24 @@
       "notes": {
         "en": "The current EUR 2,700 non-EU tuition supersedes the older EUR 2,430 figure printed in the Practical Guide. Living estimates are planning ranges, not guaranteed prices.",
         "tr": "Güncel 2.700 EUR AB dışı ücret, Practical Guide'daki eski 2.430 EUR tutarın yerine geçer. Yaşam tahminleri planlama aralığıdır; garanti fiyat değildir."
+      },
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -385,6 +403,61 @@
       "notes": {
         "en": "Campus housing is inexpensive but not documented as guaranteed. Keep a private-market fallback and recheck the older guide's rental ranges.",
         "tr": "Kampüs yurdu ucuzdur ancak garanti edildiği belgelenmemiştir. Özel piyasa yedeği tutun ve eski rehberdeki kira aralıklarını yeniden kontrol edin."
+      },
+      "housing_difficulty": "unknown",
+      "housing_search_difficulty": "unknown",
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": 4,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 2,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": "not_guaranteed",
+            "points": 3,
+            "derived_from": "living_profile.housing_access"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": "separate_application_generous_window",
+            "points": 1,
+            "derived_from": "living_profile.housing_application_separate"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
       }
     },
     "curriculum_profile": {
@@ -617,6 +690,14 @@
       "planning_advice": {
         "en": "A Türkiye applicant should not wait for July. Prepare legalized documents and language proof before February, submit early in the non-EU window and budget for immediate full-year tuition payment after the Letter of Acceptance.",
         "tr": "Türkiye'den aday temmuzu beklememelidir. Tasdikli belgeleri ve dil kanıtını şubattan önce hazırlayın, AB dışı pencerenin başında başvurun ve Kabul Mektubundan sonra tam yıllık ücreti hemen ödemeye hazır olun."
+      },
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": null,
+        "status": "not_published",
+        "confidence": "unknown",
+        "reason": "no_iso_dated_deadline_in_record",
+        "evaluated_at": "2026-08-30"
       }
     },
     "ranking_profile": {
@@ -1062,11 +1143,11 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "perspective_reviews": {
@@ -1079,6 +1160,55 @@
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
       }
+    },
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "unknown",
+      "score": null,
+      "score_basis_weight": 30,
+      "evidenced_dimensions": 1,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "air_transport",
+        "aircraft_systems",
+        "flight_control",
+        "cfd",
+        "aerodynamics",
+        "structures",
+        "propulsion",
+        "atm",
+        "human_factors"
+      ],
+      "confidence": "unknown",
+      "legacy_relevance_status": null,
+      "evaluated_at": "2026-08-30"
     }
   },
   {
@@ -1334,6 +1464,24 @@
       "notes": {
         "en": "Romanian preparatory-year tuition and an extra year of living costs are not included in the EUR 2,700 programme-year fee and must be budgeted separately if required.",
         "tr": "Gerekirse Rumence hazırlık yılı ücreti ve ek bir yıllık yaşam maliyeti 2.700 EUR program yılı ücretine dâhil değildir; ayrıca bütçelenmelidir."
+      },
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -1433,6 +1581,61 @@
       "notes": {
         "en": "Housing is inexpensive but not guaranteed. If a Romanian preparatory year is required, add a full extra year of housing and living costs.",
         "tr": "Yurt ucuzdur ancak garantili değildir. Rumence hazırlık yılı gerekiyorsa tam bir ek yıl konut ve yaşam maliyeti ekleyin."
+      },
+      "housing_difficulty": "unknown",
+      "housing_search_difficulty": "unknown",
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": 4,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 2,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": "not_guaranteed",
+            "points": 3,
+            "derived_from": "living_profile.housing_access"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": "separate_application_generous_window",
+            "points": 1,
+            "derived_from": "living_profile.housing_application_separate"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
       }
     },
     "curriculum_profile": {
@@ -1679,6 +1882,14 @@
       "planning_advice": {
         "en": "Plan backward from Romanian-language readiness, not only the degree deadline. If a preparatory year is required, the effective journey is at least three academic years and needs an earlier admission/visa plan.",
         "tr": "Yalnız derece son tarihinden değil Rumence hazır olma tarihinden geriye planlayın. Hazırlık yılı gerekirse fiilî yolculuk en az üç akademik yıldır ve daha erken kabul/vize planı ister."
+      },
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": null,
+        "status": "not_published",
+        "confidence": "unknown",
+        "reason": "no_iso_dated_deadline_in_record",
+        "evaluated_at": "2026-08-30"
       }
     },
     "ranking_profile": {
@@ -2179,11 +2390,11 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "perspective_reviews": {
@@ -2196,6 +2407,56 @@
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
       }
+    },
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "weak_match",
+      "score": 7,
+      "score_basis_weight": 90,
+      "evidenced_dimensions": 4,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "moderate",
+          "basis": "1_named_items",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "space_mechanics",
+        "rocket_engines",
+        "satellite_subsystems",
+        "adcs",
+        "spacecraft_dynamics",
+        "space_sensors",
+        "space_structures",
+        "launch_systems",
+        "remote_sensing",
+        "telecommunications"
+      ],
+      "confidence": "medium",
+      "legacy_relevance_status": null,
+      "evaluated_at": "2026-08-30"
     }
   },
   {
@@ -2451,6 +2712,24 @@
       "notes": {
         "en": "Romanian preparatory-year tuition and an extra year of living costs are not included in the EUR 2,700 programme-year fee and must be budgeted separately if required.",
         "tr": "Gerekirse Rumence hazırlık yılı ücreti ve ek bir yıllık yaşam maliyeti 2.700 EUR program yılı ücretine dâhil değildir; ayrıca bütçelenmelidir."
+      },
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -2550,6 +2829,61 @@
       "notes": {
         "en": "Housing is inexpensive but not guaranteed. If a Romanian preparatory year is required, add a full extra year of housing and living costs.",
         "tr": "Yurt ucuzdur ancak garantili değildir. Rumence hazırlık yılı gerekiyorsa tam bir ek yıl konut ve yaşam maliyeti ekleyin."
+      },
+      "housing_difficulty": "unknown",
+      "housing_search_difficulty": "unknown",
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": 4,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 2,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": "not_guaranteed",
+            "points": 3,
+            "derived_from": "living_profile.housing_access"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": "separate_application_generous_window",
+            "points": 1,
+            "derived_from": "living_profile.housing_application_separate"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
       }
     },
     "curriculum_profile": {
@@ -2798,6 +3132,14 @@
       "planning_advice": {
         "en": "Plan backward from Romanian-language readiness, not only the degree deadline. If a preparatory year is required, the effective journey is at least three academic years and needs an earlier admission/visa plan.",
         "tr": "Yalnız derece son tarihinden değil Rumence hazır olma tarihinden geriye planlayın. Hazırlık yılı gerekirse fiilî yolculuk en az üç akademik yıldır ve daha erken kabul/vize planı ister."
+      },
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": null,
+        "status": "not_published",
+        "confidence": "unknown",
+        "reason": "no_iso_dated_deadline_in_record",
+        "evaluated_at": "2026-08-30"
       }
     },
     "ranking_profile": {
@@ -3298,11 +3640,11 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "perspective_reviews": {
@@ -3315,6 +3657,55 @@
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
       }
+    },
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "weak_match",
+      "score": 7,
+      "score_basis_weight": 90,
+      "evidenced_dimensions": 4,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "moderate",
+          "basis": "1_named_items",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "avionics",
+        "aerospace_navigation",
+        "gnc",
+        "optimal_control",
+        "flight_control",
+        "spacecraft_control",
+        "simulation",
+        "artificial_intelligence",
+        "launch_systems"
+      ],
+      "confidence": "medium",
+      "legacy_relevance_status": null,
+      "evaluated_at": "2026-08-30"
     }
   },
   {
@@ -3570,6 +3961,24 @@
       "notes": {
         "en": "Romanian preparatory-year tuition and an extra year of living costs are not included in the EUR 2,700 programme-year fee and must be budgeted separately if required.",
         "tr": "Gerekirse Rumence hazırlık yılı ücreti ve ek bir yıllık yaşam maliyeti 2.700 EUR program yılı ücretine dâhil değildir; ayrıca bütçelenmelidir."
+      },
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -3669,6 +4078,61 @@
       "notes": {
         "en": "Housing is inexpensive but not guaranteed. If a Romanian preparatory year is required, add a full extra year of housing and living costs.",
         "tr": "Yurt ucuzdur ancak garantili değildir. Rumence hazırlık yılı gerekiyorsa tam bir ek yıl konut ve yaşam maliyeti ekleyin."
+      },
+      "housing_difficulty": "unknown",
+      "housing_search_difficulty": "unknown",
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": 4,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 2,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": "not_guaranteed",
+            "points": 3,
+            "derived_from": "living_profile.housing_access"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": "separate_application_generous_window",
+            "points": 1,
+            "derived_from": "living_profile.housing_application_separate"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
       }
     },
     "curriculum_profile": {
@@ -3912,6 +4376,14 @@
       "planning_advice": {
         "en": "Plan backward from Romanian-language readiness, not only the degree deadline. If a preparatory year is required, the effective journey is at least three academic years and needs an earlier admission/visa plan.",
         "tr": "Yalnız derece son tarihinden değil Rumence hazır olma tarihinden geriye planlayın. Hazırlık yılı gerekirse fiilî yolculuk en az üç akademik yıldır ve daha erken kabul/vize planı ister."
+      },
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": null,
+        "status": "not_published",
+        "confidence": "unknown",
+        "reason": "no_iso_dated_deadline_in_record",
+        "evaluated_at": "2026-08-30"
       }
     },
     "ranking_profile": {
@@ -4412,11 +4884,11 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "perspective_reviews": {
@@ -4429,6 +4901,54 @@
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
       }
+    },
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "weak_match",
+      "score": 7,
+      "score_basis_weight": 90,
+      "evidenced_dimensions": 4,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "moderate",
+          "basis": "1_named_items",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "propulsion",
+        "combustion",
+        "aero_engines",
+        "space_propulsion",
+        "cfd",
+        "noise",
+        "emissions",
+        "structural_integrity"
+      ],
+      "confidence": "medium",
+      "legacy_relevance_status": null,
+      "evaluated_at": "2026-08-30"
     }
   },
   {
@@ -4684,6 +5204,24 @@
       "notes": {
         "en": "Romanian preparatory-year tuition and an extra year of living costs are not included in the EUR 2,700 programme-year fee and must be budgeted separately if required.",
         "tr": "Gerekirse Rumence hazırlık yılı ücreti ve ek bir yıllık yaşam maliyeti 2.700 EUR program yılı ücretine dâhil değildir; ayrıca bütçelenmelidir."
+      },
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -4783,6 +5321,61 @@
       "notes": {
         "en": "Housing is inexpensive but not guaranteed. If a Romanian preparatory year is required, add a full extra year of housing and living costs.",
         "tr": "Yurt ucuzdur ancak garantili değildir. Rumence hazırlık yılı gerekiyorsa tam bir ek yıl konut ve yaşam maliyeti ekleyin."
+      },
+      "housing_difficulty": "unknown",
+      "housing_search_difficulty": "unknown",
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": 4,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 2,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": "not_guaranteed",
+            "points": 3,
+            "derived_from": "living_profile.housing_access"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": "separate_application_generous_window",
+            "points": 1,
+            "derived_from": "living_profile.housing_application_separate"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
       }
     },
     "curriculum_profile": {
@@ -5026,6 +5619,14 @@
       "planning_advice": {
         "en": "Plan backward from Romanian-language readiness, not only the degree deadline. If a preparatory year is required, the effective journey is at least three academic years and needs an earlier admission/visa plan.",
         "tr": "Yalnız derece son tarihinden değil Rumence hazır olma tarihinden geriye planlayın. Hazırlık yılı gerekirse fiilî yolculuk en az üç akademik yıldır ve daha erken kabul/vize planı ister."
+      },
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": null,
+        "status": "not_published",
+        "confidence": "unknown",
+        "reason": "no_iso_dated_deadline_in_record",
+        "evaluated_at": "2026-08-30"
       }
     },
     "ranking_profile": {
@@ -5526,11 +6127,11 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "perspective_reviews": {
@@ -5543,6 +6144,54 @@
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
       }
+    },
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "weak_match",
+      "score": 7,
+      "score_basis_weight": 90,
+      "evidenced_dimensions": 4,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "moderate",
+          "basis": "1_named_items",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "aerospace_structures",
+        "space_structures",
+        "finite_elements",
+        "space_materials",
+        "vibration",
+        "structural_integrity",
+        "launch_systems",
+        "rocket_engines"
+      ],
+      "confidence": "medium",
+      "legacy_relevance_status": null,
+      "evaluated_at": "2026-08-30"
     }
   },
   {
@@ -5798,6 +6447,24 @@
       "notes": {
         "en": "Romanian preparatory-year tuition and an extra year of living costs are not included in the EUR 2,700 programme-year fee and must be budgeted separately if required.",
         "tr": "Gerekirse Rumence hazırlık yılı ücreti ve ek bir yıllık yaşam maliyeti 2.700 EUR program yılı ücretine dâhil değildir; ayrıca bütçelenmelidir."
+      },
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -5897,6 +6564,61 @@
       "notes": {
         "en": "Housing is inexpensive but not guaranteed. If a Romanian preparatory year is required, add a full extra year of housing and living costs.",
         "tr": "Yurt ucuzdur ancak garantili değildir. Rumence hazırlık yılı gerekiyorsa tam bir ek yıl konut ve yaşam maliyeti ekleyin."
+      },
+      "housing_difficulty": "unknown",
+      "housing_search_difficulty": "unknown",
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": 4,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 2,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": "not_guaranteed",
+            "points": 3,
+            "derived_from": "living_profile.housing_access"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": "separate_application_generous_window",
+            "points": 1,
+            "derived_from": "living_profile.housing_application_separate"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
       }
     },
     "curriculum_profile": {
@@ -6132,6 +6854,14 @@
       "planning_advice": {
         "en": "Plan backward from Romanian-language readiness, not only the degree deadline. If a preparatory year is required, the effective journey is at least three academic years and needs an earlier admission/visa plan.",
         "tr": "Yalnız derece son tarihinden değil Rumence hazır olma tarihinden geriye planlayın. Hazırlık yılı gerekirse fiilî yolculuk en az üç akademik yıldır ve daha erken kabul/vize planı ister."
+      },
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": null,
+        "status": "not_published",
+        "confidence": "unknown",
+        "reason": "no_iso_dated_deadline_in_record",
+        "evaluated_at": "2026-08-30"
       }
     },
     "ranking_profile": {
@@ -6606,11 +7336,11 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "perspective_reviews": {
@@ -6623,6 +7353,54 @@
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
       }
+    },
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "unknown",
+      "score": null,
+      "score_basis_weight": 30,
+      "evidenced_dimensions": 1,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "aviation_management",
+        "air_transport",
+        "atm",
+        "cns",
+        "aviation_safety",
+        "human_factors",
+        "simulators",
+        "artificial_intelligence_in_aviation"
+      ],
+      "confidence": "unknown",
+      "legacy_relevance_status": null,
+      "evaluated_at": "2026-08-30"
     }
   },
   {
@@ -6878,6 +7656,24 @@
       "notes": {
         "en": "Romanian preparatory-year tuition and an extra year of living costs are not included in the EUR 2,700 programme-year fee and must be budgeted separately if required.",
         "tr": "Gerekirse Rumence hazırlık yılı ücreti ve ek bir yıllık yaşam maliyeti 2.700 EUR program yılı ücretine dâhil değildir; ayrıca bütçelenmelidir."
+      },
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -6977,6 +7773,61 @@
       "notes": {
         "en": "Housing is inexpensive but not guaranteed. If a Romanian preparatory year is required, add a full extra year of housing and living costs.",
         "tr": "Yurt ucuzdur ancak garantili değildir. Rumence hazırlık yılı gerekiyorsa tam bir ek yıl konut ve yaşam maliyeti ekleyin."
+      },
+      "housing_difficulty": "unknown",
+      "housing_search_difficulty": "unknown",
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": 4,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 2,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": "not_guaranteed",
+            "points": 3,
+            "derived_from": "living_profile.housing_access"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": "separate_application_generous_window",
+            "points": 1,
+            "derived_from": "living_profile.housing_application_separate"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
       }
     },
     "curriculum_profile": {
@@ -7212,6 +8063,14 @@
       "planning_advice": {
         "en": "Plan backward from Romanian-language readiness, not only the degree deadline. If a preparatory year is required, the effective journey is at least three academic years and needs an earlier admission/visa plan.",
         "tr": "Yalnız derece son tarihinden değil Rumence hazır olma tarihinden geriye planlayın. Hazırlık yılı gerekirse fiilî yolculuk en az üç akademik yıldır ve daha erken kabul/vize planı ister."
+      },
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": null,
+        "status": "not_published",
+        "confidence": "unknown",
+        "reason": "no_iso_dated_deadline_in_record",
+        "evaluated_at": "2026-08-30"
       }
     },
     "ranking_profile": {
@@ -7686,11 +8545,11 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "perspective_reviews": {
@@ -7703,6 +8562,54 @@
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
       }
+    },
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "unknown",
+      "score": null,
+      "score_basis_weight": 30,
+      "evidenced_dimensions": 1,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "aviation_management",
+        "air_transport",
+        "atm",
+        "cns",
+        "aviation_safety",
+        "human_factors",
+        "simulators",
+        "aviation_environment"
+      ],
+      "confidence": "unknown",
+      "legacy_relevance_status": null,
+      "evaluated_at": "2026-08-30"
     }
   },
   {
@@ -7994,6 +8901,24 @@
       "notes": {
         "en": "The current EUR 2,700 non-EU tuition supersedes the older EUR 2,430 figure printed in the Practical Guide. Living estimates are planning ranges, not guaranteed prices.",
         "tr": "Güncel 2.700 EUR AB dışı ücret, Practical Guide'daki eski 2.430 EUR tutarın yerine geçer. Yaşam tahminleri planlama aralığıdır; garanti fiyat değildir."
+      },
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -8093,6 +9018,61 @@
       "notes": {
         "en": "Campus housing is inexpensive but not documented as guaranteed. Keep a private-market fallback and recheck the older guide's rental ranges.",
         "tr": "Kampüs yurdu ucuzdur ancak garanti edildiği belgelenmemiştir. Özel piyasa yedeği tutun ve eski rehberdeki kira aralıklarını yeniden kontrol edin."
+      },
+      "housing_difficulty": "unknown",
+      "housing_search_difficulty": "unknown",
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": 4,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 2,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": "not_guaranteed",
+            "points": 3,
+            "derived_from": "living_profile.housing_access"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": "separate_application_generous_window",
+            "points": 1,
+            "derived_from": "living_profile.housing_application_separate"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
       }
     },
     "curriculum_profile": {
@@ -8356,6 +9336,22 @@
       "planning_advice": {
         "en": "A Türkiye applicant should not wait for July. Prepare legalized documents and language proof before February, submit early in the non-EU window and budget for immediate full-year tuition payment after the Letter of Acceptance.",
         "tr": "Türkiye'den aday temmuzu beklememelidir. Tasdikli belgeleri ve dil kanıtını şubattan önce hazırlayın, AB dışı pencerenin başında başvurun ve Kabul Mektubundan sonra tam yıllık ücreti hemen ödemeye hazır olun."
+      },
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": "2026-05-11",
+        "next_expected_date": null,
+        "time": null,
+        "timezone": null,
+        "applies_to": "all_applicants",
+        "cycle_label": null,
+        "is_recurring_annual": false,
+        "status": "closed",
+        "days_remaining_at_evaluation": -111,
+        "derived_from": "application_timeline_profile.deadline_events[]",
+        "confidence": "high",
+        "source_url": null,
+        "evaluated_at": "2026-08-30"
       }
     },
     "ranking_profile": {
@@ -8806,11 +9802,11 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "perspective_reviews": {
@@ -8823,6 +9819,55 @@
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
       }
+    },
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "unknown",
+      "score": null,
+      "score_basis_weight": 30,
+      "evidenced_dimensions": 1,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "aviation_ict",
+        "software_engineering",
+        "systems_engineering",
+        "data",
+        "cybersecurity",
+        "computer_vision",
+        "uav",
+        "atm_networks",
+        "decision_support"
+      ],
+      "confidence": "unknown",
+      "legacy_relevance_status": null,
+      "evaluated_at": "2026-08-30"
     }
   },
   {
@@ -9051,7 +10096,25 @@
       "tuition_sek_per_year": null,
       "tuition_dkk_per_year": null,
       "mandatory_fees_usd_per_year": null,
-      "total_cost_of_attendance_usd_per_year": null
+      "total_cost_of_attendance_usd_per_year": null,
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
+      }
     },
     "scholarship_profile": {
       "application_mode": "separate",
@@ -9119,6 +10182,61 @@
       "notes": {
         "en": "A separate online request by 1 August is mandatory for normal consideration. Missing, incomplete or unattended requests are considered only if places remain. A current 2026/27 self-funded non-EU monthly dormitory rate and official total living budget were not verified.",
         "tr": "Normal değerlendirme için 1 Ağustos'a kadar ayrı çevrim içi talep zorunludur. Eksik, tamamlanmamış veya zamanında kullanılmayan talepler yalnız yer kalırsa değerlendirilir. 2026/27 kendi ücretini ödeyen AB dışı öğrenci için güncel aylık yurt ücreti ve resmî toplam yaşam bütçesi doğrulanmadı."
+      },
+      "housing_difficulty": "unknown",
+      "housing_search_difficulty": "unknown",
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": 4,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 2,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": "not_guaranteed",
+            "points": 3,
+            "derived_from": "living_profile.housing_access"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": "separate_application_generous_window",
+            "points": 1,
+            "derived_from": "living_profile.housing_application_separate"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
       }
     },
     "curriculum_profile": {
@@ -9424,6 +10542,22 @@
       "planning_advice": {
         "en": "For a Türkiye applicant without Romanian B1, treat the route as a three-year academic journey and apply first to the preparatory year. Scholarship applications close earlier than UCV admission, while housing requires a separate request by 1 August.",
         "tr": "Rumence B1'i olmayan Türkiye adayı rotayı üç yıllık akademik yolculuk olarak görmeli ve önce hazırlık yılına başvurmalıdır. Burs başvuruları UCV kabulünden daha erken kapanır; yurt içinse 1 Ağustos'a kadar ayrı talep gerekir."
+      },
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": "2026-08-01",
+        "next_expected_date": null,
+        "time": null,
+        "timezone": null,
+        "applies_to": "all_applicants",
+        "cycle_label": null,
+        "is_recurring_annual": false,
+        "status": "closed",
+        "days_remaining_at_evaluation": -29,
+        "derived_from": "application_timeline_profile.deadline_events[]",
+        "confidence": "high",
+        "source_url": null,
+        "evaluated_at": "2026-08-30"
       }
     },
     "ranking_profile": {
@@ -10003,11 +11137,11 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "perspective_reviews": {
@@ -10022,7 +11156,57 @@
       }
     },
     "tuition_eur_per_year": null,
-    "annual_fee_eur": null
+    "annual_fee_eur": null,
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "weak_match",
+      "score": 17,
+      "score_basis_weight": 90,
+      "evidenced_dimensions": 4,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "moderate",
+          "basis": "2_named_items",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "aerospace",
+        "avionics",
+        "navigation",
+        "gnc",
+        "autopilot",
+        "flight_dynamics",
+        "propulsion_control",
+        "structures",
+        "emc",
+        "onboard_power"
+      ],
+      "confidence": "medium",
+      "legacy_relevance_status": null,
+      "evaluated_at": "2026-08-30"
+    }
   },
   {
     "schema_version": "2.0.0",
@@ -10211,7 +11395,25 @@
       "tuition_sek_per_year": null,
       "tuition_dkk_per_year": null,
       "mandatory_fees_usd_per_year": null,
-      "total_cost_of_attendance_usd_per_year": null
+      "total_cost_of_attendance_usd_per_year": null,
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
+      }
     },
     "scholarship_profile": {
       "application_mode": "unknown",
@@ -10275,6 +11477,63 @@
       "notes": {
         "en": "The national portal reports 849 institution-level dormitory places and EUR 680/month for Bucharest excluding rent, but it publishes no MTA allocation right, fee or guarantee for civilian/international students.",
         "tr": "Ulusal portal kurum düzeyinde 849 yurt yeri ve Bükreş için kira hariç aylık 680 EUR bildirir; ancak sivil/uluslararası öğrenci için MTA tahsis hakkı, ücret veya garanti yayımlamaz."
+      },
+      "housing_difficulty": "unknown",
+      "housing_search_difficulty": "unknown",
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": null,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 0,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
       }
     },
     "curriculum_profile": {
@@ -10456,6 +11715,14 @@
       "planning_advice": {
         "en": "Use the 2025 dates only as historical evidence, not as a forecast. Ask the faculty for the 2026/27 master regulation and non-EU route before preparing travel for an on-campus interview.",
         "tr": "2025 tarihlerini tahmin olarak değil yalnız geçmiş kanıt olarak kullanın. Yüz yüze mülakat seyahatini planlamadan önce fakülteden 2026/27 yüksek lisans yönetmeliğini ve AB dışı rotayı isteyin."
+      },
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": null,
+        "status": "not_published",
+        "confidence": "unknown",
+        "reason": "no_iso_dated_deadline_in_record",
+        "evaluated_at": "2026-08-30"
       }
     },
     "ranking_profile": {
@@ -10847,7 +12114,7 @@
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
       ],
@@ -10894,9 +12161,59 @@
         "scholarship"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "tuition_eur_per_year": null,
-    "annual_fee_eur": null
+    "annual_fee_eur": null,
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "strong_adjacent",
+      "score": 68,
+      "score_basis_weight": 90,
+      "evidenced_dimensions": 4,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "strong",
+          "basis": "7_named_items",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "strong",
+          "basis": "3_named_items",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "moderate",
+          "basis": "1_named_items",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "aerospace",
+        "aeronautical_systems",
+        "avionics",
+        "navigation",
+        "flight_dynamics",
+        "control",
+        "propulsion",
+        "structures",
+        "uav",
+        "ai"
+      ],
+      "confidence": "medium",
+      "legacy_relevance_status": null,
+      "evaluated_at": "2026-08-30"
+    }
   }
 ]

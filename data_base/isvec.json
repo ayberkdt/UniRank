@@ -117,7 +117,25 @@
         "en": "KTH states the fee in SEK; no EUR conversion is stored.",
         "tr": "KTH ücreti SEK olarak yayımlar; EUR dönüşümü kaydedilmedi."
       },
-      "application_fee_eur": null
+      "application_fee_eur": null,
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
+      }
     },
     "scholarship_profile": {
       "available_types": [],
@@ -152,7 +170,7 @@
     },
     "living_profile": {
       "city_type": "Medium",
-      "housing_search_difficulty": "high",
+      "housing_search_difficulty": "unknown",
       "housing_cost_range_eur": null,
       "student_dorm_availability": "unknown",
       "living_cost_risk": "Bilinmiyor / Resmi Veri Yok",
@@ -173,13 +191,68 @@
         12000
       ],
       "official_budget_basis": "three current-student 2026 budgets published by KTH; not a universal cost estimate",
-      "housing_difficulty": "high",
+      "housing_difficulty": "unknown",
       "student_housing_available": true,
       "monthly_living_cost_eur_min": null,
       "monthly_living_cost_eur_max": null,
       "living_risk": "unknown",
       "housing_access": "unknown",
-      "housing_application_separate": null
+      "housing_application_separate": null,
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": null,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 0,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
+      }
     },
     "curriculum_profile": {
       "structure": null,
@@ -287,14 +360,105 @@
         "Application opens 2026-10-16",
         "Documents/application fee by 2027-02-01",
         "Admission results 2027-04-01"
-      ]
+      ],
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": "2027-01-15",
+        "next_expected_date": null,
+        "time": null,
+        "timezone": null,
+        "applies_to": "non_eu",
+        "cycle_label": null,
+        "is_recurring_annual": false,
+        "status": "open",
+        "days_remaining_at_evaluation": 138,
+        "derived_from": "application_timeline_profile.non_eu_deadline",
+        "confidence": "high",
+        "source_url": "https://www.kth.se/en/studies/master/aerospace-engineering",
+        "evaluated_at": "2026-08-30"
+      }
     },
     "research_profile": {
       "research_focus_areas": [],
       "key_institutes": [],
       "research_funding_level": "very_high",
       "research_risk": "low",
-      "verification_notes": ""
+      "verification_notes": "",
+      "department": "Department of Engineering Mechanics, School of Engineering Sciences",
+      "department_url": "https://www.kth.se/en/tekmek/institutionen-for-teknisk-mekanik-1.1204789",
+      "department_note": {
+        "en": "KTH runs aerospace as one application area of a broader engineering mechanics department that also covers naval, vehicle, railway and biomechanics. The MSc itself is structured into four tracks — Aeronautics, Space, Lightweight Structures and Systems Engineering — and every student takes one mandatory course in each during the first autumn, which means you choose your track after seeing all four rather than at application.",
+        "tr": "KTH havacılığı, deniz, taşıt, demiryolu ve biyomekaniği de kapsayan daha geniş bir mühendislik mekaniği bölümünün bir uygulama alanı olarak yürütür. Yüksek lisansın kendisi dört ize ayrılmıştır — Havacılık, Uzay, Hafif Yapılar ve Sistem Mühendisliği — ve her öğrenci ilk güz döneminde her birinden bir zorunlu ders alır; yani izini başvuruda değil, dördünü de gördükten sonra seçersin."
+      },
+      "faculty_contact_policy": "only_with_specific_research_question",
+      "research_units": [
+        {
+          "name": "FLOW research centre",
+          "unit_type": "centre",
+          "url": "https://www.flow.kth.se/",
+          "topics": [
+            "turbulence",
+            "cfd",
+            "experimental_fluids",
+            "aerodynamics",
+            "hpc"
+          ],
+          "student_access": "msc_thesis_open",
+          "why_it_fits": {
+            "en": "KTH's fluid mechanics centre, internationally known for turbulence and flow control. If turbulence or cfd is your tag, FLOW is the specific unit to name — the department's other application areas dilute the aerospace framing but not the fluid mechanics depth.",
+            "tr": "KTH'nin akışkanlar mekaniği merkezi; türbülans ve akış kontrolüyle uluslararası olarak tanınır. Etiketin turbulence veya cfd ise, adlandırman gereken spesifik birim FLOW'dur — bölümün diğer uygulama alanları havacılık çerçevesini seyreltir ancak akışkanlar mekaniği derinliğini değil."
+          },
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "Engineering Mechanics research areas",
+          "unit_type": "research_group",
+          "url": "https://www.kth.se/en/tekmek/institutionen-for-teknisk-mekanik-1.1204789",
+          "topics": [
+            "structural_mechanics",
+            "aeroacoustics",
+            "lightweight_design",
+            "turbulence",
+            "flight_mechanics"
+          ],
+          "stated_research_areas": [
+            "Fundamental mechanics",
+            "Fluid mechanics",
+            "Solid mechanics",
+            "Engineering acoustics",
+            "Lightweight structures",
+            "Application areas: aerospace, naval, vehicle dynamics, railway vehicles, biomechanics"
+          ],
+          "student_access": "msc_thesis_open",
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "MSc Aerospace Engineering track structure with wind tunnel testing",
+          "unit_type": "facility",
+          "url": "https://www.kth.se/en/studies/master/aerospace-engineering/msc-aerospace-engineering-1.6529",
+          "topics": [
+            "wind_tunnel",
+            "aerodynamics",
+            "aircraft_design",
+            "aeroelasticity",
+            "systems_engineering"
+          ],
+          "student_access": "project_course_open",
+          "why_it_fits": {
+            "en": "The Aeronautics track states that students plan, perform and evaluate a wind tunnel test during their studies, and that the track covers how aerodynamic and structural properties influence stability and control. That is a taught aeroelasticity thread, which many programmes leave to electives.",
+            "tr": "Havacılık izi, öğrencilerin eğitimleri sırasında bir rüzgâr tüneli testi planlayıp yürüttüğünü ve değerlendirdiğini; izin aerodinamik ve yapısal özelliklerin kararlılık ile kontrolü nasıl etkilediğini kapsadığını belirtir. Bu, birçok programın seçmelilere bıraktığı, öğretilen bir aeroelastisite hattıdır."
+          },
+          "last_verified": "2026-08-30"
+        }
+      ],
+      "faculty_email_availability": {
+        "status": "not_published",
+        "note": {
+          "en": "The department and programme pages describe the research areas and tracks but publish no individual staff addresses on the checked pages.",
+          "tr": "Bölüm ve program sayfaları araştırma alanlarını ve izleri anlatır ancak kontrol edilen sayfalarda bireysel personel adresi yayımlamaz."
+        },
+        "directory_url": "https://www.kth.se/en/tekmek/institutionen-for-teknisk-mekanik-1.1204789"
+      }
     },
     "industry_ecosystem_profile": {
       "local_industry_strength": "very_high",
@@ -310,7 +474,7 @@
         "https://www.universityadmissions.se/intl/search?period=18&freeText=aerospace+engineering",
         "https://www.kth.se/en/studies/master/aerospace-engineering"
       ],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-08-30",
       "field_confidence": {
         "tuition": "high",
         "admission": "high",
@@ -461,6 +625,51 @@
             "en": "Official page checked directly on 14 July 2026.",
             "tr": "Resmî sayfa 14 Temmuz 2026 tarihinde doğrudan kontrol edildi."
           }
+        },
+        {
+          "url": "https://www.kth.se/en/tekmek/institutionen-for-teknisk-mekanik-1.1204789",
+          "title": "KTH — Department of Engineering Mechanics",
+          "source_type": "official_department_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "research",
+            "department"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes the department's research span and its application areas.",
+            "tr": "Bölümün araştırma yelpazesini ve uygulama alanlarını yayımlar."
+          }
+        },
+        {
+          "url": "https://www.kth.se/en/studies/master/aerospace-engineering/msc-aerospace-engineering-1.6529",
+          "title": "KTH — MSc Aerospace Engineering",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "research",
+            "program",
+            "curriculum"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "States the four tracks, the mandatory foundation course in each and the wind tunnel test requirement.",
+            "tr": "Dört izi, her birindeki zorunlu temel dersi ve rüzgâr tüneli testi gerekliliğini belirtir."
+          }
+        },
+        {
+          "url": "https://www.flow.kth.se/",
+          "title": "KTH — FLOW research centre",
+          "source_type": "official_lab_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "research",
+            "labs"
+          ],
+          "confidence": "high"
         }
       ],
       "needs_verification": false
@@ -481,7 +690,7 @@
     "qs_ranking": 82,
     "data_quality": {
       "status": "verified",
-      "checked_official_source_count": 9,
+      "checked_official_source_count": 12,
       "verified_fields": [
         "program",
         "language",
@@ -491,14 +700,15 @@
         "scholarship",
         "deadline",
         "curriculum",
+        "research",
         "housing"
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-30"
     },
     "quality_control": {
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "qc_status": "passed",
       "remaining_verification_tasks": [],
       "qc_notes": {
@@ -530,6 +740,64 @@
           "en": "Institutional global rank; it is not evidence of aerospace or space-programme fit.",
           "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
         }
+      }
+    },
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "partial_match",
+      "score": 50,
+      "score_basis_weight": 90,
+      "evidenced_dimensions": 4,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "strong",
+          "basis": "four declared MSc tracks — Aeronautics, Space, Lightweight Structures and Systems Engineering — each with a mandatory foundation course",
+          "weight": 30,
+          "source_url": "https://www.kth.se/en/studies/master/aerospace-engineering/msc-aerospace-engineering-1.6529"
+        },
+        "research_group_evidence": {
+          "level": "moderate",
+          "basis": "a named fluid mechanics centre and published engineering mechanics research areas, with aerospace as one of several application areas",
+          "weight": 25,
+          "source_url": "https://www.kth.se/en/tekmek/institutionen-for-teknisk-mekanik-1.1204789"
+        },
+        "faculty_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "aerodynamics",
+        "space_systems",
+        "aerospace_structures",
+        "systems_engineering"
+      ],
+      "confidence": "medium",
+      "legacy_relevance_status": "needs_review",
+      "evaluated_at": "2026-08-30"
+    },
+    "academic_match_evidence": {
+      "research_group_evidence": {
+        "level": "moderate",
+        "basis": "a named fluid mechanics centre and published engineering mechanics research areas, with aerospace as one of several application areas",
+        "source_url": "https://www.kth.se/en/tekmek/institutionen-for-teknisk-mekanik-1.1204789"
+      },
+      "curriculum_evidence": {
+        "level": "strong",
+        "basis": "four declared MSc tracks — Aeronautics, Space, Lightweight Structures and Systems Engineering — each with a mandatory foundation course",
+        "source_url": "https://www.kth.se/en/studies/master/aerospace-engineering/msc-aerospace-engineering-1.6529"
       }
     }
   },
@@ -614,6 +882,10 @@
         "validity_rule": "",
         "waiver_rules": [],
         "source_ids": []
+      },
+      "entry_note": {
+        "en": "A bachelor's degree in mechanical, mechatronic, electrical, vehicle, automotive, aerospace or civil engineering, engineering physics, engineering mathematics or naval architecture. Specific prerequisites: at least 24 credits of mathematics including linear algebra, multivariable analysis, numerical analysis and mathematical statistics or probability; mechanics including statics and dynamics; a control theory or automatic control course; and programming. The control-theory prerequisite is the one applicants from pure mechanical backgrounds most often miss.",
+        "tr": "Makine, mekatronik, elektrik, taşıt, otomotiv, havacılık veya inşaat mühendisliği, mühendislik fiziği, mühendislik matematiği ya da gemi inşasında lisans derecesi. Özel ön koşullar: doğrusal cebir, çok değişkenli analiz, sayısal analiz ve matematiksel istatistik ya da olasılık dâhil en az 24 kredi matematik; statik ve dinamik dâhil mekanik; bir kontrol teorisi veya otomatik kontrol dersi; ve programlama. Saf makine geçmişinden gelen adayların en sık kaçırdığı ön koşul kontrol teorisidir."
       }
     },
     "language_profile": {
@@ -658,6 +930,24 @@
         "amount": 320000,
         "currency": "SEK",
         "basis": "four semesters at SEK 80,000; published programme price"
+      },
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -685,7 +975,7 @@
     },
     "living_profile": {
       "city_type": "Medium",
-      "housing_search_difficulty": "medium",
+      "housing_search_difficulty": "unknown",
       "housing_cost_range_eur": null,
       "student_dorm_availability": "unknown",
       "living_cost_risk": "medium",
@@ -699,7 +989,7 @@
       "monthly_living_cost_sek_per_month_min": 14360,
       "monthly_living_cost_sek_per_month_max": 18360,
       "monthly_living_cost_eur_estimated": null,
-      "housing_difficulty": "high",
+      "housing_difficulty": "unknown",
       "monthly_living_cost_eur_min": null,
       "monthly_living_cost_eur_max": null,
       "living_cost_eur_per_month": null,
@@ -718,7 +1008,62 @@
       },
       "student_housing_available": true,
       "housing_access": "unknown",
-      "housing_application_separate": null
+      "housing_application_separate": null,
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": null,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 0,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
+      }
     },
     "curriculum_profile": {
       "structure": null,
@@ -743,7 +1088,11 @@
         "Project in Aerospace",
         "Aerospace profile courses"
       ],
-      "curriculum_url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/?p=12"
+      "curriculum_url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/?p=12",
+      "specialisation_note": {
+        "en": "Four specialisations — Automotive Engineering, Railway Technology, Naval Architecture and Ocean Engineering, and Aerospace Engineering — sit inside one 120-credit programme. The first phase is common to all sectors, including a project-based course on systems and mechatronics and one on propulsion and energy systems, before you go deeper in one sector. Courses outside the specialisations cover electric machines and drive systems, systems engineering fundamentals and data-driven engineering for connected fleets. Note that Naval Architecture and Ocean Engineering has separate entry requirements and must be selected at application.",
+        "tr": "Dört uzmanlaşma — Otomotiv Mühendisliği, Demiryolu Teknolojisi, Gemi İnşası ve Okyanus Mühendisliği, Havacılık ve Uzay Mühendisliği — tek bir 120 kredilik programın içindedir. İlk aşama tüm sektörler için ortaktır; sistemler ve mekatronik üzerine proje tabanlı bir ders ile itki ve enerji sistemleri üzerine bir ders içerir, ardından tek bir sektörde derinleşirsin. Uzmanlaşmaların dışındaki dersler elektrik makineleri ve tahrik sistemleri, sistem mühendisliği temelleri ve bağlantılı filolar için veriye dayalı mühendisliği kapsar. Gemi İnşası ve Okyanus Mühendisliği'nin ayrı giriş koşulları olduğunu ve başvuruda seçilmesi gerektiğini not et."
+      }
     },
     "category_profile": {
       "primary_categories": [],
@@ -774,19 +1123,106 @@
       "deadline_non_eu": null,
       "timeline_risk": "high",
       "verification_notes": "",
-      "academic_year": "2026/2027",
+      "academic_year": "2027/2028",
       "intake_terms": [
-        "Autumn"
+        "Autumn 2027"
       ],
       "non_eu_deadline": "Mid-January (annual application period; verify exact University Admissions date)",
-      "eu_deadline": "Mid-January (annual application period; verify exact University Admissions date)"
+      "eu_deadline": "Mid-January (annual application period; verify exact University Admissions date)",
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": "2027-01-15",
+        "next_expected_date": null,
+        "time": null,
+        "timezone": null,
+        "applies_to": "all_applicants",
+        "cycle_label": null,
+        "is_recurring_annual": true,
+        "status": "open",
+        "days_remaining_at_evaluation": 138,
+        "derived_from": "application_timeline_profile.application_deadline",
+        "confidence": "high",
+        "source_url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/?p=12",
+        "evaluated_at": "2026-08-30"
+      },
+      "application_deadline": "2027-01-15",
+      "application_opens": "2026-10-16",
+      "recurring_annual_deadline": true,
+      "deadline_notes": {
+        "en": "Chalmers publishes both ends of the window on the programme page: applications open on 16 October 2026 and close on 15 January 2027. The page also marks the current cycle as closed, so these are the dates of the next round, not the one just past.",
+        "tr": "Chalmers pencerenin iki ucunu da program sayfasında yayımlar: başvurular 16 Ekim 2026'da açılır ve 15 Ocak 2027'de kapanır. Sayfa mevcut döngüyü de kapalı olarak işaretler; yani bunlar yeni geçen turun değil, bir sonraki turun tarihleridir."
+      }
     },
     "research_profile": {
       "research_focus_areas": [],
       "key_institutes": [],
       "research_funding_level": "very_high",
       "research_risk": "low",
-      "verification_notes": ""
+      "verification_notes": "",
+      "department": "Mobility Engineering MSc, educational area Mechanical Engineering",
+      "department_url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/",
+      "department_note": {
+        "en": "The honest shape of this record: aerospace is one of four specialisations inside a mobility programme, alongside automotive, railway and naval architecture. The research centres Chalmers names on the programme page — CHARMEC for railway mechanics, SAFER for traffic safety, Lighthouse for maritime, the Swedish Electromobility Center — are strong but mostly not aerospace. TechForH2, on hydrogen across transport sectors, is the one that reaches aviation propulsion. Choose this record for the systems-engineering framing and the Gothenburg industry cluster, not for aerospace depth.",
+        "tr": "Bu kaydın dürüst biçimi: havacılık, bir hareketlilik programının içinde otomotiv, demiryolu ve gemi inşası ile birlikte dört uzmanlaşmadan biridir. Chalmers'ın program sayfasında adlandırdığı araştırma merkezleri — demiryolu mekaniği için CHARMEC, trafik güvenliği için SAFER, denizcilik için Lighthouse, İsveç Elektromobilite Merkezi — güçlüdür ama çoğu havacılık değildir. Ulaşım sektörleri genelinde hidrojen üzerine olan TechForH2, havacılık itkisine ulaşan tek merkezdir. Bu kaydı havacılık derinliği için değil, sistem mühendisliği çerçevesi ve Göteborg sanayi kümesi için seç."
+      },
+      "faculty_contact_policy": "only_with_specific_research_question",
+      "research_units": [
+        {
+          "name": "TechForH2",
+          "unit_type": "centre",
+          "url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/",
+          "topics": [
+            "energy_systems",
+            "combustion",
+            "jet_propulsion",
+            "industrial_projects"
+          ],
+          "student_access": "msc_thesis_open",
+          "why_it_fits": {
+            "en": "Chalmers names TechForH2 as a competence centre addressing hydrogen usage across different transport sectors, and states that students may carry out the thesis project across these research groups. Of the centres listed, this is the one whose subject matter reaches aviation — the programme itself argues that aerospace needs engineers who combine aerodynamics, propulsion and compressible flow with emerging propulsion and alternative fuels.",
+            "tr": "Chalmers, TechForH2'yi farklı ulaşım sektörlerinde hidrojen kullanımını ele alan bir yetkinlik merkezi olarak adlandırır ve öğrencilerin tez projelerini bu araştırma grupları arasında yürütebileceğini belirtir. Listelenen merkezler arasında konusu havacılığa ulaşan budur — programın kendisi de havacılığın aerodinamik, itki ve sıkıştırılabilir akışı yeni itki ile alternatif yakıtlarla birleştiren mühendislere ihtiyaç duyduğunu savunur."
+          },
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "CHARMEC — railway mechanics competence centre",
+          "unit_type": "centre",
+          "url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/",
+          "topics": [
+            "structural_mechanics",
+            "fatigue_damage",
+            "testing",
+            "industrial_projects"
+          ],
+          "student_access": "msc_thesis_open",
+          "why_it_fits": {
+            "en": "Over thirty years of research on design, deterioration, noise and vibration. Relevant to you only if fatigue_damage or structural_mechanics is your tag and you are willing to do it on rail rather than airframes — the mechanics transfer, the application does not.",
+            "tr": "Tasarım, bozulma, gürültü ve titreşim üzerine otuz yılı aşkın araştırma. Yalnızca etiketin fatigue_damage veya structural_mechanics ise ve bunu uçak gövdeleri yerine demiryolunda yapmaya istekliysen ilgilidir — mekanik aktarılır, uygulama aktarılmaz."
+          },
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "SAFER, Lighthouse and the Swedish Electromobility Center",
+          "unit_type": "consortium",
+          "url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/",
+          "topics": [
+            "systems_engineering",
+            "energy_systems",
+            "industrial_projects",
+            "verification_validation"
+          ],
+          "student_access": "msc_thesis_open",
+          "last_verified": "2026-08-30"
+        }
+      ],
+      "faculty_email_availability": {
+        "status": "not_published",
+        "note": {
+          "en": "The programme page names research centres rather than individual academics, and publishes no addresses. Chalmers restructured its departmental web pages, and the mechanics and maritime sciences department URLs previously used now return 404, so no faculty directory could be checked.",
+          "tr": "Program sayfası bireysel akademisyenler yerine araştırma merkezleri adlandırır ve adres yayımlamaz. Chalmers bölüm web sayfalarını yeniden yapılandırmıştır ve daha önce kullanılan mekanik ile denizcilik bilimleri bölümü adresleri artık 404 döndürmektedir; bu yüzden bir öğretim üyesi dizini kontrol edilememiştir."
+        },
+        "directory_url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/"
+      }
     },
     "industry_ecosystem_profile": {
       "local_industry_strength": "very_high",
@@ -794,7 +1230,11 @@
       "hiring_culture": "",
       "alumni_presence": "very_high",
       "industry_risk": "",
-      "verification_notes": ""
+      "verification_notes": "",
+      "ecosystem_note": {
+        "en": "Chalmers states that project work involves input and collaboration with regional industrial partners including Saab and the Volvo group, and describes Gothenburg as the largest port in the Nordic region with headquarters spanning aerospace, automotive, maritime and railway industries. The master's thesis may be completed directly with an industry or research partner.",
+        "tr": "Chalmers, proje çalışmasının Saab ve Volvo grubu dâhil bölgesel sanayi ortaklarının katkısı ve iş birliğiyle yürütüldüğünü belirtir; Göteborg'u havacılık, otomotiv, denizcilik ve demiryolu sanayilerinde merkezleri barındıran, Kuzey Avrupa'nın en büyük limanı olarak tanımlar. Yüksek lisans tezi doğrudan bir sanayi veya araştırma ortağıyla tamamlanabilir."
+      }
     },
     "source_profile": {
       "primary_url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/",
@@ -802,7 +1242,7 @@
         "https://www.chalmers.se/en/education/application-and-admission/",
         "https://www.chalmers.se/en/education/tuition-fees-and-scholarships/"
       ],
-      "last_verified": "2026-07-15",
+      "last_verified": "2026-08-30",
       "field_confidence": {
         "program_basic_info": "high",
         "language": "high",
@@ -936,6 +1376,26 @@
             "tr": "Resmî Swedish Institute ders kaydı, bu 120 AKTS ve İngilizce program için dönem başına 80.000 SEK verir. Chalmers'ın kendi fiyat tablosu değil, resmî bir devlet ders kaydıdır."
           },
           "final_url": "https://apply-scholarships.si.se/courses/course/715-mobility-engineering"
+        },
+        {
+          "url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/",
+          "title": "Chalmers University of Technology — Mobility Engineering, MSc",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "research",
+            "curriculum",
+            "program",
+            "deadline",
+            "admission",
+            "industry"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "States the four specialisations, the shared core courses, the named research centres, the industrial partners, the entry prerequisites and both ends of the application window.",
+            "tr": "Dört uzmanlaşmayı, ortak çekirdek dersleri, adlandırılmış araştırma merkezlerini, sanayi ortaklarını, giriş ön koşullarını ve başvuru penceresinin iki ucunu da belirtir."
+          }
         }
       ],
       "needs_verification": true,
@@ -957,7 +1417,7 @@
     "qs_ranking": 174,
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 8,
+      "checked_official_source_count": 9,
       "verified_fields": [
         "program",
         "language",
@@ -971,11 +1431,11 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-30"
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "qc_notes": {
@@ -1006,6 +1466,69 @@
           "en": "Institutional global rank; it is not evidence of aerospace or space-programme fit.",
           "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
         }
+      }
+    },
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "unknown",
+      "score": null,
+      "score_basis_weight": 55,
+      "evidenced_dimensions": 2,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "moderate",
+          "basis": "aerospace is one of four specialisations inside a shared mobility core; the aerospace-specific course content is not itemised on the programme page",
+          "weight": 30,
+          "source_url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/"
+        },
+        "research_group_evidence": {
+          "level": "moderate",
+          "basis": "five named research centres are published, but only TechForH2 addresses subject matter that reaches aviation; the rest are railway, traffic safety, maritime and electromobility",
+          "weight": 25,
+          "source_url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/"
+        },
+        "faculty_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "Aerodynamics",
+        "Space Systems",
+        "Propulsion",
+        "Structures"
+      ],
+      "confidence": "unknown",
+      "legacy_relevance_status": "medium",
+      "evaluated_at": "2026-08-30"
+    },
+    "academic_match_evidence": {
+      "research_group_evidence": {
+        "level": "moderate",
+        "basis": "five named research centres are published, but only TechForH2 addresses subject matter that reaches aviation; the rest are railway, traffic safety, maritime and electromobility",
+        "source_url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/"
+      },
+      "curriculum_evidence": {
+        "level": "moderate",
+        "basis": "aerospace is one of four specialisations inside a shared mobility core; the aerospace-specific course content is not itemised on the programme page",
+        "source_url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/"
+      },
+      "industry_evidence": {
+        "level": "strong",
+        "basis": "Saab and the Volvo group named as project partners, with the thesis stated to be completable at an industry partner",
+        "source_url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/"
       }
     }
   },
@@ -1091,6 +1614,10 @@
         "validity_rule": "",
         "waiver_rules": [],
         "source_ids": []
+      },
+      "entry_note": {
+        "en": "A bachelor's degree equivalent to a Swedish Kandidatexamen majoring in aeronautical or mechanical engineering, plus 30 ECTS in mathematics or applied mathematics relevant to the programme, a basic programming course, and English at Swedish upper-secondary Engelska 6 level. Selection in the January round is by merit rating in three groups (High, Good, Low), with lots drawn between applicants inside the same group — so a marginal grade difference can matter more than a strong motivation letter here.",
+        "tr": "Havacılık veya makine mühendisliği ana dalında İsveç Kandidatexamen'ine denk bir lisans derecesi, artı programla ilgili matematik veya uygulamalı matematikte 30 AKTS, temel bir programlama dersi ve İsveç lise Engelska 6 düzeyinde İngilizce. Ocak turunda seçim üç grupta (Yüksek, İyi, Düşük) not değerlendirmesiyle yapılır ve aynı grup içindeki adaylar arasında kura çekilir — yani burada marjinal bir not farkı güçlü bir niyet mektubundan daha çok önem taşıyabilir."
       }
     },
     "language_profile": {
@@ -1135,6 +1662,24 @@
         "amount": 332000,
         "currency": "SEK",
         "basis": "full programme"
+      },
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -1167,7 +1712,7 @@
     },
     "living_profile": {
       "city_type": "Medium",
-      "housing_search_difficulty": "medium",
+      "housing_search_difficulty": "unknown",
       "housing_cost_range_eur": null,
       "student_dorm_availability": "unknown",
       "living_cost_risk": "medium",
@@ -1181,14 +1726,69 @@
       "average_room_rent_sek_per_month_max": 6000,
       "monthly_living_cost_sek_per_month_min": 6400,
       "monthly_living_cost_sek_per_month_max": 13100,
-      "housing_difficulty": "medium",
+      "housing_difficulty": "unknown",
       "monthly_living_cost_eur_min": null,
       "monthly_living_cost_eur_max": null,
       "living_cost_eur_per_month": null,
       "living_risk": "medium",
       "student_housing_available": true,
       "housing_access": "unknown",
-      "housing_application_separate": null
+      "housing_application_separate": null,
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": null,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 0,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
+      }
     },
     "curriculum_profile": {
       "structure": null,
@@ -1208,7 +1808,11 @@
       ],
       "curriculum_url": "https://liu.se/en/education/program/6maer",
       "mandatory_courses": [],
-      "thesis_required": true
+      "thesis_required": true,
+      "specialisation_note": {
+        "en": "LiU frames the degree around a single question — what aviation will look like in twenty years — and states the span as aerodynamics, structures, systems integration and conceptual design, with sustainable aircraft and future drone transportation named as destinations. The degree awarded is a Master of Science (120 credits) with a major in Aeronautical Engineering, which is a narrower and more explicit major than the mechanical-engineering-with-a-track structure used at KTH and Chalmers.",
+        "tr": "LiU dereceyi tek bir soru etrafında çerçeveler — havacılık yirmi yıl sonra nasıl görünecek — ve kapsamı aerodinamik, yapılar, sistem entegrasyonu ve kavramsal tasarım olarak belirtir; hedefler arasında sürdürülebilir uçaklar ve gelecekteki drone taşımacılığı adlandırılır. Verilen derece, Havacılık Mühendisliği ana dalında Yüksek Lisans (120 kredi) olup, KTH ve Chalmers'ta kullanılan makine-mühendisliği-artı-iz yapısından daha dar ve daha açıktır."
+      }
     },
     "category_profile": {
       "primary_categories": [],
@@ -1252,6 +1856,22 @@
       "deadline_notes": {
         "en": "The official LiU page currently publishes the closed 2026/27 international Master's cycle, not an exact 2027/28 date. The record shows that checked cycle for planning context and deliberately refuses to extrapolate it. An applicant for the next intake must use the programme's Apply button/University Admissions when the new round opens.",
         "tr": "Resmî LiU sayfası şu anda kesin 2027/28 tarihi değil, kapanmış 2026/27 uluslararası yüksek lisans döngüsünü yayımlar. Kayıt bu doğrulanmış döngüyü planlama bağlamı için gösterir ve geleceğe taşımayı kasıtlı olarak reddeder. Sonraki girişe başvuracak aday, yeni dönem açıldığında programın Apply düğmesini/University Admissions sistemini kullanmalıdır."
+      },
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": "2026-01-15",
+        "next_expected_date": null,
+        "time": null,
+        "timezone": null,
+        "applies_to": "non_eu",
+        "cycle_label": null,
+        "is_recurring_annual": false,
+        "status": "closed",
+        "days_remaining_at_evaluation": -227,
+        "derived_from": "application_timeline_profile.non_eu_deadline",
+        "confidence": "high",
+        "source_url": "https://liu.se/en/education/application-and-admission/how-to-apply",
+        "evaluated_at": "2026-08-30"
       }
     },
     "research_profile": {
@@ -1263,6 +1883,91 @@
       "research_strength_summary": {
         "en": "The programme page identifies aircraft design and systems, aerodynamics, sub-scale test flights and air-vehicle structural integrity research.",
         "tr": "Program sayfası uçak tasarımı ve sistemleri, aerodinamik, ölçekli test uçuşları ve hava aracı yapısal bütünlüğü araştırmasını tanımlar."
+      },
+      "department": "Division of Fluid and Mechatronic Systems (FLUMES), Department of Management and Engineering (IEI)",
+      "department_url": "https://liu.se/en/organisation/liu/iei/flumes",
+      "department_note": {
+        "en": "FLUMES states plainly that it carries out research and education in fluid power systems and aeronautics — one division holding both. IEI as a whole has more than 500 staff across 19 divisions, three of which are directly relevant here: FLUMES, Applied Thermodynamics and Fluid Mechanics, and Solid Mechanics.",
+        "tr": "FLUMES, akışkan güç sistemleri ve havacılıkta araştırma ile eğitim yürüttüğünü açıkça belirtir — ikisini birden tutan tek bir bölüm. IEI bir bütün olarak 19 bölümde 500'den fazla personele sahiptir; bunların üçü burada doğrudan ilgilidir: FLUMES, Uygulamalı Termodinamik ve Akışkanlar Mekaniği, ve Katı Mekaniği."
+      },
+      "faculty_contact_policy": "only_with_specific_research_question",
+      "research_units": [
+        {
+          "name": "Division of Fluid and Mechatronic Systems (FLUMES)",
+          "unit_type": "research_group",
+          "url": "https://liu.se/en/organisation/liu/iei/flumes",
+          "lead": "Prof. Petter Krus is named on the division's pages as the recipient of the Thulin gold medal for aeronautical research",
+          "topics": [
+            "aircraft_design",
+            "simulation_modelling",
+            "systems_engineering",
+            "gnc",
+            "uav",
+            "energy_systems",
+            "mdo"
+          ],
+          "student_access": "msc_thesis_open",
+          "why_it_fits": {
+            "en": "The division publishes concrete student outcomes rather than themes: master's students designing and building an autonomously flying aircraft to document Arctic weather; a joint LiU-Stanford drone for forest-fire monitoring; a team that won a title at the SAE Aero Design competition in Brazil despite an engine fire, after which LiU committed to recurring student aircraft projects. If aircraft_design is your tag, that is a pattern of students actually building airframes, repeated across years.",
+            "tr": "Bölüm temalar yerine somut öğrenci çıktıları yayımlar: Arktik hava koşullarını belgelemek için otonom uçan bir uçak tasarlayıp inşa eden yüksek lisans öğrencileri; orman yangını izleme için ortak bir LiU-Stanford dronu; Brezilya'daki SAE Aero Design yarışmasında motor yangınına rağmen bir unvan kazanan ve ardından LiU'nun yinelenen öğrenci uçak projelerine bağlandığı bir ekip. Etiketin aircraft_design ise, bu yıllar boyunca tekrarlanan, öğrencilerin gerçekten uçak gövdesi inşa ettiği bir örüntüdür."
+          },
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "Saab 'iron bird' flight control test rig",
+          "unit_type": "facility",
+          "url": "https://liu.se/en/organisation/liu/iei/flumes",
+          "topics": [
+            "gnc",
+            "stability_control",
+            "avionics",
+            "verification_validation",
+            "testing",
+            "simulation_modelling"
+          ],
+          "student_access": "msc_thesis_open",
+          "why_it_fits": {
+            "en": "The division states that aircraft control systems have been essentially unchanged for over fifty years and that LiU researchers are working on the next generation using an 'iron bird' from Saab fitted with current technology. An iron bird is a full-scale ground rig of an aircraft's actuation and control systems — hardware you can command and break without a flight. Very few universities have one on campus.",
+            "tr": "Bölüm, uçak kontrol sistemlerinin elli yılı aşkın süredir esasen değişmediğini ve LiU araştırmacılarının güncel teknolojiyle donatılmış, Saab'dan gelen bir 'demir kuş' kullanarak yeni nesli çalıştığını belirtir. Demir kuş, bir uçağın eyleyici ve kontrol sistemlerinin tam ölçekli yer düzeneğidir — uçmadan komut verip bozabileceğin donanım. Çok az üniversitenin kampüsünde böyle bir şey vardır."
+          },
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "Division of Applied Thermodynamics and Fluid Mechanics",
+          "unit_type": "research_group",
+          "url": "https://liu.se/en/organisation/liu/iei",
+          "topics": [
+            "cfd",
+            "aerodynamics",
+            "heat_transfer",
+            "turbulence",
+            "energy_systems"
+          ],
+          "student_access": "msc_thesis_open",
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "Division of Solid Mechanics",
+          "unit_type": "research_group",
+          "url": "https://liu.se/en/organisation/liu/iei",
+          "topics": [
+            "structural_mechanics",
+            "fea",
+            "aerospace_structures",
+            "fatigue_damage",
+            "materials"
+          ],
+          "student_access": "msc_thesis_open",
+          "last_verified": "2026-08-30"
+        }
+      ],
+      "faculty_email_availability": {
+        "status": "not_published",
+        "note": {
+          "en": "The division page links a staff listing but publishes no addresses itself; none was read on the checked pages, so none is stored.",
+          "tr": "Bölüm sayfası bir personel listesine bağlantı verir ancak kendisi adres yayımlamaz; kontrol edilen sayfalarda adres okunmadığı için hiçbiri saklanmamıştır."
+        },
+        "directory_url": "https://liu.se/en/organisation/liu/iei/flumes"
       }
     },
     "industry_ecosystem_profile": {
@@ -1279,7 +1984,7 @@
         "https://liu.se/en/education/program/6maer",
         "https://liu.se/en/education/program/6maer"
       ],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-08-30",
       "field_confidence": {
         "program_basic_info": "high",
         "language": "high",
@@ -1330,22 +2035,6 @@
         },
         {
           "url": "https://liu.se/en/education/program/6maer",
-          "title": "Linköping Aeronautical Engineering Master's Programme",
-          "source_type": "official_program_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "program",
-            "language",
-            "admission",
-            "curriculum",
-            "non_eu_eligibility"
-          ],
-          "confidence": "high",
-          "notes": ""
-        },
-        {
-          "url": "https://liu.se/en/education/program/6maer",
           "title": "Linköping Aeronautical Engineering tuition",
           "source_type": "official_tuition_page",
           "access_status": "ok",
@@ -1373,6 +2062,56 @@
             "en": "Current LiU guide documents the 15 January 2026 application deadline, 2 February document/fee deadline, 26 March Master's result and 26-31 March scholarship period for the checked international Master's cycle, and explains that no Master's programmes start in spring.",
             "tr": "Güncel LiU rehberi, kontrol edilen uluslararası yüksek lisans döngüsü için 15 Ocak 2026 başvuru son tarihini, 2 Şubat belge/ücret son tarihini, 26 Mart yüksek lisans sonucunu ve 26-31 Mart burs dönemini belgeler; ayrıca yüksek lisans programlarının baharda başlamadığını açıklar."
           }
+        },
+        {
+          "url": "https://liu.se/en/organisation/liu/iei/flumes",
+          "title": "Linköping University — Division of Fluid and Mechatronic Systems (FLUMES)",
+          "source_type": "official_department_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "research",
+            "department",
+            "labs"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "States the division's remit in fluid power and aeronautics and publishes the student aircraft, drone, Saab iron bird and SAE Aero Design items.",
+            "tr": "Bölümün akışkan güç ve havacılık kapsamını belirtir; öğrenci uçağı, drone, Saab demir kuşu ve SAE Aero Design haberlerini yayımlar."
+          }
+        },
+        {
+          "url": "https://liu.se/en/education/program/6maer",
+          "title": "Linköping University — Aeronautical Engineering, Master's Programme",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "curriculum",
+            "program",
+            "admission"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "States the degree major, the entry requirements, the merit-rating selection groups and the tuition figure for non-EU students.",
+            "tr": "Derece ana dalını, giriş koşullarını, not değerlendirme seçim gruplarını ve AB dışı öğrenciler için öğrenim ücreti rakamını belirtir."
+          }
+        },
+        {
+          "url": "https://liu.se/en/organisation/liu/iei",
+          "title": "Linköping University — Department of Management and Engineering (IEI)",
+          "source_type": "official_department_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "research",
+            "department"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes the department's size and its list of nineteen divisions.",
+            "tr": "Bölümün büyüklüğünü ve on dokuz alt bölümünün listesini yayımlar."
+          }
         }
       ],
       "needs_verification": false,
@@ -1393,26 +2132,28 @@
     },
     "qs_ranking": 308,
     "data_quality": {
-      "status": "verified",
-      "checked_official_source_count": 5,
+      "status": "partial",
+      "checked_official_source_count": 7,
       "verified_fields": [
         "program",
-        "language",
         "admission",
         "non_eu_eligibility",
         "tuition",
         "scholarship",
         "deadline",
         "curriculum",
+        "research",
         "housing"
       ],
-      "unverified_critical_fields": [],
+      "unverified_critical_fields": [
+        "language"
+      ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-30"
     },
     "quality_control": {
       "qc_status": "passed",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "qc_notes": {
@@ -1443,6 +2184,70 @@
           "en": "Institutional global rank; it is not evidence of aerospace or space-programme fit.",
           "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
         }
+      }
+    },
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "strong_adjacent",
+      "score": 68,
+      "score_basis_weight": 90,
+      "evidenced_dimensions": 4,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "strong",
+          "basis": "a dedicated Aeronautical Engineering major at 120 credits with a declared span from aerodynamics and structures to systems integration and conceptual design",
+          "weight": 30,
+          "source_url": "https://liu.se/en/education/program/6maer"
+        },
+        "research_group_evidence": {
+          "level": "strong",
+          "basis": "a named division combining fluid power and aeronautics, plus two further relevant IEI divisions, with published student aircraft and drone outcomes",
+          "weight": 25,
+          "source_url": "https://liu.se/en/organisation/liu/iei/flumes"
+        },
+        "faculty_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "moderate",
+          "basis": "a Saab 'iron bird' flight control rig is stated to be in use for next-generation control research; no test-facility specification is published",
+          "weight": 10,
+          "source_url": "https://liu.se/en/organisation/liu/iei/flumes"
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "Aerodynamics",
+        "Space Systems",
+        "Propulsion",
+        "Structures"
+      ],
+      "confidence": "medium",
+      "legacy_relevance_status": "needs_review",
+      "evaluated_at": "2026-08-30"
+    },
+    "academic_match_evidence": {
+      "research_group_evidence": {
+        "level": "strong",
+        "basis": "a named division combining fluid power and aeronautics, plus two further relevant IEI divisions, with published student aircraft and drone outcomes",
+        "source_url": "https://liu.se/en/organisation/liu/iei/flumes"
+      },
+      "facility_evidence": {
+        "level": "moderate",
+        "basis": "a Saab 'iron bird' flight control rig is stated to be in use for next-generation control research; no test-facility specification is published",
+        "source_url": "https://liu.se/en/organisation/liu/iei/flumes"
+      },
+      "curriculum_evidence": {
+        "level": "strong",
+        "basis": "a dedicated Aeronautical Engineering major at 120 credits with a declared span from aerodynamics and structures to systems integration and conceptual design",
+        "source_url": "https://liu.se/en/education/program/6maer"
       }
     }
   },
@@ -1527,6 +2332,25 @@
       "source_notes": {
         "en": "LTU publishes SEK 70,000/semester; no EUR conversion is stored.",
         "tr": "LTU dönem başına 70.000 SEK yayımlar; EUR dönüşümü kaydedilmez."
+      },
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": "SEK",
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [
+          "tuition"
+        ],
+        "missing_mandatory_components": [
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -1565,7 +2389,63 @@
         "tr": "LTU'nun resmî değişim rehberi konaklama için 4.000 SEK dahil yaklaşık aylık 10.000 SEK İsveç örnek bütçesi verir. Bu Kiruna kira garantisi değil planlama rehberidir; LTU Kiruna öğrencilerini Kirunabostäder'e yönlendirir."
       },
       "housing_access": "unknown",
-      "housing_application_separate": null
+      "housing_application_separate": null,
+      "housing_search_difficulty": "unknown",
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": null,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 0,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
+      }
     },
     "curriculum_profile": {
       "tracks": [
@@ -1637,6 +2517,22 @@
       "deadline_notes": {
         "en": "The published date is for the 30 August 2027 start and application code LTU-97406.",
         "tr": "Yayımlanan tarih 30 Ağustos 2027 başlangıcı ve LTU-97406 başvuru kodu içindir."
+      },
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": "2027-01-15",
+        "next_expected_date": null,
+        "time": null,
+        "timezone": null,
+        "applies_to": "non_eu",
+        "cycle_label": null,
+        "is_recurring_annual": false,
+        "status": "open",
+        "days_remaining_at_evaluation": 138,
+        "derived_from": "application_timeline_profile.non_eu_deadline",
+        "confidence": "high",
+        "source_url": "https://www.ltu.se/en/education/programme/tmrra-master-programme-in-space-science-and-technology",
+        "evaluated_at": "2026-08-30"
       }
     },
     "source_profile": {
@@ -1762,9 +2658,42 @@
             "en": "Official page directs Kiruna students to the named housing provider without promising availability.",
             "tr": "Resmî sayfa bulunabilirlik sözü vermeden Kiruna öğrencilerini belirtilen konut sağlayıcısına yönlendirir."
           }
+        },
+        {
+          "url": "https://www.ltu.se/en/education/programme/tmrda-master-programme-in-spacecraft-design",
+          "title": "Luleå University of Technology — Master Programme in Spacecraft Design",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "research",
+            "program",
+            "department"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "States the Kiruna location, the Esrange interaction through project courses and graduate work, and the IRF and EISCAT campus partnership.",
+            "tr": "Kiruna konumunu, proje dersleri ve lisansüstü çalışmalar yoluyla Esrange etkileşimini ve IRF ile EISCAT kampüs ortaklığını belirtir."
+          }
+        },
+        {
+          "url": "https://atmospheres.research.ltu.se/index.php/2015/11/30/space-engineering-students-to-join-rexusbexus-selection-workshop-in-estec",
+          "title": "Luleå University of Technology — Space engineering students in REXUS/BEXUS",
+          "source_type": "official_lab_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "research",
+            "labs"
+          ],
+          "confidence": "medium",
+          "notes": {
+            "en": "Describes the REXUS/BEXUS programme, its DLR and SNSA agreement and the ESA route for other European students.",
+            "tr": "REXUS/BEXUS programını, DLR ve SNSA anlaşmasını ve diğer Avrupalı öğrenciler için ESA rotasını anlatır."
+          }
         }
       ],
-      "last_verified": "2026-07-19",
+      "last_verified": "2026-08-30",
       "verification_notes": {
         "en": "Critical programme fields are current for the 2027 intake; consortium mobility makes second-year location and costs profile-dependent.",
         "tr": "Kritik program alanları 2027 alımı için günceldir; konsorsiyum hareketliliği ikinci yıl konumunu ve maliyetini profile bağlı kılar."
@@ -1820,7 +2749,77 @@
       "research_strength_score": null,
       "research_sources": [
         "https://www.ltu.se/en/education/programme/tmrra-master-programme-in-space-science-and-technology"
-      ]
+      ],
+      "department": "Department of Computer Science, Electrical and Space Engineering — Kiruna Space Campus",
+      "department_url": "https://www.ltu.se/en/education/programme/tmrda-master-programme-in-spacecraft-design",
+      "department_note": {
+        "en": "This is the one record in the database where the location is the research infrastructure. Kiruna is Sweden's space town: the campus sits alongside the Swedish Institute of Space Physics (IRF) and EISCAT, and Esrange Space Centre — which launches sounding rockets and stratospheric balloons — is the department's partner rather than a distant collaborator.",
+        "tr": "Bu, veritabanında konumun araştırma altyapısı olduğu tek kayıttır. Kiruna İsveç'in uzay kentidir: kampüs, İsveç Uzay Fiziği Enstitüsü (IRF) ve EISCAT'ın yanındadır ve sondaj roketleri ile stratosferik balonlar fırlatan Esrange Uzay Merkezi, uzak bir iş ortağı değil, bölümün ortağıdır."
+      },
+      "faculty_contact_policy": "only_with_specific_research_question",
+      "research_units": [
+        {
+          "name": "Esrange Space Centre partnership",
+          "unit_type": "consortium",
+          "url": "https://www.ltu.se/en/education/programme/tmrda-master-programme-in-spacecraft-design",
+          "topics": [
+            "space_systems",
+            "rocket_propulsion",
+            "sensors",
+            "flight_testing",
+            "space_environment"
+          ],
+          "facilities": [
+            "Sounding rocket launches",
+            "Large high-altitude balloon launches"
+          ],
+          "student_access": "project_course_open",
+          "why_it_fits": {
+            "en": "Esrange and the university interact through project courses, graduate work and summer jobs at the rocket base. If your tag is space_systems and you want your instrument to actually fly rather than sit on a bench, a launch site inside the same town is the structural advantage no ranking captures.",
+            "tr": "Esrange ile üniversite proje dersleri, lisansüstü çalışmalar ve roket üssünde yaz işleri üzerinden etkileşir. Etiketin space_systems ise ve cihazının tezgâhta durmak yerine gerçekten uçmasını istiyorsan, aynı kasabadaki bir fırlatma sahası hiçbir sıralamanın yakalayamadığı yapısal avantajdır."
+          },
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "REXUS/BEXUS student sounding rocket and balloon programme",
+          "unit_type": "consortium",
+          "url": "https://atmospheres.research.ltu.se/index.php/2015/11/30/space-engineering-students-to-join-rexusbexus-selection-workshop-in-estec",
+          "topics": [
+            "space_systems",
+            "attitude_dynamics_control",
+            "sensors",
+            "gnc",
+            "testing"
+          ],
+          "student_access": "project_course_open",
+          "why_it_fits": {
+            "en": "Space students at Luleå develop attitude control systems for free-falling experiments launched on sounding rockets within REXUS/BEXUS — a programme run under a bilateral agreement between the German Aerospace Center and the Swedish National Space Agency, with the Swedish share opened to other European students through ESA. If attitude_dynamics_control is your tag, this is a real flight opportunity attached to a taught programme.",
+            "tr": "Luleå'daki uzay öğrencileri, REXUS/BEXUS kapsamında sondaj roketleriyle fırlatılan serbest düşüş deneyleri için yönelim kontrol sistemleri geliştirir — Alman Havacılık ve Uzay Merkezi ile İsveç Ulusal Uzay Ajansı arasındaki ikili anlaşma kapsamında yürütülen ve İsveç payı ESA aracılığıyla diğer Avrupalı öğrencilere açılan bir program. Etiketin attitude_dynamics_control ise, bu, bir ders programına bağlı gerçek bir uçuş fırsatıdır."
+          },
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "Kiruna Space Campus partnership with IRF and EISCAT",
+          "unit_type": "consortium",
+          "url": "https://www.ltu.se/en/education/programme/tmrda-master-programme-in-spacecraft-design",
+          "topics": [
+            "space_environment",
+            "sensors",
+            "signal_processing",
+            "space_systems"
+          ],
+          "student_access": "msc_thesis_open",
+          "last_verified": "2026-08-30"
+        }
+      ],
+      "faculty_email_availability": {
+        "status": "not_published",
+        "note": {
+          "en": "The programme pages describe the partnerships and student flight opportunities but publish no individual staff addresses on the checked pages.",
+          "tr": "Program sayfaları ortaklıkları ve öğrenci uçuş fırsatlarını anlatır ancak kontrol edilen sayfalarda bireysel personel adresi yayımlamaz."
+        },
+        "directory_url": "https://www.ltu.se/en/education/programme/tmrda-master-programme-in-spacecraft-design"
+      }
     },
     "industry_ecosystem_profile": {
       "nearby_companies": [],
@@ -1888,7 +2887,7 @@
     },
     "data_quality": {
       "status": "verified",
-      "checked_official_source_count": 7,
+      "checked_official_source_count": 9,
       "verified_fields": [
         "program",
         "language",
@@ -1898,15 +2897,16 @@
         "scholarship",
         "deadline",
         "curriculum",
+        "research",
         "housing"
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-30"
     },
     "quality_control": {
       "qc_status": "passed",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "qc_notes": {
@@ -1938,6 +2938,66 @@
           "en": "No independent 2027 QS WUR rank was verified for this database institution; no value is inferred.",
           "tr": "Bu veri tabanı kurumu için bağımsız bir 2027 QS WUR sırası doğrulanmadı; değer türetilmedi."
         }
+      }
+    },
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "strong_adjacent",
+      "score": 61,
+      "score_basis_weight": 90,
+      "evidenced_dimensions": 4,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "strong",
+          "basis": "8_named_items",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "moderate",
+          "basis": "the space engineering division works through named partnerships with IRF, EISCAT and Esrange rather than through an internal laboratory register",
+          "weight": 25,
+          "source_url": "https://www.ltu.se/en/education/programme/tmrda-master-programme-in-spacecraft-design"
+        },
+        "faculty_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "strong",
+          "basis": "partnership access to a working sounding-rocket and stratospheric-balloon launch site, plus student flight opportunities through REXUS/BEXUS",
+          "weight": 10,
+          "source_url": "https://atmospheres.research.ltu.se/index.php/2015/11/30/space-engineering-students-to-join-rexusbexus-selection-workshop-in-estec"
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "space_systems",
+        "spacecraft_gnc",
+        "space_robotics",
+        "space_instrumentation",
+        "satellite_communications",
+        "space_physics"
+      ],
+      "confidence": "medium",
+      "legacy_relevance_status": "strong",
+      "evaluated_at": "2026-08-30"
+    },
+    "academic_match_evidence": {
+      "research_group_evidence": {
+        "level": "moderate",
+        "basis": "the space engineering division works through named partnerships with IRF, EISCAT and Esrange rather than through an internal laboratory register",
+        "source_url": "https://www.ltu.se/en/education/programme/tmrda-master-programme-in-spacecraft-design"
+      },
+      "facility_evidence": {
+        "level": "strong",
+        "basis": "partnership access to a working sounding-rocket and stratospheric-balloon launch site, plus student flight opportunities through REXUS/BEXUS",
+        "source_url": "https://atmospheres.research.ltu.se/index.php/2015/11/30/space-engineering-students-to-join-rexusbexus-selection-workshop-in-estec"
       }
     }
   }

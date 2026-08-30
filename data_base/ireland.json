@@ -261,6 +261,24 @@
       "notes": {
         "en": "Do not combine the EUR 29,500 fee with an assumed scholarship; UCD explicitly advises students not to base budgets on receiving funding.",
         "tr": "29.500 EUR ücreti varsayılan bir bursla netleştirmeyin; UCD bütçenin burs kazanımına dayandırılmamasını açıkça tavsiye eder."
+      },
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -350,6 +368,61 @@
       "notes": {
         "en": "The EUR 750 residence booking/security deposit is refundable under the published conditions. Apply early and research off-campus housing in parallel.",
         "tr": "750 EUR yurt rezervasyon/güvence depozitosu yayımlanan koşullarda iade edilir. Erken başvurun ve aynı anda kampüs dışı konut arayın."
+      },
+      "housing_difficulty": "unknown",
+      "housing_search_difficulty": "unknown",
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": 3,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 2,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": "first_come_first_served",
+            "points": 2,
+            "derived_from": "living_profile.housing_access"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": "separate_application_generous_window",
+            "points": 1,
+            "derived_from": "living_profile.housing_application_separate"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
       }
     },
     "curriculum_profile": {
@@ -557,6 +630,14 @@
       "planning_advice": {
         "en": "Treat October 1 as the preparation target and rolling capacity as the true deadline; do not wait for late June. Scholarship applications close much earlier and require an offer first.",
         "tr": "1 Ekim'i hazırlık hedefi, dönemsel kontenjanı gerçek son tarih sayın; haziran sonunu beklemeyin. Burs başvuruları çok daha erken kapanır ve önce program teklifi gerektirir."
+      },
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": null,
+        "status": "not_published",
+        "confidence": "unknown",
+        "reason": "no_iso_dated_deadline_in_record",
+        "evaluated_at": "2026-08-30"
       }
     },
     "ranking_profile": {
@@ -1050,11 +1131,11 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "quality_control": {
       "qc_status": "passed",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "perspective_reviews": {
@@ -1067,6 +1148,53 @@
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
       }
+    },
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "unknown",
+      "score": null,
+      "score_basis_weight": 30,
+      "evidenced_dimensions": 1,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "space_science",
+        "spacecraft_operations",
+        "satellite_subsystems",
+        "space_detector_lab",
+        "mission_design",
+        "python",
+        "internship"
+      ],
+      "confidence": "unknown",
+      "legacy_relevance_status": null,
+      "evaluated_at": "2026-08-30"
     }
   }
 ]

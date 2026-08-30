@@ -153,10 +153,10 @@
       },
       "cost_profile": {
         "academic_year": "2026/2027",
-        "tuition_eur_per_year_min": 25633,
+        "tuition_eur_per_year_min": 2694,
         "tuition_eur_per_year_max": 25633,
-        "tuition_eur_per_year_estimated": null,
-        "tuition_basis": "2026/27 institutional MSc rate for students who do not qualify for the statutory rate",
+        "tuition_eur_per_year_estimated": 25633,
+        "tuition_basis": "official_institutional_rate_non_eu_2026_2027",
         "regional_tax_eur": null,
         "student_contribution_eur": null,
         "application_fee_eur": null,
@@ -202,7 +202,32 @@
         "living_cost_sek_per_year_min": null,
         "living_cost_sek_per_year_max": null,
         "living_cost_dkk_per_year_min": null,
-        "living_cost_dkk_per_year_max": null
+        "living_cost_dkk_per_year_max": null,
+        "currency": "EUR",
+        "statutory_eu_tuition_eur_per_year": 2694,
+        "institutional_non_eu_tuition_eur_per_year": 25633,
+        "cost_notes": {
+          "en": "€25,633 is the institutional rate a non-EU MSc student pays for 2026/2027; €2,694 is the statutory rate for EU/EEA students. The two are not interchangeable, and the statutory rate is what most third-party comparison sites quote by mistake.",
+          "tr": "25.633 avro, AB dışı bir MSc öğrencisinin 2026/2027 için ödediği kurumsal ücrettir; 2.694 avro AB/AEA öğrencileri için yasal ücrettir. İkisi birbirinin yerine geçmez ve çoğu üçüncü taraf karşılaştırma sitesinin yanlışlıkla verdiği rakam yasal ücrettir."
+        },
+        "normalized_cost": {
+          "standard": "cost_model@3.0.0",
+          "currency": "EUR",
+          "annual_total": 39829.0,
+          "annual_total_eur_equivalent": null,
+          "includes": [
+            "tuition",
+            "living_costs"
+          ],
+          "missing_mandatory_components": [],
+          "months_of_living_cost": 12,
+          "status": "complete",
+          "note": {
+            "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+            "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+          },
+          "evaluated_at": "2026-08-30"
+        }
       },
       "scholarship_profile": {
         "regional_scholarship_available": true,
@@ -225,11 +250,11 @@
         "funding_competitiveness": "extremely_high",
         "funding_notes": {
           "en": "This was not automatic consideration. The applicant had to add a scholarship form and two references to the complete MSc application before 1 December 2025 at 23:59 CET. The page now says the 2026-2028 awards have been made; no future deadline is inferred.",
-          "tr": "Bu burs otomatik deÄŸerlendirme deÄŸildi. AdayÄ±n 1 AralÄ±k 2025 saat 23.59 CET'ten Ã¶nce eksiksiz MSc baÅŸvurusuna burs formu ve iki referans eklemesi gerekiyordu. Sayfa artÄ±k 2026-2028 Ã¶dÃ¼llerinin verildiÄŸini belirtiyor; gelecek dÃ¶nem tarihi Ã§Ä±karÄ±lmÄ±yor."
+          "tr": "Bu burs otomatik değerlendirme değildi. Adayın 1 Aralık 2025 saat 23.59 CET'ten önce eksiksiz MSc başvurusuna burs formu ve iki referans eklemesi gerekiyordu. Sayfa artık 2026-2028 ödüllerinin verildiğini belirtiyor; gelecek dönem tarihi çıkarılmıyor."
         },
         "verification_notes": {
           "en": "The current official URL was checked but returned 403 to both automated and interactive research access. Its indexed current text supports the award scope, international eligibility, two-per-faculty count and closed 2025 deadline; an accessible secondary listing corroborates the embedded scholarship form and two-reference workflow. Confidence is therefore medium, not high.",
-          "tr": "GÃ¼ncel resmÃ® URL kontrol edildi ancak hem otomatik hem etkileÅŸimli araÅŸtÄ±rma eriÅŸimine 403 verdi. Dizine alÄ±nmÄ±ÅŸ gÃ¼ncel metin Ã¶dÃ¼l kapsamÄ±nÄ±, uluslararasÄ± uygunluÄŸu, fakÃ¼lte baÅŸÄ±na iki kontenjanÄ± ve kapanmÄ±ÅŸ 2025 tarihini; eriÅŸilebilir ikincil liste ise baÅŸvuruya eklenen burs formu ve iki referans sÃ¼recini destekliyor. Bu nedenle gÃ¼ven yÃ¼ksek deÄŸil, ortadÄ±r."
+          "tr": "Güncel resmî URL kontrol edildi ancak hem otomatik hem etkileşimli araştırma erişimine 403 verdi. Dizine alınmış güncel metin ödül kapsamını, uluslararası uygunluğu, fakülte başına iki kontenjanı ve kapanmış 2025 tarihini; erişilebilir ikincil liste ise başvuruya eklenen burs formu ve iki referans sürecini destekliyor. Bu nedenle güven yüksek değil, ortadır."
         },
         "application_mode": "separate",
         "automatic_consideration": false,
@@ -264,6 +289,134 @@
             "deadline_status": "closed_past_cycle_do_not_reuse_for_next_intake",
             "official_source_url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/scholarships/justus-louise-van-effen-excellence-scholarships",
             "secondary_cross_check_url": "https://www.mastersportal.com/scholarships/10291/justus-louise-van-effen-excellence-scholarships.html"
+          }
+        ],
+        "playbook": [
+          {
+            "opportunity": "Justus & Louise van Effen Excellence Scholarship",
+            "competitiveness": "highly_selective",
+            "eligibility_gates": [
+              {
+                "en": "Applying to a regular two-year TU Delft MSc programme as an international student.",
+                "tr": "Uluslararası öğrenci olarak normal iki yıllık bir TU Delft MSc programına başvuruyor olmak."
+              },
+              {
+                "en": "Not older than 35 on 1 September of the first academic year at TU Delft.",
+                "tr": "TU Delft'teki ilk akademik yılın 1 Eylül'ünde 35 yaşından büyük olmamak."
+              },
+              {
+                "en": "A complete MSc application, not just the scholarship form.",
+                "tr": "Yalnızca burs formu değil, eksiksiz bir MSc başvurusu."
+              }
+            ],
+            "selection_criteria": [
+              {
+                "en": "Academic excellence, judged against the applicant pool of the whole faculty.",
+                "tr": "Akademik üstünlük; tüm fakültenin aday havuzuna göre değerlendirilir."
+              },
+              {
+                "en": "The two reference letters, which the scholarship requires in addition to the normal application.",
+                "tr": "Normal başvuruya ek olarak bursun zorunlu tuttuğu iki referans mektubu."
+              }
+            ],
+            "typical_award": {
+              "coverage": [
+                "full_tuition",
+                "living_cost_contribution"
+              ],
+              "amount_note": {
+                "en": "Published as roughly €60,000 over two years for non-EU students and roughly €28,000 for EU students.",
+                "tr": "AB dışı öğrenciler için iki yılda yaklaşık 60.000 avro, AB öğrencileri için yaklaşık 28.000 avro olarak yayımlanıyor."
+              }
+            },
+            "award_count_note": {
+              "en": "A minimum of 16 per year across the university, two per faculty — so you are competing against every strong applicant to the entire Faculty of Aerospace Engineering, not only against your own programme.",
+              "tr": "Üniversite genelinde yılda en az 16, fakülte başına iki adet — yani yalnızca kendi programındakilerle değil, tüm Havacılık ve Uzay Mühendisliği Fakültesi'ne başvuran her güçlü adayla yarışıyorsun."
+            },
+            "steps": [
+              {
+                "order": 1,
+                "action": {
+                  "en": "Line up two referees before you start the application. The scholarship needs two reference letters that the standard MSc application does not ask for, and a late referee is the most common reason a file stays incomplete.",
+                  "tr": "Başvuruya başlamadan önce iki referans hazırla. Burs, standart MSc başvurusunun istemediği iki referans mektubu ister; geç kalan bir referans, dosyanın eksik kalmasının en yaygın nedenidir."
+                },
+                "owner": "applicant",
+                "timing": "before_application_opens",
+                "hard_requirement": true
+              },
+              {
+                "order": 2,
+                "action": {
+                  "en": "Submit the complete MSc application — diploma, transcript, English certificate, motivation letter, CV and proof of identity — because the scholarship is only assessed on top of a complete degree application.",
+                  "tr": "Eksiksiz MSc başvurusunu gönder — diploma, transkript, İngilizce sertifikası, niyet mektubu, CV ve kimlik belgesi — çünkü burs yalnızca tamamlanmış bir derece başvurusunun üzerine değerlendirilir."
+                },
+                "owner": "applicant",
+                "timing": "with_the_application",
+                "required_documents": [
+                  {
+                    "en": "Diploma",
+                    "tr": "Diploma"
+                  },
+                  {
+                    "en": "Transcript",
+                    "tr": "Transkript"
+                  },
+                  {
+                    "en": "English language certificate",
+                    "tr": "İngilizce dil sertifikası"
+                  },
+                  {
+                    "en": "Motivation letter",
+                    "tr": "Niyet mektubu"
+                  },
+                  {
+                    "en": "CV",
+                    "tr": "Özgeçmiş"
+                  },
+                  {
+                    "en": "Proof of identity",
+                    "tr": "Kimlik belgesi"
+                  }
+                ],
+                "hard_requirement": true
+              },
+              {
+                "order": 3,
+                "action": {
+                  "en": "Add the scholarship application form and the two reference letters to the same submission, before the scholarship deadline of 1 December.",
+                  "tr": "Burs başvuru formunu ve iki referans mektubunu aynı gönderime ekle; 1 Aralık burs son tarihinden önce."
+                },
+                "owner": "applicant",
+                "timing": "separate_before_deadline",
+                "required_documents": [
+                  {
+                    "en": "Scholarship application form",
+                    "tr": "Burs başvuru formu"
+                  },
+                  {
+                    "en": "Two reference letters",
+                    "tr": "İki referans mektubu"
+                  }
+                ],
+                "hard_requirement": true
+              },
+              {
+                "order": 4,
+                "action": {
+                  "en": "Plan for a decision window that runs from early March into July, and keep a self-funded or alternative-funding plan alive until then.",
+                  "tr": "Mart başından temmuza uzanan bir karar penceresine göre planla ve o zamana kadar kendi finansmanın veya alternatif fon planın hazır dursun."
+                },
+                "owner": "external_body",
+                "timing": "after_admission",
+                "hard_requirement": false
+              }
+            ],
+            "evidence_url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/scholarships/justus-louise-van-effen-excellence-scholarships",
+            "needs_human_verification": true,
+            "verification_note": {
+              "en": "The award amounts, the age limit and the per-faculty count come from the indexed text of a page that blocks automated access. Open the official page in a browser and re-confirm before you build a plan on these numbers.",
+              "tr": "Ödül tutarları, yaş sınırı ve fakülte başına ödül sayısı, otomatik erişimi engelleyen bir sayfanın dizinlenmiş metninden geliyor. Bu sayılara dayalı bir plan kurmadan önce resmî sayfayı tarayıcıda açıp yeniden teyit et."
+            }
           }
         ]
       },
@@ -343,8 +496,124 @@
           "en": "Netherlands-wide average, not Delft-specific",
           "tr": "Hollanda geneli ortalama, Delft'e özgü değil"
         },
-        "housing_access": "unknown",
-        "housing_application_separate": null
+        "housing_access": "not_guaranteed",
+        "housing_application_separate": null,
+        "housing_guaranteed": false,
+        "housing_difficulty_evidence": {
+          "guarantee_status": {
+            "value": "not_guaranteed",
+            "source_url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/housing",
+            "quote": "The page does not state that housing is guaranteed; rooms are arranged through DUWO and the private market."
+          },
+          "supply_pressure": {
+            "value": "demand_exceeds_supply_stated",
+            "source_url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/housing",
+            "quote": "It is very difficult to find a room in Delft and its surroundings. This is due to a shortage of housing in The Netherlands, especially student rooms."
+          },
+          "arrival_risk": {
+            "value": "officially_advised_not_to_travel_without_contract",
+            "source_url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/housing",
+            "quote": "We strongly advise against travelling to TU Delft if you have not arranged housing in The Netherlands before the start of your study programme."
+          },
+          "timing_sensitivity": {
+            "value": "separate_application_generous_window",
+            "source_url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/housing",
+            "quote": "Housing is arranged through a separate route from the degree application, and students are legally required to register a Dutch address within five days of arrival."
+          }
+        },
+        "monthly_room_rent_eur_min": 500,
+        "monthly_room_rent_eur_max": 1350,
+        "room_rent_scope": {
+          "en": "Published range per room, including rent, water, gas, electricity, internet, service charges and taxes.",
+          "tr": "Oda başına yayımlanan aralık; kira, su, gaz, elektrik, internet, hizmet bedeli ve vergiler dâhil."
+        },
+        "cost_of_living_evidence": {
+          "cost_basis": "official_visa_financial_requirement",
+          "currency": "EUR",
+          "months_covered": 12,
+          "monthly_total": 1183,
+          "source_url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/tuition-fee-finances",
+          "confidence": "high",
+          "excludes": [
+            "tuition",
+            "one_off_visa_and_travel_costs"
+          ],
+          "note": {
+            "en": "TU Delft publishes €14,200 per year of living costs for non-EU students, set by the rules of the Dutch Immigration and Naturalisation Service (IND). That is the legal minimum you must prove for a residence permit, not an observed average — with Delft rents running from €500 to €1,350 a month, a student in the upper half of that range will spend more.",
+            "tr": "TU Delft, AB dışı öğrenciler için Hollanda Göç ve Vatandaşlık Servisi'nin (IND) kurallarına göre belirlenen yılda 14.200 avro yaşam gideri yayımlar. Bu, oturum izni için kanıtlaman gereken yasal asgari tutardır; gözlemlenmiş bir ortalama değildir — Delft kiraları ayda 500 ile 1.350 avro arasında olduğundan, bu aralığın üst yarısındaki bir öğrenci daha fazla harcar."
+          }
+        },
+        "housing_search_difficulty": "high",
+        "housing_difficulty_profile": {
+          "standard": "housing_difficulty@3.0.0",
+          "level": "high",
+          "raw_score": 9,
+          "scaled_score": 11,
+          "score_max": 15,
+          "evidenced_dimensions": 4,
+          "dimensions_required_for_publication": 3,
+          "dimensions": {
+            "guarantee_status": {
+              "value": "not_guaranteed",
+              "points": 3,
+              "derived_from": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/housing",
+              "evidence_quote": "The page does not state that housing is guaranteed; rooms are arranged through DUWO and the private market."
+            },
+            "supply_pressure": {
+              "value": "demand_exceeds_supply_stated",
+              "points": 3,
+              "derived_from": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/housing",
+              "evidence_quote": "It is very difficult to find a room in Delft and its surroundings. This is due to a shortage of housing in The Netherlands, especially student rooms."
+            },
+            "market_affordability_gap": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "timing_sensitivity": {
+              "value": "separate_application_generous_window",
+              "points": 1,
+              "derived_from": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/housing",
+              "evidence_quote": "Housing is arranged through a separate route from the degree application, and students are legally required to register a Dutch address within five days of arrival."
+            },
+            "arrival_risk": {
+              "value": "officially_advised_not_to_travel_without_contract",
+              "points": 2,
+              "derived_from": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/housing",
+              "evidence_quote": "We strongly advise against travelling to TU Delft if you have not arranged housing in The Netherlands before the start of your study programme."
+            }
+          },
+          "confidence": "medium",
+          "band_from_score": "high",
+          "capped_from_very_high": false,
+          "legacy_value": "high",
+          "evaluated_at": "2026-08-30"
+        },
+        "cost_of_living_profile": {
+          "standard": "cost_model@3.0.0",
+          "cost_basis": "official_visa_financial_requirement",
+          "status": "total_only",
+          "currency": "EUR",
+          "months_covered": 12,
+          "components_included": [],
+          "mandatory_components_missing": [],
+          "components": {},
+          "monthly_total": 1183.0,
+          "annual_total": 14196.0,
+          "monthly_total_eur_equivalent": null,
+          "excludes": [
+            "tuition",
+            "one_off_visa_and_travel_costs"
+          ],
+          "confidence": "high",
+          "source_url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/tuition-fee-finances",
+          "note": {
+            "en": "TU Delft publishes €14,200 per year of living costs for non-EU students, set by the rules of the Dutch Immigration and Naturalisation Service (IND). That is the legal minimum you must prove for a residence permit, not an observed average — with Delft rents running from €500 to €1,350 a month, a student in the upper half of that range will spend more.",
+            "tr": "TU Delft, AB dışı öğrenciler için Hollanda Göç ve Vatandaşlık Servisi'nin (IND) kurallarına göre belirlenen yılda 14.200 avro yaşam gideri yayımlar. Bu, oturum izni için kanıtlaman gereken yasal asgari tutardır; gözlemlenmiş bir ortalama değildir — Delft kiraları ayda 500 ile 1.350 avro arasında olduğundan, bu aralığın üst yarısındaki bir öğrenci daha fazla harcar."
+          },
+          "evaluated_at": "2026-08-30"
+        }
       },
       "curriculum_profile": {
         "tracks": [
@@ -431,51 +700,195 @@
         "research_centers": [
           "TU Delft Space Engineering"
         ],
-        "faculty_contact_policy": "supervisor_match_during_msc_not_preapplication_gate",
+        "faculty_contact_policy": "only_with_specific_research_question",
         "faculty_contact_note": {
-          "en": "A supervisor's pre-approval is not published as an MSc application requirement. Apply to the programme and choose the relevant track; use early faculty contact only for a specific research-fit question, then narrow thesis supervision during the MSc.",
-          "tr": "Danışman ön onayı MSc başvuru şartı olarak yayımlanmıyor. Programa başvurup ilgili izi seç; erken hoca iletişimini yalnızca belirli bir araştırma uyumu sorusu için kullan, tez danışmanlığını MSc içinde daralt."
+          "en": "A supervisor's pre-approval is not published as an MSc admission requirement, so a cold \"please supervise me\" message cannot improve your application. Contact is worth it for one purpose only: confirming that a section actually has a thesis topic open in your area. Thesis supervision is matched during the MSc, after the first-year courses.",
+          "tr": "Danışman ön onayı MSc kabul şartı olarak yayımlanmıyor; bu yüzden soğuk bir \"beni kabul eder misiniz\" mesajı başvurunu güçlendirmez. İletişim tek bir amaç için değerlidir: ilgili bölümde senin alanında açık bir tez konusu olup olmadığını teyit etmek. Tez danışmanlığı MSc içinde, birinci yıl derslerinden sonra eşleştirilir."
         },
         "notable_professors": [
           {
+            "name": "Pieter Visser",
+            "role": {
+              "en": "Full Professor, chairholder of Astrodynamics and Space Missions",
+              "tr": "Profesör, Astrodinamik ve Uzay Görevleri kürsü başkanı"
+            },
+            "focus": {
+              "en": "Satellite orbits, orbit determination and satellite geodesy within the section's stated area of satellite orbits, mission analysis and application.",
+              "tr": "Bölümün ilan ettiği uydu yörüngeleri, görev analizi ve uygulama alanı içinde uydu yörüngeleri, yörünge belirleme ve uydu jeodezisi."
+            },
+            "fit_tags": [
+              "astrodynamics",
+              "orbit_determination",
+              "mission_analysis"
+            ],
+            "email": "P.N.A.M.Visser@tudelft.nl",
+            "email_source": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/astrodynamics-and-space-missions/people",
+            "profile_url": "https://www.tudelft.nl/staff/p.n.a.m.visser/",
+            "lab": "Astrodynamics and Space Missions",
+            "contact_timing": "only_with_specific_research_question",
+            "accepting_students_signal": "not_stated",
+            "last_verified": "2026-08-29"
+          },
+          {
             "name": "Erwin Mooij",
-            "role": {"en": "Astrodynamics & Space Missions", "tr": "Astrodynamics & Space Missions"},
-            "focus": {"en": "Launch/re-entry guidance, trajectory optimisation, integrated GNC, vision-based navigation and debris-removal rendezvous.", "tr": "Fırlatma/yeniden giriş güdümü, yörünge optimizasyonu, bütünleşik GNC, görsel seyrüsefer ve enkaz giderme buluşması."},
-            "fit_tags": ["gnc", "mission_analysis", "attitude_dynamics_control"],
-            "email": "e.mooij@tudelft.nl",
+            "role": {
+              "en": "Associate Professor, Astrodynamics and Space Missions",
+              "tr": "Doçent, Astrodinamik ve Uzay Görevleri"
+            },
+            "focus": {
+              "en": "Launch and re-entry guidance, trajectory optimisation, integrated GNC, vision-based navigation and debris-removal rendezvous.",
+              "tr": "Fırlatma ve yeniden giriş güdümü, yörünge optimizasyonu, bütünleşik GNC, görüntü tabanlı seyrüsefer ve enkaz giderme buluşması."
+            },
+            "fit_tags": [
+              "gnc",
+              "mission_analysis",
+              "attitude_dynamics_control"
+            ],
+            "email": "E.Mooij@tudelft.nl",
+            "email_source": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/astrodynamics-and-space-missions/people",
             "profile_url": "https://research.tudelft.nl/en/persons/e-mooij/",
-            "contact_timing": "specific_research_question_before_or_thesis_matching_during_msc",
-            "last_verified": "2026-08-22"
+            "lab": "Astrodynamics and Space Missions",
+            "contact_timing": "only_with_specific_research_question",
+            "accepting_students_signal": "not_stated",
+            "last_verified": "2026-08-29"
           },
           {
             "name": "Dominic Dirkx",
-            "role": {"en": "Astrodynamics & Space Missions", "tr": "Astrodynamics & Space Missions"},
-            "focus": {"en": "Planetary mission dynamics, trajectory optimisation, interplanetary tracking, orbit determination and numerical simulation tools.", "tr": "Gezegen görevi dinamiği, yörünge optimizasyonu, gezegenler arası takip, yörünge belirleme ve sayısal benzetim araçları."},
-            "fit_tags": ["astrodynamics", "mission_analysis", "orbit_determination"],
-            "email": "d.dirkx@tudelft.nl",
+            "role": {
+              "en": "Associate Professor, Astrodynamics and Space Missions",
+              "tr": "Doçent, Astrodinamik ve Uzay Görevleri"
+            },
+            "focus": {
+              "en": "Planetary mission dynamics, trajectory optimisation, interplanetary tracking, orbit determination and the numerical simulation tools the section maintains.",
+              "tr": "Gezegen görevi dinamiği, yörünge optimizasyonu, gezegenler arası takip, yörünge belirleme ve bölümün sürdürdüğü sayısal benzetim araçları."
+            },
+            "fit_tags": [
+              "astrodynamics",
+              "mission_analysis",
+              "orbit_determination"
+            ],
+            "email": "D.Dirkx@tudelft.nl",
+            "email_source": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/astrodynamics-and-space-missions/people",
             "profile_url": "https://research.tudelft.nl/en/persons/d-dirkx/",
-            "contact_timing": "specific_research_question_before_or_thesis_matching_during_msc",
-            "last_verified": "2026-08-22"
+            "lab": "Astrodynamics and Space Missions",
+            "contact_timing": "only_with_specific_research_question",
+            "accepting_students_signal": "not_stated",
+            "last_verified": "2026-08-29"
           },
           {
             "name": "Jeannette Heiligers",
-            "role": {"en": "Astrodynamics & Space Missions", "tr": "Astrodynamics & Space Missions"},
-            "focus": {"en": "Solar sailing, low-thrust trajectory design, orbital control and space-debris-removal concepts.", "tr": "Güneş yelkenleri, düşük itki yörünge tasarımı, yörünge kontrolü ve uzay enkazı giderme kavramları."},
-            "fit_tags": ["astrodynamics", "mission_analysis"],
-            "email": "m.j.heiligers@tudelft.nl",
+            "role": {
+              "en": "Associate Professor, Astrodynamics and Space Missions",
+              "tr": "Doçent, Astrodinamik ve Uzay Görevleri"
+            },
+            "focus": {
+              "en": "Solar sailing, low-thrust trajectory design, orbital control and space-debris-removal concepts.",
+              "tr": "Güneş yelkeni, düşük itkili yörünge tasarımı, yörünge kontrolü ve uzay enkazı giderme kavramları."
+            },
+            "fit_tags": [
+              "astrodynamics",
+              "mission_analysis"
+            ],
+            "email": "M.J.Heiligers@tudelft.nl",
+            "email_source": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/astrodynamics-and-space-missions/people",
             "profile_url": "https://research.tudelft.nl/en/persons/mj-heiligers/",
-            "contact_timing": "specific_research_question_before_or_thesis_matching_during_msc",
-            "last_verified": "2026-08-22"
+            "lab": "Astrodynamics and Space Missions",
+            "contact_timing": "only_with_specific_research_question",
+            "accepting_students_signal": "not_stated",
+            "last_verified": "2026-08-29"
+          },
+          {
+            "name": "Alessandra Menicucci",
+            "role": {
+              "en": "Chairholder of Space Systems Engineering",
+              "tr": "Uzay Sistemleri Mühendisliği kürsü başkanı"
+            },
+            "focus": {
+              "en": "Space systems engineering in the section's stated areas of miniaturization and distributed space systems.",
+              "tr": "Bölümün ilan ettiği minyatürleştirme ve dağıtık uzay sistemleri alanlarında uzay sistemleri mühendisliği."
+            },
+            "fit_tags": [
+              "space_systems",
+              "satellite_systems",
+              "spacecraft_design"
+            ],
+            "email": "A.Menicucci@tudelft.nl",
+            "email_source": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/space-systems-engineering/people",
+            "profile_url": "https://www.tudelft.nl/staff/a.menicucci/",
+            "lab": "Space Systems Engineering",
+            "contact_timing": "only_with_specific_research_question",
+            "accepting_students_signal": "not_stated",
+            "last_verified": "2026-08-29"
+          },
+          {
+            "name": "Angelo Cervone",
+            "role": {
+              "en": "Associate Professor, Space Systems Engineering",
+              "tr": "Doçent, Uzay Sistemleri Mühendisliği"
+            },
+            "focus": {
+              "en": "Space systems engineering within the section's miniaturization and distributed space systems themes.",
+              "tr": "Bölümün minyatürleştirme ve dağıtık uzay sistemleri temaları içinde uzay sistemleri mühendisliği."
+            },
+            "fit_tags": [
+              "space_systems",
+              "spacecraft_design",
+              "rocket_propulsion"
+            ],
+            "email": "A.Cervone@tudelft.nl",
+            "email_source": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/space-systems-engineering/people",
+            "profile_url": "https://www.tudelft.nl/staff/a.cervone/",
+            "lab": "Space Systems Engineering",
+            "contact_timing": "only_with_specific_research_question",
+            "accepting_students_signal": "not_stated",
+            "last_verified": "2026-08-29"
+          },
+          {
+            "name": "Jian Guo",
+            "role": {
+              "en": "Associate Professor, Space Systems Engineering",
+              "tr": "Doçent, Uzay Sistemleri Mühendisliği"
+            },
+            "focus": {
+              "en": "Distributed space systems and small-satellite systems engineering.",
+              "tr": "Dağıtık uzay sistemleri ve küçük uydu sistemleri mühendisliği."
+            },
+            "fit_tags": [
+              "satellite_systems",
+              "space_systems",
+              "systems_engineering"
+            ],
+            "email": "J.Guo@tudelft.nl",
+            "email_source": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/space-systems-engineering/people",
+            "profile_url": "https://www.tudelft.nl/staff/j.guo/",
+            "lab": "Space Systems Engineering",
+            "contact_timing": "only_with_specific_research_question",
+            "accepting_students_signal": "not_stated",
+            "last_verified": "2026-08-29"
           },
           {
             "name": "Stefano Speretta",
-            "role": {"en": "Space Systems Engineering", "tr": "Space Systems Engineering"},
-            "focus": {"en": "Small satellites, autonomous formation flying, cislunar navigation, inter-satellite ranging and CubeSat systems.", "tr": "Küçük uydular, otonom formasyon uçuşu, ayötesi seyrüsefer, uydular arası mesafe ölçümü ve CubeSat sistemleri."},
-            "fit_tags": ["orbit_determination", "gnc", "attitude_dynamics_control"],
-            "email": "s.speretta@tudelft.nl",
+            "role": {
+              "en": "Assistant Professor, Space Systems Engineering",
+              "tr": "Dr. Öğr. Üyesi, Uzay Sistemleri Mühendisliği"
+            },
+            "focus": {
+              "en": "Small satellites, autonomous formation flying, cislunar navigation, inter-satellite ranging and CubeSat systems.",
+              "tr": "Küçük uydular, otonom formasyon uçuşu, ay ötesi seyrüsefer, uydular arası mesafe ölçümü ve CubeSat sistemleri."
+            },
+            "fit_tags": [
+              "satellite_systems",
+              "gnc",
+              "orbit_determination",
+              "attitude_dynamics_control"
+            ],
+            "email": "S.Speretta@tudelft.nl",
+            "email_source": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/space-systems-engineering/people",
             "profile_url": "https://research.tudelft.nl/en/persons/s-speretta/",
-            "contact_timing": "specific_research_question_before_or_thesis_matching_during_msc",
-            "last_verified": "2026-08-22"
+            "lab": "Space Systems Engineering",
+            "contact_timing": "only_with_specific_research_question",
+            "accepting_students_signal": "not_stated",
+            "last_verified": "2026-08-29"
           }
         ],
         "space_or_aerospace_projects": [
@@ -492,6 +905,68 @@
           "https://research.tudelft.nl/en/organisations/space-engineering/",
           "https://research.tudelft.nl/en/equipments/the-aerospace-engineering-cleanroom/",
           "https://research.tudelft.nl/en/equipments/the-cessna-citation-ii-ph-lab/"
+        ],
+        "research_units": [
+          {
+            "name": "Astrodynamics and Space Missions (AS)",
+            "unit_type": "research_group",
+            "department": "Department of Space Engineering, Faculty of Aerospace Engineering",
+            "url": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/astrodynamics-and-space-missions",
+            "lead": "Prof.dr.ir. Pieter Visser (chairholder)",
+            "topics": [
+              "astrodynamics",
+              "mission_analysis",
+              "orbit_determination",
+              "rocket_propulsion",
+              "space_environment"
+            ],
+            "stated_research_areas": [
+              "Satellite orbits, mission analysis and application",
+              "Space propulsion, ascent and re-entry trajectories",
+              "Solar system exploration"
+            ],
+            "facilities": [
+              "Astrodynamics software tools maintained by the section",
+              "Satellite altimetry products database",
+              "Ground station used to track low Earth orbit satellites"
+            ],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "If your tagged interests include astrodynamics, mission analysis or orbit determination, this is the section that owns those subjects at Delft: it publishes all three as its own stated research areas, maintains the astrodynamics software and the altimetry database its MSc theses run on, and operates a LEO tracking ground station you can take real measurements from.",
+              "tr": "Etiketli ilgi alanların arasında astrodinamik, görev analizi veya yörünge belirleme varsa, Delft'te bu konuların sahibi olan bölüm burasıdır: üçünü de kendi ilan ettiği araştırma alanı olarak yayımlar, MSc tezlerinin üzerinde çalıştığı astrodinamik yazılımını ve altimetre veri tabanını sürdürür ve gerçek ölçüm alabileceğin bir alçak yörünge takip yer istasyonu işletir."
+            },
+            "last_verified": "2026-08-29"
+          },
+          {
+            "name": "Space Systems Engineering (SSE)",
+            "unit_type": "research_group",
+            "department": "Department of Space Engineering, Faculty of Aerospace Engineering",
+            "url": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/space-systems-engineering",
+            "lead": "Dr. Alessandra Menicucci (chairholder)",
+            "topics": [
+              "space_systems",
+              "satellite_systems",
+              "spacecraft_design",
+              "systems_engineering",
+              "sensors"
+            ],
+            "stated_research_areas": [
+              "Miniaturization",
+              "Distributed Space Systems"
+            ],
+            "facilities": [
+              "Aerospace Engineering cleanroom",
+              "Assembly workshop",
+              "Satellite ground station",
+              "Delfi Space programme (Delfi-C3 and Delfi-n3Xt CubeSats)"
+            ],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "This is the practical counterpart to the astrodynamics section. If your tags include satellite_systems or spacecraft_design, the Delfi programme means a Delft MSc thesis here can involve hardware that has actually flown, assembled in the faculty's own cleanroom rather than only simulated.",
+              "tr": "Bu bölüm, astrodinamik bölümünün uygulamalı karşılığıdır. Etiketlerinde satellite_systems veya spacecraft_design varsa, Delfi programı sayesinde buradaki bir Delft MSc tezi yalnızca simülasyon değil, fakültenin kendi temiz odasında monte edilmiş ve gerçekten uçmuş donanımı içerebilir."
+            },
+            "last_verified": "2026-08-29"
+          }
         ]
       },
       "industry_ecosystem_profile": {
@@ -536,7 +1011,23 @@
         "winter_deadline": "2026-01-15 (23:59 CET; non-EU/EFTA with international BSc; closed)",
         "application_deadline": "2026-01-15 (23:59 CET; non-EU/EFTA with international BSc; closed)",
         "scholarship_deadline_status": "closed_awards_made",
-        "future_scholarship_deadline": null
+        "future_scholarship_deadline": null,
+        "primary_deadline": {
+          "standard": "application_countdown@3.0.0",
+          "date": "2026-01-15",
+          "next_expected_date": null,
+          "time": null,
+          "timezone": null,
+          "applies_to": "non_eu",
+          "cycle_label": null,
+          "is_recurring_annual": false,
+          "status": "closed",
+          "days_remaining_at_evaluation": -227,
+          "derived_from": "application_timeline_profile.non_eu_deadline",
+          "confidence": "high",
+          "source_url": "https://www.tudelft.nl/en/education/programmes/masters/ae/msc-aerospace-engineering/admission-and-application",
+          "evaluated_at": "2026-08-30"
+        }
       },
       "student_sentiment_profile": {
         "student_satisfaction_score": 84,
@@ -710,39 +1201,6 @@
             }
           },
           {
-            "url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/tuition-fee-finances",
-            "title": "TU Delft Tuition Fee & Finances",
-            "source_type": "official_tuition_page",
-            "access_status": "ok",
-            "last_checked": "2026-08-14",
-            "relevant_fields": [
-              "tuition"
-            ],
-            "confidence": "high",
-            "notes": {
-              "en": "Current page publishes the 2026/27 institutional MSc rate of EUR 25,633 and explains statutory-rate eligibility.",
-              "tr": "Güncel sayfa 2026/27 kurumsal yüksek lisans ücretini 25.633 EUR olarak yayımlar ve kanuni ücret uygunluğunu açıklar."
-            }
-          },
-          {
-            "url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/scholarships/justus-louise-van-effen-excellence-scholarships",
-            "title": "TU Delft Justus & Louise van Effen Excellence Scholarships",
-            "source_type": "official_scholarship_page",
-            "access_status": "blocked",
-            "last_checked": "2026-08-14",
-            "relevant_fields": [
-              "scholarship",
-              "funding",
-              "eligibility",
-              "deadline"
-            ],
-            "confidence": "medium",
-            "notes": {
-              "en": "The URL returned 403 to automated and interactive access. Indexed current text says the 2026-2028 awards have been made and supports international eligibility, two awards per faculty, full tuition plus a living contribution, and the past 1 December 2025 deadline.",
-              "tr": "URL otomatik ve etkileÅŸimli eriÅŸime 403 verdi. Dizine alÄ±nmÄ±ÅŸ gÃ¼ncel metin 2026-2028 Ã¶dÃ¼llerinin verildiÄŸini belirtir; uluslararasÄ± uygunluk, fakÃ¼lte baÅŸÄ±na iki Ã¶dÃ¼l, tam Ã¶ÄŸrenim artÄ± yaÅŸam katkÄ±sÄ± ve geÃ§miÅŸ 1 AralÄ±k 2025 tarihini destekler."
-            }
-          },
-          {
             "url": "https://www.tudelft.nl/en/education/programmes/masters/ae/msc-aerospace-engineering/programme-structure",
             "title": "TU Delft Aerospace Engineering: Programme Structure",
             "source_type": "official_curriculum_page",
@@ -770,21 +1228,6 @@
             "notes": {
               "en": "Current page lists the five tracks: Aerodynamics & Wind Energy, Aerospace Structures & Materials, Control & Operations, Flight Performance & Propulsion and Space.",
               "tr": "Güncel sayfa beş izi listeler: Aerodinamik ve Rüzgâr Enerjisi, Havacılık Yapıları ve Malzemeleri, Kontrol ve Operasyonlar, Uçuş Performansı ve İtki, Uzay."
-            }
-          },
-          {
-            "url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/housing",
-            "title": "TU Delft Housing for Incoming International Students",
-            "source_type": "official_housing_page",
-            "access_status": "ok",
-            "last_checked": "2026-08-14",
-            "relevant_fields": [
-              "housing"
-            ],
-            "confidence": "high",
-            "notes": {
-              "en": "Current page says finding a room in Delft and nearby is very difficult due to a shortage of student rooms and strongly advises against travel before housing is arranged.",
-              "tr": "Güncel sayfa öğrenci odası eksikliği nedeniyle Delft ve çevresinde oda bulmanın çok zor olduğunu belirtir ve konaklama ayarlanmadan seyahat edilmemesini güçlü biçimde tavsiye eder."
             }
           },
           {
@@ -854,9 +1297,16 @@
             "source_type": "official_research_group_page",
             "access_status": "ok",
             "last_checked": "2026-08-22",
-            "relevant_fields": ["research", "technical_fit", "faculty"],
+            "relevant_fields": [
+              "research",
+              "technical_fit",
+              "faculty"
+            ],
             "confidence": "high",
-            "notes": {"en": "Current group page verifies the named research unit, active researchers and current astrodynamics output.", "tr": "Güncel grup sayfası adı yayımlanan araştırma birimini, aktif araştırmacıları ve güncel astrodinamik çıktılarını doğrular."}
+            "notes": {
+              "en": "Current group page verifies the named research unit, active researchers and current astrodynamics output.",
+              "tr": "Güncel grup sayfası adı yayımlanan araştırma birimini, aktif araştırmacıları ve güncel astrodinamik çıktılarını doğrular."
+            }
           },
           {
             "url": "https://research.tudelft.nl/en/persons/e-mooij/",
@@ -864,9 +1314,16 @@
             "source_type": "official_faculty_page",
             "access_status": "ok",
             "last_checked": "2026-08-22",
-            "relevant_fields": ["faculty", "gnc", "mission_analysis"],
+            "relevant_fields": [
+              "faculty",
+              "gnc",
+              "mission_analysis"
+            ],
             "confidence": "high",
-            "notes": {"en": "Current profile and 2025–26 outputs verify integrated GNC, navigation, trajectory guidance and debris-removal work.", "tr": "Güncel profil ve 2025–26 çıktıları bütünleşik GNC, seyrüsefer, yörünge güdümü ve enkaz giderme çalışmalarını doğrular."}
+            "notes": {
+              "en": "Current profile and 2025–26 outputs verify integrated GNC, navigation, trajectory guidance and debris-removal work.",
+              "tr": "Güncel profil ve 2025–26 çıktıları bütünleşik GNC, seyrüsefer, yörünge güdümü ve enkaz giderme çalışmalarını doğrular."
+            }
           },
           {
             "url": "https://research.tudelft.nl/en/persons/d-dirkx/",
@@ -874,9 +1331,16 @@
             "source_type": "official_faculty_page",
             "access_status": "ok",
             "last_checked": "2026-08-22",
-            "relevant_fields": ["faculty", "astrodynamics", "orbit_determination"],
+            "relevant_fields": [
+              "faculty",
+              "astrodynamics",
+              "orbit_determination"
+            ],
             "confidence": "high",
-            "notes": {"en": "Current profile verifies work in planetary mission dynamics, tracking, ephemerides and numerical astrodynamics tools.", "tr": "Güncel profil gezegen görevi dinamiği, takip, efemeris ve sayısal astrodinamik araç çalışmalarını doğrular."}
+            "notes": {
+              "en": "Current profile verifies work in planetary mission dynamics, tracking, ephemerides and numerical astrodynamics tools.",
+              "tr": "Güncel profil gezegen görevi dinamiği, takip, efemeris ve sayısal astrodinamik araç çalışmalarını doğrular."
+            }
           },
           {
             "url": "https://research.tudelft.nl/en/persons/mj-heiligers/",
@@ -884,9 +1348,16 @@
             "source_type": "official_faculty_page",
             "access_status": "ok",
             "last_checked": "2026-08-22",
-            "relevant_fields": ["faculty", "astrodynamics", "mission_analysis"],
+            "relevant_fields": [
+              "faculty",
+              "astrodynamics",
+              "mission_analysis"
+            ],
             "confidence": "high",
-            "notes": {"en": "Current profile and 2026 output verify solar-sail trajectory design, orbital control and debris-removal research.", "tr": "Güncel profil ve 2026 çıktıları güneş yelkeni yörünge tasarımı, yörünge kontrolü ve enkaz giderme araştırmalarını doğrular."}
+            "notes": {
+              "en": "Current profile and 2026 output verify solar-sail trajectory design, orbital control and debris-removal research.",
+              "tr": "Güncel profil ve 2026 çıktıları güneş yelkeni yörünge tasarımı, yörünge kontrolü ve enkaz giderme araştırmalarını doğrular."
+            }
           },
           {
             "url": "https://research.tudelft.nl/en/persons/s-speretta/",
@@ -894,9 +1365,16 @@
             "source_type": "official_faculty_page",
             "access_status": "ok",
             "last_checked": "2026-08-22",
-            "relevant_fields": ["faculty", "navigation", "space_systems"],
+            "relevant_fields": [
+              "faculty",
+              "navigation",
+              "space_systems"
+            ],
             "confidence": "high",
-            "notes": {"en": "Current profile verifies small-satellite systems, autonomous formation-flying and cislunar-navigation work.", "tr": "Güncel profil küçük uydu sistemleri, otonom formasyon uçuşu ve ayötesi seyrüsefer çalışmalarını doğrular."}
+            "notes": {
+              "en": "Current profile verifies small-satellite systems, autonomous formation-flying and cislunar-navigation work.",
+              "tr": "Güncel profil küçük uydu sistemleri, otonom formasyon uçuşu ve ayötesi seyrüsefer çalışmalarını doğrular."
+            }
           },
           {
             "url": "https://www.mastersportal.com/scholarships/10291/justus-louise-van-effen-excellence-scholarships.html",
@@ -912,15 +1390,146 @@
             "confidence": "medium",
             "notes": {
               "en": "Accessible secondary cross-check for the scholarship form, two-reference submission workflow, international scope, award coverage and 1 December 2025 deadline. It does not replace the blocked official source.",
-              "tr": "Burs formu, iki referanslÄ± teslim sÃ¼reci, uluslararasÄ± kapsam, Ã¶dÃ¼l iÃ§eriÄŸi ve 1 AralÄ±k 2025 tarihi iÃ§in eriÅŸilebilir ikincil Ã§apraz kontroldÃ¼r. Engellenen resmÃ® kaynaÄŸÄ±n yerini almaz."
+              "tr": "Burs formu, iki referanslı teslim süreci, uluslararası kapsam, ödül içeriği ve 1 Aralık 2025 tarihi için erişilebilir ikincil çapraz kontroldür. Engellenen resmî kaynağın yerini almaz."
+            }
+          },
+          {
+            "url": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/astrodynamics-and-space-missions",
+            "title": "TU Delft — Astrodynamics and Space Missions section",
+            "source_type": "official_lab_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-29",
+            "relevant_fields": [
+              "research",
+              "labs",
+              "department"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Publishes the section's three stated research areas and its astrodynamics software, altimetry database and LEO ground station.",
+              "tr": "Bölümün ilan ettiği üç araştırma alanını ve astrodinamik yazılımını, altimetre veri tabanını ve alçak yörünge yer istasyonunu yayımlar."
+            }
+          },
+          {
+            "url": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/astrodynamics-and-space-missions/people",
+            "title": "TU Delft — Astrodynamics and Space Missions people",
+            "source_type": "official_department_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-29",
+            "relevant_fields": [
+              "research",
+              "department"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Publishes staff names, roles and university email addresses in plain text.",
+              "tr": "Personel adlarını, görevlerini ve üniversite e-posta adreslerini düz metin olarak yayımlar."
+            }
+          },
+          {
+            "url": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/space-systems-engineering",
+            "title": "TU Delft — Space Systems Engineering section",
+            "source_type": "official_lab_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-29",
+            "relevant_fields": [
+              "research",
+              "labs"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "States miniaturization and distributed space systems as focus areas and lists the cleanroom, workshop, ground station and Delfi programme.",
+              "tr": "Odak alanları olarak minyatürleştirme ve dağıtık uzay sistemlerini belirtir; temiz odayı, atölyeyi, yer istasyonunu ve Delfi programını listeler."
+            }
+          },
+          {
+            "url": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/space-systems-engineering/people",
+            "title": "TU Delft — Space Systems Engineering people",
+            "source_type": "official_department_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-29",
+            "relevant_fields": [
+              "research",
+              "department"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Publishes staff names, roles and university email addresses in plain text.",
+              "tr": "Personel adlarını, görevlerini ve üniversite e-posta adreslerini düz metin olarak yayımlar."
+            }
+          },
+          {
+            "url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/housing",
+            "title": "TU Delft — Housing",
+            "source_type": "official_housing_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-29",
+            "relevant_fields": [
+              "housing",
+              "living"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "States the Dutch student-room shortage and advises against travelling to Delft without arranged housing.",
+              "tr": "Hollanda'daki öğrenci odası sıkıntısını belirtir ve konut ayarlamadan Delft'e gelmemeyi tavsiye eder."
+            }
+          },
+          {
+            "url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/tuition-fee-finances",
+            "title": "TU Delft — Tuition fee and finances 2026/2027",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-29",
+            "relevant_fields": [
+              "tuition",
+              "cost",
+              "housing",
+              "living"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Publishes the €25,633 institutional non-EU MSc rate, the €2,694 statutory rate and the €14,200 IND living-cost requirement.",
+              "tr": "25.633 avroluk AB dışı kurumsal MSc ücretini, 2.694 avroluk yasal ücreti ve 14.200 avroluk IND yaşam gideri şartını yayımlar."
+            }
+          },
+          {
+            "url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/scholarships/justus-louise-van-effen-excellence-scholarships",
+            "title": "TU Delft — Justus & Louise van Effen Excellence Scholarships",
+            "source_type": "official_scholarship_page",
+            "access_status": "blocked",
+            "last_checked": "2026-08-29",
+            "relevant_fields": [
+              "scholarship",
+              "funding"
+            ],
+            "confidence": "medium",
+            "notes": {
+              "en": "The dedicated scholarship page returns 403 to automated access. Its indexed current text supplies the age limit, the required documents, the two reference letters, the two-per-faculty award count and the 1 December deadline, so those values carry medium confidence and need a human check in a browser before a student relies on them.",
+              "tr": "Bursa ayrılmış sayfa otomatik erişime 403 döndürüyor. Yaş sınırı, istenen belgeler, iki referans mektubu, fakülte başına iki ödül sayısı ve 1 Aralık son tarihi sayfanın dizinlenmiş güncel metninden geliyor; bu nedenle bu değerler orta güven taşıyor ve bir öğrenci bunlara dayanmadan önce tarayıcıda insan kontrolü gerekiyor."
+            }
+          },
+          {
+            "url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/scholarships",
+            "title": "TU Delft — Scholarships for international MSc applicants",
+            "source_type": "official_scholarship_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-29",
+            "relevant_fields": [
+              "scholarship",
+              "funding"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Directly accessible. Confirms that the van Effen scholarship exists, that it is submitted with the MSc application and that it is a separate form, plus the 1 December 23:59 CET cut-off pattern used by TU Delft faculty scholarships.",
+              "tr": "Doğrudan erişilebilir. van Effen bursunun var olduğunu, MSc başvurusuyla birlikte gönderildiğini ve ayrı bir form olduğunu, ayrıca TU Delft fakülte burslarının kullandığı 1 Aralık 23.59 CET kesim kalıbını doğrular."
             }
           }
         ],
-        "last_verified": "2026-08-22",
+        "last_verified": "2026-08-29",
         "needs_verification": true,
         "verification_notes": {
           "en": "Critical fields have current checked evidence except that the official scholarship page blocks research access. Keep scholarship confidence at medium and recheck the next intake directly before advice or application.",
-          "tr": "Kritik alanlarda gÃ¼ncel kontrol edilmiÅŸ kanÄ±t vardÄ±r; ancak resmÃ® burs sayfasÄ± araÅŸtÄ±rma eriÅŸimini engeller. Burs gÃ¼venini orta tutun ve tavsiye ya da baÅŸvuru Ã¶ncesi sonraki alÄ±mÄ± doÄŸrudan yeniden kontrol edin."
+          "tr": "Kritik alanlarda güncel kontrol edilmiş kanıt vardır; ancak resmî burs sayfası araştırma erişimini engeller. Burs güvenini orta tutun ve tavsiye ya da başvuru öncesi sonraki alımı doğrudan yeniden kontrol edin."
         },
         "field_confidence": {
           "program_basic_info": "high",
@@ -987,34 +1596,33 @@
         "remaining_verification_tasks": [
           {
             "en": "Recheck the official scholarship page when it becomes accessible and replace the closed 2026-2028 cycle with the next published cycle; never roll the 1 December date forward by assumption.",
-            "tr": "ResmÃ® burs sayfasÄ± eriÅŸilebilir olduÄŸunda yeniden kontrol edin ve kapanmÄ±ÅŸ 2026-2028 dÃ¶nemini yayÄ±mlanan sonraki dÃ¶nemle deÄŸiÅŸtirin; 1 AralÄ±k tarihini varsayÄ±mla ileri taÅŸÄ±mayÄ±n."
+            "tr": "Resmî burs sayfası erişilebilir olduğunda yeniden kontrol edin ve kapanmış 2026-2028 dönemini yayımlanan sonraki dönemle değiştirin; 1 Aralık tarihini varsayımla ileri taşımayın."
           }
         ],
         "qc_notes": {
           "en": "The record now answers eligibility, amount scope, application mode, documents and deadline without falsely treating a blocked official page as accessible evidence.",
-          "tr": "KayÄ±t artÄ±k uygunluk, kapsam, baÅŸvuru biÃ§imi, belgeler ve tarihi yanÄ±tlarken engellenen resmÃ® sayfayÄ± eriÅŸilebilir kanÄ±t gibi gÃ¶stermez."
+          "tr": "Kayıt artık uygunluk, kapsam, başvuru biçimi, belgeler ve tarihi yanıtlarken engellenen resmî sayfayı erişilebilir kanıt gibi göstermez."
         }
       },
       "qs_ranking": 48,
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 14,
+        "checked_official_source_count": 19,
         "verified_fields": [
           "program",
           "language",
           "admission",
           "non_eu_eligibility",
           "tuition",
+          "scholarship",
           "deadline",
           "curriculum",
           "research",
           "housing"
         ],
-        "unverified_critical_fields": [
-          "scholarship"
-        ],
+        "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-14"
+        "audited_at": "2026-08-29"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -1042,6 +1650,72 @@
             "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
           }
         }
+      },
+      "academic_match_evidence": {
+        "research_group_evidence": {
+          "level": "strong",
+          "basis": "two named Space Engineering sections publish their own research areas",
+          "source_url": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/astrodynamics-and-space-missions"
+        },
+        "faculty_evidence": {
+          "level": "strong",
+          "basis": "eight named academic staff with published university email addresses",
+          "source_url": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/space-systems-engineering/people"
+        },
+        "facility_evidence": {
+          "level": "strong",
+          "basis": "cleanroom, workshop, LEO ground station and the Delfi CubeSat programme",
+          "source_url": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/space-systems-engineering"
+        }
+      },
+      "academic_match_profile": {
+        "standard": "academic_match@3.0.0",
+        "tier": "core_match",
+        "score": 100,
+        "score_basis_weight": 90,
+        "evidenced_dimensions": 4,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "curriculum_evidence": {
+            "level": "strong",
+            "basis": "5_named_items",
+            "weight": 30
+          },
+          "research_group_evidence": {
+            "level": "strong",
+            "basis": "two named Space Engineering sections publish their own research areas",
+            "weight": 25,
+            "source_url": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/astrodynamics-and-space-missions"
+          },
+          "faculty_evidence": {
+            "level": "strong",
+            "basis": "eight named academic staff with published university email addresses",
+            "weight": 25,
+            "source_url": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/space-systems-engineering/people"
+          },
+          "facility_evidence": {
+            "level": "strong",
+            "basis": "cleanroom, workshop, LEO ground station and the Delfi CubeSat programme",
+            "weight": 10,
+            "source_url": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/space-systems-engineering"
+          },
+          "industry_outlet_evidence": {
+            "level": "unknown",
+            "basis": "industry_evidence_not_checked",
+            "weight": 10
+          }
+        },
+        "matched_tags": [
+          "astrodynamics",
+          "mission_analysis",
+          "orbit_determination",
+          "gnc",
+          "attitude_dynamics_control",
+          "space_systems"
+        ],
+        "confidence": "medium",
+        "legacy_relevance_status": "needs_review",
+        "evaluated_at": "2026-08-30"
       }
     },
     {
@@ -1109,11 +1783,11 @@
         "test_required": null,
         "notes_for_turkish_students": {
           "en": "The current national catalogue publishes a non-EU application route but says programme admission requirements are unavailable. Do not infer Turkish degree equivalence, GPA, documents or GRE rules from scholarship pages.",
-          "tr": "GÃ¼ncel ulusal katalog AB dÄ±ÅŸÄ± baÅŸvuru rotasÄ±nÄ± yayÄ±mlar ancak program kabul koÅŸullarÄ±nÄ± 'mevcut deÄŸil' gÃ¶sterir. TÃ¼rk diploma denkliÄŸi, GPA, belgeler veya GRE kurallarÄ±nÄ± burs sayfalarÄ±ndan Ã§Ä±karmayÄ±n."
+          "tr": "Güncel ulusal katalog AB dışı başvuru rotasını yayımlar ancak program kabul koşullarını 'mevcut değil' gösterir. Türk diploma denkliği, GPA, belgeler veya GRE kurallarını burs sayfalarından çıkarmayın."
         },
         "verification_notes": {
           "en": "Non-EU application is explicitly supported by the official national catalogue. Academic prerequisite, equivalency and document details remain unknown because the linked TU/e admission page blocked research access and the catalogue does not reproduce them.",
-          "tr": "AB dÄ±ÅŸÄ± baÅŸvuru resmÃ® ulusal katalogda aÃ§Ä±kÃ§a desteklenir. BaÄŸlÄ± TU/e kabul sayfasÄ± araÅŸtÄ±rma eriÅŸimini engellediÄŸi ve katalog bunlarÄ± aktarmadÄ±ÄŸÄ± iÃ§in akademik Ã¶nkoÅŸul, denklik ve belge ayrÄ±ntÄ±larÄ± bilinmiyor."
+          "tr": "AB dışı başvuru resmî ulusal katalogda açıkça desteklenir. Bağlı TU/e kabul sayfası araştırma erişimini engellediği ve katalog bunları aktarmadığı için akademik önkoşul, denklik ve belge ayrıntıları bilinmiyor."
         },
         "gre": {
           "policy": "unknown_not_published_in_accessible_checked_requirements",
@@ -1148,7 +1822,7 @@
         "language_risk": "medium",
         "verification_notes": {
           "en": "The current national programme catalogue publishes the overall IELTS and TOEFL thresholds and Cambridge levels. It does not publish component minima or exemptions, so none are inferred.",
-          "tr": "GÃ¼ncel ulusal program kataloÄŸu toplam IELTS ve TOEFL eÅŸiklerini ve Cambridge dÃ¼zeylerini yayÄ±mlar. BÃ¶lÃ¼m alt puanlarÄ± veya muafiyetler yayÄ±mlanmadÄ±ÄŸÄ±ndan bunlar Ã§Ä±karÄ±lmaz."
+          "tr": "Güncel ulusal program kataloğu toplam IELTS ve TOEFL eşiklerini ve Cambridge düzeylerini yayımlar. Bölüm alt puanları veya muafiyetler yayımlanmadığından bunlar çıkarılmaz."
         },
         "minimum_scores": {
           "ielts_academic": {
@@ -1179,11 +1853,11 @@
         },
         "source_notes": {
           "en": "Study in NL publishes EUR 2,694 for EU/EEA students in 2026/27 but explicitly shows the non-EU amount as unavailable. TU/e university media reports EUR 21,000 for non-EU master's students in 2025/26; it is retained only as historical context and is not rolled forward.",
-          "tr": "Study in NL 2026/27 AB/AEA iÃ§in 2.694 EUR yayÄ±mlar ancak AB dÄ±ÅŸÄ± tutarÄ± aÃ§Ä±kÃ§a mevcut deÄŸil gÃ¶sterir. TU/e Ã¼niversite medyasÄ± 2025/26 AB dÄ±ÅŸÄ± yÃ¼ksek lisans iÃ§in 21.000 EUR bildirir; yalnÄ±zca tarihsel baÄŸlam olarak tutulur ve ileri taÅŸÄ±nmaz."
+          "tr": "Study in NL 2026/27 AB/AEA için 2.694 EUR yayımlar ancak AB dışı tutarı açıkça mevcut değil gösterir. TU/e üniversite medyası 2025/26 AB dışı yüksek lisans için 21.000 EUR bildirir; yalnızca tarihsel bağlam olarak tutulur ve ileri taşınmaz."
         },
         "verification_notes": {
           "en": "The decision-critical 2026/27 non-EU tuition remains unknown; no estimate is stored.",
-          "tr": "Karar-kritik 2026/27 AB dÄ±ÅŸÄ± Ã¶ÄŸrenim Ã¼creti bilinmiyor; tahmin tutulmaz."
+          "tr": "Karar-kritik 2026/27 AB dışı öğrenim ücreti bilinmiyor; tahmin tutulmaz."
         },
         "tuition_usd_per_year": null,
         "tuition_usd_per_year_at_three_quarters": null,
@@ -1218,6 +1892,24 @@
           "currency": "EUR",
           "academic_year": "2025/2026",
           "use_for_2026_27": false
+        },
+        "normalized_cost": {
+          "standard": "cost_model@3.0.0",
+          "currency": null,
+          "annual_total": null,
+          "annual_total_eur_equivalent": null,
+          "includes": [],
+          "missing_mandatory_components": [
+            "tuition",
+            "living_costs"
+          ],
+          "months_of_living_cost": null,
+          "status": "incomplete",
+          "note": {
+            "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+            "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+          },
+          "evaluated_at": "2026-08-30"
         }
       },
       "scholarship_profile": {
@@ -1236,11 +1928,11 @@
         "funding_competitiveness": "high",
         "funding_notes": {
           "en": "The current national programme catalogue lists both scholarships for this programme and states that the NL Scholarship targets non-EEA students. The linked TU/e scholarship pages blocked access, so old claims about a 1 February deadline, automatic consideration or award values are not treated as current facts.",
-          "tr": "GÃ¼ncel ulusal program kataloÄŸu iki bursu da bu program iÃ§in listeler ve NL Scholarship'ın AB/AEA dÄ±ÅŸÄ± Ã¶ÄŸrencileri hedeflediÄŸini belirtir. BaÄŸlÄ± TU/e burs sayfalarÄ± eriÅŸimi engellediÄŸinden eski 1 Åžubat tarihi, otomatik deÄŸerlendirme veya Ã¶dÃ¼l tutarÄ± iddialarÄ± gÃ¼ncel gerÃ§ek kabul edilmez."
+          "tr": "Güncel ulusal program kataloğu iki bursu da bu program için listeler ve NL Scholarship'ın AB/AEA dışı öğrencileri hedeflediğini belirtir. Bağlı TU/e burs sayfaları erişimi engellediğinden eski 1 Şubat tarihi, otomatik değerlendirme veya ödül tutarı iddiaları güncel gerçek kabul edilmez."
         },
         "verification_notes": {
           "en": "Scholarship existence and non-EEA targeting are current; mechanics, amounts and deadline need direct TU/e confirmation.",
-          "tr": "BurslarÄ±n varlÄ±ÄŸÄ± ve AB/AEA dÄ±ÅŸÄ± hedefi gÃ¼nceldir; sÃ¼reÃ§, tutar ve son tarih doÄŸrudan TU/e doÄŸrulamasÄ± gerektirir."
+          "tr": "Bursların varlığı ve AB/AEA dışı hedefi günceldir; süreç, tutar ve son tarih doğrudan TU/e doğrulaması gerektirir."
         },
         "application_mode": "unknown",
         "automatic_consideration": null,
@@ -1270,7 +1962,7 @@
         "monthly_living_cost_eur_min": 1000,
         "monthly_living_cost_eur_max": 1500,
         "monthly_living_cost_eur_estimated": null,
-        "housing_difficulty": "high_no_guarantee",
+        "housing_difficulty": "high",
         "student_housing_available": true,
         "student_housing_competitiveness": "high",
         "average_room_rent_eur": null,
@@ -1283,12 +1975,12 @@
         "living_risk_score": 85,
         "verification_notes": {
           "en": "The EUR 1,000-1,500 monthly budget is an official Netherlands-wide planning range, not an Eindhoven quote. TU/e university media still described housing as a major problem in 2025.",
-          "tr": "AylÄ±k 1.000-1.500 EUR bÃ¼tÃ§e resmÃ® Hollanda geneli planlama aralÄ±ÄŸÄ±dÄ±r; Eindhoven fiyatÄ± deÄŸildir. TU/e Ã¼niversite medyasÄ± 2025'te konutu hÃ¢lÃ¢ bÃ¼yÃ¼k bir sorun olarak tanÄ±mlÄ±yordu."
+          "tr": "Aylık 1.000-1.500 EUR bütçe resmî Hollanda geneli planlama aralığıdır; Eindhoven fiyatı değildir. TU/e üniversite medyası 2025'te konutu hâlâ büyük bir sorun olarak tanımlıyordu."
         },
         "living_cost_eur_per_month": null,
         "housing_notes": {
           "en": "A current Vestide example was restricted to international full-time TU/e-campus students and required an admission/confirmation statement; international students receive priority for this room type, but applicants still had to respond to the listing. It is an example, not a guarantee or market average.",
-          "tr": "GÃ¼ncel Vestide Ã¶rneÄŸi uluslararasÄ± tam zamanlÄ± TU/e kampÃ¼sÃ¼ Ã¶ÄŸrencileriyle sÄ±nÄ±rlÄ±ydÄ± ve kabul/onay belgesi istiyordu; bu oda tipinde uluslararasÄ±lara Ã¶ncelik vardÄ± ancak adayÄ±n ilana ayrÄ±ca yanÄ±t vermesi gerekiyordu. Bu bir Ã¶rnek olup garanti veya piyasa ortalamasÄ± deÄŸildir."
+          "tr": "Güncel Vestide örneği uluslararası tam zamanlı TU/e kampüsü öğrencileriyle sınırlıydı ve kabul/onay belgesi istiyordu; bu oda tipinde uluslararasılara öncelik vardı ancak adayın ilana ayrıca yanıt vermesi gerekiyordu. Bu bir örnek olup garanti veya piyasa ortalaması değildir."
         },
         "average_room_rent_usd_per_month_min": null,
         "average_room_rent_usd_per_month_max": null,
@@ -1351,7 +2043,60 @@
           "available": false,
           "basis": "no guarantee found; current Vestide listing requires a separate response and documentation"
         },
-        "housing_access_notes": "Eligible international full-time TU/e-campus students can respond to designated Vestide listings; eligibility is not an allocation guarantee."
+        "housing_access_notes": "Eligible international full-time TU/e-campus students can respond to designated Vestide listings; eligibility is not an allocation guarantee.",
+        "housing_search_difficulty": "high",
+        "housing_difficulty_profile": {
+          "standard": "housing_difficulty@3.0.0",
+          "level": "high",
+          "raw_score": 6,
+          "scaled_score": 9,
+          "score_max": 15,
+          "evidenced_dimensions": 3,
+          "dimensions_required_for_publication": 3,
+          "dimensions": {
+            "guarantee_status": {
+              "value": "not_guaranteed",
+              "points": 3,
+              "derived_from": "living_profile.housing_access"
+            },
+            "supply_pressure": {
+              "value": "published_waiting_list",
+              "points": 2,
+              "derived_from": "living_profile.student_housing_competitiveness"
+            },
+            "market_affordability_gap": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "timing_sensitivity": {
+              "value": "separate_application_generous_window",
+              "points": 1,
+              "derived_from": "living_profile.housing_application_separate"
+            },
+            "arrival_risk": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            }
+          },
+          "confidence": "medium",
+          "band_from_score": "high",
+          "capped_from_very_high": false,
+          "legacy_value": "high",
+          "evaluated_at": "2026-08-30"
+        },
+        "cost_of_living_profile": {
+          "standard": "cost_model@3.0.0",
+          "cost_basis": "unknown",
+          "status": "unknown",
+          "reason": "no_official_living_cost_items",
+          "components": {},
+          "monthly_total": null,
+          "evaluated_at": "2026-08-30"
+        }
       },
       "curriculum_profile": {
         "tracks": [],
@@ -1372,7 +2117,7 @@
         "study_plan_url": "",
         "verification_notes": {
           "en": "The official national catalogue verifies the three clusters and broad two-year structure. It does not publish an exact course list or number, so the old nine-track list is removed rather than presented as a current study plan.",
-          "tr": "ResmÃ® ulusal katalog Ã¼Ã§ kÃ¼meyi ve genel iki yÄ±llÄ±k yapÄ±yÄ± doÄŸrular. Kesin ders listesi veya sayÄ±sÄ± yayÄ±mlanmadÄ±ÄŸÄ±ndan eski dokuz iz listesi gÃ¼ncel plan gibi sunulmak yerine kaldÄ±rÄ±lÄ±r."
+          "tr": "Resmî ulusal katalog üç kümeyi ve genel iki yıllık yapıyı doğrular. Kesin ders listesi veya sayısı yayımlanmadığından eski dokuz iz listesi güncel plan gibi sunulmak yerine kaldırılır."
         },
         "research_clusters": [
           "Dynamical Systems Design",
@@ -1422,9 +2167,11 @@
       },
       "research_profile": {
         "department_research_areas": [
-          "Computational and Experimental Mechanics",
-          "Dynamical Systems Design",
-          "Thermo Fluids Engineering"
+          "Computational Dynamics",
+          "Vehicle dynamics and control",
+          "Vibro-acoustics and noise control",
+          "Autonomous and Complex Systems",
+          "Autonomous Matter & Machines"
         ],
         "labs": [],
         "research_centers": [
@@ -1443,7 +2190,7 @@
         "satellite_or_flight_projects": [],
         "research_strength_summary": {
           "en": "TU/e has credible aerospace-adjacent research in structures/materials, controls, drones/e-aircraft and precision mechatronics for space/astronomy, but no dedicated space-engineering department or programme was verified.",
-          "tr": "TU/e; yapÄ±lar/malzemeler, kontrol, Ä°HA/e-uÃ§ak ve uzay/astronomi iÃ§in hassas mekatronikte gÃ¼venilir havacÄ±lÄ±k-yan alan araÅŸtÄ±rmasÄ±na sahiptir; ancak Ã¶zel uzay mÃ¼hendisliÄŸi bÃ¶lÃ¼mÃ¼ veya programÄ± doÄŸrulanmadÄ±."
+          "tr": "TU/e; yapılar/malzemeler, kontrol, İHA/e-uçak ve uzay/astronomi için hassas mekatronikte güvenilir havacılık-yan alan araştırmasına sahiptir; ancak özel uzay mühendisliği bölümü veya programı doğrulanmadı."
         },
         "research_strength_score": 70,
         "research_sources": [
@@ -1452,7 +2199,101 @@
           "https://research.tue.nl/en/organisations/group-hofman/",
           "https://research.tue.nl/en/organisations/group-oomen/",
           "https://research.tue.nl/en/organisations/autonomous-and-complex-systems/studentTheses/"
-        ]
+        ],
+        "department": "Department of Mechanical Engineering — Dynamics and Control, with Control Systems Technology",
+        "department_url": "https://www.tue.nl/en/research/research-groups/dynamics-and-control",
+        "department_note": {
+          "en": "This is a mechanical-engineering control programme, not an aerospace one. Its relevance to an aerospace applicant is the control, estimation and system-identification core, which transfers directly to GNC — but there is no aerospace department, no wind tunnel and no space systems group behind it.",
+          "tr": "Bu bir havacılık programı değil, makine mühendisliği kontrol programıdır. Havacılık adayı için önemi, doğrudan GNC'ye aktarılabilen kontrol, kestirim ve sistem tanımlama çekirdeğidir — ancak arkasında havacılık bölümü, rüzgâr tüneli veya uzay sistemleri grubu yoktur."
+        },
+        "faculty_contact_policy": "only_with_specific_research_question",
+        "research_units": [
+          {
+            "name": "Autonomous and Complex Systems (Dynamics and Control)",
+            "unit_type": "research_group",
+            "url": "https://www.tue.nl/en/research/research-groups/dynamics-and-control/autonomous-and-complex-systems",
+            "topics": [
+              "autonomy",
+              "stability_control",
+              "data_driven_modeling",
+              "sensors",
+              "simulation_modelling"
+            ],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "The group states its approach is a synergy between model-based and data-driven learning methods, and publishes its PhD and postdoc research posters — including optimal sensor placement for output estimation, which is the same estimation problem a spacecraft navigation filter solves. If your tags are stability_control or data_driven_modeling rather than aerodynamics, this transfers.",
+              "tr": "Grup, yaklaşımının model tabanlı ve veri odaklı öğrenme yöntemleri arasındaki sinerji olduğunu belirtir ve doktora ile doktora sonrası araştırma posterlerini yayımlar — bunlar arasında çıktı kestirimi için optimal sensör yerleşimi vardır ki bu, bir uzay aracı seyrüsefer filtresinin çözdüğü kestirim probleminin aynısıdır. Etiketlerin aerodinamik değil stability_control veya data_driven_modeling ise, bu aktarılabilir."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "Control Systems Technology group",
+            "unit_type": "research_group",
+            "url": "https://www.tue.nl/en/research/research-groups/control-systems-technology",
+            "topics": [
+              "stability_control",
+              "verification_validation",
+              "optimization_ai",
+              "systems_engineering"
+            ],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "Its stated strategy is performance-driven design and control — matching actual to intended behaviour under disturbances and dynamic variation. That framing is exactly what a flight control requirement is, so the methods transfer even though the application domain here is high-tech equipment and mobility.",
+              "tr": "İlan ettiği strateji performans odaklı tasarım ve kontroldür — bozucular ve dinamik değişim altında gerçek davranışı hedeflenen davranışla eşleştirmek. Bu çerçeve tam olarak bir uçuş kontrolü gereksiniminin ne olduğudur; uygulama alanı burada yüksek teknoloji ekipmanı ve hareketlilik olsa da yöntemler aktarılabilir."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "Motion Control (DCT) Laboratory",
+            "unit_type": "laboratory",
+            "url": "https://www.tue.nl/en/research/research-labs/the-motion-dct-laboratory",
+            "topics": [
+              "stability_control",
+              "testing",
+              "embedded_systems",
+              "sensors"
+            ],
+            "facilities": [
+              "dSpace and Beckhoff real-time hardware",
+              "SigLab measurement systems",
+              "TU/e DACS systems allowing students to use their own laptops as real-time control processors"
+            ],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "A joint laboratory of the Control Systems Technology and Dynamics and Control groups, explicitly described as a combined educational and research facility for MSc and PhD projects with technical staff support. If you want a controls MSc where your controller runs on real hardware rather than only in simulation, that is the concrete offer.",
+              "tr": "Kontrol Sistemleri Teknolojisi ile Dinamik ve Kontrol gruplarının ortak laboratuvarı; teknik personel desteğiyle MSc ve doktora projeleri için birleşik eğitim ve araştırma tesisi olarak açıkça tanımlanır. Denetleyicinin yalnızca simülasyonda değil gerçek donanımda çalıştığı bir kontrol yüksek lisansı istiyorsan, somut teklif budur."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "Automotive Technology lab",
+            "unit_type": "laboratory",
+            "url": "https://www.tue.nl/en/research/research-labs/automotive-technology-lab",
+            "topics": [
+              "stability_control",
+              "autonomy",
+              "testing",
+              "energy_systems"
+            ],
+            "facilities": [
+              "Tire-road interaction rigs",
+              "Suspension component test facilities",
+              "Vehicle control systems",
+              "Cooperative and automated driving",
+              "Electric vehicle and powertrain component testing"
+            ],
+            "student_access": "msc_thesis_open",
+            "last_verified": "2026-08-30"
+          }
+        ],
+        "faculty_email_availability": {
+          "status": "not_published",
+          "note": {
+            "en": "The group pages describe the research and name PhD researchers on the poster list, but publish no staff email addresses. TU/e staff addresses live on the separate research portal, which is the route to use.",
+            "tr": "Grup sayfaları araştırmayı anlatır ve poster listesinde doktora araştırmacılarını adlandırır, ancak personel e-posta adresi yayımlamaz. TU/e personel adresleri ayrı araştırma portalındadır; kullanılacak yol odur."
+          },
+          "directory_url": "https://research.tue.nl/en/organisations/dynamics-and-control/persons/"
+        }
       },
       "industry_ecosystem_profile": {
         "nearby_companies": [],
@@ -1466,7 +2307,7 @@
         "ecosystem_strength_score": null,
         "ecosystem_notes": {
           "en": "The programme catalogue says the department works intensively with many high-tech companies, but it does not name them. ASML, Philips or NXP are therefore not stored as programme partners without a direct current confirmation.",
-          "tr": "Program kataloÄŸu bÃ¶lÃ¼mÃ¼n Ã§ok sayÄ±da yÃ¼ksek teknoloji ÅŸirketiyle yoÄŸun Ã§alÄ±ÅŸtÄ±ÄŸÄ±nÄ± belirtir ancak ad vermez. Bu nedenle ASML, Philips veya NXP doÄŸrudan gÃ¼ncel teyit olmadan program ortaÄŸÄ± olarak tutulmaz."
+          "tr": "Program kataloğu bölümün çok sayıda yüksek teknoloji şirketiyle yoğun çalıştığını belirtir ancak ad vermez. Bu nedenle ASML, Philips veya NXP doğrudan güncel teyit olmadan program ortağı olarak tutulmaz."
         }
       },
       "application_timeline_profile": {
@@ -1486,7 +2327,7 @@
         "timeline_risk": "medium",
         "deadline_notes": {
           "en": "Study in NL currently publishes 1 May for both EU/EEA and non-EU/EEA applicants for the September 2027 start. Scholarship timing is not inferred from old ALSP cycles.",
-          "tr": "Study in NL EylÃ¼l 2027 baÅŸlangÄ±cÄ± iÃ§in hem AB/AEA hem AB/AEA dÄ±ÅŸÄ± adaylara 1 MayÄ±s tarihini yayÄ±mlar. Burs takvimi eski ALSP dÃ¶nemlerinden Ã§Ä±karÄ±lmaz."
+          "tr": "Study in NL Eylül 2027 başlangıcı için hem AB/AEA hem AB/AEA dışı adaylara 1 Mayıs tarihini yayımlar. Burs takvimi eski ALSP dönemlerinden çıkarılmaz."
         },
         "winter_deadline": null,
         "application_deadline": "2027-05-01",
@@ -1501,7 +2342,23 @@
             "date": "2027-05-01",
             "status": "future_published"
           }
-        ]
+        ],
+        "primary_deadline": {
+          "standard": "application_countdown@3.0.0",
+          "date": "2027-05-01",
+          "next_expected_date": null,
+          "time": null,
+          "timezone": null,
+          "applies_to": "all_applicants",
+          "cycle_label": null,
+          "is_recurring_annual": false,
+          "status": "open",
+          "days_remaining_at_evaluation": 244,
+          "derived_from": "application_timeline_profile.application_deadline",
+          "confidence": "high",
+          "source_url": "https://www.tue.nl/en/education/graduate-school/master-mechanical-engineering",
+          "evaluated_at": "2026-08-30"
+        }
       },
       "student_sentiment_profile": {
         "student_satisfaction_score": null,
@@ -1521,12 +2378,12 @@
         "recurring_strengths": [],
         "sentiment_summary": {
           "en": "Insufficient programme-specific, attributable recent student evidence; no sentiment conclusion is stored.",
-          "tr": "Programa Ã¶zgÃ¼, atfedilebilir gÃ¼ncel Ã¶ÄŸrenci kanÄ±tÄ± yetersizdir; duygu sonucu tutulmaz."
+          "tr": "Programa özgü, atfedilebilir güncel öğrenci kanıtı yetersizdir; duygu sonucu tutulmaz."
         },
         "student_sentiment_sources": [],
         "verification_notes": {
           "en": "Prior unattributed Reddit search-result quotations were removed.",
-          "tr": "Ã–nceki atÄ±fsÄ±z Reddit arama-sonucu alÄ±ntÄ±larÄ± kaldÄ±rÄ±ldÄ±."
+          "tr": "Önceki atıfsız Reddit arama-sonucu alıntıları kaldırıldı."
         }
       },
       "source_profile": {
@@ -1558,7 +2415,7 @@
             "confidence": "high",
             "notes": {
               "en": "Current Nuffic initiative page verifies 120 ECTS, two years, English, clusters, broad study structure, language scores, 2026/27 EU fee, non-EU fee unavailable, programme deadlines and scholarship listings.",
-              "tr": "Kaynak, belirtilen alanlar ve kapsam sÄ±nÄ±rlarÄ± iÃ§in kontrol edildi."
+              "tr": "Kaynak, belirtilen alanlar ve kapsam sınırları için kontrol edildi."
             }
           },
           {
@@ -1574,7 +2431,7 @@
             "confidence": "high",
             "notes": {
               "en": "Official Netherlands-wide monthly student budget and room-cost range; not Eindhoven-specific.",
-              "tr": "Kaynak, belirtilen alanlar ve kapsam sÄ±nÄ±rlarÄ± iÃ§in kontrol edildi."
+              "tr": "Kaynak, belirtilen alanlar ve kapsam sınırları için kontrol edildi."
             }
           },
           {
@@ -1590,7 +2447,7 @@
             "confidence": "high",
             "notes": {
               "en": "Current room example with full cost breakdown, international eligibility, required documents and non-guaranteed response workflow.",
-              "tr": "Kaynak, belirtilen alanlar ve kapsam sÄ±nÄ±rlarÄ± iÃ§in kontrol edildi."
+              "tr": "Kaynak, belirtilen alanlar ve kapsam sınırları için kontrol edildi."
             }
           },
           {
@@ -1605,7 +2462,7 @@
             "confidence": "high",
             "notes": {
               "en": "Department divisions, active facilities and research structure.",
-              "tr": "Kaynak, belirtilen alanlar ve kapsam sÄ±nÄ±rlarÄ± iÃ§in kontrol edildi."
+              "tr": "Kaynak, belirtilen alanlar ve kapsam sınırları için kontrol edildi."
             }
           },
           {
@@ -1620,7 +2477,7 @@
             "confidence": "high",
             "notes": {
               "en": "Direct aerospace materials, composites, jet-engine materials and landing-gear research evidence.",
-              "tr": "Kaynak, belirtilen alanlar ve kapsam sÄ±nÄ±rlarÄ± iÃ§in kontrol edildi."
+              "tr": "Kaynak, belirtilen alanlar ve kapsam sınırları için kontrol edildi."
             }
           },
           {
@@ -1635,7 +2492,7 @@
             "confidence": "high",
             "notes": {
               "en": "Integrated design and control applications explicitly spanning drones, aircraft and e-aircraft.",
-              "tr": "Kaynak, belirtilen alanlar ve kapsam sÄ±nÄ±rlarÄ± iÃ§in kontrol edildi."
+              "tr": "Kaynak, belirtilen alanlar ve kapsam sınırları için kontrol edildi."
             }
           },
           {
@@ -1650,7 +2507,7 @@
             "confidence": "high",
             "notes": {
               "en": "Learning-control research and collaborations covering precision mechatronics, space and astronomy.",
-              "tr": "Kaynak, belirtilen alanlar ve kapsam sÄ±nÄ±rlarÄ± iÃ§in kontrol edildi."
+              "tr": "Kaynak, belirtilen alanlar ve kapsam sınırları için kontrol edildi."
             }
           },
           {
@@ -1666,7 +2523,7 @@
             "confidence": "medium",
             "notes": {
               "en": "Search-indexed programme-level thesis evidence includes free-space optical communication control; direct link checking returned HTTP 403.",
-              "tr": "Kaynak, belirtilen alanlar ve kapsam sÄ±nÄ±rlarÄ± iÃ§in kontrol edildi."
+              "tr": "Kaynak, belirtilen alanlar ve kapsam sınırları için kontrol edildi."
             }
           },
           {
@@ -1681,7 +2538,7 @@
             "confidence": "medium",
             "notes": {
               "en": "January 2026 university-media context for the 2025/26 EUR 21,000 non-EU master's fee; not used as a 2026/27 amount.",
-              "tr": "Kaynak, belirtilen alanlar ve kapsam sÄ±nÄ±rlarÄ± iÃ§in kontrol edildi."
+              "tr": "Kaynak, belirtilen alanlar ve kapsam sınırları için kontrol edildi."
             }
           },
           {
@@ -1697,15 +2554,71 @@
             "confidence": "medium",
             "notes": {
               "en": "April 2025 programme context explicitly calling housing a major problem.",
-              "tr": "Kaynak, belirtilen alanlar ve kapsam sÄ±nÄ±rlarÄ± iÃ§in kontrol edildi."
+              "tr": "Kaynak, belirtilen alanlar ve kapsam sınırları için kontrol edildi."
             }
+          },
+          {
+            "url": "https://www.tue.nl/en/research/research-groups/dynamics-and-control",
+            "title": "TU Eindhoven — Dynamics and Control research group",
+            "source_type": "official_department_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-30",
+            "relevant_fields": [
+              "research",
+              "department"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Publishes the group's mission, its five sub-areas and its application domains.",
+              "tr": "Grubun misyonunu, beş alt alanını ve uygulama alanlarını yayımlar."
+            }
+          },
+          {
+            "url": "https://www.tue.nl/en/research/research-labs/the-motion-dct-laboratory",
+            "title": "TU Eindhoven — Motion Control (DCT) Laboratory",
+            "source_type": "official_lab_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-30",
+            "relevant_fields": [
+              "research",
+              "labs"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "States that the lab is a joint MSc and PhD facility and lists its real-time hardware.",
+              "tr": "Laboratuvarın ortak bir MSc ve doktora tesisi olduğunu belirtir ve gerçek zamanlı donanımını listeler."
+            }
+          },
+          {
+            "url": "https://www.tue.nl/en/research/research-labs/automotive-technology-lab",
+            "title": "TU Eindhoven — Automotive Technology lab",
+            "source_type": "official_lab_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-30",
+            "relevant_fields": [
+              "research",
+              "labs"
+            ],
+            "confidence": "high"
+          },
+          {
+            "url": "https://www.tue.nl/en/research/research-groups/control-systems-technology",
+            "title": "TU Eindhoven — Control Systems Technology group",
+            "source_type": "official_department_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-30",
+            "relevant_fields": [
+              "research",
+              "department"
+            ],
+            "confidence": "high"
           }
         ],
-        "last_verified": "2026-08-14",
+        "last_verified": "2026-08-30",
         "needs_verification": true,
         "verification_notes": {
           "en": "Accessible national and provider sources support programme, language, dates, scholarship listing, structure and housing examples. Programme admission, 2026/27 non-EU tuition and scholarship mechanics remain unresolved because TU/e pages blocked access.",
-          "tr": "EriÅŸilebilir ulusal ve saÄŸlayÄ±cÄ± kaynaklar program, dil, tarihler, burs listesi, yapÄ± ve konut Ã¶rneklerini destekler. TU/e sayfalarÄ± eriÅŸimi engellediÄŸinden program kabulÃ¼, 2026/27 AB dÄ±ÅŸÄ± Ã¼cret ve burs sÃ¼reci Ã§Ã¶zÃ¼msÃ¼z kalÄ±r."
+          "tr": "Erişilebilir ulusal ve sağlayıcı kaynaklar program, dil, tarihler, burs listesi, yapı ve konut örneklerini destekler. TU/e sayfaları erişimi engellediğinden program kabulü, 2026/27 AB dışı ücret ve burs süreci çözümsüz kalır."
         },
         "field_confidence": {
           "program_basic_info": "high",
@@ -1730,53 +2643,53 @@
         "best_for": [
           {
             "en": "Students targeting control, mechatronics, CFD/thermofluids or aerospace structures/materials who accept a general Mechanical Engineering degree title.",
-            "tr": "Genel Mechanical Engineering derece adÄ±nÄ± kabul ederek kontrol, mekatronik, HAD/termofluid veya havacÄ±lÄ±k yapÄ±larÄ±/malzemelerini hedefleyen Ã¶ÄŸrenciler."
+            "tr": "Genel Mechanical Engineering derece adını kabul ederek kontrol, mekatronik, HAD/termofluid veya havacılık yapıları/malzemelerini hedefleyen öğrenciler."
           }
         ],
         "not_ideal_for": [
           {
             "en": "Students seeking a dedicated spacecraft, satellite, orbital mechanics, astrodynamics, mission design or propulsion curriculum.",
-            "tr": "Ã–zel uzay aracÄ±, uydu, yÃ¶rÃ¼nge mekaniÄŸi, astrodinamik, gÃ¶rev tasarÄ±mÄ± veya itki mÃ¼fredatÄ± arayan Ã¶ÄŸrenciler."
+            "tr": "Özel uzay aracı, uydu, yörünge mekaniği, astrodinamik, görev tasarımı veya itki müfredatı arayan öğrenciler."
           }
         ],
         "main_strengths": [
           {
             "en": "A broad 120-ECTS Mechanical Engineering degree with control, mechanics/materials and thermofluid clusters plus a programme internship and graduation project.",
-            "tr": "Kontrol, mekanik/malzemeler ve termofluid kÃ¼meleri ile program stajÄ± ve mezuniyet projesi iÃ§eren geniÅŸ 120 AKTS Mechanical Engineering derecesi."
+            "tr": "Kontrol, mekanik/malzemeler ve termofluid kümeleri ile program stajı ve mezuniyet projesi içeren geniş 120 AKTS Mechanical Engineering derecesi."
           },
           {
             "en": "Official research evidence supports aerospace materials, aircraft/drone control applications and space/astronomy precision mechatronics.",
-            "tr": "ResmÃ® araÅŸtÄ±rma kanÄ±tÄ± havacÄ±lÄ±k malzemeleri, uÃ§ak/Ä°HA kontrol uygulamalarÄ± ve uzay/astronomi hassas mekatroniÄŸini destekler."
+            "tr": "Resmî araştırma kanıtı havacılık malzemeleri, uçak/İHA kontrol uygulamaları ve uzay/astronomi hassas mekatroniğini destekler."
           }
         ],
         "main_risks": [
           {
             "en": "This is not an Aerospace or Space Engineering degree; no orbital mechanics, spacecraft systems, mission design or dedicated space track was verified.",
-            "tr": "Bu bir Aerospace veya Space Engineering derecesi deÄŸildir; yÃ¶rÃ¼nge mekaniÄŸi, uzay aracÄ± sistemleri, gÃ¶rev tasarÄ±mÄ± veya Ã¶zel uzay izi doÄŸrulanmadÄ±."
+            "tr": "Bu bir Aerospace veya Space Engineering derecesi değildir; yörünge mekaniği, uzay aracı sistemleri, görev tasarımı veya özel uzay izi doğrulanmadı."
           },
           {
             "en": "The 2026/27 non-EU tuition, academic admission rules and current scholarship mechanics remain unknown because TU/e's linked pages blocked research access.",
-            "tr": "TU/e'nin baÄŸlÄ± sayfalarÄ± araÅŸtÄ±rma eriÅŸimini engellediÄŸinden 2026/27 AB dÄ±ÅŸÄ± Ã¼cret, akademik kabul kurallarÄ± ve gÃ¼ncel burs sÃ¼reci bilinmiyor."
+            "tr": "TU/e'nin bağlı sayfaları araştırma erişimini engellediğinden 2026/27 AB dışı ücret, akademik kabul kuralları ve güncel burs süreci bilinmiyor."
           },
           {
             "en": "Housing is not guaranteed; the current room is a single Vestide example and university reporting still describes a serious shortage.",
-            "tr": "Konut garantili deÄŸildir; gÃ¼ncel oda tek bir Vestide Ã¶rneÄŸidir ve Ã¼niversite haberciliÄŸi hÃ¢lÃ¢ ciddi eksiklik bildirir."
+            "tr": "Konut garantili değildir; güncel oda tek bir Vestide örneğidir ve üniversite haberciliği hâlâ ciddi eksiklik bildirir."
           }
         ],
         "application_reality": {
           "en": "The next published programme deadline is 1 May 2027, but applicants need direct TU/e confirmation of academic eligibility, non-EU tuition and scholarship timing before spending money.",
-          "tr": "YayÄ±mlanmÄ±ÅŸ sonraki program tarihi 1 MayÄ±s 2027'dir; ancak adaylar para harcamadan Ã¶nce akademik uygunluk, AB dÄ±ÅŸÄ± Ã¼cret ve burs takvimini doÄŸrudan TU/e'den doÄŸrulamalÄ±dÄ±r."
+          "tr": "Yayımlanmış sonraki program tarihi 1 Mayıs 2027'dir; ancak adaylar para harcamadan önce akademik uygunluk, AB dışı ücret ve burs takvimini doğrudan TU/e'den doğrulamalıdır."
         },
         "overall_recommendation": {
           "en": "A credible adjacent option for control, fluids and structures, not a substitute for a dedicated aerospace/space master's.",
-          "tr": "Kontrol, akÄ±ÅŸkanlar ve yapÄ±lar iÃ§in gÃ¼venilir yan alan seÃ§eneÄŸidir; Ã¶zel havacÄ±lÄ±k/uzay yÃ¼ksek lisansÄ±nÄ±n yerine geÃ§mez."
+          "tr": "Kontrol, akışkanlar ve yapılar için güvenilir yan alan seçeneğidir; özel havacılık/uzay yüksek lisansının yerine geçmez."
         },
         "recommended_user_profile": ""
       },
       "scoring_inputs": {},
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-08-14",
+        "checked_at": "2026-08-23",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
@@ -1794,7 +2707,7 @@
       "qs_ranking": 152,
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 7,
+        "checked_official_source_count": 11,
         "verified_fields": [
           "program",
           "language",
@@ -1810,7 +2723,7 @@
           "admission"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-14"
+        "audited_at": "2026-08-30"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -1839,7 +2752,73 @@
           }
         }
       },
-      "programme_fit_class": "adjacent_mechanical_degree_with_aerospace_applications_not_aerospace_or_space_degree"
+      "programme_fit_class": "adjacent_mechanical_degree_with_aerospace_applications_not_aerospace_or_space_degree",
+      "academic_match_profile": {
+        "standard": "academic_match@3.0.0",
+        "tier": "weak_match",
+        "score": 32,
+        "score_basis_weight": 90,
+        "evidenced_dimensions": 4,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "curriculum_evidence": {
+            "level": "none",
+            "basis": "no_named_items",
+            "weight": 30
+          },
+          "research_group_evidence": {
+            "level": "moderate",
+            "basis": "five named sub-areas within Dynamics and Control plus the Control Systems Technology group, but none aerospace-specific",
+            "weight": 25,
+            "source_url": "https://www.tue.nl/en/research/research-groups/dynamics-and-control"
+          },
+          "faculty_evidence": {
+            "level": "weak",
+            "basis": "group pages name no academic staff with contactable detail",
+            "weight": 25,
+            "source_url": "https://www.tue.nl/en/research/research-groups/dynamics-and-control"
+          },
+          "facility_evidence": {
+            "level": "moderate",
+            "basis": "a joint motion control laboratory with real-time control hardware and an automotive technology lab; no aerospace test facility",
+            "weight": 10,
+            "source_url": "https://www.tue.nl/en/research/research-labs/the-motion-dct-laboratory"
+          },
+          "industry_outlet_evidence": {
+            "level": "unknown",
+            "basis": "industry_evidence_not_checked",
+            "weight": 10
+          }
+        },
+        "matched_tags": [
+          "control_systems",
+          "robotics",
+          "mechatronics",
+          "cfd",
+          "thermofluids",
+          "structures_materials"
+        ],
+        "confidence": "medium",
+        "legacy_relevance_status": "weak",
+        "evaluated_at": "2026-08-30"
+      },
+      "academic_match_evidence": {
+        "research_group_evidence": {
+          "level": "moderate",
+          "basis": "five named sub-areas within Dynamics and Control plus the Control Systems Technology group, but none aerospace-specific",
+          "source_url": "https://www.tue.nl/en/research/research-groups/dynamics-and-control"
+        },
+        "facility_evidence": {
+          "level": "moderate",
+          "basis": "a joint motion control laboratory with real-time control hardware and an automotive technology lab; no aerospace test facility",
+          "source_url": "https://www.tue.nl/en/research/research-labs/the-motion-dct-laboratory"
+        },
+        "faculty_evidence": {
+          "level": "weak",
+          "basis": "group pages name no academic staff with contactable detail",
+          "source_url": "https://www.tue.nl/en/research/research-groups/dynamics-and-control"
+        }
+      }
     },
     {
       "id": "netherlands_utwente_msc_robotics",
@@ -1980,6 +2959,25 @@
           "currency": "EUR",
           "basis": "two_years_tuition_only",
           "academic_year": "2026/2027"
+        },
+        "normalized_cost": {
+          "standard": "cost_model@3.0.0",
+          "currency": "EUR",
+          "annual_total": null,
+          "annual_total_eur_equivalent": null,
+          "includes": [
+            "tuition"
+          ],
+          "missing_mandatory_components": [
+            "living_costs"
+          ],
+          "months_of_living_cost": null,
+          "status": "incomplete",
+          "note": {
+            "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+            "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+          },
+          "evaluated_at": "2026-08-30"
         }
       },
       "scholarship_profile": {
@@ -2018,7 +3016,7 @@
         "monthly_living_cost_eur_min": null,
         "monthly_living_cost_eur_max": null,
         "monthly_living_cost_eur_estimated": 1311,
-        "housing_difficulty": "medium",
+        "housing_difficulty": "unknown",
         "student_housing_available": true,
         "student_housing_competitiveness": "high",
         "average_room_rent_eur": 561,
@@ -2035,7 +3033,62 @@
         },
         "living_cost_eur_per_month": 1311,
         "housing_access": "unknown",
-        "housing_application_separate": null
+        "housing_application_separate": null,
+        "housing_search_difficulty": "unknown",
+        "housing_difficulty_profile": {
+          "standard": "housing_difficulty@3.0.0",
+          "level": "unknown",
+          "raw_score": 2,
+          "scaled_score": null,
+          "score_max": 15,
+          "evidenced_dimensions": 1,
+          "dimensions_required_for_publication": 3,
+          "dimensions": {
+            "guarantee_status": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "supply_pressure": {
+              "value": "published_waiting_list",
+              "points": 2,
+              "derived_from": "living_profile.student_housing_competitiveness"
+            },
+            "market_affordability_gap": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "timing_sensitivity": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "arrival_risk": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            }
+          },
+          "confidence": "unknown",
+          "band_from_score": null,
+          "capped_from_very_high": false,
+          "legacy_value": "unknown",
+          "evaluated_at": "2026-08-30"
+        },
+        "cost_of_living_profile": {
+          "standard": "cost_model@3.0.0",
+          "cost_basis": "unknown",
+          "status": "unknown",
+          "reason": "no_official_living_cost_items",
+          "components": {},
+          "monthly_total": null,
+          "evaluated_at": "2026-08-30"
+        }
       },
       "curriculum_profile": {
         "tracks": [
@@ -2076,7 +3129,13 @@
         "category_scores": {}
       },
       "research_profile": {
-        "department_research_areas": [],
+        "department_research_areas": [
+          "Biomechanical Engineering (BE)",
+          "Civil Engineering and Management (CEM)",
+          "Design, Production and Management (DPM)",
+          "Mechanics of Solids, Surfaces and Systems (MS3)",
+          "Thermal and Fluid Engineering (TFE)"
+        ],
         "labs": [],
         "research_centers": [],
         "notable_professors": [],
@@ -2088,7 +3147,81 @@
           "tr": "Kayıt, robotik ve sistem-kontrol kesişimi için tutulur; bu program için resmî havacılık veya uzay uzmanlaşması iddia edilmez."
         },
         "research_strength_score": null,
-        "research_sources": []
+        "research_sources": [],
+        "department": "Faculty of Engineering Technology",
+        "department_url": "https://www.utwente.nl/en/et/research/departments-and-research-chairs/",
+        "department_note": {
+          "en": "Twente organises its engineering faculty into five departments, each holding several research chairs. There is no aerospace department; the aerospace-relevant capability sits inside Thermal and Fluid Engineering, which operates the wind tunnels.",
+          "tr": "Twente mühendislik fakültesini, her biri birkaç araştırma kürsüsü barındıran beş bölüme ayırır. Havacılık bölümü yoktur; havacılıkla ilgili yetkinlik, rüzgâr tünellerini işleten Isıl ve Akışkanlar Mühendisliği içinde yer alır."
+        },
+        "faculty_contact_policy": "only_with_specific_research_question",
+        "research_units": [
+          {
+            "name": "Engineering Fluid Dynamics wind tunnel complex",
+            "unit_type": "facility",
+            "url": "https://www.utwente.nl/en/et/research/facilities/",
+            "topics": [
+              "wind_tunnel",
+              "aerodynamics",
+              "aeroacoustics",
+              "experimental_fluids"
+            ],
+            "facilities": [
+              "Silent wind tunnel: open test section 0.9 m x 0.7 m inside a 6 m x 6 m x 4 m anechoic chamber, up to 250 km/h",
+              "Supersonic wind tunnel reaching Mach 1.7 (about 2,000 km/h)",
+              "Smoke and video flow visualisation"
+            ],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "An anechoic wind tunnel and a supersonic tunnel in a university with no aerospace department is a genuine surprise, and it is the single strongest aerospace-relevant asset here. The supersonic tunnel is used for airflow instabilities from wall grooves, jet-in-supersonic-crossflow behaviour and validating computational models — real aerodynamics work. If aeroacoustics or experimental_fluids is your tag, this is the reason Twente is on the list at all.",
+              "tr": "Havacılık bölümü olmayan bir üniversitede yankısız bir rüzgâr tüneli ve bir ses üstü tünel gerçek bir sürprizdir ve buradaki havacılıkla ilgili en güçlü varlıktır. Ses üstü tünel duvar oluklarından kaynaklanan akış kararsızlıkları, ses üstü çapraz akış içindeki jet davranışı ve hesaplamalı modellerin doğrulanması için kullanılır — gerçek aerodinamik çalışması. Etiketin aeroacoustics veya experimental_fluids ise, Twente'nin listede olmasının sebebi budur."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "Mechanical Testing Laboratory",
+            "unit_type": "laboratory",
+            "url": "https://www.utwente.nl/en/et/research/facilities/",
+            "topics": [
+              "materials",
+              "structural_mechanics",
+              "composites",
+              "fatigue_damage",
+              "testing"
+            ],
+            "facilities": [
+              "Material characterisation: balances, indenters, tribometers, tensile testers, digital image correlation, rheometers",
+              "Thermal characterisation: TMA, calorimeter, infrared camera",
+              "Optical and scanning electron microscopes, x-ray diffractometer, spectrometers"
+            ],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "A shared materials laboratory spanning nanometres to metres, covering rubber, plastics, metal, composite and biological materials. Relevant if composites or fatigue_damage is your tag and you want characterisation equipment rather than a simulation-only route.",
+              "tr": "Nanometrelerden metrelere uzanan, kauçuk, plastik, metal, kompozit ve biyolojik malzemeleri kapsayan ortak bir malzeme laboratuvarı. Etiketin composites veya fatigue_damage ise ve yalnızca simülasyon rotası yerine karakterizasyon ekipmanı istiyorsan önemlidir."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "MESA+ Institute for Nanotechnology",
+            "unit_type": "institute",
+            "url": "https://www.utwente.nl/en/et/research/institutes/",
+            "topics": [
+              "materials",
+              "sensors",
+              "manufacturing"
+            ],
+            "student_access": "msc_thesis_open",
+            "last_verified": "2026-08-30"
+          }
+        ],
+        "faculty_email_availability": {
+          "status": "not_published",
+          "note": {
+            "en": "The faculty research pages name departments and chairs but publish no individual staff addresses; Twente routes contact through its central People Pages directory.",
+            "tr": "Fakülte araştırma sayfaları bölümleri ve kürsüleri adlandırır ancak bireysel personel adresi yayımlamaz; Twente iletişimi merkezî People Pages rehberi üzerinden yönlendirir."
+          },
+          "directory_url": "https://people.utwente.nl"
+        }
       },
       "industry_ecosystem_profile": {
         "nearby_companies": [],
@@ -2128,6 +3261,22 @@
         "deadline_notes": {
           "en": "The factsheet contains two distinct intakes. It is misleading to display the July EU date without the matching September 2026 start, or to project those closed/published dates to a later cycle. The February 2027 dates were future dates when checked.",
           "tr": "Bilgi sayfası iki ayrı giriş içerir. Temmuz AB tarihini eşleşen Eylül 2026 başlangıcı olmadan göstermek veya bu kapanmış/yayımlanmış tarihleri sonraki döneme taşımak yanıltıcıdır. Şubat 2027 tarihleri kontrol edildiğinde gelecekteydi."
+        },
+        "primary_deadline": {
+          "standard": "application_countdown@3.0.0",
+          "date": "2026-10-01",
+          "next_expected_date": null,
+          "time": null,
+          "timezone": null,
+          "applies_to": "all_applicants",
+          "cycle_label": null,
+          "is_recurring_annual": false,
+          "status": "open",
+          "days_remaining_at_evaluation": 32,
+          "derived_from": "application_timeline_profile.application_deadline",
+          "confidence": "high",
+          "source_url": "https://www.utwente.nl/en/education/master/programmes/robotics/masters-structure/factsheet/",
+          "evaluated_at": "2026-08-30"
         }
       },
       "student_sentiment_profile": {
@@ -2256,9 +3405,49 @@
               "en": "Official factsheet lists 1 September 2026 and 1 February 2027 starts; EU/non-EU deadlines for both intakes; and the 2026/27 statutory, institutional and non-EU/EEA fee categories.",
               "tr": "Resmî bilgi sayfası 1 Eylül 2026 ve 1 Şubat 2027 başlangıçlarını; iki giriş için AB/AB-dışı son tarihlerini; ayrıca 2026/27 yasal, kurumsal ve AB/AEA-dışı ücret kategorilerini listeler."
             }
+          },
+          {
+            "url": "https://www.utwente.nl/en/et/research/departments-and-research-chairs/",
+            "title": "University of Twente — Engineering Technology departments and research chairs",
+            "source_type": "official_department_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-30",
+            "relevant_fields": [
+              "research",
+              "department"
+            ],
+            "confidence": "high"
+          },
+          {
+            "url": "https://www.utwente.nl/en/et/research/facilities/",
+            "title": "University of Twente — Engineering Technology research facilities",
+            "source_type": "official_lab_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-30",
+            "relevant_fields": [
+              "research",
+              "labs"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Publishes the silent wind tunnel dimensions and speed, the Mach 1.7 supersonic tunnel and the Mechanical Testing Laboratory equipment list.",
+              "tr": "Sessiz rüzgâr tünelinin boyutlarını ve hızını, Mach 1,7 ses üstü tüneli ve Mekanik Test Laboratuvarı ekipman listesini yayımlar."
+            }
+          },
+          {
+            "url": "https://www.utwente.nl/en/et/research/institutes/",
+            "title": "University of Twente — Institutes and centres",
+            "source_type": "official_department_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-30",
+            "relevant_fields": [
+              "research",
+              "department"
+            ],
+            "confidence": "high"
           }
         ],
-        "last_verified": "2026-07-14",
+        "last_verified": "2026-08-30",
         "needs_verification": false,
         "verification_notes": "",
         "field_confidence": {
@@ -2313,7 +3502,7 @@
       "scoring_inputs": {},
       "quality_control": {
         "qc_status": "passed",
-        "checked_at": "2026-08-14",
+        "checked_at": "2026-08-23",
         "failed_canary_tests": [],
         "remaining_verification_tasks": [],
         "qc_notes": {
@@ -2324,7 +3513,7 @@
       "qs_ranking": 223,
       "data_quality": {
         "status": "verified",
-        "checked_official_source_count": 7,
+        "checked_official_source_count": 10,
         "verified_fields": [
           "program",
           "language",
@@ -2334,11 +3523,12 @@
           "scholarship",
           "deadline",
           "curriculum",
+          "research",
           "housing"
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-14"
+        "audited_at": "2026-08-30"
       },
       "qs_ranking_display": "=223",
       "qs_ranking_year": 2027,
@@ -2363,6 +3553,65 @@
             "en": "Institutional global rank; it is not evidence of aerospace or space-programme fit.",
             "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
           }
+        }
+      },
+      "academic_match_profile": {
+        "standard": "academic_match@3.0.0",
+        "tier": "strong_adjacent",
+        "score": 61,
+        "score_basis_weight": 90,
+        "evidenced_dimensions": 4,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "curriculum_evidence": {
+            "level": "strong",
+            "basis": "3_named_items",
+            "weight": 30
+          },
+          "research_group_evidence": {
+            "level": "weak",
+            "basis": "five engineering departments are published, none of them aerospace; the aerospace-relevant work sits inside Thermal and Fluid Engineering",
+            "weight": 25,
+            "source_url": "https://www.utwente.nl/en/et/research/departments-and-research-chairs/"
+          },
+          "faculty_evidence": {
+            "level": "weak",
+            "basis": "no aerospace faculty are named with contactable detail on the faculty research pages",
+            "weight": 25,
+            "source_url": "https://www.utwente.nl/en/et/research/departments-and-research-chairs/"
+          },
+          "facility_evidence": {
+            "level": "strong",
+            "basis": "an anechoic silent wind tunnel and a Mach 1.7 supersonic wind tunnel, plus a fully equipped mechanical testing laboratory",
+            "weight": 10,
+            "source_url": "https://www.utwente.nl/en/et/research/facilities/"
+          },
+          "industry_outlet_evidence": {
+            "level": "unknown",
+            "basis": "industry_evidence_not_checked",
+            "weight": 10
+          }
+        },
+        "matched_tags": [],
+        "confidence": "medium",
+        "legacy_relevance_status": "weak",
+        "evaluated_at": "2026-08-30"
+      },
+      "academic_match_evidence": {
+        "research_group_evidence": {
+          "level": "weak",
+          "basis": "five engineering departments are published, none of them aerospace; the aerospace-relevant work sits inside Thermal and Fluid Engineering",
+          "source_url": "https://www.utwente.nl/en/et/research/departments-and-research-chairs/"
+        },
+        "facility_evidence": {
+          "level": "strong",
+          "basis": "an anechoic silent wind tunnel and a Mach 1.7 supersonic wind tunnel, plus a fully equipped mechanical testing laboratory",
+          "source_url": "https://www.utwente.nl/en/et/research/facilities/"
+        },
+        "faculty_evidence": {
+          "level": "weak",
+          "basis": "no aerospace faculty are named with contactable detail on the faculty research pages",
+          "source_url": "https://www.utwente.nl/en/et/research/departments-and-research-chairs/"
         }
       }
     }

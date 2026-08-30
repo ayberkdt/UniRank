@@ -101,6 +101,25 @@
         "currency": "EUR",
         "basis": "two_year_programme",
         "academic_year": "current DTU fee page; revision announced for autumn 2026"
+      },
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": "EUR",
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [
+          "tuition"
+        ],
+        "missing_mandatory_components": [
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -135,14 +154,70 @@
       "monthly_housing_rent_dkk_per_month_max": 6500,
       "monthly_living_cost_dkk_per_month_min": 6450,
       "monthly_living_cost_dkk_per_month_max": 13700,
-      "housing_difficulty": "high",
+      "housing_difficulty": "unknown",
       "living_risk": "medium",
       "verification_notes": {
         "en": "Study in Denmark's official budget lists rent at DKK 3,000–6,500 (utilities usually included). Adding its published component ranges yields a transparent DKK 6,450–13,700 monthly planning range; it is a national rough budget, not a DTU housing offer.",
         "tr": "Study in Denmark'in resmî bütçesi kirayı aylık 3.000–6.500 DKK (genellikle faturalar dahil) olarak listeler. Yayımlanan kalem aralıklarının toplamı şeffaf bir aylık 6.450–13.700 DKK planlama aralığı verir; bu ulusal kaba bütçedir, DTU konut teklifi değildir."
       },
       "housing_access": "unknown",
-      "housing_application_separate": null
+      "housing_application_separate": null,
+      "housing_search_difficulty": "unknown",
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": null,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 0,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
+      }
     },
     "curriculum_profile": {
       "tracks": [],
@@ -192,6 +267,22 @@
       "deadline_notes": {
         "en": "For autumn intake: non-EU 15 January and EU/EEA 1 March; for spring: non-EU 15 September and EU/EEA 15 October.",
         "tr": "Güz dönemi için AB dışı 15 Ocak ve AB/AEA 1 Mart; bahar için AB dışı 15 Eylül ve AB/AEA 15 Ekim."
+      },
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": "2026-01-15",
+        "next_expected_date": null,
+        "time": null,
+        "timezone": null,
+        "applies_to": "non_eu",
+        "cycle_label": null,
+        "is_recurring_annual": false,
+        "status": "closed",
+        "days_remaining_at_evaluation": -227,
+        "derived_from": "application_timeline_profile.non_eu_deadline",
+        "confidence": "high",
+        "source_url": "https://www.dtu.dk/english/education/graduate/admission-and-deadlines/application_procedure/apply/submit-application",
+        "evaluated_at": "2026-08-30"
       }
     },
     "student_sentiment_profile": {
@@ -347,11 +438,11 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "qc_notes": {
@@ -384,6 +475,49 @@
           "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
         }
       }
+    },
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "unknown",
+      "score": null,
+      "score_basis_weight": 30,
+      "evidenced_dimensions": 1,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "space_physics",
+        "earth_observation",
+        "space_instrumentation"
+      ],
+      "confidence": "unknown",
+      "legacy_relevance_status": "strong",
+      "evaluated_at": "2026-08-30"
     }
   }
 ]

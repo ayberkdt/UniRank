@@ -237,6 +237,36 @@ If any canary test fails, do not finalize the record.
 
 The database must be useful, source-grounded, and honest about uncertainty. Missing data is acceptable. Invented data is not.
 
+## Category Standards
+
+Every categorical scale a student sees is defined once in
+`config/standards.json` and documented in `docs/CATEGORY_STANDARDS.md`.
+
+1. Do not invent a new categorical value. If a value is not in the standard,
+   extend the standard first, with bilingual labels and criteria.
+2. Do not write a level as free text that mixes the level with its reason.
+   The level is a code; the reason belongs in the matching `*_profile` object.
+3. Housing difficulty is `low`, `medium`, `high`, `very_high` or `unknown`,
+   and is scored from the five published dimensions. Fewer than three
+   evidenced dimensions must produce `unknown`.
+4. A cost figure must carry its basis, its component list and the number of
+   months it covers. A monthly figure is never multiplied by twelve when the
+   source states a nine- or ten-month academic year.
+5. A euro figure converted from another currency must carry `fx_rate`,
+   `fx_rate_date` and `fx_source`, and must be labelled as a conversion.
+6. An academic-match tier is published only from three evidenced dimensions
+   upward, and the score is normalised over the evidenced weights.
+7. A faculty email is stored only with an `email_source` naming the official
+   page that publishes it. Never reconstruct an address from a naming pattern.
+8. A scholarship playbook step is written only from an official scholarship or
+   financial-aid page.
+
+Researched facts are added as payloads under `research_queue/enrichment/` and
+merged with `scripts/apply_enrichment.py`, which refuses any payload that
+changes a decision profile without a source covering that field. Run
+`scripts/standardize_categories.py --write` afterwards, then the canary checks
+and the test suite.
+
 ## Bilingual Data Rule
 
 Internal keys must be English (e.g. `scientific_ai_computational_digital`), while user-facing text must be bilingual:

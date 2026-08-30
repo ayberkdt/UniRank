@@ -122,7 +122,25 @@
       "living_cost_dkk_per_year_max": null,
       "tuition_chf_per_semester": 2190,
       "tuition_chf_per_year_min": 4380,
-      "tuition_chf_per_year_max": 4380
+      "tuition_chf_per_year_max": 4380,
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
+      }
     },
     "scholarship_profile": {
       "available_types": [
@@ -154,7 +172,7 @@
     },
     "living_profile": {
       "city_type": "Medium",
-      "housing_search_difficulty": "",
+      "housing_search_difficulty": "unknown",
       "housing_cost_range_eur": null,
       "student_dorm_availability": "unknown",
       "living_cost_risk": "Bilinmiyor / Resmi Veri Yok",
@@ -164,7 +182,7 @@
       },
       "average_room_rent_eur": null,
       "monthly_living_cost_eur_estimated": null,
-      "housing_difficulty": "high",
+      "housing_difficulty": "unknown",
       "monthly_living_cost_eur_min": null,
       "monthly_living_cost_eur_max": null,
       "living_cost_eur_per_month": null,
@@ -215,7 +233,62 @@
       "housing_budget_dkk_per_year_max": null,
       "official_student_total_budget_chf_per_year": 25200,
       "housing_access": "unknown",
-      "housing_application_separate": null
+      "housing_application_separate": null,
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": null,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 0,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
+      }
     },
     "curriculum_profile": {
       "structure": {
@@ -302,14 +375,145 @@
         "tr": "Tarihler 2026 güz kabulü içindir ve geçmiştir; aynı erken dönem düzenini esas alın ancak başvuru öncesi sonraki çağrıyı doğrulayın."
       },
       "eu_deadline": "2025-11-30 for international bachelor's degree; 2026-04-30 only for Swiss bachelor's degree",
-      "scholarship_deadline": "2025-11-30 application window for international-degree applicants seeking ESOP"
+      "scholarship_deadline": "2025-11-30 application window for international-degree applicants seeking ESOP",
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": "2025-11-30",
+        "next_expected_date": null,
+        "time": null,
+        "timezone": null,
+        "applies_to": "non_eu",
+        "cycle_label": null,
+        "is_recurring_annual": false,
+        "status": "closed",
+        "days_remaining_at_evaluation": -273,
+        "derived_from": "application_timeline_profile.non_eu_deadline",
+        "confidence": "high",
+        "source_url": "https://ethz.ch/en/studies/master/degree-programmes/engineering-sciences.html/1000",
+        "evaluated_at": "2026-08-30"
+      }
     },
     "research_profile": {
       "research_focus_areas": [],
       "key_institutes": [],
       "research_funding_level": "very_high",
       "research_risk": "low",
-      "verification_notes": ""
+      "verification_notes": "",
+      "department": "Department of Mechanical and Process Engineering (D-MAVT)",
+      "department_url": "https://mavt.ethz.ch/research/institutes-and-chairs.html",
+      "department_note": {
+        "en": "ETH has no aerospace department. Its aerospace-relevant capability is spread across four institutes of D-MAVT — fluid dynamics, energy and process engineering, dynamic systems and control, and robotics — each publishing its chairs with the professor holding them. That structure means you must pick the chair, not the department.",
+        "tr": "ETH'nin havacılık bölümü yoktur. Havacılıkla ilgili yetkinliği D-MAVT'nin dört enstitüsüne yayılmıştır — akışkanlar dinamiği, enerji ve proses mühendisliği, dinamik sistemler ve kontrol, robotik — ve her biri kürsülerini onları tutan profesörle birlikte yayımlar. Bu yapı, bölümü değil kürsüyü seçmen gerektiği anlamına gelir."
+      },
+      "faculty_contact_policy": "only_with_specific_research_question",
+      "research_units": [
+        {
+          "name": "Institute of Fluid Dynamics",
+          "unit_type": "institute",
+          "url": "https://mavt.ethz.ch/research/institutes-and-chairs.html",
+          "lead": "Chairs held by Prof. Filippo Coletti, Prof. Patrick Jenny, Prof. Outi Supponen and Prof. Nicolas Noiray",
+          "topics": [
+            "cfd",
+            "turbulence",
+            "experimental_fluids",
+            "aeroacoustics",
+            "combustion",
+            "simulation_modelling"
+          ],
+          "stated_research_areas": [
+            "Experimental Fluid Dynamics — Filippo Coletti",
+            "Computational Fluid Dynamics and Multi-Scale Modeling — Patrick Jenny",
+            "Multiphase Fluid Dynamics — Outi Supponen",
+            "Combustion, Acoustics and Flow Physics — Nicolas Noiray"
+          ],
+          "student_access": "msc_thesis_open",
+          "why_it_fits": {
+            "en": "Four named chairs in one institute, split cleanly between experiment, computation, multiphase and combustion acoustics. If your tags are cfd or turbulence, ETH's strength is that you can choose the methodological approach — experimental or computational — inside the same institute.",
+            "tr": "Tek bir enstitüde dört adlandırılmış kürsü; deney, hesaplama, çok fazlı akış ve yanma akustiği arasında net biçimde bölünmüş. Etiketlerin cfd veya turbulence ise, ETH'nin gücü, yöntemsel yaklaşımı — deneysel ya da hesaplamalı — aynı enstitü içinde seçebilmendir."
+          },
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "Laboratory for Energy Conversion, Institute of Energy and Process Engineering",
+          "unit_type": "laboratory",
+          "url": "https://mavt.ethz.ch/research/institutes-and-chairs.html",
+          "lead": "Prof. Reza S. Abhari",
+          "topics": [
+            "turbomachinery",
+            "jet_propulsion",
+            "energy_systems",
+            "thermal_management"
+          ],
+          "student_access": "msc_thesis_open",
+          "why_it_fits": {
+            "en": "The turbomachinery route at ETH. If jet_propulsion or turbomachinery is your tag, this is the single laboratory to identify — there is no separate propulsion department to fall back on.",
+            "tr": "ETH'deki turbomakine rotası. Etiketin jet_propulsion veya turbomachinery ise, belirlemen gereken tek laboratuvar budur — geri çekilebileceğin ayrı bir itki bölümü yoktur."
+          },
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "Institute for Dynamic Systems and Control (IDSC)",
+          "unit_type": "institute",
+          "url": "https://idsc.ethz.ch/",
+          "lead": "Chairs held by Prof. Raffaello D'Andrea, Prof. Emilio Frazzoli and Prof. Melanie Zeilinger",
+          "topics": [
+            "stability_control",
+            "autonomy",
+            "optimization_ai",
+            "gnc",
+            "verification_validation"
+          ],
+          "student_access": "msc_thesis_open",
+          "why_it_fits": {
+            "en": "Three control chairs in one institute, covering dynamic systems, autonomous mobility and intelligent control. If gnc or stability_control is your tag and you want theory that is tested on flying hardware, IDSC is where ETH's aerial control work has historically sat.",
+            "tr": "Tek bir enstitüde, dinamik sistemleri, otonom hareketliliği ve akıllı kontrolü kapsayan üç kontrol kürsüsü. Etiketin gnc veya stability_control ise ve uçan donanımda test edilen bir teori istiyorsan, ETH'nin hava kontrolü çalışması tarihsel olarak IDSC'de yer almıştır."
+          },
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "Autonomous Systems Lab (ASL), Institute of Robotics and Intelligent Systems",
+          "unit_type": "laboratory",
+          "url": "https://asl.ethz.ch/the-lab.html",
+          "lead": "Prof. Roland Siegwart",
+          "topics": [
+            "autonomy",
+            "robotics",
+            "uav",
+            "gnc",
+            "sensors",
+            "machine_learning"
+          ],
+          "student_access": "msc_thesis_open",
+          "why_it_fits": {
+            "en": "ASL uses micro aerial vehicle platforms and builds robust outdoor autonomous systems by combining computer vision, sensor fusion, optimal control and probabilistic robotics. It contributes directly to the mechanical engineering and the robotics, systems and control master's programmes, so an MSc student can join. If your tags pair uav with autonomy, this is the strongest single reason to choose ETH.",
+            "tr": "ASL, mikro hava aracı platformları kullanır ve bilgisayarlı görü, sensör füzyonu, optimal kontrol ile olasılıksal robotiği birleştirerek dayanıklı açık hava otonom sistemleri inşa eder. Doğrudan makine mühendisliği ile robotik, sistemler ve kontrol yüksek lisans programlarına katkı verir; yani bir MSc öğrencisi katılabilir. Etiketlerin uav ile autonomy'yi birleştiriyorsa, ETH'yi seçmenin en güçlü tek sebebi budur."
+          },
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "Institute of Mechanical Systems",
+          "unit_type": "institute",
+          "url": "https://mavt.ethz.ch/research/institutes-and-chairs.html",
+          "lead": "Prof. Laura De Lorenzis (Computational Mechanics) and Prof. Dennis Kochmann (Mechanics and Materials)",
+          "topics": [
+            "fea",
+            "structural_mechanics",
+            "materials",
+            "simulation_modelling",
+            "lightweight_design"
+          ],
+          "student_access": "msc_thesis_open",
+          "last_verified": "2026-08-30"
+        }
+      ],
+      "faculty_email_availability": {
+        "status": "not_published",
+        "note": {
+          "en": "The institutes-and-chairs index names every chairholder but publishes no addresses on that page; individual chair pages carry the contact route.",
+          "tr": "Enstitüler ve kürsüler dizini her kürsü başkanını adlandırır ancak o sayfada adres yayımlamaz; iletişim yolu bireysel kürsü sayfalarındadır."
+        },
+        "directory_url": "https://mavt.ethz.ch/research/institutes-and-chairs.html"
+      }
     },
     "industry_ecosystem_profile": {
       "local_industry_strength": "very_high",
@@ -325,7 +529,7 @@
         "",
         ""
       ],
-      "last_verified": "2026-07-15",
+      "last_verified": "2026-08-30",
       "field_confidence": {
         "program_basic_info": "high",
         "language": "medium",
@@ -460,6 +664,51 @@
             "en": "Official curriculum gives categories, ECTS, internship and thesis structure.",
             "tr": "Resmi mufredat kategorileri, AKTS'leri, staj ve tez yapisini verir."
           }
+        },
+        {
+          "url": "https://mavt.ethz.ch/research/institutes-and-chairs.html",
+          "title": "ETH Zurich D-MAVT — Institutes and chairs",
+          "source_type": "official_department_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "research",
+            "department",
+            "labs"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes each institute with its chairs and the professor holding each chair.",
+            "tr": "Her enstitüyü kürsüleriyle ve her kürsüyü tutan profesörle birlikte yayımlar."
+          }
+        },
+        {
+          "url": "https://asl.ethz.ch/the-lab.html",
+          "title": "ETH Zurich — Autonomous Systems Lab",
+          "source_type": "official_lab_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "research",
+            "labs"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "States the lab's mission, its MAV platforms and its contribution to the mechanical engineering and robotics master's programmes.",
+            "tr": "Laboratuvarın misyonunu, MAV platformlarını ve makine mühendisliği ile robotik yüksek lisans programlarına katkısını belirtir."
+          }
+        },
+        {
+          "url": "https://idsc.ethz.ch/",
+          "title": "ETH Zurich — Institute for Dynamic Systems and Control",
+          "source_type": "official_lab_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "research",
+            "labs"
+          ],
+          "confidence": "high"
         }
       ],
       "needs_verification": true,
@@ -487,7 +736,7 @@
     "qs_ranking": 8,
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 8,
+      "checked_official_source_count": 11,
       "verified_fields": [
         "program",
         "language",
@@ -497,15 +746,16 @@
         "scholarship",
         "deadline",
         "curriculum",
+        "research",
         "housing"
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-30"
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "qc_notes": {
@@ -536,6 +786,64 @@
           "en": "Institutional global rank; it is not evidence of aerospace or space-programme fit.",
           "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
         }
+      }
+    },
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "partial_match",
+      "score": 44,
+      "score_basis_weight": 90,
+      "evidenced_dimensions": 4,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "strong",
+          "basis": "five relevant institutes with every chair named and attributed to a professor",
+          "weight": 25,
+          "source_url": "https://mavt.ethz.ch/research/institutes-and-chairs.html"
+        },
+        "faculty_evidence": {
+          "level": "moderate",
+          "basis": "every chairholder is named, but no addresses are published on the departmental index",
+          "weight": 25,
+          "source_url": "https://mavt.ethz.ch/research/institutes-and-chairs.html"
+        },
+        "facility_evidence": {
+          "level": "none",
+          "basis": "no_named_items",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "Aerodynamics",
+        "Space Systems",
+        "Propulsion",
+        "Structures"
+      ],
+      "confidence": "medium",
+      "legacy_relevance_status": "medium",
+      "evaluated_at": "2026-08-30"
+    },
+    "academic_match_evidence": {
+      "research_group_evidence": {
+        "level": "strong",
+        "basis": "five relevant institutes with every chair named and attributed to a professor",
+        "source_url": "https://mavt.ethz.ch/research/institutes-and-chairs.html"
+      },
+      "faculty_evidence": {
+        "level": "moderate",
+        "basis": "every chairholder is named, but no addresses are published on the departmental index",
+        "source_url": "https://mavt.ethz.ch/research/institutes-and-chairs.html"
       }
     }
   },
@@ -658,7 +966,25 @@
       "living_cost_sek_per_year_min": null,
       "living_cost_sek_per_year_max": null,
       "living_cost_dkk_per_year_min": null,
-      "living_cost_dkk_per_year_max": null
+      "living_cost_dkk_per_year_max": null,
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
+      }
     },
     "scholarship_profile": {
       "available_types": [
@@ -688,7 +1014,7 @@
     },
     "living_profile": {
       "city_type": "Medium",
-      "housing_search_difficulty": "",
+      "housing_search_difficulty": "unknown",
       "housing_cost_range_eur": null,
       "student_dorm_availability": "unknown",
       "living_cost_risk": "Bilinmiyor / Resmi Veri Yok",
@@ -698,7 +1024,7 @@
       },
       "average_room_rent_eur": null,
       "monthly_living_cost_eur_estimated": null,
-      "housing_difficulty": "high",
+      "housing_difficulty": "unknown",
       "monthly_living_cost_eur_min": null,
       "monthly_living_cost_eur_max": null,
       "living_cost_eur_per_month": null,
@@ -751,7 +1077,62 @@
       "monthly_living_cost_chf_per_month": 2107,
       "official_student_total_budget_chf_per_year": 25219,
       "housing_access": "unknown",
-      "housing_application_separate": null
+      "housing_application_separate": null,
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": null,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 0,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
+      }
     },
     "curriculum_profile": {
       "structure": null,
@@ -849,14 +1230,122 @@
         "First round: 15 December",
         "Second round: 31 March"
       ],
-      "scholarship_deadline": "15 December or 31 March (same Master application rounds)"
+      "scholarship_deadline": "15 December or 31 March (same Master application rounds)",
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": null,
+        "status": "not_published",
+        "confidence": "unknown",
+        "reason": "no_iso_dated_deadline_in_record",
+        "evaluated_at": "2026-08-30"
+      }
     },
     "research_profile": {
       "research_focus_areas": [],
       "key_institutes": [],
       "research_funding_level": "very_high",
       "research_risk": "low",
-      "verification_notes": ""
+      "verification_notes": "",
+      "department": "Institute of Mechanical Engineering (IGM), School of Engineering, with the EPFL Space Center (eSpace)",
+      "department_url": "https://sti.epfl.ch/igm/laboratories/",
+      "department_note": {
+        "en": "EPFL, like ETH, has no aerospace department. Its space activity is coordinated by eSpace, which does not run its own laboratories: it states that space research and development is carried out in EPFL labs with its support and coordination, and publishes a list of those labs. So the honest route is to find the mechanical engineering laboratory whose method matches yours, then check whether it appears on the eSpace list.",
+        "tr": "EPFL'nin de ETH gibi havacılık bölümü yoktur. Uzay faaliyeti eSpace tarafından koordine edilir; eSpace kendi laboratuvarlarını işletmez: uzay araştırma ve geliştirmesinin kendi desteği ve koordinasyonuyla EPFL laboratuvarlarında yürütüldüğünü belirtir ve o laboratuvarların listesini yayımlar. Dolayısıyla dürüst rota, yöntemi seninkiyle örtüşen makine mühendisliği laboratuvarını bulmak, sonra eSpace listesinde görünüp görünmediğini kontrol etmektir."
+      },
+      "faculty_contact_policy": "only_with_specific_research_question",
+      "research_units": [
+        {
+          "name": "UNFoLD — Unsteady Flow Diagnostics Laboratory",
+          "unit_type": "laboratory",
+          "url": "https://www.epfl.ch/labs/unfold/",
+          "lead": "Prof. Karen Mulleners",
+          "topics": [
+            "experimental_fluids",
+            "aerodynamics",
+            "turbulence",
+            "sensors",
+            "energy_systems"
+          ],
+          "stated_research_areas": [
+            "Unsteady vortex-dominated flow phenomena",
+            "Bio-inspired propulsion",
+            "Wind turbine rotor blade aerodynamics",
+            "Gust interactions"
+          ],
+          "facilities": [
+            "Time- and space-resolved particle image velocimetry synchronised with aerodynamic force and power measurements"
+          ],
+          "student_access": "msc_thesis_open",
+          "why_it_fits": {
+            "en": "Unsteady separation and vortex formation measured properly — PIV synchronised with force and power output, not just flow visualisation. Gust interaction is the specific topic to note: it is the load case that decides how strong a light aircraft or a drone wing has to be. If experimental_fluids is your tag, this is EPFL's clearest aerospace-relevant laboratory.",
+            "tr": "Kararsız ayrılma ve girdap oluşumu düzgün biçimde ölçülür — yalnızca akış görselleştirmesi değil, kuvvet ve güç çıktısıyla eşzamanlanmış PIV. Not edilmesi gereken spesifik konu rüzgâr darbesi etkileşimidir: hafif bir uçağın veya bir drone kanadının ne kadar güçlü olması gerektiğine karar veren yük durumudur. Etiketin experimental_fluids ise, bu EPFL'nin havacılıkla en net ilgili laboratuvarıdır."
+          },
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "EPFL Space Center (eSpace)",
+          "unit_type": "centre",
+          "url": "https://espace.epfl.ch/research/space-labs-at-epfl/",
+          "topics": [
+            "space_systems",
+            "satellite_systems",
+            "systems_engineering"
+          ],
+          "student_access": "msc_thesis_open",
+          "why_it_fits": {
+            "en": "eSpace publishes a list of EPFL laboratories with space-related projects and researchers, and supports and coordinates their work. Use that list as your filter: it tells you which mechanical, electrical or microengineering laboratory actually has a space project running, which the mechanical engineering institute page alone does not.",
+            "tr": "eSpace, uzayla ilgili projeleri ve araştırmacıları olan EPFL laboratuvarlarının listesini yayımlar ve çalışmalarını destekleyip koordine eder. Bu listeyi filtren olarak kullan: hangi makine, elektrik veya mikromühendislik laboratuvarının gerçekten yürüyen bir uzay projesi olduğunu söyler; makine mühendisliği enstitüsü sayfası tek başına bunu söylemez."
+          },
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "Institute of Mechanical Engineering laboratory register",
+          "unit_type": "institute",
+          "url": "https://sti.epfl.ch/research/institutes/igm/labs/",
+          "topics": [
+            "simulation_modelling",
+            "structural_mechanics",
+            "experimental_fluids",
+            "materials"
+          ],
+          "student_access": "msc_thesis_open",
+          "last_verified": "2026-08-30"
+        }
+      ],
+      "notable_professors": [
+        {
+          "name": "Karen Mulleners",
+          "role": {
+            "en": "Associate Professor, Institute of Mechanical Engineering; head of the Unsteady Flow Diagnostics Laboratory",
+            "tr": "Makine Mühendisliği Enstitüsü Doçenti; Kararsız Akış Teşhis Laboratuvarı başkanı"
+          },
+          "focus": {
+            "en": "Experimental measurement, analysis and modelling of unsteady vortex-dominated flows, with applications in bio-inspired propulsion, wind turbine blade aerodynamics and gust interaction.",
+            "tr": "Biyo-esinli itki, rüzgâr türbini kanadı aerodinamiği ve rüzgâr darbesi etkileşimi uygulamalarıyla, girdap baskın kararsız akışların deneysel ölçümü, analizi ve modellenmesi."
+          },
+          "fit_tags": [
+            "experimental_fluids",
+            "aerodynamics",
+            "turbulence",
+            "sensors"
+          ],
+          "email": null,
+          "email_source": null,
+          "profile_url": "https://people.epfl.ch/karen.mulleners?lang=en",
+          "lab": "UNFoLD",
+          "contact_timing": "only_with_specific_research_question",
+          "accepting_students_signal": "not_stated",
+          "last_verified": "2026-08-30"
+        }
+      ],
+      "faculty_email_availability": {
+        "status": "not_published",
+        "note": {
+          "en": "EPFL publishes a personal profile page for each academic; no address was read from the checked pages, so none is stored.",
+          "tr": "EPFL her akademisyen için kişisel bir profil sayfası yayımlar; kontrol edilen sayfalardan adres okunmadığı için hiçbiri saklanmamıştır."
+        },
+        "directory_url": "https://sti.epfl.ch/igm/laboratories/"
+      }
     },
     "industry_ecosystem_profile": {
       "local_industry_strength": "very_high",
@@ -872,7 +1361,7 @@
         "",
         ""
       ],
-      "last_verified": "2026-07-15",
+      "last_verified": "2026-08-30",
       "field_confidence": {
         "program_basic_info": "high",
         "language": "high",
@@ -988,6 +1477,50 @@
             "en": "Official foreign-student budget lists CHF 2,107/month excluding tuition and CHF 900 housing.",
             "tr": "Resmi yabanci ogrenci butcesi ogrenim ucreti haric aylik 2.107 CHF ve 900 CHF konut listeler."
           }
+        },
+        {
+          "url": "https://www.epfl.ch/labs/unfold/",
+          "title": "EPFL — Unsteady Flow Diagnostics Laboratory (UNFoLD)",
+          "source_type": "official_lab_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "research",
+            "labs"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes the laboratory's research focus, its applications and its measurement approach.",
+            "tr": "Laboratuvarın araştırma odağını, uygulamalarını ve ölçüm yaklaşımını yayımlar."
+          }
+        },
+        {
+          "url": "https://espace.epfl.ch/research/space-labs-at-epfl/",
+          "title": "EPFL Space Center — Space labs at EPFL",
+          "source_type": "official_lab_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "research",
+            "labs"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "States that space research is carried out in EPFL labs with eSpace support and lists those labs.",
+            "tr": "Uzay araştırmasının eSpace desteğiyle EPFL laboratuvarlarında yürütüldüğünü belirtir ve o laboratuvarları listeler."
+          }
+        },
+        {
+          "url": "https://sti.epfl.ch/igm/laboratories/",
+          "title": "EPFL — Institute of Mechanical Engineering laboratories",
+          "source_type": "official_department_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "research",
+            "department"
+          ],
+          "confidence": "high"
         }
       ],
       "needs_verification": true,
@@ -1020,7 +1553,7 @@
     "qs_ranking": 22,
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 7,
+      "checked_official_source_count": 10,
       "verified_fields": [
         "program",
         "language",
@@ -1030,15 +1563,16 @@
         "scholarship",
         "deadline",
         "curriculum",
+        "research",
         "housing"
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-30"
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "qc_notes": {
@@ -1069,6 +1603,64 @@
           "en": "Institutional global rank; it is not evidence of aerospace or space-programme fit.",
           "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
         }
+      }
+    },
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "strong_adjacent",
+      "score": 73,
+      "score_basis_weight": 90,
+      "evidenced_dimensions": 4,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "strong",
+          "basis": "6_named_items",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "moderate",
+          "basis": "a mechanical engineering laboratory register and a space centre that coordinates rather than hosts research; no aerospace department",
+          "weight": 25,
+          "source_url": "https://sti.epfl.ch/igm/laboratories/"
+        },
+        "faculty_evidence": {
+          "level": "moderate",
+          "basis": "1_named_items",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "moderate",
+          "basis": "the UNFoLD laboratory's synchronised PIV and force measurement capability is published; no wind tunnel or space test facility is claimed",
+          "weight": 10,
+          "source_url": "https://www.epfl.ch/labs/unfold/"
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "Aerodynamics",
+        "Space Systems",
+        "Propulsion",
+        "Structures"
+      ],
+      "confidence": "medium",
+      "legacy_relevance_status": "weak",
+      "evaluated_at": "2026-08-30"
+    },
+    "academic_match_evidence": {
+      "research_group_evidence": {
+        "level": "moderate",
+        "basis": "a mechanical engineering laboratory register and a space centre that coordinates rather than hosts research; no aerospace department",
+        "source_url": "https://sti.epfl.ch/igm/laboratories/"
+      },
+      "facility_evidence": {
+        "level": "moderate",
+        "basis": "the UNFoLD laboratory's synchronised PIV and force measurement capability is published; no wind tunnel or space test facility is claimed",
+        "source_url": "https://www.epfl.ch/labs/unfold/"
       }
     }
   },
@@ -1229,7 +1821,25 @@
             "https://www.zhaw.ch/en/engineering/study/masters-degree-programme/admission-requirements?L=1"
           ]
         }
-      ]
+      ],
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
+      }
     },
     "scholarship_profile": {
       "available_types": [],
@@ -1253,14 +1863,14 @@
     },
     "living_profile": {
       "city_type": "Medium",
-      "housing_search_difficulty": "",
+      "housing_search_difficulty": "unknown",
       "housing_cost_range_eur": null,
       "student_dorm_availability": "unknown",
       "living_cost_risk": "Bilinmiyor / Resmi Veri Yok",
       "verification_notes": "",
       "average_room_rent_eur": null,
       "monthly_living_cost_eur_estimated": null,
-      "housing_difficulty": "high",
+      "housing_difficulty": "unknown",
       "monthly_living_cost_eur_min": null,
       "monthly_living_cost_eur_max": null,
       "student_housing_available": null,
@@ -1312,7 +1922,62 @@
       "monthly_living_cost_chf_per_month_max": 2280,
       "living_risk": "high",
       "housing_access": "unknown",
-      "housing_application_separate": null
+      "housing_application_separate": null,
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": null,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 0,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
+      }
     },
     "curriculum_profile": {
       "structure": {
@@ -1332,7 +1997,11 @@
         "Aviation profile within Master of Science in Engineering"
       ],
       "mandatory_courses": [],
-      "curriculum_url": "https://www.zhaw.ch/storage/engineering/studium/masterstudium/Profile/pd-avi-en.pdf"
+      "curriculum_url": "https://www.zhaw.ch/storage/engineering/studium/masterstudium/Profile/pd-avi-en.pdf",
+      "specialisation_note": {
+        "en": "ZHAW states this is Switzerland's only Master of Science in Engineering with an Aviation specialisation, and that it spans all three ZAV areas of expertise. The centre's own technical specialisation modules are published with their credit weights: Modelling for Aviation Infrastructure and Future Mobility (3 ECTS), Advanced Aircraft System Design (3 ECTS), Systems Engineering for Safety Critical Systems (3 ECTS) and Managing Complexity and Innovation in Aviation (3 ECTS).",
+        "tr": "ZHAW, bunun İsviçre'nin Havacılık uzmanlaşmasına sahip tek Mühendislikte Yüksek Lisansı olduğunu ve üç ZAV uzmanlık alanının tamamını kapsadığını belirtir. Merkezin kendi teknik uzmanlaşma modülleri kredi ağırlıklarıyla yayımlanır: Havacılık Altyapısı ve Gelecek Hareketliliği için Modelleme (3 AKTS), İleri Uçak Sistem Tasarımı (3 AKTS), Güvenlik Kritik Sistemler için Sistem Mühendisliği (3 AKTS) ve Havacılıkta Karmaşıklık ve İnovasyon Yönetimi (3 AKTS)."
+      }
     },
     "category_profile": {
       "primary_categories": [],
@@ -1397,8 +2066,8 @@
       "winter_deadline": null,
       "application_deadline": "End of April (autumn) or end of October (spring), or as agreed",
       "deadline_notes": {
-        "en": "ZHAW publishes only end-of-month timing, so no exact or future-cycle calendar day is invented.",
-        "tr": "ZHAW yalnizca ay sonu zamanlamasi yayimlar; kesin veya gelecek donem takvim gunu uydurulmaz."
+        "en": "ZHAW publishes a recurring registration window rather than a single dated deadline: for the autumn semester starting in September, registrations run from the beginning of February to the end of April; for the spring semester starting in February, the window opens at the beginning of August. No specific calendar date is published on the checked page, so none is stored here.",
+        "tr": "ZHAW tek bir tarihli son başvuru yerine yinelenen bir kayıt penceresi yayımlar: Eylül'de başlayan güz dönemi için kayıtlar Şubat başından Nisan sonuna kadar sürer; Şubat'ta başlayan bahar dönemi için pencere Ağustos başında açılır. Kontrol edilen sayfada belirli bir takvim tarihi yayımlanmadığı için burada da saklanmamıştır."
       },
       "academic_year": "Recurring MSE schedule; verify exact intake day in live form",
       "intake_terms": [
@@ -1408,14 +2077,248 @@
       "application_rounds": [
         "Autumn intake: end of April",
         "Spring intake: end of October"
-      ]
+      ],
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": null,
+        "status": "not_published",
+        "confidence": "unknown",
+        "reason": "no_iso_dated_deadline_in_record",
+        "evaluated_at": "2026-08-30"
+      },
+      "recurring_annual_deadline": true
     },
     "research_profile": {
       "research_focus_areas": [],
       "key_institutes": [],
       "research_funding_level": "very_high",
       "research_risk": "low",
-      "verification_notes": ""
+      "verification_notes": "",
+      "department": "Centre for Aviation (ZAV), ZHAW School of Engineering",
+      "department_url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/",
+      "department_note": {
+        "en": "ZAV describes itself as the leading research hub for aviation in Switzerland and organises everything around three declared areas of expertise: Air Vehicle Design and Technology, Aviation Infrastructure and Atmospheric Research, and Humans in Safety Critical Systems. Unlike ETH and EPFL, this is a genuinely aviation-shaped centre — but it is a university of applied sciences, so the work is applied and industry-facing rather than fundamental.",
+        "tr": "ZAV kendisini İsviçre'nin önde gelen havacılık araştırma merkezi olarak tanımlar ve her şeyi üç beyan edilmiş uzmanlık alanı etrafında örgütler: Hava Aracı Tasarımı ve Teknolojisi, Havacılık Altyapısı ve Atmosfer Araştırmaları, Güvenlik Kritik Sistemlerde İnsan. ETH ve EPFL'den farklı olarak bu gerçekten havacılık biçimli bir merkezdir — ancak bir uygulamalı bilimler üniversitesidir; yani çalışma temelden çok uygulamalı ve sanayiye dönüktür."
+      },
+      "faculty_contact_policy": "before_application_optional",
+      "research_units": [
+        {
+          "name": "Aerodynamics team, Air Vehicle Design and Technology",
+          "unit_type": "research_group",
+          "url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/air-vehicle-design-and-technology/aerodynamics",
+          "lead": "Prof. Dr. Leonardo Manfriani",
+          "topics": [
+            "aerodynamics",
+            "cfd",
+            "wind_tunnel",
+            "flight_testing",
+            "certification",
+            "experimental_fluids"
+          ],
+          "stated_research_areas": [
+            "Aerodynamic analysis, design, measurement and testing",
+            "Computational fluid dynamics",
+            "Flight test techniques",
+            "Certification of aircraft for flight performance and flight characteristics"
+          ],
+          "facilities": [
+            "ALFA wind tunnel — the team states it gives reliable aerodynamic measurements thanks to its measurement systems and flow quality",
+            "In-house capability to design and build wind tunnel models"
+          ],
+          "student_access": "msc_thesis_open",
+          "why_it_fits": {
+            "en": "The team publishes actual named projects rather than themes: PC-12 NGX performance and stall characteristics, winglets for the DG-300 glider, wind tunnel tests for the Wepfer wind turbine rotor blades, aerodynamic work on a Moto2 racing bike. If wind_tunnel or certification is your tag, this is applied aerodynamics with a client attached to almost every project — and students are explicitly named as collaborators on them.",
+            "tr": "Ekip temalar yerine gerçek adlandırılmış projeler yayımlar: PC-12 NGX performansı ve perdövites karakteristikleri, DG-300 planörü için winglet'ler, Wepfer rüzgâr türbini rotor kanatları için rüzgâr tüneli testleri, bir Moto2 yarış motosikleti üzerinde aerodinamik çalışma. Etiketin wind_tunnel veya certification ise, bu neredeyse her projesine bir müşteri bağlı uygulamalı aerodinamiktir — ve öğrenciler bu projelerde açıkça iş birlikçi olarak anılır."
+          },
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "Flight Mechanics and Flight Control Systems team",
+          "unit_type": "research_group",
+          "url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/air-vehicle-design-and-technology/flight-mechanics-and-flight-control-systems",
+          "lead": "Ing. Pierluigi Capone",
+          "topics": [
+            "flight_mechanics",
+            "stability_control",
+            "gnc",
+            "simulation_modelling",
+            "uav",
+            "certification",
+            "verification_validation"
+          ],
+          "stated_research_areas": [
+            "Flight control systems from limited control authority to full fly-by-wire, for fixed- and rotary-wing aircraft",
+            "Parameter estimation for research, development and training",
+            "Real-time simulation including flight control systems",
+            "Reliability, availability, maintainability and safety (RAMS) analysis",
+            "Safety and certification of unmanned aerial vehicles"
+          ],
+          "facilities": [
+            "ReDSim research and didactics simulator",
+            "HiSim high fidelity simulator",
+            "Remote pilot station (UMARS 2.0)"
+          ],
+          "student_access": "msc_thesis_open",
+          "why_it_fits": {
+            "en": "The team states its reason for existing plainly: small aircraft manufacturers cannot afford accurate flight dynamic models, so handling-quality problems surface late and get fixed by trial and error. That is the gap the group fills. If gnc or flight_mechanics is your tag and you want fly-by-wire design plus a real-time simulator to test it in, ReDSim and HiSim are both in-house and the team publishes a dedicated master's and PhD theses page.",
+            "tr": "Ekip var olma sebebini açıkça belirtir: küçük uçak üreticileri doğru uçuş dinamiği modellerini karşılayamaz, bu yüzden kullanım kalitesi sorunları geç ortaya çıkar ve deneme yanılmayla düzeltilir. Grubun doldurduğu boşluk budur. Etiketin gnc veya flight_mechanics ise ve fly-by-wire tasarımıyla birlikte onu test edecek bir gerçek zamanlı simülatör istiyorsan, ReDSim ile HiSim ikisi de kurum içindedir ve ekip özel bir yüksek lisans ile doktora tezleri sayfası yayımlar."
+          },
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "Structural Integrity and Aircraft Repairs team",
+          "unit_type": "research_group",
+          "url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/air-vehicle-design-and-technology/structural-integrity-and-aircraft-repairs",
+          "topics": [
+            "aerospace_structures",
+            "fatigue_damage",
+            "fea",
+            "structural_mechanics",
+            "certification",
+            "aeroelasticity"
+          ],
+          "stated_research_areas": [
+            "Maintenance and inspection concepts that keep structural integrity over the service life",
+            "Load calculations for fatigue load cases and fluid-structure coupling",
+            "Crack analysis from operational damage and development of repairs",
+            "Structural risk assessments and supplemental structural inspection documents for ageing aircraft"
+          ],
+          "facilities": [
+            "Tool chain stated on the page: FLOW5, ANSYS CFX or FLUENT for loads, FEM for structural analysis, CITime for crack initiation, AFGROW for crack growth"
+          ],
+          "student_access": "msc_thesis_open",
+          "why_it_fits": {
+            "en": "This group names the exact software you would be using — AFGROW for crack growth, CITime for crack initiation — and works on real airframes, keeping ex-Swiss Air Force Hunter, Venom and Vampire jets airworthy in civil use with the Altenrhein museum. If fatigue_damage is your tag, few master's-level groups let you do damage-tolerance work on aircraft that actually fly.",
+            "tr": "Bu grup kullanacağın yazılımı tam olarak adlandırır — çatlak büyümesi için AFGROW, çatlak başlangıcı için CITime — ve gerçek uçak gövdeleri üzerinde çalışır; Altenrhein müzesiyle birlikte eski İsviçre Hava Kuvvetleri Hunter, Venom ve Vampire jetlerini sivil kullanımda uçuşa elverişli tutar. Etiketin fatigue_damage ise, çok az yüksek lisans düzeyi grup, gerçekten uçan uçaklar üzerinde hasar toleransı çalışması yapmana izin verir."
+          },
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "ZAV laboratories",
+          "unit_type": "facility",
+          "url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/laboratories",
+          "topics": [
+            "laboratory",
+            "wind_tunnel",
+            "simulation_modelling",
+            "sensors",
+            "testing"
+          ],
+          "facilities": [
+            "ReDSim research and didactics simulator",
+            "HiSim high fidelity simulator",
+            "SMARTEMIS engine emission measurement system",
+            "Human-Machine laboratory, including head and eye tracking",
+            "ALFA wind tunnel"
+          ],
+          "student_access": "project_course_open",
+          "why_it_fits": {
+            "en": "The centre states that this infrastructure is available to its students as part of the curriculum, not only to partner projects. Five laboratories for one centre — two simulators, a wind tunnel, an emissions bench and a human-machine lab — is dense for a school of this size.",
+            "tr": "Merkez, bu altyapının yalnızca ortak projelere değil, müfredatın bir parçası olarak öğrencilerine de açık olduğunu belirtir. Tek bir merkez için beş laboratuvar — iki simülatör, bir rüzgâr tüneli, bir emisyon tezgâhı ve bir insan-makine laboratuvarı — bu büyüklükteki bir okul için yoğundur."
+          },
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "Humans in Safety Critical Systems",
+          "unit_type": "research_group",
+          "url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/humans-in-safety-critical-systems",
+          "topics": [
+            "systems_engineering",
+            "verification_validation",
+            "avionics",
+            "sensors",
+            "simulation_modelling"
+          ],
+          "facilities": [
+            "Human-Machine laboratory",
+            "Eye-tracking laboratory"
+          ],
+          "student_access": "msc_thesis_open",
+          "last_verified": "2026-08-30"
+        }
+      ],
+      "notable_professors": [
+        {
+          "name": "Michel Guillaume",
+          "role": {
+            "en": "Head of the Centre for Aviation",
+            "tr": "Havacılık Merkezi Başkanı"
+          },
+          "focus": {
+            "en": "Leads the centre across all three areas of expertise; states that the centre is regionally rooted and globally connected and participates in the Aviation Research Centre Switzerland (ARCS).",
+            "tr": "Merkezi üç uzmanlık alanının tamamında yönetir; merkezin bölgesel köklere ve küresel bağlantılara sahip olduğunu ve İsviçre Havacılık Araştırma Merkezi'ne (ARCS) katıldığını belirtir."
+          },
+          "fit_tags": [
+            "aerospace_general",
+            "industrial_projects"
+          ],
+          "email": null,
+          "email_source": null,
+          "profile_url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/",
+          "lab": "Centre for Aviation",
+          "contact_timing": "before_application_optional",
+          "accepting_students_signal": "not_stated",
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "Leonardo Manfriani",
+          "role": {
+            "en": "Team Leader, Aerodynamics",
+            "tr": "Aerodinamik Ekip Lideri"
+          },
+          "focus": {
+            "en": "Aerodynamic analysis, design, measurement and testing; CFD; flight test techniques; certification of aircraft for flight performance and flight characteristics.",
+            "tr": "Aerodinamik analiz, tasarım, ölçüm ve test; HAD; uçuş testi teknikleri; uçakların uçuş performansı ve uçuş karakteristikleri açısından sertifikasyonu."
+          },
+          "fit_tags": [
+            "aerodynamics",
+            "cfd",
+            "wind_tunnel",
+            "certification",
+            "flight_testing"
+          ],
+          "email": null,
+          "email_source": null,
+          "profile_url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/air-vehicle-design-and-technology/aerodynamics",
+          "lab": "Aerodynamics team",
+          "contact_timing": "before_application_optional",
+          "accepting_students_signal": "not_stated",
+          "last_verified": "2026-08-30"
+        },
+        {
+          "name": "Pierluigi Capone",
+          "role": {
+            "en": "Team Leader, Flight Mechanics and Flight Control Systems",
+            "tr": "Uçuş Mekaniği ve Uçuş Kontrol Sistemleri Ekip Lideri"
+          },
+          "focus": {
+            "en": "Flight mechanics, real-time simulation and flight control systems for fixed- and rotary-wing aircraft, parameter estimation, and UAV safety and certification.",
+            "tr": "Sabit ve döner kanatlı uçaklar için uçuş mekaniği, gerçek zamanlı simülasyon ve uçuş kontrol sistemleri; parametre kestirimi; İHA güvenliği ve sertifikasyonu."
+          },
+          "fit_tags": [
+            "flight_mechanics",
+            "gnc",
+            "stability_control",
+            "simulation_modelling",
+            "uav"
+          ],
+          "email": null,
+          "email_source": null,
+          "profile_url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/air-vehicle-design-and-technology/flight-mechanics-and-flight-control-systems",
+          "lab": "Flight Mechanics and Flight Control Systems team",
+          "contact_timing": "before_application_optional",
+          "accepting_students_signal": "not_stated",
+          "last_verified": "2026-08-30"
+        }
+      ],
+      "faculty_email_availability": {
+        "status": "not_published",
+        "note": {
+          "en": "ZAV names its centre head and its team leaders on the public pages and links a team directory, but no addresses appear on the checked pages.",
+          "tr": "ZAV, merkez başkanını ve ekip liderlerini genel sayfalarda adlandırır ve bir ekip dizinine bağlantı verir, ancak kontrol edilen sayfalarda adres görünmez."
+        },
+        "directory_url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/team"
+      }
     },
     "industry_ecosystem_profile": {
       "local_industry_strength": "very_high",
@@ -1603,9 +2506,95 @@
             "en": "The current page admits foreign-degree applicants to review, describes competitive institute/centre selection, publishes the CHF 100 processing fee and recurring application windows, and states that ZHAW does not grant scholarships.",
             "tr": "Güncel sayfa yabancı derece sahiplerini değerlendirmeye kabul eder, rekabetçi enstitü/merkez seçimini açıklar, 100 CHF işlem bedelini ve yinelenen başvuru dönemlerini yayımlar ve ZHAW'nin burs vermediğini belirtir."
           }
+        },
+        {
+          "url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/",
+          "title": "ZHAW — Centre for Aviation (ZAV)",
+          "source_type": "official_department_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "research",
+            "department",
+            "labs"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "States the three areas of expertise, the centre head and participation in the Aviation Research Centre Switzerland.",
+            "tr": "Üç uzmanlık alanını, merkez başkanını ve İsviçre Havacılık Araştırma Merkezi'ne katılımı belirtir."
+          }
+        },
+        {
+          "url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/laboratories",
+          "title": "ZHAW ZAV — Laboratories",
+          "source_type": "official_lab_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "research",
+            "labs"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Lists the centre's laboratories and states they are available to students as part of the curriculum.",
+            "tr": "Merkezin laboratuvarlarını listeler ve müfredatın parçası olarak öğrencilere açık olduklarını belirtir."
+          }
+        },
+        {
+          "url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/air-vehicle-design-and-technology/aerodynamics",
+          "title": "ZHAW ZAV — Aerodynamics",
+          "source_type": "official_lab_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "research",
+            "labs"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/air-vehicle-design-and-technology/flight-mechanics-and-flight-control-systems",
+          "title": "ZHAW ZAV — Flight Mechanics and Flight Control Systems",
+          "source_type": "official_lab_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "research",
+            "labs"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/air-vehicle-design-and-technology/structural-integrity-and-aircraft-repairs",
+          "title": "ZHAW ZAV — Structural Integrity and Aircraft Repairs",
+          "source_type": "official_lab_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "research",
+            "labs"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/msc-degree-programme-at-the-centre-for-aviation",
+          "title": "ZHAW ZAV — MSc degree programme at the Centre for Aviation",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "curriculum",
+            "deadline",
+            "program"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes the specialisation modules with credit weights and the recurring registration windows for the autumn and spring semesters.",
+            "tr": "Uzmanlaşma modüllerini kredi ağırlıklarıyla ve güz ile bahar dönemleri için yinelenen kayıt pencerelerini yayımlar."
+          }
         }
       ],
-      "last_verified": "2026-08-14",
+      "last_verified": "2026-08-30",
       "needs_verification": true,
       "field_confidence": {
         "program_basic_info": "high",
@@ -1645,7 +2634,7 @@
     "qs_ranking": null,
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 10,
+      "checked_official_source_count": 16,
       "verified_fields": [
         "program",
         "language",
@@ -1655,14 +2644,15 @@
         "scholarship",
         "deadline",
         "curriculum",
+        "research",
         "housing"
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-30"
     },
     "quality_control": {
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "qc_status": "needs_revision",
       "remaining_verification_tasks": [],
       "qc_notes": {
@@ -1696,6 +2686,70 @@
           "en": "Institutional global rank; it is not evidence of aerospace or space-programme fit.",
           "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
         }
+      }
+    },
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "core_match",
+      "score": 100,
+      "score_basis_weight": 90,
+      "evidenced_dimensions": 4,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "strong",
+          "basis": "four aviation-specific technical specialisation modules published with credit weights, plus the stated coverage of all three centre expertise areas",
+          "weight": 30,
+          "source_url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/msc-degree-programme-at-the-centre-for-aviation"
+        },
+        "research_group_evidence": {
+          "level": "strong",
+          "basis": "three named teams inside one aviation centre, each with a named leader, published scope and its own project list",
+          "weight": 25,
+          "source_url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/"
+        },
+        "faculty_evidence": {
+          "level": "strong",
+          "basis": "3_named_items",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "strong",
+          "basis": "five in-house laboratories — ALFA wind tunnel, ReDSim, HiSim, SMARTEMIS and the human-machine lab — stated to be available to students as part of the curriculum",
+          "weight": 10,
+          "source_url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/laboratories"
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "Aerodynamics",
+        "Space Systems",
+        "Propulsion",
+        "Structures"
+      ],
+      "confidence": "medium",
+      "legacy_relevance_status": "medium",
+      "evaluated_at": "2026-08-30"
+    },
+    "academic_match_evidence": {
+      "research_group_evidence": {
+        "level": "strong",
+        "basis": "three named teams inside one aviation centre, each with a named leader, published scope and its own project list",
+        "source_url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/"
+      },
+      "facility_evidence": {
+        "level": "strong",
+        "basis": "five in-house laboratories — ALFA wind tunnel, ReDSim, HiSim, SMARTEMIS and the human-machine lab — stated to be available to students as part of the curriculum",
+        "source_url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/laboratories"
+      },
+      "curriculum_evidence": {
+        "level": "strong",
+        "basis": "four aviation-specific technical specialisation modules published with credit weights, plus the stated coverage of all three centre expertise areas",
+        "source_url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/msc-degree-programme-at-the-centre-for-aviation"
       }
     }
   }

@@ -153,7 +153,7 @@ def test_caltech_space_ms_has_current_cost_housing_curriculum_and_funding_scope(
     assert research["jpl_collaboration_opportunities"] is True
     assert research["jpl_access_guaranteed"] is False
     assert caltech["student_sentiment_profile"]["student_satisfaction_score"] is None
-    assert len(caltech["source_profile"]["source_log"]) == 30
+    assert len(caltech["source_profile"]["source_log"]) == 31
 
 
 def test_uc_berkeley_me_meng_scopes_professional_degree_cost_funding_and_housing():
@@ -204,7 +204,7 @@ def test_uc_berkeley_me_meng_scopes_professional_degree_cost_funding_and_housing
     assert timeline["english_score_deadline_if_required"] == "2026-12-01T20:59:00-08:00"
     assert berkeley["research_profile"]["individual_lab_place_guaranteed"] is False
     assert berkeley["student_sentiment_profile"]["student_satisfaction_score"] is None
-    assert len(berkeley["source_profile"]["source_log"]) == 34
+    assert len(berkeley["source_profile"]["source_log"]) == 36
     assert berkeley["data_quality"]["status"] == "partial"
 
 
@@ -499,7 +499,11 @@ def test_tudelft_scholarship_keeps_separate_closed_cycle_and_blocked_source_expl
     assert scholarship["application_mode"] == "separate"
     assert scholarship["automatic_consideration"] is False
     assert scholarship["separate_application_required"] is True
-    assert scholarship["opportunities"] == []
+    # An accessible official scholarship page now backs the record, so the
+    # integrity gate surfaces the opportunity instead of stripping it.  The
+    # award itself is still labelled as a closed cycle, and the dedicated page
+    # that blocks automated access is still recorded as blocked below.
+    assert len(scholarship["opportunities"]) == 1
 
     raw_payload = json.loads(
         (database / "hollanda.json").read_text(encoding="utf-8")
@@ -523,7 +527,17 @@ def test_tudelft_scholarship_keeps_separate_closed_cycle_and_blocked_source_expl
     )
     assert official["access_status"] == "blocked"
     assert raw_delft["source_profile"]["field_confidence"]["scholarship"] == "medium"
-    assert "scholarship" in delft["data_quality"]["unverified_critical_fields"]
+    # The blocked page is not the only scholarship evidence any more: an
+    # accessible official scholarship page sits beside it.
+    assert any(
+        source["source_type"] == "official_scholarship_page" and source["access_status"] == "ok"
+        for source in sources
+    )
+    # Every playbook step derived from the blocked page carries an explicit
+    # instruction to re-confirm it in a browser.
+    playbook = raw_scholarship["playbook"][0]
+    assert playbook["needs_human_verification"] is True
+    assert playbook["verification_note"]["en"]
 
 
 def test_tue_mechanical_stays_adjacent_and_does_not_invent_non_eu_cost_or_admission():
@@ -1051,7 +1065,7 @@ def test_uiuc_ae_ms_separates_pathways_current_usd_costs_funding_and_housing():
 
     assert uiuc["student_sentiment_profile"]["student_satisfaction_score"] is None
     assert uiuc["student_sentiment_profile"]["sentiment_confidence"] == "low"
-    assert uiuc["data_quality"]["checked_official_source_count"] == 15
+    assert uiuc["data_quality"]["checked_official_source_count"] == 20
     assert uiuc["data_quality"]["unverified_critical_fields"] == []
     assert uiuc["data_quality"]["status"] == "verified"
 
@@ -1173,7 +1187,7 @@ def test_purdue_aae_ms_separates_routes_current_cost_funding_and_graduate_housin
 
     assert purdue["student_sentiment_profile"]["student_satisfaction_score"] is None
     assert purdue["student_sentiment_profile"]["sentiment_confidence"] == "low"
-    assert purdue["data_quality"]["checked_official_source_count"] == 19
+    assert purdue["data_quality"]["checked_official_source_count"] == 23
     assert purdue["data_quality"]["unverified_critical_fields"] == ["language"]
     assert purdue["data_quality"]["status"] == "partial"
 
@@ -1244,7 +1258,7 @@ def test_ut_austin_ase_mse_separates_three_routes_current_cost_funding_and_housi
 
     assert texas["student_sentiment_profile"]["student_satisfaction_score"] is None
     assert texas["student_sentiment_profile"]["sentiment_confidence"] == "low"
-    assert texas["data_quality"]["checked_official_source_count"] == 19
+    assert texas["data_quality"]["checked_official_source_count"] == 21
     assert texas["data_quality"]["unverified_critical_fields"] == ["language"]
     assert texas["data_quality"]["status"] == "partial"
 
@@ -1318,7 +1332,7 @@ def test_tamu_aero_ms_keeps_thesis_funding_cost_housing_and_meng_separate():
 
     assert tamu["student_sentiment_profile"]["student_satisfaction_score"] is None
     assert tamu["student_sentiment_profile"]["sentiment_confidence"] == "low"
-    assert tamu["data_quality"]["checked_official_source_count"] == 26
+    assert tamu["data_quality"]["checked_official_source_count"] == 30
     assert tamu["data_quality"]["unverified_critical_fields"] == ["language"]
     assert tamu["data_quality"]["status"] == "partial"
 
@@ -1390,7 +1404,7 @@ def test_cu_boulder_traditional_ms_keeps_cost_funding_housing_and_proms_separate
     assert "Lockheed Martin" in boulder["industry_ecosystem_profile"]["verified_partnerships"]
     assert boulder["student_sentiment_profile"]["student_satisfaction_score"] is None
     assert boulder["student_sentiment_profile"]["sentiment_confidence"] == "low"
-    assert boulder["data_quality"]["checked_official_source_count"] == 20
+    assert boulder["data_quality"]["checked_official_source_count"] == 24
     assert boulder["data_quality"]["unverified_critical_fields"] == ["language"]
     assert boulder["data_quality"]["status"] == "partial"
 
@@ -1473,7 +1487,7 @@ def test_usc_astronautical_ms_preserves_cycle_conflicts_cost_funding_and_housing
     assert usc["industry_ecosystem_profile"]["outcomes_are_partnership_evidence"] is False
     assert usc["student_sentiment_profile"]["student_satisfaction_score"] is None
     assert usc["student_sentiment_profile"]["sentiment_confidence"] == "low"
-    assert usc["data_quality"]["checked_official_source_count"] == 23
+    assert usc["data_quality"]["checked_official_source_count"] == 25
     assert usc["data_quality"]["unverified_critical_fields"] == ["language"]
     assert usc["data_quality"]["status"] == "partial"
 
@@ -1551,7 +1565,7 @@ def test_ucla_aerospace_ms_separates_program_current_gre_cost_funding_and_housin
     assert len(ucla["industry_ecosystem_profile"]["verified_partnerships"]) == 1
     assert ucla["student_sentiment_profile"]["student_satisfaction_score"] is None
     assert ucla["student_sentiment_profile"]["sentiment_confidence"] == "low"
-    assert ucla["data_quality"]["checked_official_source_count"] == 18
+    assert ucla["data_quality"]["checked_official_source_count"] == 19
     assert ucla["data_quality"]["unverified_critical_fields"] == ["language"]
     assert ucla["data_quality"]["status"] == "partial"
 
@@ -1630,7 +1644,7 @@ def test_ucsd_aerospace_ms_has_current_deadline_cost_routes_housing_and_visa():
     assert len(ucsd["industry_ecosystem_profile"]["verified_partnerships"]) == 2
     assert ucsd["student_sentiment_profile"]["student_satisfaction_score"] is None
     assert ucsd["student_sentiment_profile"]["sentiment_confidence"] == "low"
-    assert ucsd["data_quality"]["checked_official_source_count"] == 20
+    assert ucsd["data_quality"]["checked_official_source_count"] == 23
     assert ucsd["data_quality"]["unverified_critical_fields"] == ["language"]
     assert ucsd["data_quality"]["status"] == "partial"
 
@@ -1716,7 +1730,7 @@ def test_mit_aeroastro_sm_has_current_direct_route_units_cost_funding_housing_an
     assert mit["industry_ecosystem_profile"]["verified_partnerships"] == []
     assert mit["student_sentiment_profile"]["student_satisfaction_score"] is None
     assert mit["student_sentiment_profile"]["sentiment_confidence"] == "low"
-    assert mit["data_quality"]["checked_official_source_count"] == 22
+    assert mit["data_quality"]["checked_official_source_count"] == 23
     assert mit["data_quality"]["status"] == "partial"
 
 
@@ -1800,5 +1814,5 @@ def test_stanford_aa_ms_has_current_units_cost_funding_housing_and_visa():
     assert stanford["industry_ecosystem_profile"]["verified_partnerships"] == []
     assert stanford["student_sentiment_profile"]["student_satisfaction_score"] is None
     assert stanford["student_sentiment_profile"]["sentiment_confidence"] == "low"
-    assert stanford["data_quality"]["checked_official_source_count"] == 21
+    assert stanford["data_quality"]["checked_official_source_count"] == 22
     assert stanford["data_quality"]["status"] == "partial"

@@ -1,0 +1,873 @@
+{
+  "checked": "2026-08-30",
+  "note": "ZHAW, ESTACA, Paris-Saclay SAAS, ISAE-ENSMA, Chalmers and Linköping — the labs, benches and staff each institution actually publishes.",
+  "records": [
+    {
+      "id": "ch-zhaw-aviation-mse",
+      "research_profile": {
+        "department": "Centre for Aviation (ZAV), ZHAW School of Engineering",
+        "department_url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/",
+        "department_note": {
+          "en": "ZAV describes itself as the leading research hub for aviation in Switzerland and organises everything around three declared areas of expertise: Air Vehicle Design and Technology, Aviation Infrastructure and Atmospheric Research, and Humans in Safety Critical Systems. Unlike ETH and EPFL, this is a genuinely aviation-shaped centre — but it is a university of applied sciences, so the work is applied and industry-facing rather than fundamental.",
+          "tr": "ZAV kendisini İsviçre'nin önde gelen havacılık araştırma merkezi olarak tanımlar ve her şeyi üç beyan edilmiş uzmanlık alanı etrafında örgütler: Hava Aracı Tasarımı ve Teknolojisi, Havacılık Altyapısı ve Atmosfer Araştırmaları, Güvenlik Kritik Sistemlerde İnsan. ETH ve EPFL'den farklı olarak bu gerçekten havacılık biçimli bir merkezdir — ancak bir uygulamalı bilimler üniversitesidir; yani çalışma temelden çok uygulamalı ve sanayiye dönüktür."
+        },
+        "faculty_contact_policy": "before_application_optional",
+        "research_units": [
+          {
+            "name": "Aerodynamics team, Air Vehicle Design and Technology",
+            "unit_type": "research_group",
+            "url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/air-vehicle-design-and-technology/aerodynamics",
+            "lead": "Prof. Dr. Leonardo Manfriani",
+            "topics": ["aerodynamics", "cfd", "wind_tunnel", "flight_testing", "certification", "experimental_fluids"],
+            "stated_research_areas": [
+              "Aerodynamic analysis, design, measurement and testing",
+              "Computational fluid dynamics",
+              "Flight test techniques",
+              "Certification of aircraft for flight performance and flight characteristics"
+            ],
+            "facilities": ["ALFA wind tunnel — the team states it gives reliable aerodynamic measurements thanks to its measurement systems and flow quality", "In-house capability to design and build wind tunnel models"],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "The team publishes actual named projects rather than themes: PC-12 NGX performance and stall characteristics, winglets for the DG-300 glider, wind tunnel tests for the Wepfer wind turbine rotor blades, aerodynamic work on a Moto2 racing bike. If wind_tunnel or certification is your tag, this is applied aerodynamics with a client attached to almost every project — and students are explicitly named as collaborators on them.",
+              "tr": "Ekip temalar yerine gerçek adlandırılmış projeler yayımlar: PC-12 NGX performansı ve perdövites karakteristikleri, DG-300 planörü için winglet'ler, Wepfer rüzgâr türbini rotor kanatları için rüzgâr tüneli testleri, bir Moto2 yarış motosikleti üzerinde aerodinamik çalışma. Etiketin wind_tunnel veya certification ise, bu neredeyse her projesine bir müşteri bağlı uygulamalı aerodinamiktir — ve öğrenciler bu projelerde açıkça iş birlikçi olarak anılır."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "Flight Mechanics and Flight Control Systems team",
+            "unit_type": "research_group",
+            "url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/air-vehicle-design-and-technology/flight-mechanics-and-flight-control-systems",
+            "lead": "Ing. Pierluigi Capone",
+            "topics": ["flight_mechanics", "stability_control", "gnc", "simulation_modelling", "uav", "certification", "verification_validation"],
+            "stated_research_areas": [
+              "Flight control systems from limited control authority to full fly-by-wire, for fixed- and rotary-wing aircraft",
+              "Parameter estimation for research, development and training",
+              "Real-time simulation including flight control systems",
+              "Reliability, availability, maintainability and safety (RAMS) analysis",
+              "Safety and certification of unmanned aerial vehicles"
+            ],
+            "facilities": ["ReDSim research and didactics simulator", "HiSim high fidelity simulator", "Remote pilot station (UMARS 2.0)"],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "The team states its reason for existing plainly: small aircraft manufacturers cannot afford accurate flight dynamic models, so handling-quality problems surface late and get fixed by trial and error. That is the gap the group fills. If gnc or flight_mechanics is your tag and you want fly-by-wire design plus a real-time simulator to test it in, ReDSim and HiSim are both in-house and the team publishes a dedicated master's and PhD theses page.",
+              "tr": "Ekip var olma sebebini açıkça belirtir: küçük uçak üreticileri doğru uçuş dinamiği modellerini karşılayamaz, bu yüzden kullanım kalitesi sorunları geç ortaya çıkar ve deneme yanılmayla düzeltilir. Grubun doldurduğu boşluk budur. Etiketin gnc veya flight_mechanics ise ve fly-by-wire tasarımıyla birlikte onu test edecek bir gerçek zamanlı simülatör istiyorsan, ReDSim ile HiSim ikisi de kurum içindedir ve ekip özel bir yüksek lisans ile doktora tezleri sayfası yayımlar."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "Structural Integrity and Aircraft Repairs team",
+            "unit_type": "research_group",
+            "url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/air-vehicle-design-and-technology/structural-integrity-and-aircraft-repairs",
+            "topics": ["aerospace_structures", "fatigue_damage", "fea", "structural_mechanics", "certification", "aeroelasticity"],
+            "stated_research_areas": [
+              "Maintenance and inspection concepts that keep structural integrity over the service life",
+              "Load calculations for fatigue load cases and fluid-structure coupling",
+              "Crack analysis from operational damage and development of repairs",
+              "Structural risk assessments and supplemental structural inspection documents for ageing aircraft"
+            ],
+            "facilities": ["Tool chain stated on the page: FLOW5, ANSYS CFX or FLUENT for loads, FEM for structural analysis, CITime for crack initiation, AFGROW for crack growth"],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "This group names the exact software you would be using — AFGROW for crack growth, CITime for crack initiation — and works on real airframes, keeping ex-Swiss Air Force Hunter, Venom and Vampire jets airworthy in civil use with the Altenrhein museum. If fatigue_damage is your tag, few master's-level groups let you do damage-tolerance work on aircraft that actually fly.",
+              "tr": "Bu grup kullanacağın yazılımı tam olarak adlandırır — çatlak büyümesi için AFGROW, çatlak başlangıcı için CITime — ve gerçek uçak gövdeleri üzerinde çalışır; Altenrhein müzesiyle birlikte eski İsviçre Hava Kuvvetleri Hunter, Venom ve Vampire jetlerini sivil kullanımda uçuşa elverişli tutar. Etiketin fatigue_damage ise, çok az yüksek lisans düzeyi grup, gerçekten uçan uçaklar üzerinde hasar toleransı çalışması yapmana izin verir."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "ZAV laboratories",
+            "unit_type": "facility",
+            "url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/laboratories",
+            "topics": ["laboratory", "wind_tunnel", "simulation_modelling", "sensors", "testing"],
+            "facilities": [
+              "ReDSim research and didactics simulator",
+              "HiSim high fidelity simulator",
+              "SMARTEMIS engine emission measurement system",
+              "Human-Machine laboratory, including head and eye tracking",
+              "ALFA wind tunnel"
+            ],
+            "student_access": "project_course_open",
+            "why_it_fits": {
+              "en": "The centre states that this infrastructure is available to its students as part of the curriculum, not only to partner projects. Five laboratories for one centre — two simulators, a wind tunnel, an emissions bench and a human-machine lab — is dense for a school of this size.",
+              "tr": "Merkez, bu altyapının yalnızca ortak projelere değil, müfredatın bir parçası olarak öğrencilerine de açık olduğunu belirtir. Tek bir merkez için beş laboratuvar — iki simülatör, bir rüzgâr tüneli, bir emisyon tezgâhı ve bir insan-makine laboratuvarı — bu büyüklükteki bir okul için yoğundur."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "Humans in Safety Critical Systems",
+            "unit_type": "research_group",
+            "url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/humans-in-safety-critical-systems",
+            "topics": ["systems_engineering", "verification_validation", "avionics", "sensors", "simulation_modelling"],
+            "facilities": ["Human-Machine laboratory", "Eye-tracking laboratory"],
+            "student_access": "msc_thesis_open",
+            "last_verified": "2026-08-30"
+          }
+        ],
+        "notable_professors": [
+          {
+            "name": "Michel Guillaume",
+            "role": { "en": "Head of the Centre for Aviation", "tr": "Havacılık Merkezi Başkanı" },
+            "focus": { "en": "Leads the centre across all three areas of expertise; states that the centre is regionally rooted and globally connected and participates in the Aviation Research Centre Switzerland (ARCS).", "tr": "Merkezi üç uzmanlık alanının tamamında yönetir; merkezin bölgesel köklere ve küresel bağlantılara sahip olduğunu ve İsviçre Havacılık Araştırma Merkezi'ne (ARCS) katıldığını belirtir." },
+            "fit_tags": ["aerospace_general", "industrial_projects"],
+            "email": null,
+            "email_source": null,
+            "profile_url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/",
+            "lab": "Centre for Aviation",
+            "contact_timing": "before_application_optional",
+            "accepting_students_signal": "not_stated",
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "Leonardo Manfriani",
+            "role": { "en": "Team Leader, Aerodynamics", "tr": "Aerodinamik Ekip Lideri" },
+            "focus": { "en": "Aerodynamic analysis, design, measurement and testing; CFD; flight test techniques; certification of aircraft for flight performance and flight characteristics.", "tr": "Aerodinamik analiz, tasarım, ölçüm ve test; HAD; uçuş testi teknikleri; uçakların uçuş performansı ve uçuş karakteristikleri açısından sertifikasyonu." },
+            "fit_tags": ["aerodynamics", "cfd", "wind_tunnel", "certification", "flight_testing"],
+            "email": null,
+            "email_source": null,
+            "profile_url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/air-vehicle-design-and-technology/aerodynamics",
+            "lab": "Aerodynamics team",
+            "contact_timing": "before_application_optional",
+            "accepting_students_signal": "not_stated",
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "Pierluigi Capone",
+            "role": { "en": "Team Leader, Flight Mechanics and Flight Control Systems", "tr": "Uçuş Mekaniği ve Uçuş Kontrol Sistemleri Ekip Lideri" },
+            "focus": { "en": "Flight mechanics, real-time simulation and flight control systems for fixed- and rotary-wing aircraft, parameter estimation, and UAV safety and certification.", "tr": "Sabit ve döner kanatlı uçaklar için uçuş mekaniği, gerçek zamanlı simülasyon ve uçuş kontrol sistemleri; parametre kestirimi; İHA güvenliği ve sertifikasyonu." },
+            "fit_tags": ["flight_mechanics", "gnc", "stability_control", "simulation_modelling", "uav"],
+            "email": null,
+            "email_source": null,
+            "profile_url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/air-vehicle-design-and-technology/flight-mechanics-and-flight-control-systems",
+            "lab": "Flight Mechanics and Flight Control Systems team",
+            "contact_timing": "before_application_optional",
+            "accepting_students_signal": "not_stated",
+            "last_verified": "2026-08-30"
+          }
+        ],
+        "faculty_email_availability": {
+          "status": "not_published",
+          "note": { "en": "ZAV names its centre head and its team leaders on the public pages and links a team directory, but no addresses appear on the checked pages.", "tr": "ZAV, merkez başkanını ve ekip liderlerini genel sayfalarda adlandırır ve bir ekip dizinine bağlantı verir, ancak kontrol edilen sayfalarda adres görünmez." },
+          "directory_url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/team"
+        }
+      },
+      "curriculum_profile": {
+        "specialisation_note": {
+          "en": "ZHAW states this is Switzerland's only Master of Science in Engineering with an Aviation specialisation, and that it spans all three ZAV areas of expertise. The centre's own technical specialisation modules are published with their credit weights: Modelling for Aviation Infrastructure and Future Mobility (3 ECTS), Advanced Aircraft System Design (3 ECTS), Systems Engineering for Safety Critical Systems (3 ECTS) and Managing Complexity and Innovation in Aviation (3 ECTS).",
+          "tr": "ZHAW, bunun İsviçre'nin Havacılık uzmanlaşmasına sahip tek Mühendislikte Yüksek Lisansı olduğunu ve üç ZAV uzmanlık alanının tamamını kapsadığını belirtir. Merkezin kendi teknik uzmanlaşma modülleri kredi ağırlıklarıyla yayımlanır: Havacılık Altyapısı ve Gelecek Hareketliliği için Modelleme (3 AKTS), İleri Uçak Sistem Tasarımı (3 AKTS), Güvenlik Kritik Sistemler için Sistem Mühendisliği (3 AKTS) ve Havacılıkta Karmaşıklık ve İnovasyon Yönetimi (3 AKTS)."
+        }
+      },
+      "application_timeline_profile": {
+        "recurring_annual_deadline": true,
+        "deadline_notes": {
+          "en": "ZHAW publishes a recurring registration window rather than a single dated deadline: for the autumn semester starting in September, registrations run from the beginning of February to the end of April; for the spring semester starting in February, the window opens at the beginning of August. No specific calendar date is published on the checked page, so none is stored here.",
+          "tr": "ZHAW tek bir tarihli son başvuru yerine yinelenen bir kayıt penceresi yayımlar: Eylül'de başlayan güz dönemi için kayıtlar Şubat başından Nisan sonuna kadar sürer; Şubat'ta başlayan bahar dönemi için pencere Ağustos başında açılır. Kontrol edilen sayfada belirli bir takvim tarihi yayımlanmadığı için burada da saklanmamıştır."
+        }
+      },
+      "academic_match_evidence": {
+        "research_group_evidence": {
+          "level": "strong",
+          "basis": "three named teams inside one aviation centre, each with a named leader, published scope and its own project list",
+          "source_url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/"
+        },
+        "facility_evidence": {
+          "level": "strong",
+          "basis": "five in-house laboratories — ALFA wind tunnel, ReDSim, HiSim, SMARTEMIS and the human-machine lab — stated to be available to students as part of the curriculum",
+          "source_url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/laboratories"
+        },
+        "curriculum_evidence": {
+          "level": "strong",
+          "basis": "four aviation-specific technical specialisation modules published with credit weights, plus the stated coverage of all three centre expertise areas",
+          "source_url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/msc-degree-programme-at-the-centre-for-aviation"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/",
+          "title": "ZHAW — Centre for Aviation (ZAV)",
+          "source_type": "official_department_page",
+          "relevant_fields": ["research", "department", "labs"],
+          "confidence": "high",
+          "notes": { "en": "States the three areas of expertise, the centre head and participation in the Aviation Research Centre Switzerland.", "tr": "Üç uzmanlık alanını, merkez başkanını ve İsviçre Havacılık Araştırma Merkezi'ne katılımı belirtir." }
+        },
+        {
+          "url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/laboratories",
+          "title": "ZHAW ZAV — Laboratories",
+          "source_type": "official_lab_page",
+          "relevant_fields": ["research", "labs"],
+          "confidence": "high",
+          "notes": { "en": "Lists the centre's laboratories and states they are available to students as part of the curriculum.", "tr": "Merkezin laboratuvarlarını listeler ve müfredatın parçası olarak öğrencilere açık olduklarını belirtir." }
+        },
+        {
+          "url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/air-vehicle-design-and-technology/aerodynamics",
+          "title": "ZHAW ZAV — Aerodynamics",
+          "source_type": "official_lab_page",
+          "relevant_fields": ["research", "labs"],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/air-vehicle-design-and-technology/flight-mechanics-and-flight-control-systems",
+          "title": "ZHAW ZAV — Flight Mechanics and Flight Control Systems",
+          "source_type": "official_lab_page",
+          "relevant_fields": ["research", "labs"],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/air-vehicle-design-and-technology/structural-integrity-and-aircraft-repairs",
+          "title": "ZHAW ZAV — Structural Integrity and Aircraft Repairs",
+          "source_type": "official_lab_page",
+          "relevant_fields": ["research", "labs"],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.zhaw.ch/en/engineering/institutes-centres/zav/msc-degree-programme-at-the-centre-for-aviation",
+          "title": "ZHAW ZAV — MSc degree programme at the Centre for Aviation",
+          "source_type": "official_program_page",
+          "relevant_fields": ["curriculum", "deadline", "program"],
+          "confidence": "high",
+          "notes": { "en": "Publishes the specialisation modules with credit weights and the recurring registration windows for the autumn and spring semesters.", "tr": "Uzmanlaşma modüllerini kredi ağırlıklarıyla ve güz ile bahar dönemleri için yinelenen kayıt pencerelerini yayımlar." }
+        }
+      ]
+    },
+    {
+      "id": "fr-isae-ensma-msc-ame",
+      "research_profile": {
+        "department": "Institut Pprime (CNRS UPR 3346) — departments PMM, FTC and GMSC — with the LIAS laboratory",
+        "department_url": "https://www.ensma.fr/en/laboratories/",
+        "department_note": {
+          "en": "ISAE-ENSMA states that it devotes half its floor area (17,000 m²) and half its net budget to research. Its research runs through Institut Pprime, a CNRS unit shared with the University of Poitiers that gathers 632 people across three departments. For a school of ~140 permanent staff, that is an unusually high research-to-teaching ratio, and it is published rather than implied.",
+          "tr": "ISAE-ENSMA, taban alanının yarısını (17.000 m²) ve net bütçesinin yarısını araştırmaya ayırdığını belirtir. Araştırması, Poitiers Üniversitesi ile paylaşılan ve üç bölümde 632 kişiyi toplayan bir CNRS birimi olan Institut Pprime üzerinden yürür. Yaklaşık 140 kadrolu personelli bir okul için bu olağandışı derecede yüksek bir araştırma-öğretim oranıdır ve ima edilmek yerine yayımlanır."
+        },
+        "faculty_contact_policy": "before_application_encouraged",
+        "research_units": [
+          {
+            "name": "PROMETEE experimental platform",
+            "unit_type": "facility",
+            "url": "https://www.ensma.fr/en/prometee/",
+            "topics": ["wind_tunnel", "combustion", "jet_propulsion", "rocket_propulsion", "aeroacoustics", "aerothermodynamics", "testing", "materials"],
+            "stated_research_areas": [
+              "Compressible aerodynamics, jet aeroacoustics, high-temperature aerothermics, flow control, detonation and combustion for propulsion, fire safety (FTC department)",
+              "Durability and damage of materials under extreme temperature and pressure (PMM department)",
+              "Sealing and bearings for rotating machines (GMSC department)"
+            ],
+            "facilities": [
+              "4,500 m² test centre commissioned in 2018, replacing the 1960s CEAT centre",
+              "Its own 200-bar high-pressure compressed air network feeding high-speed wind tunnels and combustion benches",
+              "Around twenty experimental installations planned, some of which the school states are unique in Europe"
+            ],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "A dedicated 200-bar compressed air production network is the detail that matters: it is what lets the site run high-speed wind tunnels and combustion benches on reactive gases including hydrogen, and the school states this capability is one of its main distinguishing features in French research. Named industrial partners on the platform are SAFRAN, CNES and ArianeGroup for propulsion, EDF and Air Liquide for energy. If jet_propulsion, rocket_propulsion or combustion is your tag, this is the strongest single reason on this record.",
+              "tr": "Özel bir 200 bar basınçlı hava üretim ağı, önemli olan ayrıntıdır: sahanın yüksek hızlı rüzgâr tünellerini ve hidrojen dâhil reaktif gazlarla çalışan yanma tezgâhlarını işletmesini sağlayan şeydir ve okul bu yeteneğin Fransız araştırma ortamındaki başlıca ayırt edici özelliklerinden biri olduğunu belirtir. Platformdaki adlandırılmış sanayi ortakları itki için SAFRAN, CNES ve ArianeGroup; enerji için EDF ve Air Liquide'dir. Etiketin jet_propulsion, rocket_propulsion veya combustion ise, bu kayıttaki en güçlü tek sebep budur."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "Institut Pprime — Fluids, Heat transfer and Combustion department (FTC)",
+            "unit_type": "institute",
+            "url": "https://www.ensma.fr/en/laboratories/",
+            "topics": ["aerodynamics", "combustion", "aeroacoustics", "heat_transfer", "turbulence", "cfd", "experimental_fluids"],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "The department that hosts the EPROP major's research. Institut Pprime is described as a European-level research centre for transport, energy and the environment, organised into physics and mechanics of materials, fluids-thermal-combustion, and mechanical engineering and complex systems. The MSc's two majors map onto the first two of those three departments almost exactly.",
+              "tr": "EPROP ana dalının araştırmasını barındıran bölüm. Institut Pprime, ulaşım, enerji ve çevre için Avrupa düzeyinde bir araştırma merkezi olarak tanımlanır; malzemelerin fiziği ve mekaniği, akışkanlar-ısı-yanma ve makine mühendisliği ile karmaşık sistemler şeklinde örgütlenmiştir. Yüksek lisansın iki ana dalı bu üç bölümün ilk ikisiyle neredeyse tam olarak örtüşür."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "Institut Pprime — Physics and Mechanics of Materials department (PMM)",
+            "unit_type": "institute",
+            "url": "https://www.ensma.fr/en/laboratories/",
+            "topics": ["materials", "fatigue_damage", "aerospace_structures", "structural_mechanics", "manufacturing"],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "The department behind the HTM (High Temperature Materials) major, working on durability and damage of materials under extreme temperatures and pressures. If materials or fatigue_damage is your tag, the HTM major and this department are the same thing seen from two sides.",
+              "tr": "HTM (Yüksek Sıcaklık Malzemeleri) ana dalının arkasındaki bölüm; malzemelerin aşırı sıcaklık ve basınç altındaki dayanıklılığı ile hasarı üzerine çalışır. Etiketin materials veya fatigue_damage ise, HTM ana dalı ile bu bölüm aynı şeyin iki taraftan görünüşüdür."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "Labex INTERACTIFS",
+            "unit_type": "consortium",
+            "url": "https://www.ensma.fr/en/innovation-programs/labex-interactifs/",
+            "topics": ["materials", "experimental_fluids", "energy_systems", "heat_transfer"],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "A laboratory of excellence led by the University of Poitiers with ISAE-ENSMA, the CNRS and Institut Pprime, built around interactions at fluid-solid interfaces from the nanometre to the system scale. Part of its budget is explicitly devoted to master's-level teaching, visiting researchers and scientific events, so the funding reaches taught students and not only doctoral ones.",
+              "tr": "Poitiers Üniversitesi öncülüğünde ISAE-ENSMA, CNRS ve Institut Pprime ile yürütülen; nanometreden sistem ölçeğine akışkan-katı arayüzlerindeki etkileşimler etrafında kurulmuş bir mükemmeliyet laboratuvarı. Bütçesinin bir kısmı açıkça yüksek lisans düzeyi öğretime, misafir araştırmacılara ve bilimsel etkinliklere ayrılmıştır; yani fon yalnızca doktora öğrencilerine değil ders alan öğrencilere de ulaşır."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "OpenLab FLUIDICS@Poitiers",
+            "unit_type": "consortium",
+            "url": "https://www.ensma.fr/en/innovation-programs/fluidics/",
+            "topics": ["aerodynamics", "aeroacoustics", "thermal_management", "industrial_projects", "energy_systems"],
+            "student_access": "internship_open",
+            "why_it_fits": {
+              "en": "A joint laboratory between Stellantis and Institut Pprime, running since 2011 and renewed for four-year periods. It states 21 final-year engineering and master's internships completed under it, so this is a named, countable industrial internship route rather than a vague partnership.",
+              "tr": "Stellantis ile Institut Pprime arasında 2011'den beri süren ve dört yıllık dönemler hâlinde yenilenen ortak bir laboratuvar. Kapsamında tamamlanan 21 son sınıf mühendislik ve yüksek lisans stajı olduğunu belirtir; yani bu belirsiz bir ortaklık değil, adlandırılmış ve sayılabilir bir sanayi staj rotasıdır."
+            },
+            "last_verified": "2026-08-30"
+          }
+        ],
+        "notable_professors": [
+          {
+            "name": "Julien Sotton",
+            "role": { "en": "Programme director, International MSc Aeronautical Mechanics and Energetics (AME)", "tr": "Uluslararası MSc Havacılık Mekaniği ve Enerjetiği (AME) program direktörü" },
+            "focus": { "en": "Directs the two-year AME programme covering energy for propulsion, high-temperature materials and interface problems, taught entirely in English across the EPROP and HTM majors.", "tr": "İtki için enerji, yüksek sıcaklık malzemeleri ve arayüz problemlerini kapsayan; EPROP ile HTM ana dalları boyunca tamamen İngilizce verilen iki yıllık AME programını yönetir." },
+            "fit_tags": ["combustion", "jet_propulsion", "energy_systems", "materials"],
+            "email": "julien.sotton@ensma.fr",
+            "email_source": "https://www.ensma.fr/en/master-of-science-in-aeronautics-and-space/international-msc-ame-presentation/",
+            "profile_url": "https://www.ensma.fr/en/master-of-science-in-aeronautics-and-space/international-msc-ame-presentation/",
+            "lab": "Institut Pprime",
+            "contact_timing": "before_application_encouraged",
+            "accepting_students_signal": "not_stated",
+            "last_verified": "2026-08-30"
+          }
+        ],
+        "faculty_email_availability": {
+          "status": "published",
+          "note": { "en": "ISAE-ENSMA publishes the programme director's address and phone directly on the MSc page, alongside the international relations office at international@ensma.fr. This is the most contactable record in the French block — you can write to the person who runs the programme without hunting a directory.", "tr": "ISAE-ENSMA, program direktörünün adresini ve telefonunu doğrudan yüksek lisans sayfasında, international@ensma.fr adresindeki uluslararası ilişkiler ofisiyle birlikte yayımlar. Bu, Fransız bloğundaki en kolay ulaşılan kayıttır — bir dizin aramadan programı yürüten kişiye yazabilirsin." },
+          "directory_url": "https://www.ensma.fr/en/master-of-science-in-aeronautics-and-space/international-msc-ame-presentation/"
+        }
+      },
+      "curriculum_profile": {
+        "specialisation_note": {
+          "en": "The MSc is taught entirely in English and offers two majors: EPROP (Energetics for Propulsion) and HTM (High Temperature Materials). The school states the aim is solid theoretical, numerical and experimental training in energy for propulsion, materials for high temperatures and interface problems, with industrial contact through projects and a graduation internship that can become the master's thesis.",
+          "tr": "Yüksek lisans tamamen İngilizce verilir ve iki ana dal sunar: EPROP (İtki için Enerjetik) ve HTM (Yüksek Sıcaklık Malzemeleri). Okul, amacın itki için enerji, yüksek sıcaklık malzemeleri ve arayüz problemlerinde sağlam kuramsal, sayısal ve deneysel eğitim olduğunu; sanayi temasının projeler ve yüksek lisans tezine dönüşebilen mezuniyet stajı yoluyla sağlandığını belirtir."
+        }
+      },
+      "academic_match_evidence": {
+        "research_group_evidence": {
+          "level": "strong",
+          "basis": "Institut Pprime with 632 people across three departments, plus a Labex and an industrial OpenLab, all named on official pages",
+          "source_url": "https://www.ensma.fr/en/laboratories/"
+        },
+        "facility_evidence": {
+          "level": "strong",
+          "basis": "the 4,500 m² PROMETEE platform with a dedicated 200-bar compressed air network for high-speed wind tunnels and combustion benches",
+          "source_url": "https://www.ensma.fr/en/prometee/"
+        },
+        "faculty_evidence": {
+          "level": "strong",
+          "basis": "the programme director is named with a direct published email address and phone number on the programme page",
+          "source_url": "https://www.ensma.fr/en/master-of-science-in-aeronautics-and-space/international-msc-ame-presentation/"
+        },
+        "industry_evidence": {
+          "level": "strong",
+          "basis": "SAFRAN, CNES, ArianeGroup, EDF and Air Liquide named as PROMETEE research partners; Stellantis named as the OpenLab partner with a counted internship record",
+          "source_url": "https://www.ensma.fr/en/prometee/"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.ensma.fr/en/master-of-science-in-aeronautics-and-space/international-msc-ame-presentation/",
+          "title": "ISAE-ENSMA — International MSc Aeronautical Mechanics and Energetics (AME)",
+          "source_type": "official_program_page",
+          "relevant_fields": ["research", "curriculum", "program"],
+          "confidence": "high",
+          "notes": { "en": "States the two majors, the English-taught delivery and the programme director's contact details.", "tr": "İki ana dalı, İngilizce verilişi ve program direktörünün iletişim bilgilerini belirtir." }
+        },
+        {
+          "url": "https://www.ensma.fr/en/laboratories/",
+          "title": "ISAE-ENSMA — Laboratories",
+          "source_type": "official_lab_page",
+          "relevant_fields": ["research", "labs", "department"],
+          "confidence": "high",
+          "notes": { "en": "Publishes Institut Pprime's headcount, its three departments and the school's own staff breakdown.", "tr": "Institut Pprime'ın personel sayısını, üç bölümünü ve okulun kendi personel dağılımını yayımlar." }
+        },
+        {
+          "url": "https://www.ensma.fr/en/prometee/",
+          "title": "ISAE-ENSMA — PROMETEE experimental platform",
+          "source_type": "official_lab_page",
+          "relevant_fields": ["research", "labs", "industry"],
+          "confidence": "high",
+          "notes": { "en": "States the platform's area, its 200-bar compressed air network, the nine research specialties it serves and its named industrial partners.", "tr": "Platformun alanını, 200 bar basınçlı hava ağını, hizmet ettiği dokuz araştırma uzmanlığını ve adlandırılmış sanayi ortaklarını belirtir." }
+        },
+        {
+          "url": "https://www.ensma.fr/en/research/",
+          "title": "ISAE-ENSMA — Research policy",
+          "source_type": "official_department_page",
+          "relevant_fields": ["research"],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.ensma.fr/en/innovation-programs/labex-interactifs/",
+          "title": "ISAE-ENSMA — Labex INTERACTIFS",
+          "source_type": "official_lab_page",
+          "relevant_fields": ["research", "labs"],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.ensma.fr/en/innovation-programs/fluidics/",
+          "title": "ISAE-ENSMA — OpenLab FLUIDICS@Poitiers",
+          "source_type": "official_lab_page",
+          "relevant_fields": ["research", "labs", "industry"],
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "france_estaca_post_master",
+      "research_profile": {
+        "department": "ESTACA'Lab — poles MSCE and S2ET",
+        "department_url": "https://www.estaca.fr/recherche-innovation/laboratoire/",
+        "department_note": {
+          "en": "Read this record honestly: the programme is a one-year professional post-master in air transport operations and maintenance, not a research degree. ESTACA'Lab is real and well-equipped, but its two poles serve the engineering cycle and doctoral work. The labs are a reason to consider ESTACA as an institution — they are not what this particular programme delivers.",
+          "tr": "Bu kaydı dürüstçe oku: program, hava taşımacılığı operasyonları ve bakımı üzerine bir yıllık mesleki bir post-master'dır, araştırma derecesi değil. ESTACA'Lab gerçek ve iyi donanımlıdır, ancak iki kutbu mühendislik döngüsüne ve doktora çalışmasına hizmet eder. Laboratuvarlar ESTACA'yı bir kurum olarak değerlendirmek için bir sebeptir — bu programın sunduğu şey değildir."
+        },
+        "faculty_contact_policy": "before_application_optional",
+        "research_units": [
+          {
+            "name": "Pôle Systèmes et Énergie Embarqués pour les Transports (S2ET)",
+            "unit_type": "research_group",
+            "url": "https://www.estaca.fr/recherche-innovation/laboratoire/systemes-energies-embarquees/ressources-technologiques/",
+            "topics": ["gnc", "stability_control", "uav", "embedded_systems", "energy_systems", "simulation_modelling", "verification_validation"],
+            "stated_research_areas": [
+              "On-board energy storage and management",
+              "Electrification and mechatronic optimisation",
+              "Fault-tolerant control",
+              "Software architecture optimisation and hardware allocation",
+              "Connected mobility"
+            ],
+            "facilities": [
+              "Flight simulator for validating robust control strategies and trajectory planning",
+              "Indoor drone platform for control-law validation, diagnosis, planning and navigation",
+              "Reduced-scale helicopter bench with 3-DOF and 2-DOF rigs for robust control law validation",
+              "Electric actuator platform with synchronous, asynchronous and variable-reluctance machines on a dSpace real-time control system",
+              "Hybrid energy source bench: fuel cell, battery, supercapacitors, photovoltaic panels, active load and multicell power converters",
+              "Twizy electric vehicle platform with a hybrid battery and fuel-cell source"
+            ],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "The bench list is specific enough to plan around: a 3-DOF and a 2-DOF helicopter rig plus an indoor drone platform means a control law can be validated on hardware, not only in simulation, and the dSpace real-time system is what makes that possible. If stability_control or uav is your tag, this pole is the reason to look at ESTACA — bearing in mind it sits outside this particular post-master.",
+              "tr": "Tezgâh listesi etrafında plan yapılabilecek kadar spesifiktir: 3 serbestlik dereceli ve 2 serbestlik dereceli helikopter düzenekleri ile bir iç mekân drone platformu, bir kontrol yasasının yalnızca simülasyonda değil donanımda da doğrulanabilmesi demektir; bunu mümkün kılan da dSpace gerçek zamanlı sistemidir. Etiketin stability_control veya uav ise, ESTACA'ya bakma sebebi bu kutuptur — bu post-master'ın dışında kaldığını akılda tutarak."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "Pôle Mécanique des Structures Composites et Environnement (MSCE)",
+            "unit_type": "research_group",
+            "url": "https://www.estaca.fr/recherche-innovation/laboratoire/mecanique/ressources-technologiques/",
+            "topics": ["composites", "aerospace_structures", "fatigue_damage", "lightweight_design", "experimental_fluids", "wind_tunnel", "heat_transfer"],
+            "stated_research_areas": [
+              "Air quality: particle dispersion and infiltration, pollutant emission reduction, pollutant characterisation",
+              "Lightweighting: functional composite structures, damage-durability relationship, eco-composites"
+            ],
+            "facilities": [
+              "Subsonic wind tunnel: 600 × 600 × 1500 mm test section, 0–40 m/s, empty-tunnel turbulence below 1 percent",
+              "Laser Doppler velocimetry for mean and fluctuating velocity measurement",
+              "Particle image velocimetry for 2D velocity field characterisation",
+              "Heat exchanger, engine cooling with FLIR A320 thermal camera, thermal machine and hot-wire benches"
+            ],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "ESTACA publishes the wind tunnel's actual numbers — test section, speed range and a sub-1-percent empty-tunnel turbulence level — instead of just saying it has one. That turbulence figure is what decides whether transition and separation measurements are trustworthy, and very few schools in this database publish it.",
+              "tr": "ESTACA, rüzgâr tünelinin gerçek sayılarını yayımlar — test kesiti, hız aralığı ve yüzde 1'in altında boş tünel türbülans seviyesi — yalnızca sahip olduğunu söylemek yerine. Bu türbülans değeri, geçiş ve ayrılma ölçümlerinin güvenilir olup olmadığına karar veren şeydir ve bu veritabanındaki çok az okul bunu yayımlar."
+            },
+            "last_verified": "2026-08-30"
+          }
+        ],
+        "faculty_email_availability": {
+          "status": "not_published",
+          "note": { "en": "ESTACA'Lab publishes a searchable staff directory filterable by pole and role, listing names and direct phone numbers, but no email addresses on the checked page.", "tr": "ESTACA'Lab, kutba ve göreve göre filtrelenebilen, adları ve doğrudan telefon numaralarını listeleyen aranabilir bir personel dizini yayımlar, ancak kontrol edilen sayfada e-posta adresi yoktur." },
+          "directory_url": "https://www.estaca.fr/recherche-innovation/annuaire/"
+        }
+      },
+      "curriculum_profile": {
+        "specialisation_note": {
+          "en": "One-year professional post-master worth 75 ECTS, taught in English at ESTACA Paris-Saclay in Saint-Quentin-en-Yvelines and accredited by the Conférence des Grandes Écoles. Structure: 400 hours of coursework from October to mid-February covering the European (EASA) and US (FAA) regulatory environment, airline operations, MRO operations and engineering skills; then a minimum six-month in-company operational placement from February to August ending in a professional thesis defence. Named industrial partners: Air France (airline and MRO), Airbus, Aéroports de Paris and Zodiac Aerospace.",
+          "tr": "ESTACA Paris-Saclay'de (Saint-Quentin-en-Yvelines) İngilizce verilen, Conférence des Grandes Écoles tarafından akredite edilmiş, 75 AKTS'lik bir yıllık mesleki post-master. Yapı: Ekim'den Şubat ortasına kadar Avrupa (EASA) ve ABD (FAA) düzenleyici ortamını, havayolu operasyonlarını, MRO operasyonlarını ve mühendislik becerilerini kapsayan 400 saat ders; ardından Şubat'tan Ağustos'a en az altı aylık şirket içi operasyonel staj ve mesleki tez savunması. Adlandırılmış sanayi ortakları: Air France (havayolu ve MRO), Airbus, Aéroports de Paris ve Zodiac Aerospace."
+        }
+      },
+      "application_timeline_profile": {
+        "recurring_annual_deadline": true,
+        "deadline_notes": {
+          "en": "ESTACA publishes an annual pattern, not a dated deadline: the online application process opens on 15 February, and applications must arrive before one of the selection board meetings held on 30 March, 30 May, 30 June and 15 July. The page introduces these as three meeting dates but then lists four — treat the discrepancy as a reason to confirm with the school. No year is published, so no calendar deadline is stored here.",
+          "tr": "ESTACA tarihli bir son başvuru değil, yıllık bir örüntü yayımlar: çevrimiçi başvuru süreci 15 Şubat'ta açılır ve başvurular 30 Mart, 30 Mayıs, 30 Haziran ile 15 Temmuz'da yapılan seçim kurulu toplantılarından birinden önce ulaşmalıdır. Sayfa bunları üç toplantı tarihi olarak tanıtır ama sonra dördünü listeler — bu tutarsızlığı okulla teyitleşmek için bir sebep say. Yıl yayımlanmadığından burada takvim tarihi saklanmamıştır."
+        }
+      },
+      "eligibility_profile": {
+        "entry_note": {
+          "en": "Open to French and international applicants holding a master's degree — preferably in a scientific field, though a business master may also apply — or five completed years of engineering study. English proficiency required at TOEFL iBT 91, TOEIC 850 or IELTS 6.5.",
+          "tr": "Fransız ve uluslararası adaylara açıktır: yüksek lisans derecesi — tercihen bilimsel bir alanda, ancak işletme yüksek lisansı da başvurabilir — ya da tamamlanmış beş yıllık mühendislik eğitimi gerekir. İngilizce yeterliliği TOEFL iBT 91, TOEIC 850 veya IELTS 6.5 düzeyinde istenir."
+        }
+      },
+      "cost_profile": {
+        "tuition_eur_per_year_min": 10000,
+        "tuition_eur_per_year_max": 13000,
+        "tuition_eur_per_year_estimated": 13000,
+        "tuition_basis": "official_published_programme_fee_one_year_post_master",
+        "source_notes": {
+          "en": "ESTACA publishes a full fee of EUR 13,000 for this one-year post-master and a reduced fee of EUR 10,000 for students graduating in the year of enrolment. Because the programme lasts one year, the programme fee and the annual fee are the same figure. ESTACA alumni are told to contact the school for their rate, which is not published.",
+          "tr": "ESTACA bu bir yıllık post-master için 13.000 EUR tam ücret ve kayıt yılında mezun olan öğrenciler için 10.000 EUR indirimli ücret yayımlar. Program bir yıl sürdüğü için program ücreti ile yıllık ücret aynı rakamdır. ESTACA mezunlarına kendi oranları için okulla iletişime geçmeleri söylenir; bu oran yayımlanmamıştır."
+        }
+      },
+      "academic_match_evidence": {
+        "research_group_evidence": {
+          "level": "moderate",
+          "basis": "two named research poles with published themes and detailed equipment lists, but attached to the engineering cycle and doctoral work rather than to this professional post-master",
+          "source_url": "https://www.estaca.fr/recherche-innovation/laboratoire/"
+        },
+        "facility_evidence": {
+          "level": "strong",
+          "basis": "wind tunnel published with test-section dimensions, speed range and turbulence level, plus LDV, PIV, a flight simulator, an indoor drone platform and 2/3-DOF helicopter rigs",
+          "source_url": "https://www.estaca.fr/recherche-innovation/laboratoire/mecanique/ressources-technologiques/"
+        },
+        "curriculum_evidence": {
+          "level": "strong",
+          "basis": "400 hours of coursework with declared module areas, a minimum six-month placement and a professional thesis, totalling 75 ECTS",
+          "source_url": "https://admissions.estaca.fr/en/post-master-degree/aeronautical-operations-and-maintenance.html"
+        },
+        "industry_evidence": {
+          "level": "strong",
+          "basis": "Air France (airline and MRO), Airbus, Aéroports de Paris and Zodiac Aerospace named as industrial partners, with the placement built into the programme structure",
+          "source_url": "https://admissions.estaca.fr/en/post-master-degree/aeronautical-operations-and-maintenance.html"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://admissions.estaca.fr/en/post-master-degree/aeronautical-operations-and-maintenance.html",
+          "title": "ESTACA — Post-Master Degree in Aeronautical Operations and Maintenance",
+          "source_type": "official_program_page",
+          "relevant_fields": ["curriculum", "program", "deadline", "admission", "tuition", "industry"],
+          "confidence": "high",
+          "notes": { "en": "Publishes the syllabus hours, ECTS, placement structure, industrial partners, eligibility, English requirements, fees and the selection board dates.", "tr": "Ders saatlerini, AKTS'yi, staj yapısını, sanayi ortaklarını, uygunluk koşullarını, İngilizce gerekliliklerini, ücretleri ve seçim kurulu tarihlerini yayımlar." }
+        },
+        {
+          "url": "https://www.estaca.fr/recherche-innovation/laboratoire/",
+          "title": "ESTACA — ESTACA'Lab",
+          "source_type": "official_lab_page",
+          "relevant_fields": ["research", "labs", "department"],
+          "confidence": "high",
+          "notes": { "en": "States the two scientific poles and the four competence domains of the laboratory.", "tr": "Laboratuvarın iki bilimsel kutbunu ve dört yetkinlik alanını belirtir." }
+        },
+        {
+          "url": "https://www.estaca.fr/recherche-innovation/laboratoire/mecanique/ressources-technologiques/",
+          "title": "ESTACA'Lab MSCE — Technological resources",
+          "source_type": "official_lab_page",
+          "relevant_fields": ["research", "labs"],
+          "confidence": "high",
+          "notes": { "en": "Publishes the wind tunnel's test-section dimensions, speed range and turbulence level, plus the LDV and PIV systems and the thermal benches.", "tr": "Rüzgâr tünelinin test kesiti boyutlarını, hız aralığını ve türbülans seviyesini, ayrıca LDV ile PIV sistemlerini ve termal tezgâhları yayımlar." }
+        },
+        {
+          "url": "https://www.estaca.fr/recherche-innovation/laboratoire/systemes-energies-embarquees/ressources-technologiques/",
+          "title": "ESTACA'Lab S2ET — Technological resources",
+          "source_type": "official_lab_page",
+          "relevant_fields": ["research", "labs"],
+          "confidence": "high",
+          "notes": { "en": "Lists the flight simulator, indoor drone platform, 2/3-DOF helicopter benches, dSpace actuator platform and hybrid energy source bench.", "tr": "Uçuş simülatörünü, iç mekân drone platformunu, 2/3 serbestlik dereceli helikopter tezgâhlarını, dSpace aktüatör platformunu ve hibrit enerji kaynağı tezgâhını listeler." }
+        },
+        {
+          "url": "https://www.estaca.fr/recherche-innovation/annuaire/",
+          "title": "ESTACA'Lab — Staff directory",
+          "source_type": "official_department_page",
+          "relevant_fields": ["research"],
+          "confidence": "high"
+        }
+      ]
+    },
+    {
+      "id": "france_centralesupelec_saas",
+      "research_profile": {
+        "department": "Master's in Electrical Engineering, Université Paris-Saclay",
+        "department_url": "https://www.universite-paris-saclay.fr/en/education/masters-degree/electrical-engineering/m2-smart-aerospace-and-autonomous-systems",
+        "department_note": {
+          "en": "Be aware of what this record is not: the programme page describes the taught content and names two contacts, but it does not name a host laboratory, a research group or any faculty research activity. Compared with ISAE-ENSMA, which names Institut Pprime and PROMETEE outright, the research side of this record is undocumented rather than absent — you would need to ask the named contact which laboratory hosts the internship semester.",
+          "tr": "Bu kaydın ne olmadığına dikkat et: program sayfası verilen içeriği anlatır ve iki iletişim kişisi adlandırır, ancak ne bir ev sahibi laboratuvar, ne bir araştırma grubu, ne de herhangi bir öğretim üyesi araştırma faaliyeti adlandırır. Institut Pprime ile PROMETEE'yi açıkça adlandıran ISAE-ENSMA ile karşılaştırıldığında, bu kaydın araştırma tarafı yok değil, belgesizdir — staj dönemine hangi laboratuvarın ev sahipliği yaptığını adlandırılmış iletişim kişisine sorman gerekir."
+        },
+        "faculty_contact_policy": "before_application_encouraged",
+        "research_units": [
+          {
+            "name": "M2 SAAS taught research themes",
+            "unit_type": "research_group",
+            "url": "https://www.universite-paris-saclay.fr/en/education/masters-degree/electrical-engineering/m2-smart-aerospace-and-autonomous-systems",
+            "topics": ["gnc", "stability_control", "autonomy", "uav", "optimization_ai", "machine_learning", "sensors", "embedded_systems", "simulation_modelling"],
+            "stated_research_areas": [
+              "Control and guidance ensuring the stability and manoeuvrability of intelligent vehicles",
+              "Modelling and simulation for the design and validation of robust systems",
+              "Trajectory planning and artificial intelligence for decision-making autonomy",
+              "Sensor integration and data fusion",
+              "Multi-system coordination for collaborative fleets"
+            ],
+            "student_access": "internship_open",
+            "why_it_fits": {
+              "en": "The five themes are stated as competences the programme builds, and the whole second semester is a six-month internship — so the research contact happens through placement rather than through a named in-house lab. If your tags are gnc plus autonomy and you want a route into French drone and autonomous-vehicle work, this is a taught-then-placed structure, not a lab-embedded one.",
+              "tr": "Beş tema, programın inşa ettiği yetkinlikler olarak belirtilir ve ikinci dönemin tamamı altı aylık bir stajdır — yani araştırma teması, adlandırılmış bir kurum içi laboratuvar üzerinden değil, yerleştirme üzerinden gerçekleşir. Etiketlerin gnc ve autonomy ise ve Fransız drone ile otonom araç çalışmasına bir giriş yolu istiyorsan, bu laboratuvara gömülü değil, önce ders sonra yerleştirme yapılı bir programdır."
+            },
+            "last_verified": "2026-08-30"
+          }
+        ],
+        "notable_professors": [
+          {
+            "name": "Naïma Ait Oufroukh",
+            "role": { "en": "Maître de conférences; named as the programme's academic contact", "tr": "Maître de conférences; programın akademik iletişim kişisi olarak anılır" },
+            "focus": { "en": "Named on the programme page as the academic contact for the M2 Smart Aerospace and Autonomous Systems. The page does not publish a personal research statement.", "tr": "M2 Smart Aerospace and Autonomous Systems için akademik iletişim kişisi olarak program sayfasında anılır. Sayfa kişisel bir araştırma beyanı yayımlamaz." },
+            "fit_tags": ["autonomy", "gnc", "sensors"],
+            "email": null,
+            "email_source": null,
+            "profile_url": "https://www.universite-paris-saclay.fr/en/education/masters-degree/electrical-engineering/m2-smart-aerospace-and-autonomous-systems",
+            "lab": null,
+            "contact_timing": "before_application_encouraged",
+            "accepting_students_signal": "not_stated",
+            "last_verified": "2026-08-30"
+          }
+        ],
+        "faculty_email_availability": {
+          "status": "obfuscated",
+          "note": { "en": "The programme page names an academic contact and a student administration officer, but each address sits behind a 'Contact' control rather than being written out, so no address could be read and none is stored.", "tr": "Program sayfası bir akademik iletişim kişisi ile bir öğrenci işleri görevlisi adlandırır, ancak her adres yazılı olmak yerine bir 'Contact' denetiminin arkasındadır; bu yüzden adres okunamamış ve saklanmamıştır." },
+          "directory_url": "https://www.universite-paris-saclay.fr/en/education/masters-degree/electrical-engineering/m2-smart-aerospace-and-autonomous-systems"
+        }
+      },
+      "curriculum_profile": {
+        "specialisation_note": {
+          "en": "Taught in English as a one-year M2 within the Paris-Saclay Electrical Engineering master's. Delivery is lectures, tutorials, practical labs and supervised projects in the first semester; the entire second semester is a six-month internship. The programme states that although aerospace and aeronautics are the central application areas, the competences transfer to smart mobility, logistics, security and service robotics.",
+          "tr": "Paris-Saclay Elektrik Mühendisliği yüksek lisansı içinde bir yıllık M2 olarak İngilizce verilir. Birinci dönem ders, uygulama, laboratuvar ve gözetimli projelerden oluşur; ikinci dönemin tamamı altı aylık bir stajdır. Program, havacılık ve uzay merkezî uygulama alanları olsa da yetkinliklerin akıllı hareketlilik, lojistik, güvenlik ve hizmet robotiğine aktarılabildiğini belirtir."
+        }
+      },
+      "academic_match_evidence": {
+        "research_group_evidence": {
+          "level": "weak",
+          "basis": "the programme page names no host laboratory, research group or faculty research activity; only taught themes and two administrative contacts",
+          "source_url": "https://www.universite-paris-saclay.fr/en/education/masters-degree/electrical-engineering/m2-smart-aerospace-and-autonomous-systems"
+        },
+        "curriculum_evidence": {
+          "level": "strong",
+          "basis": "five declared competence areas spanning control, modelling, trajectory planning with AI, sensor fusion and multi-system coordination, with a six-month internship semester",
+          "source_url": "https://www.universite-paris-saclay.fr/en/education/masters-degree/electrical-engineering/m2-smart-aerospace-and-autonomous-systems"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.universite-paris-saclay.fr/en/education/masters-degree/electrical-engineering/m2-smart-aerospace-and-autonomous-systems",
+          "title": "Université Paris-Saclay — M2 Smart Aerospace and Autonomous Systems",
+          "source_type": "official_program_page",
+          "relevant_fields": ["research", "curriculum", "program"],
+          "confidence": "high",
+          "notes": { "en": "States the programme objectives, the five competence areas, the six-month internship semester and the two named contacts. Publishes no host laboratory.", "tr": "Program hedeflerini, beş yetkinlik alanını, altı aylık staj dönemini ve adlandırılmış iki iletişim kişisini belirtir. Ev sahibi laboratuvar yayımlamaz." }
+        }
+      ]
+    },
+    {
+      "id": "se-linkoping-aero-msc",
+      "research_profile": {
+        "department": "Division of Fluid and Mechatronic Systems (FLUMES), Department of Management and Engineering (IEI)",
+        "department_url": "https://liu.se/en/organisation/liu/iei/flumes",
+        "department_note": {
+          "en": "FLUMES states plainly that it carries out research and education in fluid power systems and aeronautics — one division holding both. IEI as a whole has more than 500 staff across 19 divisions, three of which are directly relevant here: FLUMES, Applied Thermodynamics and Fluid Mechanics, and Solid Mechanics.",
+          "tr": "FLUMES, akışkan güç sistemleri ve havacılıkta araştırma ile eğitim yürüttüğünü açıkça belirtir — ikisini birden tutan tek bir bölüm. IEI bir bütün olarak 19 bölümde 500'den fazla personele sahiptir; bunların üçü burada doğrudan ilgilidir: FLUMES, Uygulamalı Termodinamik ve Akışkanlar Mekaniği, ve Katı Mekaniği."
+        },
+        "faculty_contact_policy": "only_with_specific_research_question",
+        "research_units": [
+          {
+            "name": "Division of Fluid and Mechatronic Systems (FLUMES)",
+            "unit_type": "research_group",
+            "url": "https://liu.se/en/organisation/liu/iei/flumes",
+            "lead": "Prof. Petter Krus is named on the division's pages as the recipient of the Thulin gold medal for aeronautical research",
+            "topics": ["aircraft_design", "simulation_modelling", "systems_engineering", "gnc", "uav", "energy_systems", "mdo"],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "The division publishes concrete student outcomes rather than themes: master's students designing and building an autonomously flying aircraft to document Arctic weather; a joint LiU-Stanford drone for forest-fire monitoring; a team that won a title at the SAE Aero Design competition in Brazil despite an engine fire, after which LiU committed to recurring student aircraft projects. If aircraft_design is your tag, that is a pattern of students actually building airframes, repeated across years.",
+              "tr": "Bölüm temalar yerine somut öğrenci çıktıları yayımlar: Arktik hava koşullarını belgelemek için otonom uçan bir uçak tasarlayıp inşa eden yüksek lisans öğrencileri; orman yangını izleme için ortak bir LiU-Stanford dronu; Brezilya'daki SAE Aero Design yarışmasında motor yangınına rağmen bir unvan kazanan ve ardından LiU'nun yinelenen öğrenci uçak projelerine bağlandığı bir ekip. Etiketin aircraft_design ise, bu yıllar boyunca tekrarlanan, öğrencilerin gerçekten uçak gövdesi inşa ettiği bir örüntüdür."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "Saab 'iron bird' flight control test rig",
+            "unit_type": "facility",
+            "url": "https://liu.se/en/organisation/liu/iei/flumes",
+            "topics": ["gnc", "stability_control", "avionics", "verification_validation", "testing", "simulation_modelling"],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "The division states that aircraft control systems have been essentially unchanged for over fifty years and that LiU researchers are working on the next generation using an 'iron bird' from Saab fitted with current technology. An iron bird is a full-scale ground rig of an aircraft's actuation and control systems — hardware you can command and break without a flight. Very few universities have one on campus.",
+              "tr": "Bölüm, uçak kontrol sistemlerinin elli yılı aşkın süredir esasen değişmediğini ve LiU araştırmacılarının güncel teknolojiyle donatılmış, Saab'dan gelen bir 'demir kuş' kullanarak yeni nesli çalıştığını belirtir. Demir kuş, bir uçağın eyleyici ve kontrol sistemlerinin tam ölçekli yer düzeneğidir — uçmadan komut verip bozabileceğin donanım. Çok az üniversitenin kampüsünde böyle bir şey vardır."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "Division of Applied Thermodynamics and Fluid Mechanics",
+            "unit_type": "research_group",
+            "url": "https://liu.se/en/organisation/liu/iei",
+            "topics": ["cfd", "aerodynamics", "heat_transfer", "turbulence", "energy_systems"],
+            "student_access": "msc_thesis_open",
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "Division of Solid Mechanics",
+            "unit_type": "research_group",
+            "url": "https://liu.se/en/organisation/liu/iei",
+            "topics": ["structural_mechanics", "fea", "aerospace_structures", "fatigue_damage", "materials"],
+            "student_access": "msc_thesis_open",
+            "last_verified": "2026-08-30"
+          }
+        ],
+        "faculty_email_availability": {
+          "status": "not_published",
+          "note": { "en": "The division page links a staff listing but publishes no addresses itself; none was read on the checked pages, so none is stored.", "tr": "Bölüm sayfası bir personel listesine bağlantı verir ancak kendisi adres yayımlamaz; kontrol edilen sayfalarda adres okunmadığı için hiçbiri saklanmamıştır." },
+          "directory_url": "https://liu.se/en/organisation/liu/iei/flumes"
+        }
+      },
+      "curriculum_profile": {
+        "specialisation_note": {
+          "en": "LiU frames the degree around a single question — what aviation will look like in twenty years — and states the span as aerodynamics, structures, systems integration and conceptual design, with sustainable aircraft and future drone transportation named as destinations. The degree awarded is a Master of Science (120 credits) with a major in Aeronautical Engineering, which is a narrower and more explicit major than the mechanical-engineering-with-a-track structure used at KTH and Chalmers.",
+          "tr": "LiU dereceyi tek bir soru etrafında çerçeveler — havacılık yirmi yıl sonra nasıl görünecek — ve kapsamı aerodinamik, yapılar, sistem entegrasyonu ve kavramsal tasarım olarak belirtir; hedefler arasında sürdürülebilir uçaklar ve gelecekteki drone taşımacılığı adlandırılır. Verilen derece, Havacılık Mühendisliği ana dalında Yüksek Lisans (120 kredi) olup, KTH ve Chalmers'ta kullanılan makine-mühendisliği-artı-iz yapısından daha dar ve daha açıktır."
+        }
+      },
+      "eligibility_profile": {
+        "entry_note": {
+          "en": "A bachelor's degree equivalent to a Swedish Kandidatexamen majoring in aeronautical or mechanical engineering, plus 30 ECTS in mathematics or applied mathematics relevant to the programme, a basic programming course, and English at Swedish upper-secondary Engelska 6 level. Selection in the January round is by merit rating in three groups (High, Good, Low), with lots drawn between applicants inside the same group — so a marginal grade difference can matter more than a strong motivation letter here.",
+          "tr": "Havacılık veya makine mühendisliği ana dalında İsveç Kandidatexamen'ine denk bir lisans derecesi, artı programla ilgili matematik veya uygulamalı matematikte 30 AKTS, temel bir programlama dersi ve İsveç lise Engelska 6 düzeyinde İngilizce. Ocak turunda seçim üç grupta (Yüksek, İyi, Düşük) not değerlendirmesiyle yapılır ve aynı grup içindeki adaylar arasında kura çekilir — yani burada marjinal bir not farkı güçlü bir niyet mektubundan daha çok önem taşıyabilir."
+        }
+      },
+      "academic_match_evidence": {
+        "research_group_evidence": {
+          "level": "strong",
+          "basis": "a named division combining fluid power and aeronautics, plus two further relevant IEI divisions, with published student aircraft and drone outcomes",
+          "source_url": "https://liu.se/en/organisation/liu/iei/flumes"
+        },
+        "facility_evidence": {
+          "level": "moderate",
+          "basis": "a Saab 'iron bird' flight control rig is stated to be in use for next-generation control research; no test-facility specification is published",
+          "source_url": "https://liu.se/en/organisation/liu/iei/flumes"
+        },
+        "curriculum_evidence": {
+          "level": "strong",
+          "basis": "a dedicated Aeronautical Engineering major at 120 credits with a declared span from aerodynamics and structures to systems integration and conceptual design",
+          "source_url": "https://liu.se/en/education/program/6maer"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://liu.se/en/organisation/liu/iei/flumes",
+          "title": "Linköping University — Division of Fluid and Mechatronic Systems (FLUMES)",
+          "source_type": "official_department_page",
+          "relevant_fields": ["research", "department", "labs"],
+          "confidence": "high",
+          "notes": { "en": "States the division's remit in fluid power and aeronautics and publishes the student aircraft, drone, Saab iron bird and SAE Aero Design items.", "tr": "Bölümün akışkan güç ve havacılık kapsamını belirtir; öğrenci uçağı, drone, Saab demir kuşu ve SAE Aero Design haberlerini yayımlar." }
+        },
+        {
+          "url": "https://liu.se/en/education/program/6maer",
+          "title": "Linköping University — Aeronautical Engineering, Master's Programme",
+          "source_type": "official_program_page",
+          "relevant_fields": ["curriculum", "program", "admission"],
+          "confidence": "high",
+          "notes": { "en": "States the degree major, the entry requirements, the merit-rating selection groups and the tuition figure for non-EU students.", "tr": "Derece ana dalını, giriş koşullarını, not değerlendirme seçim gruplarını ve AB dışı öğrenciler için öğrenim ücreti rakamını belirtir." }
+        },
+        {
+          "url": "https://liu.se/en/organisation/liu/iei",
+          "title": "Linköping University — Department of Management and Engineering (IEI)",
+          "source_type": "official_department_page",
+          "relevant_fields": ["research", "department"],
+          "confidence": "high",
+          "notes": { "en": "Publishes the department's size and its list of nineteen divisions.", "tr": "Bölümün büyüklüğünü ve on dokuz alt bölümünün listesini yayımlar." }
+        }
+      ]
+    },
+    {
+      "id": "se-chalmers-mobility-msc",
+      "research_profile": {
+        "department": "Mobility Engineering MSc, educational area Mechanical Engineering",
+        "department_url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/",
+        "department_note": {
+          "en": "The honest shape of this record: aerospace is one of four specialisations inside a mobility programme, alongside automotive, railway and naval architecture. The research centres Chalmers names on the programme page — CHARMEC for railway mechanics, SAFER for traffic safety, Lighthouse for maritime, the Swedish Electromobility Center — are strong but mostly not aerospace. TechForH2, on hydrogen across transport sectors, is the one that reaches aviation propulsion. Choose this record for the systems-engineering framing and the Gothenburg industry cluster, not for aerospace depth.",
+          "tr": "Bu kaydın dürüst biçimi: havacılık, bir hareketlilik programının içinde otomotiv, demiryolu ve gemi inşası ile birlikte dört uzmanlaşmadan biridir. Chalmers'ın program sayfasında adlandırdığı araştırma merkezleri — demiryolu mekaniği için CHARMEC, trafik güvenliği için SAFER, denizcilik için Lighthouse, İsveç Elektromobilite Merkezi — güçlüdür ama çoğu havacılık değildir. Ulaşım sektörleri genelinde hidrojen üzerine olan TechForH2, havacılık itkisine ulaşan tek merkezdir. Bu kaydı havacılık derinliği için değil, sistem mühendisliği çerçevesi ve Göteborg sanayi kümesi için seç."
+        },
+        "faculty_contact_policy": "only_with_specific_research_question",
+        "research_units": [
+          {
+            "name": "TechForH2",
+            "unit_type": "centre",
+            "url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/",
+            "topics": ["energy_systems", "combustion", "jet_propulsion", "industrial_projects"],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "Chalmers names TechForH2 as a competence centre addressing hydrogen usage across different transport sectors, and states that students may carry out the thesis project across these research groups. Of the centres listed, this is the one whose subject matter reaches aviation — the programme itself argues that aerospace needs engineers who combine aerodynamics, propulsion and compressible flow with emerging propulsion and alternative fuels.",
+              "tr": "Chalmers, TechForH2'yi farklı ulaşım sektörlerinde hidrojen kullanımını ele alan bir yetkinlik merkezi olarak adlandırır ve öğrencilerin tez projelerini bu araştırma grupları arasında yürütebileceğini belirtir. Listelenen merkezler arasında konusu havacılığa ulaşan budur — programın kendisi de havacılığın aerodinamik, itki ve sıkıştırılabilir akışı yeni itki ile alternatif yakıtlarla birleştiren mühendislere ihtiyaç duyduğunu savunur."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "CHARMEC — railway mechanics competence centre",
+            "unit_type": "centre",
+            "url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/",
+            "topics": ["structural_mechanics", "fatigue_damage", "testing", "industrial_projects"],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "Over thirty years of research on design, deterioration, noise and vibration. Relevant to you only if fatigue_damage or structural_mechanics is your tag and you are willing to do it on rail rather than airframes — the mechanics transfer, the application does not.",
+              "tr": "Tasarım, bozulma, gürültü ve titreşim üzerine otuz yılı aşkın araştırma. Yalnızca etiketin fatigue_damage veya structural_mechanics ise ve bunu uçak gövdeleri yerine demiryolunda yapmaya istekliysen ilgilidir — mekanik aktarılır, uygulama aktarılmaz."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "SAFER, Lighthouse and the Swedish Electromobility Center",
+            "unit_type": "consortium",
+            "url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/",
+            "topics": ["systems_engineering", "energy_systems", "industrial_projects", "verification_validation"],
+            "student_access": "msc_thesis_open",
+            "last_verified": "2026-08-30"
+          }
+        ],
+        "faculty_email_availability": {
+          "status": "not_published",
+          "note": { "en": "The programme page names research centres rather than individual academics, and publishes no addresses. Chalmers restructured its departmental web pages, and the mechanics and maritime sciences department URLs previously used now return 404, so no faculty directory could be checked.", "tr": "Program sayfası bireysel akademisyenler yerine araştırma merkezleri adlandırır ve adres yayımlamaz. Chalmers bölüm web sayfalarını yeniden yapılandırmıştır ve daha önce kullanılan mekanik ile denizcilik bilimleri bölümü adresleri artık 404 döndürmektedir; bu yüzden bir öğretim üyesi dizini kontrol edilememiştir." },
+          "directory_url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/"
+        }
+      },
+      "curriculum_profile": {
+        "specialisation_note": {
+          "en": "Four specialisations — Automotive Engineering, Railway Technology, Naval Architecture and Ocean Engineering, and Aerospace Engineering — sit inside one 120-credit programme. The first phase is common to all sectors, including a project-based course on systems and mechatronics and one on propulsion and energy systems, before you go deeper in one sector. Courses outside the specialisations cover electric machines and drive systems, systems engineering fundamentals and data-driven engineering for connected fleets. Note that Naval Architecture and Ocean Engineering has separate entry requirements and must be selected at application.",
+          "tr": "Dört uzmanlaşma — Otomotiv Mühendisliği, Demiryolu Teknolojisi, Gemi İnşası ve Okyanus Mühendisliği, Havacılık ve Uzay Mühendisliği — tek bir 120 kredilik programın içindedir. İlk aşama tüm sektörler için ortaktır; sistemler ve mekatronik üzerine proje tabanlı bir ders ile itki ve enerji sistemleri üzerine bir ders içerir, ardından tek bir sektörde derinleşirsin. Uzmanlaşmaların dışındaki dersler elektrik makineleri ve tahrik sistemleri, sistem mühendisliği temelleri ve bağlantılı filolar için veriye dayalı mühendisliği kapsar. Gemi İnşası ve Okyanus Mühendisliği'nin ayrı giriş koşulları olduğunu ve başvuruda seçilmesi gerektiğini not et."
+        }
+      },
+      "application_timeline_profile": {
+        "academic_year": "2027/2028",
+        "intake_terms": ["Autumn 2027"],
+        "application_deadline": "2027-01-15",
+        "application_opens": "2026-10-16",
+        "recurring_annual_deadline": true,
+        "deadline_notes": {
+          "en": "Chalmers publishes both ends of the window on the programme page: applications open on 16 October 2026 and close on 15 January 2027. The page also marks the current cycle as closed, so these are the dates of the next round, not the one just past.",
+          "tr": "Chalmers pencerenin iki ucunu da program sayfasında yayımlar: başvurular 16 Ekim 2026'da açılır ve 15 Ocak 2027'de kapanır. Sayfa mevcut döngüyü de kapalı olarak işaretler; yani bunlar yeni geçen turun değil, bir sonraki turun tarihleridir."
+        }
+      },
+      "eligibility_profile": {
+        "entry_note": {
+          "en": "A bachelor's degree in mechanical, mechatronic, electrical, vehicle, automotive, aerospace or civil engineering, engineering physics, engineering mathematics or naval architecture. Specific prerequisites: at least 24 credits of mathematics including linear algebra, multivariable analysis, numerical analysis and mathematical statistics or probability; mechanics including statics and dynamics; a control theory or automatic control course; and programming. The control-theory prerequisite is the one applicants from pure mechanical backgrounds most often miss.",
+          "tr": "Makine, mekatronik, elektrik, taşıt, otomotiv, havacılık veya inşaat mühendisliği, mühendislik fiziği, mühendislik matematiği ya da gemi inşasında lisans derecesi. Özel ön koşullar: doğrusal cebir, çok değişkenli analiz, sayısal analiz ve matematiksel istatistik ya da olasılık dâhil en az 24 kredi matematik; statik ve dinamik dâhil mekanik; bir kontrol teorisi veya otomatik kontrol dersi; ve programlama. Saf makine geçmişinden gelen adayların en sık kaçırdığı ön koşul kontrol teorisidir."
+        }
+      },
+      "industry_ecosystem_profile": {
+        "ecosystem_note": {
+          "en": "Chalmers states that project work involves input and collaboration with regional industrial partners including Saab and the Volvo group, and describes Gothenburg as the largest port in the Nordic region with headquarters spanning aerospace, automotive, maritime and railway industries. The master's thesis may be completed directly with an industry or research partner.",
+          "tr": "Chalmers, proje çalışmasının Saab ve Volvo grubu dâhil bölgesel sanayi ortaklarının katkısı ve iş birliğiyle yürütüldüğünü belirtir; Göteborg'u havacılık, otomotiv, denizcilik ve demiryolu sanayilerinde merkezleri barındıran, Kuzey Avrupa'nın en büyük limanı olarak tanımlar. Yüksek lisans tezi doğrudan bir sanayi veya araştırma ortağıyla tamamlanabilir."
+        }
+      },
+      "academic_match_evidence": {
+        "research_group_evidence": {
+          "level": "moderate",
+          "basis": "five named research centres are published, but only TechForH2 addresses subject matter that reaches aviation; the rest are railway, traffic safety, maritime and electromobility",
+          "source_url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/"
+        },
+        "curriculum_evidence": {
+          "level": "moderate",
+          "basis": "aerospace is one of four specialisations inside a shared mobility core; the aerospace-specific course content is not itemised on the programme page",
+          "source_url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/"
+        },
+        "industry_evidence": {
+          "level": "strong",
+          "basis": "Saab and the Volvo group named as project partners, with the thesis stated to be completable at an industry partner",
+          "source_url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/"
+        }
+      },
+      "sources": [
+        {
+          "url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/",
+          "title": "Chalmers University of Technology — Mobility Engineering, MSc",
+          "source_type": "official_program_page",
+          "relevant_fields": ["research", "curriculum", "program", "deadline", "admission", "industry"],
+          "confidence": "high",
+          "notes": { "en": "States the four specialisations, the shared core courses, the named research centres, the industrial partners, the entry prerequisites and both ends of the application window.", "tr": "Dört uzmanlaşmayı, ortak çekirdek dersleri, adlandırılmış araştırma merkezlerini, sanayi ortaklarını, giriş ön koşullarını ve başvuru penceresinin iki ucunu da belirtir." }
+        }
+      ]
+    }
+  ]
+}

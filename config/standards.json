@@ -1,0 +1,780 @@
+{
+  "standards_version": "3.0.0",
+  "last_updated": "2026-08-29",
+  "purpose": {
+    "en": "Machine-readable definitions for every categorical scale used in the UniRank database. Any category shown to a student must be defined here, together with the criteria that produce it and the evidence it requires.",
+    "tr": "UniRank veritabanında kullanılan her kategorik ölçeğin makine-okunur tanımı. Öğrenciye gösterilen her kategori, onu üreten ölçütler ve gerektirdiği kanıtla birlikte burada tanımlanmak zorundadır."
+  },
+  "housing_difficulty": {
+    "field_path": "living_profile.housing_difficulty",
+    "profile_path": "living_profile.housing_difficulty_profile",
+    "scale_type": "ordinal_4_plus_unknown",
+    "why_previous_options_were_incomplete": {
+      "en": "The earlier database accepted free-text housing values such as \"high_no_guarantee\" or \"competitive_adisu_or_self_search\". Those strings mixed a difficulty level with its reason, so they could not be sorted, filtered or compared, and the easiest real outcome — a genuine guarantee — had no code at all. This standard separates the level (four ordered codes) from the reason (a structured evidence object).",
+      "tr": "Önceki veritabanı \"high_no_guarantee\" veya \"competitive_adisu_or_self_search\" gibi serbest metin konut değerlerini kabul ediyordu. Bu diziler zorluk seviyesi ile gerekçesini birbirine karıştırdığı için sıralanamıyor, filtrelenemiyor ve karşılaştırılamıyordu; ayrıca en kolay gerçek durumun — gerçek bir garantinin — karşılığı hiç yoktu. Bu standart seviyeyi (dört sıralı kod) gerekçeden (yapısal kanıt nesnesi) ayırır."
+    },
+    "levels": [
+      {
+        "code": "low",
+        "rank": 1,
+        "score_range": [
+          0,
+          3
+        ],
+        "label": {
+          "en": "Low — housing is effectively secured",
+          "tr": "Düşük — konut fiilen güvence altında"
+        },
+        "criteria": {
+          "en": "The university or an affiliated provider guarantees a room to the applicant group, or reserves capacity for incoming international students; an on-time application is sufficient and no lottery or waiting list applies to that group.",
+          "tr": "Üniversite veya bağlı sağlayıcı, aday grubuna oda garanti eder ya da gelen uluslararası öğrenciler için kapasite ayırır; zamanında başvuru yeterlidir ve bu grup için kura veya bekleme listesi uygulanmaz."
+        }
+      },
+      {
+        "code": "medium",
+        "rank": 2,
+        "score_range": [
+          4,
+          7
+        ],
+        "label": {
+          "en": "Medium — offered but capacity-limited",
+          "tr": "Orta — sunuluyor ancak kapasite sınırlı"
+        },
+        "criteria": {
+          "en": "Student housing exists without a guarantee and is allocated first-come-first-served, by priority list or by lottery, but published supply is broadly adequate and private-market rent sits at or below the official student housing budget.",
+          "tr": "Öğrenci konutu garanti olmadan mevcuttur; önce gelen alır, öncelik listesi veya kura ile dağıtılır. Ancak yayımlanan arz genel olarak yeterlidir ve serbest piyasa kirası resmî öğrenci konut bütçesinin altında ya da ona eşittir."
+        }
+      },
+      {
+        "code": "high",
+        "rank": 3,
+        "score_range": [
+          8,
+          11
+        ],
+        "label": {
+          "en": "High — no guarantee and a documented shortage",
+          "tr": "Yüksek — garanti yok ve belgelenmiş arz sıkıntısı var"
+        },
+        "criteria": {
+          "en": "No guarantee for the applicant group plus at least one documented pressure signal: an official warning to start searching early, a published waiting list, lottery odds below demand, or median private rent above the official housing budget.",
+          "tr": "Aday grubu için garanti yoktur ve en az bir belgelenmiş baskı sinyali vardır: erken aramaya başlama konusunda resmî uyarı, yayımlanmış bekleme listesi, talebin altında kura şansı veya resmî konut bütçesinin üzerinde medyan serbest piyasa kirası."
+        }
+      },
+      {
+        "code": "very_high",
+        "rank": 4,
+        "score_range": [
+          12,
+          15
+        ],
+        "label": {
+          "en": "Very high — structural shortage and arrival risk",
+          "tr": "Çok yüksek — yapısal arz sıkıntısı ve varış riski"
+        },
+        "criteria": {
+          "en": "The university or the city authority officially states it cannot house most international students, or the published waiting time exceeds one semester, or students are officially advised not to travel before a contract is signed.",
+          "tr": "Üniversite veya şehir yönetimi, uluslararası öğrencilerin çoğunu barındıramadığını resmen belirtir; ya da yayımlanan bekleme süresi bir dönemi aşar; ya da öğrencilere sözleşme imzalanmadan yola çıkmamaları resmen tavsiye edilir."
+        }
+      },
+      {
+        "code": "unknown",
+        "rank": null,
+        "score_range": null,
+        "label": {
+          "en": "Unknown — not verified",
+          "tr": "Bilinmiyor — doğrulanmadı"
+        },
+        "criteria": {
+          "en": "No checked official source describes availability, guarantee status or market pressure for this programme's campus. A level is never guessed from the country or the city alone.",
+          "tr": "Bu programın kampüsü için uygunluk, garanti durumu veya piyasa baskısını anlatan kontrol edilmiş resmî kaynak yoktur. Seviye asla yalnızca ülkeden veya şehirden tahmin edilmez."
+        }
+      }
+    ],
+    "scoring_dimensions": [
+      {
+        "key": "guarantee_status",
+        "weight_max": 4,
+        "question": {
+          "en": "Is a room guaranteed to this applicant group?",
+          "tr": "Bu aday grubuna oda garanti ediliyor mu?"
+        },
+        "values": {
+          "guaranteed": {
+            "points": 0,
+            "label": {
+              "en": "A room is guaranteed",
+              "tr": "Oda garanti ediliyor"
+            }
+          },
+          "priority": {
+            "points": 1,
+            "label": {
+              "en": "Priority allocation for this group",
+              "tr": "Bu gruba öncelikli tahsis"
+            }
+          },
+          "lottery": {
+            "points": 2,
+            "label": {
+              "en": "Allocated by lottery",
+              "tr": "Kura ile dağıtılıyor"
+            }
+          },
+          "first_come_first_served": {
+            "points": 2,
+            "label": {
+              "en": "First come, first served",
+              "tr": "Önce gelen alır"
+            }
+          },
+          "waitlist": {
+            "points": 3,
+            "label": {
+              "en": "Waiting list",
+              "tr": "Bekleme listesi"
+            }
+          },
+          "not_guaranteed": {
+            "points": 3,
+            "label": {
+              "en": "Offered but not guaranteed",
+              "tr": "Sunuluyor ancak garanti değil"
+            }
+          },
+          "not_offered": {
+            "points": 4,
+            "label": {
+              "en": "No student housing offered",
+              "tr": "Öğrenci konutu sunulmuyor"
+            }
+          }
+        }
+      },
+      {
+        "key": "supply_pressure",
+        "weight_max": 4,
+        "question": {
+          "en": "Does an official source document excess demand?",
+          "tr": "Resmî bir kaynak talep fazlasını belgeliyor mu?"
+        },
+        "values": {
+          "no_documented_shortage": {
+            "points": 0,
+            "label": {
+              "en": "No documented shortage",
+              "tr": "Belgelenmiş arz sıkıntısı yok"
+            }
+          },
+          "early_application_advised": {
+            "points": 1,
+            "label": {
+              "en": "Officially advised to apply early",
+              "tr": "Resmen erken başvuru tavsiye ediliyor"
+            }
+          },
+          "published_waiting_list": {
+            "points": 2,
+            "label": {
+              "en": "A waiting list is published",
+              "tr": "Yayımlanmış bir bekleme listesi var"
+            }
+          },
+          "demand_exceeds_supply_stated": {
+            "points": 3,
+            "label": {
+              "en": "Demand exceeding supply is stated officially",
+              "tr": "Talebin arzı aştığı resmen belirtiliyor"
+            }
+          },
+          "cannot_house_most_internationals_stated": {
+            "points": 4,
+            "label": {
+              "en": "Officially states most internationals cannot be housed",
+              "tr": "Uluslararası öğrencilerin çoğunun barındırılamadığı resmen belirtiliyor"
+            }
+          }
+        }
+      },
+      {
+        "key": "market_affordability_gap",
+        "weight_max": 3,
+        "question": {
+          "en": "How does median private rent compare with the official student housing budget?",
+          "tr": "Medyan serbest piyasa kirası resmî öğrenci konut bütçesiyle nasıl karşılaştırılıyor?"
+        },
+        "values": {
+          "at_or_below_budget": {
+            "points": 0,
+            "label": {
+              "en": "Private rent is at or below the official budget",
+              "tr": "Serbest piyasa kirası resmî bütçenin altında veya eşit"
+            }
+          },
+          "up_to_25_percent_above": {
+            "points": 1,
+            "label": {
+              "en": "Private rent up to 25% above the budget",
+              "tr": "Serbest piyasa kirası bütçenin %25'ine kadar üzerinde"
+            }
+          },
+          "25_to_60_percent_above": {
+            "points": 2,
+            "label": {
+              "en": "Private rent 25-60% above the budget",
+              "tr": "Serbest piyasa kirası bütçenin %25-60 üzerinde"
+            }
+          },
+          "more_than_60_percent_above": {
+            "points": 3,
+            "label": {
+              "en": "Private rent more than 60% above the budget",
+              "tr": "Serbest piyasa kirası bütçenin %60'tan fazla üzerinde"
+            }
+          }
+        }
+      },
+      {
+        "key": "timing_sensitivity",
+        "weight_max": 2,
+        "question": {
+          "en": "Does a separate, dated housing application gate access?",
+          "tr": "Ayrı ve tarihli bir konut başvurusu erişimi belirliyor mu?"
+        },
+        "values": {
+          "no_separate_application": {
+            "points": 0,
+            "label": {
+              "en": "No separate housing application",
+              "tr": "Ayrı konut başvurusu yok"
+            }
+          },
+          "separate_application_generous_window": {
+            "points": 1,
+            "label": {
+              "en": "Separate application, generous window",
+              "tr": "Ayrı başvuru, geniş pencere"
+            }
+          },
+          "separate_application_hard_deadline": {
+            "points": 2,
+            "label": {
+              "en": "Separate application with a hard deadline",
+              "tr": "Kesin son tarihli ayrı başvuru"
+            }
+          }
+        }
+      },
+      {
+        "key": "arrival_risk",
+        "weight_max": 2,
+        "question": {
+          "en": "Can a student arrive without a signed contract?",
+          "tr": "Öğrenci imzalı sözleşme olmadan gelebilir mi?"
+        },
+        "values": {
+          "contract_before_arrival_normal": {
+            "points": 0,
+            "label": {
+              "en": "Signing a contract before arrival is normal",
+              "tr": "Varıştan önce sözleşme imzalamak olağan"
+            }
+          },
+          "temporary_housing_commonly_needed": {
+            "points": 1,
+            "label": {
+              "en": "Temporary housing is commonly needed on arrival",
+              "tr": "Varışta geçici konaklama sıkça gerekiyor"
+            }
+          },
+          "officially_advised_not_to_travel_without_contract": {
+            "points": 2,
+            "label": {
+              "en": "Officially advised not to travel without a contract",
+              "tr": "Sözleşme olmadan yola çıkmamak resmen tavsiye ediliyor"
+            }
+          }
+        }
+      }
+    ],
+    "scoring_rule": {
+      "en": "Sum the scored dimensions. A level is published only when at least three of the five dimensions are evidenced; otherwise the level is \"unknown\". When only three or four dimensions are known, the partial sum is rescaled onto the 0–15 range before banding and confidence is capped at \"medium\".",
+      "tr": "Puanlanan boyutlar toplanır. Seviye yalnızca beş boyuttan en az üçü kanıtlandığında yayımlanır; aksi hâlde seviye \"unknown\" olur. Yalnızca üç veya dört boyut biliniyorsa kısmi toplam bantlamadan önce 0–15 aralığına ölçeklenir ve güven düzeyi en fazla \"medium\" olur."
+    },
+    "required_evidence": [
+      "official_housing_page",
+      "official_student_housing_provider",
+      "official_cost_of_living_page"
+    ],
+    "forbidden_inference": {
+      "en": "Never derive a housing level from country reputation, QS rank, city size or student forum posts. Forum posts may only populate living_profile.housing_sentiment.",
+      "tr": "Konut seviyesi asla ülke itibarından, QS sırasından, şehir büyüklüğünden veya öğrenci forumu paylaşımlarından türetilemez. Forum paylaşımları yalnızca living_profile.housing_sentiment alanını besleyebilir."
+    }
+  },
+  "cost_model": {
+    "field_path": "cost_profile.normalized_cost",
+    "living_field_path": "living_profile.cost_of_living_profile",
+    "why_previous_values_were_unreliable": {
+      "en": "Average expenses were previously stored as bare numbers such as monthly_living_cost_eur_estimated, without recording what the figure covered, how many months it applied to, which currency it was published in or which exchange rate converted it. Two records could show the same number while one meant rent alone for nine months and the other a full twelve-month budget including insurance. This standard makes the basis, the component list, the period and the exchange rate part of the value itself.",
+      "tr": "Ortalama giderler daha önce monthly_living_cost_eur_estimated gibi çıplak sayılar olarak saklanıyordu; rakamın neyi kapsadığı, kaç aya karşılık geldiği, hangi para biriminde yayımlandığı ve hangi kurla çevrildiği kaydedilmiyordu. İki kayıt aynı sayıyı gösterebiliyordu; oysa biri yalnızca dokuz aylık kira, diğeri sigorta dâhil tam on iki aylık bütçe olabiliyordu. Bu standart dayanağı, bileşen listesini, dönemi ve döviz kurunu değerin kendisinin parçası hâline getirir."
+    },
+    "cost_basis_values": [
+      {
+        "code": "official_university_cost_of_attendance",
+        "label": {
+          "en": "Official university cost-of-attendance budget",
+          "tr": "Resmî üniversite eğitim maliyeti bütçesi"
+        },
+        "note": {
+          "en": "A planning budget published by the university, usually for financial-aid purposes. It normally includes tuition and must be split before any part of it is used as a living cost.",
+          "tr": "Üniversitenin genellikle malî destek amacıyla yayımladığı planlama bütçesi. Normalde öğrenim ücretini içerir ve herhangi bir parçası yaşam gideri olarak kullanılmadan önce ayrıştırılmalıdır."
+        },
+        "reliability": "high"
+      },
+      {
+        "code": "official_university_living_budget",
+        "label": {
+          "en": "Official university living-cost estimate",
+          "tr": "Resmî üniversite yaşam gideri tahmini"
+        },
+        "reliability": "high"
+      },
+      {
+        "code": "official_visa_financial_requirement",
+        "label": {
+          "en": "Official visa or residence-permit financial requirement",
+          "tr": "Resmî vize veya oturum izni malî yeterlilik tutarı"
+        },
+        "note": {
+          "en": "A legal minimum, not an observed average. It is a planning floor and never a realistic budget.",
+          "tr": "Gözlemlenen ortalama değil, yasal asgari tutardır. Planlama tabanıdır, gerçekçi bütçe değildir."
+        },
+        "reliability": "high"
+      },
+      {
+        "code": "official_national_student_survey",
+        "label": {
+          "en": "Official national student cost survey",
+          "tr": "Resmî ulusal öğrenci gider araştırması"
+        },
+        "reliability": "medium"
+      },
+      {
+        "code": "official_housing_provider_rates",
+        "label": {
+          "en": "Published rates of the official housing provider",
+          "tr": "Resmî konut sağlayıcısının yayımlanmış fiyatları"
+        },
+        "reliability": "high"
+      },
+      {
+        "code": "unknown",
+        "label": {
+          "en": "No verified basis",
+          "tr": "Doğrulanmış dayanak yok"
+        },
+        "reliability": "unknown"
+      }
+    ],
+    "components": [
+      {
+        "key": "rent",
+        "label": {
+          "en": "Rent",
+          "tr": "Kira"
+        },
+        "mandatory_in_total": true
+      },
+      {
+        "key": "utilities",
+        "label": {
+          "en": "Utilities and internet",
+          "tr": "Faturalar ve internet"
+        },
+        "mandatory_in_total": true
+      },
+      {
+        "key": "food",
+        "label": {
+          "en": "Food",
+          "tr": "Gıda"
+        },
+        "mandatory_in_total": true
+      },
+      {
+        "key": "transport",
+        "label": {
+          "en": "Local transport",
+          "tr": "Şehir içi ulaşım"
+        },
+        "mandatory_in_total": true
+      },
+      {
+        "key": "study_materials",
+        "label": {
+          "en": "Books and study materials",
+          "tr": "Kitap ve ders malzemesi"
+        },
+        "mandatory_in_total": false
+      },
+      {
+        "key": "personal",
+        "label": {
+          "en": "Personal and leisure",
+          "tr": "Kişisel ve sosyal"
+        },
+        "mandatory_in_total": false
+      },
+      {
+        "key": "health_insurance",
+        "label": {
+          "en": "Health insurance",
+          "tr": "Sağlık sigortası"
+        },
+        "mandatory_in_total": false,
+        "note": {
+          "en": "Tracked separately because it is often billed by the university once per year rather than paid monthly.",
+          "tr": "Genellikle aylık ödenmek yerine üniversite tarafından yılda bir faturalandığı için ayrı izlenir."
+        }
+      },
+      {
+        "key": "semester_contribution",
+        "label": {
+          "en": "Semester contribution or student union fee",
+          "tr": "Dönem katkı payı veya öğrenci birliği ücreti"
+        },
+        "mandatory_in_total": false
+      }
+    ],
+    "period_rule": {
+      "en": "Every published figure is stored with months_covered. Monthly values are never multiplied by twelve when the source states an academic year of nine or ten months; the stated period is preserved and both a monthly and an annual view are derived from it.",
+      "tr": "Yayımlanan her rakam months_covered ile saklanır. Kaynak dokuz veya on aylık bir akademik yıl belirtiyorsa aylık değerler asla on iki ile çarpılmaz; belirtilen dönem korunur ve hem aylık hem yıllık görünüm ondan türetilir."
+    },
+    "fx_rule": {
+      "en": "Non-euro figures keep their published currency as the primary value. A euro equivalent may be derived only with an explicit fx_rate, fx_rate_date and fx_source, and is always labelled as a conversion, never as a published price.",
+      "tr": "Avro dışı rakamlar birincil değer olarak yayımlandığı para biriminde kalır. Avro karşılığı yalnızca açık fx_rate, fx_rate_date ve fx_source ile türetilebilir ve daima çevrim olarak etiketlenir, asla yayımlanmış fiyat olarak değil."
+    },
+    "total_rule": {
+      "en": "annual_total = tuition + mandatory fees + health insurance (when compulsory and separately billed) + monthly living total × months_covered. The inclusion list is always published next to the number, and the total is omitted whenever a mandatory component is unknown.",
+      "tr": "yıllık_toplam = öğrenim ücreti + zorunlu ücretler + sağlık sigortası (zorunlu ve ayrı faturalanıyorsa) + aylık yaşam toplamı × months_covered. Kapsam listesi daima rakamın yanında yayımlanır ve zorunlu bileşenlerden biri bilinmiyorsa toplam verilmez."
+    }
+  },
+  "academic_match": {
+    "field_path": "academic_match_profile",
+    "why_stronger_categories_were_needed": {
+      "en": "Academic fit was previously expressed only as relevance_status — \"strong\" for 80 of 177 records — plus a flat tag list. That collapsed five very different questions into one adjective: does the curriculum actually teach the field, does a research group work on it, is there a professor who could supervise it, is there a facility, and is there an industry outlet. This profile scores each question separately and only then produces a tier.",
+      "tr": "Akademik uyum daha önce yalnızca relevance_status — 177 kaydın 80'inde \"strong\" — ve düz bir etiket listesiyle ifade ediliyordu. Bu, birbirinden çok farklı beş soruyu tek bir sıfata indirgiyordu: müfredat alanı gerçekten öğretiyor mu, bir araştırma grubu bu konuda çalışıyor mu, danışmanlık yapabilecek bir hoca var mı, tesis var mı ve sanayi çıktısı var mı. Bu profil her soruyu ayrı puanlar ve tier'ı ancak ondan sonra üretir."
+    },
+    "evidence_dimensions": [
+      {
+        "key": "curriculum_evidence",
+        "weight": 30,
+        "question": {
+          "en": "Do named, countable courses or a declared track teach the target field?",
+          "tr": "Hedef alanı öğreten adlandırılmış, sayılabilir dersler veya ilan edilmiş bir uzmanlık dalı var mı?"
+        },
+        "required_source": "official_curriculum_page"
+      },
+      {
+        "key": "research_group_evidence",
+        "weight": 25,
+        "question": {
+          "en": "Does a named laboratory, chair or research group work on the target field?",
+          "tr": "Hedef alanda çalışan adlandırılmış bir laboratuvar, kürsü veya araştırma grubu var mı?"
+        },
+        "required_source": "official_lab_page"
+      },
+      {
+        "key": "faculty_evidence",
+        "weight": 25,
+        "question": {
+          "en": "Are there named faculty whose published focus matches the target field?",
+          "tr": "Yayımlanmış çalışma alanı hedef alanla örtüşen adlandırılmış öğretim üyeleri var mı?"
+        },
+        "required_source": "official_department_page"
+      },
+      {
+        "key": "facility_evidence",
+        "weight": 10,
+        "question": {
+          "en": "Is there a physical facility — wind tunnel, cleanroom, test rig, HPC cluster — for the field?",
+          "tr": "Alan için fiziksel bir tesis — rüzgâr tüneli, temiz oda, test düzeneği, HPC kümesi — var mı?"
+        },
+        "required_source": "official_lab_page"
+      },
+      {
+        "key": "industry_outlet_evidence",
+        "weight": 10,
+        "question": {
+          "en": "Is there a verified industry or agency partnership in the field?",
+          "tr": "Alanda doğrulanmış bir sanayi veya ajans iş birliği var mı?"
+        },
+        "required_source": "official_industry_partner_page"
+      }
+    ],
+    "dimension_levels": {
+      "strong": 1.0,
+      "moderate": 0.6,
+      "weak": 0.3,
+      "none": 0.0,
+      "unknown": null
+    },
+    "tiers": [
+      {
+        "code": "core_match",
+        "min_score": 75,
+        "label": {
+          "en": "Core match — the field is a declared specialisation",
+          "tr": "Çekirdek uyum — alan ilan edilmiş bir uzmanlık"
+        }
+      },
+      {
+        "code": "strong_adjacent",
+        "min_score": 55,
+        "label": {
+          "en": "Strong adjacent — reachable through electives and a matching group",
+          "tr": "Güçlü komşu uyum — seçmeliler ve uyumlu bir grup üzerinden erişilebilir"
+        }
+      },
+      {
+        "code": "partial_match",
+        "min_score": 35,
+        "label": {
+          "en": "Partial — some evidence, gaps in teaching or supervision",
+          "tr": "Kısmi — bir miktar kanıt var, öğretim veya danışmanlıkta boşluk var"
+        }
+      },
+      {
+        "code": "weak_match",
+        "min_score": 0,
+        "label": {
+          "en": "Weak — the field is not meaningfully represented",
+          "tr": "Zayıf — alan anlamlı ölçüde temsil edilmiyor"
+        }
+      },
+      {
+        "code": "unknown",
+        "min_score": null,
+        "label": {
+          "en": "Unknown — fewer than three dimensions verified",
+          "tr": "Bilinmiyor — üçten az boyut doğrulandı"
+        }
+      }
+    ],
+    "publication_rule": {
+      "en": "A tier is published only when at least three of the five dimensions carry checked evidence. The score is normalised over the weights of the evidenced dimensions, never over the full 100.",
+      "tr": "Tier yalnızca beş boyuttan en az üçü kontrol edilmiş kanıt taşıdığında yayımlanır. Puan, tam 100 üzerinden değil, kanıtlanmış boyutların ağırlıkları üzerinden normalize edilir."
+    }
+  },
+  "faculty_contact": {
+    "field_path": "research_profile.notable_professors",
+    "entry_schema": {
+      "name": "string, exactly as published by the department",
+      "role": "bilingual object",
+      "focus": "bilingual object, taken from the official profile page",
+      "fit_tags": "array of taxonomy keys from data_base/taxonomy.json",
+      "email": "string or null — only when published on an official university page",
+      "email_source": "url of the official page that publishes the address",
+      "profile_url": "official staff profile url",
+      "lab": "name of the lab or group this person leads or belongs to",
+      "contact_timing": "enum, see contact_timing_values",
+      "accepting_students_signal": "enum: stated_open | stated_closed | not_stated",
+      "last_verified": "YYYY-MM-DD"
+    },
+    "contact_timing_values": [
+      {
+        "code": "before_application_encouraged",
+        "label": {
+          "en": "Write before applying — the department expects it",
+          "tr": "Başvurudan önce yazın — bölüm bunu bekliyor"
+        },
+        "guidance": {
+          "en": "Typical for chair-funded and research-council positions in Germany, the Netherlands and Nordic doctoral-style tracks. A short, specific message referring to one paper is expected.",
+          "tr": "Almanya, Hollanda ve İskandinav doktora tarzı rotalarda kürsü ve araştırma konseyi finansmanlı pozisyonlar için tipiktir. Tek bir makaleye atıf yapan kısa ve spesifik bir mesaj beklenir."
+        }
+      },
+      {
+        "code": "before_application_optional",
+        "label": {
+          "en": "Optional before applying",
+          "tr": "Başvurudan önce isteğe bağlı"
+        },
+        "guidance": {
+          "en": "Contact does not affect the admission decision but can confirm whether a thesis topic is available.",
+          "tr": "İletişim kabul kararını etkilemez, ancak bir tez konusunun müsait olup olmadığını teyit edebilir."
+        }
+      },
+      {
+        "code": "only_with_specific_research_question",
+        "label": {
+          "en": "Only with a specific research question",
+          "tr": "Yalnızca spesifik bir araştırma sorusuyla"
+        },
+        "guidance": {
+          "en": "Generic \"please accept me\" messages are ignored or filtered. Ask about one method, dataset or result.",
+          "tr": "Genel \"lütfen beni kabul edin\" mesajları dikkate alınmaz veya filtrelenir. Tek bir yöntem, veri kümesi veya sonuç hakkında sorun."
+        }
+      },
+      {
+        "code": "after_admission_for_ra",
+        "label": {
+          "en": "After admission, for a research assistantship",
+          "tr": "Kabulden sonra, araştırma asistanlığı için"
+        },
+        "guidance": {
+          "en": "Common in the United States: a central committee admits, then the student finds an advisor and RA funding.",
+          "tr": "ABD'de yaygındır: merkezî bir komite kabul eder, ardından öğrenci danışman ve RA finansmanı bulur."
+        }
+      },
+      {
+        "code": "do_not_contact_centralised_admission",
+        "label": {
+          "en": "Do not contact — admission is fully centralised",
+          "tr": "İletişime geçmeyin — kabul tamamen merkezî"
+        },
+        "guidance": {
+          "en": "The department states that individual staff cannot influence taught-master admission.",
+          "tr": "Bölüm, bireysel öğretim üyelerinin ders bazlı yüksek lisans kabulünü etkileyemeyeceğini belirtir."
+        }
+      },
+      {
+        "code": "unknown",
+        "label": {
+          "en": "Policy not verified",
+          "tr": "Politika doğrulanmadı"
+        },
+        "guidance": {
+          "en": "No official statement about contacting staff was found.",
+          "tr": "Öğretim üyeleriyle iletişim konusunda resmî bir açıklama bulunamadı."
+        }
+      }
+    ],
+    "email_rule": {
+      "en": "An address is stored only when it appears on an official university page. Addresses are never reconstructed from a naming pattern, and never taken from a paper, a CV mirror or a third-party directory.",
+      "tr": "Adres yalnızca resmî bir üniversite sayfasında göründüğünde saklanır. Adresler asla bir adlandırma kalıbından üretilmez ve asla bir makaleden, CV kopyasından veya üçüncü taraf rehberinden alınmaz."
+    }
+  },
+  "research_unit": {
+    "field_path": "research_profile.research_units",
+    "entry_schema": {
+      "name": "string as published",
+      "unit_type": "enum: laboratory | research_group | chair | institute | centre | facility | consortium",
+      "url": "official page",
+      "lead": "name of the head, when published",
+      "topics": "array of taxonomy keys",
+      "facilities": "array of named physical facilities",
+      "student_access": "enum: msc_thesis_open | project_course_open | ra_position_only | phd_only | not_stated",
+      "why_it_fits": "bilingual object explaining the overlap with the student's tagged interests, referencing the topics array",
+      "last_verified": "YYYY-MM-DD"
+    },
+    "why_it_fits_rule": {
+      "en": "The fit explanation must name at least one taxonomy tag shared with the student profile and one concrete activity of the unit. It must not repeat the university's marketing text.",
+      "tr": "Uyum açıklaması, öğrenci profiliyle paylaşılan en az bir taksonomi etiketini ve birimin somut bir faaliyetini adlandırmak zorundadır. Üniversitenin tanıtım metnini tekrar edemez."
+    }
+  },
+  "scholarship_playbook": {
+    "field_path": "scholarship_profile.playbook",
+    "entry_schema": {
+      "opportunity": "name of the scholarship",
+      "eligibility_gates": "array of hard requirements that disqualify when unmet",
+      "selection_criteria": "array of what the committee actually scores",
+      "steps": "ordered array of action objects",
+      "competitiveness": "enum: open_to_all_eligible | selective | highly_selective | unknown",
+      "typical_award": "object with amount, currency, period and coverage list",
+      "renewal_conditions": "string or null",
+      "evidence_url": "official scholarship page"
+    },
+    "step_schema": {
+      "order": "integer",
+      "action": "bilingual object, imperative voice",
+      "owner": "enum: applicant | university | external_body",
+      "timing": "enum, see step_timing_values",
+      "required_documents": "array of bilingual objects",
+      "hard_requirement": "boolean — true when skipping the step disqualifies"
+    },
+    "step_timing_values": [
+      {
+        "code": "before_application_opens",
+        "label": {
+          "en": "Before applications open",
+          "tr": "Başvurular açılmadan önce"
+        }
+      },
+      {
+        "code": "with_the_application",
+        "label": {
+          "en": "Submitted with the degree application",
+          "tr": "Derece başvurusuyla birlikte"
+        }
+      },
+      {
+        "code": "separate_before_deadline",
+        "label": {
+          "en": "Separate submission before its own deadline",
+          "tr": "Kendi son tarihinden önce ayrı başvuru"
+        }
+      },
+      {
+        "code": "after_admission",
+        "label": {
+          "en": "Only after an admission offer",
+          "tr": "Yalnızca kabul mektubundan sonra"
+        }
+      },
+      {
+        "code": "after_enrolment",
+        "label": {
+          "en": "After enrolment",
+          "tr": "Kayıttan sonra"
+        }
+      }
+    ],
+    "honesty_rule": {
+      "en": "A playbook step is written only from an official scholarship or financial-aid page. Advice such as \"contact professors early\" becomes a step only when the funder itself publishes it as a requirement.",
+      "tr": "Bir playbook adımı yalnızca resmî burs veya malî destek sayfasından yazılır. \"Hocalarla erken iletişime geçin\" gibi tavsiyeler ancak fon sağlayıcı bunu bir gereklilik olarak yayımlıyorsa adım olur."
+    }
+  },
+  "application_countdown": {
+    "field_path": "application_timeline_profile.primary_deadline",
+    "entry_schema": {
+      "date": "YYYY-MM-DD",
+      "time": "HH:MM or null",
+      "timezone": "IANA-style identifier or the published label",
+      "applies_to": "enum: all_applicants | non_eu | eu_eea | international | scholarship_track",
+      "cycle_label": "for example \"Fall 2027 entry\"",
+      "is_recurring_annual": "boolean",
+      "status": "enum: open | upcoming | closing_soon | closed | rolling | not_published",
+      "confidence": "high | medium | low | unknown",
+      "source_url": "official admission or programme page"
+    },
+    "status_rule": {
+      "en": "\"closing_soon\" is used when thirty days or fewer remain. A past date is \"closed\" and is shown greyed out beside the next expected cycle, never as an actionable deadline. A record without a published date shows \"not_published\" rather than an invented one.",
+      "tr": "\"closing_soon\", otuz gün veya daha az kaldığında kullanılır. Geçmiş bir tarih \"closed\" olur; eyleme dönük son tarih olarak değil, soluk biçimde ve beklenen sonraki dönemin yanında gösterilir. Yayımlanmış tarihi olmayan kayıt, uydurma bir tarih yerine \"not_published\" gösterir."
+    }
+  },
+  "student_sentiment": {
+    "field_path": "student_sentiment_profile",
+    "display_rule": {
+      "en": "Sentiment is always labelled as student perception, never as fact, and is shown with its sample size, date range and confidence. A score is published only when at least three independent recent sources agree.",
+      "tr": "Yorumlar daima öğrenci algısı olarak etiketlenir, asla olgu olarak değil; örneklem büyüklüğü, tarih aralığı ve güven düzeyiyle birlikte gösterilir. Puan yalnızca en az üç bağımsız ve güncel kaynak örtüştüğünde yayımlanır."
+    },
+    "dimension_values": [
+      "very_positive",
+      "positive",
+      "mixed",
+      "negative",
+      "very_negative",
+      "unknown"
+    ],
+    "weights": {
+      "teaching_quality_sentiment": 20,
+      "workload_sentiment": 15,
+      "administration_sentiment": 15,
+      "housing_sentiment": 15,
+      "international_student_sentiment": 15,
+      "career_support_sentiment": 10,
+      "city_life_sentiment": 10
+    }
+  }
+}

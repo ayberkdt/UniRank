@@ -25,6 +25,7 @@ UniRank/
 ├── unirank/                   # Veri katmanı paketi
 │   ├── core/                  # Veri yükleme, şema ve bütünlük kontrolleri (json_loader.py vb.)
 │   └── utils/                 # Araçlar, algoritmalar ve yardımcılar
+├── config/                    # Kategori standartları, döviz kurları, katalog kapsamı
 ├── scripts/                   # Veri güncelleme ve doğrulama scriptleri (devServer.mjs dahil)
 ├── vercel.json                # Vercel dağıtım yapılandırması
 └── requirements.txt           # Python bağımlılıkları
@@ -67,6 +68,27 @@ Veri bütünlüğü denetimi varsayılan olarak salt okunurdur:
 python scripts/audit_research_data.py
 ```
 Denetlenen bütünlük durumunu JSON dosyalarına bilinçli olarak yazmak için ayrıca `--write` kullanın.
+
+### Kategori standartları
+
+Öğrenciye gösterilen her kategorik ölçek — konaklama zorluğu, maliyet dayanağı,
+akademik uyum kademesi, hocayla iletişim zamanlaması, burs adımı zamanlaması —
+`config/standards.json` içinde bir kez tanımlanır ve arayüze `GET /api/standards`
+uç noktasından sunulur. Ayrıntılar: [`docs/CATEGORY_STANDARDS.md`](docs/CATEGORY_STANDARDS.md).
+
+```bash
+python scripts/standardize_categories.py            # ne üreteceğini raporlar
+python scripts/standardize_categories.py --write    # data_base/ dosyalarına yazar
+```
+
+Araştırılmış veriler `research_queue/enrichment/` altında yük dosyaları olarak
+tutulur ve tek bir birleştirici ile uygulanır. Birleştirici, bir karar profilini
+o alanı kapsayan bir kaynak olmadan değiştiren yükü reddeder:
+
+```bash
+python scripts/apply_enrichment.py                                  # doğrula
+python scripts/apply_enrichment.py --payload italy_2026_08.json --write
+```
 
 ## ☁️ Dağıtım (Vercel)
 

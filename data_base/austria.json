@@ -83,17 +83,24 @@
         "verification_notes": {
           "en": "The degree is taught entirely in English. The published proof threshold is C1-level in practice; an English page or campus location is not used as a substitute for this requirement.",
           "tr": "Derece tamamen İngilizce okutulur. Yayımlanan kanıt eşiği uygulamada C1 düzeyindedir; İngilizce bir sayfa veya kampüs konumu bu koşulun yerine geçirilmez."
-        }
+        },
+        "language_of_instruction": "English",
+        "language_note": {
+          "en": "FHWN states the language is English and separately lists 'taught entirely in English' as a programme highlight. Unconditional, unlike the Austrian university records where German proficiency is an admission requirement.",
+          "tr": "FHWN dilin İngilizce olduğunu belirtir ve ayrıca 'tamamen İngilizce verilir' ifadesini bir program öne çıkanı olarak listeler. Almanca yeterliliğinin kabul koşulu olduğu Avusturya üniversitesi kayıtlarından farklı olarak koşulsuzdur."
+        },
+        "verified_from": "https://www.fhwn.ac.at/en/studyprogramme/master-aerospace-engineering",
+        "last_verified": "2026-08-30"
       },
       "cost_profile": {
         "academic_year": "2026/2027",
-        "tuition_eur_per_year_min": 1700,
+        "tuition_eur_per_year_min": 727,
         "tuition_eur_per_year_max": 1700,
         "tuition_eur_per_year_estimated": 1700,
-        "tuition_basis": "standard_third_country_fee_unless_exempt",
+        "tuition_basis": "official_published_per_semester_rate_2026_2027_doubled_for_the_academic_year",
         "non_eu_flat_fee": 1700,
         "student_contribution_eur": 52.4,
-        "application_fee_eur": null,
+        "application_fee_eur": 250,
         "document_verification_deposit_eur": 250,
         "total_academic_cost_eur_per_year_estimated": 1752.4,
         "payment_installments": "EUR 850 tuition plus EUR 26.20 Austrian Student Union (ÖH) fee each semester; a one-time EUR 250 document-verification deposit is listed for third-country students.",
@@ -104,6 +111,29 @@
         "verification_notes": {
           "en": "The displayed annual tuition is the current standard third-country rate, not a claim that every applicant lacks a statutory exemption.",
           "tr": "Gösterilen yıllık öğrenim ücreti güncel standart üçüncü ülke tarifesidir; her adayın yasal bir muafiyetten yararlanamayacağı iddiası değildir."
+        },
+        "normalized_cost": {
+          "standard": "cost_model@3.0.0",
+          "currency": "EUR",
+          "annual_total": null,
+          "annual_total_eur_equivalent": null,
+          "includes": [
+            "tuition"
+          ],
+          "missing_mandatory_components": [
+            "living_costs"
+          ],
+          "months_of_living_cost": null,
+          "status": "incomplete",
+          "note": {
+            "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+            "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+          },
+          "evaluated_at": "2026-08-30"
+        },
+        "source_notes": {
+          "en": "FHWN publishes EUR 363.36 per semester for EU, EEA and Swiss citizens and EUR 850 per semester for third-country citizens, plus a one-time EUR 250 deposit for third-country citizens and a EUR 26.20 student union fee per semester, for study year 26/27. Two semesters make an academic year, so a non-EU student pays about EUR 1,700 in tuition plus about EUR 52 in union fees per year, with the EUR 250 deposit once. This is among the cheapest English-taught aerospace masters in the database.",
+          "tr": "FHWN, 26/27 öğretim yılı için AB, AEA ve İsviçre vatandaşlarına dönem başına 363,36 avro, üçüncü ülke vatandaşlarına dönem başına 850 avro; ayrıca üçüncü ülke vatandaşları için tek seferlik 250 avro depozito ve dönem başına 26,20 avro öğrenci birliği aidatı yayımlar. Bir akademik yıl iki dönemdir; yani AB dışı bir öğrenci yılda yaklaşık 1.700 avro öğrenim ücreti artı yaklaşık 52 avro birlik aidatı, bir kez de 250 avro depozito öder. Bu, veritabanındaki İngilizce verilen en ucuz havacılık yüksek lisanslarından biridir."
         }
       },
       "scholarship_profile": {
@@ -149,7 +179,7 @@
         },
         "student_housing_available": true,
         "student_housing_competitiveness": "medium",
-        "housing_difficulty": "medium",
+        "housing_difficulty": "unknown",
         "living_risk": "medium",
         "housing_sentiment": null,
         "housing_notes": {
@@ -161,7 +191,62 @@
           "tr": "Resmî, tüm kalemleri içeren aylık yaşam bütçesi bulunmadığından kart yalnızca doğrulanmış yurt kira aralığını gösterir; bunu toplam maliyet tahminine dönüştürmez."
         },
         "housing_access": "unknown",
-        "housing_application_separate": null
+        "housing_application_separate": null,
+        "housing_search_difficulty": "unknown",
+        "housing_difficulty_profile": {
+          "standard": "housing_difficulty@3.0.0",
+          "level": "unknown",
+          "raw_score": 1,
+          "scaled_score": null,
+          "score_max": 15,
+          "evidenced_dimensions": 1,
+          "dimensions_required_for_publication": 3,
+          "dimensions": {
+            "guarantee_status": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "supply_pressure": {
+              "value": "early_application_advised",
+              "points": 1,
+              "derived_from": "living_profile.student_housing_competitiveness"
+            },
+            "market_affordability_gap": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "timing_sensitivity": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "arrival_risk": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            }
+          },
+          "confidence": "unknown",
+          "band_from_score": null,
+          "capped_from_very_high": false,
+          "legacy_value": "unknown",
+          "evaluated_at": "2026-08-30"
+        },
+        "cost_of_living_profile": {
+          "standard": "cost_model@3.0.0",
+          "cost_basis": "unknown",
+          "status": "unknown",
+          "reason": "no_official_living_cost_items",
+          "components": {},
+          "monthly_total": null,
+          "evaluated_at": "2026-08-30"
+        }
       },
       "curriculum_profile": {
         "tracks": [
@@ -217,6 +302,10 @@
         "verification_notes": {
           "en": "Course titles and ECTS are transcribed from the current official programme page; no unlisted lab, internship or specialisation is inferred.",
           "tr": "Ders başlıkları ve AKTS'ler güncel resmî program sayfasından aktarılmıştır; listelenmeyen laboratuvar, staj veya uzmanlaşma çıkarımı yapılmaz."
+        },
+        "specialisation_note": {
+          "en": "Four semesters, 120 ECTS, full-time at Campus 1 Wiener Neustadt, awarding the MSc, with 25 study places. There is no mandatory internship, but the school recommends using the summer break between the second and third semesters for one and states it often produces the master's thesis topic or the first job. Highlights the school claims for itself: state-of-the-art research facilities, international projects with active student participation, and high-performance computing.",
+          "tr": "Wiener Neustadt Kampüs 1'de dört dönem, 120 AKTS, tam zamanlı; MSc verir, 25 öğrenci kontenjanı vardır. Zorunlu staj yoktur, ancak okul ikinci ile üçüncü dönem arasındaki yaz tatilinin bunun için kullanılmasını önerir ve bunun sıklıkla yüksek lisans tez konusunu ya da ilk işi ürettiğini belirtir. Okulun kendisi için öne sürdüğü özellikler: güncel araştırma tesisleri, öğrencilerin etkin katıldığı uluslararası projeler ve yüksek başarımlı hesaplama."
         }
       },
       "category_profile": {
@@ -281,7 +370,77 @@
         "research_sources": [
           "https://www.fhwn.ac.at/en/studyprogramme/master-aerospace-engineering",
           "https://www.fhwn.ac.at/en/news/neue-studiengangsleitung-fuer-aerospace-engineering"
-        ]
+        ],
+        "department": "Aerospace Engineering department, FH Wiener Neustadt, with the R&D company FOTEC",
+        "department_url": "https://www.fhwn.ac.at/en/studyprogramme/master-aerospace-engineering",
+        "department_note": {
+          "en": "A university of applied sciences that has built and flown its own hardware. FHWN names an autonomous transport drone, TROGON, and a research satellite, CLIMB, as its own, and states that its Aerospace Engineering department and the FHWN R&D company FOTEC run several ESA-financed projects together. For a 25-place programme costing under EUR 900 a semester for a non-EU student, that is an unusual amount of real project access.",
+          "tr": "Kendi donanımını inşa edip uçurmuş bir uygulamalı bilimler üniversitesi. FHWN, otonom bir taşıma dronu olan TROGON'u ve bir araştırma uydusu olan CLIMB'i kendisine ait olarak adlandırır ve Havacılık ve Uzay Mühendisliği bölümünün, FHWN'nin Ar-Ge şirketi FOTEC ile birlikte ESA finansmanlı birkaç proje yürüttüğünü belirtir. AB dışı bir öğrenci için dönemi 900 avronun altına mal olan 25 kontenjanlı bir program için bu, olağandışı miktarda gerçek proje erişimidir."
+        },
+        "faculty_contact_policy": "before_application_encouraged",
+        "research_units": [
+          {
+            "name": "CubeSat Programme, including the FHWN-built CLIMB satellite",
+            "unit_type": "research_group",
+            "url": "https://www.fhwn.ac.at/en/studyprogramme/master-aerospace-engineering",
+            "topics": [
+              "satellite_systems",
+              "spacecraft_design",
+              "space_systems",
+              "systems_engineering",
+              "testing"
+            ],
+            "student_access": "project_course_open",
+            "why_it_fits": {
+              "en": "FHWN describes the CubeSat programme as development, launch and operation of CubeSats for educational and scientific purposes, and names CLIMB as a satellite the school built. Development, launch and operation — all three phases — is what separates a real satellite programme from a design exercise. If satellite_systems is your tag and you want to touch flight hardware at master's level, this is a direct route.",
+              "tr": "FHWN, CubeSat programını eğitsel ve bilimsel amaçlarla CubeSat'ların geliştirilmesi, fırlatılması ve işletilmesi olarak tanımlar ve CLIMB'i okulun inşa ettiği bir uydu olarak adlandırır. Geliştirme, fırlatma ve işletme — üç aşamanın tamamı — gerçek bir uydu programını bir tasarım alıştırmasından ayıran şeydir. Etiketin satellite_systems ise ve yüksek lisans düzeyinde uçuş donanımına dokunmak istiyorsan, bu doğrudan bir yoldur."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "TROGON autonomous transport drone and the aircraft design studies programme",
+            "unit_type": "research_group",
+            "url": "https://www.fhwn.ac.at/en/studyprogramme/master-aerospace-engineering",
+            "topics": [
+              "uav",
+              "autonomy",
+              "aircraft_design",
+              "mdo",
+              "flight_testing"
+            ],
+            "student_access": "project_course_open",
+            "why_it_fits": {
+              "en": "The department states it participates in aircraft conceptual design projects for the transport of people and goods, and shows TROGON, its own autonomous transport drone. Conceptual design plus a flying demonstrator in the same department is the combination that lets a thesis go from sizing study to test flight.",
+              "tr": "Bölüm, insan ve yük taşımacılığı için uçak kavramsal tasarım projelerine katıldığını belirtir ve kendi otonom taşıma dronu TROGON'u gösterir. Aynı bölümde kavramsal tasarım artı uçan bir gösterici, bir tezin boyutlandırma çalışmasından test uçuşuna geçmesini sağlayan birleşimdir."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "FOTEC Aerospace Engineering business unit and the ESA development projects",
+            "unit_type": "consortium",
+            "url": "https://www.fhwn.ac.at/en/studyprogramme/master-aerospace-engineering",
+            "topics": [
+              "electric_propulsion",
+              "industrial_projects",
+              "space_systems",
+              "internship_thesis"
+            ],
+            "student_access": "internship_open",
+            "why_it_fits": {
+              "en": "FOTEC's CEO is quoted on the programme page saying FOTEC develops technology for the aerospace industry under contract with the European Space Agency, and that this is the environment students learn in during their studies. Separately, the CEO of ENPULSION — the Wiener Neustadt company that builds field-emission electric propulsion thrusters for smallsats — states that close cooperation with the department gives immediate access to its graduates. If electric_propulsion is your tag, that local company is a rare and specific reason to be in this town.",
+              "tr": "FOTEC'in CEO'su program sayfasında, FOTEC'in Avrupa Uzay Ajansı ile sözleşmeli olarak havacılık ve uzay sanayii için teknoloji geliştirdiğini ve bunun öğrencilerin eğitimleri sırasında öğrendiği ortam olduğunu söyler. Ayrıca, küçük uydular için alan emisyonlu elektrikli itki iticileri üreten Wiener Neustadt şirketi ENPULSION'ın CEO'su, bölümle yakın iş birliğinin mezunlarına anında erişim sağladığını belirtir. Etiketin electric_propulsion ise, bu yerel şirket bu kasabada olmak için nadir ve spesifik bir sebeptir."
+            },
+            "last_verified": "2026-08-30"
+          }
+        ],
+        "faculty_email_availability": {
+          "status": "not_published",
+          "note": {
+            "en": "The programme page publishes no academic addresses, but it does something better for an applicant: it offers a bookable personal counselling appointment about this specific master's programme. Use that rather than a cold email.",
+            "tr": "Program sayfası akademisyen adresi yayımlamaz, ancak bir aday için daha iyisini yapar: bu yüksek lisans programına özel, randevu alınabilen kişisel bir danışmanlık görüşmesi sunar. Soğuk bir e-posta yerine bunu kullan."
+          },
+          "directory_url": "https://www.fhwn.ac.at/en/studyprogramme/master-aerospace-engineering"
+        }
       },
       "industry_ecosystem_profile": {
         "nearby_companies": [],
@@ -296,10 +455,14 @@
         "ecosystem_notes": {
           "en": "The programme page lists alumni employment examples including aerospace and engineering companies, but alumni destinations are not stored as partnerships or placement guarantees. No programme-specific company partnership, internship guarantee or thesis guarantee is claimed without a separate confirmation.",
           "tr": "Program sayfası havacılık/uzay ve mühendislik şirketlerinde mezun istihdamı örnekleri verir; ancak mezun destinasyonları ortaklık veya yerleştirme garantisi olarak saklanmaz. Ayrı bir onay olmadan programa özgü şirket ortaklığı, staj garantisi veya tez garantisi ileri sürülmez."
+        },
+        "ecosystem_note": {
+          "en": "FHWN names where its graduates go: Diamond Aircraft, Schiebel, Airbus and OHB in aerospace, and Magna Steyr and Siemens outside it. Diamond Aircraft and Schiebel are both Austrian — Diamond builds light aircraft, Schiebel builds the Camcopter unmanned helicopter — so the domestic employment market for this degree is concrete, not aspirational.",
+          "tr": "FHWN mezunlarının nereye gittiğini adlandırır: havacılıkta Diamond Aircraft, Schiebel, Airbus ve OHB; dışında Magna Steyr ve Siemens. Diamond Aircraft ile Schiebel'in ikisi de Avusturyalıdır — Diamond hafif uçak, Schiebel Camcopter insansız helikopteri üretir — yani bu derece için yurt içi istihdam piyasası özlem değil, somuttur."
         }
       },
       "application_timeline_profile": {
-        "academic_year": "2026/2027 published intake",
+        "academic_year": "2026/2027",
         "intake_terms": [
           "September 2026"
         ],
@@ -309,13 +472,30 @@
         ],
         "non_eu_deadline": "2026-03-31",
         "eu_deadline": "2026-06-15",
-        "application_deadline": "2026-03-31 for third-country applicants; 2026-06-15 for EU/EEA/Swiss applicants",
+        "application_deadline": "2026-03-31",
         "scholarship_deadline": null,
         "timeline_risk": "high",
         "deadline_notes": {
-          "en": "These are the official 2026/27 dates displayed on the programme page and both had passed when the record was checked on 14 July 2026. They must not be silently reused as 2027 dates; a future applicant should monitor the official programme page and allow visa time.",
-          "tr": "Bunlar program sayfasında gösterilen resmî 2026/27 tarihleridir ve kayıt 14 Temmuz 2026'da kontrol edildiğinde ikisi de geçmişti. 2027 tarihleri olarak sessizce yeniden kullanılmamalıdır; gelecek aday resmî program sayfasını izlemeli ve vize süresi bırakmalıdır."
-        }
+          "en": "Two different deadlines, and the non-EU one is much earlier: 31 March 2026 for non-EU citizens against 15 June 2026 for EU, EEA and Swiss citizens, for a September 2026 start. That two-and-a-half-month gap is the trap on this record — a non-EU applicant working to the visible June date has already missed it. Admission days are described as ongoing, and proof of eligibility such as the bachelor's certificate may be submitted later, so an incomplete degree is not a reason to delay applying.",
+          "tr": "İki farklı son tarih vardır ve AB dışı olanı çok daha erkendir: Eylül 2026 başlangıcı için AB dışı vatandaşlar 31 Mart 2026, AB, AEA ve İsviçre vatandaşları 15 Haziran 2026. Bu iki buçuk aylık fark, bu kayıttaki tuzaktır — görünürdeki Haziran tarihine göre çalışan AB dışı bir aday onu çoktan kaçırmıştır. Kabul günleri sürekli olarak tanımlanır ve lisans diploması gibi uygunluk kanıtı sonradan sunulabilir; yani tamamlanmamış bir derece başvuruyu ertelemek için bir sebep değildir."
+        },
+        "primary_deadline": {
+          "standard": "application_countdown@3.0.0",
+          "date": "2026-03-31",
+          "next_expected_date": "2027-03-31",
+          "time": null,
+          "timezone": null,
+          "applies_to": "non_eu",
+          "cycle_label": null,
+          "is_recurring_annual": true,
+          "status": "closed",
+          "days_remaining_at_evaluation": -152,
+          "derived_from": "application_timeline_profile.non_eu_deadline",
+          "confidence": "high",
+          "source_url": "https://www.fhwn.ac.at/en/studyprogramme/master-aerospace-engineering",
+          "evaluated_at": "2026-08-30"
+        },
+        "recurring_annual_deadline": true
       },
       "source_profile": {
         "official_program_page": "https://www.fhwn.ac.at/en/studyprogramme/master-aerospace-engineering",
@@ -326,26 +506,6 @@
         "official_housing_page": "https://www.fhwn.ac.at/en/information-for/prospective-students/accommodation",
         "official_department_page": "https://www.fhwn.ac.at/en/news/neue-studiengangsleitung-fuer-aerospace-engineering",
         "source_log": [
-          {
-            "url": "https://www.fhwn.ac.at/en/studyprogramme/master-aerospace-engineering",
-            "title": "FHWN Master Aerospace Engineering",
-            "source_type": "official_program_page",
-            "access_status": "ok",
-            "last_checked": "2026-08-14",
-            "relevant_fields": [
-              "program",
-              "language",
-              "admission",
-              "non_eu",
-              "deadline",
-              "curriculum"
-            ],
-            "confidence": "high",
-            "notes": {
-              "en": "Current programme page confirms active English MSc delivery, 120 ECTS/4 semesters, the engineering-ECTS threshold, language proofs, interview, 2026 deadlines and detailed course list.",
-              "tr": "Güncel program sayfası aktif İngilizce MSc eğitimini, 120 AKTS/dört yarıyılı, mühendislik-AKTS eşiğini, dil kanıtlarını, mülakatı, 2026 son tarihlerini ve ayrıntılı ders listesini doğrular."
-            }
-          },
           {
             "url": "https://www.fhwn.ac.at/en/information-for/prospective-students/costs",
             "title": "FHWN Costs for Prospective Students",
@@ -445,9 +605,32 @@
               "en": "The current page lists the complete 120-ECTS curriculum, laboratories, CubeSat/aircraft projects and named FOTEC/ESA-linked activity. Company employment examples are not treated as partnership proof beyond explicitly described cooperation.",
               "tr": "Güncel sayfa 120 AKTS'lik tam ders planını, laboratuvarları, CubeSat/uçak projelerini ve adı verilen FOTEC/ESA bağlantılı faaliyeti listeler. Şirket istihdam örnekleri, açıkça açıklanan iş birliğinin ötesinde ortaklık kanıtı sayılmaz."
             }
+          },
+          {
+            "url": "https://www.fhwn.ac.at/en/studyprogramme/master-aerospace-engineering",
+            "title": "FH Wiener Neustadt — Master Aerospace Engineering",
+            "source_type": "official_program_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-30",
+            "relevant_fields": [
+              "research",
+              "labs",
+              "curriculum",
+              "program",
+              "tuition",
+              "language",
+              "deadline",
+              "industry",
+              "admission"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Publishes the English delivery, the per-semester fees for EU and third-country citizens, the split application deadlines, the 25 places, the CubeSat and drone projects, the FOTEC and ESA relationships and the named graduate employers.",
+              "tr": "İngilizce verilişi, AB ile üçüncü ülke vatandaşları için dönem başına ücretleri, ayrışan başvuru son tarihlerini, 25 kontenjanı, CubeSat ve drone projelerini, FOTEC ile ESA ilişkilerini ve adlandırılmış mezun işverenlerini yayımlar."
+            }
           }
         ],
-        "last_verified": "2026-07-14",
+        "last_verified": "2026-08-30",
         "needs_verification": true,
         "verification_notes": {
           "en": "All displayed critical decision facts have an accessible official source. Scholarship eligibility is intentionally scoped rather than universal, and no unverified student sentiment is shown.",
@@ -552,7 +735,7 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-08-14",
+        "checked_at": "2026-08-23",
         "failed_canary_tests": [],
         "remaining_verification_tasks": [],
         "qc_notes": {
@@ -585,7 +768,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-14"
+        "audited_at": "2026-08-30"
       },
       "financials": {
         "tuition_fee_per_year": null,
@@ -624,6 +807,75 @@
             "en": "No independent 2027 QS WUR rank was verified for this database institution; no value is inferred.",
             "tr": "Bu veri tabanı kurumu için bağımsız bir 2027 QS WUR sırası doğrulanmadı; değer türetilmedi."
           }
+        }
+      },
+      "academic_match_profile": {
+        "standard": "academic_match@3.0.0",
+        "tier": "strong_adjacent",
+        "score": 59,
+        "score_basis_weight": 90,
+        "evidenced_dimensions": 4,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "curriculum_evidence": {
+            "level": "moderate",
+            "basis": "credits, duration, mode, places and internship policy are published, but no course list appears on the checked page",
+            "weight": 30,
+            "source_url": "https://www.fhwn.ac.at/en/studyprogramme/master-aerospace-engineering"
+          },
+          "research_group_evidence": {
+            "level": "strong",
+            "basis": "a CubeSat programme covering development, launch and operation, a named autonomous drone, aircraft conceptual design projects, and ESA-financed projects run with the school's own R&D company",
+            "weight": 25,
+            "source_url": "https://www.fhwn.ac.at/en/studyprogramme/master-aerospace-engineering"
+          },
+          "faculty_evidence": {
+            "level": "none",
+            "basis": "no_named_items",
+            "weight": 25
+          },
+          "facility_evidence": {
+            "level": "strong",
+            "basis": "2_named_items",
+            "weight": 10
+          },
+          "industry_outlet_evidence": {
+            "level": "unknown",
+            "basis": "industry_evidence_not_checked",
+            "weight": 10
+          }
+        },
+        "matched_tags": [
+          "aerospace_engineering",
+          "aircraft_design",
+          "cfd",
+          "finite_element_analysis",
+          "propulsion",
+          "spacecraft_systems",
+          "space_mission_design",
+          "satellite_systems",
+          "gnc",
+          "uav"
+        ],
+        "confidence": "medium",
+        "legacy_relevance_status": "strong",
+        "evaluated_at": "2026-08-30"
+      },
+      "academic_match_evidence": {
+        "research_group_evidence": {
+          "level": "strong",
+          "basis": "a CubeSat programme covering development, launch and operation, a named autonomous drone, aircraft conceptual design projects, and ESA-financed projects run with the school's own R&D company",
+          "source_url": "https://www.fhwn.ac.at/en/studyprogramme/master-aerospace-engineering"
+        },
+        "industry_evidence": {
+          "level": "strong",
+          "basis": "named graduate employers plus quoted statements from the CEOs of FOTEC and ENPULSION describing direct cooperation with the department",
+          "source_url": "https://www.fhwn.ac.at/en/studyprogramme/master-aerospace-engineering"
+        },
+        "curriculum_evidence": {
+          "level": "moderate",
+          "basis": "credits, duration, mode, places and internship policy are published, but no course list appears on the checked page",
+          "source_url": "https://www.fhwn.ac.at/en/studyprogramme/master-aerospace-engineering"
         }
       }
     },
@@ -722,13 +974,20 @@
         "italian_needed_for_life_or_internship": "",
         "mixed_language_warning": "",
         "language_risk": "low",
-        "verification_notes": "Teaching language was not retained without a checked official source."
+        "verification_notes": "Teaching language was not retained without a checked official source.",
+        "language_of_instruction": "English",
+        "language_note": {
+          "en": "FH JOANNEUM states the language of instruction is English, unconditionally.",
+          "tr": "FH JOANNEUM, öğretim dilinin koşulsuz olarak İngilizce olduğunu belirtir."
+        },
+        "verified_from": "https://www.fh-joanneum.at/luftfahrt/master/en/",
+        "last_verified": "2026-08-30"
       },
       "cost_profile": {
-        "tuition_eur_per_year_min": 1453.44,
-        "tuition_eur_per_year_max": 1453.44,
-        "tuition_eur_per_year_estimated": 1453.44,
-        "tuition_basis": "official_2026_27",
+        "tuition_eur_per_year_min": 727,
+        "tuition_eur_per_year_max": 727,
+        "tuition_eur_per_year_estimated": 727,
+        "tuition_basis": "official_published_per_semester_rate_for_eu_eea_swiss_citizens_only_doubled_for_the_academic_year",
         "regional_tax_eur": null,
         "student_contribution_eur": null,
         "application_fee_eur": 10,
@@ -738,7 +997,10 @@
         "non_eu_flat_fee": 1453.44,
         "payment_installments": "EUR 726.72 per semester for third-country students; EUR 250 application deposit is credited if admitted and EUR 10 processing fee is non-refundable",
         "refund_policy": "Deposit credited to tuition, refunded if not accepted (except 10 EUR fee).",
-        "source_notes": "726.72 EUR per semester + ÖH fee (~26 EUR).",
+        "source_notes": {
+          "en": "FH JOANNEUM publishes EUR 363.36 per semester, and the page states this rate is for citizens of EU and EEA countries and Switzerland. No third-country rate is published on the checked page — so a non-EU applicant must not assume this figure applies. Ask the admissions office for the third-country rate before budgeting; FH Wiener Neustadt, for comparison, charges third-country citizens EUR 850 per semester.",
+          "tr": "FH JOANNEUM dönem başına 363,36 avro yayımlar ve sayfa bu oranın AB ile AEA ülkeleri ve İsviçre vatandaşları için olduğunu belirtir. Kontrol edilen sayfada üçüncü ülke oranı yayımlanmamıştır — bu yüzden AB dışı bir aday bu rakamın geçerli olduğunu varsaymamalıdır. Bütçelemeden önce kabul ofisinden üçüncü ülke oranını sor; karşılaştırma için FH Wiener Neustadt üçüncü ülke vatandaşlarından dönem başına 850 avro alır."
+        },
         "verification_notes": {
           "en": "The total excludes the compulsory Student Union fee because the checked page confirms the fee but not a 2026 amount.",
           "tr": "Toplam, kontrol edilen sayfanın ücreti doğrulayıp 2026 tutarını vermemesi nedeniyle zorunlu Öğrenci Birliği ücretini içermez."
@@ -759,7 +1021,26 @@
         "living_cost_sek_per_year_min": null,
         "living_cost_sek_per_year_max": null,
         "living_cost_dkk_per_year_min": null,
-        "living_cost_dkk_per_year_max": null
+        "living_cost_dkk_per_year_max": null,
+        "normalized_cost": {
+          "standard": "cost_model@3.0.0",
+          "currency": "EUR",
+          "annual_total": null,
+          "annual_total_eur_equivalent": null,
+          "includes": [
+            "tuition"
+          ],
+          "missing_mandatory_components": [
+            "living_costs"
+          ],
+          "months_of_living_cost": null,
+          "status": "incomplete",
+          "note": {
+            "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+            "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+          },
+          "evaluated_at": "2026-08-30"
+        }
       },
       "scholarship_profile": {
         "regional_scholarship_available": true,
@@ -811,7 +1092,7 @@
         },
         "student_housing_available": true,
         "student_housing_competitiveness": "high",
-        "housing_difficulty": "high",
+        "housing_difficulty": "unknown",
         "living_risk": "medium",
         "housing_sentiment": null,
         "housing_notes": {
@@ -823,7 +1104,62 @@
           "tr": "Gösterilen 1.000-1.100 EUR, belirtilmiş kalemleri olan güncel resmî planlama bütçesidir; öğrenci yorumu ortalaması veya yalnızca kira tutarı değildir."
         },
         "housing_access": "unknown",
-        "housing_application_separate": null
+        "housing_application_separate": null,
+        "housing_search_difficulty": "unknown",
+        "housing_difficulty_profile": {
+          "standard": "housing_difficulty@3.0.0",
+          "level": "unknown",
+          "raw_score": 2,
+          "scaled_score": null,
+          "score_max": 15,
+          "evidenced_dimensions": 1,
+          "dimensions_required_for_publication": 3,
+          "dimensions": {
+            "guarantee_status": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "supply_pressure": {
+              "value": "published_waiting_list",
+              "points": 2,
+              "derived_from": "living_profile.student_housing_competitiveness"
+            },
+            "market_affordability_gap": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "timing_sensitivity": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "arrival_risk": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            }
+          },
+          "confidence": "unknown",
+          "band_from_score": null,
+          "capped_from_very_high": false,
+          "legacy_value": "unknown",
+          "evaluated_at": "2026-08-30"
+        },
+        "cost_of_living_profile": {
+          "standard": "cost_model@3.0.0",
+          "cost_basis": "unknown",
+          "status": "unknown",
+          "reason": "no_official_living_cost_items",
+          "components": {},
+          "monthly_total": null,
+          "evaluated_at": "2026-08-30"
+        }
       },
       "curriculum_profile": {
         "tracks": [
@@ -890,6 +1226,10 @@
         "verification_notes": {
           "en": "Course names, language indications and the internship requirement are taken from the public curriculum and graduation pages. A student selects technical or business electives, so the broad programme title alone does not guarantee the same depth for every individual plan.",
           "tr": "Ders adları, dil göstergeleri ve staj gereği kamuya açık müfredat ile mezuniyet sayfalarından alınmıştır. Öğrenci teknik veya işletme seçmelilerini seçer; bu nedenle geniş program adı her bireysel planda aynı derinliği garanti etmez."
+        },
+        "specialisation_note": {
+          "en": "Four semesters, 120 ECTS, full-time in Graz, awarding the MSc. FH JOANNEUM states you can determine the direction of your studies from the very first semester through a catalogue of elective subjects, and describes this as a head start over more fixed curricula. It also claims that most graduates have already found an employer by the time they complete the master's thesis, attributing this to the internship and thesis contacts made in industry.",
+          "tr": "Graz'da dört dönem, 120 AKTS, tam zamanlı; MSc verir. FH JOANNEUM, bir seçmeli ders kataloğu aracılığıyla çalışmalarının yönünü daha ilk dönemden belirleyebileceğini belirtir ve bunu daha katı müfredatlara karşı bir avantaj olarak tanımlar. Ayrıca çoğu mezunun yüksek lisans tezini tamamladığında bir işveren bulmuş olduğunu ve bunu staj ile tez yoluyla sanayide kurulan bağlantılara bağladığını öne sürer."
         }
       },
       "category_profile": {
@@ -951,7 +1291,149 @@
           "https://www.fh-joanneum.at/luftfahrt/master/en/",
           "https://www.fh-joanneum.at/luftfahrt/master/en/my-studies/degree-programme/",
           "https://www.fh-joanneum.at/en/labor/flight-simulation-laboratory/"
-        ]
+        ],
+        "department": "Institute of Aviation, Department of Engineering, FH JOANNEUM Graz",
+        "department_url": "https://www.fh-joanneum.at/luftfahrt/master/en/",
+        "department_note": {
+          "en": "FH JOANNEUM makes a specific claim worth taking seriously: it states it is the only university in Austria covering the entire range of aviation-related topics, from aircraft to air traffic operations and management, and has done so since 2001. If you want operations and management alongside engineering rather than instead of it, that breadth is the distinguishing feature of this record.",
+          "tr": "FH JOANNEUM ciddiye alınmaya değer spesifik bir iddiada bulunur: Avusturya'da havacılıkla ilgili konuların tamamını — uçaktan hava trafiği operasyonları ve yönetimine — kapsayan tek üniversite olduğunu ve bunu 2001'den beri yaptığını belirtir. Mühendisliğin yerine değil, yanında operasyon ve yönetim istiyorsan, bu genişlik bu kaydın ayırt edici özelliğidir."
+        },
+        "faculty_contact_policy": "before_application_encouraged",
+        "research_units": [
+          {
+            "name": "Institute of Aviation research activities",
+            "unit_type": "institute",
+            "url": "https://www.fh-joanneum.at/luftfahrt/master/en/",
+            "lead": "Dr.-Ing. Holger Friehmelt, Head of Degree Programme",
+            "topics": [
+              "aircraft_design",
+              "uav",
+              "aerodynamics",
+              "avionics",
+              "stability_control",
+              "simulation_modelling",
+              "flight_testing"
+            ],
+            "stated_research_areas": [
+              "Aircraft and drone construction",
+              "Aerodynamics",
+              "Aircraft electronics",
+              "Flight control",
+              "Flight simulation"
+            ],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "The institute states plainly that as a master's student you form part of the research team, not an observer of it. The five named activity areas run from construction through aerodynamics and electronics to flight control and simulation — the full chain for a small aircraft or a UAS.",
+              "tr": "Enstitü, yüksek lisans öğrencisi olarak araştırma ekibinin bir gözlemcisi değil parçası olduğunu açıkça belirtir. Adlandırılmış beş faaliyet alanı, inşadan aerodinamik ve elektroniğe, oradan uçuş kontrolü ile simülasyona uzanır — küçük bir uçak ya da bir İHA sistemi için tam zincir."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "IRON LIQORNE — liquid hydrogen fuel system iron bird",
+            "unit_type": "research_group",
+            "url": "https://www.fh-joanneum.at/luftfahrt/master/en/",
+            "topics": [
+              "energy_systems",
+              "aircraft_design",
+              "testing",
+              "thermal_management",
+              "verification_validation"
+            ],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "The project is described as an iron bird to test a safe and efficient liquid hydrogen fuel system for airborne applications. Liquid hydrogen is where sustainable aviation actually gets hard — cryogenic storage, boil-off, safety — and building a ground rig to test it is a serious commitment, not a paper study.",
+              "tr": "Proje, havacılık uygulamaları için güvenli ve verimli bir sıvı hidrojen yakıt sistemini test etmeye yönelik bir demir kuş olarak tanımlanır. Sürdürülebilir havacılığın gerçekten zorlaştığı yer sıvı hidrojendir — kriyojenik depolama, buharlaşma kaybı, güvenlik — ve bunu test etmek için bir yer düzeneği inşa etmek kâğıt üzerinde bir çalışma değil, ciddi bir bağlılıktır."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "AIRlabs Austria — national UAS test and trial sites",
+            "unit_type": "consortium",
+            "url": "https://www.fh-joanneum.at/luftfahrt/master/en/",
+            "topics": [
+              "uav",
+              "flight_testing",
+              "certification",
+              "testing",
+              "autonomy"
+            ],
+            "student_access": "project_course_open",
+            "why_it_fits": {
+              "en": "FH JOANNEUM leads a project with science, industry and service partners to establish and operate test and trial sites for unpiloted aerial systems in Austria. Legal airspace to fly experimental UAS in is scarcer than the aircraft themselves — a school that operates the test sites removes the hardest logistical barrier to drone research.",
+              "tr": "FH JOANNEUM, bilim, sanayi ve hizmet ortaklarıyla birlikte Avusturya'da insansız hava sistemleri için test ve deneme sahaları kurup işletmeye yönelik bir projeye öncülük eder. Deneysel İHA uçurmak için yasal hava sahası, araçların kendisinden daha kıttır — test sahalarını işleten bir okul, drone araştırmasındaki en zor lojistik engeli kaldırır."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "Reinforced Thermoplastic Composite Wing Movable Structures, with Diamond Aircraft",
+            "unit_type": "research_group",
+            "url": "https://www.fh-joanneum.at/luftfahrt/master/en/",
+            "topics": [
+              "composites",
+              "aerospace_structures",
+              "manufacturing",
+              "materials",
+              "aircraft_design"
+            ],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "The project aimed at a design concept for a landing flap of the Diamond Aircraft DA62 using thermoplastic-matrix fibre composites. A named aircraft type, a named manufacturer and a named component — this is what an industrially relevant composites thesis looks like when it is real.",
+              "tr": "Proje, termoplastik matrisli elyaf kompozitler kullanarak Diamond Aircraft DA62'nin bir iniş flapı için tasarım konsepti hedefledi. Adlandırılmış bir uçak tipi, adlandırılmış bir üretici ve adlandırılmış bir bileşen — sanayiyle ilgili bir kompozit tezi gerçek olduğunda böyle görünür."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "joanneum aeronautics student team",
+            "unit_type": "research_group",
+            "url": "https://www.fh-joanneum.at/luftfahrt/master/en/",
+            "topics": [
+              "aircraft_design",
+              "manufacturing",
+              "flight_testing",
+              "internship_thesis"
+            ],
+            "student_access": "project_course_open",
+            "why_it_fits": {
+              "en": "A student team that designs and builds aircraft and enters them into international competitions, with involvement welcome across all aviation disciplines. Competition teams are the fastest way to get hands on a whole aircraft rather than a subsystem.",
+              "tr": "Uçak tasarlayıp inşa eden ve bunları uluslararası yarışmalara sokan, tüm havacılık disiplinlerinden katılıma açık bir öğrenci takımı. Yarışma takımları, bir alt sisteme değil bütün bir uçağa el atmanın en hızlı yoludur."
+            },
+            "last_verified": "2026-08-30"
+          }
+        ],
+        "notable_professors": [
+          {
+            "name": "Holger Friehmelt",
+            "role": {
+              "en": "Head of Degree Programme, Aviation",
+              "tr": "Havacılık Bölüm Programı Başkanı"
+            },
+            "focus": {
+              "en": "Heads the Aviation master's programme at the Institute of Aviation. The programme page names him but publishes no address; a Team page is linked from the same page.",
+              "tr": "Havacılık Enstitüsü'ndeki Havacılık yüksek lisans programını yönetir. Program sayfası onu adlandırır ancak adres yayımlamaz; aynı sayfadan bir Ekip sayfasına bağlantı verilir."
+            },
+            "fit_tags": [
+              "flight_mechanics",
+              "flight_testing",
+              "aircraft_design",
+              "stability_control"
+            ],
+            "email": null,
+            "email_source": null,
+            "profile_url": "https://www.fh-joanneum.at/luftfahrt/master/en/",
+            "lab": "Institute of Aviation",
+            "contact_timing": "before_application_encouraged",
+            "accepting_students_signal": "not_stated",
+            "last_verified": "2026-08-30"
+          }
+        ],
+        "faculty_email_availability": {
+          "status": "not_published",
+          "note": {
+            "en": "The programme page names the head of the degree programme and links a Team page and an Info & Contact page, but no addresses appear in the content read.",
+            "tr": "Program sayfası bölüm programı başkanını adlandırır ve bir Ekip sayfası ile bir Bilgi ve İletişim sayfasına bağlantı verir, ancak okunan içerikte adres görünmez."
+          },
+          "directory_url": "https://www.fh-joanneum.at/luftfahrt/master/en/"
+        }
       },
       "industry_ecosystem_profile": {
         "nearby_companies": [],
@@ -967,9 +1449,9 @@
         }
       },
       "application_timeline_profile": {
-        "academic_year": "2026/2027 published intake",
+        "academic_year": "2026/2027",
         "intake_terms": [
-          "winter semester; studies start 28 September 2026"
+          "Winter semester 2026/2027"
         ],
         "application_rounds": [
           "Programme rolling dates through 3 August 2026",
@@ -978,13 +1460,30 @@
         ],
         "non_eu_deadline": "2026-06-29 (all documents for most third-country applicants); 2026-02-01 for Pakistan, India, Bangladesh, Iran and Nigeria",
         "eu_deadline": "2026-08-03",
-        "application_deadline": "2026-08-03 for the published programme cycle; earlier country-specific third-country deadlines apply",
+        "application_deadline": "2026-09-07",
         "scholarship_deadline": null,
         "timeline_risk": "high",
         "deadline_notes": {
-          "en": "At verification on 14 July 2026, the third-country deadlines had passed while the published programme cycle still displayed 3 August 2026 for applicants not subject to those country-specific requirements. This must not be extrapolated to a future intake; document legalisation and residence-permit timing are explicit risks.",
-          "tr": "14 Temmuz 2026 doğrulamasında üçüncü ülke tarihleri geçmişti; buna karşın yayımlanan program döngüsü bu ülkeye özgü koşullara tabi olmayan adaylar için hâlâ 3 Ağustos 2026 gösteriyordu. Bu gelecek girişe taşınmamalıdır; belge tasdiki ve oturma izni zamanlaması açık risklerdir."
-        }
+          "en": "The current application period for the winter semester runs until 7 September 2026. Unlike FH Wiener Neustadt, no separate earlier non-EU deadline is published on this page — but a non-EU applicant should still confirm visa timing, because a September deadline for a winter-semester start leaves very little room for a residence permit.",
+          "tr": "Kış dönemi için mevcut başvuru dönemi 7 Eylül 2026'ya kadar sürer. FH Wiener Neustadt'tan farklı olarak bu sayfada AB dışı için ayrı ve daha erken bir son tarih yayımlanmaz — ancak AB dışı bir aday yine de vize zamanlamasını teyit etmelidir; çünkü kış dönemi başlangıcı için Eylül son tarihi, oturma izni için çok az yer bırakır."
+        },
+        "primary_deadline": {
+          "standard": "application_countdown@3.0.0",
+          "date": "2026-09-07",
+          "next_expected_date": null,
+          "time": null,
+          "timezone": null,
+          "applies_to": "all_applicants",
+          "cycle_label": null,
+          "is_recurring_annual": true,
+          "status": "closing_soon",
+          "days_remaining_at_evaluation": 8,
+          "derived_from": "application_timeline_profile.application_deadline",
+          "confidence": "high",
+          "source_url": "https://www.fh-joanneum.at/luftfahrt/master/en/admissions/application-requirements/",
+          "evaluated_at": "2026-08-30"
+        },
+        "recurring_annual_deadline": true
       },
       "source_profile": {
         "official_program_page": "https://www.fh-joanneum.at/luftfahrt/master/en/",
@@ -998,24 +1497,6 @@
           "https://www.fh-joanneum.at/en/labor/flight-simulation-laboratory/"
         ],
         "source_log": [
-          {
-            "url": "https://www.fh-joanneum.at/luftfahrt/master/en/",
-            "title": "FH JOANNEUM Aviation MSc",
-            "source_type": "official_program_page",
-            "access_status": "ok",
-            "last_checked": "2026-08-14",
-            "relevant_fields": [
-              "program",
-              "language",
-              "curriculum",
-              "research"
-            ],
-            "confidence": "high",
-            "notes": {
-              "en": "Current programme page confirms active English full-time MSc delivery, 120 ECTS/4 semesters, technical/research themes and the student aircraft team.",
-              "tr": "Güncel program sayfası aktif İngilizce tam zamanlı MSc eğitimini, 120 AKTS/dört yarıyılı, teknik/araştırma temalarını ve öğrenci uçak ekibini doğrular."
-            }
-          },
           {
             "url": "https://www.fh-joanneum.at/luftfahrt/master/en/my-studies/curriculum/",
             "title": "FH JOANNEUM Aviation MSc curriculum",
@@ -1174,9 +1655,30 @@
               "en": "Official laboratory page documents two research simulators, student development through projects/theses and use in flight-dynamics, fly-by-wire and autonomous-UAV control research.",
               "tr": "Resmî laboratuvar sayfası iki araştırma simülatörünü, projeler/tezler yoluyla öğrenci geliştirmesini ve uçuş dinamiği, fly-by-wire ve otonom İHA kontrol araştırmalarındaki kullanımını belgeler."
             }
+          },
+          {
+            "url": "https://www.fh-joanneum.at/luftfahrt/master/en/",
+            "title": "FH JOANNEUM — Aviation, MSc",
+            "source_type": "official_program_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-30",
+            "relevant_fields": [
+              "research",
+              "labs",
+              "curriculum",
+              "program",
+              "tuition",
+              "language",
+              "deadline"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "States the head of programme, the English delivery, the EU rate per semester, the 7 September 2026 application deadline, the five research activity areas, the IRON LIQORNE, AIRlabs and Diamond Aircraft flap projects and the joanneum aeronautics student team.",
+              "tr": "Program başkanını, İngilizce verilişi, dönem başına AB oranını, 7 Eylül 2026 başvuru son tarihini, beş araştırma faaliyet alanını, IRON LIQORNE, AIRlabs ve Diamond Aircraft flap projelerini ve joanneum aeronautics öğrenci takımını belirtir."
+            }
           }
         ],
-        "last_verified": "2026-07-14",
+        "last_verified": "2026-08-30",
         "needs_verification": false,
         "verification_notes": {
           "en": "All displayed decision fields are sourced from accessible official pages. Curriculum depth is shown as selectable routes, and all cost figures are labelled by scope rather than converted into unsupported estimates.",
@@ -1269,7 +1771,7 @@
       },
       "quality_control": {
         "qc_status": "passed",
-        "checked_at": "2026-08-14",
+        "checked_at": "2026-08-23",
         "failed_canary_tests": [],
         "remaining_verification_tasks": [],
         "qc_notes": {
@@ -1302,7 +1804,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-14"
+        "audited_at": "2026-08-30"
       },
       "qs_ranking_display": null,
       "qs_ranking_year": 2027,
@@ -1327,6 +1829,76 @@
             "en": "No independent 2027 QS WUR rank was verified for this database institution; no value is inferred.",
             "tr": "Bu veri tabanı kurumu için bağımsız bir 2027 QS WUR sırası doğrulanmadı; değer türetilmedi."
           }
+        }
+      },
+      "academic_match_profile": {
+        "standard": "academic_match@3.0.0",
+        "tier": "strong_adjacent",
+        "score": 71,
+        "score_basis_weight": 90,
+        "evidenced_dimensions": 4,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "curriculum_evidence": {
+            "level": "moderate",
+            "basis": "credits, duration, English delivery and elective-driven specialisation from the first semester are published, but no course list appears on the checked page",
+            "weight": 30,
+            "source_url": "https://www.fh-joanneum.at/luftfahrt/master/en/"
+          },
+          "research_group_evidence": {
+            "level": "strong",
+            "basis": "five research activity areas plus three named projects with named industrial partners and a student aircraft team, all published on the programme page",
+            "weight": 25,
+            "source_url": "https://www.fh-joanneum.at/luftfahrt/master/en/"
+          },
+          "faculty_evidence": {
+            "level": "moderate",
+            "basis": "1_named_items",
+            "weight": 25
+          },
+          "facility_evidence": {
+            "level": "moderate",
+            "basis": "the page advertises state-of-the-art labs and flight simulation, and the institute co-operates UAS test and trial sites, but no laboratory is individually specified on the checked page",
+            "weight": 10,
+            "source_url": "https://www.fh-joanneum.at/luftfahrt/master/en/"
+          },
+          "industry_outlet_evidence": {
+            "level": "unknown",
+            "basis": "industry_evidence_not_checked",
+            "weight": 10
+          }
+        },
+        "matched_tags": [
+          "aerospace_engineering",
+          "aeronautics",
+          "cfd",
+          "flight_control",
+          "uav",
+          "aircraft_systems",
+          "propulsion",
+          "aviation_management",
+          "maintenance",
+          "certification"
+        ],
+        "confidence": "medium",
+        "legacy_relevance_status": "strong",
+        "evaluated_at": "2026-08-30"
+      },
+      "academic_match_evidence": {
+        "research_group_evidence": {
+          "level": "strong",
+          "basis": "five research activity areas plus three named projects with named industrial partners and a student aircraft team, all published on the programme page",
+          "source_url": "https://www.fh-joanneum.at/luftfahrt/master/en/"
+        },
+        "facility_evidence": {
+          "level": "moderate",
+          "basis": "the page advertises state-of-the-art labs and flight simulation, and the institute co-operates UAS test and trial sites, but no laboratory is individually specified on the checked page",
+          "source_url": "https://www.fh-joanneum.at/luftfahrt/master/en/"
+        },
+        "curriculum_evidence": {
+          "level": "moderate",
+          "basis": "credits, duration, English delivery and elective-driven specialisation from the first semester are published, but no course list appears on the checked page",
+          "source_url": "https://www.fh-joanneum.at/luftfahrt/master/en/"
         }
       }
     },
@@ -1413,6 +1985,10 @@
           "validity_rule": "",
           "waiver_rules": [],
           "source_ids": []
+        },
+        "entry_note": {
+          "en": "A completed relevant bachelor's degree is required. TU Graz graduates of Physics, Geodesy, Electrical Engineering, Information and Computer Engineering, and Acoustics, Music and Information Engineering are admitted without conditions; holders of other national or international degrees must check the curriculum for the exact requirements. Proof of German language competence is required in addition.",
+          "tr": "Tamamlanmış, ilgili bir lisans derecesi gerekir. TU Graz'ın Fizik, Jeodezi, Elektrik Mühendisliği, Bilişim ve Bilgisayar Mühendisliği ile Akustik, Müzik ve Bilişim Mühendisliği mezunları koşulsuz kabul edilir; diğer ulusal ya da uluslararası derecelerin sahipleri tam koşullar için müfredata bakmalıdır. Ayrıca Almanca dil yeterliliği kanıtı istenir."
         }
       },
       "language_profile": {
@@ -1440,7 +2016,14 @@
         "additional_language_notes": {
           "en": "Applicants may obtain a conditional non-degree admission with at least German A2 while completing the University Preparation Programme, but they cannot start as regular students in this German-taught Master's until C1 is documented.",
           "tr": "Adaylar Üniversite Hazırlık Programını tamamlarken en az Almanca A2 ile koşullu özel öğrenci kabulü alabilir; ancak C1 belgelenmeden bu Almanca yüksek lisansa düzenli öğrenci olarak başlayamaz."
-        }
+        },
+        "language_of_instruction": "German",
+        "language_note": {
+          "en": "The decisive constraint on this record. TU Graz lists the language of instruction as German and states outright that proof of German language competence is part of the admission requirements. The page adds that the programme has an international orientation and numerous courses are held in English — but 'numerous courses in English' does not remove a German-proficiency admission gate. Unless you already hold certified German, the two Austrian universities of applied sciences in this database are the realistic Austrian options.",
+          "tr": "Bu kayıttaki belirleyici kısıt. TU Graz, öğretim dilini Almanca olarak listeler ve Almanca dil yeterliliği kanıtının kabul koşullarının bir parçası olduğunu açıkça belirtir. Sayfa, programın uluslararası bir yönelimi olduğunu ve pek çok dersin İngilizce verildiğini ekler — ancak 'pek çok ders İngilizce', Almanca yeterlilik kabul kapısını ortadan kaldırmaz. Belgelenmiş Almancan yoksa, bu veritabanındaki iki Avusturya uygulamalı bilimler üniversitesi gerçekçi Avusturya seçenekleridir."
+        },
+        "verified_from": "https://www.tugraz.at/en/studying-and-teaching/degree-and-certificate-programmes/masters-degree-programmes/space-sciences-and-earth-from-space",
+        "last_verified": "2026-08-30"
       },
       "cost_profile": {
         "tuition_eur_per_year_min": 1453.44,
@@ -1481,6 +2064,25 @@
         "cost_notes": {
           "en": "TU Graz publishes EUR 726.72 tuition plus EUR 26.20 Austrian Student Union (ÖH) fee per semester for non-EU foreign nationals who are not exempt: EUR 1,453.44 tuition and EUR 52.40 ÖH per year. All students pay the ÖH fee; listed exemptions can change tuition liability.",
           "tr": "TU Graz, muaf olmayan AB dışı yabancı uyruklular için dönem başına 726,72 EUR öğrenim ücreti ve 26,20 EUR Avusturya Öğrenci Birliği (ÖH) ücreti yayımlar: yıllık 1.453,44 EUR öğrenim ücreti ve 52,40 EUR ÖH. Tüm öğrenciler ÖH ücretini öder; listelenen muafiyetler öğrenim ücreti yükümlülüğünü değiştirebilir."
+        },
+        "normalized_cost": {
+          "standard": "cost_model@3.0.0",
+          "currency": "EUR",
+          "annual_total": null,
+          "annual_total_eur_equivalent": null,
+          "includes": [
+            "tuition"
+          ],
+          "missing_mandatory_components": [
+            "living_costs"
+          ],
+          "months_of_living_cost": null,
+          "status": "incomplete",
+          "note": {
+            "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+            "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+          },
+          "evaluated_at": "2026-08-30"
         }
       },
       "scholarship_profile": {
@@ -1519,7 +2121,7 @@
         "monthly_living_cost_eur_min": 800,
         "monthly_living_cost_eur_max": 1000,
         "monthly_living_cost_eur_estimated": null,
-        "housing_difficulty": "medium",
+        "housing_difficulty": "unknown",
         "student_housing_available": true,
         "student_housing_competitiveness": "medium",
         "average_room_rent_eur": null,
@@ -1592,7 +2194,62 @@
         },
         "housing_sentiment": null,
         "housing_access": "unknown",
-        "housing_application_separate": null
+        "housing_application_separate": null,
+        "housing_search_difficulty": "unknown",
+        "housing_difficulty_profile": {
+          "standard": "housing_difficulty@3.0.0",
+          "level": "unknown",
+          "raw_score": 1,
+          "scaled_score": null,
+          "score_max": 15,
+          "evidenced_dimensions": 1,
+          "dimensions_required_for_publication": 3,
+          "dimensions": {
+            "guarantee_status": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "supply_pressure": {
+              "value": "early_application_advised",
+              "points": 1,
+              "derived_from": "living_profile.student_housing_competitiveness"
+            },
+            "market_affordability_gap": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "timing_sensitivity": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "arrival_risk": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            }
+          },
+          "confidence": "unknown",
+          "band_from_score": null,
+          "capped_from_very_high": false,
+          "legacy_value": "unknown",
+          "evaluated_at": "2026-08-30"
+        },
+        "cost_of_living_profile": {
+          "standard": "cost_model@3.0.0",
+          "cost_basis": "unknown",
+          "status": "unknown",
+          "reason": "no_official_living_cost_items",
+          "components": {},
+          "monthly_total": null,
+          "evaluated_at": "2026-08-30"
+        }
       },
       "curriculum_profile": {
         "tracks": [
@@ -1630,6 +2287,10 @@
         "curriculum_structure": {
           "en": "The official programme page identifies the focused technical spine: satellite components and measurement systems, space technologies, Earth observation, micro/nanosatellites, satellite communication and numerical modelling. It also says students can join research teams and use laboratory equipment; course-by-course mandatory modules are not inferred from the public summary.",
           "tr": "Resmî program sayfası odaklı teknik omurgayı tanımlar: uydu bileşenleri ve ölçüm sistemleri, uzay teknolojileri, Dünya gözlemi, mikro/nano uydular, uydu haberleşmesi ve sayısal modelleme. Ayrıca öğrencilerin araştırma ekiplerine katılıp laboratuvar ekipmanı kullanabileceğini söyler; ders-ders zorunlu modüller kamu özetinden çıkarılmaz."
+        },
+        "specialisation_note": {
+          "en": "Four semesters, 120 ECTS, awarding the Diplom-Ingenieur (Dipl.-Ing. or DI), which TU Graz states is equivalent to the MSc. After an introduction to Earth and space sciences, satellite systems and data analysis and modelling, you choose one of three elective specialisation modules: Solar System Physics, Satellite Systems, or Earth System from Space. TU Graz states that by the time you write the final thesis you will often already be involved in current research projects.",
+          "tr": "Dört dönem, 120 AKTS; TU Graz'ın MSc'ye denk olduğunu belirttiği Diplom-Ingenieur (Dipl.-Ing. ya da DI) unvanını verir. Yer ve uzay bilimleri, uydu sistemleri ile veri analizi ve modellemeye girişin ardından üç seçmeli uzmanlaşma modülünden birini seçersin: Güneş Sistemi Fiziği, Uydu Sistemleri ya da Uzaydan Yer Sistemi. TU Graz, son tezi yazacağın zaman genellikle güncel araştırma projelerine çoktan dâhil olmuş olacağını belirtir."
         }
       },
       "category_profile": {
@@ -1685,7 +2346,102 @@
         "research_strength_score": null,
         "research_sources": [
           "https://www.tugraz.at/en/studying-and-teaching/degree-and-certificate-programmes/masters-degree-programmes/space-sciences-and-earth-from-space"
-        ]
+        ],
+        "department": "TU Graz, taught jointly with the University of Graz, the Space Research Institute of the Austrian Academy of Sciences and Joanneum Research",
+        "department_url": "https://www.tugraz.at/en/studying-and-teaching/degree-and-certificate-programmes/masters-degree-programmes/space-sciences-and-earth-from-space",
+        "department_note": {
+          "en": "Four institutions teach and research this field together in Graz: TU Graz, the University of Graz, the Space Research Institute (IWF) at the Austrian Academy of Sciences, and Joanneum Research. TU Graz states its expertise has contributed to active space missions for more than thirty years, and describes Graz as an internationally renowned research hotspot for micro- and nanosatellites, measurement systems, numerical modelling and Earth observation.",
+          "tr": "Graz'da dört kurum bu alanı birlikte öğretir ve araştırır: TU Graz, Graz Üniversitesi, Avusturya Bilimler Akademisi'ndeki Uzay Araştırmaları Enstitüsü (IWF) ve Joanneum Research. TU Graz, uzmanlığının otuz yılı aşkın süredir etkin uzay görevlerine katkı verdiğini belirtir ve Graz'ı mikro ve nano uydular, ölçüm sistemleri, sayısal modelleme ve yer gözlemi için uluslararası olarak tanınan bir araştırma odağı olarak tanımlar."
+        },
+        "faculty_contact_policy": "do_not_contact_centralised_admission",
+        "research_units": [
+          {
+            "name": "Satellite Systems specialisation module",
+            "unit_type": "research_group",
+            "url": "https://www.tugraz.at/en/studying-and-teaching/degree-and-certificate-programmes/masters-degree-programmes/space-sciences-and-earth-from-space",
+            "topics": [
+              "satellite_systems",
+              "signal_processing",
+              "sensors",
+              "space_environment",
+              "space_systems"
+            ],
+            "stated_research_areas": [
+              "Communications engineering, signal processing and space physics",
+              "Satellite systems and communications",
+              "Navigation procedures and measurement methods"
+            ],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "The engineering-side elective module, and the one that matches satellite_systems directly. TU Graz says the programme focuses on satellite components and measurement systems built or co-developed in Graz for ESA and NASA missions — so this is instrument and subsystem work with a flight destination, rather than generic communications engineering.",
+              "tr": "Mühendislik tarafındaki seçmeli modül ve satellite_systems ile doğrudan eşleşen modül. TU Graz, programın ESA ve NASA görevleri için Graz'da inşa edilen ya da ortak geliştirilen uydu bileşenlerine ve ölçüm sistemlerine odaklandığını söyler — yani bu, genel bir iletişim mühendisliği değil, uçuş hedefi olan cihaz ve alt sistem çalışmasıdır."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "Solar System Physics specialisation module",
+            "unit_type": "research_group",
+            "url": "https://www.tugraz.at/en/studying-and-teaching/degree-and-certificate-programmes/masters-degree-programmes/space-sciences-and-earth-from-space",
+            "topics": [
+              "space_environment",
+              "machine_learning",
+              "signal_processing",
+              "simulation_modelling"
+            ],
+            "stated_research_areas": [
+              "Solar physics and the effects of solar activity on the planets",
+              "Measurement and data analysis methods used to describe the solar system",
+              "Image recognition, image analysis and machine learning",
+              "Plasma physics and planetology"
+            ],
+            "student_access": "msc_thesis_open",
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "Earth System from Space specialisation module",
+            "unit_type": "research_group",
+            "url": "https://www.tugraz.at/en/studying-and-teaching/degree-and-certificate-programmes/masters-degree-programmes/space-sciences-and-earth-from-space",
+            "topics": [
+              "space_environment",
+              "signal_processing",
+              "simulation_modelling",
+              "hpc"
+            ],
+            "stated_research_areas": [
+              "Components of the Earth system including the magnetic field, atmosphere, climate and oceans",
+              "Satellite geodesy and reference systems",
+              "Analysis and numerical modelling of space-based data"
+            ],
+            "student_access": "msc_thesis_open",
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "Aerospace Team Graz student team",
+            "unit_type": "research_group",
+            "url": "https://www.tugraz.at/en/studying-and-teaching/degree-and-certificate-programmes/masters-degree-programmes/space-sciences-and-earth-from-space",
+            "topics": [
+              "systems_engineering",
+              "space_systems",
+              "internship_thesis"
+            ],
+            "student_access": "project_course_open",
+            "why_it_fits": {
+              "en": "A graduate quoted on the programme page describes putting his coursework into practice as a system engineer and project leader in the Aerospace Team Graz, before going on to a doctorate at the Space Research Institute in Graz. That is a concrete, published path from student team to research institute inside the same city.",
+              "tr": "Program sayfasında alıntılanan bir mezun, derslerinde öğrendiklerini Aerospace Team Graz'da sistem mühendisi ve proje lideri olarak uygulamaya geçirdiğini, ardından Graz'daki Uzay Araştırmaları Enstitüsü'nde doktoraya devam ettiğini anlatır. Bu, aynı şehrin içinde öğrenci takımından araştırma enstitüsüne uzanan, somut ve yayımlanmış bir yoldur."
+            },
+            "last_verified": "2026-08-30"
+          }
+        ],
+        "faculty_email_availability": {
+          "status": "not_published",
+          "note": {
+            "en": "TU Graz routes admission questions to a central address, study@tugraz.at, and names no academics on the programme page.",
+            "tr": "TU Graz kabul sorularını merkezî bir adrese, study@tugraz.at'a yönlendirir ve program sayfasında hiçbir akademisyen adlandırmaz."
+          },
+          "directory_url": "https://www.tugraz.at/en/studying-and-teaching/degree-and-certificate-programmes/masters-degree-programmes/space-sciences-and-earth-from-space"
+        },
+        "department_contact_email": "study@tugraz.at",
+        "department_contact_email_source": "https://www.tugraz.at/en/studying-and-teaching/degree-and-certificate-programmes/masters-degree-programmes/space-sciences-and-earth-from-space"
       },
       "industry_ecosystem_profile": {
         "nearby_companies": [],
@@ -1730,6 +2486,22 @@
         "deadline_notes": {
           "en": "The official international Master's page warns processing can take weeks to months and strongly recommends complete early submission; TU Graz accepts no responsibility for visa appointments or relocation planning. Treat the third-country 15 August winter deadline as a hard ceiling, not a safe visa-planning date.",
           "tr": "Resmî uluslararası yüksek lisans sayfası işlemenin haftalar-aylar sürebileceği uyarısını yapar ve eksiksiz erken başvuruyu şiddetle önerir; TU Graz vize randevuları veya taşınma planlaması için sorumluluk kabul etmez. Üçüncü ülke kış dönemi 15 Ağustos son tarihini güvenli vize planlama tarihi değil kesin üst sınır sayın."
+        },
+        "primary_deadline": {
+          "standard": "application_countdown@3.0.0",
+          "date": "2026-08-15",
+          "next_expected_date": null,
+          "time": null,
+          "timezone": null,
+          "applies_to": "non_eu",
+          "cycle_label": null,
+          "is_recurring_annual": false,
+          "status": "closed",
+          "days_remaining_at_evaluation": -15,
+          "derived_from": "application_timeline_profile.non_eu_deadline",
+          "confidence": "high",
+          "source_url": "https://www.tugraz.at/en/studying-and-teaching/studying-at-tu-graz/prospective-students/registration-and-admission/masters-programme-without-admission-procedure-with-an-international-degree",
+          "evaluated_at": "2026-08-30"
         }
       },
       "source_profile": {
@@ -1741,28 +2513,6 @@
         "official_housing_page": "https://www.tugraz.at/fileadmin/user_upload/tugrazInternal/Studium/International_studieren_und_lehren/Mobilitaetsprogramme/OverSEAs_Factsheet.pdf",
         "official_department_page": "https://www.tugraz.at/en/studying-and-teaching/degree-and-certificate-programmes/masters-degree-programmes/space-sciences-and-earth-from-space",
         "source_log": [
-          {
-            "url": "https://www.tugraz.at/en/studying-and-teaching/degree-and-certificate-programmes/masters-degree-programmes/space-sciences-and-earth-from-space",
-            "title": "TU Graz Space Sciences and Earth from Space MSc",
-            "source_type": "official_program_page",
-            "access_status": "ok",
-            "last_checked": "2026-08-14",
-            "relevant_fields": [
-              "program",
-              "degree",
-              "duration",
-              "language",
-              "admission",
-              "curriculum",
-              "research",
-              "industry"
-            ],
-            "confidence": "high",
-            "notes": {
-              "en": "Current programme page confirms the German 120-ECTS/4-semester MSc-equivalent, relevant degree framework, technical focus and named Graz research ecosystem.",
-              "tr": "Güncel program sayfası Almanca 120 AKTS/dört yarıyıllık MSc-denk dereceyi, ilgili diploma çerçevesini, teknik odağı ve isimli Graz araştırma ekosistemini doğrular."
-            }
-          },
           {
             "url": "https://www.tugraz.at/en/studying-and-teaching/studying-at-tu-graz/prospective-students/registration-and-admission/masters-programme-without-admission-procedure-with-an-international-degree",
             "title": "TU Graz International Master's Admission",
@@ -1875,9 +2625,29 @@
               "en": "Current TU Graz comparison guidance says a Graz single room in a shared flat typically ranges EUR 400-600 depending on location and facilities.",
               "tr": "Güncel TU Graz karşılaştırma rehberi Graz'ta paylaşımlı dairede tek kişilik odanın konum ve olanaklara göre tipik olarak 400-600 EUR olduğunu söyler."
             }
+          },
+          {
+            "url": "https://www.tugraz.at/en/studying-and-teaching/degree-and-certificate-programmes/masters-degree-programmes/space-sciences-and-earth-from-space",
+            "title": "TU Graz — Master's Degree Programme in Space Sciences and Earth from Space",
+            "source_type": "official_program_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-30",
+            "relevant_fields": [
+              "research",
+              "curriculum",
+              "program",
+              "language",
+              "admission",
+              "department"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "States the German language of instruction and the German-proficiency admission requirement, the three specialisation modules with their content, the four-institution partnership, the unconditional-admission bachelor list and the central admissions address.",
+              "tr": "Almanca öğretim dilini ve Almanca yeterlilik kabul koşulunu, içerikleriyle birlikte üç uzmanlaşma modülünü, dört kurumlu ortaklığı, koşulsuz kabul edilen lisans listesini ve merkezî kabul adresini belirtir."
+            }
           }
         ],
-        "last_verified": "2026-07-14",
+        "last_verified": "2026-08-30",
         "needs_verification": false,
         "verification_notes": {
           "en": "All displayed decision fields are tied to checked official sources. The scholarship is a competitive general Master's route and the room figure is scoped planning guidance; neither is portrayed as guaranteed support or housing.",
@@ -1970,7 +2740,7 @@
       },
       "quality_control": {
         "qc_status": "passed",
-        "checked_at": "2026-08-14",
+        "checked_at": "2026-08-23",
         "failed_canary_tests": [],
         "remaining_verification_tasks": [],
         "qc_notes": {
@@ -2002,7 +2772,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-14"
+        "audited_at": "2026-08-30"
       },
       "financials": {
         "tuition_fee_per_year": null,
@@ -2040,6 +2810,67 @@
             "en": "Institutional global rank; it is not evidence of aerospace or space-programme fit.",
             "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
           }
+        }
+      },
+      "academic_match_profile": {
+        "standard": "academic_match@3.0.0",
+        "tier": "unknown",
+        "score": null,
+        "score_basis_weight": 55,
+        "evidenced_dimensions": 2,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "curriculum_evidence": {
+            "level": "strong",
+            "basis": "the common core and the three specialisation modules are published with their topic content, credits, duration and awarded degree",
+            "weight": 30,
+            "source_url": "https://www.tugraz.at/en/studying-and-teaching/degree-and-certificate-programmes/masters-degree-programmes/space-sciences-and-earth-from-space"
+          },
+          "research_group_evidence": {
+            "level": "strong",
+            "basis": "three elective specialisation modules with published topic lists, plus a four-institution teaching and research partnership including the Austrian Academy of Sciences' Space Research Institute",
+            "weight": 25,
+            "source_url": "https://www.tugraz.at/en/studying-and-teaching/degree-and-certificate-programmes/masters-degree-programmes/space-sciences-and-earth-from-space"
+          },
+          "faculty_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 25
+          },
+          "facility_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 10
+          },
+          "industry_outlet_evidence": {
+            "level": "unknown",
+            "basis": "industry_evidence_not_checked",
+            "weight": 10
+          }
+        },
+        "matched_tags": [
+          "spacecraft_systems",
+          "earth_observation",
+          "remote_sensing",
+          "satellite_communications",
+          "micro_nanosatellites",
+          "space_measurement_systems",
+          "numerical_modelling"
+        ],
+        "confidence": "unknown",
+        "legacy_relevance_status": "strong",
+        "evaluated_at": "2026-08-30"
+      },
+      "academic_match_evidence": {
+        "research_group_evidence": {
+          "level": "strong",
+          "basis": "three elective specialisation modules with published topic lists, plus a four-institution teaching and research partnership including the Austrian Academy of Sciences' Space Research Institute",
+          "source_url": "https://www.tugraz.at/en/studying-and-teaching/degree-and-certificate-programmes/masters-degree-programmes/space-sciences-and-earth-from-space"
+        },
+        "curriculum_evidence": {
+          "level": "strong",
+          "basis": "the common core and the three specialisation modules are published with their topic content, credits, duration and awarded degree",
+          "source_url": "https://www.tugraz.at/en/studying-and-teaching/degree-and-certificate-programmes/masters-degree-programmes/space-sciences-and-earth-from-space"
         }
       }
     },
@@ -2166,7 +2997,25 @@
         "living_cost_sek_per_year_max": null,
         "living_cost_dkk_per_year_min": null,
         "living_cost_dkk_per_year_max": null,
-        "tuition_items": []
+        "tuition_items": [],
+        "normalized_cost": {
+          "standard": "cost_model@3.0.0",
+          "currency": null,
+          "annual_total": null,
+          "annual_total_eur_equivalent": null,
+          "includes": [],
+          "missing_mandatory_components": [
+            "tuition",
+            "living_costs"
+          ],
+          "months_of_living_cost": null,
+          "status": "incomplete",
+          "note": {
+            "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+            "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+          },
+          "evaluated_at": "2026-08-30"
+        }
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
@@ -2194,7 +3043,7 @@
         "monthly_living_cost_eur_min": null,
         "monthly_living_cost_eur_max": null,
         "monthly_living_cost_eur_estimated": null,
-        "housing_difficulty": null,
+        "housing_difficulty": "unknown",
         "student_housing_available": true,
         "student_housing_competitiveness": "medium",
         "average_room_rent_eur": null,
@@ -2251,7 +3100,62 @@
         "housing_application_separate": null,
         "housing_options": [],
         "official_living_cost_items": [],
-        "official_rent_items": []
+        "official_rent_items": [],
+        "housing_search_difficulty": "unknown",
+        "housing_difficulty_profile": {
+          "standard": "housing_difficulty@3.0.0",
+          "level": "unknown",
+          "raw_score": 1,
+          "scaled_score": null,
+          "score_max": 15,
+          "evidenced_dimensions": 1,
+          "dimensions_required_for_publication": 3,
+          "dimensions": {
+            "guarantee_status": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "supply_pressure": {
+              "value": "early_application_advised",
+              "points": 1,
+              "derived_from": "living_profile.student_housing_competitiveness"
+            },
+            "market_affordability_gap": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "timing_sensitivity": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "arrival_risk": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            }
+          },
+          "confidence": "unknown",
+          "band_from_score": null,
+          "capped_from_very_high": false,
+          "legacy_value": "unknown",
+          "evaluated_at": "2026-08-30"
+        },
+        "cost_of_living_profile": {
+          "standard": "cost_model@3.0.0",
+          "cost_basis": "unknown",
+          "status": "unknown",
+          "reason": "no_official_living_cost_items",
+          "components": {},
+          "monthly_total": null,
+          "evaluated_at": "2026-08-30"
+        }
       },
       "curriculum_profile": {
         "tracks": [],
@@ -2318,7 +3222,15 @@
         "deadline_notes": null,
         "winter_deadline": null,
         "application_deadline": null,
-        "deadline_events": []
+        "deadline_events": [],
+        "primary_deadline": {
+          "standard": "application_countdown@3.0.0",
+          "date": null,
+          "status": "not_published",
+          "confidence": "unknown",
+          "reason": "no_iso_dated_deadline_in_record",
+          "evaluated_at": "2026-08-30"
+        }
       },
       "source_profile": {
         "official_program_page": "https://www.tugraz.at",
@@ -2464,7 +3376,7 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-08-14",
+        "checked_at": "2026-08-23",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
@@ -2528,7 +3440,7 @@
           "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-14"
+        "audited_at": "2026-08-23"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -2556,6 +3468,45 @@
             "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
           }
         }
+      },
+      "academic_match_profile": {
+        "standard": "academic_match@3.0.0",
+        "tier": "unknown",
+        "score": null,
+        "score_basis_weight": 30,
+        "evidenced_dimensions": 1,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "curriculum_evidence": {
+            "level": "none",
+            "basis": "no_named_items",
+            "weight": 30
+          },
+          "research_group_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 25
+          },
+          "faculty_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 25
+          },
+          "facility_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 10
+          },
+          "industry_outlet_evidence": {
+            "level": "unknown",
+            "basis": "industry_evidence_not_checked",
+            "weight": 10
+          }
+        },
+        "matched_tags": [],
+        "confidence": "unknown",
+        "legacy_relevance_status": "weak",
+        "evaluated_at": "2026-08-30"
       }
     },
     {
@@ -2681,7 +3632,25 @@
         "living_cost_sek_per_year_max": null,
         "living_cost_dkk_per_year_min": null,
         "living_cost_dkk_per_year_max": null,
-        "tuition_items": []
+        "tuition_items": [],
+        "normalized_cost": {
+          "standard": "cost_model@3.0.0",
+          "currency": null,
+          "annual_total": null,
+          "annual_total_eur_equivalent": null,
+          "includes": [],
+          "missing_mandatory_components": [
+            "tuition",
+            "living_costs"
+          ],
+          "months_of_living_cost": null,
+          "status": "incomplete",
+          "note": {
+            "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+            "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+          },
+          "evaluated_at": "2026-08-30"
+        }
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
@@ -2709,7 +3678,7 @@
         "monthly_living_cost_eur_min": null,
         "monthly_living_cost_eur_max": null,
         "monthly_living_cost_eur_estimated": null,
-        "housing_difficulty": null,
+        "housing_difficulty": "unknown",
         "student_housing_available": true,
         "student_housing_competitiveness": "high",
         "average_room_rent_eur": null,
@@ -2766,7 +3735,62 @@
         "housing_application_separate": null,
         "housing_options": [],
         "official_living_cost_items": [],
-        "official_rent_items": []
+        "official_rent_items": [],
+        "housing_search_difficulty": "unknown",
+        "housing_difficulty_profile": {
+          "standard": "housing_difficulty@3.0.0",
+          "level": "unknown",
+          "raw_score": 2,
+          "scaled_score": null,
+          "score_max": 15,
+          "evidenced_dimensions": 1,
+          "dimensions_required_for_publication": 3,
+          "dimensions": {
+            "guarantee_status": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "supply_pressure": {
+              "value": "published_waiting_list",
+              "points": 2,
+              "derived_from": "living_profile.student_housing_competitiveness"
+            },
+            "market_affordability_gap": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "timing_sensitivity": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "arrival_risk": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            }
+          },
+          "confidence": "unknown",
+          "band_from_score": null,
+          "capped_from_very_high": false,
+          "legacy_value": "unknown",
+          "evaluated_at": "2026-08-30"
+        },
+        "cost_of_living_profile": {
+          "standard": "cost_model@3.0.0",
+          "cost_basis": "unknown",
+          "status": "unknown",
+          "reason": "no_official_living_cost_items",
+          "components": {},
+          "monthly_total": null,
+          "evaluated_at": "2026-08-30"
+        }
       },
       "curriculum_profile": {
         "tracks": [],
@@ -2838,7 +3862,15 @@
         "deadline_notes": null,
         "winter_deadline": null,
         "application_deadline": null,
-        "deadline_events": []
+        "deadline_events": [],
+        "primary_deadline": {
+          "standard": "application_countdown@3.0.0",
+          "date": null,
+          "status": "not_published",
+          "confidence": "unknown",
+          "reason": "no_iso_dated_deadline_in_record",
+          "evaluated_at": "2026-08-30"
+        }
       },
       "source_profile": {
         "official_program_page": "https://www.tuwien.at",
@@ -2983,7 +4015,7 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-08-14",
+        "checked_at": "2026-08-23",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
@@ -3047,7 +4079,7 @@
           "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-14"
+        "audited_at": "2026-08-23"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -3075,6 +4107,45 @@
             "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
           }
         }
+      },
+      "academic_match_profile": {
+        "standard": "academic_match@3.0.0",
+        "tier": "unknown",
+        "score": null,
+        "score_basis_weight": 30,
+        "evidenced_dimensions": 1,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "curriculum_evidence": {
+            "level": "none",
+            "basis": "no_named_items",
+            "weight": 30
+          },
+          "research_group_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 25
+          },
+          "faculty_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 25
+          },
+          "facility_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 10
+          },
+          "industry_outlet_evidence": {
+            "level": "unknown",
+            "basis": "industry_evidence_not_checked",
+            "weight": 10
+          }
+        },
+        "matched_tags": [],
+        "confidence": "unknown",
+        "legacy_relevance_status": "weak",
+        "evaluated_at": "2026-08-30"
       }
     },
     {
@@ -3203,7 +4274,25 @@
         "living_cost_sek_per_year_max": null,
         "living_cost_dkk_per_year_min": null,
         "living_cost_dkk_per_year_max": null,
-        "tuition_items": []
+        "tuition_items": [],
+        "normalized_cost": {
+          "standard": "cost_model@3.0.0",
+          "currency": null,
+          "annual_total": null,
+          "annual_total_eur_equivalent": null,
+          "includes": [],
+          "missing_mandatory_components": [
+            "tuition",
+            "living_costs"
+          ],
+          "months_of_living_cost": null,
+          "status": "incomplete",
+          "note": {
+            "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+            "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+          },
+          "evaluated_at": "2026-08-30"
+        }
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
@@ -3231,7 +4320,7 @@
         "monthly_living_cost_eur_min": null,
         "monthly_living_cost_eur_max": null,
         "monthly_living_cost_eur_estimated": null,
-        "housing_difficulty": null,
+        "housing_difficulty": "unknown",
         "student_housing_available": true,
         "student_housing_competitiveness": "high",
         "average_room_rent_eur": null,
@@ -3288,7 +4377,62 @@
         "housing_application_separate": null,
         "housing_options": [],
         "official_living_cost_items": [],
-        "official_rent_items": []
+        "official_rent_items": [],
+        "housing_search_difficulty": "unknown",
+        "housing_difficulty_profile": {
+          "standard": "housing_difficulty@3.0.0",
+          "level": "unknown",
+          "raw_score": 2,
+          "scaled_score": null,
+          "score_max": 15,
+          "evidenced_dimensions": 1,
+          "dimensions_required_for_publication": 3,
+          "dimensions": {
+            "guarantee_status": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "supply_pressure": {
+              "value": "published_waiting_list",
+              "points": 2,
+              "derived_from": "living_profile.student_housing_competitiveness"
+            },
+            "market_affordability_gap": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "timing_sensitivity": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "arrival_risk": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            }
+          },
+          "confidence": "unknown",
+          "band_from_score": null,
+          "capped_from_very_high": false,
+          "legacy_value": "unknown",
+          "evaluated_at": "2026-08-30"
+        },
+        "cost_of_living_profile": {
+          "standard": "cost_model@3.0.0",
+          "cost_basis": "unknown",
+          "status": "unknown",
+          "reason": "no_official_living_cost_items",
+          "components": {},
+          "monthly_total": null,
+          "evaluated_at": "2026-08-30"
+        }
       },
       "curriculum_profile": {
         "tracks": [],
@@ -3356,7 +4500,15 @@
         "deadline_notes": null,
         "winter_deadline": null,
         "application_deadline": null,
-        "deadline_events": []
+        "deadline_events": [],
+        "primary_deadline": {
+          "standard": "application_countdown@3.0.0",
+          "date": null,
+          "status": "not_published",
+          "confidence": "unknown",
+          "reason": "no_iso_dated_deadline_in_record",
+          "evaluated_at": "2026-08-30"
+        }
       },
       "source_profile": {
         "official_program_page": "https://www.tuwien.at/en/studies/studies/master-programmes/electrical-engineering/information-and-communication-engineering",
@@ -3489,7 +4641,7 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-08-14",
+        "checked_at": "2026-08-23",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
@@ -3553,7 +4705,7 @@
           "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-14"
+        "audited_at": "2026-08-23"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -3581,6 +4733,45 @@
             "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
           }
         }
+      },
+      "academic_match_profile": {
+        "standard": "academic_match@3.0.0",
+        "tier": "unknown",
+        "score": null,
+        "score_basis_weight": 30,
+        "evidenced_dimensions": 1,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "curriculum_evidence": {
+            "level": "none",
+            "basis": "no_named_items",
+            "weight": 30
+          },
+          "research_group_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 25
+          },
+          "faculty_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 25
+          },
+          "facility_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 10
+          },
+          "industry_outlet_evidence": {
+            "level": "unknown",
+            "basis": "industry_evidence_not_checked",
+            "weight": 10
+          }
+        },
+        "matched_tags": [],
+        "confidence": "unknown",
+        "legacy_relevance_status": "weak",
+        "evaluated_at": "2026-08-30"
       }
     },
     {
@@ -3709,7 +4900,25 @@
         "living_cost_sek_per_year_max": null,
         "living_cost_dkk_per_year_min": null,
         "living_cost_dkk_per_year_max": null,
-        "tuition_items": []
+        "tuition_items": [],
+        "normalized_cost": {
+          "standard": "cost_model@3.0.0",
+          "currency": null,
+          "annual_total": null,
+          "annual_total_eur_equivalent": null,
+          "includes": [],
+          "missing_mandatory_components": [
+            "tuition",
+            "living_costs"
+          ],
+          "months_of_living_cost": null,
+          "status": "incomplete",
+          "note": {
+            "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+            "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+          },
+          "evaluated_at": "2026-08-30"
+        }
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
@@ -3737,7 +4946,7 @@
         "monthly_living_cost_eur_min": null,
         "monthly_living_cost_eur_max": null,
         "monthly_living_cost_eur_estimated": null,
-        "housing_difficulty": null,
+        "housing_difficulty": "unknown",
         "student_housing_available": true,
         "student_housing_competitiveness": "very high",
         "average_room_rent_eur": null,
@@ -3794,7 +5003,62 @@
         "housing_application_separate": null,
         "housing_options": [],
         "official_living_cost_items": [],
-        "official_rent_items": []
+        "official_rent_items": [],
+        "housing_search_difficulty": "unknown",
+        "housing_difficulty_profile": {
+          "standard": "housing_difficulty@3.0.0",
+          "level": "unknown",
+          "raw_score": 3,
+          "scaled_score": null,
+          "score_max": 15,
+          "evidenced_dimensions": 1,
+          "dimensions_required_for_publication": 3,
+          "dimensions": {
+            "guarantee_status": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "supply_pressure": {
+              "value": "demand_exceeds_supply_stated",
+              "points": 3,
+              "derived_from": "living_profile.student_housing_competitiveness"
+            },
+            "market_affordability_gap": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "timing_sensitivity": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "arrival_risk": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            }
+          },
+          "confidence": "unknown",
+          "band_from_score": null,
+          "capped_from_very_high": false,
+          "legacy_value": "unknown",
+          "evaluated_at": "2026-08-30"
+        },
+        "cost_of_living_profile": {
+          "standard": "cost_model@3.0.0",
+          "cost_basis": "unknown",
+          "status": "unknown",
+          "reason": "no_official_living_cost_items",
+          "components": {},
+          "monthly_total": null,
+          "evaluated_at": "2026-08-30"
+        }
       },
       "curriculum_profile": {
         "tracks": [],
@@ -3865,7 +5129,15 @@
         "deadline_notes": null,
         "winter_deadline": null,
         "application_deadline": null,
-        "deadline_events": []
+        "deadline_events": [],
+        "primary_deadline": {
+          "standard": "application_countdown@3.0.0",
+          "date": null,
+          "status": "not_published",
+          "confidence": "unknown",
+          "reason": "no_iso_dated_deadline_in_record",
+          "evaluated_at": "2026-08-30"
+        }
       },
       "source_profile": {
         "official_program_page": "https://www.uibk.ac.at/en/programmes/ma-physics/",
@@ -3998,7 +5270,7 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-08-14",
+        "checked_at": "2026-08-23",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
@@ -4062,7 +5334,7 @@
           "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-14"
+        "audited_at": "2026-08-23"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -4090,6 +5362,45 @@
             "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
           }
         }
+      },
+      "academic_match_profile": {
+        "standard": "academic_match@3.0.0",
+        "tier": "unknown",
+        "score": null,
+        "score_basis_weight": 30,
+        "evidenced_dimensions": 1,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "curriculum_evidence": {
+            "level": "none",
+            "basis": "no_named_items",
+            "weight": 30
+          },
+          "research_group_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 25
+          },
+          "faculty_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 25
+          },
+          "facility_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 10
+          },
+          "industry_outlet_evidence": {
+            "level": "unknown",
+            "basis": "industry_evidence_not_checked",
+            "weight": 10
+          }
+        },
+        "matched_tags": [],
+        "confidence": "unknown",
+        "legacy_relevance_status": "weak",
+        "evaluated_at": "2026-08-30"
       }
     },
     {
@@ -4215,7 +5526,25 @@
         "living_cost_sek_per_year_max": null,
         "living_cost_dkk_per_year_min": null,
         "living_cost_dkk_per_year_max": null,
-        "tuition_items": []
+        "tuition_items": [],
+        "normalized_cost": {
+          "standard": "cost_model@3.0.0",
+          "currency": null,
+          "annual_total": null,
+          "annual_total_eur_equivalent": null,
+          "includes": [],
+          "missing_mandatory_components": [
+            "tuition",
+            "living_costs"
+          ],
+          "months_of_living_cost": null,
+          "status": "incomplete",
+          "note": {
+            "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+            "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+          },
+          "evaluated_at": "2026-08-30"
+        }
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
@@ -4243,7 +5572,7 @@
         "monthly_living_cost_eur_min": null,
         "monthly_living_cost_eur_max": null,
         "monthly_living_cost_eur_estimated": null,
-        "housing_difficulty": null,
+        "housing_difficulty": "unknown",
         "student_housing_available": true,
         "student_housing_competitiveness": "medium",
         "average_room_rent_eur": null,
@@ -4300,7 +5629,62 @@
         "housing_application_separate": null,
         "housing_options": [],
         "official_living_cost_items": [],
-        "official_rent_items": []
+        "official_rent_items": [],
+        "housing_search_difficulty": "unknown",
+        "housing_difficulty_profile": {
+          "standard": "housing_difficulty@3.0.0",
+          "level": "unknown",
+          "raw_score": 1,
+          "scaled_score": null,
+          "score_max": 15,
+          "evidenced_dimensions": 1,
+          "dimensions_required_for_publication": 3,
+          "dimensions": {
+            "guarantee_status": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "supply_pressure": {
+              "value": "early_application_advised",
+              "points": 1,
+              "derived_from": "living_profile.student_housing_competitiveness"
+            },
+            "market_affordability_gap": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "timing_sensitivity": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "arrival_risk": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            }
+          },
+          "confidence": "unknown",
+          "band_from_score": null,
+          "capped_from_very_high": false,
+          "legacy_value": "unknown",
+          "evaluated_at": "2026-08-30"
+        },
+        "cost_of_living_profile": {
+          "standard": "cost_model@3.0.0",
+          "cost_basis": "unknown",
+          "status": "unknown",
+          "reason": "no_official_living_cost_items",
+          "components": {},
+          "monthly_total": null,
+          "evaluated_at": "2026-08-30"
+        }
       },
       "curriculum_profile": {
         "tracks": [],
@@ -4368,7 +5752,15 @@
         "deadline_notes": null,
         "winter_deadline": null,
         "application_deadline": null,
-        "deadline_events": []
+        "deadline_events": [],
+        "primary_deadline": {
+          "standard": "application_countdown@3.0.0",
+          "date": null,
+          "status": "not_published",
+          "confidence": "unknown",
+          "reason": "no_iso_dated_deadline_in_record",
+          "evaluated_at": "2026-08-30"
+        }
       },
       "source_profile": {
         "official_program_page": "https://www.jku.at/en/degree-programs/types-of-degree-programs/masters-degree-programs/ma-mechatronics/",
@@ -4502,7 +5894,7 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-08-14",
+        "checked_at": "2026-08-23",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
@@ -4566,7 +5958,7 @@
           "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-14"
+        "audited_at": "2026-08-23"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -4594,6 +5986,45 @@
             "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
           }
         }
+      },
+      "academic_match_profile": {
+        "standard": "academic_match@3.0.0",
+        "tier": "unknown",
+        "score": null,
+        "score_basis_weight": 30,
+        "evidenced_dimensions": 1,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "curriculum_evidence": {
+            "level": "none",
+            "basis": "no_named_items",
+            "weight": 30
+          },
+          "research_group_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 25
+          },
+          "faculty_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 25
+          },
+          "facility_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 10
+          },
+          "industry_outlet_evidence": {
+            "level": "unknown",
+            "basis": "industry_evidence_not_checked",
+            "weight": 10
+          }
+        },
+        "matched_tags": [],
+        "confidence": "unknown",
+        "legacy_relevance_status": "weak",
+        "evaluated_at": "2026-08-30"
       }
     },
     {
@@ -4722,7 +6153,25 @@
         "living_cost_sek_per_year_max": null,
         "living_cost_dkk_per_year_min": null,
         "living_cost_dkk_per_year_max": null,
-        "tuition_items": []
+        "tuition_items": [],
+        "normalized_cost": {
+          "standard": "cost_model@3.0.0",
+          "currency": null,
+          "annual_total": null,
+          "annual_total_eur_equivalent": null,
+          "includes": [],
+          "missing_mandatory_components": [
+            "tuition",
+            "living_costs"
+          ],
+          "months_of_living_cost": null,
+          "status": "incomplete",
+          "note": {
+            "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+            "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+          },
+          "evaluated_at": "2026-08-30"
+        }
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
@@ -4750,7 +6199,7 @@
         "monthly_living_cost_eur_min": null,
         "monthly_living_cost_eur_max": null,
         "monthly_living_cost_eur_estimated": null,
-        "housing_difficulty": null,
+        "housing_difficulty": "unknown",
         "student_housing_available": true,
         "student_housing_competitiveness": "low",
         "average_room_rent_eur": null,
@@ -4807,7 +6256,62 @@
         "housing_application_separate": null,
         "housing_options": [],
         "official_living_cost_items": [],
-        "official_rent_items": []
+        "official_rent_items": [],
+        "housing_search_difficulty": "unknown",
+        "housing_difficulty_profile": {
+          "standard": "housing_difficulty@3.0.0",
+          "level": "unknown",
+          "raw_score": 0,
+          "scaled_score": null,
+          "score_max": 15,
+          "evidenced_dimensions": 1,
+          "dimensions_required_for_publication": 3,
+          "dimensions": {
+            "guarantee_status": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "supply_pressure": {
+              "value": "no_documented_shortage",
+              "points": 0,
+              "derived_from": "living_profile.student_housing_competitiveness"
+            },
+            "market_affordability_gap": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "timing_sensitivity": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "arrival_risk": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            }
+          },
+          "confidence": "unknown",
+          "band_from_score": null,
+          "capped_from_very_high": false,
+          "legacy_value": "unknown",
+          "evaluated_at": "2026-08-30"
+        },
+        "cost_of_living_profile": {
+          "standard": "cost_model@3.0.0",
+          "cost_basis": "unknown",
+          "status": "unknown",
+          "reason": "no_official_living_cost_items",
+          "components": {},
+          "monthly_total": null,
+          "evaluated_at": "2026-08-30"
+        }
       },
       "curriculum_profile": {
         "tracks": [],
@@ -4877,7 +6381,15 @@
         "deadline_notes": null,
         "winter_deadline": null,
         "application_deadline": null,
-        "deadline_events": []
+        "deadline_events": [],
+        "primary_deadline": {
+          "standard": "application_countdown@3.0.0",
+          "date": null,
+          "status": "not_published",
+          "confidence": "unknown",
+          "reason": "no_iso_dated_deadline_in_record",
+          "evaluated_at": "2026-08-30"
+        }
       },
       "source_profile": {
         "official_program_page": "https://www.unileoben.ac.at/en/studying/graduate-studies/materials/advanced-materials-science-and-engineering-en/",
@@ -5010,7 +6522,7 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-08-14",
+        "checked_at": "2026-08-23",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
@@ -5074,7 +6586,7 @@
           "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-14"
+        "audited_at": "2026-08-23"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -5102,6 +6614,45 @@
             "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
           }
         }
+      },
+      "academic_match_profile": {
+        "standard": "academic_match@3.0.0",
+        "tier": "unknown",
+        "score": null,
+        "score_basis_weight": 30,
+        "evidenced_dimensions": 1,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "curriculum_evidence": {
+            "level": "none",
+            "basis": "no_named_items",
+            "weight": 30
+          },
+          "research_group_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 25
+          },
+          "faculty_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 25
+          },
+          "facility_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 10
+          },
+          "industry_outlet_evidence": {
+            "level": "unknown",
+            "basis": "industry_evidence_not_checked",
+            "weight": 10
+          }
+        },
+        "matched_tags": [],
+        "confidence": "unknown",
+        "legacy_relevance_status": "weak",
+        "evaluated_at": "2026-08-30"
       }
     },
     {
@@ -5227,7 +6778,25 @@
         "living_cost_sek_per_year_max": null,
         "living_cost_dkk_per_year_min": null,
         "living_cost_dkk_per_year_max": null,
-        "tuition_items": []
+        "tuition_items": [],
+        "normalized_cost": {
+          "standard": "cost_model@3.0.0",
+          "currency": null,
+          "annual_total": null,
+          "annual_total_eur_equivalent": null,
+          "includes": [],
+          "missing_mandatory_components": [
+            "tuition",
+            "living_costs"
+          ],
+          "months_of_living_cost": null,
+          "status": "incomplete",
+          "note": {
+            "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+            "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+          },
+          "evaluated_at": "2026-08-30"
+        }
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
@@ -5255,7 +6824,7 @@
         "monthly_living_cost_eur_min": null,
         "monthly_living_cost_eur_max": null,
         "monthly_living_cost_eur_estimated": null,
-        "housing_difficulty": null,
+        "housing_difficulty": "unknown",
         "student_housing_available": true,
         "student_housing_competitiveness": "medium",
         "average_room_rent_eur": null,
@@ -5312,7 +6881,62 @@
         "housing_application_separate": null,
         "housing_options": [],
         "official_living_cost_items": [],
-        "official_rent_items": []
+        "official_rent_items": [],
+        "housing_search_difficulty": "unknown",
+        "housing_difficulty_profile": {
+          "standard": "housing_difficulty@3.0.0",
+          "level": "unknown",
+          "raw_score": 1,
+          "scaled_score": null,
+          "score_max": 15,
+          "evidenced_dimensions": 1,
+          "dimensions_required_for_publication": 3,
+          "dimensions": {
+            "guarantee_status": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "supply_pressure": {
+              "value": "early_application_advised",
+              "points": 1,
+              "derived_from": "living_profile.student_housing_competitiveness"
+            },
+            "market_affordability_gap": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "timing_sensitivity": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "arrival_risk": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            }
+          },
+          "confidence": "unknown",
+          "band_from_score": null,
+          "capped_from_very_high": false,
+          "legacy_value": "unknown",
+          "evaluated_at": "2026-08-30"
+        },
+        "cost_of_living_profile": {
+          "standard": "cost_model@3.0.0",
+          "cost_basis": "unknown",
+          "status": "unknown",
+          "reason": "no_official_living_cost_items",
+          "components": {},
+          "monthly_total": null,
+          "evaluated_at": "2026-08-30"
+        }
       },
       "curriculum_profile": {
         "tracks": [],
@@ -5379,7 +7003,15 @@
         "deadline_notes": null,
         "winter_deadline": null,
         "application_deadline": null,
-        "deadline_events": []
+        "deadline_events": [],
+        "primary_deadline": {
+          "standard": "application_countdown@3.0.0",
+          "date": null,
+          "status": "not_published",
+          "confidence": "unknown",
+          "reason": "no_iso_dated_deadline_in_record",
+          "evaluated_at": "2026-08-30"
+        }
       },
       "source_profile": {
         "official_program_page": "https://fh-ooe.at/en/degree-programs/mechanical-engineering-master",
@@ -5512,7 +7144,7 @@
       },
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-08-14",
+        "checked_at": "2026-08-23",
         "failed_canary_tests": [
           "missing_or_unverified_critical_fields"
         ],
@@ -5576,7 +7208,7 @@
           "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-14"
+        "audited_at": "2026-08-23"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -5604,6 +7236,45 @@
             "tr": "Bu veri tabanı kurumu için bağımsız bir 2027 QS WUR sırası doğrulanmadı; değer türetilmedi."
           }
         }
+      },
+      "academic_match_profile": {
+        "standard": "academic_match@3.0.0",
+        "tier": "unknown",
+        "score": null,
+        "score_basis_weight": 30,
+        "evidenced_dimensions": 1,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "curriculum_evidence": {
+            "level": "none",
+            "basis": "no_named_items",
+            "weight": 30
+          },
+          "research_group_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 25
+          },
+          "faculty_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 25
+          },
+          "facility_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 10
+          },
+          "industry_outlet_evidence": {
+            "level": "unknown",
+            "basis": "industry_evidence_not_checked",
+            "weight": 10
+          }
+        },
+        "matched_tags": [],
+        "confidence": "unknown",
+        "legacy_relevance_status": "weak",
+        "evaluated_at": "2026-08-30"
       }
     }
   ]

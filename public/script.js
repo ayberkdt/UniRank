@@ -605,7 +605,11 @@ async function init() {
 
     setupEventListeners();
     initSpotlightCards();
+    // The categorical definitions back every ordinal label in the drawer, so
+    // they are fetched alongside the data rather than on first drawer open.
+    const standardsReady = window.uniStandards ? window.uniStandards.load() : Promise.resolve();
     await fetchData();
+    await standardsReady;
     window.applyTranslations();
 }
 
@@ -1504,6 +1508,30 @@ function renderKPIs() {
 }
 
 
+/**
+ * Days-left chip for a result card.
+ *
+ * Only a normalised primary_deadline can produce one: a record whose date was
+ * never verified shows nothing rather than a guess, and a past date is shown
+ * greyed out so a closed cycle never reads as an open one.
+ */
+function renderCardCountdown(record) {
+    const primary = record?.application_timeline_profile?.primary_deadline;
+    if (!primary || !primary.date) return '';
+    const target = new Date(`${primary.date}T23:59:59`);
+    if (Number.isNaN(target.getTime())) return '';
+
+    const days = Math.ceil((target - new Date()) / 86400000);
+    const isTurkish = window.currentLanguage === 'tr';
+    if (days < 0) {
+        const label = isTurkish ? 'Bu dönem kapandı' : 'Closed this cycle';
+        return `<span class="program-card__meta-countdown program-card__meta-countdown--closed">${escapeHtml(label)}</span>`;
+    }
+    const modifier = days <= 30 ? '' : '--open';
+    const label = isTurkish ? `${days} gün kaldı` : `${days} days left`;
+    return `<span class="program-card__meta-countdown${modifier ? ` program-card__meta-countdown${modifier}` : ''}">${escapeHtml(label)}</span>`;
+}
+
 function renderTable() {
     els.tableBody.innerHTML = '';
     if (filteredData.length === 0) {
@@ -1543,6 +1571,7 @@ function renderTable() {
                 : formatRiskBadge(n.admissionRisk);
         const housingHTML = formatRiskBadge(n.housingDifficulty);
         const deadline = n.deadline ? formatCalendarValue(n.deadline) : '';
+        const countdownChip = renderCardCountdown(row);
         const profileMatch = row._scoringDetails?.personalized_match?.personal_field_fit;
         const university = window.localizedField(n.universityName) || (window.currentLanguage === 'tr' ? 'Üniversite adı doğrulanmalı' : 'University name needs verification');
         const program = window.localizedField(n.programName) || (window.currentLanguage === 'tr' ? 'Program adı doğrulanmalı' : 'Program name needs verification');
@@ -1567,6 +1596,7 @@ function renderTable() {
                     ${n.ects ? `<span>${escapeHtml(n.ects)} ECTS</span>` : ''}
                     ${n.duration ? `<span>${escapeHtml(n.duration)}</span>` : ''}
                     ${deadline ? `<span class="program-card__meta-date">${escapeHtml(window.currentLanguage === 'tr' ? 'Son başvuru' : 'Deadline')} · ${escapeHtml(deadline)}</span>` : ''}
+                    ${countdownChip}
                 </div>
                 <dl class="decision-grid">
                     <div class="decision-item decision-item--score"><dt>${escapeHtml(window.t ? window.t('technical_match') : 'Technical match')}</dt><dd><span class="fit-score fit-score--${band.key}">${Number(row._score).toFixed(1)}</span><small>${escapeHtml(band.label)}</small>${window.personalizationEnabled && Number.isFinite(profileMatch) ? `<em>${Math.round(profileMatch)}% ${escapeHtml(window.t('profile_match'))}</em>` : ''}</dd></div>
@@ -1980,6 +2010,10 @@ function openDrawer(data) {
             }).join('');
         }
         const facultyContactNote = n.raw?.research_profile?.faculty_contact_note;
+        // The richer panels below supersede these two blocks whenever the
+        // record has the structured data they need, so they are not shown twice.
+        const hasResearchUnits = Array.isArray(n.raw?.research_profile?.research_units) && n.raw.research_profile.research_units.length > 0;
+        const hasFacultyPanel = Boolean(window.uniDecisionPanels) && Array.isArray(n.professors) && n.professors.length > 0;
         const researchSummaryHTML = n.researchSummary
             ? `<div class="dept-block"><label>${isTurkish ? 'Araştırma erişimi notu' : 'Research access note'}</label><p>${escapeHtml(displayValue(n.researchSummary))}</p></div>`
             : '';
@@ -2003,12 +2037,12 @@ function openDrawer(data) {
                         <label>${isTurkish ? 'Güçlü Alanlar' : 'Strong Areas'}</label>
                         <ul class="aesthetic-list">${strongAreasHTML}</ul>
                     </div>` : ''}
-                    ${labsHTML ? `
+                    ${labsHTML && !hasResearchUnits ? `
                     <div class="dept-block">
                         <label>${isTurkish ? 'İlgili Laboratuvarlar' : 'Related Laboratories'}</label>
                         <div class="chip-container">${labsHTML}</div>
                     </div>` : ''}
-                    ${profsHTML ? `
+                    ${profsHTML && !hasFacultyPanel ? `
                     <div class="dept-block">
                         <label>${isTurkish ? 'Araştırma uyumu olan hocalar' : 'Faculty matched to this research area'}</label>
                         ${facultyContactNote ? `<p class="faculty-contact-note"><strong>${isTurkish ? 'Ne zaman yazmalı?' : 'When should you contact them?'}</strong>${escapeHtml(displayValue(facultyContactNote))}</p>` : ''}
@@ -2349,22 +2383,44 @@ function openDrawer(data) {
             </div>
         `;
 
-        document.getElementById('drawer-info').innerHTML =
+        // Panels built from the standardised profiles.  Each one renders only
+        // when the record actually carries the evidence, so an unresearched
+        // programme shows the old sections rather than an empty shell.
+        const panels = window.uniDecisionPanels;
+        const record = n.raw || data;
+        const countdownHTML = panels ? panels.countdownPanel(record) : '';
+        const matchHTML = panels ? panels.academicMatchPanel(record) : '';
+        const unitsHTML = panels ? panels.researchUnitsPanel(record) : '';
+        const facultyHTML = panels ? panels.facultyPanel(record) : '';
+        const playbookHTML = panels ? panels.scholarshipPlaybookPanel(record) : '';
+        const housingRubricHTML = panels ? panels.housingRubricPanel(record) : '';
+        const costBreakdownHTML = panels ? panels.costBreakdownPanel(record) : '';
+
+        const drawerInfo = document.getElementById('drawer-info');
+        drawerInfo.innerHTML =
             decisionHeroHTML +
+            countdownHTML +
             verificationBanner +
             qualityHTML +
+            matchHTML +
             scoreImpactHTML +
             basicInfoHTML +
             admissionsHTML +
             timelineHTML +
             curriculumHTML +
             financeHTML +
+            costBreakdownHTML +
+            playbookHTML +
             livingHTML +
+            housingRubricHTML +
+            unitsHTML +
+            facultyHTML +
             deptHTML +
             studentReviewsHTML +
             prosConsHTML +
             sourcesHTML +
             linksHTML;
+        if (panels) panels.bindPanelEvents(drawerInfo);
 
         // 1. Radar Chart Setup
         const ctx = document.getElementById('radarChart');

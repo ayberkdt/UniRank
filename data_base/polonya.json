@@ -123,7 +123,25 @@
       "living_cost_dkk_per_year": null,
       "living_cost_dkk_per_year_min": null,
       "living_cost_dkk_per_year_max": null,
-      "tuition_items": []
+      "tuition_items": [],
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
+      }
     },
     "scholarship_profile": {
       "available_types": [],
@@ -142,14 +160,14 @@
     },
     "living_profile": {
       "city_type": "Medium",
-      "housing_search_difficulty": "high",
+      "housing_search_difficulty": "unknown",
       "housing_cost_range_eur": null,
       "student_dorm_availability": "unknown",
       "living_cost_risk": "Bilinmiyor / Resmi Veri Yok",
       "verification_notes": "",
       "average_room_rent_eur": null,
       "monthly_living_cost_eur_estimated": null,
-      "housing_difficulty": null,
+      "housing_difficulty": "unknown",
       "average_room_rent_eur_min": null,
       "average_room_rent_eur_max": null,
       "monthly_living_cost_eur_min": null,
@@ -198,7 +216,62 @@
       "housing_application_separate": null,
       "housing_options": [],
       "official_living_cost_items": [],
-      "official_rent_items": []
+      "official_rent_items": [],
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": null,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 0,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
+      }
     },
     "curriculum_profile": {
       "structure": null,
@@ -266,7 +339,15 @@
       "winter_deadline": null,
       "application_deadline": null,
       "deadline_notes": null,
-      "deadline_events": []
+      "deadline_events": [],
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": null,
+        "status": "not_published",
+        "confidence": "unknown",
+        "reason": "no_iso_dated_deadline_in_record",
+        "evaluated_at": "2026-08-30"
+      }
     },
     "research_profile": {
       "research_focus_areas": [],
@@ -339,10 +420,10 @@
         "housing"
       ],
       "has_checked_source_log": false,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "quality_control": {
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "qc_status": "needs_revision",
       "remaining_verification_tasks": [
         {
@@ -416,7 +497,51 @@
       }
     },
     "tuition_eur_per_year": null,
-    "annual_fee_eur": null
+    "annual_fee_eur": null,
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "unknown",
+      "score": null,
+      "score_basis_weight": 0,
+      "evidenced_dimensions": 0,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "unknown",
+          "basis": "curriculum_evidence_not_checked",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "Aerodynamics",
+        "Space Systems",
+        "Propulsion",
+        "Structures"
+      ],
+      "confidence": "unknown",
+      "legacy_relevance_status": "strong",
+      "evaluated_at": "2026-08-30"
+    }
   },
   {
     "id": "pl-agh-space-msc",
@@ -542,7 +667,25 @@
       "living_cost_dkk_per_year": null,
       "living_cost_dkk_per_year_min": null,
       "living_cost_dkk_per_year_max": null,
-      "tuition_items": []
+      "tuition_items": [],
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
+      }
     },
     "scholarship_profile": {
       "available_types": [],
@@ -561,14 +704,14 @@
     },
     "living_profile": {
       "city_type": "Medium",
-      "housing_search_difficulty": "high",
+      "housing_search_difficulty": "unknown",
       "housing_cost_range_eur": null,
       "student_dorm_availability": "unknown",
       "living_cost_risk": "Bilinmiyor / Resmi Veri Yok",
       "verification_notes": "",
       "average_room_rent_eur": null,
       "monthly_living_cost_eur_estimated": null,
-      "housing_difficulty": null,
+      "housing_difficulty": "unknown",
       "average_room_rent_eur_min": null,
       "average_room_rent_eur_max": null,
       "monthly_living_cost_eur_min": null,
@@ -617,7 +760,62 @@
       "housing_application_separate": null,
       "housing_options": [],
       "official_living_cost_items": [],
-      "official_rent_items": []
+      "official_rent_items": [],
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": null,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 0,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
+      }
     },
     "curriculum_profile": {
       "structure": null,
@@ -685,7 +883,15 @@
       "winter_deadline": null,
       "application_deadline": null,
       "deadline_notes": null,
-      "deadline_events": []
+      "deadline_events": [],
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": null,
+        "status": "not_published",
+        "confidence": "unknown",
+        "reason": "no_iso_dated_deadline_in_record",
+        "evaluated_at": "2026-08-30"
+      }
     },
     "research_profile": {
       "research_focus_areas": [],
@@ -758,10 +964,10 @@
         "housing"
       ],
       "has_checked_source_log": false,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "quality_control": {
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "qc_status": "needs_revision",
       "remaining_verification_tasks": [
         {
@@ -835,7 +1041,51 @@
       }
     },
     "tuition_eur_per_year": null,
-    "annual_fee_eur": null
+    "annual_fee_eur": null,
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "unknown",
+      "score": null,
+      "score_basis_weight": 0,
+      "evidenced_dimensions": 0,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "unknown",
+          "basis": "curriculum_evidence_not_checked",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "Aerodynamics",
+        "Space Systems",
+        "Propulsion",
+        "Structures"
+      ],
+      "confidence": "unknown",
+      "legacy_relevance_status": "strong",
+      "evaluated_at": "2026-08-30"
+    }
   },
   {
     "id": "pl-wroclaw-mech-msc",
@@ -961,7 +1211,25 @@
       "living_cost_dkk_per_year": null,
       "living_cost_dkk_per_year_min": null,
       "living_cost_dkk_per_year_max": null,
-      "tuition_items": []
+      "tuition_items": [],
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
+      }
     },
     "scholarship_profile": {
       "available_types": [],
@@ -980,14 +1248,14 @@
     },
     "living_profile": {
       "city_type": "Medium",
-      "housing_search_difficulty": "high",
+      "housing_search_difficulty": "unknown",
       "housing_cost_range_eur": null,
       "student_dorm_availability": "unknown",
       "living_cost_risk": "Bilinmiyor / Resmi Veri Yok",
       "verification_notes": "",
       "average_room_rent_eur": null,
       "monthly_living_cost_eur_estimated": null,
-      "housing_difficulty": null,
+      "housing_difficulty": "unknown",
       "average_room_rent_eur_min": null,
       "average_room_rent_eur_max": null,
       "monthly_living_cost_eur_min": null,
@@ -1036,7 +1304,62 @@
       "housing_application_separate": null,
       "housing_options": [],
       "official_living_cost_items": [],
-      "official_rent_items": []
+      "official_rent_items": [],
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": null,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 0,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
+      }
     },
     "curriculum_profile": {
       "structure": null,
@@ -1104,7 +1427,15 @@
       "winter_deadline": null,
       "application_deadline": null,
       "deadline_notes": null,
-      "deadline_events": []
+      "deadline_events": [],
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": null,
+        "status": "not_published",
+        "confidence": "unknown",
+        "reason": "no_iso_dated_deadline_in_record",
+        "evaluated_at": "2026-08-30"
+      }
     },
     "research_profile": {
       "research_focus_areas": [],
@@ -1177,10 +1508,10 @@
         "housing"
       ],
       "has_checked_source_log": false,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "quality_control": {
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "qc_status": "needs_revision",
       "remaining_verification_tasks": [
         {
@@ -1254,7 +1585,51 @@
       }
     },
     "tuition_eur_per_year": null,
-    "annual_fee_eur": null
+    "annual_fee_eur": null,
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "unknown",
+      "score": null,
+      "score_basis_weight": 0,
+      "evidenced_dimensions": 0,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "unknown",
+          "basis": "curriculum_evidence_not_checked",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "Aerodynamics",
+        "Space Systems",
+        "Propulsion",
+        "Structures"
+      ],
+      "confidence": "unknown",
+      "legacy_relevance_status": "strong",
+      "evaluated_at": "2026-08-30"
+    }
   },
   {
     "id": "pl-silesian-aero-msc",
@@ -1380,7 +1755,25 @@
       "living_cost_dkk_per_year": null,
       "living_cost_dkk_per_year_min": null,
       "living_cost_dkk_per_year_max": null,
-      "tuition_items": []
+      "tuition_items": [],
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
+      }
     },
     "scholarship_profile": {
       "available_types": [],
@@ -1399,14 +1792,14 @@
     },
     "living_profile": {
       "city_type": "Medium",
-      "housing_search_difficulty": "medium",
+      "housing_search_difficulty": "unknown",
       "housing_cost_range_eur": null,
       "student_dorm_availability": "unknown",
       "living_cost_risk": "Bilinmiyor / Resmi Veri Yok",
       "verification_notes": "",
       "average_room_rent_eur": null,
       "monthly_living_cost_eur_estimated": null,
-      "housing_difficulty": null,
+      "housing_difficulty": "unknown",
       "average_room_rent_eur_min": null,
       "average_room_rent_eur_max": null,
       "monthly_living_cost_eur_min": null,
@@ -1455,7 +1848,62 @@
       "housing_application_separate": null,
       "housing_options": [],
       "official_living_cost_items": [],
-      "official_rent_items": []
+      "official_rent_items": [],
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": null,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 0,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
+      }
     },
     "curriculum_profile": {
       "structure": null,
@@ -1523,7 +1971,15 @@
       "winter_deadline": null,
       "application_deadline": null,
       "deadline_notes": null,
-      "deadline_events": []
+      "deadline_events": [],
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": null,
+        "status": "not_published",
+        "confidence": "unknown",
+        "reason": "no_iso_dated_deadline_in_record",
+        "evaluated_at": "2026-08-30"
+      }
     },
     "research_profile": {
       "research_focus_areas": [],
@@ -1596,10 +2052,10 @@
         "housing"
       ],
       "has_checked_source_log": false,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "quality_control": {
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "qc_status": "needs_revision",
       "remaining_verification_tasks": [
         {
@@ -1673,7 +2129,51 @@
       }
     },
     "tuition_eur_per_year": null,
-    "annual_fee_eur": null
+    "annual_fee_eur": null,
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "unknown",
+      "score": null,
+      "score_basis_weight": 0,
+      "evidenced_dimensions": 0,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "unknown",
+          "basis": "curriculum_evidence_not_checked",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "Aerodynamics",
+        "Space Systems",
+        "Propulsion",
+        "Structures"
+      ],
+      "confidence": "unknown",
+      "legacy_relevance_status": "strong",
+      "evaluated_at": "2026-08-30"
+    }
   },
   {
     "id": "pl-gdansk-mech-msc",
@@ -1799,7 +2299,25 @@
       "living_cost_dkk_per_year": null,
       "living_cost_dkk_per_year_min": null,
       "living_cost_dkk_per_year_max": null,
-      "tuition_items": []
+      "tuition_items": [],
+      "normalized_cost": {
+        "standard": "cost_model@3.0.0",
+        "currency": null,
+        "annual_total": null,
+        "annual_total_eur_equivalent": null,
+        "includes": [],
+        "missing_mandatory_components": [
+          "tuition",
+          "living_costs"
+        ],
+        "months_of_living_cost": null,
+        "status": "incomplete",
+        "note": {
+          "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+          "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+        },
+        "evaluated_at": "2026-08-30"
+      }
     },
     "scholarship_profile": {
       "available_types": [],
@@ -1818,14 +2336,14 @@
     },
     "living_profile": {
       "city_type": "Medium",
-      "housing_search_difficulty": "high",
+      "housing_search_difficulty": "unknown",
       "housing_cost_range_eur": null,
       "student_dorm_availability": "unknown",
       "living_cost_risk": "Bilinmiyor / Resmi Veri Yok",
       "verification_notes": "",
       "average_room_rent_eur": null,
       "monthly_living_cost_eur_estimated": null,
-      "housing_difficulty": null,
+      "housing_difficulty": "unknown",
       "average_room_rent_eur_min": null,
       "average_room_rent_eur_max": null,
       "monthly_living_cost_eur_min": null,
@@ -1874,7 +2392,62 @@
       "housing_application_separate": null,
       "housing_options": [],
       "official_living_cost_items": [],
-      "official_rent_items": []
+      "official_rent_items": [],
+      "housing_difficulty_profile": {
+        "standard": "housing_difficulty@3.0.0",
+        "level": "unknown",
+        "raw_score": null,
+        "scaled_score": null,
+        "score_max": 15,
+        "evidenced_dimensions": 0,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "guarantee_status": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "supply_pressure": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "market_affordability_gap": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "timing_sensitivity": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          },
+          "arrival_risk": {
+            "value": null,
+            "points": null,
+            "derived_from": null,
+            "reason": "not_published_in_record"
+          }
+        },
+        "confidence": "unknown",
+        "band_from_score": null,
+        "capped_from_very_high": false,
+        "legacy_value": "unknown",
+        "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_profile": {
+        "standard": "cost_model@3.0.0",
+        "cost_basis": "unknown",
+        "status": "unknown",
+        "reason": "no_official_living_cost_items",
+        "components": {},
+        "monthly_total": null,
+        "evaluated_at": "2026-08-30"
+      }
     },
     "curriculum_profile": {
       "structure": null,
@@ -1942,7 +2515,15 @@
       "winter_deadline": null,
       "application_deadline": null,
       "deadline_notes": null,
-      "deadline_events": []
+      "deadline_events": [],
+      "primary_deadline": {
+        "standard": "application_countdown@3.0.0",
+        "date": null,
+        "status": "not_published",
+        "confidence": "unknown",
+        "reason": "no_iso_dated_deadline_in_record",
+        "evaluated_at": "2026-08-30"
+      }
     },
     "research_profile": {
       "research_focus_areas": [],
@@ -2015,10 +2596,10 @@
         "housing"
       ],
       "has_checked_source_log": false,
-      "audited_at": "2026-08-14"
+      "audited_at": "2026-08-23"
     },
     "quality_control": {
-      "checked_at": "2026-08-14",
+      "checked_at": "2026-08-23",
       "qc_status": "needs_revision",
       "remaining_verification_tasks": [
         {
@@ -2092,6 +2673,50 @@
       }
     },
     "tuition_eur_per_year": null,
-    "annual_fee_eur": null
+    "annual_fee_eur": null,
+    "academic_match_profile": {
+      "standard": "academic_match@3.0.0",
+      "tier": "unknown",
+      "score": null,
+      "score_basis_weight": 0,
+      "evidenced_dimensions": 0,
+      "dimensions_required_for_publication": 3,
+      "dimensions": {
+        "curriculum_evidence": {
+          "level": "unknown",
+          "basis": "curriculum_evidence_not_checked",
+          "weight": 30
+        },
+        "research_group_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "faculty_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 25
+        },
+        "facility_evidence": {
+          "level": "unknown",
+          "basis": "research_evidence_not_checked",
+          "weight": 10
+        },
+        "industry_outlet_evidence": {
+          "level": "unknown",
+          "basis": "industry_evidence_not_checked",
+          "weight": 10
+        }
+      },
+      "matched_tags": [
+        "Aerodynamics",
+        "Space Systems",
+        "Propulsion",
+        "Structures"
+      ],
+      "confidence": "unknown",
+      "legacy_relevance_status": "strong",
+      "evaluated_at": "2026-08-30"
+    }
   }
 ]

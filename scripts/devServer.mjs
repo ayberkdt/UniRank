@@ -8,6 +8,7 @@ const dataDir = new URL('../data_base/', import.meta.url);
 const scholarshipCatalogUrl = new URL('../scholarships/catalog.json', import.meta.url);
 const researchFieldCatalogUrl = new URL('../research_fields/catalog.json', import.meta.url);
 const catalogScopeUrl = new URL('../config/catalog_scope.json', import.meta.url);
+const standardsUrl = new URL('../config/standards.json', import.meta.url);
 const port = Number(process.env.PORT || 8765);
 
 const mimeTypes = {
@@ -499,6 +500,12 @@ const server = createServer(async (request, response) => {
     if (url.pathname === '/api/research-pathways') {
       const catalog = JSON.parse(await readFile(researchFieldCatalogUrl, 'utf8'));
       sendJson(response, { status: 'success', data: catalog });
+      return;
+    }
+
+    if (url.pathname === '/api/standards') {
+      const standards = JSON.parse(await readFile(standardsUrl, 'utf8'));
+      sendJson(response, { status: 'success', data: standards });
       return;
     }
 

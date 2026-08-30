@@ -186,7 +186,14 @@
         "verification_notes": {
           "en": "UPM's general B2 English rule applies to Appendix-I professional master's degrees; MUSE is not in that category. No English test is listed for MUSE admission.",
           "tr": "UPM'nin genel B2 İngilizce kuralı Ek-I mesleki yetki veren yüksek lisanslara uygulanır; MUSE bu kategoride değildir. MUSE kabulü için İngilizce sınavı listelenmemiştir."
-        }
+        },
+        "language_of_instruction": "Spanish",
+        "language_note": {
+          "en": "Decisive detail: UPM lists the language of this master as Spanish. Despite the English acronym MUSE and the international mission list, the teaching is not in English. If you do not hold Spanish at academic level, this record is not viable for you regardless of how well the facilities match — check this before anything else on this page.",
+          "tr": "Belirleyici ayrıntı: UPM bu yüksek lisansın dilini İspanyolca olarak listeler. İngilizce MUSE kısaltmasına ve uluslararası görev listesine rağmen öğretim İngilizce değildir. Akademik düzeyde İspanyolcan yoksa, tesisler ne kadar iyi örtüşürse örtüşsün bu kayıt senin için uygulanabilir değildir — bu sayfadaki her şeyden önce bunu kontrol et."
+        },
+        "verified_from": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?fmt=detail&id=14.2",
+        "last_verified": "2026-08-30"
       },
       "cost_profile": {
         "academic_year": "2026/2027",
@@ -266,7 +273,26 @@
         ],
         "reservation_deposit_eur": 150,
         "reservation_deposit_deducted_from_tuition": true,
-        "tuition_eur_per_year_non_eu_nonresident": 5044.2
+        "tuition_eur_per_year_non_eu_nonresident": 5044.2,
+        "normalized_cost": {
+          "standard": "cost_model@3.0.0",
+          "currency": "EUR",
+          "annual_total": null,
+          "annual_total_eur_equivalent": null,
+          "includes": [
+            "living_costs"
+          ],
+          "missing_mandatory_components": [
+            "tuition"
+          ],
+          "months_of_living_cost": 1,
+          "status": "incomplete",
+          "note": {
+            "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+            "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+          },
+          "evaluated_at": "2026-08-30"
+        }
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
@@ -320,7 +346,7 @@
         "monthly_living_cost_eur_min": null,
         "monthly_living_cost_eur_max": null,
         "monthly_living_cost_eur_estimated": null,
-        "housing_difficulty": "high",
+        "housing_difficulty": "unknown",
         "student_housing_available": false,
         "student_housing_competitiveness": "not_applicable",
         "average_room_rent_eur": null,
@@ -407,7 +433,98 @@
           }
         ],
         "official_rent_items": [],
-        "housing_allocation_mode": "external_market_and_independent_residences"
+        "housing_allocation_mode": "external_market_and_independent_residences",
+        "housing_search_difficulty": "unknown",
+        "housing_difficulty_profile": {
+          "standard": "housing_difficulty@3.0.0",
+          "level": "unknown",
+          "raw_score": 5,
+          "scaled_score": null,
+          "score_max": 15,
+          "evidenced_dimensions": 2,
+          "dimensions_required_for_publication": 3,
+          "dimensions": {
+            "guarantee_status": {
+              "value": "not_offered",
+              "points": 4,
+              "derived_from": "living_profile.housing_access"
+            },
+            "supply_pressure": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "market_affordability_gap": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "timing_sensitivity": {
+              "value": "separate_application_generous_window",
+              "points": 1,
+              "derived_from": "living_profile.housing_application_separate"
+            },
+            "arrival_risk": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            }
+          },
+          "confidence": "unknown",
+          "band_from_score": null,
+          "capped_from_very_high": false,
+          "legacy_value": "unknown",
+          "evaluated_at": "2026-08-30"
+        },
+        "cost_of_living_profile": {
+          "standard": "cost_model@3.0.0",
+          "cost_basis": "official_university_living_budget",
+          "status": "partial",
+          "currency": "EUR",
+          "months_covered": 1,
+          "components_included": [
+            "rent"
+          ],
+          "mandatory_components_missing": [
+            "food",
+            "transport",
+            "utilities"
+          ],
+          "components": {
+            "rent": {
+              "monthly_amount": 825.0,
+              "currency": "EUR",
+              "published_items": [
+                {
+                  "label": "UPM welcome-guide accommodation reference range",
+                  "published_amount": 825.0,
+                  "currency": "EUR",
+                  "period": "monthly"
+                }
+              ]
+            }
+          },
+          "monthly_total": 825.0,
+          "annual_total": 825.0,
+          "monthly_total_eur_equivalent": {
+            "amount": 825.0,
+            "currency": "EUR",
+            "is_conversion": true,
+            "fx_rate": 1,
+            "fx_rate_date": "2026-08-28",
+            "fx_source": "European Central Bank euro foreign exchange reference rates"
+          },
+          "excludes": [
+            "tuition",
+            "mandatory_university_fees",
+            "one_off_visa_and_travel_costs"
+          ],
+          "confidence": "medium",
+          "evaluated_at": "2026-08-30"
+        }
       },
       "curriculum_profile": {
         "tracks": [],
@@ -685,6 +802,10 @@
         "verification_notes": {
           "en": "The newest fully indexed tabular plan located is the 2020/21 Plan 14SA. Its course codes and structure are corroborated by the current 2025/26 learning-guide index and individual guides. Any 2026/27 timetable-level change should be rechecked when UPM publishes that cycle's guides.",
           "tr": "Bulunan en yeni eksiksiz ve dizinlenmiş tablo 2020/21 Plan 14SA'dır. Ders kodları ve yapı, güncel 2025/26 öğrenme rehberi dizini ve tekil rehberlerle doğrulanmıştır. 2026/27 ders programı düzeyindeki değişiklikler UPM o dönemin rehberlerini yayımladığında yeniden kontrol edilmelidir."
+        },
+        "specialisation_note": {
+          "en": "120 ECTS, on-campus, professionally oriented, with 20 places, for the 2026-27 academic year. Aimed at graduates in aerospace engineering and related disciplines. The stated objective is that the student understands the scientific and technological methodology governing the conception and design of a space system: space environment, orbital mechanics, attitude control, thermal control, launchers, space mechanisms and structures, materials, power systems, data handling and management, communications, compatibility and reliability, and the integration of those subsystems into one system. Teaching is project-based, initially using the development of UPM's UPMSat satellites as the working case.",
+          "tr": "2026-27 akademik yılı için 120 AKTS, yüz yüze, mesleki yönelimli, 20 kontenjanlı. Havacılık ve uzay mühendisliği ile ilgili disiplinlerin mezunlarına yöneliktir. Belirtilen amaç, öğrencinin bir uzay sisteminin tasarlanmasını ve tasarımını yöneten bilimsel ve teknolojik metodolojiyi kavramasıdır: uzay ortamı, yörünge mekaniği, yönelim kontrolü, termal kontrol, fırlatıcılar, uzay mekanizmaları ve yapıları, malzemeler, güç sistemleri, veri işleme ve yönetimi, iletişim, uyumluluk ve güvenilirlik ile bu alt sistemlerin tek bir sistemde bütünleştirilmesi. Öğretim proje tabanlıdır ve başlangıçta UPM'nin UPMSat uydularının geliştirilmesini çalışma vakası olarak kullanır."
         }
       },
       "category_profile": {
@@ -819,7 +940,82 @@
           "https://muse.idr.upm.es/index.php/es/master",
           "https://muse.idr.upm.es/images/Guias%20Aprendizaje%20202526/GA_14SA_143000133_1S_2025-26.pdf",
           "https://muse.idr.upm.es/es/ultimasnoticias"
-        ]
+        ],
+        "department": "Instituto Universitario de Microgravedad \"Ignacio Da Riva\" (IDR/UPM), E.T.S.I. Aeronáutica y del Espacio",
+        "department_url": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?fmt=detail&id=14.2",
+        "department_note": {
+          "en": "This master is owned by a research institute rather than by a teaching school: IDR/UPM organises and runs it. That is why the learning method is project-based around UPM's own UPMSat satellites, and why the facility list reads like a small space agency rather than a teaching lab.",
+          "tr": "Bu yüksek lisans, bir öğretim okuluna değil bir araştırma enstitüsüne aittir: onu IDR/UPM örgütler ve yürütür. Öğrenme yönteminin UPM'nin kendi UPMSat uydularının etrafında proje tabanlı olmasının ve tesis listesinin bir öğretim laboratuvarından çok küçük bir uzay ajansı gibi okunmasının sebebi budur."
+        },
+        "faculty_contact_policy": "before_application_optional",
+        "research_units": [
+          {
+            "name": "IDR/UPM — Instituto Universitario de Microgravedad \"Ignacio Da Riva\", Montegancedo campus",
+            "unit_type": "institute",
+            "url": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?fmt=detail&id=14.2",
+            "topics": [
+              "spacecraft_design",
+              "satellite_systems",
+              "space_systems",
+              "testing",
+              "thermal_management",
+              "space_environment",
+              "systems_engineering"
+            ],
+            "stated_research_areas": [
+              "Space environment, orbital mechanics and attitude control",
+              "Thermal control, launchers, space mechanisms and structures, materials",
+              "Power subsystem, data handling and management, communications, compatibility and reliability",
+              "Integration of the different subsystems into a space system"
+            ],
+            "facilities": [
+              "Class M8 clean room for assembly and integration of 50 kg-class satellites",
+              "Thermal vacuum chamber for acceptance and qualification testing of 50 kg-class satellites and of components",
+              "Concurrent Design Facility (CDF) sponsored by the European Space Agency for concurrent design of space missions and vehicles, equipped with 14 workstations"
+            ],
+            "student_access": "project_course_open",
+            "why_it_fits": {
+              "en": "A clean room and a thermal vacuum chamber both sized for 50 kg-class satellites means the institute can build and qualify a real spacecraft, not a model — and it has: UPMSat-1 and UPMSat-2 are its own. The ESA-sponsored Concurrent Design Facility with 14 workstations is how real missions are scoped in industry, and having one attached to a taught master is rare. If satellite_systems or spacecraft_design is your tag, this is the strongest hardware access in the Spanish block.",
+              "tr": "Her ikisi de 50 kg sınıfı uydular için boyutlandırılmış bir temiz oda ile bir termal vakum odası, enstitünün bir maket değil gerçek bir uzay aracı inşa edip niteleyebileceği anlamına gelir — ve inşa etmiştir: UPMSat-1 ile UPMSat-2 kendisine aittir. ESA destekli, 14 iş istasyonlu Eşzamanlı Tasarım Tesisi, gerçek görevlerin sanayide kapsamlandırılma biçimidir ve ders verilen bir yüksek lisansa bağlı olması nadirdir. Etiketin satellite_systems veya spacecraft_design ise, bu, İspanya bloğundaki en güçlü donanım erişimidir."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "IDR/UPM mission participation as a technological agent",
+            "unit_type": "consortium",
+            "url": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?fmt=detail&id=14.2",
+            "topics": [
+              "space_systems",
+              "satellite_systems",
+              "sensors",
+              "space_environment",
+              "industrial_projects"
+            ],
+            "stated_research_areas": [
+              "UPMSat-1 and UPMSat-2 — UPM's own satellites",
+              "ROSETTA (ESA)",
+              "SO-PHI and SUNRISE solar instruments",
+              "Energetic Particle Detector (EPD)",
+              "NOMAD instrument on ExoMars"
+            ],
+            "student_access": "project_course_open",
+            "why_it_fits": {
+              "en": "The institute states it participates as a technological agent in ESA and NASA missions and names them, and that the master's project-based learning draws on that real experience. Rosetta, ExoMars NOMAD and Solar Orbiter's PHI instrument are flight hardware — the teaching case studies are missions the same building worked on.",
+              "tr": "Enstitü, ESA ve NASA görevlerine teknolojik ajan olarak katıldığını belirtir ve bunları adlandırır; yüksek lisansın proje tabanlı öğrenmesinin bu gerçek deneyimden beslendiğini söyler. Rosetta, ExoMars NOMAD ve Solar Orbiter'ın PHI cihazı uçuş donanımıdır — ders vaka çalışmaları, aynı binanın üzerinde çalıştığı görevlerdir."
+            },
+            "last_verified": "2026-08-30"
+          }
+        ],
+        "faculty_email_availability": {
+          "status": "not_published",
+          "note": {
+            "en": "UPM publishes the IDR institute secretariat address, secretaria.idr@upm.es, and three phone lines on the programme page, but no individual academic addresses. Because the institute is small and owns the programme, the secretariat is the correct first contact.",
+            "tr": "UPM, program sayfasında IDR enstitü sekreterliği adresi olan secretaria.idr@upm.es'i ve üç telefon hattını yayımlar, ancak bireysel akademisyen adresi vermez. Enstitü küçük olduğu ve programın sahibi olduğu için doğru ilk temas noktası sekreterliktir."
+          },
+          "directory_url": "http://muse.idr.upm.es"
+        },
+        "department_contact_email": "secretaria.idr@upm.es",
+        "department_contact_email_source": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?fmt=detail&id=14.2"
       },
       "industry_ecosystem_profile": {
         "nearby_companies": [],
@@ -927,7 +1123,23 @@
             "event": "Santander_economic_aid_deadline",
             "date": "2026-10-07"
           }
-        ]
+        ],
+        "primary_deadline": {
+          "standard": "application_countdown@3.0.0",
+          "date": "2026-09-30",
+          "next_expected_date": null,
+          "time": null,
+          "timezone": null,
+          "applies_to": "all_applicants",
+          "cycle_label": null,
+          "is_recurring_annual": false,
+          "status": "open",
+          "days_remaining_at_evaluation": 31,
+          "derived_from": "application_timeline_profile.deadline_events[]",
+          "confidence": "high",
+          "source_url": "https://muse.idr.upm.es/es/master?catid=8&id=4%3Aadmision-al-muse&view=article",
+          "evaluated_at": "2026-08-30"
+        }
       },
       "student_sentiment_profile": {
         "student_satisfaction_score": null,
@@ -1014,26 +1226,6 @@
           "https://www.reddit.com/r/askspain/comments/13h3r94"
         ],
         "source_log": [
-          {
-            "url": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?fmt=detail&id=14.2",
-            "source_type": "official_program_page",
-            "title": "Sistemas Espaciales — UPM official master's catalogue",
-            "access_status": "ok",
-            "last_checked": "2026-08-14",
-            "relevant_fields": [
-              "program",
-              "program_status",
-              "degree_level",
-              "ects",
-              "language",
-              "curriculum"
-            ],
-            "confidence": "high",
-            "notes": {
-              "en": "Current UPM catalogue identifies the active 120-ECTS, two-year, Spanish, on-campus MUSE programme.",
-              "tr": "Güncel UPM kataloğu aktif, 120 AKTS, iki yıllık, İspanyolca ve yüz yüze MUSE programını tanımlar."
-            }
-          },
           {
             "url": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/preguntas_frecuentes",
             "source_type": "official_admission_page",
@@ -1236,9 +1428,29 @@
               "en": "Confirms active 2026/27 admissions, high first-round demand, current selection evidence and recent student space projects.",
               "tr": "Aktif 2026/27 kabulünü, yüksek ilk tur talebini, güncel seçim kanıtlarını ve yakın tarihli öğrenci uzay projelerini doğrular."
             }
+          },
+          {
+            "url": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?fmt=detail&id=14.2",
+            "title": "Universidad Politécnica de Madrid — Máster Universitario en Sistemas Espaciales (MUSE)",
+            "source_type": "official_program_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-30",
+            "relevant_fields": [
+              "research",
+              "labs",
+              "curriculum",
+              "program",
+              "language",
+              "department"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "States the owning institute, the language of instruction as Spanish, the 120 ECTS and 20 places, the subject span, the project-based method around UPMSat, the named ESA and NASA missions and the three Montegancedo facilities.",
+              "tr": "Sahibi enstitüyü, öğretim dilinin İspanyolca olduğunu, 120 AKTS ve 20 kontenjanı, konu kapsamını, UPMSat etrafındaki proje tabanlı yöntemi, adlandırılmış ESA ve NASA görevlerini ve üç Montegancedo tesisini belirtir."
+            }
           }
         ],
-        "last_verified": "2026-08-14",
+        "last_verified": "2026-08-30",
         "needs_verification": false,
         "verification_notes": {
           "en": "All decision-critical groups have checked official evidence. Deliberate unknowns remain where the university does not publish a value: numeric GPA floor, GRE score, accepted Spanish certificate list, automatic admission funding, newly arrived non-EU eligibility for the current Santander aid, and a current complete Madrid living-cost total.",
@@ -1353,7 +1565,7 @@
       },
       "quality_control": {
         "qc_status": "passed",
-        "checked_at": "2026-08-14",
+        "checked_at": "2026-08-23",
         "failed_canary_tests": [],
         "remaining_verification_tasks": [],
         "qc_notes": {
@@ -1379,7 +1591,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-14"
+        "audited_at": "2026-08-30"
       },
       "tuition_eur_per_year": 5044.2,
       "annual_fee_eur": 33.65,
@@ -1406,6 +1618,86 @@
             "en": "Institutional global rank; it is not evidence of aerospace or space-programme fit.",
             "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
           }
+        }
+      },
+      "academic_match_profile": {
+        "standard": "academic_match@3.0.0",
+        "tier": "strong_adjacent",
+        "score": 59,
+        "score_basis_weight": 90,
+        "evidenced_dimensions": 4,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "curriculum_evidence": {
+            "level": "moderate",
+            "basis": "the subject span and the project-based method are published, but no course-by-course list with credits appears on the checked page",
+            "weight": 30,
+            "source_url": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?fmt=detail&id=14.2"
+          },
+          "research_group_evidence": {
+            "level": "strong",
+            "basis": "the master is organised by a named research institute that lists its own satellites and its participation in named ESA and NASA missions",
+            "weight": 25,
+            "source_url": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?fmt=detail&id=14.2"
+          },
+          "faculty_evidence": {
+            "level": "none",
+            "basis": "no_named_items",
+            "weight": 25
+          },
+          "facility_evidence": {
+            "level": "strong",
+            "basis": "a class M8 clean room and a thermal vacuum chamber both rated for 50 kg-class satellites, plus an ESA-sponsored 14-station Concurrent Design Facility",
+            "weight": 10,
+            "source_url": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?fmt=detail&id=14.2"
+          },
+          "industry_outlet_evidence": {
+            "level": "unknown",
+            "basis": "industry_evidence_not_checked",
+            "weight": 10
+          }
+        },
+        "matched_tags": [
+          "space_systems",
+          "spacecraft_design",
+          "astrodynamics",
+          "mission_analysis",
+          "space_environment",
+          "gnc",
+          "rocket_propulsion",
+          "thermal_management",
+          "energy_systems",
+          "aerospace_structures",
+          "materials",
+          "systems_engineering",
+          "verification_validation",
+          "embedded_systems",
+          "testing",
+          "manufacturing",
+          "industrial_projects",
+          "internship_thesis",
+          "aerothermodynamics",
+          "aeroacoustics"
+        ],
+        "confidence": "medium",
+        "legacy_relevance_status": "strong",
+        "evaluated_at": "2026-08-30"
+      },
+      "academic_match_evidence": {
+        "facility_evidence": {
+          "level": "strong",
+          "basis": "a class M8 clean room and a thermal vacuum chamber both rated for 50 kg-class satellites, plus an ESA-sponsored 14-station Concurrent Design Facility",
+          "source_url": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?fmt=detail&id=14.2"
+        },
+        "research_group_evidence": {
+          "level": "strong",
+          "basis": "the master is organised by a named research institute that lists its own satellites and its participation in named ESA and NASA missions",
+          "source_url": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?fmt=detail&id=14.2"
+        },
+        "curriculum_evidence": {
+          "level": "moderate",
+          "basis": "the subject span and the project-based method are published, but no course-by-course list with credits appears on the checked page",
+          "source_url": "https://www.upm.es/Estudiantes/Estudios_Titulaciones/Estudios_Master/Programas?fmt=detail&id=14.2"
         }
       }
     },
@@ -1527,14 +1819,21 @@
         "verification_notes": {
           "en": "Major language barrier verified.",
           "tr": "Büyük dil bariyeri doğrulandı."
-        }
+        },
+        "language_of_instruction": "Catalan in year one, English in year two",
+        "language_note": {
+          "en": "The single most important line on this record: UPC states that the first year is taught in Catalan and the second year in English. Not Spanish — Catalan. An international applicant who assumes an 'English-taught' Spanish master will hit a full year of instruction in a language they almost certainly do not have. UPC does publish information on language use in the classroom and on students' language rights, so ask specifically what accommodation exists before you apply.",
+          "tr": "Bu kayıttaki en önemli tek satır: UPC, birinci yılın Katalanca, ikinci yılın İngilizce verildiğini belirtir. İspanyolca değil — Katalanca. 'İngilizce verilen' bir İspanyol yüksek lisansı varsayan uluslararası bir aday, neredeyse kesinlikle bilmediği bir dilde tam bir yıllık öğretimle karşılaşır. UPC, sınıfta dil kullanımı ve öğrencilerin dil hakları hakkında bilgi yayımlar; başvurmadan önce hangi uyarlamanın mevcut olduğunu özellikle sor."
+        },
+        "verified_from": "https://www.upc.edu/en/masters/aerospace-engineering",
+        "last_verified": "2026-08-30"
       },
       "cost_profile": {
         "academic_year": "2026/2027",
-        "tuition_eur_per_year_min": 5400,
+        "tuition_eur_per_year_min": 2122,
         "tuition_eur_per_year_max": 5400,
         "tuition_eur_per_year_estimated": 5400,
-        "tuition_basis": "official",
+        "tuition_basis": "official_published_approximate_programme_fee_excluding_non_teaching_and_certificate_costs",
         "regional_tax_eur": null,
         "student_contribution_eur": null,
         "application_fee_eur": null,
@@ -1548,8 +1847,8 @@
           "tr": ""
         },
         "source_notes": {
-          "en": "Approximately 5,400 EUR per year (total ~10,800 EUR for 120 ECTS) for non-EU non-residents.",
-          "tr": "Oturum izni olmayan AB dışı öğrenciler için yılda yaklaşık 5.400 EUR (120 AKTS için toplam ~10.800 EUR)."
+          "en": "UPC publishes an approximate fee of EUR 2,122, rising to EUR 5,400 for non-EU residents. The page states these figures exclude non-teaching academic fees and the cost of issuing the degree certificate, so treat them as a floor rather than a total.",
+          "tr": "UPC, AB dışı sakinler için 5.400 avroya yükselen yaklaşık 2.122 avroluk bir ücret yayımlar. Sayfa, bu rakamların öğretim dışı akademik ücretleri ve diploma düzenleme masrafını içermediğini belirtir; dolayısıyla bunları toplam değil taban olarak gör."
         },
         "verification_notes": {
           "en": "",
@@ -1570,7 +1869,26 @@
         "living_cost_sek_per_year_min": null,
         "living_cost_sek_per_year_max": null,
         "living_cost_dkk_per_year_min": null,
-        "living_cost_dkk_per_year_max": null
+        "living_cost_dkk_per_year_max": null,
+        "normalized_cost": {
+          "standard": "cost_model@3.0.0",
+          "currency": "EUR",
+          "annual_total": null,
+          "annual_total_eur_equivalent": null,
+          "includes": [
+            "tuition"
+          ],
+          "missing_mandatory_components": [
+            "living_costs"
+          ],
+          "months_of_living_cost": null,
+          "status": "incomplete",
+          "note": {
+            "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+            "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+          },
+          "evaluated_at": "2026-08-30"
+        }
       },
       "scholarship_profile": {
         "regional_scholarship_available": false,
@@ -1604,7 +1922,7 @@
         "monthly_living_cost_eur_min": 1300,
         "monthly_living_cost_eur_max": 1500,
         "monthly_living_cost_eur_estimated": null,
-        "housing_difficulty": "high",
+        "housing_difficulty": "unknown",
         "student_housing_available": true,
         "student_housing_competitiveness": "medium",
         "average_room_rent_eur": null,
@@ -1664,7 +1982,62 @@
         "housing_budget_dkk_per_year_min": null,
         "housing_budget_dkk_per_year_max": null,
         "housing_access": "unknown",
-        "housing_application_separate": null
+        "housing_application_separate": null,
+        "housing_search_difficulty": "unknown",
+        "housing_difficulty_profile": {
+          "standard": "housing_difficulty@3.0.0",
+          "level": "unknown",
+          "raw_score": 1,
+          "scaled_score": null,
+          "score_max": 15,
+          "evidenced_dimensions": 1,
+          "dimensions_required_for_publication": 3,
+          "dimensions": {
+            "guarantee_status": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "supply_pressure": {
+              "value": "early_application_advised",
+              "points": 1,
+              "derived_from": "living_profile.student_housing_competitiveness"
+            },
+            "market_affordability_gap": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "timing_sensitivity": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "arrival_risk": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            }
+          },
+          "confidence": "unknown",
+          "band_from_score": null,
+          "capped_from_very_high": false,
+          "legacy_value": "unknown",
+          "evaluated_at": "2026-08-30"
+        },
+        "cost_of_living_profile": {
+          "standard": "cost_model@3.0.0",
+          "cost_basis": "unknown",
+          "status": "unknown",
+          "reason": "no_official_living_cost_items",
+          "components": {},
+          "monthly_total": null,
+          "evaluated_at": "2026-08-30"
+        }
       },
       "curriculum_profile": {
         "tracks": [
@@ -1705,7 +2078,11 @@
           "Fundamentals of Space Engineering",
           "Aerospace Materials",
           "Aerospace Production and Design"
-        ]
+        ],
+        "specialisation_note": {
+          "en": "120 ECTS over two academic years at ESEIAAT in Terrassa, face-to-face, mornings and afternoons, with intakes starting in both September and February. Five specialisations are published: Aerospace Vehicles, Airports, Propulsion, Space, and Air Navigation at EETAC. The degree is recorded in the Spanish Ministry of Science, Innovation and Universities.",
+          "tr": "Terrassa'daki ESEIAAT'ta iki akademik yılda 120 AKTS; yüz yüze, sabah ve öğleden sonra, hem Eylül hem Şubat başlangıçlı alımlarla. Beş uzmanlaşma yayımlanır: Havacılık ve Uzay Araçları, Havaalanları, İtki, Uzay ve EETAC'ta Hava Seyrüseferi. Derece, İspanya Bilim, İnovasyon ve Üniversiteler Bakanlığı'na kayıtlıdır."
+        }
       },
       "category_profile": {
         "primary_categories": [
@@ -1729,7 +2106,49 @@
           "tr": "ESEIAAT araştırma grupları"
         },
         "research_strength_score": 80,
-        "research_sources": []
+        "research_sources": [],
+        "department": "Terrassa School of Industrial, Aerospace and Audiovisual Engineering (ESEIAAT)",
+        "department_url": "https://www.upc.edu/en/masters/aerospace-engineering",
+        "department_note": {
+          "en": "ESEIAAT publishes five specialisations for this master — Aerospace Vehicles, Airports, Propulsion, Space, and Air Navigation at the EETAC school. That spread from airframes through airports to air traffic is wider than most European aerospace masters, but the programme page names no research groups, laboratories or academics, so the research side of this record is undocumented rather than verified.",
+          "tr": "ESEIAAT bu yüksek lisans için beş uzmanlaşma yayımlar — Havacılık ve Uzay Araçları, Havaalanları, İtki, Uzay ve EETAC okulunda Hava Seyrüseferi. Uçak gövdelerinden havaalanlarına ve hava trafiğine uzanan bu yelpaze, çoğu Avrupa havacılık yüksek lisansından geniştir; ancak program sayfası hiçbir araştırma grubu, laboratuvar veya akademisyen adlandırmaz; dolayısıyla bu kaydın araştırma tarafı doğrulanmış değil, belgesizdir."
+        },
+        "faculty_contact_policy": "do_not_contact_centralised_admission",
+        "research_units": [
+          {
+            "name": "Declared specialisation tracks at ESEIAAT and EETAC",
+            "unit_type": "research_group",
+            "url": "https://www.upc.edu/en/masters/aerospace-engineering",
+            "topics": [
+              "aircraft_design",
+              "jet_propulsion",
+              "space_systems",
+              "systems_engineering",
+              "aerospace_general"
+            ],
+            "stated_research_areas": [
+              "Aerospace Vehicles",
+              "Airports",
+              "Propulsion",
+              "Space",
+              "Air Navigation, taught at the EETAC school"
+            ],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "The Airports and Air Navigation tracks are the distinguishing feature: very few aerospace masters in this database let you specialise in the ground and airspace side of aviation rather than the vehicle. If your interest is operations and infrastructure rather than design, that is a genuine reason to look here — but read the language note first.",
+              "tr": "Havaalanları ve Hava Seyrüseferi izleri ayırt edici özelliktir: bu veritabanındaki çok az havacılık yüksek lisansı, aracın değil havacılığın yer ve hava sahası tarafında uzmanlaşmana izin verir. İlgin tasarımdan çok operasyon ve altyapıysa, bu buraya bakmak için gerçek bir sebeptir — ama önce dil notunu oku."
+            },
+            "last_verified": "2026-08-30"
+          }
+        ],
+        "faculty_email_availability": {
+          "status": "not_published",
+          "note": {
+            "en": "The UPC programme page names no academics and publishes no addresses; enquiries route through a request-information form.",
+            "tr": "UPC program sayfası hiçbir akademisyen adlandırmaz ve adres yayımlamaz; sorular bir bilgi talebi formundan yönlendirilir."
+          },
+          "directory_url": "https://www.upc.edu/en/masters/aerospace-engineering"
+        }
       },
       "industry_ecosystem_profile": {
         "nearby_companies": [],
@@ -1769,7 +2188,23 @@
           "tr": "Güncel resmî 2026/27 program föyü beklenen ön kayıt son tarihini 1 Temmuz 2026 olarak gösterdi. Bu, döngüye özgü ve geçmiş bir referanstır; sonraki döngü için tahmin değildir. İşlem yapmadan önce canlı başvuru portalını doğrulayın."
         },
         "winter_deadline": null,
-        "application_deadline": "2026-07-01 (expected date in 2026/27 official programme sheet; passed)"
+        "application_deadline": "2026-07-01 (expected date in 2026/27 official programme sheet; passed)",
+        "primary_deadline": {
+          "standard": "application_countdown@3.0.0",
+          "date": "2026-07-01",
+          "next_expected_date": null,
+          "time": null,
+          "timezone": null,
+          "applies_to": "non_eu",
+          "cycle_label": null,
+          "is_recurring_annual": false,
+          "status": "closed",
+          "days_remaining_at_evaluation": -60,
+          "derived_from": "application_timeline_profile.non_eu_deadline",
+          "confidence": "high",
+          "source_url": "https://www.upc.edu/master/en/348/masters-degree-in-aerospace-engineering.pdf",
+          "evaluated_at": "2026-08-30"
+        }
       },
       "student_sentiment_profile": {
         "student_satisfaction_score": null,
@@ -1834,29 +2269,6 @@
         "third_party_sources": [],
         "student_sentiment_sources": [],
         "source_log": [
-          {
-            "url": "https://www.upc.edu/en/masters/aerospace-engineering",
-            "title": "Master's degree in Aerospace Engineering — UPC",
-            "source_type": "official_program_page",
-            "access_status": "ok",
-            "last_checked": "2026-08-14",
-            "relevant_fields": [
-              "program",
-              "program_status",
-              "degree_level",
-              "ects",
-              "teaching_language",
-              "curriculum",
-              "admission",
-              "non_eu_eligibility",
-              "tuition"
-            ],
-            "confidence": "high",
-            "notes": {
-              "en": "Official page lists 120 ECTS over two years, first year Catalan and second year English; it lists approximate €2,122 fees and €5,400 for non-EU residents, plus five specialisations.",
-              "tr": "Resmî sayfa iki yılda 120 AKTS, ilk yıl Katalanca ve ikinci yıl İngilizce belirtir; yaklaşık 2.122 € ve AB dışı ikamet etmeyenler için 5.400 € ücret ile beş uzmanlaşma alanını listeler."
-            }
-          },
           {
             "url": "https://www.upc.edu/en/masters/aerospace-engineering",
             "title": "Master's degree in Aerospace Engineering — UPC",
@@ -1925,9 +2337,28 @@
               "en": "Official UPC guidance recommends EUR 1,300-1,500/month and EUR 450-650 shared-room rent, both expressly city-dependent planning information.",
               "tr": "Resmî UPC rehberi, ikisi de açıkça şehre bağlı planlama bilgisi olarak aylık 1.300-1.500 EUR ve 450-650 EUR paylaşımlı oda kirası önerir."
             }
+          },
+          {
+            "url": "https://www.upc.edu/en/masters/aerospace-engineering",
+            "title": "Universitat Politècnica de Catalunya — Master's degree in Aerospace Engineering",
+            "source_type": "official_program_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-30",
+            "relevant_fields": [
+              "research",
+              "curriculum",
+              "program",
+              "tuition",
+              "language"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "States the five specialisations, the credits and duration, the September and February intakes, the approximate fees for EU and non-EU residents, and that the first year is taught in Catalan and the second in English.",
+              "tr": "Beş uzmanlaşmayı, kredi ve süreyi, Eylül ile Şubat alımlarını, AB ve AB dışı sakinler için yaklaşık ücretleri ve birinci yılın Katalanca, ikinci yılın İngilizce verildiğini belirtir."
+            }
           }
         ],
-        "last_verified": "2026-07-15",
+        "last_verified": "2026-08-30",
         "needs_verification": true,
         "verification_notes": {
           "en": "Programme, language, fees, a cycle-specific deadline, living budget and the actual scope of the named scholarship are source-checked. The card does not turn an EU-only aid call into a Turkish/non-EU scholarship promise.",
@@ -1997,7 +2428,7 @@
       "scoring_inputs": {},
       "quality_control": {
         "qc_status": "needs_revision",
-        "checked_at": "2026-08-14",
+        "checked_at": "2026-08-23",
         "failed_canary_tests": [],
         "remaining_verification_tasks": [],
         "qc_notes": {
@@ -2013,16 +2444,17 @@
           "program",
           "language",
           "admission",
-          "non_eu_eligibility",
           "tuition",
           "scholarship",
           "deadline",
           "curriculum",
           "housing"
         ],
-        "unverified_critical_fields": [],
+        "unverified_critical_fields": [
+          "non_eu_eligibility"
+        ],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-14"
+        "audited_at": "2026-08-30"
       },
       "qs_ranking_display": "=434",
       "qs_ranking_year": 2027,
@@ -2047,6 +2479,59 @@
             "en": "Institutional global rank; it is not evidence of aerospace or space-programme fit.",
             "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
           }
+        }
+      },
+      "academic_match_profile": {
+        "standard": "academic_match@3.0.0",
+        "tier": "unknown",
+        "score": null,
+        "score_basis_weight": 55,
+        "evidenced_dimensions": 2,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "curriculum_evidence": {
+            "level": "moderate",
+            "basis": "five specialisations are named with credits, duration and intake months, but no course list is published on the checked page",
+            "weight": 30,
+            "source_url": "https://www.upc.edu/en/masters/aerospace-engineering"
+          },
+          "research_group_evidence": {
+            "level": "weak",
+            "basis": "no research groups, laboratories, facilities or academics are named on the programme page",
+            "weight": 25,
+            "source_url": "https://www.upc.edu/en/masters/aerospace-engineering"
+          },
+          "faculty_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 25
+          },
+          "facility_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 10
+          },
+          "industry_outlet_evidence": {
+            "level": "unknown",
+            "basis": "industry_evidence_not_checked",
+            "weight": 10
+          }
+        },
+        "matched_tags": [],
+        "confidence": "unknown",
+        "legacy_relevance_status": "strong",
+        "evaluated_at": "2026-08-30"
+      },
+      "academic_match_evidence": {
+        "curriculum_evidence": {
+          "level": "moderate",
+          "basis": "five specialisations are named with credits, duration and intake months, but no course list is published on the checked page",
+          "source_url": "https://www.upc.edu/en/masters/aerospace-engineering"
+        },
+        "research_group_evidence": {
+          "level": "weak",
+          "basis": "no research groups, laboratories, facilities or academics are named on the programme page",
+          "source_url": "https://www.upc.edu/en/masters/aerospace-engineering"
         }
       }
     },
@@ -2143,6 +2628,14 @@
           "validity_rule": "",
           "waiver_rules": [],
           "source_ids": []
+        },
+        "entry_note": {
+          "en": "Direct entry for a bachelor's in the Aerospace Engineering branch. Telecommunications, Industrial Engineering and Physics or Applied Physics bachelors are also accepted after the 6 ECTS Formative Complement. The admissions committee may admit engineers from other branches and physics or mathematics graduates, setting whatever complements it judges necessary. Admission is scored, and the weighting is published: academic record of the access degree up to 100 points, English above B2 up to 20 points, and other merits up to 20 points. Other merits explicitly include further study, professional and research experience, scholarships and awards, the motivation letter, recommendation letters and additional languages.",
+          "tr": "Havacılık ve Uzay Mühendisliği dalında lisans için doğrudan giriş. Telekomünikasyon, Endüstri Mühendisliği ile Fizik veya Uygulamalı Fizik lisansları da 6 AKTS'lik Tamamlayıcı Eğitim sonrasında kabul edilir. Kabul komitesi, gerekli gördüğü tamamlayıcıları belirleyerek diğer dallardan mühendisleri ve fizik ya da matematik mezunlarını kabul edebilir. Kabul puanlanır ve ağırlıklandırma yayımlanır: giriş derecesinin akademik dosyası en fazla 100 puan, B2 üstü İngilizce en fazla 20 puan, diğer başarılar en fazla 20 puan. Diğer başarılar açıkça ileri öğrenimi, mesleki ve araştırma deneyimini, bursları ve ödülleri, niyet mektubunu, tavsiye mektuplarını ve ek dilleri içerir."
+        },
+        "motivation_letter_note": {
+          "en": "UC3M publishes what it wants in the motivation letter, which few programmes do: reflect on the professional career you intend to pursue, critically reflect on the competences your bachelor gave you and how this master would extend them, and analyse which specific elements of this programme you value. Write to those three prompts in that order.",
+          "tr": "UC3M, niyet mektubunda ne istediğini yayımlar; çok az program bunu yapar: izlemeyi düşündüğün mesleki kariyer üzerine düşün, lisansının sana kazandırdığı yetkinlikler ile bu yüksek lisansın onları nasıl genişleteceği üzerine eleştirel biçimde düşün ve bu programın hangi somut ögelerine değer verdiğini çözümle. Bu üç yönergeye, bu sırayla yaz."
         }
       },
       "language_profile": {
@@ -2171,13 +2664,13 @@
       },
       "cost_profile": {
         "academic_year": "2025/2026 (published; 2026/27 pending approval)",
-        "tuition_eur_per_year_min": 5044.2,
-        "tuition_eur_per_year_max": 5044.2,
-        "tuition_eur_per_year_estimated": 5044.2,
-        "tuition_basis": "official",
+        "tuition_eur_per_year_min": 1350,
+        "tuition_eur_per_year_max": 5044,
+        "tuition_eur_per_year_estimated": 5044,
+        "tuition_basis": "official_published_per_ects_public_price_2025_2026_pending_2026_2027_approval",
         "regional_tax_eur": null,
         "student_contribution_eur": null,
-        "application_fee_eur": null,
+        "application_fee_eur": 450,
         "enrollment_fee_eur": null,
         "total_academic_cost_eur_per_year_estimated": 5044.2,
         "tuition_eur_full_program": 7566.3,
@@ -2189,8 +2682,8 @@
           "tr": ""
         },
         "source_notes": {
-          "en": "Published 2025/26 non-EU price: €84.07/ECTS; €5,044.20 for 60 ECTS in year 1 and €2,522.10 for 30 ECTS in year 2 (total €7,566.30). The page says 2026/27 approval is pending.",
-          "tr": "Yayımlanan 2025/26 AB dışı fiyatı: 84,07 €/AKTS; 1. yılda 60 AKTS için 5.044,20 € ve 2. yılda 30 AKTS için 2.522,10 € (toplam 7.566,30 €). Sayfa 2026/27 onayının beklediğini belirtir."
+          "en": "UC3M publishes a per-ECTS public price: EUR 45.02 for EU students and EUR 84.07 for non-EU students. On the 90 ECTS programme that is EUR 2,701.20 then EUR 1,350.60 for EU students across the two years, and EUR 5,044.20 then EUR 2,522.10 for non-EU students. A EUR 450 reservation fee is payable on notification of admission and is deducted from the first tuition payment; it is refunded only if the programme is cancelled. The prices exclude the Formative Complement credits and the cost of issuing the degree certificate. UC3M states these are the 25/26 figures, pending approval by the Community of Madrid for 26/27.",
+          "tr": "UC3M AKTS başına kamu fiyatı yayımlar: AB öğrencileri için 45,02 avro, AB dışı öğrenciler için 84,07 avro. 90 AKTS'lik programda bu, iki yıl boyunca AB öğrencileri için 2.701,20 avro ardından 1.350,60 avro; AB dışı öğrenciler için 5.044,20 avro ardından 2.522,10 avro eder. Kabul bildirimi üzerine 450 avroluk bir yer ayırma ücreti ödenir ve ilk öğrenim ödemesinden düşülür; yalnızca program iptal edilirse iade edilir. Fiyatlar Tamamlayıcı Eğitim kredilerini ve diploma düzenleme masrafını içermez. UC3M bunların 25/26 rakamları olduğunu, 26/27 için Madrid Özerk Yönetimi'nin onayının beklendiğini belirtir."
         },
         "verification_notes": {
           "en": "",
@@ -2211,7 +2704,26 @@
         "living_cost_sek_per_year_min": null,
         "living_cost_sek_per_year_max": null,
         "living_cost_dkk_per_year_min": null,
-        "living_cost_dkk_per_year_max": null
+        "living_cost_dkk_per_year_max": null,
+        "normalized_cost": {
+          "standard": "cost_model@3.0.0",
+          "currency": "EUR",
+          "annual_total": null,
+          "annual_total_eur_equivalent": null,
+          "includes": [
+            "tuition"
+          ],
+          "missing_mandatory_components": [
+            "living_costs"
+          ],
+          "months_of_living_cost": null,
+          "status": "incomplete",
+          "note": {
+            "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
+            "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
+          },
+          "evaluated_at": "2026-08-30"
+        }
       },
       "scholarship_profile": {
         "regional_scholarship_available": null,
@@ -2237,14 +2749,87 @@
         },
         "application_mode": "unknown",
         "automatic_consideration": null,
-        "separate_application_required": null
+        "separate_application_required": null,
+        "playbook": [
+          {
+            "opportunity": "Santander Scholarship Ayuda Económica 2026 for the Master in Space Engineering",
+            "competitiveness": "moderately_selective",
+            "eligibility_gates": [
+              {
+                "en": "Having formalised the application for admission to the Master in Space Engineering for 2026/2027.",
+                "tr": "2026/2027 için Uzay Mühendisliği Yüksek Lisansı'na kabul başvurusunu resmîleştirmiş olmak."
+              },
+              {
+                "en": "Completing the university's own scholarship form in addition to the admission application.",
+                "tr": "Kabul başvurusuna ek olarak üniversitenin kendi burs formunu doldurmak."
+              },
+              {
+                "en": "Registering on the Banco Santander platform — this is a separate registration and the award is announced through it.",
+                "tr": "Banco Santander platformuna kayıt olmak — bu ayrı bir kayıttır ve ödül bu platform üzerinden duyurulur."
+              }
+            ],
+            "selection_criteria": [
+              {
+                "en": "UC3M does not publish a scoring rubric for this scholarship on the programme page. Treat the admission scoring — academic record up to 100, English above B2 up to 20, other merits up to 20 — as the effective filter, since only admitted-track applicants can hold the award.",
+                "tr": "UC3M bu burs için program sayfasında bir puanlama tablosu yayımlamaz. Yalnızca kabul yolundaki adaylar ödülü tutabileceğinden, fiilî filtre olarak kabul puanlamasını — akademik dosya en fazla 100, B2 üstü İngilizce en fazla 20, diğer başarılar en fazla 20 — kabul et."
+              }
+            ],
+            "typical_award": {
+              "coverage": [
+                "partial_tuition"
+              ],
+              "amount_note": {
+                "en": "Three scholarships of EUR 1,000 each. Against non-EU first-year tuition of EUR 5,044.20 this is a partial offset, not a funded place — plan your budget without it and treat it as upside.",
+                "tr": "Her biri 1.000 avroluk üç burs. AB dışı birinci yıl öğrenim ücreti olan 5.044,20 avroya karşı bu, fonlanmış bir yer değil kısmi bir mahsuptur — bütçeni onsuz planla ve ek kazanç olarak gör."
+              }
+            },
+            "award_count_note": {
+              "en": "Exactly three, announced specifically for this master's programme in 2026/2027 under the UC3M agreement with Banco Santander.",
+              "tr": "UC3M'nin Banco Santander ile anlaşması kapsamında 2026/2027'de özellikle bu yüksek lisans programı için duyurulan tam olarak üç adet."
+            },
+            "steps": [
+              {
+                "order": 1,
+                "action": {
+                  "en": "Submit the admission application for the master first. The scholarship requires a formalised admission application to exist before you can apply for the aid.",
+                  "tr": "Önce yüksek lisans kabul başvurusunu gönder. Burs, yardıma başvurabilmen için resmîleştirilmiş bir kabul başvurusunun var olmasını gerektirir."
+                },
+                "owner": "applicant",
+                "timing": "before_application_opens",
+                "hard_requirement": true
+              },
+              {
+                "order": 2,
+                "action": {
+                  "en": "Complete the UC3M scholarship form and register separately on the Banco Santander platform. Two registrations, not one — the university form alone does not enter you, and the outcome is notified through the Santander platform.",
+                  "tr": "UC3M burs formunu doldur ve ayrıca Banco Santander platformuna kayıt ol. Bir değil iki kayıt — üniversite formu tek başına seni yarışa sokmaz ve sonuç Santander platformu üzerinden bildirilir."
+                },
+                "owner": "applicant",
+                "timing": "separate_before_deadline",
+                "hard_requirement": true
+              },
+              {
+                "order": 3,
+                "action": {
+                  "en": "Submit before 7 October 2026, the published application deadline. The decision is published in the UC3M e-bulletin (BOEL) and on the call's web page, and successful and reserve candidates are notified individually through the Santander platform.",
+                  "tr": "Yayımlanan son başvuru tarihi olan 7 Ekim 2026'dan önce gönder. Karar UC3M e-bülteninde (BOEL) ve çağrının web sayfasında yayımlanır; kazanan ve yedek adaylara Santander platformu üzerinden bireysel olarak bildirilir."
+                },
+                "owner": "applicant",
+                "timing": "separate_before_deadline",
+                "hard_requirement": true
+              }
+            ],
+            "evidence_url": "https://www.uc3m.es/master/space-engineering",
+            "last_verified": "2026-08-30"
+          }
+        ]
       },
       "living_profile": {
         "city_cost_level": "medium",
         "monthly_living_cost_eur_min": 600,
         "monthly_living_cost_eur_max": 1200,
         "monthly_living_cost_eur_estimated": null,
-        "housing_difficulty": null,
+        "housing_difficulty": "unknown",
         "student_housing_available": true,
         "student_housing_competitiveness": "medium",
         "average_room_rent_eur": 400,
@@ -2304,7 +2889,62 @@
         "housing_budget_dkk_per_year_min": null,
         "housing_budget_dkk_per_year_max": null,
         "housing_access": "unknown",
-        "housing_application_separate": null
+        "housing_application_separate": null,
+        "housing_search_difficulty": "unknown",
+        "housing_difficulty_profile": {
+          "standard": "housing_difficulty@3.0.0",
+          "level": "unknown",
+          "raw_score": 1,
+          "scaled_score": null,
+          "score_max": 15,
+          "evidenced_dimensions": 1,
+          "dimensions_required_for_publication": 3,
+          "dimensions": {
+            "guarantee_status": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "supply_pressure": {
+              "value": "early_application_advised",
+              "points": 1,
+              "derived_from": "living_profile.student_housing_competitiveness"
+            },
+            "market_affordability_gap": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "timing_sensitivity": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            },
+            "arrival_risk": {
+              "value": null,
+              "points": null,
+              "derived_from": null,
+              "reason": "not_published_in_record"
+            }
+          },
+          "confidence": "unknown",
+          "band_from_score": null,
+          "capped_from_very_high": false,
+          "legacy_value": "unknown",
+          "evaluated_at": "2026-08-30"
+        },
+        "cost_of_living_profile": {
+          "standard": "cost_model@3.0.0",
+          "cost_basis": "unknown",
+          "status": "unknown",
+          "reason": "no_official_living_cost_items",
+          "components": {},
+          "monthly_total": null,
+          "evaluated_at": "2026-08-30"
+        }
       },
       "curriculum_profile": {
         "tracks": [],
@@ -2331,7 +2971,11 @@
           "Compulsory coursework (63 ECTS)",
           "Elective coursework (15 ECTS)",
           "Master's Thesis (12 ECTS)"
-        ]
+        ],
+        "specialisation_note": {
+          "en": "90 ECTS taught entirely in English on the Leganés campus, split 63 ECTS compulsory, 15 ECTS elective and a 12 ECTS master thesis. Compulsory courses run: Space Project Management, Space Environment, On-board Spacecraft Software, Orbital Dynamics, Space Propulsion, Antennas and Radio Propagation, Telecommunications and Signal Processing, Spacecraft Structures, Power Subsystem, Thermal Subsystem, Attitude Dynamics and GNC, Space Electronics, Space Systems Engineering, Space Safety, On-board Data Handling and Telemetry, Ground Segment and Operations, GNSS and Telecommunication Systems, Remote Sensing and Scientific Missions, and a 6 ECTS Spacecraft Pre-design. Electives include Launchers and Re-entry, Earth Observation Data Processing, Data-intensive Space Engineering, an Integral Project worth 12 ECTS, and industrial internships at 3 or 6 ECTS. Applicants from outside the aerospace branch take a 6 ECTS Formative Complement in Introduction to Space Vehicles and Dynamics before the course starts — for 2026/27 this runs online from 1 to 22 July and on-site on 31 August and 1 September. The programme caps classes at 40 students and offers 40 places.",
+          "tr": "Leganés kampüsünde tamamen İngilizce verilen 90 AKTS; 63 AKTS zorunlu, 15 AKTS seçmeli ve 12 AKTS yüksek lisans tezi olarak bölünür. Zorunlu dersler: Uzay Proje Yönetimi, Uzay Ortamı, Uzay Aracı Uçuş İçi Yazılımı, Yörünge Dinamiği, Uzay İtkisi, Antenler ve Radyo Yayılımı, Telekomünikasyon ve Sinyal İşleme, Uzay Aracı Yapıları, Güç Alt Sistemi, Termal Alt Sistem, Yönelim Dinamiği ve GNC, Uzay Elektroniği, Uzay Sistem Mühendisliği, Uzay Güvenliği, Uçuş İçi Veri İşleme ve Telemetri, Yer Segmenti ve Operasyonlar, GNSS ve Telekomünikasyon Sistemleri, Uzaktan Algılama ve Bilimsel Görevler ile 6 AKTS'lik Uzay Aracı Ön Tasarımı. Seçmeliler arasında Fırlatıcılar ve Atmosfere Geri Giriş, Yer Gözlem Verisi İşleme, Veri Yoğun Uzay Mühendisliği, 12 AKTS'lik bir Bütünleşik Proje ve 3 ya da 6 AKTS'lik sanayi stajları vardır. Havacılık dalı dışından gelen adaylar, ders başlamadan önce Uzay Araçlarına ve Dinamiğine Giriş konulu 6 AKTS'lik bir Tamamlayıcı Eğitim alır — 2026/27 için bu, 1–22 Temmuz arası çevrimiçi, 31 Ağustos ile 1 Eylül'de yüz yüze yürütülür. Program sınıfları 40 öğrenciyle sınırlar ve 40 kontenjan sunar."
+        }
       },
       "category_profile": {
         "primary_categories": [
@@ -2347,7 +2991,31 @@
         "department_research_areas": [],
         "labs": [],
         "research_centers": [],
-        "notable_professors": [],
+        "notable_professors": [
+          {
+            "name": "Andrés Marcos Esteban",
+            "role": {
+              "en": "Programme Director, Master in Space Engineering",
+              "tr": "Uzay Mühendisliği Yüksek Lisansı Program Direktörü"
+            },
+            "focus": {
+              "en": "Named on the programme page as the direction of the master. The page does not publish a personal research statement or address.",
+              "tr": "Program sayfasında yüksek lisansın yönetimi olarak anılır. Sayfa kişisel bir araştırma beyanı veya adres yayımlamaz."
+            },
+            "fit_tags": [
+              "gnc",
+              "space_systems",
+              "systems_engineering"
+            ],
+            "email": null,
+            "email_source": null,
+            "profile_url": "https://www.uc3m.es/master/space-engineering",
+            "lab": "Aerospace Engineering Department",
+            "contact_timing": "do_not_contact_centralised_admission",
+            "accepting_students_signal": "not_stated",
+            "last_verified": "2026-08-30"
+          }
+        ],
         "space_or_aerospace_projects": [],
         "student_teams": [],
         "satellite_or_flight_projects": [],
@@ -2356,7 +3024,77 @@
           "tr": "UC3M Havacılık ve Uzay Mühendisliği Bölümü"
         },
         "research_strength_score": 85,
-        "research_sources": []
+        "research_sources": [],
+        "department": "Graduate School of Engineering and Basic Sciences — eight participating departments led by Aerospace Engineering",
+        "department_url": "https://www.uc3m.es/master/space-engineering",
+        "department_note": {
+          "en": "UC3M runs this master across eight departments at once: Aerospace Engineering, Signal and Communications Theory, Electronic Technology, Computer Science and Engineering, Telematic Engineering, Systems Engineering and Automation, Mechanical Engineering, and Thermal and Fluids Engineering. That breadth is deliberate — the programme states it mirrors the multidisciplinary reality of space projects — and it is why the curriculum has separate courses for antennas, on-board software and thermal subsystems rather than folding them into one systems module.",
+          "tr": "UC3M bu yüksek lisansı aynı anda sekiz bölüm üzerinden yürütür: Havacılık ve Uzay Mühendisliği, Sinyal ve İletişim Teorisi, Elektronik Teknolojisi, Bilgisayar Bilimi ve Mühendisliği, Telematik Mühendisliği, Sistem Mühendisliği ve Otomasyon, Makine Mühendisliği, Isıl ve Akışkanlar Mühendisliği. Bu genişlik kasıtlıdır — program, uzay projelerinin çok disiplinli gerçekliğini yansıttığını belirtir — ve müfredatın antenler, uçuş içi yazılım ve termal alt sistemler için bunları tek bir sistem modülüne katlamak yerine ayrı dersler taşımasının sebebi budur."
+        },
+        "faculty_contact_policy": "do_not_contact_centralised_admission",
+        "research_units": [
+          {
+            "name": "Aerospace Engineering Department, with the Spacecraft Pre-design project chain",
+            "unit_type": "research_group",
+            "url": "https://www.uc3m.es/master/space-engineering",
+            "lead": "Programme direction: Prof. Andrés Marcos Esteban",
+            "topics": [
+              "spacecraft_design",
+              "systems_engineering",
+              "astrodynamics",
+              "attitude_dynamics_control",
+              "gnc",
+              "space_environment",
+              "thermal_management"
+            ],
+            "student_access": "project_course_open",
+            "why_it_fits": {
+              "en": "The curriculum is built around a 6 ECTS Spacecraft Pre-design running across two terms, sitting after every subsystem course — space environment, orbital dynamics, propulsion, structures, power, thermal, attitude and GNC, electronics, data handling, ground segment. You learn each subsystem and then integrate them on one vehicle. If spacecraft_design or systems_engineering is your tag, this is the clearest end-to-end design spine in the Spanish block.",
+              "tr": "Müfredat, iki döneme yayılan 6 AKTS'lik bir Uzay Aracı Ön Tasarımı etrafında kurulmuştur ve her alt sistem dersinden sonra gelir — uzay ortamı, yörünge dinamiği, itki, yapılar, güç, termal, yönelim ve GNC, elektronik, veri işleme, yer segmenti. Her alt sistemi öğrenir, sonra bunları tek bir araçta bütünleştirirsin. Etiketin spacecraft_design veya systems_engineering ise, bu, İspanya bloğundaki en net uçtan uca tasarım omurgasıdır."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "Signal and Communications Theory and Telematic Engineering departments",
+            "unit_type": "research_group",
+            "url": "https://www.uc3m.es/master/space-engineering",
+            "topics": [
+              "signal_processing",
+              "satellite_systems",
+              "avionics",
+              "sensors",
+              "space_systems"
+            ],
+            "student_access": "msc_thesis_open",
+            "why_it_fits": {
+              "en": "Antennas and Radio Propagation, Telecommunications and Signal Processing, GNSS and Telecommunication Systems, and Ground Segment and Operations are all compulsory courses here, not electives. Most aerospace masters treat the communications payload as somebody else's problem; this one does not.",
+              "tr": "Antenler ve Radyo Yayılımı, Telekomünikasyon ve Sinyal İşleme, GNSS ve Telekomünikasyon Sistemleri ile Yer Segmenti ve Operasyonlar burada seçmeli değil, zorunlu derslerdir. Çoğu havacılık yüksek lisansı iletişim faydalı yükünü başkasının problemi olarak görür; bu program görmez."
+            },
+            "last_verified": "2026-08-30"
+          },
+          {
+            "name": "Systems Engineering and Automation, Electronic Technology and Computer Science departments",
+            "unit_type": "research_group",
+            "url": "https://www.uc3m.es/master/space-engineering",
+            "topics": [
+              "embedded_systems",
+              "software_engineering",
+              "gnc",
+              "verification_validation",
+              "avionics"
+            ],
+            "student_access": "msc_thesis_open",
+            "last_verified": "2026-08-30"
+          }
+        ],
+        "faculty_email_availability": {
+          "status": "not_published",
+          "note": {
+            "en": "UC3M names the programme director and lists the eight participating departments but routes all enquiries through a contact form rather than publishing addresses. Admission is decided by a weighted committee scoring, not by a supervisor, so contacting an academic will not move your file.",
+            "tr": "UC3M program direktörünü adlandırır ve sekiz katılımcı bölümü listeler ancak adres yayımlamak yerine tüm soruları bir iletişim formundan yönlendirir. Kabul, bir danışman tarafından değil, ağırlıklı bir komite puanlamasıyla kararlaştırılır; dolayısıyla bir akademisyenle iletişime geçmek dosyanı ilerletmez."
+          },
+          "directory_url": "https://www.uc3m.es/master/space-engineering"
+        }
       },
       "industry_ecosystem_profile": {
         "nearby_companies": [],
@@ -2396,6 +3134,22 @@
         "deadline_notes": {
           "en": "UC3M's published general master calendar is recorded as a closed 2026/27 reference. The university states that programmes can close before the period end if places are filled; the extended period is only for programmes with vacancies. A future-cycle deadline is not inferred.",
           "tr": "UC3M'nin yayımladığı genel yüksek lisans takvimi kapanmış 2026/27 referansı olarak kaydedilir. Üniversite, kontenjanlar dolarsa programların dönem sonundan önce kapanabileceğini; uzatılmış dönemin yalnızca kontenjanı olan programlar için olduğunu belirtir. Gelecek dönem son tarihi çıkarım yoluyla üretilmez."
+        },
+        "primary_deadline": {
+          "standard": "application_countdown@3.0.0",
+          "date": "2026-05-31",
+          "next_expected_date": null,
+          "time": null,
+          "timezone": null,
+          "applies_to": "non_eu",
+          "cycle_label": null,
+          "is_recurring_annual": false,
+          "status": "closed",
+          "days_remaining_at_evaluation": -91,
+          "derived_from": "application_timeline_profile.non_eu_deadline",
+          "confidence": "high",
+          "source_url": "https://www.uc3m.es/postgraduate/admission/process",
+          "evaluated_at": "2026-08-30"
         }
       },
       "student_sentiment_profile": {
@@ -2464,31 +3218,6 @@
           {
             "url": "https://www.uc3m.es/master/space-engineering",
             "title": "Master in Space Engineering — UC3M",
-            "source_type": "official_program_page",
-            "access_status": "ok",
-            "last_checked": "2026-08-14",
-            "relevant_fields": [
-              "program",
-              "program_status",
-              "degree_level",
-              "ects",
-              "teaching_language",
-              "curriculum",
-              "admission",
-              "non_eu_eligibility",
-              "tuition",
-              "scholarship",
-              "scholarship_deadline"
-            ],
-            "confidence": "high",
-            "notes": {
-              "en": "Official page: 90 ECTS/three semesters; courses are in English. It publishes 2025/26 tuition pending 2026/27 approval and a 2026 Santander call (three €1,000 awards; 7 October 2026 deadline).",
-              "tr": "Resmî sayfa: 90 AKTS/üç yarıyıl; dersler İngilizce. 2026/27 onayı bekleyen 2025/26 ücretlerini ve 2026 Santander çağrısını (üç adet 1.000 € ödül; 7 Ekim 2026 son tarihi) yayımlar."
-            }
-          },
-          {
-            "url": "https://www.uc3m.es/master/space-engineering",
-            "title": "Master in Space Engineering — UC3M",
             "source_type": "official_tuition_page",
             "access_status": "ok",
             "last_checked": "2026-08-14",
@@ -2548,9 +3277,30 @@
               "en": "Official UC3M page gives EUR 600–1,200/month total student costs, room examples for central Madrid and Getafe/Leganés, food and under-26 transport costs.",
               "tr": "Resmî UC3M sayfası aylık 600–1.200 EUR toplam öğrenci maliyeti, merkez Madrid ve Getafe/Leganés için oda örnekleri, yemek ve 26 yaş altı ulaşım maliyetleri verir."
             }
+          },
+          {
+            "url": "https://www.uc3m.es/master/space-engineering",
+            "title": "Universidad Carlos III de Madrid — Master in Space Engineering",
+            "source_type": "official_program_page",
+            "access_status": "ok",
+            "last_checked": "2026-08-30",
+            "relevant_fields": [
+              "research",
+              "curriculum",
+              "program",
+              "admission",
+              "tuition",
+              "scholarship",
+              "language"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Publishes the programme director, the eight participating departments, the complete curriculum with ECTS, the admission scoring weights, the per-ECTS fees for EU and non-EU students, the reservation fee and the Santander scholarship call with its 7 October 2026 deadline.",
+              "tr": "Program direktörünü, sekiz katılımcı bölümü, AKTS'li tam müfredatı, kabul puanlama ağırlıklarını, AB ve AB dışı öğrenciler için AKTS başına ücretleri, yer ayırma ücretini ve 7 Ekim 2026 son tarihli Santander burs çağrısını yayımlar."
+            }
           }
         ],
-        "last_verified": "2026-07-15",
+        "last_verified": "2026-08-30",
         "needs_verification": false,
         "verification_notes": {
           "en": "Programme-specific source verified. Published fees are explicitly 2025/26 pending regional approval for 2026/27.",
@@ -2613,7 +3363,7 @@
       "scoring_inputs": {},
       "quality_control": {
         "qc_status": "passed",
-        "checked_at": "2026-08-14",
+        "checked_at": "2026-08-23",
         "failed_canary_tests": [],
         "remaining_verification_tasks": [],
         "qc_notes": {
@@ -2623,22 +3373,23 @@
       },
       "qs_ranking": 314,
       "data_quality": {
-        "status": "verified",
+        "status": "partial",
         "checked_official_source_count": 5,
         "verified_fields": [
           "program",
           "language",
           "admission",
-          "non_eu_eligibility",
           "tuition",
           "scholarship",
           "deadline",
           "curriculum",
           "housing"
         ],
-        "unverified_critical_fields": [],
+        "unverified_critical_fields": [
+          "non_eu_eligibility"
+        ],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-14"
+        "audited_at": "2026-08-30"
       },
       "qs_ranking_display": "=314",
       "qs_ranking_year": 2027,
@@ -2663,6 +3414,59 @@
             "en": "Institutional global rank; it is not evidence of aerospace or space-programme fit.",
             "tr": "Kurumsal dünya sıralamasıdır; havacılık veya uzay programı uygunluğunun kanıtı değildir."
           }
+        }
+      },
+      "academic_match_profile": {
+        "standard": "academic_match@3.0.0",
+        "tier": "unknown",
+        "score": null,
+        "score_basis_weight": 55,
+        "evidenced_dimensions": 2,
+        "dimensions_required_for_publication": 3,
+        "dimensions": {
+          "curriculum_evidence": {
+            "level": "strong",
+            "basis": "the full 90 ECTS course list is published term by term with credits and compulsory/elective type, including a 6 ECTS spacecraft pre-design project",
+            "weight": 30,
+            "source_url": "https://www.uc3m.es/master/space-engineering"
+          },
+          "research_group_evidence": {
+            "level": "moderate",
+            "basis": "eight participating departments are named and the programme director is named, but no laboratories, research groups or facilities are published on the programme page",
+            "weight": 25,
+            "source_url": "https://www.uc3m.es/master/space-engineering"
+          },
+          "faculty_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 25
+          },
+          "facility_evidence": {
+            "level": "unknown",
+            "basis": "research_evidence_not_checked",
+            "weight": 10
+          },
+          "industry_outlet_evidence": {
+            "level": "unknown",
+            "basis": "industry_evidence_not_checked",
+            "weight": 10
+          }
+        },
+        "matched_tags": [],
+        "confidence": "unknown",
+        "legacy_relevance_status": "strong",
+        "evaluated_at": "2026-08-30"
+      },
+      "academic_match_evidence": {
+        "curriculum_evidence": {
+          "level": "strong",
+          "basis": "the full 90 ECTS course list is published term by term with credits and compulsory/elective type, including a 6 ECTS spacecraft pre-design project",
+          "source_url": "https://www.uc3m.es/master/space-engineering"
+        },
+        "research_group_evidence": {
+          "level": "moderate",
+          "basis": "eight participating departments are named and the programme director is named, but no laboratories, research groups or facilities are published on the programme page",
+          "source_url": "https://www.uc3m.es/master/space-engineering"
         }
       }
     }
