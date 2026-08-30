@@ -56,6 +56,9 @@
     --ge-shadow-2: 0 6px 18px rgba(0, 0, 0, 0.36);
     --ge-shadow-3: 0 18px 44px rgba(0, 0, 0, 0.46);
 
+    /* Shell ---------------------------------------------------------------- */
+    --site-bar-h: 63px;
+
     /* Type ----------------------------------------------------------------- */
     --ge-display: "Space Grotesk", "Segoe UI", sans-serif;
     --ge-body: "Source Sans 3", "Segoe UI", sans-serif;
@@ -136,7 +139,8 @@
 .site-bar {
     position: sticky;
     top: 0;
-    z-index: 60;
+    z-index: 80;
+    min-height: var(--site-bar-h);
     display: flex;
     align-items: center;
     gap: 24px;
@@ -296,4 +300,18 @@
     .site-bar__lang button {
         transition: none;
     }
+}
+
+
+/* The programmes view puts a full-height filter rail beside the content. The
+   bar sits above both, so the rail starts below it rather than fighting it for
+   the top of the viewport, and the rail's own brand lockup is dropped - two
+   UniRank marks stacked vertically is not a header, it is a duplicate. */
+body:has(> .site-bar) .sidebar {
+    top: var(--site-bar-h);
+    height: calc(100dvh - var(--site-bar-h));
+}
+
+body:has(> .site-bar) .sidebar-brand {
+    display: none;
 }
