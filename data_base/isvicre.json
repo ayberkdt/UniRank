@@ -124,22 +124,42 @@
       "tuition_chf_per_year_min": 4380,
       "tuition_chf_per_year_max": 4380,
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
-        "currency": null,
-        "annual_total": null,
-        "annual_total_eur_equivalent": null,
-        "includes": [],
-        "missing_mandatory_components": [
+        "standard": "cost_model@3.1.0",
+        "currency": "CHF",
+        "annual_total": 29580.0,
+        "annual_total_eur_equivalent": {
+          "amount": 31589.06,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 0.9364,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "includes": [
           "tuition",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 12,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
         "evaluated_at": "2026-08-30"
+      },
+      "tuition_chf_per_year": 4380.0,
+      "tuition_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "tuition_chf_per_year",
+        "rule": "non_eu_planning_maximum",
+        "derived_from": {
+          "tuition_chf_per_year_min": 4380.0,
+          "tuition_chf_per_year_max": 4380.0
+        },
+        "currency": "CHF",
+        "includes_mandatory_fees": false,
+        "derived_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -235,7 +255,7 @@
       "housing_access": "unknown",
       "housing_application_separate": null,
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -281,12 +301,40 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_source_range_basis_not_itemised",
+        "status": "total_only",
+        "currency": "CHF",
+        "months_covered": 12,
+        "components_included": [],
+        "mandatory_components_missing": [],
         "components": {},
-        "monthly_total": null,
+        "monthly_total": 2100.0,
+        "published_range": null,
+        "annual_total": 25200.0,
+        "monthly_total_eur_equivalent": {
+          "amount": 2242.63,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 0.9364,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "medium",
+        "derivation": {
+          "rule": "published_annual_living_budget",
+          "derived_from": {
+            "monthly_living_cost_chf_estimated": 25200.0
+          },
+          "derived_at": "2026-08-30"
+        },
+        "source_url": null,
+        "note": null,
         "evaluated_at": "2026-08-30"
       }
     },
@@ -377,7 +425,7 @@
       "eu_deadline": "2025-11-30 for international bachelor's degree; 2026-04-30 only for Swiss bachelor's degree",
       "scholarship_deadline": "2025-11-30 application window for international-degree applicants seeking ESOP",
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": "2025-11-30",
         "next_expected_date": null,
         "time": null,
@@ -791,7 +839,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "partial_match",
       "score": 44,
       "score_basis_weight": 90,
@@ -970,22 +1018,47 @@
       "living_cost_dkk_per_year_min": null,
       "living_cost_dkk_per_year_max": null,
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
-        "currency": null,
-        "annual_total": null,
-        "annual_total_eur_equivalent": null,
-        "includes": [],
-        "missing_mandatory_components": [
+        "standard": "cost_model@3.1.0",
+        "currency": "CHF",
+        "annual_total": 29664.0,
+        "annual_total_eur_equivalent": {
+          "amount": 31678.77,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 0.9364,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "includes": [
           "tuition",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 12,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
         "evaluated_at": "2026-08-30"
+      },
+      "tuition_chf_per_year": 4380.0,
+      "tuition_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "tuition_chf_per_year",
+        "rule": "programme_fee_divided_by_duration",
+        "derived_from": {
+          "tuition_non_eu_full_program": {
+            "amount": 8760,
+            "currency": "CHF",
+            "basis": "four_semesters_tuition_only",
+            "academic_year": "from autumn 2025"
+          },
+          "duration_years": 2.0
+        },
+        "currency": "CHF",
+        "includes_mandatory_fees": false,
+        "derived_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -1081,7 +1154,7 @@
       "housing_access": "unknown",
       "housing_application_separate": null,
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -1127,12 +1200,44 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_source_range_basis_not_itemised",
+        "status": "total_only",
+        "currency": "CHF",
+        "months_covered": 12,
+        "components_included": [],
+        "mandatory_components_missing": [],
         "components": {},
-        "monthly_total": null,
+        "monthly_total": 2107.0,
+        "published_range": {
+          "min": 2107.0,
+          "max": 2107.0
+        },
+        "annual_total": 25284.0,
+        "monthly_total_eur_equivalent": {
+          "amount": 2250.11,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 0.9364,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "medium",
+        "derivation": {
+          "rule": "verified_range_midpoint",
+          "derived_from": {
+            "monthly_living_cost_chf_min": 2107.0,
+            "monthly_living_cost_chf_max": 2107.0
+          },
+          "derived_at": "2026-08-30"
+        },
+        "source_url": null,
+        "note": null,
         "evaluated_at": "2026-08-30"
       }
     },
@@ -1234,7 +1339,7 @@
       ],
       "scholarship_deadline": "15 December or 31 March (same Master application rounds)",
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -1610,7 +1715,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "strong_adjacent",
       "score": 73,
       "score_basis_weight": 90,
@@ -1788,7 +1893,7 @@
       "tuition_usd_per_year_at_three_quarters": null,
       "tuition_usd_per_quarter_nonresident_full_time": null,
       "tuition_gbp_per_year": null,
-      "tuition_chf_per_year": null,
+      "tuition_chf_per_year": 1440.0,
       "tuition_sek_per_year": null,
       "tuition_dkk_per_year": null,
       "mandatory_fees_usd_per_year": null,
@@ -1827,22 +1932,41 @@
         }
       ],
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
-        "currency": null,
-        "annual_total": null,
-        "annual_total_eur_equivalent": null,
-        "includes": [],
-        "missing_mandatory_components": [
+        "standard": "cost_model@3.1.0",
+        "currency": "CHF",
+        "annual_total": 23460.0,
+        "annual_total_eur_equivalent": {
+          "amount": 25053.4,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 0.9364,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "includes": [
           "tuition",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 12,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
         "evaluated_at": "2026-08-30"
+      },
+      "tuition_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "tuition_chf_per_year",
+        "rule": "non_eu_planning_maximum",
+        "derived_from": {
+          "tuition_chf_per_year_min": 1440.0,
+          "tuition_chf_per_year_max": 1440.0
+        },
+        "currency": "CHF",
+        "includes_mandatory_fees": false,
+        "derived_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -1928,7 +2052,7 @@
       "housing_access": "unknown",
       "housing_application_separate": null,
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -1974,12 +2098,44 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_source_range_basis_not_itemised",
+        "status": "total_only",
+        "currency": "CHF",
+        "months_covered": 12,
+        "components_included": [],
+        "mandatory_components_missing": [],
         "components": {},
-        "monthly_total": null,
+        "monthly_total": 1835.0,
+        "published_range": {
+          "min": 1390.0,
+          "max": 2280.0
+        },
+        "annual_total": 22020.0,
+        "monthly_total_eur_equivalent": {
+          "amount": 1959.63,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 0.9364,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "medium",
+        "derivation": {
+          "rule": "verified_range_midpoint",
+          "derived_from": {
+            "monthly_living_cost_chf_min": 1390.0,
+            "monthly_living_cost_chf_max": 2280.0
+          },
+          "derived_at": "2026-08-30"
+        },
+        "source_url": null,
+        "note": null,
         "evaluated_at": "2026-08-30"
       }
     },
@@ -2083,7 +2239,7 @@
         "Spring intake: end of October"
       ],
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -2695,7 +2851,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "core_match",
       "score": 100,
       "score_basis_weight": 90,

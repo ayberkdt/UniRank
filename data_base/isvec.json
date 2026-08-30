@@ -119,13 +119,14 @@
       },
       "application_fee_eur": null,
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
-        "currency": null,
+        "standard": "cost_model@3.1.0",
+        "currency": "SEK",
         "annual_total": null,
         "annual_total_eur_equivalent": null,
-        "includes": [],
+        "includes": [
+          "tuition"
+        ],
         "missing_mandatory_components": [
-          "tuition",
           "living_costs"
         ],
         "months_of_living_cost": null,
@@ -135,6 +136,23 @@
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
         "evaluated_at": "2026-08-30"
+      },
+      "tuition_sek_per_year": 180000.0,
+      "tuition_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "tuition_sek_per_year",
+        "rule": "programme_fee_divided_by_duration",
+        "derived_from": {
+          "tuition_non_eu_full_program": {
+            "amount": 360000,
+            "currency": "SEK",
+            "basis": "full programme"
+          },
+          "duration_years": 2.0
+        },
+        "currency": "SEK",
+        "includes_mandatory_fees": false,
+        "derived_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -199,7 +217,7 @@
       "housing_access": "unknown",
       "housing_application_separate": null,
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -245,7 +263,7 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
@@ -362,7 +380,7 @@
         "Admission results 2027-04-01"
       ],
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": "2027-01-15",
         "next_expected_date": null,
         "time": null,
@@ -745,7 +763,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "partial_match",
       "score": 50,
       "score_basis_weight": 90,
@@ -934,22 +952,42 @@
         "basis": "four semesters at SEK 80,000; published programme price"
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
-        "currency": null,
-        "annual_total": null,
-        "annual_total_eur_equivalent": null,
-        "includes": [],
-        "missing_mandatory_components": [
+        "standard": "cost_model@3.1.0",
+        "currency": "SEK",
+        "annual_total": 356320.0,
+        "annual_total_eur_equivalent": {
+          "amount": 32134.19,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 11.0885,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "includes": [
           "tuition",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 12,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
         "evaluated_at": "2026-08-30"
+      },
+      "tuition_sek_per_year": 160000.0,
+      "tuition_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "tuition_sek_per_year",
+        "rule": "non_eu_planning_maximum",
+        "derived_from": {
+          "tuition_sek_per_year_min": 160000.0,
+          "tuition_sek_per_year_max": 160000.0
+        },
+        "currency": "SEK",
+        "includes_mandatory_fees": false,
+        "derived_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -1012,7 +1050,7 @@
       "housing_access": "unknown",
       "housing_application_separate": null,
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -1058,12 +1096,44 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_source_range_basis_not_itemised",
+        "status": "total_only",
+        "currency": "SEK",
+        "months_covered": 12,
+        "components_included": [],
+        "mandatory_components_missing": [],
         "components": {},
-        "monthly_total": null,
+        "monthly_total": 16360.0,
+        "published_range": {
+          "min": 14360.0,
+          "max": 18360.0
+        },
+        "annual_total": 196320.0,
+        "monthly_total_eur_equivalent": {
+          "amount": 1475.4,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 11.0885,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "medium",
+        "derivation": {
+          "rule": "verified_range_midpoint",
+          "derived_from": {
+            "monthly_living_cost_sek_min": 14360.0,
+            "monthly_living_cost_sek_max": 18360.0
+          },
+          "derived_at": "2026-08-30"
+        },
+        "source_url": null,
+        "note": null,
         "evaluated_at": "2026-08-30"
       }
     },
@@ -1132,7 +1202,7 @@
       "non_eu_deadline": "Mid-January (annual application period; verify exact University Admissions date)",
       "eu_deadline": "Mid-January (annual application period; verify exact University Admissions date)",
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": "2027-01-15",
         "next_expected_date": null,
         "time": null,
@@ -1473,7 +1543,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "unknown",
       "score": null,
       "score_basis_weight": 55,
@@ -1668,22 +1738,46 @@
         "basis": "full programme"
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
-        "currency": null,
-        "annual_total": null,
-        "annual_total_eur_equivalent": null,
-        "includes": [],
-        "missing_mandatory_components": [
+        "standard": "cost_model@3.1.0",
+        "currency": "SEK",
+        "annual_total": 283000.0,
+        "annual_total_eur_equivalent": {
+          "amount": 25521.94,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 11.0885,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "includes": [
           "tuition",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 12,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
         "evaluated_at": "2026-08-30"
+      },
+      "tuition_sek_per_year": 166000.0,
+      "tuition_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "tuition_sek_per_year",
+        "rule": "programme_fee_divided_by_duration",
+        "derived_from": {
+          "tuition_non_eu_full_program": {
+            "amount": 332000,
+            "currency": "SEK",
+            "basis": "full programme"
+          },
+          "duration_years": 2.0
+        },
+        "currency": "SEK",
+        "includes_mandatory_fees": false,
+        "derived_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -1739,7 +1833,7 @@
       "housing_access": "unknown",
       "housing_application_separate": null,
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -1785,12 +1879,44 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_source_range_basis_not_itemised",
+        "status": "total_only",
+        "currency": "SEK",
+        "months_covered": 12,
+        "components_included": [],
+        "mandatory_components_missing": [],
         "components": {},
-        "monthly_total": null,
+        "monthly_total": 9750.0,
+        "published_range": {
+          "min": 6400.0,
+          "max": 13100.0
+        },
+        "annual_total": 117000.0,
+        "monthly_total_eur_equivalent": {
+          "amount": 879.29,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 11.0885,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "medium",
+        "derivation": {
+          "rule": "verified_range_midpoint",
+          "derived_from": {
+            "monthly_living_cost_sek_min": 6400.0,
+            "monthly_living_cost_sek_max": 13100.0
+          },
+          "derived_at": "2026-08-30"
+        },
+        "source_url": null,
+        "note": null,
         "evaluated_at": "2026-08-30"
       }
     },
@@ -1862,7 +1988,7 @@
         "tr": "Resmî LiU sayfası şu anda kesin 2027/28 tarihi değil, kapanmış 2026/27 uluslararası yüksek lisans döngüsünü yayımlar. Kayıt bu doğrulanmış döngüyü planlama bağlamı için gösterir ve geleceğe taşımayı kasıtlı olarak reddeder. Sonraki girişe başvuracak aday, yeni dönem açıldığında programın Apply düğmesini/University Admissions sistemini kullanmalıdır."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": "2026-01-15",
         "next_expected_date": null,
         "time": null,
@@ -2193,7 +2319,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "strong_adjacent",
       "score": 68,
       "score_basis_weight": 90,
@@ -2340,18 +2466,24 @@
         "tr": "LTU dönem başına 70.000 SEK yayımlar; EUR dönüşümü kaydedilmez."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "SEK",
-        "annual_total": null,
-        "annual_total_eur_equivalent": null,
+        "annual_total": 260000.0,
+        "annual_total_eur_equivalent": {
+          "amount": 23447.72,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 11.0885,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
         "includes": [
-          "tuition"
-        ],
-        "missing_mandatory_components": [
+          "tuition",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 12,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
@@ -2398,7 +2530,7 @@
       "housing_application_separate": null,
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -2444,12 +2576,44 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_source_range_basis_not_itemised",
+        "status": "total_only",
+        "currency": "SEK",
+        "months_covered": 12,
+        "components_included": [],
+        "mandatory_components_missing": [],
         "components": {},
-        "monthly_total": null,
+        "monthly_total": 10000.0,
+        "published_range": {
+          "min": 10000.0,
+          "max": 10000.0
+        },
+        "annual_total": 120000.0,
+        "monthly_total_eur_equivalent": {
+          "amount": 901.84,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 11.0885,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "medium",
+        "derivation": {
+          "rule": "verified_range_midpoint",
+          "derived_from": {
+            "monthly_living_cost_sek_min": 10000.0,
+            "monthly_living_cost_sek_max": 10000.0
+          },
+          "derived_at": "2026-08-30"
+        },
+        "source_url": null,
+        "note": null,
         "evaluated_at": "2026-08-30"
       }
     },
@@ -2525,7 +2689,7 @@
         "tr": "Yayımlanan tarih 30 Ağustos 2027 başlangıcı ve LTU-97406 başvuru kodu içindir."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": "2027-01-15",
         "next_expected_date": null,
         "time": null,
@@ -2949,7 +3113,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "strong_adjacent",
       "score": 61,
       "score_basis_weight": 90,

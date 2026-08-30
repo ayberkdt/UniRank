@@ -1,6 +1,6 @@
 {
-  "standards_version": "3.0.0",
-  "last_updated": "2026-08-29",
+  "standards_version": "3.1.0",
+  "last_updated": "2026-08-30",
   "purpose": {
     "en": "Machine-readable definitions for every categorical scale used in the UniRank database. Any category shown to a student must be defined here, together with the criteria that produce it and the evidence it requires.",
     "tr": "UniRank veritabanında kullanılan her kategorik ölçeğin makine-okunur tanımı. Öğrenciye gösterilen her kategori, onu üreten ölçütler ve gerektirdiği kanıtla birlikte burada tanımlanmak zorundadır."
@@ -369,6 +369,18 @@
         "reliability": "high"
       },
       {
+        "code": "official_source_range_basis_not_itemised",
+        "label": {
+          "en": "Checked official figure, components not itemised",
+          "tr": "Doğrulanmış resmî rakam, bileşenleri ayrıntılandırılmamış"
+        },
+        "note": {
+          "en": "The record carries a living-cost figure that was read from an official source and logged with it, but the component list and the period were never recorded alongside the number. It is shown as a range with its midpoint, never as a component-checked budget.",
+          "tr": "Kayıt, resmî bir kaynaktan okunmuş ve kaynağıyla birlikte kaydedilmiş bir yaşam gideri rakamı taşır; ancak bileşen listesi ve dönem rakamın yanına hiç yazılmamıştır. Bileşenleri kontrol edilmiş bir bütçe olarak değil, orta noktasıyla birlikte bir aralık olarak gösterilir."
+        },
+        "reliability": "medium"
+      },
+      {
         "code": "unknown",
         "label": {
           "en": "No verified basis",
@@ -445,6 +457,18 @@
           "tr": "Dönem katkı payı veya öğrenci birliği ücreti"
         },
         "mandatory_in_total": false
+      },
+      {
+        "key": "living_allowance",
+        "label": {
+          "en": "Combined living allowance",
+          "tr": "Birlesik yasam odenegi"
+        },
+        "mandatory_in_total": false,
+        "note": {
+          "en": "A single published line covering rent, utilities, food and local transport together. Universities and immigration offices often publish only this, so the components it contains are recorded as absorbed rather than as unpublished.",
+          "tr": "Kira, faturalar, gida ve sehir ici ulasimi birlikte kapsayan tek bir yayimlanmis satir. Universiteler ve gocmenlik ofisleri cogu zaman yalnizca bunu yayimlar; bu yuzden icerdigi bilesenler yayimlanmamis degil, icine alinmis olarak kaydedilir."
+        }
       }
     ],
     "period_rule": {
@@ -458,6 +482,86 @@
     "total_rule": {
       "en": "annual_total = tuition + mandatory fees + health insurance (when compulsory and separately billed) + monthly living total × months_covered. The inclusion list is always published next to the number, and the total is omitted whenever a mandatory component is unknown.",
       "tr": "yıllık_toplam = öğrenim ücreti + zorunlu ücretler + sağlık sigortası (zorunlu ve ayrı faturalanıyorsa) + aylık yaşam toplamı × months_covered. Kapsam listesi daima rakamın yanında yayımlanır ve zorunlu bileşenlerden biri bilinmiyorsa toplam verilmez."
+    },
+    "derivation_rule": {
+      "en": "A published annual tuition figure may be derived from another verified figure on the same record, never from a different record and never from an average. Only keys that name tuition are read: a mandatory fee, an enrolment fee or an application fee is never promoted to tuition. Every derived value stores derived_from, the rule that produced it and the original published figure, so the derivation can be undone and checked.",
+      "tr": "Yayımlanan yıllık öğrenim ücreti, aynı kayıttaki başka bir doğrulanmış rakamdan türetilebilir; asla başka bir kayıttan ve asla bir ortalamadan türetilemez. Yalnızca adında öğrenim ücreti geçen alanlar okunur: zorunlu bir harç, kayıt ücreti veya başvuru ücreti asla öğrenim ücretine yükseltilmez. Türetilen her değer derived_from bilgisini, kendisini üreten kuralı ve özgün yayımlanmış rakamı saklar; böylece türetme geri alınabilir ve denetlenebilir."
+    },
+    "derivation_rules": [
+      {
+        "code": "no_tuition_charged",
+        "reads": [
+          "tuition_basis",
+          "student_contribution_<currency>",
+          "mandatory_fees_<currency>_per_year_max"
+        ],
+        "en": "Where the basis says in words that no tuition is charged and the record holds no positive tuition figure anywhere, the annual tuition is published as zero rather than as unknown. The compulsory semester contribution is then derived into the annual mandatory fee, because with tuition at zero that contribution is the whole of what the university bills.",
+        "tr": "Dayanak, öğrenim ücreti alınmadığını açıkça söylüyorsa ve kayıtta hiçbir yerde pozitif bir öğrenim ücreti rakamı yoksa, yıllık öğrenim ücreti bilinmiyor olarak değil sıfır olarak yayımlanır. Zorunlu dönem katkısı da yıllık zorunlu ücrete türetilir; çünkü öğrenim ücreti sıfırken üniversitenin faturaladığı tutarın tamamı o katkıdır."
+      },
+      {
+        "code": "published_annual_figure",
+        "reads": [
+          "tuition_<currency>_per_year_at_three_quarters",
+          "tuition_and_program_fees_<currency>_nonresident",
+          "tuition_<currency>_first_year_example"
+        ],
+        "en": "The source already publishes a figure for one academic year. It is used unchanged.",
+        "tr": "Kaynak zaten bir akademik yıla ait bir rakam yayımlar. Değiştirilmeden kullanılır."
+      },
+      {
+        "code": "non_eu_planning_maximum",
+        "reads": [
+          "tuition_<currency>_per_year_min",
+          "tuition_<currency>_per_year_max"
+        ],
+        "en": "Where the source publishes a band, the upper bound is used, because a non-EU applicant cannot assume the lower bracket. A band whose upper bound is missing is not published at all when the record marks the fee as income-based, since the lowest bracket would read as the price.",
+        "tr": "Kaynak bir bant yayımlıyorsa üst sınır kullanılır; çünkü AB dışından bir aday alt dilimi varsayamaz. Üst sınırı olmayan bir bant, kayıt ücreti gelire bağlı olarak işaretlemişse hiç yayımlanmaz; aksi hâlde en düşük dilim fiyat gibi okunurdu."
+      },
+      {
+        "code": "two_semesters_per_academic_year",
+        "reads": [
+          "tuition_<currency>_per_semester",
+          "tuition_<currency>_per_term"
+        ],
+        "en": "A per-semester rate is doubled, because an academic year is two semesters. A per-quarter rate is never multiplied this way.",
+        "tr": "Dönemlik ücret ikiyle çarpılır; çünkü bir akademik yıl iki dönemdir. Çeyreklik bir ücret asla bu şekilde çarpılmaz."
+      },
+      {
+        "code": "programme_fee_divided_by_duration",
+        "reads": [
+          "tuition_<currency>_full_programme",
+          "tuition_<currency>_total"
+        ],
+        "en": "A whole-programme fee is divided by the record's duration in years. It is not published when the duration is unknown, because the divisor would be a guess.",
+        "tr": "Tüm programa ait ücret, kaydın yıl cinsinden süresine bölünür. Süre bilinmiyorsa yayımlanmaz; çünkü bölen bir tahmin olurdu."
+      },
+      {
+        "code": "verified_range_midpoint",
+        "reads": [
+          "monthly_living_cost_<currency>_min",
+          "monthly_living_cost_<currency>_max",
+          "monthly_living_cost_<currency>_estimated"
+        ],
+        "en": "A living-cost range already checked against an official source is published as a total-only figure: the midpoint for comparison, with the full range always shown next to it. It is never presented as a component-checked budget.",
+        "tr": "Resmî bir kaynağa karşı zaten doğrulanmış bir yaşam gideri aralığı, yalnızca toplam olarak yayımlanır: karşılaştırma için orta nokta, yanında daima tam aralık. Bileşenleri kontrol edilmiş bir bütçe olarak sunulmaz."
+      },
+      {
+        "code": "published_annual_living_budget",
+        "reads": [
+          "living_cost_<currency>_per_year",
+          "living_cost_<currency>_per_year_min",
+          "living_cost_<currency>_per_year_max",
+          "living_cost_<currency>_per_week_min",
+          "living_cost_<currency>_per_week_max",
+          "living_cost_period_months"
+        ],
+        "en": "An annual or weekly living budget already checked against an official source is converted to a monthly rate over the period the record states, defaulting to twelve months. A weekly rate is converted over fifty-two weeks, never by multiplying by four, which would drop most of a month from the year.",
+        "tr": "Resmi bir kaynaga karsi zaten dogrulanmis yillik veya haftalik bir yasam butcesi, kaydin belirttigi donem uzerinden aylik orana cevrilir; belirtilmemisse on iki ay varsayilir. Haftalik oran elli iki hafta uzerinden cevrilir, asla dortle carpilarak degil; bu, yildan neredeyse bir ay dusururdu."
+      }
+    ],
+    "derivation_guard": {
+      "en": "Nothing is derived unless the record's data_quality.verified_fields already contains the matching field and its source log carries a reachable source covering it. A derivation cannot turn an unverified number into a published one; it can only move a number that was already checked into the standard shape.",
+      "tr": "Kaydın data_quality.verified_fields alanı ilgili alanı zaten içermiyorsa ve kaynak günlüğü onu kapsayan erişilebilir bir kaynak taşımıyorsa hiçbir şey türetilmez. Türetme, doğrulanmamış bir sayıyı yayımlanmış hâle getiremez; yalnızca zaten kontrol edilmiş bir sayıyı standart biçime taşır."
     }
   },
   "academic_match": {

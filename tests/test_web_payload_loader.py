@@ -153,7 +153,7 @@ def test_caltech_space_ms_has_current_cost_housing_curriculum_and_funding_scope(
     assert research["jpl_collaboration_opportunities"] is True
     assert research["jpl_access_guaranteed"] is False
     assert caltech["student_sentiment_profile"]["student_satisfaction_score"] is None
-    assert len(caltech["source_profile"]["source_log"]) == 31
+    assert len(caltech["source_profile"]["source_log"]) == 32
 
 
 def test_uc_berkeley_me_meng_scopes_professional_degree_cost_funding_and_housing():
@@ -204,7 +204,7 @@ def test_uc_berkeley_me_meng_scopes_professional_degree_cost_funding_and_housing
     assert timeline["english_score_deadline_if_required"] == "2026-12-01T20:59:00-08:00"
     assert berkeley["research_profile"]["individual_lab_place_guaranteed"] is False
     assert berkeley["student_sentiment_profile"]["student_satisfaction_score"] is None
-    assert len(berkeley["source_profile"]["source_log"]) == 36
+    assert len(berkeley["source_profile"]["source_log"]) == 37
     assert berkeley["data_quality"]["status"] == "partial"
 
 

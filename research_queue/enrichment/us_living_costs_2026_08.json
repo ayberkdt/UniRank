@@ -1,0 +1,228 @@
+{
+ "checked": "2026-08-30",
+ "note": "Official United States cost-of-attendance and living budgets, itemised wherever the source itemises them. Every figure keeps the number of months its own source states; where a source does not state a period, the note says so in both languages and the confidence drops to medium.",
+ "records": [
+  {
+   "id": "stanford-aa",
+   "living_profile": {
+    "cost_of_living_evidence": {
+     "cost_basis": "official_university_living_budget",
+     "currency": "USD",
+     "months_covered": 9,
+     "source_url": "https://financialaid.stanford.edu/grad/budget/index.html",
+     "confidence": "high",
+     "note": {
+      "en": "Stanford's 2026-27 standard budget for a single graduate student with no dependents: USD 49,116 across the nine-month academic year, or USD 61,142 over twelve months. The nine-month figure is used because that is the period Stanford labels the academic year. The USD 843 campus health service fee belongs to the same published budget but is held in the mandatory-fee field instead, so it is not counted twice.",
+      "tr": "Stanford'un bakmakla yukumlu oldugu kimsesi olmayan tek kisilik bir lisansustu ogrenci icin 2026-27 standart butcesi: dokuz aylik akademik yil boyunca 49.116 USD, on iki ay icin 61.142 USD. Dokuz aylik rakam kullanilir, cunku Stanford akademik yil olarak bu donemi adlandirir. 843 USD kampus saglik hizmeti ucreti ayni yayimlanmis butcenin parcasidir, ancak iki kez sayilmamasi icin zorunlu ucret alaninda tutulur."
+     },
+     "components": {
+      "rent": 2228.33,
+      "food": 856.67,
+      "personal": 1015.0,
+      "transport": 220.0,
+      "study_materials": 65.0,
+      "health_insurance": 978.67
+     }
+    }
+   },
+   "sources": [
+    {
+     "url": "https://financialaid.stanford.edu/grad/budget/index.html",
+     "title": "Stanford Financial Aid: The Graduate Student Budget 2026-27",
+     "source_type": "official_university_page",
+     "access_status": "ok",
+     "relevant_fields": [
+      "living",
+      "housing",
+      "cost"
+     ],
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "id": "uc-berkeley-me",
+   "living_profile": {
+    "cost_of_living_evidence": {
+     "cost_basis": "official_university_living_budget",
+     "currency": "USD",
+     "months_covered": 12,
+     "source_url": "https://funginstitute.berkeley.edu/programs-centers/full-time-program/learn-more/tuition-financial-aid/",
+     "confidence": "medium",
+     "note": {
+      "en": "The Fung Institute publishes USD 36,774 of estimated annual personal expenses for the MEng: housing 19,432, food 9,576, books 752, personal 3,246 and transportation 3,768. The page calls the figure annual but never names the number of months, so twelve are used here; if it is in fact a nine-month budget the monthly rate is a third higher.",
+      "tr": "Fung Institute, MEng icin yillik 36.774 USD tahmini kisisel gider yayimlar: konut 19.432, gida 9.576, kitap 752, kisisel 3.246 ve ulasim 3.768. Sayfa rakami yillik olarak adlandirir ancak ay sayisini hicbir yerde belirtmez; bu yuzden burada on iki ay kullanilir. Gercekte dokuz aylik bir butce ise aylik tutar ucte bir daha yuksektir."
+     },
+     "components": {
+      "rent": 1619.33,
+      "food": 798.0,
+      "study_materials": 62.67,
+      "personal": 270.5,
+      "transport": 314.0
+     }
+    }
+   },
+   "sources": [
+    {
+     "url": "https://funginstitute.berkeley.edu/programs-centers/full-time-program/learn-more/tuition-financial-aid/",
+     "title": "Berkeley Fung Institute: MEng Tuition and Financial Aid",
+     "source_type": "official_university_page",
+     "access_status": "ok",
+     "relevant_fields": [
+      "living",
+      "housing",
+      "cost",
+      "tuition"
+     ],
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "id": "georgia-tech-ae",
+   "living_profile": {
+    "cost_of_living_evidence": {
+     "cost_basis": "official_university_cost_of_attendance",
+     "currency": "USD",
+     "months_covered": 9,
+     "source_url": "https://finaid.gatech.edu/costs/graduate-costs",
+     "confidence": "high",
+     "note": {
+      "en": "Georgia Tech's 2026-27 out-of-country graduate budget, on-campus column: housing 11,736, food 6,310, books 800, personal 2,800 and transportation 966, published as a total per year for the fall and spring terms. The off-campus column raises housing to 14,380 and the total to 25,256.",
+      "tr": "Georgia Tech'in 2026-27 yurt disindan gelen lisansustu butcesi, kampus ici sutunu: konut 11.736, gida 6.310, kitap 800, kisisel 2.800 ve ulasim 966; guz ve bahar donemleri icin yillik toplam olarak yayimlanir. Kampus disi sutunu konutu 14.380'e, toplami 25.256'ya yukseltir."
+     },
+     "components": {
+      "rent": 1304.0,
+      "food": 701.11,
+      "study_materials": 88.89,
+      "personal": 311.11,
+      "transport": 107.33
+     }
+    }
+   },
+   "sources": [
+    {
+     "url": "https://finaid.gatech.edu/costs/graduate-costs",
+     "title": "Georgia Tech Financial Aid: Graduate Cost of Attendance 2026-27",
+     "source_type": "official_university_page",
+     "access_status": "ok",
+     "relevant_fields": [
+      "living",
+      "housing",
+      "cost"
+     ],
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "id": "caltech-galcit",
+   "living_profile": {
+    "cost_of_living_evidence": {
+     "cost_basis": "official_university_living_budget",
+     "currency": "USD",
+     "months_covered": 12,
+     "source_url": "https://gradoffice.caltech.edu/financialsupport/budget",
+     "confidence": "high",
+     "note": {
+      "en": "Caltech's 2025-26 twelve-month graduate budget for an on-campus double apartment: housing and utilities 13,320, food 8,904, books 1,400, health, dental and vision 965 and personal 9,585, totalling 34,174. The published range across housing types runs from 31,774 for a quad apartment to 44,554 for an off-campus two-bedroom lease. Caltech warns separately that first-year students should expect relocation and set-up costs on top.",
+      "tr": "Caltech'in kampus ici cift kisilik daire icin 2025-26 on iki aylik lisansustu butcesi: konut ve faturalar 13.320, gida 8.904, kitap 1.400, saglik, dis ve goz 965 ve kisisel 9.585; toplam 34.174. Konut turlerine gore yayimlanan aralik, dortlu daire icin 31.774'ten kampus disi iki yatak odali kira icin 44.554'e uzanir. Caltech ayrica birinci yil ogrencilerinin bunlarin ustune tasinma ve kurulum masraflari beklemesi gerektigini belirtir."
+     },
+     "components": {
+      "rent": 1110.0,
+      "food": 742.0,
+      "study_materials": 116.67,
+      "health_insurance": 80.42,
+      "personal": 798.75
+     },
+     "components_absorbed": {
+      "utilities": "rent"
+     }
+    }
+   },
+   "sources": [
+    {
+     "url": "https://gradoffice.caltech.edu/financialsupport/budget",
+     "title": "Caltech Graduate Office: Graduate Student Budget",
+     "source_type": "official_university_page",
+     "access_status": "ok",
+     "relevant_fields": [
+      "living",
+      "housing",
+      "cost"
+     ],
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "id": "ucla-mae",
+   "living_profile": {
+    "cost_of_living_evidence": {
+     "cost_basis": "official_university_cost_of_attendance",
+     "currency": "USD",
+     "months_covered": 9,
+     "source_url": "https://financialaid.ucla.edu/graduate-aid/cost-of-attendance",
+     "confidence": "medium",
+     "note": {
+      "en": "UCLA's 2026-27 graduate student budget: housing 18,221, food 10,546, books 2,004, transportation 3,819, personal 3,219 and health insurance 7,515, excluding tuition and fees. The checked page does not say how many months the budget covers; it is read here as the fall-to-spring academic year, so anyone planning a full twelve months in Los Angeles must budget the summer on top.",
+      "tr": "UCLA'nin 2026-27 lisansustu ogrenci butcesi: konut 18.221, gida 10.546, kitap 2.004, ulasim 3.819, kisisel 3.219 ve saglik sigortasi 7.515; ogrenim ucreti ve harclar haric. Kontrol edilen sayfa butcenin kac ayi kapsadigini soylemez; burada guzden bahara akademik yil olarak okunur, bu yuzden Los Angeles'ta tam on iki ay planlayan birinin yazi ustune butcelemesi gerekir."
+     },
+     "components": {
+      "rent": 2024.56,
+      "food": 1171.78,
+      "study_materials": 222.67,
+      "transport": 424.33,
+      "personal": 357.67,
+      "health_insurance": 835.0
+     }
+    }
+   },
+   "sources": [
+    {
+     "url": "https://financialaid.ucla.edu/graduate-aid/cost-of-attendance",
+     "title": "UCLA Financial Aid: Graduate Cost of Attendance 2026-27",
+     "source_type": "official_university_page",
+     "access_status": "ok",
+     "relevant_fields": [
+      "living",
+      "housing",
+      "cost"
+     ],
+     "confidence": "high"
+    }
+   ]
+  },
+  {
+   "id": "umd-aero",
+   "living_profile": {
+    "cost_of_living_evidence": {
+     "cost_basis": "official_university_cost_of_attendance",
+     "currency": "USD",
+     "months_covered": 12,
+     "source_url": "https://financialaid.umd.edu/resources-policies/cost-attendance",
+     "confidence": "high",
+     "note": {
+      "en": "UMD's 2026-27 non-resident graduate budget publishes housing and food together as USD 17,724, plus books 1,000, transportation 3,058 and personal 1,200: USD 23,982 in all, alongside tuition 26,824 and mandatory fees 764. Housing and food arrive as a single line, so they cannot be shown as separate components here.",
+      "tr": "UMD'nin 2026-27 eyalet disi lisansustu butcesi konut ve gidayi birlikte 17.724 USD olarak yayimlar; buna kitap 1.000, ulasim 3.058 ve kisisel 1.200 eklenir: toplam 23.982 USD, ayrica ogrenim ucreti 26.824 ve zorunlu harclar 764. Konut ve gida tek satir halinde geldigi icin burada ayri bilesenler olarak gosterilemez."
+     },
+     "monthly_total": 1998.5
+    }
+   },
+   "sources": [
+    {
+     "url": "https://financialaid.umd.edu/resources-policies/cost-attendance",
+     "title": "University of Maryland: Cost of Attendance 2026-27",
+     "source_type": "official_university_page",
+     "access_status": "ok",
+     "relevant_fields": [
+      "living",
+      "housing",
+      "cost"
+     ],
+     "confidence": "high"
+    }
+   ]
+  }
+ ]
+}

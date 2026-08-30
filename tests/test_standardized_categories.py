@@ -306,3 +306,209 @@ def test_other_milestones_are_future_dated_and_labelled():
                 "eu_eea",
                 "admitted_or_offer_holders",
             }, (record.get("id"), milestone)
+
+
+# ---------------------------------------------------------------------------
+# cost derivations
+#
+# Most records held a tuition or living figure that a researcher had already
+# checked, but stored under a key nothing downstream could read, so the cost
+# card behaved as though the fee were unknown.  The derivation layer moves
+# those into the canonical fields.  These tests guard the two ways that can go
+# wrong: promoting a number that is not tuition, and promoting a number that is
+# tuition for somebody other than this database's reader.
+# ---------------------------------------------------------------------------
+
+import sys
+
+sys.path.insert(0, str(ROOT / "scripts"))
+import standardize_categories as SC  # noqa: E402
+
+DERIVATION_RULES = {rule["code"] for rule in STANDARDS["cost_model"]["derivation_rules"]}
+COST_BASIS_CODES = {value["code"] for value in STANDARDS["cost_model"]["cost_basis_values"]}
+
+
+def _sourced_record(**cost):
+    """A record whose tuition is verified and covered by a reachable source."""
+    return {
+        "duration_years": 1,
+        "cost_profile": dict(cost),
+        "data_quality": {"verified_fields": ["tuition", "housing", "living"]},
+        "source_profile": {"source_log": [
+            {"url": "https://example.org/fees", "access_status": "ok", "relevant_fields": ["tuition", "living"]}
+        ]},
+    }
+
+
+def test_derivation_rules_in_records_are_declared_in_the_standard():
+    for record in RECORDS:
+        derivation = (record.get("cost_profile") or {}).get("tuition_derivation")
+        if not derivation:
+            continue
+        rule = derivation.get("rule")
+        assert rule in DERIVATION_RULES | {"not_derivable"}, (record.get("id"), rule)
+
+
+def test_a_derived_tuition_always_records_what_it_came_from():
+    for record in RECORDS:
+        derivation = (record.get("cost_profile") or {}).get("tuition_derivation") or {}
+        if derivation.get("rule") in (None, "not_derivable"):
+            continue
+        assert derivation.get("derived_from"), record.get("id")
+        assert derivation.get("field"), record.get("id")
+
+
+def test_derivation_requires_both_a_verified_field_and_a_reachable_source():
+    unverified = _sourced_record(tuition_gbp_per_year_max=30000)
+    unverified["data_quality"]["verified_fields"] = []
+    assert SC.derive_annual_tuition(unverified) is None
+
+    unsourced = _sourced_record(tuition_gbp_per_year_max=30000)
+    unsourced["source_profile"]["source_log"][0]["access_status"] = "broken"
+    assert SC.derive_annual_tuition(unsourced) is None
+
+
+def test_a_mandatory_or_application_fee_is_never_promoted_to_tuition():
+    # Naples publishes only a EUR 167-189 mandatory fee; reading it as tuition
+    # would place the programme at the top of every affordability comparison.
+    record = _sourced_record(mandatory_fees_eur_per_year_min=167,
+                             mandatory_fees_eur_per_year_max=189,
+                             enrollment_fee_eur=136,
+                             application_fee_eur=100)
+    assert SC.derive_annual_tuition(record) is None
+    assert record["cost_profile"].get("tuition_eur_per_year") is None
+
+
+def test_a_zero_is_treated_as_an_unfilled_field_not_a_free_degree():
+    record = _sourced_record(tuition_eur_per_year_max=0, tuition_eur_per_year_min=0)
+    assert SC.derive_annual_tuition(record) is None
+    assert not record["cost_profile"].get("tuition_eur_per_year")
+
+
+def test_an_eu_only_published_rate_is_refused():
+    # FH JOANNEUM publishes a per-semester rate whose own page limits it to
+    # EU, EEA and Swiss citizens, and publishes no third-country rate.
+    record = _sourced_record(
+        tuition_eur_per_year_max=727,
+        tuition_basis="official_published_per_semester_rate_for_eu_eea_swiss_citizens_only_doubled_for_the_academic_year",
+    )
+    assert SC.derive_annual_tuition(record) is None
+    assert record["cost_profile"]["tuition_derivation"]["reason"] == "published_rate_is_eu_eea_only"
+
+
+def test_a_non_eu_basis_is_not_mistaken_for_an_eu_only_one():
+    # The same words appear in "non-EU/EEA/Swiss fee-paying students", which is
+    # exactly the rate this database wants.
+    record = _sourced_record(
+        tuition_sek_per_year_max=160000,
+        tuition_basis="non-EU/EEA/Swiss fee-paying students; current fee per semester",
+    )
+    assert SC.derive_annual_tuition(record)["rule"] == "non_eu_planning_maximum"
+
+
+def test_an_income_based_band_without_a_ceiling_is_not_published():
+    # Bologna's ISEE floor is what a low-income Italian family pays.
+    record = _sourced_record(tuition_eur_per_year_min=157.04, isee_or_income_based=True)
+    assert SC.derive_annual_tuition(record) is None
+    assert record["cost_profile"]["tuition_derivation"]["reason"] == "income_based_range_without_upper_bound"
+
+
+def test_a_band_is_published_at_its_upper_bound():
+    record = _sourced_record(tuition_usd_per_year_min=17312, tuition_usd_per_year_max=19340)
+    assert SC.derive_annual_tuition(record)["rule"] == "non_eu_planning_maximum"
+    assert record["cost_profile"]["tuition_usd_per_year"] == 19340
+
+
+def test_a_per_semester_rate_is_doubled_and_a_programme_fee_is_divided():
+    semester = _sourced_record(tuition_usd_per_semester=375)
+    assert SC.derive_annual_tuition(semester)["rule"] == "two_semesters_per_academic_year"
+    assert semester["cost_profile"]["tuition_usd_per_year"] == 750
+
+    programme = _sourced_record(tuition_gbp_full_programme=33660)
+    programme["duration_years"] = 1
+    assert SC.derive_annual_tuition(programme)["rule"] == "programme_fee_divided_by_duration"
+    assert programme["cost_profile"]["tuition_gbp_per_year"] == 33660
+
+
+def test_a_programme_fee_is_not_published_without_a_duration_to_divide_by():
+    record = _sourced_record(tuition_gbp_full_programme=33660)
+    record["duration_years"] = None
+    assert SC.derive_annual_tuition(record) is None
+
+
+def test_a_canonical_figure_is_never_overwritten_by_a_derivation():
+    record = _sourced_record(tuition_eur_per_year=25633, tuition_eur_per_year_max=999)
+    assert SC.derive_annual_tuition(record) is None
+    assert record["cost_profile"]["tuition_eur_per_year"] == 25633
+
+
+def test_a_derived_living_total_is_labelled_total_only_and_keeps_its_range():
+    record = _sourced_record()
+    record["living_profile"] = {"monthly_living_cost_eur_min": 1000, "monthly_living_cost_eur_max": 1500}
+    profile = SC.build_cost_of_living(record)
+    assert profile["status"] == "total_only"
+    assert profile["cost_basis"] == "official_source_range_basis_not_itemised"
+    assert profile["monthly_total"] == 1250
+    assert profile["published_range"] == {"min": 1000.0, "max": 1500.0}
+    assert profile["components"] == {}
+
+
+def test_every_published_cost_basis_is_declared_in_the_standard():
+    for record in RECORDS:
+        profile = (record.get("living_profile") or {}).get("cost_of_living_profile") or {}
+        basis = profile.get("cost_basis")
+        if basis is None:
+            continue
+        assert basis in COST_BASIS_CODES, (record.get("id"), basis)
+
+
+def test_a_total_only_living_figure_never_claims_checked_components():
+    for record in RECORDS:
+        profile = (record.get("living_profile") or {}).get("cost_of_living_profile") or {}
+        if profile.get("status") != "total_only":
+            continue
+        assert not profile.get("components"), record.get("id")
+        assert not profile.get("components_included"), record.get("id")
+
+
+def test_a_whole_budget_line_is_not_dropped_for_matching_no_component():
+    # Michigan publishes "General international immigration living allowance
+    # for 12 months" as one line.  Matching nothing, it used to be discarded,
+    # leaving books and insurance as the entire published living cost: USD 415
+    # a month against a real allowance of USD 2,769.
+    record = _sourced_record()
+    record["living_profile"] = {"official_living_cost_items": [
+        {"item": "General international immigration living allowance for 12 months",
+         "amount_usd": 28250, "period": "year"},
+        {"item": "Books and supplies allowance", "amount_usd": 1380, "period": "year"},
+        {"item": "Mandatory international health-insurance estimate", "amount_usd": 3600, "period": "year"},
+    ]}
+    profile = SC.build_cost_of_living(record)
+    assert profile["monthly_total"] == 2769.17
+    assert profile["components_absorbed"]["rent"] == "living_allowance"
+    assert profile["mandatory_components_missing"] == []
+
+
+def test_a_combined_housing_and_food_line_does_not_report_food_as_missing():
+    record = _sourced_record()
+    record["living_profile"] = {"official_living_cost_items": [
+        {"item": "Official graduate food-and-housing allowance", "amount_usd": 16512, "period": "academic_year"},
+    ]}
+    profile = SC.build_cost_of_living(record)
+    assert profile["components_included"] == ["rent"]
+    assert profile["components_absorbed"] == {"food": "rent"}
+    assert "food" not in profile["mandatory_components_missing"]
+
+
+def test_health_insurance_is_not_billed_twice_when_the_living_budget_carries_it():
+    record = _sourced_record(tuition_usd_per_year=1000, health_insurance_premium_usd=8808)
+    record["living_profile"] = {"cost_of_living_evidence": {
+        "cost_basis": "official_university_living_budget", "currency": "USD",
+        "months_covered": 9, "source_url": "https://example.org/budget",
+        "components": {"rent": 100, "utilities": 10, "food": 50, "transport": 10,
+                       "health_insurance": 978.67}}}
+    SC.build_cost_of_living(record)
+    normalized = SC.build_normalized_cost(record)
+    assert "health_insurance" not in normalized["includes"]
+    assert "health_insurance_within_living_costs" in normalized["includes"]
+    assert normalized["annual_total"] == round(1000 + 1148.67 * 9, 2)

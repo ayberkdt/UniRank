@@ -209,20 +209,26 @@
         "tr": "Kontrol edilen Registrar ve SFS sayfaları güncel 2026/27 kurum geneli standart lisansüstü ücretlerini yayımlar; AeroAstro standart dışı ücret istisnası olarak belirtilmemiştir."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "USD",
-        "annual_total": null,
-        "annual_total_eur_equivalent": null,
+        "annual_total": 109017.0,
+        "annual_total_eur_equivalent": {
+          "amount": 93633.08,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
         "includes": [
           "tuition",
           "mandatory_fees",
-          "health_insurance"
-        ],
-        "missing_mandatory_components": [
+          "health_insurance_within_living_costs",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 9,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
@@ -394,7 +400,7 @@
       },
       "housing_difficulty": "high",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "high",
         "raw_score": 7,
         "scaled_score": 12,
@@ -437,13 +443,90 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
-        "components": {},
-        "monthly_total": null,
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_university_cost_of_attendance",
+        "status": "partial",
+        "currency": "USD",
+        "months_covered": 9,
+        "components_included": [
+          "food",
+          "health_insurance",
+          "personal",
+          "rent",
+          "study_materials",
+          "transport"
+        ],
+        "components_absorbed": {},
+        "mandatory_components_missing": [
+          "utilities"
+        ],
+        "components": {
+          "rent": {
+            "monthly_amount": 1900.0,
+            "currency": "USD"
+          },
+          "food": {
+            "monthly_amount": 870.0,
+            "currency": "USD"
+          },
+          "study_materials": {
+            "monthly_amount": 129.0,
+            "currency": "USD"
+          },
+          "personal": {
+            "monthly_amount": 866.0,
+            "currency": "USD"
+          },
+          "transport": {
+            "monthly_amount": 316.0,
+            "currency": "USD"
+          },
+          "health_insurance": {
+            "monthly_amount": 572.0,
+            "currency": "USD"
+          }
+        },
+        "monthly_total": 4653.0,
+        "annual_total": 41877.0,
+        "monthly_total_eur_equivalent": {
+          "amount": 3996.39,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "high",
+        "source_url": "https://sfs.mit.edu/graduate-students/cost-of-attendance/grad-cost-of-attendance/",
+        "note": {
+          "en": "MIT's 2026-27 graduate cost of attendance, nine-month column for the standard September-to-May academic year: housing 17,100, food 7,830, books and course materials 1,161, personal 7,794, transportation 2,844 and health insurance 5,148. MIT publishes a twelve-month column as well, used only when a student also registers for the summer session, where housing rises to 22,800 and food to 10,440.",
+          "tr": "MIT'nin 2026-27 lisansustu egitim maliyeti, standart Eylul-Mayis akademik yili icin dokuz aylik sutun: konut 17.100, gida 7.830, kitap ve ders malzemesi 1.161, kisisel 7.794, ulasim 2.844 ve saglik sigortasi 5.148. MIT ayrica on iki aylik bir sutun yayimlar; bu sutun yalnizca ogrenci yaz donemine de kayit oldugunda kullanilir ve konut 22.800'e, gida 10.440'a yukselir."
+        },
         "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_evidence": {
+        "cost_basis": "official_university_cost_of_attendance",
+        "currency": "USD",
+        "months_covered": 9,
+        "source_url": "https://sfs.mit.edu/graduate-students/cost-of-attendance/grad-cost-of-attendance/",
+        "confidence": "high",
+        "note": {
+          "en": "MIT's 2026-27 graduate cost of attendance, nine-month column for the standard September-to-May academic year: housing 17,100, food 7,830, books and course materials 1,161, personal 7,794, transportation 2,844 and health insurance 5,148. MIT publishes a twelve-month column as well, used only when a student also registers for the summer session, where housing rises to 22,800 and food to 10,440.",
+          "tr": "MIT'nin 2026-27 lisansustu egitim maliyeti, standart Eylul-Mayis akademik yili icin dokuz aylik sutun: konut 17.100, gida 7.830, kitap ve ders malzemesi 1.161, kisisel 7.794, ulasim 2.844 ve saglik sigortasi 5.148. MIT ayrica on iki aylik bir sutun yayimlar; bu sutun yalnizca ogrenci yaz donemine de kayit oldugunda kullanilir ve konut 22.800'e, gida 10.440'a yukselir."
+        },
+        "components": {
+          "rent": 1900.0,
+          "food": 870.0,
+          "study_materials": 129.0,
+          "personal": 866.0,
+          "transport": 316.0,
+          "health_insurance": 572.0
+        }
       }
     },
     "curriculum_profile": {
@@ -636,7 +719,7 @@
         "tr": "Bölüm yalnızca güz kabulü için yıllık 1 Eylül açılışı ve 1 Aralık 23:59 ET kesin son tarihini yayımlar. Dönem, Eylül 2026'da açıldığı için Güz 2027 olarak eşlenmiştir; gün tahmini değildir."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": "2026-12-01",
         "next_expected_date": null,
         "time": "23:59",
@@ -1038,7 +1121,7 @@
       "official_scholarship_page": "https://aeroastro.mit.edu/education/funding/",
       "official_housing_page": "https://graduatehousing.mit.edu/get-housing/",
       "official_department_page": "https://aeroastro.mit.edu/research/",
-      "last_verified": "2026-08-29",
+      "last_verified": "2026-08-30",
       "field_confidence": {
         "program_basic_info": "high",
         "admission": "high",
@@ -1559,6 +1642,19 @@
             "en": "Publishes the department's seven research areas and every named laboratory with its own URL.",
             "tr": "Bölümün yedi araştırma alanını ve adlandırılmış her laboratuvarı kendi adresiyle yayımlar."
           }
+        },
+        {
+          "url": "https://sfs.mit.edu/graduate-students/cost-of-attendance/grad-cost-of-attendance/",
+          "title": "MIT Student Financial Services: Graduate Cost of Attendance 2026-27",
+          "source_type": "official_university_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "living",
+            "housing",
+            "cost"
+          ],
+          "confidence": "high"
         }
       ],
       "needs_verification": true
@@ -1686,7 +1782,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "core_match",
       "score": 100,
       "score_basis_weight": 90,
@@ -1967,22 +2063,43 @@
         "tr": "118.833 USD örneği, 11–18 birimlik üç standart Mühendislik çeyreğini resmî üç çeyreklik öğrenim dışı bütçeyle birleştirir. Destek öncesi planlama örneğidir, program faturası değildir."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
-        "currency": null,
-        "annual_total": null,
-        "annual_total_eur_equivalent": null,
-        "includes": [],
-        "missing_mandatory_components": [
+        "standard": "cost_model@3.1.0",
+        "currency": "USD",
+        "annual_total": 118833.03,
+        "annual_total_eur_equivalent": {
+          "amount": 102063.93,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "includes": [
           "tuition",
+          "mandatory_fees",
+          "health_insurance_within_living_costs",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 9,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
         "evaluated_at": "2026-08-30"
+      },
+      "tuition_usd_per_year": 69717.0,
+      "tuition_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "tuition_usd_per_year",
+        "rule": "published_annual_figure",
+        "derived_from": {
+          "tuition_usd_per_year_at_three_quarters": 69717.0
+        },
+        "currency": "USD",
+        "includes_mandatory_fees": false,
+        "derived_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -2096,7 +2213,7 @@
       },
       "housing_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": 1,
         "scaled_score": null,
@@ -2140,13 +2257,90 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
-        "components": {},
-        "monthly_total": null,
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_university_living_budget",
+        "status": "partial",
+        "currency": "USD",
+        "months_covered": 9,
+        "components_included": [
+          "food",
+          "health_insurance",
+          "personal",
+          "rent",
+          "study_materials",
+          "transport"
+        ],
+        "components_absorbed": {},
+        "mandatory_components_missing": [
+          "utilities"
+        ],
+        "components": {
+          "rent": {
+            "monthly_amount": 2228.33,
+            "currency": "USD"
+          },
+          "food": {
+            "monthly_amount": 856.67,
+            "currency": "USD"
+          },
+          "personal": {
+            "monthly_amount": 1015.0,
+            "currency": "USD"
+          },
+          "transport": {
+            "monthly_amount": 220.0,
+            "currency": "USD"
+          },
+          "study_materials": {
+            "monthly_amount": 65.0,
+            "currency": "USD"
+          },
+          "health_insurance": {
+            "monthly_amount": 978.67,
+            "currency": "USD"
+          }
+        },
+        "monthly_total": 5363.67,
+        "annual_total": 48273.03,
+        "monthly_total_eur_equivalent": {
+          "amount": 4606.78,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "high",
+        "source_url": "https://financialaid.stanford.edu/grad/budget/index.html",
+        "note": {
+          "en": "Stanford's 2026-27 standard budget for a single graduate student with no dependents: USD 49,116 across the nine-month academic year, or USD 61,142 over twelve months. The nine-month figure is used because that is the period Stanford labels the academic year. The USD 843 campus health service fee belongs to the same published budget but is held in the mandatory-fee field instead, so it is not counted twice.",
+          "tr": "Stanford'un bakmakla yukumlu oldugu kimsesi olmayan tek kisilik bir lisansustu ogrenci icin 2026-27 standart butcesi: dokuz aylik akademik yil boyunca 49.116 USD, on iki ay icin 61.142 USD. Dokuz aylik rakam kullanilir, cunku Stanford akademik yil olarak bu donemi adlandirir. 843 USD kampus saglik hizmeti ucreti ayni yayimlanmis butcenin parcasidir, ancak iki kez sayilmamasi icin zorunlu ucret alaninda tutulur."
+        },
         "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_evidence": {
+        "cost_basis": "official_university_living_budget",
+        "currency": "USD",
+        "months_covered": 9,
+        "source_url": "https://financialaid.stanford.edu/grad/budget/index.html",
+        "confidence": "high",
+        "note": {
+          "en": "Stanford's 2026-27 standard budget for a single graduate student with no dependents: USD 49,116 across the nine-month academic year, or USD 61,142 over twelve months. The nine-month figure is used because that is the period Stanford labels the academic year. The USD 843 campus health service fee belongs to the same published budget but is held in the mandatory-fee field instead, so it is not counted twice.",
+          "tr": "Stanford'un bakmakla yukumlu oldugu kimsesi olmayan tek kisilik bir lisansustu ogrenci icin 2026-27 standart butcesi: dokuz aylik akademik yil boyunca 49.116 USD, on iki ay icin 61.142 USD. Dokuz aylik rakam kullanilir, cunku Stanford akademik yil olarak bu donemi adlandirir. 843 USD kampus saglik hizmeti ucreti ayni yayimlanmis butcenin parcasidir, ancak iki kez sayilmamasi icin zorunlu ucret alaninda tutulur."
+        },
+        "components": {
+          "rent": 2228.33,
+          "food": 856.67,
+          "personal": 1015.0,
+          "transport": 220.0,
+          "study_materials": 65.0,
+          "health_insurance": 978.67
+        }
       }
     },
     "curriculum_profile": {
@@ -2312,7 +2506,7 @@
         "tr": "1 Aralık tek tam zamanlı dönem için kesin son tarihtir. Konut ve Knight-Hennessy ayrı takvimlere sahiptir; 2027 Güz konut son tarihi henüz yayımlanmamıştır."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": "2026-12-01",
         "next_expected_date": null,
         "time": null,
@@ -2714,7 +2908,7 @@
         "https://www.reddit.com/r/stanford/comments/1k6i32u",
         "https://www.reddit.com/r/stanford/comments/1srdy4u"
       ],
-      "last_verified": "2026-08-29",
+      "last_verified": "2026-08-30",
       "field_confidence": {
         "program": "high",
         "degree": "high",
@@ -3164,6 +3358,19 @@
             "en": "Publishes faculty names and titles; email addresses appear on only some individual profiles.",
             "tr": "Öğretim üyesi adlarını ve unvanlarını yayımlar; e-posta adresleri yalnızca bazı bireysel profillerde görünür."
           }
+        },
+        {
+          "url": "https://financialaid.stanford.edu/grad/budget/index.html",
+          "title": "Stanford Financial Aid: The Graduate Student Budget 2026-27",
+          "source_type": "official_university_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "living",
+            "housing",
+            "cost"
+          ],
+          "confidence": "high"
         }
       ]
     },
@@ -3282,7 +3489,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "strong_adjacent",
       "score": 56,
       "score_basis_weight": 90,
@@ -3571,19 +3778,25 @@
         "tr": "Kendi finansmanını sağlayan terminal MS öğrencisi, 71.022 USD öğrenim ve zorunlu ücret faturasına ek olarak sigorta, konut, yemek, kitap, kişisel gider, taşınma ve seyahati planlamalıdır."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "USD",
-        "annual_total": null,
-        "annual_total_eur_equivalent": null,
+        "annual_total": 105196.08,
+        "annual_total_eur_equivalent": {
+          "amount": 90351.35,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
         "includes": [
           "tuition",
-          "mandatory_fees"
-        ],
-        "missing_mandatory_components": [
+          "mandatory_fees",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 12,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
@@ -3742,7 +3955,7 @@
       },
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": 1,
         "scaled_score": null,
@@ -3786,13 +3999,89 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
-        "components": {},
-        "monthly_total": null,
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_university_living_budget",
+        "status": "partial",
+        "currency": "USD",
+        "months_covered": 12,
+        "components_included": [
+          "food",
+          "health_insurance",
+          "personal",
+          "rent",
+          "study_materials"
+        ],
+        "components_absorbed": {
+          "utilities": "rent"
+        },
+        "mandatory_components_missing": [
+          "transport"
+        ],
+        "components": {
+          "rent": {
+            "monthly_amount": 1110.0,
+            "currency": "USD"
+          },
+          "food": {
+            "monthly_amount": 742.0,
+            "currency": "USD"
+          },
+          "study_materials": {
+            "monthly_amount": 116.67,
+            "currency": "USD"
+          },
+          "health_insurance": {
+            "monthly_amount": 80.42,
+            "currency": "USD"
+          },
+          "personal": {
+            "monthly_amount": 798.75,
+            "currency": "USD"
+          }
+        },
+        "monthly_total": 2847.84,
+        "annual_total": 34174.08,
+        "monthly_total_eur_equivalent": {
+          "amount": 2445.97,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "high",
+        "source_url": "https://gradoffice.caltech.edu/financialsupport/budget",
+        "note": {
+          "en": "Caltech's 2025-26 twelve-month graduate budget for an on-campus double apartment: housing and utilities 13,320, food 8,904, books 1,400, health, dental and vision 965 and personal 9,585, totalling 34,174. The published range across housing types runs from 31,774 for a quad apartment to 44,554 for an off-campus two-bedroom lease. Caltech warns separately that first-year students should expect relocation and set-up costs on top.",
+          "tr": "Caltech'in kampus ici cift kisilik daire icin 2025-26 on iki aylik lisansustu butcesi: konut ve faturalar 13.320, gida 8.904, kitap 1.400, saglik, dis ve goz 965 ve kisisel 9.585; toplam 34.174. Konut turlerine gore yayimlanan aralik, dortlu daire icin 31.774'ten kampus disi iki yatak odali kira icin 44.554'e uzanir. Caltech ayrica birinci yil ogrencilerinin bunlarin ustune tasinma ve kurulum masraflari beklemesi gerektigini belirtir."
+        },
         "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_evidence": {
+        "cost_basis": "official_university_living_budget",
+        "currency": "USD",
+        "months_covered": 12,
+        "source_url": "https://gradoffice.caltech.edu/financialsupport/budget",
+        "confidence": "high",
+        "note": {
+          "en": "Caltech's 2025-26 twelve-month graduate budget for an on-campus double apartment: housing and utilities 13,320, food 8,904, books 1,400, health, dental and vision 965 and personal 9,585, totalling 34,174. The published range across housing types runs from 31,774 for a quad apartment to 44,554 for an off-campus two-bedroom lease. Caltech warns separately that first-year students should expect relocation and set-up costs on top.",
+          "tr": "Caltech'in kampus ici cift kisilik daire icin 2025-26 on iki aylik lisansustu butcesi: konut ve faturalar 13.320, gida 8.904, kitap 1.400, saglik, dis ve goz 965 ve kisisel 9.585; toplam 34.174. Konut turlerine gore yayimlanan aralik, dortlu daire icin 31.774'ten kampus disi iki yatak odali kira icin 44.554'e uzanir. Caltech ayrica birinci yil ogrencilerinin bunlarin ustune tasinma ve kurulum masraflari beklemesi gerektigini belirtir."
+        },
+        "components": {
+          "rent": 1110.0,
+          "food": 742.0,
+          "study_materials": 116.67,
+          "health_insurance": 80.42,
+          "personal": 798.75
+        },
+        "components_absorbed": {
+          "utilities": "rent"
+        }
       }
     },
     "curriculum_profile": {
@@ -3995,7 +4284,7 @@
       },
       "timeline_risk": "high",
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -4305,7 +4594,7 @@
         "https://housing.caltech.edu/grads/newadmits/newstudent-housingoptions",
         "https://aerospace.caltech.edu/research/space-technology"
       ],
-      "last_verified": "2026-08-29",
+      "last_verified": "2026-08-30",
       "field_confidence": {
         "program_basic_info": "high",
         "program_status": "high",
@@ -4847,6 +5136,19 @@
             "en": "Publishes eighteen faculty with names and titles; no email addresses are shown.",
             "tr": "On sekiz öğretim üyesini ad ve unvanlarıyla yayımlar; e-posta adresi gösterilmez."
           }
+        },
+        {
+          "url": "https://gradoffice.caltech.edu/financialsupport/budget",
+          "title": "Caltech Graduate Office: Graduate Student Budget",
+          "source_type": "official_university_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "living",
+            "housing",
+            "cost"
+          ],
+          "confidence": "high"
         }
       ],
       "verification_notes": {
@@ -4972,7 +5274,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "core_match",
       "score": 86,
       "score_basis_weight": 100,
@@ -5133,19 +5435,25 @@
         "tr": "USD tutarları resmî para biriminde tutulur. Zaman duyarlı döviz kuru varsayımı gerektireceği için EUR dönüşümü sunulmaz."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "USD",
-        "annual_total": null,
-        "annual_total_eur_equivalent": null,
+        "annual_total": 57207.96,
+        "annual_total_eur_equivalent": {
+          "amount": 49135.07,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
         "includes": [
           "tuition",
-          "mandatory_fees"
-        ],
-        "missing_mandatory_components": [
+          "mandatory_fees",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 9,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
@@ -5285,7 +5593,7 @@
       "housing_application_separate": true,
       "housing_search_difficulty": "high",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "high",
         "raw_score": 6,
         "scaled_score": 9,
@@ -5331,12 +5639,65 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
-        "components": {},
-        "monthly_total": null,
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_university_cost_of_attendance",
+        "status": "partial",
+        "currency": "USD",
+        "months_covered": 9,
+        "components_included": [
+          "food",
+          "personal",
+          "rent",
+          "study_materials",
+          "transport"
+        ],
+        "components_absorbed": {},
+        "mandatory_components_missing": [
+          "utilities"
+        ],
+        "components": {
+          "rent": {
+            "monthly_amount": 1304.0,
+            "currency": "USD"
+          },
+          "food": {
+            "monthly_amount": 701.11,
+            "currency": "USD"
+          },
+          "study_materials": {
+            "monthly_amount": 88.89,
+            "currency": "USD"
+          },
+          "personal": {
+            "monthly_amount": 311.11,
+            "currency": "USD"
+          },
+          "transport": {
+            "monthly_amount": 107.33,
+            "currency": "USD"
+          }
+        },
+        "monthly_total": 2512.44,
+        "annual_total": 22611.96,
+        "monthly_total_eur_equivalent": {
+          "amount": 2157.9,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "high",
+        "source_url": "https://finaid.gatech.edu/costs/graduate-costs",
+        "note": {
+          "en": "Georgia Tech's 2026-27 out-of-country graduate budget, on-campus column: housing 11,736, food 6,310, books 800, personal 2,800 and transportation 966, published as a total per year for the fall and spring terms. The off-campus column raises housing to 14,380 and the total to 25,256.",
+          "tr": "Georgia Tech'in 2026-27 yurt disindan gelen lisansustu butcesi, kampus ici sutunu: konut 11.736, gida 6.310, kitap 800, kisisel 2.800 ve ulasim 966; guz ve bahar donemleri icin yillik toplam olarak yayimlanir. Kampus disi sutunu konutu 14.380'e, toplami 25.256'ya yukseltir."
+        },
         "evaluated_at": "2026-08-30"
       },
       "housing_guaranteed": false,
@@ -5360,6 +5721,24 @@
       "housing_contract_limit": {
         "en": "Graduate students are limited to one academic-year contract plus one summer contract, so on-campus housing is a first-year solution, not a two-year one.",
         "tr": "Lisansüstü öğrenciler bir akademik yıl sözleşmesi artı bir yaz sözleşmesiyle sınırlıdır; yani kampüs içi konut iki yıllık değil, birinci yıllık bir çözümdür."
+      },
+      "cost_of_living_evidence": {
+        "cost_basis": "official_university_cost_of_attendance",
+        "currency": "USD",
+        "months_covered": 9,
+        "source_url": "https://finaid.gatech.edu/costs/graduate-costs",
+        "confidence": "high",
+        "note": {
+          "en": "Georgia Tech's 2026-27 out-of-country graduate budget, on-campus column: housing 11,736, food 6,310, books 800, personal 2,800 and transportation 966, published as a total per year for the fall and spring terms. The off-campus column raises housing to 14,380 and the total to 25,256.",
+          "tr": "Georgia Tech'in 2026-27 yurt disindan gelen lisansustu butcesi, kampus ici sutunu: konut 11.736, gida 6.310, kitap 800, kisisel 2.800 ve ulasim 966; guz ve bahar donemleri icin yillik toplam olarak yayimlanir. Kampus disi sutunu konutu 14.380'e, toplami 25.256'ya yukseltir."
+        },
+        "components": {
+          "rent": 1304.0,
+          "food": 701.11,
+          "study_materials": 88.89,
+          "personal": 311.11,
+          "transport": 107.33
+        }
       }
     },
     "curriculum_profile": {
@@ -5478,7 +5857,7 @@
         "tr": "Okul, referans mektupları ve dil yeterlik belgelerinin ilgili başvuru tarihinden dört hafta sonra teslim edileceğini belirtir. Finansman için karar açısından kritik tarih Marttaki nihai tarih değil Aralık tarihidir. Başvuru öncesinde canlı sayfayı kontrol edin."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": "2027-03-01",
         "next_expected_date": null,
         "time": null,
@@ -5799,7 +6178,7 @@
     "source_profile": {
       "primary_url": "https://catalog.gatech.edu/programs/aerospace-engineering-ms/",
       "secondary_urls": [],
-      "last_verified": "2026-08-29",
+      "last_verified": "2026-08-30",
       "field_confidence": {
         "program_basic_info": "high",
         "language": "high",
@@ -6083,6 +6462,19 @@
             "en": "States that housing is not guaranteed and limited, describes the lottery and waitlist, and gives the application deadline.",
             "tr": "Konutun garanti olmadığını ve sınırlı olduğunu belirtir, kura ve bekleme listesini anlatır ve başvuru son tarihini verir."
           }
+        },
+        {
+          "url": "https://finaid.gatech.edu/costs/graduate-costs",
+          "title": "Georgia Tech Financial Aid: Graduate Cost of Attendance 2026-27",
+          "source_type": "official_university_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "living",
+            "housing",
+            "cost"
+          ],
+          "confidence": "high"
         }
       ],
       "needs_verification": false,
@@ -6184,7 +6576,7 @@
     "faculty_or_school": "College of Engineering",
     "campus": "Atlanta campus",
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "core_match",
       "score": 100,
       "score_basis_weight": 90,
@@ -6498,11 +6890,11 @@
         "tr": "68.038 $ iki dönemlik öğrenim ücreti programa özgü ve günceldir. Ayrı 94.230 $ göçmenlik tahmini genel Rackham uluslararası bütçesidir ve program ücretlerinin değiştiğini açıkça söyler; mühendisliğe özgü toplam gibi sunulamaz. Tipik üç dönemlik MSE iki akademik yıla yayıldığından tam program ücreti tek güncel tarifeden sabitlenemez."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "USD",
-        "annual_total": 74511.78,
+        "annual_total": 102761.82,
         "annual_total_eur_equivalent": {
-          "amount": 63997.06,
+          "amount": 88260.6,
           "currency": "EUR",
           "is_conversion": true,
           "fx_rate": 1.1643,
@@ -6679,7 +7071,7 @@
       },
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -6723,21 +7115,23 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "cost_basis": "official_university_living_budget",
-        "status": "partial",
+        "status": "complete",
         "currency": "USD",
         "months_covered": 12,
         "components_included": [
           "health_insurance",
+          "living_allowance",
           "study_materials"
         ],
-        "mandatory_components_missing": [
-          "food",
-          "rent",
-          "transport",
-          "utilities"
-        ],
+        "components_absorbed": {
+          "rent": "living_allowance",
+          "utilities": "living_allowance",
+          "food": "living_allowance",
+          "transport": "living_allowance"
+        },
+        "mandatory_components_missing": [],
         "components": {
           "health_insurance": {
             "monthly_amount": 300.0,
@@ -6749,6 +7143,21 @@
                   "tr": "Zorunlu uluslararası sağlık sigortası tahmini"
                 },
                 "published_amount": 3600.0,
+                "currency": "USD",
+                "period": "year"
+              }
+            ]
+          },
+          "living_allowance": {
+            "monthly_amount": 2354.17,
+            "currency": "USD",
+            "published_items": [
+              {
+                "label": {
+                  "en": "General international immigration living allowance for 12 months",
+                  "tr": "12 aylık genel uluslararası göçmenlik yaşam payı"
+                },
+                "published_amount": 28250.0,
                 "currency": "USD",
                 "period": "year"
               }
@@ -6770,10 +7179,10 @@
             ]
           }
         },
-        "monthly_total": 415.0,
-        "annual_total": 4980.0,
+        "monthly_total": 2769.17,
+        "annual_total": 33230.04,
         "monthly_total_eur_equivalent": {
-          "amount": 356.44,
+          "amount": 2378.4,
           "currency": "EUR",
           "is_conversion": true,
           "fx_rate": 1.1643,
@@ -6785,7 +7194,7 @@
           "mandatory_university_fees",
           "one_off_visa_and_travel_costs"
         ],
-        "confidence": "medium",
+        "confidence": "high",
         "evaluated_at": "2026-08-30"
       }
     },
@@ -7041,7 +7450,7 @@
         "tr": "Güncel bölüm sayfaları dönem yılı vermeden yinelenen ay/gün tarihleri yayımlar; burada gelecek yıl uydurulmaz."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -7912,7 +8321,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "core_match",
       "score": 89,
       "score_basis_weight": 90,
@@ -8236,7 +8645,7 @@
         "tr": "49.798 $ resmî akademik yıl bütçesi yayımlanan uluslararası sabit ücreti, konut/yemek payını ve diğer tahminleri içerir. Sayfa off-campus ulaşım konusunda kendi içinde tutarsızdır (tabloda 285 $, notta 550 $); veritabanı tabloyu ve resmî toplamı sessizce yeniden hesaplamadan korur. Sigorta zorunludur ancak 2026/27 primi doğrulanamadığı için tam program maliyeti iddia edilmez."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "USD",
         "annual_total": 49797.97,
         "annual_total_eur_equivalent": {
@@ -8449,7 +8858,7 @@
       },
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -8493,7 +8902,7 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "cost_basis": "official_university_living_budget",
         "status": "partial",
         "currency": "USD",
@@ -8504,8 +8913,10 @@
           "study_materials",
           "transport"
         ],
+        "components_absorbed": {
+          "food": "rent"
+        },
         "mandatory_components_missing": [
-          "food",
           "utilities"
         ],
         "components": {
@@ -8878,7 +9289,7 @@
         "tr": "Çevrimiçi program tarihleri bu kampüs kaydından bilerek çıkarılmıştır. Eksik veya geç başvurular incelenmez."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -9905,7 +10316,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "core_match",
       "score": 90,
       "score_basis_weight": 100,
@@ -10180,7 +10591,7 @@
         "tr": "Resmî hesaplayıcı, Grainger Engineering'de 12 kredi alan uluslararası lisansüstü öğrenci için katılım bütçesi tahminidir. Konut, kitap ve diğer payların tümü üniversite tarafından faturalandırılmaz; gerçek tutar kayıt yüküne ve tercihlere bağlıdır."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "USD",
         "annual_total": 64092.0,
         "annual_total_eur_equivalent": {
@@ -10449,7 +10860,7 @@
       },
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -10493,7 +10904,7 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "cost_basis": "official_university_living_budget",
         "status": "partial",
         "currency": "USD",
@@ -10502,8 +10913,10 @@
           "rent",
           "study_materials"
         ],
+        "components_absorbed": {
+          "food": "rent"
+        },
         "mandatory_components_missing": [
-          "food",
           "transport",
           "utilities"
         ],
@@ -10833,7 +11246,7 @@
         "tr": "Güncel resmî sayfalar dönem yılı olmadan yinelenen ay/gün tarihleri yayımlar; bu kayıtta yıl uydurulmamıştır."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -11886,7 +12299,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "core_match",
       "score": 100,
       "score_basis_weight": 90,
@@ -12138,7 +12551,7 @@
     "cost_profile": {
       "academic_year": "2026/2027",
       "currency": "USD",
-      "tuition_usd_per_year": null,
+      "tuition_usd_per_year": 19340.0,
       "tuition_usd_per_year_min": 17312,
       "tuition_usd_per_year_max": 19340,
       "tuition_basis": "official nonresident full-time graduate range for Fall and Spring, based on 9-hour enrollment",
@@ -12183,23 +12596,41 @@
         "tr": "Texas One Stop mali yardım için bir COA aralığı, Texas Global ise göçmenlik belgesi için daha yüksek sabit tahmin yayımlar. Farklı amaçlara hizmet ederler ve birleştirilmezler. Hiçbiri garantili fatura değildir; gerçek Engineering ücreti ders yüküne bağlıdır. 2026/27 uluslararası sigorta primi ayrıca doğrulanamamıştır."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "USD",
-        "annual_total": null,
-        "annual_total_eur_equivalent": null,
+        "annual_total": 44279.0,
+        "annual_total_eur_equivalent": {
+          "amount": 38030.58,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
         "includes": [
+          "tuition",
           "living_costs"
         ],
-        "missing_mandatory_components": [
-          "tuition"
-        ],
+        "missing_mandatory_components": [],
         "months_of_living_cost": 9,
-        "status": "incomplete",
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
         "evaluated_at": "2026-08-30"
+      },
+      "tuition_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "tuition_usd_per_year",
+        "rule": "non_eu_planning_maximum",
+        "derived_from": {
+          "tuition_usd_per_year_min": 17312.0,
+          "tuition_usd_per_year_max": 19340.0
+        },
+        "currency": "USD",
+        "includes_mandatory_fees": false,
+        "derived_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -12366,7 +12797,7 @@
       },
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -12410,40 +12841,19 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "official_university_living_budget",
-        "status": "partial",
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_university_cost_of_attendance",
+        "status": "total_only",
         "currency": "USD",
         "months_covered": 9,
-        "components_included": [
-          "rent"
-        ],
-        "mandatory_components_missing": [
-          "food",
-          "transport",
-          "utilities"
-        ],
-        "components": {
-          "rent": {
-            "monthly_amount": 1915.28,
-            "currency": "USD",
-            "published_items": [
-              {
-                "label": {
-                  "en": "Housing and food COA allowance",
-                  "tr": "Konut ve yemek COA payı"
-                },
-                "published_amount": 17237.5,
-                "currency": "USD",
-                "period": "academic_year"
-              }
-            ]
-          }
-        },
-        "monthly_total": 1915.28,
-        "annual_total": 17237.52,
+        "components_included": [],
+        "components_absorbed": {},
+        "mandatory_components_missing": [],
+        "components": {},
+        "monthly_total": 2771.0,
+        "annual_total": 24939.0,
         "monthly_total_eur_equivalent": {
-          "amount": 1645.01,
+          "amount": 2379.97,
           "currency": "EUR",
           "is_conversion": true,
           "fx_rate": 1.1643,
@@ -12455,8 +12865,25 @@
           "mandatory_university_fees",
           "one_off_visa_and_travel_costs"
         ],
-        "confidence": "medium",
+        "confidence": "high",
+        "source_url": "https://onestop.utexas.edu/managing-costs/cost-tuition-rates/cost-of-attendance/",
+        "note": {
+          "en": "UT Austin's 2026-27 full-time graduate cost of attendance for a nonresident living on or off campus, across the fall and spring semesters at nine hours of enrolment: housing and food 17,052 to 17,423, transportation 1,840, books and course materials 776 and personal 4,900. The upper bound is used. Housing and food arrive as one line and cannot be separated.",
+          "tr": "UT Austin'in 2026-27 tam zamanli lisansustu egitim maliyeti, kampus ici veya disinda yasayan eyalet disi bir ogrenci icin, guz ve bahar donemlerinde dokuz saatlik kayitla: konut ve gida 17.052-17.423, ulasim 1.840, kitap ve ders malzemesi 776 ve kisisel 4.900. Ust sinir kullanilir. Konut ve gida tek satir halinde gelir ve ayristirilamaz."
+        },
         "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_evidence": {
+        "cost_basis": "official_university_cost_of_attendance",
+        "currency": "USD",
+        "months_covered": 9,
+        "source_url": "https://onestop.utexas.edu/managing-costs/cost-tuition-rates/cost-of-attendance/",
+        "confidence": "high",
+        "note": {
+          "en": "UT Austin's 2026-27 full-time graduate cost of attendance for a nonresident living on or off campus, across the fall and spring semesters at nine hours of enrolment: housing and food 17,052 to 17,423, transportation 1,840, books and course materials 776 and personal 4,900. The upper bound is used. Housing and food arrive as one line and cannot be separated.",
+          "tr": "UT Austin'in 2026-27 tam zamanli lisansustu egitim maliyeti, kampus ici veya disinda yasayan eyalet disi bir ogrenci icin, guz ve bahar donemlerinde dokuz saatlik kayitla: konut ve gida 17.052-17.423, ulasim 1.840, kitap ve ders malzemesi 776 ve kisisel 4.900. Ust sinir kullanilir. Konut ve gida tek satir halinde gelir ve ayristirilamaz."
+        },
+        "monthly_total": 2771.0
       }
     },
     "curriculum_profile": {
@@ -12728,7 +13155,7 @@
         "tr": "SSS geç belge veya değişiklik kabul edilmediğini, kabul sayfası ise tarih sonrası başvuruların yer kalırsa değerlendirilebileceğini söyler. Resmî tarihi kesin kabul edin ve yer kalırsa incelemeye güvenmeyin."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -13633,6 +14060,20 @@
             "en": "Publishes email, phone, office, research areas and research interests for each faculty member.",
             "tr": "Her öğretim üyesi için e-posta, telefon, ofis, araştırma alanları ve araştırma ilgi alanlarını yayımlar."
           }
+        },
+        {
+          "url": "https://onestop.utexas.edu/managing-costs/cost-tuition-rates/cost-of-attendance/",
+          "title": "UT Austin Texas One Stop: Cost of Attendance 2026-27",
+          "source_type": "official_university_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "living",
+            "housing",
+            "cost",
+            "tuition"
+          ],
+          "confidence": "high"
         }
       ]
     },
@@ -13799,7 +14240,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "core_match",
       "score": 100,
       "score_basis_weight": 90,
@@ -14093,19 +14534,25 @@
         "tr": "46.015 $ göçmenlik belgesi tahminidir, garantili fatura değildir. Eyalet dışı Engineering oranlarını, iki ana dönemi ve 12 aylık yaşam ile sigortayı varsayar; yaz öğrenim ücreti hariçtir. Program sayfası evrensel paket dökümü yayımlamadığından tam finansman teklifi kalem kalem okunmalıdır."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "USD",
-        "annual_total": null,
-        "annual_total_eur_equivalent": null,
+        "annual_total": 42992.0,
+        "annual_total_eur_equivalent": {
+          "amount": 36925.19,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
         "includes": [
           "tuition",
-          "mandatory_fees"
-        ],
-        "missing_mandatory_components": [
+          "mandatory_fees",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 12,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
@@ -14384,7 +14831,7 @@
       },
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -14428,13 +14875,49 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_visa_financial_requirement",
+        "status": "total_only",
+        "currency": "USD",
+        "months_covered": 12,
+        "components_included": [],
+        "components_absorbed": {},
+        "mandatory_components_missing": [],
         "components": {},
-        "monthly_total": null,
+        "monthly_total": 1666.25,
+        "annual_total": 19995.0,
+        "monthly_total_eur_equivalent": {
+          "amount": 1431.12,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "high",
+        "source_url": "https://global.tamu.edu/_files/_documents/isss-documents/2026-ecoa-12m-no-su.pdf",
+        "note": {
+          "en": "Texas A&M's twelve-month estimated cost of attendance for immigration documents puts living costs at USD 19,995 within a USD 46,015 total that assumes nonresident engineering rates and two major semesters. This is the amount the university will certify on an I-20, which is a floor for the visa rather than an observed average, and it excludes summer tuition.",
+          "tr": "Texas A&M'in gocmenlik belgeleri icin on iki aylik tahmini egitim maliyeti, eyalet disi muhendislik oranlarini ve iki ana donemi varsayan 46.015 USD'lik toplam icinde yasam giderlerini 19.995 USD olarak belirler. Bu, universitenin I-20 uzerinde onaylayacagi tutardir; gozlemlenen bir ortalama degil vize icin bir tabandir ve yaz donemi ogrenim ucretini icermez."
+        },
         "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_evidence": {
+        "cost_basis": "official_visa_financial_requirement",
+        "currency": "USD",
+        "months_covered": 12,
+        "source_url": "https://global.tamu.edu/_files/_documents/isss-documents/2026-ecoa-12m-no-su.pdf",
+        "confidence": "high",
+        "note": {
+          "en": "Texas A&M's twelve-month estimated cost of attendance for immigration documents puts living costs at USD 19,995 within a USD 46,015 total that assumes nonresident engineering rates and two major semesters. This is the amount the university will certify on an I-20, which is a floor for the visa rather than an observed average, and it excludes summer tuition.",
+          "tr": "Texas A&M'in gocmenlik belgeleri icin on iki aylik tahmini egitim maliyeti, eyalet disi muhendislik oranlarini ve iki ana donemi varsayan 46.015 USD'lik toplam icinde yasam giderlerini 19.995 USD olarak belirler. Bu, universitenin I-20 uzerinde onaylayacagi tutardir; gozlemlenen bir ortalama degil vize icin bir tabandir ve yaz donemi ogrenim ucretini icermez."
+        },
+        "monthly_total": 1666.25
       }
     },
     "curriculum_profile": {
@@ -14613,7 +15096,7 @@
         "tr": "Bölüm 1 Aralık ve 1 Eylül'ü öncelik tarihleri olarak etiketler ve belgelerin sonrasında da gönderilebileceğini belirtir. Bu nedenle nihai kapanış tarihi uydurulmaz ve bilinmiyor bırakılır. Danışman ile finansman onayı kabul koşulu olduğundan uluslararası adaylar öncelik tarihini fiilî son tarih saymalıdır."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -15739,6 +16222,19 @@
             "en": "Publishes the GAR/GAT structure, the 20-hour requirement, the $15,000-$18,000 stipend range, the ten $5,000 Academic Excellence Fellowships and the 1 March / 31 March dates.",
             "tr": "GAR/GAT yapısını, 20 saatlik şartı, 15.000-18.000 dolarlık ödenek aralığını, on adet 5.000 dolarlık Akademik Üstünlük Bursunu ve 1 Mart / 31 Mart tarihlerini yayımlar."
           }
+        },
+        {
+          "url": "https://global.tamu.edu/_files/_documents/isss-documents/2026-ecoa-12m-no-su.pdf",
+          "title": "Texas A&M ISSS: 2026 Estimated Cost of Attendance, 12 months",
+          "source_type": "official_university_page",
+          "access_status": "pdf",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "living",
+            "housing",
+            "cost"
+          ],
+          "confidence": "high"
         }
       ]
     },
@@ -15908,7 +16404,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "core_match",
       "score": 96,
       "score_basis_weight": 100,
@@ -16176,19 +16672,25 @@
         "tr": "48.411,66 $ tutarı, CU SHIP kullanan tam zamanlı birinci yıl uluslararası Engineering MS öğrencisi için güncel doğrudan üniversite kalemlerinin şeffaf toplamıdır; konut, yemek, kitap, ulaşım ve kişisel harcamaları içermez. Üniversitenin genel lisansüstü COA'sı Arts & Sciences öğrenim ücretini kullandığından Aerospace toplamı olarak sunulmaz."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "USD",
-        "annual_total": null,
-        "annual_total_eur_equivalent": null,
+        "annual_total": 74754.62,
+        "annual_total_eur_equivalent": {
+          "amount": 64205.63,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
         "includes": [
           "tuition",
-          "mandatory_fees"
-        ],
-        "missing_mandatory_components": [
+          "mandatory_fees",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 9,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
@@ -16373,7 +16875,7 @@
       },
       "housing_search_difficulty": "high",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "high",
         "raw_score": 6,
         "scaled_score": 9,
@@ -16416,13 +16918,49 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_university_cost_of_attendance",
+        "status": "total_only",
+        "currency": "USD",
+        "months_covered": 9,
+        "components_included": [],
+        "components_absorbed": {},
+        "mandatory_components_missing": [],
         "components": {},
-        "monthly_total": null,
+        "monthly_total": 3540.44,
+        "annual_total": 31863.96,
+        "monthly_total_eur_equivalent": {
+          "amount": 3040.83,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "high",
+        "source_url": "https://www.colorado.edu/financialaid/cost/example-aid",
+        "note": {
+          "en": "CU Boulder's 2026-27 nonresident graduate budget covers the two semesters of the academic year: housing and food 18,684, books and supplies 1,200, transportation 2,062, personal 1,782 and medical expenses 8,136, totalling 31,864. Housing and food arrive as one line, so they cannot be separated here.",
+          "tr": "CU Boulder'in 2026-27 eyalet disi lisansustu butcesi akademik yilin iki donemini kapsar: konut ve gida 18.684, kitap ve malzeme 1.200, ulasim 2.062, kisisel 1.782 ve saglik giderleri 8.136; toplam 31.864. Konut ve gida tek satir halinde geldigi icin burada ayristirilamaz."
+        },
         "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_evidence": {
+        "cost_basis": "official_university_cost_of_attendance",
+        "currency": "USD",
+        "months_covered": 9,
+        "source_url": "https://www.colorado.edu/financialaid/cost/example-aid",
+        "confidence": "high",
+        "note": {
+          "en": "CU Boulder's 2026-27 nonresident graduate budget covers the two semesters of the academic year: housing and food 18,684, books and supplies 1,200, transportation 2,062, personal 1,782 and medical expenses 8,136, totalling 31,864. Housing and food arrive as one line, so they cannot be separated here.",
+          "tr": "CU Boulder'in 2026-27 eyalet disi lisansustu butcesi akademik yilin iki donemini kapsar: konut ve gida 18.684, kitap ve malzeme 1.200, ulasim 2.062, kisisel 1.782 ve saglik giderleri 8.136; toplam 31.864. Konut ve gida tek satir halinde geldigi icin burada ayristirilamaz."
+        },
+        "monthly_total": 3540.44
       }
     },
     "curriculum_profile": {
@@ -16617,7 +17155,7 @@
         "tr": "Tarihler tahmin değil, güncel bölüm tarihleridir. Dış burs tarihleri ayrıdır ve çoğu kez daha erkendir."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -17465,6 +18003,19 @@
             "en": "Lists faculty with title and research centre; no email addresses are published on the listing.",
             "tr": "Öğretim üyelerini unvan ve araştırma merkeziyle listeler; listede e-posta adresi yayımlanmaz."
           }
+        },
+        {
+          "url": "https://www.colorado.edu/financialaid/cost/example-aid",
+          "title": "CU Boulder Financial Aid: Example Cost of Attendance 2026-27",
+          "source_type": "official_university_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "living",
+            "housing",
+            "cost"
+          ],
+          "confidence": "high"
         }
       ]
     },
@@ -17627,7 +18178,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "strong_adjacent",
       "score": 74,
       "score_basis_weight": 100,
@@ -17922,22 +18473,41 @@
         "tr": "77.777 $ öğrenim/harç ve 108.977 $ öğrenim/harç/konut toplamları, 2026-27 oranını kullanan USC dört dönem örnekleridir; sonraki yıl ücretleri yıllık güncellenir. 116.021 $ tutarı yalnızca USC'nin eski 2025-26 sigorta örneğini ekler ve sabit fatura değildir. Ayrı 84.093 $ I-20 tutarı, derece faturası değil göçmenlik finansman şartıdır."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
-        "currency": null,
-        "annual_total": null,
-        "annual_total_eur_equivalent": null,
-        "includes": [],
-        "missing_mandatory_components": [
+        "standard": "cost_model@3.1.0",
+        "currency": "USD",
+        "annual_total": 69174.0,
+        "annual_total_eur_equivalent": {
+          "amount": 59412.52,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "includes": [
           "tuition",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 12,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
         "evaluated_at": "2026-08-30"
+      },
+      "tuition_usd_per_year": 41130.0,
+      "tuition_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "tuition_usd_per_year",
+        "rule": "published_annual_figure",
+        "derived_from": {
+          "tuition_usd_first_year_example": 41130.0
+        },
+        "currency": "USD",
+        "includes_mandatory_fees": false,
+        "derived_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -18041,7 +18611,7 @@
       },
       "housing_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -18085,13 +18655,49 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_visa_financial_requirement",
+        "status": "total_only",
+        "currency": "USD",
+        "months_covered": 12,
+        "components_included": [],
+        "components_absorbed": {},
+        "mandatory_components_missing": [],
         "components": {},
-        "monthly_total": null,
+        "monthly_total": 2337.0,
+        "annual_total": 28044.0,
+        "monthly_total_eur_equivalent": {
+          "amount": 2007.21,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "high",
+        "source_url": "https://gradadm.usc.edu/overview-of-student-visas/financial-documentation-requirements/",
+        "note": {
+          "en": "USC certifies USD 28,044 of living expenses for a twelve-month I-20. A visa minimum is a floor the university will vouch for, not a budget: Viterbi separately estimates university housing reserved for graduate engineering students at USD 1,300 a month, or USD 15,600 across an academic year, and that is housing alone.",
+          "tr": "USC, on iki aylik bir I-20 icin 28.044 USD yasam gideri onaylar. Vize asgari tutari, universitenin kefil oldugu bir tabandir, bir butce degildir: Viterbi ayrica lisansustu muhendislik ogrencilerine ayrilan universite konutunu ayda 1.300 USD, bir akademik yil boyunca 15.600 USD olarak tahmin eder ve bu yalnizca konuttur."
+        },
         "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_evidence": {
+        "cost_basis": "official_visa_financial_requirement",
+        "currency": "USD",
+        "months_covered": 12,
+        "source_url": "https://gradadm.usc.edu/overview-of-student-visas/financial-documentation-requirements/",
+        "confidence": "high",
+        "note": {
+          "en": "USC certifies USD 28,044 of living expenses for a twelve-month I-20. A visa minimum is a floor the university will vouch for, not a budget: Viterbi separately estimates university housing reserved for graduate engineering students at USD 1,300 a month, or USD 15,600 across an academic year, and that is housing alone.",
+          "tr": "USC, on iki aylik bir I-20 icin 28.044 USD yasam gideri onaylar. Vize asgari tutari, universitenin kefil oldugu bir tabandir, bir butce degildir: Viterbi ayrica lisansustu muhendislik ogrencilerine ayrilan universite konutunu ayda 1.300 USD, bir akademik yil boyunca 15.600 USD olarak tahmin eder ve bu yalnizca konuttur."
+        },
+        "monthly_total": 2337.0
       }
     },
     "curriculum_profile": {
@@ -18289,7 +18895,7 @@
         "tr": "Güz burs değerlendirmesi için 15 Aralık'a kadar başvurun. USC'nin resmî sayfaları daha sonraki güz ve bahar finansman tarihlerinde çeliştiği için riskten kaçınan aday daha erken uygulanabilir tarihi kullanmalı ve göndermeden önce canlı başvuru portalını doğrulamalıdır."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -19051,6 +19657,33 @@
             "en": "Publishes each research and student project laboratory with the faculty member in charge and the room number.",
             "tr": "Her araştırma ve öğrenci proje laboratuvarını sorumlu öğretim üyesi ve oda numarasıyla yayımlar."
           }
+        },
+        {
+          "url": "https://gradadm.usc.edu/overview-of-student-visas/financial-documentation-requirements/",
+          "title": "USC Graduate Admission: Financial Documentation Requirements",
+          "source_type": "official_university_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "living",
+            "housing",
+            "cost"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://viterbigradadmission.usc.edu/wp-content/uploads/2026/03/2026-2027-Tuition-and-Fees-27.pdf",
+          "title": "USC Viterbi: Tuition and Fees for 27-Unit Master of Science Programs 2026-27",
+          "source_type": "official_university_page",
+          "access_status": "pdf",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "tuition",
+            "fees",
+            "housing",
+            "living"
+          ],
+          "confidence": "high"
         }
       ]
     },
@@ -19211,7 +19844,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "core_match",
       "score": 84,
       "score_basis_weight": 90,
@@ -19513,20 +20146,26 @@
         "tr": "76.034 $ katılım maliyeti bir planlama bütçesidir, fatura değildir. Süre değiştiği ve gelecek ücretler bilinmediği için tam program toplamı verilmez."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "USD",
-        "annual_total": null,
-        "annual_total_eur_equivalent": null,
+        "annual_total": 75427.49,
+        "annual_total_eur_equivalent": {
+          "amount": 64783.55,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
         "includes": [
           "tuition",
           "mandatory_fees",
-          "health_insurance"
-        ],
-        "missing_mandatory_components": [
+          "health_insurance_within_living_costs",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 9,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
@@ -19600,7 +20239,7 @@
       },
       "housing_difficulty": "high",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "high",
         "raw_score": 5,
         "scaled_score": 8,
@@ -19643,13 +20282,90 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
-        "components": {},
-        "monthly_total": null,
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_university_cost_of_attendance",
+        "status": "partial",
+        "currency": "USD",
+        "months_covered": 9,
+        "components_included": [
+          "food",
+          "health_insurance",
+          "personal",
+          "rent",
+          "study_materials",
+          "transport"
+        ],
+        "components_absorbed": {},
+        "mandatory_components_missing": [
+          "utilities"
+        ],
+        "components": {
+          "rent": {
+            "monthly_amount": 2024.56,
+            "currency": "USD"
+          },
+          "food": {
+            "monthly_amount": 1171.78,
+            "currency": "USD"
+          },
+          "study_materials": {
+            "monthly_amount": 222.67,
+            "currency": "USD"
+          },
+          "transport": {
+            "monthly_amount": 424.33,
+            "currency": "USD"
+          },
+          "personal": {
+            "monthly_amount": 357.67,
+            "currency": "USD"
+          },
+          "health_insurance": {
+            "monthly_amount": 835.0,
+            "currency": "USD"
+          }
+        },
+        "monthly_total": 5036.01,
+        "annual_total": 45324.09,
+        "monthly_total_eur_equivalent": {
+          "amount": 4325.35,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "medium",
+        "source_url": "https://financialaid.ucla.edu/graduate-aid/cost-of-attendance",
+        "note": {
+          "en": "UCLA's 2026-27 graduate student budget: housing 18,221, food 10,546, books 2,004, transportation 3,819, personal 3,219 and health insurance 7,515, excluding tuition and fees. The checked page does not say how many months the budget covers; it is read here as the fall-to-spring academic year, so anyone planning a full twelve months in Los Angeles must budget the summer on top.",
+          "tr": "UCLA'nin 2026-27 lisansustu ogrenci butcesi: konut 18.221, gida 10.546, kitap 2.004, ulasim 3.819, kisisel 3.219 ve saglik sigortasi 7.515; ogrenim ucreti ve harclar haric. Kontrol edilen sayfa butcenin kac ayi kapsadigini soylemez; burada guzden bahara akademik yil olarak okunur, bu yuzden Los Angeles'ta tam on iki ay planlayan birinin yazi ustune butcelemesi gerekir."
+        },
         "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_evidence": {
+        "cost_basis": "official_university_cost_of_attendance",
+        "currency": "USD",
+        "months_covered": 9,
+        "source_url": "https://financialaid.ucla.edu/graduate-aid/cost-of-attendance",
+        "confidence": "medium",
+        "note": {
+          "en": "UCLA's 2026-27 graduate student budget: housing 18,221, food 10,546, books 2,004, transportation 3,819, personal 3,219 and health insurance 7,515, excluding tuition and fees. The checked page does not say how many months the budget covers; it is read here as the fall-to-spring academic year, so anyone planning a full twelve months in Los Angeles must budget the summer on top.",
+          "tr": "UCLA'nin 2026-27 lisansustu ogrenci butcesi: konut 18.221, gida 10.546, kitap 2.004, ulasim 3.819, kisisel 3.219 ve saglik sigortasi 7.515; ogrenim ucreti ve harclar haric. Kontrol edilen sayfa butcenin kac ayi kapsadigini soylemez; burada guzden bahara akademik yil olarak okunur, bu yuzden Los Angeles'ta tam on iki ay planlayan birinin yazi ustune butcelemesi gerekir."
+        },
+        "components": {
+          "rent": 2024.56,
+          "food": 1171.78,
+          "study_materials": 222.67,
+          "transport": 424.33,
+          "personal": 357.67,
+          "health_insurance": 835.0
+        }
       }
     },
     "curriculum_profile": {
@@ -19873,7 +20589,7 @@
         "tr": "Tarih ve GRE kuralında güncel döneme özgü Aerospace sayfası esas alınır. Göndermeden önce canlı başvuru yine kontrol edilmelidir."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": "2026-12-01",
         "next_expected_date": null,
         "time": null,
@@ -20578,6 +21294,19 @@
             "en": "Publishes each laboratory with its director in the title and a description of its work.",
             "tr": "Her laboratuvarı başlıkta direktörüyle birlikte ve çalışmasının açıklamasıyla yayımlar."
           }
+        },
+        {
+          "url": "https://financialaid.ucla.edu/graduate-aid/cost-of-attendance",
+          "title": "UCLA Financial Aid: Graduate Cost of Attendance 2026-27",
+          "source_type": "official_university_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "living",
+            "housing",
+            "cost"
+          ],
+          "confidence": "high"
         }
       ]
     },
@@ -20744,7 +21473,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "partial_match",
       "score": 51,
       "score_basis_weight": 90,
@@ -21024,22 +21753,41 @@
         "tr": "Uluslararası aday altı haneli bir yıllık bütçe planlamalı; tarihsel tabloyu veya rekabetçi ödülü garanti üst sınır saymamalıdır."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
-        "currency": null,
-        "annual_total": null,
-        "annual_total_eur_equivalent": null,
-        "includes": [],
-        "missing_mandatory_components": [
+        "standard": "cost_model@3.1.0",
+        "currency": "USD",
+        "annual_total": 100079.5,
+        "annual_total_eur_equivalent": {
+          "amount": 85956.8,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "includes": [
           "tuition",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 12,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
         "evaluated_at": "2026-08-30"
+      },
+      "tuition_usd_per_year": 63305.5,
+      "tuition_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "tuition_usd_per_year",
+        "rule": "published_annual_figure",
+        "derived_from": {
+          "tuition_and_program_fees_usd_nonresident": 63305.5
+        },
+        "currency": "USD",
+        "includes_mandatory_fees": true,
+        "derived_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -21199,7 +21947,7 @@
       },
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": 3,
         "scaled_score": null,
@@ -21243,13 +21991,84 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
-        "components": {},
-        "monthly_total": null,
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_university_living_budget",
+        "status": "partial",
+        "currency": "USD",
+        "months_covered": 12,
+        "components_included": [
+          "food",
+          "personal",
+          "rent",
+          "study_materials",
+          "transport"
+        ],
+        "components_absorbed": {},
+        "mandatory_components_missing": [
+          "utilities"
+        ],
+        "components": {
+          "rent": {
+            "monthly_amount": 1619.33,
+            "currency": "USD"
+          },
+          "food": {
+            "monthly_amount": 798.0,
+            "currency": "USD"
+          },
+          "study_materials": {
+            "monthly_amount": 62.67,
+            "currency": "USD"
+          },
+          "personal": {
+            "monthly_amount": 270.5,
+            "currency": "USD"
+          },
+          "transport": {
+            "monthly_amount": 314.0,
+            "currency": "USD"
+          }
+        },
+        "monthly_total": 3064.5,
+        "annual_total": 36774.0,
+        "monthly_total_eur_equivalent": {
+          "amount": 2632.05,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "medium",
+        "source_url": "https://funginstitute.berkeley.edu/programs-centers/full-time-program/learn-more/tuition-financial-aid/",
+        "note": {
+          "en": "The Fung Institute publishes USD 36,774 of estimated annual personal expenses for the MEng: housing 19,432, food 9,576, books 752, personal 3,246 and transportation 3,768. The page calls the figure annual but never names the number of months, so twelve are used here; if it is in fact a nine-month budget the monthly rate is a third higher.",
+          "tr": "Fung Institute, MEng icin yillik 36.774 USD tahmini kisisel gider yayimlar: konut 19.432, gida 9.576, kitap 752, kisisel 3.246 ve ulasim 3.768. Sayfa rakami yillik olarak adlandirir ancak ay sayisini hicbir yerde belirtmez; bu yuzden burada on iki ay kullanilir. Gercekte dokuz aylik bir butce ise aylik tutar ucte bir daha yuksektir."
+        },
         "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_evidence": {
+        "cost_basis": "official_university_living_budget",
+        "currency": "USD",
+        "months_covered": 12,
+        "source_url": "https://funginstitute.berkeley.edu/programs-centers/full-time-program/learn-more/tuition-financial-aid/",
+        "confidence": "medium",
+        "note": {
+          "en": "The Fung Institute publishes USD 36,774 of estimated annual personal expenses for the MEng: housing 19,432, food 9,576, books 752, personal 3,246 and transportation 3,768. The page calls the figure annual but never names the number of months, so twelve are used here; if it is in fact a nine-month budget the monthly rate is a third higher.",
+          "tr": "Fung Institute, MEng icin yillik 36.774 USD tahmini kisisel gider yayimlar: konut 19.432, gida 9.576, kitap 752, kisisel 3.246 ve ulasim 3.768. Sayfa rakami yillik olarak adlandirir ancak ay sayisini hicbir yerde belirtmez; bu yuzden burada on iki ay kullanilir. Gercekte dokuz aylik bir butce ise aylik tutar ucte bir daha yuksektir."
+        },
+        "components": {
+          "rent": 1619.33,
+          "food": 798.0,
+          "study_materials": 62.67,
+          "personal": 270.5,
+          "transport": 314.0
+        }
       }
     },
     "curriculum_profile": {
@@ -21472,7 +22291,7 @@
         "tr": "İngilizce puanı son tarihi MEng başvuru son tarihinden bir aydan fazla erkendir. Sınav gereken adaylar 6 Ocak'a değil 1 Aralık'a göre plan yapmalıdır."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": "2027-01-06",
         "next_expected_date": null,
         "time": null,
@@ -22305,6 +23124,20 @@
             "department"
           ],
           "confidence": "medium"
+        },
+        {
+          "url": "https://funginstitute.berkeley.edu/programs-centers/full-time-program/learn-more/tuition-financial-aid/",
+          "title": "Berkeley Fung Institute: MEng Tuition and Financial Aid",
+          "source_type": "official_university_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "living",
+            "housing",
+            "cost",
+            "tuition"
+          ],
+          "confidence": "high"
         }
       ],
       "source_count": 34,
@@ -22483,7 +23316,7 @@
     },
     "last_verified": "2026-08-14",
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "weak_match",
       "score": 22,
       "score_basis_weight": 100,
@@ -22753,20 +23586,26 @@
         "tr": "COA bir planlama bütçesidir, fatura değildir. Öğrenciler üç ila yedi çeyrek sürebildiği ve gelecek oranlar bilinmediği için tam program toplamı verilmez."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "USD",
-        "annual_total": null,
-        "annual_total_eur_equivalent": null,
+        "annual_total": 69842.14,
+        "annual_total_eur_equivalent": {
+          "amount": 59986.38,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
         "includes": [
           "tuition",
           "mandatory_fees",
-          "health_insurance"
-        ],
-        "missing_mandatory_components": [
+          "health_insurance",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 9,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
@@ -22850,7 +23689,7 @@
       },
       "housing_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -22894,13 +23733,60 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_university_cost_of_attendance",
+        "status": "total_only",
+        "currency": "USD",
+        "months_covered": 9,
+        "components_included": [],
+        "components_absorbed": {},
+        "mandatory_components_missing": [],
         "components": {},
-        "monthly_total": null,
+        "monthly_total": 3505.33,
+        "annual_total": 31547.97,
+        "monthly_total_eur_equivalent": {
+          "amount": 3010.68,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "excludes": [
+          "tuition",
+          "transport",
+          "study_materials",
+          "personal",
+          "health_insurance",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "medium",
+        "source_url": "https://fas.ucsd.edu/cost-of-attendance/graduate-students/index.html",
+        "note": {
+          "en": "UC San Diego states its graduate cost of attendance is built on three quarters of full-time enrolment, so this is a nine-month figure. The off-campus food and housing line for 2026-27 is USD 31,548 within a published total of USD 76,821. Only food and housing are carried here: transportation, books, personal expenses and health insurance sit in the same official budget but were not captured as separate figures, so they must be budgeted on top.",
+          "tr": "UC San Diego, lisansustu egitim maliyetinin tam zamanli kayitla uc ceyrek uzerine kuruldugunu belirtir; bu yuzden bu dokuz aylik bir rakamdir. 2026-27 icin kampus disi gida ve konut satiri, yayimlanan 76.821 USD'lik toplam icinde 31.548 USD'dir. Burada yalnizca gida ve konut tasinir: ulasim, kitap, kisisel giderler ve saglik sigortasi ayni resmi butcede yer alir ancak ayri rakamlar olarak kaydedilmemistir, bu yuzden ustune butcelenmelidir."
+        },
         "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_evidence": {
+        "cost_basis": "official_university_cost_of_attendance",
+        "currency": "USD",
+        "months_covered": 9,
+        "source_url": "https://fas.ucsd.edu/cost-of-attendance/graduate-students/index.html",
+        "confidence": "medium",
+        "note": {
+          "en": "UC San Diego states its graduate cost of attendance is built on three quarters of full-time enrolment, so this is a nine-month figure. The off-campus food and housing line for 2026-27 is USD 31,548 within a published total of USD 76,821. Only food and housing are carried here: transportation, books, personal expenses and health insurance sit in the same official budget but were not captured as separate figures, so they must be budgeted on top.",
+          "tr": "UC San Diego, lisansustu egitim maliyetinin tam zamanli kayitla uc ceyrek uzerine kuruldugunu belirtir; bu yuzden bu dokuz aylik bir rakamdir. 2026-27 icin kampus disi gida ve konut satiri, yayimlanan 76.821 USD'lik toplam icinde 31.548 USD'dir. Burada yalnizca gida ve konut tasinir: ulasim, kitap, kisisel giderler ve saglik sigortasi ayni resmi butcede yer alir ancak ayri rakamlar olarak kaydedilmemistir, bu yuzden ustune butcelenmelidir."
+        },
+        "monthly_total": 3505.33,
+        "excludes": [
+          "tuition",
+          "transport",
+          "study_materials",
+          "personal",
+          "health_insurance",
+          "one_off_visa_and_travel_costs"
+        ]
       }
     },
     "curriculum_profile": {
@@ -23082,7 +23968,7 @@
         "tr": "Güncel Fall 2027 MAE sayfası MS için 13 Ocak 2027'yi açıkça yayımlar ve geç başvuru kabul edilmediğini söyler. Son tarih tahmini kullanılmaz."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": "2027-01-13",
         "next_expected_date": null,
         "time": null,
@@ -23979,6 +24865,19 @@
             "labs"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://fas.ucsd.edu/cost-of-attendance/graduate-students/index.html",
+          "title": "UC San Diego Financial Aid: Graduate Cost of Attendance 2026-27",
+          "source_type": "official_university_page",
+          "access_status": "requires_js",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "living",
+            "housing",
+            "cost"
+          ],
+          "confidence": "high"
         }
       ]
     },
@@ -24142,7 +25041,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "weak_match",
       "score": 33,
       "score_basis_weight": 90,
@@ -24269,11 +25168,11 @@
       ]
     },
     "cost_profile": {
-      "academic_year": null,
+      "academic_year": "2026/2027",
       "tuition_eur_per_year_min": null,
       "tuition_eur_per_year_max": null,
       "tuition_eur_per_year_estimated": null,
-      "tuition_basis": "official_graduate_tier_III_rate_dashboard",
+      "tuition_basis": "official_annual_non_resident_graduate_tier_III_rate",
       "non_eu_flat_fee": null,
       "source_notes": {
         "en": "UW confirms that MSAA is assessed at Graduate Tier III and that cost depends on residency and full- or part-time enrollment. The current approved dollar amount is presented in the official interactive tuition dashboard; no unsupported static EUR or USD total is retained here.",
@@ -24290,22 +25189,42 @@
         "tr": "MSAA finansman sayfası, bölüm finansmanının mevcut ancak çok sınırlı olduğunu; adayların başka finansman kaynakları aramasının güçlü biçimde teşvik edildiğini belirtir. Bu, kabul aşamasında finansman garantisi olarak okunmamalıdır."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
-        "currency": null,
-        "annual_total": null,
-        "annual_total_eur_equivalent": null,
-        "includes": [],
-        "missing_mandatory_components": [
+        "standard": "cost_model@3.1.0",
+        "currency": "USD",
+        "annual_total": 77765.04,
+        "annual_total_eur_equivalent": {
+          "amount": 66791.24,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "includes": [
           "tuition",
+          "mandatory_fees",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 12,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
         "evaluated_at": "2026-08-30"
+      },
+      "tuition_derivation": {
+        "standard": "cost_model@3.1.0",
+        "rule": "not_derivable",
+        "reason": "no_readable_tuition_figure",
+        "derived_at": "2026-08-30"
+      },
+      "tuition_usd_per_year": 39315,
+      "mandatory_fees_usd_per_year": 966,
+      "cost_notes": {
+        "en": "UW publishes annual full-time rates for Autumn, Winter and Spring. The MS in Aeronautics and Astronautics sits in Graduate Tier III on the university's own tier list, where the 2026-27 non-resident operating fee is USD 37,939 and the building fee USD 1,376, giving USD 39,315 of tuition. The required technology, services and activities, IMA bond and facilities renovation fees add USD 966, for USD 40,281 of tuition and fees; the U-PASS transport pass adds a further USD 243.",
+        "tr": "UW, Guz, Kis ve Bahar icin yillik tam zamanli oranlar yayimlar. Uzay ve Havacilik Muhendisligi yuksek lisansi, universitenin kendi kademe listesinde Lisansustu Kademe III'te yer alir; burada 2026-27 eyalet disi isletme ucreti 37.939 USD ve bina ucreti 1.376 USD'dir, bu da 39.315 USD ogrenim ucreti eder. Zorunlu teknoloji, hizmet ve etkinlik, IMA tahvili ve tesis yenileme ucretleri 966 USD ekler ve ogrenim ucreti ile harclar 40.281 USD olur; U-PASS ulasim karti bunun uzerine 243 USD ekler."
       }
     },
     "scholarship_profile": {
@@ -24347,7 +25266,7 @@
       "housing_application_separate": null,
       "housing_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -24393,13 +25312,49 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_university_living_budget",
+        "status": "total_only",
+        "currency": "USD",
+        "months_covered": 12,
+        "components_included": [],
+        "components_absorbed": {},
+        "mandatory_components_missing": [],
         "components": {},
-        "monthly_total": null,
+        "monthly_total": 3123.67,
+        "annual_total": 37484.04,
+        "monthly_total_eur_equivalent": {
+          "amount": 2682.87,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "high",
+        "source_url": "https://iss.washington.edu/annual-expenses/",
+        "note": {
+          "en": "UW International Student Services estimates USD 37,484 of living expenses for 2026-27 across a four-quarter year, alongside USD 2,148 of ISHIP health insurance. The tuition figure on this record covers the three-quarter academic year instead, so a student staying through summer should expect tuition on top of it as well.",
+          "tr": "UW Uluslararasi Ogrenci Hizmetleri, 2026-27 icin dort ceyreklik bir yil boyunca 37.484 USD yasam gideri ve bunun yaninda 2.148 USD ISHIP saglik sigortasi tahmin eder. Bu kayittaki ogrenim ucreti rakami ise uc ceyreklik akademik yili kapsar; bu yuzden yaz boyunca kalan bir ogrenci ustune ogrenim ucreti de beklemelidir."
+        },
         "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_evidence": {
+        "cost_basis": "official_university_living_budget",
+        "currency": "USD",
+        "months_covered": 12,
+        "source_url": "https://iss.washington.edu/annual-expenses/",
+        "confidence": "high",
+        "note": {
+          "en": "UW International Student Services estimates USD 37,484 of living expenses for 2026-27 across a four-quarter year, alongside USD 2,148 of ISHIP health insurance. The tuition figure on this record covers the three-quarter academic year instead, so a student staying through summer should expect tuition on top of it as well.",
+          "tr": "UW Uluslararasi Ogrenci Hizmetleri, 2026-27 icin dort ceyreklik bir yil boyunca 37.484 USD yasam gideri ve bunun yaninda 2.148 USD ISHIP saglik sigortasi tahmin eder. Bu kayittaki ogrenim ucreti rakami ise uc ceyreklik akademik yili kapsar; bu yuzden yaz boyunca kalan bir ogrenci ustune ogrenim ucreti de beklemelidir."
+        },
+        "monthly_total": 3123.67
       }
     },
     "curriculum_profile": {
@@ -24463,7 +25418,7 @@
         "tr": "MSAA yalnızca güz çeyreği için öğrenci kabul eder. Kontrol edilen sayfa hâlâ 2026 güz son tarihini (1 Aralık 2025) gösterir, güncel 2027 güz tarihi göstermez; bu nedenle eski yıllık son tarih kaldırıldı."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -25062,6 +26017,44 @@
             "en": "Publishes email, phone, office and research keywords for each faculty member, filterable by research area.",
             "tr": "Her öğretim üyesi için e-posta, telefon, ofis ve araştırma anahtar kelimelerini araştırma alanına göre filtrelenebilir biçimde yayımlar."
           }
+        },
+        {
+          "url": "https://finance.uw.edu/tuition-fees/files/docs/annual-tuition-and-fees/2026-2027tricampusannualtuitionandfees.pdf",
+          "title": "University of Washington: 2026-27 Annual Tuition and Fees, all three campuses",
+          "source_type": "official_university_page",
+          "access_status": "pdf",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "tuition",
+            "fees",
+            "cost"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://finance.uw.edu/tuition-fees/files/docs/annual-tuition-and-fees/2026-2027programsineachgraduatetierbycampus.pdf",
+          "title": "University of Washington: Programs in each graduate tier by campus, 2026-27",
+          "source_type": "official_university_page",
+          "access_status": "pdf",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "tuition",
+            "fees"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://iss.washington.edu/annual-expenses/",
+          "title": "UW International Student Services: Estimated Annual Expenses 2026-2027",
+          "source_type": "official_university_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "living",
+            "housing",
+            "cost"
+          ],
+          "confidence": "high"
         }
       ],
       "needs_verification": true
@@ -25132,7 +26125,7 @@
       ]
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "core_match",
       "score": 100,
       "score_basis_weight": 90,
@@ -25286,19 +26279,25 @@
         "tr": "Önceki kaynaksız EUR tahmini kaldırıldı."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "USD",
-        "annual_total": null,
-        "annual_total_eur_equivalent": null,
+        "annual_total": 67617.0,
+        "annual_total_eur_equivalent": {
+          "amount": 58075.24,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
         "includes": [
           "tuition",
-          "mandatory_fees"
-        ],
-        "missing_mandatory_components": [
+          "mandatory_fees",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 12,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
@@ -25352,7 +26351,7 @@
       "housing_application_separate": null,
       "housing_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -25398,12 +26397,43 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_source_range_basis_not_itemised",
+        "status": "total_only",
+        "currency": "USD",
+        "months_covered": 12,
+        "components_included": [],
+        "mandatory_components_missing": [],
         "components": {},
-        "monthly_total": null,
+        "monthly_total": 3118.0,
+        "published_range": null,
+        "annual_total": 37416.0,
+        "monthly_total_eur_equivalent": {
+          "amount": 2678.0,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "medium",
+        "derivation": {
+          "rule": "verified_range_midpoint",
+          "derived_from": {
+            "monthly_living_cost_usd_estimated": 3118.0
+          },
+          "derived_at": "2026-08-30"
+        },
+        "source_url": null,
+        "note": {
+          "en": "Cornell International Services' published graduate living-expense estimate; it is a budget, not rent alone.",
+          "tr": "Cornell International Services'ın yayımladığı lisansüstü yaşam gideri tahmini; yalnız kira değildir."
+        },
         "evaluated_at": "2026-08-30"
       }
     },
@@ -25487,7 +26517,7 @@
       "deadline_notes": null,
       "deadline_events": [],
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -26039,7 +27069,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "core_match",
       "score": 84,
       "score_basis_weight": 90,
@@ -26199,18 +27229,24 @@
         "tr": "Önceki kaynaksız EUR tahmini kaldırıldı."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "USD",
-        "annual_total": null,
-        "annual_total_eur_equivalent": null,
+        "annual_total": 104980.04,
+        "annual_total_eur_equivalent": {
+          "amount": 90165.8,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
         "includes": [
-          "tuition"
-        ],
-        "missing_mandatory_components": [
+          "tuition",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 12,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
@@ -26257,7 +27293,7 @@
       "housing_application_separate": null,
       "housing_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -26303,13 +27339,79 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
-        "components": {},
-        "monthly_total": null,
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_university_living_budget",
+        "status": "partial",
+        "currency": "USD",
+        "months_covered": 12,
+        "components_included": [
+          "food",
+          "personal",
+          "rent",
+          "study_materials"
+        ],
+        "components_absorbed": {},
+        "mandatory_components_missing": [
+          "transport",
+          "utilities"
+        ],
+        "components": {
+          "rent": {
+            "monthly_amount": 1420.0,
+            "currency": "USD"
+          },
+          "food": {
+            "monthly_amount": 910.42,
+            "currency": "USD"
+          },
+          "personal": {
+            "monthly_amount": 780.42,
+            "currency": "USD"
+          },
+          "study_materials": {
+            "monthly_amount": 203.33,
+            "currency": "USD"
+          }
+        },
+        "monthly_total": 3314.17,
+        "annual_total": 39770.04,
+        "monthly_total_eur_equivalent": {
+          "amount": 2846.49,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "high",
+        "source_url": "https://gradschool.princeton.edu/financial-support/financial-support-model/funding-calendar-university-rates-costs",
+        "note": {
+          "en": "Princeton's 2026-27 living-expense table, twelve-month column: housing on or off campus 17,040, food 10,925, personal expenses 9,365 and books and supplies 2,440, totalling 39,770. The ten-month column totals 33,141. Princeton publishes no separate transport line, so local travel is not inside this figure.",
+          "tr": "Princeton'un 2026-27 yasam gideri tablosu, on iki aylik sutun: kampus ici veya disi konut 17.040, gida 10.925, kisisel giderler 9.365 ve kitap ve malzeme 2.440; toplam 39.770. On aylik sutunun toplami 33.141'dir. Princeton ayri bir ulasim satiri yayimlamaz, bu yuzden sehir ici ulasim bu rakamin icinde degildir."
+        },
         "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_evidence": {
+        "cost_basis": "official_university_living_budget",
+        "currency": "USD",
+        "months_covered": 12,
+        "source_url": "https://gradschool.princeton.edu/financial-support/financial-support-model/funding-calendar-university-rates-costs",
+        "confidence": "high",
+        "note": {
+          "en": "Princeton's 2026-27 living-expense table, twelve-month column: housing on or off campus 17,040, food 10,925, personal expenses 9,365 and books and supplies 2,440, totalling 39,770. The ten-month column totals 33,141. Princeton publishes no separate transport line, so local travel is not inside this figure.",
+          "tr": "Princeton'un 2026-27 yasam gideri tablosu, on iki aylik sutun: kampus ici veya disi konut 17.040, gida 10.925, kisisel giderler 9.365 ve kitap ve malzeme 2.440; toplam 39.770. On aylik sutunun toplami 33.141'dir. Princeton ayri bir ulasim satiri yayimlamaz, bu yuzden sehir ici ulasim bu rakamin icinde degildir."
+        },
+        "components": {
+          "rent": 1420.0,
+          "food": 910.42,
+          "personal": 780.42,
+          "study_materials": 203.33
+        }
       }
     },
     "curriculum_profile": {
@@ -26392,7 +27494,7 @@
       "deadline_notes": null,
       "deadline_events": [],
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -26854,6 +27956,19 @@
             "en": "Lists each professor with their research areas and links to their research group; email addresses are protected.",
             "tr": "Her profesörü araştırma alanlarıyla listeler ve araştırma grubuna bağlanır; e-posta adresleri korumalıdır."
           }
+        },
+        {
+          "url": "https://gradschool.princeton.edu/financial-support/financial-support-model/funding-calendar-university-rates-costs",
+          "title": "Princeton Graduate School: University Rates and Costs 2026-27",
+          "source_type": "official_university_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "living",
+            "housing",
+            "cost"
+          ],
+          "confidence": "high"
         }
       ]
     },
@@ -26949,7 +28064,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "core_match",
       "score": 78,
       "score_basis_weight": 90,
@@ -27095,19 +28210,25 @@
         "tr": "Önceki kaynaksız EUR tahmini kaldırıldı. PDF'deki 13.330 USD konut payı, şehir geneli kira teklifi olarak değil aşağıda konut bütçesi olarak kaydedildi."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "USD",
-        "annual_total": null,
-        "annual_total_eur_equivalent": null,
+        "annual_total": 62770.0,
+        "annual_total_eur_equivalent": {
+          "amount": 53912.22,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
         "includes": [
           "tuition",
-          "mandatory_fees"
-        ],
-        "missing_mandatory_components": [
+          "mandatory_fees",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 9,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
@@ -27156,7 +28277,7 @@
       "housing_application_separate": null,
       "housing_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -27202,13 +28323,84 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
-        "components": {},
-        "monthly_total": null,
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_university_cost_of_attendance",
+        "status": "partial",
+        "currency": "USD",
+        "months_covered": 9,
+        "components_included": [
+          "food",
+          "personal",
+          "rent",
+          "study_materials",
+          "transport"
+        ],
+        "components_absorbed": {},
+        "mandatory_components_missing": [
+          "utilities"
+        ],
+        "components": {
+          "rent": {
+            "monthly_amount": 1481.11,
+            "currency": "USD"
+          },
+          "food": {
+            "monthly_amount": 426.67,
+            "currency": "USD"
+          },
+          "study_materials": {
+            "monthly_amount": 124.44,
+            "currency": "USD"
+          },
+          "transport": {
+            "monthly_amount": 334.89,
+            "currency": "USD"
+          },
+          "personal": {
+            "monthly_amount": 458.89,
+            "currency": "USD"
+          }
+        },
+        "monthly_total": 2826.0,
+        "annual_total": 25434.0,
+        "monthly_total_eur_equivalent": {
+          "amount": 2427.21,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "high",
+        "source_url": "https://finaid.vt.edu/content/dam/finaid_vt_edu/Cost_of_Attendance/2627/GRNR_0.pdf",
+        "note": {
+          "en": "Virginia Tech's 2026-27 out-of-state graduate cost of attendance for the Blacksburg campus, stated as one academic year of fall and spring: housing 13,330, food 3,840, course materials 1,120, transportation 3,014 and personal 4,130. Direct costs of tuition 33,582 and fees 3,754 bring the published total to 62,770. The sheet adds that a first-time graduate student's budget also carries a computer allowance of 2,150 or 3,140 depending on the programme.",
+          "tr": "Virginia Tech'in Blacksburg kampusu icin 2026-27 eyalet disi lisansustu egitim maliyeti, guz ve bahardan olusan bir akademik yil olarak belirtilir: konut 13.330, gida 3.840, ders malzemesi 1.120, ulasim 3.014 ve kisisel 4.130. Dogrudan maliyetler olan 33.582 ogrenim ucreti ve 3.754 harc ile yayimlanan toplam 62.770'e ulasir. Belge, ilk kez kayit olan bir lisansustu ogrencinin butcesinin ayrica programa gore 2.150 veya 3.140 bilgisayar odenegi tasidigini ekler."
+        },
         "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_evidence": {
+        "cost_basis": "official_university_cost_of_attendance",
+        "currency": "USD",
+        "months_covered": 9,
+        "source_url": "https://finaid.vt.edu/content/dam/finaid_vt_edu/Cost_of_Attendance/2627/GRNR_0.pdf",
+        "confidence": "high",
+        "note": {
+          "en": "Virginia Tech's 2026-27 out-of-state graduate cost of attendance for the Blacksburg campus, stated as one academic year of fall and spring: housing 13,330, food 3,840, course materials 1,120, transportation 3,014 and personal 4,130. Direct costs of tuition 33,582 and fees 3,754 bring the published total to 62,770. The sheet adds that a first-time graduate student's budget also carries a computer allowance of 2,150 or 3,140 depending on the programme.",
+          "tr": "Virginia Tech'in Blacksburg kampusu icin 2026-27 eyalet disi lisansustu egitim maliyeti, guz ve bahardan olusan bir akademik yil olarak belirtilir: konut 13.330, gida 3.840, ders malzemesi 1.120, ulasim 3.014 ve kisisel 4.130. Dogrudan maliyetler olan 33.582 ogrenim ucreti ve 3.754 harc ile yayimlanan toplam 62.770'e ulasir. Belge, ilk kez kayit olan bir lisansustu ogrencinin butcesinin ayrica programa gore 2.150 veya 3.140 bilgisayar odenegi tasidigini ekler."
+        },
+        "components": {
+          "rent": 1481.11,
+          "food": 426.67,
+          "study_materials": 124.44,
+          "transport": 334.89,
+          "personal": 458.89
+        }
       }
     },
     "curriculum_profile": {
@@ -27285,7 +28477,7 @@
         "tr": "Virginia Tech Graduate School, uluslararası adaylar için güz dönemi 15 Mayıs ve bahar dönemi 15 Ekim tarihlerini yayımlar. Bölüm ve finansman tarihleri ayrı olduğundan hedef dönemi mutlaka doğrulayın."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -27812,6 +29004,20 @@
             "department"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://finaid.vt.edu/content/dam/finaid_vt_edu/Cost_of_Attendance/2627/GRNR_0.pdf",
+          "title": "Virginia Tech: Estimated 2026-27 Cost of Attendance, Graduate Out-of-State",
+          "source_type": "official_university_page",
+          "access_status": "pdf",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "living",
+            "housing",
+            "cost",
+            "tuition"
+          ],
+          "confidence": "high"
         }
       ]
     },
@@ -27899,7 +29105,7 @@
       ]
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "core_match",
       "score": 100,
       "score_basis_weight": 90,
@@ -28049,7 +29255,7 @@
         "tr": "Önceki kaynaksız EUR tahmini kaldırıldı. Kontrol edilmiş programla ilgili kaynak olmadan harçlar ve toplam yaşam bütçesi iddia edilmedi."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "USD",
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -28163,7 +29369,7 @@
       "housing_application_separate": null,
       "housing_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -28209,7 +29415,7 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
@@ -28289,7 +29495,7 @@
         "tr": "Programın resmî başvuru sayfası güz için 15 Aralık, bahar için 15 Ağustos listeler. Yıllık kabul rehberi değişebileceği için başvurmadan önce hedef dönemi kontrol edin."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -28974,7 +30180,7 @@
       ]
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "core_match",
       "score": 100,
       "score_basis_weight": 90,
@@ -29121,19 +30327,25 @@
         "tr": "Bölüm, asistanlık finansmanı arayan MS/PhD adaylarını 1 Aralık öncelik son tarihine kadar başvurmaya teşvik eder. Bireysel ödül garanti edilmez."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "USD",
-        "annual_total": null,
-        "annual_total_eur_equivalent": null,
+        "annual_total": 51570.0,
+        "annual_total_eur_equivalent": {
+          "amount": 44292.71,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
         "includes": [
           "tuition",
-          "mandatory_fees"
-        ],
-        "missing_mandatory_components": [
+          "mandatory_fees",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 12,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
@@ -29177,7 +30389,7 @@
       "housing_application_separate": null,
       "housing_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -29223,13 +30435,49 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_university_cost_of_attendance",
+        "status": "total_only",
+        "currency": "USD",
+        "months_covered": 12,
+        "components_included": [],
+        "components_absorbed": {},
+        "mandatory_components_missing": [],
         "components": {},
-        "monthly_total": null,
+        "monthly_total": 1998.5,
+        "annual_total": 23982.0,
+        "monthly_total_eur_equivalent": {
+          "amount": 1716.48,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "high",
+        "source_url": "https://financialaid.umd.edu/resources-policies/cost-attendance",
+        "note": {
+          "en": "UMD's 2026-27 non-resident graduate budget publishes housing and food together as USD 17,724, plus books 1,000, transportation 3,058 and personal 1,200: USD 23,982 in all, alongside tuition 26,824 and mandatory fees 764. Housing and food arrive as a single line, so they cannot be shown as separate components here.",
+          "tr": "UMD'nin 2026-27 eyalet disi lisansustu butcesi konut ve gidayi birlikte 17.724 USD olarak yayimlar; buna kitap 1.000, ulasim 3.058 ve kisisel 1.200 eklenir: toplam 23.982 USD, ayrica ogrenim ucreti 26.824 ve zorunlu harclar 764. Konut ve gida tek satir halinde geldigi icin burada ayri bilesenler olarak gosterilemez."
+        },
         "evaluated_at": "2026-08-30"
+      },
+      "cost_of_living_evidence": {
+        "cost_basis": "official_university_cost_of_attendance",
+        "currency": "USD",
+        "months_covered": 12,
+        "source_url": "https://financialaid.umd.edu/resources-policies/cost-attendance",
+        "confidence": "high",
+        "note": {
+          "en": "UMD's 2026-27 non-resident graduate budget publishes housing and food together as USD 17,724, plus books 1,000, transportation 3,058 and personal 1,200: USD 23,982 in all, alongside tuition 26,824 and mandatory fees 764. Housing and food arrive as a single line, so they cannot be shown as separate components here.",
+          "tr": "UMD'nin 2026-27 eyalet disi lisansustu butcesi konut ve gidayi birlikte 17.724 USD olarak yayimlar; buna kitap 1.000, ulasim 3.058 ve kisisel 1.200 eklenir: toplam 23.982 USD, ayrica ogrenim ucreti 26.824 ve zorunlu harclar 764. Konut ve gida tek satir halinde geldigi icin burada ayri bilesenler olarak gosterilemez."
+        },
+        "monthly_total": 1998.5
       }
     },
     "curriculum_profile": {
@@ -29290,7 +30538,7 @@
       "timeline_risk": "unknown",
       "verification_notes": "Deadline notes: Estimated for US Fall intake (check department calendar / funding priority dates).",
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -29847,6 +31095,19 @@
             "en": "Publishes email, phone, office and centre affiliation for each faculty member.",
             "tr": "Her öğretim üyesi için e-posta, telefon, ofis ve merkez bağlantısını yayımlar."
           }
+        },
+        {
+          "url": "https://financialaid.umd.edu/resources-policies/cost-attendance",
+          "title": "University of Maryland: Cost of Attendance 2026-27",
+          "source_type": "official_university_page",
+          "access_status": "ok",
+          "last_checked": "2026-08-30",
+          "relevant_fields": [
+            "living",
+            "housing",
+            "cost"
+          ],
+          "confidence": "high"
         }
       ],
       "needs_verification": true
@@ -29921,7 +31182,7 @@
       ]
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "core_match",
       "score": 100,
       "score_basis_weight": 90,

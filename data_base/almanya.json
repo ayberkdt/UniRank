@@ -111,7 +111,7 @@
       "living_cost_dkk_per_year_min": null,
       "living_cost_dkk_per_year_max": null,
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "EUR",
         "annual_total": 31800.0,
         "annual_total_eur_equivalent": null,
@@ -136,6 +136,19 @@
       "cost_notes": {
         "en": "TUM charges non-EU students tuition for this programme: €6,000 per semester, so €12,000 per academic year, plus a €97 semester fee. EU/EEA students and anyone who already finished a bachelor's degree at TUM or another German university pay only the semester fee. The gap between those two situations is larger here than at almost any other German public university, so check which one applies to you before comparing Germany with the Netherlands.",
         "tr": "TUM bu program için AB dışı öğrencilerden öğrenim ücreti alır: dönem başına 6.000 avro, yani akademik yılda 12.000 avro, artı 97 avro dönem ücreti. AB/AEA öğrencileri ve TUM'da veya başka bir Alman üniversitesinde lisansını bitirmiş olanlar yalnızca dönem ücretini öder. Bu iki durum arasındaki fark burada neredeyse her Alman devlet üniversitesindekinden büyüktür; Almanya'yı Hollanda ile karşılaştırmadan önce hangisinin sana uyduğunu kontrol et."
+      },
+      "tuition_eur_per_year": 12000.0,
+      "tuition_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "tuition_eur_per_year",
+        "rule": "non_eu_planning_maximum",
+        "derived_from": {
+          "tuition_eur_per_year_min": null,
+          "tuition_eur_per_year_max": 12000.0
+        },
+        "currency": "EUR",
+        "includes_mandatory_fees": false,
+        "derived_at": "2026-08-30"
       }
     },
     "curriculum_profile": {
@@ -898,7 +911,7 @@
       },
       "deadline_non_eu": "May 31 (Winter Intake)",
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": "2026-11-30",
         "next_expected_date": null,
         "time": null,
@@ -1193,7 +1206,7 @@
       "housing_application_separate": null,
       "housing_search_difficulty": "high",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "high",
         "raw_score": 8,
         "scaled_score": 10,
@@ -1239,12 +1252,13 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "cost_basis": "official_university_living_budget",
         "status": "total_only",
         "currency": "EUR",
         "months_covered": 12,
         "components_included": [],
+        "components_absorbed": {},
         "mandatory_components_missing": [],
         "components": {},
         "monthly_total": 1650.0,
@@ -1445,7 +1459,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "core_match",
       "score": 100,
       "score_basis_weight": 90,
@@ -1593,18 +1607,17 @@
         "tr": "Stuttgart, AB dışı öğrencilerden ücret alan Alman eyaletlerinden biri olan Baden-Württemberg'dedir: dönem başına 1.500 avro, yani yılda 3.000 avro; ayrıca 184 avroluk dönem ücreti. AB/AEA öğrencileri ve birkaç kategori daha yalnızca dönem ücretini öder. Bu, Stuttgart ile aynı derecenin hiç öğrenim ücreti taşımadığı RWTH Aachen gibi bir Kuzey Ren-Vestfalya üniversitesi arasındaki en büyük maliyet farkıdır."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "EUR",
-        "annual_total": null,
+        "annual_total": 14904.0,
         "annual_total_eur_equivalent": null,
         "includes": [
-          "tuition"
-        ],
-        "missing_mandatory_components": [
+          "tuition",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 12,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
@@ -1614,7 +1627,20 @@
       "currency": "EUR",
       "tuition_eur_per_semester_non_eu": 1500,
       "semester_fee_eur": 184,
-      "eu_tuition_eur_per_year": 0
+      "eu_tuition_eur_per_year": 0,
+      "tuition_eur_per_year": 3000.0,
+      "tuition_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "tuition_eur_per_year",
+        "rule": "non_eu_planning_maximum",
+        "derived_from": {
+          "tuition_eur_per_year_min": null,
+          "tuition_eur_per_year_max": 3000.0
+        },
+        "currency": "EUR",
+        "includes_mandatory_fees": false,
+        "derived_at": "2026-08-30"
+      }
     },
     "curriculum_profile": {
       "specializations": [],
@@ -2147,7 +2173,7 @@
         "tr": "Başvurular C@mpus portalı üzerinden yapılmaktadır."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -2331,7 +2357,7 @@
       "housing_application_separate": null,
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -2377,12 +2403,39 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_source_range_basis_not_itemised",
+        "status": "total_only",
+        "currency": "EUR",
+        "months_covered": 12,
+        "components_included": [],
+        "mandatory_components_missing": [],
         "components": {},
-        "monthly_total": null,
+        "monthly_total": 992.0,
+        "published_range": {
+          "min": 992.0,
+          "max": null
+        },
+        "annual_total": 11904.0,
+        "monthly_total_eur_equivalent": null,
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "medium",
+        "derivation": {
+          "rule": "verified_range_midpoint",
+          "derived_from": {
+            "monthly_living_cost_eur_min": 992.0
+          },
+          "derived_at": "2026-08-30"
+        },
+        "source_url": null,
+        "note": {
+          "en": "University of Stuttgart says students need at least EUR 992 per month for living costs; its shared-flat room range excludes electricity, water and heating.",
+          "tr": "Stuttgart Üniversitesi yaşam giderleri için ayda en az 992 EUR gerektiğini; paylaşımlı ev oda aralığının elektrik, su ve ısıtmayı içermediğini belirtir."
+        },
         "evaluated_at": "2026-08-30"
       }
     },
@@ -2485,7 +2538,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "core_match",
       "score": 89,
       "score_basis_weight": 90,
@@ -2629,23 +2682,35 @@
       "living_cost_dkk_per_year_min": null,
       "living_cost_dkk_per_year_max": null,
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "EUR",
-        "annual_total": null,
+        "annual_total": 13200.0,
         "annual_total_eur_equivalent": null,
         "includes": [
-          "tuition"
-        ],
-        "missing_mandatory_components": [
+          "tuition",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 12,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
         "evaluated_at": "2026-08-30"
+      },
+      "tuition_eur_per_year": 3000.0,
+      "tuition_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "tuition_eur_per_year",
+        "rule": "non_eu_planning_maximum",
+        "derived_from": {
+          "tuition_eur_per_year_min": 3000.0,
+          "tuition_eur_per_year_max": 3000.0
+        },
+        "currency": "EUR",
+        "includes_mandatory_fees": false,
+        "derived_at": "2026-08-30"
       }
     },
     "curriculum_profile": {
@@ -3023,7 +3088,7 @@
       "winter_deadline": "15 July (winter term; first semester)",
       "application_deadline": "15 July (winter term) / 15 January (summer term; first semester)",
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -3155,7 +3220,7 @@
       "housing_application_separate": null,
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": 2,
         "scaled_score": null,
@@ -3200,12 +3265,40 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_source_range_basis_not_itemised",
+        "status": "total_only",
+        "currency": "EUR",
+        "months_covered": 12,
+        "components_included": [],
+        "mandatory_components_missing": [],
         "components": {},
-        "monthly_total": null,
+        "monthly_total": 850.0,
+        "published_range": {
+          "min": 800.0,
+          "max": 900.0
+        },
+        "annual_total": 10200.0,
+        "monthly_total_eur_equivalent": null,
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "medium",
+        "derivation": {
+          "rule": "verified_range_midpoint",
+          "derived_from": {
+            "monthly_living_cost_eur_min": 800.0,
+            "monthly_living_cost_eur_max": 900.0
+          },
+          "derived_at": "2026-08-30"
+        },
+        "source_url": null,
+        "note": {
+          "en": "KIT's current guide puts average student expenses in Karlsruhe, including fees and depending on personal situation, at EUR 800–900 per month.",
+          "tr": "KIT'in güncel rehberi, Karlsruhe'de öğrenci giderlerini ücretler dahil ve kişisel duruma bağlı olarak ayda 800–900 EUR olarak verir."
+        },
         "evaluated_at": "2026-08-30"
       }
     },
@@ -3314,7 +3407,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "partial_match",
       "score": 42,
       "score_basis_weight": 90,
@@ -3463,23 +3556,45 @@
       "living_cost_dkk_per_year_min": null,
       "living_cost_dkk_per_year_max": null,
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "EUR",
-        "annual_total": null,
+        "annual_total": 13707.0,
         "annual_total_eur_equivalent": null,
         "includes": [
-          "tuition"
-        ],
-        "missing_mandatory_components": [
+          "tuition",
+          "mandatory_fees",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 12,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
         "evaluated_at": "2026-08-30"
+      },
+      "tuition_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "tuition_eur_per_year",
+        "rule": "no_tuition_charged",
+        "derived_from": {
+          "tuition_basis": "no_regular_tuition_within_standard_period"
+        },
+        "currency": "EUR",
+        "includes_mandatory_fees": false,
+        "derived_at": "2026-08-30"
+      },
+      "tuition_eur_per_year": 0,
+      "mandatory_fees_eur_per_year": 945.0,
+      "mandatory_fees_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "mandatory_fees_eur_per_year",
+        "rule": "two_semesters_per_academic_year",
+        "derived_from": {
+          "student_contribution_per_semester": 472.5
+        },
+        "derived_at": "2026-08-30"
       }
     },
     "curriculum_profile": {
@@ -3953,7 +4068,7 @@
       },
       "application_deadline": "June 1–July 15 (winter) / December 1–January 15 (summer; graduate route)",
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -4089,7 +4204,7 @@
       "housing_application_separate": null,
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": 2,
         "scaled_score": null,
@@ -4134,12 +4249,40 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_source_range_basis_not_itemised",
+        "status": "total_only",
+        "currency": "EUR",
+        "months_covered": 12,
+        "components_included": [],
+        "mandatory_components_missing": [],
         "components": {},
-        "monthly_total": null,
+        "monthly_total": 1063.5,
+        "published_range": {
+          "min": 992.0,
+          "max": 1135.0
+        },
+        "annual_total": 12762.0,
+        "monthly_total_eur_equivalent": null,
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "medium",
+        "derivation": {
+          "rule": "verified_range_midpoint",
+          "derived_from": {
+            "monthly_living_cost_eur_min": 992.0,
+            "monthly_living_cost_eur_max": 1135.0
+          },
+          "derived_at": "2026-08-30"
+        },
+        "source_url": null,
+        "note": {
+          "en": "TU Braunschweig says students need at least about EUR 992 monthly and publishes a current itemised planning total of EUR 1,135 per month. The amount varies with lifestyle and is separate from the semester fee.",
+          "tr": "TU Braunschweig öğrencilerin ayda en az yaklaşık 992 EUR'a ihtiyacı olduğunu ve güncel kalemli planlama toplamını ayda 1.135 EUR olarak yayımlar. Tutar yaşam tarzına göre değişir ve dönem katkısından ayrıdır."
+        },
         "evaluated_at": "2026-08-30"
       }
     },
@@ -4239,7 +4382,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "strong_adjacent",
       "score": 71,
       "score_basis_weight": 100,
@@ -4433,22 +4576,40 @@
       },
       "payment_installments": "One instalment: EUR 9,960; then three instalments of EUR 4,980 each (published full-programme schedule).",
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
-        "currency": null,
-        "annual_total": null,
+        "standard": "cost_model@3.1.0",
+        "currency": "EUR",
+        "annual_total": 24450.0,
         "annual_total_eur_equivalent": null,
-        "includes": [],
-        "missing_mandatory_components": [
+        "includes": [
           "tuition",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 12,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
         "evaluated_at": "2026-08-30"
+      },
+      "tuition_eur_per_year": 12450.0,
+      "tuition_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "tuition_eur_per_year",
+        "rule": "programme_fee_divided_by_duration",
+        "derived_from": {
+          "tuition_non_eu_full_program": {
+            "amount": 24900,
+            "currency": "EUR",
+            "basis": "full_program",
+            "academic_year": "current programme page checked 2026-07-14"
+          },
+          "duration_years": 2.0
+        },
+        "currency": "EUR",
+        "includes_mandatory_fees": false,
+        "derived_at": "2026-08-30"
       }
     },
     "curriculum_profile": {
@@ -4999,7 +5160,7 @@
       "deadline_non_eu": null,
       "application_deadline": "1 October (priority for Spring intake) / 1 April (priority for Fall intake); applications accepted year-round subject to remaining capacity",
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -5175,7 +5336,7 @@
       "housing_application_separate": null,
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": 2,
         "scaled_score": null,
@@ -5220,12 +5381,36 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_source_range_basis_not_itemised",
+        "status": "total_only",
+        "currency": "EUR",
+        "months_covered": 12,
+        "components_included": [],
+        "mandatory_components_missing": [],
         "components": {},
-        "monthly_total": null,
+        "monthly_total": 1000.0,
+        "published_range": null,
+        "annual_total": 12000.0,
+        "monthly_total_eur_equivalent": null,
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "medium",
+        "derivation": {
+          "rule": "verified_range_midpoint",
+          "derived_from": {
+            "monthly_living_cost_eur_estimated": 1000.0
+          },
+          "derived_at": "2026-08-30"
+        },
+        "source_url": null,
+        "note": {
+          "en": "MSE's current Fees & Funding page advises approximately EUR 1,000 per month for living expenses in Berlin, separately from tuition and organisation fees.",
+          "tr": "MSE'nin güncel Ücretler ve Finansman sayfası, öğrenim ücreti ve organizasyon ücretinden ayrı olarak Berlin yaşam giderleri için ayda yaklaşık 1.000 EUR önerir."
+        },
         "evaluated_at": "2026-08-30"
       }
     },
@@ -5326,7 +5511,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "core_match",
       "score": 78,
       "score_basis_weight": 90,
@@ -5513,23 +5698,45 @@
       "living_cost_dkk_per_year_min": null,
       "living_cost_dkk_per_year_max": null,
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "EUR",
-        "annual_total": null,
+        "annual_total": 12754.0,
         "annual_total_eur_equivalent": null,
         "includes": [
-          "tuition"
-        ],
-        "missing_mandatory_components": [
+          "tuition",
+          "mandatory_fees",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 12,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
         "evaluated_at": "2026-08-30"
+      },
+      "tuition_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "tuition_eur_per_year",
+        "rule": "no_tuition_charged",
+        "derived_from": {
+          "tuition_basis": "no_general_tuition_regular_programme"
+        },
+        "currency": "EUR",
+        "includes_mandatory_fees": false,
+        "derived_at": "2026-08-30"
+      },
+      "tuition_eur_per_year": 0,
+      "mandatory_fees_eur_per_year": 850.0,
+      "mandatory_fees_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "mandatory_fees_eur_per_year",
+        "rule": "two_semesters_per_academic_year",
+        "derived_from": {
+          "student_contribution_per_semester": 425.0
+        },
+        "derived_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -5637,7 +5844,7 @@
       "housing_application_separate": null,
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": 2,
         "scaled_score": null,
@@ -5682,12 +5889,39 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_source_range_basis_not_itemised",
+        "status": "total_only",
+        "currency": "EUR",
+        "months_covered": 12,
+        "components_included": [],
+        "mandatory_components_missing": [],
         "components": {},
-        "monthly_total": null,
+        "monthly_total": 992.0,
+        "published_range": {
+          "min": 992.0,
+          "max": null
+        },
+        "annual_total": 11904.0,
+        "monthly_total_eur_equivalent": null,
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "medium",
+        "derivation": {
+          "rule": "verified_range_midpoint",
+          "derived_from": {
+            "monthly_living_cost_eur_min": 992.0
+          },
+          "derived_at": "2026-08-30"
+        },
+        "source_url": null,
+        "note": {
+          "en": "University of Bremen's current international-student guidance says at least EUR 992 per month is required for regular student life in Germany, including rent, food, insurance, leisure and study costs. This is a planning minimum, not a Bremen-specific rent quote.",
+          "tr": "Bremen Üniversitesi'nin güncel uluslararası öğrenci rehberi, kira, yemek, sigorta, boş zaman ve eğitim giderleri dahil Almanya'da normal öğrenci hayatı için ayda en az 992 EUR gerektiğini belirtir. Bu bir planlama asgarisidir, Bremen'e özgü kira teklifi değildir."
+        },
         "evaluated_at": "2026-08-30"
       }
     },
@@ -5929,7 +6163,7 @@
       "summer_deadline": "August 1–October 15 (summer; programme application period)",
       "application_deadline": "March 1–April 30 (winter) / August 1–October 15 (summer; programme application periods)",
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -6349,7 +6583,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "core_match",
       "score": 89,
       "score_basis_weight": 90,
@@ -6531,23 +6765,45 @@
         "tr": "TU Darmstadt programlarin cogunun ogrenim ucretinden muaf oldugunu belirtir; Aerospace Engineering duzenli bir TU Darmstadt yuksek lisansi olarak listelenir. 2026/27 kis donemi icin yayimlanan normal ogrenci ucreti, Almanya donem bileti ve 50 EUR idari ucret dahil 402,68 EUR'dur. Bu ogrenim ucreti degildir ve her donem yeniden belirlenir."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "EUR",
-        "annual_total": null,
+        "annual_total": 13855.36,
         "annual_total_eur_equivalent": null,
         "includes": [
-          "tuition"
-        ],
-        "missing_mandatory_components": [
+          "tuition",
+          "mandatory_fees",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 12,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
         "evaluated_at": "2026-08-30"
+      },
+      "tuition_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "tuition_eur_per_year",
+        "rule": "no_tuition_charged",
+        "derived_from": {
+          "tuition_basis": "regular_state_funded_TU_Darmstadt_programme"
+        },
+        "currency": "EUR",
+        "includes_mandatory_fees": false,
+        "derived_at": "2026-08-30"
+      },
+      "tuition_eur_per_year": 0,
+      "mandatory_fees_eur_per_year": 805.36,
+      "mandatory_fees_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "mandatory_fees_eur_per_year",
+        "rule": "two_semesters_per_academic_year",
+        "derived_from": {
+          "student_contribution_per_semester": 402.68
+        },
+        "derived_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -6647,7 +6903,7 @@
       "housing_application_separate": null,
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": 2,
         "scaled_score": null,
@@ -6692,12 +6948,40 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_source_range_basis_not_itemised",
+        "status": "total_only",
+        "currency": "EUR",
+        "months_covered": 12,
+        "components_included": [],
+        "mandatory_components_missing": [],
         "components": {},
-        "monthly_total": null,
+        "monthly_total": 1087.5,
+        "published_range": {
+          "min": 875.0,
+          "max": 1300.0
+        },
+        "annual_total": 13050.0,
+        "monthly_total_eur_equivalent": null,
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "medium",
+        "derivation": {
+          "rule": "verified_range_midpoint",
+          "derived_from": {
+            "monthly_living_cost_eur_min": 875.0,
+            "monthly_living_cost_eur_max": 1300.0
+          },
+          "derived_at": "2026-08-30"
+        },
+        "source_url": null,
+        "note": {
+          "en": "Studierendenwerk Darmstadt's current guidance gives EUR 875-1,300/month depending on lifestyle. TU Darmstadt separately cites a EUR 992/month BAfoeG planning figure; both are planning guidance rather than a personal quote.",
+          "tr": "Studierendenwerk Darmstadt'in guncel rehberi yasam tarzina gore ayda 875-1.300 EUR verir. TU Darmstadt ayri olarak ayda 992 EUR BAfoeG planlama tutari belirtir; ikisi de kisisel teklif degil planlama rehberidir."
+        },
         "evaluated_at": "2026-08-30"
       }
     },
@@ -6886,7 +7170,7 @@
       "summer_deadline": null,
       "application_deadline": "2026-07-15 (winter semester 2026/27; final deadline)",
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": "2026-07-15",
         "next_expected_date": null,
         "time": null,
@@ -7326,7 +7610,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "partial_match",
       "score": 52,
       "score_basis_weight": 100,
@@ -7511,12 +7795,13 @@
         "tr": "RWTH AStA sayfasi RWTH ogrencilerinin ogrenim ucreti odemedigini ancak donem katkisi odedigini belirtir. Guncel kamuya acik bilesen sayfalari hesapla 318,06 EUR verir; bu tek bir RWTH faturasinin tutari degil, yorumlanmis toplama sonucudur ve kayit donemi icin yeniden kontrol edilmelidir."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "EUR",
-        "annual_total": 13200.0,
+        "annual_total": 13836.12,
         "annual_total_eur_equivalent": null,
         "includes": [
           "tuition",
+          "mandatory_fees",
           "living_costs"
         ],
         "missing_mandatory_components": [],
@@ -7534,6 +7819,28 @@
       "cost_notes": {
         "en": "RWTH charges international students no tuition — the state of North Rhine-Westphalia covers it, with the exception of RWTH International Academy programmes, which are a separate fee-paying route. What you do pay every semester is the roughly €298 contribution, which includes the regional transport ticket.",
         "tr": "RWTH uluslararası öğrencilerden öğrenim ücreti almaz — masrafı Kuzey Ren-Vestfalya eyaleti karşılar; ayrı ve ücretli bir rota olan RWTH International Academy programları hariç. Her dönem ödediğin şey, bölgesel ulaşım kartını da içeren yaklaşık 298 avroluk katkı payıdır."
+      },
+      "tuition_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "tuition_eur_per_year",
+        "rule": "no_tuition_charged",
+        "derived_from": {
+          "tuition_basis": "no_general_tuition_regular_programme"
+        },
+        "currency": "EUR",
+        "includes_mandatory_fees": false,
+        "derived_at": "2026-08-30"
+      },
+      "tuition_eur_per_year": 0,
+      "mandatory_fees_eur_per_year": 636.12,
+      "mandatory_fees_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "mandatory_fees_eur_per_year",
+        "rule": "two_semesters_per_academic_year",
+        "derived_from": {
+          "student_contribution_per_semester": 318.06
+        },
+        "derived_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -7633,7 +7940,7 @@
       "housing_application_separate": null,
       "housing_search_difficulty": "high",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "high",
         "raw_score": 6,
         "scaled_score": 9,
@@ -7679,7 +7986,7 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "cost_basis": "official_university_living_budget",
         "status": "partial",
         "currency": "EUR",
@@ -7692,6 +7999,7 @@
           "study_materials",
           "utilities"
         ],
+        "components_absorbed": {},
         "mandatory_components_missing": [
           "transport"
         ],
@@ -8068,7 +8376,7 @@
       "application_deadline": "See applicant group: third-country 1 March/1 September; EU/EEA 15 July/15 January",
       "summer_deadline": "Third-country: 1 September; EU/EEA: 15 January",
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -8529,7 +8837,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "core_match",
       "score": 89,
       "score_basis_weight": 90,
@@ -8693,23 +9001,45 @@
         "tr": "TU Hamburg genel olarak öğrenim ücreti almadığını belirtir. 384 EUR, toplu taşıma dönem biletini içeren yayımlanmış 2026 yaz dönemi katkısıdır; yıllık fiyat değildir ve sonraki dönemler farklı olabilir."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "EUR",
-        "annual_total": null,
+        "annual_total": 12168.0,
         "annual_total_eur_equivalent": null,
         "includes": [
-          "tuition"
-        ],
-        "missing_mandatory_components": [
+          "tuition",
+          "mandatory_fees",
           "living_costs"
         ],
-        "months_of_living_cost": null,
-        "status": "incomplete",
+        "missing_mandatory_components": [],
+        "months_of_living_cost": 12,
+        "status": "complete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
         "evaluated_at": "2026-08-30"
+      },
+      "tuition_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "tuition_eur_per_year",
+        "rule": "no_tuition_charged",
+        "derived_from": {
+          "tuition_basis": "no_general_tuition_regular_programme"
+        },
+        "currency": "EUR",
+        "includes_mandatory_fees": false,
+        "derived_at": "2026-08-30"
+      },
+      "tuition_eur_per_year": 0,
+      "mandatory_fees_eur_per_year": 768.0,
+      "mandatory_fees_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "mandatory_fees_eur_per_year",
+        "rule": "two_semesters_per_academic_year",
+        "derived_from": {
+          "student_contribution_per_semester": 384.0
+        },
+        "derived_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -8786,7 +9116,7 @@
       "housing_application_separate": null,
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -8832,12 +9162,39 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_source_range_basis_not_itemised",
+        "status": "total_only",
+        "currency": "EUR",
+        "months_covered": 12,
+        "components_included": [],
+        "mandatory_components_missing": [],
         "components": {},
-        "monthly_total": null,
+        "monthly_total": 950.0,
+        "published_range": {
+          "min": 950.0,
+          "max": null
+        },
+        "annual_total": 11400.0,
+        "monthly_total_eur_equivalent": null,
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "medium",
+        "derivation": {
+          "rule": "verified_range_midpoint",
+          "derived_from": {
+            "monthly_living_cost_eur_min": 950.0
+          },
+          "derived_at": "2026-08-30"
+        },
+        "source_url": null,
+        "note": {
+          "en": "TU Hamburg's 2026 international-Master's guide advises at least EUR 950 per month including accommodation, health insurance and study material.",
+          "tr": "TU Hamburg'un 2026 uluslararası yüksek lisans rehberi; konaklama, sağlık sigortası ve eğitim materyali dahil ayda en az 950 EUR önerir."
+        },
         "evaluated_at": "2026-08-30"
       }
     },
@@ -8983,7 +9340,7 @@
       "winter_deadline": null,
       "application_deadline": "July 15 (winter) / January 15 (summer; annual periods)",
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
@@ -9379,7 +9736,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "partial_match",
       "score": 51,
       "score_basis_weight": 100,

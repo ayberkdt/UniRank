@@ -211,7 +211,7 @@
           "tr": "25.633 avro, AB dışı bir MSc öğrencisinin 2026/2027 için ödediği kurumsal ücrettir; 2.694 avro AB/AEA öğrencileri için yasal ücrettir. İkisi birbirinin yerine geçmez ve çoğu üçüncü taraf karşılaştırma sitesinin yanlışlıkla verdiği rakam yasal ücrettir."
         },
         "normalized_cost": {
-          "standard": "cost_model@3.0.0",
+          "standard": "cost_model@3.1.0",
           "currency": "EUR",
           "annual_total": 39829.0,
           "annual_total_eur_equivalent": null,
@@ -227,6 +227,19 @@
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
           "evaluated_at": "2026-08-30"
+        },
+        "tuition_eur_per_year": 25633.0,
+        "tuition_derivation": {
+          "standard": "cost_model@3.1.0",
+          "field": "tuition_eur_per_year",
+          "rule": "non_eu_planning_maximum",
+          "derived_from": {
+            "tuition_eur_per_year_min": 2694.0,
+            "tuition_eur_per_year_max": 25633.0
+          },
+          "currency": "EUR",
+          "includes_mandatory_fees": false,
+          "derived_at": "2026-08-30"
         }
       },
       "scholarship_profile": {
@@ -545,7 +558,7 @@
         },
         "housing_search_difficulty": "high",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.0.0",
+          "standard": "housing_difficulty@3.1.0",
           "level": "high",
           "raw_score": 9,
           "scaled_score": 11,
@@ -591,12 +604,13 @@
           "evaluated_at": "2026-08-30"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.0.0",
+          "standard": "cost_model@3.1.0",
           "cost_basis": "official_visa_financial_requirement",
           "status": "total_only",
           "currency": "EUR",
           "months_covered": 12,
           "components_included": [],
+          "components_absorbed": {},
           "mandatory_components_missing": [],
           "components": {},
           "monthly_total": 1183.0,
@@ -1013,7 +1027,7 @@
         "scholarship_deadline_status": "closed_awards_made",
         "future_scholarship_deadline": null,
         "primary_deadline": {
-          "standard": "application_countdown@3.0.0",
+          "standard": "application_countdown@3.1.0",
           "date": "2026-01-15",
           "next_expected_date": null,
           "time": null,
@@ -1671,7 +1685,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.0.0",
+        "standard": "academic_match@3.1.0",
         "tier": "core_match",
         "score": 100,
         "score_basis_weight": 90,
@@ -1896,22 +1910,29 @@
           "use_for_2026_27": false
         },
         "normalized_cost": {
-          "standard": "cost_model@3.0.0",
-          "currency": null,
+          "standard": "cost_model@3.1.0",
+          "currency": "EUR",
           "annual_total": null,
           "annual_total_eur_equivalent": null,
-          "includes": [],
-          "missing_mandatory_components": [
-            "tuition",
+          "includes": [
             "living_costs"
           ],
-          "months_of_living_cost": null,
+          "missing_mandatory_components": [
+            "tuition"
+          ],
+          "months_of_living_cost": 12,
           "status": "incomplete",
           "note": {
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
           "evaluated_at": "2026-08-30"
+        },
+        "tuition_derivation": {
+          "standard": "cost_model@3.1.0",
+          "rule": "not_derivable",
+          "reason": "no_readable_tuition_figure",
+          "derived_at": "2026-08-30"
         }
       },
       "scholarship_profile": {
@@ -2048,7 +2069,7 @@
         "housing_access_notes": "Eligible international full-time TU/e-campus students can respond to designated Vestide listings; eligibility is not an allocation guarantee.",
         "housing_search_difficulty": "high",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.0.0",
+          "standard": "housing_difficulty@3.1.0",
           "level": "high",
           "raw_score": 6,
           "scaled_score": 9,
@@ -2091,12 +2112,37 @@
           "evaluated_at": "2026-08-30"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.0.0",
-          "cost_basis": "unknown",
-          "status": "unknown",
-          "reason": "no_official_living_cost_items",
+          "standard": "cost_model@3.1.0",
+          "cost_basis": "official_source_range_basis_not_itemised",
+          "status": "total_only",
+          "currency": "EUR",
+          "months_covered": 12,
+          "components_included": [],
+          "mandatory_components_missing": [],
           "components": {},
-          "monthly_total": null,
+          "monthly_total": 1250.0,
+          "published_range": {
+            "min": 1000.0,
+            "max": 1500.0
+          },
+          "annual_total": 15000.0,
+          "monthly_total_eur_equivalent": null,
+          "excludes": [
+            "tuition",
+            "mandatory_university_fees",
+            "one_off_visa_and_travel_costs"
+          ],
+          "confidence": "medium",
+          "derivation": {
+            "rule": "verified_range_midpoint",
+            "derived_from": {
+              "monthly_living_cost_eur_min": 1000.0,
+              "monthly_living_cost_eur_max": 1500.0
+            },
+            "derived_at": "2026-08-30"
+          },
+          "source_url": null,
+          "note": null,
           "evaluated_at": "2026-08-30"
         }
       },
@@ -2346,7 +2392,7 @@
           }
         ],
         "primary_deadline": {
-          "standard": "application_countdown@3.0.0",
+          "standard": "application_countdown@3.1.0",
           "date": "2027-05-01",
           "next_expected_date": null,
           "time": null,
@@ -2758,7 +2804,7 @@
       },
       "programme_fit_class": "adjacent_mechanical_degree_with_aerospace_applications_not_aerospace_or_space_degree",
       "academic_match_profile": {
-        "standard": "academic_match@3.0.0",
+        "standard": "academic_match@3.1.0",
         "tier": "weak_match",
         "score": 32,
         "score_basis_weight": 90,
@@ -2965,23 +3011,35 @@
           "academic_year": "2026/2027"
         },
         "normalized_cost": {
-          "standard": "cost_model@3.0.0",
+          "standard": "cost_model@3.1.0",
           "currency": "EUR",
-          "annual_total": null,
+          "annual_total": 37432.0,
           "annual_total_eur_equivalent": null,
           "includes": [
-            "tuition"
-          ],
-          "missing_mandatory_components": [
+            "tuition",
             "living_costs"
           ],
-          "months_of_living_cost": null,
-          "status": "incomplete",
+          "missing_mandatory_components": [],
+          "months_of_living_cost": 12,
+          "status": "complete",
           "note": {
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
           "evaluated_at": "2026-08-30"
+        },
+        "tuition_eur_per_year": 21700.0,
+        "tuition_derivation": {
+          "standard": "cost_model@3.1.0",
+          "field": "tuition_eur_per_year",
+          "rule": "non_eu_planning_maximum",
+          "derived_from": {
+            "tuition_eur_per_year_min": 2694.0,
+            "tuition_eur_per_year_max": 21700.0
+          },
+          "currency": "EUR",
+          "includes_mandatory_fees": false,
+          "derived_at": "2026-08-30"
         }
       },
       "scholarship_profile": {
@@ -3040,7 +3098,7 @@
         "housing_application_separate": null,
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.0.0",
+          "standard": "housing_difficulty@3.1.0",
           "level": "unknown",
           "raw_score": 2,
           "scaled_score": null,
@@ -3085,12 +3143,33 @@
           "evaluated_at": "2026-08-30"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.0.0",
-          "cost_basis": "unknown",
-          "status": "unknown",
-          "reason": "no_official_living_cost_items",
+          "standard": "cost_model@3.1.0",
+          "cost_basis": "official_source_range_basis_not_itemised",
+          "status": "total_only",
+          "currency": "EUR",
+          "months_covered": 12,
+          "components_included": [],
+          "mandatory_components_missing": [],
           "components": {},
-          "monthly_total": null,
+          "monthly_total": 1311.0,
+          "published_range": null,
+          "annual_total": 15732.0,
+          "monthly_total_eur_equivalent": null,
+          "excludes": [
+            "tuition",
+            "mandatory_university_fees",
+            "one_off_visa_and_travel_costs"
+          ],
+          "confidence": "medium",
+          "derivation": {
+            "rule": "verified_range_midpoint",
+            "derived_from": {
+              "monthly_living_cost_eur_estimated": 1311.0
+            },
+            "derived_at": "2026-08-30"
+          },
+          "source_url": null,
+          "note": null,
           "evaluated_at": "2026-08-30"
         }
       },
@@ -3267,7 +3346,7 @@
           "tr": "Bilgi sayfası iki ayrı giriş içerir. Temmuz AB tarihini eşleşen Eylül 2026 başlangıcı olmadan göstermek veya bu kapanmış/yayımlanmış tarihleri sonraki döneme taşımak yanıltıcıdır. Şubat 2027 tarihleri kontrol edildiğinde gelecekteydi."
         },
         "primary_deadline": {
-          "standard": "application_countdown@3.0.0",
+          "standard": "application_countdown@3.1.0",
           "date": "2026-10-01",
           "next_expected_date": null,
           "time": null,
@@ -3562,7 +3641,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.0.0",
+        "standard": "academic_match@3.1.0",
         "tier": "strong_adjacent",
         "score": 61,
         "score_basis_weight": 90,

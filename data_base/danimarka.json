@@ -103,7 +103,7 @@
         "academic_year": "current DTU fee page; revision announced for autumn 2026"
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": "EUR",
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -113,13 +113,26 @@
         "missing_mandatory_components": [
           "living_costs"
         ],
-        "months_of_living_cost": null,
+        "months_of_living_cost": 12,
         "status": "incomplete",
         "note": {
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
         "evaluated_at": "2026-08-30"
+      },
+      "tuition_eur_per_year": 15000.0,
+      "tuition_derivation": {
+        "standard": "cost_model@3.1.0",
+        "field": "tuition_eur_per_year",
+        "rule": "non_eu_planning_maximum",
+        "derived_from": {
+          "tuition_eur_per_year_min": 15000.0,
+          "tuition_eur_per_year_max": 15000.0
+        },
+        "currency": "EUR",
+        "includes_mandatory_fees": false,
+        "derived_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -164,7 +177,7 @@
       "housing_application_separate": null,
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -210,12 +223,44 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
-        "cost_basis": "unknown",
-        "status": "unknown",
-        "reason": "no_official_living_cost_items",
+        "standard": "cost_model@3.1.0",
+        "cost_basis": "official_source_range_basis_not_itemised",
+        "status": "total_only",
+        "currency": "DKK",
+        "months_covered": 12,
+        "components_included": [],
+        "mandatory_components_missing": [],
         "components": {},
-        "monthly_total": null,
+        "monthly_total": 10075.0,
+        "published_range": {
+          "min": 6450.0,
+          "max": 13700.0
+        },
+        "annual_total": 120900.0,
+        "monthly_total_eur_equivalent": {
+          "amount": 1347.86,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 7.4748,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "excludes": [
+          "tuition",
+          "mandatory_university_fees",
+          "one_off_visa_and_travel_costs"
+        ],
+        "confidence": "medium",
+        "derivation": {
+          "rule": "verified_range_midpoint",
+          "derived_from": {
+            "monthly_living_cost_dkk_min": 6450.0,
+            "monthly_living_cost_dkk_max": 13700.0
+          },
+          "derived_at": "2026-08-30"
+        },
+        "source_url": null,
+        "note": null,
         "evaluated_at": "2026-08-30"
       }
     },
@@ -269,7 +314,7 @@
         "tr": "Güz dönemi için AB dışı 15 Ocak ve AB/AEA 1 Mart; bahar için AB dışı 15 Eylül ve AB/AEA 15 Ekim."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": "2026-01-15",
         "next_expected_date": null,
         "time": null,
@@ -479,7 +524,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "unknown",
       "score": null,
       "score_basis_weight": 30,

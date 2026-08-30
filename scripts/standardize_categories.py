@@ -88,6 +88,28 @@ def verified_fields(record: dict[str, Any]) -> set[str]:
     return {str(f) for f in fields} if isinstance(fields, list) else set()
 
 
+UNUSABLE_ACCESS = {"broken", "not_found", "unknown"}
+
+
+def sourced_fields(record: dict[str, Any]) -> set[str]:
+    """Fields covered by a source that was checked and found reachable.
+
+    ``verified_fields`` records what a researcher concluded; this records what
+    the source log can still show for it.  A derivation needs both, so that a
+    number left behind by a source that has since gone dead is never promoted
+    into the published shape.
+    """
+    covered: set[str] = set()
+    for source in (record.get("source_profile") or {}).get("source_log") or []:
+        if not isinstance(source, dict):
+            continue
+        if str(source.get("access_status") or "unknown").lower() in UNUSABLE_ACCESS:
+            continue
+        for field in source.get("relevant_fields") or []:
+            covered.add(str(field).lower())
+    return covered
+
+
 def non_empty_list(value: Any) -> list:
     return [item for item in value if item] if isinstance(value, list) else []
 
@@ -345,16 +367,31 @@ def build_housing_difficulty(record: dict[str, Any]) -> dict[str, Any]:
 # 2. cost of living
 # --------------------------------------------------------------------------
 
-MONTHS_BY_PERIOD = {"month": 1, "monthly": 1, "academic_year": 9, "year": 12, "annual": 12, "12_month_contract": 12, "semester": 6}
+MONTHS_BY_PERIOD = {"month": 1, "monthly": 1, "week": 12 / 52, "weekly": 12 / 52, "52_week_academic_year": 12, "academic_year": 9, "year": 12, "annual": 12, "12_month_contract": 12, "semester": 6}
 
 COMPONENT_PATTERNS = [
+    # Order matters.  A line that already covers several components has to be
+    # recognised before the narrower patterns claim it: "food and housing
+    # allowance" would otherwise be filed as rent alone, hiding the food inside
+    # it and then reporting food as unpublished, and a whole-budget line such
+    # as Michigan's "living allowance for 12 months" would match nothing at all
+    # and be dropped, leaving books and insurance as the entire living cost.
+    (re.compile(r"living (allowance|expenses?|costs?)|cost of living"), "living_allowance"),
+    (re.compile(r"(food|meals?).{0,5}(and|&|/).{0,5}(hous|accommodation|rent|room)|"
+                r"(hous|accommodation|rent|room).{0,12}(and|&|/).{0,5}(food|meals?|board)|"
+                r"room and board"), "rent_and_food"),
     (re.compile(r"hous|rent|room|accommodation|dorm|residence|apartment"), "rent"),
     (re.compile(r"food|meal|board|groceries"), "food"),
     (re.compile(r"transport|travel|commut|bus|metro"), "transport"),
-    (re.compile(r"utilit|internet|electric|heating"), "utilities"),
+    (re.compile(r"utilit|internet|electric|heating|wifi|broadband|phone|mobile"), "utilities"),
     (re.compile(r"book|supplies|course material|study material"), "study_materials"),
     (re.compile(r"insurance|health"), "health_insurance"),
-    (re.compile(r"personal|miscellaneous|leisure|other expense"), "personal"),
+    # Universities itemise discretionary spending under many names.  Every one
+    # of these that goes unmatched is silently dropped from the total, which is
+    # how Sheffield's published budget lost GBP 165 of its GBP 378.
+    (re.compile(r"personal|miscellaneous|leisure|other expense|going out|eating out|"
+                r"takeaway|clothes|shopping|social|wellbeing|trips|entertainment|"
+                r"laundry|sport|gym|hobb"), "personal"),
     (re.compile(r"semester (fee|contribution)|student union|studentenwerk"), "semester_contribution"),
 ]
 
@@ -398,7 +435,12 @@ def build_cost_of_living_from_evidence(living: dict[str, Any], evidence: dict[st
         monthly_total = round(sum(entry["monthly_amount"] for entry in components.values()), 2)
 
     mandatory = {c["key"] for c in STANDARDS["cost_model"]["components"] if c["mandatory_in_total"]}
-    covered = set(components) & mandatory
+    # A source often folds one component into another - utilities inside the
+    # rent line, for instance.  Without this the component would be reported as
+    # unpublished, which tells a reader to budget for it twice.
+    absorbed = evidence.get("components_absorbed") if isinstance(evidence.get("components_absorbed"), dict) else {}
+    absorbed = {key: host for key, host in absorbed.items() if host in components}
+    covered = (set(components) | set(absorbed)) & mandatory
     profile = {
         "standard": f"cost_model@{STANDARDS_VERSION}",
         "cost_basis": evidence.get("cost_basis") or "unknown",
@@ -413,6 +455,7 @@ def build_cost_of_living_from_evidence(living: dict[str, Any], evidence: dict[st
         "currency": currency,
         "months_covered": months,
         "components_included": sorted(components),
+        "components_absorbed": absorbed,
         "mandatory_components_missing": sorted(mandatory - covered) if components else [],
         "components": components,
         "monthly_total": monthly_total,
@@ -426,6 +469,113 @@ def build_cost_of_living_from_evidence(living: dict[str, Any], evidence: dict[st
     }
     living["cost_of_living_profile"] = profile
     return profile
+
+
+def derive_living_total(record: dict[str, Any], living: dict[str, Any]) -> dict[str, Any] | None:
+    """Publish a checked monthly range that was never itemised.
+
+    Most records hold a monthly living figure that a researcher read from an
+    official page and logged a source for, but stored as a bare min/max with no
+    component list and no period.  The itemised path cannot see it, so the cost
+    card showed nothing at all — the least useful of the three honest answers.
+    This publishes it as an explicitly total-only figure: the midpoint for
+    comparison, the range beside it, and a basis that says the components were
+    never itemised.
+    """
+    if not (verified_fields(record) & {"living", "housing"}):
+        return None
+    if not (sourced_fields(record) & {"living", "housing", "cost", "costs", "rent"}):
+        return None
+
+    # The same fact was written under several key spellings as the database
+    # grew.  All of them are read, monthly first, so a record is not treated as
+    # having no living cost because of the shape of a field name.
+    annual_months = number(living.get("living_cost_period_months")) or 12
+    # UCL's annual living budget sits in the cost profile rather than the
+    # living profile, so both are searched as one namespace.  The profile is
+    # still written back to ``living`` alone.
+    fields = {**(record.get("cost_profile") or {}), **living}
+    for currency in CURRENCY_SUFFIXES:
+        shapes = (
+            (f"monthly_living_cost_{currency}_min", f"monthly_living_cost_{currency}_max",
+             f"monthly_living_cost_{currency}_estimated", 1.0, "verified_range_midpoint"),
+            (f"monthly_living_cost_{currency}_per_month_min", f"monthly_living_cost_{currency}_per_month_max",
+             f"monthly_living_cost_{currency}_per_month_estimated", 1.0, "verified_range_midpoint"),
+            (f"living_cost_{currency}_per_year_min", f"living_cost_{currency}_per_year_max",
+             f"living_cost_{currency}_per_year", 1.0 / annual_months, "published_annual_living_budget"),
+            # A weekly rate covers a 52-week year, so twelve months of it is
+            # the annual figure divided by twelve, not the weekly rate times
+            # four, which would lose most of a month every year.
+            (f"living_cost_{currency}_per_week_min", f"living_cost_{currency}_per_week_max",
+             f"living_cost_{currency}_per_week", 52.0 / 12.0, "published_annual_living_budget"),
+        )
+        low = high = estimated = None
+        factor = 1.0
+        rule = "verified_range_midpoint"
+        for min_key, max_key, single_key, shape_factor, shape_rule in shapes:
+            low = number(fields.get(min_key))
+            high = number(fields.get(max_key))
+            estimated = number(fields.get(single_key))
+            if currency == "eur" and estimated is None and shape_factor == 1.0:
+                estimated = number(fields.get("living_cost_eur_per_month"))
+            if low is not None or high is not None or estimated is not None:
+                factor, rule = shape_factor, shape_rule
+                break
+
+        values = [v for v in (low, high) if v is not None]
+        if values:
+            monthly_total = round(sum(values) / len(values) * factor, 2)
+        elif estimated is not None:
+            monthly_total = round(estimated * factor, 2)
+        else:
+            continue
+        if monthly_total <= 0:
+            continue
+
+        published_range = {"min": low, "max": high} if values else None
+        # Surrey's GBP 1,171 is the Home Office maintenance requirement, and
+        # its own note says so.  Publishing that as a spending estimate would
+        # tell a reader the legal minimum is what living there costs, so the
+        # record's prose is read to pick the right basis.
+        prose = " ".join(text_of(fields.get(key)) for key in
+                         ("monthly_living_cost_basis", "housing_notes", "living_cost_notes", "verification_notes"))
+        is_visa_floor = bool(re.search(r"maintenance requirement|visa maintenance|ukvi|student-visa maintenance", prose))
+        profile = {
+            "standard": f"cost_model@{STANDARDS_VERSION}",
+            "cost_basis": "official_visa_financial_requirement" if is_visa_floor
+            else "official_source_range_basis_not_itemised",
+            "status": "total_only",
+            "currency": currency.upper(),
+            # The stored figure is a monthly rate, so twelve months is the
+            # period it was written for.  A nine-month academic year is only
+            # ever assumed when the source itself says so, which is what the
+            # itemised path reads from each item's period.
+            "months_covered": 12,
+            "components_included": [],
+            "mandatory_components_missing": [],
+            "components": {},
+            "monthly_total": monthly_total,
+            "published_range": published_range,
+            "annual_total": round(monthly_total * 12, 2),
+            "monthly_total_eur_equivalent": to_eur(monthly_total, currency.upper()) if currency != "eur" else None,
+            "excludes": ["tuition", "mandatory_university_fees", "one_off_visa_and_travel_costs"],
+            "confidence": "medium",
+            "derivation": {
+                "rule": rule,
+                "derived_from": {k: v for k, v in {
+                    f"monthly_living_cost_{currency}_min": low,
+                    f"monthly_living_cost_{currency}_max": high,
+                    f"monthly_living_cost_{currency}_estimated": estimated,
+                }.items() if v is not None},
+                "derived_at": TODAY,
+            },
+            "source_url": fields.get("living_cost_source_url"),
+            "note": fields.get("monthly_living_cost_basis") or fields.get("living_cost_notes"),
+            "evaluated_at": TODAY,
+        }
+        living["cost_of_living_profile"] = profile
+        return profile
+    return None
 
 
 def build_cost_of_living(record: dict[str, Any]) -> dict[str, Any]:
@@ -460,7 +610,25 @@ def build_cost_of_living(record: dict[str, Any]) -> dict[str, Any]:
         entry["monthly_amount"] += amount / months
         entry["sources"].append({"label": item.get("item"), "published_amount": amount, "currency": currency, "period": item.get("period")})
 
+    # A combined line is stored under the component a reader looks for first,
+    # and the components it swallowed are recorded so they are reported as
+    # included rather than as missing.
+    combined_absorbed: dict[str, str] = {}
+    if "rent_and_food" in components:
+        merged = components.pop("rent_and_food")
+        host = components.setdefault("rent", {"monthly_amount": 0.0, "currency": merged["currency"], "sources": []})
+        host["monthly_amount"] += merged["monthly_amount"]
+        host["sources"].extend(merged["sources"])
+        combined_absorbed["food"] = "rent"
+    if "living_allowance" in components:
+        for swallowed in ("rent", "utilities", "food", "transport"):
+            if swallowed not in components:
+                combined_absorbed[swallowed] = "living_allowance"
+
     if not components or len(currencies) != 1 or not fields_ok:
+        derived = derive_living_total(record, living)
+        if derived:
+            return derived
         profile = {
             "standard": f"cost_model@{STANDARDS_VERSION}",
             "cost_basis": "unknown",
@@ -480,7 +648,7 @@ def build_cost_of_living(record: dict[str, Any]) -> dict[str, Any]:
     currency = currencies.pop()
     months_covered = max(months_seen) if months_seen else 12
     mandatory = {c["key"] for c in STANDARDS["cost_model"]["components"] if c["mandatory_in_total"]}
-    covered = set(components) & mandatory
+    covered = (set(components) | set(combined_absorbed)) & mandatory
     monthly_total = round(sum(entry["monthly_amount"] for entry in components.values()), 2)
 
     profile = {
@@ -490,6 +658,7 @@ def build_cost_of_living(record: dict[str, Any]) -> dict[str, Any]:
         "currency": currency,
         "months_covered": months_covered,
         "components_included": sorted(components),
+        "components_absorbed": combined_absorbed,
         "mandatory_components_missing": sorted(mandatory - covered),
         "components": {
             name: {
@@ -508,6 +677,244 @@ def build_cost_of_living(record: dict[str, Any]) -> dict[str, Any]:
     }
     living["cost_of_living_profile"] = profile
     return profile
+
+
+# Keys that name tuition and can be turned into an annual figure.  A mandatory
+# fee, an enrolment fee, a regional tax or an application fee is deliberately
+# absent: promoting one of those to tuition would understate a cost by an order
+# of magnitude, which is the single most damaging error this file could make.
+TUITION_DERIVATIONS = (
+    ("tuition_{c}_per_year_at_three_quarters", "published_annual_figure", 1.0),
+    ("tuition_and_program_fees_{c}_nonresident", "published_annual_figure", 1.0),
+    ("tuition_{c}_first_year_example", "published_annual_figure", 1.0),
+    ("tuition_{c}_per_semester", "two_semesters_per_academic_year", 2.0),
+    ("tuition_{c}_per_term", "two_semesters_per_academic_year", 2.0),
+    # Legacy key name.  Where these are still set they mirror the published
+    # annual rate exactly rather than holding an estimate, and the EU-only and
+    # zero guards above still apply to them.
+    ("tuition_{c}_per_year_estimated", "published_annual_figure", 1.0),
+)
+
+TUITION_PROGRAMME_KEYS = ("tuition_{c}_full_programme", "tuition_{c}_total")
+
+# A basis that names EU/EEA/Swiss citizens is describing a rate the reader of
+# this database cannot use.  Several records store that rate in the same field
+# a non-EU rate would occupy and explain the mismatch only in prose, so the
+# basis string is read before the number is promoted to a headline figure.
+EU_ONLY_BASIS = re.compile(r"eu[_ ]?eea|eu/eea|for_eu|eu_citizens|eea_swiss", re.IGNORECASE)
+
+# German and Nordic public universities charge no tuition at all.  Their
+# records store that as a 0/0 band, which the zero guard above would otherwise
+# reject as an unfilled field, leaving the most affordable programmes in the
+# database showing "tuition unknown".  A zero is published only when the basis
+# says in words that no tuition is charged.
+NO_TUITION_BASIS = re.compile(
+    r"no_general_tuition|no_regular_tuition|no_tuition|tuition_free|abolished|"
+    r"state_funded|fully_exempt",
+    re.IGNORECASE,
+)
+
+
+def _positive(value: Any) -> float | None:
+    """A tuition of zero is almost always an unfilled field, not a free degree.
+
+    Publishing it would place the record at the top of every cost comparison.
+    Where a programme genuinely charges nothing, the record says so through the
+    fee-status fields rather than through a numeric zero.
+    """
+    amount = number(value)
+    return amount if amount is not None and amount > 0 else None
+
+
+def _tuition_band(cost: dict[str, Any], currency: str, income_based: bool) -> tuple[tuple[float, str, dict] | None, bool]:
+    """Return the band-derived figure, and whether a min-only band was refused."""
+    low = _positive(cost.get(f"tuition_{currency}_per_year_min"))
+    high = _positive(cost.get(f"tuition_{currency}_per_year_max"))
+    if high is not None:
+        return (high, "non_eu_planning_maximum", {f"tuition_{currency}_per_year_min": low,
+                                                  f"tuition_{currency}_per_year_max": high}), False
+    if low is None:
+        return None, False
+    if income_based:
+        # An Italian ISEE band published without its ceiling: the lowest
+        # bracket is what a local family on a low income pays, and printing it
+        # as "the tuition" would be the most flattering number in the record.
+        return None, True
+    return (low, "non_eu_planning_maximum", {f"tuition_{currency}_per_year_min": low}), False
+
+
+def derive_mandatory_semester_fees(cost: dict[str, Any], currency: str) -> None:
+    """Turn a per-semester student contribution into the annual cost it is.
+
+    Where tuition is zero the semester contribution is the whole of what a
+    student is billed, so leaving it out of the annual total would publish a
+    cost of exactly nothing for the cheapest programmes in the database.
+    """
+    if number(cost.get(f"mandatory_fees_{currency}_per_year")) is not None:
+        return
+
+    # Some records publish the annual mandatory charge directly as a band.
+    annual_band = _positive(cost.get(f"mandatory_fees_{currency}_per_year_max")) \
+        or _positive(cost.get(f"mandatory_fees_{currency}_per_year_min"))
+    if annual_band is not None:
+        cost[f"mandatory_fees_{currency}_per_year"] = annual_band
+        cost["mandatory_fees_derivation"] = {
+            "standard": f"cost_model@{STANDARDS_VERSION}",
+            "field": f"mandatory_fees_{currency}_per_year",
+            "rule": "non_eu_planning_maximum",
+            "derived_from": {f"mandatory_fees_{currency}_per_year_max": annual_band},
+            "derived_at": TODAY,
+        }
+        return
+
+    per_semester = _positive(cost.get(f"student_contribution_{currency}")) \
+        or _positive(cost.get("student_contribution_eur") if currency == "eur" else None) \
+        or _positive(cost.get(f"student_contribution_calculated_{currency}")) \
+        or _positive(cost.get("student_contribution_calculated_eur") if currency == "eur" else None)
+    if per_semester is None:
+        return
+    cost[f"mandatory_fees_{currency}_per_year"] = round(per_semester * 2, 2)
+    cost["mandatory_fees_derivation"] = {
+        "standard": f"cost_model@{STANDARDS_VERSION}",
+        "field": f"mandatory_fees_{currency}_per_year",
+        "rule": "two_semesters_per_academic_year",
+        "derived_from": {"student_contribution_per_semester": per_semester},
+        "derived_at": TODAY,
+    }
+
+
+def derive_annual_tuition(record: dict[str, Any]) -> dict[str, Any] | None:
+    """Fill the canonical annual tuition field from another verified figure.
+
+    Records were written by many hands, so the same fact arrived as a
+    per-semester rate, a whole-programme fee or a bespoke example key.  The
+    figure was checked, but nothing downstream could read it, so the annual
+    total and the cost card both behaved as though tuition were unknown.  This
+    moves such a figure into ``tuition_<currency>_per_year`` and records how.
+    """
+    cost = record.setdefault("cost_profile", {})
+    if "tuition" not in verified_fields(record):
+        return None
+    if not sourced_fields(record) & {"tuition", "fee", "fees", "cost", "costs"}:
+        return None
+
+    income_based = bool(cost.get("isee_or_income_based"))
+    duration = number(record.get("duration_years"))
+
+    # Separators vary between records ("non_eu", "non-EU", "non EU"), so they
+    # are flattened before the basis is matched.
+    basis = str(cost.get("tuition_basis") or "")
+    flat_basis = re.sub(r"[^a-z]+", "_", basis.lower())
+    if EU_ONLY_BASIS.search(basis) and "non_eu" not in flat_basis:
+        cost["tuition_derivation"] = {
+            "standard": f"cost_model@{STANDARDS_VERSION}",
+            "rule": "not_derivable",
+            "reason": "published_rate_is_eu_eea_only",
+            "derived_from": {"tuition_basis": basis},
+            "derived_at": TODAY,
+        }
+        return None
+
+    for currency in CURRENCY_SUFFIXES:
+        if _positive(cost.get(f"tuition_{currency}_per_year")) is not None:
+            return None  # already published in the canonical field
+
+    # A stated no-tuition policy publishes a zero only when the record also
+    # holds no positive tuition figure anywhere.  A basis phrase alone is not
+    # enough: a record can say "state funded" and still charge non-EU students.
+    any_positive_tuition = any(
+        _positive(value) is not None
+        for key, value in cost.items()
+        if isinstance(key, str) and key.startswith("tuition_")
+    )
+    if NO_TUITION_BASIS.search(flat_basis) and not any_positive_tuition:
+        currency = str(cost.get("currency") or "EUR").lower()
+        if currency not in CURRENCY_SUFFIXES:
+            currency = "eur"
+        cost[f"tuition_{currency}_per_year"] = 0
+        derivation = {
+            "standard": f"cost_model@{STANDARDS_VERSION}",
+            "field": f"tuition_{currency}_per_year",
+            "rule": "no_tuition_charged",
+            "derived_from": {"tuition_basis": basis},
+            "currency": currency.upper(),
+            "includes_mandatory_fees": False,
+            "derived_at": TODAY,
+        }
+        cost["tuition_derivation"] = derivation
+        derive_mandatory_semester_fees(cost, currency)
+        return derivation
+
+    refused_income_band = False
+    for currency in CURRENCY_SUFFIXES:
+        candidates: list[tuple[float, str, dict]] = []
+
+        band, refused = _tuition_band(cost, currency, income_based)
+        refused_income_band = refused_income_band or refused
+        if band:
+            candidates.append(band)
+
+        for template, rule, factor in TUITION_DERIVATIONS:
+            key = template.format(c=currency)
+            value = _positive(cost.get(key))
+            if value is not None:
+                candidates.append((value * factor, rule, {key: value}))
+
+        # A record that names its currency once can carry the figure in a key
+        # with no currency in it at all.
+        original_currency = str(cost.get("tuition_original_currency") or cost.get("currency") or "").lower()
+        if original_currency == currency:
+            value = _positive(cost.get("tuition_original_amount"))
+            if value is not None:
+                candidates.append((value, "published_annual_figure",
+                                   {"tuition_original_amount": value, "tuition_original_currency": currency.upper()}))
+
+        # Some UK records store the fee as an object carrying its own basis.
+        full = cost.get("tuition_non_eu_full_program")
+        if isinstance(full, dict) and str(full.get("currency") or "").lower() == currency:
+            value = _positive(full.get("amount"))
+            if value is not None and str(full.get("basis")) == "one_year_programme":
+                candidates.append((value, "published_annual_figure",
+                                   {"tuition_non_eu_full_program": full}))
+            elif value is not None and duration and duration > 0:
+                candidates.append((value / duration, "programme_fee_divided_by_duration",
+                                   {"tuition_non_eu_full_program": full, "duration_years": duration}))
+
+        if duration and duration > 0:
+            for template in TUITION_PROGRAMME_KEYS:
+                key = template.format(c=currency)
+                value = _positive(cost.get(key))
+                if value is not None:
+                    candidates.append((value / duration, "programme_fee_divided_by_duration",
+                                       {key: value, "duration_years": duration}))
+
+        if not candidates:
+            continue
+
+        amount, rule, origin = candidates[0]
+        cost[f"tuition_{currency}_per_year"] = round(amount, 2)
+        derivation = {
+            "standard": f"cost_model@{STANDARDS_VERSION}",
+            "field": f"tuition_{currency}_per_year",
+            "rule": rule,
+            "derived_from": origin,
+            "currency": currency.upper(),
+            "includes_mandatory_fees": "tuition_and_program_fees" in next(iter(origin)),
+            "derived_at": TODAY,
+        }
+        cost["tuition_derivation"] = derivation
+        return derivation
+
+    # The record's tuition is marked verified but no key this rule set can read
+    # holds a number.  Say so, rather than leaving the reader to guess whether
+    # the fee is zero or simply unrecorded.
+    cost["tuition_derivation"] = {
+        "standard": f"cost_model@{STANDARDS_VERSION}",
+        "rule": "not_derivable",
+        "reason": "income_based_range_without_upper_bound" if refused_income_band else "no_readable_tuition_figure",
+        "derived_at": TODAY,
+    }
+    return None
 
 
 def build_normalized_cost(record: dict[str, Any]) -> dict[str, Any]:
@@ -548,7 +955,16 @@ def build_normalized_cost(record: dict[str, Any]) -> dict[str, Any]:
         total += fees
         included.append("mandatory_fees")
 
+    # Several American cost-of-attendance budgets already carry the health
+    # plan as a living-cost line.  Adding the separately stored premium on top
+    # would bill the same policy twice, which on the Stanford record was worth
+    # USD 8,808 a year.
+    insurance_in_living = "health_insurance" in set(col.get("components_included") or []) \
+        | set(col.get("components_absorbed") or {})
     insurance = number(cost.get("health_insurance_premium_usd")) if currency == "USD" else None
+    if insurance is not None and insurance_in_living:
+        insurance = None
+        included.append("health_insurance_within_living_costs")
     if insurance is not None:
         total += insurance
         included.append("health_insurance")
@@ -905,6 +1321,9 @@ def build_primary_deadline(record: dict[str, Any]) -> dict[str, Any]:
 
 def standardize(record: dict[str, Any]) -> dict[str, Any]:
     housing = build_housing_difficulty(record)
+    # Both derivations run before the total, because the total is assembled
+    # from the canonical fields they populate.
+    derive_annual_tuition(record)
     build_cost_of_living(record)
     cost = build_normalized_cost(record)
     match = build_academic_match(record)

@@ -263,7 +263,7 @@
         "tr": "Tutarlar resmî kaynak para biriminde kaydedilmiştir."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "currency": null,
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -279,6 +279,12 @@
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
         "evaluated_at": "2026-08-30"
+      },
+      "tuition_derivation": {
+        "standard": "cost_model@3.1.0",
+        "rule": "not_derivable",
+        "reason": "no_readable_tuition_figure",
+        "derived_at": "2026-08-30"
       }
     },
     "scholarship_profile": {
@@ -363,7 +369,7 @@
       "housing_difficulty": "unknown",
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.0.0",
+        "standard": "housing_difficulty@3.1.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -407,7 +413,7 @@
         "evaluated_at": "2026-08-30"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.0.0",
+        "standard": "cost_model@3.1.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
@@ -631,7 +637,7 @@
         "tr": "Yayımlanan 2026 tarihleri geçmiştir. Bunları yalnız daha erken hazırlanmaya başlamak için kullanın; tarih tahmin etmek yerine sonraki resmî dönemi bekleyin."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.0.0",
+        "standard": "application_countdown@3.1.0",
         "date": "2026-06-15",
         "next_expected_date": null,
         "time": null,
@@ -1011,7 +1017,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.0.0",
+      "standard": "academic_match@3.1.0",
       "tier": "unknown",
       "score": null,
       "score_basis_weight": 30,
