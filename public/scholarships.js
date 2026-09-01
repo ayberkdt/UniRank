@@ -32,6 +32,8 @@
             closesToday: "Closes today", deadlinePassed: "Current cycle closed", noFutureExact: "No future exact deadline published",
             noFutureExactBody: "Watch the yellow cards below; they will switch to a confirmed countdown when an official call is released.",
             routes: "researched routes", verifiedEligible: "verified for Türkiye", liveDeadlines: "future exact dates", officialSources: "official sources",
+            applyCost: "Cost of applying", scholarshipStep: "Scholarship application", universityStep: "University applications",
+            costFree: "Free", costNotPublished: "No fee named", costUnknown: "Not verified",
             exactDeadline: "Confirmed deadline", previousReference: "Previous-cycle reference", programmeSpecific: "Programme-specific timing",
             notPublished: "2027/28 exact date not published", routeConfirmation: "Country route must be confirmed", currentClosed: "2027/28 cycle closed",
             open: "Open", awaiting: "Awaiting call", closed: "Closed", conditional: "Confirm route", typicalWindow: "Typical window",
@@ -61,6 +63,8 @@
             closesToday: "Bugün kapanıyor", deadlinePassed: "Güncel dönem kapandı", noFutureExact: "Gelecekteki kesin tarih henüz yayımlanmadı",
             noFutureExactBody: "Aşağıdaki sarı kartları takip et; resmî çağrı çıktığında doğrulanmış geri sayıma dönüşürler.",
             routes: "araştırılmış burs rotası", verifiedEligible: "Türkiye için doğrulanmış", liveDeadlines: "gelecekteki kesin tarih", officialSources: "resmî kaynak",
+            applyCost: "Başvurmanın maliyeti", scholarshipStep: "Burs başvurusu", universityStep: "Üniversite başvuruları",
+            costFree: "Ücretsiz", costNotPublished: "Ücret adlandırılmamış", costUnknown: "Doğrulanamadı",
             exactDeadline: "Doğrulanmış son tarih", previousReference: "Önceki dönem referansı", programmeSpecific: "Programa özel takvim",
             notPublished: "2027/28 kesin tarihi yayımlanmadı", routeConfirmation: "Ülke rotası doğrulanmalı", currentClosed: "2027/28 dönemi kapandı",
             open: "Açık", awaiting: "Çağrı bekleniyor", closed: "Kapandı", conditional: "Rotayı doğrula", typicalWindow: "Tipik dönem",
@@ -157,13 +161,31 @@
 
     function searchableText(item) {
         const language = currentLanguage();
-        return [localized(item.name, language), localized(item.provider, language), localized(item.destination, language), ...(item.coverage || []).map((x) => localized(x, language)), ...(item.requirements || []).map((x) => localized(x, language)), ...(item.required_documents || []).map((x) => localized(x, language))].join(" ").toLocaleLowerCase(language === "tr" ? "tr-TR" : "en-US");
+        return [localized(item.name, language), localized(item.provider, language), localized(item.destination, language), ...(item.coverage || []).map((x) => localized(x, language)), ...(item.requirements || []).map((x) => localized(x, language)), ...(item.required_documents || []).map((x) => localized(x, language)), localized(item.application_cost?.scholarship_application?.note, language), localized(item.application_cost?.university_step?.note, language)].join(" ").toLocaleLowerCase(language === "tr" ? "tr-TR" : "en-US");
     }
 
     function matches(item) {
         const query = state.query.trim().toLocaleLowerCase(currentLanguage() === "tr" ? "tr-TR" : "en-US");
         const levelMatch = state.level === "all" || item.levels.includes(state.level) || (state.level === "master" && item.levels.some((level) => ["postgraduate", "graduate_study"].includes(level)));
         return (!query || searchableText(item).includes(query)) && levelMatch && (state.status === "all" || statusOf(item) === state.status) && (state.fit === "all" || item.aerospace_relevance === state.fit);
+    }
+
+    // The scholarship being free is only half the answer: most routes force
+    // university applications whose fees come from the applicant's own pocket,
+    // and that is where the real money is.  Both halves render together.
+    function renderApplicationCost(item, c) {
+        const cost = item.application_cost;
+        if (!cost || !cost.scholarship_application) return "";
+        const scholarship = cost.scholarship_application;
+        const badgeLabel = { free: c.costFree, not_published: c.costNotPublished, unknown: c.costUnknown }[scholarship.status] || c.costUnknown;
+        const university = cost.university_step
+            ? `<div class="scholarship-cost__row"><span class="scholarship-cost__label">${escapeHtml(c.universityStep)}</span><p>${languageText(cost.university_step.note)}</p></div>`
+            : "";
+        return `<div class="scholarship-cost">
+            <h4>${escapeHtml(c.applyCost)}</h4>
+            <div class="scholarship-cost__row"><span class="scholarship-cost__label">${escapeHtml(c.scholarshipStep)}</span><span class="scholarship-cost__badge scholarship-cost__badge--${escapeHtml(scholarship.status)}">${escapeHtml(badgeLabel)}</span><p>${languageText(scholarship.note)}</p></div>
+            ${university}
+        </div>`;
     }
 
     function renderCard(item) {
@@ -180,7 +202,7 @@
             <div class="scholarship-card__route">${levels}<span>${escapeHtml(item.cycle.academic_year || "")}</span></div>
             <div class="scholarship-card__deadline"><div><span>${escapeHtml(deadline.label)}</span>${deadlineTime}<small>${escapeHtml(deadline.note)}</small></div><b>${escapeHtml(deadline.countdown)}</b></div>
             <div class="scholarship-card__body"><section><h4>${escapeHtml(c.coverage)}</h4><ul>${list(item.coverage, 3)}</ul></section><section><h4>${escapeHtml(c.requirements)}</h4><ul>${list(item.requirements, 3)}</ul></section></div>
-            ${risk}<details><summary><span>${escapeHtml(c.details)}</span><span aria-hidden="true">⌄</span></summary><div class="scholarship-detail"><section><h4>${escapeHtml(c.documents)}</h4>${documents}</section><section><h4>${escapeHtml(c.sources)}</h4><div class="scholarship-sources">${sources}</div></section><span class="scholarship-confidence">${escapeHtml(c.confidence)}: ${escapeHtml(item.source_profile.confidence)} · ${escapeHtml(c.lastVerified)} ${escapeHtml(item.source_profile.last_verified)}</span></div></details>
+            ${renderApplicationCost(item, c)}${risk}<details><summary><span>${escapeHtml(c.details)}</span><span aria-hidden="true">⌄</span></summary><div class="scholarship-detail"><section><h4>${escapeHtml(c.documents)}</h4>${documents}</section><section><h4>${escapeHtml(c.sources)}</h4><div class="scholarship-sources">${sources}</div></section><span class="scholarship-confidence">${escapeHtml(c.confidence)}: ${escapeHtml(item.source_profile.confidence)} · ${escapeHtml(c.lastVerified)} ${escapeHtml(item.source_profile.last_verified)}</span></div></details>
         </article>`;
     }
 

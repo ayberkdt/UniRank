@@ -270,3 +270,64 @@ main { display: grid; width: min(1500px, calc(100% - 40px)); margin: 0 auto; gap
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
+
+/* Cost of applying ---------------------------------------------------------
+   Two bills hide behind one phrase: what the scholarship charges (usually
+   nothing, said from an official page rather than assumed) and what the
+   university applications the route forces cost from the applicant's own
+   pocket. Solid surfaces, and the status badge carries the colour. */
+.scholarship-cost {
+    display: grid;
+    gap: 10px;
+    margin: 0 22px 16px;
+    padding: 14px 16px;
+    border: 1px solid #2c2f36;
+    border-left: 3px solid var(--country-accent, #8fa8e8);
+    border-radius: 10px;
+    background: #15171c;
+}
+
+.scholarship-cost h4 {
+    margin: 0;
+    color: #8d97a8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.scholarship-cost__row {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: start;
+    align-items: center;
+    column-gap: 10px;
+    row-gap: 4px;
+}
+
+.scholarship-cost__row p {
+    grid-column: 1 / -1;
+    margin: 0;
+    color: #aab4c4;
+    font-size: 12.5px;
+    line-height: 1.55;
+}
+
+.scholarship-cost__label {
+    color: #e6ebf4;
+    font-size: 12.5px;
+    font-weight: 600;
+}
+
+.scholarship-cost__badge {
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.scholarship-cost__badge--free { background: #12281a; color: #7fd196; border: 1px solid #2b5238; }
+.scholarship-cost__badge--not_published { background: #2b2512; color: #dfc873; border: 1px solid #57492a; }
+.scholarship-cost__badge--unknown { background: #1c1f24; color: #8d97a8; border: 1px solid #32363d; }

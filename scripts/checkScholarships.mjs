@@ -41,12 +41,31 @@ for (const item of catalog.scholarships) {
   assert(['high', 'medium', 'low', 'unknown'].includes(item.source_profile?.confidence), `${item.id} has invalid confidence`);
   assert(Array.isArray(item.source_profile?.sources) && item.source_profile.sources.length, `${item.id} has no official source`);
   assert(Array.isArray(item.coverage) && item.coverage.length, `${item.id} has no coverage data`);
+
+  // What applying costs is a decision field: each route must state it, in both
+  // languages, and back a definite answer with a source that covers it.
+  const cost = item.application_cost;
+  assert(cost && cost.scholarship_application, `${item.id} has no application_cost block`);
+  if (cost?.scholarship_application) {
+    assert(['free', 'not_published', 'unknown'].includes(cost.scholarship_application.status),
+      `${item.id} application_cost has an invalid status`);
+    bilingual(cost.scholarship_application.note, `${item.id}.application_cost.scholarship_application.note`);
+    if (cost.scholarship_application.status !== 'unknown') {
+      const covered = item.source_profile.sources.some((source) => (source.relevant_fields || []).includes('application_cost'));
+      assert(covered, `${item.id} states an application cost without a source covering application_cost`);
+    }
+  }
+  if (cost?.university_step) bilingual(cost.university_step.note, `${item.id}.application_cost.university_step.note`);
   assert(Array.isArray(item.requirements) && item.requirements.length, `${item.id} has no requirements data`);
 
   for (const [index, source] of item.source_profile.sources.entries()) {
     assert(/^https:\/\//.test(source.url || ''), `${item.id} source ${index + 1} is not HTTPS`);
     assert(validAccess.has(source.access_status), `${item.id} source ${index + 1} has invalid access_status`);
-    assert(source.last_checked === catalog.last_verified, `${item.id} source ${index + 1} was not checked on catalog verification date`);
+    // Sources keep the date they were actually read on; a research pass that
+    // adds one route must not claim it re-checked every older page the same
+    // day. A source may only never postdate the catalogue stamp.
+    assert(/^\d{4}-\d{2}-\d{2}$/.test(source.last_checked || '') && source.last_checked <= catalog.last_verified,
+      `${item.id} source ${index + 1} has an invalid or future last_checked date`);
     assert(source.source_type?.startsWith('official_'), `${item.id} source ${index + 1} is not classified as official`);
     assert(Array.isArray(source.relevant_fields) && source.relevant_fields.length, `${item.id} source ${index + 1} has no relevant_fields`);
   }
