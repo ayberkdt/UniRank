@@ -3861,3 +3861,204 @@ input[type="range"]::-webkit-slider-thumb {
     font-size: 12px;
     line-height: 1.35;
 }
+
+/* Application fee ------------------------------------------------------- */
+/* The first bill a student meets is the one for being considered at all,
+   and it falls due before every other amount on the cost card. It is given
+   the top row and a rule under it so the reader sees where the one-off
+   charge ends and the recurring annual costs begin. */
+#detail-drawer .application-fee-row {
+    display: grid;
+    gap: 4px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+#detail-drawer .application-fee-amount {
+    font-family: var(--ui-display, inherit);
+    font-size: 19px;
+    letter-spacing: 0.01em;
+}
+
+#detail-drawer .application-fee-row--published .application-fee-amount { color: #f3e3b2; }
+#detail-drawer .application-fee-row--no_fee .application-fee-amount,
+#detail-drawer .application-fee-row--not_published .application-fee-amount { color: #a8cfae; }
+#detail-drawer .application-fee-row--unknown .application-fee-amount { color: #b9b3a4; }
+
+#detail-drawer .application-fee-qualifiers,
+#detail-drawer .application-fee-note {
+    color: rgba(233, 227, 214, 0.66);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+#detail-drawer .application-fee-early {
+    color: #e2d587;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+#detail-drawer .application-fee-note a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* Application calendar: cost of applying, sort, and an untruncated runway -- */
+.deadline-cost-strip {
+    display: grid;
+    gap: 8px;
+    padding: 16px 18px;
+    border: 1px solid rgba(215, 199, 101, 0.24);
+    border-radius: 10px;
+    background: rgba(215, 199, 101, 0.07);
+}
+
+.deadline-cost-strip__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px 14px;
+}
+
+.deadline-cost-strip__eyebrow {
+    color: rgba(233, 227, 214, 0.62);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.deadline-cost-strip__head strong {
+    color: #f3e3b2;
+    font-family: var(--ui-display, inherit);
+    font-size: 20px;
+}
+
+.deadline-cost-strip__facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.deadline-cost-strip__facts li {
+    color: rgba(233, 227, 214, 0.78);
+    font-size: 12.5px;
+}
+
+.deadline-cost-strip__facts li::before {
+    margin-right: 7px;
+    color: rgba(215, 199, 101, 0.6);
+    content: '\00b7';
+}
+
+.deadline-cost-strip small,
+.deadline-cost-strip__empty {
+    color: rgba(233, 227, 214, 0.5);
+    font-size: 11.5px;
+    line-height: 1.55;
+}
+
+.deadline-sort {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    padding-left: 12px;
+}
+
+.deadline-sort > small {
+    color: rgba(233, 227, 214, 0.45);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.deadline-sort-chip {
+    padding: 5px 11px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    background: transparent;
+    color: rgba(233, 227, 214, 0.68);
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.deadline-sort-chip.is-active {
+    border-color: rgba(215, 199, 101, 0.55);
+    background: rgba(215, 199, 101, 0.12);
+    color: #f3e3b2;
+}
+
+.deadline-fee-pill {
+    border: 1px solid rgba(215, 199, 101, 0.34) !important;
+    background: rgba(215, 199, 101, 0.1) !important;
+    color: #f0dfa8 !important;
+}
+
+.deadline-fee-pill--no_fee,
+.deadline-fee-pill--not_published {
+    border-color: rgba(140, 200, 155, 0.3) !important;
+    background: rgba(140, 200, 155, 0.09) !important;
+    color: #a8cfae !important;
+}
+
+.deadline-fee-pill--unknown {
+    border-color: rgba(255, 255, 255, 0.14) !important;
+    background: transparent !important;
+    color: rgba(233, 227, 214, 0.55) !important;
+}
+
+.deadline-early-saving {
+    color: #e2d587;
+}
+
+/* The runway lists every milestone in a month rather than the first four, so
+   a busy month scrolls inside its own card instead of hiding the rest. */
+.deadline-runway-month ol {
+    max-height: 268px;
+    overflow-y: auto;
+}
+
+/* The month cards carry a third column now, so they need the width for it.
+   The track scrolls horizontally, so widening them costs nothing but a scroll. */
+.deadline-runway-month { min-width: 296px; }
+
+/* Three columns now: the date, the programme, and what applying to it costs. */
+.deadline-runway-month li {
+    grid-template-columns: 52px minmax(0, 1fr) auto;
+    column-gap: 10px;
+}
+
+.deadline-runway-month li > .deadline-runway-body {
+    display: grid;
+    min-width: 0;
+    align-content: center;
+    gap: 2px;
+}
+
+.deadline-runway-month li.is-offer-holder {
+    opacity: 0.62;
+}
+
+.deadline-runway-fee {
+    align-self: center;
+    color: rgba(240, 223, 168, 0.8);
+    font-size: 11.5px;
+    white-space: nowrap;
+}
+
+/* Cost to apply, on the comparison card ----------------------------------
+   A shortlist is drawn up on the list, not in the drawer, so the bill that
+   falls due first has to be visible while the comparison is being made. */
+.decision-item--apply-fee .apply-fee {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.decision-item--apply-fee .apply-fee--published { color: #f0dfa8; }
+.decision-item--apply-fee .apply-fee--no_fee,
+.decision-item--apply-fee .apply-fee--not_published { color: #a8cfae; }
+.decision-item--apply-fee .apply-fee--unknown { color: rgba(233, 227, 214, 0.5); font-weight: 500; }

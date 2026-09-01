@@ -122,7 +122,14 @@
       "notes_for_turkish_students": {
         "en": "The 45-ECTS prerequisite audit and one-attempt online test can be more decisive than the degree title; prepare a course-to-prerequisite map.",
         "tr": "45 AKTS ön koşul denetimi ve tek denemelik çevrim içi sınav derece adından daha belirleyici olabilir; ders-ön koşul eşleme tablosu hazırlayın."
-      }
+      },
+      "application_fee_refundable": false,
+      "application_fee_waiver_possible": true,
+      "application_fee_waiver": {
+        "en": "Tartu exempts Estonian citizens, anyone who completed the previous study level in Estonia, applicants already admitted to the same programme who sent hard copies in 2025, and anyone enrolled at UT at the same level since 2023/2024.",
+        "tr": "Tartu; Estonya vatandaşlarını, önceki eğitim kademesini Estonya'da tamamlayanları, aynı programa daha önce kabul edilip 2025'te basılı nüsha gönderenleri ve 2023/2024'ten beri UT'de aynı kademede kayıtlı olanları muaf tutar."
+      },
+      "international_application_fee_waiver_available_from_department": false
     },
     "language_profile": {
       "teaching_languages": [
@@ -254,7 +261,7 @@
         "tr": "Güncel resmî tutarlar zaten EUR cinsindedir."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": null,
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -269,13 +276,61 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_derivation": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-08-30"
+        "derived_at": "2026-09-01"
+      },
+      "application_fee_eur": 100,
+      "application_fee_covers_programmes": 2,
+      "application_fee_verification": {
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "EUR 100, non-refundable whatever the admission result, and one payment covers a maximum of two study programmes. A non-EU applicant also has to pre-pay half of the first semester's tuition before the admission letter needed for the visa is issued.",
+          "tr": "Kabul sonucu ne olursa olsun iade edilmeyen 100 avro; tek ödeme en fazla iki programı kapsar. AB dışı bir adayın ayrıca, vize için gereken kabul mektubu düzenlenmeden önce ilk dönem öğrenim ücretinin yarısını peşin ödemesi gerekir."
+        },
+        "confidence": "high"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 100.0,
+        "currency": "EUR",
+        "amount_eur_equivalent": null,
+        "scope": "international_applicants",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": 2.0,
+        "refundable": false,
+        "components": [],
+        "waiver": {
+          "available": true,
+          "open_to_international": false,
+          "request_deadline": null,
+          "processing_days": null,
+          "note": {
+            "en": "Tartu exempts Estonian citizens, anyone who completed the previous study level in Estonia, applicants already admitted to the same programme who sent hard copies in 2025, and anyone enrolled at UT at the same level since 2023/2024.",
+            "tr": "Tartu; Estonya vatandaşlarını, önceki eğitim kademesini Estonya'da tamamlayanları, aynı programa daha önce kabul edilip 2025'te basılı nüsha gönderenleri ve 2023/2024'ten beri UT'de aynı kademede kayıtlı olanları muaf tutar."
+          }
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "cost_profile.application_fee_eur": 100
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -356,7 +411,7 @@
       "housing_difficulty": "unknown",
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 2,
         "scaled_score": null,
@@ -397,16 +452,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -625,7 +680,7 @@
         "tr": "Gösterilen bütün 2026 tarihleri tarihseldir. Ocak-Mart düzenine göre hazırlanın; ancak tarih tahmin etmek yerine sonraki resmî dönemi bekleyin."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": "2026-04-30",
         "next_expected_date": null,
         "time": null,
@@ -634,11 +689,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -122,
+        "days_remaining_at_evaluation": -124,
         "derived_from": "application_timeline_profile.deadline_events[] (Admission results)",
         "confidence": "high",
         "source_url": null,
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -871,6 +926,21 @@
             "en": "Current international guide with typical living and dormitory amounts.",
             "tr": "Tipik yaşam ve yurt tutarlarını içeren güncel uluslararası rehber."
           }
+        },
+        {
+          "url": "https://ut.ee/en/content/application-fee",
+          "title": "Application fee | University of Tartu",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
       "evidence_map": {
@@ -908,7 +978,7 @@
           "ee_ut_guide"
         ]
       },
-      "last_verified": "2026-08-14",
+      "last_verified": "2026-09-01",
       "next_review_due": "2026-11-01",
       "needs_verification": false,
       "verification_notes": {
@@ -984,7 +1054,7 @@
     },
     "data_quality": {
       "status": "verified",
-      "checked_official_source_count": 8,
+      "checked_official_source_count": 9,
       "verified_fields": [
         "program",
         "language",
@@ -998,7 +1068,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-23"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "qc_status": "passed",
@@ -1017,7 +1087,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "unknown",
       "score": null,
       "score_basis_weight": 30,
@@ -1059,7 +1129,7 @@
       ],
       "confidence": "unknown",
       "legacy_relevance_status": null,
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     }
   }
 ]

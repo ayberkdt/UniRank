@@ -90,7 +90,7 @@
       "living_cost_dkk_per_year_min": null,
       "living_cost_dkk_per_year_max": null,
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "TRY",
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -106,7 +106,34 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_research": {
+        "outcome": "no_fee_published",
+        "checked_on": "2026-09-01",
+        "pages_checked": [
+          "https://lee.itu.edu.tr/adayogrenciler/lisansustu-basvuru"
+        ],
+        "note": {
+          "en": "ITU's Graduate School application page lists the whole route - online submission, document upload, interview with the admission committee, results through the student information system - and states that uploading the documents completely to the system is sufficient. It names no fee for either a master's or a doctorate.",
+          "tr": "İTÜ Lisansüstü Eğitim Enstitüsü başvuru sayfası tüm yolu listeler - çevrimiçi gönderim, belge yükleme, kabul komisyonuyla mülakat, sonuçların öğrenci bilgi sisteminden duyurulması - ve belgelerin tam olarak sisteme yüklenmesinin yeterli olduğunu belirtir. Ne yüksek lisans ne de doktora için bir ücret adlandırır."
+        }
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "not_published",
+        "amount": null,
+        "currency": null,
+        "rule": "researched_absence",
+        "pages_checked": [
+          "https://lee.itu.edu.tr/adayogrenciler/lisansustu-basvuru"
+        ],
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "ITU's Graduate School application page lists the whole route - online submission, document upload, interview with the admission committee, results through the student information system - and states that uploading the documents completely to the system is sufficient. It names no fee for either a master's or a doctorate.",
+          "tr": "İTÜ Lisansüstü Eğitim Enstitüsü başvuru sayfası tüm yolu listeler - çevrimiçi gönderim, belge yükleme, kabul komisyonuyla mülakat, sonuçların öğrenci bilgi sisteminden duyurulması - ve belgelerin tam olarak sisteme yüklenmesinin yeterli olduğunu belirtir. Ne yüksek lisans ne de doktora için bir ücret adlandırır."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -181,7 +208,7 @@
       "official_rent_items": [],
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -224,16 +251,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -485,7 +512,7 @@
         "tr": "Güncel son başvuru tarihi doğrulanamadı."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": "2026-06-28",
         "next_expected_date": null,
         "time": null,
@@ -494,11 +521,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -63,
+        "days_remaining_at_evaluation": -65,
         "derived_from": "application_timeline_profile.non_eu_deadline",
         "confidence": "high",
         "source_url": "https://www.tyyc.itu.edu.tr/ProgramHakkinda.php?Dili=EN&Program=UUM_UU_YL&SayfaBaslik=SKayitKabulSartlari-LU-Tum&sdonemkodu=202710",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -644,9 +671,24 @@
             "en": "Groups the laboratories by department and publishes the HAVELSAT CubeSat collaboration with HAVELSAN and the Turkish Air Force Academy.",
             "tr": "Laboratuvarları bölümlere göre gruplar ve HAVELSAN ile Hava Harp Okulu iş birliğiyle yürütülen HAVELSAT CubeSat çalışmasını yayımlar."
           }
+        },
+        {
+          "url": "https://lee.itu.edu.tr/adayogrenciler/lisansustu-basvuru",
+          "title": "Lisansustu Basvuru | ITU Lisansustu Egitim Enstitusu",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-01",
       "verification_notes": {
         "en": "Unknown fields remain explicit.",
         "tr": "Bilinmeyen alanlar açık bırakıldı."
@@ -709,7 +751,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 7,
+      "checked_official_source_count": 8,
       "verified_fields": [
         "program",
         "admission",
@@ -725,7 +767,7 @@
         "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-30"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "qc_status": "needs_revision",
@@ -779,7 +821,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "strong_adjacent",
       "score": 72,
       "score_basis_weight": 90,
@@ -824,7 +866,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -934,7 +976,7 @@
       "living_cost_dkk_per_year_min": null,
       "living_cost_dkk_per_year_max": null,
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "TRY",
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -950,7 +992,34 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_research": {
+        "outcome": "no_fee_published",
+        "checked_on": "2026-09-01",
+        "pages_checked": [
+          "https://lee.itu.edu.tr/adayogrenciler/lisansustu-basvuru"
+        ],
+        "note": {
+          "en": "ITU's Graduate School application page lists the whole route and states that uploading the documents completely to the system is sufficient. It names no application fee.",
+          "tr": "İTÜ Lisansüstü Eğitim Enstitüsü başvuru sayfası tüm yolu listeler ve belgelerin tam olarak sisteme yüklenmesinin yeterli olduğunu belirtir. Bir başvuru ücreti adlandırmaz."
+        }
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "not_published",
+        "amount": null,
+        "currency": null,
+        "rule": "researched_absence",
+        "pages_checked": [
+          "https://lee.itu.edu.tr/adayogrenciler/lisansustu-basvuru"
+        ],
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "ITU's Graduate School application page lists the whole route and states that uploading the documents completely to the system is sufficient. It names no application fee.",
+          "tr": "İTÜ Lisansüstü Eğitim Enstitüsü başvuru sayfası tüm yolu listeler ve belgelerin tam olarak sisteme yüklenmesinin yeterli olduğunu belirtir. Bir başvuru ücreti adlandırmaz."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -1025,7 +1094,7 @@
       "official_rent_items": [],
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -1068,16 +1137,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -1305,7 +1374,7 @@
         "tr": "Güncel son başvuru tarihi doğrulanamadı."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": "2026-06-28",
         "next_expected_date": null,
         "time": null,
@@ -1314,11 +1383,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -63,
+        "days_remaining_at_evaluation": -65,
         "derived_from": "application_timeline_profile.non_eu_deadline",
         "confidence": "high",
         "source_url": "https://www.tyyc.itu.edu.tr/ProgramHakkinda.php?Dili=EN&Program=UZM_UB_YL&SayfaBaslik=SKayitKabulSartlari-LU-Tum&sdonemkodu=202710",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -1465,9 +1534,24 @@
             "en": "Publishes the HAVELSAT CubeSat item attributing the work to the ITU Space Systems Design and Test Laboratory.",
             "tr": "Çalışmayı İTÜ Uzay Sistemleri Tasarım ve Test Laboratuvarı'na atfeden HAVELSAT CubeSat haberini yayımlar."
           }
+        },
+        {
+          "url": "https://lee.itu.edu.tr/adayogrenciler/lisansustu-basvuru",
+          "title": "Lisansustu Basvuru | ITU Lisansustu Egitim Enstitusu",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-01",
       "verification_notes": {
         "en": "Unknown fields remain explicit.",
         "tr": "Bilinmeyen alanlar açık bırakıldı."
@@ -1530,7 +1614,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 7,
+      "checked_official_source_count": 8,
       "verified_fields": [
         "program",
         "language",
@@ -1546,7 +1630,7 @@
         "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-30"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "qc_status": "needs_revision",
@@ -1596,7 +1680,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "strong_adjacent",
       "score": 72,
       "score_basis_weight": 90,
@@ -1641,7 +1725,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -1713,6 +1797,12 @@
       "advisor_requirement_note": {
         "en": "The single most important rule on this record. METU states that an applicant for a graduate programme should identify a thesis advisor, that it is imperative to contact potential faculty members in advance, and that an Advisor Approval Form must be attached to the application. This is not a suggestion: without a named academic who has agreed to supervise you, your file is structurally incomplete. Budget weeks for this, not days — and write to a specific research field from the five the department publishes.",
         "tr": "Bu kayıttaki en önemli tek kural. ODTÜ, lisansüstü programa başvuran adayın bir tez danışmanı belirlemesi gerektiğini, olası öğretim üyeleriyle önceden iletişime geçmenin zorunlu olduğunu ve başvuruya bir Danışman Onay Formu eklenmesi gerektiğini belirtir. Bu bir öneri değildir: seni danışmanlık yapmayı kabul etmiş adlandırılmış bir akademisyen olmadan dosyan yapısal olarak eksiktir. Bunun için gün değil hafta ayır — ve bölümün yayımladığı beş alandan belirli birine yaz."
+      },
+      "application_fee_scope": "charged per programme selections",
+      "application_fee_waiver_possible": true,
+      "application_fee_waiver": {
+        "en": "METU exempts students with an active registration at a Turkish university. If you are still enrolled on your bachelor's when you apply, the fee does not apply to you at all.",
+        "tr": "ODTÜ, bir Türk üniversitesinde aktif kaydı olan öğrencileri muaf tutar. Başvurduğunda hâlâ lisansına kayıtlıysan ücret sana hiç uygulanmaz."
       }
     },
     "language_profile": {
@@ -1757,7 +1847,7 @@
       "living_cost_dkk_per_year_min": null,
       "living_cost_dkk_per_year_max": null,
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "USD",
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -1773,7 +1863,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_usd_per_year": 750.0,
       "tuition_derivation": {
@@ -1786,6 +1876,61 @@
         "currency": "USD",
         "includes_mandatory_fees": false,
         "derived_at": "2026-08-30"
+      },
+      "application_fee_usd": 55,
+      "application_fee_charged_per": "programme_choice",
+      "application_fee_verification": {
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "USD 55 for each programme applied to, and applicants with an active registration at a Turkish university are exempt - which covers most people applying in their final undergraduate year.",
+          "tr": "Başvurulan her program için 55 ABD doları; bir Türk üniversitesinde aktif kaydı olan adaylar muaftır - bu da lisansının son yılında başvuran çoğu kişiyi kapsar."
+        },
+        "confidence": "high"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 55.0,
+        "currency": "USD",
+        "amount_eur_equivalent": {
+          "amount": 47.24,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "unknown",
+        "charged_per": "programme_choice",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [],
+        "waiver": {
+          "available": true,
+          "open_to_international": true,
+          "request_deadline": null,
+          "processing_days": null,
+          "note": {
+            "en": "METU exempts students with an active registration at a Turkish university. If you are still enrolled on your bachelor's when you apply, the fee does not apply to you at all.",
+            "tr": "ODTÜ, bir Türk üniversitesinde aktif kaydı olan öğrencileri muaf tutar. Başvurduğunda hâlâ lisansına kayıtlıysan ücret sana hiç uygulanmaz."
+          }
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "cost_profile.application_fee_usd": 55
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -1860,7 +2005,7 @@
       "official_rent_items": [],
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -1903,16 +2048,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -2081,12 +2226,12 @@
       "application_deadline": null,
       "deadline_events": [],
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -2261,9 +2406,24 @@
             "en": "Linked from the department's main page as its HPC resource; the page itself was not opened directly in this pass.",
             "tr": "Bölümün ana sayfasından YBH kaynağı olarak bağlantı verilir; sayfanın kendisi bu turda doğrudan açılmamıştır."
           }
+        },
+        {
+          "url": "https://iso.metu.edu.tr/en/system/files/grad-handout-eng.pdf",
+          "title": "Graduate handout | METU International Students Office",
+          "source_type": "official_tuition_page",
+          "access_status": "pdf",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-01",
       "verification_notes": {
         "en": "Unknown fields remain explicit.",
         "tr": "Bilinmeyen alanlar açık bırakıldı."
@@ -2328,7 +2488,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 8,
+      "checked_official_source_count": 9,
       "verified_fields": [
         "program",
         "language",
@@ -2344,7 +2504,7 @@
         "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-30"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "qc_status": "needs_revision",
@@ -2398,7 +2558,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "partial_match",
       "score": 53,
       "score_basis_weight": 90,
@@ -2444,7 +2604,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -2564,7 +2724,7 @@
       "living_cost_dkk_per_year_min": null,
       "living_cost_dkk_per_year_max": null,
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "USD",
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -2580,7 +2740,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_usd_per_year": 1000.0,
       "tuition_derivation": {
@@ -2593,6 +2753,35 @@
         "currency": "USD",
         "includes_mandatory_fees": false,
         "derived_at": "2026-08-30"
+      },
+      "application_fee_research": {
+        "outcome": "no_fee_published",
+        "checked_on": "2026-09-01",
+        "pages_checked": [
+          "https://adaylar.bogazici.edu.tr/tr-TR/Sayfa/Basvuru",
+          "https://bogazici.edu.tr/tr/announcements/guncellenmistir-fen-bilimleri-enstitusu-2026-/5586"
+        ],
+        "note": {
+          "en": "Bogazici's candidate portal gives the 2026/2027 graduate calendar to the hour - applications open 15 April 2026 at 10:00 and close 11 June 2026 at 17:00, exams 22-26 June - and names no fee at any step, and neither does the Institute for Graduate Studies in Science and Engineering's own admissions announcement for that cycle. The institute's separate fee page did not resolve on 1 September 2026, so a charge published only there would not have been seen.",
+          "tr": "Boğaziçi'nin aday portalı 2026/2027 lisansüstü takvimini saatine kadar verir - başvurular 15 Nisan 2026 saat 10:00'da açılır, 11 Haziran 2026 saat 17:00'de kapanır, sınavlar 22-26 Haziran - ve hiçbir adımda bir ücret adlandırmaz; Fen Bilimleri Enstitüsü'nün o döneme ait kendi kabul duyurusu da adlandırmaz. Enstitünün ayrı ücret sayfası 1 Eylül 2026'da açılmadı; dolayısıyla yalnızca orada yayımlanmış bir kalem görülmemiş olurdu."
+        }
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "not_published",
+        "amount": null,
+        "currency": null,
+        "rule": "researched_absence",
+        "pages_checked": [
+          "https://adaylar.bogazici.edu.tr/tr-TR/Sayfa/Basvuru",
+          "https://bogazici.edu.tr/tr/announcements/guncellenmistir-fen-bilimleri-enstitusu-2026-/5586"
+        ],
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "Bogazici's candidate portal gives the 2026/2027 graduate calendar to the hour - applications open 15 April 2026 at 10:00 and close 11 June 2026 at 17:00, exams 22-26 June - and names no fee at any step, and neither does the Institute for Graduate Studies in Science and Engineering's own admissions announcement for that cycle. The institute's separate fee page did not resolve on 1 September 2026, so a charge published only there would not have been seen.",
+          "tr": "Boğaziçi'nin aday portalı 2026/2027 lisansüstü takvimini saatine kadar verir - başvurular 15 Nisan 2026 saat 10:00'da açılır, 11 Haziran 2026 saat 17:00'de kapanır, sınavlar 22-26 Haziran - ve hiçbir adımda bir ücret adlandırmaz; Fen Bilimleri Enstitüsü'nün o döneme ait kendi kabul duyurusu da adlandırmaz. Enstitünün ayrı ücret sayfası 1 Eylül 2026'da açılmadı; dolayısıyla yalnızca orada yayımlanmış bir kalem görülmemiş olurdu."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -2667,7 +2856,7 @@
       "official_rent_items": [],
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -2710,16 +2899,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -2890,12 +3079,12 @@
         "tr": "Bölüm güz başvurularının genellikle nisan başında, bahar başvurularının aralık ortasında başladığını belirtiyor; sonraki dönem için kesin tarih kaydedilmedi."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -3040,9 +3229,24 @@
             "en": "Publishes the ten research areas, the graduate programme structure and the departmental contact address.",
             "tr": "On araştırma alanını, lisansüstü program yapısını ve bölüm iletişim adresini yayımlar."
           }
+        },
+        {
+          "url": "https://adaylar.bogazici.edu.tr/tr-TR/Sayfa/Basvuru",
+          "title": "Lisansustu Programlara Basvuru Kosullari | Bogazici Universitesi",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-01",
       "verification_notes": {
         "en": "Unknown fields remain explicit.",
         "tr": "Bilinmeyen alanlar açık bırakıldı."
@@ -3105,7 +3309,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 7,
+      "checked_official_source_count": 8,
       "verified_fields": [
         "program",
         "language",
@@ -3121,7 +3325,7 @@
         "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-30"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "qc_status": "needs_revision",
@@ -3171,7 +3375,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "partial_match",
       "score": 40,
       "score_basis_weight": 90,
@@ -3216,7 +3420,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {

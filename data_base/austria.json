@@ -113,7 +113,7 @@
           "tr": "Gösterilen yıllık öğrenim ücreti güncel standart üçüncü ülke tarifesidir; her adayın yasal bir muafiyetten yararlanamayacağı iddiası değildir."
         },
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "EUR",
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -129,7 +129,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "source_notes": {
           "en": "FHWN publishes EUR 363.36 per semester for EU, EEA and Swiss citizens and EUR 850 per semester for third-country citizens, plus a one-time EUR 250 deposit for third-country citizens and a EUR 26.20 student union fee per semester, for study year 26/27. Two semesters make an academic year, so a non-EU student pays about EUR 1,700 in tuition plus about EUR 52 in union fees per year, with the EUR 250 deposit once. This is among the cheapest English-taught aerospace masters in the database.",
@@ -147,6 +147,40 @@
           "currency": "EUR",
           "includes_mandatory_fees": false,
           "derived_at": "2026-08-30"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "published",
+          "amount": 250.0,
+          "currency": "EUR",
+          "amount_eur_equivalent": null,
+          "scope": "unknown",
+          "charged_per": "application",
+          "charged_by": "university",
+          "charged_by_name": null,
+          "additional_application_amount": null,
+          "academic_cycle": null,
+          "early_amount": null,
+          "early_deadline": null,
+          "covers_programmes": null,
+          "refundable": null,
+          "components": [],
+          "waiver": {
+            "available": null,
+            "open_to_international": null,
+            "request_deadline": null,
+            "processing_days": null
+          },
+          "payment_due_days_after_deadline": null,
+          "rule": "published_application_fee",
+          "derived_from": {
+            "cost_profile.application_fee_eur": 250
+          },
+          "note": {
+            "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+            "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -207,7 +241,7 @@
         "housing_application_separate": null,
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 1,
           "scaled_score": null,
@@ -249,16 +283,16 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -493,7 +527,7 @@
           "tr": "İki farklı son tarih vardır ve AB dışı olanı çok daha erkendir: Eylül 2026 başlangıcı için AB dışı vatandaşlar 31 Mart 2026, AB, AEA ve İsviçre vatandaşları 15 Haziran 2026. Bu iki buçuk aylık fark, bu kayıttaki tuzaktır — görünürdeki Haziran tarihine göre çalışan AB dışı bir aday onu çoktan kaçırmıştır. Kabul günleri sürekli olarak tanımlanır ve lisans diploması gibi uygunluk kanıtı sonradan sunulabilir; yani tamamlanmamış bir derece başvuruyu ertelemek için bir sebep değildir."
         },
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-03-31",
           "next_expected_date": "2027-03-31",
           "time": null,
@@ -502,11 +536,11 @@
           "cycle_label": null,
           "is_recurring_annual": true,
           "status": "closed",
-          "days_remaining_at_evaluation": -152,
+          "days_remaining_at_evaluation": -154,
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://www.fhwn.ac.at/en/studyprogramme/master-aerospace-engineering",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         },
@@ -825,7 +859,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "strong_adjacent",
         "score": 59,
         "score_basis_weight": 90,
@@ -874,7 +908,7 @@
         ],
         "confidence": "medium",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "research_group_evidence": {
@@ -1038,7 +1072,7 @@
         "living_cost_dkk_per_year_min": null,
         "living_cost_dkk_per_year_max": null,
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "EUR",
           "annual_total": 13327.0,
           "annual_total_eur_equivalent": null,
@@ -1053,16 +1087,50 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "tuition_derivation": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "rule": "not_derivable",
           "reason": "published_rate_is_eu_eea_only",
           "derived_from": {
             "tuition_basis": "official_published_per_semester_rate_for_eu_eea_swiss_citizens_only_doubled_for_the_academic_year"
           },
-          "derived_at": "2026-08-30"
+          "derived_at": "2026-09-01"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "published",
+          "amount": 10.0,
+          "currency": "EUR",
+          "amount_eur_equivalent": null,
+          "scope": "unknown",
+          "charged_per": "application",
+          "charged_by": "university",
+          "charged_by_name": null,
+          "additional_application_amount": null,
+          "academic_cycle": null,
+          "early_amount": null,
+          "early_deadline": null,
+          "covers_programmes": null,
+          "refundable": null,
+          "components": [],
+          "waiver": {
+            "available": null,
+            "open_to_international": null,
+            "request_deadline": null,
+            "processing_days": null
+          },
+          "payment_due_days_after_deadline": null,
+          "rule": "published_application_fee",
+          "derived_from": {
+            "cost_profile.application_fee_eur": 10
+          },
+          "note": {
+            "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+            "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -1130,7 +1198,7 @@
         "housing_application_separate": null,
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 2,
           "scaled_score": null,
@@ -1172,10 +1240,10 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "official_source_range_basis_not_itemised",
           "status": "total_only",
           "currency": "EUR",
@@ -1202,14 +1270,14 @@
               "monthly_living_cost_eur_min": 1000.0,
               "monthly_living_cost_eur_max": 1100.0
             },
-            "derived_at": "2026-08-30"
+            "derived_at": "2026-09-01"
           },
           "source_url": null,
           "note": {
             "en": "Official 2026/27 handout: accommodation including heating/electricity EUR 400-500, food EUR 300, and study/personal requirements, books, culture and recreation EUR 300.",
             "tr": "Resmî 2026/27 bilgi notu: ısınma/elektrik dahil konaklama 400-500 EUR, yemek 300 EUR, eğitim/kişisel gereksinimler, kitaplar, kültür ve eğlence 300 EUR."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -1519,7 +1587,7 @@
           "tr": "Kış dönemi için mevcut başvuru dönemi 7 Eylül 2026'ya kadar sürer. FH Wiener Neustadt'tan farklı olarak bu sayfada AB dışı için ayrı ve daha erken bir son tarih yayımlanmaz — ancak AB dışı bir aday yine de vize zamanlamasını teyit etmelidir; çünkü kış dönemi başlangıcı için Eylül son tarihi, oturma izni için çok az yer bırakır."
         },
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-09-07",
           "next_expected_date": null,
           "time": null,
@@ -1528,11 +1596,11 @@
           "cycle_label": null,
           "is_recurring_annual": true,
           "status": "closing_soon",
-          "days_remaining_at_evaluation": 8,
+          "days_remaining_at_evaluation": 6,
           "derived_from": "application_timeline_profile.application_deadline",
           "confidence": "high",
           "source_url": "https://www.fh-joanneum.at/luftfahrt/master/en/admissions/application-requirements/",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         },
@@ -1885,7 +1953,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "strong_adjacent",
         "score": 71,
         "score_basis_weight": 90,
@@ -1935,7 +2003,7 @@
         ],
         "confidence": "medium",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "research_group_evidence": {
@@ -2119,7 +2187,7 @@
           "tr": "TU Graz, muaf olmayan AB dışı yabancı uyruklular için dönem başına 726,72 EUR öğrenim ücreti ve 26,20 EUR Avusturya Öğrenci Birliği (ÖH) ücreti yayımlar: yıllık 1.453,44 EUR öğrenim ücreti ve 52,40 EUR ÖH. Tüm öğrenciler ÖH ücretini öder; listelenen muafiyetler öğrenim ücreti yükümlülüğünü değiştirebilir."
         },
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "EUR",
           "annual_total": 12253.44,
           "annual_total_eur_equivalent": null,
@@ -2134,7 +2202,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "tuition_eur_per_year": 1453.44,
         "tuition_derivation": {
@@ -2148,6 +2216,33 @@
           "currency": "EUR",
           "includes_mandatory_fees": false,
           "derived_at": "2026-08-30"
+        },
+        "application_fee_research": {
+          "outcome": "no_fee_published",
+          "checked_on": "2026-09-01",
+          "pages_checked": [
+            "https://www.tugraz.at/en/studying-and-teaching/studying-at-tu-graz/prospective-students/registration-and-admission/admission-of-international-degree-programme-applicants/overview-admission-of-international-degree-programme-applicants"
+          ],
+          "note": {
+            "en": "TU Graz's admission overview for international degree-programme applicants sets out the deadlines, the documents and the timeline and prices none of them. What a non-EU student pays at TU Graz is the EUR 726.72 semester tuition and the EUR 26.20 student union fee, both after admission.",
+            "tr": "TU Graz'ın uluslararası program adayları için kabul özeti; son tarihleri, belgeleri ve takvimi ortaya koyar ve hiçbirini fiyatlandırmaz. AB dışı bir öğrencinin TU Graz'da ödediği şey, ikisi de kabulden sonra gelen 726,72 avroluk dönem öğrenim ücreti ile 26,20 avroluk öğrenci birliği aidatıdır."
+          }
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "not_published",
+          "amount": null,
+          "currency": null,
+          "rule": "researched_absence",
+          "pages_checked": [
+            "https://www.tugraz.at/en/studying-and-teaching/studying-at-tu-graz/prospective-students/registration-and-admission/admission-of-international-degree-programme-applicants/overview-admission-of-international-degree-programme-applicants"
+          ],
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "TU Graz's admission overview for international degree-programme applicants sets out the deadlines, the documents and the timeline and prices none of them. What a non-EU student pays at TU Graz is the EUR 726.72 semester tuition and the EUR 26.20 student union fee, both after admission.",
+            "tr": "TU Graz'ın uluslararası program adayları için kabul özeti; son tarihleri, belgeleri ve takvimi ortaya koyar ve hiçbirini fiyatlandırmaz. AB dışı bir öğrencinin TU Graz'da ödediği şey, ikisi de kabulden sonra gelen 726,72 avroluk dönem öğrenim ücreti ile 26,20 avroluk öğrenci birliği aidatıdır."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -2262,7 +2357,7 @@
         "housing_application_separate": null,
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 1,
           "scaled_score": null,
@@ -2304,10 +2399,10 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "official_source_range_basis_not_itemised",
           "status": "total_only",
           "currency": "EUR",
@@ -2334,14 +2429,14 @@
               "monthly_living_cost_eur_min": 800.0,
               "monthly_living_cost_eur_max": 1000.0
             },
-            "derived_at": "2026-08-30"
+            "derived_at": "2026-09-01"
           },
           "source_url": null,
           "note": {
             "en": "TU Graz's current 2026/27 international fact sheet advises EUR 800-1,000/month for rent, food and personal expenses, depending on housing and lifestyle. Its separate international FAQ cites just under EUR 1,300 as the 2025 Austria-wide Student Social Survey average; that national average is not presented as a Graz quote.",
             "tr": "TU Graz'ın güncel 2026/27 uluslararası bilgi notu, konaklama ve yaşam tarzına göre kira, yemek ve kişisel giderler için ayda 800-1.000 EUR önerir. Ayrı uluslararası SSS'si 2025 Avusturya geneli Öğrenci Sosyal Araştırması ortalamasını 1.300 EUR'un biraz altı olarak verir; bu ulusal ortalama Graz fiyatı olarak sunulmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -2581,7 +2676,7 @@
           "tr": "Resmî uluslararası yüksek lisans sayfası işlemenin haftalar-aylar sürebileceği uyarısını yapar ve eksiksiz erken başvuruyu şiddetle önerir; TU Graz vize randevuları veya taşınma planlaması için sorumluluk kabul etmez. Üçüncü ülke kış dönemi 15 Ağustos son tarihini güvenli vize planlama tarihi değil kesin üst sınır sayın."
         },
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-08-15",
           "next_expected_date": null,
           "time": null,
@@ -2590,11 +2685,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closed",
-          "days_remaining_at_evaluation": -15,
+          "days_remaining_at_evaluation": -17,
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://www.tugraz.at/en/studying-and-teaching/studying-at-tu-graz/prospective-students/registration-and-admission/masters-programme-without-admission-procedure-with-an-international-degree",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -2740,9 +2835,24 @@
               "en": "States the German language of instruction and the German-proficiency admission requirement, the three specialisation modules with their content, the four-institution partnership, the unconditional-admission bachelor list and the central admissions address.",
               "tr": "Almanca öğretim dilini ve Almanca yeterlilik kabul koşulunu, içerikleriyle birlikte üç uzmanlaşma modülünü, dört kurumlu ortaklığı, koşulsuz kabul edilen lisans listesini ve merkezî kabul adresini belirtir."
             }
+          },
+          {
+            "url": "https://www.tugraz.at/en/studying-and-teaching/studying-at-tu-graz/prospective-students/registration-and-admission/admission-of-international-degree-programme-applicants/overview-admission-of-international-degree-programme-applicants",
+            "title": "Overview: Admission of International Degree Programme Applicants | TU Graz",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ],
-        "last_verified": "2026-08-30",
+        "last_verified": "2026-09-01",
         "needs_verification": false,
         "verification_notes": {
           "en": "All displayed decision fields are tied to checked official sources. The scholarship is a competitive general Master's route and the room figure is scoped planning guidance; neither is portrayed as guaranteed support or housing.",
@@ -2853,7 +2963,7 @@
       "qs_ranking": 409,
       "data_quality": {
         "status": "verified",
-        "checked_official_source_count": 6,
+        "checked_official_source_count": 7,
         "verified_fields": [
           "program",
           "language",
@@ -2867,7 +2977,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-30"
+        "audited_at": "2026-09-01"
       },
       "financials": {
         "tuition_fee_per_year": null,
@@ -2908,7 +3018,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "unknown",
         "score": null,
         "score_basis_weight": 55,
@@ -2954,7 +3064,7 @@
         ],
         "confidence": "unknown",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "research_group_evidence": {
@@ -3094,7 +3204,7 @@
         "living_cost_dkk_per_year_max": null,
         "tuition_items": [],
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": null,
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -3109,7 +3219,40 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
+        },
+        "application_fee_research": {
+          "outcome": "no_fee_published",
+          "checked_on": "2026-09-01",
+          "pages_checked": [
+            "https://www.tugraz.at/en/studying-and-teaching/studying-at-tu-graz/prospective-students/registration-and-admission/admission-of-international-degree-programme-applicants/overview-admission-of-international-degree-programme-applicants"
+          ],
+          "note": {
+            "en": "TU Graz's admission overview for international degree-programme applicants sets out the deadlines, the documents and the timeline and prices none of them.",
+            "tr": "TU Graz'ın uluslararası program adayları için kabul özeti; son tarihleri, belgeleri ve takvimi ortaya koyar ve hiçbirini fiyatlandırmaz."
+          }
+        },
+        "tuition_derivation": {
+          "standard": "cost_model@3.2.0",
+          "rule": "not_derivable",
+          "reason": "no_readable_tuition_figure",
+          "derived_at": "2026-09-01"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "not_published",
+          "amount": null,
+          "currency": null,
+          "rule": "researched_absence",
+          "pages_checked": [
+            "https://www.tugraz.at/en/studying-and-teaching/studying-at-tu-graz/prospective-students/registration-and-admission/admission-of-international-degree-programme-applicants/overview-admission-of-international-degree-programme-applicants"
+          ],
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "TU Graz's admission overview for international degree-programme applicants sets out the deadlines, the documents and the timeline and prices none of them.",
+            "tr": "TU Graz'ın uluslararası program adayları için kabul özeti; son tarihleri, belgeleri ve takvimi ortaya koyar ve hiçbirini fiyatlandırmaz."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -3198,7 +3341,7 @@
         "official_rent_items": [],
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 1,
           "scaled_score": null,
@@ -3240,16 +3383,16 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -3319,12 +3462,12 @@
         "application_deadline": null,
         "deadline_events": [],
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": null,
           "status": "not_published",
           "confidence": "unknown",
           "reason": "no_iso_dated_deadline_in_record",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -3338,7 +3481,7 @@
         "official_department_page": "",
         "official_lab_pages": [],
         "third_party_sources": [],
-        "last_verified": "2026-07-14",
+        "last_verified": "2026-09-01",
         "needs_verification": true,
         "verification_notes": "",
         "field_confidence": {
@@ -3401,6 +3544,21 @@
               "en": "Official page checked directly on 14 July 2026.",
               "tr": "Resmî sayfa 14 Temmuz 2026 tarihinde doğrudan kontrol edildi."
             }
+          },
+          {
+            "url": "https://www.tugraz.at/en/studying-and-teaching/studying-at-tu-graz/prospective-students/registration-and-admission/admission-of-international-degree-programme-applicants/overview-admission-of-international-degree-programme-applicants",
+            "title": "Overview: Admission of International Degree Programme Applicants | TU Graz",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ]
       },
@@ -3522,22 +3680,22 @@
       "qs_ranking": 409,
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 2,
+        "checked_official_source_count": 3,
         "verified_fields": [
           "program",
+          "tuition",
           "curriculum"
         ],
         "unverified_critical_fields": [
           "language",
           "admission",
           "non_eu_eligibility",
-          "tuition",
           "scholarship",
           "deadline",
           "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-23"
+        "audited_at": "2026-09-01"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -3567,7 +3725,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "unknown",
         "score": null,
         "score_basis_weight": 30,
@@ -3603,7 +3761,7 @@
         "matched_tags": [],
         "confidence": "unknown",
         "legacy_relevance_status": "weak",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     {
@@ -3731,7 +3889,7 @@
         "living_cost_dkk_per_year_max": null,
         "tuition_items": [],
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": null,
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -3746,7 +3904,40 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
+        },
+        "application_fee_research": {
+          "outcome": "no_fee_published",
+          "checked_on": "2026-09-01",
+          "pages_checked": [
+            "https://www.tuwien.at/en/studies/admission/masters-programmes/other-inter-national-bachelors-degree"
+          ],
+          "note": {
+            "en": "TU Wien's admission page for master's applicants holding another national bachelor's degree gives the submission windows for non-EU/EEA citizens - 16 January to 15 July for the winter semester - and names no fee at any step.",
+            "tr": "TU Wien'in başka bir ülkenin lisans diplomasını taşıyan yüksek lisans adayları için kabul sayfası, AB/AEA dışı vatandaşlar için başvuru pencerelerini verir - kış dönemi için 16 Ocak ile 15 Temmuz arası - ve hiçbir adımda bir ücret adlandırmaz."
+          }
+        },
+        "tuition_derivation": {
+          "standard": "cost_model@3.2.0",
+          "rule": "not_derivable",
+          "reason": "no_readable_tuition_figure",
+          "derived_at": "2026-09-01"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "not_published",
+          "amount": null,
+          "currency": null,
+          "rule": "researched_absence",
+          "pages_checked": [
+            "https://www.tuwien.at/en/studies/admission/masters-programmes/other-inter-national-bachelors-degree"
+          ],
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "TU Wien's admission page for master's applicants holding another national bachelor's degree gives the submission windows for non-EU/EEA citizens - 16 January to 15 July for the winter semester - and names no fee at any step.",
+            "tr": "TU Wien'in başka bir ülkenin lisans diplomasını taşıyan yüksek lisans adayları için kabul sayfası, AB/AEA dışı vatandaşlar için başvuru pencerelerini verir - kış dönemi için 16 Ocak ile 15 Temmuz arası - ve hiçbir adımda bir ücret adlandırmaz."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -3835,7 +4026,7 @@
         "official_rent_items": [],
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 2,
           "scaled_score": null,
@@ -3877,16 +4068,16 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -3961,12 +4152,12 @@
         "application_deadline": null,
         "deadline_events": [],
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": null,
           "status": "not_published",
           "confidence": "unknown",
           "reason": "no_iso_dated_deadline_in_record",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -3980,7 +4171,7 @@
         "official_department_page": "",
         "official_lab_pages": [],
         "third_party_sources": [],
-        "last_verified": "2026-07-14",
+        "last_verified": "2026-09-01",
         "needs_verification": true,
         "verification_notes": "",
         "field_confidence": {
@@ -4042,6 +4233,21 @@
               "en": "Official page checked directly on 14 July 2026.",
               "tr": "Resmî sayfa 14 Temmuz 2026 tarihinde doğrudan kontrol edildi."
             }
+          },
+          {
+            "url": "https://www.tuwien.at/en/studies/admission/masters-programmes/other-inter-national-bachelors-degree",
+            "title": "Other (inter-)national Bachelor's degree | TU Wien",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ]
       },
@@ -4163,22 +4369,22 @@
       "qs_ranking": 191,
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 2,
+        "checked_official_source_count": 3,
         "verified_fields": [
           "program",
+          "tuition",
           "curriculum"
         ],
         "unverified_critical_fields": [
           "language",
           "admission",
           "non_eu_eligibility",
-          "tuition",
           "scholarship",
           "deadline",
           "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-23"
+        "audited_at": "2026-09-01"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -4208,7 +4414,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "unknown",
         "score": null,
         "score_basis_weight": 30,
@@ -4244,7 +4450,7 @@
         "matched_tags": [],
         "confidence": "unknown",
         "legacy_relevance_status": "weak",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     {
@@ -4375,7 +4581,7 @@
         "living_cost_dkk_per_year_max": null,
         "tuition_items": [],
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": null,
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -4390,7 +4596,40 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
+        },
+        "application_fee_research": {
+          "outcome": "no_fee_published",
+          "checked_on": "2026-09-01",
+          "pages_checked": [
+            "https://www.tuwien.at/en/studies/admission/masters-programmes/other-inter-national-bachelors-degree"
+          ],
+          "note": {
+            "en": "TU Wien's admission page for master's applicants holding another national bachelor's degree gives the submission windows for non-EU/EEA citizens and names no fee at any step.",
+            "tr": "TU Wien'in başka bir ülkenin lisans diplomasını taşıyan yüksek lisans adayları için kabul sayfası, AB/AEA dışı vatandaşlar için başvuru pencerelerini verir ve hiçbir adımda bir ücret adlandırmaz."
+          }
+        },
+        "tuition_derivation": {
+          "standard": "cost_model@3.2.0",
+          "rule": "not_derivable",
+          "reason": "no_readable_tuition_figure",
+          "derived_at": "2026-09-01"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "not_published",
+          "amount": null,
+          "currency": null,
+          "rule": "researched_absence",
+          "pages_checked": [
+            "https://www.tuwien.at/en/studies/admission/masters-programmes/other-inter-national-bachelors-degree"
+          ],
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "TU Wien's admission page for master's applicants holding another national bachelor's degree gives the submission windows for non-EU/EEA citizens and names no fee at any step.",
+            "tr": "TU Wien'in başka bir ülkenin lisans diplomasını taşıyan yüksek lisans adayları için kabul sayfası, AB/AEA dışı vatandaşlar için başvuru pencerelerini verir ve hiçbir adımda bir ücret adlandırmaz."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -4479,7 +4718,7 @@
         "official_rent_items": [],
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 2,
           "scaled_score": null,
@@ -4521,16 +4760,16 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -4601,12 +4840,12 @@
         "application_deadline": null,
         "deadline_events": [],
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": null,
           "status": "not_published",
           "confidence": "unknown",
           "reason": "no_iso_dated_deadline_in_record",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -4620,7 +4859,7 @@
         "official_department_page": "",
         "official_lab_pages": [],
         "third_party_sources": [],
-        "last_verified": "2026-07-14",
+        "last_verified": "2026-09-01",
         "needs_verification": true,
         "verification_notes": "",
         "field_confidence": {
@@ -4670,6 +4909,21 @@
               "en": "Official page checked directly on 14 July 2026.",
               "tr": "Resmî sayfa 14 Temmuz 2026 tarihinde doğrudan kontrol edildi."
             }
+          },
+          {
+            "url": "https://www.tuwien.at/en/studies/admission/masters-programmes/other-inter-national-bachelors-degree",
+            "title": "Other (inter-)national Bachelor's degree | TU Wien",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ]
       },
@@ -4791,22 +5045,22 @@
       "qs_ranking": 191,
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 1,
+        "checked_official_source_count": 2,
         "verified_fields": [
           "program",
+          "tuition",
           "curriculum"
         ],
         "unverified_critical_fields": [
           "language",
           "admission",
           "non_eu_eligibility",
-          "tuition",
           "scholarship",
           "deadline",
           "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-23"
+        "audited_at": "2026-09-01"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -4836,7 +5090,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "unknown",
         "score": null,
         "score_basis_weight": 30,
@@ -4872,7 +5126,7 @@
         "matched_tags": [],
         "confidence": "unknown",
         "legacy_relevance_status": "weak",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     {
@@ -5003,7 +5257,7 @@
         "living_cost_dkk_per_year_max": null,
         "tuition_items": [],
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": null,
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -5018,7 +5272,40 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
+        },
+        "application_fee_research": {
+          "outcome": "no_fee_published",
+          "checked_on": "2026-09-01",
+          "pages_checked": [
+            "https://www.uibk.ac.at/en/admission-department/admission/"
+          ],
+          "note": {
+            "en": "Innsbruck's admission department page names the tuition fee and the Austrian Student Union fee and no charge for applying. A third-country national pays EUR 726.72 a semester plus the union fee, both from the first semester of enrolment.",
+            "tr": "Innsbruck'un kabul birimi sayfası, öğrenim ücreti ile Avusturya Öğrenci Birliği aidatını adlandırır; başvuru için bir ücret adlandırmaz. Üçüncü ülke vatandaşı, ikisi de kaydın ilk döneminden itibaren olmak üzere dönemde 726,72 avro ile birlik aidatını öder."
+          }
+        },
+        "tuition_derivation": {
+          "standard": "cost_model@3.2.0",
+          "rule": "not_derivable",
+          "reason": "no_readable_tuition_figure",
+          "derived_at": "2026-09-01"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "not_published",
+          "amount": null,
+          "currency": null,
+          "rule": "researched_absence",
+          "pages_checked": [
+            "https://www.uibk.ac.at/en/admission-department/admission/"
+          ],
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "Innsbruck's admission department page names the tuition fee and the Austrian Student Union fee and no charge for applying. A third-country national pays EUR 726.72 a semester plus the union fee, both from the first semester of enrolment.",
+            "tr": "Innsbruck'un kabul birimi sayfası, öğrenim ücreti ile Avusturya Öğrenci Birliği aidatını adlandırır; başvuru için bir ücret adlandırmaz. Üçüncü ülke vatandaşı, ikisi de kaydın ilk döneminden itibaren olmak üzere dönemde 726,72 avro ile birlik aidatını öder."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -5107,7 +5394,7 @@
         "official_rent_items": [],
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 3,
           "scaled_score": null,
@@ -5149,16 +5436,16 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -5232,12 +5519,12 @@
         "application_deadline": null,
         "deadline_events": [],
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": null,
           "status": "not_published",
           "confidence": "unknown",
           "reason": "no_iso_dated_deadline_in_record",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -5251,7 +5538,7 @@
         "official_department_page": "",
         "official_lab_pages": [],
         "third_party_sources": [],
-        "last_verified": "2026-07-14",
+        "last_verified": "2026-09-01",
         "needs_verification": true,
         "verification_notes": "",
         "field_confidence": {
@@ -5301,6 +5588,21 @@
             "confidence": "medium",
             "notes": "Coordinates resolved at exact confidence; this is a map placement signal, not an official programme fact.",
             "final_url": "https://nominatim.openstreetmap.org/ui/search.html"
+          },
+          {
+            "url": "https://www.uibk.ac.at/en/admission-department/admission/",
+            "title": "Admission to Study Programmes | Universitat Innsbruck",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ]
       },
@@ -5422,22 +5724,22 @@
       "qs_ranking": 333,
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 1,
+        "checked_official_source_count": 2,
         "verified_fields": [
           "program",
+          "tuition",
           "curriculum"
         ],
         "unverified_critical_fields": [
           "language",
           "admission",
           "non_eu_eligibility",
-          "tuition",
           "scholarship",
           "deadline",
           "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-23"
+        "audited_at": "2026-09-01"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -5467,7 +5769,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "unknown",
         "score": null,
         "score_basis_weight": 30,
@@ -5503,7 +5805,7 @@
         "matched_tags": [],
         "confidence": "unknown",
         "legacy_relevance_status": "weak",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     {
@@ -5594,7 +5896,7 @@
         "tuition_basis": "needs_verification",
         "regional_tax_eur": null,
         "student_contribution_eur": null,
-        "application_fee_eur": null,
+        "application_fee_eur": 0,
         "enrollment_fee_eur": null,
         "total_academic_cost_eur_per_year_estimated": null,
         "isee_or_income_based": false,
@@ -5631,7 +5933,7 @@
         "living_cost_dkk_per_year_max": null,
         "tuition_items": [],
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": null,
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -5646,7 +5948,55 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
+        },
+        "application_fee_verification": {
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "JKU states it in words on its international students page: application submissions to the JKU Linz must always be submitted by the applicants themselves and are free of charge. A handful of programmes carry their own registration fee - International Business Administration charges EUR 50 - and Mechatronics is not one of them.",
+            "tr": "JKU bunu uluslararası öğrenciler sayfasında sözle belirtir: JKU Linz'e başvurular daima adayların kendileri tarafından yapılmalıdır ve ücretsizdir. Birkaç programın kendi kayıt ücreti vardır - International Business Administration 50 avro alır - ve Mechatronics bunlardan biri değildir."
+          },
+          "confidence": "high"
+        },
+        "tuition_derivation": {
+          "standard": "cost_model@3.2.0",
+          "rule": "not_derivable",
+          "reason": "no_readable_tuition_figure",
+          "derived_at": "2026-09-01"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "no_fee",
+          "amount": 0.0,
+          "currency": "EUR",
+          "amount_eur_equivalent": null,
+          "scope": "unknown",
+          "charged_per": "application",
+          "charged_by": "university",
+          "charged_by_name": null,
+          "additional_application_amount": null,
+          "academic_cycle": null,
+          "early_amount": null,
+          "early_deadline": null,
+          "covers_programmes": null,
+          "refundable": null,
+          "components": [],
+          "waiver": {
+            "available": null,
+            "open_to_international": null,
+            "request_deadline": null,
+            "processing_days": null
+          },
+          "payment_due_days_after_deadline": null,
+          "rule": "published_no_fee",
+          "derived_from": {
+            "cost_profile.application_fee_eur": 0
+          },
+          "note": {
+            "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+            "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -5735,7 +6085,7 @@
         "official_rent_items": [],
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 1,
           "scaled_score": null,
@@ -5777,16 +6127,16 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -5857,12 +6207,12 @@
         "application_deadline": null,
         "deadline_events": [],
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": null,
           "status": "not_published",
           "confidence": "unknown",
           "reason": "no_iso_dated_deadline_in_record",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -5876,7 +6226,7 @@
         "official_department_page": "",
         "official_lab_pages": [],
         "third_party_sources": [],
-        "last_verified": "2026-07-14",
+        "last_verified": "2026-09-01",
         "needs_verification": true,
         "verification_notes": "German taught.",
         "field_confidence": {
@@ -5927,6 +6277,21 @@
             "confidence": "low",
             "notes": "Coordinates resolved at city confidence; this is a map placement signal, not an official programme fact.",
             "final_url": "https://nominatim.openstreetmap.org/ui/search.html"
+          },
+          {
+            "url": "https://www.jku.at/en/degree-programs/international-students/international-students/",
+            "title": "International Students | JKU Linz",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ]
       },
@@ -6048,22 +6413,22 @@
       "qs_ranking": 458,
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 1,
+        "checked_official_source_count": 2,
         "verified_fields": [
           "program",
+          "tuition",
           "curriculum"
         ],
         "unverified_critical_fields": [
           "language",
           "admission",
           "non_eu_eligibility",
-          "tuition",
           "scholarship",
           "deadline",
           "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-23"
+        "audited_at": "2026-09-01"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -6093,7 +6458,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "unknown",
         "score": null,
         "score_basis_weight": 30,
@@ -6129,7 +6494,7 @@
         "matched_tags": [],
         "confidence": "unknown",
         "legacy_relevance_status": "weak",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     {
@@ -6260,7 +6625,7 @@
         "living_cost_dkk_per_year_max": null,
         "tuition_items": [],
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": null,
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -6275,7 +6640,40 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
+        },
+        "application_fee_research": {
+          "outcome": "no_fee_published",
+          "checked_on": "2026-09-01",
+          "pages_checked": [
+            "https://ssc.unileoben.ac.at/en/start-of-studies/application/application-to-a-masters-programme"
+          ],
+          "note": {
+            "en": "Leoben's master's application page walks through MUonline pre-registration, document upload, the equivalence assessment and in-person enrolment, and the only money it names is the tuition and student union fee paid at that last step.",
+            "tr": "Leoben'in yüksek lisans başvuru sayfası; MUonline ön kaydını, belge yüklemeyi, denklik değerlendirmesini ve yüz yüze kaydı anlatır ve adlandırdığı tek para, o son adımda ödenen öğrenim ücreti ile öğrenci birliği aidatıdır."
+          }
+        },
+        "tuition_derivation": {
+          "standard": "cost_model@3.2.0",
+          "rule": "not_derivable",
+          "reason": "no_readable_tuition_figure",
+          "derived_at": "2026-09-01"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "not_published",
+          "amount": null,
+          "currency": null,
+          "rule": "researched_absence",
+          "pages_checked": [
+            "https://ssc.unileoben.ac.at/en/start-of-studies/application/application-to-a-masters-programme"
+          ],
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "Leoben's master's application page walks through MUonline pre-registration, document upload, the equivalence assessment and in-person enrolment, and the only money it names is the tuition and student union fee paid at that last step.",
+            "tr": "Leoben'in yüksek lisans başvuru sayfası; MUonline ön kaydını, belge yüklemeyi, denklik değerlendirmesini ve yüz yüze kaydı anlatır ve adlandırdığı tek para, o son adımda ödenen öğrenim ücreti ile öğrenci birliği aidatıdır."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -6364,7 +6762,7 @@
         "official_rent_items": [],
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 0,
           "scaled_score": null,
@@ -6406,16 +6804,16 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -6488,12 +6886,12 @@
         "application_deadline": null,
         "deadline_events": [],
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": null,
           "status": "not_published",
           "confidence": "unknown",
           "reason": "no_iso_dated_deadline_in_record",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -6507,7 +6905,7 @@
         "official_department_page": "",
         "official_lab_pages": [],
         "third_party_sources": [],
-        "last_verified": "2026-07-14",
+        "last_verified": "2026-09-01",
         "needs_verification": true,
         "verification_notes": "",
         "field_confidence": {
@@ -6557,6 +6955,21 @@
               "en": "Official page checked directly on 14 July 2026.",
               "tr": "Resmî sayfa 14 Temmuz 2026 tarihinde doğrudan kontrol edildi."
             }
+          },
+          {
+            "url": "https://ssc.unileoben.ac.at/en/start-of-studies/application/application-to-a-masters-programme",
+            "title": "Application to a Master's Programme | Montanuniversitat Leoben Study Support Center",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ]
       },
@@ -6678,22 +7091,22 @@
       "qs_ranking": null,
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 1,
+        "checked_official_source_count": 2,
         "verified_fields": [
           "program",
+          "tuition",
           "curriculum"
         ],
         "unverified_critical_fields": [
           "language",
           "admission",
           "non_eu_eligibility",
-          "tuition",
           "scholarship",
           "deadline",
           "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-23"
+        "audited_at": "2026-09-01"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -6723,7 +7136,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "unknown",
         "score": null,
         "score_basis_weight": 30,
@@ -6759,7 +7172,7 @@
         "matched_tags": [],
         "confidence": "unknown",
         "legacy_relevance_status": "weak",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     {
@@ -6887,7 +7300,7 @@
         "living_cost_dkk_per_year_max": null,
         "tuition_items": [],
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": null,
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -6902,7 +7315,40 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
+        },
+        "application_fee_research": {
+          "outcome": "no_fee_published",
+          "checked_on": "2026-09-01",
+          "pages_checked": [
+            "https://www.fh-ooe.at/en/international/degree-seeking-students/application/"
+          ],
+          "note": {
+            "en": "FH Upper Austria's application page for degree-seeking international students lists six steps - online application for up to two programmes, online interview and entrance test, updates, acceptance letter, start of studies - and prices none of them. That is worth checking, because two of the Austrian universities of applied sciences in this catalogue do charge: FH Wiener Neustadt EUR 250 and FH JOANNEUM EUR 10.",
+            "tr": "FH Yukarı Avusturya'nın diploma programına başvuran uluslararası öğrenciler için sayfası altı adım listeler - en fazla iki programa çevrimiçi başvuru, çevrimiçi mülakat ve giriş sınavı, bilgilendirmeler, kabul mektubu, öğrenime başlama - ve hiçbirini fiyatlandırmaz. Bunu kontrol etmek önemlidir, çünkü bu katalogdaki Avusturya Uygulamalı Bilimler üniversitelerinden ikisi ücret alır: FH Wiener Neustadt 250 avro ve FH JOANNEUM 10 avro."
+          }
+        },
+        "tuition_derivation": {
+          "standard": "cost_model@3.2.0",
+          "rule": "not_derivable",
+          "reason": "no_readable_tuition_figure",
+          "derived_at": "2026-09-01"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "not_published",
+          "amount": null,
+          "currency": null,
+          "rule": "researched_absence",
+          "pages_checked": [
+            "https://www.fh-ooe.at/en/international/degree-seeking-students/application/"
+          ],
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "FH Upper Austria's application page for degree-seeking international students lists six steps - online application for up to two programmes, online interview and entrance test, updates, acceptance letter, start of studies - and prices none of them. That is worth checking, because two of the Austrian universities of applied sciences in this catalogue do charge: FH Wiener Neustadt EUR 250 and FH JOANNEUM EUR 10.",
+            "tr": "FH Yukarı Avusturya'nın diploma programına başvuran uluslararası öğrenciler için sayfası altı adım listeler - en fazla iki programa çevrimiçi başvuru, çevrimiçi mülakat ve giriş sınavı, bilgilendirmeler, kabul mektubu, öğrenime başlama - ve hiçbirini fiyatlandırmaz. Bunu kontrol etmek önemlidir, çünkü bu katalogdaki Avusturya Uygulamalı Bilimler üniversitelerinden ikisi ücret alır: FH Wiener Neustadt 250 avro ve FH JOANNEUM 10 avro."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -6991,7 +7437,7 @@
         "official_rent_items": [],
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 1,
           "scaled_score": null,
@@ -7033,16 +7479,16 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -7112,12 +7558,12 @@
         "application_deadline": null,
         "deadline_events": [],
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": null,
           "status": "not_published",
           "confidence": "unknown",
           "reason": "no_iso_dated_deadline_in_record",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -7131,7 +7577,7 @@
         "official_department_page": "",
         "official_lab_pages": [],
         "third_party_sources": [],
-        "last_verified": "2026-07-14",
+        "last_verified": "2026-09-01",
         "needs_verification": true,
         "verification_notes": "German taught program. Might lack English courses.",
         "field_confidence": {
@@ -7181,6 +7627,21 @@
               "en": "Official page checked directly on 14 July 2026.",
               "tr": "Resmî sayfa 14 Temmuz 2026 tarihinde doğrudan kontrol edildi."
             }
+          },
+          {
+            "url": "https://www.fh-ooe.at/en/international/degree-seeking-students/application/",
+            "title": "Application Process | FH Upper Austria",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ]
       },
@@ -7302,22 +7763,22 @@
       "qs_ranking": null,
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 1,
+        "checked_official_source_count": 2,
         "verified_fields": [
           "program",
+          "tuition",
           "curriculum"
         ],
         "unverified_critical_fields": [
           "language",
           "admission",
           "non_eu_eligibility",
-          "tuition",
           "scholarship",
           "deadline",
           "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-23"
+        "audited_at": "2026-09-01"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -7347,7 +7808,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "unknown",
         "score": null,
         "score_basis_weight": 30,
@@ -7383,7 +7844,7 @@
         "matched_tags": [],
         "confidence": "unknown",
         "legacy_relevance_status": "weak",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     }
   ]

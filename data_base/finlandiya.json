@@ -59,6 +59,13 @@
           "validity_rule": "",
           "waiver_rules": [],
           "source_ids": []
+        },
+        "application_fee_scope": "non-EU/EEA and non-Swiss citizens",
+        "application_fee_refundable": false,
+        "application_fee_waiver_possible": false,
+        "application_fee_waiver": {
+          "en": "Aalto states that the fee is mandated by Finnish law and that no waivers are available, and that paying it does not guarantee admission.",
+          "tr": "Aalto, ücretin Fin yasasıyla zorunlu kılındığını ve hiçbir muafiyet bulunmadığını, ödemenin de kabul garantisi vermediğini belirtir."
         }
       },
       "language_profile": {
@@ -80,7 +87,7 @@
         "tuition_eur_per_year_max": null,
         "tuition_eur_per_year_estimated": null,
         "tuition_basis": "non-EU/EEA/Swiss citizens in an English-taught technology Master's programme",
-        "application_fee_eur": null,
+        "application_fee_eur": 100,
         "source_notes": {
           "en": "Programme-specific annual tuition is published directly by Aalto.",
           "tr": "Programa özgü yıllık öğrenim ücreti Aalto tarafından doğrudan yayımlanır."
@@ -117,7 +124,7 @@
         "living_cost_dkk_per_year_max": null,
         "tuition_items": [],
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": null,
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -132,7 +139,61 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
+        },
+        "application_fee_charged_by": "central_application_service",
+        "application_fee_charged_by_name": "Studyinfo.fi",
+        "application_fee_verification": {
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "EUR 100, collected not by Aalto but by the Finnish National Agency for Education through Studyinfo.fi, and it must be paid within seven days of submitting the online form. It cannot be paid late, and an unpaid application is not processed at all.",
+            "tr": "Aalto tarafından değil, Fin Ulusal Eğitim Ajansı tarafından Studyinfo.fi üzerinden toplanan 100 avro; çevrimiçi formun gönderilmesinden sonraki yedi gün içinde ödenmelidir. Geç ödenemez ve ödenmemiş bir başvuru hiç işlenmez."
+          },
+          "confidence": "high"
+        },
+        "tuition_derivation": {
+          "standard": "cost_model@3.2.0",
+          "rule": "not_derivable",
+          "reason": "no_readable_tuition_figure",
+          "derived_at": "2026-09-01"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "published",
+          "amount": 100.0,
+          "currency": "EUR",
+          "amount_eur_equivalent": null,
+          "scope": "non_eu_applicants",
+          "charged_per": "application",
+          "charged_by": "central_application_service",
+          "charged_by_name": "Studyinfo.fi",
+          "additional_application_amount": null,
+          "academic_cycle": null,
+          "early_amount": null,
+          "early_deadline": null,
+          "covers_programmes": null,
+          "refundable": false,
+          "components": [],
+          "waiver": {
+            "available": false,
+            "open_to_international": true,
+            "request_deadline": null,
+            "processing_days": null,
+            "note": {
+              "en": "Aalto states that the fee is mandated by Finnish law and that no waivers are available, and that paying it does not guarantee admission.",
+              "tr": "Aalto, ücretin Fin yasasıyla zorunlu kılındığını ve hiçbir muafiyet bulunmadığını, ödemenin de kabul garantisi vermediğini belirtir."
+            }
+          },
+          "payment_due_days_after_deadline": null,
+          "rule": "published_application_fee",
+          "derived_from": {
+            "cost_profile.application_fee_eur": 100
+          },
+          "note": {
+            "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+            "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -214,7 +275,7 @@
         "official_rent_items": [],
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": null,
           "scaled_score": null,
@@ -257,16 +318,16 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -331,12 +392,12 @@
         "application_deadline": null,
         "deadline_events": [],
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": null,
           "status": "not_published",
           "confidence": "unknown",
           "reason": "no_iso_dated_deadline_in_record",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -479,9 +540,24 @@
               "en": "Official page states that housing is arranged through HOAS/AYY and cannot be guaranteed to all applicants.",
               "tr": "Resmî sayfa konutun HOAS/AYY üzerinden ayarlandığını ve tüm adaylara garanti edilemediğini belirtir."
             }
+          },
+          {
+            "url": "https://www.aalto.fi/en/admission-services/masters-admissions-frequently-asked-questions",
+            "title": "Master's Admissions FAQ | Aalto University",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ],
-        "last_verified": "2026-07-19",
+        "last_verified": "2026-09-01",
         "verification_notes": {
           "en": "The database record represents the separately applied-to Aalto MSc and its Space Science and Technology major, not a duplicate record for the joint SpaceMaster route.",
           "tr": "Veritabanı kaydı ortak SpaceMaster yolunun kopyası değil, ayrı başvurulan Aalto MSc ve içindeki Space Science and Technology ana dalıdır."
@@ -606,22 +682,23 @@
         }
       },
       "data_quality": {
-        "status": "needs_verification",
-        "checked_official_source_count": 0,
-        "verified_fields": [],
+        "status": "partial",
+        "checked_official_source_count": 1,
+        "verified_fields": [
+          "tuition"
+        ],
         "unverified_critical_fields": [
           "program",
           "language",
           "admission",
           "non_eu_eligibility",
-          "tuition",
           "scholarship",
           "deadline",
           "curriculum",
           "housing"
         ],
-        "has_checked_source_log": false,
-        "audited_at": "2026-08-23"
+        "has_checked_source_log": true,
+        "audited_at": "2026-09-01"
       },
       "quality_control": {
         "qc_status": "needs_revision",
@@ -701,7 +778,7 @@
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "unknown",
         "score": null,
         "score_basis_weight": 0,
@@ -744,7 +821,7 @@
         ],
         "confidence": "unknown",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     }
   ]

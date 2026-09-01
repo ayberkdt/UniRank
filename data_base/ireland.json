@@ -263,7 +263,7 @@
         "tr": "29.500 EUR ücreti varsayılan bir bursla netleştirmeyin; UCD bütçenin burs kazanımına dayandırılmamasını açıkça tavsiye eder."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": null,
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -278,13 +278,60 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_derivation": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-08-30"
+        "derived_at": "2026-09-01"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 70.0,
+        "currency": "EUR",
+        "amount_eur_equivalent": null,
+        "scope": "unknown",
+        "charged_per": "admission_portal_account",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": "current page checked 2026-08-14",
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "application_fee_items": [
+            {
+              "amount": 70,
+              "currency": "EUR",
+              "period": "one_time",
+              "applicant_scope": "applicant",
+              "academic_cycle": "current page checked 2026-08-14",
+              "mandatory": true,
+              "basis": "One fee permits multiple programme applications for the same intake",
+              "source_ids": [
+                "ie_ucd_apply_fee"
+              ]
+            }
+          ]
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -378,7 +425,7 @@
       "housing_difficulty": "unknown",
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 3,
         "scaled_score": null,
@@ -419,16 +466,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -638,12 +685,12 @@
         "tr": "1 Ekim'i hazırlık hedefi, dönemsel kontenjanı gerçek son tarih sayın; haziran sonunu beklemeyin. Burs başvuruları çok daha erken kapanır ve önce program teklifi gerektirir."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -1158,7 +1205,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "unknown",
       "score": null,
       "score_basis_weight": 30,
@@ -1202,7 +1249,7 @@
       ],
       "confidence": "unknown",
       "legacy_relevance_status": null,
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     }
   }
 ]

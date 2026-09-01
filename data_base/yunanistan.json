@@ -97,7 +97,7 @@
         "living_cost_dkk_per_year_min": null,
         "living_cost_dkk_per_year_max": null,
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "EUR",
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -113,7 +113,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "tuition_eur_per_year": 6000.0,
         "tuition_derivation": {
@@ -127,6 +127,33 @@
           "currency": "EUR",
           "includes_mandatory_fees": false,
           "derived_at": "2026-08-30"
+        },
+        "application_fee_research": {
+          "outcome": "no_fee_published",
+          "checked_on": "2026-09-01",
+          "pages_checked": [
+            "https://qa.auth.gr/en/pms/395"
+          ],
+          "note": {
+            "en": "The programme's official listing prices the degree itself at EUR 6,000 in tuition and names no charge for applying.",
+            "tr": "Programın resmî kaydı, diplomanın kendisini 6.000 avroluk öğrenim ücretiyle fiyatlandırır ve başvurmak için bir kalem adlandırmaz."
+          }
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "not_published",
+          "amount": null,
+          "currency": null,
+          "rule": "researched_absence",
+          "pages_checked": [
+            "https://qa.auth.gr/en/pms/395"
+          ],
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "The programme's official listing prices the degree itself at EUR 6,000 in tuition and names no charge for applying.",
+            "tr": "Programın resmî kaydı, diplomanın kendisini 6.000 avroluk öğrenim ücretiyle fiyatlandırır ve başvurmak için bir kalem adlandırmaz."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -209,7 +236,7 @@
         "official_rent_items": [],
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": null,
           "scaled_score": null,
@@ -252,16 +279,16 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -416,7 +443,7 @@
           "tr": "2026/27 ilanı 31 Ağustos 2026 tarihini verir; PDF içindeki bir cümle tutarsız biçimde 2025/26 dediğinden tarih bu uyarıyla kaydedildi."
         },
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-08-31",
           "next_expected_date": null,
           "time": null,
@@ -424,12 +451,12 @@
           "applies_to": "non_eu",
           "cycle_label": null,
           "is_recurring_annual": false,
-          "status": "closing_soon",
-          "days_remaining_at_evaluation": 1,
+          "status": "closed",
+          "days_remaining_at_evaluation": -1,
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://career.auth.gr/wp-content/uploads/2026/04/%CE%A0%CF%81%CE%BF%CE%BA%CE%AE%CF%81%CF%85%CE%BE%CE%B7-%CE%94%CE%A0%CE%9C%CE%A3-UAV-2026-27-3.pdf",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -546,9 +573,24 @@
               "en": "Publishes the hosting and co-active schools, the director with his email address, the EUR 6,000 fee, the 'Without Scholarship' status, 90 ECTS over three semesters, 35 entrants per year, portfolio-examination recruitment and the 2024-25 to 2028-29 operating window.",
               "tr": "Ev sahibi ve ortak etkin okulları, e-posta adresiyle birlikte direktörü, 6.000 avroluk ücreti, 'Burssuz' durumunu, üç dönemde 90 AKTS'yi, yılda 35 kişilik alımı, portföy incelemesiyle alımı ve 2024-25 ile 2028-29 arası işletme penceresini yayımlar."
             }
+          },
+          {
+            "url": "https://qa.auth.gr/en/pms/395",
+            "title": "MSc in Aerial Autonomous Systems | Aristotle University of Thessaloniki",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ],
-        "last_verified": "2026-08-30",
+        "last_verified": "2026-09-01",
         "verification_notes": {
           "en": "Unknown fields remain explicit.",
           "tr": "Bilinmeyen alanlar açık bırakıldı."
@@ -611,7 +653,7 @@
       },
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 5,
+        "checked_official_source_count": 6,
         "verified_fields": [
           "program",
           "admission",
@@ -626,7 +668,7 @@
           "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-30"
+        "audited_at": "2026-09-01"
       },
       "quality_control": {
         "qc_status": "needs_revision",
@@ -672,7 +714,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "strong_adjacent",
         "score": 60,
         "score_basis_weight": 80,
@@ -718,7 +760,7 @@
         ],
         "confidence": "medium",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "research_group_evidence": {
@@ -829,7 +871,7 @@
         "living_cost_dkk_per_year_min": null,
         "living_cost_dkk_per_year_max": null,
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "EUR",
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -845,7 +887,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "tuition_eur_per_year": 2666.67,
         "tuition_derivation": {
@@ -859,6 +901,33 @@
           "currency": "EUR",
           "includes_mandatory_fees": false,
           "derived_at": "2026-08-30"
+        },
+        "application_fee_research": {
+          "outcome": "no_fee_published",
+          "checked_on": "2026-09-01",
+          "pages_checked": [
+            "https://mead-ata.upatras.gr/"
+          ],
+          "note": {
+            "en": "The programme's own site carries the call for applications with its window - 11 May to 17 July 2026 for the 2026-2027 winter intake - and prices neither the application nor the programme.",
+            "tr": "Programın kendi sitesi, başvuru çağrısını penceresiyle birlikte taşır - 2026-2027 kış dönemi için 11 Mayıs - 17 Temmuz 2026 - ve ne başvuruyu ne de programı fiyatlandırır."
+          }
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "not_published",
+          "amount": null,
+          "currency": null,
+          "rule": "researched_absence",
+          "pages_checked": [
+            "https://mead-ata.upatras.gr/"
+          ],
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "The programme's own site carries the call for applications with its window - 11 May to 17 July 2026 for the 2026-2027 winter intake - and prices neither the application nor the programme.",
+            "tr": "Programın kendi sitesi, başvuru çağrısını penceresiyle birlikte taşır - 2026-2027 kış dönemi için 11 Mayıs - 17 Temmuz 2026 - ve ne başvuruyu ne de programı fiyatlandırır."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -933,7 +1002,7 @@
         "official_rent_items": [],
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": null,
           "scaled_score": null,
@@ -976,16 +1045,16 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -1134,7 +1203,7 @@
           "tr": "2026-2027 çağrısı 11 Mayıs'tan 17 Temmuz 2026'ya kadar sürdü ve şimdi kapalıdır; çağrıya bir uzatma 26 Haziran 2026'da duyurulmuştur. Bu, programın ilk alımı olduğu için tarihleri bir kural değil, beklenecek bir örüntü olarak gör — ikinci döngünün penceresi kayabilir."
         },
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-07-17",
           "next_expected_date": "2027-07-17",
           "time": null,
@@ -1143,11 +1212,11 @@
           "cycle_label": null,
           "is_recurring_annual": true,
           "status": "closed",
-          "days_remaining_at_evaluation": -44,
+          "days_remaining_at_evaluation": -46,
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://mead-ata.upatras.gr/prokirixi-2026-2027/",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         },
@@ -1249,9 +1318,24 @@
               "en": "States the lead and collaborating departments, that the programme starts for the first time in the winter semester of 2026-2027, its aims including National Defence, and the 11 May to 17 July 2026 application window with its announced extension.",
               "tr": "Öncü ve iş birliği yapan bölümleri, programın 2026-2027 kış döneminde ilk kez başladığını, Ulusal Savunmayı da içeren amaçlarını ve duyurulan uzatmasıyla birlikte 11 Mayıs–17 Temmuz 2026 başvuru penceresini belirtir."
             }
+          },
+          {
+            "url": "https://mead-ata.upatras.gr/",
+            "title": "MSc Advanced Technologies in Aeronautics | University of Patras",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ],
-        "last_verified": "2026-08-30",
+        "last_verified": "2026-09-01",
         "verification_notes": {
           "en": "Unknown fields remain explicit.",
           "tr": "Bilinmeyen alanlar açık bırakıldı."
@@ -1314,7 +1398,7 @@
       },
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 4,
+        "checked_official_source_count": 5,
         "verified_fields": [
           "program",
           "admission",
@@ -1329,7 +1413,7 @@
           "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-30"
+        "audited_at": "2026-09-01"
       },
       "quality_control": {
         "qc_status": "needs_revision",
@@ -1379,7 +1463,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "unknown",
         "score": null,
         "score_basis_weight": 55,
@@ -1424,7 +1508,7 @@
         ],
         "confidence": "unknown",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "research_group_evidence": {
@@ -1546,7 +1630,7 @@
         "living_cost_dkk_per_year_max": null,
         "tuition_items": [],
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": null,
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -1561,7 +1645,40 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
+        },
+        "application_fee_research": {
+          "outcome": "no_fee_published",
+          "checked_on": "2026-09-01",
+          "pages_checked": [
+            "https://www.di.uoa.gr/en/studies/graduate/star"
+          ],
+          "note": {
+            "en": "The Department of Informatics and Telecommunications runs STAR's administration, and its programme page carries no fee of any kind - neither to apply nor to study. The programme's own site at star.uoa.gr served a certificate issued for a different host on 1 September 2026 and could not be read.",
+            "tr": "STAR'ın idaresini Bilgisayar ve Telekomünikasyon Bölümü yürütür ve bölümün program sayfası hiçbir ücret taşımaz - ne başvurmak ne de okumak için. Programın kendi sitesi star.uoa.gr, 1 Eylül 2026'da başka bir sunucu için düzenlenmiş bir sertifika sundu ve okunamadı."
+          }
+        },
+        "tuition_derivation": {
+          "standard": "cost_model@3.2.0",
+          "rule": "not_derivable",
+          "reason": "no_readable_tuition_figure",
+          "derived_at": "2026-09-01"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "not_published",
+          "amount": null,
+          "currency": null,
+          "rule": "researched_absence",
+          "pages_checked": [
+            "https://www.di.uoa.gr/en/studies/graduate/star"
+          ],
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "The Department of Informatics and Telecommunications runs STAR's administration, and its programme page carries no fee of any kind - neither to apply nor to study. The programme's own site at star.uoa.gr served a certificate issued for a different host on 1 September 2026 and could not be read.",
+            "tr": "STAR'ın idaresini Bilgisayar ve Telekomünikasyon Bölümü yürütür ve bölümün program sayfası hiçbir ücret taşımaz - ne başvurmak ne de okumak için. Programın kendi sitesi star.uoa.gr, 1 Eylül 2026'da başka bir sunucu için düzenlenmiş bir sertifika sundu ve okunamadı."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -1636,7 +1753,7 @@
         "official_rent_items": [],
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": null,
           "scaled_score": null,
@@ -1679,16 +1796,16 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -1785,12 +1902,12 @@
         "application_deadline": null,
         "deadline_events": [],
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": null,
           "status": "not_published",
           "confidence": "unknown",
           "reason": "no_iso_dated_deadline_in_record",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -1887,9 +2004,24 @@
               "en": "TLS certificate mismatch: the certificate served for star.uoa.gr does not list that hostname. The page could not be retrieved, so it cannot act as a primary source for any field.",
               "tr": "TLS sertifika uyuşmazlığı: star.uoa.gr için sunulan sertifika bu alan adını listelemiyor. Sayfa alınamadığından hiçbir alan için birincil kaynak olamaz."
             }
+          },
+          {
+            "url": "https://www.di.uoa.gr/en/studies/graduate/star",
+            "title": "Space Technologies, Applications and SeRvices - STAR | Department of Informatics and Telecommunications, NKUA",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ],
-        "last_verified": "2026-08-30",
+        "last_verified": "2026-09-01",
         "verification_notes": {
           "en": "Unknown fields remain explicit.",
           "tr": "Bilinmeyen alanlar açık bırakıldı."
@@ -1956,8 +2088,9 @@
       },
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 1,
+        "checked_official_source_count": 2,
         "verified_fields": [
+          "tuition",
           "research"
         ],
         "unverified_critical_fields": [
@@ -1965,14 +2098,13 @@
           "language",
           "admission",
           "non_eu_eligibility",
-          "tuition",
           "scholarship",
           "deadline",
           "curriculum",
           "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-30"
+        "audited_at": "2026-09-01"
       },
       "quality_control": {
         "qc_status": "needs_revision",
@@ -2052,7 +2184,7 @@
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "weak_match",
         "score": 0,
         "score_basis_weight": 60,
@@ -2095,7 +2227,7 @@
         ],
         "confidence": "medium",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     }
   ]

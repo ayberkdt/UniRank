@@ -22,7 +22,7 @@ from.
 | `notable_professors[].email` | Present on two records in the whole database, with no record of which page published the address. | An `email_source` URL is now required beside every stored address, and a test fails the build without it. |
 | Deadlines | Stored as `2026-01-15 (23:59 CET; non-EU/EFTA with international BSc; closed)` — human-readable, machine-useless. A past cycle's date outranked the current open one. | `primary_deadline`, which parses the leading ISO date, prefers the next date a student can still act on, and marks a past recurring date `closed` beside its `next_expected_date`. |
 
-## The five scales
+## The six scales
 
 ### 1. Housing difficulty
 
@@ -67,7 +67,47 @@ names what is missing. Euro conversions carry `fx_rate`, `fx_rate_date` and
 `fx_source` from [`config/fx_rates.json`](../config/fx_rates.json) and are
 always labelled as conversions.
 
-### 3. Academic match
+### 3. Application fee
+
+`cost_profile.application_fee_standard` publishes the one-off charge that falls
+due before every other amount on the cost card, with a status rather than a
+silence when there is no number:
+
+| Status | Meaning |
+|---|---|
+| `published` | A positive amount read from a key that names the application fee |
+| `no_fee` | A zero on such a key, or a university that says in words it charges nothing |
+| `not_published` | The official application pages were read on a recorded date and none of them charges — the pages travel with the value |
+| `unknown` | Nobody has looked, or the figure failed a guard |
+
+`not_published` is deliberately not the same answer as `no_fee`, and neither is
+the same as `unknown`. An absent key is never read as a zero.
+
+Rules the code enforces:
+
+- A housing application fee, an enrolment or matriculation fee, a pre-enrolment
+  portal step and a stamp duty are four charges that look like an application
+  fee and are not one. Each is read only from its own field.
+- The fee is never added into `normalized_cost.annual_total`. It is paid once,
+  before there is a place to pay for, and folding a one-off charge into a
+  per-year figure would make it recur for every year of the degree.
+- Fee items are grouped by the applicant they name before anything is summed,
+  and only one group is ever added up. Politehnica Bucharest publishes a
+  RON 100 July route and a RON 50 early route and says of each that it is not
+  the central non-EU route; summing them would invent a charge nobody pays.
+- `charged_by` and `charged_by_name` record who takes the money. Many German
+  programmes are applied for through uni-assist, which charges EUR 75 for the
+  first course of study in a semester and EUR 30 for each further one and is
+  not the university.
+- `charged_per` records what the payment buys. Sweden charges SEK 900 once per
+  semester through universityadmissions.se however many programmes are on the
+  list, so calling it per-application would multiply one payment by the size of
+  a shortlist.
+- `early_amount` and `early_deadline` publish both prices and the date between
+  them where a university charges less inside an early window, because that
+  date costs money to miss and not only a place.
+
+### 4. Academic match
 
 Five weighted dimensions — curriculum (30), research group (25), faculty (25),
 facility (10), industry outlet (10) — each scored `strong` / `moderate` /
@@ -75,7 +115,7 @@ facility (10), industry outlet (10) — each scored `strong` / `moderate` /
 **evidenced** dimensions, so an unverified dimension neither raises nor lowers
 it. A tier is published only from three evidenced dimensions upward.
 
-### 4. Faculty contact
+### 5. Faculty contact
 
 `contact_timing` is an enum, and each value ships with guidance the interface
 prints beside the professor's card, because "when do I email them" has a
@@ -86,7 +126,7 @@ and `email_source` must name that page. Addresses are never reconstructed from
 a naming pattern. Where a department publishes phone numbers but hides emails
 behind an image — TUM, RWTH — the record says so instead of guessing.
 
-### 5. Scholarship playbook
+### 6. Scholarship playbook
 
 Each opportunity carries `eligibility_gates` (fail one and you are out),
 `selection_criteria` (what the committee actually scores) and ordered `steps`
@@ -158,6 +198,21 @@ and, at record level:
 Explicit evidence always wins over the derived value, and the quote is
 rendered to the student inside the housing panel.
 
+An application fee has a third hatch, for the answer no key can carry: the
+university charges nothing, so there is no number to store. Recording which
+pages were read is what separates that from nobody having looked.
+
+```json
+"cost_profile": {
+  "application_fee_research": {
+    "outcome": "no_fee_published",
+    "checked_on": "2026-09-01",
+    "pages_checked": ["https://…", "https://…"],
+    "note": { "en": "…", "tr": "…" }
+  }
+}
+```
+
 ## What the interface does with all this
 
 `public/standards.js` fetches the definitions once per session;
@@ -180,3 +235,21 @@ rendered to the student inside the housing panel.
 
 Each panel renders only when the record carries the evidence for it, so an
 unresearched programme shows nothing rather than an empty shell.
+
+`public/applicationFee.js` is the single reader of the application-fee block,
+so nothing that shows the fee can disagree with anything else about it. It
+reaches the reader in four places, each answering a different question:
+
+- **A cell on every result card** — because a shortlist is drawn up on the
+  list, not in the drawer, and what applying costs is part of whether the
+  shortlist is affordable.
+- **A panel in the drawer**, next to the countdown it shares a date with —
+  the amount, who takes the money, what the payment buys, the waiver with its
+  own deadline and lead time, the early window, and the pages that were read
+  when no fee was found.
+- **A chip on every calendar card**, and the amount beside each runway
+  milestone.
+- **One euro total for whatever the calendar is currently showing** — narrow
+  it to your favourites and it answers what your shortlist costs to apply to.
+  A payment covering several programmes is counted once, so four Swedish
+  programmes add SEK 900 to that total rather than SEK 3,600.

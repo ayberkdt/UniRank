@@ -29,7 +29,14 @@
       autoUpdated: 'Auto-updated at {time} · every 15 min', syncing: 'Checking for updates…', syncFailed: 'Update check failed · cached data shown',
       officialWording: 'Official wording', targetCycle: '2027 intake', cyclePublished: '2027 cycle published', cycleAnnual: 'Standing annual rule', cycleAwaiting: '2027 cycle awaiting publication', cycleUnknown: '2027 date not verified',
       previousCycle: 'Previous cycle · reference only', lastPublishedDate: 'Last published application date', referenceWarning: '{cycle} reference · not a 2027 deadline', openOfficialStep: 'Open official step', applicationLinkHint: 'Deadline and application instructions', documentLinkHint: 'Official checklist and eligibility evidence',
-      runwayEmpty: 'No exact target-cycle date has been verified yet', runwayEmptyHint: 'Programs awaiting publication remain visible below with their previous-cycle reference.', runwayEvents: '{count} milestone(s)', admittedOnly: 'Application window closed · remaining dates apply to admitted students'
+      runwayEmpty: 'No exact target-cycle date has been verified yet', runwayEmptyHint: 'Programs awaiting publication remain visible below with their previous-cycle reference.', runwayEvents: '{count} milestone(s)', admittedOnly: 'Application window closed · remaining dates apply to admitted students',
+      forOfferHolders: 'offer holders', feeLabel: 'To apply', feeWaiverAhead: 'Fee waiver closes {date}',
+      sortLabel: 'Sort by', sortDeadline: 'Soonest deadline', sortFee: 'Cheapest to apply', sortName: 'University',
+      costTitle: 'What this shortlist costs to apply to', costEmpty: 'None of these programmes publishes a verified application fee',
+      costLine: '{total} for {count} programme(s) that charge', costUnverified: '{count} with no verified fee',
+      costPayments: 'that is {count} separate payments, because some cover several programmes',
+      costFree: '{count} charge nothing', costSaving: '{amount} of it disappears inside the early windows',
+      costHint: 'Counted once where one payment covers several programmes, and never mixed into a yearly total.'
     },
     tr: {
       urgent: 'Acil', soon: 'Yaklaşıyor', later: 'Daha sonra', verify: 'Tarihi doğrula', closed: 'Kapanan dönem', all: 'Tümü', upcoming: 'Tüm yaklaşanlar',
@@ -50,7 +57,14 @@
       autoUpdated: 'Otomatik güncellendi: {time} · 15 dakikada bir', syncing: 'Güncellemeler kontrol ediliyor…', syncFailed: 'Güncelleme kontrolü başarısız · kayıtlı veri gösteriliyor',
       officialWording: 'Resmî ifade', targetCycle: '2027 dönemi', cyclePublished: '2027 dönemi yayımlandı', cycleAnnual: 'Her yıl geçerli resmî kural', cycleAwaiting: '2027 dönemi henüz yayımlanmadı', cycleUnknown: '2027 tarihi doğrulanmadı',
       previousCycle: 'Önceki dönem · yalnızca referans', lastPublishedDate: 'Son yayımlanan başvuru tarihi', referenceWarning: '{cycle} referansı · 2027 son tarihi değildir', openOfficialStep: 'Resmî adıma git', applicationLinkHint: 'Son tarih ve başvuru yönergeleri', documentLinkHint: 'Resmî belge listesi ve uygunluk kanıtları',
-      runwayEmpty: 'Hedef dönem için kesin bir tarih henüz doğrulanmadı', runwayEmptyHint: 'Yayın bekleyen programlar, önceki dönem referanslarıyla aşağıda görünmeye devam eder.', runwayEvents: '{count} aşama', admittedOnly: 'Başvuru dönemi kapandı · kalan tarihler kabul edilmiş öğrenciler için'
+      runwayEmpty: 'Hedef dönem için kesin bir tarih henüz doğrulanmadı', runwayEmptyHint: 'Yayın bekleyen programlar, önceki dönem referanslarıyla aşağıda görünmeye devam eder.', runwayEvents: '{count} aşama', admittedOnly: 'Başvuru dönemi kapandı · kalan tarihler kabul edilmiş öğrenciler için',
+      forOfferHolders: 'kabul almış adaylar için', feeLabel: 'Başvurmak', feeWaiverAhead: 'Ücret muafiyeti {date} kapanıyor',
+      sortLabel: 'Sıralama', sortDeadline: 'En yakın son tarih', sortFee: 'Başvurması en ucuz', sortName: 'Üniversite',
+      costTitle: 'Bu listeye başvurmanın maliyeti', costEmpty: 'Bu programların hiçbiri doğrulanmış bir başvuru ücreti yayımlamıyor',
+      costLine: 'Ücret alan {count} program için {total}', costUnverified: '{count} tanesinin ücreti doğrulanmadı',
+      costPayments: 'bu, {count} ayrı ödeme demek; bazıları birden çok programı kapsıyor',
+      costFree: '{count} tanesi ücret almıyor', costSaving: 'Bunun {amount} kadarı erken pencerelerin içinde eriyor',
+      costHint: 'Tek ödeme birden çok programı kapsıyorsa bir kez sayılır ve hiçbir zaman yıllık toplama karıştırılmaz.'
     }
   };
 
@@ -58,6 +72,7 @@
     records: [],
     models: [],
     filter: 'all',
+    sort: 'deadline',
     query: '',
     favoritesOnly: false,
     lastFocus: null,
@@ -96,6 +111,24 @@
     if (typeof value === 'object') {
       const preferred = value[lang()] ?? value.en ?? value.tr ?? value.name ?? value.label ?? value.title ?? value.document ?? value.requirement;
       return localized(preferred);
+    }
+    return '';
+  }
+
+  // Classification must never read the translated string.  `localized` returns
+  // Turkish to a Turkish reader, and every rule below is written in English,
+  // so a Turkish reader was silently losing four fifths of the live
+  // countdowns - 25 programmes with a date to act on became 5 - from the same
+  // data.  Whether a date is one a new applicant can still act on is a fact
+  // about the record, not about the language it is being read in.
+  function sourceText(value) {
+    if (value === null || value === undefined) return '';
+    if (typeof value === 'string' || typeof value === 'number') return String(value).trim();
+    if (Array.isArray(value)) return value.map(sourceText).filter(Boolean).join(' ');
+    if (typeof value === 'object') {
+      const preferred = value.en ?? value.name ?? value.label ?? value.title ?? value.event;
+      if (preferred !== undefined) return sourceText(preferred);
+      return Object.values(value).map(sourceText).filter(Boolean).join(' ');
     }
     return '';
   }
@@ -178,7 +211,7 @@
   }
 
   function appliesToTargetApplicant(scope) {
-    const value = localized(scope).toLowerCase().replace(/[\s-]+/g, '_');
+    const value = sourceText(scope).toLowerCase().replace(/[\s-]+/g, '_');
     if (!value) return true;
     if (/non_?eu|international|overseas|foreign|third_?country|visa|all|eligible/.test(value)) return true;
     if (/(^|_)(home|uk|domestic)($|_)/.test(value) || /(^|_)eu(_|$)/.test(value)) return false;
@@ -186,7 +219,7 @@
   }
 
   function isActionableDeadlineEvent(event) {
-    const label = localized(event?.label || event?.title || event?.event || event?.name).toLowerCase().replace(/[_-]+/g, ' ');
+    const label = sourceText(event?.event || event?.name || event?.label || event?.title).toLowerCase().replace(/[_-]+/g, ' ');
     if (!label) return false;
     const isOpeningOrOutcome = /\b(open|opened|opening|start|starts|begin|begins|result|results|decision|publication|classes|orientation|arrival|check in)\b/.test(label);
     const hasDeadlineSignal = /deadline|close|closing|due|selection|registration|enrol|enroll|application|visa|document|fee|deposit|scholar|fund|housing|accommodation|offer reply/.test(label);
@@ -206,12 +239,25 @@
   const APPLICATION_STEP = /applica|apply|admission|call for|intake|round|selection|competition|scholarship|funding|bursary|fellowship|fee waiver/i;
 
   function isNewApplicantEvent(event) {
-    const text = `${event?.label || ''} ${event?.statusText || ''} ${event?.applicantScope || ''}`
+    const text = `${event?.sourceLabel || event?.label || ''} ${event?.sourceStatus || event?.statusText || ''} ${event?.applicantScope || ''}`
       .replace(/[_-]+/g, ' ');
     if (!text.trim()) return false;
     if (ADMITTED_ONLY_EVENT.test(text)) return false;
     if (!APPLICATION_STEP.test(text)) return false;
     return !NOT_AN_APPLICATION_STEP.test(text);
+  }
+
+  // Failing the countdown test is not the same as being for offer holders.
+  // The countdown asks "is this certainly a step a new applicant can take",
+  // and answers no for a date it simply does not recognise - "Non-EU
+  // deadline" among them.  Labelling a row from that answer would print a
+  // claim the data never made, so the label is only attached when the text
+  // positively says the date belongs to somebody already admitted.
+  function isAdmittedOnlyEvent(event) {
+    const text = `${event?.sourceLabel || event?.label || ''} ${event?.sourceStatus || event?.statusText || ''} ${event?.applicantScope || ''}`
+      .replace(/[_-]+/g, ' ');
+    if (!text.trim()) return false;
+    return ADMITTED_ONLY_EVENT.test(text) || NOT_AN_APPLICATION_STEP.test(text);
   }
 
   function addEvent(target, config) {
@@ -222,7 +268,10 @@
     const base = {
       label,
       raw,
-      kind: config.kind || inferKind(`${label} ${raw}`),
+      // The wording the rules read, kept next to the wording the reader sees.
+      sourceLabel: sourceText(config.sourceLabel ?? config.label),
+      sourceStatus: sourceText(config.status),
+      kind: config.kind || inferKind(`${sourceText(config.sourceLabel ?? config.label)} ${raw}`),
       statusText: localized(config.status),
       priority: Number(config.priority) || 0,
       sourceIds: Array.isArray(config.sourceIds) ? config.sourceIds : [],
@@ -269,23 +318,29 @@
       ['housing_deadline', 'housingDeadline', 'housing']
     ];
 
+    // The field name is the untranslated wording for these: the label the
+    // reader sees is UI copy, so it changes with the language and cannot be
+    // what the rules read.
     scalarFields.forEach(([field, labelKey, kind]) => {
-      addEvent(events, { value: timeline[field], label: tr(labelKey), kind, priority: 1 });
+      addEvent(events, { value: timeline[field], label: tr(labelKey), sourceLabel: field, kind, priority: 1 });
     });
 
     addEvent(events, {
       value: record.eligibility_profile?.application_fee_waiver_request_deadline,
-      label: tr('feeWaiverDeadline'), kind: 'documents', priority: 1
+      label: tr('feeWaiverDeadline'), sourceLabel: 'application_fee_waiver_request_deadline',
+      kind: 'documents', priority: 1
     });
 
     (Array.isArray(timeline.deadline_events) ? timeline.deadline_events : []).forEach(event => {
       if (!event || typeof event !== 'object') return;
       if (!appliesToTargetApplicant(event.applicant_scope) || !isActionableDeadlineEvent(event)) return;
       const label = readableToken(event.label || event.title || event.event || event.name);
+      const sourceLabel = sourceText(event.event || event.name || event.label || event.title);
       addEvent(events, {
         value: event.date || event.deadline,
         label: label || tr('otherDeadline'),
-        kind: inferKind(label),
+        sourceLabel: sourceLabel || label,
+        kind: inferKind(sourceLabel || label),
         status: event.status_as_of_last_checked || event.status || event.date_status,
         sourceIds: event.source_ids,
         sourceUrl: event.source_url,
@@ -296,7 +351,7 @@
 
     (Array.isArray(timeline.application_rounds) ? timeline.application_rounds : []).forEach((round, index) => {
       if (typeof round === 'string') {
-        addEvent(events, { value: round, label: `${tr('applicationRound')} ${index + 1}`, kind: 'application', priority: 2 });
+        addEvent(events, { value: round, label: `${tr('applicationRound')} ${index + 1}`, sourceLabel: 'application round', kind: 'application', priority: 2 });
         return;
       }
       if (!round || typeof round !== 'object') return;
@@ -305,23 +360,24 @@
       addEvent(events, {
         value: round.international_deadline || round.non_eu_deadline || round.deadline,
         label: roundName ? `${tr('applicationRound')} · ${roundName}` : `${tr('applicationRound')} ${index + 1}`,
+        sourceLabel: `application round ${sourceText(round.round || round.intake || round.name || round.label)}`,
         kind: 'application', status: round.status, sourceUrl: round.source_url, priority: 3
       });
     });
 
     const scholarship = record.scholarship_profile || {};
     ['scholarship_deadline', 'funding_deadline', 'application_deadline', 'funding_priority_deadline'].forEach(field => {
-      addEvent(events, { value: scholarship[field], label: field.includes('priority') ? tr('fundingDeadline') : tr('scholarshipDeadline'), kind: 'scholarship', priority: 2 });
+      addEvent(events, { value: scholarship[field], label: field.includes('priority') ? tr('fundingDeadline') : tr('scholarshipDeadline'), sourceLabel: `scholarship ${field}`, kind: 'scholarship', priority: 2 });
     });
     (Array.isArray(scholarship.opportunities) ? scholarship.opportunities : []).forEach(opportunity => {
       if (!opportunity || typeof opportunity !== 'object') return;
       const name = localized(opportunity.name);
-      addEvent(events, { value: opportunity.deadline || opportunity.application_deadline, label: name || tr('scholarshipDeadline'), kind: 'scholarship', status: opportunity.status, priority: 3 });
+      addEvent(events, { value: opportunity.deadline || opportunity.application_deadline, label: name || tr('scholarshipDeadline'), sourceLabel: `scholarship ${sourceText(opportunity.name)}`, kind: 'scholarship', status: opportunity.status, priority: 3 });
     });
 
     const living = record.living_profile || {};
     [living.housing_deadline, living.application_deadline, living.housing_guarantee?.application_deadline, living.housing_guarantee?.offer_acceptance_deadline, living.housing_guarantee?.latest_published_housing_deadline]
-      .forEach(value => addEvent(events, { value, label: tr('housingDeadline'), kind: 'housing', priority: 2 }));
+      .forEach(value => addEvent(events, { value, label: tr('housingDeadline'), sourceLabel: 'housing deadline', kind: 'housing', priority: 2 }));
 
     const bySignature = new Map();
     events.forEach(event => {
@@ -432,6 +488,10 @@
       referenceDeadline,
       referenceAcademicYear: localized(record.application_timeline_profile?.academic_year) || tr('previousCycle'),
       documents: documentItems(record),
+      // The date tells you when to act; the fee tells you what acting costs.
+      // A calendar that answers only the first sends a reader to the fees page
+      // of every university on the list to answer the second.
+      fee: window.uniApplicationFee ? window.uniApplicationFee.read(record) : null,
       deadlineSource: relevantSource(record, 'deadline'),
       documentSource: relevantSource(record, 'documents'),
       confidence: fieldConfidence(record),
@@ -439,14 +499,36 @@
     };
   }
 
-  function rebuildModels() {
-    state.models = state.records.map(programModel).sort((left, right) => {
-      const order = { urgent: 0, soon: 1, later: 2, undated: 3, missing: 4, closed: 5 };
-      const statusDifference = order[left.status] - order[right.status];
-      if (statusDifference) return statusDifference;
-      if (left.next && right.next && left.next.days !== right.next.days) return left.next.days - right.next.days;
+  function feeEuros(model) {
+    const fee = model.fee;
+    if (!fee || !window.uniApplicationFee) return null;
+    if (fee.status === 'no_fee' || fee.status === 'not_published') return 0;
+    if (fee.status !== 'published') return null;
+    return window.uniApplicationFee.toEur(fee.amount, fee.currency);
+  }
+
+  function compareModels(left, right) {
+    if (state.sort === 'name') return left.university.localeCompare(right.university);
+    if (state.sort === 'fee') {
+      const leftFee = feeEuros(left);
+      const rightFee = feeEuros(right);
+      // A programme whose fee nobody has verified is not cheap; it is unknown,
+      // so it sorts after every priced one instead of leading the list.
+      if (leftFee === null && rightFee === null) return left.university.localeCompare(right.university);
+      if (leftFee === null) return 1;
+      if (rightFee === null) return -1;
+      if (leftFee !== rightFee) return leftFee - rightFee;
       return left.university.localeCompare(right.university);
-    });
+    }
+    const order = { urgent: 0, soon: 1, later: 2, undated: 3, missing: 4, closed: 5 };
+    const statusDifference = order[left.status] - order[right.status];
+    if (statusDifference) return statusDifference;
+    if (left.next && right.next && left.next.days !== right.next.days) return left.next.days - right.next.days;
+    return left.university.localeCompare(right.university);
+  }
+
+  function rebuildModels() {
+    state.models = state.records.map(programModel).sort(compareModels);
   }
 
   function formatDate(datePart) {
@@ -563,8 +645,42 @@
       ['all', tr('all')], ['upcoming', tr('upcoming')], ['urgent', tr('urgent')], ['soon', tr('soon')],
       ['later', tr('later')], ['undated', tr('verify')], ['closed', tr('closed')]
     ];
+    const sorts = [['deadline', tr('sortDeadline')], ['fee', tr('sortFee')], ['name', tr('sortName')]];
     elements.filters.innerHTML = filters.map(([value, label]) => `
-      <button type="button" class="deadline-filter-chip${state.filter === value ? ' is-active' : ''}" data-deadline-filter="${value}" aria-pressed="${state.filter === value}">${escapeHtml(label)}</button>`).join('');
+      <button type="button" class="deadline-filter-chip${state.filter === value ? ' is-active' : ''}" data-deadline-filter="${value}" aria-pressed="${state.filter === value}">${escapeHtml(label)}</button>`).join('')
+      + `<span class="deadline-sort" role="group" aria-label="${escapeHtml(tr('sortLabel'))}"><small>${escapeHtml(tr('sortLabel'))}</small>${
+        sorts.map(([value, label]) => `<button type="button" class="deadline-sort-chip${state.sort === value ? ' is-active' : ''}" data-deadline-sort="${value}" aria-pressed="${state.sort === value}">${escapeHtml(label)}</button>`).join('')
+      }</span>`;
+  }
+
+  // What a shortlist costs to apply to is a number the reader could otherwise
+  // only get by opening the fees page of every university on it.  It is
+  // computed over the programmes currently on screen, so narrowing to
+  // favourites answers "what do my six actually cost".
+  function renderCost() {
+    if (!elements.cost) return;
+    const models = filteredModels();
+    const helper = window.uniApplicationFee;
+    // With nothing on screen there is nothing to total, and the list below
+    // already says why it is empty.
+    if (!helper || !models.length) { elements.cost.innerHTML = ''; return; }
+    const summary = helper.total(models.map(model => model.record));
+    if (!summary.priced && !summary.free) {
+      elements.cost.innerHTML = `<div class="deadline-cost-strip__empty">${escapeHtml(tr('costEmpty'))}</div>`;
+      return;
+    }
+    const facts = [];
+    if (summary.payments < summary.priced) facts.push(tr('costPayments', { count: summary.payments }));
+    if (summary.free) facts.push(tr('costFree', { count: summary.free }));
+    if (summary.unverified) facts.push(tr('costUnverified', { count: summary.unverified }));
+    if (summary.saving > 0) facts.push(tr('costSaving', { amount: helper.money(Math.round(summary.saving), 'EUR') }));
+    elements.cost.innerHTML = `
+      <div class="deadline-cost-strip__head">
+        <span class="deadline-cost-strip__eyebrow">${escapeHtml(tr('costTitle'))}</span>
+        <strong>${escapeHtml(tr('costLine', { total: summary.label, count: summary.priced }))}</strong>
+      </div>
+      ${facts.length ? `<ul class="deadline-cost-strip__facts">${facts.map(fact => `<li>${escapeHtml(fact)}</li>`).join('')}</ul>` : ''}
+      <small>${escapeHtml(tr('costHint'))}</small>`;
   }
 
   function renderRunway() {
@@ -585,7 +701,21 @@
     });
     elements.runway.innerHTML = [...grouped.values()].map(items => {
       const month = new Intl.DateTimeFormat(lang() === 'tr' ? 'tr-TR' : 'en-GB', { month: 'long', year: 'numeric' }).format(items[0].event.datePart.date);
-      const rows = items.slice(0, 4).map(({ model, event }) => `<li><span class="deadline-runway-date"><strong>${String(event.datePart.day).padStart(2, '0')}</strong><small>${escapeHtml(remainingLabel(event.days))}</small></span><span><b>${escapeHtml(model.university)}</b><small>${escapeHtml(eventDisplayLabel(event))}</small></span></li>`).join('');
+      // Every milestone in the month is listed.  The header used to count all
+      // of them while the list showed four, so January 2027 announced eleven
+      // dates and printed four - the seven it dropped were exactly the ones a
+      // reader scanning for a clash would have needed.
+      const rows = items.map(({ model, event }) => {
+        const admittedOnly = isAdmittedOnlyEvent(event);
+        const fee = model.fee && window.uniApplicationFee && model.fee.status === 'published'
+          ? window.uniApplicationFee.headline(model.fee).split(' · ')[0]
+          : '';
+        return `<li${admittedOnly ? ' class="is-offer-holder"' : ''}>
+          <span class="deadline-runway-date"><strong>${String(event.datePart.day).padStart(2, '0')}</strong><small>${escapeHtml(remainingLabel(event.days))}</small></span>
+          <span class="deadline-runway-body"><b>${escapeHtml(model.university)}</b><small>${escapeHtml(eventDisplayLabel(event))}${admittedOnly ? ` · ${escapeHtml(tr('forOfferHolders'))}` : ''}</small></span>
+          ${fee ? `<span class="deadline-runway-fee">${escapeHtml(fee)}</span>` : ''}
+        </li>`;
+      }).join('');
       return `<article class="deadline-runway-month"><header><span>${escapeHtml(month)}</span><b>${escapeHtml(tr('runwayEvents', { count: items.length }))}</b></header><ol>${rows}</ol></article>`;
     }).join('');
   }
@@ -669,6 +799,13 @@
       : '<span class="deadline-country-flag" aria-hidden="true">🌐</span>';
     const accent = /^#[0-9a-f]{6}$/i.test(String(model.countryVisual?.accent || '')) ? model.countryVisual.accent : '#6f85a2';
     const rgb = /^\d{1,3},\s*\d{1,3},\s*\d{1,3}$/.test(String(model.countryVisual?.rgb || '')) ? model.countryVisual.rgb : '111, 133, 162';
+    // The cost of applying sits with the date it falls due, because that is
+    // the moment it is paid and the moment a shortlist has to be affordable.
+    const helper = window.uniApplicationFee;
+    const feeChip = model.fee && helper
+      ? `<span class="deadline-fee-pill deadline-fee-pill--${escapeHtml(model.fee.status)}" title="${escapeHtml(helper.qualifiers(model.fee).join(' · '))}">${escapeHtml(tr('feeLabel'))}: ${escapeHtml(helper.headline(model.fee))}</span>`
+      : '';
+    const feeEarly = model.fee && helper ? helper.earlyWindow(model.fee) : null;
 
     return `<article class="deadline-program-card deadline-program-card--${model.status} deadline-cycle--${escapeHtml(model.cycle.key)}" data-deadline-model="${model.index}" data-country-theme="${escapeHtml(model.countryVisual?.key || 'global')}" style="--deadline-country-accent:${escapeHtml(accent)};--deadline-country-rgb:${escapeHtml(rgb)}">
       <div class="deadline-program-card__accent" aria-hidden="true"></div>
@@ -680,6 +817,7 @@
           <div class="deadline-program-card__facts">
             ${model.degree ? `<span>${escapeHtml(model.degree)}</span>` : ''}
             <span class="deadline-cycle-pill deadline-cycle-pill--${escapeHtml(model.cycle.key)}">${escapeHtml(model.cycle.label)}</span>
+            ${feeChip}
             <span>${escapeHtml(tr('documentsCount', { count: model.documents.length }))}</span>
             <span>${escapeHtml(tr('confidence'))}: ${escapeHtml(confidenceLabel(model.confidence))}</span>
           </div>
@@ -689,6 +827,7 @@
           <strong>${escapeHtml(nextLabel)}</strong>
           <time${displayedEvent ? ` datetime="${escapeHtml(displayedEvent.datePart.key)}"` : ''}>${escapeHtml(nextDate)}</time>
           <b>${escapeHtml(remaining)}</b>
+          ${feeEarly && feeEarly.open ? `<small class="deadline-early-saving">${escapeHtml(feeEarly.savingLabel)}</small>` : ''}
           ${model.admittedOnlyAhead ? `<small class="deadline-admitted-only">${escapeHtml(tr('admittedOnly'))}</small>` : ''}
           ${model.upcomingEvents.length > 1 ? `<small>+${model.upcomingEvents.length - 1} ${escapeHtml(lang() === 'tr' ? 'yaklaşan aşama' : 'upcoming milestone(s)')}</small>` : ''}
         </div>
@@ -752,11 +891,20 @@
     renderRunway();
     renderFilters();
     renderList();
+    renderCost();
   }
 
   function setFilter(filter) {
     state.filter = filter;
     render();
+  }
+
+  function setSort(sort) {
+    state.sort = sort;
+    rebuildModels();
+    renderFilters();
+    renderList();
+    renderCost();
   }
 
   function modalIsOpen() {
@@ -770,6 +918,7 @@
     if (modalIsOpen()) {
       renderRunway();
       renderList();
+      renderCost();
     }
   }
 
@@ -854,6 +1003,11 @@
   }
 
   function handleModalClick(event) {
+    const sortButton = event.target.closest('[data-deadline-sort]');
+    if (sortButton) {
+      setSort(sortButton.dataset.deadlineSort);
+      return;
+    }
     const filterButton = event.target.closest('[data-deadline-filter]');
     if (filterButton) {
       setFilter(filterButton.dataset.deadlineFilter);
@@ -890,6 +1044,7 @@
     elements.close = document.getElementById('deadline-modal-close');
     elements.summary = document.getElementById('deadline-summary-grid');
     elements.runway = document.getElementById('deadline-runway-track');
+    elements.cost = document.getElementById('deadline-cost-strip');
     elements.filters = document.getElementById('deadline-filter-chips');
     elements.search = document.getElementById('deadline-search-input');
     elements.favorites = document.getElementById('deadline-favorites-only');
@@ -910,10 +1065,12 @@
     elements.search.addEventListener('input', event => {
       state.query = event.target.value;
       renderList();
+      renderCost();
     });
     elements.favorites.addEventListener('change', event => {
       state.favoritesOnly = event.target.checked;
       renderList();
+      renderCost();
     });
     document.addEventListener('keydown', event => {
       if (event.key === 'Escape' && !elements.modal.hidden) {
@@ -932,6 +1089,7 @@
       if (modalIsOpen()) {
         renderRunway();
         renderList();
+        renderCost();
       }
     });
     document.addEventListener('languageChanged', () => {

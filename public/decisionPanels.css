@@ -760,3 +760,141 @@
         gap: 6px;
     }
 }
+
+/* What it costs to apply --------------------------------------------------
+   The application fee is the first bill a student meets and the only one that
+   falls due before there is a place to pay for. It gets a panel of its own,
+   next to the countdown it shares a date with, rather than a row inside the
+   annual costs it must never be added to. */
+.decision-panel--fee .fee-headline {
+    display: grid;
+    gap: 4px;
+    padding: 14px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.decision-panel--fee .fee-headline--charged { border-color: rgba(215, 199, 101, 0.32); background: rgba(215, 199, 101, 0.08); }
+.decision-panel--fee .fee-headline--free { border-color: rgba(140, 200, 155, 0.28); background: rgba(140, 200, 155, 0.07); }
+
+.decision-panel--fee .fee-headline__value {
+    font-family: var(--ui-display, inherit);
+    font-size: 26px;
+    letter-spacing: -0.01em;
+    line-height: 1.1;
+}
+
+.decision-panel--fee .fee-headline--charged .fee-headline__value { color: #f3e3b2; }
+.decision-panel--fee .fee-headline--free .fee-headline__value { color: #a8cfae; }
+.decision-panel--fee .fee-headline--unverified .fee-headline__value { color: rgba(233, 227, 214, 0.6); font-size: 20px; }
+
+.decision-panel--fee .fee-headline__status {
+    color: rgba(233, 227, 214, 0.52);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.decision-panel--fee .fee-headline__qualifiers {
+    color: rgba(233, 227, 214, 0.72);
+    font-size: 12.5px;
+    line-height: 1.5;
+}
+
+.decision-panel--fee .fee-component-list {
+    display: grid;
+    gap: 2px;
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.decision-panel--fee .fee-component-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 7px 2px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 12.5px;
+}
+
+.decision-panel--fee .fee-early {
+    display: grid;
+    gap: 3px;
+    margin-top: 12px;
+    padding: 12px 14px;
+    border-left: 2px solid rgba(215, 199, 101, 0.3);
+    border-radius: 0 8px 8px 0;
+    background: rgba(215, 199, 101, 0.05);
+}
+
+.decision-panel--fee .fee-early--open {
+    border-left-color: #d7c765;
+    background: rgba(215, 199, 101, 0.11);
+}
+
+.decision-panel--fee .fee-early__label {
+    color: rgba(233, 227, 214, 0.5);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.decision-panel--fee .fee-early strong { color: #f0dfa8; font-size: 13.5px; }
+.decision-panel--fee .fee-early em { color: #e2d587; font-size: 12.5px; font-style: normal; }
+
+.decision-panel--fee .fee-waiver {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.decision-panel--fee .fee-waiver__label {
+    color: rgba(233, 227, 214, 0.5);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.decision-panel--fee .fee-waiver p { margin: 4px 0 0; font-size: 12.5px; line-height: 1.55; }
+.decision-panel--fee .fee-waiver__note { color: rgba(233, 227, 214, 0.62); }
+
+.decision-panel--fee .fee-waiver__categories {
+    margin: 6px 0 0;
+    padding-left: 16px;
+    color: rgba(233, 227, 214, 0.62);
+    font-size: 12px;
+}
+
+.decision-panel--fee .fee-refused {
+    margin-top: 12px;
+    padding: 12px 14px;
+    border: 1px dashed rgba(255, 255, 255, 0.14);
+    border-radius: 8px;
+}
+
+.decision-panel--fee .fee-refused p { margin: 0 0 6px; font-size: 12.5px; }
+.decision-panel--fee .fee-refused ul { margin: 0; padding-left: 16px; font-size: 12px; }
+
+.decision-panel--fee .fee-note,
+.decision-panel--fee .fee-pages {
+    margin: 10px 0 0;
+    color: rgba(233, 227, 214, 0.66);
+    font-size: 12.5px;
+    line-height: 1.6;
+}
+
+.decision-panel--fee .fee-pages { font-size: 11.5px; }
+
+.decision-panel--fee .fee-confidence {
+    display: inline-block;
+    padding: 1px 7px;
+    border: 1px solid rgba(215, 199, 101, 0.35);
+    border-radius: 999px;
+    color: #e2d587;
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}

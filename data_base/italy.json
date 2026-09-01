@@ -83,6 +83,13 @@
           "validity_rule": "",
           "waiver_rules": [],
           "source_ids": []
+        },
+        "application_fee_scope": "applicants with a foreign qualification; charged per programme selections",
+        "application_fee_refundable": false,
+        "application_fee_waiver_possible": false,
+        "application_fee_waiver": {
+          "en": "Politecnico di Milano states that the application fee is mandatory, non-refundable and cannot be waived.",
+          "tr": "Politecnico di Milano, başvuru ücretinin zorunlu olduğunu, iade edilmediğini ve kaldırılamayacağını belirtir."
         }
       },
       "language_profile": {
@@ -123,7 +130,7 @@
         "tuition_basis": "official_full_contribution_non_eea_2026_2027",
         "regional_tax_eur": null,
         "student_contribution_eur": null,
-        "application_fee_eur": null,
+        "application_fee_eur": 150,
         "enrollment_fee_eur": null,
         "total_academic_cost_eur_per_year_estimated": 3883.04,
         "isee_or_income_based": false,
@@ -162,7 +169,7 @@
           "tr": "AEA dışı öğrencilerden otomatik olarak 3.891,59 avroluk tam katkı payı alınır ve ikinci taksit için ISEE istenmez; dolayısıyla düşük beyan edilen aile geliri bunu düşürmez. Yalnızca bir Politecnico bursu veya bölgesel DSU desteği düşürür."
         },
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "EUR",
           "annual_total": 14871.59,
           "annual_total_eur_equivalent": null,
@@ -177,7 +184,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "currency": "EUR",
         "tuition_eur_per_year": 3891.59,
@@ -192,6 +199,55 @@
           "currency": "EUR",
           "includes_mandatory_fees": false,
           "derived_at": "2026-08-30"
+        },
+        "application_fee_early_amount": 50,
+        "application_fee_early_deadline": "2025-12-01",
+        "application_fee_charged_per": "programme_choice",
+        "application_fee_verification": {
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "EUR 150 per application, dropping to EUR 50 for anyone who applies in the early-bird window that closes on 1 December. The fee is mandatory, non-refundable and cannot be waived, and one payment covers up to two Master of Science choices submitted as first and second choice. Applying early is worth EUR 100 here, which is the clearest case in the catalogue of a deadline that costs money to miss.",
+            "tr": "Başvuru başına 150 avro; 1 Aralık'ta kapanan erken başvuru penceresinde başvuran herkes için 50 avroya iner. Ücret zorunludur, iade edilmez ve kaldırılamaz; tek ödeme, birinci ve ikinci tercih olarak verilen en fazla iki yüksek lisans tercihini kapsar. Erken başvurmak burada 100 avro değerindedir; katalogda kaçırılması paraya mal olan bir son tarihin en açık örneği budur."
+          },
+          "confidence": "high"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "published",
+          "amount": 150.0,
+          "currency": "EUR",
+          "amount_eur_equivalent": null,
+          "scope": "international_applicants",
+          "charged_per": "programme_choice",
+          "charged_by": "university",
+          "charged_by_name": null,
+          "additional_application_amount": null,
+          "academic_cycle": null,
+          "early_amount": 50.0,
+          "early_deadline": "2025-12-01",
+          "covers_programmes": null,
+          "refundable": false,
+          "components": [],
+          "waiver": {
+            "available": false,
+            "open_to_international": true,
+            "request_deadline": null,
+            "processing_days": null,
+            "note": {
+              "en": "Politecnico di Milano states that the application fee is mandatory, non-refundable and cannot be waived.",
+              "tr": "Politecnico di Milano, başvuru ücretinin zorunlu olduğunu, iade edilmediğini ve kaldırılamayacağını belirtir."
+            }
+          },
+          "payment_due_days_after_deadline": null,
+          "rule": "published_application_fee",
+          "derived_from": {
+            "cost_profile.application_fee_eur": 150
+          },
+          "note": {
+            "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+            "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -367,7 +423,7 @@
         "housing_application_separate": null,
         "housing_search_difficulty": "medium",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "medium",
           "raw_score": 6,
           "scaled_score": 7,
@@ -410,10 +466,10 @@
           "band_from_score": "medium",
           "capped_from_very_high": false,
           "legacy_value": "medium",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "official_university_living_budget",
           "status": "partial",
           "currency": "EUR",
@@ -460,7 +516,7 @@
             "en": "Midpoints of the ranges Politecnico publishes: accommodation €400-700, food €150-200, transport €20-30, social activities €100-200, mobile phone €10-30. Full published range: €680-1,150 per month.",
             "tr": "Politecnico'nun yayımladığı aralıkların orta noktaları: konaklama 400-700, gıda 150-200, ulaşım 20-30, sosyal etkinlikler 100-200, cep telefonu 10-30 avro. Yayımlanan tam aralık: ayda 680-1.150 avro."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "housing_guaranteed": false,
         "student_housing_places_published": 2131,
@@ -897,7 +953,7 @@
           "tr": "Bunlar resmî yayımlanmış 2026/27 yabancı diplomalı Mühendislik çağrılarıdır ve doğrulama tarihinde hepsi kapanmıştır. 31 Mart ek Eylül çağrısı normal AB dışı rota değildir: AEA adayları ve İtalya'da belirtilmiş statüde ikamet eden AB dışı adaylarla sınırlıdır. Gelecek 2027/28 tarihleri tahmin edilmez. Kabul alan vize adayları bu akademik yıl için İtalyan devletinin vize talebini ayrıca 30 Kasım 2026'ya kadar tamamlamalıdır."
         },
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-06-18",
           "next_expected_date": null,
           "time": null,
@@ -906,11 +962,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closed",
-          "days_remaining_at_evaluation": -73,
+          "days_remaining_at_evaluation": -75,
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-magistrale/foreign-qualification/application/list-of-documents-required-by-the-admissions-office",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -1171,9 +1227,39 @@
               "living"
             ],
             "confidence": "medium"
+          },
+          {
+            "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-magistrale/foreign-qualification/application",
+            "title": "Application - Admission to Laurea Magistrale with a foreign qualification | Politecnico di Milano",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
+          },
+          {
+            "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-magistrale/foreign-qualification/deadlines",
+            "title": "Deadlines - Admission to Laurea Magistrale with a foreign qualification | Politecnico di Milano",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ],
-        "last_verified": "2026-08-29",
+        "last_verified": "2026-09-01",
         "needs_verification": false,
         "verification_notes": {
           "en": "All displayed programme, admission, language, current fee, scholarship, deadline, housing and research facts are grounded in checked official sources. The complete monthly living budget and a named programme-specific industry placement are not published by these sources and are left unclaimed.",
@@ -1321,7 +1407,7 @@
       },
       "data_quality": {
         "status": "verified",
-        "checked_official_source_count": 17,
+        "checked_official_source_count": 19,
         "verified_fields": [
           "program",
           "language",
@@ -1336,7 +1422,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-29"
+        "audited_at": "2026-09-01"
       },
       "financials": {
         "tuition_fee_per_year": null,
@@ -1383,7 +1469,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "core_match",
         "score": 100,
         "score_basis_weight": 90,
@@ -1430,7 +1516,7 @@
         ],
         "confidence": "medium",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "research_group_evidence": {
@@ -1610,7 +1696,7 @@
         "verification_notes": "Tuition value was not retained because no checked official tuition source supports it.",
         "academic_year": "2026/2027",
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "EUR",
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -1626,7 +1712,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "currency": "EUR",
         "cost_notes": {
@@ -1645,6 +1731,40 @@
           "currency": "EUR",
           "includes_mandatory_fees": false,
           "derived_at": "2026-08-30"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "published",
+          "amount": 50.0,
+          "currency": "EUR",
+          "amount_eur_equivalent": null,
+          "scope": "unknown",
+          "charged_per": "application",
+          "charged_by": "university",
+          "charged_by_name": null,
+          "additional_application_amount": null,
+          "academic_cycle": null,
+          "early_amount": null,
+          "early_deadline": null,
+          "covers_programmes": null,
+          "refundable": null,
+          "components": [],
+          "waiver": {
+            "available": null,
+            "open_to_international": null,
+            "request_deadline": null,
+            "processing_days": null
+          },
+          "payment_due_days_after_deadline": null,
+          "rule": "published_application_fee",
+          "derived_from": {
+            "eligibility_profile.application_fee_eur": 50
+          },
+          "note": {
+            "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+            "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -1840,7 +1960,7 @@
         "housing_application_separate": null,
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 2,
           "scaled_score": null,
@@ -1882,16 +2002,16 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -2314,7 +2434,7 @@
           "tr": "Yabancı diplomalar için yayımlanan tüm 2026/27 başvuru çağrıları kapanmıştır. Yurt dışında yaşayan vizeye tabi non‑EU adaylar, yalnız AB adayları ve İtalya'da ikamet eden non‑EU adaylara açık ikinci dönem yolunu kullanamaz. 2027/28 tarihi tahmin edilmez."
         },
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-04-20",
           "next_expected_date": null,
           "time": null,
@@ -2323,11 +2443,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closed",
-          "days_remaining_at_evaluation": -132,
+          "days_remaining_at_evaluation": -134,
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://www.polito.it/en/education/applying-studying-graduating/admissions-and-enrolment/master-s-degree-programmes/applicants-with-a-non-italian-qualification",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": [
             {
@@ -2793,7 +2913,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "core_match",
         "score": 100,
         "score_basis_weight": 90,
@@ -2832,7 +2952,7 @@
         "matched_tags": [],
         "confidence": "medium",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "research_group_evidence": {
@@ -2962,7 +3082,13 @@
         "cv_evaluated": true,
         "interview_policy": "MoveIN selection is described as dossier screening followed by an interview; the final programme call states foreign-degree applicants may be invited by the Admissions Committee.",
         "preselection_fee_eur": 30,
-        "infostud_eligibility_fee_eur": 10
+        "infostud_eligibility_fee_eur": 10,
+        "application_fee_scope": "pre-selection candidates",
+        "application_fee_waiver_possible": false,
+        "application_fee_waiver": {
+          "en": "Sapienza states that no application fee waiver is available under any circumstances.",
+          "tr": "Sapienza, hiçbir koşulda başvuru ücreti muafiyeti bulunmadığını belirtir."
+        }
       },
       "language_profile": {
         "teaching_language": [
@@ -3006,7 +3132,7 @@
         "tuition_basis": "official_foreign_income_band_B_T?rkiye",
         "regional_tax_eur": null,
         "student_contribution_eur": null,
-        "application_fee_eur": null,
+        "application_fee_eur": 30,
         "enrollment_fee_eur": null,
         "total_academic_cost_eur_per_year_estimated": 700,
         "isee_or_income_based": true,
@@ -3025,7 +3151,7 @@
           "C": 1500
         },
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "EUR",
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -3041,7 +3167,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "tuition_eur_per_year": 1500.0,
         "tuition_derivation": {
@@ -3055,6 +3181,53 @@
           "currency": "EUR",
           "includes_mandatory_fees": false,
           "derived_at": "2026-08-30"
+        },
+        "application_fee_charged_per": "application",
+        "application_fee_verification": {
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "EUR 30 for each application submitted through pre-selection, and a candidate may submit at most two applications per intake - so the ceiling on what Sapienza can cost you to apply to is EUR 60.",
+            "tr": "Ön seçim yoluyla gönderilen her başvuru için 30 avro; bir aday her dönem en fazla iki başvuru gönderebilir - dolayısıyla Sapienza'ya başvurmanın üst sınırı 60 avrodur."
+          },
+          "confidence": "high"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "published",
+          "amount": 30.0,
+          "currency": "EUR",
+          "amount_eur_equivalent": null,
+          "scope": "unknown",
+          "charged_per": "application",
+          "charged_by": "university",
+          "charged_by_name": null,
+          "additional_application_amount": null,
+          "academic_cycle": null,
+          "early_amount": null,
+          "early_deadline": null,
+          "covers_programmes": null,
+          "refundable": null,
+          "components": [],
+          "waiver": {
+            "available": false,
+            "open_to_international": true,
+            "request_deadline": null,
+            "processing_days": null,
+            "note": {
+              "en": "Sapienza states that no application fee waiver is available under any circumstances.",
+              "tr": "Sapienza, hiçbir koşulda başvuru ücreti muafiyeti bulunmadığını belirtir."
+            }
+          },
+          "payment_due_days_after_deadline": null,
+          "rule": "published_application_fee",
+          "derived_from": {
+            "cost_profile.application_fee_eur": 30
+          },
+          "note": {
+            "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+            "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -3104,7 +3277,7 @@
         "housing_application_separate": null,
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 3,
           "scaled_score": null,
@@ -3146,16 +3319,16 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -3420,7 +3593,7 @@
           "tr": "Vizeye tabi aday sürecinde üç ayrı tarih vardır: MoveIN ön seçimi, Universitaly ön kaydı ve ardından 10 EUR'luk Infostud uygunluk değerlendirmesi. Doğrulama tarihinde ilk ikisi kapanmıştır; 2027/28 tarihi tahmin edilmez."
         },
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-05-15",
           "next_expected_date": null,
           "time": null,
@@ -3429,11 +3602,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closed",
-          "days_remaining_at_evaluation": -107,
+          "days_remaining_at_evaluation": -109,
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://corsidilaurea.uniroma1.it/sites/default/files/offertaformativa/documenti_ufficiali/187/33484_e_0.pdf",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": [
             {
@@ -3460,7 +3633,7 @@
         "official_department_page": "https://www.dima.uniroma1.it/",
         "official_lab_pages": [],
         "third_party_sources": [],
-        "last_verified": "2026-08-30",
+        "last_verified": "2026-09-01",
         "needs_verification": true,
         "verification_notes": {
           "en": "The official international-admissions and programme pages were rechecked on 2026-08-22. They still publish only the closed 2026/27 route; no 2027/28 deadline is published or projected forward.",
@@ -3737,6 +3910,21 @@
               "department"
             ],
             "confidence": "high"
+          },
+          {
+            "url": "https://www.uniroma1.it/en/en/admissions",
+            "title": "Programmes in English - Admissions | Sapienza Universita di Roma",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ]
       },
@@ -3829,7 +4017,7 @@
       },
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 15,
+        "checked_official_source_count": 16,
         "verified_fields": [
           "program",
           "language",
@@ -3844,7 +4032,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-30"
+        "audited_at": "2026-09-01"
       },
       "qs_ranking": 111,
       "qs_ranking_display": "=111",
@@ -3873,7 +4061,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "core_match",
         "score": 81,
         "score_basis_weight": 90,
@@ -3912,7 +4100,7 @@
         "matched_tags": [],
         "confidence": "medium",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "research_group_evidence": {
@@ -4148,7 +4336,7 @@
         "mandatory_fees_eur_per_year_min": 167,
         "mandatory_fees_eur_per_year_max": 189,
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "EUR",
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -4165,10 +4353,10 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "tuition_derivation": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "field": "tuition_eur_per_year",
           "rule": "no_tuition_charged",
           "derived_from": {
@@ -4176,7 +4364,7 @@
           },
           "currency": "EUR",
           "includes_mandatory_fees": false,
-          "derived_at": "2026-08-30"
+          "derived_at": "2026-09-01"
         },
         "tuition_eur_per_year": 0,
         "mandatory_fees_eur_per_year": 189.0,
@@ -4188,6 +4376,33 @@
             "mandatory_fees_eur_per_year_max": 189.0
           },
           "derived_at": "2026-08-30"
+        },
+        "application_fee_research": {
+          "outcome": "no_fee_published",
+          "checked_on": "2026-09-01",
+          "pages_checked": [
+            "https://www.international.unina.it/education/admission-regulation/"
+          ],
+          "note": {
+            "en": "Federico II's admission regulation prices the two charges a non-EU student meets - a EUR 140 regional fee and a EUR 16 legal stamp - and prices both of them at enrolment, after admission, not at application. Nothing is charged to apply.",
+            "tr": "Federico II'nin kabul yönetmeliği, AB dışı bir öğrencinin karşılaştığı iki kalemi - 140 avroluk bölgesel harç ve 16 avroluk damga - fiyatlandırır ve ikisini de başvuruda değil, kabulden sonra kayıtta fiyatlandırır. Başvurmak için bir ücret alınmaz."
+          }
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "not_published",
+          "amount": null,
+          "currency": null,
+          "rule": "researched_absence",
+          "pages_checked": [
+            "https://www.international.unina.it/education/admission-regulation/"
+          ],
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "Federico II's admission regulation prices the two charges a non-EU student meets - a EUR 140 regional fee and a EUR 16 legal stamp - and prices both of them at enrolment, after admission, not at application. Nothing is charged to apply.",
+            "tr": "Federico II'nin kabul yönetmeliği, AB dışı bir öğrencinin karşılaştığı iki kalemi - 140 avroluk bölgesel harç ve 16 avroluk damga - fiyatlandırır ve ikisini de başvuruda değil, kabulden sonra kayıtta fiyatlandırır. Başvurmak için bir ücret alınmaz."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -4391,7 +4606,7 @@
           }
         ],
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 4,
           "scaled_score": null,
@@ -4432,16 +4647,16 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -4534,7 +4749,7 @@
         "visa_sensitive_deadline": "2026-11-30",
         "scholarship_deadline": "2026-09-10T12:00:00+02:00",
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-09-10",
           "next_expected_date": null,
           "time": null,
@@ -4543,11 +4758,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closing_soon",
-          "days_remaining_at_evaluation": 11,
+          "days_remaining_at_evaluation": 9,
           "derived_from": "application_timeline_profile.deadline_events[] (adisurc_scholarship_and_services_deadline)",
           "confidence": "high",
           "source_url": "https://aerospaziale.dii.unina.it/it/info-lm",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": [
             {
@@ -4614,7 +4829,7 @@
           "non_eu_eligibility": "high",
           "deadline": "high"
         },
-        "last_verified": "2026-08-30",
+        "last_verified": "2026-09-01",
         "needs_verification": false,
         "verification_notes": {
           "en": "Current official sources now cover programme access, non-EU procedure, Italian B2, tuition/mandatory fees, ADISURC scholarship mechanics, deadlines and housing access. The university's room and daily-cost examples are retained at medium confidence because their presentation is labelled 2025/26.",
@@ -4807,6 +5022,21 @@
               "en": "Publishes the group's aircraft design, wind tunnel and flight test activity and its wind-tunnel test record.",
               "tr": "Grubun uçak tasarımı, rüzgâr tüneli ve uçuş testi faaliyetini ve rüzgâr tüneli test kaydını yayımlar."
             }
+          },
+          {
+            "url": "https://www.international.unina.it/education/admission-regulation/",
+            "title": "Admission regulation | University of Naples Federico II",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ],
         "official_program_page": "https://aerospaziale.dii.unina.it/it/info-lm",
@@ -4817,7 +5047,7 @@
       "qs_ranking": 401,
       "data_quality": {
         "status": "verified",
-        "checked_official_source_count": 11,
+        "checked_official_source_count": 12,
         "verified_fields": [
           "program",
           "language",
@@ -4832,7 +5062,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-30"
+        "audited_at": "2026-09-01"
       },
       "quality_control": {
         "qc_status": "passed",
@@ -4877,7 +5107,7 @@
       },
       "degree_class": "LM-20",
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "strong_adjacent",
         "score": 61,
         "score_basis_weight": 90,
@@ -4920,7 +5150,7 @@
         ],
         "confidence": "medium",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "research_profile": {
         "department": "Dipartimento di Ingegneria Industriale (DII) — Aerospace Section",
@@ -5091,7 +5321,8 @@
           "validity_rule": "",
           "waiver_rules": [],
           "source_ids": []
-        }
+        },
+        "application_fee_scope": "applicants holding a foreign qualification"
       },
       "language_profile": {
         "teaching_language": [
@@ -5121,7 +5352,7 @@
         "isee_or_income_based": true,
         "regional_tax_eur": null,
         "student_contribution_eur": null,
-        "application_fee_eur": null,
+        "application_fee_eur": 30,
         "enrollment_fee_eur": null,
         "total_academic_cost_eur_per_year_estimated": null,
         "payment_installments": "The general University of Pisa fee page states that payment is divided into four instalments for the income/assets-abroad contribution.",
@@ -5134,7 +5365,7 @@
           "tr": "Kart bunu 2026/27 taahhüdü değil, önceki yayımlanmış referans olarak açıkça etiketler. Uluslararası gelir ücreti kuralları ve muafiyetler Üniversite ücret sayfasındadır; ödeme veya karşılanabilirlik karşılaştırması öncesinde yeni yıllık tabloyu kullanın."
         },
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "EUR",
           "annual_total": 9704.0,
           "annual_total_eur_equivalent": null,
@@ -5149,7 +5380,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "tuition_eur_per_year": 2900.0,
         "tuition_derivation": {
@@ -5163,6 +5394,49 @@
           "currency": "EUR",
           "includes_mandatory_fees": false,
           "derived_at": "2026-08-30"
+        },
+        "application_fee_charged_per": "application",
+        "application_fee_verification": {
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "EUR 30 for each application, charged only to applicants holding a foreign qualification and payable on the application portal before the application can be submitted at all. Up to two applications may be made and each carries its own fee. Pisa's own call still prints the amount against A.Y. 2024/2025 while applying it to the 2026/2027 cycle.",
+            "tr": "Her başvuru için 30 avro; yalnızca yabancı bir diploma taşıyan adaylardan alınır ve başvurunun gönderilebilmesi için başvuru portalında önceden ödenir. En fazla iki başvuru yapılabilir ve her biri kendi ücretini taşır. Pisa'nın kendi ilanı, tutarı 2026/2027 dönemine uygularken hâlâ 2024/2025 akademik yılı karşısında yazar."
+          },
+          "confidence": "high"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "published",
+          "amount": 30.0,
+          "currency": "EUR",
+          "amount_eur_equivalent": null,
+          "scope": "international_applicants",
+          "charged_per": "application",
+          "charged_by": "university",
+          "charged_by_name": null,
+          "additional_application_amount": null,
+          "academic_cycle": null,
+          "early_amount": null,
+          "early_deadline": null,
+          "covers_programmes": null,
+          "refundable": null,
+          "components": [],
+          "waiver": {
+            "available": null,
+            "open_to_international": null,
+            "request_deadline": null,
+            "processing_days": null
+          },
+          "payment_due_days_after_deadline": null,
+          "rule": "published_application_fee",
+          "derived_from": {
+            "cost_profile.application_fee_eur": 30
+          },
+          "note": {
+            "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+            "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -5229,7 +5503,7 @@
         "housing_application_separate": null,
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 2,
           "scaled_score": null,
@@ -5271,10 +5545,10 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "official_source_range_basis_not_itemised",
           "status": "total_only",
           "currency": "EUR",
@@ -5297,14 +5571,14 @@
             "derived_from": {
               "monthly_living_cost_eur_estimated": 567.0
             },
-            "derived_at": "2026-08-30"
+            "derived_at": "2026-09-01"
           },
           "source_url": null,
           "note": {
             "en": "The MSSE page publishes a roughly EUR 6,800 yearly student budget (EUR 4,200 accommodation/utilities, EUR 1,800 food at student dining facilities, EUR 300 books/supplies and EUR 500 health/dental). EUR 567 is the transparent EUR 6,800/12 arithmetic, not a separately quoted monthly total.",
             "tr": "MSSE sayfası yaklaşık 6.800 EUR yıllık öğrenci bütçesi yayımlar (4.200 EUR konaklama/faturalar, öğrenci yemekhanelerinde 1.800 EUR yemek, 300 EUR kitap/malzeme ve 500 EUR sağlık/diş). 567 EUR, ayrı yayımlanmış aylık toplam değil, şeffaf 6.800/12 hesabıdır."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -5510,7 +5784,7 @@
         "timeline_risk": "unknown",
         "deadline_notes": "Deadlines were not retained without a checked official source.",
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-05-03",
           "next_expected_date": null,
           "time": null,
@@ -5519,11 +5793,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closed",
-          "days_remaining_at_evaluation": -119,
+          "days_remaining_at_evaluation": -121,
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://msse.ing.unipi.it/applications/",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -5537,7 +5811,7 @@
         "official_department_page": "https://msse.ing.unipi.it/about-us/",
         "official_lab_pages": [],
         "third_party_sources": [],
-        "last_verified": "2026-08-30",
+        "last_verified": "2026-09-01",
         "needs_verification": true,
         "verification_notes": {
           "en": "All displayed programme, curriculum, living-budget and fee-reference facts have accessible official sources. The currency range and course plan are explicitly scoped to their published academic years rather than silently upgraded to 2026/27.",
@@ -5747,6 +6021,21 @@
               "program"
             ],
             "confidence": "high"
+          },
+          {
+            "url": "https://applymscenglish.unipi.it/downloads/downloadpdf/bandicdl/2026/bando_10_wgf-lm_en.pdf",
+            "title": "Call for the enrolment of non-EU citizens A.Y. 2026/27 | University of Pisa",
+            "source_type": "official_tuition_page",
+            "access_status": "pdf",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ],
         "official_cost_of_living_page": "https://msse.ing.unipi.it/tuition-and-expenses/"
@@ -5874,7 +6163,7 @@
       },
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 11,
+        "checked_official_source_count": 12,
         "verified_fields": [
           "program",
           "language",
@@ -5889,7 +6178,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-30"
+        "audited_at": "2026-09-01"
       },
       "qs_ranking": 341,
       "qs_ranking_display": "341",
@@ -5918,7 +6207,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "strong_adjacent",
         "score": 57,
         "score_basis_weight": 90,
@@ -5966,7 +6255,7 @@
         ],
         "confidence": "medium",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "research_group_evidence": {
@@ -6190,7 +6479,7 @@
           "use_for_2026_27": false
         },
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": null,
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -6205,13 +6494,42 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "tuition_derivation": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "rule": "not_derivable",
           "reason": "no_readable_tuition_figure",
-          "derived_at": "2026-08-30"
+          "derived_at": "2026-09-01"
+        },
+        "application_fee_research": {
+          "outcome": "no_fee_published",
+          "checked_on": "2026-09-01",
+          "pages_checked": [
+            "https://orientami.poliba.it/en/admission-procedure-second-cycle-master-degree/",
+            "https://www.poliba.it/en/procedure-non-eu-students"
+          ],
+          "note": {
+            "en": "Both the second-cycle admission procedure and the dedicated non-EU procedure describe the full route - Esse3 platform, Universitaly pre-enrolment, document upload - and price none of it.",
+            "tr": "Hem ikinci kademe kabul yordamı hem de AB dışı adaylara özel yordam tüm yolu anlatır - Esse3 platformu, Universitaly ön kaydı, belge yükleme - ve hiçbirini fiyatlandırmaz."
+          }
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "not_published",
+          "amount": null,
+          "currency": null,
+          "rule": "researched_absence",
+          "pages_checked": [
+            "https://orientami.poliba.it/en/admission-procedure-second-cycle-master-degree/",
+            "https://www.poliba.it/en/procedure-non-eu-students"
+          ],
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "Both the second-cycle admission procedure and the dedicated non-EU procedure describe the full route - Esse3 platform, Universitaly pre-enrolment, document upload - and price none of it.",
+            "tr": "Hem ikinci kademe kabul yordamı hem de AB dışı adaylara özel yordam tüm yolu anlatır - Esse3 platformu, Universitaly ön kaydı, belge yükleme - ve hiçbirini fiyatlandırmaz."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -6360,7 +6678,7 @@
         ],
         "housing_search_difficulty": "high",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "high",
           "raw_score": 6,
           "scaled_score": 9,
@@ -6400,16 +6718,16 @@
           "band_from_score": "high",
           "capped_from_very_high": false,
           "legacy_value": "high",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -6576,7 +6894,7 @@
           "tr": "Başvuru, üniversite kaydı, burs ve vize takvimleri ayrıdır. 2027/28 tarihi türetilmez."
         },
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-09-15",
           "next_expected_date": null,
           "time": null,
@@ -6585,11 +6903,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closing_soon",
-          "days_remaining_at_evaluation": 16,
+          "days_remaining_at_evaluation": 14,
           "derived_from": "application_timeline_profile.deadline_events[] (first_esse3_master_admission_window)",
           "confidence": "high",
           "source_url": "https://develop.poliba.it/it/node/14994",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": [
             {
@@ -6628,7 +6946,7 @@
         "official_department_page": "needs_verification",
         "official_lab_pages": [],
         "third_party_sources": [],
-        "last_verified": "2026-08-30",
+        "last_verified": "2026-09-01",
         "needs_verification": true,
         "verification_notes": {
           "en": "Accessible current official pages cover the active programme, English delivery, foreign-qualification route, admission windows, first fee, ADISU funding and competitive accommodation. Complete 2026/27 personalised contribution and private Taranto/Lecce rent remain unknown.",
@@ -6826,6 +7144,21 @@
               "en": "States the department's formation, its Department of Excellence designation for 2023-2027 and its research areas of mechanical engineering, management engineering and mathematics.",
               "tr": "Bölümün kuruluşunu, 2023-2027 için Mükemmeliyet Bölümü statüsünü ve makine mühendisliği, yönetim mühendisliği ile matematik araştırma alanlarını belirtir."
             }
+          },
+          {
+            "url": "https://www.poliba.it/en/procedure-non-eu-students",
+            "title": "Procedure for non-EU students | Politecnico di Bari",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ]
       },
@@ -6923,7 +7256,7 @@
       },
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 10,
+        "checked_official_source_count": 11,
         "verified_fields": [
           "program",
           "language",
@@ -6938,7 +7271,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-30"
+        "audited_at": "2026-09-01"
       },
       "qs_ranking": null,
       "qs_ranking_display": "951-1000",
@@ -6985,7 +7318,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "partial_match",
         "score": 50,
         "score_basis_weight": 90,
@@ -7031,7 +7364,7 @@
         ],
         "confidence": "medium",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "research_group_evidence": {
@@ -7300,7 +7633,7 @@
         "academic_year": "2026/2027",
         "stamp_duty_eur": 16,
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "EUR",
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -7316,7 +7649,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "tuition_eur_per_year": 356.0,
         "tuition_derivation": {
@@ -7330,6 +7663,33 @@
           "currency": "EUR",
           "includes_mandatory_fees": false,
           "derived_at": "2026-08-30"
+        },
+        "application_fee_research": {
+          "outcome": "no_fee_published",
+          "checked_on": "2026-09-01",
+          "pages_checked": [
+            "https://www.unipa.it/mobilita/en/new-students/new-students---enrolment/enrolment-procedures-for-extra-eu-foreign-students/master-degree-course/"
+          ],
+          "note": {
+            "en": "Palermo's enrolment procedure for extra-EU applicants to a master's degree runs from portal registration through the coordinator's academic review and a knowledge interview to Universitaly and final enrolment, and charges nothing along the way. Tuition and the regional tax are handled in separate sections and fall due after admission.",
+            "tr": "Palermo'nun AB dışı yüksek lisans adayları için kayıt yordamı, portal kaydından koordinatörün akademik değerlendirmesine ve bir bilgi mülakatına, oradan Universitaly'ye ve kesin kayda uzanır ve yol boyunca hiçbir ücret almaz. Öğrenim ücreti ile bölgesel harç ayrı bölümlerde ele alınır ve vadeleri kabulden sonra gelir."
+          }
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "not_published",
+          "amount": null,
+          "currency": null,
+          "rule": "researched_absence",
+          "pages_checked": [
+            "https://www.unipa.it/mobilita/en/new-students/new-students---enrolment/enrolment-procedures-for-extra-eu-foreign-students/master-degree-course/"
+          ],
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "Palermo's enrolment procedure for extra-EU applicants to a master's degree runs from portal registration through the coordinator's academic review and a knowledge interview to Universitaly and final enrolment, and charges nothing along the way. Tuition and the regional tax are handled in separate sections and fall due after admission.",
+            "tr": "Palermo'nun AB dışı yüksek lisans adayları için kayıt yordamı, portal kaydından koordinatörün akademik değerlendirmesine ve bir bilgi mülakatına, oradan Universitaly'ye ve kesin kayda uzanır ve yol boyunca hiçbir ücret almaz. Öğrenim ücreti ile bölgesel harç ayrı bölümlerde ele alınır ve vadeleri kabulden sonra gelir."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -7498,7 +7858,7 @@
         ],
         "housing_search_difficulty": "high",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "high",
           "raw_score": 6,
           "scaled_score": 9,
@@ -7538,16 +7898,16 @@
           "band_from_score": "high",
           "capped_from_very_high": false,
           "legacy_value": "high",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -7835,7 +8195,7 @@
           }
         ],
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-11-30",
           "next_expected_date": null,
           "time": null,
@@ -7844,11 +8204,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "open",
-          "days_remaining_at_evaluation": 92,
+          "days_remaining_at_evaluation": 90,
           "derived_from": "application_timeline_profile.deadline_events[] (ersu_final_international_regularisation)",
           "confidence": "high",
           "source_url": "https://www.unipa.it/mobilita/new-students/new-students---enrolment/enrolment-procedures-for-extra-eu-foreign-students/index.html",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": [
             {
@@ -7883,7 +8243,7 @@
           "https://www.unipa.it/dipartimenti/ingegneria/aerospace-manufacturing-mechanical-and-management-engineering/index.html"
         ],
         "third_party_sources": [],
-        "last_verified": "2026-08-30",
+        "last_verified": "2026-09-01",
         "needs_verification": true,
         "verification_notes": {
           "en": "The record separates current 2026/27 central admissions, tuition and ERSU facts from the 2025/26 programme regulation. No stale admission date, private-rent estimate or industry partnership is promoted as current fact.",
@@ -8168,6 +8528,21 @@
               "en": "Publishes the three aerospace groups and states that research is predominantly computational.",
               "tr": "Üç havacılık grubunu yayımlar ve araştırmanın ağırlıklı olarak hesaplamalı olduğunu belirtir."
             }
+          },
+          {
+            "url": "https://www.unipa.it/mobilita/en/new-students/new-students---enrolment/enrolment-procedures-for-extra-eu-foreign-students/master-degree-course/",
+            "title": "Master Degree course - Enrolment procedures for extra-EU foreign students | Universita degli Studi di Palermo",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ]
       },
@@ -8328,7 +8703,7 @@
       },
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 15,
+        "checked_official_source_count": 16,
         "verified_fields": [
           "program",
           "language",
@@ -8343,7 +8718,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-30"
+        "audited_at": "2026-09-01"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -8374,7 +8749,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "partial_match",
         "score": 40,
         "score_basis_weight": 90,
@@ -8421,7 +8796,7 @@
         ],
         "confidence": "medium",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "research_group_evidence": {
@@ -8569,7 +8944,7 @@
         "living_cost_dkk_per_year_min": null,
         "living_cost_dkk_per_year_max": null,
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": null,
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -8584,13 +8959,40 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "tuition_derivation": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "rule": "not_derivable",
           "reason": "income_based_range_without_upper_bound",
-          "derived_at": "2026-08-30"
+          "derived_at": "2026-09-01"
+        },
+        "application_fee_research": {
+          "outcome": "no_fee_published",
+          "checked_on": "2026-09-01",
+          "pages_checked": [
+            "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/enrolling-in-second-cycle-degree-programmes/enrolling-in-a-second-cycle-degree-programme-if-you-come-from-a-non-eu-country"
+          ],
+          "note": {
+            "en": "Bologna's enrolment page for non-EU second-cycle applicants tells you to pay the first instalment of tuition only after passing the entry requirements and being admitted. The charge it does name up front is the National Health Service registration, and that is a residence cost rather than an application cost.",
+            "tr": "Bologna'nın AB dışı ikinci kademe adayları için kayıt sayfası, öğrenim ücretinin ilk taksitini ancak giriş koşulları sağlanıp kabul alındıktan sonra ödemeni söyler. Önceden adlandırdığı tek kalem Ulusal Sağlık Hizmeti kaydıdır; o da bir başvuru maliyeti değil ikamet maliyetidir."
+          }
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "not_published",
+          "amount": null,
+          "currency": null,
+          "rule": "researched_absence",
+          "pages_checked": [
+            "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/enrolling-in-second-cycle-degree-programmes/enrolling-in-a-second-cycle-degree-programme-if-you-come-from-a-non-eu-country"
+          ],
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "Bologna's enrolment page for non-EU second-cycle applicants tells you to pay the first instalment of tuition only after passing the entry requirements and being admitted. The charge it does name up front is the National Health Service registration, and that is a residence cost rather than an application cost.",
+            "tr": "Bologna'nın AB dışı ikinci kademe adayları için kayıt sayfası, öğrenim ücretinin ilk taksitini ancak giriş koşulları sağlanıp kabul alındıktan sonra ödemeni söyler. Önceden adlandırdığı tek kalem Ulusal Sağlık Hizmeti kaydıdır; o da bir başvuru maliyeti değil ikamet maliyetidir."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -8638,7 +9040,7 @@
         "housing_application_separate": null,
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 2,
           "scaled_score": null,
@@ -8680,16 +9082,16 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -8843,7 +9245,7 @@
           "tr": "Tüm tarihler 2026/27 çağrısındandır ve 14 Temmuz 2026'da kontrol edildiğinde geçmiş veya yakındı. Üç tur vize garantisi değildir: seçilen AB dışı öğrenciler vizeden önce Universitaly ön kaydını tamamlamalıdır; program Ağustos'ta Üniversite ofislerinin kapanıp doğrulamayı geciktirebileceği uyarısını yapar. Bu tarihleri 2027/28 için yeniden kullanmayın."
         },
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-09-10",
           "next_expected_date": null,
           "time": null,
@@ -8852,11 +9254,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closing_soon",
-          "days_remaining_at_evaluation": 11,
+          "days_remaining_at_evaluation": 9,
           "derived_from": "application_timeline_profile.application_deadline",
           "confidence": "high",
           "source_url": "https://corsi.unibo.it/2cycle/AerospaceEngineering/how-to-enrol",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -8870,7 +9272,7 @@
         "official_department_page": "needs_verification",
         "official_lab_pages": [],
         "third_party_sources": [],
-        "last_verified": "2026-08-30",
+        "last_verified": "2026-09-01",
         "needs_verification": false,
         "verification_notes": {
           "en": "Application dates and housing access are source-checked. The card retains the Forlì price gap as unknown instead of filling it with Bologna-city estimates.",
@@ -9046,6 +9448,21 @@
               "labs"
             ],
             "confidence": "high"
+          },
+          {
+            "url": "https://www.unibo.it/en/study/enrolment-fees-and-other-procedures/degree-programmes/enrolling-in-second-cycle-degree-programmes/enrolling-in-a-second-cycle-degree-programme-if-you-come-from-a-non-eu-country",
+            "title": "Enrolling in a second cycle degree programme if you come from a non-EU country | University of Bologna",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ],
         "official_housing_page": "https://www.er-go.it/cosa-fare-per/bandi-di-concorso/leggi-il-bando/bando-di-concorso-benefici-dsu-a-a-2026_2027.pdf/%40%40display-file/file/bando-di-concorso-benefici-dsu-a-a-2026_2027.pdf"
@@ -9182,7 +9599,7 @@
       },
       "data_quality": {
         "status": "verified",
-        "checked_official_source_count": 9,
+        "checked_official_source_count": 10,
         "verified_fields": [
           "program",
           "language",
@@ -9197,7 +9614,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-30"
+        "audited_at": "2026-09-01"
       },
       "qs_ranking": 123,
       "qs_ranking_display": "=123",
@@ -9226,7 +9643,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "strong_adjacent",
         "score": 61,
         "score_basis_weight": 90,
@@ -9264,7 +9681,7 @@
         "matched_tags": [],
         "confidence": "medium",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "research_group_evidence": {
@@ -9400,7 +9817,7 @@
         },
         "first_installment_eur": 208,
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "EUR",
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -9416,7 +9833,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "tuition_eur_per_year": 2990.0,
         "tuition_derivation": {
@@ -9430,6 +9847,40 @@
           "currency": "EUR",
           "includes_mandatory_fees": false,
           "derived_at": "2026-08-30"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "published",
+          "amount": 60.0,
+          "currency": "EUR",
+          "amount_eur_equivalent": null,
+          "scope": "unknown",
+          "charged_per": "application",
+          "charged_by": "university",
+          "charged_by_name": null,
+          "additional_application_amount": null,
+          "academic_cycle": null,
+          "early_amount": null,
+          "early_deadline": null,
+          "covers_programmes": null,
+          "refundable": null,
+          "components": [],
+          "waiver": {
+            "available": null,
+            "open_to_international": null,
+            "request_deadline": null,
+            "processing_days": null
+          },
+          "payment_due_days_after_deadline": null,
+          "rule": "published_application_fee",
+          "derived_from": {
+            "cost_profile.application_fee_eur": 60
+          },
+          "note": {
+            "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+            "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -9482,7 +9933,7 @@
         "housing_application_separate": null,
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 2,
           "scaled_score": null,
@@ -9524,16 +9975,16 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -9724,7 +10175,7 @@
           "tr": "Kontrol edilen 2026/27 ders sayfası 2 Mayıs son tarihini gösterir ve başvuru döneminin kapandığını söyler. 2027/28 tarihi yayımlamaz; bu nedenle yalnızca kapanmış döngü referansı olarak tutulur. Yabancı diploma adayları ayrıca ilgili kategoriye özgü Unipd çağrısını/prosedürünü izlemelidir."
         },
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-05-02",
           "next_expected_date": null,
           "time": null,
@@ -9733,11 +10184,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closed",
-          "days_remaining_at_evaluation": -120,
+          "days_remaining_at_evaluation": -122,
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://apply.unipd.it/courses/course/232-aerospace-engineering?search=2301888",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -10069,7 +10520,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "strong_adjacent",
         "score": 57,
         "score_basis_weight": 90,
@@ -10118,7 +10569,7 @@
         ],
         "confidence": "medium",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "research_group_evidence": {
@@ -10449,7 +10900,7 @@
           "tr": "Bağlayıcı İtalyanca çağrıda yıllık azami tutarın yanında yazıyla sayı hatası vardır; ancak rakamsal azami tutar ve iki ayrıntılı tablo 6.000 EUR'yu tutarlı biçimde destekler. İlk yıl için kabul edilebilir en az 50 puanda yayımlanan aralık 0-4.500 EUR'dur; 6.000 EUR normal ilk yıl dilimi gibi eklenmez, sistem ve düşük kredili ikinci yıl tavanı olarak tutulur."
         },
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "EUR",
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -10465,7 +10916,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "tuition_eur_per_year": 4500.0,
         "tuition_derivation": {
@@ -10479,6 +10930,40 @@
           "currency": "EUR",
           "includes_mandatory_fees": false,
           "derived_at": "2026-08-30"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "published",
+          "amount": 30.0,
+          "currency": "EUR",
+          "amount_eur_equivalent": null,
+          "scope": "unknown",
+          "charged_per": "application",
+          "charged_by": "university",
+          "charged_by_name": null,
+          "additional_application_amount": null,
+          "academic_cycle": null,
+          "early_amount": null,
+          "early_deadline": null,
+          "covers_programmes": null,
+          "refundable": null,
+          "components": [],
+          "waiver": {
+            "available": null,
+            "open_to_international": null,
+            "request_deadline": null,
+            "processing_days": null
+          },
+          "payment_due_days_after_deadline": null,
+          "rule": "published_application_fee",
+          "derived_from": {
+            "cost_profile.application_fee_eur": 30
+          },
+          "note": {
+            "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+            "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -10691,7 +11176,7 @@
         },
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 0,
           "scaled_score": null,
@@ -10732,16 +11217,16 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -11103,7 +11588,7 @@
         "visa_sensitive_deadline": "2026-10-31",
         "enrollment_deadline": "communicated individually after ranking",
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-05-20",
           "next_expected_date": null,
           "time": null,
@@ -11112,11 +11597,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closed",
-          "days_remaining_at_evaluation": -102,
+          "days_remaining_at_evaluation": -104,
           "derived_from": "application_timeline_profile.deadline_events[] (ranking_and_scholarship_assignment_publication)",
           "confidence": "high",
           "source_url": "https://corsi.unitn.it/en/intelligent-mechatronics-engineering/enrollment/admission-and-enrollment-non-europeans",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": [
             {
@@ -11770,7 +12255,7 @@
         "space_curriculum_delivery_status": "officially_planned_for_the_first_cohort_second_year_not_yet_delivered_in_2026_27"
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "strong_adjacent",
         "score": 65,
         "score_basis_weight": 90,
@@ -11817,7 +12302,7 @@
         ],
         "confidence": "medium",
         "legacy_relevance_status": "medium",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "research_group_evidence": {
@@ -11905,6 +12390,13 @@
           "validity_rule": "",
           "waiver_rules": [],
           "source_ids": []
+        },
+        "application_fee_scope": "applicants with a foreign qualification; charged per programme selections",
+        "application_fee_refundable": false,
+        "application_fee_waiver_possible": false,
+        "application_fee_waiver": {
+          "en": "Politecnico di Milano states that the application fee is mandatory, non-refundable and cannot be waived.",
+          "tr": "Politecnico di Milano, başvuru ücretinin zorunlu olduğunu, iade edilmediğini ve kaldırılamayacağını belirtir."
         }
       },
       "language_profile": {
@@ -11941,7 +12433,7 @@
         "tuition_basis": "official_full_contribution_non_eea_2026_2027",
         "regional_tax_eur": null,
         "student_contribution_eur": null,
-        "application_fee_eur": null,
+        "application_fee_eur": 150,
         "enrollment_fee_eur": null,
         "total_academic_cost_eur_per_year_estimated": 3883.04,
         "isee_or_income_based": false,
@@ -11996,7 +12488,7 @@
           "tr": "AEA dışı öğrencilerden otomatik olarak 3.891,59 avroluk tam katkı payı alınır ve ikinci taksit için ISEE istenmez — yani İtalyan ve AB öğrencilerinin aksine, düşük aile geliri beyan ederek bu rakamı düşüremezsin. Tek indirim yolları bir Politecnico bursu ya da bölgesel DSU desteğidir."
         },
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "EUR",
           "annual_total": 14871.59,
           "annual_total_eur_equivalent": null,
@@ -12011,7 +12503,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "currency": "EUR",
         "tuition_eur_per_year": 3891.59,
@@ -12026,6 +12518,55 @@
           "currency": "EUR",
           "includes_mandatory_fees": false,
           "derived_at": "2026-08-30"
+        },
+        "application_fee_early_amount": 50,
+        "application_fee_early_deadline": "2025-12-01",
+        "application_fee_charged_per": "programme_choice",
+        "application_fee_verification": {
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "EUR 150 per application, dropping to EUR 50 for anyone who applies in the early-bird window that closes on 1 December. The fee is mandatory, non-refundable and cannot be waived, and one payment covers up to two Master of Science choices submitted as first and second choice. Applying early is worth EUR 100 here, which is the clearest case in the catalogue of a deadline that costs money to miss.",
+            "tr": "Başvuru başına 150 avro; 1 Aralık'ta kapanan erken başvuru penceresinde başvuran herkes için 50 avroya iner. Ücret zorunludur, iade edilmez ve kaldırılamaz; tek ödeme, birinci ve ikinci tercih olarak verilen en fazla iki yüksek lisans tercihini kapsar. Erken başvurmak burada 100 avro değerindedir; katalogda kaçırılması paraya mal olan bir son tarihin en açık örneği budur."
+          },
+          "confidence": "high"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "published",
+          "amount": 150.0,
+          "currency": "EUR",
+          "amount_eur_equivalent": null,
+          "scope": "international_applicants",
+          "charged_per": "programme_choice",
+          "charged_by": "university",
+          "charged_by_name": null,
+          "additional_application_amount": null,
+          "academic_cycle": null,
+          "early_amount": 50.0,
+          "early_deadline": "2025-12-01",
+          "covers_programmes": null,
+          "refundable": false,
+          "components": [],
+          "waiver": {
+            "available": false,
+            "open_to_international": true,
+            "request_deadline": null,
+            "processing_days": null,
+            "note": {
+              "en": "Politecnico di Milano states that the application fee is mandatory, non-refundable and cannot be waived.",
+              "tr": "Politecnico di Milano, başvuru ücretinin zorunlu olduğunu, iade edilmediğini ve kaldırılamayacağını belirtir."
+            }
+          },
+          "payment_due_days_after_deadline": null,
+          "rule": "published_application_fee",
+          "derived_from": {
+            "cost_profile.application_fee_eur": 150
+          },
+          "note": {
+            "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+            "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -12268,7 +12809,7 @@
         "housing_application_separate": null,
         "housing_search_difficulty": "medium",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "medium",
           "raw_score": 6,
           "scaled_score": 7,
@@ -12311,10 +12852,10 @@
           "band_from_score": "medium",
           "capped_from_very_high": false,
           "legacy_value": "medium",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "official_university_living_budget",
           "status": "partial",
           "currency": "EUR",
@@ -12361,7 +12902,7 @@
             "en": "Midpoints of the ranges Politecnico publishes: accommodation €400-700, food €150-200, transport €20-30 (a monthly public-transport pass is €22), social activities €100-200 and mobile phone €10-30. The university also advises arriving with €200-250 in cash. The full published range is €680-1,150 per month; the components here sit at its centre.",
             "tr": "Politecnico'nun yayımladığı aralıkların orta noktaları: konaklama 400-700 avro, gıda 150-200 avro, ulaşım 20-30 avro (aylık toplu taşıma kartı 22 avro), sosyal etkinlikler 100-200 avro ve cep telefonu 10-30 avro. Üniversite ayrıca yanında 200-250 avro nakitle gelmeyi tavsiye eder. Yayımlanan tam aralık ayda 680-1.150 avrodur; buradaki bileşenler bu aralığın ortasındadır."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "housing_guaranteed": false,
         "student_housing_places_published": 2131,
@@ -12839,7 +13380,7 @@
           "tr": "Yayımlanan tüm 2026/27 yabancı diplomalı Mühendislik çağrıları doğrulama tarihinde kapanmıştır. 31 Mart ek çağrısı yalnızca AEA adayları ve İtalya'da belirtilmiş statüde ikamet eden AB dışı adaylar içindir; normal yurtdışı AB dışı rota değildir. Gelecek 2027/28 tarihleri tahmin edilmez."
         },
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-06-18",
           "next_expected_date": null,
           "time": null,
@@ -12848,11 +13389,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closed",
-          "days_remaining_at_evaluation": -73,
+          "days_remaining_at_evaluation": -75,
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-magistrale/foreign-qualification/application/list-of-documents-required-by-the-admissions-office",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -13211,9 +13752,39 @@
               "en": "Publishes a component breakdown: accommodation, food, transport, social activities and mobile phone.",
               "tr": "Bileşen bazlı bir dağılım yayımlar: konaklama, gıda, ulaşım, sosyal etkinlikler ve cep telefonu."
             }
+          },
+          {
+            "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-magistrale/foreign-qualification/application",
+            "title": "Application - Admission to Laurea Magistrale with a foreign qualification | Politecnico di Milano",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
+          },
+          {
+            "url": "https://www.polimi.it/en/prospective-students/how-to-apply/admission-to-laurea-magistrale/foreign-qualification/deadlines",
+            "title": "Deadlines - Admission to Laurea Magistrale with a foreign qualification | Politecnico di Milano",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ],
-        "last_verified": "2026-08-29",
+        "last_verified": "2026-09-01",
         "needs_verification": true,
         "verification_notes": {
           "en": "All shown critical decision fields have checked official sources. The next 2026/27 course-by-course plan, a complete monthly budget and a named programme-specific industry placement are not claimed where not published.",
@@ -13361,7 +13932,7 @@
       },
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 22,
+        "checked_official_source_count": 24,
         "verified_fields": [
           "program",
           "language",
@@ -13376,7 +13947,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-29"
+        "audited_at": "2026-09-01"
       },
       "financials": {
         "tuition_fee_per_year": null,
@@ -13423,7 +13994,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "core_match",
         "score": 100,
         "score_basis_weight": 90,
@@ -13471,7 +14042,7 @@
         ],
         "confidence": "medium",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "research_group_evidence": {
@@ -13677,7 +14248,7 @@
           "tr": "Sabit vergi kuralı uluslararası öğrenciler için yayımlanmıştır ve ISEE Parificato gerektirmez."
         },
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "EUR",
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -13693,7 +14264,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "tuition_eur_per_year": 1000.0,
         "tuition_derivation": {
@@ -13707,6 +14278,40 @@
           "currency": "EUR",
           "includes_mandatory_fees": false,
           "derived_at": "2026-08-30"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "published",
+          "amount": 23.0,
+          "currency": "EUR",
+          "amount_eur_equivalent": null,
+          "scope": "unknown",
+          "charged_per": "application",
+          "charged_by": "university",
+          "charged_by_name": null,
+          "additional_application_amount": null,
+          "academic_cycle": null,
+          "early_amount": null,
+          "early_deadline": null,
+          "covers_programmes": null,
+          "refundable": null,
+          "components": [],
+          "waiver": {
+            "available": null,
+            "open_to_international": null,
+            "request_deadline": null,
+            "processing_days": null
+          },
+          "payment_due_days_after_deadline": null,
+          "rule": "published_application_fee",
+          "derived_from": {
+            "cost_profile.application_fee_eur": 23
+          },
+          "note": {
+            "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+            "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -13843,7 +14448,7 @@
           "tr": "Güncel resmî Brindisi özel oda veya toplam yaşam maliyeti aralığı bulunamadı. Eski 150–400 EUR kira ve aylık 600 EUR yaşam maliyeti iddiaları kaynaksız olduğu için kaldırıldı."
         },
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 4,
           "scaled_score": null,
@@ -13884,16 +14489,16 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -14036,7 +14641,7 @@
           "tr": "Temmuz ve Kasım tarihleri güncel merkezi vize süreci son tarihleridir; Haziran tarihleri Aerospace'e özgüdür."
         },
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-08-25",
           "next_expected_date": null,
           "time": null,
@@ -14045,11 +14650,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closed",
-          "days_remaining_at_evaluation": -5,
+          "days_remaining_at_evaluation": -7,
           "derived_from": "application_timeline_profile.deadline_events[] (isufi_second_level_selection)",
           "confidence": "high",
           "source_url": "https://international.unisalento.it/en/admission/masters-degree",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": [
             {
@@ -14723,7 +15328,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "weak_match",
         "score": 32,
         "score_basis_weight": 100,
@@ -14768,7 +15373,7 @@
         ],
         "confidence": "high",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "research_group_evidence": {

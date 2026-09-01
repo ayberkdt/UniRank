@@ -120,6 +120,28 @@ if (!unpublishedModel.referenceDeadline || unpublishedModel.referenceDeadline.da
   failures.push('The latest verified previous-cycle deadline was not preserved as a labelled reference date.');
 }
 
+// A deadline is a fact about the record, not about the language it is read in.
+// The actionability rules are written in English, so classifying on the
+// translated label made the Turkish calendar quietly weaker than the English
+// one: the same catalogue offered a Turkish reader five live countdowns where
+// an English reader got twenty-five.
+const englishModel = (() => {
+  sandbox.currentLanguage = 'en';
+  return dashboard.programModel(record, 0);
+})();
+sandbox.currentLanguage = 'tr';
+const turkishModel = dashboard.programModel(record, 0);
+if (englishModel.status !== turkishModel.status
+  || englishModel.events.length !== turkishModel.events.length
+  || englishModel.applicantEvents.length !== turkishModel.applicantEvents.length
+  || Boolean(englishModel.next) !== Boolean(turkishModel.next)) {
+  failures.push(
+    `Deadline classification changed with the interface language: `
+    + `en=${englishModel.status}/${englishModel.events.length}/${englishModel.applicantEvents.length} `
+    + `tr=${turkishModel.status}/${turkishModel.events.length}/${turkishModel.applicantEvents.length}`
+  );
+}
+
 let refreshCalls = 0;
 sandbox.document.hidden = false;
 sandbox.refreshUniRankData = async () => {

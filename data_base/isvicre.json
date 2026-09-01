@@ -124,7 +124,7 @@
       "tuition_chf_per_year_min": 4380,
       "tuition_chf_per_year_max": 4380,
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "CHF",
         "annual_total": 29580.0,
         "annual_total_eur_equivalent": {
@@ -146,7 +146,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_chf_per_year": 4380.0,
       "tuition_derivation": {
@@ -160,6 +160,51 @@
         "currency": "CHF",
         "includes_mandatory_fees": false,
         "derived_at": "2026-08-30"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 150.0,
+        "currency": "CHF",
+        "amount_eur_equivalent": {
+          "amount": 160.19,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 0.9364,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "unknown",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "cost_profile.application_fee": {
+            "amount": 150,
+            "currency": "CHF",
+            "basis": "non-Swiss matriculation certificate"
+          }
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -255,7 +300,7 @@
       "housing_access": "unknown",
       "housing_application_separate": null,
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -298,10 +343,10 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_source_range_basis_not_itemised",
         "status": "total_only",
         "currency": "CHF",
@@ -331,11 +376,11 @@
           "derived_from": {
             "monthly_living_cost_chf_estimated": 25200.0
           },
-          "derived_at": "2026-08-30"
+          "derived_at": "2026-09-01"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -425,7 +470,7 @@
       "eu_deadline": "2025-11-30 for international bachelor's degree; 2026-04-30 only for Swiss bachelor's degree",
       "scholarship_deadline": "2025-11-30 application window for international-degree applicants seeking ESOP",
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": "2025-11-30",
         "next_expected_date": null,
         "time": null,
@@ -434,11 +479,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -273,
+        "days_remaining_at_evaluation": -275,
         "derived_from": "application_timeline_profile.non_eu_deadline",
         "confidence": "high",
         "source_url": "https://ethz.ch/en/studies/master/degree-programmes/engineering-sciences.html/1000",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -839,7 +884,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "partial_match",
       "score": 44,
       "score_basis_weight": 90,
@@ -882,7 +927,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "medium",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -950,7 +995,9 @@
         "validity_rule": "",
         "waiver_rules": [],
         "source_ids": []
-      }
+      },
+      "application_fee_scope": "applicants holding a foreign bachelor's degree",
+      "application_fee_refundable": false
     },
     "language_profile": {
       "teaching_language": [
@@ -1018,7 +1065,7 @@
       "living_cost_dkk_per_year_min": null,
       "living_cost_dkk_per_year_max": null,
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "CHF",
         "annual_total": 29664.0,
         "annual_total_eur_equivalent": {
@@ -1040,7 +1087,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_chf_per_year": 4380.0,
       "tuition_derivation": {
@@ -1059,6 +1106,56 @@
         "currency": "CHF",
         "includes_mandatory_fees": false,
         "derived_at": "2026-08-30"
+      },
+      "application_fee_chf": 150,
+      "application_fee_verification": {
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "CHF 150 for a foreign bachelor's degree, against CHF 50 for a Swiss one and nothing for an EPFL one. The form has to be validated and paid for by 31 March at the latest, and the fee is not returned if the application is then withdrawn or never validated.",
+          "tr": "Yabancı bir lisans diploması için 150 İsviçre frangı; İsviçre diploması için 50 frank, EPFL diploması için sıfırdır. Form en geç 31 Mart'a kadar onaylanıp ödenmiş olmalıdır ve başvuru sonradan geri çekilir ya da hiç onaylanmazsa ücret iade edilmez."
+        },
+        "confidence": "high"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 150.0,
+        "currency": "CHF",
+        "amount_eur_equivalent": {
+          "amount": 160.19,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 0.9364,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "international_applicants",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": false,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "cost_profile.application_fee_chf": 150
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -1154,7 +1251,7 @@
       "housing_access": "unknown",
       "housing_application_separate": null,
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -1197,10 +1294,10 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_source_range_basis_not_itemised",
         "status": "total_only",
         "currency": "CHF",
@@ -1234,11 +1331,11 @@
             "monthly_living_cost_chf_min": 2107.0,
             "monthly_living_cost_chf_max": 2107.0
           },
-          "derived_at": "2026-08-30"
+          "derived_at": "2026-09-01"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -1339,12 +1436,12 @@
       ],
       "scholarship_deadline": "15 December or 31 March (same Master application rounds)",
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -1470,7 +1567,7 @@
         "",
         ""
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-01",
       "field_confidence": {
         "program_basic_info": "high",
         "language": "high",
@@ -1630,6 +1727,21 @@
             "department"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://www.epfl.ch/education/admission/admission-2/master-admission-criteria-application/online-application/",
+          "title": "Online application | EPFL Admission",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
       "needs_verification": true,
@@ -1662,7 +1774,7 @@
     "qs_ranking": 22,
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 10,
+      "checked_official_source_count": 11,
       "verified_fields": [
         "program",
         "language",
@@ -1677,7 +1789,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-30"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "qc_status": "needs_revision",
@@ -1715,7 +1827,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "strong_adjacent",
       "score": 73,
       "score_basis_weight": 90,
@@ -1758,7 +1870,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "weak",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -1932,7 +2044,7 @@
         }
       ],
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "CHF",
         "annual_total": 23460.0,
         "annual_total_eur_equivalent": {
@@ -1954,7 +2066,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_derivation": {
         "standard": "cost_model@3.1.0",
@@ -1967,6 +2079,59 @@
         "currency": "CHF",
         "includes_mandatory_fees": false,
         "derived_at": "2026-08-30"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 100.0,
+        "currency": "CHF",
+        "amount_eur_equivalent": {
+          "amount": 106.79,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 0.9364,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "unknown",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "application_fee_items": [
+            {
+              "amount": 100,
+              "currency": "CHF",
+              "period": "one_time",
+              "applicant_scope": "mse_applicant",
+              "mandatory": true,
+              "basis": "Application is processed only after the admission processing fee is paid",
+              "source_ids": [
+                "https://www.zhaw.ch/en/engineering/study/masters-degree-programme/admission-requirements?L=1"
+              ]
+            }
+          ]
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -2052,7 +2217,7 @@
       "housing_access": "unknown",
       "housing_application_separate": null,
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -2095,10 +2260,10 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_source_range_basis_not_itemised",
         "status": "total_only",
         "currency": "CHF",
@@ -2132,11 +2297,11 @@
             "monthly_living_cost_chf_min": 1390.0,
             "monthly_living_cost_chf_max": 2280.0
           },
-          "derived_at": "2026-08-30"
+          "derived_at": "2026-09-01"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -2239,12 +2404,12 @@
         "Spring intake: end of October"
       ],
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -2851,7 +3016,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "core_match",
       "score": 100,
       "score_basis_weight": 90,
@@ -2895,7 +3060,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "medium",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {

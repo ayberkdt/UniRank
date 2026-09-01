@@ -288,7 +288,7 @@
         "tr": "Güncel 2.700 EUR AB dışı ücret, Practical Guide'daki eski 2.430 EUR tutarın yerine geçer. Yaşam tahminleri planlama aralığıdır; garanti fiyat değildir."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": null,
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -303,13 +303,68 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_derivation": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-08-30"
+        "derived_at": "2026-09-01"
+      },
+      "application_fee_research": {
+        "outcome": "no_fee_published",
+        "checked_on": "2026-09-01",
+        "pages_checked": [
+          "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "https://international.upb.ro/admission/applying/students-from-non-eu-countries"
+        ],
+        "note": {
+          "en": "POLITEHNICA Bucharest's 2026 methodology for non-EU citizens sets out the graduate route end to end - upload the file on apply.upb.ro from February, the university evaluates it, the list goes to the Ministry of Education and Research, the Ministry issues the letter of acceptance after a minimum of 60 days - and prices none of it. The RON 100 and RON 50 fees the record already carried are the general Romanian admission fees for the July and early-admission routes, and the university's own basis says of each that it is not the central non-EU route.",
+          "tr": "POLITEHNICA Bükreş'in AB dışı vatandaşlar için 2026 yöntemi, lisansüstü yolu baştan sona anlatır - şubattan itibaren dosyayı apply.upb.ro'ya yükle, üniversite değerlendirir, liste Eğitim ve Araştırma Bakanlığı'na gider, Bakanlık en az 60 gün sonra kabul mektubunu düzenler - ve hiçbirini fiyatlandırmaz. Kayıtta zaten bulunan 100 ve 50 RON'luk ücretler, temmuz ve erken başvuru yollarına ait genel Romanya kabul ücretleridir ve üniversitenin kendi dayanağı her ikisi için de bunun merkezi AB dışı yol olmadığını söyler."
+        }
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "not_published",
+        "amount": null,
+        "currency": null,
+        "rule": "researched_absence",
+        "pages_checked": [
+          "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "https://international.upb.ro/admission/applying/students-from-non-eu-countries"
+        ],
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "POLITEHNICA Bucharest's 2026 methodology for non-EU citizens sets out the graduate route end to end - upload the file on apply.upb.ro from February, the university evaluates it, the list goes to the Ministry of Education and Research, the Ministry issues the letter of acceptance after a minimum of 60 days - and prices none of it. The RON 100 and RON 50 fees the record already carried are the general Romanian admission fees for the July and early-admission routes, and the university's own basis says of each that it is not the central non-EU route.",
+          "tr": "POLITEHNICA Bükreş'in AB dışı vatandaşlar için 2026 yöntemi, lisansüstü yolu baştan sona anlatır - şubattan itibaren dosyayı apply.upb.ro'ya yükle, üniversite değerlendirir, liste Eğitim ve Araştırma Bakanlığı'na gider, Bakanlık en az 60 gün sonra kabul mektubunu düzenler - ve hiçbirini fiyatlandırmaz. Kayıtta zaten bulunan 100 ve 50 RON'luk ücretler, temmuz ve erken başvuru yollarına ait genel Romanya kabul ücretleridir ve üniversitenin kendi dayanağı her ikisi için de bunun merkezi AB dışı yol olmadığını söyler."
+        },
+        "evaluated_at": "2026-09-01",
+        "refused_items": [
+          {
+            "amount": 100,
+            "currency": "RON",
+            "period": "one_time",
+            "applicant_scope": "general_eu_domestic_july_or_september_route",
+            "academic_cycle": "2026/2027",
+            "mandatory": true,
+            "basis": "General master admission fee; not the central non-EU route",
+            "source_ids": [
+              "ro_upb_master_regulation"
+            ]
+          },
+          {
+            "amount": 50,
+            "currency": "RON",
+            "period": "one_time",
+            "applicant_scope": "general_eu_domestic_early_admission_route",
+            "academic_cycle": "2026/2027",
+            "mandatory": true,
+            "basis": "General early-admission fee; not the central non-EU route",
+            "source_ids": [
+              "ro_upb_master_regulation"
+            ]
+          }
+        ]
       }
     },
     "scholarship_profile": {
@@ -413,7 +468,7 @@
       "housing_difficulty": "unknown",
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -454,16 +509,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -698,12 +753,12 @@
         "tr": "Türkiye'den aday temmuzu beklememelidir. Tasdikli belgeleri ve dil kanıtını şubattan önce hazırlayın, AB dışı pencerenin başında başvurun ve Kabul Mektubundan sonra tam yıllık ücreti hemen ödemeye hazır olun."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -855,34 +910,6 @@
           }
         },
         {
-          "source_id": "ro_upb_noneu_methodology",
-          "url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
-          "final_url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
-          "title": "Methodology for admission of non-EU students 2026",
-          "publisher": "POLITEHNICA Bucharest",
-          "source_type": "official_tuition_page",
-          "official": true,
-          "access_status": "pdf",
-          "published_or_effective_date": "2026",
-          "applicable_academic_cycle": "2026/2027",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "admission",
-            "non_eu_eligibility",
-            "tuition",
-            "deadline",
-            "payment",
-            "refund",
-            "housing",
-            "visa"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Authoritative current non-EU route with the Annex VI official fee table. Admission procedure is independently supported by the current non-EU guide. Where confirmation wording differs, the shorter 20-day period is used as the safe deadline.",
-            "tr": "Ek VI resmî ücret tablosunu içeren yetkili güncel AB dışı rota kaynağıdır. Kabul prosedürü güncel AB dışı rehberiyle ayrıca desteklenir. Teyit ifadeleri farklılaştığında güvenli tarih olarak daha kısa 20 gün kullanılır."
-          }
-        },
-        {
           "source_id": "ro_upb_faculty_admission",
           "url": "https://www.aero.pub.ro/ro/admitere-master/",
           "final_url": "https://www.aero.pub.ro/ro/admitere-master/",
@@ -1016,6 +1043,42 @@
             "en": "Rendered page 9 was visually checked. Living and rental ranges are used; its older tuition figure is explicitly not used.",
             "tr": "9. sayfa görsel olarak kontrol edildi. Yaşam ve kira aralıkları kullanılır; eski öğrenim ücreti açıkça kullanılmaz."
           }
+        },
+        {
+          "url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "title": "Methodology for Admission and Tuition of Foreign Citizens from non-EU states | POLITEHNICA Bucharest",
+          "source_type": "official_tuition_page",
+          "access_status": "pdf",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees",
+            "non_eu_eligibility",
+            "deadline",
+            "payment",
+            "refund",
+            "housing",
+            "visa"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://international.upb.ro/admission/applying/students-from-non-eu-countries",
+          "title": "Students from non-EU countries | POLITEHNICA Bucharest",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
       "evidence_map": {
@@ -1061,7 +1124,7 @@
           "ro_upb_practical_guide"
         ]
       },
-      "last_verified": "2026-08-14",
+      "last_verified": "2026-09-01",
       "next_review_due": "2027-01-15",
       "needs_verification": true,
       "verification_notes": {
@@ -1137,7 +1200,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 11,
+      "checked_official_source_count": 12,
       "verified_fields": [
         "program",
         "language",
@@ -1151,7 +1214,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-23"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "qc_status": "needs_revision",
@@ -1170,7 +1233,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "unknown",
       "score": null,
       "score_basis_weight": 30,
@@ -1216,7 +1279,7 @@
       ],
       "confidence": "unknown",
       "legacy_relevance_status": null,
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     }
   },
   {
@@ -1474,7 +1537,7 @@
         "tr": "Gerekirse Rumence hazırlık yılı ücreti ve ek bir yıllık yaşam maliyeti 2.700 EUR program yılı ücretine dâhil değildir; ayrıca bütçelenmelidir."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": null,
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -1489,13 +1552,68 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_derivation": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-08-30"
+        "derived_at": "2026-09-01"
+      },
+      "application_fee_research": {
+        "outcome": "no_fee_published",
+        "checked_on": "2026-09-01",
+        "pages_checked": [
+          "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "https://international.upb.ro/admission/applying/students-from-non-eu-countries"
+        ],
+        "note": {
+          "en": "POLITEHNICA Bucharest's 2026 methodology for non-EU citizens sets out the graduate route end to end - upload the file on apply.upb.ro from February, the university evaluates it, the list goes to the Ministry of Education and Research, the Ministry issues the letter of acceptance after a minimum of 60 days - and prices none of it. The RON 100 and RON 50 fees the record already carried are the general Romanian admission fees for the July and early-admission routes, and the university's own basis says of each that it is not the central non-EU route.",
+          "tr": "POLITEHNICA Bükreş'in AB dışı vatandaşlar için 2026 yöntemi, lisansüstü yolu baştan sona anlatır - şubattan itibaren dosyayı apply.upb.ro'ya yükle, üniversite değerlendirir, liste Eğitim ve Araştırma Bakanlığı'na gider, Bakanlık en az 60 gün sonra kabul mektubunu düzenler - ve hiçbirini fiyatlandırmaz. Kayıtta zaten bulunan 100 ve 50 RON'luk ücretler, temmuz ve erken başvuru yollarına ait genel Romanya kabul ücretleridir ve üniversitenin kendi dayanağı her ikisi için de bunun merkezi AB dışı yol olmadığını söyler."
+        }
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "not_published",
+        "amount": null,
+        "currency": null,
+        "rule": "researched_absence",
+        "pages_checked": [
+          "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "https://international.upb.ro/admission/applying/students-from-non-eu-countries"
+        ],
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "POLITEHNICA Bucharest's 2026 methodology for non-EU citizens sets out the graduate route end to end - upload the file on apply.upb.ro from February, the university evaluates it, the list goes to the Ministry of Education and Research, the Ministry issues the letter of acceptance after a minimum of 60 days - and prices none of it. The RON 100 and RON 50 fees the record already carried are the general Romanian admission fees for the July and early-admission routes, and the university's own basis says of each that it is not the central non-EU route.",
+          "tr": "POLITEHNICA Bükreş'in AB dışı vatandaşlar için 2026 yöntemi, lisansüstü yolu baştan sona anlatır - şubattan itibaren dosyayı apply.upb.ro'ya yükle, üniversite değerlendirir, liste Eğitim ve Araştırma Bakanlığı'na gider, Bakanlık en az 60 gün sonra kabul mektubunu düzenler - ve hiçbirini fiyatlandırmaz. Kayıtta zaten bulunan 100 ve 50 RON'luk ücretler, temmuz ve erken başvuru yollarına ait genel Romanya kabul ücretleridir ve üniversitenin kendi dayanağı her ikisi için de bunun merkezi AB dışı yol olmadığını söyler."
+        },
+        "evaluated_at": "2026-09-01",
+        "refused_items": [
+          {
+            "amount": 100,
+            "currency": "RON",
+            "period": "one_time",
+            "applicant_scope": "general_eu_domestic_july_or_september_route",
+            "academic_cycle": "2026/2027",
+            "mandatory": true,
+            "basis": "General master admission fee; not the central non-EU route",
+            "source_ids": [
+              "ro_upb_master_regulation"
+            ]
+          },
+          {
+            "amount": 50,
+            "currency": "RON",
+            "period": "one_time",
+            "applicant_scope": "general_eu_domestic_early_admission_route",
+            "academic_cycle": "2026/2027",
+            "mandatory": true,
+            "basis": "General early-admission fee; not the central non-EU route",
+            "source_ids": [
+              "ro_upb_master_regulation"
+            ]
+          }
+        ]
       }
     },
     "scholarship_profile": {
@@ -1599,7 +1717,7 @@
       "housing_difficulty": "unknown",
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -1640,16 +1758,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -1898,12 +2016,12 @@
         "tr": "Yalnız derece son tarihinden değil Rumence hazır olma tarihinden geriye planlayın. Hazırlık yılı gerekirse fiilî yolculuk en az üç akademik yıldır ve daha erken kabul/vize planı ister."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -2078,34 +2196,6 @@
           }
         },
         {
-          "source_id": "ro_upb_noneu_methodology",
-          "url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
-          "final_url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
-          "title": "Methodology for admission of non-EU students 2026",
-          "publisher": "POLITEHNICA Bucharest",
-          "source_type": "official_tuition_page",
-          "official": true,
-          "access_status": "pdf",
-          "published_or_effective_date": "2026",
-          "applicable_academic_cycle": "2026/2027",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "admission",
-            "non_eu_eligibility",
-            "tuition",
-            "deadline",
-            "payment",
-            "refund",
-            "housing",
-            "visa"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Current non-EU route and Annex VI fee table; admission procedure independently supported by the guide.",
-            "tr": "Güncel AB dışı rota ve Ek VI ücret tablosu; kabul prosedürü rehberle ayrıca desteklenir."
-          }
-        },
-        {
           "source_id": "ro_upb_faculty_admission",
           "url": "https://www.aero.pub.ro/ro/admitere-master/",
           "final_url": "https://www.aero.pub.ro/ro/admitere-master/",
@@ -2262,6 +2352,42 @@
             "en": "Centre expertise includes satellites, ADCS, launchers, rockets, propulsion and structures; no guaranteed student placement inferred.",
             "tr": "Merkez uzmanlığı uydular, ADCS, fırlatıcılar, roketler, itki ve yapıları içerir; garantili öğrenci yerleştirmesi çıkarılmadı."
           }
+        },
+        {
+          "url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "title": "Methodology for Admission and Tuition of Foreign Citizens from non-EU states | POLITEHNICA Bucharest",
+          "source_type": "official_tuition_page",
+          "access_status": "pdf",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees",
+            "non_eu_eligibility",
+            "deadline",
+            "payment",
+            "refund",
+            "housing",
+            "visa"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://international.upb.ro/admission/applying/students-from-non-eu-countries",
+          "title": "Students from non-EU countries | POLITEHNICA Bucharest",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
       "evidence_map": {
@@ -2315,7 +2441,7 @@
           "ro_upb_ccas"
         ]
       },
-      "last_verified": "2026-08-14",
+      "last_verified": "2026-09-01",
       "next_review_due": "2027-01-15",
       "needs_verification": true,
       "verification_notes": {
@@ -2391,7 +2517,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 13,
+      "checked_official_source_count": 14,
       "verified_fields": [
         "program",
         "language",
@@ -2406,7 +2532,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-23"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "qc_status": "needs_revision",
@@ -2425,7 +2551,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "weak_match",
       "score": 7,
       "score_basis_weight": 90,
@@ -2472,7 +2598,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": null,
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     }
   },
   {
@@ -2730,7 +2856,7 @@
         "tr": "Gerekirse Rumence hazırlık yılı ücreti ve ek bir yıllık yaşam maliyeti 2.700 EUR program yılı ücretine dâhil değildir; ayrıca bütçelenmelidir."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": null,
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -2745,13 +2871,68 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_derivation": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-08-30"
+        "derived_at": "2026-09-01"
+      },
+      "application_fee_research": {
+        "outcome": "no_fee_published",
+        "checked_on": "2026-09-01",
+        "pages_checked": [
+          "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "https://international.upb.ro/admission/applying/students-from-non-eu-countries"
+        ],
+        "note": {
+          "en": "POLITEHNICA Bucharest's 2026 methodology for non-EU citizens sets out the graduate route end to end - upload the file on apply.upb.ro from February, the university evaluates it, the list goes to the Ministry of Education and Research, the Ministry issues the letter of acceptance after a minimum of 60 days - and prices none of it. The RON 100 and RON 50 fees the record already carried are the general Romanian admission fees for the July and early-admission routes, and the university's own basis says of each that it is not the central non-EU route.",
+          "tr": "POLITEHNICA Bükreş'in AB dışı vatandaşlar için 2026 yöntemi, lisansüstü yolu baştan sona anlatır - şubattan itibaren dosyayı apply.upb.ro'ya yükle, üniversite değerlendirir, liste Eğitim ve Araştırma Bakanlığı'na gider, Bakanlık en az 60 gün sonra kabul mektubunu düzenler - ve hiçbirini fiyatlandırmaz. Kayıtta zaten bulunan 100 ve 50 RON'luk ücretler, temmuz ve erken başvuru yollarına ait genel Romanya kabul ücretleridir ve üniversitenin kendi dayanağı her ikisi için de bunun merkezi AB dışı yol olmadığını söyler."
+        }
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "not_published",
+        "amount": null,
+        "currency": null,
+        "rule": "researched_absence",
+        "pages_checked": [
+          "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "https://international.upb.ro/admission/applying/students-from-non-eu-countries"
+        ],
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "POLITEHNICA Bucharest's 2026 methodology for non-EU citizens sets out the graduate route end to end - upload the file on apply.upb.ro from February, the university evaluates it, the list goes to the Ministry of Education and Research, the Ministry issues the letter of acceptance after a minimum of 60 days - and prices none of it. The RON 100 and RON 50 fees the record already carried are the general Romanian admission fees for the July and early-admission routes, and the university's own basis says of each that it is not the central non-EU route.",
+          "tr": "POLITEHNICA Bükreş'in AB dışı vatandaşlar için 2026 yöntemi, lisansüstü yolu baştan sona anlatır - şubattan itibaren dosyayı apply.upb.ro'ya yükle, üniversite değerlendirir, liste Eğitim ve Araştırma Bakanlığı'na gider, Bakanlık en az 60 gün sonra kabul mektubunu düzenler - ve hiçbirini fiyatlandırmaz. Kayıtta zaten bulunan 100 ve 50 RON'luk ücretler, temmuz ve erken başvuru yollarına ait genel Romanya kabul ücretleridir ve üniversitenin kendi dayanağı her ikisi için de bunun merkezi AB dışı yol olmadığını söyler."
+        },
+        "evaluated_at": "2026-09-01",
+        "refused_items": [
+          {
+            "amount": 100,
+            "currency": "RON",
+            "period": "one_time",
+            "applicant_scope": "general_eu_domestic_july_or_september_route",
+            "academic_cycle": "2026/2027",
+            "mandatory": true,
+            "basis": "General master admission fee; not the central non-EU route",
+            "source_ids": [
+              "ro_upb_master_regulation"
+            ]
+          },
+          {
+            "amount": 50,
+            "currency": "RON",
+            "period": "one_time",
+            "applicant_scope": "general_eu_domestic_early_admission_route",
+            "academic_cycle": "2026/2027",
+            "mandatory": true,
+            "basis": "General early-admission fee; not the central non-EU route",
+            "source_ids": [
+              "ro_upb_master_regulation"
+            ]
+          }
+        ]
       }
     },
     "scholarship_profile": {
@@ -2855,7 +3036,7 @@
       "housing_difficulty": "unknown",
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -2896,16 +3077,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -3156,12 +3337,12 @@
         "tr": "Yalnız derece son tarihinden değil Rumence hazır olma tarihinden geriye planlayın. Hazırlık yılı gerekirse fiilî yolculuk en az üç akademik yıldır ve daha erken kabul/vize planı ister."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -3336,34 +3517,6 @@
           }
         },
         {
-          "source_id": "ro_upb_noneu_methodology",
-          "url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
-          "final_url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
-          "title": "Methodology for admission of non-EU students 2026",
-          "publisher": "POLITEHNICA Bucharest",
-          "source_type": "official_tuition_page",
-          "official": true,
-          "access_status": "pdf",
-          "published_or_effective_date": "2026",
-          "applicable_academic_cycle": "2026/2027",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "admission",
-            "non_eu_eligibility",
-            "tuition",
-            "deadline",
-            "payment",
-            "refund",
-            "housing",
-            "visa"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Current non-EU route and Annex VI fee table; admission procedure independently supported by the guide.",
-            "tr": "Güncel AB dışı rota ve Ek VI ücret tablosu; kabul prosedürü rehberle ayrıca desteklenir."
-          }
-        },
-        {
           "source_id": "ro_upb_faculty_admission",
           "url": "https://www.aero.pub.ro/ro/admitere-master/",
           "final_url": "https://www.aero.pub.ro/ro/admitere-master/",
@@ -3520,6 +3673,42 @@
             "en": "Centre expertise includes satellites, ADCS, launchers, rockets, propulsion and structures; no guaranteed student placement inferred.",
             "tr": "Merkez uzmanlığı uydular, ADCS, fırlatıcılar, roketler, itki ve yapıları içerir; garantili öğrenci yerleştirmesi çıkarılmadı."
           }
+        },
+        {
+          "url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "title": "Methodology for Admission and Tuition of Foreign Citizens from non-EU states | POLITEHNICA Bucharest",
+          "source_type": "official_tuition_page",
+          "access_status": "pdf",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees",
+            "non_eu_eligibility",
+            "deadline",
+            "payment",
+            "refund",
+            "housing",
+            "visa"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://international.upb.ro/admission/applying/students-from-non-eu-countries",
+          "title": "Students from non-EU countries | POLITEHNICA Bucharest",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
       "evidence_map": {
@@ -3573,7 +3762,7 @@
           "ro_upb_ccas"
         ]
       },
-      "last_verified": "2026-08-14",
+      "last_verified": "2026-09-01",
       "next_review_due": "2027-01-15",
       "needs_verification": true,
       "verification_notes": {
@@ -3649,7 +3838,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 13,
+      "checked_official_source_count": 14,
       "verified_fields": [
         "program",
         "language",
@@ -3664,7 +3853,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-23"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "qc_status": "needs_revision",
@@ -3683,7 +3872,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "weak_match",
       "score": 7,
       "score_basis_weight": 90,
@@ -3729,7 +3918,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": null,
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     }
   },
   {
@@ -3987,7 +4176,7 @@
         "tr": "Gerekirse Rumence hazırlık yılı ücreti ve ek bir yıllık yaşam maliyeti 2.700 EUR program yılı ücretine dâhil değildir; ayrıca bütçelenmelidir."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": null,
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -4002,13 +4191,68 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_derivation": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-08-30"
+        "derived_at": "2026-09-01"
+      },
+      "application_fee_research": {
+        "outcome": "no_fee_published",
+        "checked_on": "2026-09-01",
+        "pages_checked": [
+          "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "https://international.upb.ro/admission/applying/students-from-non-eu-countries"
+        ],
+        "note": {
+          "en": "POLITEHNICA Bucharest's 2026 methodology for non-EU citizens sets out the graduate route end to end - upload the file on apply.upb.ro from February, the university evaluates it, the list goes to the Ministry of Education and Research, the Ministry issues the letter of acceptance after a minimum of 60 days - and prices none of it. The RON 100 and RON 50 fees the record already carried are the general Romanian admission fees for the July and early-admission routes, and the university's own basis says of each that it is not the central non-EU route.",
+          "tr": "POLITEHNICA Bükreş'in AB dışı vatandaşlar için 2026 yöntemi, lisansüstü yolu baştan sona anlatır - şubattan itibaren dosyayı apply.upb.ro'ya yükle, üniversite değerlendirir, liste Eğitim ve Araştırma Bakanlığı'na gider, Bakanlık en az 60 gün sonra kabul mektubunu düzenler - ve hiçbirini fiyatlandırmaz. Kayıtta zaten bulunan 100 ve 50 RON'luk ücretler, temmuz ve erken başvuru yollarına ait genel Romanya kabul ücretleridir ve üniversitenin kendi dayanağı her ikisi için de bunun merkezi AB dışı yol olmadığını söyler."
+        }
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "not_published",
+        "amount": null,
+        "currency": null,
+        "rule": "researched_absence",
+        "pages_checked": [
+          "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "https://international.upb.ro/admission/applying/students-from-non-eu-countries"
+        ],
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "POLITEHNICA Bucharest's 2026 methodology for non-EU citizens sets out the graduate route end to end - upload the file on apply.upb.ro from February, the university evaluates it, the list goes to the Ministry of Education and Research, the Ministry issues the letter of acceptance after a minimum of 60 days - and prices none of it. The RON 100 and RON 50 fees the record already carried are the general Romanian admission fees for the July and early-admission routes, and the university's own basis says of each that it is not the central non-EU route.",
+          "tr": "POLITEHNICA Bükreş'in AB dışı vatandaşlar için 2026 yöntemi, lisansüstü yolu baştan sona anlatır - şubattan itibaren dosyayı apply.upb.ro'ya yükle, üniversite değerlendirir, liste Eğitim ve Araştırma Bakanlığı'na gider, Bakanlık en az 60 gün sonra kabul mektubunu düzenler - ve hiçbirini fiyatlandırmaz. Kayıtta zaten bulunan 100 ve 50 RON'luk ücretler, temmuz ve erken başvuru yollarına ait genel Romanya kabul ücretleridir ve üniversitenin kendi dayanağı her ikisi için de bunun merkezi AB dışı yol olmadığını söyler."
+        },
+        "evaluated_at": "2026-09-01",
+        "refused_items": [
+          {
+            "amount": 100,
+            "currency": "RON",
+            "period": "one_time",
+            "applicant_scope": "general_eu_domestic_july_or_september_route",
+            "academic_cycle": "2026/2027",
+            "mandatory": true,
+            "basis": "General master admission fee; not the central non-EU route",
+            "source_ids": [
+              "ro_upb_master_regulation"
+            ]
+          },
+          {
+            "amount": 50,
+            "currency": "RON",
+            "period": "one_time",
+            "applicant_scope": "general_eu_domestic_early_admission_route",
+            "academic_cycle": "2026/2027",
+            "mandatory": true,
+            "basis": "General early-admission fee; not the central non-EU route",
+            "source_ids": [
+              "ro_upb_master_regulation"
+            ]
+          }
+        ]
       }
     },
     "scholarship_profile": {
@@ -4112,7 +4356,7 @@
       "housing_difficulty": "unknown",
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -4153,16 +4397,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -4408,12 +4652,12 @@
         "tr": "Yalnız derece son tarihinden değil Rumence hazır olma tarihinden geriye planlayın. Hazırlık yılı gerekirse fiilî yolculuk en az üç akademik yıldır ve daha erken kabul/vize planı ister."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -4588,34 +4832,6 @@
           }
         },
         {
-          "source_id": "ro_upb_noneu_methodology",
-          "url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
-          "final_url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
-          "title": "Methodology for admission of non-EU students 2026",
-          "publisher": "POLITEHNICA Bucharest",
-          "source_type": "official_tuition_page",
-          "official": true,
-          "access_status": "pdf",
-          "published_or_effective_date": "2026",
-          "applicable_academic_cycle": "2026/2027",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "admission",
-            "non_eu_eligibility",
-            "tuition",
-            "deadline",
-            "payment",
-            "refund",
-            "housing",
-            "visa"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Current non-EU route and Annex VI fee table; admission procedure independently supported by the guide.",
-            "tr": "Güncel AB dışı rota ve Ek VI ücret tablosu; kabul prosedürü rehberle ayrıca desteklenir."
-          }
-        },
-        {
           "source_id": "ro_upb_faculty_admission",
           "url": "https://www.aero.pub.ro/ro/admitere-master/",
           "final_url": "https://www.aero.pub.ro/ro/admitere-master/",
@@ -4772,6 +4988,42 @@
             "en": "Centre expertise includes satellites, ADCS, launchers, rockets, propulsion and structures; no guaranteed student placement inferred.",
             "tr": "Merkez uzmanlığı uydular, ADCS, fırlatıcılar, roketler, itki ve yapıları içerir; garantili öğrenci yerleştirmesi çıkarılmadı."
           }
+        },
+        {
+          "url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "title": "Methodology for Admission and Tuition of Foreign Citizens from non-EU states | POLITEHNICA Bucharest",
+          "source_type": "official_tuition_page",
+          "access_status": "pdf",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees",
+            "non_eu_eligibility",
+            "deadline",
+            "payment",
+            "refund",
+            "housing",
+            "visa"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://international.upb.ro/admission/applying/students-from-non-eu-countries",
+          "title": "Students from non-EU countries | POLITEHNICA Bucharest",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
       "evidence_map": {
@@ -4825,7 +5077,7 @@
           "ro_upb_ccas"
         ]
       },
-      "last_verified": "2026-08-14",
+      "last_verified": "2026-09-01",
       "next_review_due": "2027-01-15",
       "needs_verification": true,
       "verification_notes": {
@@ -4901,7 +5153,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 13,
+      "checked_official_source_count": 14,
       "verified_fields": [
         "program",
         "language",
@@ -4916,7 +5168,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-23"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "qc_status": "needs_revision",
@@ -4935,7 +5187,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "weak_match",
       "score": 7,
       "score_basis_weight": 90,
@@ -4980,7 +5232,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": null,
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     }
   },
   {
@@ -5238,7 +5490,7 @@
         "tr": "Gerekirse Rumence hazırlık yılı ücreti ve ek bir yıllık yaşam maliyeti 2.700 EUR program yılı ücretine dâhil değildir; ayrıca bütçelenmelidir."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": null,
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -5253,13 +5505,68 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_derivation": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-08-30"
+        "derived_at": "2026-09-01"
+      },
+      "application_fee_research": {
+        "outcome": "no_fee_published",
+        "checked_on": "2026-09-01",
+        "pages_checked": [
+          "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "https://international.upb.ro/admission/applying/students-from-non-eu-countries"
+        ],
+        "note": {
+          "en": "POLITEHNICA Bucharest's 2026 methodology for non-EU citizens sets out the graduate route end to end - upload the file on apply.upb.ro from February, the university evaluates it, the list goes to the Ministry of Education and Research, the Ministry issues the letter of acceptance after a minimum of 60 days - and prices none of it. The RON 100 and RON 50 fees the record already carried are the general Romanian admission fees for the July and early-admission routes, and the university's own basis says of each that it is not the central non-EU route.",
+          "tr": "POLITEHNICA Bükreş'in AB dışı vatandaşlar için 2026 yöntemi, lisansüstü yolu baştan sona anlatır - şubattan itibaren dosyayı apply.upb.ro'ya yükle, üniversite değerlendirir, liste Eğitim ve Araştırma Bakanlığı'na gider, Bakanlık en az 60 gün sonra kabul mektubunu düzenler - ve hiçbirini fiyatlandırmaz. Kayıtta zaten bulunan 100 ve 50 RON'luk ücretler, temmuz ve erken başvuru yollarına ait genel Romanya kabul ücretleridir ve üniversitenin kendi dayanağı her ikisi için de bunun merkezi AB dışı yol olmadığını söyler."
+        }
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "not_published",
+        "amount": null,
+        "currency": null,
+        "rule": "researched_absence",
+        "pages_checked": [
+          "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "https://international.upb.ro/admission/applying/students-from-non-eu-countries"
+        ],
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "POLITEHNICA Bucharest's 2026 methodology for non-EU citizens sets out the graduate route end to end - upload the file on apply.upb.ro from February, the university evaluates it, the list goes to the Ministry of Education and Research, the Ministry issues the letter of acceptance after a minimum of 60 days - and prices none of it. The RON 100 and RON 50 fees the record already carried are the general Romanian admission fees for the July and early-admission routes, and the university's own basis says of each that it is not the central non-EU route.",
+          "tr": "POLITEHNICA Bükreş'in AB dışı vatandaşlar için 2026 yöntemi, lisansüstü yolu baştan sona anlatır - şubattan itibaren dosyayı apply.upb.ro'ya yükle, üniversite değerlendirir, liste Eğitim ve Araştırma Bakanlığı'na gider, Bakanlık en az 60 gün sonra kabul mektubunu düzenler - ve hiçbirini fiyatlandırmaz. Kayıtta zaten bulunan 100 ve 50 RON'luk ücretler, temmuz ve erken başvuru yollarına ait genel Romanya kabul ücretleridir ve üniversitenin kendi dayanağı her ikisi için de bunun merkezi AB dışı yol olmadığını söyler."
+        },
+        "evaluated_at": "2026-09-01",
+        "refused_items": [
+          {
+            "amount": 100,
+            "currency": "RON",
+            "period": "one_time",
+            "applicant_scope": "general_eu_domestic_july_or_september_route",
+            "academic_cycle": "2026/2027",
+            "mandatory": true,
+            "basis": "General master admission fee; not the central non-EU route",
+            "source_ids": [
+              "ro_upb_master_regulation"
+            ]
+          },
+          {
+            "amount": 50,
+            "currency": "RON",
+            "period": "one_time",
+            "applicant_scope": "general_eu_domestic_early_admission_route",
+            "academic_cycle": "2026/2027",
+            "mandatory": true,
+            "basis": "General early-admission fee; not the central non-EU route",
+            "source_ids": [
+              "ro_upb_master_regulation"
+            ]
+          }
+        ]
       }
     },
     "scholarship_profile": {
@@ -5363,7 +5670,7 @@
       "housing_difficulty": "unknown",
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -5404,16 +5711,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -5659,12 +5966,12 @@
         "tr": "Yalnız derece son tarihinden değil Rumence hazır olma tarihinden geriye planlayın. Hazırlık yılı gerekirse fiilî yolculuk en az üç akademik yıldır ve daha erken kabul/vize planı ister."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -5839,34 +6146,6 @@
           }
         },
         {
-          "source_id": "ro_upb_noneu_methodology",
-          "url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
-          "final_url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
-          "title": "Methodology for admission of non-EU students 2026",
-          "publisher": "POLITEHNICA Bucharest",
-          "source_type": "official_tuition_page",
-          "official": true,
-          "access_status": "pdf",
-          "published_or_effective_date": "2026",
-          "applicable_academic_cycle": "2026/2027",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "admission",
-            "non_eu_eligibility",
-            "tuition",
-            "deadline",
-            "payment",
-            "refund",
-            "housing",
-            "visa"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Current non-EU route and Annex VI fee table; admission procedure independently supported by the guide.",
-            "tr": "Güncel AB dışı rota ve Ek VI ücret tablosu; kabul prosedürü rehberle ayrıca desteklenir."
-          }
-        },
-        {
           "source_id": "ro_upb_faculty_admission",
           "url": "https://www.aero.pub.ro/ro/admitere-master/",
           "final_url": "https://www.aero.pub.ro/ro/admitere-master/",
@@ -6023,6 +6302,42 @@
             "en": "Centre expertise includes satellites, ADCS, launchers, rockets, propulsion and structures; no guaranteed student placement inferred.",
             "tr": "Merkez uzmanlığı uydular, ADCS, fırlatıcılar, roketler, itki ve yapıları içerir; garantili öğrenci yerleştirmesi çıkarılmadı."
           }
+        },
+        {
+          "url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "title": "Methodology for Admission and Tuition of Foreign Citizens from non-EU states | POLITEHNICA Bucharest",
+          "source_type": "official_tuition_page",
+          "access_status": "pdf",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees",
+            "non_eu_eligibility",
+            "deadline",
+            "payment",
+            "refund",
+            "housing",
+            "visa"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://international.upb.ro/admission/applying/students-from-non-eu-countries",
+          "title": "Students from non-EU countries | POLITEHNICA Bucharest",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
       "evidence_map": {
@@ -6076,7 +6391,7 @@
           "ro_upb_ccas"
         ]
       },
-      "last_verified": "2026-08-14",
+      "last_verified": "2026-09-01",
       "next_review_due": "2027-01-15",
       "needs_verification": true,
       "verification_notes": {
@@ -6152,7 +6467,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 13,
+      "checked_official_source_count": 14,
       "verified_fields": [
         "program",
         "language",
@@ -6167,7 +6482,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-23"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "qc_status": "needs_revision",
@@ -6186,7 +6501,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "weak_match",
       "score": 7,
       "score_basis_weight": 90,
@@ -6231,7 +6546,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": null,
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     }
   },
   {
@@ -6489,7 +6804,7 @@
         "tr": "Gerekirse Rumence hazırlık yılı ücreti ve ek bir yıllık yaşam maliyeti 2.700 EUR program yılı ücretine dâhil değildir; ayrıca bütçelenmelidir."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": null,
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -6504,13 +6819,68 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_derivation": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-08-30"
+        "derived_at": "2026-09-01"
+      },
+      "application_fee_research": {
+        "outcome": "no_fee_published",
+        "checked_on": "2026-09-01",
+        "pages_checked": [
+          "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "https://international.upb.ro/admission/applying/students-from-non-eu-countries"
+        ],
+        "note": {
+          "en": "POLITEHNICA Bucharest's 2026 methodology for non-EU citizens sets out the graduate route end to end - upload the file on apply.upb.ro from February, the university evaluates it, the list goes to the Ministry of Education and Research, the Ministry issues the letter of acceptance after a minimum of 60 days - and prices none of it. The RON 100 and RON 50 fees the record already carried are the general Romanian admission fees for the July and early-admission routes, and the university's own basis says of each that it is not the central non-EU route.",
+          "tr": "POLITEHNICA Bükreş'in AB dışı vatandaşlar için 2026 yöntemi, lisansüstü yolu baştan sona anlatır - şubattan itibaren dosyayı apply.upb.ro'ya yükle, üniversite değerlendirir, liste Eğitim ve Araştırma Bakanlığı'na gider, Bakanlık en az 60 gün sonra kabul mektubunu düzenler - ve hiçbirini fiyatlandırmaz. Kayıtta zaten bulunan 100 ve 50 RON'luk ücretler, temmuz ve erken başvuru yollarına ait genel Romanya kabul ücretleridir ve üniversitenin kendi dayanağı her ikisi için de bunun merkezi AB dışı yol olmadığını söyler."
+        }
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "not_published",
+        "amount": null,
+        "currency": null,
+        "rule": "researched_absence",
+        "pages_checked": [
+          "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "https://international.upb.ro/admission/applying/students-from-non-eu-countries"
+        ],
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "POLITEHNICA Bucharest's 2026 methodology for non-EU citizens sets out the graduate route end to end - upload the file on apply.upb.ro from February, the university evaluates it, the list goes to the Ministry of Education and Research, the Ministry issues the letter of acceptance after a minimum of 60 days - and prices none of it. The RON 100 and RON 50 fees the record already carried are the general Romanian admission fees for the July and early-admission routes, and the university's own basis says of each that it is not the central non-EU route.",
+          "tr": "POLITEHNICA Bükreş'in AB dışı vatandaşlar için 2026 yöntemi, lisansüstü yolu baştan sona anlatır - şubattan itibaren dosyayı apply.upb.ro'ya yükle, üniversite değerlendirir, liste Eğitim ve Araştırma Bakanlığı'na gider, Bakanlık en az 60 gün sonra kabul mektubunu düzenler - ve hiçbirini fiyatlandırmaz. Kayıtta zaten bulunan 100 ve 50 RON'luk ücretler, temmuz ve erken başvuru yollarına ait genel Romanya kabul ücretleridir ve üniversitenin kendi dayanağı her ikisi için de bunun merkezi AB dışı yol olmadığını söyler."
+        },
+        "evaluated_at": "2026-09-01",
+        "refused_items": [
+          {
+            "amount": 100,
+            "currency": "RON",
+            "period": "one_time",
+            "applicant_scope": "general_eu_domestic_july_or_september_route",
+            "academic_cycle": "2026/2027",
+            "mandatory": true,
+            "basis": "General master admission fee; not the central non-EU route",
+            "source_ids": [
+              "ro_upb_master_regulation"
+            ]
+          },
+          {
+            "amount": 50,
+            "currency": "RON",
+            "period": "one_time",
+            "applicant_scope": "general_eu_domestic_early_admission_route",
+            "academic_cycle": "2026/2027",
+            "mandatory": true,
+            "basis": "General early-admission fee; not the central non-EU route",
+            "source_ids": [
+              "ro_upb_master_regulation"
+            ]
+          }
+        ]
       }
     },
     "scholarship_profile": {
@@ -6614,7 +6984,7 @@
       "housing_difficulty": "unknown",
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -6655,16 +7025,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -6902,12 +7272,12 @@
         "tr": "Yalnız derece son tarihinden değil Rumence hazır olma tarihinden geriye planlayın. Hazırlık yılı gerekirse fiilî yolculuk en az üç akademik yıldır ve daha erken kabul/vize planı ister."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -7080,34 +7450,6 @@
           }
         },
         {
-          "source_id": "ro_upb_noneu_methodology",
-          "url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
-          "final_url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
-          "title": "Methodology for admission of non-EU students 2026",
-          "publisher": "POLITEHNICA Bucharest",
-          "source_type": "official_tuition_page",
-          "official": true,
-          "access_status": "pdf",
-          "published_or_effective_date": "2026",
-          "applicable_academic_cycle": "2026/2027",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "admission",
-            "non_eu_eligibility",
-            "tuition",
-            "deadline",
-            "payment",
-            "refund",
-            "housing",
-            "visa"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Current non-EU route and Annex VI fee table; admission procedure independently supported by the guide.",
-            "tr": "Güncel AB dışı rota ve Ek VI ücret tablosu; kabul prosedürü rehberle ayrıca desteklenir."
-          }
-        },
-        {
           "source_id": "ro_upb_faculty_admission",
           "url": "https://www.aero.pub.ro/ro/admitere-master/",
           "final_url": "https://www.aero.pub.ro/ro/admitere-master/",
@@ -7242,6 +7584,42 @@
             "en": "Rendered page 9 visually checked; living and rent ranges used, older tuition ignored.",
             "tr": "9. sayfa görsel kontrol edildi; yaşam ve kira aralıkları kullanıldı, eski ücret kullanılmadı."
           }
+        },
+        {
+          "url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "title": "Methodology for Admission and Tuition of Foreign Citizens from non-EU states | POLITEHNICA Bucharest",
+          "source_type": "official_tuition_page",
+          "access_status": "pdf",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees",
+            "non_eu_eligibility",
+            "deadline",
+            "payment",
+            "refund",
+            "housing",
+            "visa"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://international.upb.ro/admission/applying/students-from-non-eu-countries",
+          "title": "Students from non-EU countries | POLITEHNICA Bucharest",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
       "evidence_map": {
@@ -7294,7 +7672,7 @@
           "ro_upb_ima_curriculum"
         ]
       },
-      "last_verified": "2026-08-14",
+      "last_verified": "2026-09-01",
       "next_review_due": "2027-01-15",
       "needs_verification": true,
       "verification_notes": {
@@ -7370,7 +7748,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 12,
+      "checked_official_source_count": 13,
       "verified_fields": [
         "program",
         "language",
@@ -7384,7 +7762,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-23"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "qc_status": "needs_revision",
@@ -7403,7 +7781,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "unknown",
       "score": null,
       "score_basis_weight": 30,
@@ -7448,7 +7826,7 @@
       ],
       "confidence": "unknown",
       "legacy_relevance_status": null,
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     }
   },
   {
@@ -7706,7 +8084,7 @@
         "tr": "Gerekirse Rumence hazırlık yılı ücreti ve ek bir yıllık yaşam maliyeti 2.700 EUR program yılı ücretine dâhil değildir; ayrıca bütçelenmelidir."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": null,
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -7721,13 +8099,68 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_derivation": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-08-30"
+        "derived_at": "2026-09-01"
+      },
+      "application_fee_research": {
+        "outcome": "no_fee_published",
+        "checked_on": "2026-09-01",
+        "pages_checked": [
+          "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "https://international.upb.ro/admission/applying/students-from-non-eu-countries"
+        ],
+        "note": {
+          "en": "POLITEHNICA Bucharest's 2026 methodology for non-EU citizens sets out the graduate route end to end - upload the file on apply.upb.ro from February, the university evaluates it, the list goes to the Ministry of Education and Research, the Ministry issues the letter of acceptance after a minimum of 60 days - and prices none of it. The RON 100 and RON 50 fees the record already carried are the general Romanian admission fees for the July and early-admission routes, and the university's own basis says of each that it is not the central non-EU route.",
+          "tr": "POLITEHNICA Bükreş'in AB dışı vatandaşlar için 2026 yöntemi, lisansüstü yolu baştan sona anlatır - şubattan itibaren dosyayı apply.upb.ro'ya yükle, üniversite değerlendirir, liste Eğitim ve Araştırma Bakanlığı'na gider, Bakanlık en az 60 gün sonra kabul mektubunu düzenler - ve hiçbirini fiyatlandırmaz. Kayıtta zaten bulunan 100 ve 50 RON'luk ücretler, temmuz ve erken başvuru yollarına ait genel Romanya kabul ücretleridir ve üniversitenin kendi dayanağı her ikisi için de bunun merkezi AB dışı yol olmadığını söyler."
+        }
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "not_published",
+        "amount": null,
+        "currency": null,
+        "rule": "researched_absence",
+        "pages_checked": [
+          "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "https://international.upb.ro/admission/applying/students-from-non-eu-countries"
+        ],
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "POLITEHNICA Bucharest's 2026 methodology for non-EU citizens sets out the graduate route end to end - upload the file on apply.upb.ro from February, the university evaluates it, the list goes to the Ministry of Education and Research, the Ministry issues the letter of acceptance after a minimum of 60 days - and prices none of it. The RON 100 and RON 50 fees the record already carried are the general Romanian admission fees for the July and early-admission routes, and the university's own basis says of each that it is not the central non-EU route.",
+          "tr": "POLITEHNICA Bükreş'in AB dışı vatandaşlar için 2026 yöntemi, lisansüstü yolu baştan sona anlatır - şubattan itibaren dosyayı apply.upb.ro'ya yükle, üniversite değerlendirir, liste Eğitim ve Araştırma Bakanlığı'na gider, Bakanlık en az 60 gün sonra kabul mektubunu düzenler - ve hiçbirini fiyatlandırmaz. Kayıtta zaten bulunan 100 ve 50 RON'luk ücretler, temmuz ve erken başvuru yollarına ait genel Romanya kabul ücretleridir ve üniversitenin kendi dayanağı her ikisi için de bunun merkezi AB dışı yol olmadığını söyler."
+        },
+        "evaluated_at": "2026-09-01",
+        "refused_items": [
+          {
+            "amount": 100,
+            "currency": "RON",
+            "period": "one_time",
+            "applicant_scope": "general_eu_domestic_july_or_september_route",
+            "academic_cycle": "2026/2027",
+            "mandatory": true,
+            "basis": "General master admission fee; not the central non-EU route",
+            "source_ids": [
+              "ro_upb_master_regulation"
+            ]
+          },
+          {
+            "amount": 50,
+            "currency": "RON",
+            "period": "one_time",
+            "applicant_scope": "general_eu_domestic_early_admission_route",
+            "academic_cycle": "2026/2027",
+            "mandatory": true,
+            "basis": "General early-admission fee; not the central non-EU route",
+            "source_ids": [
+              "ro_upb_master_regulation"
+            ]
+          }
+        ]
       }
     },
     "scholarship_profile": {
@@ -7831,7 +8264,7 @@
       "housing_difficulty": "unknown",
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -7872,16 +8305,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -8119,12 +8552,12 @@
         "tr": "Yalnız derece son tarihinden değil Rumence hazır olma tarihinden geriye planlayın. Hazırlık yılı gerekirse fiilî yolculuk en az üç akademik yıldır ve daha erken kabul/vize planı ister."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -8297,34 +8730,6 @@
           }
         },
         {
-          "source_id": "ro_upb_noneu_methodology",
-          "url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
-          "final_url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
-          "title": "Methodology for admission of non-EU students 2026",
-          "publisher": "POLITEHNICA Bucharest",
-          "source_type": "official_tuition_page",
-          "official": true,
-          "access_status": "pdf",
-          "published_or_effective_date": "2026",
-          "applicable_academic_cycle": "2026/2027",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "admission",
-            "non_eu_eligibility",
-            "tuition",
-            "deadline",
-            "payment",
-            "refund",
-            "housing",
-            "visa"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Current non-EU route and Annex VI fee table; admission procedure independently supported by the guide.",
-            "tr": "Güncel AB dışı rota ve Ek VI ücret tablosu; kabul prosedürü rehberle ayrıca desteklenir."
-          }
-        },
-        {
           "source_id": "ro_upb_faculty_admission",
           "url": "https://www.aero.pub.ro/ro/admitere-master/",
           "final_url": "https://www.aero.pub.ro/ro/admitere-master/",
@@ -8459,6 +8864,42 @@
             "en": "Rendered page 9 visually checked; living and rent ranges used, older tuition ignored.",
             "tr": "9. sayfa görsel kontrol edildi; yaşam ve kira aralıkları kullanıldı, eski ücret kullanılmadı."
           }
+        },
+        {
+          "url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "title": "Methodology for Admission and Tuition of Foreign Citizens from non-EU states | POLITEHNICA Bucharest",
+          "source_type": "official_tuition_page",
+          "access_status": "pdf",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees",
+            "non_eu_eligibility",
+            "deadline",
+            "payment",
+            "refund",
+            "housing",
+            "visa"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://international.upb.ro/admission/applying/students-from-non-eu-countries",
+          "title": "Students from non-EU countries | POLITEHNICA Bucharest",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
       "evidence_map": {
@@ -8511,7 +8952,7 @@
           "ro_upb_ma_curriculum"
         ]
       },
-      "last_verified": "2026-08-14",
+      "last_verified": "2026-09-01",
       "next_review_due": "2027-01-15",
       "needs_verification": true,
       "verification_notes": {
@@ -8587,7 +9028,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 12,
+      "checked_official_source_count": 13,
       "verified_fields": [
         "program",
         "language",
@@ -8601,7 +9042,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-23"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "qc_status": "needs_revision",
@@ -8620,7 +9061,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "unknown",
       "score": null,
       "score_basis_weight": 30,
@@ -8665,7 +9106,7 @@
       ],
       "confidence": "unknown",
       "legacy_relevance_status": null,
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     }
   },
   {
@@ -8959,7 +9400,7 @@
         "tr": "Güncel 2.700 EUR AB dışı ücret, Practical Guide'daki eski 2.430 EUR tutarın yerine geçer. Yaşam tahminleri planlama aralığıdır; garanti fiyat değildir."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": null,
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -8974,13 +9415,68 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_derivation": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-08-30"
+        "derived_at": "2026-09-01"
+      },
+      "application_fee_research": {
+        "outcome": "no_fee_published",
+        "checked_on": "2026-09-01",
+        "pages_checked": [
+          "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "https://international.upb.ro/admission/applying/students-from-non-eu-countries"
+        ],
+        "note": {
+          "en": "POLITEHNICA Bucharest's 2026 methodology for non-EU citizens sets out the graduate route end to end - upload the file on apply.upb.ro from February, the university evaluates it, the list goes to the Ministry of Education and Research, the Ministry issues the letter of acceptance after a minimum of 60 days - and prices none of it. The RON 100 and RON 50 fees the record already carried are the general Romanian admission fees for the July and early-admission routes, and the university's own basis says of each that it is not the central non-EU route.",
+          "tr": "POLITEHNICA Bükreş'in AB dışı vatandaşlar için 2026 yöntemi, lisansüstü yolu baştan sona anlatır - şubattan itibaren dosyayı apply.upb.ro'ya yükle, üniversite değerlendirir, liste Eğitim ve Araştırma Bakanlığı'na gider, Bakanlık en az 60 gün sonra kabul mektubunu düzenler - ve hiçbirini fiyatlandırmaz. Kayıtta zaten bulunan 100 ve 50 RON'luk ücretler, temmuz ve erken başvuru yollarına ait genel Romanya kabul ücretleridir ve üniversitenin kendi dayanağı her ikisi için de bunun merkezi AB dışı yol olmadığını söyler."
+        }
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "not_published",
+        "amount": null,
+        "currency": null,
+        "rule": "researched_absence",
+        "pages_checked": [
+          "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "https://international.upb.ro/admission/applying/students-from-non-eu-countries"
+        ],
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "POLITEHNICA Bucharest's 2026 methodology for non-EU citizens sets out the graduate route end to end - upload the file on apply.upb.ro from February, the university evaluates it, the list goes to the Ministry of Education and Research, the Ministry issues the letter of acceptance after a minimum of 60 days - and prices none of it. The RON 100 and RON 50 fees the record already carried are the general Romanian admission fees for the July and early-admission routes, and the university's own basis says of each that it is not the central non-EU route.",
+          "tr": "POLITEHNICA Bükreş'in AB dışı vatandaşlar için 2026 yöntemi, lisansüstü yolu baştan sona anlatır - şubattan itibaren dosyayı apply.upb.ro'ya yükle, üniversite değerlendirir, liste Eğitim ve Araştırma Bakanlığı'na gider, Bakanlık en az 60 gün sonra kabul mektubunu düzenler - ve hiçbirini fiyatlandırmaz. Kayıtta zaten bulunan 100 ve 50 RON'luk ücretler, temmuz ve erken başvuru yollarına ait genel Romanya kabul ücretleridir ve üniversitenin kendi dayanağı her ikisi için de bunun merkezi AB dışı yol olmadığını söyler."
+        },
+        "evaluated_at": "2026-09-01",
+        "refused_items": [
+          {
+            "amount": 100,
+            "currency": "RON",
+            "period": "one_time",
+            "applicant_scope": "general_eu_domestic_july_or_september_route",
+            "academic_cycle": "2026/2027",
+            "mandatory": true,
+            "basis": "General master admission fee; not the central non-EU route",
+            "source_ids": [
+              "ro_upb_master_regulation"
+            ]
+          },
+          {
+            "amount": 50,
+            "currency": "RON",
+            "period": "one_time",
+            "applicant_scope": "general_eu_domestic_early_admission_route",
+            "academic_cycle": "2026/2027",
+            "mandatory": true,
+            "basis": "General early-admission fee; not the central non-EU route",
+            "source_ids": [
+              "ro_upb_master_regulation"
+            ]
+          }
+        ]
       }
     },
     "scholarship_profile": {
@@ -9084,7 +9580,7 @@
       "housing_difficulty": "unknown",
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -9125,16 +9621,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -9400,7 +9896,7 @@
         "tr": "Türkiye'den aday temmuzu beklememelidir. Tasdikli belgeleri ve dil kanıtını şubattan önce hazırlayın, AB dışı pencerenin başında başvurun ve Kabul Mektubundan sonra tam yıllık ücreti hemen ödemeye hazır olun."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": "2026-05-11",
         "next_expected_date": null,
         "time": null,
@@ -9409,11 +9905,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -111,
+        "days_remaining_at_evaluation": -113,
         "derived_from": "application_timeline_profile.deadline_events[] (ITAA general/EU early-admission interview)",
         "confidence": "high",
         "source_url": null,
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -9564,34 +10060,6 @@
           }
         },
         {
-          "source_id": "ro_upb_noneu_methodology",
-          "url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
-          "final_url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
-          "title": "Methodology for admission of non-EU students 2026",
-          "publisher": "POLITEHNICA Bucharest",
-          "source_type": "official_tuition_page",
-          "official": true,
-          "access_status": "pdf",
-          "published_or_effective_date": "2026",
-          "applicable_academic_cycle": "2026/2027",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "admission",
-            "non_eu_eligibility",
-            "tuition",
-            "deadline",
-            "payment",
-            "refund",
-            "housing",
-            "visa"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Authoritative current non-EU route with the Annex VI official fee table. Admission procedure is independently supported by the current non-EU guide. Where confirmation wording differs, the shorter 20-day period is used as the safe deadline.",
-            "tr": "Ek VI resmî ücret tablosunu içeren yetkili güncel AB dışı rota kaynağıdır. Kabul prosedürü güncel AB dışı rehberiyle ayrıca desteklenir. Teyit ifadeleri farklılaştığında güvenli tarih olarak daha kısa 20 gün kullanılır."
-          }
-        },
-        {
           "source_id": "ro_upb_itaa_admission",
           "url": "https://www.unesco.chair.upb.ro/admitere/",
           "final_url": "https://www.unesco.chair.upb.ro/admitere/",
@@ -9724,6 +10192,42 @@
             "en": "Rendered page 9 was visually checked. Living and rental ranges are used; its older tuition figure is explicitly not used.",
             "tr": "9. sayfa görsel olarak kontrol edildi. Yaşam ve kira aralıkları kullanılır; eski öğrenim ücreti açıkça kullanılmaz."
           }
+        },
+        {
+          "url": "https://international.upb.ro/assets/docs/2026/regulations/Methodology_admission_non-EU_students_.pdf",
+          "title": "Methodology for Admission and Tuition of Foreign Citizens from non-EU states | POLITEHNICA Bucharest",
+          "source_type": "official_tuition_page",
+          "access_status": "pdf",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees",
+            "non_eu_eligibility",
+            "deadline",
+            "payment",
+            "refund",
+            "housing",
+            "visa"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://international.upb.ro/admission/applying/students-from-non-eu-countries",
+          "title": "Students from non-EU countries | POLITEHNICA Bucharest",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
       "evidence_map": {
@@ -9776,7 +10280,7 @@
           "ro_upb_itaa_program"
         ]
       },
-      "last_verified": "2026-08-14",
+      "last_verified": "2026-09-01",
       "next_review_due": "2027-01-15",
       "needs_verification": true,
       "verification_notes": {
@@ -9852,7 +10356,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 11,
+      "checked_official_source_count": 12,
       "verified_fields": [
         "program",
         "language",
@@ -9866,7 +10370,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-23"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "qc_status": "needs_revision",
@@ -9885,7 +10389,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "unknown",
       "score": null,
       "score_basis_weight": 30,
@@ -9931,7 +10435,7 @@
       ],
       "confidence": "unknown",
       "legacy_relevance_status": null,
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     }
   },
   {
@@ -10162,7 +10666,7 @@
       "mandatory_fees_usd_per_year": null,
       "total_cost_of_attendance_usd_per_year": null,
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": null,
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -10177,13 +10681,60 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_derivation": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-08-30"
+        "derived_at": "2026-09-01"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 200.0,
+        "currency": "EUR",
+        "amount_eur_equivalent": null,
+        "scope": "non_eu_applicants",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": "2026/2027",
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "application_fee_items": [
+            {
+              "amount": 200,
+              "currency": "EUR",
+              "period": "one_time",
+              "applicant_scope": "non_eu_applicant",
+              "academic_cycle": "2026/2027",
+              "mandatory": true,
+              "basis": "Non-refundable file-processing fee; UCV alternatively publishes 1000 RON",
+              "source_ids": [
+                "ro_ucv_noneu_admission_2026"
+              ]
+            }
+          ]
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -10256,7 +10807,7 @@
       "housing_difficulty": "unknown",
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -10297,16 +10848,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -10614,7 +11165,7 @@
         "tr": "Rumence B1'i olmayan Türkiye adayı rotayı üç yıllık akademik yolculuk olarak görmeli ve önce hazırlık yılına başvurmalıdır. Burs başvuruları UCV kabulünden daha erken kapanır; yurt içinse 1 Ağustos'a kadar ayrı talep gerekir."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": "2026-05-25",
         "next_expected_date": null,
         "time": null,
@@ -10623,11 +11174,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -97,
+        "days_remaining_at_evaluation": -99,
         "derived_from": "application_timeline_profile.deadline_events[] (Romanian-language evaluation for non-EU degree applicants)",
         "confidence": "high",
         "source_url": null,
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -11230,7 +11781,7 @@
     "tuition_eur_per_year": null,
     "annual_fee_eur": null,
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "weak_match",
       "score": 17,
       "score_basis_weight": 90,
@@ -11277,7 +11828,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": null,
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     }
   },
   {
@@ -11469,7 +12020,7 @@
       "mandatory_fees_usd_per_year": null,
       "total_cost_of_attendance_usd_per_year": null,
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": null,
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -11484,7 +12035,61 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 200.0,
+        "currency": "RON",
+        "amount_eur_equivalent": {
+          "amount": 38.03,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 5.2584,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "unknown",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": "2025/2026",
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "application_fee_items": [
+            {
+              "amount": 200,
+              "currency": "RON",
+              "period": "one_time",
+              "applicant_scope": "2025_2026_master_applicant",
+              "academic_cycle": "2025/2026",
+              "mandatory": true,
+              "basis": "Historical official master-admission regulation; exemptions were listed",
+              "source_ids": [
+                "ro_mta_master_admission_2025"
+              ]
+            }
+          ]
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -11553,7 +12158,7 @@
       "housing_difficulty": "unknown",
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -11596,16 +12201,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -11789,12 +12394,12 @@
         "tr": "2025 tarihlerini tahmin olarak değil yalnız geçmiş kanıt olarak kullanın. Yüz yüze mülakat seyahatini planlamadan önce fakülteden 2026/27 yüksek lisans yönetmeliğini ve AB dışı rotayı isteyin."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -12240,7 +12845,7 @@
     "tuition_eur_per_year": null,
     "annual_fee_eur": null,
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "strong_adjacent",
       "score": 68,
       "score_basis_weight": 90,
@@ -12287,7 +12892,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": null,
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     }
   }
 ]

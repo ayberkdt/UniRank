@@ -275,7 +275,7 @@
         "reservation_deposit_deducted_from_tuition": true,
         "tuition_eur_per_year_non_eu_nonresident": 5044.2,
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "EUR",
           "annual_total": 5869.2,
           "annual_total_eur_equivalent": null,
@@ -290,7 +290,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "tuition_eur_per_year": 5044.2,
         "tuition_derivation": {
@@ -304,6 +304,33 @@
           "currency": "EUR",
           "includes_mandatory_fees": false,
           "derived_at": "2026-08-30"
+        },
+        "application_fee_research": {
+          "outcome": "no_fee_published",
+          "checked_on": "2026-09-01",
+          "pages_checked": [
+            "https://www.upm.es/internacional/Students/StudiesDegrees/UniversityMasters"
+          ],
+          "note": {
+            "en": "UPM's page for international applicants to official master's degrees names one charge and places it after admission: a EUR 150 tuition-fee deposit, later deducted from the enrolment. Nothing is charged to submit the pre-enrolment itself.",
+            "tr": "UPM'nin resmî yüksek lisanslara başvuran uluslararası adaylar için sayfası tek bir kalem adlandırır ve onu kabulden sonraya yerleştirir: sonradan kayıttan düşülen 150 avroluk bir öğrenim ücreti depozitosu. Ön kaydın kendisini göndermek için bir ücret alınmaz."
+          }
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "not_published",
+          "amount": null,
+          "currency": null,
+          "rule": "researched_absence",
+          "pages_checked": [
+            "https://www.upm.es/internacional/Students/StudiesDegrees/UniversityMasters"
+          ],
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "UPM's page for international applicants to official master's degrees names one charge and places it after admission: a EUR 150 tuition-fee deposit, later deducted from the enrolment. Nothing is charged to submit the pre-enrolment itself.",
+            "tr": "UPM'nin resmî yüksek lisanslara başvuran uluslararası adaylar için sayfası tek bir kalem adlandırır ve onu kabulden sonraya yerleştirir: sonradan kayıttan düşülen 150 avroluk bir öğrenim ücreti depozitosu. Ön kaydın kendisini göndermek için bir ücret alınmaz."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -448,7 +475,7 @@
         "housing_allocation_mode": "external_market_and_independent_residences",
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 5,
           "scaled_score": null,
@@ -489,10 +516,10 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "official_university_living_budget",
           "status": "partial",
           "currency": "EUR",
@@ -536,7 +563,7 @@
             "one_off_visa_and_travel_costs"
           ],
           "confidence": "medium",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -1138,7 +1165,7 @@
           }
         ],
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-07-01",
           "next_expected_date": null,
           "time": null,
@@ -1147,11 +1174,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closed",
-          "days_remaining_at_evaluation": -60,
+          "days_remaining_at_evaluation": -62,
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://muse.idr.upm.es/es/master?catid=8&id=4%3Aadmision-al-muse&view=article",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": [
             {
@@ -1476,9 +1503,24 @@
               "en": "States the owning institute, the language of instruction as Spanish, the 120 ECTS and 20 places, the subject span, the project-based method around UPMSat, the named ESA and NASA missions and the three Montegancedo facilities.",
               "tr": "Sahibi enstitüyü, öğretim dilinin İspanyolca olduğunu, 120 AKTS ve 20 kontenjanı, konu kapsamını, UPMSat etrafındaki proje tabanlı yöntemi, adlandırılmış ESA ve NASA görevlerini ve üç Montegancedo tesisini belirtir."
             }
+          },
+          {
+            "url": "https://www.upm.es/internacional/Students/StudiesDegrees/UniversityMasters",
+            "title": "Official Master's Degree Studies | Universidad Politecnica de Madrid",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ],
-        "last_verified": "2026-08-30",
+        "last_verified": "2026-09-01",
         "needs_verification": false,
         "verification_notes": {
           "en": "All decision-critical groups have checked official evidence. Deliberate unknowns remain where the university does not publish a value: numeric GPA floor, GRE score, accepted Spanish certificate list, automatic admission funding, newly arrived non-EU eligibility for the current Santander aid, and a current complete Madrid living-cost total.",
@@ -1604,7 +1646,7 @@
       "qs_ranking": 364,
       "data_quality": {
         "status": "verified",
-        "checked_official_source_count": 13,
+        "checked_official_source_count": 14,
         "verified_fields": [
           "program",
           "language",
@@ -1619,7 +1661,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-30"
+        "audited_at": "2026-09-01"
       },
       "tuition_eur_per_year": 5044.2,
       "annual_fee_eur": 33.65,
@@ -1649,7 +1691,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "strong_adjacent",
         "score": 59,
         "score_basis_weight": 90,
@@ -1709,7 +1751,7 @@
         ],
         "confidence": "medium",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "facility_evidence": {
@@ -1824,7 +1866,9 @@
           "validity_rule": "",
           "waiver_rules": [],
           "source_ids": []
-        }
+        },
+        "application_fee_refundable": false,
+        "application_fee_scope": "charged per programme selections"
       },
       "language_profile": {
         "teaching_language": [
@@ -1864,7 +1908,7 @@
         "tuition_basis": "official_published_approximate_programme_fee_excluding_non_teaching_and_certificate_costs",
         "regional_tax_eur": null,
         "student_contribution_eur": null,
-        "application_fee_eur": null,
+        "application_fee_eur": 30.21,
         "enrollment_fee_eur": null,
         "total_academic_cost_eur_per_year_estimated": 5400,
         "isee_or_income_based": false,
@@ -1899,7 +1943,7 @@
         "living_cost_dkk_per_year_min": null,
         "living_cost_dkk_per_year_max": null,
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "EUR",
           "annual_total": 22200.0,
           "annual_total_eur_equivalent": null,
@@ -1914,7 +1958,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "tuition_eur_per_year": 5400.0,
         "tuition_derivation": {
@@ -1928,6 +1972,49 @@
           "currency": "EUR",
           "includes_mandatory_fees": false,
           "derived_at": "2026-08-30"
+        },
+        "application_fee_charged_per": "programme_choice",
+        "application_fee_verification": {
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "EUR 30.21 for each master's course pre-enrolled in, non-refundable, paid by card inside the online application before the status changes to sent. Two UPC masters cost EUR 60.42.",
+            "tr": "Ön kayıt yapılan her yüksek lisans programı için 30,21 avro; iade edilmez, durum gönderildi olarak değişmeden önce çevrimiçi başvurunun içinde kartla ödenir. Iki UPC yüksek lisansı 60,42 avro tutar."
+          },
+          "confidence": "high"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "published",
+          "amount": 30.21,
+          "currency": "EUR",
+          "amount_eur_equivalent": null,
+          "scope": "unknown",
+          "charged_per": "programme_choice",
+          "charged_by": "university",
+          "charged_by_name": null,
+          "additional_application_amount": null,
+          "academic_cycle": null,
+          "early_amount": null,
+          "early_deadline": null,
+          "covers_programmes": null,
+          "refundable": false,
+          "components": [],
+          "waiver": {
+            "available": null,
+            "open_to_international": null,
+            "request_deadline": null,
+            "processing_days": null
+          },
+          "payment_due_days_after_deadline": null,
+          "rule": "published_application_fee",
+          "derived_from": {
+            "cost_profile.application_fee_eur": 30.21
+          },
+          "note": {
+            "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+            "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -2025,7 +2112,7 @@
         "housing_application_separate": null,
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 1,
           "scaled_score": null,
@@ -2067,10 +2154,10 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "official_source_range_basis_not_itemised",
           "status": "total_only",
           "currency": "EUR",
@@ -2097,11 +2184,11 @@
               "monthly_living_cost_eur_min": 1300.0,
               "monthly_living_cost_eur_max": 1500.0
             },
-            "derived_at": "2026-08-30"
+            "derived_at": "2026-09-01"
           },
           "source_url": null,
           "note": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -2255,7 +2342,7 @@
         "winter_deadline": null,
         "application_deadline": "2026-07-01 (expected date in 2026/27 official programme sheet; passed)",
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-07-01",
           "next_expected_date": null,
           "time": null,
@@ -2264,11 +2351,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closed",
-          "days_remaining_at_evaluation": -60,
+          "days_remaining_at_evaluation": -62,
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://www.upc.edu/master/en/348/masters-degree-in-aerospace-engineering.pdf",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -2423,9 +2510,24 @@
               "en": "States the five specialisations, the credits and duration, the September and February intakes, the approximate fees for EU and non-EU residents, and that the first year is taught in Catalan and the second in English.",
               "tr": "Beş uzmanlaşmayı, kredi ve süreyi, Eylül ile Şubat alımlarını, AB ve AB dışı sakinler için yaklaşık ücretleri ve birinci yılın Katalanca, ikinci yılın İngilizce verildiğini belirtir."
             }
+          },
+          {
+            "url": "https://www.upc.edu/en/masters/access-admission-enrolment/pre-enrolment",
+            "title": "Pre-enrolment | UPC Universitat Politecnica de Catalunya",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ],
-        "last_verified": "2026-08-30",
+        "last_verified": "2026-09-01",
         "needs_verification": true,
         "verification_notes": {
           "en": "Programme, language, fees, a cycle-specific deadline, living budget and the actual scope of the named scholarship are source-checked. The card does not turn an EU-only aid call into a Turkish/non-EU scholarship promise.",
@@ -2506,7 +2608,7 @@
       "qs_ranking": 434,
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 5,
+        "checked_official_source_count": 6,
         "verified_fields": [
           "program",
           "language",
@@ -2521,7 +2623,7 @@
           "non_eu_eligibility"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-30"
+        "audited_at": "2026-09-01"
       },
       "qs_ranking_display": "=434",
       "qs_ranking_year": 2027,
@@ -2549,7 +2651,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "unknown",
         "score": null,
         "score_basis_weight": 55,
@@ -2587,7 +2689,7 @@
         "matched_tags": [],
         "confidence": "unknown",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "curriculum_evidence": {
@@ -2773,7 +2875,7 @@
         "living_cost_dkk_per_year_min": null,
         "living_cost_dkk_per_year_max": null,
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "EUR",
           "annual_total": 15844.0,
           "annual_total_eur_equivalent": null,
@@ -2788,7 +2890,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "tuition_eur_per_year": 5044.0,
         "tuition_derivation": {
@@ -2802,6 +2904,40 @@
           "currency": "EUR",
           "includes_mandatory_fees": false,
           "derived_at": "2026-08-30"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "published",
+          "amount": 450.0,
+          "currency": "EUR",
+          "amount_eur_equivalent": null,
+          "scope": "unknown",
+          "charged_per": "application",
+          "charged_by": "university",
+          "charged_by_name": null,
+          "additional_application_amount": null,
+          "academic_cycle": null,
+          "early_amount": null,
+          "early_deadline": null,
+          "covers_programmes": null,
+          "refundable": null,
+          "components": [],
+          "waiver": {
+            "available": null,
+            "open_to_international": null,
+            "request_deadline": null,
+            "processing_days": null
+          },
+          "payment_due_days_after_deadline": null,
+          "rule": "published_application_fee",
+          "derived_from": {
+            "cost_profile.application_fee_eur": 450
+          },
+          "note": {
+            "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+            "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -2971,7 +3107,7 @@
         "housing_application_separate": null,
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 1,
           "scaled_score": null,
@@ -3013,10 +3149,10 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "official_source_range_basis_not_itemised",
           "status": "total_only",
           "currency": "EUR",
@@ -3043,11 +3179,11 @@
               "monthly_living_cost_eur_min": 600.0,
               "monthly_living_cost_eur_max": 1200.0
             },
-            "derived_at": "2026-08-30"
+            "derived_at": "2026-09-01"
           },
           "source_url": null,
           "note": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -3240,7 +3376,7 @@
           "tr": "UC3M'nin yayımladığı genel yüksek lisans takvimi kapanmış 2026/27 referansı olarak kaydedilir. Üniversite, kontenjanlar dolarsa programların dönem sonundan önce kapanabileceğini; uzatılmış dönemin yalnızca kontenjanı olan programlar için olduğunu belirtir. Gelecek dönem son tarihi çıkarım yoluyla üretilmez."
         },
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-05-31",
           "next_expected_date": null,
           "time": null,
@@ -3249,11 +3385,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closed",
-          "days_remaining_at_evaluation": -91,
+          "days_remaining_at_evaluation": -93,
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://www.uc3m.es/postgraduate/admission/process",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -3523,7 +3659,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "unknown",
         "score": null,
         "score_basis_weight": 55,
@@ -3561,7 +3697,7 @@
         "matched_tags": [],
         "confidence": "unknown",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "curriculum_evidence": {

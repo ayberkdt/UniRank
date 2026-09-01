@@ -126,7 +126,9 @@
           "source_ids": [
             "https://www.tudelft.nl/en/education/programmes/masters/ae/msc-aerospace-engineering/admission-and-application"
           ]
-        }
+        },
+        "application_fee_scope": "applicants with an international diploma",
+        "application_fee_refundable": false
       },
       "language_profile": {
         "teaching_language": [
@@ -159,7 +161,7 @@
         "tuition_basis": "official_institutional_rate_non_eu_2026_2027",
         "regional_tax_eur": null,
         "student_contribution_eur": null,
-        "application_fee_eur": null,
+        "application_fee_eur": 100,
         "enrollment_fee_eur": null,
         "total_academic_cost_eur_per_year_estimated": 25633,
         "isee_or_income_based": false,
@@ -211,7 +213,7 @@
           "tr": "25.633 avro, AB dışı bir MSc öğrencisinin 2026/2027 için ödediği kurumsal ücrettir; 2.694 avro AB/AEA öğrencileri için yasal ücrettir. İkisi birbirinin yerine geçmez ve çoğu üçüncü taraf karşılaştırma sitesinin yanlışlıkla verdiği rakam yasal ücrettir."
         },
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "EUR",
           "annual_total": 39829.0,
           "annual_total_eur_equivalent": null,
@@ -226,7 +228,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "tuition_eur_per_year": 25633.0,
         "tuition_derivation": {
@@ -240,6 +242,48 @@
           "currency": "EUR",
           "includes_mandatory_fees": false,
           "derived_at": "2026-08-30"
+        },
+        "application_fee_verification": {
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "EUR 100, non-refundable, paid inside the Osiris application before the application can be submitted. The deadline for a non-EU/EFTA applicant to MSc Aerospace Engineering is 15 January 2026.",
+            "tr": "100 avro; iade edilmez, başvuru gönderilmeden önce Osiris başvurusunun içinde ödenir. MSc Aerospace Engineering için AB/EFTA dışı bir adayın son tarihi 15 Ocak 2026'dır."
+          },
+          "confidence": "high"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "published",
+          "amount": 100.0,
+          "currency": "EUR",
+          "amount_eur_equivalent": null,
+          "scope": "international_applicants",
+          "charged_per": "application",
+          "charged_by": "university",
+          "charged_by_name": null,
+          "additional_application_amount": null,
+          "academic_cycle": null,
+          "early_amount": null,
+          "early_deadline": null,
+          "covers_programmes": null,
+          "refundable": false,
+          "components": [],
+          "waiver": {
+            "available": null,
+            "open_to_international": null,
+            "request_deadline": null,
+            "processing_days": null
+          },
+          "payment_due_days_after_deadline": null,
+          "rule": "published_application_fee",
+          "derived_from": {
+            "cost_profile.application_fee_eur": 100
+          },
+          "note": {
+            "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+            "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -558,7 +602,7 @@
         },
         "housing_search_difficulty": "high",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "high",
           "raw_score": 9,
           "scaled_score": 11,
@@ -601,10 +645,10 @@
           "band_from_score": "high",
           "capped_from_very_high": false,
           "legacy_value": "high",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "official_visa_financial_requirement",
           "status": "total_only",
           "currency": "EUR",
@@ -626,7 +670,7 @@
             "en": "TU Delft publishes €14,200 per year of living costs for non-EU students, set by the rules of the Dutch Immigration and Naturalisation Service (IND). That is the legal minimum you must prove for a residence permit, not an observed average — with Delft rents running from €500 to €1,350 a month, a student in the upper half of that range will spend more.",
             "tr": "TU Delft, AB dışı öğrenciler için Hollanda Göç ve Vatandaşlık Servisi'nin (IND) kurallarına göre belirlenen yılda 14.200 avro yaşam gideri yayımlar. Bu, oturum izni için kanıtlaman gereken yasal asgari tutardır; gözlemlenmiş bir ortalama değildir — Delft kiraları ayda 500 ile 1.350 avro arasında olduğundan, bu aralığın üst yarısındaki bir öğrenci daha fazla harcar."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -1027,7 +1071,7 @@
         "scholarship_deadline_status": "closed_awards_made",
         "future_scholarship_deadline": null,
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-01-15",
           "next_expected_date": null,
           "time": null,
@@ -1036,11 +1080,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closed",
-          "days_remaining_at_evaluation": -227,
+          "days_remaining_at_evaluation": -229,
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://www.tudelft.nl/en/education/programmes/masters/ae/msc-aerospace-engineering/admission-and-application",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -1539,9 +1583,24 @@
               "en": "Directly accessible. Confirms that the van Effen scholarship exists, that it is submitted with the MSc application and that it is a separate form, plus the 1 December 23:59 CET cut-off pattern used by TU Delft faculty scholarships.",
               "tr": "Doğrudan erişilebilir. van Effen bursunun var olduğunu, MSc başvurusuyla birlikte gönderildiğini ve ayrı bir form olduğunu, ayrıca TU Delft fakülte burslarının kullandığı 1 Aralık 23.59 CET kesim kalıbını doğrular."
             }
+          },
+          {
+            "url": "https://www.tudelft.nl/en/education/admission-and-application/msc-international-diploma/application-procedure",
+            "title": "Application procedure - MSc international diploma | TU Delft",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ],
-        "last_verified": "2026-08-29",
+        "last_verified": "2026-09-01",
         "needs_verification": true,
         "verification_notes": {
           "en": "Critical fields have current checked evidence except that the official scholarship page blocks research access. Keep scholarship confidence at medium and recheck the next intake directly before advice or application.",
@@ -1623,7 +1682,7 @@
       "qs_ranking": 48,
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 19,
+        "checked_official_source_count": 20,
         "verified_fields": [
           "program",
           "language",
@@ -1638,7 +1697,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-29"
+        "audited_at": "2026-09-01"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -1685,7 +1744,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "core_match",
         "score": 100,
         "score_basis_weight": 90,
@@ -1731,7 +1790,7 @@
         ],
         "confidence": "medium",
         "legacy_relevance_status": "needs_review",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     {
@@ -1816,7 +1875,15 @@
             "https://www.studyinnl.org/dutch-education/studies/mechanical-engineering-857-eindhoven-university-of-technology",
             "https://www.tue.nl/en/education/graduate-school/master-mechanical-engineering"
           ]
-        }
+        },
+        "application_fee_scope": "applicants educated outside the Netherlands",
+        "application_fee_refundable": false,
+        "application_fee_waiver_possible": true,
+        "application_fee_waiver": {
+          "en": "TU/e exempts only applicants resident in or holding the nationality of Cuba, Iran, North Korea, Russia, Sudan or Syria, and does so because international sanctions block the payment rather than as a hardship measure.",
+          "tr": "TU/e yalnızca Küba, İran, Kuzey Kore, Rusya, Sudan veya Suriye'de ikamet eden ya da bu ülkelerin vatandaşı olan adayları muaf tutar; bunu bir zorluk önlemi olarak değil, uluslararası yaptırımlar ödemeyi engellediği için yapar."
+        },
+        "international_application_fee_waiver_available_from_department": false
       },
       "language_profile": {
         "teaching_language": [
@@ -1857,7 +1924,7 @@
         "tuition_basis": "current_official_national_catalogue_reports_non_eu_amount_unavailable",
         "regional_tax_eur": null,
         "student_contribution_eur": null,
-        "application_fee_eur": null,
+        "application_fee_eur": 100,
         "enrollment_fee_eur": null,
         "total_academic_cost_eur_per_year_estimated": null,
         "isee_or_income_based": false,
@@ -1910,7 +1977,7 @@
           "use_for_2026_27": false
         },
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "EUR",
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -1926,13 +1993,60 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "tuition_derivation": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "rule": "not_derivable",
           "reason": "no_readable_tuition_figure",
-          "derived_at": "2026-08-30"
+          "derived_at": "2026-09-01"
+        },
+        "application_fee_charged_per": "application",
+        "application_fee_verification": {
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "EUR 100 per application, non-refundable, charged to anyone whose previous education was outside the Netherlands. Proof of payment is uploaded with the online form and the application is not assessed without it.",
+            "tr": "Başvuru başına 100 avro; iade edilmez, önceki Eğitim Hollanda dışında olan herkesten alınır. Ödeme belgesi çevrimiçi formla birlikte yüklenir ve o olmadan başvuru değerlendirilmez."
+          },
+          "confidence": "high"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "published",
+          "amount": 100.0,
+          "currency": "EUR",
+          "amount_eur_equivalent": null,
+          "scope": "international_applicants",
+          "charged_per": "application",
+          "charged_by": "university",
+          "charged_by_name": null,
+          "additional_application_amount": null,
+          "academic_cycle": null,
+          "early_amount": null,
+          "early_deadline": null,
+          "covers_programmes": null,
+          "refundable": false,
+          "components": [],
+          "waiver": {
+            "available": true,
+            "open_to_international": false,
+            "request_deadline": null,
+            "processing_days": null,
+            "note": {
+              "en": "TU/e exempts only applicants resident in or holding the nationality of Cuba, Iran, North Korea, Russia, Sudan or Syria, and does so because international sanctions block the payment rather than as a hardship measure.",
+              "tr": "TU/e yalnızca Küba, İran, Kuzey Kore, Rusya, Sudan veya Suriye'de ikamet eden ya da bu ülkelerin vatandaşı olan adayları muaf tutar; bunu bir zorluk önlemi olarak değil, uluslararası yaptırımlar ödemeyi engellediği için yapar."
+            }
+          },
+          "payment_due_days_after_deadline": null,
+          "rule": "published_application_fee",
+          "derived_from": {
+            "cost_profile.application_fee_eur": 100
+          },
+          "note": {
+            "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+            "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -2069,7 +2183,7 @@
         "housing_access_notes": "Eligible international full-time TU/e-campus students can respond to designated Vestide listings; eligibility is not an allocation guarantee.",
         "housing_search_difficulty": "high",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "high",
           "raw_score": 6,
           "scaled_score": 9,
@@ -2109,10 +2223,10 @@
           "band_from_score": "high",
           "capped_from_very_high": false,
           "legacy_value": "high",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "official_source_range_basis_not_itemised",
           "status": "total_only",
           "currency": "EUR",
@@ -2139,11 +2253,11 @@
               "monthly_living_cost_eur_min": 1000.0,
               "monthly_living_cost_eur_max": 1500.0
             },
-            "derived_at": "2026-08-30"
+            "derived_at": "2026-09-01"
           },
           "source_url": null,
           "note": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -2392,7 +2506,7 @@
           }
         ],
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2027-05-01",
           "next_expected_date": null,
           "time": null,
@@ -2401,11 +2515,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "open",
-          "days_remaining_at_evaluation": 244,
+          "days_remaining_at_evaluation": 242,
           "derived_from": "application_timeline_profile.application_deadline",
           "confidence": "high",
           "source_url": "https://www.tue.nl/en/education/graduate-school/master-mechanical-engineering",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -2662,9 +2776,24 @@
               "department"
             ],
             "confidence": "high"
+          },
+          {
+            "url": "https://www.tue.nl/en/education/become-a-tue-student/tuition-fees-and-other-study-costs/application-fee",
+            "title": "Application fee | TU/e",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ],
-        "last_verified": "2026-08-30",
+        "last_verified": "2026-09-01",
         "needs_verification": true,
         "verification_notes": {
           "en": "Accessible national and provider sources support programme, language, dates, scholarship listing, structure and housing examples. Programme admission, 2026/27 non-EU tuition and scholarship mechanics remain unresolved because TU/e pages blocked access.",
@@ -2757,7 +2886,7 @@
       "qs_ranking": 152,
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 11,
+        "checked_official_source_count": 12,
         "verified_fields": [
           "program",
           "language",
@@ -2773,7 +2902,7 @@
           "admission"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-30"
+        "audited_at": "2026-09-01"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -2804,7 +2933,7 @@
       },
       "programme_fit_class": "adjacent_mechanical_degree_with_aerospace_applications_not_aerospace_or_space_degree",
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "weak_match",
         "score": 32,
         "score_basis_weight": 90,
@@ -2850,7 +2979,7 @@
         ],
         "confidence": "medium",
         "legacy_relevance_status": "weak",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "research_group_evidence": {
@@ -3011,7 +3140,7 @@
           "academic_year": "2026/2027"
         },
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "EUR",
           "annual_total": 37432.0,
           "annual_total_eur_equivalent": null,
@@ -3026,7 +3155,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "tuition_eur_per_year": 21700.0,
         "tuition_derivation": {
@@ -3040,6 +3169,40 @@
           "currency": "EUR",
           "includes_mandatory_fees": false,
           "derived_at": "2026-08-30"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "published",
+          "amount": 100.0,
+          "currency": "EUR",
+          "amount_eur_equivalent": null,
+          "scope": "unknown",
+          "charged_per": "application",
+          "charged_by": "university",
+          "charged_by_name": null,
+          "additional_application_amount": null,
+          "academic_cycle": null,
+          "early_amount": null,
+          "early_deadline": null,
+          "covers_programmes": null,
+          "refundable": null,
+          "components": [],
+          "waiver": {
+            "available": null,
+            "open_to_international": null,
+            "request_deadline": null,
+            "processing_days": null
+          },
+          "payment_due_days_after_deadline": null,
+          "rule": "published_application_fee",
+          "derived_from": {
+            "cost_profile.application_fee_eur": 100
+          },
+          "note": {
+            "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+            "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -3098,7 +3261,7 @@
         "housing_application_separate": null,
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 2,
           "scaled_score": null,
@@ -3140,10 +3303,10 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "official_source_range_basis_not_itemised",
           "status": "total_only",
           "currency": "EUR",
@@ -3166,11 +3329,11 @@
             "derived_from": {
               "monthly_living_cost_eur_estimated": 1311.0
             },
-            "derived_at": "2026-08-30"
+            "derived_at": "2026-09-01"
           },
           "source_url": null,
           "note": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -3346,7 +3509,7 @@
           "tr": "Bilgi sayfası iki ayrı giriş içerir. Temmuz AB tarihini eşleşen Eylül 2026 başlangıcı olmadan göstermek veya bu kapanmış/yayımlanmış tarihleri sonraki döneme taşımak yanıltıcıdır. Şubat 2027 tarihleri kontrol edildiğinde gelecekteydi."
         },
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-10-01",
           "next_expected_date": null,
           "time": null,
@@ -3354,12 +3517,12 @@
           "applies_to": "all_applicants",
           "cycle_label": null,
           "is_recurring_annual": false,
-          "status": "open",
-          "days_remaining_at_evaluation": 32,
+          "status": "closing_soon",
+          "days_remaining_at_evaluation": 30,
           "derived_from": "application_timeline_profile.application_deadline",
           "confidence": "high",
           "source_url": "https://www.utwente.nl/en/education/master/programmes/robotics/masters-structure/factsheet/",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -3641,7 +3804,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "strong_adjacent",
         "score": 61,
         "score_basis_weight": 90,
@@ -3680,7 +3843,7 @@
         "matched_tags": [],
         "confidence": "medium",
         "legacy_relevance_status": "weak",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "research_group_evidence": {

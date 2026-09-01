@@ -39,7 +39,9 @@
         "validity_rule": "",
         "waiver_rules": [],
         "source_ids": []
-      }
+      },
+      "application_fee_scope": "international students",
+      "application_fee_refundable": false
     },
     "language_profile": {
       "teaching_language": [
@@ -68,7 +70,7 @@
       "tuition_basis": "official_international_student_1st_and_2nd_cycle_annual_fee",
       "regional_tax_eur": null,
       "student_contribution_eur": null,
-      "application_fee_eur": null,
+      "application_fee_eur": 100,
       "enrollment_fee_eur": null,
       "total_academic_cost_eur_per_year_estimated": 7000,
       "verification_notes": {
@@ -92,7 +94,7 @@
       "living_cost_dkk_per_year_min": null,
       "living_cost_dkk_per_year_max": null,
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "EUR",
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -108,7 +110,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_eur_per_year": 7000.0,
       "tuition_derivation": {
@@ -122,6 +124,48 @@
         "currency": "EUR",
         "includes_mandatory_fees": false,
         "derived_at": "2026-08-30"
+      },
+      "application_fee_verification": {
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "EUR 100 for an international student, against EUR 50 for the first two applications on the EU route - the international route is the more expensive one and is the route a Turkish applicant uses. Payment is due within three working days of submitting the application, by bank transfer against an ATM reference the system generates, and is non-refundable whatever the result.",
+          "tr": "Uluslararası bir öğrenci için 100 avro; AB yolundaki ilk iki başvuru için 50 avro olan tutara karşılık. Pahalı olan uluslararası yoldur ve Türkiyeli bir adayın kullandığı yol da odur. Ödeme, başvurunun gönderilmesinden sonraki üç iş günü içinde, sistemin ürettiği ATM referansına banka havalesiyle yapılır ve sonuç ne olursa olsun iade edilmez."
+        },
+        "confidence": "high"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 100.0,
+        "currency": "EUR",
+        "amount_eur_equivalent": null,
+        "scope": "international_applicants",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": false,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "cost_profile.application_fee_eur": 100
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -208,7 +252,7 @@
       "housing_application_separate": null,
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -251,16 +295,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -448,7 +492,7 @@
         "tr": "Tarihler, 2026/27 için AB dışı uluslararası öğrencilerin Özel Kabul Rejimine aittir. Yalnızca kapanmış ve tarihli referans olarak kaydedilir; Técnico sonraki dönem takvimini henüz yayımlamamıştır. AB/ulusal adaylar başka bir kabul yolunu kullanır."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": "2026-07-17",
         "next_expected_date": null,
         "time": null,
@@ -457,11 +501,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -44,
+        "days_remaining_at_evaluation": -46,
         "derived_from": "application_timeline_profile.non_eu_deadline",
         "confidence": "high",
         "source_url": "https://tecnico.ulisboa.pt/en/education/study-at-tecnico/applications/international-students/",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -561,21 +605,6 @@
           }
         },
         {
-          "url": "https://tecnico.ulisboa.pt/en/education/study-at-tecnico/applications/international-students/",
-          "title": "Técnico Lisboa: International Students fees 2026/27",
-          "source_type": "official_tuition_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "tuition"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Official page publishes EUR 7,000/year for international students in first and second study cycles, with EUR 2,000 due on vacancy reservation.",
-            "tr": "Resmî sayfa birinci ve ikinci döngüdeki uluslararası öğrenciler için yıllık 7.000 EUR; kontenjan rezervasyonunda 2.000 EUR ödeme yayımlar."
-          }
-        },
-        {
           "url": "https://aai.tecnico.ulisboa.pt/files/sites/52/brochura_estudantes_internacionais_26_27_set_25.pdf",
           "title": "Técnico Lisboa International Students 2026/27 brochure: Lisbon cost components",
           "source_type": "official_cost_of_living_page",
@@ -641,9 +670,24 @@
             "en": "Publishes all 25 research units with a described scope for each, including IdMEC's aerospace science and technology focus and IPFN's space propulsion activity.",
             "tr": "25 araştırma biriminin tamamını her biri için tanımlanmış bir kapsamla yayımlar; IdMEC'in havacılık ve uzay bilimi ile teknolojisi odağı ve IPFN'in uzay itkisi faaliyeti dâhil."
           }
+        },
+        {
+          "url": "https://tecnico.ulisboa.pt/en/education/study-at-tecnico/applications/international-students/",
+          "title": "International Students | Tecnico Lisboa",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-01",
       "needs_verification": true,
       "verification_notes": {
         "en": "Programme facts are checked. Current second-cycle international tuition, next international deadline, housing and prospective-student scholarship eligibility were not verified from a direct official source.",
@@ -705,7 +749,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-30"
+      "audited_at": "2026-09-01"
     },
     "qs_ranking_display": "=237",
     "qs_ranking_year": 2027,
@@ -734,7 +778,7 @@
     },
     "relevance_status": "needs_review",
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "strong_adjacent",
       "score": 61,
       "score_basis_weight": 90,
@@ -772,7 +816,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "needs_review",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "curriculum_evidence": {
@@ -888,7 +932,7 @@
       "living_cost_dkk_per_year_min": null,
       "living_cost_dkk_per_year_max": null,
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "EUR",
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -904,7 +948,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_eur_per_year": 1500.0,
       "tuition_derivation": {
@@ -918,6 +962,40 @@
         "currency": "EUR",
         "includes_mandatory_fees": false,
         "derived_at": "2026-08-30"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 50.0,
+        "currency": "EUR",
+        "amount_eur_equivalent": null,
+        "scope": "unknown",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "cost_profile.application_fee_eur": 50
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -998,7 +1076,7 @@
       "average_room_rent_scope_label": "UBI residence room examples; not private-market rent",
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 2,
         "scaled_score": null,
@@ -1039,16 +1117,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -1255,12 +1333,12 @@
       "application_deadline": null,
       "deadline_events": [],
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -1532,7 +1610,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "partial_match",
       "score": 48,
       "score_basis_weight": 90,
@@ -1571,7 +1649,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "facility_evidence": {
@@ -1656,7 +1734,7 @@
       "tuition_basis": "inactive_program_historical_context_only",
       "regional_tax_eur": null,
       "student_contribution_eur": null,
-      "application_fee_eur": null,
+      "application_fee_eur": 55,
       "enrollment_fee_eur": null,
       "total_academic_cost_eur_per_year_estimated": null,
       "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
@@ -1697,7 +1775,7 @@
       "living_cost_dkk_per_year_max": null,
       "tuition_items": [],
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": null,
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -1712,7 +1790,23 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_verification": {
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "EUR 55 for a master's application at FEUP. The faculty's own applications page and the university's master's access pages refused every request from this check on 1 September 2026, so the figure comes from those pages as indexed rather than from a page read on the day; re-check it before paying.",
+          "tr": "FEUP'ta bir yüksek lisans başvurusu için 55 avro. Fakültenin kendi başvuru sayfası ve üniversitenin yüksek lisans erişim sayfaları 1 Eylül 2026'daki bu kontrolde her isteği reddetti; dolayısıyla rakam, o gün okunan bir sayfadan değil, dizinlenmiş hâllerinden gelmektedir; ödemeden önce yeniden kontrol et."
+        },
+        "confidence": "medium"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "unknown",
+        "amount": null,
+        "currency": null,
+        "reason": "record_does_not_verify_admission_or_cost",
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -1790,7 +1884,7 @@
       "official_rent_items": [],
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -1833,16 +1927,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -1892,12 +1986,12 @@
       "application_deadline": null,
       "deadline_events": [],
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -1963,9 +2057,25 @@
             "en": "Official source checked for the listed fields.",
             "tr": "Resm? kaynak listelenen alanlar i?in kontrol edildi."
           }
+        },
+        {
+          "url": "https://fe.up.pt/studyresearch/applications-masters/",
+          "title": "Applications Masters | International University of Porto",
+          "source_type": "official_tuition_page",
+          "access_status": "blocked",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "medium",
+          "notes": "Host timed out and the U.Porto mirrors returned 403 on 2026-09-01; re-check before relying on the amount."
         }
       ],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-09-01",
       "needs_verification": true,
       "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
       "field_confidence": {
@@ -2047,7 +2157,7 @@
         "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-23"
+      "audited_at": "2026-09-01"
     },
     "relevance_status": "strong",
     "program_native_name": "Mestrado em Engenharia Aeroespacial",
@@ -2079,7 +2189,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "unknown",
       "score": null,
       "score_basis_weight": 30,
@@ -2115,7 +2225,7 @@
       "matched_tags": [],
       "confidence": "unknown",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     }
   },
   {
@@ -2158,7 +2268,8 @@
         "validity_rule": "",
         "waiver_rules": [],
         "source_ids": []
-      }
+      },
+      "application_fee_refundable": false
     },
     "language_profile": {
       "teaching_language": [
@@ -2180,7 +2291,7 @@
       "tuition_basis": "needs_verification",
       "regional_tax_eur": null,
       "student_contribution_eur": null,
-      "application_fee_eur": null,
+      "application_fee_eur": 20,
       "enrollment_fee_eur": null,
       "total_academic_cost_eur_per_year_estimated": null,
       "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
@@ -2212,7 +2323,7 @@
       "living_cost_dkk_per_year_max": null,
       "tuition_items": [],
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": null,
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -2227,7 +2338,55 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_verification": {
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "EUR 20, non-refundable, paid on the application platform - and Aveiro is explicit that only applications whose payment arrives inside the window count as valid, so a late transfer voids the application rather than delaying it. The figure is from the Aerospace Engineering master's own call, not from a general fee table. The EUR 70 Aveiro charges elsewhere is the first-cycle international-student special call and does not apply to a second-cycle master's.",
+          "tr": "Başvuru platformunda ödenen, iade edilmeyen 20 avro - ve Aveiro, yalnızca ödemesi süre içinde ulaşan başvuruların geçerli sayıldığını açıkça söyler; yani geç bir havale başvuruyu geciktirmez, geçersiz kılar. Rakam genel bir ücret tablosundan değil, Havacılık ve Uzay Mühendisliği yüksek lisansının kendi ilanından gelmektedir. Aveiro'nun başka yerde aldığı 70 avro, birinci kademe uluslararası öğrenci özel kontenjanına aittir ve ikinci kademe bir yüksek lisans için geçerli değildir."
+        },
+        "confidence": "high"
+      },
+      "tuition_derivation": {
+        "standard": "cost_model@3.2.0",
+        "rule": "not_derivable",
+        "reason": "no_readable_tuition_figure",
+        "derived_at": "2026-09-01"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 20.0,
+        "currency": "EUR",
+        "amount_eur_equivalent": null,
+        "scope": "unknown",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": false,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "cost_profile.application_fee_eur": 20
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -2302,7 +2461,7 @@
       "official_rent_items": [],
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -2345,16 +2504,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -2403,12 +2562,12 @@
       "application_deadline": null,
       "deadline_events": [],
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -2474,9 +2633,24 @@
             "en": "Official 2024/25 course report confirms an active second-cycle Master's in Aerospace Engineering. It lists aerospace structural analysis, avionics/spaceonics, space-vehicle dynamics/control, aerospace CFD, space robotics and aerospace project; it is not a current tuition or admission source.",
             "tr": "Resmî 2024/25 ders raporu aktif ikinci döngü Havacılık ve Uzay Mühendisliği yüksek lisansını doğrular. Havacılık-uzay yapısal analiz, aviyonik/espasiyonik, uzay aracı dinamiği/kontrolü, havacılık-uzay CFD, uzay robotiği ve havacılık-uzay projesini listeler; güncel ücret veya kabul kaynağı değildir."
           }
+        },
+        {
+          "url": "https://acesso.ua.pt/upload/editais/e_10894.pdf",
+          "title": "Edital de candidatura - Mestrado em Engenharia Aeroespacial (2.o ciclo) | Universidade de Aveiro",
+          "source_type": "official_tuition_page",
+          "access_status": "pdf",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-09-01",
       "needs_verification": true,
       "verification_notes": {
         "en": "Programme and course evidence are checked but current language, fees, scholarship, application deadlines and housing are not established by this source.",
@@ -2559,8 +2733,9 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 1,
+      "checked_official_source_count": 2,
       "verified_fields": [
+        "tuition",
         "curriculum"
       ],
       "unverified_critical_fields": [
@@ -2568,13 +2743,12 @@
         "language",
         "admission",
         "non_eu_eligibility",
-        "tuition",
         "scholarship",
         "deadline",
         "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-23"
+      "audited_at": "2026-09-01"
     },
     "tuition_eur_per_year": null,
     "annual_fee_eur": null,
@@ -2605,7 +2779,7 @@
     },
     "relevance_status": "needs_review",
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "unknown",
       "score": null,
       "score_basis_weight": 30,
@@ -2641,7 +2815,7 @@
       "matched_tags": [],
       "confidence": "unknown",
       "legacy_relevance_status": "needs_review",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     }
   },
   {
@@ -2693,7 +2867,8 @@
         "validity_rule": "",
         "waiver_rules": [],
         "source_ids": []
-      }
+      },
+      "application_fee_refundable": false
     },
     "language_profile": {
       "teaching_language": [
@@ -2715,7 +2890,7 @@
       "tuition_basis": "needs_verification",
       "regional_tax_eur": null,
       "student_contribution_eur": null,
-      "application_fee_eur": null,
+      "application_fee_eur": 44,
       "enrollment_fee_eur": null,
       "total_academic_cost_eur_per_year_estimated": null,
       "verification_notes": "Legacy record was not fully reverified from current official programme sources.",
@@ -2747,7 +2922,7 @@
       "living_cost_dkk_per_year_max": null,
       "tuition_items": [],
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": null,
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -2762,7 +2937,49 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_verification": {
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "EUR 44 for a master's application and non-refundable, against the EUR 126 Minho charges for registration and enrolment once you are in - two different charges at two different points. Minho's student portal presented an unverifiable TLS certificate on 1 September 2026, so the amount comes from its fees page as indexed rather than from a page read on the day.",
+          "tr": "Bir yüksek lisans başvurusu için 44 avro ve iade edilmez; Minho'nun kabul sonrasında kayıt ve kaydolma için aldığı 126 avroya karşılık - iki farklı noktada iki farklı kalem. Minho öğrenci portalı 1 Eylül 2026'da doğrulanamayan bir TLS sertifikası sundu; bu nedenle tutar, o gün okunan bir sayfadan değil, dizinlenmiş ücretler sayfasından gelmektedir."
+        },
+        "confidence": "medium"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 44.0,
+        "currency": "EUR",
+        "amount_eur_equivalent": null,
+        "scope": "unknown",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": false,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "cost_profile.application_fee_eur": 44
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -2837,7 +3054,7 @@
       "official_rent_items": [],
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -2880,16 +3097,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -2955,12 +3172,12 @@
       "application_deadline": null,
       "deadline_events": [],
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -3064,9 +3281,25 @@
             "en": "The official document lists Aerospace Engineering specialisations for both national/equivalent and international candidates and requires a detailed CV and degree/transcript certificate.",
             "tr": "Resmi belge, Havacilik ve Uzay Muhendisligi uzmanliklarini hem ulusal/esdeger hem uluslararasi adaylar icin listeler ve ayrintili CV ile derece/transkript belgesi ister."
           }
+        },
+        {
+          "url": "https://alunos.uminho.pt/EN/students/Pages/InfoUteisEmolumentos.aspx",
+          "title": "Fees | Universidade do Minho",
+          "source_type": "official_tuition_page",
+          "access_status": "blocked",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "medium",
+          "notes": "TLS certificate could not be verified on 2026-09-01; re-check before relying on the amount."
         }
       ],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-09-01",
       "needs_verification": true,
       "verification_notes": {
         "en": "Programme existence and core structure are supported. The catalogue is older, so language, fees, scholarship, current deadline and housing are intentionally left unverified.",
@@ -3150,7 +3383,7 @@
         "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-23"
+      "audited_at": "2026-09-01"
     },
     "tuition_eur_per_year": null,
     "annual_fee_eur": null,
@@ -3181,7 +3414,7 @@
     },
     "relevance_status": "needs_review",
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "unknown",
       "score": null,
       "score_basis_weight": 30,
@@ -3217,7 +3450,7 @@
       "matched_tags": [],
       "confidence": "unknown",
       "legacy_relevance_status": "needs_review",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     }
   },
   {
@@ -3325,7 +3558,7 @@
       "living_cost_dkk_per_year_max": null,
       "tuition_items": [],
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": null,
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -3340,7 +3573,41 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 100.0,
+        "currency": "EUR",
+        "amount_eur_equivalent": null,
+        "scope": "unknown",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "cost_profile.application_fee_eur": 100
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -3418,7 +3685,7 @@
       "official_rent_items": [],
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -3461,16 +3728,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -3546,7 +3813,7 @@
         "tr": "2026/27 ulusal aşamaları: 4 Şubat–27 Mart, 1 Haziran–17 Temmuz ve 19 Ağustos–4 Eylül. Sayfa uluslararası öğrencilere tek aşama olarak 4 Şubat–27 Mart 2026'yı belirtir; üniversite yeni çağrı yayımlamadıkça AB dışı adaylar için bu son tarihi kullanın."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": "2026-03-27",
         "next_expected_date": null,
         "time": null,
@@ -3555,11 +3822,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -156,
+        "days_remaining_at_evaluation": -158,
         "derived_from": "application_timeline_profile.non_eu_deadline",
         "confidence": "high",
         "source_url": "https://www.fct.unl.pt/ensino/curso/mestrado-em-engenharia-aeroespacial",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -3761,7 +4028,7 @@
     },
     "relevance_status": "needs_review",
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "unknown",
       "score": null,
       "score_basis_weight": 30,
@@ -3797,7 +4064,7 @@
       "matched_tags": [],
       "confidence": "unknown",
       "legacy_relevance_status": "needs_review",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     }
   },
   {
@@ -3899,7 +4166,7 @@
       "living_cost_dkk_per_year_max": null,
       "tuition_items": [],
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": null,
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -3914,7 +4181,40 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_research": {
+        "outcome": "no_fee_published",
+        "checked_on": "2026-09-01",
+        "pages_checked": [
+          "https://uatlantica.pt/wp-content/uploads/2025/09/EDITAL-Mestrados-2025_2026-Atlantica.pdf"
+        ],
+        "note": {
+          "en": "Atlantica's master's call sets out the whole application - the platform, the six documents, the coordinator's selection, and three dated application phases - and prices none of it. The EUR 25 it charges elsewhere is on the first-cycle route, and the EUR 3,000 and EUR 2,000 are the first and second year of tuition, both after admission.",
+          "tr": "Atlantica'nın yüksek lisans ilanı tüm başvuruyu ortaya koyar - platform, altı belge, koordinatörün seçimi ve tarihli üç başvuru aşaması - ve hiçbirini fiyatlandırmaz. Başka yerde aldığı 25 avro birinci kademe yoluna aittir; 3.000 ve 2.000 avro ise ikisi de kabulden sonra gelen birinci ve ikinci yıl öğrenim ücretidir."
+        }
+      },
+      "tuition_derivation": {
+        "standard": "cost_model@3.2.0",
+        "rule": "not_derivable",
+        "reason": "no_readable_tuition_figure",
+        "derived_at": "2026-09-01"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "not_published",
+        "amount": null,
+        "currency": null,
+        "rule": "researched_absence",
+        "pages_checked": [
+          "https://uatlantica.pt/wp-content/uploads/2025/09/EDITAL-Mestrados-2025_2026-Atlantica.pdf"
+        ],
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "Atlantica's master's call sets out the whole application - the platform, the six documents, the coordinator's selection, and three dated application phases - and prices none of it. The EUR 25 it charges elsewhere is on the first-cycle route, and the EUR 3,000 and EUR 2,000 are the first and second year of tuition, both after admission.",
+          "tr": "Atlantica'nın yüksek lisans ilanı tüm başvuruyu ortaya koyar - platform, altı belge, koordinatörün seçimi ve tarihli üç başvuru aşaması - ve hiçbirini fiyatlandırmaz. Başka yerde aldığı 25 avro birinci kademe yoluna aittir; 3.000 ve 2.000 avro ise ikisi de kabulden sonra gelen birinci ve ikinci yıl öğrenim ücretidir."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -3989,7 +4289,7 @@
       "official_rent_items": [],
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -4032,16 +4332,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -4092,7 +4392,7 @@
         "tr": "Resmî 2026 1. aşama: başvuru 2 Şubat–31 Mart, sonuç 10 Nisan, kayıt 10–17 Nisan. 2. aşama (kalan kontenjan): 6 Nisan–5 Haziran, sonuç 12 Haziran, kayıt 12–22 Haziran. Sayfa eğitimin Ekim sonuna doğru başlamasının planlandığını söyler; ayrı uluslararası son tarih yayımlamaz."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": "2026-03-31",
         "next_expected_date": null,
         "time": null,
@@ -4101,11 +4401,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -152,
+        "days_remaining_at_evaluation": -154,
         "derived_from": "application_timeline_profile.non_eu_deadline",
         "confidence": "high",
         "source_url": "https://uatlantica.pt/cursos/mestrado-em-engenharia-e-gestao-de-manutencao-aeronautica/",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -4174,9 +4474,24 @@
             "en": "Official page describes the aeronautical-maintenance and technical-management master's programme, documents foreign-degree access, required passport/ID, and 2026 first/second application phases. It does not publish ECTS, duration, tuition, teaching language or scholarship conditions.",
             "tr": "Resmî sayfa havacılık bakımı ve teknik yönetim yüksek lisansını açıklar; yabancı dereceyle erişimi, gerekli pasaport/kimliği ve 2026 birinci/ikinci başvuru aşamalarını belgeler. AKTS, süre, ücret, eğitim dili veya burs koşullarını yayımlamaz."
           }
+        },
+        {
+          "url": "https://uatlantica.pt/wp-content/uploads/2025/09/EDITAL-Mestrados-2025_2026-Atlantica.pdf",
+          "title": "Edital Mestrados 2025/2026 | Atlantica University Institute",
+          "source_type": "official_tuition_page",
+          "access_status": "pdf",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
-      "last_verified": "2026-07-14",
+      "last_verified": "2026-09-01",
       "needs_verification": true,
       "verification_notes": {
         "en": "Programme facts and dates are checked. Core cost, language and workload data remain intentionally unknown.",
@@ -4239,22 +4554,22 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 1,
+      "checked_official_source_count": 2,
       "verified_fields": [
         "program",
         "admission",
         "non_eu_eligibility",
+        "tuition",
         "deadline",
         "curriculum"
       ],
       "unverified_critical_fields": [
         "language",
-        "tuition",
         "scholarship",
         "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-23"
+      "audited_at": "2026-09-01"
     },
     "tuition_eur_per_year": null,
     "annual_fee_eur": null,
@@ -4285,7 +4600,7 @@
     },
     "relevance_status": "needs_review",
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "unknown",
       "score": null,
       "score_basis_weight": 30,
@@ -4321,7 +4636,7 @@
       "matched_tags": [],
       "confidence": "unknown",
       "legacy_relevance_status": "needs_review",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     }
   }
 ]

@@ -92,7 +92,7 @@
         "living_cost_dkk_per_year_min": null,
         "living_cost_dkk_per_year_max": null,
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "CZK",
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -108,7 +108,57 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
+        },
+        "application_fee_czk": 950,
+        "application_fee_verification": {
+          "checked_on": "2026-09-01",
+          "note": {
+            "en": "CZK 950, which CTU itself puts at roughly EUR 39, and it has to be in before the final application is submitted. Bank charges are the applicant's, and CTU keeps CZK, USD and EUR accounts so the transfer can be made in euro.",
+            "tr": "CTU'nun kendisinin yaklaşık 39 avro dediği 950 Çek koronası; nihai başvuru gönderilmeden önce yatırılmış olmalıdır. Banka masrafları adaya aittir ve CTU korona, dolar ve avro hesapları tuttuğu için havale avro olarak yapılabilir."
+          },
+          "confidence": "high"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "published",
+          "amount": 950.0,
+          "currency": "CZK",
+          "amount_eur_equivalent": {
+            "amount": 39.34,
+            "currency": "EUR",
+            "is_conversion": true,
+            "fx_rate": 24.148,
+            "fx_rate_date": "2026-08-28",
+            "fx_source": "European Central Bank euro foreign exchange reference rates"
+          },
+          "scope": "unknown",
+          "charged_per": "application",
+          "charged_by": "university",
+          "charged_by_name": null,
+          "additional_application_amount": null,
+          "academic_cycle": null,
+          "early_amount": null,
+          "early_deadline": null,
+          "covers_programmes": null,
+          "refundable": null,
+          "components": [],
+          "waiver": {
+            "available": null,
+            "open_to_international": null,
+            "request_deadline": null,
+            "processing_days": null
+          },
+          "payment_due_days_after_deadline": null,
+          "rule": "published_application_fee",
+          "derived_from": {
+            "cost_profile.application_fee_czk": 950
+          },
+          "note": {
+            "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+            "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -275,7 +325,7 @@
         "housing_allocation_mode": "competitive_separate_reservation",
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 4,
           "scaled_score": null,
@@ -316,16 +366,16 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -484,12 +534,12 @@
           "tr": "Güncel son başvuru tarihi doğrulanamadı."
         },
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": null,
           "status": "not_published",
           "confidence": "unknown",
           "reason": "no_iso_dated_deadline_in_record",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -683,9 +733,24 @@
               "en": "States the two-faculty structure, the graduate profile, the complete course list with per-course language markers, the fourth-semester thesis and the PEGASUS Network membership.",
               "tr": "İki fakülteli yapıyı, mezun profilini, ders başına dil işaretleriyle tam ders listesini, dördüncü dönem tezini ve PEGASUS Ağı üyeliğini belirtir."
             }
+          },
+          {
+            "url": "https://fel.cvut.cz/en/admissions/admission-procedures/admission-fee",
+            "title": "Admission fee | CTU Faculty of Electrical Engineering",
+            "source_type": "official_tuition_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-01",
+            "relevant_fields": [
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
+            ],
+            "confidence": "high"
           }
         ],
-        "last_verified": "2026-08-30",
+        "last_verified": "2026-09-01",
         "verification_notes": {
           "en": "Unknown fields remain explicit.",
           "tr": "Bilinmeyen alanlar açık bırakıldı."
@@ -750,7 +815,7 @@
       },
       "data_quality": {
         "status": "verified",
-        "checked_official_source_count": 10,
+        "checked_official_source_count": 11,
         "verified_fields": [
           "program",
           "language",
@@ -764,7 +829,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-08-30"
+        "audited_at": "2026-09-01"
       },
       "quality_control": {
         "qc_status": "passed",
@@ -803,7 +868,7 @@
         }
       },
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "unknown",
         "score": null,
         "score_basis_weight": 55,
@@ -847,7 +912,7 @@
         ],
         "confidence": "unknown",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "curriculum_evidence": {
@@ -1068,7 +1133,7 @@
           }
         ],
         "normalized_cost": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "currency": "EUR",
           "annual_total": null,
           "annual_total_eur_equivalent": null,
@@ -1084,7 +1149,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "tuition_eur_per_year": 3000.0,
         "tuition_derivation": {
@@ -1098,6 +1163,40 @@
           "currency": "EUR",
           "includes_mandatory_fees": false,
           "derived_at": "2026-08-30"
+        },
+        "application_fee_standard": {
+          "standard": "application_fee@3.2.0",
+          "status": "published",
+          "amount": 28.0,
+          "currency": "EUR",
+          "amount_eur_equivalent": null,
+          "scope": "unknown",
+          "charged_per": "application",
+          "charged_by": "university",
+          "charged_by_name": null,
+          "additional_application_amount": null,
+          "academic_cycle": null,
+          "early_amount": null,
+          "early_deadline": null,
+          "covers_programmes": null,
+          "refundable": null,
+          "components": [],
+          "waiver": {
+            "available": null,
+            "open_to_international": null,
+            "request_deadline": null,
+            "processing_days": null
+          },
+          "payment_due_days_after_deadline": null,
+          "rule": "published_application_fee",
+          "derived_from": {
+            "cost_profile.application_fee_eur": 28
+          },
+          "note": {
+            "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+            "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+          },
+          "evaluated_at": "2026-09-01"
         }
       },
       "scholarship_profile": {
@@ -1242,7 +1341,7 @@
         "housing_allocation_mode": "available_by_separate_request",
         "housing_search_difficulty": "unknown",
         "housing_difficulty_profile": {
-          "standard": "housing_difficulty@3.1.0",
+          "standard": "housing_difficulty@3.2.0",
           "level": "unknown",
           "raw_score": 4,
           "scaled_score": null,
@@ -1283,16 +1382,16 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         },
         "cost_of_living_profile": {
-          "standard": "cost_model@3.1.0",
+          "standard": "cost_model@3.2.0",
           "cost_basis": "unknown",
           "status": "unknown",
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-08-30"
+          "evaluated_at": "2026-09-01"
         }
       },
       "curriculum_profile": {
@@ -1506,7 +1605,7 @@
           "tr": "Programa özgü FME tarihleri genel üniversite SSS takvimine üstün gelir."
         },
         "primary_deadline": {
-          "standard": "application_countdown@3.1.0",
+          "standard": "application_countdown@3.2.0",
           "date": "2026-04-30",
           "next_expected_date": null,
           "time": null,
@@ -1515,11 +1614,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closed",
-          "days_remaining_at_evaluation": -122,
+          "days_remaining_at_evaluation": -124,
           "derived_from": "application_timeline_profile.deadline_events[] (jcmm_scholarship)",
           "confidence": "high",
           "source_url": "https://www.vut.cz/en/board/internal-legislation-fme/-d294652/s-5-25-aj-p307841",
-          "evaluated_at": "2026-08-30",
+          "evaluated_at": "2026-09-01",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -1968,7 +2067,7 @@
       "tuition_eur_per_year": 3000,
       "annual_fee_eur": 3000,
       "academic_match_profile": {
-        "standard": "academic_match@3.1.0",
+        "standard": "academic_match@3.2.0",
         "tier": "unknown",
         "score": null,
         "score_basis_weight": 55,
@@ -2013,7 +2112,7 @@
         ],
         "confidence": "unknown",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "academic_match_evidence": {
         "curriculum_evidence": {

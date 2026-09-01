@@ -1,6 +1,6 @@
 {
-  "standards_version": "3.1.0",
-  "last_updated": "2026-08-30",
+  "standards_version": "3.2.0",
+  "last_updated": "2026-09-01",
   "purpose": {
     "en": "Machine-readable definitions for every categorical scale used in the UniRank database. Any category shown to a student must be defined here, together with the criteria that produce it and the evidence it requires.",
     "tr": "UniRank veritabanında kullanılan her kategorik ölçeğin makine-okunur tanımı. Öğrenciye gösterilen her kategori, onu üreten ölçütler ve gerektirdiği kanıtla birlikte burada tanımlanmak zorundadır."
@@ -562,6 +562,193 @@
     "derivation_guard": {
       "en": "Nothing is derived unless the record's data_quality.verified_fields already contains the matching field and its source log carries a reachable source covering it. A derivation cannot turn an unverified number into a published one; it can only move a number that was already checked into the standard shape.",
       "tr": "Kaydın data_quality.verified_fields alanı ilgili alanı zaten içermiyorsa ve kaynak günlüğü onu kapsayan erişilebilir bir kaynak taşımıyorsa hiçbir şey türetilmez. Türetme, doğrulanmamış bir sayıyı yayımlanmış hâle getiremez; yalnızca zaten kontrol edilmiş bir sayıyı standart biçime taşır."
+    }
+  },
+  "application_fee": {
+    "field_path": "cost_profile.application_fee_standard",
+    "why_the_figure_never_reached_the_reader": {
+      "en": "The fee you pay to be considered at all was already in the database for a third of the catalogue, and none of it was readable. It arrived as application_fee_eur, application_fee_usd, application_fee_gbp, application_fee_usd_international, international_application_fee_usd, an application_fee object carrying its own currency, and an application_fee_items list of separate charges - seven shapes across five currencies, filed under two different profiles. Nothing downstream could read any of them, so a student comparing twelve programmes saw the cost of a year of study and not the cost of applying, which is the bill that actually falls due first. This standard gives the figure one shape, one currency rule and one place to live.",
+      "tr": "Değerlendirmeye alınmak için ödediğin ücret katalogun üçte biri için veritabanında zaten vardı ve hiçbiri okunabilir değildi. Alan; application_fee_eur, application_fee_usd, application_fee_gbp, application_fee_usd_international, international_application_fee_usd, kendi para birimini taşıyan bir application_fee nesnesi ve ayrı kalemleri listeleyen bir application_fee_items dizisi olarak geliyordu - iki farklı profil altında, beş para biriminde yedi ayrı biçim. Hiçbiri arayüze ulaşamıyordu; dolayısıyla ön iki programı karşılaştıran bir öğrenci bir yıllık öğrenim maliyetini görüyor, ilk vadesi gelen fatura olan başvuru maliyetini görmüyordu. Bu standart rakama tek bir biçim, tek bir para birimi kuralı ve tek bir yer verir."
+    },
+    "entry_schema": {
+      "status": "enum: published | no_fee | not_published | unknown",
+      "amount": "number in the published currency, or null",
+      "currency": "ISO 4217 code exactly as the university publishes the charge",
+      "amount_eur_equivalent": "conversion object with fx_rate, fx_rate_date and fx_source, or null when the fee is already in euro",
+      "scope": "enum, see scope_values - who the published amount applies to",
+      "charged_per": "enum: application | programme_choice | admission_portal_account - what the payment buys. Sweden charges once per semester through universityadmissions.se however many programmes are on the list, so calling that per-application would multiply one payment by the size of a shortlist.",
+      "refundable": "boolean or null - null means the university does not say",
+      "components": "array of {label, amount, currency} when the total is the sum of separate charges",
+      "waiver": "object, see waiver_schema",
+      "payment_deadline": "YYYY-MM-DD or null - some universities accept the form first and the fee days later",
+      "rule": "the derivation rule that produced the value",
+      "derived_from": "the original keys and figures, so the derivation can be undone and checked",
+      "evaluated_at": "YYYY-MM-DD",
+      "pages_checked": "array of official urls that were read when the status is not_published",
+      "charged_by": "enum: university | central_application_service - uni-assist charges the fee for many German programmes, and calling that a university fee would misname who to pay and who to ask",
+      "additional_application_amount": "number or null - what each further application in the same cycle costs, where the charge is tiered",
+      "academic_cycle": "the cycle the published amount belongs to, when the record names one",
+      "refused_items": "the published fee items that were read and rejected, with the applicant route each is for, when none of them applies to this reader",
+      "early_amount": "number or null - the reduced amount charged inside an early-application window",
+      "early_deadline": "YYYY-MM-DD or null - the last day the reduced amount applies",
+      "covers_programmes": "integer or null - how many programme choices one payment covers, where the university says",
+      "charged_by_name": "the body that takes the money, named, when it is not the university - uni-assist, universityadmissions.se, Studyinfo.fi, Campus France"
+    },
+    "status_values": [
+      {
+        "code": "published",
+        "label": {
+          "en": "Fee published by the university",
+          "tr": "Üniversitenin yayımladığı ücret"
+        },
+        "note": {
+          "en": "A positive amount read from a key that names the application fee, on a record whose admission or cost fields are already verified and sourced.",
+          "tr": "Başvuru ücretini adıyla anan bir alandan okunmuş pozitif tutar; kaydın kabul veya maliyet alanları zaten doğrulanmış ve kaynaklandırılmış olmalıdır."
+        }
+      },
+      {
+        "code": "no_fee",
+        "label": {
+          "en": "No application fee is charged",
+          "tr": "Başvuru ücreti alınmıyor"
+        },
+        "note": {
+          "en": "A zero read from a key that names the application fee. Most British and continental European universities charge nothing to apply, so a zero here is a real answer rather than an unfilled field - but only when the key exists. An absent key is unknown, never free.",
+          "tr": "Başvuru ücretini adıyla anan bir alandan okunmuş sıfır. İngiltere'deki ve kıta Avrupası'ndaki üniversitelerin çoğu başvuru için ücret almaz; dolayısıyla buradaki sıfır boş bırakılmış bir alan değil gerçek bir cevaptır - ama yalnızca alan mevcutsa. Olmayan bir alan bilinmiyordur, asla ücretsiz değildir."
+        }
+      },
+      {
+        "code": "not_published",
+        "label": {
+          "en": "No fee on the official application route",
+          "tr": "Resmî başvuru yolunda ücret yok"
+        },
+        "note": {
+          "en": "The university's own application pages were read on the date recorded and none of them charges or mentions an application fee. This is deliberately not the same answer as 'no fee': the university has not written the sentence, so what is published is the absence of a charge on the route a student actually uses, not a promise. It is also not the same answer as 'not verified', which means nobody looked. The pages that were read travel with the value.",
+          "tr": "Üniversitenin kendi başvuru sayfaları kayıtlı tarihte okundu ve hiçbiri başvuru ücreti almıyor ya da bundan söz etmiyor. Bu bilerek 'ücret yok' ile aynı cevap değildir: üniversite bu cümleyi yazmamıştır; dolayısıyla yayımlanan şey, öğrencinin gerçekten kullandığı yolda bir ücretin bulunmayışıdır, bir taahhüt değil. 'Doğrulanmadı' ile de aynı cevap değildir; o, kimsenin bakmadığı anlamına gelir. Okunan sayfalar değerle birlikte taşınır."
+        }
+      },
+      {
+        "code": "unknown",
+        "label": {
+          "en": "Not verified",
+          "tr": "Doğrulanmadı"
+        },
+        "note": {
+          "en": "The record holds no key naming an application fee, or the figure it holds failed a guard. Shown as unverified, never as zero.",
+          "tr": "Kayıtta başvuru ücretini anan bir alan yok ya da taşıdığı rakam bir korumadan geçemedi. Sıfır olarak değil, doğrulanmamış olarak gösterilir."
+        }
+      }
+    ],
+    "scope_values": [
+      {
+        "code": "all_applicants",
+        "label": {
+          "en": "Every applicant",
+          "tr": "Tüm adaylar"
+        }
+      },
+      {
+        "code": "international_applicants",
+        "label": {
+          "en": "International applicants",
+          "tr": "Uluslararası adaylar"
+        }
+      },
+      {
+        "code": "non_eu_applicants",
+        "label": {
+          "en": "Non-EU/EEA applicants",
+          "tr": "AB/AEA dışı adaylar"
+        }
+      },
+      {
+        "code": "unknown",
+        "label": {
+          "en": "Scope not stated",
+          "tr": "Kapsam belirtilmemiş"
+        },
+        "note": {
+          "en": "The fee is published without saying who pays it. It is shown as the amount a Turkish applicant should budget, because that is the conservative reading.",
+          "tr": "Ücret, kimin ödediği söylenmeden yayımlanmış. Türkiyeli bir adayın bütçelemesi gereken tutar olarak gösterilir; ihtiyatlı okuma budur."
+        }
+      }
+    ],
+    "waiver_schema": {
+      "available": "boolean or null",
+      "open_to_international": "boolean or null - several American waivers exist but exclude anyone applying from abroad, which makes the headline 'waiver available' false for this reader",
+      "request_deadline": "YYYY-MM-DD or null",
+      "processing_days": "integer or null - the university's own stated turnaround, used to warn before the request is too late to help",
+      "note": "bilingual object naming the conditions, taken from the official page"
+    },
+    "derivation_rules": [
+      {
+        "code": "published_application_fee",
+        "reads": [
+          "application_fee_<currency>",
+          "application_fee_<currency>_international",
+          "international_application_fee_<currency>",
+          "application_fee.amount with application_fee.currency"
+        ],
+        "en": "A key that names the application fee and carries a positive amount is used unchanged, in the currency it was published in.",
+        "tr": "Başvuru ücretini adıyla anan ve pozitif bir tutar taşıyan bir alan, yayımlandığı para biriminde değiştirilmeden kullanılır."
+      },
+      {
+        "code": "sum_of_published_components",
+        "reads": [
+          "application_fee_items[]",
+          "application_fee_breakdown"
+        ],
+        "en": "Where the university bills the application as two or more separate charges - a university fee and a centralised application-service fee, for instance - they are summed and the component list travels with the total. Texas A&M's USD 148 is a USD 90 university fee plus a USD 58 EngineeringCAS processing fee, and quoting either half alone would be wrong.",
+        "tr": "Üniversite başvuruyu iki veya daha fazla ayrı kalem olarak faturalıyorsa - örneğin bir üniversite ücreti ve bir merkezi başvuru servisi ücreti - bunlar toplanır ve kalem listesi toplamla birlikte taşınır. Texas A&M'in 148 ABD doları, 90 dolarlık üniversite ücreti ile 58 dolarlık EngineeringCAS işlem ücretinin toplamıdır; iki yarıyı tek başına aktarmak yanlış olurdu."
+      },
+      {
+        "code": "one_group_of_items_never_two_routes",
+        "reads": [
+          "application_fee_items[].applicant_scope",
+          "application_fee_items[].basis"
+        ],
+        "en": "Fee items are grouped by the applicant they name before anything is added up, and only one group is ever summed. Politehnica Bucharest publishes a RON 100 July route and a RON 50 early route, and its own basis says of each that it is not the central non-EU route; adding them would invent a RON 150 charge nobody pays, and publishing either would name a route this reader cannot use. Where no group describes a non-EU applicant the fee is refused, and the items that were read are published with the refusal so the reader can see which routes the university does price.",
+        "tr": "Ücret kalemleri, herhangi bir toplama yapılmadan önce adını andıkları adaya göre gruplanır ve yalnızca tek bir grup toplanır. POLITEHNICA Bucharest, 100 RON'luk bir temmuz yolu ile 50 RON'luk bir erken başvuru yolu yayımlar ve her ikisi için de kendi dayanağında bunun merkezi AB dışı yol olmadığını söyler; bunları toplamak kimsenin ödemediği 150 RON'luk bir kalem uydurmak, herhangi birini yayımlamak ise bu okuyucunun kullanamayacağı bir yolu adlandırmak olurdu. Hiçbir grup AB dışı bir adayı tanımlamıyorsa ücret reddedilir ve okunan kalemler reddin yanında yayımlanır; böylece okuyucu üniversitenin hangi yolları fiyatladığını görebilir."
+      },
+      {
+        "code": "published_no_fee",
+        "reads": [
+          "application_fee_<currency>",
+          "application_fee.amount"
+        ],
+        "en": "A zero on a key that names the application fee publishes no_fee. The key has to exist: the rule never reads an absent field as a zero.",
+        "tr": "Başvuru ücretini adıyla anan bir alandaki sıfır, no_fee olarak yayımlanır. Alanın var olması gerekir: kural hiçbir zaman olmayan bir alanı sıfır olarak okumaz."
+      },
+      {
+        "code": "researched_absence",
+        "reads": [
+          "cost_profile.application_fee_research.outcome",
+          "cost_profile.application_fee_research.pages_checked"
+        ],
+        "en": "A researcher read the official application pages, found no charge, and recorded which pages those were. The status becomes not_published and the page list is published with it, so the reader can check the same pages rather than trust the conclusion.",
+        "tr": "Bir araştırmacı resmî başvuru sayfalarını okudu, bir ücret bulmadı ve hangi sayfalar olduğunu kaydetti. Durum not_published olur ve sayfa listesi değerle birlikte yayımlanır; böylece okuyucu sonuca güvenmek yerine aynı sayfaları kontrol edebilir."
+      }
+    ],
+    "forbidden_promotions": {
+      "en": "Four charges look like an application fee and are not one. A housing application fee books a room, not a place on the programme, and lives under living_profile where it stays. An enrolment, matriculation or registration fee falls due after an offer is accepted, so quoting it as the cost of applying would overstate the barrier by an order of magnitude. A pre-enrolment portal step such as Universitaly is a government process with its own timetable. A mandatory fee or stamp duty is part of the annual bill, and reading Naples's EUR 167 stamp duty as an application fee would be the same error in reverse. Each of these is read only from its own field.",
+      "tr": "Dört kalem başvuru ücretine benzer ama değildir. Konut başvuru ücreti bir oda ayırtır, programda bir yer değil; living_profile altında yaşar ve orada kalır. Kayıt veya kesin kayıt ücretinin vadesi teklif kabul edildikten sonra gelir; bunu başvuru maliyeti diye aktarmak engeli kat kat abartmak olur. Universitaly gibi bir ön kayıt portalı adımı, kendi takvimi olan bir devlet sürecidir. Zorunlu bir harç veya damga vergisi yıllık faturanın parçasıdır; Napoli'nin 167 avroluk damga vergisini başvuru ücreti saymak aynı hatanın tersi olurdu. Bunların her biri yalnızca kendi alanından okunur."
+    },
+    "total_rule": {
+      "en": "The application fee is never added to the annual total. It is paid once, before there is a place to pay for, and folding a one-off charge into a per-year figure would make it recur for every year of the degree. It is published beside the deadline it belongs to, because that is when it falls due.",
+      "tr": "Başvuru ücreti hiçbir zaman yıllık toplama eklenmez. Bir kez, ödenecek bir yer daha ortada yokken ödenir; tek seferlik bir kalemi yıllık bir rakamın içine katmak onu diplomanın her yılı için tekrarlatırdı. Ait olduğu son tarihin yanında yayımlanır, çünkü vadesi o zaman gelir."
+    },
+    "derivation_guard": {
+      "en": "Nothing is derived unless the record's data_quality.verified_fields already names its admission or cost fields and its source log carries a reachable source covering them. A derivation cannot turn an unverified number into a published one; it can only move a number that was already checked into the standard shape.",
+      "tr": "Kaydın data_quality.verified_fields alanı kabul veya maliyet alanlarını zaten anmıyorsa ve kaynak günlüğü bunları kapsayan erişilebilir bir kaynak taşımıyorsa hiçbir şey türetilmez. Türetme, doğrulanmamış bir sayıyı yayımlanmış hâle getiremez; yalnızca zaten kontrol edilmiş bir sayıyı standart biçime taşır."
+    },
+    "who_charges_it": {
+      "en": "Who bills the fee is part of the answer. Many German programmes are applied for through uni-assist, which charges EUR 75 for the first course of study in a semester and EUR 30 for each further one, keeps the money whatever the outcome, and is not the university. Calling that a university application fee would misname who to pay, who to ask when it goes wrong, and - because the second application costs a third of the first - how much a second German application actually costs.",
+      "tr": "Ücreti kimin faturaladığı cevabın bir parçasıdır. Almanya'daki birçok programa uni-assist üzerinden başvurulur; uni-assist bir dönemdeki ilk program için 75 avro, sonraki her program için 30 avro alır, sonuç ne olursa olsun parayı iade etmez ve üniversite değildir. Buna üniversite başvuru ücreti demek; kime ödeneceğini, iş ters gittiğinde kime sorulacağını ve - ikinci başvuru ilkinin üçte birine mal olduğu için - ikinci bir Alman başvurusunun gerçekte ne kadar tuttuğunu yanlış adlandırmak olurdu."
+    },
+    "early_window_rule": {
+      "en": "Where a university charges less inside an early window, both amounts are published with the date that separates them. Politecnico di Milano charges EUR 50 up to 1 December and EUR 150 after it, which makes that date worth EUR 100 - the clearest case in the catalogue of a deadline that costs money to miss rather than only a place. A saving like that belongs next to the countdown, not buried in a fees page.",
+      "tr": "Bir üniversite erken bir pencere içinde daha az ücret alıyorsa, her iki tutar da onları ayıran tarihle birlikte yayımlanır. Politecnico di Milano 1 Aralık'a kadar 50, sonrasında 150 avro alır; bu da o tarihi 100 avro değerinde kılar - katalogda kaçırılması yalnızca bir yer değil para da kaybettiren bir son tarihin en açık örneği. Böyle bir tasarruf, bir ücretler sayfasına gömülmek yerine geri sayımın yanında durmalıdır."
     }
   },
   "academic_match": {

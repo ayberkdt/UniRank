@@ -264,7 +264,7 @@
         "tr": "NOK değerlerini sabit EUR araştırma gerçeğine dönüştürmeyin."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": null,
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -279,13 +279,60 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_derivation": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-08-30"
+        "derived_at": "2026-09-01"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "no_fee",
+        "amount": 0.0,
+        "currency": "NOK",
+        "amount_eur_equivalent": null,
+        "scope": "unknown",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": "current FAQ checked 2026-08-14",
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_no_fee",
+        "derived_from": {
+          "application_fee_items": [
+            {
+              "amount": 0,
+              "currency": "NOK",
+              "period": "per_application",
+              "applicant_scope": "all",
+              "academic_cycle": "current FAQ checked 2026-08-14",
+              "mandatory": false,
+              "basis": "UiT states that application is free",
+              "source_ids": [
+                "no_uit_faq"
+              ]
+            }
+          ]
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -355,7 +402,7 @@
       "housing_difficulty": "unknown",
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -396,16 +443,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -598,12 +645,12 @@
         "tr": "15 Kasım'ı yayımlanmış tekrarlanan kural olarak ele alın; ancak başvurmadan önce kesin yılı ve portal açılışını doğrulayın."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -981,7 +1028,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "unknown",
       "score": null,
       "score_basis_weight": 30,
@@ -1024,7 +1071,7 @@
       ],
       "confidence": "unknown",
       "legacy_relevance_status": null,
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     }
   }
 ]

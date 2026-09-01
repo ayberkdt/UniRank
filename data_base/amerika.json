@@ -209,7 +209,7 @@
         "tr": "Kontrol edilen Registrar ve SFS sayfaları güncel 2026/27 kurum geneli standart lisansüstü ücretlerini yayımlar; AeroAstro standart dışı ücret istisnası olarak belirtilmemiştir."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "USD",
         "annual_total": 109017.0,
         "annual_total_eur_equivalent": {
@@ -233,7 +233,52 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 90.0,
+        "currency": "USD",
+        "amount_eur_equivalent": {
+          "amount": 77.3,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "international_applicants",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [],
+        "waiver": {
+          "available": true,
+          "open_to_international": false,
+          "request_deadline": "2026-11-18",
+          "processing_days": 5,
+          "note": {
+            "en": "International applicants qualify only if currently attending a US college/university and participating in an eligible graduate-research preparation programme; overseas financial hardship alone is not eligible.",
+            "tr": "Uluslararası adaylar yalnızca hâlen bir ABD kolej/üniversitesine devam ediyor ve uygun bir lisansüstü araştırma hazırlık programına katılıyorsa uygundur; yurt dışındaki mali güçlük tek başına yeterli değildir."
+          }
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "eligibility_profile.application_fee_usd": 90
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -400,7 +445,7 @@
       },
       "housing_difficulty": "high",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "high",
         "raw_score": 7,
         "scaled_score": 12,
@@ -440,10 +485,10 @@
         "band_from_score": "very_high",
         "capped_from_very_high": true,
         "legacy_value": "high",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_university_cost_of_attendance",
         "status": "partial",
         "currency": "USD",
@@ -507,7 +552,7 @@
           "en": "MIT's 2026-27 graduate cost of attendance, nine-month column for the standard September-to-May academic year: housing 17,100, food 7,830, books and course materials 1,161, personal 7,794, transportation 2,844 and health insurance 5,148. MIT publishes a twelve-month column as well, used only when a student also registers for the summer session, where housing rises to 22,800 and food to 10,440.",
           "tr": "MIT'nin 2026-27 lisansustu egitim maliyeti, standart Eylul-Mayis akademik yili icin dokuz aylik sutun: konut 17.100, gida 7.830, kitap ve ders malzemesi 1.161, kisisel 7.794, ulasim 2.844 ve saglik sigortasi 5.148. MIT ayrica on iki aylik bir sutun yayimlar; bu sutun yalnizca ogrenci yaz donemine de kayit oldugunda kullanilir ve konut 22.800'e, gida 10.440'a yukselir."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_cost_of_attendance",
@@ -719,7 +764,7 @@
         "tr": "Bölüm yalnızca güz kabulü için yıllık 1 Eylül açılışı ve 1 Aralık 23:59 ET kesin son tarihini yayımlar. Dönem, Eylül 2026'da açıldığı için Güz 2027 olarak eşlenmiştir; gün tahmini değildir."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": "2026-12-01",
         "next_expected_date": null,
         "time": "23:59",
@@ -728,11 +773,11 @@
         "cycle_label": "Fall 2027",
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 93,
+        "days_remaining_at_evaluation": 91,
         "derived_from": "application_timeline_profile.deadline_eu",
         "confidence": "high",
         "source_url": "https://aeroastro.mit.edu/education/graduate-admission/",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -1782,7 +1827,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "core_match",
       "score": 100,
       "score_basis_weight": 90,
@@ -1832,7 +1877,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -2063,7 +2108,7 @@
         "tr": "118.833 USD örneği, 11–18 birimlik üç standart Mühendislik çeyreğini resmî üç çeyreklik öğrenim dışı bütçeyle birleştirir. Destek öncesi planlama örneğidir, program faturası değildir."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "USD",
         "annual_total": 118833.03,
         "annual_total_eur_equivalent": {
@@ -2087,7 +2132,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_usd_per_year": 69717.0,
       "tuition_derivation": {
@@ -2100,6 +2145,47 @@
         "currency": "USD",
         "includes_mandatory_fees": false,
         "derived_at": "2026-08-30"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 125.0,
+        "currency": "USD",
+        "amount_eur_equivalent": {
+          "amount": 107.36,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "international_applicants",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": false,
+        "components": [],
+        "waiver": {
+          "available": true,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": 10
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "eligibility_profile.application_fee_usd": 125
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -2213,7 +2299,7 @@
       },
       "housing_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 1,
         "scaled_score": null,
@@ -2254,10 +2340,10 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_university_living_budget",
         "status": "partial",
         "currency": "USD",
@@ -2321,7 +2407,7 @@
           "en": "Stanford's 2026-27 standard budget for a single graduate student with no dependents: USD 49,116 across the nine-month academic year, or USD 61,142 over twelve months. The nine-month figure is used because that is the period Stanford labels the academic year. The USD 843 campus health service fee belongs to the same published budget but is held in the mandatory-fee field instead, so it is not counted twice.",
           "tr": "Stanford'un bakmakla yukumlu oldugu kimsesi olmayan tek kisilik bir lisansustu ogrenci icin 2026-27 standart butcesi: dokuz aylik akademik yil boyunca 49.116 USD, on iki ay icin 61.142 USD. Dokuz aylik rakam kullanilir, cunku Stanford akademik yil olarak bu donemi adlandirir. 843 USD kampus saglik hizmeti ucreti ayni yayimlanmis butcenin parcasidir, ancak iki kez sayilmamasi icin zorunlu ucret alaninda tutulur."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_living_budget",
@@ -2506,7 +2592,7 @@
         "tr": "1 Aralık tek tam zamanlı dönem için kesin son tarihtir. Konut ve Knight-Hennessy ayrı takvimlere sahiptir; 2027 Güz konut son tarihi henüz yayımlanmamıştır."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": "2026-12-01",
         "next_expected_date": null,
         "time": null,
@@ -2515,11 +2601,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 93,
+        "days_remaining_at_evaluation": 91,
         "derived_from": "application_timeline_profile.deadline_eu",
         "confidence": "high",
         "source_url": "https://aa.stanford.edu/academics-admissions/graduate-admissions/masters-admissions",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -3489,7 +3575,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "strong_adjacent",
       "score": 56,
       "score_basis_weight": 90,
@@ -3528,7 +3614,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -3778,7 +3864,7 @@
         "tr": "Kendi finansmanını sağlayan terminal MS öğrencisi, 71.022 USD öğrenim ve zorunlu ücret faturasına ek olarak sigorta, konut, yemek, kitap, kişisel gider, taşınma ve seyahati planlamalıdır."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "USD",
         "annual_total": 105196.08,
         "annual_total_eur_equivalent": {
@@ -3801,7 +3887,48 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 100.0,
+        "currency": "USD",
+        "amount_eur_equivalent": {
+          "amount": 85.89,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "international_applicants",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [],
+        "waiver": {
+          "available": true,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "eligibility_profile.application_fee_usd": 100
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -3955,7 +4082,7 @@
       },
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 1,
         "scaled_score": null,
@@ -3996,10 +4123,10 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_university_living_budget",
         "status": "partial",
         "currency": "USD",
@@ -4060,7 +4187,7 @@
           "en": "Caltech's 2025-26 twelve-month graduate budget for an on-campus double apartment: housing and utilities 13,320, food 8,904, books 1,400, health, dental and vision 965 and personal 9,585, totalling 34,174. The published range across housing types runs from 31,774 for a quad apartment to 44,554 for an off-campus two-bedroom lease. Caltech warns separately that first-year students should expect relocation and set-up costs on top.",
           "tr": "Caltech'in kampus ici cift kisilik daire icin 2025-26 on iki aylik lisansustu butcesi: konut ve faturalar 13.320, gida 8.904, kitap 1.400, saglik, dis ve goz 965 ve kisisel 9.585; toplam 34.174. Konut turlerine gore yayimlanan aralik, dortlu daire icin 31.774'ten kampus disi iki yatak odali kira icin 44.554'e uzanir. Caltech ayrica birinci yil ogrencilerinin bunlarin ustune tasinma ve kurulum masraflari beklemesi gerektigini belirtir."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_living_budget",
@@ -4284,12 +4411,12 @@
       },
       "timeline_risk": "high",
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -5274,7 +5401,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "core_match",
       "score": 86,
       "score_basis_weight": 100,
@@ -5313,7 +5440,7 @@
       "matched_tags": [],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "facility_evidence": {
@@ -5393,7 +5520,15 @@
         "validity_rule": "",
         "waiver_rules": [],
         "source_ids": []
-      }
+      },
+      "application_fee_scope": "international applicants",
+      "application_fee_refundable": false,
+      "application_fee_waiver_possible": true,
+      "application_fee_waiver": {
+        "en": "Georgia Tech runs a long list of waiver routes, and states in words that the Office of Graduate Education does not review or approve requests based on financial hardship for international applicants. The programme routes that remain - Fulbright among them - are the only ones open from abroad.",
+        "tr": "Georgia Tech uzun bir muafiyet listesi işletir ve Lisansüstü Eğitim Ofisi'nin uluslararası adaylar için mali güçlük gerekçeli talepleri incelemediğini ya da onaylamadığını sözle belirtir. Geriye kalan program yolları - Fulbright bunlardan biri - yurt dışından açık olan tek yollardır."
+      },
+      "international_application_fee_waiver_available_from_department": false
     },
     "language_profile": {
       "teaching_language": [
@@ -5435,7 +5570,7 @@
         "tr": "USD tutarları resmî para biriminde tutulur. Zaman duyarlı döviz kuru varsayımı gerektireceği için EUR dönüşümü sunulmaz."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "USD",
         "annual_total": 57207.96,
         "annual_total_eur_equivalent": {
@@ -5458,7 +5593,61 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_usd": 105,
+      "application_fee_verification": {
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "USD 105 per application for international applicants, USD 95 for domestic, non-refundable and non-transferable, in force since 1 August 2023.",
+          "tr": "Uluslararası adaylar için başvuru başına 105, yurt içi adaylar için 95 ABD doları; iade edilmez ve devredilmez, 1 Ağustos 2023'ten beri yürürlükte."
+        },
+        "confidence": "high"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 105.0,
+        "currency": "USD",
+        "amount_eur_equivalent": {
+          "amount": 90.18,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "international_applicants",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": false,
+        "components": [],
+        "waiver": {
+          "available": true,
+          "open_to_international": false,
+          "request_deadline": null,
+          "processing_days": null,
+          "note": {
+            "en": "Georgia Tech runs a long list of waiver routes, and states in words that the Office of Graduate Education does not review or approve requests based on financial hardship for international applicants. The programme routes that remain - Fulbright among them - are the only ones open from abroad.",
+            "tr": "Georgia Tech uzun bir muafiyet listesi işletir ve Lisansüstü Eğitim Ofisi'nin uluslararası adaylar için mali güçlük gerekçeli talepleri incelemediğini ya da onaylamadığını sözle belirtir. Geriye kalan program yolları - Fulbright bunlardan biri - yurt dışından açık olan tek yollardır."
+          }
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "cost_profile.application_fee_usd": 105
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -5593,7 +5782,7 @@
       "housing_application_separate": true,
       "housing_search_difficulty": "high",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "high",
         "raw_score": 6,
         "scaled_score": 9,
@@ -5636,10 +5825,10 @@
         "band_from_score": "high",
         "capped_from_very_high": false,
         "legacy_value": "high",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_university_cost_of_attendance",
         "status": "partial",
         "currency": "USD",
@@ -5698,7 +5887,7 @@
           "en": "Georgia Tech's 2026-27 out-of-country graduate budget, on-campus column: housing 11,736, food 6,310, books 800, personal 2,800 and transportation 966, published as a total per year for the fall and spring terms. The off-campus column raises housing to 14,380 and the total to 25,256.",
           "tr": "Georgia Tech'in 2026-27 yurt disindan gelen lisansustu butcesi, kampus ici sutunu: konut 11.736, gida 6.310, kitap 800, kisisel 2.800 ve ulasim 966; guz ve bahar donemleri icin yillik toplam olarak yayimlanir. Kampus disi sutunu konutu 14.380'e, toplami 25.256'ya yukseltir."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "housing_guaranteed": false,
       "housing_difficulty_evidence": {
@@ -5857,7 +6046,7 @@
         "tr": "Okul, referans mektupları ve dil yeterlik belgelerinin ilgili başvuru tarihinden dört hafta sonra teslim edileceğini belirtir. Finansman için karar açısından kritik tarih Marttaki nihai tarih değil Aralık tarihidir. Başvuru öncesinde canlı sayfayı kontrol edin."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": "2027-03-01",
         "next_expected_date": null,
         "time": null,
@@ -5866,11 +6055,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 183,
+        "days_remaining_at_evaluation": 181,
         "derived_from": "application_timeline_profile.application_deadline",
         "confidence": "high",
         "source_url": "https://ae.gatech.edu/ae-graduate-apply",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -6178,7 +6367,7 @@
     "source_profile": {
       "primary_url": "https://catalog.gatech.edu/programs/aerospace-engineering-ms/",
       "secondary_urls": [],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-01",
       "field_confidence": {
         "program_basic_info": "high",
         "language": "high",
@@ -6475,6 +6664,36 @@
             "cost"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://grad.gatech.edu/faq/knowledgebase.php?article=120",
+          "title": "How much does it cost to apply? | Georgia Tech Graduate Education",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://grad.gatech.edu/admissions/application-fee-waivers",
+          "title": "Application Fee Waivers | Georgia Tech Graduate Education",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
       "needs_verification": false,
@@ -6542,7 +6761,7 @@
     },
     "data_quality": {
       "status": "verified",
-      "checked_official_source_count": 17,
+      "checked_official_source_count": 19,
       "verified_fields": [
         "program",
         "language",
@@ -6557,7 +6776,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-29"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "checked_at": "2026-08-23",
@@ -6576,7 +6795,7 @@
     "faculty_or_school": "College of Engineering",
     "campus": "Atlanta campus",
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "core_match",
       "score": 100,
       "score_basis_weight": 90,
@@ -6626,7 +6845,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -6890,7 +7109,7 @@
         "tr": "68.038 $ iki dönemlik öğrenim ücreti programa özgü ve günceldir. Ayrı 94.230 $ göçmenlik tahmini genel Rackham uluslararası bütçesidir ve program ücretlerinin değiştiğini açıkça söyler; mühendisliğe özgü toplam gibi sunulamaz. Tipik üç dönemlik MSE iki akademik yıla yayıldığından tam program ücreti tek güncel tarifeden sabitlenemez."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "USD",
         "annual_total": 102761.82,
         "annual_total_eur_equivalent": {
@@ -6913,7 +7132,52 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 90.0,
+        "currency": "USD",
+        "amount_eur_equivalent": {
+          "amount": 77.3,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "unknown",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": false,
+          "request_deadline": null,
+          "processing_days": null,
+          "note": {
+            "en": "The department does not offer MSE fee waivers. Rackham's need-based waiver is limited to eligible US citizens/permanent residents; certain U-M preparatory-program participants may have separate routes.",
+            "tr": "Bölüm MSE ücret muafiyeti sunmaz. Rackham'ın ihtiyaç temelli muafiyeti uygun ABD vatandaşları/kalıcı oturum sahipleriyle sınırlıdır; bazı U-M hazırlık programı katılımcılarının ayrı yolları olabilir."
+          }
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "eligibility_profile.application_fee_usd": 90
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -7071,7 +7335,7 @@
       },
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -7112,10 +7376,10 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_university_living_budget",
         "status": "complete",
         "currency": "USD",
@@ -7195,7 +7459,7 @@
           "one_off_visa_and_travel_costs"
         ],
         "confidence": "high",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -7450,12 +7714,12 @@
         "tr": "Güncel bölüm sayfaları dönem yılı vermeden yinelenen ay/gün tarihleri yayımlar; burada gelecek yıl uydurulmaz."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -8321,7 +8585,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "core_match",
       "score": 89,
       "score_basis_weight": 90,
@@ -8372,7 +8636,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -8645,7 +8909,7 @@
         "tr": "49.798 $ resmî akademik yıl bütçesi yayımlanan uluslararası sabit ücreti, konut/yemek payını ve diğer tahminleri içerir. Sayfa off-campus ulaşım konusunda kendi içinde tutarsızdır (tabloda 285 $, notta 550 $); veritabanı tabloyu ve resmî toplamı sessizce yeniden hesaplamadan korur. Sigorta zorunludur ancak 2026/27 primi doğrulanamadığı için tam program maliyeti iddia edilmez."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "USD",
         "annual_total": 49797.97,
         "annual_total_eur_equivalent": {
@@ -8667,7 +8931,52 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 75.0,
+        "currency": "USD",
+        "amount_eur_equivalent": {
+          "amount": 64.42,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "international_applicants",
+        "charged_per": "programme_choice",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": false,
+          "request_deadline": null,
+          "processing_days": null,
+          "note": {
+            "en": "A general international economic-hardship waiver is not published. Limited participation-based waivers may apply; applicants must verify eligibility before relying on one.",
+            "tr": "Uluslararası adaylar için genel ekonomik güçlük muafiyeti yayımlanmamıştır. Sınırlı program-katılımı muafiyetleri olabilir; adaylar buna güvenmeden önce uygunluğu doğrulamalıdır."
+          }
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "cost_profile.application_fee_usd": 75
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -8858,7 +9167,7 @@
       },
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -8899,10 +9208,10 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_university_living_budget",
         "status": "partial",
         "currency": "USD",
@@ -8997,7 +9306,7 @@
           "one_off_visa_and_travel_costs"
         ],
         "confidence": "medium",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -9289,12 +9598,12 @@
         "tr": "Çevrimiçi program tarihleri bu kampüs kaydından bilerek çıkarılmıştır. Eksik veya geç başvurular incelenmez."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -10316,7 +10625,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "core_match",
       "score": 90,
       "score_basis_weight": 100,
@@ -10368,7 +10677,7 @@
       ],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -10591,7 +10900,7 @@
         "tr": "Resmî hesaplayıcı, Grainger Engineering'de 12 kredi alan uluslararası lisansüstü öğrenci için katılım bütçesi tahminidir. Konut, kitap ve diğer payların tümü üniversite tarafından faturalandırılmaz; gerçek tutar kayıt yüküne ve tercihlere bağlıdır."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "USD",
         "annual_total": 64092.0,
         "annual_total_eur_equivalent": {
@@ -10614,7 +10923,52 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 90.0,
+        "currency": "USD",
+        "amount_eur_equivalent": {
+          "amount": 77.3,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "unknown",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": true,
+          "request_deadline": null,
+          "processing_days": null,
+          "note": {
+            "en": "AE lists no waiver except the university's McNair Scholar and eligible employee routes.",
+            "tr": "AE, üniversitenin McNair Scholar ve uygun çalışan yolları dışında ücret muafiyeti listelemez."
+          }
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "eligibility_profile.application_fee_usd": 90
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -10860,7 +11214,7 @@
       },
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -10901,10 +11255,10 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_university_living_budget",
         "status": "partial",
         "currency": "USD",
@@ -10962,7 +11316,7 @@
           "one_off_visa_and_travel_costs"
         ],
         "confidence": "medium",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -11246,12 +11600,12 @@
         "tr": "Güncel resmî sayfalar dönem yılı olmadan yinelenen ay/gün tarihleri yayımlar; bu kayıtta yıl uydurulmamıştır."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -12299,7 +12653,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "core_match",
       "score": 100,
       "score_basis_weight": 90,
@@ -12351,7 +12705,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -12596,7 +12950,7 @@
         "tr": "Texas One Stop mali yardım için bir COA aralığı, Texas Global ise göçmenlik belgesi için daha yüksek sabit tahmin yayımlar. Farklı amaçlara hizmet ederler ve birleştirilmezler. Hiçbiri garantili fatura değildir; gerçek Engineering ücreti ders yüküne bağlıdır. 2026/27 uluslararası sigorta primi ayrıca doğrulanamamıştır."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "USD",
         "annual_total": 44279.0,
         "annual_total_eur_equivalent": {
@@ -12618,7 +12972,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_derivation": {
         "standard": "cost_model@3.1.0",
@@ -12631,6 +12985,51 @@
         "currency": "USD",
         "includes_mandatory_fees": false,
         "derived_at": "2026-08-30"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 90.0,
+        "currency": "USD",
+        "amount_eur_equivalent": {
+          "amount": 77.3,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "unknown",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": false,
+          "request_deadline": null,
+          "processing_days": null,
+          "note": {
+            "en": "Graduate application fee waivers are not available to international citizens.",
+            "tr": "Lisansüstü başvuru ücreti muafiyeti uluslararası vatandaşlara sunulmaz."
+          }
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "cost_profile.application_fee_usd": 90
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -12797,7 +13196,7 @@
       },
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -12838,10 +13237,10 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_university_cost_of_attendance",
         "status": "total_only",
         "currency": "USD",
@@ -12871,7 +13270,7 @@
           "en": "UT Austin's 2026-27 full-time graduate cost of attendance for a nonresident living on or off campus, across the fall and spring semesters at nine hours of enrolment: housing and food 17,052 to 17,423, transportation 1,840, books and course materials 776 and personal 4,900. The upper bound is used. Housing and food arrive as one line and cannot be separated.",
           "tr": "UT Austin'in 2026-27 tam zamanli lisansustu egitim maliyeti, kampus ici veya disinda yasayan eyalet disi bir ogrenci icin, guz ve bahar donemlerinde dokuz saatlik kayitla: konut ve gida 17.052-17.423, ulasim 1.840, kitap ve ders malzemesi 776 ve kisisel 4.900. Ust sinir kullanilir. Konut ve gida tek satir halinde gelir ve ayristirilamaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_cost_of_attendance",
@@ -13155,12 +13554,12 @@
         "tr": "SSS geç belge veya değişiklik kabul edilmediğini, kabul sayfası ise tarih sonrası başvuruların yer kalırsa değerlendirilebileceğini söyler. Resmî tarihi kesin kabul edin ve yer kalırsa incelemeye güvenmeyin."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -14240,7 +14639,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "core_match",
       "score": 100,
       "score_basis_weight": 90,
@@ -14294,7 +14693,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -14534,7 +14933,7 @@
         "tr": "46.015 $ göçmenlik belgesi tahminidir, garantili fatura değildir. Eyalet dışı Engineering oranlarını, iki ana dönemi ve 12 aylık yaşam ile sigortayı varsayar; yaz öğrenim ücreti hariçtir. Program sayfası evrensel paket dökümü yayımlamadığından tam finansman teklifi kalem kalem okunmalıdır."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "USD",
         "annual_total": 42992.0,
         "annual_total_eur_equivalent": {
@@ -14557,7 +14956,62 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 148.0,
+        "currency": "USD",
+        "amount_eur_equivalent": {
+          "amount": 127.12,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "unknown",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [
+          {
+            "label": "texas_am_international_fee_usd",
+            "amount": 90.0,
+            "currency": "USD"
+          },
+          {
+            "label": "engineeringcas_processing_fee_usd",
+            "amount": 58.0,
+            "currency": "USD"
+          }
+        ],
+        "waiver": {
+          "available": null,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "sum_of_published_components",
+        "derived_from": {
+          "application_fee_breakdown": {
+            "texas_am_international_fee_usd": 90,
+            "engineeringcas_processing_fee_usd": 58
+          }
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -14831,7 +15285,7 @@
       },
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -14872,10 +15326,10 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_visa_financial_requirement",
         "status": "total_only",
         "currency": "USD",
@@ -14905,7 +15359,7 @@
           "en": "Texas A&M's twelve-month estimated cost of attendance for immigration documents puts living costs at USD 19,995 within a USD 46,015 total that assumes nonresident engineering rates and two major semesters. This is the amount the university will certify on an I-20, which is a floor for the visa rather than an observed average, and it excludes summer tuition.",
           "tr": "Texas A&M'in gocmenlik belgeleri icin on iki aylik tahmini egitim maliyeti, eyalet disi muhendislik oranlarini ve iki ana donemi varsayan 46.015 USD'lik toplam icinde yasam giderlerini 19.995 USD olarak belirler. Bu, universitenin I-20 uzerinde onaylayacagi tutardir; gozlemlenen bir ortalama degil vize icin bir tabandir ve yaz donemi ogrenim ucretini icermez."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_visa_financial_requirement",
@@ -15096,12 +15550,12 @@
         "tr": "Bölüm 1 Aralık ve 1 Eylül'ü öncelik tarihleri olarak etiketler ve belgelerin sonrasında da gönderilebileceğini belirtir. Bu nedenle nihai kapanış tarihi uydurulmaz ve bilinmiyor bırakılır. Danışman ile finansman onayı kabul koşulu olduğundan uluslararası adaylar öncelik tarihini fiilî son tarih saymalıdır."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -16404,7 +16858,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "core_match",
       "score": 96,
       "score_basis_weight": 100,
@@ -16443,7 +16897,7 @@
       "matched_tags": [],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -16672,7 +17126,7 @@
         "tr": "48.411,66 $ tutarı, CU SHIP kullanan tam zamanlı birinci yıl uluslararası Engineering MS öğrencisi için güncel doğrudan üniversite kalemlerinin şeffaf toplamıdır; konut, yemek, kitap, ulaşım ve kişisel harcamaları içermez. Üniversitenin genel lisansüstü COA'sı Arts & Sciences öğrenim ücretini kullandığından Aerospace toplamı olarak sunulmaz."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "USD",
         "annual_total": 74754.62,
         "annual_total_eur_equivalent": {
@@ -16695,7 +17149,48 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 80.0,
+        "currency": "USD",
+        "amount_eur_equivalent": {
+          "amount": 68.71,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "international_applicants",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": false,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "eligibility_profile.international_application_fee_usd": 80
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -16875,7 +17370,7 @@
       },
       "housing_search_difficulty": "high",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "high",
         "raw_score": 6,
         "scaled_score": 9,
@@ -16915,10 +17410,10 @@
         "band_from_score": "high",
         "capped_from_very_high": false,
         "legacy_value": "high",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_university_cost_of_attendance",
         "status": "total_only",
         "currency": "USD",
@@ -16948,7 +17443,7 @@
           "en": "CU Boulder's 2026-27 nonresident graduate budget covers the two semesters of the academic year: housing and food 18,684, books and supplies 1,200, transportation 2,062, personal 1,782 and medical expenses 8,136, totalling 31,864. Housing and food arrive as one line, so they cannot be separated here.",
           "tr": "CU Boulder'in 2026-27 eyalet disi lisansustu butcesi akademik yilin iki donemini kapsar: konut ve gida 18.684, kitap ve malzeme 1.200, ulasim 2.062, kisisel 1.782 ve saglik giderleri 8.136; toplam 31.864. Konut ve gida tek satir halinde geldigi icin burada ayristirilamaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_cost_of_attendance",
@@ -17155,12 +17650,12 @@
         "tr": "Tarihler tahmin değil, güncel bölüm tarihleridir. Dış burs tarihleri ayrıdır ve çoğu kez daha erkendir."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -18178,7 +18673,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "strong_adjacent",
       "score": 74,
       "score_basis_weight": 100,
@@ -18217,7 +18712,7 @@
       "matched_tags": [],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -18473,7 +18968,7 @@
         "tr": "77.777 $ öğrenim/harç ve 108.977 $ öğrenim/harç/konut toplamları, 2026-27 oranını kullanan USC dört dönem örnekleridir; sonraki yıl ücretleri yıllık güncellenir. 116.021 $ tutarı yalnızca USC'nin eski 2025-26 sigorta örneğini ekler ve sabit fatura değildir. Ayrı 84.093 $ I-20 tutarı, derece faturası değil göçmenlik finansman şartıdır."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "USD",
         "annual_total": 69174.0,
         "annual_total_eur_equivalent": {
@@ -18495,7 +18990,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_usd_per_year": 41130.0,
       "tuition_derivation": {
@@ -18508,6 +19003,47 @@
         "currency": "USD",
         "includes_mandatory_fees": false,
         "derived_at": "2026-08-30"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 120.0,
+        "currency": "USD",
+        "amount_eur_equivalent": {
+          "amount": 103.07,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "unknown",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [],
+        "waiver": {
+          "available": true,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "eligibility_profile.application_fee_usd": 120
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -18611,7 +19147,7 @@
       },
       "housing_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -18652,10 +19188,10 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_visa_financial_requirement",
         "status": "total_only",
         "currency": "USD",
@@ -18685,7 +19221,7 @@
           "en": "USC certifies USD 28,044 of living expenses for a twelve-month I-20. A visa minimum is a floor the university will vouch for, not a budget: Viterbi separately estimates university housing reserved for graduate engineering students at USD 1,300 a month, or USD 15,600 across an academic year, and that is housing alone.",
           "tr": "USC, on iki aylik bir I-20 icin 28.044 USD yasam gideri onaylar. Vize asgari tutari, universitenin kefil oldugu bir tabandir, bir butce degildir: Viterbi ayrica lisansustu muhendislik ogrencilerine ayrilan universite konutunu ayda 1.300 USD, bir akademik yil boyunca 15.600 USD olarak tahmin eder ve bu yalnizca konuttur."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_visa_financial_requirement",
@@ -18895,12 +19431,12 @@
         "tr": "Güz burs değerlendirmesi için 15 Aralık'a kadar başvurun. USC'nin resmî sayfaları daha sonraki güz ve bahar finansman tarihlerinde çeliştiği için riskten kaçınan aday daha erken uygulanabilir tarihi kullanmalı ve göndermeden önce canlı başvuru portalını doğrulamalıdır."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -19844,7 +20380,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "core_match",
       "score": 84,
       "score_basis_weight": 90,
@@ -19883,7 +20419,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -20146,7 +20682,7 @@
         "tr": "76.034 $ katılım maliyeti bir planlama bütçesidir, fatura değildir. Süre değiştiği ve gelecek ücretler bilinmediği için tam program toplamı verilmez."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "USD",
         "annual_total": 75427.49,
         "annual_total_eur_equivalent": {
@@ -20170,7 +20706,48 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 155.0,
+        "currency": "USD",
+        "amount_eur_equivalent": {
+          "amount": 133.13,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "international_applicants",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": false,
+        "components": [],
+        "waiver": {
+          "available": true,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "eligibility_profile.application_fee_usd": 155
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -20239,7 +20816,7 @@
       },
       "housing_difficulty": "high",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "high",
         "raw_score": 5,
         "scaled_score": 8,
@@ -20279,10 +20856,10 @@
         "band_from_score": "high",
         "capped_from_very_high": false,
         "legacy_value": "high",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_university_cost_of_attendance",
         "status": "partial",
         "currency": "USD",
@@ -20346,7 +20923,7 @@
           "en": "UCLA's 2026-27 graduate student budget: housing 18,221, food 10,546, books 2,004, transportation 3,819, personal 3,219 and health insurance 7,515, excluding tuition and fees. The checked page does not say how many months the budget covers; it is read here as the fall-to-spring academic year, so anyone planning a full twelve months in Los Angeles must budget the summer on top.",
           "tr": "UCLA'nin 2026-27 lisansustu ogrenci butcesi: konut 18.221, gida 10.546, kitap 2.004, ulasim 3.819, kisisel 3.219 ve saglik sigortasi 7.515; ogrenim ucreti ve harclar haric. Kontrol edilen sayfa butcenin kac ayi kapsadigini soylemez; burada guzden bahara akademik yil olarak okunur, bu yuzden Los Angeles'ta tam on iki ay planlayan birinin yazi ustune butcelemesi gerekir."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_cost_of_attendance",
@@ -20589,7 +21166,7 @@
         "tr": "Tarih ve GRE kuralında güncel döneme özgü Aerospace sayfası esas alınır. Göndermeden önce canlı başvuru yine kontrol edilmelidir."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": "2026-12-01",
         "next_expected_date": null,
         "time": null,
@@ -20598,11 +21175,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 93,
+        "days_remaining_at_evaluation": 91,
         "derived_from": "application_timeline_profile.deadline_non_eu",
         "confidence": "high",
         "source_url": "https://grad.ucla.edu/programs/school-of-engineering-and-applied-science/mechanical-aerospace-engineering-department/aerospace-engineering/",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -21473,7 +22050,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "partial_match",
       "score": 51,
       "score_basis_weight": 90,
@@ -21512,7 +22089,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -21753,7 +22330,7 @@
         "tr": "Uluslararası aday altı haneli bir yıllık bütçe planlamalı; tarihsel tabloyu veya rekabetçi ödülü garanti üst sınır saymamalıdır."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "USD",
         "annual_total": 100079.5,
         "annual_total_eur_equivalent": {
@@ -21775,7 +22352,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_usd_per_year": 63305.5,
       "tuition_derivation": {
@@ -21788,6 +22365,47 @@
         "currency": "USD",
         "includes_mandatory_fees": true,
         "derived_at": "2026-08-30"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 155.0,
+        "currency": "USD",
+        "amount_eur_equivalent": {
+          "amount": 133.13,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "international_applicants",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": 3,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "eligibility_profile.application_fee_usd_international": 155
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -21947,7 +22565,7 @@
       },
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 3,
         "scaled_score": null,
@@ -21988,10 +22606,10 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_university_living_budget",
         "status": "partial",
         "currency": "USD",
@@ -22050,7 +22668,7 @@
           "en": "The Fung Institute publishes USD 36,774 of estimated annual personal expenses for the MEng: housing 19,432, food 9,576, books 752, personal 3,246 and transportation 3,768. The page calls the figure annual but never names the number of months, so twelve are used here; if it is in fact a nine-month budget the monthly rate is a third higher.",
           "tr": "Fung Institute, MEng icin yillik 36.774 USD tahmini kisisel gider yayimlar: konut 19.432, gida 9.576, kitap 752, kisisel 3.246 ve ulasim 3.768. Sayfa rakami yillik olarak adlandirir ancak ay sayisini hicbir yerde belirtmez; bu yuzden burada on iki ay kullanilir. Gercekte dokuz aylik bir butce ise aylik tutar ucte bir daha yuksektir."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_living_budget",
@@ -22291,7 +22909,7 @@
         "tr": "İngilizce puanı son tarihi MEng başvuru son tarihinden bir aydan fazla erkendir. Sınav gereken adaylar 6 Ocak'a değil 1 Aralık'a göre plan yapmalıdır."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": "2027-01-06",
         "next_expected_date": null,
         "time": null,
@@ -22300,11 +22918,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 129,
+        "days_remaining_at_evaluation": 127,
         "derived_from": "application_timeline_profile.application_deadline",
         "confidence": "high",
         "source_url": "https://me.berkeley.edu/graduate/meng-admissions/",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -23316,7 +23934,7 @@
     },
     "last_verified": "2026-08-14",
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "weak_match",
       "score": 22,
       "score_basis_weight": 100,
@@ -23354,7 +23972,7 @@
       "matched_tags": [],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -23586,7 +24204,7 @@
         "tr": "COA bir planlama bütçesidir, fatura değildir. Öğrenciler üç ila yedi çeyrek sürebildiği ve gelecek oranlar bilinmediği için tam program toplamı verilmez."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "USD",
         "annual_total": 69842.14,
         "annual_total_eur_equivalent": {
@@ -23610,7 +24228,48 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 155.0,
+        "currency": "USD",
+        "amount_eur_equivalent": {
+          "amount": 133.13,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "international_applicants",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": false,
+        "components": [],
+        "waiver": {
+          "available": true,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "eligibility_profile.application_fee_usd": 155
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -23689,7 +24348,7 @@
       },
       "housing_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": 4,
         "scaled_score": null,
@@ -23730,10 +24389,10 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_university_cost_of_attendance",
         "status": "total_only",
         "currency": "USD",
@@ -23766,7 +24425,7 @@
           "en": "UC San Diego states its graduate cost of attendance is built on three quarters of full-time enrolment, so this is a nine-month figure. The off-campus food and housing line for 2026-27 is USD 31,548 within a published total of USD 76,821. Only food and housing are carried here: transportation, books, personal expenses and health insurance sit in the same official budget but were not captured as separate figures, so they must be budgeted on top.",
           "tr": "UC San Diego, lisansustu egitim maliyetinin tam zamanli kayitla uc ceyrek uzerine kuruldugunu belirtir; bu yuzden bu dokuz aylik bir rakamdir. 2026-27 icin kampus disi gida ve konut satiri, yayimlanan 76.821 USD'lik toplam icinde 31.548 USD'dir. Burada yalnizca gida ve konut tasinir: ulasim, kitap, kisisel giderler ve saglik sigortasi ayni resmi butcede yer alir ancak ayri rakamlar olarak kaydedilmemistir, bu yuzden ustune butcelenmelidir."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_cost_of_attendance",
@@ -23968,7 +24627,7 @@
         "tr": "Güncel Fall 2027 MAE sayfası MS için 13 Ocak 2027'yi açıkça yayımlar ve geç başvuru kabul edilmediğini söyler. Son tarih tahmini kullanılmaz."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": "2027-01-13",
         "next_expected_date": null,
         "time": null,
@@ -23977,11 +24636,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 136,
+        "days_remaining_at_evaluation": 134,
         "derived_from": "application_timeline_profile.application_deadline",
         "confidence": "high",
         "source_url": "https://mae.ucsd.edu/grad/mae-master-science-program",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -25041,7 +25700,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "weak_match",
       "score": 33,
       "score_basis_weight": 90,
@@ -25079,7 +25738,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -25149,7 +25808,15 @@
         "validity_rule": "",
         "waiver_rules": [],
         "source_ids": []
-      }
+      },
+      "application_fee_scope": "all applicants",
+      "application_fee_refundable": false,
+      "application_fee_waiver_possible": true,
+      "application_fee_waiver": {
+        "en": "The Graduate School's waiver is for US citizens, permanent residents and undocumented applicants who show financial need. Anyone who holds or expects to hold F-1 or J-1 status is excluded by federal eligibility rules, which is every applicant arriving from Turkiye.",
+        "tr": "Lisansüstü Okul'un muafiyeti, mali ihtiyacını gösteren ABD vatandaşları, daimi ikamet sahipleri ve belgesiz adaylar içindir. F-1 veya J-1 statüsü olan ya da olması beklenen herkes federal uygunluk kurallarıyla dışarıda bırakılır; bu, Türkiye'den gelen her aday demektir."
+      },
+      "international_application_fee_waiver_available_from_department": false
     },
     "language_profile": {
       "teaching_language": [
@@ -25189,7 +25856,7 @@
         "tr": "MSAA finansman sayfası, bölüm finansmanının mevcut ancak çok sınırlı olduğunu; adayların başka finansman kaynakları aramasının güçlü biçimde teşvik edildiğini belirtir. Bu, kabul aşamasında finansman garantisi olarak okunmamalıdır."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "USD",
         "annual_total": 77765.04,
         "annual_total_eur_equivalent": {
@@ -25212,7 +25879,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_derivation": {
         "standard": "cost_model@3.1.0",
@@ -25225,6 +25892,61 @@
       "cost_notes": {
         "en": "UW publishes annual full-time rates for Autumn, Winter and Spring. The MS in Aeronautics and Astronautics sits in Graduate Tier III on the university's own tier list, where the 2026-27 non-resident operating fee is USD 37,939 and the building fee USD 1,376, giving USD 39,315 of tuition. The required technology, services and activities, IMA bond and facilities renovation fees add USD 966, for USD 40,281 of tuition and fees; the U-PASS transport pass adds a further USD 243.",
         "tr": "UW, Guz, Kis ve Bahar icin yillik tam zamanli oranlar yayimlar. Uzay ve Havacilik Muhendisligi yuksek lisansi, universitenin kendi kademe listesinde Lisansustu Kademe III'te yer alir; burada 2026-27 eyalet disi isletme ucreti 37.939 USD ve bina ucreti 1.376 USD'dir, bu da 39.315 USD ogrenim ucreti eder. Zorunlu teknoloji, hizmet ve etkinlik, IMA tahvili ve tesis yenileme ucretleri 966 USD ekler ve ogrenim ucreti ile harclar 40.281 USD olur; U-PASS ulasim karti bunun uzerine 243 USD ekler."
+      },
+      "application_fee_usd": 90,
+      "application_fee_charged_per": "application",
+      "application_fee_verification": {
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "USD 90 nonrefundable, and each submitted application requires a separate fee.",
+          "tr": "90 ABD doları, iade edilmez; gönderilen her başvuru için ayrı bir ücret gerekir."
+        },
+        "confidence": "high"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 90.0,
+        "currency": "USD",
+        "amount_eur_equivalent": {
+          "amount": 77.3,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "international_applicants",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": false,
+        "components": [],
+        "waiver": {
+          "available": true,
+          "open_to_international": false,
+          "request_deadline": null,
+          "processing_days": null,
+          "note": {
+            "en": "The Graduate School's waiver is for US citizens, permanent residents and undocumented applicants who show financial need. Anyone who holds or expects to hold F-1 or J-1 status is excluded by federal eligibility rules, which is every applicant arriving from Turkiye.",
+            "tr": "Lisansüstü Okul'un muafiyeti, mali ihtiyacını gösteren ABD vatandaşları, daimi ikamet sahipleri ve belgesiz adaylar içindir. F-1 veya J-1 statüsü olan ya da olması beklenen herkes federal uygunluk kurallarıyla dışarıda bırakılır; bu, Türkiye'den gelen her aday demektir."
+          }
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "cost_profile.application_fee_usd": 90
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -25266,7 +25988,7 @@
       "housing_application_separate": null,
       "housing_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -25309,10 +26031,10 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_university_living_budget",
         "status": "total_only",
         "currency": "USD",
@@ -25342,7 +26064,7 @@
           "en": "UW International Student Services estimates USD 37,484 of living expenses for 2026-27 across a four-quarter year, alongside USD 2,148 of ISHIP health insurance. The tuition figure on this record covers the three-quarter academic year instead, so a student staying through summer should expect tuition on top of it as well.",
           "tr": "UW Uluslararasi Ogrenci Hizmetleri, 2026-27 icin dort ceyreklik bir yil boyunca 37.484 USD yasam gideri ve bunun yaninda 2.148 USD ISHIP saglik sigortasi tahmin eder. Bu kayittaki ogrenim ucreti rakami ise uc ceyreklik akademik yili kapsar; bu yuzden yaz boyunca kalan bir ogrenci ustune ogrenim ucreti de beklemelidir."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_living_budget",
@@ -25418,12 +26140,12 @@
         "tr": "MSAA yalnızca güz çeyreği için öğrenci kabul eder. Kontrol edilen sayfa hâlâ 2026 güz son tarihini (1 Aralık 2025) gösterir, güncel 2027 güz tarihi göstermez; bu nedenle eski yıllık son tarih kaldırıldı."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -25856,7 +26578,7 @@
         "https://hfs.uw.edu/live/graduates/graduate-student-apartments/mercer-court-d-e-on-campus/",
         "https://grad.uw.edu/prospective-students/how-to-apply/requirements/"
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-01",
       "field_confidence": {
         "program_basic_info": "high",
         "admission": "high",
@@ -26055,6 +26777,36 @@
             "cost"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://grad.uw.edu/prospective-students/how-to-apply/apply-now/",
+          "title": "Apply Now | UW Graduate School",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://grad.uw.edu/prospective-students/how-to-apply/application-fee-waivers/",
+          "title": "Application Fee Waivers | UW Graduate School",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
       "needs_verification": true
@@ -26089,7 +26841,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 9,
+      "checked_official_source_count": 11,
       "verified_fields": [
         "program",
         "admission",
@@ -26105,7 +26857,7 @@
         "language"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-30"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "checked_at": "2026-08-23",
@@ -26125,7 +26877,7 @@
       ]
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "core_match",
       "score": 100,
       "score_basis_weight": 90,
@@ -26164,7 +26916,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -26231,7 +26983,15 @@
         "validity_rule": "",
         "waiver_rules": [],
         "source_ids": []
-      }
+      },
+      "application_fee_scope": "all applicants",
+      "application_fee_refundable": false,
+      "application_fee_waiver_possible": true,
+      "application_fee_waiver": {
+        "en": "Cornell approves a financial-hardship waiver only in exceptional cases, and only for applicants to fully funded doctoral or research master's programmes or those who will file a FAFSA for federal student aid. A taught master's applicant from abroad can do neither.",
+        "tr": "Cornell, mali güçlük muafiyetini yalnızca istisnai durumlarda ve yalnızca tam burslu doktora ya da araştırma yüksek lisansı adaylarına veya federal öğrenci yardımı için FAFSA verecek olanlara tanıyor. Yurt dışından ders programlı bir yüksek lisansa başvuran aday bunların ikisini de yapamaz."
+      },
+      "international_application_fee_waiver_available_from_department": false
     },
     "language_profile": {
       "teaching_language": [
@@ -26279,7 +27039,7 @@
         "tr": "Önceki kaynaksız EUR tahmini kaldırıldı."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "USD",
         "annual_total": 67617.0,
         "annual_total_eur_equivalent": {
@@ -26302,7 +27062,61 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_usd": 105,
+      "application_fee_verification": {
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "USD 105, nonrefundable, paid as the last step of submitting the application.",
+          "tr": "105 ABD doları; iade edilmez, başvurunun gönderilmesindeki son adım olarak ödenir."
+        },
+        "confidence": "high"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 105.0,
+        "currency": "USD",
+        "amount_eur_equivalent": {
+          "amount": 90.18,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "international_applicants",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": false,
+        "components": [],
+        "waiver": {
+          "available": true,
+          "open_to_international": false,
+          "request_deadline": null,
+          "processing_days": null,
+          "note": {
+            "en": "Cornell approves a financial-hardship waiver only in exceptional cases, and only for applicants to fully funded doctoral or research master's programmes or those who will file a FAFSA for federal student aid. A taught master's applicant from abroad can do neither.",
+            "tr": "Cornell, mali güçlük muafiyetini yalnızca istisnai durumlarda ve yalnızca tam burslu doktora ya da araştırma yüksek lisansı adaylarına veya federal öğrenci yardımı için FAFSA verecek olanlara tanıyor. Yurt dışından ders programlı bir yüksek lisansa başvuran aday bunların ikisini de yapamaz."
+          }
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "cost_profile.application_fee_usd": 105
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -26351,7 +27165,7 @@
       "housing_application_separate": null,
       "housing_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -26394,10 +27208,10 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_source_range_basis_not_itemised",
         "status": "total_only",
         "currency": "USD",
@@ -26427,14 +27241,14 @@
           "derived_from": {
             "monthly_living_cost_usd_estimated": 3118.0
           },
-          "derived_at": "2026-08-30"
+          "derived_at": "2026-09-01"
         },
         "source_url": null,
         "note": {
           "en": "Cornell International Services' published graduate living-expense estimate; it is a budget, not rent alone.",
           "tr": "Cornell International Services'ın yayımladığı lisansüstü yaşam gideri tahmini; yalnız kira değildir."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -26517,12 +27331,12 @@
       "deadline_notes": null,
       "deadline_events": [],
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -26813,7 +27627,7 @@
         "https://international.globallearning.cornell.edu/life-cornell/tuition-and-living-expenses",
         "https://scl.cornell.edu/sub/residential-life/housing/housing-details/rates-amenities-licenses/housing-rates"
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-01",
       "field_confidence": {
         "program_basic_info": "high",
         "admission": "unknown",
@@ -26978,6 +27792,21 @@
             "en": "Publishes the instructional laboratory programme with each lab's equipment and the courses it supports.",
             "tr": "Öğretim laboratuvarı programını her laboratuvarın ekipmanı ve desteklediği derslerle yayımlar."
           }
+        },
+        {
+          "url": "https://gradschool.cornell.edu/admissions/application-steps/pay-fees/",
+          "title": "Pay Fees | Cornell Graduate School",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ]
     },
@@ -27025,7 +27854,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 9,
+      "checked_official_source_count": 10,
       "verified_fields": [
         "program",
         "admission",
@@ -27041,7 +27870,7 @@
         "deadline"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-30"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "checked_at": "2026-08-23",
@@ -27069,7 +27898,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "core_match",
       "score": 84,
       "score_basis_weight": 90,
@@ -27114,7 +27943,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "medium",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -27183,6 +28012,13 @@
         "validity_rule": "",
         "waiver_rules": [],
         "source_ids": []
+      },
+      "application_fee_scope": "all applicants",
+      "application_fee_refundable": false,
+      "application_fee_waiver_possible": true,
+      "application_fee_waiver": {
+        "en": "Princeton waives the fee on three grounds - financial hardship, participation in one of the programmes it names, or attendance at a recruiting event. IIE/Fulbright is on the named list, which is the route that is actually open from abroad. The request must be in two business days before the department deadline, and the application must not be paid for until the decision arrives.",
+        "tr": "Princeton ücreti üç gerekçeyle kaldırır: mali güçlük, adını andığı programlardan birine katılım ya da bir tanıtım etkinliğine katılım. Adı geçen listede IIE/Fulbright vardır; yurt dışından gerçekten açık olan yol budur. Talep, bölüm son tarihinden iki iş günü önce verilmeli ve karar gelmeden başvurunun ücreti ödenmemelidir."
       }
     },
     "language_profile": {
@@ -27229,7 +28065,7 @@
         "tr": "Önceki kaynaksız EUR tahmini kaldırıldı."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "USD",
         "annual_total": 104980.04,
         "annual_total_eur_equivalent": {
@@ -27251,7 +28087,61 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_usd": 90,
+      "application_fee_verification": {
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "USD 90, nonrefundable, paid online through the application portal. Mechanical and Aerospace Engineering closes on 1 December.",
+          "tr": "90 ABD doları; iade edilmez, başvuru portalı üzerinden çevrimiçi ödenir. Mechanical and Aerospace Engineering 1 Aralık'ta kapanır."
+        },
+        "confidence": "high"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 90.0,
+        "currency": "USD",
+        "amount_eur_equivalent": {
+          "amount": 77.3,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "all_applicants",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": false,
+        "components": [],
+        "waiver": {
+          "available": true,
+          "open_to_international": true,
+          "request_deadline": null,
+          "processing_days": null,
+          "note": {
+            "en": "Princeton waives the fee on three grounds - financial hardship, participation in one of the programmes it names, or attendance at a recruiting event. IIE/Fulbright is on the named list, which is the route that is actually open from abroad. The request must be in two business days before the department deadline, and the application must not be paid for until the decision arrives.",
+            "tr": "Princeton ücreti üç gerekçeyle kaldırır: mali güçlük, adını andığı programlardan birine katılım ya da bir tanıtım etkinliğine katılım. Adı geçen listede IIE/Fulbright vardır; yurt dışından gerçekten açık olan yol budur. Talep, bölüm son tarihinden iki iş günü önce verilmeli ve karar gelmeden başvurunun ücreti ödenmemelidir."
+          }
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "cost_profile.application_fee_usd": 90
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -27293,7 +28183,7 @@
       "housing_application_separate": null,
       "housing_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -27336,10 +28226,10 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_university_living_budget",
         "status": "partial",
         "currency": "USD",
@@ -27394,7 +28284,7 @@
           "en": "Princeton's 2026-27 living-expense table, twelve-month column: housing on or off campus 17,040, food 10,925, personal expenses 9,365 and books and supplies 2,440, totalling 39,770. The ten-month column totals 33,141. Princeton publishes no separate transport line, so local travel is not inside this figure.",
           "tr": "Princeton'un 2026-27 yasam gideri tablosu, on iki aylik sutun: kampus ici veya disi konut 17.040, gida 10.925, kisisel giderler 9.365 ve kitap ve malzeme 2.440; toplam 39.770. On aylik sutunun toplami 33.141'dir. Princeton ayri bir ulasim satiri yayimlamaz, bu yuzden sehir ici ulasim bu rakamin icinde degildir."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_living_budget",
@@ -27494,12 +28384,12 @@
       "deadline_notes": null,
       "deadline_events": [],
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -27800,7 +28690,7 @@
         "https://gradschool.princeton.edu/financial-support/financial-support-model/funding-calendar-university-rates-costs",
         "https://gradschool.princeton.edu/financial-support/financial-support-model/master%E2%80%99s-degree-funding"
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-01",
       "field_confidence": {
         "program_basic_info": "high",
         "admission": "unknown",
@@ -27969,6 +28859,21 @@
             "cost"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://gradschool.princeton.edu/admission-onboarding/prepare/application-fee",
+          "title": "Application Fee | Princeton Graduate School",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ]
     },
@@ -28016,7 +28921,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 8,
+      "checked_official_source_count": 9,
       "verified_fields": [
         "program",
         "tuition",
@@ -28032,7 +28937,7 @@
         "deadline"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-30"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "checked_at": "2026-08-23",
@@ -28064,7 +28969,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "core_match",
       "score": 78,
       "score_basis_weight": 90,
@@ -28108,7 +29013,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -28167,7 +29072,15 @@
         "validity_rule": "",
         "waiver_rules": [],
         "source_ids": []
-      }
+      },
+      "application_fee_scope": "all applicants",
+      "application_fee_refundable": false,
+      "application_fee_waiver_possible": true,
+      "application_fee_waiver": {
+        "en": "Virginia Tech's waiver list is built from qualifying events rather than from need: active duty or veteran status, AmeriCorps, the FAMU feeder programme, Fulbright, Math Alliance, NIH ESTEEMED or RISE, an NSF or NIH REU, the Peace Corps, or the VSU/VT 4+1 partnership. Fulbright is the route that does not require being in the United States already. Allow five to seven business days for the request.",
+        "tr": "Virginia Tech'in muafiyet listesi ihtiyaçtan değil, uygun etkinliklerden kurulur: muvazzaf askerlik ya da gazilik, AmeriCorps, FAMU besleme programı, Fulbright, Math Alliance, NIH ESTEEMED veya RISE, bir NSF ya da NIH REU, Barış Gönülleri veya VSU/VT 4+1 ortaklığı. Halihazırda ABD'de bulunmayı gerektirmeyen yol Fulbright'tır. Talep için beş ila yedi iş günü bırak."
+      },
+      "application_fee_waiver_processing_time_business_days": 7
     },
     "language_profile": {
       "teaching_language": [
@@ -28210,7 +29123,7 @@
         "tr": "Önceki kaynaksız EUR tahmini kaldırıldı. PDF'deki 13.330 USD konut payı, şehir geneli kira teklifi olarak değil aşağıda konut bütçesi olarak kaydedildi."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "USD",
         "annual_total": 62770.0,
         "annual_total_eur_equivalent": {
@@ -28233,7 +29146,61 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_usd": 75,
+      "application_fee_verification": {
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "USD 75 for degree-seeking applicants, non-refundable once the application is submitted.",
+          "tr": "Diploma programına başvuranlar için 75 ABD doları; başvuru gönderildikten sonra iade edilmez."
+        },
+        "confidence": "high"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 75.0,
+        "currency": "USD",
+        "amount_eur_equivalent": {
+          "amount": 64.42,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "all_applicants",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": false,
+        "components": [],
+        "waiver": {
+          "available": true,
+          "open_to_international": true,
+          "request_deadline": null,
+          "processing_days": 7,
+          "note": {
+            "en": "Virginia Tech's waiver list is built from qualifying events rather than from need: active duty or veteran status, AmeriCorps, the FAMU feeder programme, Fulbright, Math Alliance, NIH ESTEEMED or RISE, an NSF or NIH REU, the Peace Corps, or the VSU/VT 4+1 partnership. Fulbright is the route that does not require being in the United States already. Allow five to seven business days for the request.",
+            "tr": "Virginia Tech'in muafiyet listesi ihtiyaçtan değil, uygun etkinliklerden kurulur: muvazzaf askerlik ya da gazilik, AmeriCorps, FAMU besleme programı, Fulbright, Math Alliance, NIH ESTEEMED veya RISE, bir NSF ya da NIH REU, Barış Gönülleri veya VSU/VT 4+1 ortaklığı. Halihazırda ABD'de bulunmayı gerektirmeyen yol Fulbright'tır. Talep için beş ila yedi iş günü bırak."
+          }
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "cost_profile.application_fee_usd": 75
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -28277,7 +29244,7 @@
       "housing_application_separate": null,
       "housing_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -28320,10 +29287,10 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_university_cost_of_attendance",
         "status": "partial",
         "currency": "USD",
@@ -28382,7 +29349,7 @@
           "en": "Virginia Tech's 2026-27 out-of-state graduate cost of attendance for the Blacksburg campus, stated as one academic year of fall and spring: housing 13,330, food 3,840, course materials 1,120, transportation 3,014 and personal 4,130. Direct costs of tuition 33,582 and fees 3,754 bring the published total to 62,770. The sheet adds that a first-time graduate student's budget also carries a computer allowance of 2,150 or 3,140 depending on the programme.",
           "tr": "Virginia Tech'in Blacksburg kampusu icin 2026-27 eyalet disi lisansustu egitim maliyeti, guz ve bahardan olusan bir akademik yil olarak belirtilir: konut 13.330, gida 3.840, ders malzemesi 1.120, ulasim 3.014 ve kisisel 4.130. Dogrudan maliyetler olan 33.582 ogrenim ucreti ve 3.754 harc ile yayimlanan toplam 62.770'e ulasir. Belge, ilk kez kayit olan bir lisansustu ogrencinin butcesinin ayrica programa gore 2.150 veya 3.140 bilgisayar odenegi tasidigini ekler."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_cost_of_attendance",
@@ -28477,12 +29444,12 @@
         "tr": "Virginia Tech Graduate School, uluslararası adaylar için güz dönemi 15 Mayıs ve bahar dönemi 15 Ekim tarihlerini yayımlar. Bölüm ve finansman tarihleri ayrı olduğundan hedef dönemi mutlaka doğrulayın."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -28822,7 +29789,7 @@
         "https://www.aoe.vt.edu/graduate/fellowships-and-assistantships.html",
         "https://graduateschool.vt.edu/admissions/how-to-apply/deadlines.html"
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-01",
       "field_confidence": {
         "program_basic_info": "high",
         "admission": "high",
@@ -29018,6 +29985,21 @@
             "tuition"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://graduateschool.vt.edu/admissions/tuition-and-costs/Application_Fees.html",
+          "title": "Application Fees | Virginia Tech Graduate School",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ]
     },
@@ -29069,7 +30051,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 11,
+      "checked_official_source_count": 12,
       "verified_fields": [
         "program",
         "admission",
@@ -29085,7 +30067,7 @@
         "language"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-30"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "checked_at": "2026-08-23",
@@ -29105,7 +30087,7 @@
       ]
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "core_match",
       "score": 100,
       "score_basis_weight": 90,
@@ -29144,7 +30126,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -29214,7 +30196,9 @@
         "validity_rule": "",
         "waiver_rules": [],
         "source_ids": []
-      }
+      },
+      "application_fee_scope": "international applicants",
+      "application_fee_refundable": false
     },
     "language_profile": {
       "teaching_language": [
@@ -29255,7 +30239,7 @@
         "tr": "Önceki kaynaksız EUR tahmini kaldırıldı. Kontrol edilmiş programla ilgili kaynak olmadan harçlar ve toplam yaşam bütçesi iddia edilmedi."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "USD",
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -29271,7 +30255,57 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_usd": 85,
+      "application_fee_verification": {
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "USD 85 for international applicants against USD 65 for domestic ones, and the application is not reviewed until it is paid. Penn State publishes a discounted USD 40 rate for veterans and service members but no international waiver.",
+          "tr": "Uluslararası adaylar için 85, yurt içi adaylar için 65 ABD doları; ücret ödenmeden başvuru incelenmez. Penn State gaziler ve muvazzaflar için indirimli 40 dolarlık bir oran yayımlar ancak uluslararası bir muafiyet yayımlamaz."
+        },
+        "confidence": "high"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 85.0,
+        "currency": "USD",
+        "amount_eur_equivalent": {
+          "amount": 73.01,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "international_applicants",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": false,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "cost_profile.application_fee_usd": 85
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -29369,7 +30403,7 @@
       "housing_application_separate": null,
       "housing_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -29412,16 +30446,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -29495,12 +30529,12 @@
         "tr": "Programın resmî başvuru sayfası güz için 15 Aralık, bahar için 15 Ağustos listeler. Yıllık kabul rehberi değişebileceği için başvurmadan önce hedef dönemi kontrol edin."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -29903,7 +30937,7 @@
         "https://liveon.psu.edu/university-park/rates",
         "https://www.aero.psu.edu/academics/graduate/core-courses-graduate-program.aspx"
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-01",
       "field_confidence": {
         "program_basic_info": "high",
         "admission": "high",
@@ -30093,6 +31127,21 @@
             "department"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://gradschool.psu.edu/faqs/how-much-is-the-application-fee",
+          "title": "How much is the application fee? | Penn State Fox Graduate School",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ]
     },
@@ -30144,7 +31193,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 11,
+      "checked_official_source_count": 12,
       "verified_fields": [
         "program",
         "admission",
@@ -30160,7 +31209,7 @@
         "language"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-30"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "checked_at": "2026-08-23",
@@ -30180,7 +31229,7 @@
       ]
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "core_match",
       "score": 100,
       "score_basis_weight": 90,
@@ -30219,7 +31268,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -30283,7 +31332,15 @@
         "validity_rule": "",
         "waiver_rules": [],
         "source_ids": []
-      }
+      },
+      "application_fee_scope": "all applicants; charged per programme selections",
+      "application_fee_refundable": false,
+      "application_fee_waiver_possible": true,
+      "application_fee_waiver": {
+        "en": "Maryland's FreeApp route is described in its own words as designed to increase access to graduate education for domestic students.",
+        "tr": "Maryland'in FreeApp yolu, kendi ifadesiyle yurt içi öğrencilerin lisansüstü eğitime erişimini artırmak için tasarlanmıştır."
+      },
+      "international_application_fee_waiver_available_from_department": false
     },
     "language_profile": {
       "teaching_language": [
@@ -30327,7 +31384,7 @@
         "tr": "Bölüm, asistanlık finansmanı arayan MS/PhD adaylarını 1 Aralık öncelik son tarihine kadar başvurmaya teşvik eder. Bireysel ödül garanti edilmez."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "USD",
         "annual_total": 51570.0,
         "annual_total_eur_equivalent": {
@@ -30350,7 +31407,62 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_usd": 90,
+      "application_fee_charged_per": "programme_choice",
+      "application_fee_verification": {
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "USD 90 processing fee for each programme applied to, non-refundable whether or not an offer is made or taken up. Two applications cost USD 180.",
+          "tr": "Başvurulan her program için 90 ABD dolarlık işlem ücreti; teklif gelse de gelmese de, kabul edilse de edilmese de iade edilmez. Iki başvuru 180 dolardır."
+        },
+        "confidence": "high"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 90.0,
+        "currency": "USD",
+        "amount_eur_equivalent": {
+          "amount": 77.3,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 1.1643,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "international_applicants",
+        "charged_per": "programme_choice",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": false,
+        "components": [],
+        "waiver": {
+          "available": true,
+          "open_to_international": false,
+          "request_deadline": null,
+          "processing_days": null,
+          "note": {
+            "en": "Maryland's FreeApp route is described in its own words as designed to increase access to graduate education for domestic students.",
+            "tr": "Maryland'in FreeApp yolu, kendi ifadesiyle yurt içi öğrencilerin lisansüstü eğitime erişimini artırmak için tasarlanmıştır."
+          }
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "cost_profile.application_fee_usd": 90
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -30389,7 +31501,7 @@
       "housing_application_separate": null,
       "housing_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -30432,10 +31544,10 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_university_cost_of_attendance",
         "status": "total_only",
         "currency": "USD",
@@ -30465,7 +31577,7 @@
           "en": "UMD's 2026-27 non-resident graduate budget publishes housing and food together as USD 17,724, plus books 1,000, transportation 3,058 and personal 1,200: USD 23,982 in all, alongside tuition 26,824 and mandatory fees 764. Housing and food arrive as a single line, so they cannot be shown as separate components here.",
           "tr": "UMD'nin 2026-27 eyalet disi lisansustu butcesi konut ve gidayi birlikte 17.724 USD olarak yayimlar; buna kitap 1.000, ulasim 3.058 ve kisisel 1.200 eklenir: toplam 23.982 USD, ayrica ogrenim ucreti 26.824 ve zorunlu harclar 764. Konut ve gida tek satir halinde geldigi icin burada ayri bilesenler olarak gosterilemez."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_cost_of_attendance",
@@ -30538,12 +31650,12 @@
       "timeline_risk": "unknown",
       "verification_notes": "Deadline notes: Estimated for US Fall intake (check department calendar / funding priority dates).",
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -30934,7 +32046,7 @@
         "https://billpay.umd.edu/GraduateTuition",
         "https://financialaid.umd.edu/resources-policies/cost-attendance"
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-01",
       "field_confidence": {
         "program_basic_info": "high",
         "admission": "high",
@@ -31108,6 +32220,21 @@
             "cost"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://gradschool.umd.edu/admissions/application-process/apply-now",
+          "title": "Apply Now | UMD Graduate School",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
       "needs_verification": true
@@ -31142,7 +32269,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 9,
+      "checked_official_source_count": 10,
       "verified_fields": [
         "program",
         "admission",
@@ -31158,7 +32285,7 @@
         "scholarship"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-30"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "checked_at": "2026-08-23",
@@ -31182,7 +32309,7 @@
       ]
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "core_match",
       "score": 100,
       "score_basis_weight": 90,
@@ -31221,7 +32348,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {

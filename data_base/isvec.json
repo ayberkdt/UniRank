@@ -119,7 +119,7 @@
       },
       "application_fee_eur": null,
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "SEK",
         "annual_total": null,
         "annual_total_eur_equivalent": null,
@@ -135,7 +135,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_sek_per_year": 180000.0,
       "tuition_derivation": {
@@ -153,6 +153,50 @@
         "currency": "SEK",
         "includes_mandatory_fees": false,
         "derived_at": "2026-08-30"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 900.0,
+        "currency": "SEK",
+        "amount_eur_equivalent": {
+          "amount": 81.17,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 11.0885,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "unknown",
+        "charged_per": "application",
+        "charged_by": "university",
+        "charged_by_name": null,
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "cost_profile.application_fee": {
+            "amount": 900,
+            "currency": "SEK"
+          }
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -217,7 +261,7 @@
       "housing_access": "unknown",
       "housing_application_separate": null,
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -260,16 +304,16 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "unknown",
         "status": "unknown",
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -380,7 +424,7 @@
         "Admission results 2027-04-01"
       ],
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": "2027-01-15",
         "next_expected_date": null,
         "time": null,
@@ -389,11 +433,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 138,
+        "days_remaining_at_evaluation": 136,
         "derived_from": "application_timeline_profile.non_eu_deadline",
         "confidence": "high",
         "source_url": "https://www.kth.se/en/studies/master/aerospace-engineering",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -763,7 +807,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "partial_match",
       "score": 50,
       "score_basis_weight": 90,
@@ -806,7 +850,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "needs_review",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -906,7 +950,8 @@
       "entry_note": {
         "en": "A bachelor's degree in mechanical, mechatronic, electrical, vehicle, automotive, aerospace or civil engineering, engineering physics, engineering mathematics or naval architecture. Specific prerequisites: at least 24 credits of mathematics including linear algebra, multivariable analysis, numerical analysis and mathematical statistics or probability; mechanics including statics and dynamics; a control theory or automatic control course; and programming. The control-theory prerequisite is the one applicants from pure mechanical backgrounds most often miss.",
         "tr": "Makine, mekatronik, elektrik, taşıt, otomotiv, havacılık veya inşaat mühendisliği, mühendislik fiziği, mühendislik matematiği ya da gemi inşasında lisans derecesi. Özel ön koşullar: doğrusal cebir, çok değişkenli analiz, sayısal analiz ve matematiksel istatistik ya da olasılık dâhil en az 24 kredi matematik; statik ve dinamik dâhil mekanik; bir kontrol teorisi veya otomatik kontrol dersi; ve programlama. Saf makine geçmişinden gelen adayların en sık kaçırdığı ön koşul kontrol teorisidir."
-      }
+      },
+      "application_fee_scope": "non-EU/EEA and non-Swiss citizens"
     },
     "language_profile": {
       "teaching_language": [
@@ -952,7 +997,7 @@
         "basis": "four semesters at SEK 80,000; published programme price"
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "SEK",
         "annual_total": 356320.0,
         "annual_total_eur_equivalent": {
@@ -974,7 +1019,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_sek_per_year": 160000.0,
       "tuition_derivation": {
@@ -988,6 +1033,59 @@
         "currency": "SEK",
         "includes_mandatory_fees": false,
         "derived_at": "2026-08-30"
+      },
+      "application_fee_sek": 900,
+      "application_fee_charged_by": "central_application_service",
+      "application_fee_charged_by_name": "universityadmissions.se",
+      "application_fee_charged_per": "admission_portal_account",
+      "application_fee_verification": {
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "SEK 900, paid once to universityadmissions.se for the whole semester however many Swedish programmes you apply to. It is only EU/EEA/Swiss citizens and the listed exempt categories who do not pay, and nothing is reviewed until the money arrives. Four Swedish programmes in this catalogue therefore cost SEK 900 between them, not SEK 3,600.",
+          "tr": "universityadmissions.se'ye dönem başına bir kez ödenen 900 İsveç kronu; İsveç'te kaç programa başvurduğundan bağımsızdır. Ödemeyenler yalnızca AB/AEA/İsviçre vatandaşları ile listelenen muaf kategorilerdir ve para ulaşmadan hiçbir şey incelenmez. Bu katalogdaki dört İsveç programı bu yüzden toplamda 3.600 değil 900 kron tutar."
+        },
+        "confidence": "high"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 900.0,
+        "currency": "SEK",
+        "amount_eur_equivalent": {
+          "amount": 81.17,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 11.0885,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "non_eu_applicants",
+        "charged_per": "admission_portal_account",
+        "charged_by": "central_application_service",
+        "charged_by_name": "universityadmissions.se",
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "cost_profile.application_fee_sek": 900
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -1050,7 +1148,7 @@
       "housing_access": "unknown",
       "housing_application_separate": null,
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -1093,10 +1191,10 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_source_range_basis_not_itemised",
         "status": "total_only",
         "currency": "SEK",
@@ -1130,11 +1228,11 @@
             "monthly_living_cost_sek_min": 14360.0,
             "monthly_living_cost_sek_max": 18360.0
           },
-          "derived_at": "2026-08-30"
+          "derived_at": "2026-09-01"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -1202,7 +1300,7 @@
       "non_eu_deadline": "Mid-January (annual application period; verify exact University Admissions date)",
       "eu_deadline": "Mid-January (annual application period; verify exact University Admissions date)",
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": "2027-01-15",
         "next_expected_date": null,
         "time": null,
@@ -1211,11 +1309,11 @@
         "cycle_label": null,
         "is_recurring_annual": true,
         "status": "open",
-        "days_remaining_at_evaluation": 138,
+        "days_remaining_at_evaluation": 136,
         "derived_from": "application_timeline_profile.application_deadline",
         "confidence": "high",
         "source_url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/?p=12",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -1316,7 +1414,7 @@
         "https://www.chalmers.se/en/education/application-and-admission/",
         "https://www.chalmers.se/en/education/tuition-fees-and-scholarships/"
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-01",
       "field_confidence": {
         "program_basic_info": "high",
         "language": "high",
@@ -1470,6 +1568,21 @@
             "en": "States the four specialisations, the shared core courses, the named research centres, the industrial partners, the entry prerequisites and both ends of the application window.",
             "tr": "Dört uzmanlaşmayı, ortak çekirdek dersleri, adlandırılmış araştırma merkezlerini, sanayi ortaklarını, giriş ön koşullarını ve başvuru penceresinin iki ucunu da belirtir."
           }
+        },
+        {
+          "url": "https://www.universityadmissions.se/en/apply-to-masters/pay-your-application-fee-non-eueea-masters/",
+          "title": "Pay your application fee (non-EU/EEA), master's | universityadmissions.se",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
       "needs_verification": true,
@@ -1491,7 +1604,7 @@
     "qs_ranking": 174,
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 9,
+      "checked_official_source_count": 10,
       "verified_fields": [
         "program",
         "language",
@@ -1505,7 +1618,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-30"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "qc_status": "needs_revision",
@@ -1543,7 +1656,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "unknown",
       "score": null,
       "score_basis_weight": 55,
@@ -1586,7 +1699,7 @@
       ],
       "confidence": "unknown",
       "legacy_relevance_status": "medium",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -1692,7 +1805,8 @@
       "entry_note": {
         "en": "A bachelor's degree equivalent to a Swedish Kandidatexamen majoring in aeronautical or mechanical engineering, plus 30 ECTS in mathematics or applied mathematics relevant to the programme, a basic programming course, and English at Swedish upper-secondary Engelska 6 level. Selection in the January round is by merit rating in three groups (High, Good, Low), with lots drawn between applicants inside the same group — so a marginal grade difference can matter more than a strong motivation letter here.",
         "tr": "Havacılık veya makine mühendisliği ana dalında İsveç Kandidatexamen'ine denk bir lisans derecesi, artı programla ilgili matematik veya uygulamalı matematikte 30 AKTS, temel bir programlama dersi ve İsveç lise Engelska 6 düzeyinde İngilizce. Ocak turunda seçim üç grupta (Yüksek, İyi, Düşük) not değerlendirmesiyle yapılır ve aynı grup içindeki adaylar arasında kura çekilir — yani burada marjinal bir not farkı güçlü bir niyet mektubundan daha çok önem taşıyabilir."
-      }
+      },
+      "application_fee_scope": "non-EU/EEA and non-Swiss citizens"
     },
     "language_profile": {
       "teaching_language": [
@@ -1738,7 +1852,7 @@
         "basis": "full programme"
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "SEK",
         "annual_total": 283000.0,
         "annual_total_eur_equivalent": {
@@ -1760,7 +1874,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "tuition_sek_per_year": 166000.0,
       "tuition_derivation": {
@@ -1778,6 +1892,59 @@
         "currency": "SEK",
         "includes_mandatory_fees": false,
         "derived_at": "2026-08-30"
+      },
+      "application_fee_sek": 900,
+      "application_fee_charged_by": "central_application_service",
+      "application_fee_charged_by_name": "universityadmissions.se",
+      "application_fee_charged_per": "admission_portal_account",
+      "application_fee_verification": {
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "SEK 900, paid once to universityadmissions.se for the whole semester however many Swedish programmes you apply to. It is only EU/EEA/Swiss citizens and the listed exempt categories who do not pay, and nothing is reviewed until the money arrives. Four Swedish programmes in this catalogue therefore cost SEK 900 between them, not SEK 3,600.",
+          "tr": "universityadmissions.se'ye dönem başına bir kez ödenen 900 İsveç kronu; İsveç'te kaç programa başvurduğundan bağımsızdır. Ödemeyenler yalnızca AB/AEA/İsviçre vatandaşları ile listelenen muaf kategorilerdir ve para ulaşmadan hiçbir şey incelenmez. Bu katalogdaki dört İsveç programı bu yüzden toplamda 3.600 değil 900 kron tutar."
+        },
+        "confidence": "high"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 900.0,
+        "currency": "SEK",
+        "amount_eur_equivalent": {
+          "amount": 81.17,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 11.0885,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "non_eu_applicants",
+        "charged_per": "admission_portal_account",
+        "charged_by": "central_application_service",
+        "charged_by_name": "universityadmissions.se",
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "cost_profile.application_fee_sek": 900
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -1833,7 +2000,7 @@
       "housing_access": "unknown",
       "housing_application_separate": null,
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -1876,10 +2043,10 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_source_range_basis_not_itemised",
         "status": "total_only",
         "currency": "SEK",
@@ -1913,11 +2080,11 @@
             "monthly_living_cost_sek_min": 6400.0,
             "monthly_living_cost_sek_max": 13100.0
           },
-          "derived_at": "2026-08-30"
+          "derived_at": "2026-09-01"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -1988,7 +2155,7 @@
         "tr": "Resmî LiU sayfası şu anda kesin 2027/28 tarihi değil, kapanmış 2026/27 uluslararası yüksek lisans döngüsünü yayımlar. Kayıt bu doğrulanmış döngüyü planlama bağlamı için gösterir ve geleceğe taşımayı kasıtlı olarak reddeder. Sonraki girişe başvuracak aday, yeni dönem açıldığında programın Apply düğmesini/University Admissions sistemini kullanmalıdır."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": "2026-01-15",
         "next_expected_date": null,
         "time": null,
@@ -1997,11 +2164,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -227,
+        "days_remaining_at_evaluation": -229,
         "derived_from": "application_timeline_profile.non_eu_deadline",
         "confidence": "high",
         "source_url": "https://liu.se/en/education/application-and-admission/how-to-apply",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -2116,7 +2283,7 @@
         "https://liu.se/en/education/program/6maer",
         "https://liu.se/en/education/program/6maer"
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-01",
       "field_confidence": {
         "program_basic_info": "high",
         "language": "high",
@@ -2244,6 +2411,21 @@
             "en": "Publishes the department's size and its list of nineteen divisions.",
             "tr": "Bölümün büyüklüğünü ve on dokuz alt bölümünün listesini yayımlar."
           }
+        },
+        {
+          "url": "https://www.universityadmissions.se/en/apply-to-masters/pay-your-application-fee-non-eueea-masters/",
+          "title": "Pay your application fee (non-EU/EEA), master's | universityadmissions.se",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
       "needs_verification": false,
@@ -2265,7 +2447,7 @@
     "qs_ranking": 308,
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 7,
+      "checked_official_source_count": 8,
       "verified_fields": [
         "program",
         "admission",
@@ -2281,7 +2463,7 @@
         "language"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-30"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "qc_status": "passed",
@@ -2319,7 +2501,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "strong_adjacent",
       "score": 68,
       "score_basis_weight": 90,
@@ -2363,7 +2545,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "needs_review",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -2435,7 +2617,8 @@
         "validity_rule": "",
         "waiver_rules": [],
         "source_ids": []
-      }
+      },
+      "application_fee_scope": "non-EU/EEA and non-Swiss citizens"
     },
     "language_profile": {
       "teaching_language": [
@@ -2466,7 +2649,7 @@
         "tr": "LTU dönem başına 70.000 SEK yayımlar; EUR dönüşümü kaydedilmez."
       },
       "normalized_cost": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "currency": "SEK",
         "annual_total": 260000.0,
         "annual_total_eur_equivalent": {
@@ -2488,7 +2671,60 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
+      },
+      "application_fee_sek": 900,
+      "application_fee_charged_by": "central_application_service",
+      "application_fee_charged_by_name": "universityadmissions.se",
+      "application_fee_charged_per": "admission_portal_account",
+      "application_fee_verification": {
+        "checked_on": "2026-09-01",
+        "note": {
+          "en": "SEK 900, paid once to universityadmissions.se for the whole semester however many Swedish programmes you apply to. It is only EU/EEA/Swiss citizens and the listed exempt categories who do not pay, and nothing is reviewed until the money arrives. Four Swedish programmes in this catalogue therefore cost SEK 900 between them, not SEK 3,600.",
+          "tr": "universityadmissions.se'ye dönem başına bir kez ödenen 900 İsveç kronu; İsveç'te kaç programa başvurduğundan bağımsızdır. Ödemeyenler yalnızca AB/AEA/İsviçre vatandaşları ile listelenen muaf kategorilerdir ve para ulaşmadan hiçbir şey incelenmez. Bu katalogdaki dört İsveç programı bu yüzden toplamda 3.600 değil 900 kron tutar."
+        },
+        "confidence": "high"
+      },
+      "application_fee_standard": {
+        "standard": "application_fee@3.2.0",
+        "status": "published",
+        "amount": 900.0,
+        "currency": "SEK",
+        "amount_eur_equivalent": {
+          "amount": 81.17,
+          "currency": "EUR",
+          "is_conversion": true,
+          "fx_rate": 11.0885,
+          "fx_rate_date": "2026-08-28",
+          "fx_source": "European Central Bank euro foreign exchange reference rates"
+        },
+        "scope": "non_eu_applicants",
+        "charged_per": "admission_portal_account",
+        "charged_by": "central_application_service",
+        "charged_by_name": "universityadmissions.se",
+        "additional_application_amount": null,
+        "academic_cycle": null,
+        "early_amount": null,
+        "early_deadline": null,
+        "covers_programmes": null,
+        "refundable": null,
+        "components": [],
+        "waiver": {
+          "available": null,
+          "open_to_international": null,
+          "request_deadline": null,
+          "processing_days": null
+        },
+        "payment_due_days_after_deadline": null,
+        "rule": "published_application_fee",
+        "derived_from": {
+          "cost_profile.application_fee_sek": 900
+        },
+        "note": {
+          "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+          "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
+        },
+        "evaluated_at": "2026-09-01"
       }
     },
     "scholarship_profile": {
@@ -2530,7 +2766,7 @@
       "housing_application_separate": null,
       "housing_search_difficulty": "unknown",
       "housing_difficulty_profile": {
-        "standard": "housing_difficulty@3.1.0",
+        "standard": "housing_difficulty@3.2.0",
         "level": "unknown",
         "raw_score": null,
         "scaled_score": null,
@@ -2573,10 +2809,10 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       },
       "cost_of_living_profile": {
-        "standard": "cost_model@3.1.0",
+        "standard": "cost_model@3.2.0",
         "cost_basis": "official_source_range_basis_not_itemised",
         "status": "total_only",
         "currency": "SEK",
@@ -2610,11 +2846,11 @@
             "monthly_living_cost_sek_min": 10000.0,
             "monthly_living_cost_sek_max": 10000.0
           },
-          "derived_at": "2026-08-30"
+          "derived_at": "2026-09-01"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-08-30"
+        "evaluated_at": "2026-09-01"
       }
     },
     "curriculum_profile": {
@@ -2689,7 +2925,7 @@
         "tr": "Yayımlanan tarih 30 Ağustos 2027 başlangıcı ve LTU-97406 başvuru kodu içindir."
       },
       "primary_deadline": {
-        "standard": "application_countdown@3.1.0",
+        "standard": "application_countdown@3.2.0",
         "date": "2027-01-15",
         "next_expected_date": null,
         "time": null,
@@ -2698,11 +2934,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 138,
+        "days_remaining_at_evaluation": 136,
         "derived_from": "application_timeline_profile.non_eu_deadline",
         "confidence": "high",
         "source_url": "https://www.ltu.se/en/education/programme/tmrra-master-programme-in-space-science-and-technology",
-        "evaluated_at": "2026-08-30",
+        "evaluated_at": "2026-09-01",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -2863,9 +3099,24 @@
             "en": "Describes the REXUS/BEXUS programme, its DLR and SNSA agreement and the ESA route for other European students.",
             "tr": "REXUS/BEXUS programını, DLR ve SNSA anlaşmasını ve diğer Avrupalı öğrenciler için ESA rotasını anlatır."
           }
+        },
+        {
+          "url": "https://www.universityadmissions.se/en/apply-to-masters/pay-your-application-fee-non-eueea-masters/",
+          "title": "Pay your application fee (non-EU/EEA), master's | universityadmissions.se",
+          "source_type": "official_tuition_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-01",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees"
+          ],
+          "confidence": "high"
         }
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-01",
       "verification_notes": {
         "en": "Critical programme fields are current for the 2027 intake; consortium mobility makes second-year location and costs profile-dependent.",
         "tr": "Kritik program alanları 2027 alımı için günceldir; konsorsiyum hareketliliği ikinci yıl konumunu ve maliyetini profile bağlı kılar."
@@ -3059,7 +3310,7 @@
     },
     "data_quality": {
       "status": "verified",
-      "checked_official_source_count": 9,
+      "checked_official_source_count": 10,
       "verified_fields": [
         "program",
         "language",
@@ -3074,7 +3325,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-30"
+      "audited_at": "2026-09-01"
     },
     "quality_control": {
       "qc_status": "passed",
@@ -3113,7 +3364,7 @@
       }
     },
     "academic_match_profile": {
-      "standard": "academic_match@3.1.0",
+      "standard": "academic_match@3.2.0",
       "tier": "strong_adjacent",
       "score": 61,
       "score_basis_weight": 90,
@@ -3158,7 +3409,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-08-30"
+      "evaluated_at": "2026-09-01"
     },
     "academic_match_evidence": {
       "research_group_evidence": {

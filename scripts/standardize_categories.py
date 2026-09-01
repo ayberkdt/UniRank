@@ -997,6 +997,377 @@ def build_normalized_cost(record: dict[str, Any]) -> dict[str, Any]:
 
 
 # --------------------------------------------------------------------------
+# 2b. application fee
+# --------------------------------------------------------------------------
+
+# Only a key that names the application fee is ever read.  A housing
+# application fee books a room, an enrolment fee falls due after an offer, and
+# a stamp duty is part of the annual bill; none of them is the cost of
+# applying, and each is filed under its own field.
+APPLICATION_FEE_KEY = re.compile(r"(?:^|_)application_fee(?:_|$)", re.IGNORECASE)
+FORBIDDEN_FEE_KEY = re.compile(
+    r"housing|accommodation|residence|dorm|enrol|enroll|matricul|immatricul|"
+    r"registration|deposit|tuition|stamp|regional|waiver|refund|scope|"
+    r"breakdown|items|credit|payment_due|processing_time|lead_time|requires|"
+    r"limited|possible|eligibility|request_deadline|"
+    # This rule's own output and bookkeeping.  application_fee_standard carries
+    # an amount and a currency, so without this the second run of the
+    # standardizer would happily re-derive a fee from the first run's answer
+    # and keep republishing it after the source key was removed.
+    r"standard|research|verification|charged_|covers_|early_|additional_",
+    re.IGNORECASE,
+)
+# The scope is stored as free text on the records that carry one at all, so it
+# is matched rather than looked up.
+FEE_SCOPE_PATTERNS = (
+    (re.compile(r"non[ _-]?eu|non[ _-]?eea|third[ _-]?country", re.IGNORECASE), "non_eu_applicants"),
+    (re.compile(r"international|overseas|other than us citizens|foreign", re.IGNORECASE), "international_applicants"),
+    # Only an explicit statement about applicants.  "Most graduate programs"
+    # says which programmes charge the fee, not who pays it.
+    (re.compile(r"all applicants|every applicant|regardless of (?:nationality|citizenship)", re.IGNORECASE), "all_applicants"),
+)
+
+# A waiver that exists but is closed to anyone applying from abroad is not a
+# waiver for this reader.  These are the ways the records say so in prose.
+WAIVER_CLOSED_TO_INTERNATIONAL = re.compile(
+    r"not available to international|are not available to international|"
+    r"limited to eligible us|us citizens/permanent residents|us citizens and permanent residents|"
+    r"only if currently attending a us|does not offer|is not published|are not published",
+    re.IGNORECASE,
+)
+
+
+def _fee_currency_from_key(key: str) -> str | None:
+    """Read the currency out of the key name itself, e.g. application_fee_gbp."""
+    for currency in CURRENCY_SUFFIXES:
+        if re.search(rf"(?:^|_){currency}(?:_|$)", key, re.IGNORECASE):
+            return currency.upper()
+    return None
+
+
+def _fee_candidate_keys(profile: dict[str, Any]) -> list[tuple[str, Any]]:
+    return [
+        (key, value)
+        for key, value in profile.items()
+        if isinstance(key, str)
+        and APPLICATION_FEE_KEY.search(key)
+        and not FORBIDDEN_FEE_KEY.search(key)
+    ]
+
+
+# An item aimed at the domestic or EU route is not a fee this reader pays, and
+# several records say so in the item's own basis rather than in its scope.
+FEE_ITEM_NOT_FOR_THIS_READER = re.compile(
+    r"not the central non[ _-]?eu|not for non[ _-]?eu|eu[ _-]?domestic|"
+    r"(?:^|_)domestic(?:_|$)|home_applicant|eu_eea_only|(?:^|_)eu_only(?:_|$)",
+    re.IGNORECASE,
+)
+# Ranked from the most specific description of this reader downwards.
+FEE_ITEM_SCOPE_RANK = (
+    (re.compile(r"non[ _-]?eu|third[ _-]?country", re.IGNORECASE), 3),
+    (re.compile(r"international|overseas|foreign", re.IGNORECASE), 2),
+    (re.compile(r"^(all|applicant|any)", re.IGNORECASE), 1),
+)
+
+
+def _fee_item_applies(item: dict[str, Any]) -> bool:
+    text = f"{item.get('applicant_scope') or ''} {item.get('basis') or ''}"
+    if FEE_ITEM_NOT_FOR_THIS_READER.search(text):
+        return False
+    return number(item.get("amount")) is not None and bool(item.get("currency"))
+
+
+def _best_fee_item_group(items: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """The items that make up one bill, not two alternative routes.
+
+    Items are grouped by the applicant they name; the group describing this
+    reader most specifically wins, and only items inside that one group are
+    added together.
+    """
+    groups: dict[tuple[str, str], list[dict[str, Any]]] = {}
+    for item in items:
+        key = (str(item.get("applicant_scope") or ""), str(item.get("currency")).upper())
+        groups.setdefault(key, []).append(item)
+
+    def rank(key: tuple[str, str]) -> tuple[int, int]:
+        scope = key[0]
+        for pattern, score in FEE_ITEM_SCOPE_RANK:
+            if pattern.search(scope):
+                return (score, len(groups[key]))
+        return (0, len(groups[key]))
+
+    if not groups:
+        return []
+    return groups[max(groups, key=rank)]
+
+
+def _charged_per(eligibility: dict[str, Any], origin: dict[str, Any], cost: dict[str, Any] | None = None) -> str:
+    """Whether the fee buys one application, one programme choice, or a portal account."""
+    researched = (cost or {}).get("application_fee_charged_per")
+    if researched in {"application", "programme_choice", "admission_portal_account"}:
+        return researched
+    text = text_of(eligibility.get("application_fee_scope")) + " " + text_of(origin)
+    if re.search(r"programme selections|program selections|per programme choice", text):
+        return "programme_choice"
+    if re.search(r"permits multiple programme applications|multiple applications|one fee.*multiple", text):
+        return "admission_portal_account"
+    return "application"
+
+
+def _fee_scope(record: dict[str, Any], eligibility: dict[str, Any], cost: dict[str, Any],
+               origin: dict[str, Any] | None = None) -> str:
+    scope_text = " ".join(
+        str(value)
+        for key, value in list(eligibility.items()) + list(cost.items())
+        if isinstance(key, str) and "application_fee" in key and "scope" in key and isinstance(value, str)
+    )
+    # An itemised fee names its applicant on the item that was chosen.
+    for value in (origin or {}).values():
+        if isinstance(value, list):
+            scope_text += " " + " ".join(
+                str(item.get("applicant_scope")) for item in value
+                if isinstance(item, dict) and item.get("applicant_scope")
+            )
+    # A key that says "international" in its own name carries the same fact.
+    scope_text += " " + " ".join(
+        key for key in list(eligibility) + list(cost)
+        if isinstance(key, str) and "application_fee" in key and "international" in key
+    )
+    for pattern, code in FEE_SCOPE_PATTERNS:
+        if pattern.search(scope_text):
+            return code
+    return "unknown"
+
+
+def _fee_waiver(eligibility: dict[str, Any]) -> dict[str, Any]:
+    """Collect what the record says about getting the fee waived.
+
+    ``available`` is read only from a stored boolean, never inferred from
+    prose - a sentence can say a waiver exists and in the same breath close it
+    to everyone this database is written for.  The prose answers the narrower
+    question the reader actually has: can *I* use it.  Where neither is
+    recorded the answer stays null, and the university's own wording is
+    carried through so nothing is paraphrased into a claim.
+    """
+    available = eligibility.get("application_fee_waiver_possible")
+    note = eligibility.get("application_fee_waiver") or eligibility.get(
+        "application_fee_waiver_international_eligibility"
+    )
+
+    open_to_international = None
+    prose = " ".join(
+        text_of(eligibility.get(key))
+        for key in ("application_fee_waiver", "application_fee_waiver_international_eligibility")
+    ).strip()
+    if prose:
+        open_to_international = not WAIVER_CLOSED_TO_INTERNATIONAL.search(prose)
+    if eligibility.get("international_application_fee_waiver_available_from_department") is False:
+        open_to_international = False
+
+    waiver = {
+        "available": available if isinstance(available, bool) else None,
+        "open_to_international": open_to_international,
+        "request_deadline": iso_date(eligibility.get("application_fee_waiver_request_deadline")),
+        "processing_days": eligibility.get("application_fee_waiver_processing_time_business_days")
+        or eligibility.get("application_fee_waiver_safe_lead_time_business_days"),
+    }
+    if isinstance(note, dict):
+        waiver["note"] = note
+    return waiver
+
+
+def build_application_fee(record: dict[str, Any]) -> dict[str, Any]:
+    """Publish the one-off charge that falls due before anything else does.
+
+    The figure was already researched for a third of the catalogue, but it was
+    stored under seven different key names across two profiles and five
+    currencies, so nothing downstream could read it.  This moves whichever key
+    the record actually used into one shape and records which key that was.
+    """
+    cost = record.setdefault("cost_profile", {})
+    eligibility = record.get("eligibility_profile") or {}
+    financials = record.get("financials") or {}
+
+    def unknown(reason: str) -> dict[str, Any]:
+        published = {
+            "standard": f"application_fee@{STANDARDS_VERSION}",
+            "status": "unknown",
+            "amount": None,
+            "currency": None,
+            "reason": reason,
+            "evaluated_at": TODAY,
+        }
+        cost["application_fee_standard"] = published
+        return published
+
+    if not (verified_fields(record) & {"admission", "tuition", "cost", "costs", "fees"}):
+        return unknown("record_does_not_verify_admission_or_cost")
+    if not (sourced_fields(record) & {"admission", "tuition", "fee", "fees", "cost", "costs", "application_fee"}):
+        return unknown("no_reachable_source_covering_admission_or_cost")
+
+    amount: float | None = None
+    currency: str | None = None
+    rule: str | None = None
+    origin: dict[str, Any] = {}
+    components: list[dict[str, Any]] = []
+
+    # 1. an itemised list.  Items are grouped by the applicant they are for
+    # before anything is summed: a record can carry two fees that are
+    # alternative routes rather than two halves of one bill, and Politehnica
+    # Bucharest carries exactly that - a RON 100 July route and a RON 50 early
+    # route, both of which its own basis marks as not the non-EU route.
+    # Summing them would invent a RON 150 charge that nobody pays.
+    items = [item for item in non_empty_list(cost.get("application_fee_items")) if isinstance(item, dict)]
+    refused_items: list[dict[str, Any]] = []
+    academic_cycle = None
+    if items:
+        applicable = [item for item in items if _fee_item_applies(item)]
+        refused_items = [item for item in items if item not in applicable]
+        group = _best_fee_item_group(applicable)
+        if group:
+            item_currency = str(group[0].get("currency")).upper()
+            totals = [number(item.get("amount")) for item in group]
+            totals = [value for value in totals if value is not None]
+        else:
+            item_currency, totals = None, []
+        if item_currency and totals:
+            amount = round(sum(totals), 2)
+            currency = item_currency
+            rule = "published_no_fee" if amount == 0 else (
+                "sum_of_published_components" if len(totals) > 1 else "published_application_fee"
+            )
+            origin = {"application_fee_items": group}
+            academic_cycle = next((item.get("academic_cycle") for item in group if item.get("academic_cycle")), None)
+            components = [
+                {
+                    "label": item.get("basis") or item.get("applicant_scope") or item.get("period"),
+                    "amount": number(item.get("amount")),
+                    "currency": item_currency,
+                }
+                for item in group
+            ] if len(group) > 1 else []
+            refundable_item = next((item.get("refundable") for item in group if "refundable" in item), None)
+            if isinstance(refundable_item, bool):
+                cost.setdefault("application_fee_refundable", refundable_item)
+
+    breakdown = eligibility.get("application_fee_breakdown")
+    if amount is None and isinstance(breakdown, dict):
+        parts = [(key, number(value)) for key, value in breakdown.items() if number(value) is not None]
+        breakdown_currency = next(
+            (_fee_currency_from_key(key) for key, _ in parts if _fee_currency_from_key(key)), None
+        )
+        if parts and breakdown_currency:
+            amount = round(sum(value for _, value in parts), 2)
+            currency, rule = breakdown_currency, "sum_of_published_components"
+            origin = {"application_fee_breakdown": breakdown}
+            components = [{"label": key, "amount": value, "currency": breakdown_currency} for key, value in parts]
+
+    # 2. a scalar or object key naming the fee, wherever it was filed.
+    if amount is None:
+        for profile_name, profile in (
+            ("cost_profile", cost),
+            ("eligibility_profile", eligibility),
+            ("financials", financials),
+        ):
+            if not isinstance(profile, dict):
+                continue
+            for key, value in _fee_candidate_keys(profile):
+                if isinstance(value, dict):
+                    candidate = number(value.get("amount"))
+                    candidate_currency = str(value.get("currency") or "").upper() or None
+                else:
+                    candidate = number(value)
+                    candidate_currency = _fee_currency_from_key(key)
+                if candidate is None or not candidate_currency:
+                    continue
+                amount, currency = candidate, candidate_currency
+                rule = "published_no_fee" if candidate == 0 else "published_application_fee"
+                origin = {f"{profile_name}.{key}": value}
+                break
+            if amount is not None:
+                break
+
+    if amount is None:
+        # A researcher who read the official application pages and found no
+        # charge has answered the question; that is a different answer from
+        # nobody having looked, and the pages travel with it so the reader can
+        # check the same ones.
+        research = cost.get("application_fee_research")
+        if isinstance(research, dict) and research.get("outcome") == "no_fee_published":
+            pages = [str(url) for url in non_empty_list(research.get("pages_checked"))]
+            published = {
+                "standard": f"application_fee@{STANDARDS_VERSION}",
+                "status": "not_published",
+                "amount": None,
+                "currency": None,
+                "rule": "researched_absence",
+                "pages_checked": pages,
+                "checked_on": research.get("checked_on"),
+                "note": research.get("note"),
+                "evaluated_at": TODAY,
+            }
+            if refused_items:
+                published["refused_items"] = refused_items
+            cost["application_fee_standard"] = published
+            return published
+        # Every published item names a route this reader cannot use, and no
+        # researcher has read the pages for the route they can.  Say which
+        # routes were priced rather than leaving the fee simply blank.
+        if refused_items:
+            published = unknown("published_fees_are_for_routes_a_non_eu_applicant_cannot_use")
+            published["refused_items"] = refused_items
+            return published
+        return unknown("no_readable_application_fee_key")
+
+    waiver_source = eligibility if isinstance(eligibility, dict) else {}
+    fee_object = next((value for value in origin.values() if isinstance(value, dict) and "waiver_possible" in value), None)
+    waiver = _fee_waiver(waiver_source)
+    if isinstance(fee_object, dict) and waiver["available"] is None:
+        waiver["available"] = fee_object.get("waiver_possible")
+    # Oxford stores the waiver categories on the fee object itself.
+    for value in origin.values():
+        if isinstance(value, dict) and value.get("waiver_categories"):
+            waiver["available"] = True
+            waiver["categories"] = value["waiver_categories"]
+
+    refundable = eligibility.get("application_fee_refundable")
+    if refundable is None:
+        refundable = cost.get("application_fee_refundable")
+
+    published = {
+        "standard": f"application_fee@{STANDARDS_VERSION}",
+        "status": "no_fee" if amount == 0 else "published",
+        "amount": amount,
+        "currency": currency,
+        "amount_eur_equivalent": to_eur(amount, currency) if currency != "EUR" and amount else None,
+        "scope": _fee_scope(record, eligibility, cost, origin),
+        "charged_per": _charged_per(eligibility, origin, cost),
+        "charged_by": cost.get("application_fee_charged_by") or "university",
+        "charged_by_name": cost.get("application_fee_charged_by_name"),
+        "additional_application_amount": number(cost.get("application_fee_additional_amount")),
+        "academic_cycle": academic_cycle or cost.get("application_fee_academic_cycle"),
+        # An early window that costs less is a deadline with a price on it, so
+        # both amounts and the date between them travel with the fee.
+        "early_amount": number(cost.get("application_fee_early_amount")),
+        "early_deadline": iso_date(cost.get("application_fee_early_deadline")),
+        "covers_programmes": number(cost.get("application_fee_covers_programmes")),
+        "refundable": refundable if isinstance(refundable, bool) else None,
+        "components": components,
+        "waiver": waiver,
+        "payment_due_days_after_deadline": eligibility.get("application_fee_payment_due_days_after_deadline"),
+        "rule": rule,
+        "derived_from": origin,
+        "note": {
+            "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
+            "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi.",
+        },
+        "evaluated_at": TODAY,
+    }
+    cost["application_fee_standard"] = published
+    return published
+
+
+# --------------------------------------------------------------------------
 # 3. academic match
 # --------------------------------------------------------------------------
 
@@ -1326,11 +1697,13 @@ def standardize(record: dict[str, Any]) -> dict[str, Any]:
     derive_annual_tuition(record)
     build_cost_of_living(record)
     cost = build_normalized_cost(record)
+    application_fee = build_application_fee(record)
     match = build_academic_match(record)
     deadline = build_primary_deadline(record)
     return {
         "housing_level": housing["level"],
         "cost_status": cost["status"],
+        "application_fee_status": application_fee["status"],
         "match_tier": match["tier"],
         "deadline_status": deadline["status"],
     }
@@ -1341,7 +1714,13 @@ def main() -> None:
     parser.add_argument("--write", action="store_true", help="rewrite the JSON files in place")
     args = parser.parse_args()
 
-    tally = {"housing_level": Counter(), "cost_status": Counter(), "match_tier": Counter(), "deadline_status": Counter()}
+    tally = {
+        "housing_level": Counter(),
+        "cost_status": Counter(),
+        "application_fee_status": Counter(),
+        "match_tier": Counter(),
+        "deadline_status": Counter(),
+    }
     total = 0
 
     for path in sorted(DATA_DIR.glob("*.json")):

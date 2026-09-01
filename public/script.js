@@ -1574,6 +1574,12 @@ function renderTable() {
         const housingHTML = formatRiskBadge(n.housingDifficulty);
         const deadline = n.deadline ? formatCalendarValue(n.deadline) : '';
         const countdownChip = renderCardCountdown(row);
+        // The bill that falls due first belongs on the comparison card, not
+        // three clicks inside a drawer: a shortlist is drawn up here, and the
+        // cost of applying is part of whether it is affordable.
+        const applyFee = window.uniApplicationFee?.read(row) || null;
+        const applyFeeText = applyFee ? window.uniApplicationFee.headline(applyFee) : '';
+        const applyFeeTone = applyFee ? applyFee.status : 'unknown';
         const profileMatch = row._scoringDetails?.personalized_match?.personal_field_fit;
         const university = window.localizedField(n.universityName) || (window.currentLanguage === 'tr' ? 'Üniversite adı doğrulanmalı' : 'University name needs verification');
         const program = window.localizedField(n.programName) || (window.currentLanguage === 'tr' ? 'Program adı doğrulanmalı' : 'Program name needs verification');
@@ -1604,6 +1610,7 @@ function renderTable() {
                     <div class="decision-item decision-item--score"><dt>${escapeHtml(window.t ? window.t('technical_match') : 'Technical match')}</dt><dd><span class="fit-score fit-score--${band.key}">${Number(row._score).toFixed(1)}</span><small>${escapeHtml(band.label)}</small>${window.personalizationEnabled && Number.isFinite(profileMatch) ? `<em>${Math.round(profileMatch)}% ${escapeHtml(window.t('profile_match'))}</em>` : ''}</dd></div>
                     <div class="decision-item"><dt>${escapeHtml(window.t ? window.t('teaching_language') : 'Teaching language')}</dt><dd>${escapeHtml(language)}</dd></div>
                     <div class="decision-item"><dt>${escapeHtml(window.t ? window.t('annual_cost') : 'Annual cost')}</dt><dd>${escapeHtml(annualCost)}</dd></div>
+                    ${applyFeeText ? `<div class="decision-item decision-item--apply-fee"><dt>${escapeHtml(window.currentLanguage === 'tr' ? 'Başvurmanın maliyeti' : 'Cost to apply')}</dt><dd><span class="apply-fee apply-fee--${escapeHtml(applyFeeTone)}">${escapeHtml(applyFeeText)}</span></dd></div>` : ''}
                     <div class="decision-item"><dt>${escapeHtml(window.t ? window.t('admission_reality') : 'Admission reality')}</dt><dd>${admissionHTML}</dd></div>
                     <div class="decision-item"><dt>${escapeHtml(window.t ? window.t('housing_risk') : 'Housing risk')}</dt><dd>${housingHTML}</dd></div>
                 </dl>
@@ -1825,10 +1832,10 @@ function openDrawer(data) {
                     : '';
             return [testName, score].filter(Boolean).join(' ');
         }).filter(Boolean).join(' · ');
-        const applicationFeeUsd = admission.application_fee_usd ?? admission.application_fee_usd_international;
-        const applicationFeeText = Number.isFinite(Number(applicationFeeUsd))
-            ? formatPublishedMoney({ amount: Number(applicationFeeUsd), currency: 'USD' })
-            : '';
+        // The fee itself now lives in the cost card, where a cost belongs.  The
+        // admission card keeps only what an applicant has to do about it.
+        const feeStandard = window.uniApplicationFee?.read(data) || null;
+        const feeWaiverText = feeStandard ? (window.uniApplicationFee.waiverLine(feeStandard) || '') : '';
         const languageRequirement = languageDetails.spanish_required
             ? `${isTurkish ? 'İspanyolca' : 'Spanish'} ${escapeHtml(languageDetails.spanish_level_required || '')}`.trim()
             : languageDetails.italian_required
@@ -1849,7 +1856,7 @@ function openDrawer(data) {
                     <div class="premium-item"><label>GRE</label><span>${escapeHtml(grePolicyLabel)}</span></div>
                     <div class="premium-item"><label>${isTurkish ? 'Mülakat' : 'Interview'}</label><span>${escapeHtml(interviewText)}</span></div>
                     <div class="premium-item full-span"><label>${isTurkish ? 'Program sınavı' : 'Programme test'}</label><span>${escapeHtml(testText)}</span></div>
-                    ${applicationFeeText ? `<div class="premium-item"><label>${isTurkish ? 'Başvuru ücreti' : 'Application fee'}</label><span>${escapeHtml(applicationFeeText)}</span></div>` : ''}
+                    ${feeWaiverText ? `<div class="premium-item full-span"><label>${isTurkish ? 'Başvuru ücreti muafiyeti' : 'Application fee waiver'}</label><span>${escapeHtml(feeWaiverText)}</span></div>` : ''}
                     ${englishTestText ? `<div class="premium-item full-span source-note"><label>${isTurkish ? 'Kabul edilen İngilizce sınavları ve asgariler' : 'Accepted English tests and minimums'}</label><span>${escapeHtml(englishTestText)}</span></div>` : ''}
                     ${admission.cohort_size_max ? `<div class="premium-item"><label>${isTurkish ? 'Azami kontenjan' : 'Maximum cohort'}</label><span>${escapeHtml(admission.cohort_size_max)}</span></div>` : ''}
                     ${admission.video_requirement ? `<div class="premium-item"><label>Video</label><span>${admission.video_requirement === 'only_if_requested_in_the_call' ? (isTurkish ? 'Yalnızca çağrıda istenirse' : 'Only if requested in the call') : escapeHtml(displayValue(admission.video_requirement))}</span></div>` : ''}
@@ -2156,11 +2163,32 @@ function openDrawer(data) {
                 ? `${formatPublishedMoney({ amount: insurancePremium, currency: 'USD' })}${isTurkish ? ' · zorunlu' : ' · required'}${academicBillingContext}`
                 : (isTurkish ? 'Zorunlu; 2026/27 primi doğrulanamadı' : 'Required; 2026/27 premium not verified')
             : '';
+        // The first bill a student meets is the one for being considered at
+        // all, and it falls due before any of the amounts below it.  It is
+        // shown first, and never added into the annual total, because a
+        // one-off charge folded into a per-year figure would recur every year.
+        const fee = window.uniApplicationFee?.read(data) || null;
+        const feeQualifiers = fee ? window.uniApplicationFee.qualifiers(fee) : [];
+        const feeEarly = fee ? window.uniApplicationFee.earlyWindow(fee) : null;
+        const feePages = Array.isArray(fee?.pages_checked) ? fee.pages_checked : [];
+        const feeNote = fee && fee.status === 'not_published' ? window.uniApplicationFee.localized(fee.note) : '';
+        const feeVerification = window.uniApplicationFee?.localized(n.costDetails?.application_fee_verification?.note) || '';
+        const feeHTML = fee ? `
+                    <div class="premium-item full-span application-fee-row application-fee-row--${escapeHtml(fee.status)}">
+                        <label>${isTurkish ? 'Başvuru ücreti' : 'Application fee'}</label>
+                        <span class="finance-val application-fee-amount">${escapeHtml(window.uniApplicationFee.headline(fee))}</span>
+                        ${feeQualifiers.length ? `<small class="application-fee-qualifiers">${escapeHtml(feeQualifiers.join(' · '))}</small>` : ''}
+                        ${feeEarly ? `<small class="application-fee-early">${escapeHtml(feeEarly.label)}</small>` : ''}
+                        ${feeNote ? `<small class="application-fee-note">${escapeHtml(feeNote)}</small>` : ''}
+                        ${feeVerification ? `<small class="application-fee-note">${escapeHtml(feeVerification)}</small>` : ''}
+                        ${feePages.length ? `<small class="application-fee-note">${feePages.map((page, index) => `<a href="${escapeHtml(page)}" target="_blank" rel="noopener noreferrer">${isTurkish ? 'okunan sayfa' : 'page read'} ${index + 1}</a>`).join(' · ')}</small>` : ''}
+                    </div>` : '';
         const financeHTML = `
             <div class="drawer-section premium-card financial-card">
                 <div class="premium-header"><span class="premium-icon" aria-hidden="true"></span><h4 class="premium-title">${isTurkish ? 'Maliyet & Burs Gerçeği' : 'Cost & Funding Reality'}</h4></div>
-                <p class="card-disclaimer">${isTurkish ? 'Tutarlar yalnızca kontrol edilmiş resmi kaynak bulunduğunda gösterilir. Konaklama ve yaşam bütçesi okul ücretinden ayrıdır.' : 'Amounts are displayed only with a checked official source. Housing and living budget are separate from tuition.'}</p>
+                <p class="card-disclaimer">${isTurkish ? 'Tutarlar yalnızca kontrol edilmiş resmi kaynak bulunduğunda gösterilir. Başvuru ücreti bir kez, başvururken ödenir ve yıllık toplama katılmaz. Konaklama ve yaşam bütçesi okul ücretinden ayrıdır.' : 'Amounts are displayed only with a checked official source. The application fee is paid once, when you apply, and is never added into the annual total. Housing and living budget are separate from tuition.'}</p>
                 <div class="premium-grid">
+                    ${feeHTML}
                     <div class="premium-item"><label>${isTurkish ? 'Öğrenim ücreti' : 'Tuition'}${n.tuitionScope === 'non_eu_target' ? ` · ${isTurkish ? 'AB dışı hedef' : 'non-EU target'}` : ''}</label><span class="finance-val tuition">${tuitionText}</span></div>
                     <div class="premium-item"><label>${isTurkish ? 'Zorunlu ek ücret' : 'Compulsory fee'}</label><span class="finance-val fee">${feeText}</span></div>
                     ${attendanceCostText ? `<div class="premium-item"><label>${isTurkish ? 'Resmî toplam katılım bütçesi' : 'Official total cost of attendance'}</label><span class="finance-val">${attendanceCostText}</span></div>` : ''}
@@ -2391,6 +2419,8 @@ function openDrawer(data) {
         const panels = window.uniDecisionPanels;
         const record = n.raw || data;
         const countdownHTML = panels ? panels.countdownPanel(record) : '';
+        // The fee falls due with the deadline, so it is read next to it.
+        const applicationFeeHTML = panels ? panels.applicationFeePanel(record) : '';
         // Permit, funds and clearances: the only decision field that had no
         // coverage at all, so it always meant leaving the tool.
         const visaHTML = window.uniVisaPanel ? window.uniVisaPanel.panel(record) : '';
@@ -2405,6 +2435,7 @@ function openDrawer(data) {
         drawerInfo.innerHTML =
             decisionHeroHTML +
             countdownHTML +
+            applicationFeeHTML +
             verificationBanner +
             qualityHTML +
             matchHTML +

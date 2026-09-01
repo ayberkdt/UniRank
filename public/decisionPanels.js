@@ -570,6 +570,121 @@
     return section('cost', '₪', turkish ? 'Ortalama giderler — dayanağıyla' : 'Average expenses — with their basis', body);
   }
 
+  // -------------------------------------------------------- application fee
+
+  const FEE_STATUS_TONE = {
+    published: 'charged',
+    no_fee: 'free',
+    not_published: 'free',
+    unknown: 'unverified',
+  };
+
+  function applicationFeePanel(record) {
+    const helper = window.uniApplicationFee;
+    const fee = helper ? helper.read(record) : null;
+    if (!fee) return '';
+    const turkish = tr();
+    const spec = std()?.all().application_fee;
+    const statusSpec = (spec?.status_values || []).find((entry) => entry.code === fee.status);
+
+    const qualifiers = helper.qualifiers(fee);
+    const waiver = helper.waiverLine(fee);
+    const early = helper.earlyWindow(fee);
+    const verification = record.cost_profile?.application_fee_verification;
+    const pages = Array.isArray(fee.pages_checked) ? fee.pages_checked : [];
+    const refused = Array.isArray(fee.refused_items) ? fee.refused_items : [];
+
+    const headline = `
+      <div class="fee-headline fee-headline--${esc(FEE_STATUS_TONE[fee.status] || 'unverified')}">
+        <span class="fee-headline__value">${esc(helper.headline(fee))}</span>
+        ${statusSpec ? `<span class="fee-headline__status">${esc(pick(statusSpec.label))}</span>` : ''}
+        ${qualifiers.length ? `<span class="fee-headline__qualifiers">${esc(qualifiers.join(' · '))}</span>` : ''}
+      </div>`;
+
+    // An early window is a deadline with a price on it, so it gets the same
+    // visual weight as a countdown rather than a footnote.
+    const earlyBlock = early
+      ? `<div class="fee-early${early.open ? ' fee-early--open' : ''}">
+           <span class="fee-early__label">${esc(early.open
+             ? (turkish ? 'Erken başvuru penceresi açık' : 'Early window still open')
+             : (turkish ? 'Yayımlanan dönemin erken penceresi' : 'The published cycle’s early window'))}</span>
+           <strong>${esc(early.label)}</strong>
+           ${early.open ? `<em>${esc(early.savingLabel)}</em>` : ''}
+         </div>`
+      : '';
+
+    const waiverBlock = waiver
+      ? `<div class="fee-waiver">
+           <span class="fee-waiver__label">${esc(turkish ? 'Ücret muafiyeti' : 'Fee waiver')}</span>
+           <p>${esc(waiver)}</p>
+           ${fee.waiver && fee.waiver.note ? `<p class="fee-waiver__note">${esc(helper.localized(fee.waiver.note))}</p>` : ''}
+           ${fee.waiver && Array.isArray(fee.waiver.categories) && fee.waiver.categories.length
+             ? `<ul class="fee-waiver__categories">${fee.waiver.categories.map((item) => `<li>${esc(text(item) || String(item))}</li>`).join('')}</ul>`
+             : ''}
+         </div>`
+      : '';
+
+    const componentRows = Array.isArray(fee.components) && fee.components.length
+      ? `<ul class="fee-component-list">${fee.components.map((item) => `<li><span>${esc(text(item.label) || String(item.label || '').replace(/_/g, ' '))}</span><strong>${esc(money(item.amount, item.currency))}</strong></li>`).join('')}</ul>`
+      : '';
+
+    const noteBlock = fee.note && fee.status === 'not_published'
+      ? `<p class="fee-note">${esc(helper.localized(fee.note))}</p>`
+      : '';
+
+    const verificationBlock = verification && verification.note
+      ? `<p class="fee-note fee-note--verification">${esc(helper.localized(verification.note))}${verification.confidence && verification.confidence !== 'high'
+        ? ` <span class="fee-confidence fee-confidence--${esc(verification.confidence)}">${esc(turkish ? 'orta güven' : 'medium confidence')}</span>`
+        : ''}</p>`
+      : '';
+
+    const pagesBlock = pages.length
+      ? `<p class="fee-pages">${esc(turkish ? 'Okunan sayfalar' : 'Pages read')}${fee.checked_on ? ` · ${esc(fee.checked_on)}` : ''}: ${pages.map((page, index) => sourceLink(page, `${turkish ? 'sayfa' : 'page'} ${index + 1}`)).join(' ')}</p>`
+      : '';
+
+    // Where every published fee names a route this reader cannot use, saying
+    // which routes were priced is more useful than an empty field.
+    const refusedBlock = refused.length
+      ? `<div class="fee-refused">
+           <p>${esc(turkish
+             ? 'Yayımlanan ücretler AB dışı bir adayın kullanamayacağı yollara ait:'
+             : 'The published fees are for routes a non-EU applicant cannot use:')}</p>
+           <ul>${refused.map((item) => `<li><strong>${esc(money(item.amount, item.currency))}</strong> — ${esc(text(item.basis) || String(item.applicant_scope || '').replace(/_/g, ' '))}</li>`).join('')}</ul>
+         </div>`
+      : '';
+
+    const method = spec
+      ? disclosure(
+        turkish ? 'Bu rakam nasıl belirlendi?' : 'How was this figure decided?',
+        `<p>${esc(pick(spec.total_rule))}</p>
+         <p>${esc(pick(spec.forbidden_promotions))}</p>
+         ${spec.who_charges_it ? `<p>${esc(pick(spec.who_charges_it))}</p>` : ''}
+         ${statusSpec && statusSpec.note ? `<p>${esc(pick(statusSpec.note))}</p>` : ''}`
+      )
+      : '';
+
+    const body = `
+      ${headline}
+      ${componentRows}
+      ${earlyBlock}
+      ${waiverBlock}
+      ${refusedBlock}
+      ${noteBlock}
+      ${verificationBlock}
+      ${pagesBlock}
+      ${method}`;
+
+    return section(
+      'fee',
+      '€',
+      turkish ? 'Başvurmanın maliyeti' : 'What it costs to apply',
+      body,
+      turkish
+        ? 'Başvuru sırasında bir kez ödenir ve yıllık toplama girmez.'
+        : 'Paid once when you apply, and never counted inside the annual total.'
+    );
+  }
+
   // ------------------------------------------------------------------- export
 
   function bindPanelEvents(root) {
@@ -595,6 +710,7 @@
 
   window.uniDecisionPanels = {
     countdownPanel,
+    applicationFeePanel,
     academicMatchPanel,
     researchUnitsPanel,
     facultyPanel,
