@@ -1497,9 +1497,9 @@ option {
 
 .deadline-program-card__documents li {
     display: grid;
-    grid-template-columns: 20px minmax(0, 1fr);
+    grid-template-columns: 25px minmax(0, 1fr);
     gap: 8px;
-    align-items: start;
+    align-items: center;
     padding: 7px 9px;
     border: 1px solid #23262c;
     border-radius: 6px;
@@ -1749,8 +1749,11 @@ option {
 }
 
 .deadline-document-list li {
+    grid-template-columns: 25px minmax(0, 1fr);
+    align-items: center;
+    gap: 10px;
     min-height: 38px;
-    padding: 9px 10px;
+    padding: 6px 10px;
     border: 1px solid var(--ui-rule-soft);
     border-radius: 6px;
     background: var(--ui-surface);
@@ -2807,8 +2810,9 @@ input[type="range"]::-webkit-slider-thumb {
 
 .deadline-program-card__documents li {
     display: grid;
-    grid-template-columns: 28px minmax(0, 1fr);
-    align-items: start;
+    grid-template-columns: 25px minmax(0, 1fr);
+    align-items: center;
+    gap: 8px;
 }
 
 .deadline-document-index {
@@ -2819,7 +2823,7 @@ input[type="range"]::-webkit-slider-thumb {
     place-items: center;
     border: 1px solid rgba(var(--deadline-country-rgb), 0.38);
     border-radius: 5px;
-    background: rgba(var(--deadline-country-rgb), 0.1);
+    background: #191b20;
     color: var(--ui-ink-soft) !important;
     color: color-mix(in oklab, var(--deadline-country-accent) 34%, var(--ui-ink)) !important;
     font-family: var(--ui-display);
@@ -2829,6 +2833,7 @@ input[type="range"]::-webkit-slider-thumb {
 
 .deadline-event {
     grid-template-columns: 16px minmax(0, 1fr) minmax(180px, auto) auto 34px;
+    align-items: center;
 }
 
 .deadline-event--kind-application .deadline-event__dot { border-color: var(--ui-ember); }
