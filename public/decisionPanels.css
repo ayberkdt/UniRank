@@ -770,13 +770,13 @@
     display: grid;
     gap: 4px;
     padding: 14px 16px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid #26282e;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.02);
+    background: #17181c;
 }
 
-.decision-panel--fee .fee-headline--charged { border-color: rgba(215, 199, 101, 0.32); background: rgba(215, 199, 101, 0.08); }
-.decision-panel--fee .fee-headline--free { border-color: rgba(140, 200, 155, 0.28); background: rgba(140, 200, 155, 0.07); }
+.decision-panel--fee .fee-headline--charged { border-color: #5a4c24; border-left: 3px solid #d7c765; background: #211d10; }
+.decision-panel--fee .fee-headline--free { border-color: #2d4a38; border-left: 3px solid #7cc98b; background: #121d16; }
 
 .decision-panel--fee .fee-headline__value {
     font-family: var(--ui-display, inherit);
@@ -824,14 +824,14 @@
     gap: 3px;
     margin-top: 12px;
     padding: 12px 14px;
-    border-left: 2px solid rgba(215, 199, 101, 0.3);
+    border-left: 2px solid #6b5c2c;
     border-radius: 0 8px 8px 0;
-    background: rgba(215, 199, 101, 0.05);
+    background: #1c180d;
 }
 
 .decision-panel--fee .fee-early--open {
     border-left-color: #d7c765;
-    background: rgba(215, 199, 101, 0.11);
+    background: #262010;
 }
 
 .decision-panel--fee .fee-early__label {

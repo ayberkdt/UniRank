@@ -683,11 +683,18 @@
       <small>${escapeHtml(tr('costHint'))}</small>`;
   }
 
+  // Dec-Feb winter, Mar-May spring, Jun-Aug summer, Sep-Nov autumn.
+  const MONTH_SEASONS = ['winter', 'winter', 'spring', 'spring', 'spring', 'summer', 'summer', 'summer', 'autumn', 'autumn', 'autumn', 'winter'];
+
   function renderRunway() {
     if (!elements.runway) return;
+    // upcomingEvents already restricts to target-ready cycles, so every date
+    // here belongs to the 2027 intake.  Filtering on calendar year as well
+    // hid the intake's own autumn: MIT's Fall-2027 deadline is 1 December
+    // 2026, and September through December simply never rendered.
     const milestones = state.models
       .flatMap(model => model.upcomingEvents.map(event => ({ model, event })))
-      .filter(item => item.event.exact && item.event.datePart.year >= TARGET_INTAKE_YEAR)
+      .filter(item => item.event.exact)
       .sort((left, right) => left.event.datePart.date - right.event.datePart.date);
     if (!milestones.length) {
       elements.runway.innerHTML = `<div class="deadline-runway__empty"><span aria-hidden="true">◎</span><div><strong>${escapeHtml(tr('runwayEmpty'))}</strong><small>${escapeHtml(tr('runwayEmptyHint'))}</small></div></div>`;
@@ -701,6 +708,7 @@
     });
     elements.runway.innerHTML = [...grouped.values()].map(items => {
       const month = new Intl.DateTimeFormat(lang() === 'tr' ? 'tr-TR' : 'en-GB', { month: 'long', year: 'numeric' }).format(items[0].event.datePart.date);
+      const season = MONTH_SEASONS[items[0].event.datePart.month - 1];
       // Every milestone in the month is listed.  The header used to count all
       // of them while the list showed four, so January 2027 announced eleven
       // dates and printed four - the seven it dropped were exactly the ones a
@@ -710,13 +718,14 @@
         const fee = model.fee && window.uniApplicationFee && model.fee.status === 'published'
           ? window.uniApplicationFee.headline(model.fee).split(' · ')[0]
           : '';
-        return `<li${admittedOnly ? ' class="is-offer-holder"' : ''}>
+        const urgency = event.days <= 7 ? ' is-due-now' : event.days <= 30 ? ' is-due-soon' : '';
+        return `<li class="${admittedOnly ? 'is-offer-holder' : ''}${urgency}">
           <span class="deadline-runway-date"><strong>${String(event.datePart.day).padStart(2, '0')}</strong><small>${escapeHtml(remainingLabel(event.days))}</small></span>
           <span class="deadline-runway-body"><b>${escapeHtml(model.university)}</b><small>${escapeHtml(eventDisplayLabel(event))}${admittedOnly ? ` · ${escapeHtml(tr('forOfferHolders'))}` : ''}</small></span>
           ${fee ? `<span class="deadline-runway-fee">${escapeHtml(fee)}</span>` : ''}
         </li>`;
       }).join('');
-      return `<article class="deadline-runway-month"><header><span>${escapeHtml(month)}</span><b>${escapeHtml(tr('runwayEvents', { count: items.length }))}</b></header><ol>${rows}</ol></article>`;
+      return `<article class="deadline-runway-month" data-season="${season}"><header><span>${escapeHtml(month)}</span><b>${escapeHtml(tr('runwayEvents', { count: items.length }))}</b></header><ol>${rows}</ol></article>`;
     }).join('');
   }
 
@@ -757,13 +766,17 @@
 
   function renderEvent(event) {
     const stateInfo = eventState(event);
+    const urgency = !event.exact || event.closed || event.referenceOnly ? ''
+      : event.days <= 0 ? ' deadline-event--due-now'
+      : event.days <= 7 ? ' deadline-event--due-week'
+      : event.days <= 30 ? ' deadline-event--due-month' : '';
     const dateText = event.exact ? formatDate(event.datePart) : tr('exactDateMissing');
     const countdown = event.referenceOnly ? tr('previousCycle') : (event.exact ? remainingLabel(event.days, event.closed) : tr('undated'));
     const officialNote = eventOfficialNote(event);
     const stepLink = event.sourceUrl
       ? `<a class="deadline-event__source" href="${escapeHtml(event.sourceUrl)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(`${tr('openOfficialStep')} · ${eventDisplayLabel(event)}`)}">↗</a>`
       : '';
-    return `<li class="deadline-event deadline-event--${stateInfo.key} deadline-event--kind-${escapeHtml(event.kind)}">
+    return `<li class="deadline-event deadline-event--${stateInfo.key} deadline-event--kind-${escapeHtml(event.kind)}${urgency}">
       <span class="deadline-event__dot" aria-hidden="true"></span>
       <div><strong>${escapeHtml(eventDisplayLabel(event))}</strong>${officialNote ? `<small>${escapeHtml(officialNote)}</small>` : ''}</div>
       <div class="deadline-event__date"><strong>${escapeHtml(dateText)}</strong><span>${escapeHtml(countdown)}</span></div>

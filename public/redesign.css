@@ -1473,7 +1473,7 @@ option {
 
 .deadline-program-card__next {
     border-left: 1px solid var(--ui-rule-soft);
-    background: rgba(16, 17, 21, 0.38);
+    background: #15171c;
 }
 
 .deadline-program-card__documents {
@@ -1491,15 +1491,26 @@ option {
 .deadline-program-card__documents ul {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 8px 16px;
+    gap: 6px 10px;
     margin: 0;
 }
 
 .deadline-program-card__documents li {
+    display: grid;
+    grid-template-columns: 20px minmax(0, 1fr);
     gap: 8px;
+    align-items: start;
+    padding: 7px 9px;
+    border: 1px solid #23262c;
+    border-radius: 6px;
+    background: #15171b;
     color: var(--ui-ink-soft);
     font-size: 12px;
     line-height: 1.35;
+}
+
+.deadline-program-card__documents > small {
+    align-self: center;
 }
 
 .deadline-program-card__documents li > span {
@@ -2264,8 +2275,8 @@ input[type="range"]::-webkit-slider-thumb {
 
 /* Detail rail: same graphite hierarchy, with country colour as one edge cue. */
 .drawer-overlay {
-    background: rgba(8, 9, 12, 0.6);
-    backdrop-filter: blur(2px);
+    background: rgba(8, 9, 12, 0.66);
+    backdrop-filter: none;
 }
 
 #detail-drawer.drawer,
@@ -3909,9 +3920,10 @@ input[type="range"]::-webkit-slider-thumb {
     display: grid;
     gap: 8px;
     padding: 16px 18px;
-    border: 1px solid rgba(215, 199, 101, 0.24);
+    border: 1px solid #574a20;
+    border-left: 3px solid #d7c765;
     border-radius: 10px;
-    background: rgba(215, 199, 101, 0.07);
+    background: #201c0f;
 }
 
 .deadline-cost-strip__head {
@@ -3993,22 +4005,22 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .deadline-fee-pill {
-    border: 1px solid rgba(215, 199, 101, 0.34) !important;
-    background: rgba(215, 199, 101, 0.1) !important;
+    border: 1px solid #5a4c24 !important;
+    background: #241f10 !important;
     color: #f0dfa8 !important;
 }
 
 .deadline-fee-pill--no_fee,
 .deadline-fee-pill--not_published {
-    border-color: rgba(140, 200, 155, 0.3) !important;
-    background: rgba(140, 200, 155, 0.09) !important;
+    border-color: #2d4a38 !important;
+    background: #121d16 !important;
     color: #a8cfae !important;
 }
 
 .deadline-fee-pill--unknown {
-    border-color: rgba(255, 255, 255, 0.14) !important;
-    background: transparent !important;
-    color: rgba(233, 227, 214, 0.55) !important;
+    border-color: #2b2e33 !important;
+    background: #17191d !important;
+    color: #8d8878 !important;
 }
 
 .deadline-early-saving {
@@ -4062,3 +4074,83 @@ input[type="range"]::-webkit-slider-thumb {
 .decision-item--apply-fee .apply-fee--no_fee,
 .decision-item--apply-fee .apply-fee--not_published { color: #a8cfae; }
 .decision-item--apply-fee .apply-fee--unknown { color: rgba(233, 227, 214, 0.5); font-weight: 500; }
+
+/* Vivaldi runway: the year, in season colours -----------------------------
+   Five identical graphite month cards forced the reader to read every header
+   to know where they were in the year. Each month now wears its season -
+   autumn orange, winter white, spring green, summer yellow - so the strip
+   reads left to right as autumn deadlines giving way to the winter crunch and
+   the spring scholarship round, before a single label is read. */
+.deadline-runway-month {
+    border-top: 3px solid #3a3d44;
+}
+
+.deadline-runway-month[data-season="autumn"] {
+    border-top-color: #d97f3e;
+    background: #191411;
+}
+
+.deadline-runway-month[data-season="autumn"] > header { background: #221910; }
+.deadline-runway-month[data-season="autumn"] > header span,
+.deadline-runway-month[data-season="autumn"] .deadline-runway-date strong { color: #eda868; }
+
+.deadline-runway-month[data-season="winter"] {
+    border-top-color: #cfdde9;
+    background: #14171b;
+}
+
+.deadline-runway-month[data-season="winter"] > header { background: #1a1f25; }
+.deadline-runway-month[data-season="winter"] > header span,
+.deadline-runway-month[data-season="winter"] .deadline-runway-date strong { color: #e4edf5; }
+
+.deadline-runway-month[data-season="spring"] {
+    border-top-color: #6fbf82;
+    background: #131712;
+}
+
+.deadline-runway-month[data-season="spring"] > header { background: #172017; }
+.deadline-runway-month[data-season="spring"] > header span,
+.deadline-runway-month[data-season="spring"] .deadline-runway-date strong { color: #8ed49e; }
+
+.deadline-runway-month[data-season="summer"] {
+    border-top-color: #e6c94f;
+    background: #17150e;
+}
+
+.deadline-runway-month[data-season="summer"] > header { background: #211d0f; }
+.deadline-runway-month[data-season="summer"] > header span,
+.deadline-runway-month[data-season="summer"] .deadline-runway-date strong { color: #eed979; }
+
+.deadline-runway-month > header b {
+    color: var(--ui-muted);
+}
+
+/* Inside a month, urgency colours the countdown, not the whole row. */
+.deadline-runway-month li.is-due-now .deadline-runway-date small {
+    color: #ff8272;
+    font-weight: 600;
+}
+
+.deadline-runway-month li.is-due-soon .deadline-runway-date small {
+    color: #e8b45c;
+}
+
+/* Timeline urgency ---------------------------------------------------------
+   Every upcoming milestone wore the same teal UPCOMING pill, so "due today"
+   and "242 days left" carried identical weight. Far dates now recede to
+   neutral and the pill heats up as the date closes in: red inside a week,
+   ember inside a month, amber inside ninety days. */
+.deadline-event--current .deadline-event__state {
+    background: #1e2328;
+    color: #93a4b2;
+}
+
+.deadline-event--due-month .deadline-event__state { background: #2f2a12; color: #e3cd76; }
+.deadline-event--due-month .deadline-event__date span { color: #d9c168; }
+
+.deadline-event--due-week .deadline-event__state { background: #392512; color: #f2b36a; }
+.deadline-event--due-week .deadline-event__date span { color: #f2b36a; }
+
+.deadline-event--due-now .deadline-event__state { background: #421711; color: #ffa294; }
+.deadline-event--due-now .deadline-event__date span { color: #ff8272; font-weight: 600; }
+.deadline-event--due-now .deadline-event__date strong { color: #ffd9d2; }
