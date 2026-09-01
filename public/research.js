@@ -9,7 +9,9 @@
       programmeKicker: 'Evidence-led shortlist', programmeTitle: 'Strong programmes for the selected field', advisorKicker: 'Practical application note', advisorTitle: 'Do I need to find a professor first?', advisorText: 'The answer changes by programme and stage. The cards below distinguish an application requirement from useful research networking.',
       facultyKicker: 'Named research matches', facultyTitle: 'Faculty worth investigating', outreachKicker: 'A focused first contact', outreachTitle: 'Write one useful email, not ten generic ones.', outreachText: 'Use this only when the programme timing and your technical overlap make contact appropriate.', subject: 'Subject', footerPolicy: 'No invented faculty match. Every named person and programme claim links to an official source.',
       canonicalFields: 'canonical fields', strongProgrammes: 'evidence-backed programmes', facultyMatches: 'named faculty matches', officialSources: 'official sources checked', verified: 'Verified', showingProgrammes: '{count} programme matches', showingFaculty: '{count} faculty matches', veryStrong: 'Very strong evidence', strong: 'Strong evidence', whyFit: 'Why it fits', practical: 'Practical note', officialResearch: 'Official research evidence', programmeDetails: 'Open programme details', beforeApplication: 'Before application', afterAdmission: 'After admission', programmeContact: 'Programme contact', officialProfile: 'Official profile', email: 'Email', noMatch: 'No match for this filter yet.', avoid: 'Avoid',
-      policy_after: 'RA outreach after admission', policy_during: 'Supervisor match during the MSc'
+      policy_after: 'RA outreach after admission', policy_during: 'Supervisor match during the MSc',
+      applyFee: 'Cost to apply', perApplication: 'per application', perProgrammeChoice: 'per programme choice',
+      nonRefundable: 'non-refundable', waiverClosedIntl: 'fee waiver closed to applicants from abroad'
     },
     tr: {
       skip: 'Araştırma eşleşmelerine geç', brand: 'Araştırma uyumu', programmes: 'Programlar', calendar: 'Başvuru takvimi', scholarships: 'Burslar', researchFit: 'Araştırma uyumu',
@@ -18,7 +20,9 @@
       programmeKicker: 'Kanıta dayalı kısa liste', programmeTitle: 'Seçilen alan için güçlü programlar', advisorKicker: 'Pratik başvuru notu', advisorTitle: 'Önce hoca bulmam gerekiyor mu?', advisorText: 'Cevap programa ve aşamaya göre değişir. Aşağıdaki kartlar başvuru şartıyla yararlı araştırma iletişimini birbirinden ayırır.',
       facultyKicker: 'İsimlendirilmiş araştırma eşleşmeleri', facultyTitle: 'İncelemeye değer hocalar', outreachKicker: 'Hedefli ilk iletişim', outreachTitle: 'On genel e-posta değil, bir faydalı e-posta yaz.', outreachText: 'Bunu yalnızca programın zamanlaması ve teknik kesişimin iletişimi anlamlı kılıyorsa kullan.', subject: 'Konu', footerPolicy: 'Uydurma hoca eşleşmesi yok. Her kişi ve program iddiası resmî bir kaynağa bağlıdır.',
       canonicalFields: 'standart alan', strongProgrammes: 'kanıtlı güçlü program', facultyMatches: 'isimlendirilmiş hoca eşleşmesi', officialSources: 'kontrol edilen resmî kaynak', verified: 'Doğrulandı', showingProgrammes: '{count} program eşleşmesi', showingFaculty: '{count} hoca eşleşmesi', veryStrong: 'Çok güçlü kanıt', strong: 'Güçlü kanıt', whyFit: 'Neden uyumlu?', practical: 'Pratik not', officialResearch: 'Resmî araştırma kanıtı', programmeDetails: 'Program detayını aç', beforeApplication: 'Başvurudan önce', afterAdmission: 'Kabulden sonra / program içinde', programmeContact: 'Program iletişimi', officialProfile: 'Resmî profil', email: 'E-posta', noMatch: 'Bu filtre için henüz eşleşme yok.', avoid: 'Kaçın',
-      policy_after: 'RA iletişimi kabulden sonra', policy_during: 'Danışman eşleşmesi MSc içinde'
+      policy_after: 'RA iletişimi kabulden sonra', policy_during: 'Danışman eşleşmesi MSc içinde',
+      applyFee: 'Başvurmanın maliyeti', perApplication: 'başvuru başına', perProgrammeChoice: 'program tercihi başına',
+      nonRefundable: 'iade edilmez', waiverClosedIntl: 'ücret muafiyeti yurt dışından başvuranlara kapalı'
     }
   };
 
@@ -68,6 +72,28 @@
     return catalog.strong_programmes.filter((programme) => selectedField === 'all' || programme.fit_fields.includes(selectedField));
   }
 
+  // The fee is a build-time copy of the programme database's figure and the
+  // check script breaks the build if the two ever disagree, so this page can
+  // price the application without loading the full database.
+  function feeLine(programme) {
+    const fee = programme.application_fee;
+    if (!fee || fee.status !== 'published') return '';
+    let money;
+    try {
+      money = new Intl.NumberFormat(lang() === 'tr' ? 'tr-TR' : 'en-GB', {
+        style: 'currency', currency: fee.currency, maximumFractionDigits: 0
+      }).format(fee.amount);
+    } catch { money = `${fee.currency} ${fee.amount}`; }
+    const parts = [];
+    if (fee.eur_equivalent) parts.push(`≈ €${fee.eur_equivalent}`);
+    parts.push(t(fee.charged_per === 'programme_choice' ? 'perProgrammeChoice' : 'perApplication'));
+    if (fee.refundable === false) parts.push(t('nonRefundable'));
+    // Only the closed waiver is asserted: an "open" flag derived from prose
+    // is too weak a claim to print on a card.
+    if (fee.waiver_open_to_international === false) parts.push(t('waiverClosedIntl'));
+    return `<div class="programme-fee"><span class="research-kicker">${escapeHtml(t('applyFee'))}</span><p><strong>${escapeHtml(money)}</strong> · ${escapeHtml(parts.join(' · '))}</p></div>`;
+  }
+
   function renderProgrammes() {
     const programmes = filteredProgrammes();
     byId('programme-meta').textContent = t('showingProgrammes', { count: programmes.length });
@@ -79,6 +105,7 @@
         <div class="field-chips">${programme.fit_fields.map((field) => `<span class="field-chip">${escapeHtml(fieldLabel(field))}</span>`).join('')}</div>
         <div><span class="research-kicker">${escapeHtml(t('whyFit'))}</span><p class="programme-card__why">${escapeHtml(local(programme.why))}</p></div>
         <div class="programme-note"><strong>${escapeHtml(t('practical'))}:</strong> ${escapeHtml(local(programme.practical_note))}</div>
+        ${feeLine(programme)}
         <div class="programme-card__actions"><a class="text-link text-link--primary" href="${escapeHtml(programme.official_research_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t('officialResearch'))} ↗</a><a class="text-link" href="${detailsUrl}">${escapeHtml(t('programmeDetails'))} →</a></div>
       </article>`;
     }).join('') : `<div class="empty-state">${escapeHtml(t('noMatch'))}</div>`;

@@ -64,6 +64,7 @@ for (const [key, entry] of Object.entries(taxonomy)) {
   for (const alias of aliases) assert(!genericAliases.has(alias), `Over-broad alias “${alias}” remains under ${key}`);
 }
 
+const databaseRecords = [...flattenRecords(america), ...flattenRecords(netherlands)];
 const programmeIds = new Set();
 for (const programme of catalog.strong_programmes) {
   assert(programme.programme_id && !programmeIds.has(programme.programme_id), `Missing or duplicate programme id: ${programme.programme_id}`);
@@ -76,6 +77,24 @@ for (const programme of catalog.strong_programmes) {
   bilingual(programme.practical_note, `${programme.programme_id}.practical_note`);
   assert(/^https:\/\//.test(programme.official_research_url || ''), `${programme.programme_id} has no HTTPS official research URL`);
   assert(Array.isArray(programme.source_ids) && programme.source_ids.length, `${programme.programme_id} has no source links`);
+
+  // The fee shown here is a build-time copy of the programme database's
+  // application_fee_standard, because this page never loads the full
+  // database. A copy that drifts from its source is worse than no copy, so
+  // the two are compared field by field on every run.
+  const record = databaseRecords.find((row) => row.id === programme.programme_id);
+  const canonical = record?.cost_profile?.application_fee_standard;
+  const embedded = programme.application_fee;
+  assert(embedded && canonical, `${programme.programme_id} has no embedded/canonical application fee`);
+  if (embedded && canonical) {
+    assert(embedded.status === canonical.status, `${programme.programme_id} embedded fee status drifted from the database`);
+    assert(embedded.amount === canonical.amount, `${programme.programme_id} embedded fee amount drifted from the database`);
+    assert(embedded.currency === canonical.currency, `${programme.programme_id} embedded fee currency drifted from the database`);
+    assert(embedded.charged_per === (canonical.charged_per || 'application'), `${programme.programme_id} embedded charged_per drifted from the database`);
+    assert(embedded.waiver_open_to_international === (canonical.waiver?.open_to_international ?? null), `${programme.programme_id} embedded waiver flag drifted from the database`);
+    const canonicalEur = canonical.amount_eur_equivalent ? Math.round(canonical.amount_eur_equivalent.amount) : null;
+    assert(embedded.eur_equivalent === canonicalEur, `${programme.programme_id} embedded euro equivalent drifted from the database`);
+  }
 }
 assert(programmeIds.has('mit-aeroastro'), 'MIT programme is missing from the research shortlist');
 assert(programmeIds.has('netherlands_delft_msc_aerospace'), 'TU Delft programme is missing from the research shortlist');

@@ -132,3 +132,28 @@ main { display: grid; width: min(1500px, calc(100% - 40px)); margin: 0 auto; gap
     .advisor-stage { grid-template-columns: 1fr; gap: 4px; }
     .research-footer { flex-direction: column; }
 }
+
+/* Cost to apply ------------------------------------------------------------
+   One line, priced from the programme database at build time and checked
+   against it on every run. Solid ground, and the only warning colour is the
+   one fact worth a warning: a waiver this reader cannot use. */
+.programme-fee {
+    margin-top: 2px;
+    padding: 10px 12px;
+    border: 1px solid #2c2f36;
+    border-left: 3px solid #d7c765;
+    border-radius: 8px;
+    background: #17150e;
+}
+
+.programme-fee p {
+    margin: 4px 0 0;
+    color: #aab4c4;
+    font-size: 12.5px;
+    line-height: 1.5;
+}
+
+.programme-fee strong {
+    color: #f0dfa8;
+    font-size: 14px;
+}

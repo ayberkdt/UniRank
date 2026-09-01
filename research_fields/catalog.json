@@ -9,178 +9,828 @@
     {
       "id": "astrodynamics",
       "group": "spaceflight_dynamics",
-      "label": {"en": "Astrodynamics & Orbital Mechanics", "tr": "Astrodinamik ve Yörünge Mekaniği"},
-      "short_label": {"en": "Astrodynamics", "tr": "Astrodinamik"},
-      "definition": {"en": "Motion of natural and artificial bodies in space, including perturbations, multi-body dynamics and orbital transfers.", "tr": "Doğal ve yapay cisimlerin uzaydaki hareketi; pertürbasyonlar, çok cisim dinamiği ve yörünge transferleri dâhil."},
-      "includes": ["orbital mechanics", "orbital dynamics", "multi-body dynamics", "orbit propagation", "celestial mechanics"],
-      "not_the_same_as": ["mission analysis", "orbit determination", "attitude control"]
+      "label": {
+        "en": "Astrodynamics & Orbital Mechanics",
+        "tr": "Astrodinamik ve Yörünge Mekaniği"
+      },
+      "short_label": {
+        "en": "Astrodynamics",
+        "tr": "Astrodinamik"
+      },
+      "definition": {
+        "en": "Motion of natural and artificial bodies in space, including perturbations, multi-body dynamics and orbital transfers.",
+        "tr": "Doğal ve yapay cisimlerin uzaydaki hareketi; pertürbasyonlar, çok cisim dinamiği ve yörünge transferleri dâhil."
+      },
+      "includes": [
+        "orbital mechanics",
+        "orbital dynamics",
+        "multi-body dynamics",
+        "orbit propagation",
+        "celestial mechanics"
+      ],
+      "not_the_same_as": [
+        "mission analysis",
+        "orbit determination",
+        "attitude control"
+      ]
     },
     {
       "id": "mission_analysis",
       "group": "spaceflight_dynamics",
-      "label": {"en": "Mission Analysis & Trajectory Design", "tr": "Görev Analizi ve Yörünge Tasarımı"},
-      "short_label": {"en": "Mission design", "tr": "Görev tasarımı"},
-      "definition": {"en": "Design and optimisation of mission sequences, transfers, manoeuvres and operational constraints.", "tr": "Görev dizilerinin, transferlerin, manevraların ve operasyonel kısıtların tasarımı ve optimizasyonu."},
-      "includes": ["trajectory optimisation", "low-energy transfers", "mission design", "launch windows"],
-      "not_the_same_as": ["orbit determination", "space systems engineering"]
+      "label": {
+        "en": "Mission Analysis & Trajectory Design",
+        "tr": "Görev Analizi ve Yörünge Tasarımı"
+      },
+      "short_label": {
+        "en": "Mission design",
+        "tr": "Görev tasarımı"
+      },
+      "definition": {
+        "en": "Design and optimisation of mission sequences, transfers, manoeuvres and operational constraints.",
+        "tr": "Görev dizilerinin, transferlerin, manevraların ve operasyonel kısıtların tasarımı ve optimizasyonu."
+      },
+      "includes": [
+        "trajectory optimisation",
+        "low-energy transfers",
+        "mission design",
+        "launch windows"
+      ],
+      "not_the_same_as": [
+        "orbit determination",
+        "space systems engineering"
+      ]
     },
     {
       "id": "orbit_determination",
       "group": "navigation_estimation",
-      "label": {"en": "Orbit Determination & State Estimation", "tr": "Yörünge Belirleme ve Durum Kestirimi"},
-      "short_label": {"en": "Orbit determination", "tr": "Yörünge belirleme"},
-      "definition": {"en": "Estimating position, velocity and uncertainty from tracking, navigation and sensor measurements.", "tr": "Takip, seyrüsefer ve sensör ölçümlerinden konum, hız ve belirsizliğin kestirilmesi."},
-      "includes": ["Kalman filtering", "sensor fusion", "tracking", "GNSS", "uncertainty propagation"],
-      "not_the_same_as": ["orbit propagation", "guidance"]
+      "label": {
+        "en": "Orbit Determination & State Estimation",
+        "tr": "Yörünge Belirleme ve Durum Kestirimi"
+      },
+      "short_label": {
+        "en": "Orbit determination",
+        "tr": "Yörünge belirleme"
+      },
+      "definition": {
+        "en": "Estimating position, velocity and uncertainty from tracking, navigation and sensor measurements.",
+        "tr": "Takip, seyrüsefer ve sensör ölçümlerinden konum, hız ve belirsizliğin kestirilmesi."
+      },
+      "includes": [
+        "Kalman filtering",
+        "sensor fusion",
+        "tracking",
+        "GNSS",
+        "uncertainty propagation"
+      ],
+      "not_the_same_as": [
+        "orbit propagation",
+        "guidance"
+      ]
     },
     {
       "id": "gnc",
       "group": "guidance_navigation_control",
-      "label": {"en": "Guidance, Navigation & Control (GNC)", "tr": "Güdüm, Seyrüsefer ve Kontrol (GNC)"},
-      "short_label": {"en": "GNC", "tr": "GNC"},
-      "definition": {"en": "Integrated decision, estimation and actuation chain: guidance generates commands, navigation estimates state, and control tracks the command.", "tr": "Bütünleşik karar, kestirim ve eyleyici zinciri: güdüm komut üretir, seyrüsefer durumu kestirir, kontrol komutu takip eder."},
-      "includes": ["guidance laws", "navigation", "estimation", "feedback control", "optimal control"],
-      "not_the_same_as": ["generic robotics", "air traffic management"]
+      "label": {
+        "en": "Guidance, Navigation & Control (GNC)",
+        "tr": "Güdüm, Seyrüsefer ve Kontrol (GNC)"
+      },
+      "short_label": {
+        "en": "GNC",
+        "tr": "GNC"
+      },
+      "definition": {
+        "en": "Integrated decision, estimation and actuation chain: guidance generates commands, navigation estimates state, and control tracks the command.",
+        "tr": "Bütünleşik karar, kestirim ve eyleyici zinciri: güdüm komut üretir, seyrüsefer durumu kestirir, kontrol komutu takip eder."
+      },
+      "includes": [
+        "guidance laws",
+        "navigation",
+        "estimation",
+        "feedback control",
+        "optimal control"
+      ],
+      "not_the_same_as": [
+        "generic robotics",
+        "air traffic management"
+      ]
     },
     {
       "id": "attitude_dynamics_control",
       "group": "guidance_navigation_control",
-      "label": {"en": "Spacecraft Attitude Dynamics & Control", "tr": "Uzay Aracı Yönelim Dinamiği ve Kontrolü"},
-      "short_label": {"en": "Attitude control", "tr": "Yönelim kontrolü"},
-      "definition": {"en": "Rotational dynamics, attitude determination and control of spacecraft pointing and angular motion.", "tr": "Uzay aracının yönelimi ve açısal hareketi için dönme dinamiği, yönelim belirleme ve kontrol."},
-      "includes": ["ADCS", "attitude estimation", "reaction wheels", "pointing", "formation attitude control"],
-      "not_the_same_as": ["orbital mechanics", "flight stability"]
+      "label": {
+        "en": "Spacecraft Attitude Dynamics & Control",
+        "tr": "Uzay Aracı Yönelim Dinamiği ve Kontrolü"
+      },
+      "short_label": {
+        "en": "Attitude control",
+        "tr": "Yönelim kontrolü"
+      },
+      "definition": {
+        "en": "Rotational dynamics, attitude determination and control of spacecraft pointing and angular motion.",
+        "tr": "Uzay aracının yönelimi ve açısal hareketi için dönme dinamiği, yönelim belirleme ve kontrol."
+      },
+      "includes": [
+        "ADCS",
+        "attitude estimation",
+        "reaction wheels",
+        "pointing",
+        "formation attitude control"
+      ],
+      "not_the_same_as": [
+        "orbital mechanics",
+        "flight stability"
+      ]
     },
     {
       "id": "space_domain_awareness",
       "group": "space_operations",
-      "label": {"en": "Space Domain Awareness & Traffic Management", "tr": "Uzay Alan Farkındalığı ve Trafik Yönetimi"},
-      "short_label": {"en": "SDA / STM", "tr": "SDA / STM"},
-      "definition": {"en": "Detection, tracking, characterisation and decision support for space objects, debris and conjunction risk.", "tr": "Uzay cisimleri, enkaz ve yakınlaşma riski için tespit, takip, karakterizasyon ve karar desteği."},
-      "includes": ["space situational awareness", "space traffic management", "conjunction assessment", "debris tracking"],
-      "not_the_same_as": ["mission operations", "satellite communications"]
+      "label": {
+        "en": "Space Domain Awareness & Traffic Management",
+        "tr": "Uzay Alan Farkındalığı ve Trafik Yönetimi"
+      },
+      "short_label": {
+        "en": "SDA / STM",
+        "tr": "SDA / STM"
+      },
+      "definition": {
+        "en": "Detection, tracking, characterisation and decision support for space objects, debris and conjunction risk.",
+        "tr": "Uzay cisimleri, enkaz ve yakınlaşma riski için tespit, takip, karakterizasyon ve karar desteği."
+      },
+      "includes": [
+        "space situational awareness",
+        "space traffic management",
+        "conjunction assessment",
+        "debris tracking"
+      ],
+      "not_the_same_as": [
+        "mission operations",
+        "satellite communications"
+      ]
     }
   ],
   "strong_programmes": [
     {
       "programme_id": "mit-aeroastro",
       "university": "Massachusetts Institute of Technology",
-      "country": {"code": "US", "flag": "🇺🇸", "en": "United States", "tr": "Amerika Birleşik Devletleri"},
-      "fit_fields": ["astrodynamics", "mission_analysis", "orbit_determination", "gnc", "space_domain_awareness"],
+      "country": {
+        "code": "US",
+        "flag": "🇺🇸",
+        "en": "United States",
+        "tr": "Amerika Birleşik Devletleri"
+      },
+      "fit_fields": [
+        "astrodynamics",
+        "mission_analysis",
+        "orbit_determination",
+        "gnc",
+        "space_domain_awareness"
+      ],
       "evidence_tier": "very_strong",
-      "why": {"en": "ARCLab directly covers astrodynamics, space robotics, satellite GNC, estimation and space traffic management; AeroAstro also has dedicated controls and autonomous-systems laboratories.", "tr": "ARCLab doğrudan astrodinamik, uzay robotiği, uydu GNC, kestirim ve uzay trafik yönetimini kapsar; AeroAstro ayrıca ayrı kontrol ve otonom sistem laboratuvarlarına sahiptir."},
-      "practical_note": {"en": "Advisor capacity affects admission. Do not treat a faculty email as a required pre-application approval; MIT explicitly recommends RA outreach after admission.", "tr": "Danışman kapasitesi kabulü etkiler. Hoca e-postasını başvuru öncesi zorunlu onay gibi görme; MIT RA iletişimini açıkça kabul sonrasına yerleştirir."},
+      "why": {
+        "en": "ARCLab directly covers astrodynamics, space robotics, satellite GNC, estimation and space traffic management; AeroAstro also has dedicated controls and autonomous-systems laboratories.",
+        "tr": "ARCLab doğrudan astrodinamik, uzay robotiği, uydu GNC, kestirim ve uzay trafik yönetimini kapsar; AeroAstro ayrıca ayrı kontrol ve otonom sistem laboratuvarlarına sahiptir."
+      },
+      "practical_note": {
+        "en": "Advisor capacity affects admission. Do not treat a faculty email as a required pre-application approval; MIT explicitly recommends RA outreach after admission.",
+        "tr": "Danışman kapasitesi kabulü etkiler. Hoca e-postasını başvuru öncesi zorunlu onay gibi görme; MIT RA iletişimini açıkça kabul sonrasına yerleştirir."
+      },
+      "application_fee": {
+        "status": "published",
+        "amount": 90.0,
+        "currency": "USD",
+        "eur_equivalent": 77,
+        "charged_per": "application",
+        "refundable": null,
+        "waiver_open_to_international": false,
+        "derived_from": "programme_database"
+      },
       "official_research_url": "https://aeroastro.mit.edu/arclab/",
-      "source_ids": ["mit_admission", "mit_funding", "mit_linares", "mit_how"]
+      "source_ids": [
+        "mit_admission",
+        "mit_funding",
+        "mit_linares",
+        "mit_how"
+      ]
     },
     {
       "programme_id": "netherlands_delft_msc_aerospace",
       "university": "Delft University of Technology",
-      "country": {"code": "NL", "flag": "🇳🇱", "en": "Netherlands", "tr": "Hollanda"},
-      "fit_fields": ["astrodynamics", "mission_analysis", "orbit_determination", "gnc", "attitude_dynamics_control"],
+      "country": {
+        "code": "NL",
+        "flag": "🇳🇱",
+        "en": "Netherlands",
+        "tr": "Hollanda"
+      },
+      "fit_fields": [
+        "astrodynamics",
+        "mission_analysis",
+        "orbit_determination",
+        "gnc",
+        "attitude_dynamics_control"
+      ],
       "evidence_tier": "very_strong",
-      "why": {"en": "The Space track is backed by a named Astrodynamics & Space Missions group, current GNC and trajectory-design work, and a 45 ECTS MSc thesis.", "tr": "Uzay izi; adı açıkça yayımlanan Astrodynamics & Space Missions grubu, güncel GNC/yörünge tasarımı çalışmaları ve 45 AKTS yüksek lisans teziyle desteklenir."},
-      "practical_note": {"en": "No official pre-application supervisor approval was found for the taught MSc. Choose the track first; thesis matching happens during the programme, so early faculty contact should be targeted rather than treated as an admission gate.", "tr": "Ders ağırlıklı MSc için resmî bir başvuru öncesi danışman onayı bulunmadı. Önce izi seç; tez eşleşmesi program içinde yapılır. Erken hoca iletişimi hedefli olmalı, kabul kapısı gibi görülmemelidir."},
+      "why": {
+        "en": "The Space track is backed by a named Astrodynamics & Space Missions group, current GNC and trajectory-design work, and a 45 ECTS MSc thesis.",
+        "tr": "Uzay izi; adı açıkça yayımlanan Astrodynamics & Space Missions grubu, güncel GNC/yörünge tasarımı çalışmaları ve 45 AKTS yüksek lisans teziyle desteklenir."
+      },
+      "practical_note": {
+        "en": "No official pre-application supervisor approval was found for the taught MSc. Choose the track first; thesis matching happens during the programme, so early faculty contact should be targeted rather than treated as an admission gate.",
+        "tr": "Ders ağırlıklı MSc için resmî bir başvuru öncesi danışman onayı bulunmadı. Önce izi seç; tez eşleşmesi program içinde yapılır. Erken hoca iletişimi hedefli olmalı, kabul kapısı gibi görülmemelidir."
+      },
+      "application_fee": {
+        "status": "published",
+        "amount": 100.0,
+        "currency": "EUR",
+        "eur_equivalent": null,
+        "charged_per": "application",
+        "refundable": false,
+        "waiver_open_to_international": null,
+        "derived_from": "programme_database"
+      },
       "official_research_url": "https://research.tudelft.nl/en/organisations/astrodynamics-space-missions/",
-      "source_ids": ["delft_programme", "delft_astrodynamics_group", "delft_mooij", "delft_heiligers"]
+      "source_ids": [
+        "delft_programme",
+        "delft_astrodynamics_group",
+        "delft_mooij",
+        "delft_heiligers"
+      ]
     },
     {
       "programme_id": "purdue-aae",
       "university": "Purdue University",
-      "country": {"code": "US", "flag": "🇺🇸", "en": "United States", "tr": "Amerika Birleşik Devletleri"},
-      "fit_fields": ["astrodynamics", "mission_analysis", "orbit_determination", "gnc", "attitude_dynamics_control", "space_domain_awareness"],
+      "country": {
+        "code": "US",
+        "flag": "🇺🇸",
+        "en": "United States",
+        "tr": "Amerika Birleşik Devletleri"
+      },
+      "fit_fields": [
+        "astrodynamics",
+        "mission_analysis",
+        "orbit_determination",
+        "gnc",
+        "attitude_dynamics_control",
+        "space_domain_awareness"
+      ],
       "evidence_tier": "very_strong",
-      "why": {"en": "A dedicated Astrodynamics and Space Applications group publishes orbital/interplanetary trajectory design, multi-body dynamics, navigation, spacecraft GNC and named optical GNC facilities.", "tr": "Ayrı Astrodynamics and Space Applications grubu; yörünge/gezegenler arası rota tasarımı, çok cisim dinamiği, seyrüsefer, uzay aracı GNC ve adı yayımlanan optik GNC tesislerini kapsar."},
-      "practical_note": {"en": "Thesis and funded research access is faculty/project dependent; use the published research-area faculty list to build a narrow shortlist.", "tr": "Tez ve fonlu araştırma erişimi hoca/projeye bağlıdır; dar bir kısa liste için yayımlanan araştırma alanı hoca listesini kullan."},
+      "why": {
+        "en": "A dedicated Astrodynamics and Space Applications group publishes orbital/interplanetary trajectory design, multi-body dynamics, navigation, spacecraft GNC and named optical GNC facilities.",
+        "tr": "Ayrı Astrodynamics and Space Applications grubu; yörünge/gezegenler arası rota tasarımı, çok cisim dinamiği, seyrüsefer, uzay aracı GNC ve adı yayımlanan optik GNC tesislerini kapsar."
+      },
+      "practical_note": {
+        "en": "Thesis and funded research access is faculty/project dependent; use the published research-area faculty list to build a narrow shortlist.",
+        "tr": "Tez ve fonlu araştırma erişimi hoca/projeye bağlıdır; dar bir kısa liste için yayımlanan araştırma alanı hoca listesini kullan."
+      },
+      "application_fee": {
+        "status": "published",
+        "amount": 75.0,
+        "currency": "USD",
+        "eur_equivalent": 64,
+        "charged_per": "programme_choice",
+        "refundable": null,
+        "waiver_open_to_international": false,
+        "derived_from": "programme_database"
+      },
       "official_research_url": "https://engineering.purdue.edu/AAE/research/astrodynamics",
-      "source_ids": ["purdue_astrodynamics"]
+      "source_ids": [
+        "purdue_astrodynamics"
+      ]
     },
     {
       "programme_id": "ut-austin-ase",
       "university": "The University of Texas at Austin",
-      "country": {"code": "US", "flag": "🇺🇸", "en": "United States", "tr": "Amerika Birleşik Devletleri"},
-      "fit_fields": ["astrodynamics", "mission_analysis", "orbit_determination", "gnc", "space_domain_awareness"],
+      "country": {
+        "code": "US",
+        "flag": "🇺🇸",
+        "en": "United States",
+        "tr": "Amerika Birleşik Devletleri"
+      },
+      "fit_fields": [
+        "astrodynamics",
+        "mission_analysis",
+        "orbit_determination",
+        "gnc",
+        "space_domain_awareness"
+      ],
       "evidence_tier": "very_strong",
-      "why": {"en": "The official Space Systems and Astrodynamics group documents mission design, orbit determination, nonlinear estimation, GNSS, space-domain awareness and a large current faculty cluster.", "tr": "Resmî Space Systems and Astrodynamics grubu; görev tasarımı, yörünge belirleme, doğrusal olmayan kestirim, GNSS, uzay alan farkındalığı ve geniş güncel hoca kümesini belgeler."},
-      "practical_note": {"en": "A thesis/report route needs supervision; research access is competitive and should not be assumed from admission alone.", "tr": "Tez/rapor rotası danışmanlık gerektirir; araştırma erişimi rekabetçidir ve yalnızca kabulden çıkarılmamalıdır."},
+      "why": {
+        "en": "The official Space Systems and Astrodynamics group documents mission design, orbit determination, nonlinear estimation, GNSS, space-domain awareness and a large current faculty cluster.",
+        "tr": "Resmî Space Systems and Astrodynamics grubu; görev tasarımı, yörünge belirleme, doğrusal olmayan kestirim, GNSS, uzay alan farkındalığı ve geniş güncel hoca kümesini belgeler."
+      },
+      "practical_note": {
+        "en": "A thesis/report route needs supervision; research access is competitive and should not be assumed from admission alone.",
+        "tr": "Tez/rapor rotası danışmanlık gerektirir; araştırma erişimi rekabetçidir ve yalnızca kabulden çıkarılmamalıdır."
+      },
+      "application_fee": {
+        "status": "published",
+        "amount": 90.0,
+        "currency": "USD",
+        "eur_equivalent": 77,
+        "charged_per": "application",
+        "refundable": null,
+        "waiver_open_to_international": false,
+        "derived_from": "programme_database"
+      },
       "official_research_url": "https://ae.utexas.edu/research/research-areas/space-systems-astrodynamics/",
-      "source_ids": ["ut_space_astrodynamics"]
+      "source_ids": [
+        "ut_space_astrodynamics"
+      ]
     },
     {
       "programme_id": "cu-boulder-aes",
       "university": "University of Colorado Boulder",
-      "country": {"code": "US", "flag": "🇺🇸", "en": "United States", "tr": "Amerika Birleşik Devletleri"},
-      "fit_fields": ["astrodynamics", "orbit_determination", "gnc"],
+      "country": {
+        "code": "US",
+        "flag": "🇺🇸",
+        "en": "United States",
+        "tr": "Amerika Birleşik Devletleri"
+      },
+      "fit_fields": [
+        "astrodynamics",
+        "orbit_determination",
+        "gnc"
+      ],
       "evidence_tier": "strong",
-      "why": {"en": "CCAR is explicitly dedicated to astrodynamics and satellite applications, with GNSS, orbit determination, navigation and remote sensing as published emphasis areas.", "tr": "CCAR açıkça astrodinamik ve uydu uygulamalarına odaklanır; GNSS, yörünge belirleme, seyrüsefer ve uzaktan algılama yayımlanmış vurgu alanlarıdır."},
-      "practical_note": {"en": "The MS should be budgeted as self-funded unless a written faculty or external funding offer is secured.", "tr": "Yazılı hoca veya dış finansman teklifi alınmadıkça MSc için öz finansman varsayılmalıdır."},
+      "why": {
+        "en": "CCAR is explicitly dedicated to astrodynamics and satellite applications, with GNSS, orbit determination, navigation and remote sensing as published emphasis areas.",
+        "tr": "CCAR açıkça astrodinamik ve uydu uygulamalarına odaklanır; GNSS, yörünge belirleme, seyrüsefer ve uzaktan algılama yayımlanmış vurgu alanlarıdır."
+      },
+      "practical_note": {
+        "en": "The MS should be budgeted as self-funded unless a written faculty or external funding offer is secured.",
+        "tr": "Yazılı hoca veya dış finansman teklifi alınmadıkça MSc için öz finansman varsayılmalıdır."
+      },
+      "application_fee": {
+        "status": "published",
+        "amount": 80.0,
+        "currency": "USD",
+        "eur_equivalent": 69,
+        "charged_per": "application",
+        "refundable": null,
+        "waiver_open_to_international": false,
+        "derived_from": "programme_database"
+      },
       "official_research_url": "https://www.colorado.edu/ccar/",
-      "source_ids": ["cu_ccar"]
+      "source_ids": [
+        "cu_ccar"
+      ]
     },
     {
       "programme_id": "uiuc-ae",
       "university": "University of Illinois Urbana-Champaign",
-      "country": {"code": "US", "flag": "🇺🇸", "en": "United States", "tr": "Amerika Birleşik Devletleri"},
-      "fit_fields": ["astrodynamics", "mission_analysis", "orbit_determination", "attitude_dynamics_control"],
+      "country": {
+        "code": "US",
+        "flag": "🇺🇸",
+        "en": "United States",
+        "tr": "Amerika Birleşik Devletleri"
+      },
+      "fit_fields": [
+        "astrodynamics",
+        "mission_analysis",
+        "orbit_determination",
+        "attitude_dynamics_control"
+      ],
       "evidence_tier": "strong",
-      "why": {"en": "Illinois publishes a dedicated astrodynamics area covering constrained mission design, cooperative manoeuvres, trajectory optimisation, orbit determination and attitude determination/control.", "tr": "Illinois; kısıtlı görev tasarımı, işbirlikçi manevralar, yörünge optimizasyonu, yörünge belirleme ve yönelim belirleme/kontrolü kapsayan ayrı bir astrodinamik alanı yayımlar."},
-      "practical_note": {"en": "Use the official area faculty list and current project pages; sponsorship proves active research, not an individual place or funding guarantee.", "tr": "Resmî alan hoca listesini ve güncel proje sayfalarını kullan; sponsorluk aktif araştırmayı kanıtlar, bireysel yer veya finansman garantisini değil."},
+      "why": {
+        "en": "Illinois publishes a dedicated astrodynamics area covering constrained mission design, cooperative manoeuvres, trajectory optimisation, orbit determination and attitude determination/control.",
+        "tr": "Illinois; kısıtlı görev tasarımı, işbirlikçi manevralar, yörünge optimizasyonu, yörünge belirleme ve yönelim belirleme/kontrolü kapsayan ayrı bir astrodinamik alanı yayımlar."
+      },
+      "practical_note": {
+        "en": "Use the official area faculty list and current project pages; sponsorship proves active research, not an individual place or funding guarantee.",
+        "tr": "Resmî alan hoca listesini ve güncel proje sayfalarını kullan; sponsorluk aktif araştırmayı kanıtlar, bireysel yer veya finansman garantisini değil."
+      },
+      "application_fee": {
+        "status": "published",
+        "amount": 90.0,
+        "currency": "USD",
+        "eur_equivalent": 77,
+        "charged_per": "application",
+        "refundable": null,
+        "waiver_open_to_international": true,
+        "derived_from": "programme_database"
+      },
       "official_research_url": "https://aerospace.illinois.edu/research/research-areas/astrodynamics",
-      "source_ids": ["uiuc_astrodynamics"]
+      "source_ids": [
+        "uiuc_astrodynamics"
+      ]
     }
   ],
   "advisor_guides": [
     {
       "programme_id": "mit-aeroastro",
       "policy": "contact_after_admission_for_ra",
-      "before_application": {"en": "Name only genuinely matching faculty/labs in the objectives statement. Attend department information sessions and do not send generic mass emails or attachments.", "tr": "Amaç beyanında yalnızca gerçekten uyumlu hoca/laboratuvarları belirt. Bölüm bilgi oturumlarına katıl; genel toplu e-posta veya ek dosya gönderme."},
-      "after_admission": {"en": "Contact matching faculty about RA opportunities from March onward; offers may continue through August. Until written, funding is not guaranteed.", "tr": "Marttan itibaren uyumlu hocalarla RA fırsatları için iletişim kur; teklifler Ağustos'a kadar sürebilir. Yazılı olmadıkça finansman garanti değildir."},
-      "programme_contact": {"label": "AeroAstro Graduate Admissions", "email": "aagradinfo@mit.edu", "url": "https://aeroastro.mit.edu/education/graduate-admission/"},
+      "before_application": {
+        "en": "Name only genuinely matching faculty/labs in the objectives statement. Attend department information sessions and do not send generic mass emails or attachments.",
+        "tr": "Amaç beyanında yalnızca gerçekten uyumlu hoca/laboratuvarları belirt. Bölüm bilgi oturumlarına katıl; genel toplu e-posta veya ek dosya gönderme."
+      },
+      "after_admission": {
+        "en": "Contact matching faculty about RA opportunities from March onward; offers may continue through August. Until written, funding is not guaranteed.",
+        "tr": "Marttan itibaren uyumlu hocalarla RA fırsatları için iletişim kur; teklifler Ağustos'a kadar sürebilir. Yazılı olmadıkça finansman garanti değildir."
+      },
+      "programme_contact": {
+        "label": "AeroAstro Graduate Admissions",
+        "email": "aagradinfo@mit.edu",
+        "url": "https://aeroastro.mit.edu/education/graduate-admission/"
+      },
       "faculty": [
-        {"name": "Richard Linares", "role": {"en": "Director, ARCLab", "tr": "ARCLab Direktörü"}, "fit_fields": ["astrodynamics", "orbit_determination", "gnc", "space_domain_awareness"], "focus": {"en": "Astrodynamics, space situational awareness, satellite GNC, estimation, optimal control and space traffic management.", "tr": "Astrodinamik, uzay durumsal farkındalığı, uydu GNC, kestirim, optimal kontrol ve uzay trafik yönetimi."}, "email": "linaresr@mit.edu", "profile_url": "https://aeroastro.mit.edu/people/richard-linares/", "source_id": "mit_linares"},
-        {"name": "Jonathan P. How", "role": {"en": "Director, Aerospace Controls Laboratory", "tr": "Aerospace Controls Laboratory Direktörü"}, "fit_fields": ["gnc", "orbit_determination"], "focus": {"en": "Navigation and control, robust planning under uncertainty, multi-agent autonomy, adaptive flight control and estimation.", "tr": "Seyrüsefer ve kontrol, belirsizlik altında dayanıklı planlama, çok etmenli otonomi, uyarlamalı uçuş kontrolü ve kestirim."}, "email": "jhow@mit.edu", "profile_url": "https://aeroastro.mit.edu/people/jonathan-p-how/", "source_id": "mit_how"},
-        {"name": "Sertac Karaman", "role": {"en": "Director, AERA and LEAN", "tr": "AERA ve LEAN Direktörü"}, "fit_fields": ["gnc"], "focus": {"en": "Robotics, embedded systems, autonomous vehicles, motion planning, stochastic systems and control.", "tr": "Robotik, gömülü sistemler, otonom araçlar, hareket planlama, stokastik sistemler ve kontrol."}, "email": "sertac@mit.edu", "profile_url": "https://aeroastro.mit.edu/people/sertac-karaman/", "source_id": "mit_karaman"}
+        {
+          "name": "Richard Linares",
+          "role": {
+            "en": "Director, ARCLab",
+            "tr": "ARCLab Direktörü"
+          },
+          "fit_fields": [
+            "astrodynamics",
+            "orbit_determination",
+            "gnc",
+            "space_domain_awareness"
+          ],
+          "focus": {
+            "en": "Astrodynamics, space situational awareness, satellite GNC, estimation, optimal control and space traffic management.",
+            "tr": "Astrodinamik, uzay durumsal farkındalığı, uydu GNC, kestirim, optimal kontrol ve uzay trafik yönetimi."
+          },
+          "email": "linaresr@mit.edu",
+          "profile_url": "https://aeroastro.mit.edu/people/richard-linares/",
+          "source_id": "mit_linares"
+        },
+        {
+          "name": "Jonathan P. How",
+          "role": {
+            "en": "Director, Aerospace Controls Laboratory",
+            "tr": "Aerospace Controls Laboratory Direktörü"
+          },
+          "fit_fields": [
+            "gnc",
+            "orbit_determination"
+          ],
+          "focus": {
+            "en": "Navigation and control, robust planning under uncertainty, multi-agent autonomy, adaptive flight control and estimation.",
+            "tr": "Seyrüsefer ve kontrol, belirsizlik altında dayanıklı planlama, çok etmenli otonomi, uyarlamalı uçuş kontrolü ve kestirim."
+          },
+          "email": "jhow@mit.edu",
+          "profile_url": "https://aeroastro.mit.edu/people/jonathan-p-how/",
+          "source_id": "mit_how"
+        },
+        {
+          "name": "Sertac Karaman",
+          "role": {
+            "en": "Director, AERA and LEAN",
+            "tr": "AERA ve LEAN Direktörü"
+          },
+          "fit_fields": [
+            "gnc"
+          ],
+          "focus": {
+            "en": "Robotics, embedded systems, autonomous vehicles, motion planning, stochastic systems and control.",
+            "tr": "Robotik, gömülü sistemler, otonom araçlar, hareket planlama, stokastik sistemler ve kontrol."
+          },
+          "email": "sertac@mit.edu",
+          "profile_url": "https://aeroastro.mit.edu/people/sertac-karaman/",
+          "source_id": "mit_karaman"
+        }
       ]
     },
     {
       "programme_id": "netherlands_delft_msc_aerospace",
       "policy": "supervisor_match_during_msc",
-      "before_application": {"en": "A supervisor's pre-approval is not shown as an MSc application requirement. Apply to the programme and choose the relevant track; contact a researcher early only with a specific, informed fit question.", "tr": "Danışman ön onayı MSc başvuru şartı olarak gösterilmiyor. Programa başvur ve ilgili izi seç; bir araştırmacıya erken yazacaksan yalnızca belirli, araştırılmış bir uyum sorusuyla yaz."},
-      "after_admission": {"en": "Use first-year courses, group seminars and published thesis work to narrow a thesis topic and supervisor. Faculty capacity and topic availability still matter.", "tr": "Tez konusu ve danışmanı daraltmak için ilk yıl derslerini, grup seminerlerini ve yayımlanmış tez çalışmalarını kullan. Hoca kapasitesi ve konu uygunluğu yine önemlidir."},
-      "programme_contact": {"label": "TU Delft MSc Aerospace Engineering", "email": null, "url": "https://www.tudelft.nl/en/education/programmes/masters/ae/msc-aerospace-engineering/admission-and-application"},
+      "before_application": {
+        "en": "A supervisor's pre-approval is not shown as an MSc application requirement. Apply to the programme and choose the relevant track; contact a researcher early only with a specific, informed fit question.",
+        "tr": "Danışman ön onayı MSc başvuru şartı olarak gösterilmiyor. Programa başvur ve ilgili izi seç; bir araştırmacıya erken yazacaksan yalnızca belirli, araştırılmış bir uyum sorusuyla yaz."
+      },
+      "after_admission": {
+        "en": "Use first-year courses, group seminars and published thesis work to narrow a thesis topic and supervisor. Faculty capacity and topic availability still matter.",
+        "tr": "Tez konusu ve danışmanı daraltmak için ilk yıl derslerini, grup seminerlerini ve yayımlanmış tez çalışmalarını kullan. Hoca kapasitesi ve konu uygunluğu yine önemlidir."
+      },
+      "programme_contact": {
+        "label": "TU Delft MSc Aerospace Engineering",
+        "email": null,
+        "url": "https://www.tudelft.nl/en/education/programmes/masters/ae/msc-aerospace-engineering/admission-and-application"
+      },
       "faculty": [
-        {"name": "Erwin Mooij", "role": {"en": "Astrodynamics & Space Missions", "tr": "Astrodynamics & Space Missions"}, "fit_fields": ["gnc", "mission_analysis", "attitude_dynamics_control"], "focus": {"en": "Launch/re-entry guidance, trajectory optimisation, integrated GNC, vision-based navigation and debris-removal rendezvous.", "tr": "Fırlatma/yeniden giriş güdümü, yörünge optimizasyonu, bütünleşik GNC, görsel seyrüsefer ve enkaz giderme buluşması."}, "email": "e.mooij@tudelft.nl", "profile_url": "https://research.tudelft.nl/en/persons/e-mooij/", "source_id": "delft_mooij"},
-        {"name": "Dominic Dirkx", "role": {"en": "Astrodynamics & Space Missions", "tr": "Astrodynamics & Space Missions"}, "fit_fields": ["astrodynamics", "mission_analysis", "orbit_determination"], "focus": {"en": "Planetary mission dynamics, trajectory optimisation, interplanetary tracking, orbit determination and numerical simulation tools.", "tr": "Gezegen görevi dinamiği, yörünge optimizasyonu, gezegenler arası takip, yörünge belirleme ve sayısal benzetim araçları."}, "email": "d.dirkx@tudelft.nl", "profile_url": "https://research.tudelft.nl/en/persons/d-dirkx/", "source_id": "delft_dirkx"},
-        {"name": "Jeannette Heiligers", "role": {"en": "Astrodynamics & Space Missions", "tr": "Astrodynamics & Space Missions"}, "fit_fields": ["astrodynamics", "mission_analysis"], "focus": {"en": "Solar sailing, low-thrust trajectory design, orbital control and space-debris-removal concepts.", "tr": "Güneş yelkenleri, düşük itki yörünge tasarımı, yörünge kontrolü ve uzay enkazı giderme kavramları."}, "email": "m.j.heiligers@tudelft.nl", "profile_url": "https://research.tudelft.nl/en/persons/mj-heiligers/", "source_id": "delft_heiligers"},
-        {"name": "Stefano Speretta", "role": {"en": "Space Systems Engineering", "tr": "Space Systems Engineering"}, "fit_fields": ["orbit_determination", "gnc", "attitude_dynamics_control"], "focus": {"en": "Small satellites, autonomous formation flying, cislunar navigation, inter-satellite ranging and CubeSat systems.", "tr": "Küçük uydular, otonom formasyon uçuşu, ayötesi seyrüsefer, uydular arası mesafe ölçümü ve CubeSat sistemleri."}, "email": "s.speretta@tudelft.nl", "profile_url": "https://research.tudelft.nl/en/persons/s-speretta/", "source_id": "delft_speretta"}
+        {
+          "name": "Erwin Mooij",
+          "role": {
+            "en": "Astrodynamics & Space Missions",
+            "tr": "Astrodynamics & Space Missions"
+          },
+          "fit_fields": [
+            "gnc",
+            "mission_analysis",
+            "attitude_dynamics_control"
+          ],
+          "focus": {
+            "en": "Launch/re-entry guidance, trajectory optimisation, integrated GNC, vision-based navigation and debris-removal rendezvous.",
+            "tr": "Fırlatma/yeniden giriş güdümü, yörünge optimizasyonu, bütünleşik GNC, görsel seyrüsefer ve enkaz giderme buluşması."
+          },
+          "email": "e.mooij@tudelft.nl",
+          "profile_url": "https://research.tudelft.nl/en/persons/e-mooij/",
+          "source_id": "delft_mooij"
+        },
+        {
+          "name": "Dominic Dirkx",
+          "role": {
+            "en": "Astrodynamics & Space Missions",
+            "tr": "Astrodynamics & Space Missions"
+          },
+          "fit_fields": [
+            "astrodynamics",
+            "mission_analysis",
+            "orbit_determination"
+          ],
+          "focus": {
+            "en": "Planetary mission dynamics, trajectory optimisation, interplanetary tracking, orbit determination and numerical simulation tools.",
+            "tr": "Gezegen görevi dinamiği, yörünge optimizasyonu, gezegenler arası takip, yörünge belirleme ve sayısal benzetim araçları."
+          },
+          "email": "d.dirkx@tudelft.nl",
+          "profile_url": "https://research.tudelft.nl/en/persons/d-dirkx/",
+          "source_id": "delft_dirkx"
+        },
+        {
+          "name": "Jeannette Heiligers",
+          "role": {
+            "en": "Astrodynamics & Space Missions",
+            "tr": "Astrodynamics & Space Missions"
+          },
+          "fit_fields": [
+            "astrodynamics",
+            "mission_analysis"
+          ],
+          "focus": {
+            "en": "Solar sailing, low-thrust trajectory design, orbital control and space-debris-removal concepts.",
+            "tr": "Güneş yelkenleri, düşük itki yörünge tasarımı, yörünge kontrolü ve uzay enkazı giderme kavramları."
+          },
+          "email": "m.j.heiligers@tudelft.nl",
+          "profile_url": "https://research.tudelft.nl/en/persons/mj-heiligers/",
+          "source_id": "delft_heiligers"
+        },
+        {
+          "name": "Stefano Speretta",
+          "role": {
+            "en": "Space Systems Engineering",
+            "tr": "Space Systems Engineering"
+          },
+          "fit_fields": [
+            "orbit_determination",
+            "gnc",
+            "attitude_dynamics_control"
+          ],
+          "focus": {
+            "en": "Small satellites, autonomous formation flying, cislunar navigation, inter-satellite ranging and CubeSat systems.",
+            "tr": "Küçük uydular, otonom formasyon uçuşu, ayötesi seyrüsefer, uydular arası mesafe ölçümü ve CubeSat sistemleri."
+          },
+          "email": "s.speretta@tudelft.nl",
+          "profile_url": "https://research.tudelft.nl/en/persons/s-speretta/",
+          "source_id": "delft_speretta"
+        }
       ]
     }
   ],
   "outreach_template": {
-    "subject": {"en": "Prospective MSc applicant — [specific topic] fit", "tr": "MSc adayı — [belirli konu] araştırma uyumu"},
+    "subject": {
+      "en": "Prospective MSc applicant — [specific topic] fit",
+      "tr": "MSc adayı — [belirli konu] araştırma uyumu"
+    },
     "steps": [
-      {"en": "Open with one sentence: your degree, graduation timing and exact research theme.", "tr": "Tek cümleyle başla: bölümün, mezuniyet zamanın ve kesin araştırma teman."},
-      {"en": "Reference one current project or publication and explain the technical overlap in two sentences.", "tr": "Güncel bir proje veya yayına atıf yap ve teknik kesişimi iki cümlede açıkla."},
-      {"en": "Ask one answerable question: thesis supervision timing, expected preparation or whether the topic is active.", "tr": "Tek ve cevaplanabilir bir soru sor: tez danışmanlığı zamanı, beklenen hazırlık veya konunun aktif olup olmadığı."},
-      {"en": "Attach no large files. Link a one-page CV or portfolio only when relevant; follow up once after 7–10 days.", "tr": "Büyük dosya ekleme. Yalnızca ilgiliyse tek sayfalık CV/portföy bağlantısı ver; 7–10 gün sonra bir kez takip et."}
+      {
+        "en": "Open with one sentence: your degree, graduation timing and exact research theme.",
+        "tr": "Tek cümleyle başla: bölümün, mezuniyet zamanın ve kesin araştırma teman."
+      },
+      {
+        "en": "Reference one current project or publication and explain the technical overlap in two sentences.",
+        "tr": "Güncel bir proje veya yayına atıf yap ve teknik kesişimi iki cümlede açıkla."
+      },
+      {
+        "en": "Ask one answerable question: thesis supervision timing, expected preparation or whether the topic is active.",
+        "tr": "Tek ve cevaplanabilir bir soru sor: tez danışmanlığı zamanı, beklenen hazırlık veya konunun aktif olup olmadığı."
+      },
+      {
+        "en": "Attach no large files. Link a one-page CV or portfolio only when relevant; follow up once after 7–10 days.",
+        "tr": "Büyük dosya ekleme. Yalnızca ilgiliyse tek sayfalık CV/portföy bağlantısı ver; 7–10 gün sonra bir kez takip et."
+      }
     ],
-    "avoid": {"en": "Avoid generic praise, asking for guaranteed admission/funding, mass mail, or claiming a fit without reading the lab's current work.", "tr": "Genel övgü, garantili kabul/finansman talebi, toplu e-posta veya laboratuvarın güncel işini okumadan uyum iddiasından kaçın."}
+    "avoid": {
+      "en": "Avoid generic praise, asking for guaranteed admission/funding, mass mail, or claiming a fit without reading the lab's current work.",
+      "tr": "Genel övgü, garantili kabul/finansman talebi, toplu e-posta veya laboratuvarın güncel işini okumadan uyum iddiasından kaçın."
+    }
   },
   "sources": [
-    {"id": "mit_admission", "title": "MIT AeroAstro Graduate Admission", "url": "https://aeroastro.mit.edu/education/graduate-admission/", "source_type": "official_admission_page", "access_status": "ok", "last_checked": "2026-08-22", "relevant_fields": ["admission_process", "advisor_capacity"], "confidence": "high", "notes": "Current official department admission guidance."},
-    {"id": "mit_funding", "title": "MIT AeroAstro Funding", "url": "https://aeroastro.mit.edu/education/funding/", "source_type": "official_funding_page", "access_status": "ok", "last_checked": "2026-08-22", "relevant_fields": ["faculty_contact_timing", "research_assistantship"], "confidence": "high", "notes": "Official guidance places RA outreach after admission and states that funding is not guaranteed."},
-    {"id": "mit_linares", "title": "MIT AeroAstro — Richard Linares", "url": "https://aeroastro.mit.edu/people/richard-linares/", "source_type": "official_faculty_page", "access_status": "ok", "last_checked": "2026-08-22", "relevant_fields": ["faculty", "research_focus", "contact"], "confidence": "high", "notes": "Official department faculty profile."},
-    {"id": "mit_how", "title": "MIT AeroAstro — Jonathan P. How", "url": "https://aeroastro.mit.edu/people/jonathan-p-how/", "source_type": "official_faculty_page", "access_status": "ok", "last_checked": "2026-08-22", "relevant_fields": ["faculty", "research_focus", "contact"], "confidence": "high", "notes": "Official department faculty profile."},
-    {"id": "mit_karaman", "title": "MIT AeroAstro — Sertac Karaman", "url": "https://aeroastro.mit.edu/people/sertac-karaman/", "source_type": "official_faculty_page", "access_status": "ok", "last_checked": "2026-08-22", "relevant_fields": ["faculty", "research_focus", "contact"], "confidence": "high", "notes": "Official department faculty profile."},
-    {"id": "delft_programme", "title": "TU Delft MSc Aerospace Engineering", "url": "https://ocw.tudelft.nl/programs/master/aerospace-engineering/", "source_type": "official_program_page", "access_status": "ok", "last_checked": "2026-08-22", "relevant_fields": ["programme_structure", "track_selection", "thesis"], "confidence": "high", "notes": "Official TU Delft OpenCourseWare programme overview."},
-    {"id": "delft_astrodynamics_group", "title": "TU Delft Astrodynamics & Space Missions", "url": "https://research.tudelft.nl/en/organisations/astrodynamics-space-missions/", "source_type": "official_research_group_page", "access_status": "ok", "last_checked": "2026-08-22", "relevant_fields": ["research_group", "research_fit"], "confidence": "high", "notes": "Official TU Delft research portal organisation page."},
-    {"id": "delft_mooij", "title": "TU Delft Research Portal — Erwin Mooij", "url": "https://research.tudelft.nl/en/persons/e-mooij/", "source_type": "official_faculty_page", "access_status": "ok", "last_checked": "2026-08-22", "relevant_fields": ["faculty", "research_focus", "contact"], "confidence": "high", "notes": "Official TU Delft research portal profile."},
-    {"id": "delft_dirkx", "title": "TU Delft Research Portal — Dominic Dirkx", "url": "https://research.tudelft.nl/en/persons/d-dirkx/", "source_type": "official_faculty_page", "access_status": "ok", "last_checked": "2026-08-22", "relevant_fields": ["faculty", "research_focus", "contact"], "confidence": "high", "notes": "Official TU Delft research portal profile."},
-    {"id": "delft_heiligers", "title": "TU Delft Research Portal — Jeannette Heiligers", "url": "https://research.tudelft.nl/en/persons/mj-heiligers/", "source_type": "official_faculty_page", "access_status": "ok", "last_checked": "2026-08-22", "relevant_fields": ["faculty", "research_focus", "contact"], "confidence": "high", "notes": "Official TU Delft research portal profile."},
-    {"id": "delft_speretta", "title": "TU Delft Research Portal — Stefano Speretta", "url": "https://research.tudelft.nl/en/persons/s-speretta/", "source_type": "official_faculty_page", "access_status": "ok", "last_checked": "2026-08-22", "relevant_fields": ["faculty", "research_focus", "contact"], "confidence": "high", "notes": "Official TU Delft research portal profile."},
-    {"id": "purdue_astrodynamics", "title": "Purdue Astrodynamics and Space Applications", "url": "https://engineering.purdue.edu/AAE/research/astrodynamics", "source_type": "official_research_area_page", "access_status": "ok", "last_checked": "2026-08-22", "relevant_fields": ["research_fit", "facilities", "faculty_cluster"], "confidence": "high", "notes": "Official department research-area page."},
-    {"id": "ut_space_astrodynamics", "title": "UT Austin Space Systems and Astrodynamics", "url": "https://ae.utexas.edu/research/research-areas/space-systems-astrodynamics/", "source_type": "official_research_area_page", "access_status": "ok", "last_checked": "2026-08-22", "relevant_fields": ["research_fit", "faculty_cluster"], "confidence": "high", "notes": "Official department research-area page."},
-    {"id": "cu_ccar", "title": "Colorado Center for Astrodynamics Research", "url": "https://www.colorado.edu/ccar/", "source_type": "official_research_center_page", "access_status": "ok", "last_checked": "2026-08-22", "relevant_fields": ["research_fit", "research_center"], "confidence": "high", "notes": "Official university research-center page."},
-    {"id": "uiuc_astrodynamics", "title": "Illinois Astrodynamics", "url": "https://aerospace.illinois.edu/research/research-areas/astrodynamics", "source_type": "official_research_area_page", "access_status": "ok", "last_checked": "2026-08-22", "relevant_fields": ["research_fit", "faculty_cluster"], "confidence": "high", "notes": "Official department research-area page."}
+    {
+      "id": "mit_admission",
+      "title": "MIT AeroAstro Graduate Admission",
+      "url": "https://aeroastro.mit.edu/education/graduate-admission/",
+      "source_type": "official_admission_page",
+      "access_status": "ok",
+      "last_checked": "2026-08-22",
+      "relevant_fields": [
+        "admission_process",
+        "advisor_capacity"
+      ],
+      "confidence": "high",
+      "notes": "Current official department admission guidance."
+    },
+    {
+      "id": "mit_funding",
+      "title": "MIT AeroAstro Funding",
+      "url": "https://aeroastro.mit.edu/education/funding/",
+      "source_type": "official_funding_page",
+      "access_status": "ok",
+      "last_checked": "2026-08-22",
+      "relevant_fields": [
+        "faculty_contact_timing",
+        "research_assistantship"
+      ],
+      "confidence": "high",
+      "notes": "Official guidance places RA outreach after admission and states that funding is not guaranteed."
+    },
+    {
+      "id": "mit_linares",
+      "title": "MIT AeroAstro — Richard Linares",
+      "url": "https://aeroastro.mit.edu/people/richard-linares/",
+      "source_type": "official_faculty_page",
+      "access_status": "ok",
+      "last_checked": "2026-08-22",
+      "relevant_fields": [
+        "faculty",
+        "research_focus",
+        "contact"
+      ],
+      "confidence": "high",
+      "notes": "Official department faculty profile."
+    },
+    {
+      "id": "mit_how",
+      "title": "MIT AeroAstro — Jonathan P. How",
+      "url": "https://aeroastro.mit.edu/people/jonathan-p-how/",
+      "source_type": "official_faculty_page",
+      "access_status": "ok",
+      "last_checked": "2026-08-22",
+      "relevant_fields": [
+        "faculty",
+        "research_focus",
+        "contact"
+      ],
+      "confidence": "high",
+      "notes": "Official department faculty profile."
+    },
+    {
+      "id": "mit_karaman",
+      "title": "MIT AeroAstro — Sertac Karaman",
+      "url": "https://aeroastro.mit.edu/people/sertac-karaman/",
+      "source_type": "official_faculty_page",
+      "access_status": "ok",
+      "last_checked": "2026-08-22",
+      "relevant_fields": [
+        "faculty",
+        "research_focus",
+        "contact"
+      ],
+      "confidence": "high",
+      "notes": "Official department faculty profile."
+    },
+    {
+      "id": "delft_programme",
+      "title": "TU Delft MSc Aerospace Engineering",
+      "url": "https://ocw.tudelft.nl/programs/master/aerospace-engineering/",
+      "source_type": "official_program_page",
+      "access_status": "ok",
+      "last_checked": "2026-08-22",
+      "relevant_fields": [
+        "programme_structure",
+        "track_selection",
+        "thesis"
+      ],
+      "confidence": "high",
+      "notes": "Official TU Delft OpenCourseWare programme overview."
+    },
+    {
+      "id": "delft_astrodynamics_group",
+      "title": "TU Delft Astrodynamics & Space Missions",
+      "url": "https://research.tudelft.nl/en/organisations/astrodynamics-space-missions/",
+      "source_type": "official_research_group_page",
+      "access_status": "ok",
+      "last_checked": "2026-08-22",
+      "relevant_fields": [
+        "research_group",
+        "research_fit"
+      ],
+      "confidence": "high",
+      "notes": "Official TU Delft research portal organisation page."
+    },
+    {
+      "id": "delft_mooij",
+      "title": "TU Delft Research Portal — Erwin Mooij",
+      "url": "https://research.tudelft.nl/en/persons/e-mooij/",
+      "source_type": "official_faculty_page",
+      "access_status": "ok",
+      "last_checked": "2026-08-22",
+      "relevant_fields": [
+        "faculty",
+        "research_focus",
+        "contact"
+      ],
+      "confidence": "high",
+      "notes": "Official TU Delft research portal profile."
+    },
+    {
+      "id": "delft_dirkx",
+      "title": "TU Delft Research Portal — Dominic Dirkx",
+      "url": "https://research.tudelft.nl/en/persons/d-dirkx/",
+      "source_type": "official_faculty_page",
+      "access_status": "ok",
+      "last_checked": "2026-08-22",
+      "relevant_fields": [
+        "faculty",
+        "research_focus",
+        "contact"
+      ],
+      "confidence": "high",
+      "notes": "Official TU Delft research portal profile."
+    },
+    {
+      "id": "delft_heiligers",
+      "title": "TU Delft Research Portal — Jeannette Heiligers",
+      "url": "https://research.tudelft.nl/en/persons/mj-heiligers/",
+      "source_type": "official_faculty_page",
+      "access_status": "ok",
+      "last_checked": "2026-08-22",
+      "relevant_fields": [
+        "faculty",
+        "research_focus",
+        "contact"
+      ],
+      "confidence": "high",
+      "notes": "Official TU Delft research portal profile."
+    },
+    {
+      "id": "delft_speretta",
+      "title": "TU Delft Research Portal — Stefano Speretta",
+      "url": "https://research.tudelft.nl/en/persons/s-speretta/",
+      "source_type": "official_faculty_page",
+      "access_status": "ok",
+      "last_checked": "2026-08-22",
+      "relevant_fields": [
+        "faculty",
+        "research_focus",
+        "contact"
+      ],
+      "confidence": "high",
+      "notes": "Official TU Delft research portal profile."
+    },
+    {
+      "id": "purdue_astrodynamics",
+      "title": "Purdue Astrodynamics and Space Applications",
+      "url": "https://engineering.purdue.edu/AAE/research/astrodynamics",
+      "source_type": "official_research_area_page",
+      "access_status": "ok",
+      "last_checked": "2026-08-22",
+      "relevant_fields": [
+        "research_fit",
+        "facilities",
+        "faculty_cluster"
+      ],
+      "confidence": "high",
+      "notes": "Official department research-area page."
+    },
+    {
+      "id": "ut_space_astrodynamics",
+      "title": "UT Austin Space Systems and Astrodynamics",
+      "url": "https://ae.utexas.edu/research/research-areas/space-systems-astrodynamics/",
+      "source_type": "official_research_area_page",
+      "access_status": "ok",
+      "last_checked": "2026-08-22",
+      "relevant_fields": [
+        "research_fit",
+        "faculty_cluster"
+      ],
+      "confidence": "high",
+      "notes": "Official department research-area page."
+    },
+    {
+      "id": "cu_ccar",
+      "title": "Colorado Center for Astrodynamics Research",
+      "url": "https://www.colorado.edu/ccar/",
+      "source_type": "official_research_center_page",
+      "access_status": "ok",
+      "last_checked": "2026-08-22",
+      "relevant_fields": [
+        "research_fit",
+        "research_center"
+      ],
+      "confidence": "high",
+      "notes": "Official university research-center page."
+    },
+    {
+      "id": "uiuc_astrodynamics",
+      "title": "Illinois Astrodynamics",
+      "url": "https://aerospace.illinois.edu/research/research-areas/astrodynamics",
+      "source_type": "official_research_area_page",
+      "access_status": "ok",
+      "last_checked": "2026-08-22",
+      "relevant_fields": [
+        "research_fit",
+        "faculty_cluster"
+      ],
+      "confidence": "high",
+      "notes": "Official department research-area page."
+    }
   ]
 }
