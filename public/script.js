@@ -1471,12 +1471,16 @@ function renderTable() {
             : formatPublishedTuition(n.foreignTuition);
         const city = displayValue(n.city);
         const degree = displayValue(n.degree);
-        const admissionHTML = n.eligibleForNonEu === true
-            ? escapeHtml(window.currentLanguage === 'tr' ? 'AB dışı uygun' : 'Non-EU eligible')
-            : n.eligibleForNonEu === false
-                ? escapeHtml(window.currentLanguage === 'tr' ? 'AB dışı uygun değil' : 'Not Non-EU eligible')
-                : formatRiskBadge(n.admissionRisk);
+        const isTurkishUi = window.currentLanguage === 'tr';
+        // "Non-EU eligible" is the precondition for being in this catalogue
+        // at all, so it is not a fact worth a cell.  Only the exception - a
+        // route that is closed - and a published admission risk are shown.
+        const admissionRiskKnown = n.admissionRisk && n.admissionRisk !== 'unknown';
+        const closedToNonEu = n.eligibleForNonEu === false;
+        const housingKnown = n.housingDifficulty && n.housingDifficulty !== 'unknown';
         const housingHTML = formatRiskBadge(n.housingDifficulty);
+        const livingCost = n.monthlyLivingCost !== null && n.monthlyLivingCost !== undefined ? formatMoney(n.monthlyLivingCost) : '';
+        const roomRent = n.averageRoomRent !== null && n.averageRoomRent !== undefined ? formatMoney(n.averageRoomRent) : '';
         const deadline = n.deadline ? formatCalendarValue(n.deadline) : '';
         const countdownChip = renderCardCountdown(row);
         // The bill that falls due first belongs on the comparison card, not
@@ -1498,27 +1502,48 @@ function renderTable() {
             <div class="country-card__flag" aria-hidden="true"></div>
             <div class="program-card__rank" aria-label="Rank ${i + 1}"><span>${String(i + 1).padStart(2, '0')}</span></div>
             <div class="program-card__content">
-                <div class="program-card__eyebrow">
-                    <span>${escapeHtml([city, displayCountry].filter(value => value && value !== '—').join(' · ') || '—')}</span>
-                    <span class="confidence-badge confidence-badge--${confidence.key}">${escapeHtml(confidence.label)}</span>
+                <div class="program-card__head">
+                    <div class="program-card__title">
+                        <div class="program-card__eyebrow"><span>${escapeHtml([city, displayCountry].filter(value => value && value !== '—').join(' · ') || '—')}</span></div>
+                        <h3>${escapeHtml(university)}</h3>
+                        <p class="program-card__program">${escapeHtml(program)}</p>
+                    </div>
+                    <div class="program-card__signal">
+                        <div class="program-card__score" title="${escapeHtml(window.t ? window.t('technical_match') : 'Technical match')}">
+                            <span class="fit-score fit-score--${band.key}">${Number(row._score).toFixed(1)}</span>
+                            <span class="program-card__score-copy"><small>${escapeHtml(band.label)}</small>${window.personalizationEnabled && Number.isFinite(profileMatch) ? `<em>${Math.round(profileMatch)}% ${escapeHtml(window.t('profile_match'))}</em>` : ''}</span>
+                        </div>
+                        <span class="confidence-badge confidence-badge--${confidence.key}">${escapeHtml(confidence.label)}</span>
+                    </div>
                 </div>
-                <h3>${escapeHtml(university)}</h3>
-                <p class="program-card__program">${escapeHtml(program)}</p>
                 <div class="program-card__meta">
                     <span>${escapeHtml(degree)}</span>
                     ${n.ects ? `<span>${escapeHtml(n.ects)} ECTS</span>` : ''}
                     ${n.duration ? `<span>${escapeHtml(n.duration)}</span>` : ''}
-                    ${deadline ? `<span class="program-card__meta-date">${escapeHtml(window.currentLanguage === 'tr' ? 'Son başvuru' : 'Deadline')} · ${escapeHtml(deadline)}</span>` : ''}
+                    ${deadline ? `<span class="program-card__meta-date">${escapeHtml(isTurkishUi ? 'Son başvuru' : 'Deadline')} · ${escapeHtml(deadline)}</span>` : ''}
                     ${countdownChip}
+                    ${closedToNonEu ? `<span class="program-card__meta-warning">${escapeHtml(isTurkishUi ? 'AB dışı adaylara kapalı' : 'Not open to non-EU applicants')}</span>` : ''}
                 </div>
-                <dl class="decision-grid">
-                    <div class="decision-item decision-item--score"><dt>${escapeHtml(window.t ? window.t('technical_match') : 'Technical match')}</dt><dd><span class="fit-score fit-score--${band.key}">${Number(row._score).toFixed(1)}</span><small>${escapeHtml(band.label)}</small>${window.personalizationEnabled && Number.isFinite(profileMatch) ? `<em>${Math.round(profileMatch)}% ${escapeHtml(window.t('profile_match'))}</em>` : ''}</dd></div>
-                    <div class="decision-item"><dt>${escapeHtml(window.t ? window.t('teaching_language') : 'Teaching language')}</dt><dd>${escapeHtml(language)}</dd></div>
-                    <div class="decision-item"><dt>${escapeHtml(window.t ? window.t('annual_cost') : 'Annual cost')}</dt><dd>${escapeHtml(annualCost)}</dd></div>
-                    ${applyFeeText ? `<div class="decision-item decision-item--apply-fee"><dt>${escapeHtml(window.currentLanguage === 'tr' ? 'Başvurmanın maliyeti' : 'Cost to apply')}</dt><dd><span class="apply-fee apply-fee--${escapeHtml(applyFeeTone)}">${escapeHtml(applyFeeText)}</span></dd></div>` : ''}
-                    <div class="decision-item"><dt>${escapeHtml(window.t ? window.t('admission_reality') : 'Admission reality')}</dt><dd>${admissionHTML}</dd></div>
-                    <div class="decision-item"><dt>${escapeHtml(window.t ? window.t('housing_risk') : 'Housing risk')}</dt><dd>${housingHTML}</dd></div>
-                </dl>
+                <div class="program-card__facts">
+                    <section class="fact-group fact-group--university" aria-label="${escapeHtml(isTurkishUi ? 'Üniversite' : 'University')}">
+                        <h4>${escapeHtml(isTurkishUi ? 'Üniversite' : 'University')}</h4>
+                        <dl class="fact-list">
+                            <div class="fact"><dt>${escapeHtml(window.t ? window.t('teaching_language') : 'Teaching language')}</dt><dd>${escapeHtml(language)}</dd></div>
+                            <div class="fact"><dt>${escapeHtml(window.t ? window.t('annual_cost') : 'Annual cost')}</dt><dd>${escapeHtml(annualCost)}</dd></div>
+                            ${applyFeeText ? `<div class="fact decision-item--apply-fee"><dt>${escapeHtml(isTurkishUi ? 'Başvurmanın maliyeti' : 'Cost to apply')}</dt><dd><span class="apply-fee apply-fee--${escapeHtml(applyFeeTone)}">${escapeHtml(applyFeeText)}</span></dd></div>` : ''}
+                            ${admissionRiskKnown ? `<div class="fact"><dt>${escapeHtml(isTurkishUi ? 'Kabul riski' : 'Admission risk')}</dt><dd>${formatRiskBadge(n.admissionRisk)}</dd></div>` : ''}
+                        </dl>
+                    </section>
+                    ${housingKnown || livingCost || roomRent ? `
+                    <section class="fact-group fact-group--city" aria-label="${escapeHtml(isTurkishUi ? 'Şehir' : 'City')}">
+                        <h4>${escapeHtml(city && city !== '—' ? city : (isTurkishUi ? 'Şehir' : 'City'))}</h4>
+                        <dl class="fact-list">
+                            ${housingKnown ? `<div class="fact"><dt>${escapeHtml(window.t ? window.t('housing_risk') : 'Housing risk')}</dt><dd>${housingHTML}</dd></div>` : ''}
+                            ${livingCost ? `<div class="fact"><dt>${escapeHtml(isTurkishUi ? 'Aylık yaşam' : 'Monthly living')}</dt><dd>${escapeHtml(livingCost)}</dd></div>` : ''}
+                            ${roomRent ? `<div class="fact"><dt>${escapeHtml(isTurkishUi ? 'Oda kirası' : 'Room rent')}</dt><dd>${escapeHtml(roomRent)}</dd></div>` : ''}
+                        </dl>
+                    </section>` : ''}
+                </div>
             </div>
             <div class="program-card__actions">
                 <button class="favorite-button${isFav ? ' is-active' : ''}" type="button" aria-pressed="${String(isFav)}" aria-label="${escapeHtml(window.t ? window.t(isFav ? 'remove_favorite' : 'add_favorite') : 'Favorite')}">${isFav ? '★' : '☆'}</button>
