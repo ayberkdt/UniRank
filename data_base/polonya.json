@@ -54,8 +54,52 @@
       "admission_mode": "unknown",
       "admission_risk": "unknown",
       "accepted_backgrounds": [],
-      "required_documents": [],
-      "verification_notes": "",
+      "required_documents": [
+        {
+          "en": "Final bachelor's degree diploma and official English or Polish translation if needed",
+          "tr": "Nihai lisans diploması ve gerekirse resmî İngilizce veya Lehçe çevirisi"
+        },
+        {
+          "en": "Transcript of records",
+          "tr": "Not dökümü"
+        },
+        {
+          "en": "Passport personal-information, photo and signature pages, or national ID for EU citizens",
+          "tr": "Pasaportun kişisel bilgi, fotoğraf ve imza sayfaları veya AB vatandaşları için ulusal kimlik"
+        },
+        {
+          "en": "Proof of application-fee payment",
+          "tr": "Başvuru ücreti ödeme kanıtı"
+        },
+        {
+          "en": "Passport-format photograph",
+          "tr": "Pasaport formatında fotoğraf"
+        },
+        {
+          "en": "Legalisation or apostille for the bachelor's diploma after qualification",
+          "tr": "Ön kabulden sonra lisans diploması için yasallaştırma veya apostil"
+        },
+        {
+          "en": "Eligibility statement confirming access to master's-level study",
+          "tr": "Yüksek lisans düzeyinde öğrenime devam hakkını doğrulayan uygunluk yazısı"
+        },
+        {
+          "en": "Proof of English proficiency",
+          "tr": "İngilizce yeterlik kanıtı"
+        },
+        {
+          "en": "Proof of first-semester tuition payment after qualification",
+          "tr": "Ön kabulden sonra ilk dönem öğrenim ücreti ödeme kanıtı"
+        },
+        {
+          "en": "NAWA recognition statement when the applicant's diploma country is not exempt",
+          "tr": "Adayın diploma ülkesi muaf değilse NAWA tanıma yazısı"
+        }
+      ],
+      "verification_notes": {
+        "en": "The official international MSc page separates entry documents from post-qualification admission documents. The NAWA recognition statement does not apply to diplomas from the listed EU, OECD and EFTA members, China or Ukraine.",
+        "tr": "Resmî uluslararası MSc sayfası ilk başvuru belgeleri ile ön kabul sonrası belgeleri ayırır. NAWA tanıma yazısı listelenen AB, OECD ve EFTA üyeleri ile Çin veya Ukrayna diplomalarına uygulanmaz."
+      },
       "gre": {
         "policy": "unknown",
         "test_type": "unknown",
@@ -142,7 +186,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "application_fee_pln": 85,
       "application_fee_charged_per": "programme_choice",
@@ -158,7 +202,7 @@
         "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-09-01"
+        "derived_at": "2026-09-05"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -199,7 +243,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -320,7 +364,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -329,7 +373,7 @@
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "curriculum_profile": {
@@ -392,23 +436,45 @@
       "visa_complexity": "Medium",
       "deadline_eu": null,
       "deadline_non_eu": null,
-      "timeline_risk": "unknown",
+      "timeline_risk": "high",
       "verification_notes": "",
-      "non_eu_deadline": null,
+      "non_eu_deadline": "2026-07-21; post-qualification admission documents due 2026-08-19",
       "winter_deadline": null,
-      "application_deadline": null,
-      "deadline_notes": null,
+      "application_deadline": "2026-07-21",
+      "deadline_notes": {
+        "en": "The official international MSc route publishes exact October 2026 dates. No later Aerospace Engineering cycle was found on the checked page; do not project these dates to 2027.",
+        "tr": "Resmî uluslararası MSc rotası Ekim 2026 için kesin tarihleri yayımlar. Kontrol edilen sayfada daha sonraki bir Aerospace Engineering dönemi bulunmamıştır; bu tarihler 2027'ye taşınmamalıdır."
+      },
       "deadline_events": [],
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
-        "date": null,
-        "status": "not_published",
-        "confidence": "unknown",
-        "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "date": "2026-07-21",
+        "next_expected_date": null,
+        "time": null,
+        "timezone": null,
+        "applies_to": "all_applicants",
+        "cycle_label": null,
+        "is_recurring_annual": false,
+        "status": "closed",
+        "days_remaining_at_evaluation": -46,
+        "derived_from": "application_timeline_profile.application_deadline",
+        "confidence": "high",
+        "source_url": "https://www.pw.edu.pl/engpw/Studies-Offer/M.Sc.-programmes/Aerospace-Engineering",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
-      }
+      },
+      "academic_year": "2026/2027 (October 2026 intake; latest published cycle, closed)",
+      "intake_terms": [
+        "October 2026"
+      ],
+      "application_rounds": [
+        "Registration opened: 2026-05-11",
+        "Deadline to create an application: 2026-07-21",
+        "Deadline for qualified candidates to upload admission documents: 2026-08-19",
+        "Classes begin: 2026-10-01"
+      ],
+      "eu_deadline": "2026-07-21; post-qualification admission documents due 2026-08-19"
     },
     "research_profile": {
       "research_focus_areas": [],
@@ -431,11 +497,11 @@
         "https://www.students.pw.edu.pl/index.php/Resources/Application-Glossary/Entry-requirements-for-M.Sc.-programmes",
         "https://www.pw.edu.pl/engpw/Studies-Offer/M.Sc.-programmes/Aerospace-Engineering"
       ],
-      "last_verified": "2026-09-01",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "tuition": "unknown",
-        "admission": "unknown",
-        "deadlines": "unknown",
+        "admission": "high",
+        "deadlines": "high",
         "scholarship": "unknown",
         "location": "medium",
         "program_basic_info": "unknown",
@@ -444,7 +510,9 @@
         "housing": "unknown",
         "program": "unknown",
         "non_eu_eligibility": "unknown",
-        "deadline": "unknown"
+        "deadline": "high",
+        "application_timeline_profile": "high",
+        "application_documents": "high"
       },
       "source_reliability": "high",
       "verification_status": "verified",
@@ -463,6 +531,30 @@
             "application_fee",
             "cost",
             "fees"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.pw.edu.pl/engpw/Studies-Offer/M.Sc.-programmes/Aerospace-Engineering",
+          "title": "Warsaw University of Technology — MSc Aerospace Engineering",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.students.pw.edu.pl/How-to-Apply/Admission-to-M.Sc",
+          "title": "Warsaw University of Technology — Admission to MSc for international candidates",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "deadline",
+            "admission",
+            "application_documents"
           ],
           "confidence": "high"
         }
@@ -484,22 +576,22 @@
     "qs_ranking": 504,
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 1,
+      "checked_official_source_count": 3,
       "verified_fields": [
-        "tuition"
+        "admission",
+        "tuition",
+        "deadline"
       ],
       "unverified_critical_fields": [
         "program",
         "language",
-        "admission",
         "non_eu_eligibility",
         "scholarship",
-        "deadline",
         "curriculum",
         "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-01"
+      "audited_at": "2026-09-05"
     },
     "quality_control": {
       "checked_at": "2026-08-23",
@@ -619,7 +711,7 @@
       ],
       "confidence": "unknown",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     }
   },
   {
@@ -764,7 +856,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "application_fee_pln": 100,
       "application_fee_charged_per": "programme_choice",
@@ -780,7 +872,7 @@
         "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-09-01"
+        "derived_at": "2026-09-05"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -821,7 +913,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -942,7 +1034,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -951,7 +1043,7 @@
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "curriculum_profile": {
@@ -1027,7 +1119,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -1241,7 +1333,7 @@
       ],
       "confidence": "unknown",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     }
   },
   {
@@ -1387,7 +1479,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "application_fee_pln": 85,
       "application_fee_charged_per": "programme_choice",
@@ -1403,7 +1495,7 @@
         "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-09-01"
+        "derived_at": "2026-09-05"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -1444,7 +1536,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -1565,7 +1657,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -1574,7 +1666,7 @@
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "curriculum_profile": {
@@ -1650,7 +1742,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -1864,7 +1956,7 @@
       ],
       "confidence": "unknown",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     }
   },
   {
@@ -2008,7 +2100,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "application_fee_research": {
         "outcome": "no_fee_published",
@@ -2026,7 +2118,7 @@
         "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-09-01"
+        "derived_at": "2026-09-05"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -2043,7 +2135,7 @@
           "en": "Silesian's admission office page prices only the EUR 4 mathematics entrance exam and says payment is by bank transfer alone; neither it nor the IRK recruitment portal publishes the recruitment fee itself. The apply.polsl.pl page that used to carry it now redirects to the admission office. Every other Polish record in this catalogue charges PLN 85 to PLN 100 per programme, so budget for a charge here rather than assuming none.",
           "tr": "Silezya'nın kabul ofisi sayfası yalnızca 4 avroluk matematik giriş sınavını fiyatlandırır ve ödemenin yalnızca banka havalesiyle yapılacağını söyler; ne o sayfa ne de IRK başvuru portalı kabul ücretinin kendisini yayımlar. Bunu taşıyan apply.polsl.pl sayfası artık kabul ofisine yönlendirmektedir. Bu katalogdaki diğer her Polonya kaydı program başına 85-100 zloti alır; dolayısıyla burada ücret yok varsaymak yerine bir ücret için bütçe ayır."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -2164,7 +2256,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -2173,7 +2265,7 @@
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "curriculum_profile": {
@@ -2249,7 +2341,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -2463,7 +2555,7 @@
       ],
       "confidence": "unknown",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     }
   },
   {
@@ -2608,7 +2700,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "application_fee_pln": 85,
       "application_fee_verification": {
@@ -2623,7 +2715,7 @@
         "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-09-01"
+        "derived_at": "2026-09-05"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -2664,7 +2756,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -2785,7 +2877,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -2794,7 +2886,7 @@
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "curriculum_profile": {
@@ -2870,7 +2962,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -3084,7 +3176,7 @@
       ],
       "confidence": "unknown",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     }
   }
 ]

@@ -4649,3 +4649,260 @@ input[type="range"]::-webkit-slider-thumb {
     .program-card__head { flex-direction: column; }
     .program-card__signal { justify-items: start; grid-auto-flow: column; align-items: center; }
 }
+
+/* Map v3 ---------------------------------------------------------------------
+   The basemap is a dark canvas now, so the old light "simple mode" ground and
+   the tile-darkening filter (both written for a light basemap) are switched
+   off. The workspace takes the height of the viewport instead of a 780px cap,
+   and the context strip above the canvas collapses to one row. */
+#map.map-simple-mode,
+#map.map-detailed-mode {
+    background: #14171a !important;
+    background-image: none !important;
+}
+
+#map .leaflet-tile,
+#map.map-detailed-mode .leaflet-tile {
+    filter: none;
+}
+
+.map-workspace {
+    height: calc(100dvh - var(--site-bar-h) - 32px);
+    min-height: 640px;
+    max-height: none;
+}
+
+.map-context-strip {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+}
+
+.map-stage .map-toolbar-overlay {
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.map-stage .map-legend {
+    display: flex;
+    width: auto;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+    padding: 7px 10px;
+}
+
+.map-stat-strip > .map-stat {
+    padding: 6px 9px;
+}
+
+.map-stat strong { font-size: 15px; }
+
+.leaflet-container .leaflet-control-attribution {
+    background: rgba(12, 13, 17, 0.72) !important;
+    color: var(--ui-muted) !important;
+    font-size: 9px;
+}
+
+.leaflet-container .leaflet-control-attribution a {
+    color: var(--ui-accent-soft) !important;
+}
+
+.leaflet-popup-content-wrapper { border-radius: 8px !important; }
+
+/* Overview strip: a row of figures, not four panels ------------------------
+   The KPI band was 118px tall with 24px padding around a single number, and
+   the toolbar above it matched. Both are pulled in so the ranked list starts
+   within the first viewport. */
+.kpi-container {
+    margin: 2px 0 12px;
+}
+
+.kpi-card {
+    min-height: 60px;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+}
+
+.kpi-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 11px;
+}
+
+.kpi-card .kpi-data { gap: 1px; }
+.kpi-card .kpi-label { font-size: 10px; letter-spacing: 0.08em; }
+.kpi-card .kpi-value { font-size: 20px; line-height: 1.1; }
+.kpi-card .kpi-value small { font-size: 11px; }
+.kpi-card .kpi-data > small { font-size: 11px; line-height: 1.3; }
+
+.workspace-toolbar {
+    min-height: 0;
+    padding: 8px 12px;
+}
+
+.results-header {
+    margin-bottom: 4px;
+}
+
+.results-header h2 { font-size: 22px; }
+.results-header p { font-size: 13px; }
+
+/* Filter rail: collapsible to an icon column ---------------------------------
+   On a desktop the rail can fold to 64px of icons. Nothing is lost: every
+   icon reopens the rail on the control it stands for, and the expand button
+   carries the number of active filters. Below 1100px the rail is a drawer
+   already, so none of this applies there. */
+@media (min-width: 1101px) {
+    .sidebar-rail-toggle {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin: 12px var(--ui-filter-rail-inset) 0;
+        padding: 7px 10px;
+        border: 1px solid var(--ui-rule-soft);
+        border-radius: 7px;
+        background: transparent;
+        color: var(--ui-muted);
+        font-size: 11px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: color 130ms ease, border-color 130ms ease;
+    }
+
+    .sidebar-rail-toggle:hover {
+        border-color: var(--ui-rule);
+        color: var(--ui-ink);
+    }
+
+    .sidebar-rail-toggle > span:first-child { font-size: 15px; line-height: 1; }
+
+    .sidebar-rail { display: none; }
+
+    .rail-collapsed .app-container {
+        grid-template-columns: 64px minmax(0, 1fr);
+    }
+
+    .rail-collapsed .sidebar {
+        width: 64px;
+        padding: 0;
+    }
+
+    .rail-collapsed .sidebar__scroll,
+    .rail-collapsed .sidebar > .profile-cta,
+    .rail-collapsed .sidebar-rail-toggle {
+        display: none;
+    }
+
+    .rail-collapsed .sidebar-rail {
+        display: grid;
+        gap: 6px;
+        justify-items: center;
+        padding: 12px 10px;
+    }
+
+    .sidebar-rail__item {
+        position: relative;
+        display: grid;
+        width: 44px;
+        height: 44px;
+        place-items: center;
+        border: 1px solid var(--ui-rule-soft);
+        border-radius: 8px;
+        background: rgba(16, 17, 21, 0.5);
+        color: var(--ui-ink-soft);
+        font-size: 17px;
+        line-height: 1;
+        cursor: pointer;
+        transition: border-color 130ms ease, color 130ms ease, background-color 130ms ease;
+    }
+
+    .sidebar-rail__item:hover,
+    .sidebar-rail__item:focus-visible {
+        border-color: var(--ui-accent);
+        background: var(--ui-surface-raised);
+        color: var(--ui-ink);
+        outline: 0;
+    }
+
+    .sidebar-rail__item--expand {
+        margin-bottom: 6px;
+        border-color: color-mix(in srgb, var(--ui-accent) 45%, transparent);
+        color: var(--ui-accent-soft);
+    }
+
+    .sidebar-rail__count {
+        position: absolute;
+        top: -6px;
+        right: -6px;
+        display: grid;
+        min-width: 18px;
+        height: 18px;
+        place-items: center;
+        padding: 0 5px;
+        border-radius: 999px;
+        background: var(--ui-accent);
+        color: #15100d;
+        font-size: 10px;
+        font-weight: 700;
+    }
+
+    .sidebar-rail__count[hidden] { display: none; }
+}
+
+@media (max-width: 1100px) {
+    .sidebar-rail-toggle,
+    .sidebar-rail { display: none !important; }
+}
+
+/* Esri's dark canvas is drawn for a black page; on ours it read as a void.
+   Lifting the tile pane brings the land up to a readable graphite while the
+   ocean stays darker than the panel behind it. */
+#map .leaflet-tile-pane {
+    filter: brightness(1.6) contrast(1.08);
+}
+
+/* Context strip: two short rows. Figures and actions share the first, the
+   legend takes the second; the toggle's two-line description is dropped. */
+.map-context-strip {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+}
+
+.map-stage .map-toolbar-overlay {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.map-stage .map-toolbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 6px;
+}
+
+.map-stage .map-context-toggle small { display: none; }
+.map-stage .map-context-toggle { display: inline-flex; align-items: center; gap: 8px; min-height: 0; padding: 0 4px; }
+.map-stage .map-context-toggle strong { font-size: 11px; white-space: nowrap; }
+.map-stage .map-focus-button,
+.map-stage .map-fullscreen-button { min-height: 32px; padding: 6px 10px; font-size: 11px; }
+.map-stage .map-legend { padding: 5px 10px; font-size: 10px; }
+.map-stat-strip > .map-stat { padding: 5px 8px; }
+.map-stat strong { font-size: 14px; }
+.map-stat small { font-size: 9px; }
+
+/* Figures and actions on one line: the stat strip was stretching to the full
+   width and pushing the actions onto a row of their own. */
+.map-stage .map-toolbar-overlay { flex-wrap: nowrap; }
+.map-stage .map-stat-strip { width: auto; flex: 0 1 auto; }
+.map-stage .map-toolbar-actions { flex: 0 0 auto; }
+.map-stat-strip > .map-stat small { white-space: nowrap; }
+@media (max-width: 1240px) {
+    .map-stage .map-toolbar-overlay { flex-wrap: wrap; }
+}

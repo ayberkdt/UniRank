@@ -65,6 +65,19 @@
                 <button class="icon-button sidebar-close" id="sidebar-close" type="button" aria-label="Close filters" data-i18n-aria-label="close_filters">&times;</button>
             </div>
 
+            <button class="sidebar-rail-toggle" id="sidebar-rail-toggle" type="button" aria-expanded="true" aria-controls="filter-sidebar" aria-label="Collapse filters" data-i18n-aria-label="rail_collapse"><span aria-hidden="true">‹</span><span data-i18n="rail_collapse">Collapse filters</span></button>
+            <nav class="sidebar-rail" id="sidebar-rail" aria-label="Filters" data-i18n-aria-label="filters_title" hidden>
+                <button type="button" class="sidebar-rail__item sidebar-rail__item--expand" data-rail-open="" aria-label="Expand filters" data-i18n-aria-label="rail_expand"><span aria-hidden="true">›</span><b class="sidebar-rail__count" id="rail-filter-count" hidden>0</b></button>
+                <button type="button" class="sidebar-rail__item" data-rail-open="btn-use-profile" aria-label="Use my profile" data-i18n-aria-label="use_my_profile"><span aria-hidden="true">◎</span></button>
+                <button type="button" class="sidebar-rail__item" data-rail-open="search-input" aria-label="Search programs" data-i18n-aria-label="search_programs"><span aria-hidden="true">⌕</span></button>
+                <button type="button" class="sidebar-rail__item" data-rail-open="country-picker-trigger" aria-label="Countries & Regions" data-i18n-aria-label="countries_regions"><span aria-hidden="true">⌖</span></button>
+                <button type="button" class="sidebar-rail__item" data-rail-open="categorySearchInput" aria-label="Technical focus" data-i18n-aria-label="academic_field_categories"><span aria-hidden="true">⌁</span></button>
+                <button type="button" class="sidebar-rail__item" data-rail-open="degree-filter" aria-label="Degree Level" data-i18n-aria-label="degree_level"><span aria-hidden="true">▤</span></button>
+                <button type="button" class="sidebar-rail__item" data-rail-open="max-tuition-filter" aria-label="Max Tuition" data-i18n-aria-label="max_tuition"><span aria-hidden="true">€</span></button>
+                <button type="button" class="sidebar-rail__item" data-rail-open="fav-filter" aria-label="Show Favorites" data-i18n-aria-label="show_favorites"><span aria-hidden="true">★</span></button>
+                <button type="button" class="sidebar-rail__item" data-rail-open="preset-profile-select" aria-label="Advanced ranking" data-i18n-aria-label="advanced_ranking"><span aria-hidden="true">⚙</span></button>
+            </nav>
+
             <button id="btn-use-profile" class="profile-cta" type="button" onclick="window.togglePersonalization()">
                 <span class="profile-cta__icon" aria-hidden="true">◎</span>
                 <span class="profile-cta__copy">

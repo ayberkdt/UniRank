@@ -128,7 +128,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "currency": "EUR",
       "tuition_eur_per_semester_non_eu": 6000,
@@ -195,7 +195,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "curriculum_profile": {
@@ -997,11 +997,11 @@
         "cycle_label": "Summer semester 2027",
         "is_recurring_annual": true,
         "status": "open",
-        "days_remaining_at_evaluation": 90,
+        "days_remaining_at_evaluation": 86,
         "derived_from": "application_timeline_profile.application_deadline",
         "confidence": "high",
         "source_url": "https://www.tum.de/en/studies/degree-programs/detail/aerospace-master-of-science-msc?cHash=4529d92753fb930cb5ee3b1c475952d0&hl=en-GB",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -1326,7 +1326,7 @@
         "band_from_score": "high",
         "capped_from_very_high": false,
         "legacy_value": "high",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -1351,7 +1351,7 @@
           "en": "TUM states that a single-person household in the greater Munich area should expect €1,300-2,000 per month; €1,650 is the midpoint of that published range and is used here only as the comparison figure. The range is wide because rent alone runs from €700 for a shared-flat room to €2,000 for a furnished studio.",
           "tr": "TUM, büyük Münih bölgesinde tek kişilik bir hanenin ayda 1.300-2.000 avro beklemesi gerektiğini belirtir; 1.650 avro bu yayımlanmış aralığın orta noktasıdır ve burada yalnızca karşılaştırma rakamı olarak kullanılır. Aralık geniştir, çünkü tek başına kira paylaşımlı dairede oda için 700 avrodan eşyalı stüdyoda 2.000 avroya kadar çıkar."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "housing_guaranteed": false,
       "student_housing_available": true,
@@ -1575,7 +1575,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -1619,13 +1619,52 @@
     "program_status": "active",
     "relevance_status": "strong",
     "eligibility_profile": {
-      "eligible_for_non_eu": null,
-      "required_previous_degree": null,
-      "admission_mode": "Bilinmiyor / Resmi Veri Yok",
+      "eligible_for_non_eu": true,
+      "required_previous_degree": {
+        "en": "A subject-related bachelor's degree or equivalent qualification; the programme and admissions office assess the subject-specific requirements.",
+        "tr": "Alanla ilişkili bir lisans derecesi veya eşdeğer yeterlilik; programa özgü koşullar program ve kabul birimi tarafından değerlendirilir."
+      },
+      "admission_mode": "online_application_via_campus_with_programme_specific_assessment",
       "admission_risk": "unknown",
       "accepted_backgrounds": [],
-      "required_documents": [],
-      "verification_notes": "Admission facts were not retained without a checked official source.",
+      "required_documents": [
+        {
+          "en": "University entrance qualification and its grade transcript",
+          "tr": "Üniversiteye giriş yeterliliği ve not dökümü"
+        },
+        {
+          "en": "University entrance-examination certificate and grades, if the issuing country requires such an examination",
+          "tr": "Diplomanın verildiği ülke böyle bir sınav istiyorsa üniversite giriş sınavı belgesi ve notları"
+        },
+        {
+          "en": "All higher-education degree/final records and transcripts",
+          "tr": "Tüm yükseköğretim diploma/mezuniyet belgeleri ve transkriptler"
+        },
+        {
+          "en": "Master's application grade extract showing the grade-point average",
+          "tr": "Not ortalamasını gösteren yüksek lisans başvuru not dökümü"
+        },
+        {
+          "en": "Bachelor's diploma, if already issued",
+          "tr": "Düzenlenmişse lisans diploması"
+        },
+        {
+          "en": "Description of the content and modules of the completed bachelor's programme",
+          "tr": "Tamamlanan lisans programının içerik ve modül açıklamaları"
+        },
+        {
+          "en": "Required language evidence and any programme-specific supplements requested in C@MPUS",
+          "tr": "Gerekli dil kanıtı ve C@MPUS'ta istenen programa özgü ek belgeler"
+        },
+        {
+          "en": "For documents not issued in German or English: both the original and a German/English translation by a licensed sworn translator",
+          "tr": "Almanca veya İngilizce düzenlenmemiş belgeler için hem asıl belge hem yeminli tercümanın Almanca/İngilizce çevirisi"
+        }
+      ],
+      "verification_notes": {
+        "en": "The international-admissions page explicitly permits non-EU applications through C@MPUS and publishes the foreign-qualification and master's document list. The portal may request additional programme-specific documents.",
+        "tr": "Uluslararası kabul sayfası AB dışı adayların C@MPUS üzerinden başvurabileceğini açıkça belirtir ve yabancı diploma/yüksek lisans belge listesini yayımlar. Portal programa özgü ek belgeler isteyebilir."
+      },
       "gre": {
         "policy": "unknown",
         "test_type": "unknown",
@@ -1699,7 +1738,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "currency": "EUR",
       "tuition_eur_per_semester_non_eu": 1500,
@@ -1758,7 +1797,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "curriculum_profile": {
@@ -1778,11 +1817,11 @@
     },
     "source_profile": {
       "official_program_page": "https://www.uni-stuttgart.de/en/study/study-programs/program/Aerospace-Engineering-M.Sc./",
-      "last_verified": "2026-09-01",
+      "last_verified": "2026-09-05",
       "needs_verification": true,
       "field_confidence": {
         "tuition": "high",
-        "admission": "medium",
+        "admission": "high",
         "curriculum": "medium",
         "program_basic_info": "high",
         "research_profile": "high",
@@ -1791,9 +1830,10 @@
         "application_timeline_profile": "high",
         "language": "high",
         "research": "high",
-        "deadlines": "medium",
+        "deadlines": "high",
         "scholarship": "medium",
-        "housing": "high"
+        "housing": "high",
+        "non_eu_eligibility": "high"
       },
       "source_log": [
         {
@@ -1803,7 +1843,8 @@
           "access_status": "redirects",
           "last_checked": "2026-08-14",
           "relevant_fields": [
-            "program_basic_info"
+            "program_basic_info",
+            "curriculum"
           ],
           "confidence": "Bilinmiyor / Resmi Veri Yok",
           "notes": "Existing source retained but not rechecked in this audit.",
@@ -1832,7 +1873,11 @@
           "access_status": "ok",
           "last_checked": "2026-08-14",
           "relevant_fields": [
-            "curriculum"
+            "program",
+            "language",
+            "deadline",
+            "curriculum",
+            "research"
           ],
           "confidence": "high",
           "notes": ""
@@ -1844,6 +1889,10 @@
           "access_status": "ok",
           "last_checked": "2026-08-14",
           "relevant_fields": [
+            "program",
+            "language",
+            "deadline",
+            "curriculum",
             "research"
           ],
           "confidence": "high",
@@ -1887,6 +1936,7 @@
           "access_status": "redirects",
           "last_checked": "2026-08-14",
           "relevant_fields": [
+            "program_basic_info",
             "curriculum"
           ],
           "confidence": "medium",
@@ -1904,7 +1954,9 @@
           "last_checked": "2026-08-14",
           "relevant_fields": [
             "housing",
-            "living"
+            "living",
+            "scholarship",
+            "funding"
           ],
           "confidence": "high",
           "notes": {
@@ -1919,6 +1971,8 @@
           "access_status": "ok",
           "last_checked": "2026-08-14",
           "relevant_fields": [
+            "housing",
+            "living",
             "scholarship",
             "funding"
           ],
@@ -1993,6 +2047,42 @@
             "fees"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://www.uni-stuttgart.de/en/study/study-programs/Aerospace-Engineering-M.Sc./",
+          "title": "University of Stuttgart — Aerospace Engineering M.Sc.",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "deadline"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "The live page publishes May 15-July 15 for winter and December 1-January 15 for summer entry.",
+            "tr": "Canlı sayfa kış başlangıcı için 15 Mayıs-15 Temmuz, yaz başlangıcı için 1 Aralık-15 Ocak aralığını yayımlar."
+          }
+        },
+        {
+          "url": "https://www.uni-stuttgart.de/en/study/application/international-degree/application/",
+          "title": "University of Stuttgart — Applying for admission with an international degree",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees",
+            "required_documents",
+            "non_eu_eligibility"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes the C@MPUS route, non-EU document checklist, translation rule and additional master's documents.",
+            "tr": "C@MPUS yolunu, AB dışı belge listesini, çeviri kuralını ve yüksek lisans ek belgelerini yayımlar."
+          }
         }
       ],
       "verification_notes": {
@@ -2282,23 +2372,27 @@
       "confirmed_partners": []
     },
     "application_timeline_profile": {
-      "academic_year": "2024/2025",
+      "academic_year": "recurring application periods verified 2026-09-05",
       "intake_terms": [
-        "Winter"
+        "winter semester",
+        "summer semester"
       ],
-      "application_rounds": [],
-      "non_eu_deadline": null,
-      "eu_deadline": null,
+      "application_rounds": [
+        "Winter semester: May 15-July 15",
+        "Summer semester: December 1-January 15"
+      ],
+      "non_eu_deadline": "July 15 for winter semester / January 15 for summer semester",
+      "eu_deadline": "July 15 for winter semester / January 15 for summer semester",
       "scholarship_deadline": null,
       "pre_enrolment_required": null,
       "universitaly_required": null,
       "visa_sensitive_deadline": "",
       "application_result_timing": "",
       "enrollment_deadline": "",
-      "timeline_risk": "unknown",
+      "timeline_risk": "medium",
       "deadline_notes": {
-        "en": "University page lists the application periods; verify the applicable cycle and applicant route.",
-        "tr": "Üniversite sayfası başvuru dönemlerini listeler; geçerli dönemi ve aday rotasını doğrulayın."
+        "en": "The live programme page publishes recurring semester periods rather than a cycle-labelled 2027 call. Recheck the page when the relevant portal window opens; no later-cycle date is inferred here.",
+        "tr": "Canlı program sayfası 2027 etiketli bir çağrı yerine dönemsel yinelenen başvuru aralıkları yayımlar. İlgili portal penceresi açıldığında sayfayı yeniden kontrol edin; burada sonraki döngü tarihi türetilmemiştir."
       },
       "winter_deadline": "July 15",
       "summer_deadline": "January 15",
@@ -2312,10 +2406,11 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
-      }
+      },
+      "application_deadline": "July 15 for winter semester / January 15 for summer semester"
     },
     "scholarships_info": [
       {
@@ -2534,7 +2629,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -2563,14 +2658,14 @@
           "derived_from": {
             "monthly_living_cost_eur_min": 992.0
           },
-          "derived_at": "2026-09-01"
+          "derived_at": "2026-09-05"
         },
         "source_url": null,
         "note": {
           "en": "University of Stuttgart says students need at least EUR 992 per month for living costs; its shared-flat room range excludes electricity, water and heating.",
           "tr": "Stuttgart Üniversitesi yaşam giderleri için ayda en az 992 EUR gerektiğini; paylaşımlı ev oda aralığının elektrik, su ve ısıtmayı içermediğini belirtir."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "location": {
@@ -2627,7 +2722,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 13,
+      "checked_official_source_count": 15,
       "verified_fields": [
         "program",
         "language",
@@ -2642,7 +2737,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-01"
+      "audited_at": "2026-09-05"
     },
     "tuition_eur_per_year": null,
     "annual_fee_eur": null,
@@ -2718,7 +2813,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -2763,14 +2858,47 @@
     "relevance_status": "medium",
     "eligibility_profile": {
       "eligible_for_non_eu": true,
-      "required_previous_degree": null,
-      "accepted_backgrounds": [],
-      "admission_mode": "programme-specific assessment",
+      "required_previous_degree": {
+        "en": "A bachelor's degree of at least three years/180 ECTS in Electrical Engineering and Information Technology or a substantially equivalent related programme; exceptional recognition of other engineering, information-technology, physical or natural-science degrees is possible.",
+        "tr": "Elektrik ve Bilgi Teknolojileri alanında veya esasen eşdeğer ilişkili bir programda en az üç yıllık/180 AKTS lisans derecesi; diğer mühendislik, bilgi teknolojisi, fizik ya da doğa bilimleri dereceleri istisnai olarak tanınabilir."
+      },
+      "accepted_backgrounds": [
+        "electrical_engineering",
+        "information_technology",
+        "related_engineering_subject_to_equivalence",
+        "physical_or_natural_sciences_by_exception"
+      ],
+      "admission_mode": "restricted_admission_ranking_with_possible_online_interview",
       "admission_risk": "medium",
-      "required_documents": [],
+      "required_documents": [
+        {
+          "en": "Bachelor's degree certificate, or enrolment certificate with expected completion date if not yet graduated, in the original language and official translation",
+          "tr": "Lisans diploma belgesi veya henüz mezun olunmadıysa beklenen bitirme tarihli öğrenci belgesi; asıl dilinde ve resmî çevirisiyle"
+        },
+        {
+          "en": "Transcript/exam results showing content and workload, in the original language and official translation; Diploma Supplement where issued",
+          "tr": "İçerik ve iş yükünü gösteren transkript/sınav sonuçları; asıl dilinde ve resmî çevirisiyle, düzenlenmişse Diploma Supplement"
+        },
+        {
+          "en": "Detailed course/module descriptions for the mandatory subject-area comparison",
+          "tr": "Zorunlu alan karşılaştırması için ayrıntılı ders/modül açıklamaları"
+        },
+        {
+          "en": "Proof of English proficiency",
+          "tr": "İngilizce yeterlilik kanıtı"
+        },
+        {
+          "en": "GRE or GATE evidence for applicants whose bachelor's degree is from a country outside the EHEA and outside the Lisbon Recognition Convention",
+          "tr": "Lisansı Avrupa Yükseköğretim Alanı ve Lizbon Tanıma Sözleşmesi dışındaki bir ülkeden olan adaylar için GRE veya GATE kanıtı"
+        },
+        {
+          "en": "Current individual APS certificate for applicants from China, Vietnam or India",
+          "tr": "Çin, Vietnam veya Hindistan başvuruları için güncel bireysel APS belgesi"
+        }
+      ],
       "verification_notes": {
-        "en": "No detailed admission facts were verified.",
-        "tr": "Ayrıntılı kabul bilgisi doğrulanmadı."
+        "en": "GRE/GATE is conditional on where the bachelor's degree was earned, not merely citizenship. KIT may request programme-specific additional documents in the portal.",
+        "tr": "GRE/GATE yalnızca vatandaşlığa değil lisans derecesinin alındığı ülkeye bağlıdır. KIT portalda programa özgü ek belgeler isteyebilir."
       },
       "gre": {
         "policy": "unknown",
@@ -2780,7 +2908,21 @@
         "validity_rule": "",
         "waiver_rules": [],
         "source_ids": []
-      }
+      },
+      "required_ects": {
+        "math": 14,
+        "other": [
+          {
+            "area": "electrical_engineering_fundamentals",
+            "ects": 19
+          },
+          {
+            "area": "digital_information_and_systems_engineering",
+            "ects": 17
+          }
+        ]
+      },
+      "test_required": true
     },
     "cost_profile": {
       "academic_year": "current official page checked 2026-07-14",
@@ -2831,7 +2973,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "tuition_eur_per_year": 3000.0,
       "tuition_derivation": {
@@ -2871,7 +3013,7 @@
           "en": "KIT's application page for international master's applicants sets out the whole route through its own online portal and names no application fee and no uni-assist step. The only charges it prices are a TestDaF exam and Studienkolleg courses, neither of which applies to an English-taught master's.",
           "tr": "KIT'in uluslararası yüksek lisans adayları için başvuru sayfası, tüm yolu kendi çevrimiçi portalı üzerinden anlatır ve ne bir başvuru ücreti ne de bir uni-assist adımı adlandırır. Fiyatladığı tek kalemler TestDaF sınavı ile Studienkolleg kurslarıdır; ikisi de İngilizce ders veren bir yüksek lisans için geçerli değildir."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "curriculum_profile": {
@@ -2984,6 +3126,8 @@
           "access_status": "ok",
           "last_checked": "2026-08-14",
           "relevant_fields": [
+            "program",
+            "language",
             "curriculum"
           ],
           "confidence": "high",
@@ -3000,7 +3144,9 @@
           "last_checked": "2026-08-14",
           "relevant_fields": [
             "tuition",
-            "fees"
+            "fees",
+            "housing",
+            "living"
           ],
           "confidence": "high",
           "notes": {
@@ -3049,6 +3195,8 @@
           "access_status": "ok",
           "last_checked": "2026-08-14",
           "relevant_fields": [
+            "tuition",
+            "fees",
             "housing",
             "living"
           ],
@@ -3103,9 +3251,46 @@
             "fees"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://www.etit.kit.edu/english/Application_Master_ETIT.php",
+          "title": "KIT ETIT — Application for the Master's degree",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "required_documents",
+            "deadline"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Current department page, last changed 19 June 2026, publishes the ECTS prerequisites, GRE/GATE rule, transcript/module-handbook evidence and application periods.",
+            "tr": "19 Haziran 2026'da güncellenen bölüm sayfası AKTS önkoşullarını, GRE/GATE kuralını, transkript/modül kılavuzu kanıtını ve başvuru dönemlerini yayımlar."
+          }
+        },
+        {
+          "url": "https://www.intl.kit.edu/istudies/9074.php",
+          "title": "KIT International Students Office — Application for a Master's degree course",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees",
+            "required_documents"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes the foreign-degree PDF checklist, translation rules, programme-specific additions and country-specific APS requirements.",
+            "tr": "Yabancı diploma PDF belge listesini, çeviri kurallarını, programa özgü ekleri ve ülkeye özgü APS koşullarını yayımlar."
+          }
         }
       ],
-      "last_verified": "2026-09-01",
+      "last_verified": "2026-09-05",
       "needs_verification": true,
       "verification_notes": {
         "en": "Only facts supported by the checked official source log are retained; funding and housing eligibility remain programme- and applicant-specific unless explicitly stated.",
@@ -3114,13 +3299,13 @@
       "field_confidence": {
         "program_basic_info": "high",
         "language": "high",
-        "admission": "medium",
+        "admission": "high",
         "tuition": "high",
         "scholarship": "high",
         "curriculum": "medium",
         "research_profile": "unknown",
         "industry_ecosystem_profile": "unknown",
-        "application_timeline_profile": "unknown",
+        "application_timeline_profile": "high",
         "living_profile": "unknown",
         "housing": "high",
         "deadlines": "high"
@@ -3246,30 +3431,33 @@
       "ecosystem_strength_score": null
     },
     "application_timeline_profile": {
-      "academic_year": "current programme page checked 2026-07-14",
+      "academic_year": "recurring application periods verified 2026-09-05",
       "intake_terms": [
         "winter term",
         "summer term"
       ],
-      "application_rounds": [],
-      "non_eu_deadline": "15 July (winter term) / 15 January (summer term; first semester)",
-      "eu_deadline": "15 July (winter term) / 15 January (summer term; first semester)",
+      "application_rounds": [
+        "Winter semester: May 15-July 15",
+        "Summer semester: December 1-January 15"
+      ],
+      "non_eu_deadline": "July 15 for winter semester / January 15 for summer semester",
+      "eu_deadline": "July 15 for winter semester / January 15 for summer semester",
       "scholarship_deadline": null,
       "pre_enrolment_required": null,
       "timeline_risk": "medium",
       "deadline_notes": {
-        "en": "The checked KIT Electrical Engineering and Information Technology MSc page publishes the same first-semester deadlines for German/EU and non-EU applicants. It also confirms winter and summer starts; recheck the live page for a dated future cycle.",
-        "tr": "Kontrol edilen KIT Elektrik ve Bilgi Teknolojileri yüksek lisans sayfası, Alman/AB ve AB dışı adaylar için ilk dönem aynı son tarihleri yayımlar. Ayrıca kış ve yaz başlangıçlarını doğrular; tarihli gelecek dönem için canlı sayfayı yeniden kontrol edin."
+        "en": "KIT publishes recurring first-semester periods and does not label them as a guaranteed 2027/28 call. The next portal opening must be checked live.",
+        "tr": "KIT birinci dönem için yinelenen başvuru aralıkları yayımlar; bunları garantili 2027/28 çağrısı olarak etiketlemez. Bir sonraki portal açılışı canlı olarak kontrol edilmelidir."
       },
       "winter_deadline": "15 July (winter term; first semester)",
-      "application_deadline": "15 July (winter term) / 15 January (summer term; first semester)",
+      "application_deadline": "July 15 for winter semester / January 15 for summer semester",
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -3438,7 +3626,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -3468,14 +3656,14 @@
             "monthly_living_cost_eur_min": 800.0,
             "monthly_living_cost_eur_max": 900.0
           },
-          "derived_at": "2026-09-01"
+          "derived_at": "2026-09-05"
         },
         "source_url": null,
         "note": {
           "en": "KIT's current guide puts average student expenses in Karlsruhe, including fees and depending on personal situation, at EUR 800–900 per month.",
           "tr": "KIT'in güncel rehberi, Karlsruhe'de öğrenci giderlerini ücretler dahil ve kişisel duruma bağlı olarak ayda 800–900 EUR olarak verir."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "location": {
@@ -3540,7 +3728,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 13,
+      "checked_official_source_count": 15,
       "verified_fields": [
         "program",
         "language",
@@ -3555,7 +3743,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-01"
+      "audited_at": "2026-09-05"
     },
     "qs_ranking_display": "110",
     "qs_ranking_year": 2027,
@@ -3621,7 +3809,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "medium",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -3668,10 +3856,27 @@
         "Closely related engineering"
       ],
       "admission_mode": "open_admission_with_special_requirements",
-      "required_documents": [],
+      "required_documents": [
+        {
+          "en": "Curriculum vitae",
+          "tr": "Özgeçmiş"
+        },
+        {
+          "en": "Latest German language certificate",
+          "tr": "En güncel Almanca dil belgesi"
+        },
+        {
+          "en": "Copies and translations of university certificates and the transcript of records with all subjects and marks",
+          "tr": "Üniversite belgelerinin ve tüm dersler ile notları içeren transkriptin kopyaları ve çevirileri"
+        },
+        {
+          "en": "Receipt for payment of the foreign-qualification assessment fee, unless exempt",
+          "tr": "Muafiyet yoksa yabancı yeterlilik değerlendirme ücretinin ödeme makbuzu"
+        }
+      ],
       "verification_notes": {
-        "en": "The current application selector publishes a graduate-programme route for non-EU applicants with a foreign qualification. Aerospace Engineering is a German-taught, admission-free MSc with special admission requirements; applicants must still satisfy the programme regulations.",
-        "tr": "Güncel başvuru seçicisi, yabancı diplomalı AB dışı adaylar için yüksek lisans başvuru yolunu yayımlar. Havacılık ve Uzay Mühendisliği Almanca yürütülen, özel kabul şartları olan ancak kontenjan kısıtlaması bulunmayan bir yüksek lisanstır; adayların yine de program yönetmeliğini karşılaması gerekir."
+        "en": "The international application page describes these as the usual documents. The exact set varies by programme, country and educational background, and the portal-generated personal checklist is authoritative.",
+        "tr": "Uluslararası başvuru sayfası bunları olağan belgeler olarak açıklar. Kesin liste programa, ülkeye ve eğitim geçmişine göre değişir; portalın oluşturduğu kişisel kontrol listesi belirleyicidir."
       },
       "gre": {
         "policy": "unknown",
@@ -3755,7 +3960,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "tuition_derivation": {
         "standard": "cost_model@3.2.0",
@@ -3766,7 +3971,7 @@
         },
         "currency": "EUR",
         "includes_mandatory_fees": false,
-        "derived_at": "2026-09-01"
+        "derived_at": "2026-09-05"
       },
       "tuition_eur_per_year": 0,
       "mandatory_fees_eur_per_year": 945.0,
@@ -3823,7 +4028,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "curriculum_profile": {
@@ -3855,35 +4060,23 @@
     },
     "source_profile": {
       "official_program_page": "https://www.tu-braunschweig.de/en/degree-programmes/aerospace-engineering-master",
-      "last_verified": "2026-09-01",
+      "last_verified": "2026-09-05",
       "needs_verification": false,
       "field_confidence": {
         "program_basic_info": "high",
         "language": "high",
-        "admission": "high",
+        "admission": "medium",
         "tuition": "high",
         "scholarship": "high",
         "curriculum": "high",
-        "application_timeline_profile": "medium",
+        "application_timeline_profile": "high",
         "living_profile": "unknown",
         "housing": "high",
-        "deadlines": "high"
+        "deadlines": "high",
+        "deadline": "high",
+        "application_documents": "medium"
       },
       "source_log": [
-        {
-          "url": "https://www.tu-braunschweig.de/en/degree-programmes/aerospace-engineering-master",
-          "title": "TU Braunschweig Aerospace Engineering Master",
-          "source_type": "official_program_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "program",
-            "language",
-            "admission"
-          ],
-          "confidence": "high",
-          "notes": ""
-        },
         {
           "url": "https://www.tu-braunschweig.de/en/fmb/students/masters-degree-programmes/aerospace-engineering",
           "title": "TU Braunschweig Aerospace Engineering programme structure",
@@ -3950,6 +4143,9 @@
           "access_status": "ok",
           "last_checked": "2026-08-14",
           "relevant_fields": [
+            "program",
+            "language",
+            "admission",
             "curriculum"
           ],
           "confidence": "medium",
@@ -4086,6 +4282,34 @@
             "fees"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://www.tu-braunschweig.de/en/degree-programmes/aerospace-engineering-master",
+          "title": "TU Braunschweig — Aerospace Engineering (Master)",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "program",
+            "language",
+            "admission",
+            "curriculum",
+            "deadline"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.tu-braunschweig.de/en/international-students/application?cHash=21cc8a797b42944a53142b1a1947ea61&lang=en",
+          "title": "TU Braunschweig — International application",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "deadline",
+            "admission",
+            "application_documents"
+          ],
+          "confidence": "medium"
         }
       ],
       "verification_notes": {
@@ -4285,14 +4509,17 @@
       "confirmed_partners": []
     },
     "application_timeline_profile": {
-      "academic_year": "current application rules checked 2026-07-14",
+      "academic_year": "Current annual application windows; cycle year not stated on the official page checked 2026-09-05",
       "intake_terms": [
         "winter semester",
         "summer semester"
       ],
-      "application_rounds": [],
-      "non_eu_deadline": "June 1–July 15 (winter) / December 1–January 15 (summer; foreign qualification, non-EU graduate route)",
-      "eu_deadline": "June 1–July 15 (winter) / December 1–January 15 (summer; graduate route)",
+      "application_rounds": [
+        "Winter semester: 1 June to 15 July",
+        "Summer semester: 1 December to 15 January"
+      ],
+      "non_eu_deadline": "15 July for winter semester / 15 January for summer semester for this German-taught programme; year not stated",
+      "eu_deadline": "15 July for winter semester / 15 January for summer semester; year not stated",
       "scholarship_deadline": null,
       "pre_enrolment_required": null,
       "universitaly_required": null,
@@ -4301,8 +4528,8 @@
       "enrollment_deadline": "",
       "timeline_risk": "medium",
       "deadline_notes": {
-        "en": "TU Braunschweig's current application selector publishes these dates for the graduate-programme route. The Aerospace programme is German-taught and not one of the English/bilingual international programmes to which the selector assigns special earlier deadlines; verify the live selector before applying.",
-        "tr": "TU Braunschweig'in güncel başvuru seçicisi bu tarihleri yüksek lisans başvuru yolu için yayımlar. Havacılık ve Uzay Mühendisliği Almanca yürütülür ve seçicinin daha erken özel tarih atadığı İngilizce/çift dilli uluslararası programlardan değildir; başvuru öncesi canlı seçiciyi doğrulayın."
+        "en": "The programme is German-taught, so the separate early non-EU deadlines for English-taught or bilingual international master's programmes do not apply. The official pages publish recurring month/day windows but no cycle year; verify the live selector before applying.",
+        "tr": "Program Almanca yürütüldüğünden İngilizce veya iki dilli uluslararası yüksek lisanslar için ayrı erken AB dışı tarihler geçerli değildir. Resmî sayfalar yinelenen ay/gün aralıklarını yayımlar ancak dönem yılı vermez; başvuru öncesinde canlı seçiciyi doğrulayın."
       },
       "winter_deadline": "June 1–July 15 (graduate route)",
       "summer_deadline": "December 1–January 15 (graduate route)",
@@ -4310,14 +4537,14 @@
         "en": "Deadlines indicated are typically for non-EU applicants in international/bilingual programs. EU applicants often have until July 15 (Winter) / Jan 15 (Summer).",
         "tr": "Belirtilen son başvuru tarihleri genellikle uluslararası/çift dilli programlardaki AB dışı başvuru sahipleri içindir. AB vatandaşları genellikle 15 Temmuz (Kış) / 15 Ocak (Yaz) tarihine kadar başvurabilir."
       },
-      "application_deadline": "June 1–July 15 (winter) / December 1–January 15 (summer; graduate route)",
+      "application_deadline": "15 July for winter semester / 15 January for summer semester (annual windows; year not stated)",
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -4490,7 +4717,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -4520,14 +4747,14 @@
             "monthly_living_cost_eur_min": 992.0,
             "monthly_living_cost_eur_max": 1135.0
           },
-          "derived_at": "2026-09-01"
+          "derived_at": "2026-09-05"
         },
         "source_url": null,
         "note": {
           "en": "TU Braunschweig says students need at least about EUR 992 monthly and publishes a current itemised planning total of EUR 1,135 per month. The amount varies with lifestyle and is separate from the semester fee.",
           "tr": "TU Braunschweig öğrencilerin ayda en az yaklaşık 992 EUR'a ihtiyacı olduğunu ve güncel kalemli planlama toplamını ayda 1.135 EUR olarak yayımlar. Tutar yaşam tarzına göre değişir ve dönem katkısından ayrıdır."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "location": {
@@ -4555,13 +4782,15 @@
       }
     },
     "quality_control": {
-      "qc_status": "passed",
-      "checked_at": "2026-08-23",
-      "failed_canary_tests": [],
+      "qc_status": "needs_revision",
+      "checked_at": "2026-09-05",
+      "failed_canary_tests": [
+        "critical_field_confidence_below_high"
+      ],
       "remaining_verification_tasks": [],
       "qc_notes": {
-        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
-        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        "en": "All critical fields have source coverage, but at least one critical field remains below high confidence.",
+        "tr": "Tüm kritik alanlar kaynakla kapsanıyor; ancak en az bir kritik alanın güven düzeyi hâlâ yüksek değil."
       }
     },
     "urls": {
@@ -4582,8 +4811,8 @@
       }
     },
     "data_quality": {
-      "status": "verified",
-      "checked_official_source_count": 14,
+      "status": "partial",
+      "checked_official_source_count": 15,
       "verified_fields": [
         "program",
         "language",
@@ -4598,7 +4827,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-01"
+      "audited_at": "2026-09-05"
     },
     "qs_ranking_display": "781-790",
     "qs_ranking_year": 2027,
@@ -4665,7 +4894,7 @@
       "matched_tags": [],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -4835,7 +5064,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "tuition_eur_per_year": 12450.0,
       "tuition_derivation": {
@@ -4880,7 +5109,7 @@
           "en": "The MSE application procedure lists six steps - online form, documents, interview, result, conditional letter, deposit - and prices only the last of them. The EUR 500 deposit is paid after a conditional offer to convert it into an unconditional one, so it is not a cost of applying.",
           "tr": "MSE başvuru yordamı altı adım sıralar - çevrimiçi form, belgeler, mülakat, sonuç, koşullu mektup, depozito - ve yalnızca sonuncusunu fiyatlandırır. 500 avroluk depozito, koşullu bir teklifi koşulsuza çevirmek için teklif sonrasında ödenir; dolayısıyla bir başvuru maliyeti değildir."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "curriculum_profile": {
@@ -5451,7 +5680,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -5664,7 +5893,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -5690,14 +5919,14 @@
           "derived_from": {
             "monthly_living_cost_eur_estimated": 1000.0
           },
-          "derived_at": "2026-09-01"
+          "derived_at": "2026-09-05"
         },
         "source_url": null,
         "note": {
           "en": "MSE's current Fees & Funding page advises approximately EUR 1,000 per month for living expenses in Berlin, separately from tuition and organisation fees.",
           "tr": "MSE'nin güncel Ücretler ve Finansman sayfası, öğrenim ücreti ve organizasyon ücretinden ayrı olarak Berlin yaşam giderleri için ayda yaklaşık 1.000 EUR önerir."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "location": {
@@ -5835,7 +6064,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -6000,7 +6229,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "tuition_derivation": {
         "standard": "cost_model@3.2.0",
@@ -6011,7 +6240,7 @@
         },
         "currency": "EUR",
         "includes_mandatory_fees": false,
-        "derived_at": "2026-09-01"
+        "derived_at": "2026-09-05"
       },
       "tuition_eur_per_year": 0,
       "mandatory_fees_eur_per_year": 850.0,
@@ -6049,7 +6278,7 @@
           "en": "Bremen sends bachelor's applicants from non-EU countries through uni-assist but states that for master's programmes international students apply directly to the University of Bremen, and that application and processing of documents at the university is free of charge.",
           "tr": "Bremen, AB dışı ülkelerden gelen lisans adaylarını uni-assist'e yönlendirir; ancak yüksek lisans programları için uluslararası öğrencilerin doğrudan Üniversite'ye başvurduğunu ve üniversitede başvuru ile belge işleminin ücretsiz olduğunu belirtir."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -6199,7 +6428,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -6228,14 +6457,14 @@
           "derived_from": {
             "monthly_living_cost_eur_min": 992.0
           },
-          "derived_at": "2026-09-01"
+          "derived_at": "2026-09-05"
         },
         "source_url": null,
         "note": {
           "en": "University of Bremen's current international-student guidance says at least EUR 992 per month is required for regular student life in Germany, including rent, food, insurance, leisure and study costs. This is a planning minimum, not a Bremen-specific rent quote.",
           "tr": "Bremen Üniversitesi'nin güncel uluslararası öğrenci rehberi, kira, yemek, sigorta, boş zaman ve eğitim giderleri dahil Almanya'da normal öğrenci hayatı için ayda en az 992 EUR gerektiğini belirtir. Bu bir planlama asgarisidir, Bremen'e özgü kira teklifi değildir."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "curriculum_profile": {
@@ -6481,7 +6710,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -6950,7 +7179,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -7109,7 +7338,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "tuition_derivation": {
         "standard": "cost_model@3.2.0",
@@ -7120,7 +7349,7 @@
         },
         "currency": "EUR",
         "includes_mandatory_fees": false,
-        "derived_at": "2026-09-01"
+        "derived_at": "2026-09-05"
       },
       "tuition_eur_per_year": 0,
       "mandatory_fees_eur_per_year": 805.36,
@@ -7158,7 +7387,7 @@
           "en": "Darmstadt's international application page lists every document a foreign applicant must supply, says notarisation is not required, routes the application through its own TUCaN portal, and prices none of it. It names no uni-assist step and no charge for the equivalence check.",
           "tr": "Darmstadt'ın uluslararası başvuru sayfası, yabancı bir adayın vermesi gereken her belgeyi listeler, noter tasdikinin gerekmediğini söyler, başvuruyu kendi TUCaN portalı üzerinden yürütür ve bunların hiçbirini fiyatlandırmaz. Ne bir uni-assist adımı ne de denklik incelemesi için bir ücret adlandırır."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -7300,7 +7529,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -7330,14 +7559,14 @@
             "monthly_living_cost_eur_min": 875.0,
             "monthly_living_cost_eur_max": 1300.0
           },
-          "derived_at": "2026-09-01"
+          "derived_at": "2026-09-05"
         },
         "source_url": null,
         "note": {
           "en": "Studierendenwerk Darmstadt's current guidance gives EUR 875-1,300/month depending on lifestyle. TU Darmstadt separately cites a EUR 992/month BAfoeG planning figure; both are planning guidance rather than a personal quote.",
           "tr": "Studierendenwerk Darmstadt'in guncel rehberi yasam tarzina gore ayda 875-1.300 EUR verir. TU Darmstadt ayri olarak ayda 992 EUR BAfoeG planlama tutari belirtir; ikisi de kisisel teklif degil planlama rehberidir."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "curriculum_profile": {
@@ -7534,11 +7763,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -48,
+        "days_remaining_at_evaluation": -52,
         "derived_from": "application_timeline_profile.non_eu_deadline",
         "confidence": "high",
         "source_url": "https://www.tu-darmstadt.de/studieren/studieninteressierte/internationale_studieninteressierte/bewerbung_und_zulassung_international/index.en.jsp",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -8026,7 +8255,7 @@
       ],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -8181,7 +8410,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "currency": "EUR",
       "semester_fee_eur": 298.06,
@@ -8199,7 +8428,7 @@
         },
         "currency": "EUR",
         "includes_mandatory_fees": false,
-        "derived_at": "2026-09-01"
+        "derived_at": "2026-09-05"
       },
       "tuition_eur_per_year": 0,
       "mandatory_fees_eur_per_year": 636.12,
@@ -8239,7 +8468,7 @@
           "en": "RWTH takes international master's applications through its own digital portal with no documents posted, and neither the international master's page nor the general application page names a fee or a uni-assist step.",
           "tr": "RWTH, uluslararası yüksek lisans başvurularını posta ile belge gönderilmeksizin kendi dijital portalı üzerinden alır; ne uluslararası yüksek lisans sayfası ne de genel başvuru sayfası bir ücret ya da uni-assist adımı adlandırır."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -8382,7 +8611,7 @@
         "band_from_score": "high",
         "capped_from_very_high": false,
         "legacy_value": "high",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -8442,7 +8671,7 @@
           "en": "Midpoints of the ranges RWTH publishes: accommodation €400-600, food €200-300, health insurance €100-150, study materials €20-40, internet and mobile €20-50, other €50-200. RWTH states the total is at least €1,100 a month. Separately, the residence-permit blocked account was €11,904 for a year as of 1 January 2023, and €992 a month must be shown to extend the permit — that is an immigration threshold, not a budget.",
           "tr": "RWTH'nin yayımladığı aralıkların orta noktaları: konaklama 400-600, gıda 200-300, sağlık sigortası 100-150, ders malzemesi 20-40, internet ve telefon 20-50, diğer 50-200 avro. RWTH toplamın ayda en az 1.100 avro olduğunu belirtir. Bundan ayrı olarak, oturum izni bloke hesabı 1 Ocak 2023 itibarıyla bir yıl için 11.904 avroydu ve izni uzatmak için ayda 992 avro gösterilmesi gerekir — bu bir bütçe değil, göçmenlik eşiğidir."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "housing_guaranteed": false,
       "student_housing_operator": "Studierendenwerk Aachen and private halls, all independent of the university",
@@ -8780,7 +9009,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -9297,7 +9526,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -9431,7 +9660,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "tuition_derivation": {
         "standard": "cost_model@3.2.0",
@@ -9442,7 +9671,7 @@
         },
         "currency": "EUR",
         "includes_mandatory_fees": false,
-        "derived_at": "2026-09-01"
+        "derived_at": "2026-09-05"
       },
       "tuition_eur_per_year": 0,
       "mandatory_fees_eur_per_year": 768.0,
@@ -9482,7 +9711,7 @@
           "en": "TUHH answers the uni-assist question directly in its master's FAQ - its own admissions office checks the certificates - and names no charge for doing so. That matters here, because the German programmes that do cost money to apply to cost it through uni-assist.",
           "tr": "TUHH, uni-assist sorusunu yüksek lisans SSS'sinde doğrudan yanıtlar - belgeleri kendi kabul ofisi kontrol eder - ve bunun için bir ücret adlandırmaz. Bu burada önemlidir, çünkü başvurması para tutan Alman programlarında o para uni-assist'e ödenir."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -9602,7 +9831,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -9631,14 +9860,14 @@
           "derived_from": {
             "monthly_living_cost_eur_min": 950.0
           },
-          "derived_at": "2026-09-01"
+          "derived_at": "2026-09-05"
         },
         "source_url": null,
         "note": {
           "en": "TU Hamburg's 2026 international-Master's guide advises at least EUR 950 per month including accommodation, health insurance and study material.",
           "tr": "TU Hamburg'un 2026 uluslararası yüksek lisans rehberi; konaklama, sağlık sigortası ve eğitim materyali dahil ayda en az 950 EUR önerir."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "curriculum_profile": {
@@ -9788,7 +10017,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -10236,7 +10465,7 @@
       ],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {

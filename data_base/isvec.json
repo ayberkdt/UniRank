@@ -58,10 +58,31 @@
       "admission_mode": "unknown",
       "admission_risk": "unknown",
       "accepted_backgrounds": [],
-      "required_documents": [],
+      "required_documents": [
+        {
+          "en": "Official degree certificates",
+          "tr": "Resmî diploma belgeleri"
+        },
+        {
+          "en": "Official transcript of courses and grades",
+          "tr": "Dersleri ve notları içeren resmî transkript"
+        },
+        {
+          "en": "Proof of english proficiency",
+          "tr": "İngilizce yeterlik kanıtı"
+        },
+        {
+          "en": "Passport or other identification",
+          "tr": "Pasaport veya başka bir kimlik belgesi"
+        },
+        {
+          "en": "Kth aerospace engineering summary sheet",
+          "tr": "KTH Havacılık ve Uzay Mühendisliği özet formu"
+        }
+      ],
       "verification_notes": {
-        "en": "The KTH 2026 syllabus documents both subject prerequisites and merit-based selection.",
-        "tr": "KTH 2026 ders planı hem alan ön koşullarını hem de başarı temelli seçimi belgeliyor."
+        "en": "KTH's Aerospace Engineering entry-requirements page says the summary sheet is the only programme-specific document; the other four are general documents. A motivation letter is used in selection but is not separately listed as an uploaded programme document on this page.",
+        "tr": "KTH Aerospace Engineering giriş şartları sayfası özet formunun programa özgü tek belge olduğunu; diğer dördünün genel belge olduğunu belirtir. Motivasyon seçmede kullanılır ancak bu sayfada ayrı yüklenen program belgesi olarak listelenmez."
       },
       "english_required": true,
       "motivation_letter_required": true,
@@ -135,7 +156,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "tuition_sek_per_year": 180000.0,
       "tuition_derivation": {
@@ -196,7 +217,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -304,7 +325,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -313,7 +334,7 @@
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "curriculum_profile": {
@@ -405,22 +426,23 @@
       "visa_complexity": "Medium",
       "deadline_eu": null,
       "deadline_non_eu": null,
-      "timeline_risk": "high",
+      "timeline_risk": "low",
       "verification_notes": "",
       "non_eu_deadline": "2027-01-15",
       "document_deadline": "2027-02-01",
       "deadline_notes": {
-        "en": "For studies starting August 2027; verify the next cycle before applying.",
-        "tr": "Ağustos 2027 başlangıcı içindir; başvuru öncesi sonraki dönemi doğrulayın."
+        "en": "All dates are published on the live KTH programme page for studies starting August 2027. The summary sheet is submitted through KTH's link when applications open, not uploaded to University Admissions.",
+        "tr": "Tüm tarihler Ağustos 2027 başlangıcı için canlı KTH program sayfasında yayımlanmıştır. Özet formu başvurular açıldığında KTH bağlantısından gönderilir; University Admissions'a yüklenmez."
       },
       "academic_year": "2027/2028",
       "intake_terms": [
-        "August"
+        "August 2027"
       ],
       "eu_deadline": "2027-01-15",
       "application_rounds": [
         "Application opens 2026-10-16",
-        "Documents/application fee by 2027-02-01",
+        "Application deadline 2027-01-15",
+        "Documents and application fee deadline 2027-02-01",
         "Admission results 2027-04-01"
       ],
       "primary_deadline": {
@@ -429,18 +451,19 @@
         "next_expected_date": null,
         "time": null,
         "timezone": null,
-        "applies_to": "non_eu",
+        "applies_to": "all_applicants",
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 136,
-        "derived_from": "application_timeline_profile.non_eu_deadline",
+        "days_remaining_at_evaluation": 132,
+        "derived_from": "application_timeline_profile.application_deadline",
         "confidence": "high",
         "source_url": "https://www.kth.se/en/studies/master/aerospace-engineering",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
-      }
+      },
+      "application_deadline": "2027-01-15"
     },
     "research_profile": {
       "research_focus_areas": [],
@@ -538,7 +561,7 @@
         "https://www.universityadmissions.se/intl/search?period=18&freeText=aerospace+engineering",
         "https://www.kth.se/en/studies/master/aerospace-engineering"
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "tuition": "high",
         "admission": "high",
@@ -548,28 +571,15 @@
         "language": "high",
         "curriculum": "high",
         "living": "high",
-        "location": "medium"
+        "location": "medium",
+        "deadline": "high",
+        "application_timeline_profile": "high",
+        "application_documents": "high"
       },
       "source_reliability": "high",
       "verification_status": "verified",
       "verification_notes": "",
       "source_log": [
-        {
-          "url": "https://www.kth.se/en/studies/master/aerospace-engineering",
-          "title": "KTH MSc Aerospace Engineering",
-          "source_type": "official_program_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "program",
-            "language",
-            "deadline",
-            "curriculum",
-            "non_eu_eligibility"
-          ],
-          "confidence": "high",
-          "notes": ""
-        },
         {
           "url": "https://www.kth.se/en/2.985/aerospace-engineering/fees-aerospace-engineering-1.910116",
           "title": "KTH fees and scholarships for Aerospace Engineering",
@@ -577,7 +587,8 @@
           "access_status": "ok",
           "last_checked": "2026-08-14",
           "relevant_fields": [
-            "tuition"
+            "tuition",
+            "scholarship"
           ],
           "confidence": "high",
           "notes": ""
@@ -589,6 +600,7 @@
           "access_status": "ok",
           "last_checked": "2026-08-14",
           "relevant_fields": [
+            "tuition",
             "scholarship"
           ],
           "confidence": "high",
@@ -734,6 +746,33 @@
             "labs"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://www.kth.se/en/studies/master/aerospace-engineering",
+          "title": "KTH — MSc Aerospace Engineering",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "program",
+            "language",
+            "deadline",
+            "curriculum",
+            "non_eu_eligibility"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.kth.se/en/studies/master/aerospace-engineering/entry-requirements-aerospace-engineering-1.6595",
+          "title": "KTH — Entry requirements for Aerospace Engineering",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "application_documents"
+          ],
+          "confidence": "high"
         }
       ],
       "needs_verification": false
@@ -754,7 +793,7 @@
     "qs_ranking": 82,
     "data_quality": {
       "status": "verified",
-      "checked_official_source_count": 12,
+      "checked_official_source_count": 13,
       "verified_fields": [
         "program",
         "language",
@@ -769,10 +808,10 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-30"
+      "audited_at": "2026-09-05"
     },
     "quality_control": {
-      "checked_at": "2026-08-23",
+      "checked_at": "2026-09-05",
       "qc_status": "passed",
       "remaining_verification_tasks": [],
       "qc_notes": {
@@ -850,7 +889,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "needs_review",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -929,14 +968,34 @@
         "Architecture"
       ],
       "required_documents": [
-        "Degree certificate and transcript",
-        "Proof of English proficiency",
-        "Citizenship documentation",
-        "Programme-specific supporting documents where required"
+        {
+          "en": "Degree certificates and diplomas",
+          "tr": "Derece belgeleri ve diplomalar"
+        },
+        {
+          "en": "Transcripts with completed courses grades and cgpa",
+          "tr": "Tamamlanan dersleri, notları ve genel not ortalamasını içeren transkriptler"
+        },
+        {
+          "en": "Proof of english proficiency",
+          "tr": "İngilizce yeterlik kanıtı"
+        },
+        {
+          "en": "Course syllabi or descriptions supporting prerequisites",
+          "tr": "Ön koşulları destekleyen ders izlenceleri veya açıklamaları"
+        },
+        {
+          "en": "Proof of citizenship",
+          "tr": "Vatandaşlık kanıtı"
+        },
+        {
+          "en": "Curriculum vitae",
+          "tr": "Özgeçmiş"
+        }
       ],
       "verification_notes": {
-        "en": "Chalmers publishes the general Master's threshold and document list. The Mobility Engineering programme page directs applicants to its programme-specific requirements; an applicant must check those before applying.",
-        "tr": "Chalmers genel yüksek lisans eşiğini ve belge listesini yayımlar. Mobility Engineering program sayfası başvuru sahiplerini programa özgü şartlara yönlendirir; aday bunları başvurmadan önce kontrol etmelidir."
+        "en": "These six documents are mandatory for the standard Mobility Engineering application. For this programme, a motivation letter, work-experience certificate and recommendation letter are optional unless a separate Chalmers scholarship application makes the motivation and recommendation documents mandatory.",
+        "tr": "Bu altı belge standart Mobility Engineering başvurusu için zorunludur. Bu programda motivasyon mektubu, iş deneyimi belgesi ve referans mektubu isteğe bağlıdır; ayrı bir Chalmers burs başvurusu motivasyon ve referans belgelerini zorunlu kılabilir."
       },
       "gre": {
         "policy": "unknown",
@@ -1019,7 +1078,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "tuition_sek_per_year": 160000.0,
       "tuition_derivation": {
@@ -1085,7 +1144,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -1191,7 +1250,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -1228,11 +1287,11 @@
             "monthly_living_cost_sek_min": 14360.0,
             "monthly_living_cost_sek_max": 18360.0
           },
-          "derived_at": "2026-09-01"
+          "derived_at": "2026-09-05"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "curriculum_profile": {
@@ -1291,14 +1350,14 @@
       "visa_complexity": "Medium",
       "deadline_eu": null,
       "deadline_non_eu": null,
-      "timeline_risk": "high",
+      "timeline_risk": "low",
       "verification_notes": "",
       "academic_year": "2027/2028",
       "intake_terms": [
         "Autumn 2027"
       ],
-      "non_eu_deadline": "Mid-January (annual application period; verify exact University Admissions date)",
-      "eu_deadline": "Mid-January (annual application period; verify exact University Admissions date)",
+      "non_eu_deadline": "2027-01-15",
+      "eu_deadline": "2027-01-15",
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
         "date": "2027-01-15",
@@ -1309,11 +1368,11 @@
         "cycle_label": null,
         "is_recurring_annual": true,
         "status": "open",
-        "days_remaining_at_evaluation": 136,
+        "days_remaining_at_evaluation": 132,
         "derived_from": "application_timeline_profile.application_deadline",
         "confidence": "high",
         "source_url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/?p=12",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -1321,9 +1380,16 @@
       "application_opens": "2026-10-16",
       "recurring_annual_deadline": true,
       "deadline_notes": {
-        "en": "Chalmers publishes both ends of the window on the programme page: applications open on 16 October 2026 and close on 15 January 2027. The page also marks the current cycle as closed, so these are the dates of the next round, not the one just past.",
-        "tr": "Chalmers pencerenin iki ucunu da program sayfasında yayımlar: başvurular 16 Ekim 2026'da açılır ve 15 Ocak 2027'de kapanır. Sayfa mevcut döngüyü de kapalı olarak işaretler; yani bunlar yeni geçen turun değil, bir sonraki turun tarihleridir."
-      }
+        "en": "Chalmers publishes the full 2027/28 first-round window and document deadline. Chalmers does not participate in the ordinary March-April second admission round; vacant programmes may reopen later only as late applications.",
+        "tr": "Chalmers 2027/28 birinci tur penceresini ve belge tarihini tam olarak yayımlar. Chalmers olağan Mart-Nisan ikinci kabul turuna katılmaz; boş kontenjanlı programlar daha sonra yalnızca geç başvuru olarak yeniden açılabilir."
+      },
+      "application_rounds": [
+        "First admission round opens 2026-10-16",
+        "Application deadline 2027-01-15 24:00 CET",
+        "Supporting-document/application-fee deadline 2027-02-01",
+        "Admission decision 2027-04-01"
+      ],
+      "document_deadline": "2027-02-01"
     },
     "research_profile": {
       "research_focus_areas": [],
@@ -1414,7 +1480,7 @@
         "https://www.chalmers.se/en/education/application-and-admission/",
         "https://www.chalmers.se/en/education/tuition-fees-and-scholarships/"
       ],
-      "last_verified": "2026-09-01",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "program_basic_info": "high",
         "language": "high",
@@ -1423,30 +1489,16 @@
         "scholarship": "medium",
         "curriculum": "high",
         "living": "high",
-        "location": "medium"
+        "location": "medium",
+        "deadline": "high",
+        "deadlines": "high",
+        "application_timeline_profile": "high",
+        "application_documents": "high"
       },
       "source_reliability": "high",
       "verification_status": "verified",
       "verification_notes": "",
       "source_log": [
-        {
-          "url": "https://www.chalmers.se/en/education/application-and-admission/how-to-apply-from-application-to-admission/apply-for-masters-programmes/",
-          "title": "Chalmers: apply for Master's programmes",
-          "source_type": "official_admission_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "admission",
-            "language",
-            "deadline",
-            "non_eu_eligibility"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "The page states the general Master's qualification, English requirement and required-document categories. Programme-specific requirements remain decisive.",
-            "tr": "Sayfa genel yüksek lisans yeterliliğini, İngilizce şartını ve gerekli belge kategorilerini belirtir. Programa özgü şartlar belirleyicidir."
-          }
-        },
         {
           "url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/?p=12",
           "title": "Chalmers Mobility Engineering MSc",
@@ -1550,26 +1602,6 @@
           "final_url": "https://apply-scholarships.si.se/courses/course/715-mobility-engineering"
         },
         {
-          "url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/",
-          "title": "Chalmers University of Technology — Mobility Engineering, MSc",
-          "source_type": "official_program_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-30",
-          "relevant_fields": [
-            "research",
-            "curriculum",
-            "program",
-            "deadline",
-            "admission",
-            "industry"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "States the four specialisations, the shared core courses, the named research centres, the industrial partners, the entry prerequisites and both ends of the application window.",
-            "tr": "Dört uzmanlaşmayı, ortak çekirdek dersleri, adlandırılmış araştırma merkezlerini, sanayi ortaklarını, giriş ön koşullarını ve başvuru penceresinin iki ucunu da belirtir."
-          }
-        },
-        {
           "url": "https://www.universityadmissions.se/en/apply-to-masters/pay-your-application-fee-non-eueea-masters/",
           "title": "Pay your application fee (non-EU/EEA), master's | universityadmissions.se",
           "source_type": "official_tuition_page",
@@ -1581,6 +1613,48 @@
             "application_fee",
             "cost",
             "fees"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/",
+          "title": "Chalmers — Mobility Engineering MSc",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "research",
+            "curriculum",
+            "program",
+            "deadline",
+            "admission",
+            "industry"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.chalmers.se/en/education/application-and-admission/key-dates-for-masters-studies/",
+          "title": "Chalmers — Key dates for master's studies",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "deadline"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.chalmers.se/en/education/application-and-admission/how-to-apply-from-application-to-admission/apply-for-masters-programmes/",
+          "title": "Chalmers — Apply for master's programmes",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "language",
+            "deadline",
+            "non_eu_eligibility",
+            "application_documents"
           ],
           "confidence": "high"
         }
@@ -1604,7 +1678,7 @@
     "qs_ranking": 174,
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 10,
+      "checked_official_source_count": 11,
       "verified_fields": [
         "program",
         "language",
@@ -1618,11 +1692,11 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-01"
+      "audited_at": "2026-09-05"
     },
     "quality_control": {
       "qc_status": "needs_revision",
-      "checked_at": "2026-08-23",
+      "checked_at": "2026-09-05",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "qc_notes": {
@@ -1699,7 +1773,7 @@
       ],
       "confidence": "unknown",
       "legacy_relevance_status": "medium",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -1874,7 +1948,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "tuition_sek_per_year": 166000.0,
       "tuition_derivation": {
@@ -1944,7 +2018,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -2043,7 +2117,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -2080,11 +2154,11 @@
             "monthly_living_cost_sek_min": 6400.0,
             "monthly_living_cost_sek_max": 13100.0
           },
-          "derived_at": "2026-09-01"
+          "derived_at": "2026-09-05"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "curriculum_profile": {
@@ -2164,11 +2238,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -229,
+        "days_remaining_at_evaluation": -233,
         "derived_from": "application_timeline_profile.non_eu_deadline",
         "confidence": "high",
         "source_url": "https://liu.se/en/education/application-and-admission/how-to-apply",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -2283,7 +2357,7 @@
         "https://liu.se/en/education/program/6maer",
         "https://liu.se/en/education/program/6maer"
       ],
-      "last_verified": "2026-09-01",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "program_basic_info": "high",
         "language": "high",
@@ -2466,10 +2540,17 @@
       "audited_at": "2026-09-01"
     },
     "quality_control": {
-      "qc_status": "passed",
-      "checked_at": "2026-08-23",
-      "failed_canary_tests": [],
-      "remaining_verification_tasks": [],
+      "qc_status": "needs_revision",
+      "checked_at": "2026-09-05",
+      "failed_canary_tests": [
+        "missing_or_unverified_critical_fields"
+      ],
+      "remaining_verification_tasks": [
+        {
+          "en": "Add checked official evidence for the teaching language.",
+          "tr": "Öğretim dili için kontrol edilmiş resmî kanıt ekleyin."
+        }
+      ],
       "qc_notes": {
         "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
         "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
@@ -2545,7 +2626,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "needs_review",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -2608,7 +2689,40 @@
       "ranking_or_selection": "academic qualifications; quality and quantity aspects",
       "admission_mode": "national application portal and academic selection",
       "admission_risk": "high",
-      "required_documents": [],
+      "required_documents": [
+        {
+          "en": "Application cover sheet generated by the portal",
+          "tr": "Portal tarafından oluşturulan başvuru kapak sayfası"
+        },
+        {
+          "en": "Motivation letter with second year university and track preferences",
+          "tr": "İkinci yıl üniversite ve uzmanlık tercihlerini içeren motivasyon mektubu"
+        },
+        {
+          "en": "Previous education certificates and diplomas",
+          "tr": "Önceki eğitime ait belgeler ve diplomalar"
+        },
+        {
+          "en": "Transcripts of courses and grades",
+          "tr": "Dersleri ve notları içeren transkriptler"
+        },
+        {
+          "en": "Proof of english language skills",
+          "tr": "İngilizce dil becerisi kanıtı"
+        },
+        {
+          "en": "Passport personal data page or other identification",
+          "tr": "Pasaportun kişisel bilgiler sayfası veya başka bir kimlik belgesi"
+        },
+        {
+          "en": "Curriculum vitae with academic and professional experience",
+          "tr": "Akademik ve mesleki deneyimi içeren özgeçmiş"
+        },
+        {
+          "en": "Two recommendation letters in english from senior subject experts",
+          "tr": "Alanında kıdemli uzmanlardan İngilizce iki tavsiye mektubu"
+        }
+      ],
       "gre": {
         "policy": "unknown",
         "test_type": "unknown",
@@ -2618,7 +2732,11 @@
         "waiver_rules": [],
         "source_ids": []
       },
-      "application_fee_scope": "non-EU/EEA and non-Swiss citizens"
+      "application_fee_scope": "non-EU/EEA and non-Swiss citizens",
+      "verification_notes": {
+        "en": "The official SpaceMaster consortium admissions page lists eight documents and the 1 February 2027 document deadline. Final-year applicants may use an official registrar-issued expected-degree statement under the published conditional-admission rule.",
+        "tr": "Resmî SpaceMaster konsorsiyumu kabul sayfası sekiz belgeyi ve 1 Şubat 2027 belge tarihini listeler. Son sınıf adayları yayımlanan koşullu kabul kuralı kapsamında öğrenci işleri tarafından düzenlenmiş beklenen derece yazısı kullanabilir."
+      }
     },
     "language_profile": {
       "teaching_language": [
@@ -2671,7 +2789,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "application_fee_sek": 900,
       "application_fee_charged_by": "central_application_service",
@@ -2724,7 +2842,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -2809,7 +2927,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -2846,11 +2964,11 @@
             "monthly_living_cost_sek_min": 10000.0,
             "monthly_living_cost_sek_max": 10000.0
           },
-          "derived_at": "2026-09-01"
+          "derived_at": "2026-09-05"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "curriculum_profile": {
@@ -2912,17 +3030,21 @@
     "application_timeline_profile": {
       "academic_year": "2027/2028",
       "intake_terms": [
-        "Autumn 2027"
+        "30 August 2027"
       ],
       "application_rounds": [
-        "Application opens 2026-10-16"
+        "Application opens 2026-10-16",
+        "Application deadline 2027-01-15",
+        "Documents and English proof deadline 2027-02-01",
+        "Selection results 2027-03-25",
+        "First-semester participation-cost payment deadline 2027-05-15"
       ],
       "non_eu_deadline": "2027-01-15",
       "eu_deadline": "2027-01-15",
-      "timeline_risk": "medium",
+      "timeline_risk": "low",
       "deadline_notes": {
-        "en": "The published date is for the 30 August 2027 start and application code LTU-97406.",
-        "tr": "Yayımlanan tarih 30 Ağustos 2027 başlangıcı ve LTU-97406 başvuru kodu içindir."
+        "en": "Dates and application code LTU-97406 are published for the 30 August 2027 start. English results and all documents must arrive by 1 February 2027.",
+        "tr": "Tarihler ve LTU-97406 başvuru kodu 30 Ağustos 2027 başlangıcı için yayımlanmıştır. İngilizce sonuçları ve tüm belgeler 1 Şubat 2027'ye kadar ulaşmalıdır."
       },
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
@@ -2930,18 +3052,20 @@
         "next_expected_date": null,
         "time": null,
         "timezone": null,
-        "applies_to": "non_eu",
+        "applies_to": "all_applicants",
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 136,
-        "derived_from": "application_timeline_profile.non_eu_deadline",
+        "days_remaining_at_evaluation": 132,
+        "derived_from": "application_timeline_profile.application_deadline",
         "confidence": "high",
         "source_url": "https://www.ltu.se/en/education/programme/tmrra-master-programme-in-space-science-and-technology",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
-      }
+      },
+      "application_deadline": "2027-01-15",
+      "document_deadline": "2027-02-01"
     },
     "source_profile": {
       "official_program_page": "https://www.ltu.se/en/education/programme/tmrra-master-programme-in-space-science-and-technology",
@@ -2953,33 +3077,20 @@
       "source_log": [
         {
           "url": "https://www.ltu.se/en/education/programme/tmrra-master-programme-in-space-science-and-technology",
-          "source_type": "official_program_page",
-          "title": "LTU SpaceMaster — Autumn 2027",
+          "source_type": "official_admission_page",
+          "title": "LTU SpaceMaster entry requirements",
           "access_status": "ok",
           "last_checked": "2026-08-14",
           "relevant_fields": [
             "program",
             "language",
             "curriculum",
-            "deadline"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Current official page confirms 120 credits, two years, English, Kiruna first year and consortium specialisations.",
-            "tr": "Güncel resmî sayfa 120 kredi, iki yıl, İngilizce, Kiruna'daki ilk yıl ve konsorsiyum uzmanlıklarını doğrular."
-          }
-        },
-        {
-          "url": "https://www.ltu.se/en/education/programme/tmrra-master-programme-in-space-science-and-technology",
-          "source_type": "official_admission_page",
-          "title": "LTU SpaceMaster entry requirements",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
+            "deadline",
             "admission",
             "non_eu_eligibility",
-            "language",
-            "deadline"
+            "tracks",
+            "courses",
+            "thesis"
           ],
           "confidence": "high",
           "notes": {
@@ -3025,7 +3136,12 @@
           "access_status": "ok",
           "last_checked": "2026-08-14",
           "relevant_fields": [
+            "program",
+            "language",
             "curriculum",
+            "deadline",
+            "admission",
+            "non_eu_eligibility",
             "tracks",
             "courses",
             "thesis"
@@ -3114,9 +3230,41 @@
             "fees"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://www.ltu.se/en/education/programme/tmrra-master-programme-in-space-science-and-technology",
+          "title": "Luleå University of Technology — Master Programme in Space Science and Technology",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "program",
+            "language",
+            "curriculum",
+            "deadline",
+            "admission",
+            "non_eu_eligibility",
+            "tracks",
+            "courses",
+            "thesis"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.spacemaster.eu/spacemaster/applying--admissions",
+          "title": "SpaceMaster Consortium — Applying and Admissions",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "deadline",
+            "admission",
+            "application_documents"
+          ],
+          "confidence": "high"
         }
       ],
-      "last_verified": "2026-09-01",
+      "last_verified": "2026-09-05",
       "verification_notes": {
         "en": "Critical programme fields are current for the 2027 intake; consortium mobility makes second-year location and costs profile-dependent.",
         "tr": "Kritik program alanları 2027 alımı için günceldir; konsorsiyum hareketliliği ikinci yıl konumunu ve maliyetini profile bağlı kılar."
@@ -3131,7 +3279,11 @@
         "research": "medium",
         "industry": "medium",
         "living": "medium",
-        "student_sentiment": "unknown"
+        "student_sentiment": "unknown",
+        "deadline": "high",
+        "deadlines": "high",
+        "application_timeline_profile": "high",
+        "application_documents": "high"
       },
       "needs_verification": false
     },
@@ -3310,7 +3462,7 @@
     },
     "data_quality": {
       "status": "verified",
-      "checked_official_source_count": 10,
+      "checked_official_source_count": 11,
       "verified_fields": [
         "program",
         "language",
@@ -3325,11 +3477,11 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-01"
+      "audited_at": "2026-09-05"
     },
     "quality_control": {
       "qc_status": "passed",
-      "checked_at": "2026-08-23",
+      "checked_at": "2026-09-05",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "qc_notes": {
@@ -3409,7 +3561,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {

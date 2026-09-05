@@ -153,7 +153,7 @@ def test_caltech_space_ms_has_current_cost_housing_curriculum_and_funding_scope(
     assert research["jpl_collaboration_opportunities"] is True
     assert research["jpl_access_guaranteed"] is False
     assert caltech["student_sentiment_profile"]["student_satisfaction_score"] is None
-    assert len(caltech["source_profile"]["source_log"]) == 32
+    assert len(caltech["source_profile"]["source_log"]) == 34
 
 
 def test_uc_berkeley_me_meng_scopes_professional_degree_cost_funding_and_housing():
@@ -1059,13 +1059,13 @@ def test_uiuc_ae_ms_separates_pathways_current_usd_costs_funding_and_housing():
     assert curriculum["internship_required"] is False
 
     deadlines = {item["round"]["en"]: item["deadline"] for item in uiuc["application_timeline_profile"]["application_rounds"]}
-    assert deadlines["Fall MS thesis and full funding consideration"] == "December 1"
-    assert deadlines["Fall MS non-thesis"] == "July 1"
-    assert deadlines["Spring MS thesis and full funding consideration"] == "October 1"
+    assert deadlines["Fall 2027 thesis MS/PhD full consideration"] == "2026-12-01"
+    assert deadlines["Fall 2027 non-thesis MS final"] == "2027-07-01"
+    assert deadlines["Spring 2027 thesis MS/PhD full consideration"] == "2026-10-08"
 
     assert uiuc["student_sentiment_profile"]["student_satisfaction_score"] is None
     assert uiuc["student_sentiment_profile"]["sentiment_confidence"] == "low"
-    assert uiuc["data_quality"]["checked_official_source_count"] == 20
+    assert uiuc["data_quality"]["checked_official_source_count"] == 22
     assert uiuc["data_quality"]["unverified_critical_fields"] == []
     assert uiuc["data_quality"]["status"] == "verified"
 
@@ -1181,13 +1181,13 @@ def test_purdue_aae_ms_separates_routes_current_cost_funding_and_graduate_housin
         item["round"]["en"]: item["deadline"]
         for item in purdue["application_timeline_profile"]["application_rounds"]
     }
-    assert deadlines["Fall on-campus — fullest funding consideration"] == "December 1 of the preceding year"
-    assert deadlines["Fall on-campus — final programme deadline"] == "March 30 of the same year"
-    assert deadlines["Spring on-campus"] == "September 15 of the preceding year"
+    assert deadlines["Fall 2027 full consideration and funding"] == "2026-12-01"
+    assert deadlines["Fall 2027 on-campus final"] == "2027-03-30"
+    assert deadlines["Spring 2027 on-campus final"] == "2026-09-15"
 
     assert purdue["student_sentiment_profile"]["student_satisfaction_score"] is None
     assert purdue["student_sentiment_profile"]["sentiment_confidence"] == "low"
-    assert purdue["data_quality"]["checked_official_source_count"] == 23
+    assert purdue["data_quality"]["checked_official_source_count"] == 24
     assert purdue["data_quality"]["unverified_critical_fields"] == ["language"]
     assert purdue["data_quality"]["status"] == "partial"
 
@@ -1258,7 +1258,7 @@ def test_ut_austin_ase_mse_separates_three_routes_current_cost_funding_and_housi
 
     assert texas["student_sentiment_profile"]["student_satisfaction_score"] is None
     assert texas["student_sentiment_profile"]["sentiment_confidence"] == "low"
-    assert texas["data_quality"]["checked_official_source_count"] == 21
+    assert texas["data_quality"]["checked_official_source_count"] == 22
     assert texas["data_quality"]["unverified_critical_fields"] == ["language"]
     assert texas["data_quality"]["status"] == "partial"
 
@@ -1326,13 +1326,13 @@ def test_tamu_aero_ms_keeps_thesis_funding_cost_housing_and_meng_separate():
         item["round"]["en"]: item["deadline"]
         for item in tamu["application_timeline_profile"]["application_rounds"]
     }
-    assert deadlines["Fall MS funding priority"] == "December 1 of the preceding year"
-    assert deadlines["Spring MS funding priority"] == "September 1 of the preceding year"
+    assert deadlines["Fall MS assistantship/fellowship priority"] == "December 1"
+    assert deadlines["Spring MS assistantship/fellowship priority"] == "September 1"
     assert tamu["application_timeline_profile"]["final_application_deadline"] is None
 
     assert tamu["student_sentiment_profile"]["student_satisfaction_score"] is None
     assert tamu["student_sentiment_profile"]["sentiment_confidence"] == "low"
-    assert tamu["data_quality"]["checked_official_source_count"] == 30
+    assert tamu["data_quality"]["checked_official_source_count"] == 31
     assert tamu["data_quality"]["unverified_critical_fields"] == ["language"]
     assert tamu["data_quality"]["status"] == "partial"
 
@@ -1565,7 +1565,7 @@ def test_ucla_aerospace_ms_separates_program_current_gre_cost_funding_and_housin
     assert len(ucla["industry_ecosystem_profile"]["verified_partnerships"]) == 1
     assert ucla["student_sentiment_profile"]["student_satisfaction_score"] is None
     assert ucla["student_sentiment_profile"]["sentiment_confidence"] == "low"
-    assert ucla["data_quality"]["checked_official_source_count"] == 19
+    assert ucla["data_quality"]["checked_official_source_count"] == 20
     assert ucla["data_quality"]["unverified_critical_fields"] == ["language"]
     assert ucla["data_quality"]["status"] == "partial"
 
@@ -1644,7 +1644,7 @@ def test_ucsd_aerospace_ms_has_current_deadline_cost_routes_housing_and_visa():
     assert len(ucsd["industry_ecosystem_profile"]["verified_partnerships"]) == 2
     assert ucsd["student_sentiment_profile"]["student_satisfaction_score"] is None
     assert ucsd["student_sentiment_profile"]["sentiment_confidence"] == "low"
-    assert ucsd["data_quality"]["checked_official_source_count"] == 23
+    assert ucsd["data_quality"]["checked_official_source_count"] == 24
     assert ucsd["data_quality"]["unverified_critical_fields"] == ["language"]
     assert ucsd["data_quality"]["status"] == "partial"
 
@@ -1730,7 +1730,7 @@ def test_mit_aeroastro_sm_has_current_direct_route_units_cost_funding_housing_an
     assert mit["industry_ecosystem_profile"]["verified_partnerships"] == []
     assert mit["student_sentiment_profile"]["student_satisfaction_score"] is None
     assert mit["student_sentiment_profile"]["sentiment_confidence"] == "low"
-    assert mit["data_quality"]["checked_official_source_count"] == 23
+    assert mit["data_quality"]["checked_official_source_count"] == 24
     assert mit["data_quality"]["status"] == "partial"
 
 
@@ -1814,5 +1814,5 @@ def test_stanford_aa_ms_has_current_units_cost_funding_housing_and_visa():
     assert stanford["industry_ecosystem_profile"]["verified_partnerships"] == []
     assert stanford["student_sentiment_profile"]["student_satisfaction_score"] is None
     assert stanford["student_sentiment_profile"]["sentiment_confidence"] == "low"
-    assert stanford["data_quality"]["checked_official_source_count"] == 22
+    assert stanford["data_quality"]["checked_official_source_count"] == 24
     assert stanford["data_quality"]["status"] == "partial"

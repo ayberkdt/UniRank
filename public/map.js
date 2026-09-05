@@ -69,30 +69,31 @@ function initUniRankMap() {
     }
 
     const initialDetailedMode = readDetailedPreference();
-    const tileAttribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>';
+    // CARTO's public basemaps started stamping "API KEY REQUIRED" across every
+    // tile, so the map had a watermark for a background.  Esri's dark canvas
+    // needs no key, matches the graphite UI, and stops the tiles fighting the
+    // score markers for attention.
+    const tileAttribution = 'Tiles &copy; Esri &mdash; Esri, HERE, Garmin, OpenStreetMap contributors';
 
     window.unirankMap = L.map(mapElement, {
         zoomControl: false,
         worldCopyJump: true,
         minZoom: 2,
-        maxZoom: 18
+        maxZoom: 16
     }).setView([25, 10], 2);
 
     const map = window.unirankMap;
     L.control.zoom({ position: 'bottomleft' }).addTo(map);
 
-    // Calm mode hides street-level labels so the score markers stay readable;
-    // detailed mode uses the fully labelled basemap. They must differ, or the
-    // "More map context" toggle silently does nothing.
-    const calmTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_nolabels/{z}/{x}/{y}{r}.png', {
+    // Calm mode is the unlabelled dark canvas, so the score markers stay
+    // readable; detailed mode lays the matching place-name layer on top.
+    // They must differ, or the "More map context" toggle silently does nothing.
+    const baseTiles = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
         attribution: tileAttribution,
-        subdomains: 'abcd',
-        maxZoom: 20
+        maxZoom: 16
     });
-    const detailedTiles = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-        attribution: tileAttribution,
-        subdomains: 'abcd',
-        maxZoom: 20
+    const labelTiles = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 16
     });
 
     // The tile layer already contains borders. Keeping a second remote GeoJSON
@@ -313,10 +314,12 @@ function initUniRankMap() {
         isDetailed = Boolean(detailed);
         if (persist) persistDetailedPreference(isDetailed);
 
-        const nextLayer = isDetailed ? detailedTiles : calmTiles;
-        const previousLayer = isDetailed ? calmTiles : detailedTiles;
-        if (map.hasLayer(previousLayer)) map.removeLayer(previousLayer);
-        if (!map.hasLayer(nextLayer)) nextLayer.addTo(map);
+        if (!map.hasLayer(baseTiles)) baseTiles.addTo(map);
+        if (isDetailed) {
+            if (!map.hasLayer(labelTiles)) labelTiles.addTo(map);
+        } else if (map.hasLayer(labelTiles)) {
+            map.removeLayer(labelTiles);
+        }
 
         mapElement.classList.toggle('map-detailed-mode', isDetailed);
         mapElement.classList.toggle('map-simple-mode', !isDetailed);

@@ -791,6 +791,30 @@ function setupEventListeners() {
     if (sidebarClose) sidebarClose.addEventListener('click', () => setFilterSidebar(false));
     if (sidebarScrim) sidebarScrim.addEventListener('click', () => setFilterSidebar(false));
 
+    // Desktop: the filter rail folds down to a column of icons instead of
+    // disappearing, so the results get the width and the filters stay one
+    // click away. Each icon reopens the rail on its own control.
+    const railToggle = document.getElementById('sidebar-rail-toggle');
+    if (railToggle) railToggle.addEventListener('click', () => setRailCollapsed(true));
+    document.querySelectorAll('[data-rail-open]').forEach(button => {
+        button.addEventListener('click', () => {
+            setRailCollapsed(false);
+            const targetId = button.dataset.railOpen;
+            if (!targetId) return;
+            // The rail's contents are display:none until the next style pass,
+            // so focusing inside the same frame silently fails.
+            window.setTimeout(() => {
+                const target = document.getElementById(targetId);
+                if (!target) return;
+                const advanced = target.closest('details.advanced-card');
+                if (advanced) advanced.open = true;
+                target.scrollIntoView({ block: 'center', behavior: 'smooth' });
+                if (typeof target.focus === 'function') target.focus({ preventScroll: true });
+            }, 40);
+        });
+    });
+    setRailCollapsed(window.uniStorage.read('unirank_rail_collapsed', 'false') === 'true', false);
+
     ['clear-filters-sidebar', 'clear-active-filters'].forEach(id => {
         const button = document.getElementById(id);
         if (button) button.addEventListener('click', clearAllFilters);
@@ -808,6 +832,18 @@ function setupEventListeners() {
     if (sidebarBreakpoint.addEventListener) sidebarBreakpoint.addEventListener('change', handleSidebarBreakpoint);
     else sidebarBreakpoint.addListener(handleSidebarBreakpoint);
     setFilterSidebar(false);
+}
+
+function setRailCollapsed(collapsed, persist = true) {
+    const isCollapsed = Boolean(collapsed);
+    document.body.classList.toggle('rail-collapsed', isCollapsed);
+    const rail = document.getElementById('sidebar-rail');
+    if (rail) rail.hidden = !isCollapsed;
+    const toggle = document.getElementById('sidebar-rail-toggle');
+    if (toggle) toggle.setAttribute('aria-expanded', String(!isCollapsed));
+    if (persist) window.uniStorage.write('unirank_rail_collapsed', String(isCollapsed));
+    // The map and the card grid both size themselves from the column width.
+    window.requestAnimationFrame(() => window.dispatchEvent(new Event('resize')));
 }
 
 function setFilterSidebar(open) {
@@ -1370,6 +1406,11 @@ function renderActiveFilters() {
 
     bar.hidden = filters.length === 0;
     if (mobileCount) mobileCount.textContent = String(filters.length);
+    const railCount = document.getElementById('rail-filter-count');
+    if (railCount) {
+        railCount.textContent = String(filters.length);
+        railCount.hidden = filters.length === 0;
+    }
 }
 
 window.switchView = function(view) {

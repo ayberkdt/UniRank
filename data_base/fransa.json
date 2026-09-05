@@ -240,7 +240,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         },
         "application_fee_verification": {
           "checked_on": "2026-09-01",
@@ -254,7 +254,7 @@
           "standard": "cost_model@3.2.0",
           "rule": "not_derivable",
           "reason": "no_readable_tuition_figure",
-          "derived_at": "2026-09-01"
+          "derived_at": "2026-09-05"
         },
         "application_fee_standard": {
           "standard": "application_fee@3.2.0",
@@ -288,7 +288,7 @@
             "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
             "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
           },
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         }
       },
       "scholarship_profile": {
@@ -439,7 +439,7 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         },
         "cost_of_living_profile": {
           "standard": "cost_model@3.2.0",
@@ -448,7 +448,7 @@
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         }
       },
       "curriculum_profile": {
@@ -703,7 +703,7 @@
           "status": "not_published",
           "confidence": "unknown",
           "reason": "no_iso_dated_deadline_in_record",
-          "evaluated_at": "2026-09-01",
+          "evaluated_at": "2026-09-05",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -1191,7 +1191,7 @@
         ],
         "confidence": "medium",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "academic_match_evidence": {
         "research_group_evidence": {
@@ -1409,7 +1409,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         },
         "application_fee_standard": {
           "standard": "application_fee@3.2.0",
@@ -1443,7 +1443,7 @@
             "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
             "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
           },
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         }
       },
       "scholarship_profile": {
@@ -1585,7 +1585,7 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         },
         "cost_of_living_profile": {
           "standard": "cost_model@3.2.0",
@@ -1615,11 +1615,11 @@
               "monthly_living_cost_eur_min": 800.0,
               "monthly_living_cost_eur_max": 1200.0
             },
-            "derived_at": "2026-09-01"
+            "derived_at": "2026-09-05"
           },
           "source_url": null,
           "note": null,
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         }
       },
       "curriculum_profile": {
@@ -1807,11 +1807,11 @@
           "cycle_label": null,
           "is_recurring_annual": true,
           "status": "closed",
-          "days_remaining_at_evaluation": -33,
+          "days_remaining_at_evaluation": -37,
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://admissions.estaca.fr/en/post-master-degree/aeronautical-operations-and-maintenance.html",
-          "evaluated_at": "2026-09-01",
+          "evaluated_at": "2026-09-05",
           "audience": "new_applicants",
           "other_milestones": []
         },
@@ -2215,7 +2215,7 @@
         "matched_tags": [],
         "confidence": "medium",
         "legacy_relevance_status": "medium",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "academic_match_evidence": {
         "research_group_evidence": {
@@ -2318,7 +2318,36 @@
         },
         "admission_mode": "selective",
         "admission_risk": "high",
-        "required_documents": [],
+        "required_documents": [
+          {
+            "en": "Previous-year class rank and cohort size",
+            "tr": "Önceki yıl sınıf sıralaması ve sınıf/kohort büyüklüğü"
+          },
+          {
+            "en": "Copies of diplomas",
+            "tr": "Diploma kopyaları"
+          },
+          {
+            "en": "Identity-document copy",
+            "tr": "Kimlik belgesi kopyası"
+          },
+          {
+            "en": "Motivation letter",
+            "tr": "Niyet mektubu"
+          },
+          {
+            "en": "All transcripts for completed years/semesters since the baccalaureate",
+            "tr": "Bakaloryadan/lise bitiminden bu yana tamamlanan tüm yıl ve dönemlere ait transkriptler"
+          },
+          {
+            "en": "Curriculum Vitae",
+            "tr": "Özgeçmiş"
+          },
+          {
+            "en": "English-level certificate for non-native speakers, or GMAT/GRE results",
+            "tr": "Ana dili İngilizce olmayanlar için İngilizce seviye belgesi veya GMAT/GRE sonucu"
+          }
+        ],
         "motivation_letter_required": true,
         "cv_required": true,
         "recommendation_required": null,
@@ -2330,8 +2359,8 @@
           "tr": "4 yıllık yükseköğrenim (M1 dengi) gerektirir."
         },
         "verification_notes": {
-          "en": "",
-          "tr": ""
+          "en": "The live Paris-Saclay programme page lists the mandatory documents. A detailed course-content/workload description is optional; VAPP and internal M1 choice forms are conditional.",
+          "tr": "Canlı Paris-Saclay program sayfası zorunlu belgeleri listeler. Ayrıntılı ders içeriği/iş yükü açıklaması isteğe bağlıdır; VAPP ve kurum içi M1 tercih formu koşula bağlıdır."
         },
         "gre": {
           "policy": "unknown",
@@ -2434,7 +2463,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         },
         "application_fee_charged_by": "central_application_service",
         "application_fee_charged_by_name": "Campus France",
@@ -2451,7 +2480,7 @@
           "standard": "cost_model@3.2.0",
           "rule": "not_derivable",
           "reason": "no_readable_tuition_figure",
-          "derived_at": "2026-09-01"
+          "derived_at": "2026-09-05"
         },
         "application_fee_standard": {
           "standard": "application_fee@3.2.0",
@@ -2485,7 +2514,7 @@
             "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
             "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
           },
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         }
       },
       "scholarship_profile": {
@@ -2623,7 +2652,7 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         },
         "cost_of_living_profile": {
           "standard": "cost_model@3.2.0",
@@ -2632,7 +2661,7 @@
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         }
       },
       "curriculum_profile": {
@@ -2772,32 +2801,46 @@
         }
       },
       "application_timeline_profile": {
-        "academic_year": "2026/2027",
+        "academic_year": "2026/2027 closed reference cycle",
         "intake_terms": [
           "September"
         ],
-        "application_rounds": [],
-        "non_eu_deadline": null,
-        "eu_deadline": "unknown",
+        "application_rounds": [
+          "2026-02-02 to 2026-07-05 via Inception",
+          "2026-08-15 to 2026-08-29 via Inception"
+        ],
+        "non_eu_deadline": "2026-08-29 (last published 2026/27 Inception round; closed)",
+        "eu_deadline": "2026-08-29 (last published 2026/27 Inception round; closed)",
         "scholarship_deadline": "unknown",
         "pre_enrolment_required": false,
         "universitaly_required": false,
         "visa_sensitive_deadline": "",
         "application_result_timing": "",
         "enrollment_deadline": "",
-        "timeline_risk": "unknown",
-        "deadline_notes": null,
-        "deadline_non_eu": "Late November (Round 1) with rolling rounds until June",
+        "timeline_risk": "high",
+        "deadline_notes": {
+          "en": "Both official 2026 application windows are closed. The page does not publish a 2027/28 date, so no future deadline is inferred.",
+          "tr": "Resmî 2026 başvuru pencerelerinin ikisi de kapalıdır. Sayfa 2027/28 tarihi yayımlamadığından gelecek son tarih türetilmemiştir."
+        },
+        "deadline_non_eu": null,
         "winter_deadline": null,
-        "application_deadline": null,
+        "application_deadline": "2026-08-29",
         "deadline_events": [],
         "primary_deadline": {
           "standard": "application_countdown@3.2.0",
-          "date": null,
-          "status": "not_published",
-          "confidence": "unknown",
-          "reason": "no_iso_dated_deadline_in_record",
-          "evaluated_at": "2026-09-01",
+          "date": "2026-08-29",
+          "next_expected_date": null,
+          "time": null,
+          "timezone": null,
+          "applies_to": "non_eu",
+          "cycle_label": null,
+          "is_recurring_annual": false,
+          "status": "closed",
+          "days_remaining_at_evaluation": -7,
+          "derived_from": "application_timeline_profile.non_eu_deadline",
+          "confidence": "high",
+          "source_url": "https://www.universite-paris-saclay.fr/en/education/masters-degree/electrical-engineering/m2-smart-aerospace-and-autonomous-systems",
+          "evaluated_at": "2026-09-05",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -2917,9 +2960,26 @@
               "fees"
             ],
             "confidence": "high"
+          },
+          {
+            "url": "https://www.universite-paris-saclay.fr/formation/master/electronique-energie-electrique-automatique/m2-smart-aerospace-and-autonomous-systems",
+            "title": "Université Paris-Saclay — M2 Smart Aerospace and Autonomous Systems",
+            "source_type": "official_admission_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-05",
+            "relevant_fields": [
+              "admission",
+              "required_documents",
+              "deadline"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "The live programme page directly publishes two 2026 Inception windows and the mandatory application documents.",
+              "tr": "Canlı program sayfası iki 2026 Inception penceresini ve zorunlu başvuru belgelerini doğrudan yayımlar."
+            }
           }
         ],
-        "last_verified": "2026-09-01",
+        "last_verified": "2026-09-05",
         "needs_verification": true,
         "verification_notes": {
           "en": "The programme name is aerospace-relevant, but current official 2026 fee, application and housing details were not revalidated in this pass; do not display old values as current.",
@@ -2928,7 +2988,7 @@
         "field_confidence": {
           "program_basic_info": "medium",
           "language": "unknown",
-          "admission": "unknown",
+          "admission": "high",
           "tuition": "unknown",
           "scholarship": "unknown",
           "curriculum": "medium",
@@ -2937,10 +2997,11 @@
           "living": "unknown",
           "student_sentiment": "medium",
           "location": "medium",
-          "deadlines": "unknown",
+          "deadlines": "high",
           "housing": "unknown",
           "non_eu_eligibility": "unknown",
-          "deadline": "unknown"
+          "deadline": "high",
+          "application_timeline_profile": "high"
         }
       },
       "decision_summary": {
@@ -3015,23 +3076,23 @@
       "qs_ranking": 76,
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 3,
+        "checked_official_source_count": 4,
         "verified_fields": [
           "program",
+          "admission",
           "tuition",
+          "deadline",
           "curriculum",
           "research"
         ],
         "unverified_critical_fields": [
           "language",
-          "admission",
           "non_eu_eligibility",
           "scholarship",
-          "deadline",
           "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-09-01"
+        "audited_at": "2026-09-05"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -3099,7 +3160,7 @@
         "matched_tags": [],
         "confidence": "medium",
         "legacy_relevance_status": "medium",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "academic_match_evidence": {
         "research_group_evidence": {
@@ -3210,7 +3271,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         },
         "tuition_eur_per_year": 7000.0,
         "tuition_derivation": {
@@ -3268,7 +3329,7 @@
             "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
             "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
           },
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         }
       },
       "scholarship_profile": {
@@ -3348,7 +3409,7 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         },
         "cost_of_living_profile": {
           "standard": "cost_model@3.2.0",
@@ -3357,7 +3418,7 @@
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         }
       },
       "curriculum_profile": {
@@ -3435,11 +3496,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closed",
-          "days_remaining_at_evaluation": -120,
+          "days_remaining_at_evaluation": -124,
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://www.ensma.fr/en/master-of-science-in-aeronautics-and-space/ame-admission/",
-          "evaluated_at": "2026-09-01",
+          "evaluated_at": "2026-09-05",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -3996,7 +4057,7 @@
         ],
         "confidence": "medium",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "academic_match_evidence": {
         "research_group_evidence": {

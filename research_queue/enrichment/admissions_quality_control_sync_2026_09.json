@@ -1,0 +1,61 @@
+{
+  "checked": "2026-09-05",
+  "records": [
+    {
+      "id": "germany-braunschweig-msc-aerospace",
+      "quality_control": {
+        "qc_status": "needs_revision",
+        "checked_at": "2026-09-05",
+        "failed_canary_tests": [
+          "critical_field_confidence_below_high"
+        ],
+        "remaining_verification_tasks": [],
+        "qc_notes": {
+          "en": "All critical fields have source coverage, but at least one critical field remains below high confidence.",
+          "tr": "Tüm kritik alanlar kaynakla kapsanıyor; ancak en az bir kritik alanın güven düzeyi hâlâ yüksek değil."
+        }
+      }
+    },
+    {
+      "id": "spain_uc3m_space_aero",
+      "quality_control": {
+        "qc_status": "needs_revision",
+        "checked_at": "2026-09-05",
+        "failed_canary_tests": [
+          "missing_or_unverified_critical_fields"
+        ],
+        "remaining_verification_tasks": [
+          {
+            "en": "Add checked official evidence for non-EU eligibility.",
+            "tr": "AB dışı uygunluk için kontrol edilmiş resmî kanıt ekleyin."
+          }
+        ]
+      }
+    },
+    {
+      "id": "se-linkoping-aero-msc",
+      "quality_control": {
+        "qc_status": "needs_revision",
+        "checked_at": "2026-09-05",
+        "failed_canary_tests": [
+          "missing_or_unverified_critical_fields"
+        ],
+        "remaining_verification_tasks": [
+          {
+            "en": "Add checked official evidence for the teaching language.",
+            "tr": "Öğretim dili için kontrol edilmiş resmî kanıt ekleyin."
+          }
+        ]
+      }
+    },
+    {
+      "id": "uk-surrey-astronautics-space-engineering-msc",
+      "quality_control": {
+        "qc_status": "passed",
+        "checked_at": "2026-09-05",
+        "failed_canary_tests": [],
+        "remaining_verification_tasks": []
+      }
+    }
+  ]
+}

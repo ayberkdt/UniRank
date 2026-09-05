@@ -53,32 +53,24 @@
       "interview_policy": "may_be_invited_not_required_for_all",
       "required_documents": [
         {
-          "en": "Online departmental graduate application",
-          "tr": "Çevrim içi bölüm lisansüstü başvurusu"
+          "en": "Online graduate application and application fee",
+          "tr": "Çevrim içi lisansüstü başvuru ve başvuru ücreti"
         },
         {
-          "en": "Research & Technical objective statement",
-          "tr": "Araştırma ve Teknik amaç beyanı"
+          "en": "Required objective statements covering prior research/academic experience, interests and goals",
+          "tr": "Önceki araştırma/akademik deneyim, ilgi alanları ve hedefleri kapsayan zorunlu amaç beyanları"
         },
         {
-          "en": "Professional Experience & Objectives statement",
-          "tr": "Mesleki Deneyim ve Hedefler beyanı"
+          "en": "Scanned transcript from every institution where a degree was or will be earned",
+          "tr": "Derece alınan veya alınacak her kurumdan taranmış transkript"
         },
         {
-          "en": "Personal Background statement",
-          "tr": "Kişisel Geçmiş beyanı"
+          "en": "Three online letters of recommendation",
+          "tr": "Üç çevrim içi referans mektubu"
         },
         {
-          "en": "Transcripts from every degree-granting institution",
-          "tr": "Derece alınan/alınacak her kurumdan transkript"
-        },
-        {
-          "en": "Exactly three recommendation letters",
-          "tr": "Tam olarak üç referans mektubu"
-        },
-        {
-          "en": "English-proficiency result when required",
-          "tr": "Gerekiyorsa İngilizce yeterlilik sonucu"
+          "en": "English-proficiency score and later official verification when required",
+          "tr": "Gerektiğinde İngilizce yeterlilik puanı ve sonrasında resmî doğrulama"
         }
       ],
       "official_transcripts_required_at_application": false,
@@ -108,9 +100,10 @@
       },
       "transfer_credit_from_other_universities_accepted": false,
       "verification_notes": {
-        "en": "No official minimum or average GPA is published. Admission is holistic, capacity-limited by advisor availability, and therefore high-risk even for strong applicants.",
-        "tr": "Resmî asgari veya ortalama GNO yayımlanmamıştır. Kabul bütünsel ve danışman kapasitesiyle sınırlıdır; bu nedenle güçlü adaylar için bile yüksek risklidir."
-      }
+        "en": "GRE scores are no longer required or accepted. Unofficial transcripts are accepted at application, while admitted students later provide official records.",
+        "tr": "GRE puanları artık istenmez ve kabul edilmez. Başvuruda resmî olmayan transkript kabul edilir; kabul edilen öğrenciler daha sonra resmî kayıt sunar."
+      },
+      "recommendation_required": true
     },
     "language_profile": {
       "teaching_language": [
@@ -233,7 +226,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -278,7 +271,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -485,7 +478,7 @@
         "band_from_score": "very_high",
         "capped_from_very_high": true,
         "legacy_value": "high",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -552,7 +545,7 @@
           "en": "MIT's 2026-27 graduate cost of attendance, nine-month column for the standard September-to-May academic year: housing 17,100, food 7,830, books and course materials 1,161, personal 7,794, transportation 2,844 and health insurance 5,148. MIT publishes a twelve-month column as well, used only when a student also registers for the summer session, where housing rises to 22,800 and food to 10,440.",
           "tr": "MIT'nin 2026-27 lisansustu egitim maliyeti, standart Eylul-Mayis akademik yili icin dokuz aylik sutun: konut 17.100, gida 7.830, kitap ve ders malzemesi 1.161, kisisel 7.794, ulasim 2.844 ve saglik sigortasi 5.148. MIT ayrica on iki aylik bir sutun yayimlar; bu sutun yalnizca ogrenci yaz donemine de kayit oldugunda kullanilir ve konut 22.800'e, gida 10.440'a yukselir."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_cost_of_attendance",
@@ -736,10 +729,17 @@
       "all_supplemental_materials_due_with_application": true,
       "application_rounds": [
         {
+          "round": {
+            "en": "Fall 2027 final deadline",
+            "tr": "Güz 2027 nihai son tarih"
+          },
+          "deadline": "2026-12-01",
+          "deadline_time": "23:59 Eastern Time",
+          "deadline_type": "final",
+          "all_materials_due": true,
+          "international_difference": false,
           "intake": "Fall 2027",
           "opens": "2026-09-01",
-          "deadline": "2026-12-01",
-          "deadline_time": "23:59 US Eastern Time",
           "gre_required": false,
           "status": "upcoming",
           "date_basis": "current official annual calendar"
@@ -758,7 +758,7 @@
       "financial_proof_duration_rule": "12 months or entire programme if shorter",
       "post_arrival_online_check_in_required": true,
       "iso_immigration_orientation_required": true,
-      "timeline_risk": "high",
+      "timeline_risk": "medium",
       "verification_notes": {
         "en": "The department publishes an annual September 1 opening and hard December 1, 11:59 PM ET deadline for fall-only admission. The cycle is mapped to Fall 2027 because it opens in September 2026; it is not an estimated day.",
         "tr": "Bölüm yalnızca güz kabulü için yıllık 1 Eylül açılışı ve 1 Aralık 23:59 ET kesin son tarihini yayımlar. Dönem, Eylül 2026'da açıldığı için Güz 2027 olarak eşlenmiştir; gün tahmini değildir."
@@ -773,13 +773,21 @@
         "cycle_label": "Fall 2027",
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 91,
+        "days_remaining_at_evaluation": 87,
         "derived_from": "application_timeline_profile.deadline_eu",
         "confidence": "high",
         "source_url": "https://aeroastro.mit.edu/education/graduate-admission/",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
+      },
+      "academic_year": "Fall 2027 entry",
+      "intake_terms": [
+        "Fall"
+      ],
+      "deadline_notes": {
+        "en": "MIT publishes a recurring December 1, 11:59 p.m. Eastern deadline for the following fall rather than printing a Fall 2027 label. Late applications and supplemental materials are not accepted; there is no spring admission.",
+        "tr": "MIT, Güz 2027 etiketini ayrıca yazmak yerine izleyen güz dönemi için her yıl 1 Aralık 23:59 Doğu Saati kuralını yayımlar. Geç başvuru ve ek belge kabul edilmez; bahar kabulü yoktur."
       }
     },
     "research_profile": {
@@ -1166,7 +1174,7 @@
       "official_scholarship_page": "https://aeroastro.mit.edu/education/funding/",
       "official_housing_page": "https://graduatehousing.mit.edu/get-housing/",
       "official_department_page": "https://aeroastro.mit.edu/research/",
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "program_basic_info": "high",
         "admission": "high",
@@ -1179,7 +1187,8 @@
         "research": "high",
         "industry": "medium",
         "visa": "high",
-        "sentiment": "low"
+        "sentiment": "low",
+        "deadline": "high"
       },
       "source_reliability": "high",
       "verification_status": "partially_verified",
@@ -1397,7 +1406,8 @@
             "fees",
             "insurance",
             "living",
-            "housing"
+            "housing",
+            "cost"
           ],
           "confidence": "high",
           "notes": {
@@ -1465,7 +1475,8 @@
           "relevant_fields": [
             "research",
             "labs",
-            "research_areas"
+            "research_areas",
+            "department"
           ],
           "confidence": "high",
           "notes": {
@@ -1680,6 +1691,7 @@
           "relevant_fields": [
             "research",
             "labs",
+            "research_areas",
             "department"
           ],
           "confidence": "high",
@@ -1695,9 +1707,30 @@
           "access_status": "ok",
           "last_checked": "2026-08-30",
           "relevant_fields": [
+            "tuition",
+            "fees",
+            "insurance",
             "living",
             "housing",
             "cost"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://aeroastro.mit.edu/education/graduate-admission/",
+          "title": "Graduate Admission - MIT AeroAstro",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "documents",
+            "deadline",
+            "language",
+            "gre",
+            "housing",
+            "required_documents",
+            "international"
           ],
           "confidence": "high"
         }
@@ -1774,7 +1807,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 23,
+      "checked_official_source_count": 24,
       "verified_fields": [
         "program",
         "language",
@@ -1789,16 +1822,16 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-29"
+      "audited_at": "2026-09-05"
     },
     "quality_control": {
-      "checked_at": "2026-08-23",
+      "checked_at": "2026-09-05",
       "qc_status": "needs_revision",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "qc_notes": {
-        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
-        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        "en": "Deadline and document checklist reverified on current official pages; the cycle year is derived only from MIT's published annual recurrence rule.",
+        "tr": "Son tarih ve belge listesi güncel resmî sayfalarda yeniden doğrulandı; döngü yılı yalnızca MIT'nin yayımladığı yıllık tekrar kuralından türetildi."
       }
     },
     "duration": {
@@ -1877,7 +1910,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -1946,24 +1979,24 @@
       "interview_policy": "not_published_as_required",
       "required_documents": [
         {
-          "en": "Online graduate application",
-          "tr": "Çevrim içi lisansüstü başvurusu"
+          "en": "Online graduate application and application fee or approved waiver",
+          "tr": "Çevrim içi lisansüstü başvuru ve başvuru ücreti veya onaylı muafiyet"
         },
         {
-          "en": "Statement of purpose, no more than two single-spaced pages",
-          "tr": "En fazla iki tek aralıklı sayfalık amaç beyanı"
+          "en": "Statement of purpose, maximum two single-spaced pages",
+          "tr": "En fazla iki tek aralıklı sayfalık amaç mektubu"
         },
         {
-          "en": "Unofficial transcript from every post-secondary degree institution",
-          "tr": "Derece programına devam edilen her yükseköğretim kurumundan resmî olmayan transkript"
+          "en": "Three online recommendation letters; at least one academic and preferably two",
+          "tr": "En az biri, tercihen ikisi akademik olmak üzere üç çevrim içi referans mektubu"
         },
         {
-          "en": "Exactly three recommendation letters; at least one academic and preferably two",
-          "tr": "Tam olarak üç referans mektubu; en az biri akademik, tercihen ikisi"
+          "en": "One scanned transcript per institution at application; official final transcript after offer",
+          "tr": "Başvuruda her kurum için bir taranmış transkript; teklif sonrasında resmî nihai transkript"
         },
         {
-          "en": "TOEFL iBT or IELTS Academic when no exemption applies",
-          "tr": "Muafiyet yoksa TOEFL iBT veya IELTS Academic"
+          "en": "Official English-proficiency score when applicable",
+          "tr": "Uygulanıyorsa resmî İngilizce yeterlilik puanı"
         }
       ],
       "recommendation_letter_count": 3,
@@ -1995,7 +2028,9 @@
       "verification_notes": {
         "en": "No minimum GPA, acceptance rate, interview rule, or international fee-waiver entitlement is published for AA-MS; these remain null rather than estimated.",
         "tr": "AA-MS için asgari GNO, kabul oranı, mülakat kuralı veya uluslararası ücret muafiyeti hakkı yayımlanmamıştır; tahmin edilmek yerine null bırakılır."
-      }
+      },
+      "motivation_letter_required": true,
+      "recommendation_required": true
     },
     "language_profile": {
       "teaching_language": [
@@ -2132,7 +2167,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "tuition_usd_per_year": 69717.0,
       "tuition_derivation": {
@@ -2185,7 +2220,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -2340,7 +2375,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -2407,7 +2442,7 @@
           "en": "Stanford's 2026-27 standard budget for a single graduate student with no dependents: USD 49,116 across the nine-month academic year, or USD 61,142 over twelve months. The nine-month figure is used because that is the period Stanford labels the academic year. The USD 843 campus health service fee belongs to the same published budget but is held in the mandatory-fee field instead, so it is not counted twice.",
           "tr": "Stanford'un bakmakla yukumlu oldugu kimsesi olmayan tek kisilik bir lisansustu ogrenci icin 2026-27 standart butcesi: dokuz aylik akademik yil boyunca 49.116 USD, on iki ay icin 61.142 USD. Dokuz aylik rakam kullanilir, cunku Stanford akademik yil olarak bu donemi adlandirir. 843 USD kampus saglik hizmeti ucreti ayni yayimlanmis butcenin parcasidir, ancak iki kez sayilmamasi icin zorunlu ucret alaninda tutulur."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_living_budget",
@@ -2542,10 +2577,17 @@
     "application_timeline_profile": {
       "application_rounds": [
         {
+          "round": {
+            "en": "Autumn 2027 final deadline",
+            "tr": "Güz 2027 nihai son tarih"
+          },
+          "deadline": "2026-12-01",
+          "deadline_time": "23:59 Pacific Time",
+          "deadline_type": "final",
+          "all_materials_due": true,
+          "international_difference": false,
           "intake": "Autumn 2027",
           "opens": "2026-09",
-          "deadline": "2026-12-01",
-          "deadline_time": null,
           "gre_required": false,
           "all_materials_due_by_deadline": true
         }
@@ -2586,7 +2628,7 @@
         "en": "The current initial-document page publishes the workflow but no processing-time promise.",
         "tr": "Güncel ilk belge sayfası iş akışını yayımlar, ancak işlem süresi taahhüdü vermez."
       },
-      "timeline_risk": "high",
+      "timeline_risk": "low",
       "verification_notes": {
         "en": "December 1 is a hard final deadline for the only full-time cycle. Housing and Knight-Hennessy have separate timelines; the Fall 2027 housing deadline is not yet published.",
         "tr": "1 Aralık tek tam zamanlı dönem için kesin son tarihtir. Konut ve Knight-Hennessy ayrı takvimlere sahiptir; 2027 Güz konut son tarihi henüz yayımlanmamıştır."
@@ -2601,13 +2643,21 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 91,
+        "days_remaining_at_evaluation": 87,
         "derived_from": "application_timeline_profile.deadline_eu",
         "confidence": "high",
         "source_url": "https://aa.stanford.edu/academics-admissions/graduate-admissions/masters-admissions",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
+      },
+      "academic_year": "2027-2028",
+      "intake_terms": [
+        "Autumn"
+      ],
+      "deadline_notes": {
+        "en": "The MS and PhD deadline is December 1, 2026 at 11:59 p.m. Pacific for Autumn 2027-28. All letters, transcripts and applicable English scores must arrive by the deadline; late applications are not accepted.",
+        "tr": "MS ve doktora için Güz 2027-28 son tarihi 1 Aralık 2026 saat 23:59 Pasifik'tir. Tüm referanslar, transkriptler ve gerekiyorsa İngilizce puanları bu tarihe kadar ulaşmalıdır; geç başvuru kabul edilmez."
       }
     },
     "research_profile": {
@@ -2994,7 +3044,7 @@
         "https://www.reddit.com/r/stanford/comments/1k6i32u",
         "https://www.reddit.com/r/stanford/comments/1srdy4u"
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "program": "high",
         "degree": "high",
@@ -3452,9 +3502,40 @@
           "access_status": "ok",
           "last_checked": "2026-08-30",
           "relevant_fields": [
+            "cost",
             "living",
             "housing",
-            "cost"
+            "insurance"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://aa.stanford.edu/academics-admissions/graduate-admissions/masters-admissions",
+          "title": "Master's Admissions | Aeronautics and Astronautics",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "program",
+            "admission",
+            "eligibility",
+            "documents",
+            "deadline",
+            "funding",
+            "required_documents",
+            "international"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://gradadmissions.stanford.edu/apply/apply-now",
+          "title": "Apply Now | Stanford Graduate Admissions",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "deadline",
+            "timezone"
           ],
           "confidence": "high"
         }
@@ -3525,7 +3606,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 22,
+      "checked_official_source_count": 24,
       "verified_fields": [
         "program",
         "language",
@@ -3540,16 +3621,16 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-29"
+      "audited_at": "2026-09-05"
     },
     "quality_control": {
-      "checked_at": "2026-08-23",
+      "checked_at": "2026-09-05",
       "qc_status": "needs_revision",
       "failed_canary_tests": [],
       "remaining_verification_tasks": [],
       "qc_notes": {
-        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
-        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        "en": "Autumn 2027-28 deadline, time zone and required materials were reverified on Stanford's official department and Graduate Admissions pages.",
+        "tr": "Güz 2027-28 son tarihi, saat dilimi ve gerekli belgeler Stanford'ın resmî bölüm ve Graduate Admissions sayfalarında yeniden doğrulandı."
       }
     },
     "duration": {
@@ -3614,7 +3695,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -3693,28 +3774,32 @@
       },
       "required_documents": [
         {
-          "en": "Online graduate application",
-          "tr": "Çevrim içi lisansüstü başvurusu"
+          "en": "CollegeNET online application and application fee or waiver request",
+          "tr": "CollegeNET çevrim içi başvurusu ve başvuru ücreti veya muafiyet talebi"
         },
         {
-          "en": "Transcript from every college or university attended; unofficial/scanned records are accepted for application",
-          "tr": "Devam edilen her kolej veya üniversiteden transkript; başvuruda resmî olmayan/taranmış kayıt kabul edilir"
+          "en": "Statement of purpose and any required essays",
+          "tr": "Amaç mektubu ve istenen diğer yazılar"
+        },
+        {
+          "en": "Institution-issued transcript or online grade report; official registrar transcript after admission",
+          "tr": "Kurumca düzenlenmiş transkript veya çevrim içi not dökümü; kabulden sonra resmî transkript"
         },
         {
           "en": "Three recommendation letters",
           "tr": "Üç referans mektubu"
         },
         {
-          "en": "Curriculum vitae",
+          "en": "Resume or CV",
           "tr": "Özgeçmiş"
         },
         {
-          "en": "Application essays / statement materials",
-          "tr": "Başvuru yazıları / amaç beyanı materyalleri"
+          "en": "English-proficiency score for applicants whose first/native language is not English",
+          "tr": "İlk/ana dili İngilizce olmayan adaylar için İngilizce yeterlilik puanı"
         },
         {
-          "en": "English-proficiency evidence under the applicable department/central rule",
-          "tr": "Uygulanabilir bölüm/merkez kuralına göre İngilizce yeterlik kanıtı"
+          "en": "Aerospace specialization selection",
+          "tr": "Aerospace uzmanlık alanı seçimi"
         }
       ],
       "recommendation_letter_count": 3,
@@ -3749,7 +3834,9 @@
       "verification_notes": {
         "en": "Non-EU applicants are eligible for this direct terminal-MS route, but eligibility does not imply admission, funding, visa issuance, JPL access or work authorisation.",
         "tr": "AB dışı adaylar bu doğrudan terminal-MS rotasına uygundur; ancak uygunluk kabul, finansman, vize, JPL erişimi veya çalışma izni anlamına gelmez."
-      }
+      },
+      "recommendation_required": true,
+      "cv_required": true
     },
     "language_profile": {
       "teaching_language": [
@@ -3887,7 +3974,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -3928,7 +4015,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -4123,7 +4210,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -4187,7 +4274,7 @@
           "en": "Caltech's 2025-26 twelve-month graduate budget for an on-campus double apartment: housing and utilities 13,320, food 8,904, books 1,400, health, dental and vision 965 and personal 9,585, totalling 34,174. The published range across housing types runs from 31,774 for a quad apartment to 44,554 for an off-campus two-bedroom lease. Caltech warns separately that first-year students should expect relocation and set-up costs on top.",
           "tr": "Caltech'in kampus ici cift kisilik daire icin 2025-26 on iki aylik lisansustu butcesi: konut ve faturalar 13.320, gida 8.904, kitap 1.400, saglik, dis ve goz 965 ve kisisel 9.585; toplam 34.174. Konut turlerine gore yayimlanan aralik, dortlu daire icin 31.774'ten kampus disi iki yatak odali kira icin 44.554'e uzanir. Caltech ayrica birinci yil ogrencilerinin bunlarin ustune tasinma ve kurulum masraflari beklemesi gerektigini belirtir."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_living_budget",
@@ -4406,20 +4493,36 @@
       "housing_application_separate": true,
       "latest_housing_benchmark_deadline": "2026-04-30",
       "deadline_notes": {
-        "en": "December 15 is a live standing departmental deadline without a cycle year, so the database does not fabricate a 2026 or 2027 date. Re-check the programme and central deadline document when the next application opens.",
-        "tr": "15 Aralık, dönem yılı olmayan canlı ve sürekli bölüm son tarihidir; veri tabanı bu nedenle uydurma bir 2026 veya 2027 tarihi üretmez. Sonraki başvuru açıldığında program ve merkezî son-tarih belgesini yeniden kontrol edin."
+        "en": "Caltech explicitly announces the 2027-28 application, opening in early October, and the current Aerospace page gives December 15 for fall-only entry. No time zone is stated. The generic checklist linked by Caltech is revision 09/2024, so its details should be reconfirmed when the 2027-28 portal opens.",
+        "tr": "Caltech 2027-28 başvurusunu ve Ekim başındaki açılışı açıkça duyurur; güncel Aerospace sayfası yalnız güz girişi için 15 Aralık tarihini verir. Saat dilimi belirtilmez. Caltech'in bağlantı verdiği genel kontrol listesi 09/2024 revizyonudur; 2027-28 portalı açıldığında ayrıntılar yeniden kontrol edilmelidir."
       },
-      "timeline_risk": "high",
+      "timeline_risk": "medium",
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
-      }
+      },
+      "academic_year": "2027-2028",
+      "intake_terms": [
+        "Fall"
+      ],
+      "application_rounds": [
+        {
+          "round": {
+            "en": "Fall 2027 final deadline",
+            "tr": "Güz 2027 nihai son tarih"
+          },
+          "deadline": "2026-12-15",
+          "deadline_time": null,
+          "deadline_type": "final",
+          "international_difference": false
+        }
+      ]
     },
     "research_profile": {
       "research_fit_for_terminal_ms": "strong_ecosystem_but_no_degree_research_requirement",
@@ -4721,11 +4824,11 @@
         "https://housing.caltech.edu/grads/newadmits/newstudent-housingoptions",
         "https://aerospace.caltech.edu/research/space-technology"
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "program_basic_info": "high",
         "program_status": "high",
-        "admission": "high",
+        "admission": "medium",
         "non_eu_eligibility": "high",
         "deadlines": "medium",
         "curriculum": "medium",
@@ -4736,7 +4839,8 @@
         "industry_partnership": "high",
         "visa": "medium",
         "language": "medium",
-        "sentiment": "low"
+        "sentiment": "low",
+        "deadline": "high"
       },
       "source_reliability": "high",
       "verification_status": "partial",
@@ -4853,23 +4957,6 @@
           }
         },
         {
-          "url": "https://gradoffice.caltech.edu/admissions/applyonline",
-          "title": "Caltech Graduate Studies — Apply Online",
-          "source_type": "official_admission_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "application_fee",
-            "fee_waiver",
-            "deadline_system"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Official USD 100 fee, limited waiver and portal-close rule.",
-            "tr": "Resmî 100 USD ücret, sınırlı muafiyet ve portal kapanış kuralı."
-          }
-        },
-        {
           "url": "https://gradoffice.caltech.edu/admissions/checklist",
           "title": "Caltech Graduate Studies — Application Requirements",
           "source_type": "official_admission_page",
@@ -4929,7 +5016,10 @@
             "fees",
             "living_cost",
             "insurance",
-            "housing_guarantee"
+            "housing_guarantee",
+            "living",
+            "housing",
+            "cost"
           ],
           "confidence": "high",
           "notes": {
@@ -5271,11 +5361,65 @@
           "access_status": "ok",
           "last_checked": "2026-08-30",
           "relevant_fields": [
+            "tuition",
+            "fees",
+            "living_cost",
+            "insurance",
+            "housing_guarantee",
             "living",
             "housing",
             "cost"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://aerospace.caltech.edu/academics/admissions",
+          "title": "Admissions - Caltech Aerospace",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "deadline",
+            "gre",
+            "english_test",
+            "specialization",
+            "scholarship",
+            "admission",
+            "international"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://gradoffice.caltech.edu/admissions/applyonline",
+          "title": "Apply Online - Caltech Graduate Studies Office",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "application_fee",
+            "fee_waiver",
+            "deadline_system",
+            "admission",
+            "deadline",
+            "required_documents"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://gradoffice.caltech.edu/documents/29051/Application_Checklist_rev_09-24.pdf",
+          "title": "Caltech Application Checklist",
+          "source_type": "official_admission_page",
+          "access_status": "pdf",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "required_documents"
+          ],
+          "confidence": "medium",
+          "notes": {
+            "en": "Official checklist revision 09/2024; recheck when the 2027-28 portal opens.",
+            "tr": "Resmî kontrol listesi 09/2024 revizyonudur; 2027-28 portalı açıldığında yeniden kontrol edin."
+          }
         }
       ],
       "verification_notes": {
@@ -5351,7 +5495,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 28,
+      "checked_official_source_count": 30,
       "verified_fields": [
         "program",
         "language",
@@ -5367,16 +5511,16 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-29"
+      "audited_at": "2026-09-05"
     },
     "quality_control": {
-      "checked_at": "2026-08-23",
+      "checked_at": "2026-09-05",
       "qc_status": "needs_revision",
       "remaining_verification_tasks": [],
       "failed_canary_tests": [],
       "qc_notes": {
-        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
-        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        "en": "Current department deadline is clear; generic application checklist remains an older official revision and is flagged for recheck after portal opening.",
+        "tr": "Güncel bölüm son tarihi açıktır; genel başvuru kontrol listesi eski bir resmî revizyondur ve portal açıldığında yeniden kontrol için işaretlenmiştir."
       }
     },
     "duration": {
@@ -5440,7 +5584,7 @@
       "matched_tags": [],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "facility_evidence": {
@@ -5593,7 +5737,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "application_fee_usd": 105,
       "application_fee_verification": {
@@ -5647,7 +5791,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -5825,7 +5969,7 @@
         "band_from_score": "high",
         "capped_from_very_high": false,
         "legacy_value": "high",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -5887,7 +6031,7 @@
           "en": "Georgia Tech's 2026-27 out-of-country graduate budget, on-campus column: housing 11,736, food 6,310, books 800, personal 2,800 and transportation 966, published as a total per year for the fall and spring terms. The off-campus column raises housing to 14,380 and the total to 25,256.",
           "tr": "Georgia Tech'in 2026-27 yurt disindan gelen lisansustu butcesi, kampus ici sutunu: konut 11.736, gida 6.310, kitap 800, kisisel 2.800 ve ulasim 966; guz ve bahar donemleri icin yillik toplam olarak yayimlanir. Kampus disi sutunu konutu 14.380'e, toplami 25.256'ya yukseltir."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "housing_guaranteed": false,
       "housing_difficulty_evidence": {
@@ -6055,11 +6199,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 181,
+        "days_remaining_at_evaluation": 177,
         "derived_from": "application_timeline_profile.application_deadline",
         "confidence": "high",
         "source_url": "https://ae.gatech.edu/ae-graduate-apply",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -6845,7 +6989,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -6919,40 +7063,36 @@
       "admission_risk": "high",
       "required_documents": [
         {
-          "en": "Rackham online graduate application and personal information",
-          "tr": "Rackham çevrimiçi lisansüstü başvurusu ve kişisel bilgiler"
+          "en": "Rackham online application and fee",
+          "tr": "Rackham çevrim içi başvurusu ve ücret"
         },
         {
-          "en": "Scanned official transcript for every completed or in-progress degree",
-          "tr": "Tamamlanan veya sürmekte olan her derece için taranmış resmî transkript"
+          "en": "Scanned official transcript for every degree earned or in progress, with required international credentials and translations",
+          "tr": "Alınan veya devam eden her derece için taranmış resmî transkript; gerekli uluslararası belgeler ve çevirilerle"
         },
         {
-          "en": "Academic statement of purpose, typically no more than 2 pages",
-          "tr": "Genellikle 2 sayfayı aşmayan akademik amaç mektubu"
+          "en": "Academic statement of purpose, approximately two pages",
+          "tr": "Yaklaşık iki sayfalık akademik amaç mektubu"
         },
         {
-          "en": "Personal statement, typically 500–700 words",
-          "tr": "Genellikle 500–700 kelimelik kişisel beyan"
+          "en": "Personal statement, 500-700 words",
+          "tr": "500-700 kelimelik kişisel beyan"
         },
         {
-          "en": "Resume or curriculum vitae",
+          "en": "Resume or CV",
           "tr": "Özgeçmiş"
         },
         {
-          "en": "Three recommendations; at least two from faculty able to discuss academic and research experience",
-          "tr": "Üç referans; en az ikisi akademik ve araştırma deneyimini değerlendirebilen öğretim üyelerinden"
+          "en": "Three recommendation letters, at least two from faculty",
+          "tr": "En az ikisi öğretim üyesinden üç referans mektubu"
         },
         {
-          "en": "Valid GRE General score",
-          "tr": "Geçerli GRE General puanı"
+          "en": "GRE for MSE applicants",
+          "tr": "MSE adayları için GRE"
         },
         {
-          "en": "TOEFL or IELTS score unless a Rackham exemption applies",
-          "tr": "Rackham muafiyeti yoksa TOEFL veya IELTS puanı"
-        },
-        {
-          "en": "Non-US-citizen application fee",
-          "tr": "ABD vatandaşı olmayan aday başvuru ücreti"
+          "en": "TOEFL or IELTS when required",
+          "tr": "Gerektiğinde TOEFL veya IELTS"
         }
       ],
       "motivation_letter_required": true,
@@ -7132,7 +7272,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -7177,7 +7317,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -7376,7 +7516,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -7459,7 +7599,7 @@
           "one_off_visa_and_travel_costs"
         ],
         "confidence": "high",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "curriculum_profile": {
@@ -7650,7 +7790,7 @@
       }
     },
     "application_timeline_profile": {
-      "academic_year": "recurring deadlines on current official pages",
+      "academic_year": "2027 entry",
       "intake_terms": [
         "Fall",
         "Winter"
@@ -7658,27 +7798,33 @@
       "application_rounds": [
         {
           "round": {
-            "en": "Fall MSE",
-            "tr": "Güz MSE"
+            "en": "Winter 2027 MSE/PhD final",
+            "tr": "Kış 2027 MSE/Doktora nihai"
           },
-          "opens": null,
-          "deadline": "January 15",
-          "decision": {
-            "en": "As soon as possible; the department warns that several months may pass",
-            "tr": "Mümkün olan en kısa sürede; bölüm birkaç ay geçebileceğini belirtir"
-          }
+          "deadline": "2026-10-07",
+          "deadline_time": null,
+          "deadline_type": "final",
+          "international_difference": false
         },
         {
           "round": {
-            "en": "Winter MSE",
-            "tr": "Kış MSE"
+            "en": "Fall 2027 PhD final",
+            "tr": "Güz 2027 Doktora nihai"
           },
-          "opens": null,
-          "deadline": "October 7",
-          "decision": {
-            "en": "As soon as possible; the department warns that several months may pass",
-            "tr": "Mümkün olan en kısa sürede; bölüm birkaç ay geçebileceğini belirtir"
-          }
+          "deadline": "2026-12-15",
+          "deadline_time": null,
+          "deadline_type": "final",
+          "international_difference": false
+        },
+        {
+          "round": {
+            "en": "Fall 2027 MSE final",
+            "tr": "Güz 2027 MSE nihai"
+          },
+          "deadline": "2027-01-15",
+          "deadline_time": null,
+          "deadline_type": "final",
+          "international_difference": false
         }
       ],
       "non_eu_deadline": {
@@ -7710,8 +7856,8 @@
       },
       "timeline_risk": "medium",
       "deadline_notes": {
-        "en": "The current department pages publish recurring month/day deadlines without a cycle year; no future year is invented here.",
-        "tr": "Güncel bölüm sayfaları dönem yılı vermeden yinelenen ay/gün tarihleri yayımlar; burada gelecek yıl uydurulmaz."
+        "en": "The department publishes term-based dates without calendar years. The 2027 dates are the next occurrences of those official rules. Missing required items by the deadline may prevent review; late recommendations can be accepted but weaken completeness.",
+        "tr": "Bölüm dönem bazlı tarihleri takvim yılı yazmadan yayımlar. 2027 tarihleri bu resmî kuralların sıradaki karşılıklarıdır. Son tarihte eksik zorunlu belge incelemeyi engelleyebilir; geç referans kabul edilebilse de dosya eksik kalır."
       },
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
@@ -7719,7 +7865,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -7951,7 +8097,7 @@
         "https://www.reddit.com/r/uofm/comments/1joyvdg/recommendations_for_grad_student_housing/",
         "https://www.reddit.com/r/uofm/comments/1l9m2g9/northwood_ivv_updates/"
       ],
-      "last_verified": "2026-08-29",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "program_basic_info": "high",
         "program": "high",
@@ -8275,7 +8421,8 @@
           "last_checked": "2026-08-14",
           "relevant_fields": [
             "research",
-            "labs"
+            "labs",
+            "department"
           ],
           "confidence": "high",
           "notes": {
@@ -8423,6 +8570,37 @@
             "en": "Lists faculty by role and research area; no email addresses are published in the page.",
             "tr": "Öğretim üyelerini görev ve araştırma alanına göre listeler; sayfada e-posta adresi yayımlanmaz."
           }
+        },
+        {
+          "url": "https://aero.engin.umich.edu/graduate/graduate-faqs/",
+          "title": "Graduate FAQs - Michigan Aerospace Engineering",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "curriculum",
+            "funding",
+            "deadline",
+            "required_documents"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://aero.engin.umich.edu/graduate/application-process/",
+          "title": "Application Process - Michigan Aerospace Engineering",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "required_documents",
+            "gre",
+            "language",
+            "application_fee",
+            "international"
+          ],
+          "confidence": "high"
         }
       ]
     },
@@ -8521,7 +8699,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 23,
+      "checked_official_source_count": 25,
       "verified_fields": [
         "program",
         "admission",
@@ -8537,10 +8715,10 @@
         "language"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-29"
+      "audited_at": "2026-09-05"
     },
     "quality_control": {
-      "checked_at": "2026-08-23",
+      "checked_at": "2026-09-05",
       "qc_status": "needs_revision",
       "remaining_verification_tasks": [
         {
@@ -8549,8 +8727,8 @@
         }
       ],
       "qc_notes": {
-        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
-        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        "en": "The official schedule is current but yearless; the record marks the deterministic 2027 mapping rather than claiming a printed cycle label.",
+        "tr": "Resmî takvim günceldir ancak yıl yazmaz; kayıt basılı bir döngü etiketi varmış gibi davranmak yerine 2027 mekanik eşlemesini işaretler."
       },
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
@@ -8636,7 +8814,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -8689,8 +8867,8 @@
       "admission_risk": "high",
       "required_documents": [
         {
-          "en": "Online graduate application",
-          "tr": "Çevrimiçi lisansüstü başvuru"
+          "en": "Online application and fee",
+          "tr": "Çevrim içi başvuru ve ücret"
         },
         {
           "en": "Academic statement of purpose",
@@ -8701,28 +8879,24 @@
           "tr": "Kişisel geçmiş beyanı"
         },
         {
-          "en": "Transcripts; international credentials require original-language and English versions",
-          "tr": "Transkriptler; uluslararası belgeler özgün dilde ve İngilizce sürümleriyle gerekir"
+          "en": "Transcripts; international applicants also provide original-language records, English translations and degree certificate when applicable",
+          "tr": "Transkriptler; uluslararası adaylar ayrıca özgün dilde belgeler, İngilizce çeviriler ve gerekiyorsa derece belgesi sunar"
         },
         {
-          "en": "International diploma or provisional certificate, when applicable",
-          "tr": "Uygunsa uluslararası diploma veya geçici mezuniyet belgesi"
+          "en": "Three online recommendation letters",
+          "tr": "Üç çevrim içi referans mektubu"
         },
         {
-          "en": "Resume or curriculum vitae",
+          "en": "GRE General unless an official waiver condition applies",
+          "tr": "Resmî muafiyet koşulu yoksa GRE General"
+        },
+        {
+          "en": "English-proficiency evidence when required",
+          "tr": "Gerektiğinde İngilizce yeterlilik kanıtı"
+        },
+        {
+          "en": "Resume",
           "tr": "Özgeçmiş"
-        },
-        {
-          "en": "Three references",
-          "tr": "Üç referans"
-        },
-        {
-          "en": "Official GRE General score unless an AAE waiver applies",
-          "tr": "AAE muafiyeti yoksa resmî GRE General puanı"
-        },
-        {
-          "en": "English-proficiency evidence unless an exemption applies",
-          "tr": "Muafiyet yoksa İngilizce yeterlilik kanıtı"
         }
       ],
       "motivation_letter_required": true,
@@ -8931,7 +9105,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -8976,7 +9150,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -9208,7 +9382,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -9306,7 +9480,7 @@
           "one_off_visa_and_travel_costs"
         ],
         "confidence": "medium",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "curriculum_profile": {
@@ -9528,7 +9702,7 @@
       }
     },
     "application_timeline_profile": {
-      "academic_year": "current recurring deadlines; Spring 2027 explicitly confirmed",
+      "academic_year": "2027 entry",
       "intake_terms": [
         "Fall",
         "Spring"
@@ -9536,39 +9710,43 @@
       "application_rounds": [
         {
           "round": {
-            "en": "Fall on-campus — fullest funding consideration",
-            "tr": "Güz kampüs — en kapsamlı finansman değerlendirmesi"
+            "en": "Spring 2027 on-campus final",
+            "tr": "Bahar 2027 kampüs programı nihai"
           },
-          "opens": null,
-          "deadline": "December 1 of the preceding year",
-          "decision": {
-            "en": "Usually about eight weeks for international applicants, but timing varies",
-            "tr": "Uluslararası adaylar için genellikle yaklaşık sekiz hafta; süre değişebilir"
-          }
+          "deadline": "2026-09-15",
+          "deadline_type": "final"
         },
         {
           "round": {
-            "en": "Fall on-campus — final programme deadline",
-            "tr": "Güz kampüs — nihai program tarihi"
+            "en": "Spring 2027 online final",
+            "tr": "Bahar 2027 çevrim içi nihai"
           },
-          "opens": null,
-          "deadline": "March 30 of the same year",
-          "decision": {
-            "en": "Usually about eight weeks for international applicants, but timing varies",
-            "tr": "Uluslararası adaylar için genellikle yaklaşık sekiz hafta; süre değişebilir"
-          }
+          "deadline": "2026-11-01",
+          "deadline_type": "final"
         },
         {
           "round": {
-            "en": "Spring on-campus",
-            "tr": "Bahar kampüs"
+            "en": "Fall 2027 full consideration and funding",
+            "tr": "Güz 2027 tam değerlendirme ve finansman"
           },
-          "opens": null,
-          "deadline": "September 15 of the preceding year",
-          "decision": {
-            "en": "Usually about eight weeks for international applicants, but timing varies",
-            "tr": "Uluslararası adaylar için genellikle yaklaşık sekiz hafta; süre değişebilir"
-          }
+          "deadline": "2026-12-01",
+          "deadline_type": "full_consideration_funding"
+        },
+        {
+          "round": {
+            "en": "Fall 2027 on-campus final",
+            "tr": "Güz 2027 kampüs programı nihai"
+          },
+          "deadline": "2027-03-30",
+          "deadline_type": "final"
+        },
+        {
+          "round": {
+            "en": "Fall 2027 online final",
+            "tr": "Güz 2027 çevrim içi nihai"
+          },
+          "deadline": "2027-07-01",
+          "deadline_type": "final"
         }
       ],
       "non_eu_deadline": {
@@ -9592,10 +9770,10 @@
         "en": "AAE reports roughly eight weeks for international and six weeks for domestic applicants, varying with completeness and review volume. AAE recommends admission and OGSPS issues the final decision.",
         "tr": "AAE, eksiksizlik ve inceleme yoğunluğuna göre değişmek üzere uluslararası adaylar için yaklaşık sekiz, yerli adaylar için altı hafta bildirir. AAE kabul önerir; nihai kararı OGSPS verir."
       },
-      "timeline_risk": "medium",
+      "timeline_risk": "low",
       "deadline_notes": {
-        "en": "Online-programme deadlines were deliberately excluded from this on-campus record. Incomplete or late applications are not reviewed.",
-        "tr": "Çevrimiçi program tarihleri bu kampüs kaydından bilerek çıkarılmıştır. Eksik veya geç başvurular incelenmez."
+        "en": "December 1 is the full-consideration date for the widest funding options, not the residential final deadline and not a funding guarantee. Incomplete or late applications are not reviewed. No deadline time zone is published.",
+        "tr": "1 Aralık, en geniş finansman seçenekleri için tam değerlendirme tarihidir; kampüs programının nihai tarihi veya finansman garantisi değildir. Eksik ya da geç başvurular incelenmez. Saat dilimi yayımlanmamıştır."
       },
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
@@ -9603,7 +9781,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -9984,7 +10162,7 @@
         "https://www.reddit.com/r/PurdueHousing/comments/1tviipp/incoming_msbaim_student_looking_for_housing/",
         "https://www.reddit.com/r/Purdue/comments/1rnqu5p/grad_student_housing_pointers/"
       ],
-      "last_verified": "2026-08-29",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "program_basic_info": "high",
         "program": "high",
@@ -10455,6 +10633,23 @@
             "en": "States the TA priority order and encourages students to approach faculty about funded research assistantships.",
             "tr": "TA öncelik sırasını belirtir ve öğrencileri fonlanmış araştırma asistanlıkları için öğretim üyeleriyle görüşmeye teşvik eder."
           }
+        },
+        {
+          "url": "https://engineering.purdue.edu/AAE/academics/graduate/admproced",
+          "title": "Graduate Admissions Procedures - Purdue AAE",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "deadline",
+            "gre",
+            "language",
+            "required_documents",
+            "international",
+            "funding"
+          ],
+          "confidence": "high"
         }
       ]
     },
@@ -10561,7 +10756,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 23,
+      "checked_official_source_count": 24,
       "verified_fields": [
         "program",
         "admission",
@@ -10578,10 +10773,10 @@
         "language"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-29"
+      "audited_at": "2026-09-05"
     },
     "quality_control": {
-      "checked_at": "2026-08-23",
+      "checked_at": "2026-09-05",
       "qc_status": "needs_revision",
       "remaining_verification_tasks": [
         {
@@ -10590,8 +10785,8 @@
         }
       ],
       "qc_notes": {
-        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
-        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        "en": "Priority/full-consideration and final deadlines are separated for residential and online routes.",
+        "tr": "Öncelik/tam değerlendirme ve nihai tarihler kampüs ve çevrim içi yollar için ayrı işlendi."
       },
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
@@ -10677,7 +10872,7 @@
       ],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -10746,32 +10941,28 @@
       "admission_risk": "high",
       "required_documents": [
         {
-          "en": "Online graduate application",
-          "tr": "Çevrimiçi lisansüstü başvuru"
+          "en": "Online application and fee",
+          "tr": "Çevrim içi başvuru ve ücret"
         },
         {
-          "en": "Resume",
-          "tr": "Özgeçmiş"
-        },
-        {
-          "en": "Statement of purpose, approximately 1–2 single-spaced pages",
-          "tr": "Yaklaşık 1–2 tek aralıklı sayfalık amaç mektubu"
+          "en": "Resume and statement of purpose",
+          "tr": "Özgeçmiş ve amaç mektubu"
         },
         {
           "en": "Scanned transcripts and degree certificates or diplomas",
-          "tr": "Taranmış transkriptler ve derece belgeleri/diplomalar"
+          "tr": "Taranmış transkriptler ve derece belgeleri veya diplomalar"
         },
         {
-          "en": "Three online letters of reference",
-          "tr": "Çevrimiçi üç referans mektubu"
+          "en": "Three online references",
+          "tr": "Üç çevrim içi referans"
         },
         {
-          "en": "Official English-proficiency score where required",
-          "tr": "Gerektiğinde resmî İngilizce yeterlilik puanı"
+          "en": "Official English-proficiency evidence when required",
+          "tr": "Gerektiğinde resmî İngilizce yeterlilik kanıtı"
         },
         {
-          "en": "Declaration of finances and evidence of funds after admission if no departmental funding is offered",
-          "tr": "Bölüm finansmanı verilmezse kabulden sonra mali beyan ve fon kanıtı"
+          "en": "After admission, financial declaration and evidence if no department funding covers the international requirement",
+          "tr": "Kabulden sonra, bölüm finansmanı uluslararası şartı karşılamıyorsa mali beyan ve kanıt"
         }
       ],
       "motivation_letter_required": true,
@@ -10923,7 +11114,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -10968,7 +11159,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -11255,7 +11446,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -11316,7 +11507,7 @@
           "one_off_visa_and_travel_costs"
         ],
         "confidence": "medium",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "curriculum_profile": {
@@ -11521,7 +11712,7 @@
       }
     },
     "application_timeline_profile": {
-      "academic_year": "recurring deadlines on current 2026/27 catalog",
+      "academic_year": "2027 entry",
       "intake_terms": [
         "Fall",
         "Spring"
@@ -11529,51 +11720,35 @@
       "application_rounds": [
         {
           "round": {
-            "en": "Fall MS thesis and full funding consideration",
-            "tr": "Güz tezli MS ve tam finansman değerlendirmesi"
+            "en": "Spring 2027 thesis MS/PhD full consideration",
+            "tr": "Bahar 2027 tezli MS/Doktora tam değerlendirme"
           },
-          "opens": null,
-          "deadline": "December 1",
-          "decision": {
-            "en": "Rolling after the deadline",
-            "tr": "Son tarihten sonra kademeli"
-          }
+          "deadline": "2026-10-08",
+          "deadline_type": "full_consideration_funding"
         },
         {
           "round": {
-            "en": "Fall MS non-thesis",
-            "tr": "Güz tezsiz MS"
+            "en": "Spring 2027 non-thesis MS final",
+            "tr": "Bahar 2027 tezsiz MS nihai"
           },
-          "opens": null,
-          "deadline": "July 1",
-          "decision": {
-            "en": "Rolling after the deadline",
-            "tr": "Son tarihten sonra kademeli"
-          }
+          "deadline": "2026-12-01",
+          "deadline_type": "final"
         },
         {
           "round": {
-            "en": "Spring MS thesis and full funding consideration",
-            "tr": "Bahar tezli MS ve tam finansman değerlendirmesi"
+            "en": "Fall 2027 thesis MS/PhD full consideration",
+            "tr": "Güz 2027 tezli MS/Doktora tam değerlendirme"
           },
-          "opens": null,
-          "deadline": "October 1",
-          "decision": {
-            "en": "Rolling after the deadline",
-            "tr": "Son tarihten sonra kademeli"
-          }
+          "deadline": "2026-12-01",
+          "deadline_type": "full_consideration_funding"
         },
         {
           "round": {
-            "en": "Spring MS non-thesis",
-            "tr": "Bahar tezsiz MS"
+            "en": "Fall 2027 non-thesis MS final",
+            "tr": "Güz 2027 tezsiz MS nihai"
           },
-          "opens": null,
-          "deadline": "December 1",
-          "decision": {
-            "en": "Rolling after the deadline",
-            "tr": "Son tarihten sonra kademeli"
-          }
+          "deadline": "2027-07-01",
+          "deadline_type": "final"
         }
       ],
       "non_eu_deadline": {
@@ -11596,8 +11771,8 @@
       },
       "timeline_risk": "medium",
       "deadline_notes": {
-        "en": "The current official pages publish recurring month/day deadlines without a cycle year; no year has been invented in this record.",
-        "tr": "Güncel resmî sayfalar dönem yılı olmadan yinelenen ay/gün tarihleri yayımlar; bu kayıtta yıl uydurulmamıştır."
+        "en": "The current official page lists month/day rules without cycle years. Post-deadline applications may be considered, but review is not guaranteed and funding chances are reduced. No time zone is stated.",
+        "tr": "Güncel resmî sayfa ay/gün kurallarını döngü yılı olmadan listeler. Tarih sonrası başvurular değerlendirilebilir; ancak inceleme garantisi yoktur ve finansman olasılığı azalır. Saat dilimi belirtilmez."
       },
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
@@ -11605,7 +11780,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -12091,7 +12266,7 @@
         "https://www.reddit.com/r/UIUC/comments/1cvflq0/incoming_graduate_student_housing_questions/",
         "https://www.reddit.com/r/UIUC/comments/1is8ags/housing_question/"
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "program_basic_info": "high",
         "program": "high",
@@ -12506,6 +12681,37 @@
             "en": "States that assistantships are determined by faculty, that students may contact faculty once admitted, and describes appointment lengths and renewal conditions.",
             "tr": "Asistanlıkların öğretim üyelerince belirlendiğini, öğrencilerin kabul sonrası iletişime geçebileceğini belirtir ve atama sürelerini ve yenileme koşullarını anlatır."
           }
+        },
+        {
+          "url": "https://aerospace.illinois.edu/admissions/graduate/dates-and-deadlines",
+          "title": "Dates and Deadlines | Aerospace Engineering | Illinois",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "deadline",
+            "application_timeline",
+            "scholarship",
+            "funding"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://aerospace.illinois.edu/admissions/graduate/admissions-requirements-and-process",
+          "title": "Admissions Requirements and Process | Aerospace Engineering | Illinois",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "non_eu_eligibility",
+            "required_documents",
+            "language",
+            "scholarship",
+            "international",
+            "gre"
+          ],
+          "confidence": "high"
         }
       ]
     },
@@ -12598,7 +12804,7 @@
     },
     "data_quality": {
       "status": "verified",
-      "checked_official_source_count": 20,
+      "checked_official_source_count": 22,
       "verified_fields": [
         "program",
         "language",
@@ -12613,15 +12819,15 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-30"
+      "audited_at": "2026-09-05"
     },
     "quality_control": {
-      "checked_at": "2026-08-23",
+      "checked_at": "2026-09-05",
       "qc_status": "passed",
       "remaining_verification_tasks": [],
       "qc_notes": {
-        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
-        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        "en": "Funding/full-consideration dates are distinguished from non-thesis final dates; cycle-year mapping is explicitly marked as recurring-rule based.",
+        "tr": "Finansman/tam değerlendirme tarihleri tezsiz nihai tarihlerden ayrıldı; döngü yılı eşlemesi açıkça tekrarlayan kurala dayalı olarak işaretlendi."
       },
       "failed_canary_tests": []
     },
@@ -12705,7 +12911,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -12778,8 +12984,8 @@
           "tr": "Lisansüstü başvuru"
         },
         {
-          "en": "Copies of official transcripts",
-          "tr": "Resmî transkript kopyaları"
+          "en": "Official transcripts from prior colleges or universities",
+          "tr": "Önceki kolej veya üniversitelerden resmî transkriptler"
         },
         {
           "en": "Statement of purpose",
@@ -12794,12 +13000,12 @@
           "tr": "En az üç referans mektubu"
         },
         {
-          "en": "Official GRE General score",
-          "tr": "Resmî GRE General puanı"
+          "en": "GRE General score",
+          "tr": "GRE General puanı"
         },
         {
-          "en": "Official English-proficiency score unless exempt",
-          "tr": "Muafiyet yoksa resmî İngilizce yeterlilik puanı"
+          "en": "Official TOEFL, IELTS or DET score for international applicants unless exempt",
+          "tr": "Muaf değilse uluslararası adaylar için resmî TOEFL, IELTS veya DET puanı"
         }
       ],
       "motivation_letter_required": true,
@@ -12972,7 +13178,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "tuition_derivation": {
         "standard": "cost_model@3.1.0",
@@ -13029,7 +13235,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -13237,7 +13443,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -13270,7 +13476,7 @@
           "en": "UT Austin's 2026-27 full-time graduate cost of attendance for a nonresident living on or off campus, across the fall and spring semesters at nine hours of enrolment: housing and food 17,052 to 17,423, transportation 1,840, books and course materials 776 and personal 4,900. The upper bound is used. Housing and food arrive as one line and cannot be separated.",
           "tr": "UT Austin'in 2026-27 tam zamanli lisansustu egitim maliyeti, kampus ici veya disinda yasayan eyalet disi bir ogrenci icin, guz ve bahar donemlerinde dokuz saatlik kayitla: konut ve gida 17.052-17.423, ulasim 1.840, kitap ve ders malzemesi 776 ve kisisel 4.900. Ust sinir kullanilir. Konut ve gida tek satir halinde gelir ve ayristirilamaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_cost_of_attendance",
@@ -13490,7 +13696,7 @@
       }
     },
     "application_timeline_profile": {
-      "academic_year": "recurring deadlines on current official pages",
+      "academic_year": "current recurring schedule",
       "intake_terms": [
         "Fall",
         "Spring",
@@ -13499,36 +13705,30 @@
       "application_rounds": [
         {
           "round": {
-            "en": "Fall admission",
-            "tr": "Güz kabulü"
-          },
-          "opens": null,
-          "deadline": "December 1",
-          "decision": {
-            "en": "Faculty-offer notifications February–March; all other Fall decisions before April 15",
-            "tr": "Öğretim üyesi teklifleri Şubat–Mart; diğer tüm Güz kararları 15 Nisan'dan önce"
-          }
-        },
-        {
-          "round": {
             "en": "Spring admission",
             "tr": "Bahar kabulü"
           },
-          "opens": null,
           "deadline": "October 1",
-          "decision": {
-            "en": "Faculty-offer notifications November–December; other decisions before mid-December winter break",
-            "tr": "Öğretim üyesi teklifleri Kasım–Aralık; diğer kararlar Aralık ortası kış tatilinden önce"
-          }
+          "deadline_type": "standard",
+          "international_difference": false
+        },
+        {
+          "round": {
+            "en": "Fall admission",
+            "tr": "Güz kabulü"
+          },
+          "deadline": "December 1",
+          "deadline_type": "standard",
+          "international_difference": false
         },
         {
           "round": {
             "en": "Summer admission",
             "tr": "Yaz kabulü"
           },
-          "opens": null,
           "deadline": "December 1",
-          "decision": null
+          "deadline_type": "standard",
+          "international_difference": false
         }
       ],
       "non_eu_deadline": {
@@ -13550,8 +13750,8 @@
       },
       "timeline_risk": "medium",
       "deadline_notes": {
-        "en": "The FAQ says late materials or changes are not accepted, while the admissions page says post-deadline applications may be considered if space remains. Treat the official deadline as firm and do not plan around space-available review.",
-        "tr": "SSS geç belge veya değişiklik kabul edilmediğini, kabul sayfası ise tarih sonrası başvuruların yer kalırsa değerlendirilebileceğini söyler. Resmî tarihi kesin kabul edin ve yer kalırsa incelemeye güvenmeyin."
+        "en": "The current department page publishes recurring dates but no cycle year or time zone. Applications may be considered later only if space remains; applicants should treat the posted dates as firm.",
+        "tr": "Güncel bölüm sayfası tekrarlayan tarihleri yayımlar ancak döngü yılı veya saat dilimi vermez. Sonraki başvurular yalnızca yer kalırsa değerlendirilebilir; adaylar yayımlanan tarihleri kesin kabul etmelidir."
       },
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
@@ -13559,7 +13759,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -14026,7 +14226,7 @@
         "https://www.reddit.com/r/UTAustin/comments/1sa0ldg/are_the_east_campus_graduate_apartments_worth_it/",
         "https://www.reddit.com/r/UTAustin/comments/1s7ty3x/repost_current_living_conditions_at_east_campus/"
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "program_basic_info": "high",
         "program": "high",
@@ -14171,7 +14371,8 @@
           "relevant_fields": [
             "tuition",
             "living",
-            "cost"
+            "cost",
+            "housing"
           ],
           "confidence": "high",
           "notes": {
@@ -14424,7 +14625,8 @@
           "last_checked": "2026-08-30",
           "relevant_fields": [
             "research",
-            "labs"
+            "labs",
+            "industry_ecosystem"
           ],
           "confidence": "high",
           "notes": {
@@ -14467,10 +14669,26 @@
           "access_status": "ok",
           "last_checked": "2026-08-30",
           "relevant_fields": [
+            "tuition",
             "living",
-            "housing",
             "cost",
-            "tuition"
+            "housing"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://ae.utexas.edu/academics/graduate/ase-grad-admissions/",
+          "title": "UT Austin ASE Graduate Admissions",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "deadline",
+            "gre",
+            "required_documents",
+            "language",
+            "international"
           ],
           "confidence": "high"
         }
@@ -14576,7 +14794,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 21,
+      "checked_official_source_count": 22,
       "verified_fields": [
         "program",
         "admission",
@@ -14592,10 +14810,10 @@
         "language"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-30"
+      "audited_at": "2026-09-05"
     },
     "quality_control": {
-      "checked_at": "2026-08-23",
+      "checked_at": "2026-09-05",
       "qc_status": "needs_revision",
       "remaining_verification_tasks": [
         {
@@ -14604,8 +14822,8 @@
         }
       ],
       "qc_notes": {
-        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
-        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        "en": "Current official month/day deadlines and the full department document checklist were reverified; no unsupported cycle year was added.",
+        "tr": "Güncel resmî ay/gün tarihleri ve bölümün tam belge listesi yeniden doğrulandı; desteklenmeyen bir döngü yılı eklenmedi."
       },
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
@@ -14693,7 +14911,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -14771,24 +14989,28 @@
           "tr": "EngineeringCAS başvurusu"
         },
         {
-          "en": "Unofficial transcripts at application; official records after admission",
-          "tr": "Başvuruda resmî olmayan transkriptler; kabulden sonra resmî kayıtlar"
+          "en": "Transcripts or grades from other institutions",
+          "tr": "Diğer kurumlardan transkriptler veya not kayıtları"
         },
         {
-          "en": "Statement of purpose (college guidance: 1–1.5 pages)",
-          "tr": "Amaç mektubu (fakülte yönlendirmesi: 1–1,5 sayfa)"
+          "en": "Statement of purpose",
+          "tr": "Amaç mektubu"
         },
         {
-          "en": "Resume or CV",
+          "en": "Resume",
           "tr": "Özgeçmiş"
         },
         {
-          "en": "Three letters of recommendation/evaluation",
-          "tr": "Üç referans/değerlendirme mektubu"
+          "en": "Online recommendation letters",
+          "tr": "Çevrim içi referans mektupları"
         },
         {
-          "en": "Official English-proficiency evidence unless exempt",
-          "tr": "Muafiyet yoksa resmî İngilizce yeterlilik kanıtı"
+          "en": "TOEFL or other approved English evidence for international applicants",
+          "tr": "Uluslararası adaylar için TOEFL veya onaylı başka İngilizce kanıtı"
+        },
+        {
+          "en": "Previous degrees, internships/work experience and publications if any as application evidence",
+          "tr": "Başvuru kanıtı olarak önceki dereceler, staj/iş deneyimi ve varsa yayınlar"
         }
       ],
       "motivation_letter_required": true,
@@ -14956,7 +15178,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -15011,7 +15233,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -15326,7 +15548,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -15359,7 +15581,7 @@
           "en": "Texas A&M's twelve-month estimated cost of attendance for immigration documents puts living costs at USD 19,995 within a USD 46,015 total that assumes nonresident engineering rates and two major semesters. This is the amount the university will certify on an I-20, which is a floor for the visa rather than an observed average, and it excludes summer tuition.",
           "tr": "Texas A&M'in gocmenlik belgeleri icin on iki aylik tahmini egitim maliyeti, eyalet disi muhendislik oranlarini ve iki ana donemi varsayan 46.015 USD'lik toplam icinde yasam giderlerini 19.995 USD olarak belirler. Bu, universitenin I-20 uzerinde onaylayacagi tutardir; gozlemlenen bir ortalama degil vize icin bir tabandir ve yaz donemi ogrenim ucretini icermez."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_visa_financial_requirement",
@@ -15513,31 +15735,25 @@
       "application_rounds": [
         {
           "round": {
-            "en": "Fall MS funding priority",
-            "tr": "Güz MS finansman önceliği"
+            "en": "Fall MS assistantship/fellowship priority",
+            "tr": "Güz MS asistanlık/burs önceliği"
           },
-          "deadline": "December 1 of the preceding year",
+          "deadline": "December 1",
           "deadline_type": "priority_not_final",
-          "recommended_submission_timing": {
-            "en": "Three weeks to one month before the deadline",
-            "tr": "Son tarihten üç hafta ile bir ay önce"
-          }
+          "international_difference": false
         },
         {
           "round": {
-            "en": "Spring MS funding priority",
-            "tr": "Bahar MS finansman önceliği"
+            "en": "Spring MS assistantship/fellowship priority",
+            "tr": "Bahar MS asistanlık/burs önceliği"
           },
-          "deadline": "September 1 of the preceding year",
+          "deadline": "September 1",
           "deadline_type": "priority_not_final",
-          "recommended_submission_timing": {
-            "en": "Three weeks to one month before the deadline",
-            "tr": "Son tarihten üç hafta ile bir ay önce"
-          }
+          "international_difference": false
         }
       ],
       "final_application_deadline": null,
-      "final_deadline_status": "not_published_on_checked_department_page",
+      "final_deadline_status": "not_published_on_current_department_page",
       "funding_priority_deadline_fall": "December 1",
       "funding_priority_deadline_spring": "September 1",
       "faculty_contact_timing": "during_application_process",
@@ -15555,9 +15771,18 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
+      },
+      "academic_year": "current recurring schedule",
+      "intake_terms": [
+        "Fall",
+        "Spring"
+      ],
+      "deadline_notes": {
+        "en": "The department calls December 1 and September 1 priority dates and permits later submissions, but it does not publish a final closing date. The final date remains null rather than being invented. Submit three weeks to one month early for rolling review.",
+        "tr": "Bölüm 1 Aralık ve 1 Eylül'ü öncelik tarihleri olarak adlandırır ve daha sonraki gönderimlere izin verir; ancak nihai kapanış tarihi yayımlamaz. Nihai tarih uydurulmadan null bırakılmıştır. Sürekli inceleme için üç hafta ile bir ay erken başvurun."
       }
     },
     "research_profile": {
@@ -16102,7 +16327,7 @@
         "https://www.reddit.com/r/aggies/comments/1jdqe8g",
         "https://www.reddit.com/r/aggies/comments/1rrzh8u/housing_for_phd_students/"
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "program_basic_info": "high",
         "program": "high",
@@ -16265,7 +16490,9 @@
             "fees",
             "insurance",
             "living",
-            "total_cost"
+            "total_cost",
+            "housing",
+            "cost"
           ],
           "confidence": "high",
           "notes": {
@@ -16684,9 +16911,30 @@
           "access_status": "pdf",
           "last_checked": "2026-08-30",
           "relevant_fields": [
+            "tuition",
+            "fees",
+            "insurance",
             "living",
+            "total_cost",
             "housing",
             "cost"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://engineering.tamu.edu/aerospace/admissions-and-aid/graduate-admissions/index.html",
+          "title": "Graduate Admissions | Texas A&M Aerospace Engineering",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "deadline",
+            "gre",
+            "language",
+            "funding",
+            "required_documents",
+            "international"
           ],
           "confidence": "high"
         }
@@ -16794,7 +17042,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 30,
+      "checked_official_source_count": 31,
       "verified_fields": [
         "program",
         "admission",
@@ -16811,10 +17059,10 @@
         "language"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-30"
+      "audited_at": "2026-09-05"
     },
     "quality_control": {
-      "checked_at": "2026-08-23",
+      "checked_at": "2026-09-05",
       "qc_status": "needs_revision",
       "remaining_verification_tasks": [
         {
@@ -16823,8 +17071,8 @@
         }
       ],
       "qc_notes": {
-        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
-        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        "en": "Official priority dates and documents are verified; the department still does not publish a final closing date.",
+        "tr": "Resmî öncelik tarihleri ve belgeler doğrulandı; bölüm hâlâ nihai kapanış tarihi yayımlamıyor."
       },
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
@@ -16897,7 +17145,7 @@
       "matched_tags": [],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -17149,7 +17397,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -17190,7 +17438,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -17410,7 +17658,7 @@
         "band_from_score": "high",
         "capped_from_very_high": false,
         "legacy_value": "high",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -17443,7 +17691,7 @@
           "en": "CU Boulder's 2026-27 nonresident graduate budget covers the two semesters of the academic year: housing and food 18,684, books and supplies 1,200, transportation 2,062, personal 1,782 and medical expenses 8,136, totalling 31,864. Housing and food arrive as one line, so they cannot be separated here.",
           "tr": "CU Boulder'in 2026-27 eyalet disi lisansustu butcesi akademik yilin iki donemini kapsar: konut ve gida 18.684, kitap ve malzeme 1.200, ulasim 2.062, kisisel 1.782 ve saglik giderleri 8.136; toplam 31.864. Konut ve gida tek satir halinde geldigi icin burada ayristirilamaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_cost_of_attendance",
@@ -17655,7 +17903,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -18712,7 +18960,7 @@
       "matched_tags": [],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -18794,12 +19042,12 @@
       "admission_risk": "high",
       "required_documents": [
         {
-          "en": "Online USC graduate application",
-          "tr": "Çevrim içi USC lisansüstü başvurusu"
+          "en": "USC graduate application and fee",
+          "tr": "USC lisansüstü başvurusu ve ücret"
         },
         {
-          "en": "Transcripts",
-          "tr": "Transkriptler"
+          "en": "Scanned official transcripts; original-language record plus English translation when applicable",
+          "tr": "Taranmış resmî transkriptler; gerekiyorsa özgün dilde kayıt ve İngilizce çeviri"
         },
         {
           "en": "Resume or CV",
@@ -18814,8 +19062,8 @@
           "tr": "İki referans mektubu"
         },
         {
-          "en": "Official English-proficiency scores when required",
-          "tr": "Gerektiğinde resmî İngilizce yeterlilik puanları"
+          "en": "Official TOEFL or IELTS score for international applicants when required",
+          "tr": "Gerektiğinde uluslararası adaylar için resmî TOEFL veya IELTS puanı"
         }
       ],
       "motivation_letter_required": true,
@@ -18990,7 +19238,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "tuition_usd_per_year": 41130.0,
       "tuition_derivation": {
@@ -19043,7 +19291,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -19188,7 +19436,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -19221,7 +19469,7 @@
           "en": "USC certifies USD 28,044 of living expenses for a twelve-month I-20. A visa minimum is a floor the university will vouch for, not a budget: Viterbi separately estimates university housing reserved for graduate engineering students at USD 1,300 a month, or USD 15,600 across an academic year, and that is housing alone.",
           "tr": "USC, on iki aylik bir I-20 icin 28.044 USD yasam gideri onaylar. Vize asgari tutari, universitenin kefil oldugu bir tabandir, bir butce degildir: Viterbi ayrica lisansustu muhendislik ogrencilerine ayrilan universite konutunu ayda 1.300 USD, bir akademik yil boyunca 15.600 USD olarak tahmin eder ve bu yalnizca konuttur."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_visa_financial_requirement",
@@ -19363,37 +19611,49 @@
         "tr": "2026-12-15 (Güz 2027); Bahar 2027 finansmanı için en güvenli tarih olarak 2026-09-01'i kullanın"
       },
       "deadline_notes": {
-        "en": "Current official USC pages conflict on the later fall deadline and the spring scholarship date. Funding-dependent applicants should use the earlier applicable date and recheck the live portal.",
-        "tr": "Güncel resmî USC sayfaları daha sonraki güz tarihi ve bahar burs tarihinde çelişir. Finansmana bağlı adaylar daha erken uygulanabilir tarihi kullanmalı ve canlı portalı yeniden kontrol etmelidir."
+        "en": "USC's official Astronautical Engineering program page gives February 15 as the fall final deadline, while the central Viterbi application page gives January 15, 2027 at 11:59 p.m. Pacific. Both are preserved; applicants should use the earlier January 15 date unless USC resolves the conflict. Funding applicants must use December 15.",
+        "tr": "USC'nin resmî Astronautical Engineering program sayfası güz nihai tarihi olarak 15 Şubat'ı, merkezi Viterbi başvuru sayfası ise 15 Ocak 2027 saat 23:59 Pasifik'i verir. İki tarih de korunmuştur; USC çelişkiyi çözene kadar adaylar daha erken olan 15 Ocak'ı kullanmalıdır. Finansman adayları 15 Aralık'ı kullanmalıdır."
       },
       "application_rounds": [
         {
-          "intake": "Fall 2027 scholarship consideration",
+          "round": {
+            "en": "Spring 2027 final",
+            "tr": "Bahar 2027 nihai"
+          },
+          "deadline": "2026-09-15",
+          "deadline_time": "23:59 Pacific Time",
+          "deadline_type": "final",
+          "intake": "Spring 2027 admission"
+        },
+        {
           "round": {
             "en": "Fall 2027 scholarship consideration",
             "tr": "Güz 2027 burs değerlendirmesi"
           },
           "deadline": "2026-12-15",
           "deadline_time": "23:59 Pacific Time",
-          "scholarship_consideration": true
+          "deadline_type": "scholarship_consideration",
+          "intake": "Fall 2027 scholarship consideration"
         },
         {
-          "intake": "Fall 2027 final - program page",
           "round": {
-            "en": "Fall 2027 final - program page",
-            "tr": "Güz 2027 nihai - program sayfası"
+            "en": "Fall 2027 final on central Viterbi page",
+            "tr": "Merkezi Viterbi sayfasında Güz 2027 nihai"
+          },
+          "deadline": "2027-01-15",
+          "deadline_time": "23:59 Pacific Time",
+          "deadline_type": "final_conflicting_general_page",
+          "intake": "Fall 2027 final - central Viterbi page"
+        },
+        {
+          "round": {
+            "en": "Fall 2027 final on program page",
+            "tr": "Program sayfasında Güz 2027 nihai"
           },
           "deadline": "2027-02-15",
-          "scholarship_consideration": false
-        },
-        {
-          "intake": "Spring 2027 admission",
-          "round": {
-            "en": "Spring 2027 admission",
-            "tr": "Bahar 2027 kabulü"
-          },
-          "deadline": "2026-09-15",
-          "scholarship_consideration": "official scholarship pages conflict; use September 1 if funding-dependent"
+          "deadline_time": null,
+          "deadline_type": "final_program_specific",
+          "intake": "Fall 2027 final - program page"
         }
       ],
       "deadline_source_conflict": {
@@ -19436,10 +19696,15 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
-      }
+      },
+      "academic_year": "2027 entry",
+      "intake_terms": [
+        "Fall",
+        "Spring"
+      ]
     },
     "research_profile": {
       "research_focus_areas": [
@@ -19668,7 +19933,7 @@
         "https://www.reddit.com/r/USC/comments/1i2nk5x/graduate_housing_options_everything_looks_so_bleak/",
         "https://www.reddit.com/r/USC/comments/1rdfca1/graduate_housing/"
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "program_basic_info": "high",
         "program": "high",
@@ -19697,26 +19962,6 @@
         "tr": "Açık eğitim dili dışındaki bulunabilir tüm temel karar alanları kaynaklıdır. Resmî çelişkiler, elverişli bir tarih veya sınav politikası sessizce seçilmek yerine korunur. Özel piyasa kirası, kabul oranı, güncel 2026-27 SHIP primi, garantili laboratuvar erişimi ve garantili finansman uydurulmaz."
       },
       "source_log": [
-        {
-          "url": "https://viterbigradadmission.usc.edu/programs/masters/msprograms/astronautical-engineering/ms-astronautical-engineering/",
-          "title": "USC Viterbi MS in Astronautical Engineering",
-          "source_type": "official_program_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "program",
-            "curriculum",
-            "admission",
-            "deadline",
-            "non_eu_eligibility",
-            "industry_outcomes"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Current 2027 application criteria, curriculum, deadlines, STEM OPT status and voluntary career outcomes.",
-            "tr": "Güncel 2027 başvuru ölçütleri, müfredat, son tarihler, STEM OPT durumu ve gönüllü kariyer sonuçları."
-          }
-        },
         {
           "url": "https://astronautics.usc.edu/academics/master-science-program/",
           "title": "USC Astronautical Engineering MS Program",
@@ -19749,23 +19994,6 @@
           "notes": {
             "en": "Official department page supplies the 3.0 GPA statement but conflicts with the current 2027 program page on GRE, letters and deadlines.",
             "tr": "Resmî bölüm sayfası 3,0 GPA bilgisini verir; ancak GRE, referans ve tarihlerde güncel 2027 program sayfasıyla çelişir."
-          }
-        },
-        {
-          "url": "https://viterbigradadmission.usc.edu/apply-masters-programs/",
-          "title": "USC Viterbi How to Apply - Master's",
-          "source_type": "official_admission_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "deadline",
-            "application_materials",
-            "decision"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Viterbi application workflow, complete-material deadline rule and decision process.",
-            "tr": "Viterbi başvuru akışı, tüm belgelerin son tarihe yetişmesi kuralı ve karar süreci."
           }
         },
         {
@@ -19846,7 +20074,10 @@
           "relevant_fields": [
             "visa_financial_requirement",
             "tuition",
-            "living_cost"
+            "living_cost",
+            "living",
+            "housing",
+            "cost"
           ],
           "confidence": "high",
           "notes": {
@@ -19883,7 +20114,8 @@
             "fees",
             "housing",
             "insurance",
-            "complete_program_cost"
+            "complete_program_cost",
+            "living"
           ],
           "confidence": "high",
           "notes": {
@@ -20201,6 +20433,9 @@
           "access_status": "ok",
           "last_checked": "2026-08-30",
           "relevant_fields": [
+            "visa_financial_requirement",
+            "tuition",
+            "living_cost",
             "living",
             "housing",
             "cost"
@@ -20214,12 +20449,55 @@
           "access_status": "pdf",
           "last_checked": "2026-08-30",
           "relevant_fields": [
+            "duration",
             "tuition",
             "fees",
             "housing",
+            "insurance",
+            "complete_program_cost",
             "living"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://viterbigradadmission.usc.edu/programs/masters/msprograms/astronautical-engineering/ms-astronautical-engineering/",
+          "title": "MS in Astronautical Engineering - USC Viterbi",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "program",
+            "curriculum",
+            "admission",
+            "deadline",
+            "non_eu_eligibility",
+            "industry_outcomes",
+            "required_documents",
+            "international",
+            "gre"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://viterbigradadmission.usc.edu/apply-masters-programs/",
+          "title": "How To Apply: Master's Programs - USC Viterbi",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "deadline",
+            "application_materials",
+            "decision",
+            "admission",
+            "required_documents",
+            "international",
+            "timezone"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official general page conflicts with the program-specific February 15 fall final deadline.",
+            "tr": "Resmî genel sayfa, programa özgü 15 Şubat güz nihai tarihiyle çelişiyor."
+          }
         }
       ]
     },
@@ -20334,10 +20612,10 @@
         "language"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-30"
+      "audited_at": "2026-09-05"
     },
     "quality_control": {
-      "checked_at": "2026-08-23",
+      "checked_at": "2026-09-05",
       "qc_status": "needs_revision",
       "remaining_verification_tasks": [
         {
@@ -20346,8 +20624,8 @@
         }
       ],
       "qc_notes": {
-        "en": "Automated source-evidence audit. Values are only shown publicly when supported by checked source evidence.",
-        "tr": "Otomatik kaynak-kanıt denetimi. Değerler, yalnızca kontrol edilmiş kaynak kanıtı varsa herkese açık olarak gösterilir."
+        "en": "Required materials are verified. The unresolved official January 15 versus February 15 fall-final conflict is retained as a risk, not normalized away.",
+        "tr": "Gerekli belgeler doğrulandı. Çözülmemiş resmî 15 Ocak ile 15 Şubat güz nihai tarih çelişkisi silinmeden risk olarak korundu."
       },
       "failed_canary_tests": [
         "missing_or_unverified_critical_fields"
@@ -20419,7 +20697,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -20499,16 +20777,20 @@
       "admission_risk": "high",
       "required_documents": [
         {
-          "en": "UCLA online graduate application",
-          "tr": "UCLA çevrim içi lisansüstü başvurusu"
+          "en": "UCLA online graduate application and application fee",
+          "tr": "UCLA çevrim içi lisansüstü başvurusu ve başvuru ücreti"
         },
         {
-          "en": "Unofficial transcript from each postsecondary institution at application",
-          "tr": "Başvuruda her yükseköğretim kurumundan resmî olmayan transkript"
+          "en": "Institution-generated unofficial transcript uploaded online",
+          "tr": "Kurum tarafından oluşturulmuş ve çevrim içi yüklenen resmî olmayan transkript"
+        },
+        {
+          "en": "Three online letters of recommendation",
+          "tr": "Üç çevrim içi referans mektubu"
         },
         {
           "en": "Statement of purpose",
-          "tr": "Amaç beyanı"
+          "tr": "Amaç mektubu"
         },
         {
           "en": "Personal statement",
@@ -20519,16 +20801,12 @@
           "tr": "Özgeçmiş"
         },
         {
-          "en": "Three letters of recommendation",
-          "tr": "Üç referans mektubu"
+          "en": "GRE General score",
+          "tr": "GRE General puanı"
         },
         {
-          "en": "Official GRE General score",
-          "tr": "Resmî GRE General puanı"
-        },
-        {
-          "en": "TOEFL iBT or IELTS Academic score when not exempt",
-          "tr": "Muaf değilse TOEFL iBT veya IELTS Academic puanı"
+          "en": "TOEFL or IELTS score for international applicants when required",
+          "tr": "Gerektiğinde uluslararası adaylar için TOEFL veya IELTS puanı"
         }
       ],
       "official_transcripts_required_at_application": false,
@@ -20575,8 +20853,8 @@
         "tr": "Resmî 2024-25 Aerospace kaydı GRE'yi isteğe bağlı gösteriyordu; güncel 2026-27 kaydı GRE General'ı açıkça zorunlu kılıyor. Bu kayıt güncel dönemi izler."
       },
       "verification_notes": {
-        "en": "Meeting the 3.0 university floor does not guarantee admission. The department describes a comprehensive review and says qualified applicants substantially exceed available places.",
-        "tr": "Üniversitenin 3,0 tabanını karşılamak kabul garantisi değildir. Bölüm kapsamlı değerlendirme yaptığını ve nitelikli aday sayısının mevcut yerleri önemli ölçüde aştığını belirtir."
+        "en": "Official transcripts are not required at application; admitted applicants who accept the offer must later provide them. International applicants may also need degree certificates or diplomas with the academic records.",
+        "tr": "Başvuru sırasında resmî transkript gerekmez; teklifi kabul eden adaylar daha sonra sunmalıdır. Uluslararası adayların akademik kayıtlarla birlikte derece belgesi veya diploma da sunması gerekebilir."
       }
     },
     "language_profile": {
@@ -20706,7 +20984,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -20747,7 +21025,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -20856,7 +21134,7 @@
         "band_from_score": "high",
         "capped_from_very_high": false,
         "legacy_value": "high",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -20923,7 +21201,7 @@
           "en": "UCLA's 2026-27 graduate student budget: housing 18,221, food 10,546, books 2,004, transportation 3,819, personal 3,219 and health insurance 7,515, excluding tuition and fees. The checked page does not say how many months the budget covers; it is read here as the fall-to-spring academic year, so anyone planning a full twelve months in Los Angeles must budget the summer on top.",
           "tr": "UCLA'nin 2026-27 lisansustu ogrenci butcesi: konut 18.221, gida 10.546, kitap 2.004, ulasim 3.819, kisisel 3.219 ve saglik sigortasi 7.515; ogrenim ucreti ve harclar haric. Kontrol edilen sayfa butcenin kac ayi kapsadigini soylemez; burada guzden bahara akademik yil olarak okunur, bu yuzden Los Angeles'ta tam on iki ay planlayan birinin yazi ustune butcelemesi gerekir."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_cost_of_attendance",
@@ -21122,10 +21400,18 @@
           "intake": "Fall 2027",
           "round": {
             "en": "Fall 2027 admission",
-            "tr": "2027 Güz kabulü"
+            "tr": "Güz 2027 kabulü"
           },
           "deadline": "2026-12-01",
-          "gre_required": true
+          "gre_required": true,
+          "deadline_type": {
+            "en": "Final deadline",
+            "tr": "Nihai son tarih"
+          },
+          "international_difference": {
+            "en": "No separate international deadline is published.",
+            "tr": "Ayrı bir uluslararası aday tarihi yayımlanmamıştır."
+          }
         }
       ],
       "all_required_materials_due_by_deadline": true,
@@ -21162,8 +21448,8 @@
       "visa_complexity": "high",
       "timeline_risk": "medium",
       "verification_notes": {
-        "en": "The current cycle-specific Aerospace page controls the date and GRE rule. The live application should still be rechecked before submission.",
-        "tr": "Tarih ve GRE kuralında güncel döneme özgü Aerospace sayfası esas alınır. Göndermeden önce canlı başvuru yine kontrol edilmelidir."
+        "en": "No deadline time zone is stated on the checked official pages.",
+        "tr": "Kontrol edilen resmî sayfalarda son tarih saat dilimi belirtilmemiştir."
       },
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
@@ -21175,13 +21461,17 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 91,
+        "days_remaining_at_evaluation": 87,
         "derived_from": "application_timeline_profile.deadline_non_eu",
         "confidence": "high",
         "source_url": "https://grad.ucla.edu/programs/school-of-engineering-and-applied-science/mechanical-aerospace-engineering-department/aerospace-engineering/",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
+      },
+      "deadline_notes": {
+        "en": "The current 2026-2027 official requirements page gives December 1, 2026 and limits admission to fall. The department describes a September 9-December 1 submission period and says the annual deadline is strictly observed.",
+        "tr": "Güncel 2026-2027 resmî şartlar sayfası 1 Aralık 2026 tarihini verir ve kabulü güz dönemiyle sınırlar. Bölüm, 9 Eylül-1 Aralık başvuru dönemini açıklar ve yıllık son tarihin kesin uygulandığını belirtir."
       }
     },
     "research_profile": {
@@ -21428,7 +21718,7 @@
         "https://www.reddit.com/r/ucla/comments/1sybwwg/grad_housing/",
         "https://www.reddit.com/r/ucla/comments/1upai2i/whats_a_good_waitlist_for_ucla_graduate_housing/"
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "program_basic_info": "high",
         "program": "high",
@@ -21472,25 +21762,6 @@
           "notes": {
             "en": "Separate active Aerospace Engineering MS/PhD program and major code 0279.",
             "tr": "Ayrı ve aktif Aerospace Engineering MS/PhD programı ile 0279 ana dal kodu."
-          }
-        },
-        {
-          "url": "https://grad.ucla.edu/gasaa/deptinfo/deptinfo.asp?academicyear=20262027&code=0279",
-          "title": "UCLA 2026-27 Aerospace Engineering Admission Requirements",
-          "source_type": "official_admission_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "program",
-            "deadline",
-            "gre",
-            "recommendations",
-            "documents"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Current cycle-specific December 1, 2026 deadline, required GRE General, three recommendations and application materials.",
-            "tr": "Güncel döneme özgü 1 Aralık 2026 tarihi, zorunlu GRE General, üç referans ve başvuru belgeleri."
           }
         },
         {
@@ -21672,7 +21943,9 @@
             "housing",
             "food",
             "insurance",
-            "coa"
+            "coa",
+            "living",
+            "cost"
           ],
           "confidence": "high",
           "notes": {
@@ -21879,9 +22152,50 @@
           "access_status": "ok",
           "last_checked": "2026-08-30",
           "relevant_fields": [
-            "living",
+            "tuition",
+            "living_cost",
             "housing",
+            "food",
+            "insurance",
+            "coa",
+            "living",
             "cost"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://grad.ucla.edu/gasaa/deptinfo/deptinfo.asp?academicyear=20262027&code=0279",
+          "title": "2026-2027 Admission Requirements for the Graduate Major in Aerospace Engineering",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "program",
+            "deadline",
+            "gre",
+            "recommendations",
+            "documents",
+            "admission",
+            "required_documents"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.mae.ucla.edu/graduate-admissions-2/",
+          "title": "Graduate Admissions | UCLA Mechanical and Aerospace Engineering",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "gre",
+            "deadline",
+            "documents",
+            "duration",
+            "funding",
+            "housing",
+            "required_documents",
+            "international"
           ],
           "confidence": "high"
         }
@@ -21982,7 +22296,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 19,
+      "checked_official_source_count": 20,
       "verified_fields": [
         "program",
         "admission",
@@ -21998,7 +22312,7 @@
         "language"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-30"
+      "audited_at": "2026-09-05"
     },
     "quality_control": {
       "checked_at": "2026-08-23",
@@ -22089,7 +22403,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -22352,7 +22666,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "tuition_usd_per_year": 63305.5,
       "tuition_derivation": {
@@ -22405,7 +22719,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -22606,7 +22920,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -22668,7 +22982,7 @@
           "en": "The Fung Institute publishes USD 36,774 of estimated annual personal expenses for the MEng: housing 19,432, food 9,576, books 752, personal 3,246 and transportation 3,768. The page calls the figure annual but never names the number of months, so twelve are used here; if it is in fact a nine-month budget the monthly rate is a third higher.",
           "tr": "Fung Institute, MEng icin yillik 36.774 USD tahmini kisisel gider yayimlar: konut 19.432, gida 9.576, kitap 752, kisisel 3.246 ve ulasim 3.768. Sayfa rakami yillik olarak adlandirir ancak ay sayisini hicbir yerde belirtmez; bu yuzden burada on iki ay kullanilir. Gercekte dokuz aylik bir butce ise aylik tutar ucte bir daha yuksektir."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_living_budget",
@@ -22918,11 +23232,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 127,
+        "days_remaining_at_evaluation": 123,
         "derived_from": "application_timeline_profile.application_deadline",
         "confidence": "high",
         "source_url": "https://me.berkeley.edu/graduate/meng-admissions/",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -23972,7 +24286,7 @@
       "matched_tags": [],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -24041,28 +24355,28 @@
       "admission_risk": "high",
       "required_documents": [
         {
-          "en": "Online graduate application",
-          "tr": "Çevrim içi lisansüstü başvuru"
+          "en": "UC San Diego online graduate application",
+          "tr": "UC San Diego çevrim içi lisansüstü başvurusu"
         },
         {
-          "en": "Academic records from every postsecondary institution attended",
-          "tr": "Devam edilen tüm yükseköğretim kurumlarından akademik kayıtlar"
+          "en": "Academic records from every post-secondary institution attended since high school",
+          "tr": "Lise sonrasında devam edilen tüm kurumlardan akademik kayıtlar"
         },
         {
           "en": "Statement of purpose",
-          "tr": "Amaç beyanı"
+          "tr": "Amaç mektubu"
         },
         {
-          "en": "Three letters of recommendation",
-          "tr": "Üç referans mektubu"
+          "en": "Three online letters of recommendation",
+          "tr": "Üç çevrim içi referans mektubu"
         },
         {
           "en": "Curriculum vitae",
           "tr": "Özgeçmiş"
         },
         {
-          "en": "English-proficiency result when not exempt",
-          "tr": "Muaf değilse İngilizce yeterlilik sonucu"
+          "en": "English-language proficiency evidence for international applicants when required",
+          "tr": "Gerektiğinde uluslararası adaylar için İngilizce yeterlilik kanıtı"
         }
       ],
       "official_transcripts_required_at_application": false,
@@ -24099,8 +24413,8 @@
         ]
       },
       "verification_notes": {
-        "en": "The 3.0 GPA is a minimum, not a competitive guarantee. The department reports most admits at 3.5-4.0 and says it rarely admits below 3.2.",
-        "tr": "3,0 GPA bir asgari şarttır, rekabet garantisi değildir. Bölüm kabul edilenlerin çoğunu 3,5-4,0 aralığında bildirir ve 3,2 altını nadiren kabul ettiğini söyler."
+        "en": "Unofficial transcripts are accepted at application; official transcripts are required after an admission offer. GRE is optional and is not a required document.",
+        "tr": "Başvuruda resmî olmayan transkript kabul edilir; kabul teklifinden sonra resmî transkript gerekir. GRE isteğe bağlıdır ve zorunlu belge değildir."
       }
     },
     "language_profile": {
@@ -24228,7 +24542,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -24269,7 +24583,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -24389,7 +24703,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -24425,7 +24739,7 @@
           "en": "UC San Diego states its graduate cost of attendance is built on three quarters of full-time enrolment, so this is a nine-month figure. The off-campus food and housing line for 2026-27 is USD 31,548 within a published total of USD 76,821. Only food and housing are carried here: transportation, books, personal expenses and health insurance sit in the same official budget but were not captured as separate figures, so they must be budgeted on top.",
           "tr": "UC San Diego, lisansustu egitim maliyetinin tam zamanli kayitla uc ceyrek uzerine kuruldugunu belirtir; bu yuzden bu dokuz aylik bir rakamdir. 2026-27 icin kampus disi gida ve konut satiri, yayimlanan 76.821 USD'lik toplam icinde 31.548 USD'dir. Burada yalnizca gida ve konut tasinir: ulasim, kitap, kisisel giderler ve saglik sigortasi ayni resmi butcede yer alir ancak ayri rakamlar olarak kaydedilmemistir, bu yuzden ustune butcelenmelidir."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_cost_of_attendance",
@@ -24581,10 +24895,21 @@
       "application_rounds": [
         {
           "intake": "Fall 2027",
+          "round": {
+            "en": "Fall 2027 M.S. application period",
+            "tr": "Güz 2027 M.S. başvuru dönemi"
+          },
+          "opens": "2026-09-02",
           "deadline": "2027-01-13",
-          "deadline_type": "final",
-          "applicant_scope": "MS applicants",
-          "gre_required": false
+          "gre_required": false,
+          "deadline_type": {
+            "en": "Final deadline",
+            "tr": "Nihai son tarih"
+          },
+          "international_difference": {
+            "en": "No separate international deadline is published.",
+            "tr": "Ayrı bir uluslararası aday tarihi yayımlanmamıştır."
+          }
         }
       ],
       "review_begins": "January 2027",
@@ -24623,8 +24948,8 @@
       },
       "timeline_risk": "medium",
       "verification_notes": {
-        "en": "The current Fall 2027 MAE page explicitly publishes January 13, 2027 for MS and says late applications cannot be accepted. No deadline estimate is used.",
-        "tr": "Güncel Fall 2027 MAE sayfası MS için 13 Ocak 2027'yi açıkça yayımlar ve geç başvuru kabul edilmediğini söyler. Son tarih tahmini kullanılmaz."
+        "en": "No deadline time zone is stated.",
+        "tr": "Son tarih saat dilimi belirtilmemiştir."
       },
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
@@ -24636,13 +24961,17 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 134,
+        "days_remaining_at_evaluation": 130,
         "derived_from": "application_timeline_profile.application_deadline",
         "confidence": "high",
         "source_url": "https://mae.ucsd.edu/grad/mae-master-science-program",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
+      },
+      "deadline_notes": {
+        "en": "Fall 2027 is explicitly published. Admission is fall-only and late applications cannot be accepted.",
+        "tr": "Güz 2027 açıkça yayımlanmıştır. Kabul yalnız güz dönemindedir ve geç başvurular kabul edilmez."
       }
     },
     "research_profile": {
@@ -24967,7 +25296,7 @@
         "https://www.reddit.com/r/UCSD/comments/1us1cx9/graduate_housing_questions/",
         "https://www.reddit.com/r/UCSD/comments/1ujla44/i20_is_taking_too_long_to_arrive/"
       ],
-      "last_verified": "2026-08-30",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "program_basic_info": "high",
         "program": "high",
@@ -25120,7 +25449,9 @@
             "food",
             "books",
             "personal",
-            "transportation"
+            "transportation",
+            "living",
+            "cost"
           ],
           "confidence": "high",
           "notes": {
@@ -25532,9 +25863,34 @@
           "access_status": "requires_js",
           "last_checked": "2026-08-30",
           "relevant_fields": [
-            "living",
+            "coa",
             "housing",
+            "food",
+            "books",
+            "personal",
+            "transportation",
+            "living",
             "cost"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://mae.ucsd.edu/grad/graduate-admissions",
+          "title": "Fall 2027 MAE Graduate Admissions | UC San Diego",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "deadline",
+            "admission",
+            "non_eu_eligibility",
+            "gre",
+            "english",
+            "documents",
+            "funding",
+            "housing",
+            "required_documents",
+            "international"
           ],
           "confidence": "high"
         }
@@ -25635,7 +25991,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 23,
+      "checked_official_source_count": 24,
       "verified_fields": [
         "program",
         "admission",
@@ -25651,7 +26007,7 @@
         "language"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-08-30"
+      "audited_at": "2026-09-05"
     },
     "quality_control": {
       "checked_at": "2026-08-23",
@@ -25738,7 +26094,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -25789,16 +26145,38 @@
         "related_field_with_engineering_and_math_preparation"
       ],
       "required_documents": [
-        "online_application",
-        "resume",
-        "transcripts",
-        "statement_of_purpose",
-        "two_letters_of_recommendation",
-        "english_proficiency_evidence_when_required"
+        {
+          "en": "Electronic Graduate School application",
+          "tr": "Elektronik Graduate School başvurusu"
+        },
+        {
+          "en": "Resume",
+          "tr": "Özgeçmiş"
+        },
+        {
+          "en": "Unofficial electronic transcripts from degree-granting institutions and institutions with relevant engineering coursework",
+          "tr": "Derece veren kurumlar ve ilgili mühendislik dersi alınan kurumlardan resmî olmayan elektronik transkriptler"
+        },
+        {
+          "en": "Statement of purpose, no more than one single-spaced page",
+          "tr": "En fazla bir tek aralıklı sayfalık amaç mektubu"
+        },
+        {
+          "en": "Two letters of recommendation",
+          "tr": "İki referans mektubu"
+        },
+        {
+          "en": "English-proficiency evidence when required",
+          "tr": "Gerektiğinde İngilizce yeterlilik kanıtı"
+        },
+        {
+          "en": "For international applicants, legible and fully translated undergraduate transcripts",
+          "tr": "Uluslararası adaylar için okunaklı ve tamamen çevrilmiş lisans transkriptleri"
+        }
       ],
       "verification_notes": {
-        "en": "UW MSAA expects aerospace or mechanical engineering preparation, permits appropriately prepared applicants from other fields and requires a 3.0 GPA minimum. The department lists the online application, résumé, transcripts, statement of purpose and two recommendations; GRE scores are not requested or considered.",
-        "tr": "UW MSAA, havacılık veya makine mühendisliği hazırlığını bekler; uygun mühendislik ve matematik altyapısıyla başka alanlardan adaylara izin verir ve en az 3,0 GPA ister. Bölüm çevrimiçi başvuru, özgeçmiş, transkript, niyet mektubu ve iki referansı listeler; GRE puanları istenmez veya değerlendirilmez."
+        "en": "GRE scores are no longer requested or considered. English test scores used to meet the requirement must be received by the application deadline.",
+        "tr": "GRE puanları artık istenmez veya değerlendirilmez. Şartı karşılamak için kullanılan İngilizce sınav puanları son tarihe kadar ulaşmalıdır."
       },
       "gre": {
         "policy": "unknown",
@@ -25816,7 +26194,11 @@
         "en": "The Graduate School's waiver is for US citizens, permanent residents and undocumented applicants who show financial need. Anyone who holds or expects to hold F-1 or J-1 status is excluded by federal eligibility rules, which is every applicant arriving from Turkiye.",
         "tr": "Lisansüstü Okul'un muafiyeti, mali ihtiyacını gösteren ABD vatandaşları, daimi ikamet sahipleri ve belgesiz adaylar içindir. F-1 veya J-1 statüsü olan ya da olması beklenen herkes federal uygunluk kurallarıyla dışarıda bırakılır; bu, Türkiye'den gelen her aday demektir."
       },
-      "international_application_fee_waiver_available_from_department": false
+      "international_application_fee_waiver_available_from_department": false,
+      "motivation_letter_required": true,
+      "cv_required": true,
+      "recommendation_required": true,
+      "recommendation_letter_count": 2
     },
     "language_profile": {
       "teaching_language": [
@@ -25879,7 +26261,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "tuition_derivation": {
         "standard": "cost_model@3.1.0",
@@ -25946,7 +26328,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -26031,7 +26413,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -26064,7 +26446,7 @@
           "en": "UW International Student Services estimates USD 37,484 of living expenses for 2026-27 across a four-quarter year, alongside USD 2,148 of ISHIP health insurance. The tuition figure on this record covers the three-quarter academic year instead, so a student staying through summer should expect tuition on top of it as well.",
           "tr": "UW Uluslararasi Ogrenci Hizmetleri, 2026-27 icin dort ceyreklik bir yil boyunca 37.484 USD yasam gideri ve bunun yaninda 2.148 USD ISHIP saglik sigortasi tahmin eder. Bu kayittaki ogrenim ucreti rakami ise uc ceyreklik akademik yili kapsar; bu yuzden yaz boyunca kalan bir ogrenci ustune ogrenim ucreti de beklemelidir."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_living_budget",
@@ -26136,8 +26518,8 @@
       "deadline_non_eu": null,
       "timeline_risk": "unknown",
       "verification_notes": {
-        "en": "MSAA admits for Autumn quarter only. The checked page still displays the Autumn 2026 deadline (December 1, 2025), not a current Autumn 2027 date, so a stale annual deadline was removed.",
-        "tr": "MSAA yalnızca güz çeyreği için öğrenci kabul eder. Kontrol edilen sayfa hâlâ 2026 güz son tarihini (1 Aralık 2025) gösterir, güncel 2027 güz tarihi göstermez; bu nedenle eski yıllık son tarih kaldırıldı."
+        "en": "The department admits new degree students only for autumn and rejects late applications.",
+        "tr": "Bölüm yeni dereceli öğrencileri yalnız güz döneminde kabul eder ve geç başvuruları reddeder."
       },
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
@@ -26145,9 +26527,31 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
+      },
+      "application_rounds": [
+        {
+          "round": {
+            "en": "Autumn 2026 admission - latest published cycle",
+            "tr": "Güz 2026 kabulü - yayımlanmış son döngü"
+          },
+          "deadline": "2025-12-01",
+          "deadline_time": "23:59 Pacific Time",
+          "deadline_type": {
+            "en": "Final deadline",
+            "tr": "Nihai son tarih"
+          },
+          "international_difference": {
+            "en": "No separate international deadline was published for this cycle.",
+            "tr": "Bu döngü için ayrı bir uluslararası aday tarihi yayımlanmamıştır."
+          }
+        }
+      ],
+      "deadline_notes": {
+        "en": "The current official MSAA page still displays the Autumn 2026 cycle. A Fall 2027 deadline was not published on the checked page as of 2026-09-05; the 2025 date is retained only as the latest official cycle and must not be reused as a 2027 date.",
+        "tr": "Güncel resmî MSAA sayfası hâlâ Güz 2026 döngüsünü gösterir. 05.09.2026 itibarıyla kontrol edilen sayfada Güz 2027 tarihi yayımlanmamıştır; 2025 tarihi yalnızca son resmî döngü olarak korunur ve 2027 tarihi olarak kullanılmamalıdır."
       }
     },
     "research_profile": {
@@ -26578,7 +26982,7 @@
         "https://hfs.uw.edu/live/graduates/graduate-student-apartments/mercer-court-d-e-on-campus/",
         "https://grad.uw.edu/prospective-students/how-to-apply/requirements/"
       ],
-      "last_verified": "2026-09-01",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "program_basic_info": "high",
         "admission": "high",
@@ -26588,7 +26992,8 @@
         "scholarship": "high",
         "housing": "high",
         "language": "unknown",
-        "sentiment": "unknown"
+        "sentiment": "unknown",
+        "deadline": "medium"
       },
       "source_reliability": "high",
       "verification_status": "partially_verified",
@@ -26807,6 +27212,27 @@
             "fees"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://www.aa.washington.edu/admissions/grad/msaa",
+          "title": "Master of Science in Aeronautics & Astronautics | University of Washington",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "program",
+            "admission",
+            "non_eu_eligibility",
+            "english_proficiency",
+            "deadline",
+            "required_documents",
+            "international"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "The live page still shows Autumn 2026; Fall 2027 is not yet published.",
+            "tr": "Canlı sayfa hâlâ Güz 2026'yı gösteriyor; Güz 2027 henüz yayımlanmamıştır."
+          }
         }
       ],
       "needs_verification": true
@@ -26841,7 +27267,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 11,
+      "checked_official_source_count": 12,
       "verified_fields": [
         "program",
         "admission",
@@ -26857,7 +27283,7 @@
         "language"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-01"
+      "audited_at": "2026-09-05"
     },
     "quality_control": {
       "checked_at": "2026-08-23",
@@ -26916,7 +27342,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -26970,10 +27396,35 @@
         "engineering",
         "physical_sciences"
       ],
-      "required_documents": [],
+      "required_documents": [
+        {
+          "en": "Cornell Graduate School online application and application fee or approved waiver",
+          "tr": "Cornell Graduate School çevrim içi başvurusu ve başvuru ücreti veya onaylı muafiyet"
+        },
+        {
+          "en": "Academic statement of purpose",
+          "tr": "Akademik amaç mektubu"
+        },
+        {
+          "en": "Personal statement",
+          "tr": "Kişisel beyan"
+        },
+        {
+          "en": "English-language proficiency score when required",
+          "tr": "Gerektiğinde İngilizce yeterlilik puanı"
+        },
+        {
+          "en": "Unofficial transcript in English from every university attended",
+          "tr": "Devam edilen her üniversiteden İngilizce resmî olmayan transkript"
+        },
+        {
+          "en": "Three electronic letters of recommendation",
+          "tr": "Üç elektronik referans mektubu"
+        }
+      ],
       "verification_notes": {
-        "en": "Cornell's Mechanical Engineering field states the bachelor's-background requirement. The MS is active, but the checked page does not separately confirm non-EU eligibility or list a current MS document checklist.",
-        "tr": "Cornell Mechanical Engineering alanı lisans geçmiş şartını belirtir. MS aktiftir; ancak kontrol edilen sayfa AB dışı uygunluğu ayrıca doğrulamaz veya güncel MS belge listesini vermez."
+        "en": "A CV or resume is optional, not required. A writing sample is not required. GRE scores are not accepted for Fall 2027.",
+        "tr": "CV veya özgeçmiş isteğe bağlıdır, zorunlu değildir. Yazı örneği istenmez. GRE puanları Güz 2027 için kabul edilmez."
       },
       "gre": {
         "policy": "unknown",
@@ -26991,7 +27442,11 @@
         "en": "Cornell approves a financial-hardship waiver only in exceptional cases, and only for applicants to fully funded doctoral or research master's programmes or those who will file a FAFSA for federal student aid. A taught master's applicant from abroad can do neither.",
         "tr": "Cornell, mali güçlük muafiyetini yalnızca istisnai durumlarda ve yalnızca tam burslu doktora ya da araştırma yüksek lisansı adaylarına veya federal öğrenci yardımı için FAFSA verecek olanlara tanıyor. Yurt dışından ders programlı bir yüksek lisansa başvuran aday bunların ikisini de yapamaz."
       },
-      "international_application_fee_waiver_available_from_department": false
+      "international_application_fee_waiver_available_from_department": false,
+      "motivation_letter_required": true,
+      "recommendation_required": true,
+      "recommendation_letter_count": 3,
+      "cv_required": false
     },
     "language_profile": {
       "teaching_language": [
@@ -27062,7 +27517,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "application_fee_usd": 105,
       "application_fee_verification": {
@@ -27116,7 +27571,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -27208,7 +27663,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -27241,14 +27696,14 @@
           "derived_from": {
             "monthly_living_cost_usd_estimated": 3118.0
           },
-          "derived_at": "2026-09-01"
+          "derived_at": "2026-09-05"
         },
         "source_url": null,
         "note": {
           "en": "Cornell International Services' published graduate living-expense estimate; it is a budget, not rent alone.",
           "tr": "Cornell International Services'ın yayımladığı lisansüstü yaşam gideri tahmini; yalnız kira değildir."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "curriculum_profile": {
@@ -27322,13 +27777,16 @@
       "deadline_non_eu": null,
       "timeline_risk": "high",
       "verification_notes": {
-        "en": "The checked field page says admission is normally fall-only, but a current MS-specific deadline was not verified; the earlier February 1 value was removed.",
-        "tr": "Kontrol edilen alan sayfası kabulün normalde yalnız güz dönemi olduğunu belirtir; ancak güncel MS'e özgü son tarih doğrulanamadığı için önceki 1 Şubat değeri kaldırıldı."
+        "en": "No deadline time zone is stated.",
+        "tr": "Son tarih saat dilimi belirtilmemiştir."
       },
       "non_eu_deadline": null,
       "winter_deadline": null,
       "application_deadline": null,
-      "deadline_notes": null,
+      "deadline_notes": {
+        "en": "The current program page places the requirements in the Fall 2027 cycle and publishes January 18 for fall-only M.S. admission. It allows a reasonable period after application submission for recommendation letters and official test scores to arrive.",
+        "tr": "Güncel program sayfası şartları Güz 2027 döngüsünde verir ve yalnız güz M.S. kabulü için 18 Ocak tarihini yayımlar. Başvuru gönderildikten sonra referans mektupları ve resmî sınav puanlarının ulaşması için makul süre tanır."
+      },
       "deadline_events": [],
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
@@ -27336,10 +27794,27 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
-      }
+      },
+      "application_rounds": [
+        {
+          "round": {
+            "en": "Fall 2027 M.S. admission",
+            "tr": "Güz 2027 M.S. kabulü"
+          },
+          "deadline": "2027-01-18",
+          "deadline_type": {
+            "en": "Final application deadline",
+            "tr": "Nihai başvuru son tarihi"
+          },
+          "international_difference": {
+            "en": "No separate international deadline is published.",
+            "tr": "Ayrı bir uluslararası aday tarihi yayımlanmamıştır."
+          }
+        }
+      ]
     },
     "research_profile": {
       "research_focus_areas": [
@@ -27627,10 +28102,10 @@
         "https://international.globallearning.cornell.edu/life-cornell/tuition-and-living-expenses",
         "https://scl.cornell.edu/sub/residential-life/housing/housing-details/rates-amenities-licenses/housing-rates"
       ],
-      "last_verified": "2026-09-01",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "program_basic_info": "high",
-        "admission": "unknown",
+        "admission": "high",
         "deadlines": "unknown",
         "scholarship": "high",
         "curriculum": "high",
@@ -27639,7 +28114,7 @@
         "language": "unknown",
         "sentiment": "unknown",
         "non_eu_eligibility": "unknown",
-        "deadline": "unknown"
+        "deadline": "high"
       },
       "source_reliability": "high",
       "verification_status": "partially_verified",
@@ -27807,6 +28282,33 @@
             "fees"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://www.duffield.cornell.edu/mae/ms-mechanical-engineering/ms-admission-requirements/",
+          "title": "Admission Requirements | Cornell Sibley School M.S. in Mechanical Engineering",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "deadline",
+            "required_documents",
+            "international"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://gradschool.cornell.edu/admissions/application-steps/transcripts/",
+          "title": "Prepare Transcripts | Cornell Graduate School",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "required_documents",
+            "international"
+          ],
+          "confidence": "high"
         }
       ]
     },
@@ -27854,23 +28356,23 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 10,
+      "checked_official_source_count": 12,
       "verified_fields": [
         "program",
         "admission",
         "tuition",
         "scholarship",
+        "deadline",
         "curriculum",
         "research",
         "housing"
       ],
       "unverified_critical_fields": [
         "language",
-        "non_eu_eligibility",
-        "deadline"
+        "non_eu_eligibility"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-01"
+      "audited_at": "2026-09-05"
     },
     "quality_control": {
       "checked_at": "2026-08-23",
@@ -27943,7 +28445,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "medium",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -27999,10 +28501,43 @@
         "mathematics",
         "physics"
       ],
-      "required_documents": [],
+      "required_documents": [
+        {
+          "en": "Princeton electronic graduate application and application fee or approved waiver",
+          "tr": "Princeton elektronik lisansüstü başvurusu ve başvuru ücreti veya onaylı muafiyet"
+        },
+        {
+          "en": "Academic statement of purpose",
+          "tr": "Akademik amaç mektubu"
+        },
+        {
+          "en": "Personal statement",
+          "tr": "Kişisel beyan"
+        },
+        {
+          "en": "Resume or curriculum vitae",
+          "tr": "Özgeçmiş"
+        },
+        {
+          "en": "Unofficial transcript, including the transcript key, from every institution attended",
+          "tr": "Devam edilen her kurumdan transkript anahtarı dâhil resmî olmayan transkript"
+        },
+        {
+          "en": "Three electronic letters of recommendation",
+          "tr": "Üç elektronik referans mektubu"
+        },
+        {
+          "en": "English-proficiency evidence when required",
+          "tr": "Gerektiğinde İngilizce yeterlilik kanıtı"
+        },
+        {
+          "en": "Selection of two MAE research-interest areas",
+          "tr": "İki MAE araştırma ilgi alanı seçimi"
+        }
+      ],
       "verification_notes": {
-        "en": "Princeton MAE states that engineering or science bachelor's preparation is normally expected and applicants select two research interests. A current international-eligibility statement and full programme-specific document checklist were not verified.",
-        "tr": "Princeton MAE, normalde mühendislik veya fen lisans hazırlığının beklendiğini ve adayların iki araştırma ilgisi seçtiğini belirtir. Güncel uluslararası uygunluk beyanı ve program özelindeki tam belge listesi doğrulanmamıştır."
+        "en": "The GRE General Test is not accepted for this program. A writing sample is not listed as a program requirement.",
+        "tr": "Bu program GRE General sınavını kabul etmez. Yazı örneği program şartı olarak listelenmemiştir."
       },
       "gre": {
         "policy": "unknown",
@@ -28019,7 +28554,11 @@
       "application_fee_waiver": {
         "en": "Princeton waives the fee on three grounds - financial hardship, participation in one of the programmes it names, or attendance at a recruiting event. IIE/Fulbright is on the named list, which is the route that is actually open from abroad. The request must be in two business days before the department deadline, and the application must not be paid for until the decision arrives.",
         "tr": "Princeton ücreti üç gerekçeyle kaldırır: mali güçlük, adını andığı programlardan birine katılım ya da bir tanıtım etkinliğine katılım. Adı geçen listede IIE/Fulbright vardır; yurt dışından gerçekten açık olan yol budur. Talep, bölüm son tarihinden iki iş günü önce verilmeli ve karar gelmeden başvurunun ücreti ödenmemelidir."
-      }
+      },
+      "motivation_letter_required": true,
+      "cv_required": true,
+      "recommendation_required": true,
+      "recommendation_letter_count": 3
     },
     "language_profile": {
       "teaching_language": [
@@ -28087,7 +28626,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "application_fee_usd": 90,
       "application_fee_verification": {
@@ -28141,7 +28680,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -28226,7 +28765,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -28284,7 +28823,7 @@
           "en": "Princeton's 2026-27 living-expense table, twelve-month column: housing on or off campus 17,040, food 10,925, personal expenses 9,365 and books and supplies 2,440, totalling 39,770. The ten-month column totals 33,141. Princeton publishes no separate transport line, so local travel is not inside this figure.",
           "tr": "Princeton'un 2026-27 yasam gideri tablosu, on iki aylik sutun: kampus ici veya disi konut 17.040, gida 10.925, kisisel giderler 9.365 ve kitap ve malzeme 2.440; toplam 39.770. On aylik sutunun toplami 33.141'dir. Princeton ayri bir ulasim satiri yayimlamaz, bu yuzden sehir ici ulasim bu rakamin icinde degildir."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_living_budget",
@@ -28381,7 +28920,10 @@
       "non_eu_deadline": null,
       "winter_deadline": null,
       "application_deadline": null,
-      "deadline_notes": null,
+      "deadline_notes": {
+        "en": "Fall 2027 and its December 1, 2026 deadline are explicitly published. All required supporting materials are due by the deadline; late applications are not accepted.",
+        "tr": "Güz 2027 ve 1 Aralık 2026 son tarihi açıkça yayımlanmıştır. Tüm zorunlu destekleyici belgeler son tarihe kadar sunulmalıdır; geç başvuru kabul edilmez."
+      },
       "deadline_events": [],
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
@@ -28389,10 +28931,28 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
-      }
+      },
+      "application_rounds": [
+        {
+          "round": {
+            "en": "Fall 2027 M.S.E. admission",
+            "tr": "Güz 2027 M.S.E. kabulü"
+          },
+          "deadline": "2026-12-01",
+          "deadline_time": "23:59 Eastern Standard Time",
+          "deadline_type": {
+            "en": "Final deadline",
+            "tr": "Nihai son tarih"
+          },
+          "international_difference": {
+            "en": "Princeton uses the same application and deadline for international applicants.",
+            "tr": "Princeton uluslararası adaylar için aynı başvuruyu ve son tarihi kullanır."
+          }
+        }
+      ]
     },
     "research_profile": {
       "research_focus_areas": [
@@ -28690,10 +29250,10 @@
         "https://gradschool.princeton.edu/financial-support/financial-support-model/funding-calendar-university-rates-costs",
         "https://gradschool.princeton.edu/financial-support/financial-support-model/master%E2%80%99s-degree-funding"
       ],
-      "last_verified": "2026-09-01",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "program_basic_info": "high",
-        "admission": "unknown",
+        "admission": "high",
         "deadlines": "unknown",
         "scholarship": "high",
         "curriculum": "high",
@@ -28702,7 +29262,7 @@
         "language": "unknown",
         "sentiment": "unknown",
         "non_eu_eligibility": "unknown",
-        "deadline": "unknown"
+        "deadline": "high"
       },
       "source_reliability": "high",
       "verification_status": "partially_verified",
@@ -28712,22 +29272,6 @@
         "tr": "Resmî MAE derece, kabul, maliyet ve finansman sayfaları kontrol edildi. Eğitim dili İngilizce web sitesinden bilinçli olarak çıkarılmamıştır."
       },
       "source_log": [
-        {
-          "url": "https://gradschool.princeton.edu/academics/degrees-requirements/fields-study/mechanical-and-aerospace-engineering",
-          "title": "Princeton MAE Graduate Field",
-          "source_type": "official_program_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "program",
-            "curriculum"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Official MAE degree offerings, duration, MSE thesis/course structure and funding statement.",
-            "tr": "Resmî MAE derece seçenekleri, süre, MSE tez/ders yapısı ve finansman açıklaması."
-          }
-        },
         {
           "url": "https://mae.princeton.edu/graduate/admissions",
           "title": "Princeton MAE Graduate Admissions",
@@ -28768,7 +29312,10 @@
           "last_checked": "2026-08-14",
           "relevant_fields": [
             "tuition",
-            "fees"
+            "fees",
+            "housing",
+            "living",
+            "cost"
           ],
           "confidence": "high",
           "notes": {
@@ -28798,8 +29345,11 @@
           "access_status": "ok",
           "last_checked": "2026-08-14",
           "relevant_fields": [
+            "tuition",
+            "fees",
             "housing",
-            "living"
+            "living",
+            "cost"
           ],
           "confidence": "high",
           "notes": {
@@ -28854,8 +29404,10 @@
           "access_status": "ok",
           "last_checked": "2026-08-30",
           "relevant_fields": [
-            "living",
+            "tuition",
+            "fees",
             "housing",
+            "living",
             "cost"
           ],
           "confidence": "high"
@@ -28872,6 +29424,46 @@
             "application_fee",
             "cost",
             "fees"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://gradschool.princeton.edu/academics/degrees-requirements/fields-study/mechanical-and-aerospace-engineering",
+          "title": "Mechanical and Aerospace Engineering | Princeton Graduate School",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "program",
+            "curriculum",
+            "admission",
+            "deadline",
+            "required_documents"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://gradschool.princeton.edu/admission-onboarding/prepare",
+          "title": "Prepare Your Application | Princeton Graduate School",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "required_documents",
+            "international"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://gradschool.princeton.edu/admission-onboarding/prepare/letters-recommendation",
+          "title": "Letters of Recommendation | Princeton Graduate School",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "required_documents"
           ],
           "confidence": "high"
         }
@@ -28921,23 +29513,23 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 9,
+      "checked_official_source_count": 11,
       "verified_fields": [
         "program",
+        "admission",
         "tuition",
         "scholarship",
+        "deadline",
         "curriculum",
         "research",
         "housing"
       ],
       "unverified_critical_fields": [
         "language",
-        "admission",
-        "non_eu_eligibility",
-        "deadline"
+        "non_eu_eligibility"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-01"
+      "audited_at": "2026-09-05"
     },
     "quality_control": {
       "checked_at": "2026-08-23",
@@ -29013,7 +29605,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -29059,10 +29651,39 @@
       "admission_mode": "Graduate School application with department review",
       "admission_risk": "high",
       "accepted_backgrounds": [],
-      "required_documents": [],
+      "required_documents": [
+        {
+          "en": "Virginia Tech Graduate School online application",
+          "tr": "Virginia Tech Graduate School çevrim içi başvurusu"
+        },
+        {
+          "en": "Official transcripts sent to the Graduate School",
+          "tr": "Graduate School'a gönderilen resmî transkriptler"
+        },
+        {
+          "en": "Statement of interest",
+          "tr": "İlgi beyanı"
+        },
+        {
+          "en": "Curriculum vitae",
+          "tr": "Özgeçmiş"
+        },
+        {
+          "en": "Three letters of recommendation",
+          "tr": "Üç referans mektubu"
+        },
+        {
+          "en": "Official English-proficiency score for international applicants",
+          "tr": "Uluslararası adaylar için resmî İngilizce yeterlilik puanı"
+        },
+        {
+          "en": "Immigration Information Form for international applicants",
+          "tr": "Uluslararası adaylar için Immigration Information Form"
+        }
+      ],
       "verification_notes": {
-        "en": "The checked AOE and Graduate School pages document the graduate application route and international deadlines. A programme-specific list of prior-degree and document requirements was not captured in this update.",
-        "tr": "Kontrol edilen AOE ve Graduate School sayfaları lisansüstü başvuru yolunu ve uluslararası son tarihleri belgeliyor. Programa özgü önceki derece ve belge listesinin tamamı bu güncellemede doğrulanmadı."
+        "en": "GRE scores are no longer required.",
+        "tr": "GRE puanları artık gerekli değildir."
       },
       "gre": {
         "policy": "unknown",
@@ -29080,7 +29701,11 @@
         "en": "Virginia Tech's waiver list is built from qualifying events rather than from need: active duty or veteran status, AmeriCorps, the FAMU feeder programme, Fulbright, Math Alliance, NIH ESTEEMED or RISE, an NSF or NIH REU, the Peace Corps, or the VSU/VT 4+1 partnership. Fulbright is the route that does not require being in the United States already. Allow five to seven business days for the request.",
         "tr": "Virginia Tech'in muafiyet listesi ihtiyaçtan değil, uygun etkinliklerden kurulur: muvazzaf askerlik ya da gazilik, AmeriCorps, FAMU besleme programı, Fulbright, Math Alliance, NIH ESTEEMED veya RISE, bir NSF ya da NIH REU, Barış Gönülleri veya VSU/VT 4+1 ortaklığı. Halihazırda ABD'de bulunmayı gerektirmeyen yol Fulbright'tır. Talep için beş ila yedi iş günü bırak."
       },
-      "application_fee_waiver_processing_time_business_days": 7
+      "application_fee_waiver_processing_time_business_days": 7,
+      "motivation_letter_required": true,
+      "cv_required": true,
+      "recommendation_required": true,
+      "recommendation_letter_count": 3
     },
     "language_profile": {
       "teaching_language": [
@@ -29146,7 +29771,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "application_fee_usd": 75,
       "application_fee_verification": {
@@ -29200,7 +29825,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -29287,7 +29912,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -29349,7 +29974,7 @@
           "en": "Virginia Tech's 2026-27 out-of-state graduate cost of attendance for the Blacksburg campus, stated as one academic year of fall and spring: housing 13,330, food 3,840, course materials 1,120, transportation 3,014 and personal 4,130. Direct costs of tuition 33,582 and fees 3,754 bring the published total to 62,770. The sheet adds that a first-time graduate student's budget also carries a computer allowance of 2,150 or 3,140 depending on the programme.",
           "tr": "Virginia Tech'in Blacksburg kampusu icin 2026-27 eyalet disi lisansustu egitim maliyeti, guz ve bahardan olusan bir akademik yil olarak belirtilir: konut 13.330, gida 3.840, ders malzemesi 1.120, ulasim 3.014 ve kisisel 4.130. Dogrudan maliyetler olan 33.582 ogrenim ucreti ve 3.754 harc ile yayimlanan toplam 62.770'e ulasir. Belge, ilk kez kayit olan bir lisansustu ogrencinin butcesinin ayrica programa gore 2.150 veya 3.140 bilgisayar odenegi tasidigini ekler."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_cost_of_attendance",
@@ -29449,9 +30074,59 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
+      },
+      "application_rounds": [
+        {
+          "round": {
+            "en": "Fall admission funding consideration",
+            "tr": "Güz kabulü finansman değerlendirmesi"
+          },
+          "deadline": "December 30",
+          "deadline_type": {
+            "en": "Department funding deadline",
+            "tr": "Bölüm finansman son tarihi"
+          }
+        },
+        {
+          "round": {
+            "en": "Spring admission funding consideration",
+            "tr": "Bahar kabulü finansman değerlendirmesi"
+          },
+          "deadline": "September 1",
+          "deadline_type": {
+            "en": "Department funding deadline",
+            "tr": "Bölüm finansman son tarihi"
+          }
+        },
+        {
+          "round": {
+            "en": "Fall international application",
+            "tr": "Güz uluslararası başvuru"
+          },
+          "deadline": "April 1",
+          "deadline_type": {
+            "en": "Graduate School international application deadline",
+            "tr": "Graduate School uluslararası başvuru son tarihi"
+          }
+        },
+        {
+          "round": {
+            "en": "Spring international application",
+            "tr": "Bahar uluslararası başvuru"
+          },
+          "deadline": "September 1",
+          "deadline_type": {
+            "en": "Graduate School international application deadline",
+            "tr": "Graduate School uluslararası başvuru son tarihi"
+          }
+        }
+      ],
+      "deadline_notes": {
+        "en": "The current official pages publish recurring month/day rules without a cycle year. No Fall 2027 ISO date is inserted. Department funding dates are separate from the Graduate School's international application dates; the earlier applicable date should be used.",
+        "tr": "Güncel resmî sayfalar döngü yılı olmadan tekrarlayan ay/gün kuralları yayımlar. Güz 2027 için ISO tarih eklenmemiştir. Bölüm finansman tarihleri Graduate School uluslararası başvuru tarihlerinden ayrıdır; uygulanabilir olan daha erken tarih kullanılmalıdır."
       }
     },
     "research_profile": {
@@ -29789,7 +30464,7 @@
         "https://www.aoe.vt.edu/graduate/fellowships-and-assistantships.html",
         "https://graduateschool.vt.edu/admissions/how-to-apply/deadlines.html"
       ],
-      "last_verified": "2026-09-01",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "program_basic_info": "high",
         "admission": "high",
@@ -29799,7 +30474,8 @@
         "scholarship": "high",
         "housing": "high",
         "language": "unknown",
-        "sentiment": "unknown"
+        "sentiment": "unknown",
+        "deadline": "high"
       },
       "source_reliability": "high",
       "verification_status": "partially_verified",
@@ -29848,7 +30524,9 @@
           "last_checked": "2026-08-14",
           "relevant_fields": [
             "tuition",
-            "housing"
+            "housing",
+            "living",
+            "cost"
           ],
           "confidence": "high",
           "notes": {
@@ -29885,22 +30563,6 @@
           "notes": {
             "en": "Explains that GRA funding depends on faculty support and GTA positions are limited.",
             "tr": "GRA finansmanının öğretim üyesi desteğine bağlı olduğunu ve GTA pozisyonlarının sınırlı olduğunu açıklar."
-          }
-        },
-        {
-          "url": "https://graduateschool.vt.edu/admissions/how-to-apply/deadlines.html",
-          "title": "Virginia Tech Graduate School Deadlines",
-          "source_type": "official_admission_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "deadline",
-            "non_eu"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Lists international graduate application deadlines for fall and spring.",
-            "tr": "Güz ve bahar için uluslararası lisansüstü başvuru son tarihlerini listeler."
           }
         },
         {
@@ -29979,10 +30641,10 @@
           "access_status": "pdf",
           "last_checked": "2026-08-30",
           "relevant_fields": [
-            "living",
+            "tuition",
             "housing",
-            "cost",
-            "tuition"
+            "living",
+            "cost"
           ],
           "confidence": "high"
         },
@@ -29998,6 +30660,35 @@
             "application_fee",
             "cost",
             "fees"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.aoe.vt.edu/graduate/graduate-admissions.html",
+          "title": "Graduate Admissions | Virginia Tech Aerospace and Ocean Engineering",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "scholarship",
+            "deadline",
+            "required_documents",
+            "international",
+            "funding"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://graduateschool.vt.edu/admissions/how-to-apply/deadlines.html",
+          "title": "Deadlines | Virginia Tech Graduate School",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "deadline",
+            "non_eu",
+            "international"
           ],
           "confidence": "high"
         }
@@ -30051,7 +30742,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 12,
+      "checked_official_source_count": 13,
       "verified_fields": [
         "program",
         "admission",
@@ -30067,7 +30758,7 @@
         "language"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-01"
+      "audited_at": "2026-09-05"
     },
     "quality_control": {
       "checked_at": "2026-08-23",
@@ -30126,7 +30817,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -30182,11 +30873,42 @@
         "mathematics"
       ],
       "required_documents": [
-        "English-proficiency test evidence when required"
+        {
+          "en": "Fox Graduate School online application",
+          "tr": "Fox Graduate School çevrim içi başvurusu"
+        },
+        {
+          "en": "Statement of purpose",
+          "tr": "Amaç mektubu"
+        },
+        {
+          "en": "Resume",
+          "tr": "Özgeçmiş"
+        },
+        {
+          "en": "Two letters of recommendation",
+          "tr": "İki referans mektubu"
+        },
+        {
+          "en": "Non-refundable application fee",
+          "tr": "İade edilmeyen başvuru ücreti"
+        },
+        {
+          "en": "Official TOEFL or IELTS score for international applicants when required",
+          "tr": "Gerektiğinde uluslararası adaylar için resmî TOEFL veya IELTS puanı"
+        },
+        {
+          "en": "Uploaded transcripts, degree/study certificates and diplomas from all higher-education institutions attended",
+          "tr": "Devam edilen tüm yükseköğretim kurumlarından yüklenen transkriptler, derece/öğrenim belgeleri ve diplomalar"
+        },
+        {
+          "en": "English translations when the language of instruction or documents is not English",
+          "tr": "Eğitim veya belge dili İngilizce değilse İngilizce çeviriler"
+        }
       ],
       "verification_notes": {
-        "en": "Penn State's official bulletin requires a bachelor's in engineering, physical science or mathematics and says a 3.0 junior/senior GPA will be considered, subject to possible waivers. The programme application page publishes deadlines and a TOEFL iBT minimum (80 overall, 19 speaking); a fuller document checklist remains unverified here.",
-        "tr": "Penn State'in resmî bülteni mühendislik, fiziksel bilim veya matematikte lisans derecesi ister ve olası muafiyetlerle 3,0 junior/senior GPA'nın değerlendirileceğini belirtir. Program başvuru sayfası son tarihleri ve TOEFL iBT alt sınırını (toplam 80, konuşma 19) yayımlar; daha kapsamlı belge listesi burada doğrulanmamıştır."
+        "en": "GRE is not required. Applicants recommended for admission later provide official/original academic records through the Graduate School process.",
+        "tr": "GRE gerekli değildir. Kabul için önerilen adaylar daha sonra Graduate School süreci üzerinden resmî/orijinal akademik kayıtlarını sunar."
       },
       "gre": {
         "policy": "unknown",
@@ -30198,7 +30920,11 @@
         "source_ids": []
       },
       "application_fee_scope": "international applicants",
-      "application_fee_refundable": false
+      "application_fee_refundable": false,
+      "motivation_letter_required": true,
+      "cv_required": true,
+      "recommendation_required": true,
+      "recommendation_letter_count": 2
     },
     "language_profile": {
       "teaching_language": [
@@ -30255,7 +30981,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "application_fee_usd": 85,
       "application_fee_verification": {
@@ -30305,7 +31031,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -30446,7 +31172,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -30455,7 +31181,7 @@
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "curriculum_profile": {
@@ -30534,9 +31260,37 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
+      },
+      "application_rounds": [
+        {
+          "round": {
+            "en": "Spring M.S. admission",
+            "tr": "Bahar M.S. kabulü"
+          },
+          "deadline": "August 15",
+          "deadline_type": {
+            "en": "Final deadline with or without funding",
+            "tr": "Finansmanlı veya finansmansız nihai son tarih"
+          }
+        },
+        {
+          "round": {
+            "en": "Fall M.S. admission",
+            "tr": "Güz M.S. kabulü"
+          },
+          "deadline": "December 15",
+          "deadline_type": {
+            "en": "Final deadline with or without funding",
+            "tr": "Finansmanlı veya finansmansız nihai son tarih"
+          }
+        }
+      ],
+      "deadline_notes": {
+        "en": "The current official program page publishes recurring August 15 and December 15 deadlines without a cycle year. No Fall 2027 ISO date is inserted. All application documents are due by the applicable deadline.",
+        "tr": "Güncel resmî program sayfası döngü yılı olmadan tekrarlayan 15 Ağustos ve 15 Aralık tarihlerini yayımlar. Güz 2027 için ISO tarih eklenmemiştir. Tüm başvuru belgeleri uygulanabilir son tarihe kadar sunulmalıdır."
       }
     },
     "research_profile": {
@@ -30937,7 +31691,7 @@
         "https://liveon.psu.edu/university-park/rates",
         "https://www.aero.psu.edu/academics/graduate/core-courses-graduate-program.aspx"
       ],
-      "last_verified": "2026-09-01",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "program_basic_info": "high",
         "admission": "high",
@@ -30947,7 +31701,8 @@
         "scholarship": "high",
         "housing": "high",
         "language": "unknown",
-        "sentiment": "unknown"
+        "sentiment": "unknown",
+        "deadline": "high"
       },
       "source_reliability": "high",
       "verification_status": "partially_verified",
@@ -31142,6 +31897,21 @@
             "fees"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://www.aero.psu.edu/academics/graduate/how-to-apply.aspx",
+          "title": "Aerospace Engineering Graduate Program Application Process | Penn State",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "deadline",
+            "non_eu",
+            "required_documents",
+            "international"
+          ],
+          "confidence": "high"
         }
       ]
     },
@@ -31193,7 +31963,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 12,
+      "checked_official_source_count": 13,
       "verified_fields": [
         "program",
         "admission",
@@ -31209,7 +31979,7 @@
         "language"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-01"
+      "audited_at": "2026-09-05"
     },
     "quality_control": {
       "checked_at": "2026-08-23",
@@ -31268,7 +32038,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -31319,10 +32089,39 @@
       "admission_mode": "Direct",
       "admission_risk": "high",
       "accepted_backgrounds": [],
-      "required_documents": [],
+      "required_documents": [
+        {
+          "en": "University of Maryland Graduate School electronic application",
+          "tr": "University of Maryland Graduate School elektronik başvurusu"
+        },
+        {
+          "en": "Transcripts",
+          "tr": "Transkriptler"
+        },
+        {
+          "en": "Statement of purpose",
+          "tr": "Amaç mektubu"
+        },
+        {
+          "en": "Letters of recommendation",
+          "tr": "Referans mektupları"
+        },
+        {
+          "en": "Program or department supporting documents, including CV or resume when requested",
+          "tr": "İstendiğinde CV veya özgeçmiş dâhil program ya da bölüm destekleyici belgeleri"
+        },
+        {
+          "en": "Non-refundable application fee",
+          "tr": "İade edilmeyen başvuru ücreti"
+        },
+        {
+          "en": "English-proficiency evidence for international applicants when required",
+          "tr": "Gerektiğinde uluslararası adaylar için İngilizce yeterlilik kanıtı"
+        }
+      ],
       "verification_notes": {
-        "en": "The programme welcomes related engineering backgrounds, but may require selected undergraduate preparation. International TOEFL/equivalent requirements are handled through the Graduate School.",
-        "tr": "Program ilgili mühendislik geçmişlerini kabul eder, ancak seçilmiş lisans hazırlığı isteyebilir. Uluslararası TOEFL/eşdeğer şartları Graduate School üzerinden yürütülür."
+        "en": "The checked department page requires electronic submission of all application materials and directs applicants to Graduate School instructions for program-specific details.",
+        "tr": "Kontrol edilen bölüm sayfası tüm başvuru belgelerinin elektronik sunulmasını ister ve programa özgü ayrıntılar için adayları Graduate School talimatlarına yönlendirir."
       },
       "gre": {
         "policy": "unknown",
@@ -31340,7 +32139,9 @@
         "en": "Maryland's FreeApp route is described in its own words as designed to increase access to graduate education for domestic students.",
         "tr": "Maryland'in FreeApp yolu, kendi ifadesiyle yurt içi öğrencilerin lisansüstü eğitime erişimini artırmak için tasarlanmıştır."
       },
-      "international_application_fee_waiver_available_from_department": false
+      "international_application_fee_waiver_available_from_department": false,
+      "motivation_letter_required": true,
+      "recommendation_required": true
     },
     "language_profile": {
       "teaching_language": [
@@ -31407,7 +32208,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "application_fee_usd": 90,
       "application_fee_charged_per": "programme_choice",
@@ -31462,7 +32263,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     },
     "scholarship_profile": {
@@ -31544,7 +32345,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -31577,7 +32378,7 @@
           "en": "UMD's 2026-27 non-resident graduate budget publishes housing and food together as USD 17,724, plus books 1,000, transportation 3,058 and personal 1,200: USD 23,982 in all, alongside tuition 26,824 and mandatory fees 764. Housing and food arrive as a single line, so they cannot be shown as separate components here.",
           "tr": "UMD'nin 2026-27 eyalet disi lisansustu butcesi konut ve gidayi birlikte 17.724 USD olarak yayimlar; buna kitap 1.000, ulasim 3.058 ve kisisel 1.200 eklenir: toplam 23.982 USD, ayrica ogrenim ucreti 26.824 ve zorunlu harclar 764. Konut ve gida tek satir halinde geldigi icin burada ayri bilesenler olarak gosterilemez."
         },
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_cost_of_attendance",
@@ -31648,16 +32449,80 @@
       "deadline_eu": null,
       "deadline_non_eu": "February 1",
       "timeline_risk": "unknown",
-      "verification_notes": "Deadline notes: Estimated for US Fall intake (check department calendar / funding priority dates).",
+      "verification_notes": {
+        "en": "No deadline time zone is stated.",
+        "tr": "Son tarih saat dilimi belirtilmemiştir."
+      },
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
         "date": null,
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-01",
+        "evaluated_at": "2026-09-05",
         "audience": "new_applicants",
         "other_milestones": []
+      },
+      "application_rounds": [
+        {
+          "round": {
+            "en": "Spring 2027 international final",
+            "tr": "Bahar 2027 uluslararası nihai"
+          },
+          "deadline": "2026-09-30",
+          "deadline_type": {
+            "en": "International final deadline",
+            "tr": "Uluslararası nihai son tarih"
+          }
+        },
+        {
+          "round": {
+            "en": "Spring 2027 U.S. final",
+            "tr": "Bahar 2027 ABD nihai"
+          },
+          "deadline": "2026-10-16",
+          "deadline_type": {
+            "en": "U.S. final deadline",
+            "tr": "ABD nihai son tarihi"
+          }
+        },
+        {
+          "round": {
+            "en": "Fall 2027 assistantship priority",
+            "tr": "Güz 2027 asistanlık önceliği"
+          },
+          "deadline": "2026-12-01",
+          "deadline_type": {
+            "en": "Priority deadline for assistantship funding",
+            "tr": "Asistanlık finansmanı öncelik tarihi"
+          }
+        },
+        {
+          "round": {
+            "en": "Fall 2027 international final",
+            "tr": "Güz 2027 uluslararası nihai"
+          },
+          "deadline": "2027-03-12",
+          "deadline_type": {
+            "en": "International final deadline",
+            "tr": "Uluslararası nihai son tarih"
+          }
+        },
+        {
+          "round": {
+            "en": "Fall 2027 U.S. final",
+            "tr": "Güz 2027 ABD nihai"
+          },
+          "deadline": "2027-04-02",
+          "deadline_type": {
+            "en": "U.S. final deadline",
+            "tr": "ABD nihai son tarihi"
+          }
+        }
+      ],
+      "deadline_notes": {
+        "en": "Fall and Spring 2027 dates are explicitly published. Reviews and financial-assistance offers are rolling, so funding applicants are strongly encouraged to meet the December 1 priority date.",
+        "tr": "Güz ve Bahar 2027 tarihleri açıkça yayımlanmıştır. İncelemeler ve mali destek teklifleri sürekli yürütüldüğünden finansman adaylarının 1 Aralık öncelik tarihine uyması kuvvetle önerilir."
       }
     },
     "research_profile": {
@@ -32046,7 +32911,7 @@
         "https://billpay.umd.edu/GraduateTuition",
         "https://financialaid.umd.edu/resources-policies/cost-attendance"
       ],
-      "last_verified": "2026-09-01",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "program_basic_info": "high",
         "admission": "high",
@@ -32055,7 +32920,8 @@
         "scholarship": "unknown",
         "tuition": "medium",
         "language": "unknown",
-        "sentiment": "unknown"
+        "sentiment": "unknown",
+        "deadline": "high"
       },
       "source_reliability": "high",
       "verification_status": "partially_verified",
@@ -32140,7 +33006,9 @@
             "tuition",
             "fees",
             "housing",
-            "living_cost"
+            "living_cost",
+            "living",
+            "cost"
           ],
           "confidence": "high",
           "notes": {
@@ -32215,8 +33083,11 @@
           "access_status": "ok",
           "last_checked": "2026-08-30",
           "relevant_fields": [
-            "living",
+            "tuition",
+            "fees",
             "housing",
+            "living_cost",
+            "living",
             "cost"
           ],
           "confidence": "high"
@@ -32233,6 +33104,23 @@
             "application_fee",
             "cost",
             "fees"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://aero.umd.edu/graduate/prospective-students/admissions",
+          "title": "Admissions | University of Maryland Aerospace Engineering",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "deadline",
+            "non_eu_eligibility",
+            "scholarship",
+            "required_documents",
+            "international",
+            "funding"
           ],
           "confidence": "high"
         }
@@ -32269,7 +33157,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 10,
+      "checked_official_source_count": 11,
       "verified_fields": [
         "program",
         "admission",
@@ -32285,7 +33173,7 @@
         "scholarship"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-01"
+      "audited_at": "2026-09-05"
     },
     "quality_control": {
       "checked_at": "2026-08-23",
@@ -32348,7 +33236,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-01"
+      "evaluated_at": "2026-09-05"
     },
     "academic_match_evidence": {
       "research_group_evidence": {

@@ -38,10 +38,31 @@
         "minimum_gpa": null,
         "admission_mode": "online technical entrance interview",
         "admission_risk": "medium",
-        "required_documents": [],
+        "required_documents": [
+          {
+            "en": "Certificate of academic achievement",
+            "tr": "Akademik başarı belgesi"
+          },
+          {
+            "en": "English-proficiency certificate unless the applicant is a native English speaker",
+            "tr": "Adayın ana dili İngilizce değilse İngilizce yeterlik belgesi"
+          },
+          {
+            "en": "Motivation letter",
+            "tr": "Motivasyon mektubu"
+          },
+          {
+            "en": "Certified Czech or English translation for documents not issued in Czech, Slovak or English",
+            "tr": "Çekçe, Slovakça veya İngilizce düzenlenmemiş belgeler için onaylı Çekçe ya da İngilizce çeviri"
+          },
+          {
+            "en": "Certificate of completed bachelor's education by enrolment",
+            "tr": "Kayıt tarihine kadar tamamlanmış lisans eğitimini gösteren belge"
+          }
+        ],
         "verification_notes": {
-          "en": "",
-          "tr": ""
+          "en": "The official 2026/27 dean's order lists the application documents for CTU FEE programmes taught in English. Evidence of exceptional achievements is encouraged but optional and is not included here.",
+          "tr": "Resmî 2026/27 dekanlık kararı CTU FEE'de İngilizce yürütülen programların başvuru belgelerini listeler. Olağanüstü başarı kanıtları teşvik edilir ancak isteğe bağlıdır ve buraya eklenmemiştir."
         },
         "gre": {
           "policy": "unknown",
@@ -108,7 +129,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         },
         "application_fee_czk": 950,
         "application_fee_verification": {
@@ -158,7 +179,7 @@
             "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
             "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
           },
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         }
       },
       "scholarship_profile": {
@@ -366,7 +387,7 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         },
         "cost_of_living_profile": {
           "standard": "cost_model@3.2.0",
@@ -375,7 +396,7 @@
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         }
       },
       "curriculum_profile": {
@@ -523,26 +544,39 @@
         }
       },
       "application_timeline_profile": {
-        "academic_year": "2026/2027 reference",
-        "intake_terms": [],
-        "application_rounds": [],
-        "non_eu_deadline": "end of April (official page wording; exact 2027 date not yet verified)",
-        "eu_deadline": "end of April (official page wording; exact 2027 date not yet verified)",
-        "timeline_risk": "low",
+        "academic_year": "2026/2027 (latest published standard English-programme cycle; closed)",
+        "intake_terms": [
+          "2026/2027 academic year"
+        ],
+        "application_rounds": [
+          "Electronic application, fee and required documents due: 2026-03-31"
+        ],
+        "non_eu_deadline": "2026-03-31",
+        "eu_deadline": "2026-03-31",
+        "timeline_risk": "high",
         "deadline_notes": {
-          "en": "No current deadline was verified.",
-          "tr": "Güncel son başvuru tarihi doğrulanamadı."
+          "en": "The 2026/27 CTU FEE dean's order sets 31 March 2026 for English-taught programmes. The checked official sources do not publish a 2027/28 deadline; do not carry this date forward.",
+          "tr": "2026/27 CTU FEE dekanlık kararı İngilizce programlar için 31 Mart 2026 tarihini belirler. Kontrol edilen resmî kaynaklar 2027/28 tarihi yayımlamaz; bu tarih ileri taşınmamalıdır."
         },
         "primary_deadline": {
           "standard": "application_countdown@3.2.0",
-          "date": null,
-          "status": "not_published",
-          "confidence": "unknown",
-          "reason": "no_iso_dated_deadline_in_record",
-          "evaluated_at": "2026-09-01",
+          "date": "2026-03-31",
+          "next_expected_date": null,
+          "time": null,
+          "timezone": null,
+          "applies_to": "non_eu",
+          "cycle_label": null,
+          "is_recurring_annual": false,
+          "status": "closed",
+          "days_remaining_at_evaluation": -158,
+          "derived_from": "application_timeline_profile.non_eu_deadline",
+          "confidence": "high",
+          "source_url": "https://aerospace.fel.cvut.cz/admissionAN",
+          "evaluated_at": "2026-09-05",
           "audience": "new_applicants",
           "other_milestones": []
-        }
+        },
+        "application_deadline": "2026-03-31"
       },
       "student_sentiment_profile": {
         "student_satisfaction_score": null,
@@ -613,7 +647,8 @@
             "access_status": "ok",
             "last_checked": "2026-08-14",
             "relevant_fields": [
-              "tuition"
+              "tuition",
+              "scholarship"
             ],
             "confidence": "high",
             "notes": {
@@ -628,6 +663,7 @@
             "access_status": "ok",
             "last_checked": "2026-08-14",
             "relevant_fields": [
+              "tuition",
               "scholarship"
             ],
             "confidence": "high",
@@ -748,9 +784,35 @@
               "fees"
             ],
             "confidence": "high"
+          },
+          {
+            "url": "https://aerospace.fel.cvut.cz/admissionAN",
+            "title": "CTU FEE — Aerospace Engineering admission for English-speaking applicants",
+            "source_type": "official_program_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-05",
+            "relevant_fields": [
+              "admission",
+              "non_eu_eligibility",
+              "deadline"
+            ],
+            "confidence": "high"
+          },
+          {
+            "url": "https://fel.cvut.cz/dokumenty/ke-stazeni/conditions-for-admission-to-the-bachelors-and-masters-programs-for-the-academic-year-2026_2027.pdf",
+            "title": "CTU FEE — Conditions for Admission to English-taught Bachelor's and Master's Programmes 2026/2027",
+            "source_type": "official_admission_page",
+            "access_status": "pdf",
+            "last_checked": "2026-09-05",
+            "relevant_fields": [
+              "deadline",
+              "admission",
+              "application_documents"
+            ],
+            "confidence": "high"
           }
         ],
-        "last_verified": "2026-09-01",
+        "last_verified": "2026-09-05",
         "verification_notes": {
           "en": "Unknown fields remain explicit.",
           "tr": "Bilinmeyen alanlar açık bırakıldı."
@@ -766,7 +828,11 @@
           "industry": "unknown",
           "living": "high",
           "student_sentiment": "unknown",
-          "housing": "high"
+          "housing": "high",
+          "deadline": "high",
+          "deadlines": "high",
+          "application_timeline_profile": "high",
+          "application_documents": "high"
         },
         "needs_verification": false,
         "official_housing_page": "https://suz.cvut.cz/en/dormitory-accommodation/price-list-documents",
@@ -815,7 +881,7 @@
       },
       "data_quality": {
         "status": "verified",
-        "checked_official_source_count": 11,
+        "checked_official_source_count": 13,
         "verified_fields": [
           "program",
           "language",
@@ -829,7 +895,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-09-01"
+        "audited_at": "2026-09-05"
       },
       "quality_control": {
         "qc_status": "passed",
@@ -912,7 +978,7 @@
         ],
         "confidence": "unknown",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "academic_match_evidence": {
         "curriculum_evidence": {
@@ -1149,7 +1215,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         },
         "tuition_eur_per_year": 3000.0,
         "tuition_derivation": {
@@ -1196,7 +1262,7 @@
             "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
             "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
           },
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         }
       },
       "scholarship_profile": {
@@ -1382,7 +1448,7 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         },
         "cost_of_living_profile": {
           "standard": "cost_model@3.2.0",
@@ -1391,7 +1457,7 @@
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         }
       },
       "curriculum_profile": {
@@ -1614,11 +1680,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closed",
-          "days_remaining_at_evaluation": -124,
+          "days_remaining_at_evaluation": -128,
           "derived_from": "application_timeline_profile.deadline_events[] (jcmm_scholarship)",
           "confidence": "high",
           "source_url": "https://www.vut.cz/en/board/internal-legislation-fme/-d294652/s-5-25-aj-p307841",
-          "evaluated_at": "2026-09-01",
+          "evaluated_at": "2026-09-05",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -2112,7 +2178,7 @@
         ],
         "confidence": "unknown",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "academic_match_evidence": {
         "curriculum_evidence": {

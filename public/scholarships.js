@@ -42,7 +42,15 @@
             remaining: (days) => `${days} days remaining`, results: (shown, total) => `${shown} of ${total} routes shown`,
             noResults: "No scholarship matches these filters. Try clearing one filter.", lastVerified: "Research verified",
             previousCycleWarning: "Reference only — not the 2027/28 deadline", noCentralChecklist: "Use the programme-specific official checklist.",
-            updatedAutomatically: "Countdown updates automatically from today's date.", levels: { bachelor: "Bachelor", master: "Master", phd: "PhD", research: "Research", partial_study: "Partial study", postgraduate: "Postgraduate", graduate_study: "Graduate study" }
+            updatedAutomatically: "Countdown updates automatically from today's date.",
+            cycleOpens: "Applications open", cycleDeadline: "Deadline", cycleDeadlineClosed: "Deadline (closed)", cycleOffer: "University offer needed by",
+            cycleReferenceOpens: "Last cycle opened", cycleReferenceDeadline: "Last cycle closed", cycleReference: "Previous cycle, reference only",
+            meaningOpen: "Applications are open now; the countdown is to the official deadline.",
+            meaningClosed: "Closed for 2027/28 entry. The next call has not been published; the dates stay for planning.",
+            meaningAwaiting: "The 2027/28 call is not published yet. The dates shown are last cycle's, for planning only, not a deadline.",
+            meaningConditional: "The deadline depends on the country route; confirm the published Türkiye deadline before planning.",
+            meaningProgramme: "There is no central deadline; each programme's own call sets the date.",
+            levels: { bachelor: "Bachelor", master: "Master", phd: "PhD", research: "Research", partial_study: "Partial study", postgraduate: "Postgraduate", graduate_study: "Graduate study" }
         },
         tr: {
             brand: "Burs radarı", programmes: "Programlar", calendar: "Başvuru takvimi", scholarships: "Burslar", researchFit: "Araştırma uyumu",
@@ -73,7 +81,15 @@
             remaining: (days) => `${days} gün kaldı`, results: (shown, total) => `${total} rotanın ${shown} tanesi gösteriliyor`,
             noResults: "Bu filtrelerle eşleşen burs yok. Bir filtreyi temizlemeyi dene.", lastVerified: "Araştırma doğrulama tarihi",
             previousCycleWarning: "Yalnızca referans — 2027/28 son tarihi değildir", noCentralChecklist: "Programa özel resmî belge listesini kullan.",
-            updatedAutomatically: "Geri sayım bugünün tarihine göre otomatik güncellenir.", levels: { bachelor: "Lisans", master: "Yüksek lisans", phd: "Doktora", research: "Araştırma", partial_study: "Kısmi öğrenim", postgraduate: "Lisansüstü", graduate_study: "Lisansüstü eğitim" }
+            updatedAutomatically: "Geri sayım bugünün tarihine göre otomatik güncellenir.",
+            cycleOpens: "Başvurular açılıyor", cycleDeadline: "Son tarih", cycleDeadlineClosed: "Son tarih (kapandı)", cycleOffer: "Üniversite kabulü için son gün",
+            cycleReferenceOpens: "Geçen dönem açılış", cycleReferenceDeadline: "Geçen dönem kapanış", cycleReference: "Önceki dönem, yalnızca referans",
+            meaningOpen: "Başvurular şu anda açık; geri sayım resmî son tarihe göredir.",
+            meaningClosed: "2027/28 girişi için kapandı. Sonraki çağrı yayımlanmadı; tarihler planlama için duruyor.",
+            meaningAwaiting: "2027/28 çağrısı henüz yayımlanmadı. Gösterilen tarihler geçen dönemindir; yalnızca planlama içindir, son tarih değildir.",
+            meaningConditional: "Son tarih ülke rotasına bağlı; planlamadan önce yayımlanan Türkiye son tarihini doğrula.",
+            meaningProgramme: "Merkezî bir son tarih yok; tarihi her programın kendi çağrısı belirler.",
+            levels: { bachelor: "Lisans", master: "Yüksek lisans", phd: "Doktora", research: "Araştırma", partial_study: "Kısmi öğrenim", postgraduate: "Lisansüstü", graduate_study: "Lisansüstü eğitim" }
         }
     };
 
@@ -133,16 +149,6 @@
         panel.innerHTML = `<span>${escapeHtml(c.nextDeadline)}</span><h2>${languageText(future.name)}</h2><p>${escapeHtml(c.currentCycle)}</p><time datetime="${future.cycle.deadline}">${escapeHtml(formatDate(future.cycle.deadline, language))}</time><b>${escapeHtml(days === 0 ? c.closesToday : c.closesIn(days))}</b><small>${escapeHtml(c.updatedAutomatically)}</small>`;
     }
 
-    function renderStats() {
-        const c = copy[currentLanguage()];
-        const items = state.catalog.scholarships;
-        const verified = items.filter((item) => item.turkish_applicant_status.startsWith("verified_eligible")).length;
-        const future = items.filter((item) => item.cycle.deadline && dayDistance(item.cycle.deadline) >= 0).length;
-        const sources = items.reduce((sum, item) => sum + (item.source_profile.sources || []).length, 0);
-        const values = [[items.length, c.routes], [verified, c.verifiedEligible], [future, c.liveDeadlines], [sources, c.officialSources]];
-        $("#funding-stats").innerHTML = values.map(([value, label], index) => `<div class="funding-stat"><span>0${index + 1}</span><strong>${value}</strong><small>${escapeHtml(label)}</small></div>`).join("");
-    }
-
     function renderCalendar() {
         const c = copy[currentLanguage()];
         const ordered = [...state.catalog.scholarships].sort((a, b) => {
@@ -188,19 +194,58 @@
         </div>`;
     }
 
+    // The card used to show one date and a one-word status.  A reader needs
+    // the whole cycle - when it opens, when it closes and at what hour, when
+    // the university offer has to be in hand - and a plain sentence saying
+    // what the status means for someone applying from Türkiye today.
+    function cycleRows(item, c) {
+        const cycle = item.cycle;
+        const withTime = (iso, time) => `${formatDate(iso)}${time ? ` · ${time}` : ""}`;
+        const rows = [];
+        if (cycle.opens) rows.push([c.cycleOpens, formatDate(cycle.opens), ""]);
+        if (cycle.deadline) {
+            const live = cycle.status === "open" && dayDistance(cycle.deadline) >= 0;
+            rows.push([live ? c.cycleDeadline : c.cycleDeadlineClosed, withTime(cycle.deadline, cycle.deadline_time), live ? "open" : "closed"]);
+        }
+        if (cycle.offer_deadline) rows.push([c.cycleOffer, withTime(cycle.offer_deadline, cycle.offer_deadline_time), ""]);
+        if (!cycle.deadline && cycle.reference_opens) rows.push([c.cycleReferenceOpens, formatDate(cycle.reference_opens), "reference"]);
+        if (!cycle.deadline && cycle.reference_deadline) rows.push([c.cycleReferenceDeadline, withTime(cycle.reference_deadline, cycle.reference_deadline_time), "reference"]);
+        if (!cycle.deadline && !cycle.reference_deadline && cycle.typical_window) rows.push([c.typicalWindow, localized(cycle.typical_window), "watch"]);
+        return rows;
+    }
+
+    function renderCycle(item, c) {
+        const status = statusOf(item);
+        const deadline = deadlineModel(item, c);
+        const meaning = item.cycle.status === "programme_calls_pending"
+            ? c.meaningProgramme
+            : { open: c.meaningOpen, closed: c.meaningClosed, awaiting: c.meaningAwaiting, conditional: c.meaningConditional }[status];
+        const rows = cycleRows(item, c).map(([label, value, tone]) => `<div class="cycle-row${tone ? ` cycle-row--${tone}` : ""}"><span>${escapeHtml(label)}</span><strong>${escapeHtml(value)}</strong></div>`).join("");
+        const reference = !item.cycle.deadline && item.cycle.reference_deadline
+            ? `<small class="cycle-reference">${escapeHtml(item.cycle.reference_academic_year || "")} · ${escapeHtml(c.cycleReference)}</small>`
+            : "";
+        const note = localized(item.cycle.notes);
+        return `<div class="scholarship-card__cycle scholarship-card__cycle--${status}">
+            <div class="scholarship-card__cycle-head"><span>${escapeHtml(item.cycle.academic_year || "2027/2028")}</span><b>${escapeHtml(deadline.countdown)}</b></div>
+            <p class="scholarship-card__meaning">${escapeHtml(meaning)}</p>
+            ${rows ? `<div class="cycle-rows">${rows}</div>` : ""}
+            ${reference}
+            ${note ? `<small class="cycle-note">${escapeHtml(note)}</small>` : ""}
+        </div>`;
+    }
+
     function renderCard(item) {
         const c = copy[currentLanguage()];
         const status = statusOf(item);
         const deadline = deadlineModel(item, c);
         const levels = item.levels.map((level) => `<span>${escapeHtml(c.levels[level] || level)}</span>`).join("");
-        const deadlineTime = deadline.iso ? `<time datetime="${deadline.iso}">${escapeHtml(deadline.date)}</time>` : `<time>${escapeHtml(deadline.date)}</time>`;
         const documents = item.required_documents?.length ? `<ol>${list(item.required_documents)}</ol>` : `<p class="scholarship-detail__note">${languageText(item.documents_note || c.noCentralChecklist)}</p>`;
         const sources = (item.source_profile.sources || []).map((source) => `<a href="${escapeHtml(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(source.title)} <span aria-hidden="true">↗</span></a>`).join("");
         const risk = item.risk_notes?.length ? `<p class="scholarship-card__risk"><strong>${escapeHtml(c.risk)}:</strong> ${languageText(item.risk_notes[0])}</p>` : "";
         return `<article class="scholarship-card" style="--country-accent:${accents[item.destination.code] || "#8fa8e8"}">
             <header class="scholarship-card__header"><span class="scholarship-card__flag" aria-hidden="true">${escapeHtml(item.destination.flag)}</span><div><h3>${languageText(item.name)}</h3><p>${languageText(item.provider)} · ${languageText(item.destination)}</p></div><span class="scholarship-status scholarship-status--${status}">${escapeHtml(statusLabel(status, c))}</span></header>
             <div class="scholarship-card__route">${levels}<span>${escapeHtml(item.cycle.academic_year || "")}</span></div>
-            <div class="scholarship-card__deadline"><div><span>${escapeHtml(deadline.label)}</span>${deadlineTime}<small>${escapeHtml(deadline.note)}</small></div><b>${escapeHtml(deadline.countdown)}</b></div>
+            ${renderCycle(item, c)}
             <div class="scholarship-card__body"><section><h4>${escapeHtml(c.coverage)}</h4><ul>${list(item.coverage, 3)}</ul></section><section><h4>${escapeHtml(c.requirements)}</h4><ul>${list(item.requirements, 3)}</ul></section></div>
             ${renderApplicationCost(item, c)}${risk}<details><summary><span>${escapeHtml(c.details)}</span><span aria-hidden="true">⌄</span></summary><div class="scholarship-detail"><section><h4>${escapeHtml(c.documents)}</h4>${documents}</section><section><h4>${escapeHtml(c.sources)}</h4><div class="scholarship-sources">${sources}</div></section><span class="scholarship-confidence">${escapeHtml(c.confidence)}: ${escapeHtml(item.source_profile.confidence)} · ${escapeHtml(c.lastVerified)} ${escapeHtml(item.source_profile.last_verified)}</span></div></details>
         </article>`;
@@ -223,7 +268,7 @@
     function render() {
         if (!state.catalog) return;
         applyCopy();
-        renderNext(); renderStats(); renderCalendar(); renderResults(); renderMismatches();
+        renderNext(); renderCalendar(); renderResults(); renderMismatches();
     }
 
     function bindFilters() {

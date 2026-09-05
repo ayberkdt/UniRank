@@ -39,10 +39,43 @@
         "minimum_gpa": null,
         "admission_mode": "document evaluation and programme selection",
         "admission_risk": "medium",
-        "required_documents": [],
+        "required_documents": [
+          {
+            "en": "Application form provided by the MSc programme",
+            "tr": "Yüksek lisans programı tarafından sağlanan başvuru formu"
+          },
+          {
+            "en": "National identity card or passport",
+            "tr": "Ulusal kimlik kartı veya pasaport"
+          },
+          {
+            "en": "Curriculum vitae",
+            "tr": "Özgeçmiş"
+          },
+          {
+            "en": "Undergraduate degree certificate or certificates",
+            "tr": "Lisans diploma belgesi veya belgeleri"
+          },
+          {
+            "en": "Transcript of records for undergraduate and postgraduate studies, or the Diploma Supplement accompanying each degree",
+            "tr": "Lisans ve lisansüstü öğrenime ait not dökümü ya da her diplomaya eşlik eden Diploma Eki"
+          },
+          {
+            "en": "Two recommendation letters, at least one from a faculty member; one employer letter is accepted",
+            "tr": "En az biri öğretim üyesinden olmak üzere iki tavsiye mektubu; bir işveren mektubu kabul edilir"
+          },
+          {
+            "en": "English-language proficiency certificate at B2 level or higher",
+            "tr": "B2 veya üzeri İngilizce yeterlik belgesi"
+          },
+          {
+            "en": "If the degree is pending, a registrar's certificate listing outstanding courses or obligations and the current grade average",
+            "tr": "Diploma bekleniyorsa kalan dersleri veya yükümlülükleri ve güncel not ortalamasını belirten öğrenci işleri belgesi"
+          }
+        ],
         "verification_notes": {
-          "en": "",
-          "tr": ""
+          "en": "The official 2026/27 call directly lists these application documents. The pending-degree registrar certificate applies only when the undergraduate degree has not yet been awarded.",
+          "tr": "Resmî 2026/27 çağrısı bu başvuru belgelerini doğrudan listeler. Bekleyen diploma için öğrenci işleri belgesi yalnız lisans derecesi henüz verilmemiş adaylara uygulanır."
         },
         "gre": {
           "policy": "unknown",
@@ -113,7 +146,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         },
         "tuition_eur_per_year": 6000.0,
         "tuition_derivation": {
@@ -153,7 +186,7 @@
             "en": "The programme's official listing prices the degree itself at EUR 6,000 in tuition and names no charge for applying.",
             "tr": "Programın resmî kaydı, diplomanın kendisini 6.000 avroluk öğrenim ücretiyle fiyatlandırır ve başvurmak için bir kalem adlandırmaz."
           },
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         }
       },
       "scholarship_profile": {
@@ -279,7 +312,7 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         },
         "cost_of_living_profile": {
           "standard": "cost_model@3.2.0",
@@ -288,7 +321,7 @@
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         }
       },
       "curriculum_profile": {
@@ -430,17 +463,19 @@
         }
       },
       "application_timeline_profile": {
-        "academic_year": "2026/2027 call",
-        "intake_terms": [],
+        "academic_year": "2026/2027 (latest published cycle; closed)",
+        "intake_terms": [
+          "2026/2027"
+        ],
         "application_rounds": [
-          "Applications accepted through 2026-08-31"
+          "Final application deadline: 2026-08-31"
         ],
         "non_eu_deadline": "2026-08-31",
         "eu_deadline": "2026-08-31",
-        "timeline_risk": "low",
+        "timeline_risk": "high",
         "deadline_notes": {
-          "en": "The 2026/27 call gives 31 August 2026, although one sentence inside the PDF inconsistently says 2025/26; the date is retained with this warning.",
-          "tr": "2026/27 ilanı 31 Ağustos 2026 tarihini verir; PDF içindeki bir cümle tutarsız biçimde 2025/26 dediğinden tarih bu uyarıyla kaydedildi."
+          "en": "The official landing page and call title identify the 2026/27 cycle and a 31 August 2026 deadline. One sentence inside the call mistakenly says 2025/26 while giving the date 31 August 2026. No 2027/28 call was published.",
+          "tr": "Resmî ilan sayfası ve çağrı başlığı 2026/27 dönemini ve 31 Ağustos 2026 son tarihini belirtir. Çağrı içindeki bir cümle 31 Ağustos 2026 tarihini verirken yanlışlıkla 2025/26 yazar. 2027/28 çağrısı yayımlanmamıştır."
         },
         "primary_deadline": {
           "standard": "application_countdown@3.2.0",
@@ -452,14 +487,15 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closed",
-          "days_remaining_at_evaluation": -1,
+          "days_remaining_at_evaluation": -5,
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://career.auth.gr/wp-content/uploads/2026/04/%CE%A0%CF%81%CE%BF%CE%BA%CE%AE%CF%81%CF%85%CE%BE%CE%B7-%CE%94%CE%A0%CE%9C%CE%A3-UAV-2026-27-3.pdf",
-          "evaluated_at": "2026-09-01",
+          "evaluated_at": "2026-09-05",
           "audience": "new_applicants",
           "other_milestones": []
-        }
+        },
+        "application_deadline": "2026-08-31"
       },
       "student_sentiment_profile": {
         "student_satisfaction_score": null,
@@ -492,23 +528,6 @@
         "official_department_page": null,
         "source_log": [
           {
-            "url": "https://career.auth.gr/wp-content/uploads/2026/04/%CE%A0%CF%81%CE%BF%CE%BA%CE%AE%CF%81%CF%85%CE%BE%CE%B7-%CE%94%CE%A0%CE%9C%CE%A3-UAV-2026-27-3.pdf",
-            "source_type": "official_admission_page",
-            "title": "AUTH Aerial Autonomous Systems 2026/27 call",
-            "access_status": "pdf",
-            "last_checked": "2026-08-14",
-            "relevant_fields": [
-              "admission",
-              "non_eu_eligibility",
-              "deadline"
-            ],
-            "confidence": "high",
-            "notes": {
-              "en": "Official 2026/27 English-programme call confirms a live international application route.",
-              "tr": "Resmî 2026/27 İngilizce program ilanı uluslararası başvuru yolunu doğrular."
-            }
-          },
-          {
             "url": "https://qa.auth.gr/en/studyguide/600000726/2025",
             "source_type": "official_curriculum_page",
             "title": "AUTH Aerial Autonomous Systems study guide",
@@ -530,7 +549,11 @@
             "access_status": "pdf",
             "last_checked": "2026-08-14",
             "relevant_fields": [
-              "tuition"
+              "admission",
+              "non_eu_eligibility",
+              "deadline",
+              "tuition",
+              "scholarship"
             ],
             "confidence": "high",
             "notes": {
@@ -545,6 +568,10 @@
             "access_status": "pdf",
             "last_checked": "2026-08-14",
             "relevant_fields": [
+              "admission",
+              "non_eu_eligibility",
+              "deadline",
+              "tuition",
               "scholarship"
             ],
             "confidence": "high",
@@ -566,7 +593,10 @@
               "admission",
               "tuition",
               "scholarship",
-              "department"
+              "department",
+              "application_fee",
+              "cost",
+              "fees"
             ],
             "confidence": "high",
             "notes": {
@@ -581,16 +611,49 @@
             "access_status": "ok",
             "last_checked": "2026-09-01",
             "relevant_fields": [
+              "research",
+              "curriculum",
+              "program",
               "admission",
               "tuition",
+              "scholarship",
+              "department",
               "application_fee",
               "cost",
               "fees"
             ],
             "confidence": "high"
+          },
+          {
+            "url": "https://career.auth.gr/prokiryxi-gia-tin-eisagogi-sto-anglofono-diatmimatiko-programma-metaptychiakon-spoudon-enaeria-aftonoma-systimata/",
+            "title": "Aristotle University of Thessaloniki — Aerial Autonomous Systems admission announcement",
+            "source_type": "official_admission_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-05",
+            "relevant_fields": [
+              "deadline",
+              "admission"
+            ],
+            "confidence": "high"
+          },
+          {
+            "url": "https://career.auth.gr/wp-content/uploads/2026/04/%CE%A0%CF%81%CE%BF%CE%BA%CE%AE%CF%81%CF%85%CE%BE%CE%B7-%CE%94%CE%A0%CE%9C%CE%A3-UAV-2026-27-3.pdf",
+            "title": "Aristotle University of Thessaloniki — Aerial Autonomous Systems call 2026/2027",
+            "source_type": "official_admission_page",
+            "access_status": "pdf",
+            "last_checked": "2026-09-05",
+            "relevant_fields": [
+              "admission",
+              "non_eu_eligibility",
+              "deadline",
+              "tuition",
+              "scholarship",
+              "application_documents"
+            ],
+            "confidence": "high"
           }
         ],
-        "last_verified": "2026-09-01",
+        "last_verified": "2026-09-05",
         "verification_notes": {
           "en": "Unknown fields remain explicit.",
           "tr": "Bilinmeyen alanlar açık bırakıldı."
@@ -606,7 +669,11 @@
           "industry": "unknown",
           "living": "unknown",
           "student_sentiment": "unknown",
-          "housing": "unknown"
+          "housing": "unknown",
+          "deadline": "medium",
+          "deadlines": "medium",
+          "application_timeline_profile": "medium",
+          "application_documents": "high"
         },
         "needs_verification": true
       },
@@ -653,7 +720,7 @@
       },
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 6,
+        "checked_official_source_count": 7,
         "verified_fields": [
           "program",
           "admission",
@@ -668,7 +735,7 @@
           "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-09-01"
+        "audited_at": "2026-09-05"
       },
       "quality_control": {
         "qc_status": "needs_revision",
@@ -760,7 +827,7 @@
         ],
         "confidence": "medium",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "academic_match_evidence": {
         "research_group_evidence": {
@@ -817,10 +884,43 @@
         "minimum_gpa": null,
         "admission_mode": "document evaluation and interview",
         "admission_risk": "medium",
-        "required_documents": [],
+        "required_documents": [
+          {
+            "en": "Online application",
+            "tr": "Çevrim içi başvuru"
+          },
+          {
+            "en": "Copy of degree diploma or certificate of completion",
+            "tr": "Diploma kopyası veya mezuniyet tamamlama belgesi"
+          },
+          {
+            "en": "Detailed undergraduate transcript",
+            "tr": "Ayrıntılı lisans transkripti"
+          },
+          {
+            "en": "Detailed curriculum vitae covering studies, teaching or professional experience and scientific activity",
+            "tr": "Eğitim, öğretim veya mesleki deneyim ile bilimsel faaliyeti içeren ayrıntılı özgeçmiş"
+          },
+          {
+            "en": "At least two academic recommendation letters",
+            "tr": "En az iki akademik tavsiye mektubu"
+          },
+          {
+            "en": "Copy of both sides of the identity card",
+            "tr": "Kimlik kartının iki yüzünün kopyası"
+          },
+          {
+            "en": "English-language certificate at B2 or higher unless exempt as a graduate of an English-speaking university",
+            "tr": "İngilizce eğitim veren bir üniversite mezunu olarak muaf değilse B2 veya üzeri İngilizce dil belgesi"
+          },
+          {
+            "en": "Declaration of expected study completion by enrolment for final-year applicants",
+            "tr": "Son sınıf adayları için kayıt tarihine kadar öğrenimin tamamlanacağına ilişkin beyan"
+          }
+        ],
         "verification_notes": {
-          "en": "",
-          "tr": ""
+          "en": "The call also requests evidence of research or professional activity, a postgraduate title, publications and DOATAP recognition only when applicable or available; these conditional items are not presented as universal documents.",
+          "tr": "İlan ayrıca araştırma veya mesleki faaliyet kanıtı, lisansüstü diploma, yayınlar ve DOATAP tanımasını yalnız uygulanabilir veya mevcut olduğunda ister; bu koşullu öğeler herkes için zorunlu belge olarak sunulmamıştır."
         },
         "gre": {
           "policy": "unknown",
@@ -887,7 +987,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         },
         "tuition_eur_per_year": 2666.67,
         "tuition_derivation": {
@@ -927,7 +1027,7 @@
             "en": "The programme's own site carries the call for applications with its window - 11 May to 17 July 2026 for the 2026-2027 winter intake - and prices neither the application nor the programme.",
             "tr": "Programın kendi sitesi, başvuru çağrısını penceresiyle birlikte taşır - 2026-2027 kış dönemi için 11 Mayıs - 17 Temmuz 2026 - ve ne başvuruyu ne de programı fiyatlandırır."
           },
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         }
       },
       "scholarship_profile": {
@@ -1045,7 +1145,7 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         },
         "cost_of_living_profile": {
           "standard": "cost_model@3.2.0",
@@ -1054,7 +1154,7 @@
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         }
       },
       "curriculum_profile": {
@@ -1188,19 +1288,21 @@
         }
       },
       "application_timeline_profile": {
-        "academic_year": "2026/2027",
+        "academic_year": "2026/2027 (latest published first-intake cycle; closed)",
         "intake_terms": [
-          "Winter semester 2026-2027 — first ever intake"
+          "2026/2027"
         ],
         "application_rounds": [
-          "2026-05-11 to 2026-07-17 (extended call)"
+          "Applications opened: 2026-05-11",
+          "Original call deadline: 2026-06-26",
+          "Extended final deadline: 2026-07-17"
         ],
         "non_eu_deadline": "2026-07-17",
         "eu_deadline": "2026-07-17",
-        "timeline_risk": "low",
+        "timeline_risk": "high",
         "deadline_notes": {
-          "en": "The 2026-2027 call ran from 11 May to 17 July 2026 and is now closed; an extension to the call was announced on 26 June 2026. Because this is the programme's first ever intake, treat the dates as a pattern to expect rather than a rule — the second cycle's window may move.",
-          "tr": "2026-2027 çağrısı 11 Mayıs'tan 17 Temmuz 2026'ya kadar sürdü ve şimdi kapalıdır; çağrıya bir uzatma 26 Haziran 2026'da duyurulmuştur. Bu, programın ilk alımı olduğu için tarihleri bir kural değil, beklenecek bir örüntü olarak gör — ikinci döngünün penceresi kayabilir."
+          "en": "This was the programme's first intake and the deadline was extended to 17 July 2026. No second-cycle date was published; a recurring annual deadline must not be inferred.",
+          "tr": "Bu programın ilk alımıydı ve son tarih 17 Temmuz 2026'ya uzatıldı. İkinci dönem tarihi yayımlanmamıştır; yinelenen yıllık bir tarih varsayılmamalıdır."
         },
         "primary_deadline": {
           "standard": "application_countdown@3.2.0",
@@ -1212,11 +1314,11 @@
           "cycle_label": null,
           "is_recurring_annual": true,
           "status": "closed",
-          "days_remaining_at_evaluation": -46,
+          "days_remaining_at_evaluation": -50,
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://mead-ata.upatras.gr/prokirixi-2026-2027/",
-          "evaluated_at": "2026-09-01",
+          "evaluated_at": "2026-09-05",
           "audience": "new_applicants",
           "other_milestones": []
         },
@@ -1254,23 +1356,6 @@
         "official_department_page": null,
         "source_log": [
           {
-            "url": "https://mead-ata.upatras.gr/prokirixi-2026-2027/",
-            "source_type": "official_admission_page",
-            "title": "Patras 2026/27 admission call",
-            "access_status": "ok",
-            "last_checked": "2026-08-14",
-            "relevant_fields": [
-              "admission",
-              "non_eu_eligibility",
-              "deadline"
-            ],
-            "confidence": "high",
-            "notes": {
-              "en": "Publishes eligible degrees, documents, interview selection and the extended deadline.",
-              "tr": "Uygun dereceleri, belgeleri, mülakatlı seçimi ve uzatılmış tarihi yayımlar."
-            }
-          },
-          {
             "url": "https://mead-ata.upatras.gr/m%CE%B1%CE%B8%CE%AE%CE%BC%CE%B1%CF%84%CE%B1/",
             "source_type": "official_curriculum_page",
             "title": "Patras aeronautics curriculum",
@@ -1292,6 +1377,9 @@
             "access_status": "ok",
             "last_checked": "2026-08-14",
             "relevant_fields": [
+              "admission",
+              "non_eu_eligibility",
+              "deadline",
               "tuition"
             ],
             "confidence": "high",
@@ -1311,7 +1399,12 @@
               "program",
               "curriculum",
               "deadline",
-              "department"
+              "department",
+              "admission",
+              "tuition",
+              "application_fee",
+              "cost",
+              "fees"
             ],
             "confidence": "high",
             "notes": {
@@ -1326,6 +1419,11 @@
             "access_status": "ok",
             "last_checked": "2026-09-01",
             "relevant_fields": [
+              "research",
+              "program",
+              "curriculum",
+              "deadline",
+              "department",
               "admission",
               "tuition",
               "application_fee",
@@ -1333,9 +1431,37 @@
               "fees"
             ],
             "confidence": "high"
+          },
+          {
+            "url": "https://mead-ata.upatras.gr/prokirixi-2026-2027/",
+            "title": "University of Patras — Advanced Technologies in Aeronautics call 2026/2027",
+            "source_type": "official_admission_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-05",
+            "relevant_fields": [
+              "admission",
+              "non_eu_eligibility",
+              "deadline",
+              "tuition",
+              "application_documents"
+            ],
+            "confidence": "high"
+          },
+          {
+            "url": "https://mead-ata.upatras.gr/wp-content/uploads/sites/237/2026/05/%CE%A0%CE%A1%CE%9F%CE%9A%CE%97%CE%A1%CE%A5%CE%9E%CE%97-%CE%95%CE%99%CE%A3%CE%91%CE%93%CE%A9%CE%93%CE%97%CE%A3-%CE%9C%CE%95%CE%A4%CE%91%CE%A0%CE%A4%CE%A5%CE%A7%CE%99%CE%91%CE%9A%CE%A9%CE%9D-%CE%A6%CE%9F%CE%99%CE%A4%CE%97%CE%A4%CE%A9%CE%9D-%CE%A4%CE%9F%CE%A5-%CE%94%CE%A0%CE%9C%CE%A3-%CE%A0%CE%A1%CE%9F%CE%97%CE%93%CE%9C%CE%95%CE%9D%CE%95%CE%A3-%CE%A4%CE%95%CE%A7%CE%9D%CE%9F%CE%9B%CE%9F%CE%93%CE%99%CE%95%CE%A3-%CE%A3%CE%A4%CE%97%CE%9D-%CE%91%CE%95%CE%A1%CE%9F%CE%9D%CE%91%CE%A5%CE%A0%CE%97%CE%93%CE%99%CE%9A%CE%97-2026-2027.pdf",
+            "title": "University of Patras — 2026/2027 admissions call PDF",
+            "source_type": "official_admission_page",
+            "access_status": "pdf",
+            "last_checked": "2026-09-05",
+            "relevant_fields": [
+              "deadline",
+              "admission",
+              "application_documents"
+            ],
+            "confidence": "high"
           }
         ],
-        "last_verified": "2026-09-01",
+        "last_verified": "2026-09-05",
         "verification_notes": {
           "en": "Unknown fields remain explicit.",
           "tr": "Bilinmeyen alanlar açık bırakıldı."
@@ -1351,7 +1477,11 @@
           "industry": "unknown",
           "living": "unknown",
           "student_sentiment": "unknown",
-          "housing": "unknown"
+          "housing": "unknown",
+          "deadline": "high",
+          "deadlines": "high",
+          "application_timeline_profile": "high",
+          "application_documents": "high"
         },
         "needs_verification": true
       },
@@ -1398,7 +1528,7 @@
       },
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 5,
+        "checked_official_source_count": 6,
         "verified_fields": [
           "program",
           "admission",
@@ -1413,7 +1543,7 @@
           "housing"
         ],
         "has_checked_source_log": true,
-        "audited_at": "2026-09-01"
+        "audited_at": "2026-09-05"
       },
       "quality_control": {
         "qc_status": "needs_revision",
@@ -1508,7 +1638,7 @@
         ],
         "confidence": "unknown",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       },
       "academic_match_evidence": {
         "research_group_evidence": {
@@ -1645,7 +1775,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         },
         "application_fee_research": {
           "outcome": "no_fee_published",
@@ -1662,7 +1792,7 @@
           "standard": "cost_model@3.2.0",
           "rule": "not_derivable",
           "reason": "no_readable_tuition_figure",
-          "derived_at": "2026-09-01"
+          "derived_at": "2026-09-05"
         },
         "application_fee_standard": {
           "standard": "application_fee@3.2.0",
@@ -1678,7 +1808,7 @@
             "en": "The Department of Informatics and Telecommunications runs STAR's administration, and its programme page carries no fee of any kind - neither to apply nor to study. The programme's own site at star.uoa.gr served a certificate issued for a different host on 1 September 2026 and could not be read.",
             "tr": "STAR'ın idaresini Bilgisayar ve Telekomünikasyon Bölümü yürütür ve bölümün program sayfası hiçbir ücret taşımaz - ne başvurmak ne de okumak için. Programın kendi sitesi star.uoa.gr, 1 Eylül 2026'da başka bir sunucu için düzenlenmiş bir sertifika sundu ve okunamadı."
           },
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         }
       },
       "scholarship_profile": {
@@ -1796,7 +1926,7 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         },
         "cost_of_living_profile": {
           "standard": "cost_model@3.2.0",
@@ -1805,7 +1935,7 @@
           "reason": "no_official_living_cost_items",
           "components": {},
           "monthly_total": null,
-          "evaluated_at": "2026-09-01"
+          "evaluated_at": "2026-09-05"
         }
       },
       "curriculum_profile": {
@@ -1907,7 +2037,7 @@
           "status": "not_published",
           "confidence": "unknown",
           "reason": "no_iso_dated_deadline_in_record",
-          "evaluated_at": "2026-09-01",
+          "evaluated_at": "2026-09-05",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -2227,7 +2357,7 @@
         ],
         "confidence": "medium",
         "legacy_relevance_status": "strong",
-        "evaluated_at": "2026-09-01"
+        "evaluated_at": "2026-09-05"
       }
     }
   ]
