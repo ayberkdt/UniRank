@@ -97,13 +97,13 @@ main { display: grid; width: min(1500px, calc(100% - 40px)); margin: 0 auto; gap
 
 .funding-hero__copy,
 .funding-next { position: relative; z-index: 1; }
-.funding-kicker { color: var(--orange-soft); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.funding-kicker { color: var(--accent-soft); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
 .funding-hero h1 { max-width: 850px; margin: 12px 0 20px; font: 600 clamp(42px, 5vw, 78px)/0.98 var(--display); letter-spacing: -0.055em; }
 .funding-hero__copy > p { max-width: 740px; margin: 0; color: #c8c5c1; font-size: clamp(17px, 1.5vw, 21px); }
 .funding-hero__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
 .funding-button { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; padding: 10px 16px; border: 1px solid var(--rule); border-radius: 7px; background: rgba(16, 17, 21, 0.5); color: var(--ink); font-weight: 700; text-decoration: none; }
-.funding-button:hover { border-color: rgba(241, 128, 70, 0.55); transform: translateY(-1px); }
-.funding-button--primary { border-color: var(--orange); background: var(--orange); color: #15100d; }
+.funding-button:hover { border-color: rgba(143, 125, 255, 0.55); transform: translateY(-1px); }
+.funding-button--primary { border-color: var(--accent); background: var(--accent); color: #15100d; }
 
 /* The card used to stretch to the full height of the hero's 390px copy column
    and then bottom-align its own contents, which left a tall empty band above
@@ -167,7 +167,7 @@ main { display: grid; width: min(1500px, calc(100% - 40px)); margin: 0 auto; gap
 .funding-filters input,
 .funding-filters select { width: 100%; min-height: 42px; padding: 8px 11px; border: 1px solid var(--rule); border-radius: 6px; background: #16181e; color: var(--ink); outline: 0; }
 .funding-filters input:focus,
-.funding-filters select:focus { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(241, 128, 70, 0.11); }
+.funding-filters select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(143, 125, 255, 0.11); }
 .funding-search { position: relative; align-self: end; }
 .funding-search > span { position: absolute; z-index: 1; top: 34px; left: 12px; color: var(--muted); font-size: 17px; }
 .funding-search input { padding-left: 36px; }
@@ -208,7 +208,7 @@ main { display: grid; width: min(1500px, calc(100% - 40px)); margin: 0 auto; gap
 .scholarship-detail h4 { margin: 0 0 8px; color: var(--muted); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
 .scholarship-detail ol { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; counter-reset: docs; }
 .scholarship-detail ol li { display: grid; grid-template-columns: 27px 1fr; gap: 8px; color: var(--ink-soft); font-size: 12px; counter-increment: docs; }
-.scholarship-detail ol li::before { content: counter(docs, decimal-leading-zero); color: var(--orange-soft); font-weight: 700; }
+.scholarship-detail ol li::before { content: counter(docs, decimal-leading-zero); color: var(--accent-soft); font-weight: 700; }
 .scholarship-detail__note { margin: 0; color: var(--muted); font-size: 12px; }
 .scholarship-sources { display: flex; flex-wrap: wrap; gap: 7px; }
 .scholarship-sources a { display: inline-flex; align-items: center; gap: 6px; padding: 7px 9px; border: 1px solid var(--rule); border-radius: 5px; color: var(--ink-soft); font-size: 11px; text-decoration: none; }

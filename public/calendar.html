@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Verified application deadlines, remaining time and required documents for every programme in UniRank.">
+    <title>UniRank | Application calendar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site.css?v=4">
+    <link rel="stylesheet" href="style.css?v=19">
+    <link rel="stylesheet" href="redesign.css?v=18">
+    <link rel="stylesheet" href="calendar.css?v=1">
+    <script src="storage.js?v=1"></script>
+    <script src="i18n.js?v=13"></script>
+</head>
+<body class="calendar-body">
+    <a class="skip-link" href="#deadline-catalog-title" data-i18n="deadline_skip">Skip to the application plan</a>
+
+    <header class="site-bar">
+        <a class="site-bar__brand" href="index.html" aria-label="UniRank home">
+            <span class="site-bar__mark" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M5 18c4-8 10-12 20-13-1 10-5 16-13 20l-2-5-5-2Z"></path><path d="m13 19 6-6"></path><circle cx="21.5" cy="10.5" r="2"></circle></svg></span>
+            <span><strong>UniRank</strong><small data-i18n="deadline_calendar">Application calendar</small></span>
+        </a>
+        <nav class="site-bar__nav" aria-label="Primary">
+            <a href="index.html" data-i18n="nav_programmes">Programmes</a>
+            <a class="is-active" href="calendar.html" aria-current="page" data-i18n="deadline_calendar">Application calendar</a>
+            <a href="scholarships.html" data-i18n="scholarship_hub">Scholarships</a>
+            <a href="research.html" data-i18n="research_hub">Research fit</a>
+        </nav>
+        <div class="site-bar__lang" role="group" aria-label="Language">
+            <button type="button" data-lang="en" onclick="window.setLanguage('en')">EN</button>
+            <button type="button" data-lang="tr" onclick="window.setLanguage('tr')">TR</button>
+        </div>
+    </header>
+
+    <main id="deadline-page" class="deadline-page" aria-labelledby="deadline-page-title">
+        <header class="deadline-page__hero">
+            <div class="deadline-page__heading">
+                <span class="deadline-page__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24"><path d="M7 3v3M17 3v3M4.5 9h15M6 5h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/><path d="M8 13h3v3H8z"/></svg>
+                </span>
+                <div>
+                    <span class="deadline-page__kicker" data-i18n="deadline_workspace_kicker">Application command center</span>
+                    <h1 id="deadline-page-title" data-i18n="deadline_calendar">Application calendar</h1>
+                    <p data-i18n="deadline_calendar_desc">See every verified date, remaining time, and required document in one place.</p>
+                </div>
+            </div>
+            <div class="deadline-page__legend" aria-label="Status colours" data-i18n-aria-label="deadline_legend_label">
+                <span><i class="deadline-legend-dot deadline-legend-dot--urgent"></i><span data-i18n="deadline_legend_urgent">Urgent · 30 days or less</span></span>
+                <span><i class="deadline-legend-dot deadline-legend-dot--soon"></i><span data-i18n="deadline_legend_soon">Approaching · 31–90 days</span></span>
+                <span><i class="deadline-legend-dot deadline-legend-dot--later"></i><span data-i18n="deadline_legend_later">Later · more than 90 days</span></span>
+                <span><i class="deadline-legend-dot deadline-legend-dot--undated"></i><span data-i18n="deadline_legend_verify">Date still to verify</span></span>
+            </div>
+        </header>
+
+        <div class="deadline-page__body">
+            <section class="deadline-overview" aria-label="Application overview" data-i18n-aria-label="deadline_overview_label">
+                <div class="deadline-priority" id="deadline-priority" aria-live="polite"></div>
+                <div class="deadline-summary-grid" id="deadline-summary-grid" aria-live="polite"></div>
+                <section class="deadline-cost-strip" id="deadline-cost-strip" aria-live="polite"></section>
+            </section>
+            <details class="deadline-runway" aria-labelledby="deadline-runway-title" open>
+                <summary class="deadline-runway__heading">
+                    <div><span class="deadline-runway__eyebrow" data-i18n="deadline_runway_eyebrow">2027 intake runway</span><h2 id="deadline-runway-title" data-i18n="deadline_runway_title">Verified dates by month</h2></div>
+                    <span class="deadline-runway__summary-copy"><span data-i18n="deadline_runway_desc">Only exact target-cycle dates appear here; reference dates stay in programme cards.</span><b aria-hidden="true">⌄</b></span>
+                </summary>
+                <div class="deadline-runway__track" id="deadline-runway-track"></div>
+            </details>
+            <section class="deadline-catalog" aria-labelledby="deadline-catalog-title">
+                <header class="deadline-catalog__heading">
+                    <div><span data-i18n="deadline_catalog_eyebrow">Program workspace</span><h2 id="deadline-catalog-title" data-i18n="deadline_catalog_title">Application plan</h2></div>
+                    <p data-i18n="deadline_catalog_desc">Filter the list, then open a program for its complete evidence trail.</p>
+                </header>
+                <div class="deadline-toolbar">
+                    <label class="deadline-search" for="deadline-search-input">
+                        <span aria-hidden="true">⌕</span>
+                        <input id="deadline-search-input" type="search" autocomplete="off" data-i18n-placeholder="deadline_search_placeholder" placeholder="Search university, program, country or document">
+                    </label>
+                    <label class="deadline-favorite-toggle" for="deadline-favorites-only">
+                        <input id="deadline-favorites-only" type="checkbox">
+                        <span aria-hidden="true">★</span>
+                        <span data-i18n="deadline_favorites_only">Favorites only</span>
+                    </label>
+                </div>
+                <div class="deadline-filter-chips" id="deadline-filter-chips" role="group" aria-label="Deadline status"></div>
+                <div class="deadline-results-meta" id="deadline-results-meta" aria-live="polite"></div>
+                <div class="deadline-program-list" id="deadline-program-list"></div>
+            </section>
+        </div>
+    </main>
+
+    <script src="dataAdapter.js?v=12"></script>
+    <script src="countryVisual.js?v=1"></script>
+    <script src="applicationFee.js?v=5"></script>
+    <script src="deadlineDashboard.js?v=17"></script>
+    <script src="calendar.js?v=1"></script>
+</body>
+</html>

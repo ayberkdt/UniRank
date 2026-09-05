@@ -24,7 +24,7 @@ main { display: grid; width: min(1500px, calc(100% - 40px)); margin: 0 auto; gap
 .research-hero { position: relative; display: grid; min-height: 420px; grid-template-columns: minmax(0, 1.35fr) minmax(300px, .65fr); align-items: end; gap: clamp(34px, 7vw, 110px); padding: clamp(36px, 5vw, 76px); border: 1px solid #3c4050; border-radius: 16px; background: linear-gradient(118deg, rgba(38, 33, 40, .98), rgba(28, 32, 55, .96) 60%, rgba(32, 55, 66, .96)); overflow: hidden; }
 .research-hero::after { position: absolute; right: -10rem; bottom: -22rem; width: 48rem; height: 48rem; border: 5.8rem solid rgba(85, 214, 194, .045); border-radius: 50%; content: ""; pointer-events: none; }
 .research-hero__copy, .research-hero__aside { position: relative; z-index: 1; }
-.research-kicker { color: var(--orange-soft); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.research-kicker { color: var(--accent-soft); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
 .research-hero h1 { max-width: 900px; margin: 12px 0 20px; font: 600 clamp(42px, 5vw, 78px)/.98 var(--display); letter-spacing: -.055em; }
 .research-hero__copy > p { max-width: 770px; margin: 0; color: #c8c5c1; font-size: clamp(17px, 1.5vw, 21px); }
 .research-hero__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
@@ -71,7 +71,7 @@ main { display: grid; width: min(1500px, calc(100% - 40px)); margin: 0 auto; gap
 .programme-card__why { margin: 0; color: var(--ink-soft); }
 .field-chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .field-chip { padding: 5px 8px; border: 1px solid rgba(143, 168, 232, .2); border-radius: 5px; background: rgba(143, 168, 232, .07); color: #c4d2fb; font-size: 11px; font-weight: 600; }
-.programme-note { padding: 12px 14px; border-left: 2px solid var(--orange); background: rgba(241, 128, 70, .07); color: #cfc7c1; font-size: 13px; }
+.programme-note { padding: 12px 14px; border-left: 2px solid var(--accent); background: rgba(143, 125, 255, .07); color: #cfc7c1; font-size: 13px; }
 .programme-card__actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
 .text-link { display: inline-flex; min-height: 38px; align-items: center; padding: 8px 11px; border: 1px solid var(--rule); border-radius: 6px; color: var(--ink-soft); font-size: 12px; font-weight: 700; text-decoration: none; }
 .text-link:hover { border-color: rgba(85, 214, 194, .5); color: var(--ink); }
@@ -90,7 +90,7 @@ main { display: grid; width: min(1500px, calc(100% - 40px)); margin: 0 auto; gap
 
 .faculty-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .faculty-card { display: grid; gap: 14px; padding: 22px; border: 1px solid var(--rule); border-radius: 10px; background: #12141a; }
-.faculty-card__school { color: var(--orange-soft); font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.faculty-card__school { color: var(--accent-soft); font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
 .faculty-card h3 { margin: 2px 0 0; font: 600 21px var(--display); }
 .faculty-card__role { margin: 0; color: var(--muted); font-size: 12px; }
 .faculty-card__focus { margin: 0; color: var(--ink-soft); font-size: 14px; }
@@ -99,7 +99,7 @@ main { display: grid; width: min(1500px, calc(100% - 40px)); margin: 0 auto; gap
 .outreach-section { display: grid; grid-template-columns: minmax(300px, .8fr) minmax(0, 1.2fr); gap: 36px 70px; background: linear-gradient(125deg, rgba(34, 32, 38, .96), rgba(23, 29, 42, .96)); }
 .outreach-copy > p { color: var(--muted); }
 .subject-line { display: grid; gap: 6px; margin-top: 20px; }
-.subject-line span { color: var(--orange-soft); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.subject-line span { color: var(--accent-soft); font-size: 10px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
 .subject-line code { padding: 12px; border: 1px solid var(--rule); border-radius: 6px; background: #0d0f14; color: #c8d6ff; white-space: normal; }
 .outreach-steps { display: grid; gap: 10px; margin: 0; padding: 0; counter-reset: steps; list-style: none; }
 .outreach-steps li { position: relative; min-height: 58px; padding: 11px 12px 11px 48px; border: 1px solid var(--rule-soft); background: rgba(12, 14, 19, .44); color: var(--ink-soft); }

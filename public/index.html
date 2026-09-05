@@ -7,10 +7,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="site.css?v=3"><link rel="stylesheet" href="style.css?v=18">
-    <link rel="stylesheet" href="redesign.css?v=17">
+    <link rel="stylesheet" href="site.css?v=4">
+    <link rel="stylesheet" href="style.css?v=19">
+    <link rel="stylesheet" href="redesign.css?v=18">
     <link rel="stylesheet" href="profile.css?v=1">
-    <link rel="stylesheet" href="decisionPanels.css?v=8">
+    <link rel="stylesheet" href="decisionPanels.css?v=9">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
@@ -18,7 +19,7 @@
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="storage.js?v=1"></script>
-    <script src="i18n.js?v=12"></script>
+    <script src="i18n.js?v=13"></script>
     <script src="taxonomy.js?v=3"></script>
     <script src="standards.js?v=2"></script>
     <script src="visaPanel.js?v=2"></script>
@@ -38,7 +39,7 @@
         </a>
         <nav class="site-bar__nav" aria-label="Primary">
             <a class="is-active" href="index.html" aria-current="page" data-i18n="nav_programmes">Programmes</a>
-            <button type="button" data-open-calendar data-i18n="deadline_calendar">Application calendar</button>
+            <a href="calendar.html" data-i18n="deadline_calendar">Application calendar</a>
             <a href="scholarships.html" data-i18n="scholarship_hub">Scholarships</a>
             <a href="research.html" data-i18n="research_hub">Research fit</a>
         </nav>
@@ -225,7 +226,7 @@
                 </div>
                 <div class="header-actions">
                     <nav class="header-destinations" aria-label="Decision tools" data-i18n-aria-label="decision_tools">
-                    <button class="deadline-launcher" id="deadline-launcher" type="button" aria-controls="deadline-modal" aria-haspopup="dialog">
+                    <a class="deadline-launcher" id="deadline-launcher" href="calendar.html">
                         <span class="deadline-launcher__icon" aria-hidden="true">
                             <svg viewBox="0 0 24 24" role="img"><path d="M7 3v3M17 3v3M4.5 9h15M6 5h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/><path d="M8 13h3v3H8z"/></svg>
                         </span>
@@ -234,7 +235,7 @@
                             <small id="deadline-launcher-summary" data-i18n="deadline_calendar_loading">Loading deadlines…</small>
                         </span>
                         <span class="deadline-launcher__badge" id="deadline-launcher-badge" aria-label="0 urgent deadlines">0</span>
-                    </button>
+                    </a>
                     <a class="scholarship-launcher" href="scholarships.html">
                         <span class="scholarship-launcher__icon" aria-hidden="true">◇</span>
                         <span class="scholarship-launcher__copy">
@@ -379,50 +380,6 @@
             </section>
         </main>
 
-        <div class="deadline-modal-overlay" id="deadline-modal" role="dialog" aria-modal="true" aria-labelledby="deadline-modal-title" aria-hidden="true" hidden>
-            <section class="deadline-modal-shell">
-                <header class="deadline-modal-header">
-                    <div class="deadline-modal-heading">
-                        <span class="deadline-modal-heading__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24"><path d="M7 3v3M17 3v3M4.5 9h15M6 5h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/><path d="M8 13h3v3H8z"/></svg>
-                        </span>
-                        <div>
-                            <span class="deadline-modal-kicker" data-i18n="deadline_workspace_kicker">Application command center</span>
-                            <h2 id="deadline-modal-title" data-i18n="deadline_calendar">Application calendar</h2>
-                            <p id="deadline-modal-subtitle" data-i18n="deadline_calendar_desc">See every verified date, remaining time, and required document in one place.</p>
-                        </div>
-                    </div>
-                    <button class="deadline-modal-close" id="deadline-modal-close" type="button" data-i18n-aria-label="close_dialog" aria-label="Close dialog">&times;</button>
-                </header>
-
-                <div class="deadline-modal-body">
-                    <div class="deadline-summary-grid" id="deadline-summary-grid" aria-live="polite"></div>
-                    <section class="deadline-cost-strip" id="deadline-cost-strip" aria-live="polite"></section>
-                    <section class="deadline-runway" aria-labelledby="deadline-runway-title">
-                        <div class="deadline-runway__heading">
-                            <div><span class="deadline-runway__eyebrow" data-i18n="deadline_runway_eyebrow">2027 intake runway</span><h3 id="deadline-runway-title" data-i18n="deadline_runway_title">Verified dates by month</h3></div>
-                            <p data-i18n="deadline_runway_desc">Only exact target-cycle dates appear here; reference dates stay in programme cards.</p>
-                        </div>
-                        <div class="deadline-runway__track" id="deadline-runway-track"></div>
-                    </section>
-                    <div class="deadline-toolbar">
-                        <label class="deadline-search" for="deadline-search-input">
-                            <span aria-hidden="true">⌕</span>
-                            <input id="deadline-search-input" type="search" autocomplete="off" data-i18n-placeholder="deadline_search_placeholder" placeholder="Search university, program, country or document">
-                        </label>
-                        <label class="deadline-favorite-toggle" for="deadline-favorites-only">
-                            <input id="deadline-favorites-only" type="checkbox">
-                            <span aria-hidden="true">★</span>
-                            <span data-i18n="deadline_favorites_only">Favorites only</span>
-                        </label>
-                    </div>
-                    <div class="deadline-filter-chips" id="deadline-filter-chips" role="group" aria-label="Deadline status"></div>
-                    <div class="deadline-results-meta" id="deadline-results-meta" aria-live="polite"></div>
-                    <div class="deadline-program-list" id="deadline-program-list"></div>
-                </div>
-            </section>
-        </div>
-
         <div class="drawer-overlay" id="drawer-overlay"></div>
         <aside class="drawer" id="detail-drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
             <div class="drawer-header">
@@ -440,11 +397,13 @@
     </div>
 
     <script src="dataAdapter.js?v=12"></script>
+    <script src="countryVisual.js?v=1"></script>
     <script src="scoring.js?v=7"></script>
     <script src="applicationFee.js?v=5"></script>
-    <script src="decisionPanels.js?v=5"></script>
-    <script src="deadlineDashboard.js?v=15"></script>
-    <script src="script.js?v=39"></script>
+    <script src="requirementSummary.js?v=1"></script>
+    <script src="decisionPanels.js?v=6"></script>
+    <script src="deadlineDashboard.js?v=17"></script>
+    <script src="script.js?v=40"></script>
     <script src="map.js?v=11"></script>
 
     <!-- Login Modal -->

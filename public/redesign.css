@@ -36,7 +36,7 @@ h3,
     inset: 0;
     overflow: hidden;
     background:
-        linear-gradient(125deg, rgba(232, 128, 74, 0.08), transparent 26rem),
+        linear-gradient(125deg, rgba(143, 125, 255, 0.08), transparent 26rem),
         linear-gradient(180deg, #17191f 0, var(--ui-canvas-deep) 28rem);
 }
 
@@ -50,7 +50,7 @@ input:focus-visible,
 select:focus-visible,
 summary:focus-visible,
 .leaflet-interactive:focus-visible {
-    outline: 3px solid rgba(232, 128, 74, 0.34) !important;
+    outline: 3px solid rgba(143, 125, 255, 0.34) !important;
     outline-offset: 3px;
 }
 
@@ -84,7 +84,7 @@ summary:focus-visible,
 .main-action,
 .map-focus-button,
 .map-detail-button {
-    background: var(--ui-ember);
+    background: var(--ui-accent);
     box-shadow: none;
 }
 
@@ -110,20 +110,20 @@ summary:focus-visible,
     min-height: 68px;
     margin-top: 16px !important;
     padding: 13px 14px;
-    border: 1px solid rgba(232, 128, 74, 0.34) !important;
+    border: 1px solid rgba(143, 125, 255, 0.34) !important;
     border-radius: 12px;
     background: #242026 !important;
-    box-shadow: inset 3px 0 0 var(--ui-ember) !important;
+    box-shadow: inset 3px 0 0 var(--ui-accent) !important;
 }
 
 .profile-cta:hover {
-    border-color: rgba(232, 128, 74, 0.68) !important;
+    border-color: rgba(143, 125, 255, 0.68) !important;
     background: #2b2427 !important;
 }
 
 .profile-cta__icon {
     background: #34262a;
-    color: var(--ui-ember-soft);
+    color: var(--ui-accent-soft);
     box-shadow: none;
 }
 
@@ -173,7 +173,7 @@ summary:focus-visible,
 .text-button,
 .slider-group label > span:last-child,
 .map-result-detail {
-    color: var(--ui-ember-soft);
+    color: var(--ui-accent-soft);
 }
 
 .section-kicker,
@@ -222,8 +222,8 @@ input[type="email"]:focus,
 input[type="number"]:focus,
 select:focus,
 .modern-input:focus {
-    border-color: var(--ui-ember) !important;
-    box-shadow: 0 0 0 3px rgba(232, 128, 74, 0.12) !important;
+    border-color: var(--ui-accent) !important;
+    box-shadow: 0 0 0 3px rgba(143, 125, 255, 0.12) !important;
 }
 
 option {
@@ -273,7 +273,7 @@ option {
 .selected-category-chip:hover,
 .popular-category-chip:hover:not(:disabled),
 .active-filter-chip:hover {
-    border-color: var(--ui-ember) !important;
+    border-color: var(--ui-accent) !important;
     background: #2a2323 !important;
     color: var(--ui-ink) !important;
 }
@@ -389,12 +389,12 @@ option {
 }
 
 .btn-primary {
-    background: var(--ui-ember);
+    background: var(--ui-accent);
     color: #17191e;
 }
 
 .btn-primary:hover {
-    background: var(--ui-ember-soft);
+    background: var(--ui-accent-soft);
 }
 
 .btn-outline,
@@ -430,10 +430,10 @@ option {
    cream pill was the only near-white surface in the product. */
 .language-toggle button.active,
 .view-toggle button.active {
-    background: var(--ge-ember-wash) !important;
-    border-color: var(--ge-ember-deep) !important;
+    background: var(--ge-accent-wash) !important;
+    border-color: var(--ge-accent-deep) !important;
     color: var(--ge-ink) !important;
-    box-shadow: inset 0 0 0 1px var(--ge-ember-deep) !important;
+    box-shadow: inset 0 0 0 1px var(--ge-accent-deep) !important;
 }
 
 .workspace-toolbar {
@@ -593,14 +593,14 @@ option {
     border: 1px solid var(--ui-rule) !important;
     border-radius: 10px;
     background-color: var(--ui-surface) !important;
-    box-shadow: inset 3px 0 0 var(--country-accent, var(--ui-ember)) !important;
+    box-shadow: inset 3px 0 0 var(--country-accent, var(--ui-accent)) !important;
 }
 
 .program-card:hover,
 .country-card:hover {
     border-color: #555963 !important;
     background-color: var(--ui-surface-raised) !important;
-    box-shadow: inset 3px 0 0 var(--country-accent, var(--ui-ember)), 0 18px 42px rgba(0, 0, 0, 0.16) !important;
+    box-shadow: inset 3px 0 0 var(--country-accent, var(--ui-accent)), 0 18px 42px rgba(0, 0, 0, 0.16) !important;
     transform: translateY(-2px);
 }
 
@@ -627,7 +627,7 @@ option {
        country stays identifiable, mixed far enough toward the ink to be
        readable; the flat fallback covers browsers without color-mix. */
     color: var(--ui-ink-soft);
-    color: color-mix(in oklab, var(--country-accent, var(--ui-ember-soft)) 40%, var(--ui-ink));
+    color: color-mix(in oklab, var(--country-accent, var(--ui-accent-soft)) 40%, var(--ui-ink));
     font-family: var(--ui-display);
     font-size: 13px;
 }
@@ -775,7 +775,7 @@ option {
 
 .detail-btn:hover,
 .country-card .detail-btn:hover {
-    border-color: var(--country-accent, var(--ui-ember));
+    border-color: var(--country-accent, var(--ui-accent));
     background: var(--ui-surface-raised);
 }
 
@@ -859,7 +859,7 @@ option {
 .map-result-detail {
     border-color: var(--ui-rule-soft);
     background: var(--ui-canvas-deep);
-    color: var(--ui-ember-soft);
+    color: var(--ui-accent-soft);
 }
 
 .map-result-detail:hover {
@@ -867,9 +867,9 @@ option {
 }
 
 .map-panel-toggle {
-    border-color: rgba(232, 128, 74, 0.5);
+    border-color: rgba(143, 125, 255, 0.5);
     background: #292126;
-    color: var(--ui-ember-soft);
+    color: var(--ui-accent-soft);
     box-shadow: none;
 }
 
@@ -927,7 +927,7 @@ option {
 }
 
 .map-stat i,
-.map-stat--programs i { color: var(--ui-ember-soft); }
+.map-stat--programs i { color: var(--ui-accent-soft); }
 .map-stat--universities i { color: var(--ui-sage); }
 .map-stat--missing i,
 .map-stat--missing strong { color: var(--ui-gold); }
@@ -935,7 +935,7 @@ option {
 .map-stat small { color: var(--ui-muted); }
 
 .map-focus-button {
-    background: var(--ui-ember);
+    background: var(--ui-accent);
     color: #17191e;
 }
 
@@ -989,7 +989,7 @@ option {
 }
 
 .map-stage.is-fullscreen {
-    border-color: rgba(232, 128, 74, 0.48);
+    border-color: rgba(143, 125, 255, 0.48);
     border-radius: 10px;
     background: var(--ui-canvas-deep);
 }
@@ -1062,7 +1062,7 @@ option {
 .scholarship-launcher:focus-visible,
 .research-launcher:hover,
 .research-launcher:focus-visible {
-    border-color: rgba(241, 128, 70, 0.62);
+    border-color: rgba(143, 125, 255, 0.62);
     background: rgba(30, 32, 38, 0.9);
     transform: translateY(-1px);
 }
@@ -1074,7 +1074,7 @@ option {
     height: 35px;
     place-items: center;
     border-radius: 6px;
-    background: rgba(241, 128, 70, 0.14);
+    background: rgba(143, 125, 255, 0.14);
     color: #ffab7f;
     font-size: 24px;
 }
@@ -1171,108 +1171,6 @@ option {
 .deadline-runway__empty small { color: var(--ui-muted); font-size: 11px; }
 
 /* Application calendar: readable master list, no dense three-column grid. */
-.deadline-modal-overlay {
-    /* Was inset:0, so it covered the site bar. */
-    inset: var(--site-bar-h) 0 0 0;
-    padding: 20px;
-    background: rgba(8, 9, 11, 0.82);
-    backdrop-filter: none;
-}
-
-.deadline-modal-shell {
-    width: min(1480px, 100%);
-    max-height: calc(100dvh - var(--site-bar-h) - 40px);
-    border: 1px solid #484b55;
-    border-radius: 12px;
-    background: var(--ui-canvas);
-    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.52);
-}
-
-.deadline-modal-header {
-    position: relative;
-    min-height: 142px;
-    padding: 28px 32px;
-    align-items: flex-start;
-    border-bottom: 1px solid var(--ge-rule);
-    /* This was an indigo band (#1e223d to #2b3154) that belonged to no part of
-       the palette. The calendar is a graphite surface with one ember accent,
-       like everything else. */
-    background:
-        radial-gradient(120% 160% at 0% 0%, var(--ge-ember-wash), transparent 58%),
-        linear-gradient(180deg, var(--ge-surface), var(--ge-canvas));
-    overflow: hidden;
-}
-
-.deadline-modal-header::after {
-    position: absolute;
-    right: 9%;
-    bottom: -90px;
-    width: 240px;
-    height: 240px;
-    border: 1px solid rgba(244, 239, 229, 0.045);
-    border-radius: 50%;
-    box-shadow: 0 0 0 42px rgba(244, 239, 229, 0.012);
-    content: "";
-}
-
-.deadline-modal-heading {
-    position: relative;
-    z-index: 1;
-    gap: 18px;
-}
-
-.deadline-modal-heading__icon {
-    width: 48px;
-    height: 48px;
-    border: 1px solid var(--ge-ember-deep);
-    border-radius: 8px;
-    background: var(--ge-ember-wash);
-    color: var(--ge-ember-soft);
-}
-
-.deadline-modal-kicker {
-    color: var(--ge-ember-soft);
-    font-size: 11px;
-    letter-spacing: 0.15em;
-}
-
-.deadline-modal-heading h2 {
-    margin-top: 5px;
-    color: var(--ui-ink);
-    font-size: clamp(30px, 3vw, 46px);
-    font-weight: 600;
-    letter-spacing: -0.045em;
-}
-
-.deadline-modal-heading p {
-    max-width: 680px;
-    margin-top: 7px;
-    color: var(--ui-ink-soft);
-    font-size: 15px;
-}
-
-.deadline-modal-close {
-    position: relative;
-    z-index: 2;
-    width: 42px;
-    height: 42px;
-    border: 1px solid rgba(244, 239, 229, 0.2);
-    border-radius: 7px;
-    background: rgba(16, 17, 21, 0.52);
-    color: var(--ui-ink);
-    font-size: 24px;
-}
-
-.deadline-modal-close:hover {
-    border-color: rgba(232, 128, 74, 0.56);
-    background: #29242a;
-}
-
-.deadline-modal-body {
-    padding: 24px 32px 40px;
-    background: var(--ui-canvas);
-}
-
 .deadline-summary-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 0;
@@ -1298,7 +1196,7 @@ option {
 .deadline-summary-card.is-active {
     border-color: var(--ui-rule);
     background: rgba(255, 255, 255, 0.025);
-    box-shadow: inset 0 -3px 0 var(--ui-ember);
+    box-shadow: inset 0 -3px 0 var(--ui-accent);
     transform: none;
 }
 
@@ -1326,12 +1224,12 @@ option {
    descends with urgency: only the urgent bucket is hot, and the undated one
    recedes to muted text. */
 .deadline-summary-card--urgent {
-    background: linear-gradient(180deg, rgba(239, 127, 69, 0.09), transparent 70%);
-    box-shadow: inset 3px 0 0 var(--ge-ember);
+    background: linear-gradient(180deg, rgba(143, 125, 255, 0.09), transparent 70%);
+    box-shadow: inset 3px 0 0 var(--ge-accent);
 }
 
 .deadline-summary-card--urgent > strong {
-    color: var(--ge-ember-soft);
+    color: var(--ge-accent-soft);
     font-size: 34px;
 }
 
@@ -1352,7 +1250,7 @@ option {
 }
 
 .deadline-summary-card--urgent > span {
-    color: var(--ge-ember-soft);
+    color: var(--ge-accent-soft);
     font-weight: 620;
     letter-spacing: 0.02em;
 }
@@ -1381,8 +1279,8 @@ option {
 }
 
 .deadline-search:focus-within {
-    border-color: var(--ui-ember);
-    box-shadow: 0 0 0 3px rgba(232, 128, 74, 0.1);
+    border-color: var(--ui-accent);
+    box-shadow: 0 0 0 3px rgba(143, 125, 255, 0.1);
 }
 
 .deadline-favorite-toggle {
@@ -1412,8 +1310,8 @@ option {
 
 .deadline-filter-chip:hover,
 .deadline-filter-chip.is-active {
-    border-color: var(--ge-ember-deep);
-    background: var(--ge-ember-wash);
+    border-color: var(--ge-accent-deep);
+    background: var(--ge-accent-wash);
     color: var(--ge-ink);
 }
 
@@ -1569,7 +1467,7 @@ option {
 /* Visible at rest, not only on hover: the whole point of this control is that
    the card announces it can be opened. */
 .deadline-program-title__cue {
-    color: var(--ui-ember-soft);
+    color: var(--ui-accent-soft);
     font-size: 0.7em;
     opacity: 0.5;
     transform: translateX(0);
@@ -1578,7 +1476,7 @@ option {
 
 .deadline-program-title:hover,
 .deadline-program-title:focus-visible {
-    color: var(--ui-ember-soft);
+    color: var(--ui-accent-soft);
 }
 
 .deadline-program-title:hover .deadline-program-title__cue,
@@ -1588,7 +1486,7 @@ option {
 }
 
 .deadline-program-title:focus-visible {
-    outline: 2px solid var(--ui-ember);
+    outline: 2px solid var(--ui-accent);
     outline-offset: 3px;
     border-radius: 4px;
 }
@@ -1685,7 +1583,7 @@ option {
 }
 
 .deadline-program-details > summary:hover {
-    color: var(--ui-ember-soft);
+    color: var(--ui-accent-soft);
 }
 
 .deadline-program-details__body {
@@ -1825,13 +1723,13 @@ option {
 }
 
 .deadline-program-open {
-    border-color: rgba(232, 128, 74, 0.48);
-    color: var(--ui-ember-soft);
+    border-color: rgba(143, 125, 255, 0.48);
+    color: var(--ui-accent-soft);
 }
 
 .deadline-source-link:hover,
 .deadline-program-open:hover {
-    border-color: var(--ui-ember);
+    border-color: var(--ui-accent);
     background: #2a2323;
     color: var(--ui-ink);
 }
@@ -1910,10 +1808,6 @@ option {
     .kpi-card:nth-child(n + 3) {
         border-top: 1px solid var(--ui-rule);
     }
-
-    .deadline-modal-body {
-        padding-inline: 24px;
-    }
 }
 
 @media (max-width: 860px) {
@@ -1974,26 +1868,6 @@ option {
     .detail-btn {
         flex: 1;
     }
-
-    .deadline-modal-overlay {
-        padding: 0;
-    }
-
-    .deadline-modal-shell {
-        max-height: 100dvh;
-        border: 0;
-        border-radius: 0;
-    }
-
-    .deadline-modal-header {
-        min-height: 128px;
-        padding: 24px 20px;
-    }
-
-    .deadline-modal-body {
-        padding: 20px 18px 32px;
-    }
-
     .deadline-summary-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
@@ -2087,12 +1961,12 @@ option {
 .country-picker-option:focus-visible,
 .country-picker-clear:focus-visible,
 .country-picker-search input:focus-visible {
-    outline-color: rgba(232, 128, 74, 0.34);
+    outline-color: rgba(143, 125, 255, 0.34);
 }
 
 .country-picker-trigger.is-open {
-    border-color: var(--ui-ember);
-    box-shadow: 0 0 0 3px rgba(232, 128, 74, 0.12);
+    border-color: var(--ui-accent);
+    box-shadow: 0 0 0 3px rgba(143, 125, 255, 0.12);
 }
 
 .country-picker-trigger__flag,
@@ -2143,11 +2017,11 @@ option {
 }
 
 .country-picker-clear {
-    color: var(--ui-ember-soft);
+    color: var(--ui-accent-soft);
 }
 
 .country-picker-clear:hover:not(:disabled) {
-    background: rgba(232, 128, 74, 0.1);
+    background: rgba(143, 125, 255, 0.1);
     color: #ffc09d;
 }
 
@@ -2208,7 +2082,7 @@ input[type="range"] {
 
 input[type="range"]::-webkit-slider-thumb {
     border: 2px solid #181a1f;
-    background: var(--ui-ember);
+    background: var(--ui-accent);
     box-shadow: none;
 }
 
@@ -2221,12 +2095,12 @@ input[type="range"]::-webkit-slider-thumb {
     gap: 14px;
     padding: 16px;
     border-radius: 8px;
-    box-shadow: inset 3px 0 0 var(--country-accent, var(--ui-ember)) !important;
+    box-shadow: inset 3px 0 0 var(--country-accent, var(--ui-accent)) !important;
 }
 
 .program-card:hover,
 .country-card:hover {
-    box-shadow: inset 3px 0 0 var(--country-accent, var(--ui-ember)), 0 12px 30px rgba(0, 0, 0, 0.18) !important;
+    box-shadow: inset 3px 0 0 var(--country-accent, var(--ui-accent)), 0 12px 30px rgba(0, 0, 0, 0.18) !important;
     transform: translateY(-1px);
 }
 
@@ -2335,7 +2209,7 @@ input[type="range"]::-webkit-slider-thumb {
     border-color: #41454f;
     border-radius: 9px;
     background: linear-gradient(180deg, #22242b, #1e2026);
-    box-shadow: inset 3px 0 0 var(--country-accent, var(--ui-ember));
+    box-shadow: inset 3px 0 0 var(--country-accent, var(--ui-accent));
 }
 
 #detail-drawer .drawer-decision-hero h3 { margin: 6px 0 10px; color: var(--ui-ink); font-size: 16px; }
@@ -2427,7 +2301,7 @@ input[type="range"]::-webkit-slider-thumb {
 #detail-drawer .student-source-list a,
 #detail-drawer .source-log-list a,
 #detail-drawer .prof-profile-link,
-#detail-drawer .prof-card__contact a { color: var(--ui-ember-soft) !important; }
+#detail-drawer .prof-card__contact a { color: var(--ui-accent-soft) !important; }
 
 #detail-drawer .evidence-strip__counts,
 #detail-drawer .source-access {
@@ -2571,19 +2445,6 @@ input[type="range"]::-webkit-slider-thumb {
     .decision-item:nth-child(n + 3) {
         border-top: 1px solid var(--ui-rule-soft) !important;
     }
-
-    .deadline-modal-heading__icon {
-        display: none;
-    }
-
-    .deadline-modal-heading h2 {
-        font-size: 30px;
-    }
-
-    .deadline-modal-heading p {
-        font-size: 13px;
-    }
-
     .deadline-summary-card {
         min-height: 86px;
         padding: 14px;
@@ -2725,7 +2586,7 @@ input[type="range"]::-webkit-slider-thumb {
    by a single edge bar and the numeral instead, so the row reads as one
    surface with one thing shouting. */
 .deadline-summary-card--urgent {
-    box-shadow: inset 3px 0 0 var(--ge-ember);
+    box-shadow: inset 3px 0 0 var(--ge-accent);
 }
 
 .deadline-summary-card--soon {
@@ -2850,7 +2711,7 @@ input[type="range"]::-webkit-slider-thumb {
     align-items: center;
 }
 
-.deadline-event--kind-application .deadline-event__dot { border-color: var(--ui-ember); }
+.deadline-event--kind-application .deadline-event__dot { border-color: var(--ui-accent); }
 .deadline-event--kind-documents .deadline-event__dot { border-color: var(--ui-blue); }
 .deadline-event--kind-scholarship .deadline-event__dot { border-color: var(--ui-gold); }
 .deadline-event--kind-visa .deadline-event__dot { border-color: #b29ae9; }
@@ -2875,12 +2736,12 @@ input[type="range"]::-webkit-slider-thumb {
     border: 1px solid var(--ui-rule);
     border-radius: 6px;
     background: var(--ui-canvas-deep);
-    color: var(--ui-ember-soft);
+    color: var(--ui-accent-soft);
     text-decoration: none;
 }
 
 .deadline-event__source:hover {
-    border-color: var(--ui-ember);
+    border-color: var(--ui-accent);
     background: #2a2323;
 }
 
@@ -2909,8 +2770,8 @@ input[type="range"]::-webkit-slider-thumb {
     height: 30px;
     place-items: center;
     border-radius: 50%;
-    background: rgba(232, 128, 74, 0.14);
-    color: var(--ui-ember-soft);
+    background: rgba(143, 125, 255, 0.14);
+    color: var(--ui-accent-soft);
 }
 
 .deadline-source-link > span:nth-child(2) {
@@ -2977,7 +2838,7 @@ input[type="range"]::-webkit-slider-thumb {
     padding: 12px 14px;
     border-left: 3px solid var(--ui-orange);
     border-radius: 5px;
-    background: rgba(241, 128, 70, 0.08);
+    background: rgba(143, 125, 255, 0.08);
     color: #b9c3d3;
     font-size: 12px;
     line-height: 1.5;
@@ -3081,12 +2942,12 @@ input[type="range"]::-webkit-slider-thumb {
 
 /* Final cascade guard: faculty components are authored later in this file. */
 #detail-drawer .faculty-contact-note {
-    border-left-color: var(--ui-ember);
-    background: rgba(232, 128, 74, .07);
+    border-left-color: var(--ui-accent);
+    background: rgba(143, 125, 255, .07);
     color: #b8bbc3;
 }
 
-#detail-drawer .faculty-contact-note strong { color: var(--ui-ember-soft); }
+#detail-drawer .faculty-contact-note strong { color: var(--ui-accent-soft); }
 
 #detail-drawer .prof-card {
     border-color: #3b3e47;
@@ -3171,7 +3032,7 @@ input[type="range"]::-webkit-slider-thumb {
     border: 1px solid #3b3e47 !important;
     border-radius: 9px;
     background: linear-gradient(180deg, #23252b, #1f2127) !important;
-    box-shadow: inset 2px 0 0 var(--ui-ember) !important;
+    box-shadow: inset 2px 0 0 var(--ui-accent) !important;
     transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
 }
 
@@ -3193,7 +3054,7 @@ input[type="range"]::-webkit-slider-thumb {
     border: 1px solid #3f424c;
     border-radius: 7px;
     background: #191a1f;
-    color: var(--ui-ember-soft);
+    color: var(--ui-accent-soft);
     font-size: 17px;
 }
 
@@ -3239,7 +3100,7 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .profile-cta:hover .profile-cta__arrow {
-    color: var(--ui-ember-soft);
+    color: var(--ui-accent-soft);
     transform: translateX(2px);
 }
 
@@ -3410,7 +3271,7 @@ input[type="range"]::-webkit-slider-thumb {
     border-top: 0;
     border-bottom-color: #343740;
     background:
-        radial-gradient(circle at 88% 112%, rgba(232, 128, 74, 0.08) 0 14rem, transparent 14.1rem),
+        radial-gradient(circle at 88% 112%, rgba(143, 125, 255, 0.08) 0 14rem, transparent 14.1rem),
         linear-gradient(118deg, #201d21 0%, #1b1d24 54%, #191b22 100%);
 }
 
@@ -3539,9 +3400,9 @@ input[type="range"]::-webkit-slider-thumb {
     height: 29px;
     flex: 0 0 auto;
     place-items: center;
-    border: 1px solid rgba(232, 128, 74, 0.35);
+    border: 1px solid rgba(143, 125, 255, 0.35);
     border-radius: 7px;
-    color: var(--ui-ember-soft);
+    color: var(--ui-accent-soft);
     font-size: 15px;
 }
 
@@ -3592,12 +3453,12 @@ input[type="range"]::-webkit-slider-thumb {
     padding: 5px 7px;
     border: 1px solid transparent;
     border-radius: 6px;
-    background: rgba(232, 128, 74, 0.06);
+    background: rgba(143, 125, 255, 0.06);
 }
 
 .sidebar .filter-card__header .text-button:hover {
-    border-color: rgba(232, 128, 74, 0.25);
-    background: rgba(232, 128, 74, 0.1);
+    border-color: rgba(143, 125, 255, 0.25);
+    background: rgba(143, 125, 255, 0.1);
 }
 
 .sidebar .profile-cta:focus-visible {
@@ -3639,8 +3500,8 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .sidebar .country-picker-trigger.is-open {
-    border-color: var(--ui-ember) !important;
-    box-shadow: 0 0 0 2px rgba(232, 128, 74, 0.1) !important;
+    border-color: var(--ui-accent) !important;
+    box-shadow: 0 0 0 2px rgba(143, 125, 255, 0.1) !important;
 }
 
 /* Detail rail hierarchy: numbered sections, calm data rows, no novelty art. */
@@ -3695,7 +3556,7 @@ input[type="range"]::-webkit-slider-thumb {
     border: 1px solid #464a54;
     border-radius: 6px;
     background: #17191e;
-    color: var(--ui-ember-soft);
+    color: var(--ui-accent-soft);
     font-size: 0;
 }
 
@@ -4109,9 +3970,9 @@ input[type="range"]::-webkit-slider-thumb {
     background: #191411;
 }
 
-.deadline-runway-month[data-season="autumn"] > header { background: #221910; }
+.deadline-runway-month[data-season="autumn"] > header { background: #231a20; }
 .deadline-runway-month[data-season="autumn"] > header span,
-.deadline-runway-month[data-season="autumn"] .deadline-runway-date strong { color: #eda868; }
+.deadline-runway-month[data-season="autumn"] .deadline-runway-date strong { color: #f2a0b6; }
 
 .deadline-runway-month[data-season="winter"] {
     border-top-color: #cfdde9;
@@ -4173,3 +4034,500 @@ input[type="range"]::-webkit-slider-thumb {
 .deadline-event--due-now .deadline-event__state { background: #421711; color: #ffa294; }
 .deadline-event--due-now .deadline-event__date span { color: #ff8272; font-weight: 600; }
 .deadline-event--due-now .deadline-event__date strong { color: #ffd9d2; }
+
+/* Application calendar v2 -------------------------------------------------
+   The calendar is an action surface, not a report. The first viewport now
+   answers one question first — what is the next verified thing to do? — and
+   keeps counts, costs, the month runway and evidence at descending levels of
+   detail. */
+.deadline-overview {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(420px, 0.8fr);
+    gap: 12px;
+}
+
+.deadline-priority {
+    min-width: 0;
+    min-height: 190px;
+    padding: 21px 22px;
+    border: 1px solid #4a4039;
+    border-radius: 12px;
+    background:
+        radial-gradient(circle at 0 0, rgba(143, 125, 255, 0.15), transparent 45%),
+        var(--ge-surface);
+    box-shadow: inset 3px 0 0 var(--ge-accent), var(--ge-shadow-1);
+}
+
+.deadline-priority__topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    color: var(--ge-accent-soft);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.deadline-priority__topline .deadline-status-pill { letter-spacing: 0.04em; }
+
+.deadline-priority__body {
+    display: grid;
+    min-height: 125px;
+    grid-template-columns: 76px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 18px;
+}
+
+.deadline-priority__date {
+    display: grid;
+    gap: 3px;
+    text-align: center;
+}
+
+.deadline-priority__date strong {
+    color: var(--ge-ink);
+    font: 620 48px/0.95 var(--ge-display);
+    letter-spacing: -0.06em;
+}
+
+.deadline-priority__date span {
+    color: var(--ge-muted);
+    font-size: 11px;
+    font-weight: 650;
+    text-transform: capitalize;
+}
+
+.deadline-priority__copy {
+    display: grid;
+    min-width: 0;
+    gap: 3px;
+}
+
+.deadline-priority__copy > strong {
+    overflow: hidden;
+    color: var(--ge-ink);
+    font: 620 clamp(18px, 1.8vw, 25px)/1.12 var(--ge-display);
+    letter-spacing: -0.025em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.deadline-priority__copy > span {
+    overflow: hidden;
+    color: var(--ge-ink-soft);
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.deadline-priority__copy > small {
+    margin-top: 5px;
+    color: var(--ge-muted);
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.deadline-priority__countdown {
+    display: grid;
+    justify-items: end;
+    gap: 11px;
+}
+
+.deadline-priority__countdown > b {
+    color: var(--ge-gold);
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.deadline-priority__countdown button {
+    display: inline-flex;
+    min-height: 38px;
+    align-items: center;
+    gap: 9px;
+    padding: 8px 12px;
+    border: 1px solid var(--ge-accent-deep);
+    border-radius: 7px;
+    background: var(--ge-accent-wash);
+    color: var(--ge-accent-soft);
+    font: 650 12px var(--ge-body);
+    cursor: pointer;
+}
+
+.deadline-priority__countdown button:hover,
+.deadline-priority__countdown button:focus-visible {
+    border-color: var(--ge-accent);
+    background: rgba(143, 125, 255, 0.2);
+    color: var(--ge-ink);
+}
+
+.deadline-priority__empty {
+    display: flex;
+    min-height: 146px;
+    align-items: center;
+    gap: 15px;
+    color: var(--ge-muted);
+}
+
+.deadline-priority__empty > span { color: var(--ge-accent-soft); font-size: 32px; }
+.deadline-priority__empty > div { display: grid; gap: 5px; }
+.deadline-priority__empty strong { color: var(--ge-ink); font-size: 16px; }
+.deadline-priority__empty small { max-width: 520px; font-size: 12px; line-height: 1.45; }
+
+.deadline-overview .deadline-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    margin: 0;
+    border: 0;
+}
+
+.deadline-overview .deadline-summary-card {
+    min-height: 91px;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    align-content: center;
+    gap: 2px 9px;
+    padding: 13px 14px;
+    border: 1px solid var(--ge-rule-soft);
+    border-radius: 10px;
+    background: var(--ge-surface);
+    box-shadow: none;
+}
+
+.deadline-overview .deadline-summary-card:last-child { border-right: 1px solid var(--ge-rule-soft); }
+.deadline-overview .deadline-summary-card > i {
+    display: grid;
+    width: 25px;
+    height: 25px;
+    grid-row: 1 / span 2;
+    place-items: center;
+    align-self: center;
+    border-radius: 7px;
+    background: var(--ge-surface-raised);
+    color: var(--ge-muted);
+    font-size: 12px;
+    font-style: normal;
+}
+.deadline-overview .deadline-summary-card > span {
+    align-self: end;
+    color: var(--ge-ink-soft);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+    text-transform: none;
+}
+.deadline-overview .deadline-summary-card > strong {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+    color: var(--ge-ink);
+    font-size: 25px;
+}
+.deadline-overview .deadline-summary-card > small { grid-column: 2; color: var(--ge-muted); font-size: 10px; }
+.deadline-overview .deadline-summary-card--urgent { box-shadow: inset 3px 0 0 var(--ge-danger); }
+.deadline-overview .deadline-summary-card--urgent > strong { color: #ff9b8d; font-size: 28px; }
+.deadline-overview .deadline-summary-card--soon > strong { color: var(--ge-gold); }
+.deadline-overview .deadline-summary-card--later > strong { color: var(--ge-ink-soft); }
+.deadline-overview .deadline-summary-card--undated > strong { color: var(--ge-muted); }
+.deadline-overview .deadline-summary-card:hover,
+.deadline-overview .deadline-summary-card.is-active {
+    border-color: #59514a;
+    background: var(--ge-surface-raised);
+    box-shadow: inset 0 -2px 0 var(--ge-accent);
+}
+.deadline-overview .deadline-summary-card--urgent:hover,
+.deadline-overview .deadline-summary-card--urgent.is-active { box-shadow: inset 3px 0 0 var(--ge-danger), inset 0 -2px 0 var(--ge-accent); }
+
+.deadline-overview .deadline-cost-strip {
+    grid-column: 1 / -1;
+    min-height: 68px;
+    grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr) auto;
+    align-items: center;
+    gap: 12px 22px;
+    padding: 13px 16px;
+    border-color: var(--ge-rule-soft);
+    border-left: 3px solid var(--ge-gold);
+    background: #151719;
+}
+.deadline-overview .deadline-cost-strip:empty { display: none; }
+.deadline-overview .deadline-cost-strip__head { display: grid; gap: 2px; }
+.deadline-overview .deadline-cost-strip__head strong { font-size: 18px; }
+.deadline-overview .deadline-cost-strip__facts { gap: 5px 15px; }
+.deadline-overview .deadline-cost-strip small { max-width: 300px; }
+
+.deadline-runway {
+    display: block;
+    padding: 0;
+    border: 1px solid var(--ge-rule-soft);
+    border-radius: 10px;
+    background: var(--ge-canvas);
+    overflow: hidden;
+}
+
+.deadline-runway__heading {
+    display: flex;
+    min-height: 74px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 14px 18px;
+    list-style: none;
+    cursor: pointer;
+}
+.deadline-runway__heading::-webkit-details-marker { display: none; }
+.deadline-runway__heading:hover { background: var(--ge-surface-soft); }
+.deadline-runway__heading h3 { margin-top: 2px; font-size: 16px; }
+.deadline-runway__summary-copy {
+    display: flex;
+    max-width: 620px;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    color: var(--ge-muted);
+    font-size: 11px;
+    line-height: 1.4;
+    text-align: right;
+}
+.deadline-runway__summary-copy b { color: var(--ge-accent-soft); font-size: 18px; transition: transform 140ms ease; }
+.deadline-runway[open] .deadline-runway__summary-copy b { transform: rotate(180deg); }
+.deadline-runway__track {
+    gap: 12px;
+    padding: 0 18px 18px;
+    border-top: 1px solid var(--ge-rule-soft);
+    padding-top: 18px;
+}
+
+.deadline-catalog {
+    padding: 20px;
+    border: 1px solid var(--ge-rule-soft);
+    border-radius: 12px;
+    background: var(--ge-canvas);
+}
+
+.deadline-catalog__heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 15px;
+}
+.deadline-catalog__heading > div > span {
+    color: var(--ge-accent-soft);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+.deadline-catalog__heading h3 { margin: 3px 0 0; color: var(--ge-ink); font: 620 20px var(--ge-display); }
+.deadline-catalog__heading p { max-width: 520px; margin: 0; color: var(--ge-muted); font-size: 12px; text-align: right; }
+
+.deadline-catalog .deadline-toolbar { margin: 0 0 10px; }
+.deadline-catalog .deadline-filter-chips { align-items: center; margin: 0 0 6px; }
+.deadline-catalog .deadline-results-meta { margin: 0; padding: 5px 2px 12px; }
+
+.deadline-program-list { gap: 10px; }
+.deadline-program-card { border-radius: 9px; }
+.deadline-program-card__main {
+    grid-template-columns: minmax(360px, 1.22fr) minmax(300px, 0.78fr);
+    padding-left: 4px;
+}
+.deadline-program-card__identity,
+.deadline-program-card__next { padding: 18px 20px; }
+.deadline-program-card__identity h3 { font-size: 19px; }
+.deadline-program-card__identity > p { margin-top: 3px; font-size: 13px; }
+.deadline-program-card__identity-head { align-items: flex-start; }
+.deadline-program-card__facts { margin-top: 12px; }
+.deadline-program-card__next { gap: 4px; }
+.deadline-program-card__next time { font-size: clamp(19px, 1.7vw, 25px); }
+.deadline-program-card__next b { min-height: 27px; padding: 5px 8px; }
+.deadline-program-details > summary { min-height: 42px; padding-block: 9px; }
+
+.deadline-priority__countdown button:focus-visible,
+.deadline-runway__heading:focus-visible,
+.deadline-catalog .deadline-search:focus-within,
+.deadline-filter-chip:focus-visible,
+.deadline-sort-chip:focus-visible {
+    outline: 2px solid var(--ge-accent);
+    outline-offset: 2px;
+}
+
+@media (max-width: 980px) {
+    .deadline-overview { grid-template-columns: 1fr; }
+    .deadline-priority { min-height: 176px; }
+    .deadline-overview .deadline-cost-strip { grid-template-columns: 1fr; }
+    .deadline-overview .deadline-cost-strip small { max-width: none; }
+}
+
+@media (max-width: 860px) {
+    .deadline-priority__body { grid-template-columns: 60px minmax(0, 1fr); gap: 12px; }
+    .deadline-priority__date strong { font-size: 40px; }
+    .deadline-priority__countdown { grid-column: 2; grid-template-columns: 1fr auto; align-items: center; justify-items: start; }
+    .deadline-priority__countdown button { justify-self: end; }
+    .deadline-runway__heading { align-items: flex-start; }
+    .deadline-runway__summary-copy { max-width: 45%; text-align: right; }
+    .deadline-catalog { padding: 16px; }
+    .deadline-catalog__heading { align-items: flex-start; flex-direction: column; gap: 5px; }
+    .deadline-catalog__heading p { text-align: left; }
+    .deadline-program-card__main { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    .deadline-overview .deadline-summary-grid { grid-template-columns: 1fr 1fr; }
+    .deadline-overview .deadline-summary-card { min-height: 82px; padding: 10px; }
+    .deadline-overview .deadline-summary-card > i { display: none; }
+    .deadline-overview .deadline-summary-card > span,
+    .deadline-overview .deadline-summary-card > small { grid-column: 1; }
+    .deadline-overview .deadline-summary-card > strong { grid-column: 2; }
+    .deadline-priority { min-height: 0; padding: 17px; }
+    .deadline-priority__body { padding-top: 12px; }
+    .deadline-priority__copy > strong,
+    .deadline-priority__copy > span { white-space: normal; }
+    .deadline-priority__countdown { grid-column: 1 / -1; }
+    .deadline-runway__heading { min-height: 64px; }
+    .deadline-runway__summary-copy > span { display: none; }
+    .deadline-toolbar { grid-template-columns: 1fr auto; }
+    .deadline-favorite-toggle > span:last-child { display: none; }
+    .deadline-sort { width: 100%; margin-left: 0; padding: 8px 0 0; overflow-x: auto; }
+    .deadline-program-card__identity,
+    .deadline-program-card__next { padding: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .deadline-runway__summary-copy b { transition: none; }
+}
+
+/* Detail rail disclosures: a list, not a box inside a box inside a box ------
+   The "accepted backgrounds" and "required documents" disclosures drew a
+   bordered summary, a bordered panel and a bordered pill for every item, with
+   the first pill glued to the summary. They are now a plain row that opens a
+   numbered list separated by hairlines. */
+#detail-drawer .detail-disclosure {
+    margin-top: 14px;
+    border: 0;
+    border-top: 1px solid #2f323a;
+    border-radius: 0;
+    background: transparent;
+    overflow: visible;
+}
+
+#detail-drawer .detail-disclosure summary {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 0 10px;
+    border: 0;
+    background: transparent;
+    color: var(--ui-ink-soft);
+    font-size: 12.5px;
+    font-weight: 650;
+    list-style: none;
+}
+
+#detail-drawer .detail-disclosure summary::-webkit-details-marker { display: none; }
+
+#detail-drawer .detail-disclosure summary::before {
+    content: "›";
+    display: inline-grid;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    place-items: center;
+    border: 1px solid #3b3e47;
+    border-radius: 5px;
+    background: #23252b;
+    color: var(--ui-accent-soft);
+    font-size: 14px;
+    line-height: 1;
+    transition: transform 140ms ease;
+}
+
+#detail-drawer .detail-disclosure summary:hover { color: var(--ui-ink); }
+#detail-drawer .detail-disclosure[open] summary { border: 0; background: transparent; color: var(--ui-ink); }
+#detail-drawer .detail-disclosure[open] summary::before { transform: rotate(90deg); }
+
+#detail-drawer .detail-disclosure > ul,
+#detail-drawer .detail-disclosure > ol {
+    counter-reset: disclosure-item;
+    display: grid;
+    gap: 0;
+    margin: 0;
+    padding: 0 0 4px;
+    list-style: none;
+}
+
+#detail-drawer .detail-disclosure > ul > li,
+#detail-drawer .detail-disclosure > ol > li {
+    counter-increment: disclosure-item;
+    display: grid;
+    grid-template-columns: 26px minmax(0, 1fr) auto;
+    align-items: baseline;
+    gap: 4px 10px;
+    padding: 9px 0;
+    border: 0 !important;
+    border-bottom: 1px solid #25282f !important;
+    border-radius: 0;
+    background: transparent !important;
+    color: var(--ui-ink-soft) !important;
+    font-size: 12.5px;
+    line-height: 1.45;
+}
+
+#detail-drawer .detail-disclosure > ul > li:last-child,
+#detail-drawer .detail-disclosure > ol > li:last-child { border-bottom: 0 !important; }
+
+#detail-drawer .detail-disclosure > ul > li::before,
+#detail-drawer .detail-disclosure > ol > li::before {
+    content: counter(disclosure-item, decimal-leading-zero);
+    color: var(--ui-muted);
+    font-family: var(--ui-display);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+}
+
+#detail-drawer .detail-disclosure > ul > li small,
+#detail-drawer .detail-disclosure > ol > li small {
+    color: var(--ui-muted);
+    font-size: 11px;
+}
+
+/* Section hues ---------------------------------------------------------------
+   Every card in the rail wore the same graphite, so the eye had no way to
+   find "the money card" or "the admission card" without reading each title.
+   Each card now carries the hue of what it is about in its number badge and
+   its top rule: blue for admission and language, violet for time, teal for
+   what you study, gold for money, rose for living risk. The body stays
+   graphite; the hue is a wayfinding mark, not a theme. */
+#detail-drawer .premium-card,
+#detail-drawer .score-impact-card,
+#detail-drawer .evidence-strip {
+    --section-hue: var(--ui-muted);
+}
+
+#detail-drawer .admission-card { --section-hue: var(--ge-blue); }
+#detail-drawer .timeline-card { --section-hue: var(--ui-accent-soft); }
+#detail-drawer .curriculum-card { --section-hue: var(--ge-teal); }
+#detail-drawer .financial-card { --section-hue: var(--ge-gold); }
+#detail-drawer .student-reviews-card,
+#detail-drawer .pros-cons-card { --section-hue: var(--ge-rose); }
+#detail-drawer .sources-card { --section-hue: var(--ge-teal); }
+#detail-drawer .decision-panel { --section-hue: var(--panel-accent); }
+
+#detail-drawer .premium-card {
+    border-top: 2px solid color-mix(in srgb, var(--section-hue) 55%, transparent) !important;
+}
+
+#detail-drawer .premium-icon {
+    border-color: color-mix(in srgb, var(--section-hue) 45%, #464a54);
+    background: color-mix(in srgb, var(--section-hue) 14%, #17191e);
+    color: var(--section-hue);
+}
+
+#detail-drawer .premium-header {
+    border-bottom-color: color-mix(in srgb, var(--section-hue) 22%, #353840);
+}
+
+#detail-drawer .premium-item label,
+#detail-drawer .dept-block label {
+    color: color-mix(in srgb, var(--section-hue) 55%, var(--ui-muted)) !important;
+}

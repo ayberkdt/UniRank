@@ -4399,9 +4399,9 @@ option {
 
 .language-toggle button.active,
 .view-toggle button.active {
-    background: var(--ge-ember-wash) !important;
+    background: var(--ge-accent-wash) !important;
     color: var(--ge-ink) !important;
-    box-shadow: inset 0 0 0 1px var(--ge-ember-deep) !important;
+    box-shadow: inset 0 0 0 1px var(--ge-accent-deep) !important;
 }
 
 .view-toggle,
@@ -6073,7 +6073,7 @@ body.map-fullscreen-active {
     }
 }
 
-/* Application deadline command center */
+/* Application calendar components (the page shell is calendar.css) */
 .deadline-launcher {
     position: relative;
     display: inline-grid;
@@ -6101,7 +6101,6 @@ body.map-fullscreen-active {
 }
 
 .deadline-launcher:focus-visible,
-.deadline-modal-close:focus-visible,
 .deadline-filter-chip:focus-visible,
 .deadline-summary-card:focus-visible,
 .deadline-program-open:focus-visible,
@@ -6110,8 +6109,7 @@ body.map-fullscreen-active {
     outline-offset: 2px;
 }
 
-.deadline-launcher__icon,
-.deadline-modal-heading__icon {
+.deadline-launcher__icon {
     display: grid;
     place-items: center;
     border-radius: 10px;
@@ -6124,8 +6122,7 @@ body.map-fullscreen-active {
     height: 36px;
 }
 
-.deadline-launcher svg,
-.deadline-modal-heading svg {
+.deadline-launcher svg {
     width: 21px;
     height: 21px;
     fill: none;
@@ -6175,121 +6172,6 @@ body.map-fullscreen-active {
     background: rgba(74, 143, 137, 0.14);
     color: #84b9b2;
 }
-
-.deadline-modal-open {
-    overflow: hidden;
-}
-
-.deadline-modal-overlay[hidden] {
-    display: none;
-}
-
-.deadline-modal-overlay {
-    position: fixed;
-    z-index: 2400;
-    inset: 0;
-    display: grid;
-    padding: clamp(10px, 2.2vw, 28px);
-    place-items: center;
-    background: rgba(3, 12, 23, 0.74);
-    backdrop-filter: blur(10px) saturate(1.1);
-}
-
-.deadline-modal-shell {
-    display: grid;
-    width: min(1440px, 100%);
-    max-height: calc(100dvh - clamp(20px, 4.4vw, 56px));
-    grid-template-rows: auto minmax(0, 1fr);
-    overflow: hidden;
-    border: 1px solid rgba(113, 158, 207, 0.32);
-    border-radius: 22px;
-    background:
-        radial-gradient(circle at 85% -15%, rgba(61, 145, 154, 0.18), transparent 35%),
-        linear-gradient(180deg, #0d2136, #091827 58%, #081522);
-    color: #dbe9f6;
-    box-shadow: 0 35px 100px rgba(0, 0, 0, 0.48);
-}
-
-.deadline-modal-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 19px 22px;
-    border-bottom: 1px solid rgba(103, 145, 188, 0.2);
-    background: rgba(10, 27, 44, 0.76);
-}
-
-.deadline-modal-heading {
-    display: flex;
-    min-width: 0;
-    align-items: center;
-    gap: 14px;
-}
-
-.deadline-modal-heading__icon {
-    width: 48px;
-    height: 48px;
-    flex: 0 0 48px;
-}
-
-.deadline-modal-heading__icon svg {
-    width: 25px;
-    height: 25px;
-}
-
-.deadline-modal-kicker {
-    display: block;
-    margin-bottom: 3px;
-    color: #6fcfc1;
-    font-size: 8px;
-    font-weight: 850;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-}
-
-.deadline-modal-heading h2 {
-    margin: 0;
-    color: #f0f7ff;
-    font-size: clamp(20px, 2vw, 28px);
-    letter-spacing: -0.035em;
-}
-
-.deadline-modal-heading p {
-    margin: 4px 0 0;
-    color: #8ea6bd;
-    font-size: 10px;
-}
-
-.deadline-modal-close {
-    display: grid;
-    width: 40px;
-    height: 40px;
-    flex: 0 0 40px;
-    place-items: center;
-    border: 1px solid rgba(115, 151, 190, 0.28);
-    border-radius: 11px;
-    background: rgba(9, 24, 39, 0.74);
-    color: #aabdd0;
-    font-size: 26px;
-    line-height: 1;
-    cursor: pointer;
-}
-
-.deadline-modal-close:hover {
-    border-color: rgba(150, 181, 215, 0.5);
-    background: rgba(34, 56, 80, 0.76);
-    color: #f0f7ff;
-}
-
-.deadline-modal-body {
-    min-height: 0;
-    padding: 17px 20px 24px;
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    scrollbar-color: rgba(109, 150, 190, 0.42) transparent;
-}
-
 .deadline-summary-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -6936,21 +6818,6 @@ body.map-fullscreen-active {
 }
 
 @media (max-width: 720px) {
-    .deadline-modal-overlay { padding: 0; }
-
-    .deadline-modal-shell {
-        width: 100%;
-        max-height: 100dvh;
-        height: 100dvh;
-        border: 0;
-        border-radius: 0;
-    }
-
-    .deadline-modal-header { padding: 13px 14px; }
-    .deadline-modal-heading__icon { width: 39px; height: 39px; flex-basis: 39px; }
-    .deadline-modal-heading p { display: none; }
-    .deadline-modal-body { padding: 12px 11px 22px; }
-
     .deadline-summary-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 7px;

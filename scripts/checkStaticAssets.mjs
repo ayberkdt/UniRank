@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const publicDir = path.join(root, 'public');
-const pages = ['index.html', 'scholarships.html', 'research.html'];
+const pages = ['index.html', 'calendar.html', 'scholarships.html', 'research.html'];
 const failures = [];
 let checkedAssetCount = 0;
 

@@ -77,7 +77,7 @@
         }
     };
 
-    const accents = { GB: "#8fa8e8", US: "#ef8675", EU: "#51c8b3", HU: "#d7c765", IT: "#58b99b", FR: "#7799ef", TR: "#f18046", DE: "#d7c765" };
+    const accents = { GB: "#8fa8e8", US: "#ef8675", EU: "#51c8b3", HU: "#d7c765", IT: "#58b99b", FR: "#7799ef", TR: "#8f7dff", DE: "#d7c765" };
     const state = { catalog: null, query: "", level: "all", status: "all", fit: "all" };
     const today = () => { const date = new Date(); return new Date(date.getFullYear(), date.getMonth(), date.getDate(), 12); };
     const parseDate = (iso) => iso ? new Date(`${iso}T12:00:00`) : null;
@@ -229,7 +229,6 @@
     function bindFilters() {
         const bindings = [["#scholarship-search", "query", "input"], ["#level-filter", "level", "change"], ["#status-filter", "status", "change"], ["#fit-filter", "fit", "change"]];
         bindings.forEach(([selector, key, event]) => $(selector).addEventListener(event, (input) => { state[key] = input.target.value; renderResults(); }));
-        $("#open-main-calendar").addEventListener("click", () => { window.location.href = "index.html?calendar=open"; });
         document.addEventListener("languageChanged", render);
     }
 

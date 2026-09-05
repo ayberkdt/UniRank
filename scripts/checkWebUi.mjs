@@ -4,6 +4,9 @@ import vm from 'node:vm';
 const root = new URL('../', import.meta.url);
 const files = {
   html: new URL('public/index.html', root),
+  calendarHtml: new URL('public/calendar.html', root),
+  calendarCss: new URL('public/calendar.css', root),
+  calendar: new URL('public/calendar.js', root),
   css: new URL('public/style.css', root),
   redesign: new URL('public/redesign.css', root),
   site: new URL('public/site.css', root),
@@ -16,8 +19,11 @@ const files = {
   storage: new URL('public/storage.js', root),
 };
 
-const [html, css, redesignCss, siteCss, profileCss, i18nCode, mapCode, scriptCode, deadlineCode, profileCode, storageCode] = await Promise.all([
+const [html, calendarHtml, calendarCss, calendarCode, css, redesignCss, siteCss, profileCss, i18nCode, mapCode, scriptCode, deadlineCode, profileCode, storageCode] = await Promise.all([
   readFile(files.html, 'utf8'),
+  readFile(files.calendarHtml, 'utf8'),
+  readFile(files.calendarCss, 'utf8'),
+  readFile(files.calendar, 'utf8'),
   readFile(files.css, 'utf8'),
   readFile(files.redesign, 'utf8'),
   readFile(files.site, 'utf8'),
@@ -34,14 +40,27 @@ const failures = [];
 const ids = [...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
 const duplicateIds = ids.filter((id, index) => ids.indexOf(id) !== index);
 if (duplicateIds.length) failures.push(`Duplicate HTML ids: ${[...new Set(duplicateIds)].join(', ')}`);
+const calendarIds = [...calendarHtml.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]);
+const duplicateCalendarIds = calendarIds.filter((id, index) => calendarIds.indexOf(id) !== index);
+if (duplicateCalendarIds.length) failures.push(`Duplicate calendar ids: ${[...new Set(duplicateCalendarIds)].join(', ')}`);
 
 const literalDomRefs = new Set();
-for (const code of [scriptCode, mapCode, deadlineCode, profileCode]) {
+for (const code of [scriptCode, mapCode, profileCode]) {
   for (const match of code.matchAll(/getElementById\(\s*['"]([^'"]+)['"]\s*\)/g)) {
     literalDomRefs.add(match[1]);
   }
 }
 const missingLiteralDomRefs = [...literalDomRefs].filter((id) => !ids.includes(id)).sort();
+const dashboardDomRefs = new Set();
+for (const code of [deadlineCode, calendarCode]) {
+  for (const match of code.matchAll(/getElementById\(\s*['"]([^'"]+)['"]\s*\)/g)) {
+    dashboardDomRefs.add(match[1]);
+  }
+}
+const missingDashboardRefs = [...dashboardDomRefs].filter((id) => !ids.includes(id) && !calendarIds.includes(id)).sort();
+if (missingDashboardRefs.length) {
+  failures.push(`Calendar JavaScript references ids on neither page: ${missingDashboardRefs.join(', ')}`);
+}
 if (missingLiteralDomRefs.length) {
   failures.push(`JavaScript references missing HTML ids: ${missingLiteralDomRefs.join(', ')}`);
 }
@@ -74,15 +93,28 @@ const requiredIds = [
   'detail-drawer',
   'drawer-overlay',
   'deadline-launcher',
-  'deadline-modal',
-  'deadline-summary-grid',
-  'deadline-program-list',
   'kpi-source-coverage',
   'kpi-map-coverage',
   'weight-total',
 ];
 const missingIds = requiredIds.filter((id) => !ids.includes(id));
 if (missingIds.length) failures.push(`Missing UI contract ids: ${missingIds.join(', ')}`);
+const requiredCalendarIds = [
+  'deadline-page',
+  'deadline-priority',
+  'deadline-summary-grid',
+  'deadline-cost-strip',
+  'deadline-runway-track',
+  'deadline-catalog-title',
+  'deadline-filter-chips',
+  'deadline-search-input',
+  'deadline-favorites-only',
+  'deadline-results-meta',
+  'deadline-program-list',
+];
+const missingCalendarIds = requiredCalendarIds.filter((id) => !calendarIds.includes(id));
+if (missingCalendarIds.length) failures.push(`Missing calendar contract ids: ${missingCalendarIds.join(', ')}`);
+if (html.includes('deadline-modal')) failures.push('The programmes page still carries the calendar dialog.');
 if (/value="BSc"|Bachelor \(BSc\)/i.test(html)) {
   failures.push('Undergraduate degree option is exposed in the postgraduate UI.');
 }
@@ -130,13 +162,14 @@ for (const pattern of [
   /\bdata-i18n-aria-label="([^"]+)"/g,
 ]) {
   for (const match of html.matchAll(pattern)) translationKeys.add(match[1]);
+  for (const match of calendarHtml.matchAll(pattern)) translationKeys.add(match[1]);
 }
 for (const key of translationKeys) {
   if (!sandbox.I18N?.en?.[key]) failures.push(`Missing English translation: ${key}`);
   if (!sandbox.I18N?.tr?.[key]) failures.push(`Missing Turkish translation: ${key}`);
 }
 
-const cssWithoutComments = `${css}\n${redesignCss}\n${profileCss}`.replace(/\/\*[\s\S]*?\*\//g, '');
+const cssWithoutComments = `${css}\n${redesignCss}\n${profileCss}\n${calendarCss}`.replace(/\/\*[\s\S]*?\*\//g, '');
 const openingBraces = (cssWithoutComments.match(/{/g) || []).length;
 const closingBraces = (cssWithoutComments.match(/}/g) || []).length;
 if (openingBraces !== closingBraces) failures.push(`CSS brace mismatch: ${openingBraces} opening / ${closingBraces} closing`);
@@ -151,9 +184,16 @@ for (const contract of [
   ['shared map score thresholds', [6.5, 5.5, 4.5].every((value) => mapCode.includes(`score >= ${value}`) && scriptCode.includes(`value >= ${value}`))],
   ['list/map aria state', scriptCode.includes("setAttribute('aria-pressed'")],
   ['drawer aria state', scriptCode.includes("setAttribute('aria-hidden'")],
-  ['deadline dashboard', html.includes('deadlineDashboard.js') && deadlineCode.includes('collectDeadlineEvents') && css.includes('.deadline-modal-shell')],
+  // The calendar is a page of its own. The programmes page keeps only the
+  // launcher, whose badge the same module still feeds.
+  ['deadline dashboard page', calendarHtml.includes('deadlineDashboard.js') && calendarHtml.includes('id="deadline-page"') && html.includes('deadlineDashboard.js') && html.includes('href="calendar.html"') && deadlineCode.includes('collectDeadlineEvents') && deadlineCode.includes('pageMode') && calendarCss.includes('.deadline-page') && !css.includes('.deadline-modal-shell') && !redesignCss.includes('.deadline-modal-')],
+  ['deadline action hierarchy', deadlineCode.includes('renderPriority') && calendarHtml.includes('class="deadline-overview"') && calendarHtml.includes('class="deadline-runway"') && redesignCss.includes('.deadline-priority__body') && redesignCss.includes('.deadline-catalog')],
+  ['requirement summary at the top of the rail', html.includes('requirementSummary.js') && scriptCode.includes('uniRequirementSummary') && /decisionHeroHTML \+\s*requirementSummaryHTML \+/.test(scriptCode)],
+  ['runway lists each university once per month', deadlineCode.includes('byUniversity') && deadlineCode.includes('runwayUniversities')],
+  ['calendar page loads its own data', calendarCode.includes("fetch('/api/universities')") && calendarCode.includes('unirank:recordsLoaded') && calendarCode.includes('refreshUniRankData') && calendarHtml.includes('countryVisual.js') && html.includes('countryVisual.js')],
   ['deadline source integrity', deadlineCode.includes('VALID_SOURCE_STATUSES') && deadlineCode.includes('documentsVerified')],
   ['deadline automatic refresh', deadlineCode.includes('AUTO_REFRESH_MS') && deadlineCode.includes('visibilitychange') && deadlineCode.includes('scheduleMidnightRefresh') && scriptCode.includes('refreshUniRankData') && css.includes('.deadline-auto-sync')],
+  ['no orange accent left', !/#e8804a|#f18046|#ef7f45|rgba\(232,\s*128,\s*74|rgba\(241,\s*128,\s*70|rgba\(239,\s*127,\s*69/i.test(`${css}${redesignCss}${siteCss}${profileCss}${calendarCss}${scriptCode}`)],
   ['Sunumatik editorial redesign', html.includes('redesign.css') && redesignCss.includes('.deadline-program-card__next time')],
   // Tokens live in the shared foundation now, not per page. One palette, one
   // header, loaded by index, research and scholarships alike.
@@ -168,8 +208,8 @@ for (const contract of [
   // Raw national colours are picked for flags, not for small text on a dark
   // card; they measured 2.5-4.0:1 until they were mixed toward the ink.
   ['country accents are mixed before use as text', css.includes('color-mix(in oklab, var(--country-accent)') && redesignCss.includes('color-mix(in oklab, var(--deadline-country-accent)')],
-  ['shared Graphite Ember foundation', html.includes('site.css') && siteCss.includes('--ge-ember') && siteCss.includes('--ui-ember: var(--ge-ember)') && siteCss.includes('--orange: var(--ge-ember)') && siteCss.includes('Space Grotesk') && siteCss.includes('.site-bar__nav') && !redesignCss.includes('--ui-canvas: #')],
-  ['Sunumatik Graphite Ember rails', redesignCss.includes('--ui-signal: var(--ge-signal)') && redesignCss.includes('#detail-drawer.drawer.country-themed') && redesignCss.includes('.country-picker-popover')],
+  ['shared Graphite Violet foundation', html.includes('site.css') && siteCss.includes('--ge-accent') && siteCss.includes('--ui-accent: var(--ge-accent)') && siteCss.includes('--accent: var(--ge-accent)') && siteCss.includes('Space Grotesk') && siteCss.includes('.site-bar__nav') && !redesignCss.includes('--ui-canvas: #')],
+  ['Sunumatik Graphite Violet rails', redesignCss.includes('--ui-signal: var(--ge-signal)') && redesignCss.includes('#detail-drawer.drawer.country-themed') && redesignCss.includes('.country-picker-popover')],
   ['pixel-aligned premium filter rail', redesignCss.includes('--ui-filter-rail-inset: 20px') && redesignCss.includes('.sidebar__scroll > .filter-card') && redesignCss.includes('scrollbar-width: none')],
   ['stable profile CTA structure', html.includes('class="profile-cta__arrow"') && scriptCode.includes("querySelector('.profile-cta__copy strong')") && !scriptCode.includes('useProfileBtn.innerHTML')],
   ['structured workspace header', html.includes('class="header-destinations"') && html.includes('class="header-accountbar"') && html.includes('class="account-profile-button"') && !html.includes('class="user-avatar"')],

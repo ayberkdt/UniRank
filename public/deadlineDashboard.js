@@ -36,7 +36,10 @@
       costLine: '{total} for {count} programme(s) that charge', costUnverified: '{count} with no verified fee',
       costPayments: 'that is {count} separate payments, because some cover several programmes',
       costFree: '{count} charge nothing', costSaving: '{amount} of it disappears inside the early windows',
-      costHint: 'Counted once where one payment covers several programmes, and never mixed into a yearly total.'
+      costHint: 'Counted once where one payment covers several programmes, and never mixed into a yearly total.',
+      priorityKicker: 'Next verified action', priorityOpen: 'Open program', priorityEmpty: 'No dated action is available yet',
+      priorityEmptyHint: 'Use “Verify date” to see programs waiting for an official target-cycle date.',
+      runwayUniversities: '{count} universities', programmesCount: '{count} programmes', andMore: '+{count} more'
     },
     tr: {
       urgent: 'Acil', soon: 'Yaklaşıyor', later: 'Daha sonra', verify: 'Tarihi doğrula', closed: 'Kapanan dönem', all: 'Tümü', upcoming: 'Tüm yaklaşanlar',
@@ -64,7 +67,10 @@
       costLine: 'Ücret alan {count} program için {total}', costUnverified: '{count} tanesinin ücreti doğrulanmadı',
       costPayments: 'bu, {count} ayrı ödeme demek; bazıları birden çok programı kapsıyor',
       costFree: '{count} tanesi ücret almıyor', costSaving: 'Bunun {amount} kadarı erken pencerelerin içinde eriyor',
-      costHint: 'Tek ödeme birden çok programı kapsıyorsa bir kez sayılır ve hiçbir zaman yıllık toplama karıştırılmaz.'
+      costHint: 'Tek ödeme birden çok programı kapsıyorsa bir kez sayılır ve hiçbir zaman yıllık toplama karıştırılmaz.',
+      priorityKicker: 'Sıradaki doğrulanmış adım', priorityOpen: 'Programı aç', priorityEmpty: 'Henüz tarihli bir adım yok',
+      priorityEmptyHint: 'Resmî hedef dönem tarihini bekleyen programları görmek için “Tarihi doğrula” filtresini kullan.',
+      runwayUniversities: '{count} üniversite', programmesCount: '{count} program', andMore: '+{count} aşama daha'
     }
   };
 
@@ -626,12 +632,13 @@
       ['later', '↗', tr('later'), counts.later, tr('laterHint')],
       ['undated', '?', tr('verify'), counts.undated + counts.missing, tr('verifyHint')]
     ];
-    elements.summary.innerHTML = cards.map(([filter, icon, label, count, hint]) => `
+    if (elements.summary) elements.summary.innerHTML = cards.map(([filter, icon, label, count, hint]) => `
       <button class="deadline-summary-card deadline-summary-card--${filter}${state.filter === filter ? ' is-active' : ''}" type="button" data-deadline-filter="${filter}">
         <i aria-hidden="true">${escapeHtml(icon)}</i><span>${escapeHtml(label)}</span><strong>${count}</strong><small>${escapeHtml(hint)}</small>
       </button>`).join('');
 
     const upcoming = counts.urgent + counts.soon + counts.later;
+    if (!elements.badge || !elements.launcherSummary) return;
     elements.badge.textContent = String(counts.urgent);
     elements.badge.classList.toggle('is-empty', counts.urgent === 0);
     elements.badge.setAttribute('aria-label', `${counts.urgent} ${tr('urgent').toLowerCase()}`);
@@ -640,7 +647,28 @@
       : tr('noUrgentLauncher', { count: upcoming });
   }
 
+  function renderPriority() {
+    if (!elements.priority) return;
+    const model = state.models
+      .filter(item => item.next?.exact && !item.next.closed)
+      .sort((left, right) => left.next.datePart.date - right.next.datePart.date)[0];
+    if (!model) {
+      elements.priority.innerHTML = `<div class="deadline-priority__empty"><span aria-hidden="true">◎</span><div><strong>${escapeHtml(tr('priorityEmpty'))}</strong><small>${escapeHtml(tr('priorityEmptyHint'))}</small></div></div>`;
+      return;
+    }
+    const event = model.next;
+    const location = [model.city, model.country].filter(Boolean).join(' · ');
+    elements.priority.innerHTML = `
+      <div class="deadline-priority__topline"><span>${escapeHtml(tr('priorityKicker'))}</span><b class="deadline-status-pill deadline-status-pill--${escapeHtml(model.status)}">${escapeHtml(statusLabel(model.status))}</b></div>
+      <div class="deadline-priority__body">
+        <div class="deadline-priority__date"><strong>${String(event.datePart.day).padStart(2, '0')}</strong><span>${escapeHtml(new Intl.DateTimeFormat(lang() === 'tr' ? 'tr-TR' : 'en-GB', { month: 'short', year: 'numeric' }).format(event.datePart.date))}</span></div>
+        <div class="deadline-priority__copy"><strong>${escapeHtml(model.university)}</strong><span>${escapeHtml(model.program)}</span><small>${escapeHtml(eventDisplayLabel(event))}${location ? ` · ${escapeHtml(location)}` : ''}</small></div>
+        <div class="deadline-priority__countdown"><b>${escapeHtml(remainingLabel(event.days))}</b><button type="button" data-open-deadline-program="${model.index}">${escapeHtml(tr('priorityOpen'))}<span aria-hidden="true">→</span></button></div>
+      </div>`;
+  }
+
   function renderFilters() {
+    if (!elements.filters) return;
     const filters = [
       ['all', tr('all')], ['upcoming', tr('upcoming')], ['urgent', tr('urgent')], ['soon', tr('soon')],
       ['later', tr('later')], ['undated', tr('verify')], ['closed', tr('closed')]
@@ -709,23 +737,54 @@
     elements.runway.innerHTML = [...grouped.values()].map(items => {
       const month = new Intl.DateTimeFormat(lang() === 'tr' ? 'tr-TR' : 'en-GB', { month: 'long', year: 'numeric' }).format(items[0].event.datePart.date);
       const season = MONTH_SEASONS[items[0].event.datePart.month - 1];
-      // Every milestone in the month is listed.  The header used to count all
-      // of them while the list showed four, so January 2027 announced eleven
-      // dates and printed four - the seven it dropped were exactly the ones a
-      // reader scanning for a clash would have needed.
-      const rows = items.map(({ model, event }) => {
-        const admittedOnly = isAdmittedOnlyEvent(event);
-        const fee = model.fee && window.uniApplicationFee && model.fee.status === 'published'
-          ? window.uniApplicationFee.headline(model.fee).split(' · ')[0]
+      // One row per university.  Stanford used to appear three times in
+      // December - application round, document completion, fellowship - all
+      // due the same day, which read as three universities rather than one
+      // university with three things due.  Every milestone is still listed,
+      // now as the steps of that university's row.
+      const byUniversity = new Map();
+      items.forEach(item => {
+        const key = item.model.university;
+        if (!byUniversity.has(key)) byUniversity.set(key, []);
+        byUniversity.get(key).push(item);
+      });
+      const rows = [...byUniversity.values()].map(group => {
+        const head = group[0];
+        const programmes = new Set(group.map(item => item.model.id)).size;
+        const allAdmittedOnly = group.every(({ event }) => isAdmittedOnlyEvent(event));
+        const fee = head.model.fee && window.uniApplicationFee && head.model.fee.status === 'published'
+          ? window.uniApplicationFee.headline(head.model.fee).split(' · ')[0]
           : '';
-        const urgency = event.days <= 7 ? ' is-due-now' : event.days <= 30 ? ' is-due-soon' : '';
-        return `<li class="${admittedOnly ? 'is-offer-holder' : ''}${urgency}">
-          <span class="deadline-runway-date"><strong>${String(event.datePart.day).padStart(2, '0')}</strong><small>${escapeHtml(remainingLabel(event.days))}</small></span>
-          <span class="deadline-runway-body"><b>${escapeHtml(model.university)}</b><small>${escapeHtml(eventDisplayLabel(event))}${admittedOnly ? ` · ${escapeHtml(tr('forOfferHolders'))}` : ''}</small></span>
+        const urgency = head.event.days <= 7 ? ' is-due-now' : head.event.days <= 30 ? ' is-due-soon' : '';
+        // One label may carry several dates ("Application round 2" opens on
+        // the 1st and closes on the 15th); those collapse to a range.
+        const byLabel = new Map();
+        group.forEach(({ event }) => {
+          const label = eventDisplayLabel(event);
+          if (!byLabel.has(label)) byLabel.set(label, new Set());
+          byLabel.get(label).add(String(event.datePart.day).padStart(2, '0'));
+        });
+        const headDay = String(head.event.datePart.day).padStart(2, '0');
+        const steps = [...byLabel.entries()].map(([label, days]) => {
+          const list = [...days].sort();
+          if (list.length === 1) return list[0] === headDay ? label : `${list[0]} · ${label}`;
+          return `${label} · ${list[0]}–${list[list.length - 1]}`;
+        });
+        const shown = steps.slice(0, 3);
+        const detail = [
+          shown.join(' · '),
+          steps.length > shown.length ? tr('andMore', { count: steps.length - shown.length }) : '',
+          programmes > 1 ? tr('programmesCount', { count: programmes }) : '',
+          allAdmittedOnly ? tr('forOfferHolders') : ''
+        ].filter(Boolean).join(' · ');
+        return `<li class="${allAdmittedOnly ? 'is-offer-holder' : ''}${urgency}">
+          <span class="deadline-runway-date"><strong>${String(head.event.datePart.day).padStart(2, '0')}</strong><small>${escapeHtml(remainingLabel(head.event.days))}</small></span>
+          <span class="deadline-runway-body"><b>${escapeHtml(head.model.university)}</b><small>${escapeHtml(detail)}</small></span>
           ${fee ? `<span class="deadline-runway-fee">${escapeHtml(fee)}</span>` : ''}
         </li>`;
       }).join('');
-      return `<article class="deadline-runway-month" data-season="${season}"><header><span>${escapeHtml(month)}</span><b>${escapeHtml(tr('runwayEvents', { count: items.length }))}</b></header><ol>${rows}</ol></article>`;
+      const headerCount = `${tr('runwayUniversities', { count: byUniversity.size })} · ${tr('runwayEvents', { count: items.length })}`;
+      return `<article class="deadline-runway-month" data-season="${season}"><header><span>${escapeHtml(month)}</span><b>${escapeHtml(headerCount)}</b></header><ol>${rows}</ol></article>`;
     }).join('');
   }
 
@@ -800,8 +859,6 @@
         ? tr('referenceWarning', { cycle: model.referenceAcademicYear })
         : (model.cycle.key === 'awaiting' ? tr('exactDateMissing') : (model.status === 'closed' ? tr('closed') : tr('verify')));
     const location = [model.city, model.country].filter(Boolean).join(' · ') || '—';
-    const previewDocuments = model.documents.slice(0, 3);
-    const extraDocuments = Math.max(0, model.documents.length - previewDocuments.length);
     const futureEvents = model.events.filter(event => !event.closed);
     const pastEvents = model.events.filter(event => event.closed);
     const timelineEvents = [...futureEvents, ...pastEvents];
@@ -844,11 +901,6 @@
           ${model.admittedOnlyAhead ? `<small class="deadline-admitted-only">${escapeHtml(tr('admittedOnly'))}</small>` : ''}
           ${model.upcomingEvents.length > 1 ? `<small>+${model.upcomingEvents.length - 1} ${escapeHtml(lang() === 'tr' ? 'yaklaşan aşama' : 'upcoming milestone(s)')}</small>` : ''}
         </div>
-        <div class="deadline-program-card__documents">
-          <span class="deadline-section-label">${escapeHtml(tr('documents'))}</span>
-          ${previewDocuments.length ? `<ul>${previewDocuments.map((document, index) => `<li><span class="deadline-document-index" aria-hidden="true">${String(index + 1).padStart(2, '0')}</span><span>${escapeHtml(document)}</span></li>`).join('')}</ul>` : `<p>${escapeHtml(tr('documentsUnknown'))}</p>`}
-          ${extraDocuments ? `<small>+${extraDocuments} ${escapeHtml(lang() === 'tr' ? 'belge daha' : 'more document(s)')}</small>` : ''}
-        </div>
       </div>
       <details class="deadline-program-details">
         <summary><span>${escapeHtml(tr('expand'))}</span><span aria-hidden="true">⌄</span></summary>
@@ -889,6 +941,7 @@
   }
 
   function renderList() {
+    if (!elements.list || !elements.meta) return;
     const models = filteredModels();
     elements.meta.innerHTML = `<span>${escapeHtml(tr('showing', { shown: models.length, total: state.models.length }))}</span><span>${escapeHtml(tr('currentFilters'))}</span>${syncStatusHtml()}`;
     if (!models.length) {
@@ -900,6 +953,7 @@
   }
 
   function render() {
+    renderPriority();
     renderSummary();
     renderRunway();
     renderFilters();
@@ -920,26 +974,29 @@
     renderCost();
   }
 
-  function modalIsOpen() {
-    return Boolean(elements.modal && !elements.modal.hidden);
+  // The dashboard lives on calendar.html.  The programmes page only carries
+  // the launcher in its header, whose badge still counts urgent deadlines, so
+  // the module runs in one of two modes: the full page, or badge only.
+  function pageMode() {
+    return Boolean(elements.page);
+  }
+
+  function renderAll() {
+    if (pageMode()) render();
+    else renderSummary();
   }
 
   function refreshCountdowns() {
     if (!state.records.length && Array.isArray(window.uniRankRecords)) state.records = window.uniRankRecords;
     rebuildModels();
-    renderSummary();
-    if (modalIsOpen()) {
-      renderRunway();
-      renderList();
-      renderCost();
-    }
+    renderAll();
   }
 
   async function requestDataRefresh() {
     if (state.syncing || document.hidden || typeof window.refreshUniRankData !== 'function') return false;
     state.syncing = true;
     state.syncFailed = false;
-    if (modalIsOpen()) renderList();
+    if (pageMode()) renderList();
     try {
       const refreshed = await window.refreshUniRankData();
       state.syncFailed = !refreshed;
@@ -950,7 +1007,7 @@
       return false;
     } finally {
       state.syncing = false;
-      if (modalIsOpen()) renderList();
+      if (pageMode()) renderList();
     }
   }
 
@@ -969,53 +1026,22 @@
 
   // The site bar stays visible above this modal, so its active mark has to tell
   // the truth: while the calendar is open, the calendar is where you are.
-  function markNavForCalendar(isOpen) {
-    const nav = document.querySelector('.site-bar__nav');
-    if (!nav) return;
-    const calendar = nav.querySelector('[data-open-calendar], [data-copy="calendar"], [data-i18n="deadline_calendar"]');
-    if (!calendar) return;
-    nav.querySelectorAll('.is-active, [aria-current="page"]').forEach(item => {
-      if (item === calendar) return;
-      if (isOpen) {
-        item.dataset.pageActive = 'true';
-        item.classList.remove('is-active');
-        item.removeAttribute('aria-current');
-      }
-    });
-    if (isOpen) {
-      calendar.classList.add('is-active');
-    } else {
-      calendar.classList.remove('is-active');
-      nav.querySelectorAll('[data-page-active="true"]').forEach(item => {
-        item.classList.add('is-active');
-        item.setAttribute('aria-current', 'page');
-        delete item.dataset.pageActive;
-      });
-    }
-  }
-
   function open() {
-    state.lastFocus = document.activeElement;
+    if (!pageMode()) {
+      window.location.href = 'calendar.html';
+      return;
+    }
     state.records = Array.isArray(window.uniRankRecords) ? window.uniRankRecords : state.records;
     rebuildModels();
     render();
-    elements.modal.hidden = false;
-    elements.modal.setAttribute('aria-hidden', 'false');
-    document.body.classList.add('deadline-modal-open');
-    markNavForCalendar(true);
-    requestAnimationFrame(() => elements.close.focus());
     if (dataIsStale()) requestDataRefresh();
   }
 
-  function close() {
-    elements.modal.hidden = true;
-    elements.modal.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('deadline-modal-open');
-    markNavForCalendar(false);
-    if (state.lastFocus instanceof HTMLElement) state.lastFocus.focus();
-  }
+  // Kept for callers that still expect a dialog API; on a page there is
+  // nothing to close.
+  function close() {}
 
-  function handleModalClick(event) {
+  function handlePageClick(event) {
     const sortButton = event.target.closest('[data-deadline-sort]');
     if (sortButton) {
       setSort(sortButton.dataset.deadlineSort);
@@ -1029,33 +1055,17 @@
     const openButton = event.target.closest('[data-open-deadline-program]');
     if (openButton) {
       const model = state.models.find(item => item.index === Number(openButton.dataset.openDeadlineProgram));
-      close();
-      if (model && typeof window.openDrawer === 'function') setTimeout(() => window.openDrawer(model.record), 60);
-    }
-  }
-
-  function trapFocus(event) {
-    if (event.key !== 'Tab' || elements.modal.hidden) return;
-    const focusable = [...elements.modal.querySelectorAll('button:not([disabled]), a[href], input:not([disabled]), summary')].filter(element => element.offsetParent !== null);
-    if (!focusable.length) return;
-    const first = focusable[0];
-    const last = focusable[focusable.length - 1];
-    if (event.shiftKey && document.activeElement === first) {
-      event.preventDefault();
-      last.focus();
-    } else if (!event.shiftKey && document.activeElement === last) {
-      event.preventDefault();
-      first.focus();
+      if (model && typeof window.openDrawer === 'function') window.openDrawer(model.record);
     }
   }
 
   function setup() {
-    elements.modal = document.getElementById('deadline-modal');
+    elements.page = document.getElementById('deadline-page');
     elements.launcher = document.getElementById('deadline-launcher');
     elements.launcherSummary = document.getElementById('deadline-launcher-summary');
     elements.badge = document.getElementById('deadline-launcher-badge');
-    elements.close = document.getElementById('deadline-modal-close');
     elements.summary = document.getElementById('deadline-summary-grid');
+    elements.priority = document.getElementById('deadline-priority');
     elements.runway = document.getElementById('deadline-runway-track');
     elements.cost = document.getElementById('deadline-cost-strip');
     elements.filters = document.getElementById('deadline-filter-chips');
@@ -1063,52 +1073,38 @@
     elements.favorites = document.getElementById('deadline-favorites-only');
     elements.meta = document.getElementById('deadline-results-meta');
     elements.list = document.getElementById('deadline-program-list');
-    if (!elements.modal || !elements.launcher) return;
+    if (!elements.page && !elements.launcher) return;
 
-    elements.launcher.addEventListener('click', open);
-    // The shared site bar carries its own calendar entry on this page.
-    document.querySelectorAll('[data-open-calendar]').forEach(button => {
-      button.addEventListener('click', open);
-    });
-    elements.close.addEventListener('click', close);
-    elements.modal.addEventListener('click', event => {
-      if (event.target === elements.modal) close();
-      else handleModalClick(event);
-    });
-    elements.search.addEventListener('input', event => {
-      state.query = event.target.value;
-      renderList();
-      renderCost();
-    });
-    elements.favorites.addEventListener('change', event => {
-      state.favoritesOnly = event.target.checked;
-      renderList();
-      renderCost();
-    });
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && !elements.modal.hidden) {
-        event.preventDefault();
-        close();
-      } else {
-        trapFocus(event);
-      }
-    });
+    // Links from before the calendar had its own page.
+    if (!elements.page && new URLSearchParams(window.location.search).get('calendar') === 'open') {
+      window.location.replace('calendar.html');
+      return;
+    }
+
+    if (elements.page) {
+      elements.page.addEventListener('click', handlePageClick);
+      elements.search?.addEventListener('input', event => {
+        state.query = event.target.value;
+        renderList();
+        renderCost();
+      });
+      elements.favorites?.addEventListener('change', event => {
+        state.favoritesOnly = event.target.checked;
+        renderList();
+        renderCost();
+      });
+    }
     window.addEventListener('unirank:recordsLoaded', event => {
       state.records = Array.isArray(event.detail?.records) ? event.detail.records : [];
       state.lastSyncedAt = new Date(event.detail?.refreshedAt || Date.now());
       state.syncFailed = false;
       rebuildModels();
-      renderSummary();
-      if (modalIsOpen()) {
-        renderRunway();
-        renderList();
-        renderCost();
-      }
+      renderAll();
     });
     document.addEventListener('languageChanged', () => {
       if (!state.records.length && Array.isArray(window.uniRankRecords)) state.records = window.uniRankRecords;
       rebuildModels();
-      render();
+      renderAll();
     });
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) return;
@@ -1126,11 +1122,7 @@
     if (Array.isArray(window.uniRankRecords)) {
       state.records = window.uniRankRecords;
       rebuildModels();
-      renderSummary();
-    }
-
-    if (new URLSearchParams(window.location.search).get('calendar') === 'open') {
-      window.requestAnimationFrame(open);
+      renderAll();
     }
   }
 

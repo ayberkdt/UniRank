@@ -4,15 +4,15 @@
    step with the rest of the drawer. */
 
 .decision-panel {
-  --panel-accent: var(--ui-ember);
+  --panel-accent: var(--ui-accent);
   border-left: 2px solid color-mix(in srgb, var(--panel-accent) 55%, transparent);
 }
 
-.decision-panel--countdown { --panel-accent: var(--ui-ember); }
+.decision-panel--countdown { --panel-accent: var(--ui-accent); }
 .decision-panel--match { --panel-accent: var(--ui-blue); }
 .decision-panel--units { --panel-accent: var(--ui-sage); }
 .decision-panel--faculty { --panel-accent: var(--ui-gold); }
-.decision-panel--playbook { --panel-accent: var(--ui-ember-soft); }
+.decision-panel--playbook { --panel-accent: var(--ui-accent-soft); }
 .decision-panel--housing { --panel-accent: var(--ui-danger); }
 .decision-panel--cost { --panel-accent: var(--ui-gold); }
 
@@ -118,7 +118,7 @@
 }
 
 .countdown__figure--open { border-color: color-mix(in srgb, var(--ui-sage) 45%, transparent); }
-.countdown__figure--urgent { border-color: color-mix(in srgb, var(--ui-ember) 60%, transparent); }
+.countdown__figure--urgent { border-color: color-mix(in srgb, var(--ui-accent) 60%, transparent); }
 .countdown__figure--past,
 .countdown__figure--muted { opacity: 0.65; }
 
@@ -130,7 +130,7 @@
   font-variant-numeric: tabular-nums;
 }
 
-.countdown__figure--urgent .countdown__value { color: var(--ui-ember); }
+.countdown__figure--urgent .countdown__value { color: var(--ui-accent); }
 .countdown__figure--open .countdown__value { color: var(--ui-sage); }
 
 .countdown__unit {
@@ -160,7 +160,7 @@
 }
 
 .deadline-chip--open { color: var(--ui-sage); border-color: color-mix(in srgb, var(--ui-sage) 45%, transparent); background: color-mix(in srgb, var(--ui-sage) 12%, transparent); }
-.deadline-chip--closing_soon { color: var(--ui-ember); border-color: color-mix(in srgb, var(--ui-ember) 55%, transparent); background: color-mix(in srgb, var(--ui-ember) 14%, transparent); }
+.deadline-chip--closing_soon { color: var(--ui-accent); border-color: color-mix(in srgb, var(--ui-accent) 55%, transparent); background: color-mix(in srgb, var(--ui-accent) 14%, transparent); }
 .deadline-chip--closed { color: var(--ui-muted); border-color: var(--ui-rule); background: var(--ui-surface-soft); }
 .deadline-chip--not_published { color: var(--ui-muted); border-color: var(--ui-rule); background: transparent; }
 
@@ -367,7 +367,7 @@
   border: 1px solid var(--ui-rule-soft);
 }
 
-.playbook-step--required { border-left: 2px solid color-mix(in srgb, var(--ui-ember) 65%, transparent); }
+.playbook-step--required { border-left: 2px solid color-mix(in srgb, var(--ui-accent) 65%, transparent); }
 
 .playbook-step__order {
   flex-shrink: 0;
@@ -378,7 +378,7 @@
   align-items: center;
   justify-content: center;
   background: var(--ui-surface-raised);
-  color: var(--ui-ember);
+  color: var(--ui-accent);
   font-size: 0.78rem;
   font-variant-numeric: tabular-nums;
 }
@@ -396,7 +396,7 @@
 }
 
 .playbook-chip--timing { color: var(--ui-blue); }
-.playbook-chip--required { color: var(--ui-ember); }
+.playbook-chip--required { color: var(--ui-accent); }
 
 .playbook-docs { margin-top: 0.55rem; }
 .playbook-docs label { display: block; font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ui-muted); margin-bottom: 0.25rem; }
@@ -418,7 +418,7 @@
 
 .housing-level--low { color: var(--ui-sage); border-color: color-mix(in srgb, var(--ui-sage) 50%, transparent); background: color-mix(in srgb, var(--ui-sage) 12%, transparent); }
 .housing-level--medium { color: var(--ui-gold); border-color: color-mix(in srgb, var(--ui-gold) 50%, transparent); background: color-mix(in srgb, var(--ui-gold) 10%, transparent); }
-.housing-level--high { color: var(--ui-ember); border-color: color-mix(in srgb, var(--ui-ember) 55%, transparent); background: color-mix(in srgb, var(--ui-ember) 12%, transparent); }
+.housing-level--high { color: var(--ui-accent); border-color: color-mix(in srgb, var(--ui-accent) 55%, transparent); background: color-mix(in srgb, var(--ui-accent) 12%, transparent); }
 .housing-level--very_high { color: var(--ui-danger); border-color: color-mix(in srgb, var(--ui-danger) 55%, transparent); background: color-mix(in srgb, var(--ui-danger) 14%, transparent); }
 .housing-level--unknown { color: var(--ui-muted); }
 
@@ -426,7 +426,7 @@
 .housing-meter__fill { height: 100%; border-radius: 3px; background: var(--ui-muted); }
 .housing-meter__fill--low { background: var(--ui-sage); }
 .housing-meter__fill--medium { background: var(--ui-gold); }
-.housing-meter__fill--high { background: var(--ui-ember); }
+.housing-meter__fill--high { background: var(--ui-accent); }
 .housing-meter__fill--very_high { background: var(--ui-danger); }
 
 .housing-score { font-family: var(--ui-display); font-size: 1.1rem; color: var(--ui-ink); font-variant-numeric: tabular-nums; }
@@ -446,7 +446,7 @@
 
 .housing-dimension--unknown { opacity: 0.55; }
 .housing-dimension__head { display: flex; gap: 0.75rem; justify-content: space-between; align-items: flex-start; font-size: 0.82rem; color: var(--ui-ink-soft); line-height: 1.5; }
-.housing-dimension__points { flex-shrink: 0; font-variant-numeric: tabular-nums; color: var(--ui-ember); }
+.housing-dimension__points { flex-shrink: 0; font-variant-numeric: tabular-nums; color: var(--ui-accent); }
 .housing-dimension__value { margin: 0.35rem 0 0; font-size: 0.78rem; color: var(--ui-muted); }
 
 .housing-quote {
@@ -510,8 +510,8 @@
 /* ------------------------------------------------------- card countdown chip */
 
 .program-card__meta-countdown {
-  color: var(--ui-ember);
-  border: 1px solid color-mix(in srgb, var(--ui-ember) 45%, transparent);
+  color: var(--ui-accent);
+  border: 1px solid color-mix(in srgb, var(--ui-accent) 45%, transparent);
   border-radius: 999px;
   padding: 0.05rem 0.5rem;
 }
@@ -657,9 +657,9 @@
 .visa-callout {
     margin-top: 10px;
     padding: 10px 12px;
-    border-left: 3px solid var(--ge-ember);
+    border-left: 3px solid var(--ge-accent);
     border-radius: 0 7px 7px 0;
-    background: var(--ge-ember-wash);
+    background: var(--ge-accent-wash);
     color: var(--ui-ink-soft);
     font-size: 12.5px;
     line-height: 1.5;
@@ -668,7 +668,7 @@
 .visa-callout > span {
     display: block;
     margin-bottom: 3px;
-    color: var(--ge-ember-soft);
+    color: var(--ge-accent-soft);
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -697,7 +697,7 @@
 }
 
 .visa-contact a {
-    color: var(--ge-ember-soft);
+    color: var(--ge-accent-soft);
     font-size: 12px;
 }
 
@@ -897,4 +897,101 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     white-space: nowrap;
+}
+
+/* ------------------------------------------------- requirement summary
+   Tokens under the drawer title: the admission facts a reader checks before
+   anything else.  Each hue means one thing - blue for language, violet for
+   tests and interviews, teal for letters and "nothing to pay", gold for GPA
+   floors and fees, rose for a route that is closed - so a row of tokens can
+   be read without reading the words. */
+
+.requirement-summary {
+  padding: 15px 17px 13px;
+  border: 1px solid var(--ui-rule-soft);
+  border-left: 2px solid var(--ui-accent);
+  border-radius: 9px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--ui-accent) 9%, #1d1f24), #191b20);
+}
+
+.requirement-summary__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 4px 12px;
+  margin-bottom: 11px;
+}
+
+.requirement-summary__eyebrow {
+  color: var(--ui-accent-soft);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.requirement-summary__head strong {
+  color: var(--ui-ink);
+  font-size: 13.5px;
+  font-weight: 650;
+}
+
+.req-tokens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.req-token {
+  --token-hue: var(--ui-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 32px;
+  padding: 5px 11px 5px 9px;
+  border: 1px solid color-mix(in srgb, var(--token-hue) 42%, transparent);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--token-hue) 13%, transparent);
+  color: var(--ui-ink);
+  font-size: 13px;
+  line-height: 1.2;
+  cursor: default;
+}
+
+/* No text-transform: under lang="tr" an uppercase "iBT" becomes "İBT". */
+.req-token__kind {
+  color: var(--token-hue);
+  font-size: 11px;
+  font-weight: 720;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.req-token strong {
+  font-weight: 640;
+  white-space: nowrap;
+}
+
+.req-token--blue { --token-hue: var(--ge-blue); }
+.req-token--violet { --token-hue: var(--ui-accent-soft); }
+.req-token--teal { --token-hue: var(--ge-teal); }
+.req-token--gold { --token-hue: var(--ge-gold); }
+.req-token--rose { --token-hue: var(--ge-rose); }
+.req-token--neutral { --token-hue: var(--ui-ink-soft); background: rgba(255, 255, 255, 0.035); }
+.req-token--muted {
+  --token-hue: var(--ui-muted);
+  border-style: dashed;
+  background: transparent;
+  color: var(--ui-muted);
+}
+
+.requirement-summary__note {
+  display: block;
+  margin-top: 10px;
+  color: var(--ui-muted);
+  font-size: 11px;
+  line-height: 1.45;
 }
