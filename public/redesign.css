@@ -352,7 +352,7 @@ option {
 
 .header-copy .eyebrow {
     margin-bottom: 14px;
-    color: #efaa7f;
+    color: var(--ui-accent-soft);
 }
 
 .header-copy h1 {
@@ -994,54 +994,16 @@ option {
     background: var(--ui-canvas-deep);
 }
 
-/* Calendar launcher */
-.deadline-launcher {
-    min-width: 244px;
-    min-height: 58px;
-    padding: 10px 12px;
-    border: 1px solid rgba(244, 239, 229, 0.18);
-    border-radius: 8px;
-    background: rgba(16, 17, 21, 0.6);
-    box-shadow: inset 3px 0 0 var(--ui-gold);
-    backdrop-filter: none;
-}
-
-.deadline-launcher:hover,
-.deadline-launcher:focus-visible {
-    border-color: rgba(215, 199, 101, 0.55);
-    background: rgba(30, 32, 38, 0.9);
-    transform: translateY(-1px);
-}
-
-.deadline-launcher__icon {
-    width: 35px;
-    height: 35px;
-    border-radius: 6px;
-    background: rgba(215, 199, 101, 0.13);
-    color: var(--ui-gold);
-}
-
-.deadline-launcher__copy strong {
-    color: var(--ui-ink);
-    font-size: 13px;
-}
-
-.deadline-launcher__copy small {
-    color: #b7b4af;
-    font-size: 11px;
-}
-
-.deadline-launcher__badge {
-    min-width: 25px;
-    height: 25px;
-    border: 1px solid rgba(239, 134, 117, 0.46);
-    background: rgba(239, 134, 117, 0.15);
-    color: #ffb1a4;
-    font-size: 11px;
-}
-
+/* Header destinations: calendar, scholarships, research fit.
+   Three launchers, one frame. Each carries a single hue in its stripe and its
+   icon - violet for the calendar (the thing to act on), gold for scholarships
+   (money), teal for research fit (evidence) - and nothing else is coloured, so
+   the three read as one row of doors rather than three products. The calendar
+   is a link now, so its underline is switched off explicitly. */
+.deadline-launcher,
 .scholarship-launcher,
 .research-launcher {
+    --launcher-hue: var(--ui-accent);
     display: grid;
     min-width: 238px;
     min-height: 58px;
@@ -1049,24 +1011,37 @@ option {
     align-items: center;
     gap: 10px;
     padding: 10px 12px;
-    border: 1px solid rgba(244, 239, 229, 0.18);
+    border: 1px solid var(--ui-rule);
     border-radius: 8px;
     background: rgba(16, 17, 21, 0.6);
-    box-shadow: inset 3px 0 0 var(--ui-orange);
+    box-shadow: inset 3px 0 0 var(--launcher-hue);
     color: var(--ui-ink);
     text-decoration: none;
+    backdrop-filter: none;
     transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
 }
 
+.deadline-launcher { min-width: 244px; }
+.scholarship-launcher { --launcher-hue: var(--ui-gold); }
+.research-launcher { --launcher-hue: var(--ge-teal); min-width: 224px; }
+
+.deadline-launcher:hover,
+.deadline-launcher:focus-visible,
 .scholarship-launcher:hover,
 .scholarship-launcher:focus-visible,
 .research-launcher:hover,
 .research-launcher:focus-visible {
-    border-color: rgba(143, 125, 255, 0.62);
+    border-color: color-mix(in srgb, var(--launcher-hue) 55%, transparent);
     background: rgba(30, 32, 38, 0.9);
+    text-decoration: none;
     transform: translateY(-1px);
 }
 
+.deadline-launcher *,
+.scholarship-launcher *,
+.research-launcher * { text-decoration: none; }
+
+.deadline-launcher__icon,
 .scholarship-launcher__icon,
 .research-launcher__icon {
     display: grid;
@@ -1074,29 +1049,40 @@ option {
     height: 35px;
     place-items: center;
     border-radius: 6px;
-    background: rgba(143, 125, 255, 0.14);
-    color: #ffab7f;
+    background: color-mix(in srgb, var(--launcher-hue) 14%, transparent);
+    color: var(--launcher-hue);
     font-size: 24px;
 }
 
+.deadline-launcher__copy,
 .scholarship-launcher__copy,
-.research-launcher__copy { display: grid; min-width: 0; }
+.research-launcher__copy { display: grid; min-width: 0; gap: 2px; }
+
+.deadline-launcher__copy strong,
 .scholarship-launcher__copy strong,
-.research-launcher__copy strong { font-size: 13px; }
+.research-launcher__copy strong { color: var(--ui-ink); font-size: 13px; }
+
+.deadline-launcher__copy small,
 .scholarship-launcher__copy small,
 .research-launcher__copy small { color: #b7b4af; font-size: 11px; line-height: 1.3; }
-.scholarship-launcher__arrow,
-.research-launcher__arrow { color: #ffab7f; }
 
-.research-launcher {
-    min-width: 224px;
-    box-shadow: inset 3px 0 0 #55d6c2;
+.scholarship-launcher__arrow,
+.research-launcher__arrow { color: var(--launcher-hue); }
+
+.deadline-launcher__badge {
+    min-width: 25px;
+    height: 25px;
+    border: 1px solid color-mix(in srgb, var(--ge-rose) 46%, transparent);
+    background: color-mix(in srgb, var(--ge-rose) 15%, transparent);
+    color: var(--ge-rose);
+    font-size: 11px;
 }
 
-.research-launcher:hover,
-.research-launcher:focus-visible { border-color: rgba(85, 214, 194, 0.58); }
-.research-launcher__icon { background: rgba(85, 214, 194, 0.12); color: #79e3d3; }
-.research-launcher__arrow { color: #79e3d3; }
+.deadline-launcher__badge.is-empty {
+    border-color: var(--ui-rule);
+    background: transparent;
+    color: var(--ui-muted);
+}
 
 .deadline-runway {
     display: grid;
@@ -2836,7 +2822,7 @@ input[type="range"]::-webkit-slider-thumb {
     gap: 4px;
     margin: 8px 0 14px;
     padding: 12px 14px;
-    border-left: 3px solid var(--ui-orange);
+    border-left: 3px solid var(--ui-accent);
     border-radius: 5px;
     background: rgba(143, 125, 255, 0.08);
     color: #b9c3d3;
@@ -2880,7 +2866,7 @@ input[type="range"]::-webkit-slider-thumb {
 #detail-drawer .prof-role { color: #8fa8e8; font-size: 10px; }
 #detail-drawer .prof-focus { margin: 0; color: #b4bdca; font-size: 11px; line-height: 1.45; }
 #detail-drawer .prof-profile-link,
-#detail-drawer .prof-card__contact a { color: #f5a06f; font-size: 10px; font-weight: 700; text-decoration: none; }
+#detail-drawer .prof-card__contact a { color: var(--ui-accent-soft); font-size: 10px; font-weight: 700; text-decoration: none; }
 #detail-drawer .prof-profile-link { white-space: nowrap; }
 #detail-drawer .prof-card__contact { align-items: center; padding-top: 9px; border-top: 1px solid rgba(255,255,255,.07); }
 #detail-drawer .prof-card__contact span { max-width: 145px; color: #8f9aaa; font-size: 9px; text-align: right; }

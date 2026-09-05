@@ -493,8 +493,30 @@ function toggleFavorite(id) {
         favorites.add(id);
         if (window.addFavorite) window.addFavorite(id);
     }
-window.uniStorage.writeJSON('unirank_favorites', Array.from(favorites));
-    processAndRender();
+    window.uniStorage.writeJSON('unirank_favorites', Array.from(favorites));
+    // Starring a programme used to rebuild the whole list, so every card
+    // faded out and slid back in for one changed glyph.  The star is flipped
+    // in place; the list only re-renders when the favourites-only filter is
+    // on, because then the row itself has to go.
+    if (els.favFilter?.checked) {
+        processAndRender();
+        return;
+    }
+    syncFavoriteButtons(id);
+}
+
+function syncFavoriteButtons(id) {
+    const isFav = favorites.has(id);
+    const label = window.t ? window.t(isFav ? 'remove_favorite' : 'add_favorite') : 'Favorite';
+    document.querySelectorAll('.program-card').forEach(card => {
+        if (card.dataset.programId !== String(id)) return;
+        const button = card.querySelector('.favorite-button');
+        if (!button) return;
+        button.classList.toggle('is-active', isFav);
+        button.setAttribute('aria-pressed', String(isFav));
+        button.setAttribute('aria-label', label);
+        button.textContent = isFav ? '★' : '☆';
+    });
 }
 
 // Initialize
