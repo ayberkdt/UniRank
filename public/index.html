@@ -6,21 +6,16 @@
     <title>UniRank | Aerospace & Space Master's Finder</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="site.css?v=4">
     <link rel="stylesheet" href="style.css?v=19">
-    <link rel="stylesheet" href="redesign.css?v=22">
+    <link rel="stylesheet" href="redesign.css?v=25">
     <link rel="stylesheet" href="profile.css?v=1">
     <link rel="stylesheet" href="decisionPanels.css?v=9">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css" />
-    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="storage.js?v=1"></script>
-    <script src="i18n.js?v=14"></script>
-    <script src="taxonomy.js?v=3"></script>
+    <script src="i18n.js?v=15"></script>
+    <script src="taxonomy.js?v=4"></script>
     <script src="standards.js?v=2"></script>
     <script src="visaPanel.js?v=2"></script>
 </head>
@@ -65,9 +60,7 @@
                 <button class="icon-button sidebar-close" id="sidebar-close" type="button" aria-label="Close filters" data-i18n-aria-label="close_filters">&times;</button>
             </div>
 
-            <button class="sidebar-rail-toggle" id="sidebar-rail-toggle" type="button" aria-expanded="true" aria-controls="filter-sidebar" aria-label="Collapse filters" data-i18n-aria-label="rail_collapse"><span aria-hidden="true">‹</span><span data-i18n="rail_collapse">Collapse filters</span></button>
             <nav class="sidebar-rail" id="sidebar-rail" aria-label="Filters" data-i18n-aria-label="filters_title" hidden>
-                <button type="button" class="sidebar-rail__item sidebar-rail__item--expand" data-rail-open="" aria-label="Expand filters" data-i18n-aria-label="rail_expand"><span aria-hidden="true">›</span><b class="sidebar-rail__count" id="rail-filter-count" hidden>0</b></button>
                 <button type="button" class="sidebar-rail__item" data-rail-open="btn-use-profile" aria-label="Use my profile" data-i18n-aria-label="use_my_profile"><span aria-hidden="true">◎</span></button>
                 <button type="button" class="sidebar-rail__item" data-rail-open="search-input" aria-label="Search programs" data-i18n-aria-label="search_programs"><span aria-hidden="true">⌕</span></button>
                 <button type="button" class="sidebar-rail__item" data-rail-open="country-picker-trigger" aria-label="Countries & Regions" data-i18n-aria-label="countries_regions"><span aria-hidden="true">⌖</span></button>
@@ -213,6 +206,12 @@
             </div>
         </aside>
 
+        <button class="sidebar-edge-toggle" id="sidebar-rail-toggle" type="button" aria-expanded="true" aria-controls="filter-sidebar" aria-label="Collapse filters" data-i18n-aria-label="rail_collapse">
+            <span class="sidebar-edge-toggle__arrow" aria-hidden="true">‹</span>
+            <span class="sr-only" data-sidebar-toggle-label data-i18n="rail_collapse">Collapse filters</span>
+            <b class="sidebar-rail__count" id="rail-filter-count" hidden>0</b>
+        </button>
+
         <div class="country-picker-popover" id="country-picker-popover" role="dialog" aria-modal="false" aria-labelledby="country-picker-title" hidden>
             <div class="country-picker-popover__header">
                 <div>
@@ -236,53 +235,62 @@
                     <span class="eyebrow" data-i18n="dashboard_eyebrow">Aerospace & space decision workspace</span>
                     <h1 data-i18n="dashboard_title">Aerospace & Space Master's Finder</h1>
                     <p data-i18n="dashboard_subtitle">Compare technical fit, eligibility, cost and source confidence in one clear view.</p>
+                    <div class="hero-proof" aria-label="Workspace capabilities" data-i18n-aria-label="hero_proof_label">
+                        <span><i aria-hidden="true"></i><b data-i18n="hero_proof_sources">Official-source evidence</b></span>
+                        <span><i aria-hidden="true"></i><b data-i18n="hero_proof_bilingual">English and Turkish</b></span>
+                        <span><i aria-hidden="true"></i><b data-i18n="hero_proof_compare">Side-by-side comparison</b></span>
+                    </div>
                 </div>
                 <div class="header-actions">
+                    <div class="header-actions__intro">
+                        <span data-i18n="decision_tools">Decision tools</span>
+                        <b aria-hidden="true">03</b>
+                    </div>
                     <nav class="header-destinations" aria-label="Decision tools" data-i18n-aria-label="decision_tools">
-                    <a class="deadline-launcher" id="deadline-launcher" href="calendar.html">
-                        <span class="deadline-launcher__icon" aria-hidden="true">
-                            <svg viewBox="0 0 24 24" role="img"><path d="M7 3v3M17 3v3M4.5 9h15M6 5h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/><path d="M8 13h3v3H8z"/></svg>
-                        </span>
-                        <span class="deadline-launcher__copy">
-                            <strong data-i18n="deadline_calendar">Application calendar</strong>
-                            <small id="deadline-launcher-summary" data-i18n="deadline_calendar_loading">Loading deadlines…</small>
-                        </span>
-                        <span class="deadline-launcher__badge" id="deadline-launcher-badge" aria-label="0 urgent deadlines">0</span>
-                    </a>
-                    <a class="scholarship-launcher" href="scholarships.html">
-                        <span class="scholarship-launcher__icon" aria-hidden="true">◇</span>
-                        <span class="scholarship-launcher__copy">
-                            <strong data-i18n="scholarship_hub">Scholarships</strong>
-                            <small data-i18n="scholarship_hub_desc">Funding routes for applicants from Türkiye</small>
-                        </span>
-                        <span class="scholarship-launcher__arrow" aria-hidden="true">→</span>
-                    </a>
-                    <a class="research-launcher" href="research.html">
-                        <span class="research-launcher__icon" aria-hidden="true">⌁</span>
-                        <span class="research-launcher__copy">
-                            <strong data-i18n="research_hub">Research fit</strong>
-                            <small data-i18n="research_hub_desc">GNC, astrodynamics & faculty guide</small>
-                        </span>
-                        <span class="research-launcher__arrow" aria-hidden="true">→</span>
-                    </a>
+                        <a class="deadline-launcher" id="deadline-launcher" href="calendar.html">
+                            <span class="deadline-launcher__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" role="img"><path d="M7 3v3M17 3v3M4.5 9h15M6 5h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z"/><path d="M8 13h3v3H8z"/></svg>
+                            </span>
+                            <span class="deadline-launcher__copy">
+                                <strong data-i18n="deadline_calendar">Application calendar</strong>
+                                <small id="deadline-launcher-summary" data-i18n="deadline_calendar_loading">Loading deadlines…</small>
+                            </span>
+                            <span class="deadline-launcher__badge" id="deadline-launcher-badge" aria-label="0 urgent deadlines">0</span>
+                        </a>
+                        <a class="scholarship-launcher" href="scholarships.html">
+                            <span class="scholarship-launcher__icon" aria-hidden="true">◇</span>
+                            <span class="scholarship-launcher__copy">
+                                <strong data-i18n="scholarship_hub">Scholarships</strong>
+                                <small data-i18n="scholarship_hub_desc">Funding routes for applicants from Türkiye</small>
+                            </span>
+                            <span class="scholarship-launcher__arrow" aria-hidden="true">→</span>
+                        </a>
+                        <a class="research-launcher" href="research.html">
+                            <span class="research-launcher__icon" aria-hidden="true">⌁</span>
+                            <span class="research-launcher__copy">
+                                <strong data-i18n="research_hub">Research fit</strong>
+                                <small data-i18n="research_hub_desc">GNC, astrodynamics & faculty guide</small>
+                            </span>
+                            <span class="research-launcher__arrow" aria-hidden="true">→</span>
+                        </a>
                     </nav>
                     <div class="header-accountbar">
-                    <div class="auth-section">
-                        <div id="auth-links">
-                            <button onclick="window.openLoginModal()" class="btn btn-outline" data-i18n="sign_in">Sign in</button>
-                            <button onclick="window.openProfileModal()" class="btn btn-primary" data-i18n="my_profile">My Profile</button>
+                        <div class="auth-section">
+                            <div id="auth-links">
+                                <button onclick="window.openLoginModal()" class="btn btn-outline" data-i18n="sign_in">Sign in</button>
+                                <button onclick="window.openProfileModal()" class="btn btn-primary" data-i18n="my_profile">My Profile</button>
+                            </div>
+                            <div id="auth-profile">
+                                <button onclick="window.openProfileModal()" class="account-profile-button" type="button">
+                                    <span class="account-profile-button__icon" aria-hidden="true">◎</span>
+                                    <span class="account-profile-button__copy">
+                                        <small data-i18n="my_profile">My Profile</small>
+                                        <strong id="auth-user-name">User</strong>
+                                    </span>
+                                </button>
+                                <button onclick="window.handleLogout()" class="btn btn-quiet" data-i18n="logout">Log out</button>
+                            </div>
                         </div>
-                        <div id="auth-profile">
-                            <button onclick="window.openProfileModal()" class="account-profile-button" type="button">
-                                <span class="account-profile-button__icon" aria-hidden="true">◎</span>
-                                <span class="account-profile-button__copy">
-                                    <small data-i18n="my_profile">My Profile</small>
-                                    <strong id="auth-user-name">User</strong>
-                                </span>
-                            </button>
-                            <button onclick="window.handleLogout()" class="btn btn-quiet" data-i18n="logout">Log out</button>
-                        </div>
-                    </div>
                     </div>
                 </div>
             </header>
@@ -339,7 +347,7 @@
                 <section class="results-shell" aria-labelledby="ranked-results-title">
                     <div class="results-header">
                         <div><span class="section-kicker">03</span><h2 id="ranked-results-title" data-i18n="ranked_results">Ranked Results</h2><p data-i18n="decision_snapshot">Scan the essentials, then open a program for source-backed details.</p></div>
-                        <div class="loader" id="loader" role="status" aria-label="Loading"></div>
+                        <div class="results-loading-state"><span id="catalog-progress" role="status" aria-live="polite" hidden></span><div class="loader" id="loader" role="status" aria-label="Loading"></div></div>
                     </div>
                     <div id="table-body" class="results-grid" role="list" aria-live="polite"></div>
                 </section>
@@ -442,8 +450,7 @@
     <script src="requirementSummary.js?v=1"></script>
     <script src="decisionPanels.js?v=6"></script>
     <script src="deadlineDashboard.js?v=17"></script>
-    <script src="script.js?v=44"></script>
-    <script src="map.js?v=11"></script>
+    <script src="script.js?v=47"></script>
 
     <!-- Login Modal -->
     <div id="login-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="login-modal-title" aria-hidden="true" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:2000; align-items:center; justify-content:center;">

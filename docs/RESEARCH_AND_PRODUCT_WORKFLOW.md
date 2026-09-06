@@ -108,6 +108,14 @@ Arayüz kararları bir yasa listesine dekoratif olarak uydurulmaz; öğrencinin 
 - Postel: eski ve yeni ülke adları gibi güvenli girdi varyasyonları kabul edilir, kullanıcıya tek standart çıktı sunulur.
 - Parkinson: filtreleme işi açık uçlu bırakılmaz; aktif filtreler görünürdür ve tek eylemle temizlenebilir.
 
+Katalog ilk açılışta 8 programlık küçük bir sayfayı getirip sıralanmış kartları hemen çizer. Kalan kayıtlar 60 programlık sayfalar halinde tarayıcı boşta kaldığında arka planda alınır; tek seferde birleştirilerek yinelenen tam liste çizimleri önlenir. Sonuç DOM'u da küçük kart dilimleri halinde genişler. Yüklenen/toplam program sayısı sonuç başlığında görünür. Yerel sunucu normalize edilmiş veriyi süreç başlarken hazırlayıp bellekte tuttuğu için ilk istek ve sonraki sayfalar aynı önbelleği paylaşır; sürümlendirilmiş CSS/JS dosyaları yeniden indirilmez.
+
+Liste görünümünün ihtiyaç duymadığı Leaflet, marker-cluster ve Chart.js ilk sayfa yüküne dahil edilmez. Harita kütüphaneleri kullanıcı haritayı, Chart.js ise karar grafiğini ilk kez açtığında yüklenir. Web fontu ağ yanıtı yavaş olsa bile ilk HTML çizimini bloke etmez; sistem yazı tipiyle içerik hemen görünür ve font hazır olduğunda yerini alır.
+
+Masaüstü filtre panelinin açma/kapama kontrolü panel içindeki ayrı bir satır değildir. Panel kenarına fiziksel olarak bağlı tek bir ok iki yönde de çalışır; dar ekranda mevcut filtre çekmecesi davranışı korunur. Program kartlarında ikincil gerçekler ile eylemler aynı alt satırda birleştirilerek dikey alan azaltılır, ancak dokunma hedefleri 44 pikselin altına düşürülmez.
+
+Ana sayfa kapağı tek bir karar başlangıcı olarak düzenlenir: ürünün vaadi ve güven sinyalleri solda, takvim/burs/araştırma eylemleri tek bir bağlı panelde sağda yer alır. Arka plan görseli bilgi taşımaz ve metin kontrastını bozmaz. Dar çalışma alanında eylem paneli başlığın altına, telefonda ise tek sütuna iner; kapak yeni bir video, animasyon veya ek veri isteği başlatmaz.
+
 ## 10. Yayın öncesi ürün kontrolü
 
 JavaScript sözdizimi, çeviri anahtarları, erişilebilir adlar, klavye ile kapatma, kalıcı seçim ve duyarlı yerleşim kontrol edilir. Uygulamanın yerel API ile açıldığı doğrulanır. Veri araştırması içeren bir sürümde bunlara canary ve tam test paketi de eklenir.

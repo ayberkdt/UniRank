@@ -489,7 +489,7 @@ function normalizeV2Record(record, sourceFile) {
   };
 }
 
-async function loadPrograms() {
+async function readPrograms() {
   const catalogScope = JSON.parse(await readFile(catalogScopeUrl, 'utf8'));
   const countryAliases = catalogScope.country_aliases || {};
   const excludedCountries = new Set(
@@ -575,16 +575,50 @@ async function loadPrograms() {
   };
 }
 
+let programsPromise = null;
+async function loadPrograms() {
+  if (!programsPromise) {
+    programsPromise = readPrograms().catch((error) => {
+      programsPromise = null;
+      throw error;
+    });
+  }
+  return programsPromise;
+}
+
+function paginatePrograms(records, url) {
+  const requestedLimit = Number(url.searchParams.get('limit'));
+  const requestedOffset = Number(url.searchParams.get('offset'));
+  const offset = Number.isFinite(requestedOffset) ? Math.max(0, Math.trunc(requestedOffset)) : 0;
+  const hasLimit = url.searchParams.has('limit') && Number.isFinite(requestedLimit);
+  const limit = hasLimit ? Math.max(1, Math.min(100, Math.trunc(requestedLimit))) : records.length;
+  const data = records.slice(offset, offset + limit);
+  const nextOffset = offset + data.length;
+  return {
+    data,
+    page: {
+      offset,
+      limit,
+      returned: data.length,
+      total: records.length,
+      has_more: nextOffset < records.length,
+      next_offset: nextOffset < records.length ? nextOffset : null,
+    },
+  };
+}
+
 const server = createServer(async (request, response) => {
   try {
     const url = new URL(request.url || '/', `http://${request.headers.host || 'localhost'}`);
 
     if (url.pathname === '/api/universities') {
       const { records, report } = await loadPrograms();
+      const page = paginatePrograms(records, url);
       sendJson(request, response, {
         status: 'success',
-        data: records,
+        data: page.data,
         report,
+        page: page.page,
       });
       return;
     }
@@ -640,9 +674,17 @@ const server = createServer(async (request, response) => {
     }
 
     const body = await readFile(fileUrl);
+    const extension = extname(safePath);
+    const isHtml = extension === '.html';
+    const isVersionedAsset = url.searchParams.has('v');
+    const cacheControl = isHtml
+      ? 'no-cache'
+      : isVersionedAsset
+        ? 'public, max-age=31536000, immutable'
+        : 'public, max-age=3600';
     response.writeHead(200, {
-      'Cache-Control': 'no-store',
-      'Content-Type': mimeTypes[extname(safePath)] || 'application/octet-stream',
+      'Cache-Control': cacheControl,
+      'Content-Type': mimeTypes[extension] || 'application/octet-stream',
     });
     response.end(body);
   } catch (error) {
@@ -653,6 +695,11 @@ const server = createServer(async (request, response) => {
     sendJson(request, response, { status: 'error', message: error.message }, 500);
   }
 });
+
+// Start normalizing the catalogue as soon as the process starts. The server
+// can accept requests immediately; an early university request simply joins
+// this shared promise instead of triggering the cold read itself.
+loadPrograms().catch(error => console.warn(`Catalogue warm-up failed: ${error.message}`));
 
 server.listen(port, '127.0.0.1', () => {
   console.log(`UniRank dev server: http://127.0.0.1:${port}`);

@@ -1,19 +1,26 @@
 let taxonomyData = null;
+let taxonomyPromise = null;
 
 async function loadTaxonomy() {
     if (taxonomyData !== null) return taxonomyData;
-    
-    try {
-        const response = await fetch('/api/taxonomy');
-        taxonomyData = await response.json();
-        window.CATEGORY_LABELS = Object.fromEntries(
-            Object.entries(taxonomyData || {}).map(([key, value]) => [key, value?.label || {}])
-        );
-    } catch (e) {
-        console.error("Failed to load taxonomy.json", e);
-        taxonomyData = {};
+    if (!taxonomyPromise) {
+        taxonomyPromise = (async () => {
+            try {
+                const response = await fetch('/api/taxonomy');
+                taxonomyData = await response.json();
+                window.CATEGORY_LABELS = Object.fromEntries(
+                    Object.entries(taxonomyData || {}).map(([key, value]) => [key, value?.label || {}])
+                );
+            } catch (e) {
+                console.error("Failed to load taxonomy.json", e);
+                taxonomyData = {};
+            } finally {
+                taxonomyPromise = null;
+            }
+            return taxonomyData;
+        })();
     }
-    return taxonomyData;
+    return taxonomyPromise;
 }
 
 function normalizeText(text) {

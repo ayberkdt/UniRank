@@ -1,6 +1,6 @@
 import { readFile } from 'node:fs/promises';
 
-const script = await readFile(new URL('../public/script.js', import.meta.url), 'utf8');
+const countryVisual = await readFile(new URL('../public/countryVisual.js', import.meta.url), 'utf8');
 const activeCountries = {
   austria: 'AT', belgium: 'BE', czechia: 'CZ', denmark: 'DK', estonia: 'EE',
   finland: 'FI', france: 'FR', germany: 'DE', greece: 'GR', ireland: 'IE',
@@ -13,8 +13,8 @@ const failures = [];
 for (const [key, code] of Object.entries(activeCountries)) {
   const visualPattern = new RegExp(`\\b${key}:\\s*\\{\\s*accent:`);
   const codePattern = new RegExp(`\\b${key}:\\s*['\"]${code}['\"]`);
-  if (!visualPattern.test(script)) failures.push(`${key}: card flag visual missing`);
-  if (!codePattern.test(script)) failures.push(`${key}: picker flag code ${code} missing`);
+  if (!visualPattern.test(countryVisual)) failures.push(`${key}: card flag visual missing`);
+  if (!codePattern.test(countryVisual)) failures.push(`${key}: picker flag code ${code} missing`);
 }
 
 if (failures.length) {

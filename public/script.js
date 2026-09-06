@@ -764,6 +764,107 @@ function initSpotlightCards() {
 
 // Fetch Data
 let dataRefreshInFlight = false;
+const INITIAL_CATALOG_PAGE_SIZE = 8;
+const CATALOG_PAGE_SIZE = 60;
+const INITIAL_RESULT_RENDER_COUNT = 8;
+const RESULT_RENDER_BATCH_SIZE = 18;
+const lazyAssetPromises = new Map();
+let catalogHydrationPromise = null;
+let visibleResultLimit = INITIAL_RESULT_RENDER_COUNT;
+let resultLoadObserver = null;
+
+function loadScriptOnce(url, key, options = {}) {
+    if (options.test?.()) return Promise.resolve();
+    if (lazyAssetPromises.has(key)) return lazyAssetPromises.get(key);
+    const promise = new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = url;
+        script.async = true;
+        if (options.integrity) {
+            script.integrity = options.integrity;
+            script.crossOrigin = 'anonymous';
+        }
+        script.addEventListener('load', resolve, { once: true });
+        script.addEventListener('error', () => reject(new Error(`Could not load ${key}.`)), { once: true });
+        document.head.appendChild(script);
+    }).catch(error => {
+        lazyAssetPromises.delete(key);
+        throw error;
+    });
+    lazyAssetPromises.set(key, promise);
+    return promise;
+}
+
+function loadStylesheetOnce(url, key, integrity = '') {
+    if (document.querySelector(`link[data-lazy-asset="${key}"]`)) return Promise.resolve();
+    if (lazyAssetPromises.has(key)) return lazyAssetPromises.get(key);
+    const promise = new Promise((resolve, reject) => {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = url;
+        link.dataset.lazyAsset = key;
+        if (integrity) {
+            link.integrity = integrity;
+            link.crossOrigin = 'anonymous';
+        }
+        link.addEventListener('load', resolve, { once: true });
+        link.addEventListener('error', () => reject(new Error(`Could not load ${key}.`)), { once: true });
+        document.head.appendChild(link);
+    }).catch(error => {
+        lazyAssetPromises.delete(key);
+        throw error;
+    });
+    lazyAssetPromises.set(key, promise);
+    return promise;
+}
+
+function ensureChartLibrary() {
+    return loadScriptOnce(
+        'https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js',
+        'chart-js',
+        { test: () => typeof window.Chart === 'function' }
+    );
+}
+
+function ensureMapAssets() {
+    if (window.unirankMap) return Promise.resolve(window.unirankMap);
+    if (lazyAssetPromises.has('unirank-map-ready')) return lazyAssetPromises.get('unirank-map-ready');
+    const stylesReady = Promise.all([
+        loadStylesheetOnce(
+            'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css',
+            'leaflet-css',
+            'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY='
+        ),
+        loadStylesheetOnce('https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css', 'marker-cluster-css'),
+        loadStylesheetOnce('https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css', 'marker-cluster-default-css')
+    ]);
+    const ready = loadScriptOnce(
+        'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',
+        'leaflet-js',
+        {
+            integrity: 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=',
+            test: () => typeof window.L !== 'undefined'
+        }
+    ).then(() => loadScriptOnce(
+        'https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js',
+        'marker-cluster-js',
+        { test: () => typeof window.L?.markerClusterGroup === 'function' }
+    )).then(() => stylesReady)
+      .then(() => loadScriptOnce('/map.js?v=12', 'unirank-map-controller', { test: () => Boolean(window.unirankMap) }))
+      .then(() => window.unirankMap);
+    lazyAssetPromises.set('unirank-map-ready', ready);
+    return ready;
+}
+
+function waitForBrowserIdle(timeout = 900) {
+    return new Promise(resolve => {
+        if (typeof window.requestIdleCallback === 'function') {
+            window.requestIdleCallback(() => resolve(), { timeout });
+        } else {
+            window.setTimeout(resolve, 40);
+        }
+    });
+}
 
 function showLoadingCards() {
     if (!els.tableBody || rawData.length || els.tableBody.children.length) return;
@@ -774,6 +875,82 @@ function showLoadingCards() {
         </article>`).join('');
 }
 
+function updateCatalogProgress(loaded, total, complete = false) {
+    const progress = document.getElementById('catalog-progress');
+    if (!progress) return;
+    progress.hidden = complete || !total || loaded >= total;
+    if (progress.hidden) {
+        progress.textContent = '';
+        return;
+    }
+    progress.textContent = window.currentLanguage === 'tr'
+        ? `${loaded} / ${total} program yüklendi`
+        : `${loaded} / ${total} programmes loaded`;
+}
+
+function updateGlobalBoundaries() {
+    if (!rawData.length) return;
+    globalMaxTuition = Math.max(...rawData.map(record => parseFloat(record.tuition_eur_per_year) || 0));
+    globalMinTuition = Math.min(...rawData.map(record => parseFloat(record.tuition_eur_per_year) || 0));
+    if (globalMaxTuition === globalMinTuition) globalMaxTuition = globalMinTuition + 1;
+
+    const validRanks = rawData.map(record => record.qs_ranking).filter(rank => rank && rank <= 1000);
+    globalMaxRank = validRanks.length ? Math.max(...validRanks) : 1000;
+    globalMinRank = validRanks.length ? Math.min(...validRanks) : 1;
+    if (globalMaxRank === globalMinRank) globalMaxRank = globalMinRank + 1;
+}
+
+async function prepareUniversityBatch(records) {
+    const batch = records.filter(record => !isUndergraduateProgramme(record));
+    if (typeof window.buildCategoryProfile === 'function') {
+        await Promise.all(batch.map(async (record) => {
+            if (!record.Category_Profile) record.Category_Profile = await window.buildCategoryProfile(record);
+        }));
+    }
+    return batch;
+}
+
+async function publishUniversityBatch(records, { append = false, silent = false, total = null } = {}) {
+    const prepared = await prepareUniversityBatch(records);
+    rawData = deduplicateProgrammeRecords(append ? [...rawData, ...prepared] : prepared);
+    window.uniRankRecords = rawData;
+    window.dispatchEvent(new CustomEvent('unirank:recordsLoaded', {
+        detail: { records: rawData, refreshedAt: new Date().toISOString(), silent, progressive: total != null }
+    }));
+    updateGlobalBoundaries();
+    populateCountryFilter();
+    if (window.renderCategoryUI) window.renderCategoryUI();
+    await applyInitialResearchDeepLink();
+    processAndRender();
+    updateCatalogProgress(rawData.length, total, total == null || rawData.length >= total);
+}
+
+async function hydrateCatalogInBackground(nextOffset, total, silent) {
+    const pendingRecords = [];
+    let offset = nextOffset;
+    try {
+        await waitForBrowserIdle(1200);
+        while (offset != null) {
+            const pageResponse = await fetch(`/api/universities?offset=${offset}&limit=${CATALOG_PAGE_SIZE}`);
+            if (!pageResponse.ok) throw new Error(`API request failed (${pageResponse.status})`);
+            await waitForBrowserIdle();
+            const pageJson = await pageResponse.json();
+            if (pageJson.status !== 'success') throw new Error(pageJson.message || 'API request failed.');
+            pendingRecords.push(...pageJson.data);
+            updateCatalogProgress(Math.min(total, rawData.length + pendingRecords.length), total);
+            offset = pageJson.page?.has_more ? pageJson.page.next_offset : null;
+        }
+        await waitForBrowserIdle(1400);
+        await publishUniversityBatch(pendingRecords, { append: true, silent, total });
+        updateCatalogProgress(rawData.length, total, true);
+    } catch (error) {
+        console.warn('Background catalogue hydration failed:', error);
+        updateCatalogProgress(rawData.length, total, true);
+    } finally {
+        catalogHydrationPromise = null;
+    }
+}
+
 async function fetchData({ silent = false } = {}) {
     if (dataRefreshInFlight) return false;
     dataRefreshInFlight = true;
@@ -781,50 +958,29 @@ async function fetchData({ silent = false } = {}) {
     if (loader && !silent) loader.classList.add('active');
     if (!silent) showLoadingCards();
     try {
-        const res = await fetch('/api/universities');
+        const progressive = !silent && rawData.length === 0;
+        const firstUrl = progressive
+            ? `/api/universities?offset=0&limit=${INITIAL_CATALOG_PAGE_SIZE}`
+            : '/api/universities';
+        const res = await fetch(firstUrl);
         if (!res.ok) throw new Error(`API request failed (${res.status})`);
         const json = await res.json();
         
         if (json.status === 'success') {
-            
-            // The API already removes exact programme clones. This client-side
-            // guard also protects people viewing an older cached deployment.
-            rawData = deduplicateProgrammeRecords(json.data.filter(record => !isUndergraduateProgramme(record)));
-            window.uniRankRecords = rawData;
-            window.dispatchEvent(new CustomEvent('unirank:recordsLoaded', {
-                detail: { records: rawData, refreshedAt: new Date().toISOString(), silent }
-            }));
-            rawData.slice(0, 20).forEach((r) => {
-              const issues = validateRecordShape(r);
-              if (issues.length) console.warn("Record shape issues:", r.id || r.name, issues);
+            const total = Number(json.page?.total) || json.data.length;
+            await publishUniversityBatch(json.data, { silent, total: progressive ? total : null });
+            rawData.slice(0, 20).forEach((record) => {
+              const issues = validateRecordShape(record);
+              if (issues.length) console.warn("Record shape issues:", record.id || record.name, issues);
             });
 
-            
-            // Calculate Global Boundaries for Min-Max Normalization
-            if (rawData.length > 0) {
-                globalMaxTuition = Math.max(...rawData.map(r => parseFloat(r.tuition_eur_per_year) || 0));
-                globalMinTuition = Math.min(...rawData.map(r => parseFloat(r.tuition_eur_per_year) || 0));
-                if (globalMaxTuition === globalMinTuition) globalMaxTuition = globalMinTuition + 1; // Prevent division by zero
-                
-                const validRanks = rawData.map(r => r.qs_ranking).filter(r => r && r <= 1000);
-                globalMaxRank = validRanks.length > 0 ? Math.max(...validRanks) : 1000;
-                globalMinRank = validRanks.length > 0 ? Math.min(...validRanks) : 1;
-                if (globalMaxRank === globalMinRank) globalMaxRank = globalMinRank + 1;
+            // The first ranked cards are now the end of the critical path.
+            // Remaining JSON parsing, normalization and scoring waits for idle
+            // time and publishes once, instead of blocking three full renders.
+            const nextOffset = progressive && json.page?.has_more ? json.page.next_offset : null;
+            if (nextOffset != null && !catalogHydrationPromise) {
+                catalogHydrationPromise = hydrateCatalogInBackground(nextOffset, total, silent);
             }
-
-            populateCountryFilter();
-            if (window.renderCategoryUI) window.renderCategoryUI();
-            
-            // Taxonomy is cached after its first request. Build missing profiles
-            // together so a large catalogue does not yield once per record.
-            if (typeof window.buildCategoryProfile === 'function') {
-                await Promise.all(rawData.map(async (record) => {
-                    if (!record.Category_Profile) record.Category_Profile = await window.buildCategoryProfile(record);
-                }));
-            }
-            
-            await applyInitialResearchDeepLink();
-            processAndRender();
             return true;
         } else {
             console.error("API Error:", json.message);
@@ -847,7 +1003,6 @@ async function fetchData({ silent = false } = {}) {
 
 async function applyInitialResearchDeepLink() {
     if (initialResearchDeepLinkHandled) return;
-    initialResearchDeepLinkHandled = true;
     const params = new URLSearchParams(window.location.search);
     const requestedProgram = params.get('program');
     const requestedField = params.get('field');
@@ -857,12 +1012,18 @@ async function applyInitialResearchDeepLink() {
         if (taxonomy?.[requestedField]) selectedCategoryKeys.add(requestedField);
     }
 
-    if (!requestedProgram) return;
+    if (!requestedProgram) {
+        initialResearchDeepLinkHandled = true;
+        return;
+    }
     const record = rawData.find((item) => {
         const normalized = window.uniDataAdapter?.normalizeUniversityRecord(item);
         return normalized?.id === requestedProgram || item.id === requestedProgram || item.programme_id === requestedProgram;
     });
-    if (record) window.requestAnimationFrame(() => openDrawer(record));
+    if (record) {
+        initialResearchDeepLinkHandled = true;
+        window.requestAnimationFrame(() => openDrawer(record));
+    }
 }
 
 window.refreshUniRankData = function() {
@@ -1028,7 +1189,9 @@ function setupEventListeners() {
     // disappearing, so the results get the width and the filters stay one
     // click away. Each icon reopens the rail on its own control.
     const railToggle = document.getElementById('sidebar-rail-toggle');
-    if (railToggle) railToggle.addEventListener('click', () => setRailCollapsed(true));
+    if (railToggle) railToggle.addEventListener('click', () => {
+        setRailCollapsed(!document.body.classList.contains('rail-collapsed'));
+    });
     document.querySelectorAll('[data-rail-open]').forEach(button => {
         button.addEventListener('click', () => {
             setRailCollapsed(false);
@@ -1088,7 +1251,17 @@ function setRailCollapsed(collapsed, persist = true) {
     const rail = document.getElementById('sidebar-rail');
     if (rail) rail.hidden = !isCollapsed;
     const toggle = document.getElementById('sidebar-rail-toggle');
-    if (toggle) toggle.setAttribute('aria-expanded', String(!isCollapsed));
+    if (toggle) {
+        const labelKey = isCollapsed ? 'rail_expand' : 'rail_collapse';
+        toggle.setAttribute('aria-expanded', String(!isCollapsed));
+        toggle.dataset.i18nAriaLabel = labelKey;
+        toggle.setAttribute('aria-label', window.t ? window.t(labelKey) : (isCollapsed ? 'Expand filters' : 'Collapse filters'));
+        const label = toggle.querySelector('[data-sidebar-toggle-label]');
+        if (label) {
+            label.dataset.i18n = labelKey;
+            label.textContent = window.t ? window.t(labelKey) : (isCollapsed ? 'Expand filters' : 'Collapse filters');
+        }
+    }
     if (persist) window.uniStorage.write('unirank_rail_collapsed', String(isCollapsed));
     // The map and the card grid both size themselves from the column width.
     window.requestAnimationFrame(() => window.dispatchEvent(new Event('resize')));
@@ -1678,10 +1851,23 @@ window.switchView = function(view) {
     document.body.dataset.view = showMap ? 'map' : 'list';
 
     if (showMap) {
-        setTimeout(() => {
-            if (window.unirankMap) window.unirankMap.invalidateSize();
-            window.dispatchEvent(new CustomEvent('unirank:viewChanged', { detail: { view: 'map' } }));
-        }, 80);
+        const mapStatus = document.getElementById('map-results-status');
+        if (mapStatus && !window.unirankMap) {
+            mapStatus.textContent = window.currentLanguage === 'tr' ? 'Harita yükleniyor…' : 'Loading map…';
+        }
+        ensureMapAssets().then(() => {
+            window.setTimeout(() => {
+                if (window.unirankMap) window.unirankMap.invalidateSize();
+                window.dispatchEvent(new CustomEvent('unirank:viewChanged', { detail: { view: 'map' } }));
+            }, 40);
+        }).catch(error => {
+            console.warn('Map assets could not be loaded:', error);
+            if (mapStatus) {
+                mapStatus.textContent = window.currentLanguage === 'tr'
+                    ? 'Harita yüklenemedi; liste görünümü kullanılabilir.'
+                    : 'The map could not load; list view remains available.';
+            }
+        });
     } else {
         window.dispatchEvent(new CustomEvent('unirank:viewChanged', { detail: { view: 'list' } }));
     }
@@ -1751,6 +1937,10 @@ function renderCardCountdown(record) {
 }
 
 function renderTable() {
+    if (resultLoadObserver) {
+        resultLoadObserver.disconnect();
+        resultLoadObserver = null;
+    }
     els.tableBody.innerHTML = '';
     if (filteredData.length === 0) {
         renderComparisonDock();
@@ -1769,7 +1959,8 @@ function renderTable() {
     }
 
     const fragment = document.createDocumentFragment();
-    filteredData.forEach((row, i) => {
+    const visibleRows = filteredData.slice(0, visibleResultLimit);
+    visibleRows.forEach((row, i) => {
         const n = window.uniDataAdapter ? window.uniDataAdapter.normalizeUniversityRecord(row) : null;
         if (!n) return;
         const rid = n ? n.id : (row.Uni_ID || row.id || row.name || row.university);
@@ -1841,18 +2032,19 @@ function renderTable() {
                     <div class="decision-fact"><dt>${escapeHtml(window.t ? window.t('compare_current_deadline') : 'Current deadline')}</dt><dd>${escapeHtml(deadline || (window.t ? window.t('unknown_value') : 'Unknown'))}</dd></div>
                     <div class="decision-fact"><dt>${escapeHtml(window.t ? window.t('housing_risk') : 'Housing risk')}</dt><dd>${housingKnown ? housingHTML : escapeHtml(window.t ? window.t('unknown_value') : 'Unknown')}</dd></div>
                 </dl>
-                ${(applyFeeText || admissionRiskKnown || livingCost || roomRent) ? `<div class="program-card__secondary-facts">
-                    ${applyFeeText ? `<span><small>${escapeHtml(window.t ? window.t('compare_application_fee') : 'Application fee')}</small><b class="apply-fee apply-fee--${escapeHtml(applyFeeTone)}">${escapeHtml(applyFeeText)}</b></span>` : ''}
-                    ${admissionRiskKnown ? `<span><small>${escapeHtml(window.t ? window.t('compare_admission_risk') : 'Admission risk')}</small>${formatRiskBadge(n.admissionRisk)}</span>` : ''}
-                    ${livingCost ? `<span><small>${escapeHtml(window.t ? window.t('compare_monthly_living') : 'Monthly living')}</small><b>${escapeHtml(livingCost)}</b></span>` : ''}
-                    ${roomRent ? `<span><small>${escapeHtml(isTurkishUi ? 'Oda kirası' : 'Room rent')}</small><b>${escapeHtml(roomRent)}</b></span>` : ''}
+                <div class="program-card__footer">
+                    ${(applyFeeText || admissionRiskKnown || livingCost || roomRent) ? `<div class="program-card__secondary-facts">
+                        ${applyFeeText ? `<span><small>${escapeHtml(window.t ? window.t('compare_application_fee') : 'Application fee')}</small><b class="apply-fee apply-fee--${escapeHtml(applyFeeTone)}">${escapeHtml(applyFeeText)}</b></span>` : ''}
+                        ${admissionRiskKnown ? `<span><small>${escapeHtml(window.t ? window.t('compare_admission_risk') : 'Admission risk')}</small>${formatRiskBadge(n.admissionRisk)}</span>` : ''}
+                        ${livingCost ? `<span><small>${escapeHtml(window.t ? window.t('compare_monthly_living') : 'Monthly living')}</small><b>${escapeHtml(livingCost)}</b></span>` : ''}
+                        ${roomRent ? `<span><small>${escapeHtml(isTurkishUi ? 'Oda kirası' : 'Room rent')}</small><b>${escapeHtml(roomRent)}</b></span>` : ''}
+                    </div>` : '<span></span>'}
+                    <div class="program-card__actions">
+                        <button class="favorite-button${isFav ? ' is-active' : ''}" type="button" aria-pressed="${String(isFav)}" aria-label="${escapeHtml(window.t ? window.t(isFav ? 'remove_favorite' : 'add_favorite') : 'Favorite')}">${isFav ? '★' : '☆'}</button>
+                        <button class="compare-button${isCompared ? ' is-active' : ''}" type="button" data-compare-id="${escapeHtml(rid)}" aria-pressed="${String(isCompared)}" aria-label="${escapeHtml(window.t ? window.t(isCompared ? 'compare_remove' : 'compare_add') : 'Compare')}"><span aria-hidden="true">${isCompared ? '✓' : '⊞'}</span><span data-compare-label>${escapeHtml(window.t ? window.t(isCompared ? 'compare_remove' : 'compare_add') : 'Compare')}</span></button>
+                        <button class="detail-btn" type="button">${escapeHtml(window.t ? window.t('view_program') : 'View program')} <span aria-hidden="true">→</span></button>
+                    </div>
                 </div>
-                ` : ''}
-            </div>
-            <div class="program-card__actions">
-                <button class="favorite-button${isFav ? ' is-active' : ''}" type="button" aria-pressed="${String(isFav)}" aria-label="${escapeHtml(window.t ? window.t(isFav ? 'remove_favorite' : 'add_favorite') : 'Favorite')}">${isFav ? '★' : '☆'}</button>
-                <button class="compare-button${isCompared ? ' is-active' : ''}" type="button" data-compare-id="${escapeHtml(rid)}" aria-pressed="${String(isCompared)}" aria-label="${escapeHtml(window.t ? window.t(isCompared ? 'compare_remove' : 'compare_add') : 'Compare')}"><span aria-hidden="true">${isCompared ? '✓' : '⊞'}</span><span data-compare-label>${escapeHtml(window.t ? window.t(isCompared ? 'compare_remove' : 'compare_add') : 'Compare')}</span></button>
-                <button class="detail-btn" type="button">${escapeHtml(window.t ? window.t('view_program') : 'View program')} <span aria-hidden="true">→</span></button>
             </div>`;
 
         applyCountryVisual(article, cleanCountry);
@@ -1871,7 +2063,76 @@ function renderTable() {
         fragment.appendChild(article);
     });
     els.tableBody.appendChild(fragment);
+    if (visibleRows.length < filteredData.length) {
+        const remaining = filteredData.length - visibleRows.length;
+        const revealCount = Math.min(RESULT_RENDER_BATCH_SIZE, remaining);
+        const loadMore = document.createElement('button');
+        loadMore.className = 'results-load-more';
+        loadMore.type = 'button';
+        loadMore.innerHTML = `<strong>${escapeHtml(window.t ? window.t('load_more_programmes') : 'Show more programmes')}</strong><small>${remaining} ${escapeHtml(window.t ? window.t('programmes_remaining') : 'programmes remaining')}</small>`;
+        const revealMore = () => {
+            if (loadMore.dataset.loading === 'true') return;
+            loadMore.dataset.loading = 'true';
+            visibleResultLimit += revealCount;
+            window.requestAnimationFrame(renderTable);
+        };
+        loadMore.addEventListener('click', revealMore);
+        els.tableBody.appendChild(loadMore);
+        if (typeof window.IntersectionObserver === 'function') {
+            resultLoadObserver = new IntersectionObserver(entries => {
+                if (entries.some(entry => entry.isIntersecting)) revealMore();
+            }, { rootMargin: '500px 0px' });
+            resultLoadObserver.observe(loadMore);
+        }
+    }
     renderComparisonDock();
+}
+
+function renderDecisionRadar(canvas, metrics) {
+    if (!canvas || typeof window.Chart !== 'function' || !document.contains(canvas)) return;
+    if (window.uniChart) window.uniChart.destroy();
+    window.uniChart = new window.Chart(canvas.getContext('2d'), {
+        type: 'radar',
+        data: {
+            labels: metrics.map(metric => metric.label),
+            datasets: [{
+                data: metrics.map(metric => metric.value),
+                backgroundColor: 'rgba(143, 125, 255, 0.18)',
+                borderColor: '#b5a9ff',
+                pointBackgroundColor: metrics.map(metric => metric.color),
+                pointBorderColor: '#141519',
+                pointHoverBackgroundColor: metrics.map(metric => metric.color),
+                pointHoverBorderColor: '#f4efe5',
+                pointRadius: 5,
+                pointHoverRadius: 7,
+                borderWidth: 2
+            }]
+        },
+        options: {
+            scales: {
+                r: {
+                    angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                    grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                    min: 0,
+                    max: 100,
+                    pointLabels: {
+                        color: context => metrics[context.index]?.color || '#aaa9a8',
+                        font: { family: 'Source Sans 3', size: 12, weight: '600' }
+                    },
+                    ticks: { display: false, stepSize: 25 }
+                }
+            },
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        label: context => `${context.label}: ${Number(context.raw).toFixed(0)} / 100`
+                    }
+                }
+            },
+            maintainAspectRatio: false
+        }
+    });
 }
 
 
@@ -2744,57 +3005,14 @@ function openDrawer(data) {
             evidenceGroup;
         if (panels) panels.bindPanelEvents(drawerInfo);
 
-        // 1. Radar Chart Setup
+        // Chart.js is not part of the homepage critical path. The numeric and
+        // textual score breakdown is visible immediately; the chart enhances
+        // it as soon as the library is available.
         const ctx = document.getElementById('radarChart');
         if (ctx) {
-            if (window.uniChart) {
-                window.uniChart.destroy();
-            }
-            
-            window.uniChart = new Chart(ctx.getContext('2d'), {
-                type: 'radar',
-                data: {
-                    labels: metrics.map(metric => metric.label),
-                    datasets: [{
-                        data: metrics.map(metric => metric.value),
-                        backgroundColor: 'rgba(143, 125, 255, 0.18)',
-                        borderColor: '#b5a9ff',
-                        pointBackgroundColor: metrics.map(metric => metric.color),
-                        pointBorderColor: '#141519',
-                        pointHoverBackgroundColor: metrics.map(metric => metric.color),
-                        pointHoverBorderColor: '#f4efe5',
-                        pointRadius: 5,
-                        pointHoverRadius: 7,
-                        borderWidth: 2
-                    }]
-                },
-                options: {
-                    scales: {
-                        r: {
-                            angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
-                            grid: { color: 'rgba(255, 255, 255, 0.1)' },
-                            min: 0,
-                            max: 100,
-                            pointLabels: {
-                                color: (context) => metrics[context.index]?.color || '#aaa9a8',
-                                font: { family: 'Source Sans 3', size: 12, weight: '600' }
-                            },
-                            ticks: { display: false, stepSize: 25 }
-                        }
-                    },
-                    plugins: {
-                        legend: { display: false },
-                        tooltip: {
-                            callbacks: {
-                                label: function(context) {
-                                    return `${context.label}: ${Number(context.raw).toFixed(0)} / 100`;
-                                }
-                            }
-                        }
-                    },
-                    maintainAspectRatio: false
-                }
-            });
+            ensureChartLibrary()
+                .then(() => renderDecisionRadar(ctx, metrics))
+                .catch(error => console.warn('Decision chart could not be loaded:', error));
         }
 
         els.drawer.panel.classList.add('active');

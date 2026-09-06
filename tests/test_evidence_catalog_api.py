@@ -1,7 +1,10 @@
+import json
+
 from api.index import (
     _database_records,
     _institutional_funding,
     _programme_research_details,
+    get_universities,
 )
 
 
@@ -44,3 +47,15 @@ def test_featured_profiles_sort_before_other_profiles():
     for profiles in (scholarship_profiles, research_profiles):
         flags = [profile["featured"] for profile in profiles]
         assert flags == sorted(flags, reverse=True)
+
+
+def test_university_api_supports_bounded_progressive_pages():
+    response = get_universities(limit=7, offset=3)
+    payload = json.loads(response.body)
+
+    assert payload["status"] == "success"
+    assert len(payload["data"]) == 7
+    assert payload["page"]["offset"] == 3
+    assert payload["page"]["limit"] == 7
+    assert payload["page"]["total"] >= 10
+    assert payload["page"]["next_offset"] == 10

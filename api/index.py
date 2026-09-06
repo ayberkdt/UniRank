@@ -206,7 +206,7 @@ def _programme_research_details(records):
     return details
 
 @app.get("/api/universities")
-def get_universities():
+def get_universities(limit: int = None, offset: int = 0):
     # In Vercel serverless functions, the directory structure can be tricky
     db_path = _database_directory()
 
@@ -230,8 +230,29 @@ def get_universities():
                 {"status": "error", "message": f"No valid data found in {db_path}. Files loaded: {report['files_loaded']}", "data": []},
                 headers=headers
             )
+        total = len(records)
+        start = max(0, offset)
+        if limit is None:
+            page_records = records[start:]
+            page_limit = total
+        else:
+            page_limit = max(1, min(limit, 100))
+            page_records = records[start:start + page_limit]
+        next_offset = start + len(page_records)
         return JSONResponse(
-            {"status": "success", "data": records, "report": report},
+            {
+                "status": "success",
+                "data": page_records,
+                "report": report,
+                "page": {
+                    "offset": start,
+                    "limit": page_limit,
+                    "returned": len(page_records),
+                    "total": total,
+                    "has_more": next_offset < total,
+                    "next_offset": next_offset if next_offset < total else None,
+                },
+            },
             headers=headers
         )
     except Exception:
