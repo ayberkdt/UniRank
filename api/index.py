@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from starlette.middleware.gzip import GZipMiddleware
+from functools import lru_cache
 import sys
 import os
 from pathlib import Path
@@ -54,6 +56,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+app.add_middleware(GZipMiddleware, minimum_size=1024, compresslevel=6)
 
 
 def _project_file(*parts):
@@ -74,8 +77,9 @@ def _database_directory():
     return next((path for path in candidates if path.exists() and path.is_dir()), None)
 
 
-def _database_records():
-    """Load the canonical programme rows for the two evidence catalogues.
+@lru_cache(maxsize=1)
+def _database_bundle():
+    """Load and normalize the programme database once per server process.
 
     The catalogues remain useful editorial entry points, but scholarship
     playbooks and faculty/lab evidence live on programme records.  Loading the
@@ -84,12 +88,17 @@ def _database_records():
     """
     database_path = _database_directory()
     if not database_path:
-        return []
-    dataframe, _ = load_database_folder(database_path, strict=False)
+        return [], {"files_loaded": 0}
+    dataframe, report = load_database_folder(database_path, strict=False)
     if dataframe is None or dataframe.empty:
-        return []
+        return [], {"files_loaded": report.files_loaded}
     dataframe = dataframe.replace({np.nan: None})
-    return _json_safe(dataframe.to_dict(orient="records"))
+    records = _json_safe(dataframe.to_dict(orient="records"))
+    return records, {"files_loaded": report.files_loaded}
+
+
+def _database_records():
+    return _database_bundle()[0]
 
 
 def _latest_verified(current, profiles):
@@ -201,7 +210,7 @@ def get_universities():
     # In Vercel serverless functions, the directory structure can be tricky
     db_path = _database_directory()
 
-    headers = {"Cache-Control": "no-store, no-cache, must-revalidate, max-age=0"}
+    headers = {"Cache-Control": "public, max-age=300, stale-while-revalidate=600"}
 
     if not db_path:
         searched = [
@@ -215,19 +224,14 @@ def get_universities():
         )
     
     try:
-        df, report = load_database_folder(db_path, strict=False)
-        if df is None or df.empty:
+        records, report = _database_bundle()
+        if not records:
             return JSONResponse(
-                {"status": "error", "message": f"No valid data found in {db_path}. Files loaded: {report.files_loaded}", "data": []},
+                {"status": "error", "message": f"No valid data found in {db_path}. Files loaded: {report['files_loaded']}", "data": []},
                 headers=headers
             )
-        
-        # Replace NaNs with None for safe JSON serialization
-        df = df.replace({np.nan: None})
-        
-        records = _json_safe(df.to_dict(orient="records"))
         return JSONResponse(
-            {"status": "success", "data": records, "report": {"files_loaded": report.files_loaded}},
+            {"status": "success", "data": records, "report": report},
             headers=headers
         )
     except Exception:

@@ -59,7 +59,8 @@ Arayüz çalışması şu soruyla başlar: öğrenci ilk bakışta hangi kararı
 
 Yeni kart tasarımında:
 
-- veriyi örten bayrak filigranı ve dekoratif katmanlar kaldırılır,
+- ülke bayrağı sağ kenarda, veriyi örtmeyen kontrollü bir filigran olarak korunur,
+- masaüstünde her program tek satıra yayılan yatay bir kartta gösterilir,
 - küçük ve okunması zor etiketler büyütülür,
 - dört temel karar alanı aynı düzende gösterilir,
 - ikincil maliyet ve risk bilgileri ayrı bir satıra alınır,
@@ -78,7 +79,22 @@ Bir kullanıcı en fazla üç programı karşılaştırma listesine ekleyebilir.
 
 Masaüstünde sütunlar aynı anda görünür. Dar ekranlarda sütun düzeni korunur ve yatay kaydırmayla incelenir; kartlar okunamayacak kadar daraltılmaz.
 
-## 9. Yayın öncesi ürün kontrolü
+## 9. Bilgi detayında karar akışı
+
+Detay çekmecesi üniversite ve program kimliğini sabit başlıkta korur. İçerik sırası, uzun bir veri dökümü yerine öğrencinin karar verme sırasını izler:
+
+1. Üniversite, program, konum ve veri güveni
+2. Genel sonuç ve dört kritik karar alanı
+3. Aktif ağırlıklardan otomatik hesaplanan karar profili
+4. Dil/sınav/belge özeti, kalan süre ve resmî bağlantılar
+5. Başvuru gereklilikleri
+6. İsteğe bağlı akademik, maliyet/yaşam ve kanıt ayrıntıları
+
+Karar profilindeki altı eksen `scoring.js` çıktısından 0–100 ölçeğinde okunur; elle kopyalanmış ayrı bir grafik verisi tutulmaz. Kırmızı riskli, sarı dengeli ve yeşil güçlü sonucu gösterir. Grafik tek başına renge bağlı değildir: her eksenin adı, sayısal değeri ve durum metni yanında listelenir.
+
+Uzun bölümler varsayılan olarak katlı tutulur. Başvuru gereklilikleri ilk açılışta görünür; müfredat, laboratuvar, hoca, maliyet dayanağı, burs, konaklama ve kaynak günlüğü kullanıcı istediğinde açılır. Bu düzen veri kapsamını azaltmaz, ilk okumadaki bilişsel yükü azaltır.
+
+## 10. Yayın öncesi ürün kontrolü
 
 JavaScript sözdizimi, çeviri anahtarları, erişilebilir adlar, klavye ile kapatma, kalıcı seçim ve duyarlı yerleşim kontrol edilir. Uygulamanın yerel API ile açıldığı doğrulanır. Veri araştırması içeren bir sürümde bunlara canary ve tam test paketi de eklenir.
 

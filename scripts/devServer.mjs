@@ -1,6 +1,7 @@
 import { createServer } from 'node:http';
 import { readFile, readdir } from 'node:fs/promises';
 import { extname, normalize } from 'node:path';
+import { gzipSync } from 'node:zlib';
 
 const root = new URL('../', import.meta.url);
 const publicDir = new URL('../public/', import.meta.url);
@@ -37,12 +38,19 @@ const mimeTypes = {
   '.webp': 'image/webp',
 };
 
-function sendJson(response, payload, statusCode = 200) {
-  response.writeHead(statusCode, {
-    'Cache-Control': 'no-store',
+function sendJson(request, response, payload, statusCode = 200) {
+  const json = JSON.stringify(payload);
+  const acceptsGzip = /(?:^|,)\s*gzip(?:\s*;|\s*,|$)/i.test(request.headers['accept-encoding'] || '');
+  const body = acceptsGzip ? gzipSync(json, { level: 6 }) : Buffer.from(json);
+  const headers = {
+    'Cache-Control': statusCode < 400 ? 'public, max-age=300, stale-while-revalidate=600' : 'no-store',
     'Content-Type': mimeTypes['.json'],
-  });
-  response.end(JSON.stringify(payload));
+    'Content-Length': body.length,
+    'Vary': 'Accept-Encoding',
+  };
+  if (acceptsGzip) headers['Content-Encoding'] = 'gzip';
+  response.writeHead(statusCode, headers);
+  response.end(body);
 }
 
 function finiteNumber(value) {
@@ -573,7 +581,7 @@ const server = createServer(async (request, response) => {
 
     if (url.pathname === '/api/universities') {
       const { records, report } = await loadPrograms();
-      sendJson(response, {
+      sendJson(request, response, {
         status: 'success',
         data: records,
         report,
@@ -583,7 +591,7 @@ const server = createServer(async (request, response) => {
 
     if (url.pathname === '/api/taxonomy') {
       const taxonomy = JSON.parse(await readFile(new URL('taxonomy.json', dataDir), 'utf8'));
-      sendJson(response, taxonomy);
+      sendJson(request, response, taxonomy);
       return;
     }
 
@@ -593,7 +601,7 @@ const server = createServer(async (request, response) => {
       const opportunities = institutionalFunding(records);
       catalog.institutional_opportunities = opportunities;
       catalog.last_verified = latestVerified(catalog.last_verified, opportunities);
-      sendJson(response, { status: 'success', data: catalog });
+      sendJson(request, response, { status: 'success', data: catalog });
       return;
     }
 
@@ -606,19 +614,19 @@ const server = createServer(async (request, response) => {
       catalog.official_source_count = officialSourceCount(
         catalog.sources, records, ['research', 'faculty', 'professor', 'lab', 'facilit']
       );
-      sendJson(response, { status: 'success', data: catalog });
+      sendJson(request, response, { status: 'success', data: catalog });
       return;
     }
 
     if (url.pathname === '/api/visa-requirements') {
       const visa = JSON.parse(await readFile(visaUrl, 'utf8'));
-      sendJson(response, { status: 'success', data: visa });
+      sendJson(request, response, { status: 'success', data: visa });
       return;
     }
 
     if (url.pathname === '/api/standards') {
       const standards = JSON.parse(await readFile(standardsUrl, 'utf8'));
-      sendJson(response, { status: 'success', data: standards });
+      sendJson(request, response, { status: 'success', data: standards });
       return;
     }
 
@@ -627,7 +635,7 @@ const server = createServer(async (request, response) => {
     const fileUrl = new URL(safePath, publicDir);
 
     if (!fileUrl.href.startsWith(publicDir.href)) {
-      sendJson(response, { status: 'error', message: 'Invalid path.' }, 400);
+      sendJson(request, response, { status: 'error', message: 'Invalid path.' }, 400);
       return;
     }
 
@@ -639,10 +647,10 @@ const server = createServer(async (request, response) => {
     response.end(body);
   } catch (error) {
     if (error?.code === 'ENOENT') {
-      sendJson(response, { status: 'error', message: 'Not found.' }, 404);
+      sendJson(request, response, { status: 'error', message: 'Not found.' }, 404);
       return;
     }
-    sendJson(response, { status: 'error', message: error.message }, 500);
+    sendJson(request, response, { status: 'error', message: error.message }, 500);
   }
 });
 

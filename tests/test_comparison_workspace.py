@@ -38,3 +38,13 @@ def test_comparison_actions_are_bilingual():
         "compare_research",
     ):
         assert translations.count(f"{key}:") == 2
+
+
+def test_programme_cards_keep_horizontal_country_identity():
+    script = (ROOT / "public" / "script.js").read_text(encoding="utf-8")
+    styles = (ROOT / "public" / "redesign.css").read_text(encoding="utf-8")
+
+    assert '<div class="country-card__flag" aria-hidden="true"></div>' in script
+    assert ".country-card__flag {" in styles
+    assert "background: var(--country-flag);" in styles
+    assert ".results-grid { grid-template-columns: repeat(2" not in styles

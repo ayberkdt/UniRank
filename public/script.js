@@ -406,19 +406,46 @@ function renderCountryFlag(container, country) {
         return;
     }
 
-    const image = document.createElement('img');
-    image.src = `https://flagcdn.com/w40/${code.toLowerCase()}.png`;
-    image.alt = '';
-    image.width = 28;
-    image.height = 20;
-    image.loading = 'lazy';
-    image.decoding = 'async';
-    image.addEventListener('error', () => {
-        container.innerHTML = '';
-        container.textContent = code;
-    }, { once: true });
-    container.appendChild(image);
+    container.textContent = code
+        .toUpperCase()
+        .split('')
+        .map(letter => String.fromCodePoint(127397 + letter.charCodeAt(0)))
+        .join('');
+    container.classList.add('country-flag-emoji');
 }
+
+function decisionMetricColor(value) {
+    const score = Math.max(0, Math.min(100, Number(value) || 0));
+    // 0 = red, 50 = amber, 100 = green.  The exact score still appears next
+    // to every metric, so colour is a fast signal rather than the only signal.
+    const hue = score <= 50
+        ? 4 + (score / 50) * 38
+        : 42 + ((score - 50) / 50) * 108;
+    return `hsl(${hue.toFixed(0)} 68% 58%)`;
+}
+
+function decisionMetricStatus(value, isTurkish) {
+    const score = Number(value) || 0;
+    if (score >= 75) return isTurkish ? 'Güçlü' : 'Strong';
+    if (score >= 55) return isTurkish ? 'Dengeli' : 'Balanced';
+    return isTurkish ? 'Riskli' : 'At risk';
+}
+
+function decisionMetrics(components = {}, isTurkish = false) {
+    return [
+        ['academic_fit', isTurkish ? 'Akademik güç' : 'Academic strength'],
+        ['eligibility_language', isTurkish ? 'Uygunluk ve dil' : 'Eligibility & language'],
+        ['cost_funding', isTurkish ? 'Maliyet ve burs' : 'Cost & funding'],
+        ['career_research', isTurkish ? 'Kariyer ve araştırma' : 'Career & research'],
+        ['living_risk', isTurkish ? 'Yaşam ve barınma' : 'Living & housing'],
+        ['confidence_deadline', isTurkish ? 'Veri güveni' : 'Data confidence']
+    ].map(([key, label]) => {
+        const value = Math.max(0, Math.min(100, Number(components[key]) || 0));
+        return { key, label, value, color: decisionMetricColor(value), status: decisionMetricStatus(value, isTurkish) };
+    });
+}
+
+window.uniDecisionMetrics = decisionMetrics;
 
 // Global Boundaries for Normalization
 let globalMaxTuition = 10000;
@@ -481,6 +508,7 @@ const els = {
         overlay: document.getElementById('drawer-overlay'),
         panel: document.getElementById('detail-drawer'),
         title: document.getElementById('drawer-title'),
+        programTitle: document.getElementById('drawer-program-title'),
         body: document.getElementById('drawer-body'),
         closeBtn: document.getElementById('drawer-close'),
         favBtn: document.getElementById('drawer-fav-btn')
@@ -777,11 +805,12 @@ async function fetchData({ silent = false } = {}) {
             populateCountryFilter();
             if (window.renderCategoryUI) window.renderCategoryUI();
             
-            // Pre-calculate category profiles synchronously for the UI
-            for (let r of rawData) {
-                if (!r.Category_Profile && typeof window.buildCategoryProfile === 'function') {
-                    r.Category_Profile = await window.buildCategoryProfile(r);
-                }
+            // Taxonomy is cached after its first request. Build missing profiles
+            // together so a large catalogue does not yield once per record.
+            if (typeof window.buildCategoryProfile === 'function') {
+                await Promise.all(rawData.map(async (record) => {
+                    if (!record.Category_Profile) record.Category_Profile = await window.buildCategoryProfile(record);
+                }));
             }
             
             await applyInitialResearchDeepLink();
@@ -1728,6 +1757,7 @@ function renderTable() {
         return;
     }
 
+    const fragment = document.createDocumentFragment();
     filteredData.forEach((row, i) => {
         const n = window.uniDataAdapter ? window.uniDataAdapter.normalizeUniversityRecord(row) : null;
         if (!n) return;
@@ -1770,6 +1800,7 @@ function renderTable() {
         article.dataset.programId = rid;
         article.style.animationDelay = `${Math.min(i * 0.05, 1.0)}s`;
         article.innerHTML = `
+            <div class="country-card__flag" aria-hidden="true"></div>
             <div class="program-card__rank" aria-label="Rank ${i + 1}"><span>${String(i + 1).padStart(2, '0')}</span></div>
             <div class="program-card__content">
                 <div class="program-card__head">
@@ -1822,8 +1853,9 @@ function renderTable() {
             toggleComparison(rid, event.currentTarget);
         });
         article.querySelector('.detail-btn').addEventListener('click', () => openDrawer(row));
-        els.tableBody.appendChild(article);
+        fragment.appendChild(article);
     });
+    els.tableBody.appendChild(fragment);
     renderComparisonDock();
 }
 
@@ -1843,6 +1875,7 @@ function openDrawer(data) {
 
         const t = window.t || (k => k);
         els.drawer.title.textContent = window.localizedField(n.universityName) || 'Details';
+        if (els.drawer.programTitle) els.drawer.programTitle.textContent = window.localizedField(n.programName) || '';
         
         const rid = n.id;
         const isFav = favorites.has(rid);
@@ -1876,7 +1909,8 @@ function openDrawer(data) {
                     <span>${escapeHtml([displayValue(n.city), window.getCountryName ? window.getCountryName(n.country) : n.country].filter(Boolean).join(' · '))}</span>
                     <span class="confidence-badge confidence-badge--${confidence.key}">${escapeHtml(confidence.label)}</span>
                 </div>
-                <h3>${escapeHtml(displayValue(n.programName))}</h3>
+                <p class="drawer-decision-hero__university">${escapeHtml(displayValue(n.universityName))}</p>
+                <h3 class="drawer-decision-hero__programme">${escapeHtml(displayValue(n.programName))}</h3>
                 <div class="drawer-score-line"><strong class="fit-score fit-score--${band.key}">${escapeHtml(scoreVal)}</strong><span><b>${escapeHtml(band.label)}</b><small>${escapeHtml(window.t ? window.t('technical_match') : 'Technical match')}</small></span></div>
                 <dl class="drawer-decision-grid">
                     <div><dt>${escapeHtml(window.t ? window.t('teaching_language') : 'Teaching language')}</dt><dd>${escapeHtml(languageText)}</dd></div>
@@ -1885,6 +1919,25 @@ function openDrawer(data) {
                     <div><dt>${escapeHtml(isTurkish ? 'Başvuru son tarihi' : 'Application deadline')}</dt><dd>${escapeHtml(n.deadline ? displayValue(n.deadline) : '—')}</dd></div>
                 </dl>
                 ${n.lastVerified ? `<p class="drawer-verified">${escapeHtml(window.t ? window.t('last_verified') : 'Last verified')}: ${escapeHtml(formatCalendarValue(n.lastVerified))}</p>` : ''}
+            </section>`;
+        const metrics = decisionMetrics(data._scoringDetails?.components || {}, isTurkish);
+        const metricRows = metrics.map((metric) => `
+            <li style="--metric-color:${metric.color}">
+                <span class="decision-metric__label">${escapeHtml(metric.label)}</span>
+                <span class="decision-metric__bar"><i style="width:${metric.value}%"></i></span>
+                <b>${metric.value.toFixed(0)}</b>
+                <small>${escapeHtml(metric.status)}</small>
+            </li>`).join('');
+        const decisionProfileHTML = `
+            <section class="drawer-fit-overview" aria-labelledby="decision-profile-title">
+                <div class="drawer-fit-overview__header">
+                    <div><span>${isTurkish ? 'KARAR PROFİLİ' : 'DECISION PROFILE'}</span><h4 id="decision-profile-title">${isTurkish ? 'Güçlü yönler ve riskler' : 'Strengths and risks'}</h4></div>
+                    <p>${isTurkish ? 'Mevcut kayıt ve aktif ağırlıklardan otomatik hesaplanır.' : 'Calculated automatically from the current record and active weights.'}</p>
+                </div>
+                <div class="drawer-fit-overview__body">
+                    <div class="radar-container"><canvas id="radarChart" aria-label="${isTurkish ? 'Program karar puanı dağılımı' : 'Programme decision score breakdown'}"></canvas></div>
+                    <ol class="decision-metric-list">${metricRows}</ol>
+                </div>
             </section>`;
         const verificationBanner = n.needsVerification
             ? `<div class="verification-banner warning"><strong>${isTurkish ? 'Doğrulama gerekli' : 'Verification required'}</strong><span>${isTurkish ? 'Kritik kayıt alanları resmi kaynaklarla yeniden kontrol edilmelidir.' : 'Critical record fields should be rechecked against official sources.'}</span></div>`
@@ -2631,33 +2684,49 @@ function openDrawer(data) {
         const housingRubricHTML = panels ? panels.housingRubricPanel(record) : '';
         const costBreakdownHTML = panels ? panels.costBreakdownPanel(record) : '';
 
+        const drawerGroup = (key, title, summary, content, open = false) => content ? `
+            <details class="drawer-priority-group drawer-priority-group--${key}"${open ? ' open' : ''}>
+                <summary><span>${escapeHtml(title)}</span><small>${escapeHtml(summary)}</small><i aria-hidden="true">⌄</i></summary>
+                <div class="drawer-priority-group__content">${content}</div>
+            </details>` : '';
+
+        const applicationGroup = drawerGroup(
+            'application',
+            isTurkish ? 'Başvuru gereklilikleri' : 'Application essentials',
+            isTurkish ? 'Ücret, uygunluk, belgeler ve takvim' : 'Fee, eligibility, documents and timeline',
+            applicationFeeHTML + admissionsHTML + timelineHTML,
+            true
+        );
+        const academicGroup = drawerGroup(
+            'academic',
+            isTurkish ? 'Akademik ve araştırma ayrıntıları' : 'Academic & research details',
+            isTurkish ? 'Müfredat, laboratuvarlar, hocalar ve uyum' : 'Curriculum, laboratories, faculty and fit',
+            matchHTML + basicInfoHTML + curriculumHTML + unitsHTML + facultyHTML + deptHTML
+        );
+        const financeGroup = drawerGroup(
+            'finance',
+            isTurkish ? 'Maliyet, burs ve yaşam' : 'Cost, funding & living',
+            isTurkish ? 'Ücret dökümü, burs rotaları, konaklama ve izinler' : 'Cost basis, funding routes, housing and permits',
+            financeHTML + costBreakdownHTML + playbookHTML + livingHTML + housingRubricHTML + visaHTML
+        );
+        const evidenceGroup = drawerGroup(
+            'evidence',
+            isTurkish ? 'Kanıt ve öğrenci bağlamı' : 'Evidence & student context',
+            isTurkish ? 'Veri kapsamı, puan etkisi, yorumlar ve kaynak günlüğü' : 'Coverage, score impact, sentiment and source log',
+            verificationBanner + qualityHTML + scoreImpactHTML + studentReviewsHTML + prosConsHTML + sourcesHTML
+        );
+
         const drawerInfo = document.getElementById('drawer-info');
         drawerInfo.innerHTML =
             decisionHeroHTML +
+            decisionProfileHTML +
             requirementSummaryHTML +
             countdownHTML +
-            applicationFeeHTML +
-            verificationBanner +
-            qualityHTML +
-            matchHTML +
-            scoreImpactHTML +
-            basicInfoHTML +
-            admissionsHTML +
-            timelineHTML +
-            curriculumHTML +
-            financeHTML +
-            costBreakdownHTML +
-            playbookHTML +
-            livingHTML +
-            housingRubricHTML +
-            visaHTML +
-            unitsHTML +
-            facultyHTML +
-            deptHTML +
-            studentReviewsHTML +
-            prosConsHTML +
-            sourcesHTML +
-            linksHTML;
+            linksHTML +
+            applicationGroup +
+            academicGroup +
+            financeGroup +
+            evidenceGroup;
         if (panels) panels.bindPanelEvents(drawerInfo);
 
         // 1. Radar Chart Setup
@@ -2667,26 +2736,21 @@ function openDrawer(data) {
                 window.uniChart.destroy();
             }
             
-            const sd = data._scoringDetails ? data._scoringDetails.components : {};
-            const fitMetric = (sd.academic_fit || 0) / 10;
-            const eligMetric = (sd.eligibility_language || 0) / 10;
-            const costMetric = (sd.cost_funding || 0) / 10;
-            const careerMetric = (sd.career_research || 0) / 10;
-            const livingMetric = (sd.living_risk || 0) / 10;
-            const confMetric = (sd.confidence_deadline || 0) / 10;
-
             window.uniChart = new Chart(ctx.getContext('2d'), {
                 type: 'radar',
                 data: {
-                    labels: [isTurkish ? 'Akademik Güç' : 'Academic Strength', isTurkish ? 'Uygunluk' : 'Eligibility', isTurkish ? 'Maliyet & Fon' : 'Cost & Fund.', isTurkish ? 'Kariyer' : 'Career', isTurkish ? 'Yaşam Riski' : 'Living Risk', isTurkish ? 'Veri Güveni' : 'Data Conf.'],
+                    labels: metrics.map(metric => metric.label),
                     datasets: [{
-                        data: [fitMetric, eligMetric, costMetric, careerMetric, livingMetric, confMetric],
+                        data: metrics.map(metric => metric.value),
                         backgroundColor: 'rgba(143, 125, 255, 0.18)',
-                        borderColor: '#8f7dff',
-                        pointBackgroundColor: '#d7c765',
+                        borderColor: '#b5a9ff',
+                        pointBackgroundColor: metrics.map(metric => metric.color),
                         pointBorderColor: '#141519',
-                        pointHoverBackgroundColor: '#f4efe5',
-                        pointHoverBorderColor: '#8f7dff'
+                        pointHoverBackgroundColor: metrics.map(metric => metric.color),
+                        pointHoverBorderColor: '#f4efe5',
+                        pointRadius: 5,
+                        pointHoverRadius: 7,
+                        borderWidth: 2
                     }]
                 },
                 options: {
@@ -2694,8 +2758,13 @@ function openDrawer(data) {
                         r: {
                             angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
                             grid: { color: 'rgba(255, 255, 255, 0.1)' },
-                            pointLabels: { color: '#aaa9a8', font: { family: 'Source Sans 3', size: 11 } },
-                            ticks: { display: false, min: 0, max: 10 }
+                            min: 0,
+                            max: 100,
+                            pointLabels: {
+                                color: (context) => metrics[context.index]?.color || '#aaa9a8',
+                                font: { family: 'Source Sans 3', size: 12, weight: '600' }
+                            },
+                            ticks: { display: false, stepSize: 25 }
                         }
                     },
                     plugins: {
@@ -2703,7 +2772,7 @@ function openDrawer(data) {
                         tooltip: {
                             callbacks: {
                                 label: function(context) {
-                                    return context.raw.toFixed(2) + ' / 1.0';
+                                    return `${context.label}: ${Number(context.raw).toFixed(0)} / 100`;
                                 }
                             }
                         }

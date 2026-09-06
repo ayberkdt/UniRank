@@ -50,7 +50,10 @@ for (const code of [scriptCode, mapCode, profileCode]) {
     literalDomRefs.add(match[1]);
   }
 }
-const missingLiteralDomRefs = [...literalDomRefs].filter((id) => !ids.includes(id)).sort();
+// Some controls are intentionally rendered with the selected record rather
+// than kept as empty global markup. Their contracts are checked below.
+const dynamicDomIds = new Set(['radarChart']);
+const missingLiteralDomRefs = [...literalDomRefs].filter((id) => !ids.includes(id) && !dynamicDomIds.has(id)).sort();
 const dashboardDomRefs = new Set();
 for (const code of [deadlineCode, calendarCode]) {
   for (const match of code.matchAll(/getElementById\(\s*['"]([^'"]+)['"]\s*\)/g)) {
@@ -188,7 +191,8 @@ for (const contract of [
   // launcher, whose badge the same module still feeds.
   ['deadline dashboard page', calendarHtml.includes('deadlineDashboard.js') && calendarHtml.includes('id="deadline-page"') && html.includes('deadlineDashboard.js') && html.includes('href="calendar.html"') && deadlineCode.includes('collectDeadlineEvents') && deadlineCode.includes('pageMode') && calendarCss.includes('.deadline-page') && !css.includes('.deadline-modal-shell') && !redesignCss.includes('.deadline-modal-')],
   ['deadline action hierarchy', deadlineCode.includes('renderPriority') && calendarHtml.includes('class="deadline-overview"') && calendarHtml.includes('class="deadline-runway"') && redesignCss.includes('.deadline-priority__body') && redesignCss.includes('.deadline-catalog')],
-  ['requirement summary at the top of the rail', html.includes('requirementSummary.js') && scriptCode.includes('uniRequirementSummary') && /decisionHeroHTML \+\s*requirementSummaryHTML \+/.test(scriptCode)],
+  ['decision profile and requirement summary at the top of the rail', html.includes('requirementSummary.js') && scriptCode.includes('uniRequirementSummary') && /decisionHeroHTML \+\s*decisionProfileHTML \+\s*requirementSummaryHTML \+/.test(scriptCode)],
+  ['live decision profile', scriptCode.includes('decisionMetrics(data._scoringDetails?.components || {}, isTurkish)') && scriptCode.includes('data: metrics.map(metric => metric.value)') && scriptCode.includes('max: 100') && redesignCss.includes('.drawer-fit-overview')],
   ['runway lists each university once per month', deadlineCode.includes('byUniversity') && deadlineCode.includes('runwayUniversities')],
   ['calendar page loads its own data', calendarCode.includes("fetch('/api/universities')") && calendarCode.includes('unirank:recordsLoaded') && calendarCode.includes('refreshUniRankData') && calendarHtml.includes('countryVisual.js') && html.includes('countryVisual.js')],
   ['deadline source integrity', deadlineCode.includes('VALID_SOURCE_STATUSES') && deadlineCode.includes('documentsVerified')],
@@ -213,7 +217,7 @@ for (const contract of [
   ['pixel-aligned premium filter rail', redesignCss.includes('--ui-filter-rail-inset: 20px') && redesignCss.includes('.sidebar__scroll > .filter-card') && redesignCss.includes('scrollbar-width: none')],
   ['stable profile CTA structure', html.includes('class="profile-cta__arrow"') && scriptCode.includes("querySelector('.profile-cta__copy strong')") && !scriptCode.includes('useProfileBtn.innerHTML')],
   ['structured workspace header', html.includes('class="header-destinations"') && html.includes('class="header-accountbar"') && html.includes('class="account-profile-button"') && !html.includes('class="user-avatar"')],
-  ['hierarchical detail rail', scriptCode.includes('class="ranking-list"') && scriptCode.includes('isTiedQsRank') && redesignCss.includes('counter-reset: drawer-section') && redesignCss.includes('counter(drawer-section, decimal-leading-zero)')],
+  ['hierarchical detail rail', scriptCode.includes('class="ranking-list"') && scriptCode.includes('isTiedQsRank') && scriptCode.includes('class="drawer-priority-group') && redesignCss.includes('.drawer-priority-group')],
   ['true map fullscreen', mapCode.includes('requestFullscreen') && mapCode.includes('fullscreenchange') && redesignCss.includes('.map-stage:fullscreen') && redesignCss.includes('inset: 0 !important')],
   ['modular profile workspace', html.includes('profile.css') && profileCss.includes('.profile-interest-item') && profileCode.includes('normalizeInterestWeight') && profileCode.includes('parseNonNegativeNumber') && profileCode.includes('replaceChildren') && !profileCode.includes('innerHTML')],
   ['resilient shared storage', html.indexOf('storage.js') < html.indexOf('i18n.js') && storageCode.includes('readJSON') && storageCode.includes('readArray') && scriptCode.includes("uniStorage.readArray('unirank_favorites')") && profileCode.includes('uniStorage.readArray') && mapCode.includes("uniStorage.read('unirank_map_detailed'")],
