@@ -160,7 +160,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_gbp": 85,
       "application_fee_verification": {
@@ -214,7 +214,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -222,24 +222,145 @@
       "regional_scholarship_name": null,
       "merit_scholarships": [],
       "tuition_waivers": [],
-      "non_eu_eligible": null,
-      "scholarship_deadline": "2026-01-07 (2026/27 main University funding deadline; past published cycle)",
-      "scholarship_application_url": "https://www.postgraduate.study.cam.ac.uk/funding/applying-university-funding",
+      "non_eu_eligible": true,
+      "scholarship_deadline": "2026/27 historical reference: Cambridge MPhil funding deadline 2025-12-03; 2027/28 deadline not yet published",
+      "scholarship_application_url": "https://www.tev.org.tr/burs/tr/36/tev-tev-uk-cambridge-universitesi-yuksek-lisans-bursu",
       "verification_notes": {
-        "en": "The card describes a funding route and dated published deadlines, not a programme-specific award or a promise of funding.",
-        "tr": "Kart, programa özgü bir ödül veya finansman taahhüdü değil, finansman başvuru yolunu ve tarihli yayımlanmış son tarihleri açıklar."
+        "en": "The playbook retains the latest official 2026/27 round as a historical reference only. Do not reuse its dates for 2027 entry.",
+        "tr": "Playbook son resmî 2026/27 turunu yalnız tarihsel referans olarak tutar. Tarihleri 2027 başlangıcı için yeniden kullanmayın."
       },
       "available_types": [
         "University postgraduate funding via Applicant Portal",
         "Course-/college-/department-specific funding found through Cambridge Funding Search"
       ],
       "funding_notes": {
-        "en": "Cambridge says eligible applicants can be considered for a range of funds by selecting funding in the Applicant Portal; some funds require separate applications. For 2026/27, the main University deadlines were 2 December 2025 and 7 January 2026, while specific funds can differ. Funding is not guaranteed.",
-        "tr": "Cambridge, uygun adayların Applicant Portal'da finansman seçeneğini işaretleyerek çeşitli fonlar için değerlendirilebileceğini; bazı fonların ayrı başvuru gerektirdiğini belirtir. 2026/27 için ana Üniversite tarihleri 2 Aralık 2025 ve 7 Ocak 2026'ydı; belirli fonların tarihi farklı olabilir. Finansman garanti değildir."
+        "en": "The 2026/27 TEV–TEV UK–Cambridge award was a genuine full-cost route for Turkish citizens: full tuition and living costs for one year, up to three awards. Applicants first had to apply to Cambridge and request funding consideration; Cambridge Trust then sent shortlisted admitted candidates to TEV around 15 April. The 2027/28 course funding deadline and renewal of this partner award were not published by 6 September 2026.",
+        "tr": "2026/27 TEV–TEV UK–Cambridge bursu Türk vatandaşları için gerçek bir tam finansman rotasıydı: bir yıl boyunca öğrenim ücretinin ve yaşam giderlerinin tamamı, en fazla üç burs. Adayların önce Cambridge'e başvurup fon değerlendirmesi istemesi; Cambridge Trust'ın kabul edilmiş kısa listedeki adayları 15 Nisan civarında TEV'e iletmesi gerekiyordu. 2027/28 program fonlama tarihi ve ortak bursun yenilenmesi 6 Eylül 2026 itibarıyla yayımlanmamıştı."
       },
-      "application_mode": "unknown",
-      "automatic_consideration": null,
-      "separate_application_required": null
+      "application_mode": "mixed",
+      "automatic_consideration": false,
+      "separate_application_required": true,
+      "playbook": [
+        {
+          "opportunity": "TEV–TEV UK–University of Cambridge Master's Scholarship (2026/27 historical reference)",
+          "eligibility_gates": [
+            {
+              "en": "Be a citizen of the Republic of Türkiye applying for autumn 2026 entry.",
+              "tr": "2026 güz başlangıcı için başvuran Türkiye Cumhuriyeti vatandaşı olmak."
+            },
+            {
+              "en": "Apply to an eligible Cambridge master's programme; MBA, EMBA, Global EMBA, MFin and Executive Master of Accounting were excluded.",
+              "tr": "Uygun bir Cambridge yüksek lisansına başvurmak; MBA, EMBA, Global EMBA, MFin ve Executive Master of Accounting kapsam dışındaydı."
+            },
+            {
+              "en": "Receive a Cambridge admission offer and be shortlisted by Cambridge Trust for referral to TEV.",
+              "tr": "Cambridge kabulü almak ve TEV'e yönlendirilmek üzere Cambridge Trust kısa listesine seçilmek."
+            }
+          ],
+          "selection_criteria": [
+            {
+              "en": "Significant academic achievement and potential, plus financial need where required by the Trust award.",
+              "tr": "Belirgin akademik başarı ve potansiyel; Trust bursunun gerektirdiği durumlarda ayrıca malî ihtiyaç."
+            },
+            {
+              "en": "Performance in the English-language TEV/TEV UK interview after referral.",
+              "tr": "Yönlendirme sonrasındaki İngilizce TEV/TEV UK mülakatındaki performans."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": {
+                "en": "Submit the complete Cambridge MPhil application by the course funding deadline and select funding consideration in the Applicant Portal.",
+                "tr": "Eksiksiz Cambridge MPhil başvurusunu programın fonlama son tarihine kadar gönder ve Applicant Portal'da fon değerlendirmesini seç."
+              },
+              "owner": "applicant",
+              "timing": "with_the_application",
+              "required_documents": [
+                {
+                  "en": "Complete Cambridge admissions application, including references and required supporting documents",
+                  "tr": "Referanslar ve istenen destekleyici belgeler dâhil eksiksiz Cambridge kabul başvurusu"
+                },
+                {
+                  "en": "Funding-section declaration of significant income from all sources",
+                  "tr": "Fonlama bölümünde tüm kaynaklardan önemli gelir beyanı"
+                }
+              ],
+              "hard_requirement": true
+            },
+            {
+              "order": 2,
+              "action": {
+                "en": "Wait for Cambridge Trust to refer shortlisted admitted Turkish candidates to TEV; there was no initial direct TEV application for this award.",
+                "tr": "Cambridge Trust'ın kısa listeye alınmış ve kabul edilmiş Türk adayları TEV'e yönlendirmesini bekle; bu burs için ilk aşamada doğrudan TEV başvurusu yoktu."
+              },
+              "owner": "university",
+              "timing": "after_admission",
+              "required_documents": [],
+              "hard_requirement": true
+            },
+            {
+              "order": 3,
+              "action": {
+                "en": "If invited, complete the TEV portal file and ensure both referees upload their letters before the invited deadline.",
+                "tr": "Davet edilirsen TEV portal dosyasını tamamla ve iki referans mektubunun da davetteki son tarihten önce yüklendiğini kontrol et."
+              },
+              "owner": "applicant",
+              "timing": "after_admission",
+              "required_documents": [
+                {
+                  "en": "TEV application form",
+                  "tr": "TEV başvuru formu"
+                },
+                {
+                  "en": "English CV, preferably one page",
+                  "tr": "Tercihen bir sayfalık İngilizce özgeçmiş"
+                },
+                {
+                  "en": "English transcript",
+                  "tr": "İngilizce transkript"
+                },
+                {
+                  "en": "Two English reference letters from faculty members",
+                  "tr": "Öğretim üyelerinden iki İngilizce referans mektubu"
+                },
+                {
+                  "en": "TOEFL iBT, IELTS Academic or PTE Academic result unless both Cambridge and TEV accept the English-medium-degree exemption",
+                  "tr": "Cambridge ve TEV İngilizce eğitimli diploma muafiyetini kabul etmedikçe TOEFL iBT, IELTS Academic veya PTE Academic sonucu"
+                },
+                {
+                  "en": "Civil registry record, Turkish identity-card image and published family-income evidence",
+                  "tr": "Vukuatlı nüfus kayıt örneği, T.C. kimlik kartı görüntüsü ve yayımlanan aile gelir belgeleri"
+                }
+              ],
+              "hard_requirement": true
+            },
+            {
+              "order": 4,
+              "action": {
+                "en": "Attend the online English-language TEV/TEV UK interview if shortlisted after document review.",
+                "tr": "Belge değerlendirmesinden sonra kısa listeye kalırsan çevrim içi İngilizce TEV/TEV UK mülakatına katıl."
+              },
+              "owner": "applicant",
+              "timing": "after_admission",
+              "required_documents": [],
+              "hard_requirement": true
+            }
+          ],
+          "competitiveness": "highly_selective",
+          "typical_award": {
+            "amount": null,
+            "currency": "GBP",
+            "period": "one year",
+            "coverage": [
+              "full_tuition",
+              "full_living_costs"
+            ]
+          },
+          "renewal_conditions": null,
+          "evidence_url": "https://www.tev.org.tr/burs/tr/36/tev-tev-uk-cambridge-universitesi-yuksek-lisans-bursu"
+        }
+      ]
     },
     "living_profile": {
       "city_cost_level": "unknown",
@@ -345,7 +466,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -382,11 +503,11 @@
             "monthly_living_cost_gbp_min": 1655.0,
             "monthly_living_cost_gbp_max": 1655.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -437,8 +558,8 @@
       "labs": [],
       "research_centers": [],
       "research_strength_summary": {
-        "en": "Research facts are limited to the cited official source.",
-        "tr": "Araştırma bilgileri atıf verilen resmî kaynakla sınırlıdır."
+        "en": "Cambridge's strongest aerospace pathway is concentrated in aerodynamics, turbomachinery and propulsion. The Whittle Laboratory combines GPU-accelerated computation with major rotating and transonic test facilities, while the Fluids Group and Aeronautical Design group add high-speed aerodynamics, aeroacoustics, uncertainty-aware aircraft design and optimisation.",
+        "tr": "Cambridge'in en güçlü havacılık yolu aerodinamik, turbomakineler ve itki alanlarında yoğunlaşır. Whittle Laboratuvarı GPU hızlandırmalı hesaplamayı büyük ölçekli döner ve transonik test tesisleriyle birleştirirken Akışkanlar Grubu ile Havacılık Tasarımı grubu yüksek hızlı aerodinamik, aeroakustik, belirsizlik duyarlı uçak tasarımı ve optimizasyon katkısı sağlar."
       },
       "research_strength_score": null,
       "research_sources": [],
@@ -450,64 +571,215 @@
       },
       "faculty_contact_policy": "do_not_contact_centralised_admission",
       "faculty_contact_note": {
-        "en": "The Turbomachinery group's own page directs enquiries to the Whittle Laboratory Administrator or to relevant project staff rather than naming academics to contact. Taught-master admission at Cambridge is centralised, so the useful preparation is knowing which project you want to join, not which professor to email.",
-        "tr": "Turbomakine grubunun kendi sayfası, iletişim için akademisyen adlandırmak yerine soruları Whittle Laboratuvarı Yöneticisi'ne veya ilgili proje personeline yönlendirir. Cambridge'de ders bazlı yüksek lisans kabulü merkezîdir; bu yüzden yararlı hazırlık hangi profesöre yazacağını değil, hangi projeye katılmak istediğini bilmektir."
+        "en": "The selected official Cambridge and Whittle profiles publish direct faculty emails. Use them for a specific research-fit or project question; programme admission remains a separate university process and an email does not imply supervision or admission.",
+        "tr": "Seçilen resmî Cambridge ve Whittle profilleri öğretim üyelerinin doğrudan e-posta adreslerini yayımlar. Bu adresleri belirli bir araştırma uyumu veya proje sorusu için kullan; program kabulü ayrı bir üniversite sürecidir ve e-posta yazmak danışmanlık ya da kabul anlamına gelmez."
       },
       "research_units": [
         {
           "name": "Whittle Laboratory",
-          "unit_type": "laboratory",
-          "url": "https://whittle.eng.cam.ac.uk/",
+          "unit_type": "lab",
+          "url": "https://whittle.eng.cam.ac.uk/lab/",
+          "lead": "Professor Rob Miller (Director) and Professor Graham Pullan (Co-Director)",
           "topics": [
             "turbomachinery",
             "jet_propulsion",
             "aerodynamics",
-            "thermal_management",
             "cfd",
+            "thermal_management"
+          ],
+          "facilities": [
+            "Rhoden low-speed open-loop wind tunnel",
+            "High Speed Tank variable-density closed-loop transonic turbomachinery wind tunnel",
+            "Low- and high-speed cascade rigs",
+            "Mid-scale and large-scale rotating machines",
+            "GPU-accelerated computational tools for multi-stage machines"
+          ],
+          "student_access": "not_stated",
+          "why_it_fits": {
+            "en": "For turbomachinery, jet_propulsion or cfd, the Whittle Laboratory offers a rare combination of engine-relevant rotating experiments, transonic cascade testing and GPU-scale computation rather than a purely numerical or purely experimental route.",
+            "tr": "turbomachinery, jet_propulsion veya cfd hedefi için Whittle Laboratuvarı; yalnızca sayısal ya da yalnızca deneysel bir yol yerine motorla ilişkili döner deneyleri, transonik kaskat testini ve GPU ölçekli hesaplamayı bir araya getirir."
+          },
+          "last_verified": "2026-09-06"
+        },
+        {
+          "name": "Fluids Group",
+          "unit_type": "research_group",
+          "url": "https://www.eng.cam.ac.uk/node/40",
+          "lead": "Professor Anurag Agarwal (Head of Fluids Group)",
+          "topics": [
+            "aerodynamics",
+            "experimental_fluids",
+            "aeroacoustics",
+            "turbulence",
+            "cfd",
+            "wind_tunnel"
+          ],
+          "facilities": [
+            "Aerodynamics laboratories",
+            "Acoustics laboratory and anechoic chamber",
+            "Fluid mechanics laboratories",
+            "CFD laboratory",
+            "Subsonic and supersonic wind tunnels",
+            "Markham wind tunnel with six-component force balance"
+          ],
+          "student_access": "not_stated",
+          "why_it_fits": {
+            "en": "For aerodynamics, aeroacoustics, turbulence or experimental_fluids, the group couples subsonic/supersonic wind-tunnel work and acoustic measurement with CFD, DNS and theoretical modelling across aircraft wings, inlets and noise.",
+            "tr": "aerodynamics, aeroacoustics, turbulence veya experimental_fluids hedefi için grup; uçak kanatları, hava girişleri ve gürültü problemlerinde subsonik/süpersonik rüzgâr tüneli ile akustik ölçümü CFD, DNS ve kuramsal modellemeyle birleştirir."
+          },
+          "last_verified": "2026-09-06"
+        },
+        {
+          "name": "Aeronautical Design group",
+          "unit_type": "research_group",
+          "url": "https://www-edc.eng.cam.ac.uk/research/aeronautical-design",
+          "lead": "Professor Jerome Jarrett",
+          "topics": [
+            "aircraft_design",
+            "mdo",
+            "uncertainty_quantification",
+            "aerodynamics",
+            "optimization_ai"
+          ],
+          "facilities": [],
+          "student_access": "not_stated",
+          "why_it_fits": {
+            "en": "For aircraft_design, mdo or uncertainty_quantification, this group is the direct Cambridge route into robust computational design, high-performance optimisation, hybrid-electric concepts and transonic shock-control design.",
+            "tr": "aircraft_design, mdo veya uncertainty_quantification hedefi için bu grup; sağlam hesaplamalı tasarım, yüksek performanslı optimizasyon, hibrit-elektrikli kavramlar ve transonik şok kontrol tasarımına Cambridge'deki doğrudan yoldur."
+          },
+          "last_verified": "2026-09-06"
+        },
+        {
+          "name": "National Centre for Propulsion and Power (NCPP)",
+          "unit_type": "facility",
+          "url": "https://whittle.eng.cam.ac.uk/ncpp/",
+          "lead": null,
+          "topics": [
+            "jet_propulsion",
+            "turbomachinery",
+            "experimental_fluids",
+            "testing",
             "energy_systems"
           ],
           "facilities": [
-            "Three multi-stage rotating machines",
-            "Three transonic and supersonic high-speed flow rigs",
-            "Thirteen rotating facilities",
-            "Numerous small-scale rigs, wind tunnels and cascades",
-            "High Mach number wind tunnels for turbine blade testing",
-            "Building expanded in 2012"
+            "4 MW wind tunnel",
+            "Flexible 1.2 MW rotating-rig facility",
+            "60-tonne pressure vessel"
           ],
-          "student_access": "msc_thesis_open",
+          "student_access": "not_stated",
           "why_it_fits": {
-            "en": "Established in 1972 and named after the inventor of the jet engine, the Whittle divides its work roughly equally between numerical prediction and experiment on real rotating machines. Nineteen rotating facilities in one laboratory is a concentration no other record in this database matches. If turbomachinery or jet_propulsion is your tag, this is the single strongest argument for Cambridge — and if it is not, the department's aerospace relevance drops sharply.",
-            "tr": "1972'de kurulan ve jet motorunun mucidinin adını taşıyan Whittle, çalışmasını sayısal tahmin ile gerçek dönen makineler üzerindeki deney arasında kabaca eşit böler. Tek bir laboratuvarda on dokuz dönen tesis, bu veritabanındaki başka hiçbir kaydın erişemediği bir yoğunluktur. Etiketin turbomachinery veya jet_propulsion ise Cambridge için en güçlü argüman budur — değilse bölümün havacılıkla ilgisi belirgin biçimde düşer."
+            "en": "For jet_propulsion, turbomachinery or testing, NCPP supplies the power and variable-density capability needed to test propulsion hardware at a scale that ordinary teaching wind tunnels cannot reproduce.",
+            "tr": "jet_propulsion, turbomachinery veya testing hedefi için NCPP, sıradan eğitim rüzgâr tünellerinin yeniden üretemeyeceği ölçekte itki donanımı testleri için gereken güç ve değişken yoğunluk kabiliyetini sağlar."
           },
-          "last_verified": "2026-08-30"
-        },
-        {
-          "name": "Turbomachinery research group",
-          "unit_type": "research_group",
-          "url": "https://www.eng.cam.ac.uk/research/academic-divisions/energy-fluid-mechanics-and-turbomachinery/research-groups/turbomachinery",
-          "topics": [
-            "turbomachinery",
-            "jet_propulsion",
-            "thermal_management",
-            "energy_systems",
-            "cfd"
-          ],
-          "student_access": "msc_thesis_open",
-          "why_it_fits": {
-            "en": "The group states extensive partnerships with Rolls-Royce, Mitsubishi Heavy Industries, Dyson and Siemens, and it co-runs the EPSRC Centre for Doctoral Training in Gas Turbine Aerodynamics with Oxford and Loughborough. If you intend to continue to a PhD in propulsion in the UK, that CDT is the route and Cambridge is one of its three homes.",
-            "tr": "Grup, Rolls-Royce, Mitsubishi Heavy Industries, Dyson ve Siemens ile kapsamlı ortaklıklar olduğunu belirtir ve Gaz Türbini Aerodinamiği EPSRC Doktora Eğitim Merkezi'ni Oxford ve Loughborough ile birlikte yürütür. Birleşik Krallık'ta itki alanında doktoraya devam etmeyi düşünüyorsan rota o CDT'dir ve Cambridge onun üç evinden biridir."
-          },
-          "last_verified": "2026-08-30"
+          "last_verified": "2026-09-06"
         }
       ],
       "faculty_email_availability": {
-        "status": "not_published",
+        "status": "published_on_individual_profiles",
         "note": {
-          "en": "The Turbomachinery group page names no individual academics and directs enquiries to the laboratory administrator instead. No address is stored here.",
-          "tr": "Turbomakine grubu sayfası bireysel akademisyen adlandırmaz ve soruları laboratuvar yöneticisine yönlendirir. Burada hiçbir adres saklanmamıştır."
+          "en": "Direct emails are stored only for the four selected academics whose official Cambridge or Whittle profiles publish them; no address was reconstructed from a username pattern.",
+          "tr": "Doğrudan e-postalar yalnızca resmî Cambridge veya Whittle profillerinde adresleri yayımlanan dört seçili akademisyen için kaydedildi; kullanıcı adı kalıbından hiçbir adres üretilmedi."
         },
-        "directory_url": "https://www.eng.cam.ac.uk/research/academic-divisions/energy-fluid-mechanics-and-turbomachinery/research-groups/turbomachinery"
-      }
+        "directory_url": "https://www.eng.cam.ac.uk/people/division/118"
+      },
+      "notable_professors": [
+        {
+          "name": "Rob Miller",
+          "role": {
+            "en": "Chair in Aerothermal Technology and Director of the Whittle Laboratory",
+            "tr": "Aerotermal Teknoloji Kürsüsü Başkanı ve Whittle Laboratuvarı Direktörü"
+          },
+          "focus": {
+            "en": "Aerothermal technology, rapid aerospace technology development, gas-turbine aerodynamics and system-level pathways to climate-neutral aviation.",
+            "tr": "Aerotermal teknoloji, hızlı havacılık teknolojisi geliştirme, gaz türbini aerodinamiği ve iklim nötr havacılığa sistem düzeyinde geçiş yolları."
+          },
+          "fit_tags": [
+            "turbomachinery",
+            "jet_propulsion",
+            "aerodynamics",
+            "energy_systems"
+          ],
+          "email": "rjm76@cam.ac.uk",
+          "email_source": "https://whittle.eng.cam.ac.uk/team-member/professor-rob-miller/",
+          "profile_url": "https://whittle.eng.cam.ac.uk/team-member/professor-rob-miller/",
+          "lab": "Whittle Laboratory",
+          "contact_timing": "unknown",
+          "accepting_students_signal": "not_stated",
+          "last_verified": "2026-09-06"
+        },
+        {
+          "name": "Graham Pullan",
+          "role": {
+            "en": "Professor of Computational Aerothermal Design and Co-Director of the Whittle Laboratory",
+            "tr": "Hesaplamalı Aerotermal Tasarım Profesörü ve Whittle Laboratuvarı Eş Direktörü"
+          },
+          "focus": {
+            "en": "Three-dimensional turbomachinery aerodynamic design and the computational methods needed for rapid, net-zero-oriented propulsion and power technology development.",
+            "tr": "Üç boyutlu turbomakine aerodinamik tasarımı ile net sıfır odaklı itki ve enerji teknolojilerinin hızlı geliştirilmesi için gereken hesaplama yöntemleri."
+          },
+          "fit_tags": [
+            "turbomachinery",
+            "cfd",
+            "jet_propulsion",
+            "mdo"
+          ],
+          "email": "gp10006@eng.cam.ac.uk",
+          "email_source": "https://whittle.eng.cam.ac.uk/team-member/professor-graham-pullan/",
+          "profile_url": "https://whittle.eng.cam.ac.uk/team-member/professor-graham-pullan/",
+          "lab": "Whittle Laboratory",
+          "contact_timing": "unknown",
+          "accepting_students_signal": "not_stated",
+          "last_verified": "2026-09-06"
+        },
+        {
+          "name": "Holger Babinsky",
+          "role": {
+            "en": "Professor of Aerodynamics and Head of the Energy, Fluids and Turbomachinery Division",
+            "tr": "Aerodinamik Profesörü ve Enerji, Akışkanlar ve Turbomakineler Bölümü Başkanı"
+          },
+          "focus": {
+            "en": "Transonic and supersonic flows, unsteady aerodynamics, shock-wave/boundary-layer interactions, flow control, engine inlets and wing-gust encounters.",
+            "tr": "Transonik ve süpersonik akışlar, kararsız aerodinamik, şok dalgası/sınır tabakası etkileşimleri, akış kontrolü, motor hava girişleri ve kanat-rüzgâr darbesi etkileşimleri."
+          },
+          "fit_tags": [
+            "aerodynamics",
+            "experimental_fluids",
+            "stability_control",
+            "wind_tunnel"
+          ],
+          "email": "hb@eng.cam.ac.uk",
+          "email_source": "https://www.eng.cam.ac.uk/profiles/hb209",
+          "profile_url": "https://www.eng.cam.ac.uk/profiles/hb209",
+          "lab": "Fluids Group and Aerodynamics Laboratory",
+          "contact_timing": "unknown",
+          "accepting_students_signal": "not_stated",
+          "last_verified": "2026-09-06"
+        },
+        {
+          "name": "Jerome Jarrett",
+          "role": {
+            "en": "University Associate Professor in Aeronautics",
+            "tr": "Havacılık Alanında Üniversite Doçenti"
+          },
+          "focus": {
+            "en": "Aeronautical design and optimisation under uncertainty, including hybrid and solar-electric aircraft, transonic shock-control bumps, robust aerodynamic design and multi-fidelity turbomachinery design.",
+            "tr": "Hibrit ve güneş-elektrikli uçaklar, transonik şok kontrol çıkıntıları, sağlam aerodinamik tasarım ve çoklu doğruluk düzeyli turbomakine tasarımı dâhil belirsizlik altında havacılık tasarımı ve optimizasyonu."
+          },
+          "fit_tags": [
+            "aircraft_design",
+            "mdo",
+            "uncertainty_quantification",
+            "aerodynamics"
+          ],
+          "email": "jpj1001@cam.ac.uk",
+          "email_source": "https://www-edc.eng.cam.ac.uk/people/jerome-jarrett",
+          "profile_url": "https://www-edc.eng.cam.ac.uk/people/jerome-jarrett",
+          "lab": "Aeronautical Design group",
+          "contact_timing": "unknown",
+          "accepting_students_signal": "not_stated",
+          "last_verified": "2026-09-06"
+        }
+      ]
     },
     "industry_ecosystem_profile": {
       "nearby_companies": [],
@@ -548,11 +820,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -114,
+        "days_remaining_at_evaluation": -115,
         "derived_from": "application_timeline_profile.non_eu_deadline",
         "confidence": "high",
         "source_url": "https://www.postgraduate.study.cam.ac.uk/courses/directory/egegmpmeg/requirements",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -848,9 +1120,244 @@
             "en": "Confirms transcript, translation and upload rules.",
             "tr": "Transkript, çeviri ve yükleme kurallarını doğrular."
           }
+        },
+        {
+          "url": "https://whittle.eng.cam.ac.uk/team-member/professor-rob-miller/",
+          "title": "University of Cambridge Whittle Laboratory — Professor Rob Miller",
+          "source_type": "official_faculty_profile",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "faculty",
+            "faculty_email",
+            "notable_professors"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes Miller's current role, research biography and direct email.",
+            "tr": "Miller'ın güncel rolünü, araştırma biyografisini ve doğrudan e-postasını yayımlar."
+          }
+        },
+        {
+          "url": "https://whittle.eng.cam.ac.uk/team-member/professor-graham-pullan/",
+          "title": "University of Cambridge Whittle Laboratory — Professor Graham Pullan",
+          "source_type": "official_faculty_profile",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "faculty",
+            "faculty_email",
+            "notable_professors"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes Pullan's current role, research focus and direct email.",
+            "tr": "Pullan'ın güncel rolünü, araştırma odağını ve doğrudan e-postasını yayımlar."
+          }
+        },
+        {
+          "url": "https://www.eng.cam.ac.uk/profiles/hb209",
+          "title": "University of Cambridge Engineering — Professor Holger Babinsky",
+          "source_type": "official_faculty_profile",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "faculty",
+            "faculty_email",
+            "notable_professors"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes Babinsky's current title, detailed research interests and direct email.",
+            "tr": "Babinsky'nin güncel unvanını, ayrıntılı araştırma ilgi alanlarını ve doğrudan e-postasını yayımlar."
+          }
+        },
+        {
+          "url": "https://www-edc.eng.cam.ac.uk/people/jerome-jarrett",
+          "title": "University of Cambridge Engineering Design Centre — Professor Jerome Jarrett",
+          "source_type": "official_faculty_profile",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "faculty",
+            "faculty_email",
+            "notable_professors"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes Jarrett's title, aeronautical design research themes and direct email.",
+            "tr": "Jarrett'ın unvanını, havacılık tasarımı araştırma temalarını ve doğrudan e-postasını yayımlar."
+          }
+        },
+        {
+          "url": "https://whittle.eng.cam.ac.uk/lab/",
+          "title": "University of Cambridge — Whittle Laboratory",
+          "source_type": "official_lab_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "labs",
+            "research_units"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Describes the laboratory's combined experimental and computational turbomachinery work and facility range.",
+            "tr": "Laboratuvarın birleşik deneysel ve hesaplamalı turbomakine çalışmalarını ve tesis yelpazesini açıklar."
+          }
+        },
+        {
+          "url": "https://whittle.eng.cam.ac.uk/ncpp/",
+          "title": "University of Cambridge Whittle Laboratory — National Centre for Propulsion and Power",
+          "source_type": "official_facility_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "labs",
+            "research_units",
+            "facilities"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Names the 4 MW wind tunnel, 1.2 MW rotating rig and 60-tonne pressure vessel.",
+            "tr": "4 MW rüzgâr tünelini, 1,2 MW döner düzeneği ve 60 tonluk basınç kabını adlandırır."
+          }
+        },
+        {
+          "url": "https://whittle.eng.cam.ac.uk/facility/rhoden-wind-tunnel/",
+          "title": "University of Cambridge Whittle Laboratory — Rhoden wind tunnel",
+          "source_type": "official_facility_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "labs",
+            "research_units",
+            "facilities"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Documents the named low-speed open-loop facility and its turbine and compressor cascade applications.",
+            "tr": "Adlandırılmış düşük hızlı açık çevrim tesisini ve türbin ile kompresör kaskatı uygulamalarını belgeler."
+          }
+        },
+        {
+          "url": "https://whittle.eng.cam.ac.uk/facility/high-speed-tank/",
+          "title": "University of Cambridge Whittle Laboratory — High Speed Tank",
+          "source_type": "official_facility_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "labs",
+            "research_units",
+            "facilities"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Documents the variable-density closed-loop transonic turbomachinery tunnel and Mach/Reynolds capability.",
+            "tr": "Değişken yoğunluklu kapalı çevrim transonik turbomakine tünelini ve Mach/Reynolds kabiliyetini belgeler."
+          }
+        },
+        {
+          "url": "https://www.eng.cam.ac.uk/node/40",
+          "title": "University of Cambridge Engineering — Fluids Group",
+          "source_type": "official_research_group_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "labs",
+            "research_units",
+            "facilities"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes the group's aerospace-relevant methods, research topics and laboratory categories.",
+            "tr": "Grubun havacılıkla ilişkili yöntemlerini, araştırma konularını ve laboratuvar kategorilerini yayımlar."
+          }
+        },
+        {
+          "url": "https://www.eng.cam.ac.uk/research/academic-divisions/energy-fluid-mechanics-and-turbomachinery/research-facilities-energy",
+          "title": "University of Cambridge Engineering — Energy, Fluid Mechanics and Turbomachinery research facilities",
+          "source_type": "official_facility_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "labs",
+            "research_units",
+            "facilities"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Names the wind tunnels, rotating rigs, Markham force-balance system and anechoic-chamber capability.",
+            "tr": "Rüzgâr tünellerini, döner düzenekleri, Markham kuvvet dengesi sistemini ve yankısız oda kabiliyetini adlandırır."
+          }
+        },
+        {
+          "url": "https://www-edc.eng.cam.ac.uk/research/aeronautical-design",
+          "title": "University of Cambridge Engineering Design Centre — Aeronautical Design",
+          "source_type": "official_research_group_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "research_units"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Defines the group's robust computational design, optimisation and transonic shock-control work.",
+            "tr": "Grubun sağlam hesaplamalı tasarım, optimizasyon ve transonik şok kontrolü çalışmalarını tanımlar."
+          }
+        },
+        {
+          "url": "https://www.tev.org.tr/burs/tr/36/tev-tev-uk-cambridge-universitesi-yuksek-lisans-bursu",
+          "title": "TEV — TEV UK–University of Cambridge Master's Scholarship 2026/27",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "scholarship_deadline",
+            "application_documents"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.cambridgetrust.org/postgraduate-applicants/",
+          "title": "Cambridge Trust — Postgraduate applicants",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "admission"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.postgraduate.study.cam.ac.uk/courses/directory/egegmpmeg/finance",
+          "title": "University of Cambridge — MPhil in Engineering finance and 2026/27 funding deadline",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "scholarship_deadline"
+          ],
+          "confidence": "high"
         }
       ],
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "needs_verification": true,
       "verification_notes": {
         "en": "Only facts supported by the checked official source log are retained; funding and housing eligibility remain programme- and applicant-specific unless explicitly stated.",
@@ -870,7 +1377,8 @@
         "housing": "high",
         "deadline": "high",
         "deadlines": "high",
-        "application_documents": "high"
+        "application_documents": "high",
+        "funding": "high"
       },
       "official_cost_of_living_page": "https://www.postgraduate.study.cam.ac.uk/finance/maintenance"
     },
@@ -903,7 +1411,7 @@
     },
     "data_quality": {
       "status": "verified",
-      "checked_official_source_count": 14,
+      "checked_official_source_count": 18,
       "verified_fields": [
         "program",
         "language",
@@ -918,7 +1426,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-05"
+      "audited_at": "2026-09-06"
     },
     "non_eu_deadline": "2026-05-14",
     "scholarship_deadline": "2025-12-03",
@@ -993,7 +1501,7 @@
       ],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -1153,7 +1661,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_gbp_per_year": 45000.0,
       "tuition_derivation": {
@@ -1225,7 +1733,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -1233,20 +1741,186 @@
       "regional_scholarship_name": null,
       "merit_scholarships": [],
       "tuition_waivers": [],
-      "non_eu_eligible": null,
-      "scholarship_deadline": null,
-      "scholarship_application_url": null,
+      "non_eu_eligible": true,
+      "scholarship_deadline": "Imperial Inspires 2027/28: not yet published; TEV–TEV UK–Imperial 2026/27 historical deadline: 2026-03-05 17:00 Türkiye time",
+      "scholarship_application_url": "https://www.imperial.ac.uk/study/fees-and-funding/imperial-inspires-scholarships/",
       "verification_notes": {
-        "en": "The official course page does not establish that every international applicant is eligible.",
-        "tr": "Resmî ders sayfası her uluslararası adayın uygun olduğunu göstermez."
+        "en": "Imperial Inspires does not yet confirm every participating postgraduate course or a deadline. Advanced Aeronautical Engineering applicants must verify course participation before relying on it.",
+        "tr": "Imperial Inspires henüz katılan her lisansüstü programı veya bir son tarihi doğrulamıyor. Advanced Aeronautical Engineering adayları bu bursa güvenmeden önce program katılımını doğrulamalıdır."
       },
       "funding_notes": {
-        "en": "The Department of Aeronautics MSc Scholarship is listed as a full-tuition award for successful Department of Aeronautics MSc applicants; exact criteria and cycle must be checked.",
-        "tr": "Department of Aeronautics MSc Bursu, başarılı Department of Aeronautics MSc adayları için tam öğrenim ücreti bursu olarak listelenir; kesin kriterler ve dönem kontrol edilmelidir."
+        "en": "Imperial Inspires is the actionable 2027 route: at least 300 awards of £15,000 per year for overseas-fee students, including participating postgraduate taught courses in Aeronautics. Applications open in September 2026, but participating-course confirmation and the deadline were not yet published. The TEV–TEV UK–Imperial full-cost route is retained only as a highly relevant 2026/27 Turkish reference.",
+        "tr": "Imperial Inspires uygulanabilir 2027 rotasıdır: Aeronautics'teki katılımcı lisansüstü programlar dâhil, yurt dışı ücret statüsündeki öğrenciler için yılda 15.000 GBP değerinde en az 300 burs. Başvurular Eylül 2026'da açılır; ancak katılımcı program teyidi ve son tarih henüz yayımlanmamıştır. TEV–TEV UK–Imperial tam finansman rotası yalnız Türk adaylara çok ilgili bir 2026/27 referansı olarak tutulur."
       },
-      "application_mode": "unknown",
-      "automatic_consideration": null,
-      "separate_application_required": null
+      "application_mode": "invitation_only",
+      "automatic_consideration": false,
+      "separate_application_required": true,
+      "playbook": [
+        {
+          "opportunity": "Imperial Inspires Scholarship — 2027/28",
+          "eligibility_gates": [
+            {
+              "en": "Be a new international entrant eligible to pay the Overseas tuition-fee rate.",
+              "tr": "Yurt dışı öğrenim ücreti statüsündeki yeni bir uluslararası öğrenci olmak."
+            },
+            {
+              "en": "Apply for a full-time participating postgraduate taught course; Aeronautics is listed, but individual course participation must still be confirmed.",
+              "tr": "Katılımcı tam zamanlı bir lisansüstü programına başvurmak; Aeronautics listelenmiştir ancak tekil program katılımı yine de doğrulanmalıdır."
+            }
+          ],
+          "selection_criteria": [
+            {
+              "en": "Academic merit and potential assessed through the postgraduate admissions application.",
+              "tr": "Lisansüstü kabul başvurusu üzerinden değerlendirilen akademik başarı ve potansiyel."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": {
+                "en": "Submit the Imperial postgraduate application through My Imperial after applications open in September 2026.",
+                "tr": "Imperial lisansüstü başvurusunu Eylül 2026'da başvurular açıldıktan sonra My Imperial üzerinden gönder."
+              },
+              "owner": "applicant",
+              "timing": "with_the_application",
+              "required_documents": [
+                {
+                  "en": "Complete Imperial course application and required supporting documents",
+                  "tr": "Eksiksiz Imperial program başvurusu ve zorunlu destekleyici belgeler"
+                }
+              ],
+              "hard_requirement": true
+            },
+            {
+              "order": 2,
+              "action": {
+                "en": "If the course participates and Imperial confirms eligibility, accept the invitation in the i360 admissions portal and submit the additional essay response by the deadline stated in the invitation.",
+                "tr": "Program katılıyorsa ve Imperial uygunluğunu doğrularsa i360 kabul portalındaki daveti kabul et ve ek kompozisyon yanıtını davette belirtilen tarihe kadar gönder."
+              },
+              "owner": "applicant",
+              "timing": "separate_before_deadline",
+              "required_documents": [
+                {
+                  "en": "Additional Imperial Inspires essay response",
+                  "tr": "Ek Imperial Inspires kompozisyon yanıtı"
+                }
+              ],
+              "hard_requirement": true
+            }
+          ],
+          "competitiveness": "highly_selective",
+          "typical_award": {
+            "amount": 15000,
+            "currency": "GBP",
+            "period": "per year for each year of the course",
+            "coverage": [
+              "tuition_and_or_living_cost_support_at_faculty_discretion"
+            ]
+          },
+          "renewal_conditions": "Continues for the course duration subject to satisfactory academic progress and Imperial's continuing requirements; repeat years and interruption periods are not funded.",
+          "evidence_url": "https://www.imperial.ac.uk/study/fees-and-funding/imperial-inspires-scholarships/"
+        },
+        {
+          "opportunity": "TEV–TEV UK–Imperial College London Master's Scholarship (2026/27 historical reference)",
+          "eligibility_gates": [
+            {
+              "en": "Be a Turkish citizen and under age 35 on 1 January of the application year.",
+              "tr": "Türkiye Cumhuriyeti vatandaşı olmak ve başvuru yılının 1 Ocak tarihinde 35 yaşın altında olmak."
+            },
+            {
+              "en": "Have at least 3.0/4.0 or 76.5/100 and meet Imperial's English requirement by 30 June 2026 without a pre-sessional English course.",
+              "tr": "En az 3,0/4,0 veya 76,5/100 ortalamaya sahip olmak ve Imperial İngilizce koşulunu hazırlık dil programı olmadan 30 Haziran 2026'ya kadar karşılamak."
+            },
+            {
+              "en": "Apply to an eligible one-year Engineering or Natural Sciences Master's and obtain an offer by 4 March 2026.",
+              "tr": "Uygun bir yıllık Engineering veya Natural Sciences yüksek lisansına başvurmak ve 4 Mart 2026'ya kadar kabul almak."
+            }
+          ],
+          "selection_criteria": [
+            {
+              "en": "Academic merit assessed by Imperial and financial need assessed by TEV UK.",
+              "tr": "Imperial tarafından değerlendirilen akademik başarı ve TEV UK tarafından değerlendirilen malî ihtiyaç."
+            },
+            {
+              "en": "Performance in the TEV interview for shortlisted candidates.",
+              "tr": "Kısa listedeki adayların TEV mülakat performansı."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": {
+                "en": "Apply to Imperial at least two weeks before the TEV application and obtain a CID number; the 2026/27 university-application deadline for this award was 7 January 2026.",
+                "tr": "TEV başvurusundan en az iki hafta önce Imperial'a başvur ve CID numarası al; bu burs için 2026/27 üniversite başvuru tarihi 7 Ocak 2026'ydı."
+              },
+              "owner": "applicant",
+              "timing": "with_the_application",
+              "required_documents": [
+                {
+                  "en": "Complete Imperial Master's application",
+                  "tr": "Eksiksiz Imperial yüksek lisans başvurusu"
+                },
+                {
+                  "en": "Imperial CID number",
+                  "tr": "Imperial CID numarası"
+                }
+              ],
+              "hard_requirement": true
+            },
+            {
+              "order": 2,
+              "action": {
+                "en": "Submit the separate TEV online application and all mandatory evidence by 5 March 2026 at 17:00.",
+                "tr": "Ayrı TEV çevrim içi başvurusunu ve tüm zorunlu kanıtları 5 Mart 2026 saat 17.00'ye kadar gönder."
+              },
+              "owner": "applicant",
+              "timing": "separate_before_deadline",
+              "required_documents": [
+                {
+                  "en": "TEV application form, English CV and English transcript",
+                  "tr": "TEV başvuru formu, İngilizce özgeçmiş ve İngilizce transkript"
+                },
+                {
+                  "en": "Two English academic reference letters",
+                  "tr": "İki İngilizce akademik referans mektubu"
+                },
+                {
+                  "en": "Required English-test result unless the published English-medium exemption applies",
+                  "tr": "Yayımlanan İngilizce eğitim muafiyeti uygulanmıyorsa zorunlu İngilizce sınav sonucu"
+                },
+                {
+                  "en": "Civil registry record, Turkish identity-card image and family-income evidence",
+                  "tr": "Vukuatlı nüfus kayıt örneği, T.C. kimlik kartı görüntüsü ve aile gelir kanıtları"
+                }
+              ],
+              "hard_requirement": true
+            },
+            {
+              "order": 3,
+              "action": {
+                "en": "Attend the online English-language TEV interview if shortlisted.",
+                "tr": "Kısa listeye kalırsan çevrim içi İngilizce TEV mülakatına katıl."
+              },
+              "owner": "applicant",
+              "timing": "after_admission",
+              "required_documents": [],
+              "hard_requirement": true
+            }
+          ],
+          "competitiveness": "highly_selective",
+          "typical_award": {
+            "amount": 21000,
+            "currency": "GBP",
+            "period": "one year; published living-cost amount is approximate",
+            "coverage": [
+              "full_tuition",
+              "housing_and_living_costs"
+            ]
+          },
+          "renewal_conditions": null,
+          "evidence_url": "https://www.tev.org.tr/burs/tr/35/tev-tev-uk-eczacibasi-imperial-college-ingiltere-yuksek-lisans-bursu"
+        }
+      ]
     },
     "living_profile": {
       "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
@@ -1353,7 +2027,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -1390,11 +2064,11 @@
             "monthly_living_cost_gbp_min": 1264.0,
             "monthly_living_cost_gbp_max": 2118.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -1917,7 +2591,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -2212,9 +2886,48 @@
             "application_documents"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://www.imperial.ac.uk/study/fees-and-funding/imperial-inspires-scholarships/",
+          "title": "Imperial College London — Imperial Inspires Scholarships 2027 entry",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "scholarship_deadline"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.imperial.ac.uk/study/fees-and-funding/imperial-inspires-scholarships/terms-and-conditions/",
+          "title": "Imperial College London — Imperial Inspires terms and conditions for 2027 entry",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "funding"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.tev.org.tr/burs/tr/35/tev-tev-uk-eczacibasi-imperial-college-ingiltere-yuksek-lisans-bursu",
+          "title": "TEV — TEV UK–Imperial College London Master's Scholarship 2026/27",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "scholarship_deadline",
+            "application_documents"
+          ],
+          "confidence": "high"
         }
       ],
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "needs_verification": true,
       "verification_notes": {
         "en": "Only facts supported by the checked official source log are retained; funding and housing eligibility remain programme- and applicant-specific unless explicitly stated.",
@@ -2225,14 +2938,15 @@
         "language": "medium",
         "admission": "medium",
         "tuition": "high",
-        "scholarship": "medium",
+        "scholarship": "high",
         "curriculum": "high",
         "living_profile": "high",
         "application_timeline_profile": "medium",
         "housing": "high",
         "deadline": "medium",
         "deadlines": "medium",
-        "application_documents": "medium"
+        "application_documents": "medium",
+        "funding": "high"
       },
       "official_cost_of_living_page": "https://www.imperial.ac.uk/study/pg/fees-and-funding/living-costs/",
       "official_language_policy_page": "https://www.imperial.ac.uk/media/imperial-college/administration-and-support-services/registry/academic-governance/public/regulations/2021-22/Single_Set_Taught_Academic_Regulations_2021_22.pdf"
@@ -2266,7 +2980,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 15,
+      "checked_official_source_count": 18,
       "verified_fields": [
         "program",
         "language",
@@ -2281,7 +2995,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-05"
+      "audited_at": "2026-09-06"
     },
     "relevance_status": "strong",
     "qs_ranking_display": "=2",
@@ -2349,7 +3063,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -2573,7 +3287,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -2630,7 +3344,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -2638,20 +3352,20 @@
       "regional_scholarship_name": null,
       "merit_scholarships": [],
       "tuition_waivers": [],
-      "non_eu_eligible": null,
-      "scholarship_deadline": null,
-      "scholarship_application_url": null,
+      "non_eu_eligible": true,
+      "scholarship_deadline": "2027/28 course-specific December deadline not yet published as of 2026-09-06",
+      "scholarship_application_url": "https://www.ox.ac.uk/admissions/graduate/fees-and-funding/funding/clarendon",
       "verification_notes": {
-        "en": "No generic non-EU scholarship guarantee is stored.",
-        "tr": "Genel bir AB dışı burs garantisi kaydedilmemiştir."
+        "en": "No exact 2027/28 deadline is stored. Oxford expected most course pages to update on 16 September 2026.",
+        "tr": "Kesin 2027/28 tarihi kaydedilmedi. Oxford çoğu program sayfasının 16 Eylül 2026'da güncellenmesini bekliyordu."
       },
       "funding_notes": {
-        "en": "For 2026/27 Oxford expected more than 1,100 full or partial graduate scholarships across many courses. Applicants who apply by this course's December deadline and receive an offer are automatically assessed for the majority of Oxford scholarships; some scholarships require a separate application or extra eligibility conditions. This does not establish eligibility for any named award.",
-        "tr": "Oxford 2026/27 için birçok ders genelinde 1.100'den fazla tam veya kısmi lisansüstü burs beklediğini belirtir. Bu dersin Aralık son tarihine kadar başvurup teklif alanlar Oxford burslarının çoğu için otomatik değerlendirilir; bazı burslar ayrı başvuru veya ek uygunluk şartı ister. Bu bilgi herhangi bir adlandırılmış burs için uygunluk kanıtlamaz."
+        "en": "Clarendon is open to every nationality and field and provides full course fees plus a living-cost grant for the full fee-liability period. Oxford confirms that the MSc by Research in Engineering Science must use its December deadline for scholarship consideration, but the exact 2027/28 date was not yet published on 6 September 2026.",
+        "tr": "Clarendon tüm uyruklara ve alanlara açıktır; ücret yükümlülüğü dönemi boyunca tüm program ücretini ve yaşam gideri hibesini sağlar. Oxford, Engineering Science MSc by Research burs değerlendirmesi için programın Aralık son tarihinin kullanılması gerektiğini doğrular; ancak kesin 2027/28 tarihi 6 Eylül 2026'da henüz yayımlanmamıştı."
       },
-      "application_mode": "mixed",
+      "application_mode": "automatic",
       "automatic_consideration": true,
-      "separate_application_required": true,
+      "separate_application_required": false,
       "opportunities": [
         {
           "name": "Oxford graduate scholarships (general pool)",
@@ -2663,7 +3377,84 @@
           "source_url": "https://www.ox.ac.uk/admissions/graduate/courses/msc-research-engineering-science"
         }
       ],
-      "funding_status": "available_but_not_guaranteed_and_scheme_specific"
+      "funding_status": "available_but_not_guaranteed_and_scheme_specific",
+      "playbook": [
+        {
+          "opportunity": "Clarendon Fund Scholarship — 2027/28",
+          "eligibility_gates": [
+            {
+              "en": "Apply for an eligible full-time or part-time Oxford Master's or DPhil course; there is no nationality, residence or field restriction.",
+              "tr": "Uygun tam zamanlı veya yarı zamanlı Oxford yüksek lisans ya da DPhil programına başvurmak; uyruk, ikamet veya alan kısıtı yoktur."
+            },
+            {
+              "en": "Submit the complete course application by the course's December or January funding deadline; this Engineering Science record uses the December deadline.",
+              "tr": "Eksiksiz program başvurusunu programın Aralık veya Ocak fonlama tarihine kadar göndermek; bu Engineering Science kaydı Aralık tarihini kullanır."
+            },
+            {
+              "en": "Receive an Oxford course offer.",
+              "tr": "Oxford program kabulü almak."
+            }
+          ],
+          "selection_criteria": [
+            {
+              "en": "Outstanding academic merit and potential.",
+              "tr": "Üstün akademik başarı ve potansiyel."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": {
+                "en": "Check the live MSc by Research in Engineering Science page after its 2027/28 update and record the exact December funding deadline.",
+                "tr": "Engineering Science MSc by Research sayfasını 2027/28 güncellemesinden sonra kontrol et ve kesin Aralık fonlama tarihini kaydet."
+              },
+              "owner": "applicant",
+              "timing": "before_application_opens",
+              "required_documents": [],
+              "hard_requirement": true
+            },
+            {
+              "order": 2,
+              "action": {
+                "en": "Submit the complete Oxford graduate application by that published December deadline; no separate Clarendon form or additional scholarship document is required.",
+                "tr": "Eksiksiz Oxford lisansüstü başvurusunu yayımlanan Aralık tarihine kadar gönder; ayrı Clarendon formu veya ek burs belgesi gerekmez."
+              },
+              "owner": "applicant",
+              "timing": "with_the_application",
+              "required_documents": [
+                {
+                  "en": "Complete course application and all supporting documents required by the Engineering Science course page",
+                  "tr": "Engineering Science program sayfasının istediği eksiksiz program başvurusu ve tüm destekleyici belgeler"
+                }
+              ],
+              "hard_requirement": true
+            },
+            {
+              "order": 3,
+              "action": {
+                "en": "Allow Oxford to assess the eligible application automatically through the Clarendon allocation process.",
+                "tr": "Oxford'un uygun başvuruyu Clarendon tahsis sürecinde otomatik değerlendirmesine izin ver."
+              },
+              "owner": "university",
+              "timing": "after_admission",
+              "required_documents": [],
+              "hard_requirement": false
+            }
+          ],
+          "competitiveness": "highly_selective",
+          "typical_award": {
+            "amount": null,
+            "currency": "GBP",
+            "period": "full duration of fee liability",
+            "coverage": [
+              "full_course_fees",
+              "living_cost_grant"
+            ]
+          },
+          "renewal_conditions": "Award is made for the full duration of fee liability for the agreed course.",
+          "evidence_url": "https://www.ox.ac.uk/admissions/graduate/fees-and-funding/funding/clarendon"
+        }
+      ]
     },
     "living_profile": {
       "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
@@ -2771,7 +3562,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -2808,11 +3599,11 @@
             "monthly_living_cost_gbp_min": 1405.0,
             "monthly_living_cost_gbp_max": 2105.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -2993,7 +3784,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -3174,26 +3965,6 @@
           }
         },
         {
-          "url": "https://www.ox.ac.uk/admissions/graduate/courses/msc-research-engineering-science",
-          "title": "University of Oxford — MSc by Research in Engineering Science",
-          "source_type": "official_program_page",
-          "access_status": "ok",
-          "last_checked": "2026-09-05",
-          "relevant_fields": [
-            "tuition",
-            "scholarship",
-            "admission",
-            "non_eu_eligibility",
-            "deadline",
-            "curriculum",
-            "program",
-            "housing",
-            "living",
-            "application_documents"
-          ],
-          "confidence": "high"
-        },
-        {
           "url": "https://www.ox.ac.uk/admissions/graduate/courses/departments/engineering-science",
           "title": "University of Oxford — Department of Engineering Science graduate courses",
           "source_type": "official_admission_page",
@@ -3203,9 +3974,44 @@
             "deadline"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://www.ox.ac.uk/admissions/graduate/fees-and-funding/funding/clarendon",
+          "title": "University of Oxford — Clarendon Fund",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "scholarship_deadline"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.ox.ac.uk/admissions/graduate/courses/msc-research-engineering-science",
+          "title": "University of Oxford — MSc by Research in Engineering Science funding 2027/28",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "admission",
+            "application_documents",
+            "curriculum",
+            "deadline",
+            "housing",
+            "living",
+            "non_eu_eligibility",
+            "tuition",
+            "scholarship",
+            "funding",
+            "scholarship_deadline",
+            "program"
+          ],
+          "confidence": "high"
         }
       ],
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "needs_verification": true,
       "verification_notes": {
         "en": "Only facts supported by the checked official source log are retained; funding and housing eligibility remain programme- and applicant-specific unless explicitly stated.",
@@ -3225,7 +4031,8 @@
         "deadlines": "medium",
         "program": "high",
         "non_eu_eligibility": "high",
-        "application_documents": "high"
+        "application_documents": "high",
+        "funding": "high"
       }
     },
     "decision_summary": {
@@ -3257,7 +4064,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 9,
+      "checked_official_source_count": 10,
       "verified_fields": [
         "program",
         "language",
@@ -3272,7 +4079,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-05"
+      "audited_at": "2026-09-06"
     },
     "duration_semesters": null,
     "relevance_status": "strong",
@@ -3342,7 +4149,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -3498,7 +4305,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_gbp_per_year": 46700.0,
       "tuition_derivation": {
@@ -3570,7 +4377,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -3682,7 +4489,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -3715,11 +4522,11 @@
           "derived_from": {
             "monthly_living_cost_gbp_estimated": 20000.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -3843,11 +4650,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -71,
+        "days_remaining_at_evaluation": -72,
         "derived_from": "application_timeline_profile.non_eu_deadline",
         "confidence": "high",
         "source_url": "https://www.ucl.ac.uk/prospective-students/graduate/taught-degrees/space-science-and-engineering-space-science-msc",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -4216,7 +5023,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -4375,7 +5182,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_gbp_per_year": 33045.0,
       "tuition_derivation": {
@@ -4419,7 +5226,7 @@
           "en": "Cranfield's how-to-apply page sets out every charge involved in applying, including a GBP 49 qualification-verification fee that it applies to nationals of Bangladesh, Ghana, India, Nigeria and Pakistan only, and deducts from tuition at registration. It names no application fee, and Turkey is not among the nationalities it verifies.",
           "tr": "Cranfield'in başvuru sayfası, başvuruyla ilgili her kalemi sıralar; bunlar arasında yalnızca Bangladeş, Gana, Hindistan, Nijerya ve Pakistan vatandaşlarına uygulanan ve kayıtta öğrenim ücretinden düşülen 49 sterlinlik bir diploma doğrulama ücreti vardır. Sayfa hiçbir başvuru ücretinden söz etmez ve Türkiye doğrulama yapılan uyruklar arasında değildir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -4427,20 +5234,109 @@
       "regional_scholarship_name": null,
       "merit_scholarships": [],
       "tuition_waivers": [],
-      "non_eu_eligible": null,
-      "scholarship_deadline": null,
-      "scholarship_application_url": null,
+      "non_eu_eligible": true,
+      "scholarship_deadline": "2026/27 historical reference: 2026-06-15 17:00; 2027/28 date not published",
+      "scholarship_application_url": "https://www.cranfield.ac.uk/funding/funding-opportunities/cranfield-college-of-aeronautics-heritage-scholarship",
       "verification_notes": {
-        "en": "Do not assume eligibility from the programme listing alone.",
-        "tr": "Yalnızca program listesine dayanarak uygunluk varsaymayın."
+        "en": "Historical reference only; do not treat the 15 June date as recurring.",
+        "tr": "Yalnız tarihsel referanstır; 15 Haziran tarihini yinelenen tarih olarak kabul etmeyin."
       },
       "funding_notes": {
-        "en": "The page lists Cranfield and College of Aeronautics Heritage Scholarships and an ISTAT Foundation opportunity; eligibility and award values vary by call.",
-        "tr": "Sayfa Cranfield ve College of Aeronautics Heritage burslarını ve ISTAT Foundation fırsatını listeler; uygunluk ve tutarlar çağrıya göre değişir."
+        "en": "The latest official Aerospace Vehicle Design-specific opportunity is the 2026/27 College of Aeronautics Heritage Scholarship: a £5,000 tuition reduction for UK, EU and rest-of-world offer holders. It closed on 15 June 2026 and no 2027/28 round was published.",
+        "tr": "Aerospace Vehicle Design için son resmî fırsat 2026/27 College of Aeronautics Heritage Scholarship'tır: Birleşik Krallık, AB ve dünyanın geri kalanından kabul sahiplerine 5.000 GBP öğrenim ücreti indirimi. 15 Haziran 2026'da kapanmıştır ve 2027/28 turu yayımlanmamıştır."
       },
-      "application_mode": "unknown",
-      "automatic_consideration": null,
-      "separate_application_required": null
+      "application_mode": "separate",
+      "automatic_consideration": false,
+      "separate_application_required": true,
+      "playbook": [
+        {
+          "opportunity": "Cranfield College of Aeronautics Heritage Scholarship (2026/27 historical reference)",
+          "eligibility_gates": [
+            {
+              "en": "Hold an offer for the full-time Aerospace Vehicle Design MSc or another listed aeronautics MSc.",
+              "tr": "Tam zamanlı Aerospace Vehicle Design MSc veya listelenen başka bir havacılık MSc programı için kabul sahibi olmak."
+            },
+            {
+              "en": "Be an applicant from the UK, EU or rest of world.",
+              "tr": "Birleşik Krallık, AB veya dünyanın geri kalanından aday olmak."
+            }
+          ],
+          "selection_criteria": [
+            {
+              "en": "Academic promise and the strength of four statements on course choice, career impact and financial barriers.",
+              "tr": "Akademik potansiyel ile program seçimi, kariyer etkisi ve malî engeller hakkındaki dört beyanın gücü."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": {
+                "en": "Apply for Aerospace Vehicle Design MSc and obtain an offer before submitting the scholarship form.",
+                "tr": "Burs formunu göndermeden önce Aerospace Vehicle Design MSc'ye başvur ve kabul al."
+              },
+              "owner": "applicant",
+              "timing": "with_the_application",
+              "required_documents": [
+                {
+                  "en": "Cranfield admission offer",
+                  "tr": "Cranfield kabul belgesi"
+                }
+              ],
+              "hard_requirement": true
+            },
+            {
+              "order": 2,
+              "action": {
+                "en": "Prepare the four required statements, each between 250 and 2,000 characters.",
+                "tr": "Her biri 250 ile 2.000 karakter arasında olan dört zorunlu beyanı hazırla."
+              },
+              "owner": "applicant",
+              "timing": "before_application_opens",
+              "required_documents": [
+                {
+                  "en": "Statement on choosing Cranfield University",
+                  "tr": "Cranfield University'yi seçme beyanı"
+                },
+                {
+                  "en": "Statement on choosing the specific course",
+                  "tr": "Belirli programı seçme beyanı"
+                },
+                {
+                  "en": "Statement on future-career and wider-impact benefits",
+                  "tr": "Gelecek kariyer ve daha geniş etki faydaları beyanı"
+                },
+                {
+                  "en": "Statement on overcoming financial barriers",
+                  "tr": "Malî engelleri aşma beyanı"
+                }
+              ],
+              "hard_requirement": true
+            },
+            {
+              "order": 3,
+              "action": {
+                "en": "Submit the separate scholarship form by the published deadline; the 2026/27 round closed at 17:00 on 15 June 2026.",
+                "tr": "Ayrı burs formunu yayımlanan tarihe kadar gönder; 2026/27 turu 15 Haziran 2026 saat 17.00'de kapandı."
+              },
+              "owner": "applicant",
+              "timing": "separate_before_deadline",
+              "required_documents": [],
+              "hard_requirement": true
+            }
+          ],
+          "competitiveness": "selective",
+          "typical_award": {
+            "amount": 5000,
+            "currency": "GBP",
+            "period": "one-time award",
+            "coverage": [
+              "tuition_fee_reduction"
+            ]
+          },
+          "renewal_conditions": null,
+          "evidence_url": "https://www.cranfield.ac.uk/funding/funding-opportunities/cranfield-college-of-aeronautics-heritage-scholarship"
+        }
+      ]
     },
     "living_profile": {
       "city_cost_level": "Bilinmiyor / Resmi Veri Yok",
@@ -4547,7 +5443,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -4584,11 +5480,11 @@
             "monthly_living_cost_gbp_min": 1259.0,
             "monthly_living_cost_gbp_max": 2285.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -4785,11 +5681,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -75,
+        "days_remaining_at_evaluation": -76,
         "derived_from": "application_timeline_profile.non_eu_deadline",
         "confidence": "high",
         "source_url": "https://www.cranfield.ac.uk/Courses/Taught/Aerospace-Vehicle-Design",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -5015,9 +5911,23 @@
             "application_documents"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://www.cranfield.ac.uk/funding/funding-opportunities/cranfield-college-of-aeronautics-heritage-scholarship",
+          "title": "Cranfield University — College of Aeronautics Heritage Scholarship",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "scholarship_deadline",
+            "application_documents"
+          ],
+          "confidence": "high"
         }
       ],
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "needs_verification": true,
       "verification_notes": {
         "en": "Only facts supported by the checked official source log are retained; funding and housing eligibility remain programme- and applicant-specific unless explicitly stated.",
@@ -5028,14 +5938,15 @@
         "language": "medium",
         "admission": "high",
         "tuition": "high",
-        "scholarship": "medium",
+        "scholarship": "high",
         "curriculum": "high",
         "living_profile": "high",
         "housing": "high",
         "deadline": "high",
         "deadlines": "high",
         "application_timeline_profile": "high",
-        "application_documents": "high"
+        "application_documents": "high",
+        "funding": "high"
       },
       "official_language_policy_page": "https://www.cranfield.ac.uk/-/media/files/short_courses_files/short-course-terms-and-conditions.ashx?hash=FA4CD369C6C35CDF62BFE532B3B3132A1D8F6952&la=en",
       "official_cost_of_living_page": "https://www.cranfield.ac.uk/study/life-on-campus/managing-money"
@@ -5069,7 +5980,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 11,
+      "checked_official_source_count": 12,
       "verified_fields": [
         "program",
         "language",
@@ -5084,7 +5995,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-05"
+      "audited_at": "2026-09-06"
     },
     "relevance_status": "strong",
     "qs_ranking_display": null,
@@ -5152,7 +6063,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "facility_evidence": {
@@ -5310,7 +6221,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_gbp_per_year": 38400.0,
       "tuition_derivation": {
@@ -5370,7 +6281,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -5493,7 +6404,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -5530,14 +6441,14 @@
             "monthly_living_cost_gbp_min": 1510.0,
             "monthly_living_cost_gbp_max": 1510.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": {
           "en": "The University estimates GBP 1,510 per month over 52 weeks for a full-time postgraduate; it is a guide, not a personal spend guarantee.",
           "tr": "Üniversite, tam zamanlı lisansüstü öğrenci için 52 haftaya yayılmış aylık 1.510 GBP tahmin eder; bu bir rehberdir, kişisel harcama garantisi değildir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -5669,7 +6580,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -6034,7 +6945,7 @@
       "matched_tags": [],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -6216,7 +7127,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_gbp": 0,
       "application_fee_verification": {
@@ -6259,7 +7170,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -6560,7 +7471,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -6693,7 +7604,7 @@
           "one_off_visa_and_travel_costs"
         ],
         "confidence": "medium",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -7001,11 +7912,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -3,
+        "days_remaining_at_evaluation": -4,
         "derived_from": "application_timeline_profile.deadline_events[] (programme_application_deadline)",
         "confidence": "high",
         "source_url": "https://www.southampton.ac.uk/courses/space-systems-engineering-masters-msc",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -7470,7 +8381,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "facility_evidence": {
@@ -7693,7 +8604,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_gbp": 0,
       "application_fee_verification": {
@@ -7736,7 +8647,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -8041,7 +8952,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -8160,7 +9071,7 @@
           "one_off_visa_and_travel_costs"
         ],
         "confidence": "high",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -8357,11 +9268,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closing_soon",
-        "days_remaining_at_evaluation": 5,
+        "days_remaining_at_evaluation": 4,
         "derived_from": "application_timeline_profile.deadline_events[] (programme_application_deadline)",
         "confidence": "high",
         "source_url": "https://www.bristol.ac.uk/study/media/postgraduate/admissions-statements/2026/msc-aerospace-engineering.pdf",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -8751,7 +9662,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "facility_evidence": {
@@ -8979,7 +9890,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_research": {
         "outcome": "no_fee_published",
@@ -9008,7 +9919,7 @@
           "en": "Neither the course page nor the five-step how-to-apply page mentions an application fee. What Leeds does require of a visa applicant is a tuition-fee deposit after an offer, which is a different charge at a different point in the process.",
           "tr": "Ne program sayfası ne de beş adımlı başvuru sayfası bir başvuru ücretinden söz eder. Leeds'in vize başvurusu yapan bir adaydan istediği şey, teklif sonrasında ödenen bir öğrenim ücreti depozitosudur; bu, sürecin başka bir noktasındaki başka bir kalemdir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -9282,7 +10193,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -9319,11 +10230,11 @@
             "monthly_living_cost_gbp_min": 199.0,
             "monthly_living_cost_gbp_max": 423.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -9585,11 +10496,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closing_soon",
-        "days_remaining_at_evaluation": 6,
+        "days_remaining_at_evaluation": 5,
         "derived_from": "application_timeline_profile.deadline_events[] (UK_programme_application_deadline)",
         "confidence": "high",
         "source_url": "https://www.leeds.ac.uk/study/doc/apply-masters-courses",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -10057,7 +10968,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -10334,7 +11245,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_verification": {
         "checked_on": "2026-09-01",
@@ -10376,7 +11287,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -10634,7 +11545,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -10724,7 +11635,7 @@
           "one_off_visa_and_travel_costs"
         ],
         "confidence": "medium",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -11082,11 +11993,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -1,
+        "days_remaining_at_evaluation": -2,
         "derived_from": "application_timeline_profile.deadline_events[] (general_programme_application_close)",
         "confidence": "high",
         "source_url": "https://sheffield.ac.uk/postgraduate/supporting",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": [
           {
@@ -11588,7 +12499,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -11807,7 +12718,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_gbp_per_year": 34470.0,
       "tuition_derivation": {
@@ -11849,7 +12760,7 @@
           "en": "Glasgow's taught admissions policy allows a GBP 25 application fee on some programmes, so the charge exists at this university. Neither the Aerospace Engineering MSc page nor the apply page carries it, and the course page's additional-fees list covers only re-assessment and late submission.",
           "tr": "Glasgow'un ders programlı kabul politikası bazı programlarda 25 sterlinlik bir başvuru ücretine izin verir; yani bu ücret üniversitede vardır. Ne Aerospace Engineering MSc sayfası ne de başvuru sayfası bunu taşır ve program sayfasının ek ücretler listesi yalnızca yeniden değerlendirme ile geç teslimi kapsar."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -12055,7 +12966,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -12088,7 +12999,7 @@
           "en": "Glasgow publishes GBP 1,100 to 1,700 a month to live and study in the city, updated August 2026; 1,400 is the midpoint. The university builds the range from the UCAS budget calculator rather than from its own survey of student spending, so it is a planning range and not an observed average. The separate GBP 31,958 figure on this record is Glasgow's maximum borrowing budget for United States federal loan applicants and includes visa fees, the immigration health surcharge and two flights home, so it is not a living cost.",
           "tr": "Glasgow, sehirde yasamak ve okumak icin ayda 1.100-1.700 GBP yayimlar; Agustos 2026'da guncellenmistir ve 1.400 orta noktadir. Universite bu araligi kendi ogrenci harcama arastirmasindan degil UCAS butce hesaplayicisindan kurar, bu yuzden gozlemlenen bir ortalama degil bir planlama araligidir. Bu kayittaki ayri 31.958 GBP rakami, Glasgow'un Amerika Birlesik Devletleri federal kredi basvuru sahipleri icin azami borclanma butcesidir ve vize ucretlerini, gocmenlik saglik ek ucretini ve iki ucus biletini icerir; bu yuzden bir yasam gideri degildir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_living_budget",
@@ -12333,11 +13244,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -12,
+        "days_remaining_at_evaluation": -13,
         "derived_from": "application_timeline_profile.non_eu_deadline",
         "confidence": "high",
         "source_url": "https://www.gla.ac.uk/postgraduate/taught/aerospace-engineering/",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": [
           {
@@ -12734,7 +13645,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "facility_evidence": {
@@ -13000,7 +13911,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_gbp_per_year": 34000.0,
       "tuition_derivation": {
@@ -13052,7 +13963,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -13475,7 +14386,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -13512,11 +14423,11 @@
             "monthly_living_cost_gbp_min": 900.0,
             "monthly_living_cost_gbp_max": 1350.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -13870,11 +14781,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closing_soon",
-        "days_remaining_at_evaluation": 6,
+        "days_remaining_at_evaluation": 5,
         "derived_from": "application_timeline_profile.deadline_events[] (UK_course_application)",
         "confidence": "high",
         "source_url": "https://www.liverpool.ac.uk/courses/advanced-aerospace-engineering-msc-eng",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": [
           {
@@ -14324,7 +15235,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "facility_evidence": {
@@ -14558,7 +15469,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_gbp_per_year": 33660.0,
       "tuition_derivation": {
@@ -14610,7 +15521,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -15040,7 +15951,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -15073,7 +15984,7 @@
           "en": "Birmingham's postgraduate money advice publishes weekly scenarios rather than a single budget: GBP 185 a week of essential costs in self-catered halls, GBP 174 a week in a private house, and GBP 110 a week of variable costs on top of either. The halls scenario is used here, so GBP 295 a week over a 52-week year. Accommodation fees run from GBP 5,335 to GBP 17,966 across 17 published postgraduate room options, with utilities, Wi-Fi and contents insurance included, so a student choosing an expensive room should expect to exceed this figure.",
           "tr": "Birmingham'in lisansustu para danismanligi tek bir butce yerine haftalik senaryolar yayimlar: kendi yemegini yapan yurtlarda haftada 185 GBP zorunlu gider, ozel bir evde haftada 174 GBP ve her ikisinin ustune haftada 110 GBP degisken gider. Burada yurt senaryosu kullanilir, yani 52 haftalik bir yil boyunca haftada 295 GBP. Konaklama ucretleri, faturalar, Wi-Fi ve esya sigortasi dahil olmak uzere yayimlanan 17 lisansustu oda secenegi arasinda 5.335 ile 17.966 GBP arasinda degisir; bu yuzden pahali bir oda secen bir ogrenci bu rakami asmayi beklemelidir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_living_budget",
@@ -15342,11 +16253,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -50,
+        "days_remaining_at_evaluation": -51,
         "derived_from": "application_timeline_profile.non_eu_deadline",
         "confidence": "high",
         "source_url": "https://www.birmingham.ac.uk/study/postgraduate/taught/apply",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -15835,7 +16746,7 @@
       ],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -16048,7 +16959,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_derivation": {
         "standard": "cost_model@3.1.0",
@@ -16115,7 +17026,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -16316,7 +17227,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -16353,11 +17264,11 @@
             "monthly_living_cost_gbp_min": 800.0,
             "monthly_living_cost_gbp_max": 1200.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -16667,11 +17578,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closing_soon",
-        "days_remaining_at_evaluation": 2,
+        "days_remaining_at_evaluation": 1,
         "derived_from": "application_timeline_profile.deadline_events[] (meet_all_offer_conditions_and_receive_unconditional_offer)",
         "confidence": "high",
         "source_url": "https://www.nottingham.ac.uk/pgstudy/how-to-apply/taught.aspx",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": [
           {
@@ -17223,7 +18134,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "weak",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -17360,7 +18271,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_gbp": 0,
       "application_fee_verification": {
@@ -17403,7 +18314,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -17486,7 +18397,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -17522,11 +18433,11 @@
           "derived_from": {
             "monthly_living_cost_gbp_min": 1171.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -17608,11 +18519,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 97,
+        "days_remaining_at_evaluation": 96,
         "derived_from": "application_timeline_profile.application_deadline",
         "confidence": "high",
         "source_url": "https://www.surrey.ac.uk/postgraduate/astronautics-and-space-engineering-msc",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -18150,7 +19061,7 @@
       ],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {

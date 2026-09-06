@@ -228,7 +228,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-09-05"
+          "evaluated_at": "2026-09-06"
         },
         "tuition_eur_per_year": 25633.0,
         "tuition_derivation": {
@@ -283,7 +283,7 @@
             "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
             "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
           },
-          "evaluated_at": "2026-09-05"
+          "evaluated_at": "2026-09-06"
         }
       },
       "scholarship_profile": {
@@ -302,16 +302,16 @@
         "cash_grant_possible": true,
         "non_eu_eligible": true,
         "income_based": false,
-        "scholarship_deadline": "2025-12-01T23:59:00+01:00",
+        "scholarship_deadline": "2026-2028 award round historical reference: 2025-12-01 23:59 CET; future round not published",
         "scholarship_application_url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/scholarships/justus-louise-van-effen-excellence-scholarships",
         "funding_competitiveness": "extremely_high",
         "funding_notes": {
-          "en": "This was not automatic consideration. The applicant had to add a scholarship form and two references to the complete MSc application before 1 December 2025 at 23:59 CET. The page now says the 2026-2028 awards have been made; no future deadline is inferred.",
-          "tr": "Bu burs otomatik değerlendirme değildi. Adayın 1 Aralık 2025 saat 23.59 CET'ten önce eksiksiz MSc başvurusuna burs formu ve iki referans eklemesi gerekiyordu. Sayfa artık 2026-2028 ödüllerinin verildiğini belirtiyor; gelecek dönem tarihi çıkarılmıyor."
+          "en": "The current official page identifies the 2026-2028 Justus & Louise van Effen awards as already made. The prior round covered full two-year MSc tuition plus a living-cost contribution for international applicants. The official URL returned 403 to both standard and interactive research access on 6 September 2026, so this remains a medium-confidence historical reference and no future deadline is inferred.",
+          "tr": "Güncel resmî sayfa 2026-2028 Justus & Louise van Effen burslarının verilmiş olduğunu belirtir. Önceki tur uluslararası adaylar için iki yıllık MSc öğrenim ücretinin tamamını ve yaşam gideri katkısını kapsıyordu. Resmî URL 6 Eylül 2026'da hem standart hem etkileşimli araştırma erişimine 403 döndürdüğünden bu yalnız orta güvenli tarihsel referanstır ve gelecek tarih türetilmemiştir."
         },
         "verification_notes": {
-          "en": "The current official URL was checked but returned 403 to both automated and interactive research access. Its indexed current text supports the award scope, international eligibility, two-per-faculty count and closed 2025 deadline; an accessible secondary listing corroborates the embedded scholarship form and two-reference workflow. Confidence is therefore medium, not high.",
-          "tr": "Güncel resmî URL kontrol edildi ancak hem otomatik hem etkileşimli araştırma erişimine 403 verdi. Dizine alınmış güncel metin ödül kapsamını, uluslararası uygunluğu, fakülte başına iki kontenjanı ve kapanmış 2025 tarihini; erişilebilir ikincil liste ise başvuruya eklenen burs formu ve iki referans sürecini destekliyor. Bu nedenle güven yüksek değil, ortadır."
+          "en": "This is the only record in the payload whose official scholarship URL was not accessible in the research environment. Reconfirm the live page before acting.",
+          "tr": "Bu, payloadda resmî burs URL'sine araştırma ortamından erişilemeyen tek kayıttır. İşlem yapmadan önce canlı sayfayı yeniden doğrulayın."
         },
         "application_mode": "separate",
         "automatic_consideration": false,
@@ -350,102 +350,57 @@
         ],
         "playbook": [
           {
-            "opportunity": "Justus & Louise van Effen Excellence Scholarship",
-            "competitiveness": "highly_selective",
+            "opportunity": "Justus & Louise van Effen Excellence Scholarship (2026-2028 historical reference)",
             "eligibility_gates": [
               {
-                "en": "Applying to a regular two-year TU Delft MSc programme as an international student.",
-                "tr": "Uluslararası öğrenci olarak normal iki yıllık bir TU Delft MSc programına başvuruyor olmak."
+                "en": "Apply as an international student to a regular two-year TU Delft MSc programme; joint education programmes were excluded.",
+                "tr": "Uluslararası öğrenci olarak normal iki yıllık TU Delft MSc programına başvurmak; ortak eğitim programları kapsam dışındaydı."
               },
               {
-                "en": "Not older than 35 on 1 September of the first academic year at TU Delft.",
-                "tr": "TU Delft'teki ilk akademik yılın 1 Eylül'ünde 35 yaşından büyük olmamak."
-              },
-              {
-                "en": "A complete MSc application, not just the scholarship form.",
-                "tr": "Yalnızca burs formu değil, eksiksiz bir MSc başvurusu."
+                "en": "Submit a complete MSc application and the scholarship materials before the scholarship deadline.",
+                "tr": "Eksiksiz MSc başvurusunu ve burs belgelerini burs son tarihinden önce göndermek."
               }
             ],
             "selection_criteria": [
               {
-                "en": "Academic excellence, judged against the applicant pool of the whole faculty.",
-                "tr": "Akademik üstünlük; tüm fakültenin aday havuzuna göre değerlendirilir."
+                "en": "Academic excellence assessed across the faculty applicant pool.",
+                "tr": "Fakültenin tüm aday havuzunda değerlendirilen akademik üstünlük."
               },
               {
-                "en": "The two reference letters, which the scholarship requires in addition to the normal application.",
-                "tr": "Normal başvuruya ek olarak bursun zorunlu tuttuğu iki referans mektubu."
+                "en": "Strength of the two required reference letters.",
+                "tr": "Zorunlu iki referans mektubunun gücü."
               }
             ],
-            "typical_award": {
-              "coverage": [
-                "full_tuition",
-                "living_cost_contribution"
-              ],
-              "amount_note": {
-                "en": "Published as roughly €60,000 over two years for non-EU students and roughly €28,000 for EU students.",
-                "tr": "AB dışı öğrenciler için iki yılda yaklaşık 60.000 avro, AB öğrencileri için yaklaşık 28.000 avro olarak yayımlanıyor."
-              }
-            },
-            "award_count_note": {
-              "en": "A minimum of 16 per year across the university, two per faculty — so you are competing against every strong applicant to the entire Faculty of Aerospace Engineering, not only against your own programme.",
-              "tr": "Üniversite genelinde yılda en az 16, fakülte başına iki adet — yani yalnızca kendi programındakilerle değil, tüm Havacılık ve Uzay Mühendisliği Fakültesi'ne başvuran her güçlü adayla yarışıyorsun."
-            },
             "steps": [
               {
                 "order": 1,
                 "action": {
-                  "en": "Line up two referees before you start the application. The scholarship needs two reference letters that the standard MSc application does not ask for, and a late referee is the most common reason a file stays incomplete.",
-                  "tr": "Başvuruya başlamadan önce iki referans hazırla. Burs, standart MSc başvurusunun istemediği iki referans mektubu ister; geç kalan bir referans, dosyanın eksik kalmasının en yaygın nedenidir."
+                  "en": "Prepare two reference letters before the scholarship deadline.",
+                  "tr": "Burs son tarihinden önce iki referans mektubunu hazırla."
                 },
                 "owner": "applicant",
                 "timing": "before_application_opens",
-                "hard_requirement": true
-              },
-              {
-                "order": 2,
-                "action": {
-                  "en": "Submit the complete MSc application — diploma, transcript, English certificate, motivation letter, CV and proof of identity — because the scholarship is only assessed on top of a complete degree application.",
-                  "tr": "Eksiksiz MSc başvurusunu gönder — diploma, transkript, İngilizce sertifikası, niyet mektubu, CV ve kimlik belgesi — çünkü burs yalnızca tamamlanmış bir derece başvurusunun üzerine değerlendirilir."
-                },
-                "owner": "applicant",
-                "timing": "with_the_application",
                 "required_documents": [
                   {
-                    "en": "Diploma",
-                    "tr": "Diploma"
-                  },
-                  {
-                    "en": "Transcript",
-                    "tr": "Transkript"
-                  },
-                  {
-                    "en": "English language certificate",
-                    "tr": "İngilizce dil sertifikası"
-                  },
-                  {
-                    "en": "Motivation letter",
-                    "tr": "Niyet mektubu"
-                  },
-                  {
-                    "en": "CV",
-                    "tr": "Özgeçmiş"
-                  },
-                  {
-                    "en": "Proof of identity",
-                    "tr": "Kimlik belgesi"
+                    "en": "Two reference letters",
+                    "tr": "İki referans mektubu"
                   }
                 ],
                 "hard_requirement": true
               },
               {
-                "order": 3,
+                "order": 2,
                 "action": {
-                  "en": "Add the scholarship application form and the two reference letters to the same submission, before the scholarship deadline of 1 December.",
-                  "tr": "Burs başvuru formunu ve iki referans mektubunu aynı gönderime ekle; 1 Aralık burs son tarihinden önce."
+                  "en": "Submit the complete TU Delft MSc application together with the scholarship application form and both references; the historical round closed on 1 December 2025 at 23:59 CET.",
+                  "tr": "Eksiksiz TU Delft MSc başvurusunu burs başvuru formu ve iki referansla birlikte gönder; tarihsel tur 1 Aralık 2025 saat 23.59 CET'te kapandı."
                 },
                 "owner": "applicant",
-                "timing": "separate_before_deadline",
+                "timing": "with_the_application",
                 "required_documents": [
+                  {
+                    "en": "Complete MSc application",
+                    "tr": "Eksiksiz MSc başvurusu"
+                  },
                   {
                     "en": "Scholarship application form",
                     "tr": "Burs başvuru formu"
@@ -456,24 +411,25 @@
                   }
                 ],
                 "hard_requirement": true
-              },
-              {
-                "order": 4,
-                "action": {
-                  "en": "Plan for a decision window that runs from early March into July, and keep a self-funded or alternative-funding plan alive until then.",
-                  "tr": "Mart başından temmuza uzanan bir karar penceresine göre planla ve o zamana kadar kendi finansmanın veya alternatif fon planın hazır dursun."
-                },
-                "owner": "external_body",
-                "timing": "after_admission",
-                "hard_requirement": false
               }
             ],
-            "evidence_url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/scholarships/justus-louise-van-effen-excellence-scholarships",
+            "competitiveness": "highly_selective",
+            "typical_award": {
+              "amount": null,
+              "currency": "EUR",
+              "period": "two years",
+              "coverage": [
+                "full_tuition",
+                "living_cost_contribution"
+              ]
+            },
+            "renewal_conditions": "Award covered the regular two-year MSc period; detailed continuation conditions were not available in accessible official evidence.",
             "needs_human_verification": true,
             "verification_note": {
-              "en": "The award amounts, the age limit and the per-faculty count come from the indexed text of a page that blocks automated access. Open the official page in a browser and re-confirm before you build a plan on these numbers.",
-              "tr": "Ödül tutarları, yaş sınırı ve fakülte başına ödül sayısı, otomatik erişimi engelleyen bir sayfanın dizinlenmiş metninden geliyor. Bu sayılara dayalı bir plan kurmadan önce resmî sayfayı tarayıcıda açıp yeniden teyit et."
-            }
+              "en": "The official scholarship page blocked automated access during verification. Re-open the live page and confirm the next call before acting on this historical plan.",
+              "tr": "Resmî burs sayfası doğrulama sırasında otomatik erişimi engelledi. Bu tarihsel plana göre hareket etmeden önce canlı sayfayı açıp yeni çağrıyı doğrula."
+            },
+            "evidence_url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/scholarships/justus-louise-van-effen-excellence-scholarships"
           }
         ]
       },
@@ -645,7 +601,7 @@
           "band_from_score": "high",
           "capped_from_very_high": false,
           "legacy_value": "high",
-          "evaluated_at": "2026-09-05"
+          "evaluated_at": "2026-09-06"
         },
         "cost_of_living_profile": {
           "standard": "cost_model@3.2.0",
@@ -670,7 +626,7 @@
             "en": "TU Delft publishes €14,200 per year of living costs for non-EU students, set by the rules of the Dutch Immigration and Naturalisation Service (IND). That is the legal minimum you must prove for a residence permit, not an observed average — with Delft rents running from €500 to €1,350 a month, a student in the upper half of that range will spend more.",
             "tr": "TU Delft, AB dışı öğrenciler için Hollanda Göç ve Vatandaşlık Servisi'nin (IND) kurallarına göre belirlenen yılda 14.200 avro yaşam gideri yayımlar. Bu, oturum izni için kanıtlaman gereken yasal asgari tutardır; gözlemlenmiş bir ortalama değildir — Delft kiraları ayda 500 ile 1.350 avro arasında olduğundan, bu aralığın üst yarısındaki bir öğrenci daha fazla harcar."
           },
-          "evaluated_at": "2026-09-05"
+          "evaluated_at": "2026-09-06"
         }
       },
       "curriculum_profile": {
@@ -968,62 +924,127 @@
           {
             "name": "Astrodynamics and Space Missions (AS)",
             "unit_type": "research_group",
-            "department": "Department of Space Engineering, Faculty of Aerospace Engineering",
             "url": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/astrodynamics-and-space-missions",
-            "lead": "Prof.dr.ir. Pieter Visser (chairholder)",
+            "lead": "Professor Pieter Visser",
             "topics": [
               "astrodynamics",
               "mission_analysis",
               "orbit_determination",
-              "rocket_propulsion",
-              "space_environment"
+              "gnc",
+              "space_domain_awareness"
             ],
-            "stated_research_areas": [
-              "Satellite orbits, mission analysis and application",
-              "Space propulsion, ascent and re-entry trajectories",
-              "Solar system exploration"
-            ],
-            "facilities": [
-              "Astrodynamics software tools maintained by the section",
-              "Satellite altimetry products database",
-              "Ground station used to track low Earth orbit satellites"
-            ],
+            "facilities": [],
             "student_access": "msc_thesis_open",
             "why_it_fits": {
-              "en": "If your tagged interests include astrodynamics, mission analysis or orbit determination, this is the section that owns those subjects at Delft: it publishes all three as its own stated research areas, maintains the astrodynamics software and the altimetry database its MSc theses run on, and operates a LEO tracking ground station you can take real measurements from.",
-              "tr": "Etiketli ilgi alanların arasında astrodinamik, görev analizi veya yörünge belirleme varsa, Delft'te bu konuların sahibi olan bölüm burasıdır: üçünü de kendi ilan ettiği araştırma alanı olarak yayımlar, MSc tezlerinin üzerinde çalıştığı astrodinamik yazılımını ve altimetre veri tabanını sürdürür ve gerçek ölçüm alabileceğin bir alçak yörünge takip yer istasyonu işletir."
+              "en": "For astrodynamics, mission_analysis or orbit_determination, the group covers satellite orbits, trajectory design, guidance and navigation with a faculty roster spanning planetary missions, low-thrust design and space-debris rendezvous.",
+              "tr": "astrodynamics, mission_analysis veya orbit_determination hedefi için grup; gezegen görevleri, düşük itkili tasarım ve uzay enkazıyla buluşmaya uzanan öğretim üyesi kadrosuyla uydu yörüngeleri, yörünge tasarımı, güdüm ve seyrüseferi kapsar."
             },
-            "last_verified": "2026-08-29"
+            "last_verified": "2026-09-06"
           },
           {
             "name": "Space Systems Engineering (SSE)",
             "unit_type": "research_group",
-            "department": "Department of Space Engineering, Faculty of Aerospace Engineering",
             "url": "https://www.tudelft.nl/en/ae/organisation/departments/space-engineering/space-systems-engineering",
-            "lead": "Dr. Alessandra Menicucci (chairholder)",
+            "lead": "Professor Alessandra Menicucci",
             "topics": [
               "space_systems",
               "satellite_systems",
               "spacecraft_design",
               "systems_engineering",
-              "sensors"
-            ],
-            "stated_research_areas": [
-              "Miniaturization",
-              "Distributed Space Systems"
+              "rocket_propulsion"
             ],
             "facilities": [
-              "Aerospace Engineering cleanroom",
-              "Assembly workshop",
-              "Satellite ground station",
-              "Delfi Space programme (Delfi-C3 and Delfi-n3Xt CubeSats)"
+              "Aerospace Engineering ISO 8 cleanroom",
+              "Vacuum oven",
+              "Helmholtz Cage for nanosatellite attitude-control-system testing"
             ],
             "student_access": "msc_thesis_open",
             "why_it_fits": {
-              "en": "This is the practical counterpart to the astrodynamics section. If your tags include satellite_systems or spacecraft_design, the Delfi programme means a Delft MSc thesis here can involve hardware that has actually flown, assembled in the faculty's own cleanroom rather than only simulated.",
-              "tr": "Bu bölüm, astrodinamik bölümünün uygulamalı karşılığıdır. Etiketlerinde satellite_systems veya spacecraft_design varsa, Delfi programı sayesinde buradaki bir Delft MSc tezi yalnızca simülasyon değil, fakültenin kendi temiz odasında monte edilmiş ve gerçekten uçmuş donanımı içerebilir."
+              "en": "For space_systems, satellite_systems or spacecraft_design, SSE connects systems-engineering faculty with a professional cleanroom where students and researchers build and test spacecraft hardware, including TU Delft CubeSats.",
+              "tr": "space_systems, satellite_systems veya spacecraft_design hedefi için SSE; sistem mühendisliği kadrosunu öğrenci ve araştırmacıların TU Delft CubeSat'leri dâhil uzay aracı donanımı üretip test ettiği profesyonel bir temiz odayla birleştirir."
             },
-            "last_verified": "2026-08-29"
+            "last_verified": "2026-09-06"
+          },
+          {
+            "name": "Delft Aerospace Structures and Materials Laboratory (DASML)",
+            "unit_type": "lab",
+            "url": "https://research.tudelft.nl/en/equipments/the-delft-aerospace-structures-and-materials-laboratory-dasml/",
+            "lead": "A.C. Geluk and R.H.P. Awater (facility managers)",
+            "topics": [
+              "aerospace_structures",
+              "composites",
+              "materials",
+              "testing",
+              "manufacturing",
+              "uav"
+            ],
+            "facilities": [
+              "Chemical-polymer development laboratories",
+              "Composite-processing laboratories",
+              "Mechanical and non-destructive testing",
+              "Physical characterisation facilities",
+              "Cyberzoo for drone testing",
+              "Scaled Aircraft Lab",
+              "Polymer tapeline machine",
+              "Bio-based materials laboratory",
+              "Delft Planetary Lab"
+            ],
+            "student_access": "project_course_open",
+            "why_it_fits": {
+              "en": "For aerospace_structures, composites, materials or testing, DASML spans the full experimental chain from polymer development and composite processing to mechanical/NDT characterisation, while Cyberzoo and the Scaled Aircraft Lab support vehicle-scale projects.",
+              "tr": "aerospace_structures, composites, materials veya testing hedefi için DASML; polimer geliştirme ve kompozit işlemeden mekanik/tahribatsız muayene karakterizasyonuna kadar tüm deney zincirini kapsar; Cyberzoo ve Scaled Aircraft Lab ise araç ölçekli projeleri destekler."
+            },
+            "last_verified": "2026-09-06"
+          },
+          {
+            "name": "Aerospace Engineering Cleanroom",
+            "unit_type": "facility",
+            "url": "https://research.tudelft.nl/en/equipments/the-aerospace-engineering-cleanroom/",
+            "lead": "M.S. Uludag (contact)",
+            "topics": [
+              "satellite_systems",
+              "spacecraft_design",
+              "attitude_dynamics_control",
+              "testing",
+              "laboratory"
+            ],
+            "facilities": [
+              "ISO 8 class 100,000 cleanroom",
+              "Vacuum oven",
+              "Various test rigs",
+              "Helmholtz Cage for nanosatellite ACS testing"
+            ],
+            "student_access": "project_course_open",
+            "why_it_fits": {
+              "en": "For satellite_systems, spacecraft_design or attitude_dynamics_control, this is a directly student-used professional environment for building and testing flight hardware; Delfi-C3 and Delfi-N3xt were built and tested here.",
+              "tr": "satellite_systems, spacecraft_design veya attitude_dynamics_control hedefi için bu tesis, uçuş donanımı üretip test etmek üzere öğrencilerin doğrudan kullandığı profesyonel bir ortamdır; Delfi-C3 ve Delfi-N3xt burada üretilip test edilmiştir."
+            },
+            "last_verified": "2026-09-06"
+          },
+          {
+            "name": "Cessna Citation II PH-LAB",
+            "unit_type": "facility",
+            "url": "https://research.tudelft.nl/en/equipments/the-cessna-citation-ii-ph-lab/",
+            "lead": null,
+            "topics": [
+              "flight_testing",
+              "avionics",
+              "sensors",
+              "testing",
+              "flight_mechanics"
+            ],
+            "facilities": [
+              "Modified Cessna Citation II twin-jet research aircraft",
+              "Pressurised 10.7 m³ cabin for up to eight observers",
+              "Operating altitude above 13 km",
+              "Maximum cruise speed 710 km/h"
+            ],
+            "student_access": "not_stated",
+            "why_it_fits": {
+              "en": "For flight_testing, avionics, sensors or flight_mechanics, PH-LAB is a real airborne research platform rather than a simulator, with a broad flight envelope and an instrumentable pressurised cabin.",
+              "tr": "flight_testing, avionics, sensors veya flight_mechanics hedefi için PH-LAB, simülatör yerine gerçek bir havadan araştırma platformudur; geniş uçuş zarfı ve cihaz kurulabilen basınçlı kabin sunar."
+            },
+            "last_verified": "2026-09-06"
           }
         ]
       },
@@ -1083,11 +1104,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closed",
-          "days_remaining_at_evaluation": -233,
+          "days_remaining_at_evaluation": -234,
           "derived_from": "application_timeline_profile.non_eu_deadline",
           "confidence": "high",
           "source_url": "https://www.tudelft.nl/en/education/programmes/masters/ae/msc-aerospace-engineering/admission-and-application",
-          "evaluated_at": "2026-09-05",
+          "evaluated_at": "2026-09-06",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -1275,36 +1296,6 @@
             "notes": {
               "en": "TU Delft's research portal documents Space Engineering within Aerospace Engineering, including Space Systems Engineering, Planetary Exploration and Spaceborne Instrumentation groups.",
               "tr": "TU Delft araştırma portalı Havacılık ve Uzay Mühendisliği içinde Uzay Mühendisliğini; Uzay Sistemleri Mühendisliği, Gezegen Keşfi ve Uzay Tabanlı Enstrümantasyon gruplarıyla belgeler."
-            }
-          },
-          {
-            "url": "https://research.tudelft.nl/en/equipments/the-aerospace-engineering-cleanroom/",
-            "title": "TU Delft Research Portal: Aerospace Engineering Cleanroom",
-            "source_type": "official_lab_page",
-            "access_status": "ok",
-            "last_checked": "2026-08-14",
-            "relevant_fields": [
-              "research"
-            ],
-            "confidence": "high",
-            "notes": {
-              "en": "Official facility page says the cleanroom supports space-systems research and student training, includes nanosatellite ACS test equipment, and was used to build and test Delfi-C3 and Delfi-N3xt CubeSats.",
-              "tr": "Resmî tesis sayfası temiz odanın uzay sistemleri araştırması ve öğrenci eğitimini desteklediğini, nanosatellit ACS test ekipmanı içerdiğini ve Delfi-C3 ile Delfi-N3xt CubeSat'lerinin burada üretim/testten geçtiğini belirtir."
-            }
-          },
-          {
-            "url": "https://research.tudelft.nl/en/equipments/the-cessna-citation-ii-ph-lab/",
-            "title": "TU Delft Research Portal: Cessna Citation II PH-LAB",
-            "source_type": "official_lab_page",
-            "access_status": "ok",
-            "last_checked": "2026-08-14",
-            "relevant_fields": [
-              "research"
-            ],
-            "confidence": "high",
-            "notes": {
-              "en": "Official facility page documents the jointly operated Cessna Citation II PH-LAB as an Aerospace Engineering research aircraft and airborne research platform.",
-              "tr": "Resmî tesis sayfası ortak işletilen Cessna Citation II PH-LAB'i Havacılık ve Uzay Mühendisliği araştırma uçağı ve havadan araştırma platformu olarak belgeler."
             }
           },
           {
@@ -1509,22 +1500,6 @@
             }
           },
           {
-            "url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/scholarships/justus-louise-van-effen-excellence-scholarships",
-            "title": "TU Delft — Justus & Louise van Effen Excellence Scholarships",
-            "source_type": "official_scholarship_page",
-            "access_status": "blocked",
-            "last_checked": "2026-08-29",
-            "relevant_fields": [
-              "scholarship",
-              "funding"
-            ],
-            "confidence": "medium",
-            "notes": {
-              "en": "The dedicated scholarship page returns 403 to automated access. Its indexed current text supplies the age limit, the required documents, the two reference letters, the two-per-faculty award count and the 1 December deadline, so those values carry medium confidence and need a human check in a browser before a student relies on them.",
-              "tr": "Bursa ayrılmış sayfa otomatik erişime 403 döndürüyor. Yaş sınırı, istenen belgeler, iki referans mektubu, fakülte başına iki ödül sayısı ve 1 Aralık son tarihi sayfanın dizinlenmiş güncel metninden geliyor; bu nedenle bu değerler orta güven taşıyor ve bir öğrenci bunlara dayanmadan önce tarayıcıda insan kontrolü gerekiyor."
-            }
-          },
-          {
             "url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/scholarships",
             "title": "TU Delft — Scholarships for international MSc applicants",
             "source_type": "official_scholarship_page",
@@ -1604,9 +1579,83 @@
               "application_documents"
             ],
             "confidence": "high"
+          },
+          {
+            "url": "https://research.tudelft.nl/en/equipments/the-delft-aerospace-structures-and-materials-laboratory-dasml/",
+            "title": "TU Delft Research Portal — Delft Aerospace Structures and Materials Laboratory",
+            "source_type": "official_lab_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-06",
+            "relevant_fields": [
+              "research",
+              "labs",
+              "research_units",
+              "facilities",
+              "student_access"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Official facility record names the Aircraft Hall laboratories, managers, student-team access and internal booking basis.",
+              "tr": "Resmî tesis kaydı Aircraft Hall laboratuvarlarını, yöneticileri, öğrenci ekibi erişimini ve kurum içi rezervasyon esasını adlandırır."
+            }
+          },
+          {
+            "url": "https://research.tudelft.nl/en/equipments/the-aerospace-engineering-cleanroom/",
+            "title": "TU Delft Research Portal — Aerospace Engineering Cleanroom",
+            "source_type": "official_lab_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-06",
+            "relevant_fields": [
+              "research",
+              "labs",
+              "research_units",
+              "facilities",
+              "student_access"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Publishes the cleanroom class, equipment, explicit student use and CubeSat build/test history.",
+              "tr": "Temiz oda sınıfını, ekipmanı, açık öğrenci kullanımını ve CubeSat üretim/test geçmişini yayımlar."
+            }
+          },
+          {
+            "url": "https://research.tudelft.nl/en/equipments/the-cessna-citation-ii-ph-lab/",
+            "title": "TU Delft Research Portal — Cessna Citation II PH-LAB",
+            "source_type": "official_lab_page",
+            "access_status": "ok",
+            "last_checked": "2026-09-06",
+            "relevant_fields": [
+              "research",
+              "labs",
+              "research_units",
+              "facilities"
+            ],
+            "confidence": "high",
+            "notes": {
+              "en": "Publishes the research-aircraft platform, ownership, performance envelope and cabin capacity.",
+              "tr": "Araştırma uçağı platformunu, işletmeyi, performans zarfını ve kabin kapasitesini yayımlar."
+            }
+          },
+          {
+            "url": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/scholarships/justus-louise-van-effen-excellence-scholarships",
+            "title": "TU Delft — Justus & Louise van Effen Excellence Scholarships",
+            "source_type": "official_scholarship_page",
+            "access_status": "blocked",
+            "last_checked": "2026-09-06",
+            "relevant_fields": [
+              "scholarship",
+              "funding",
+              "scholarship_deadline",
+              "application_documents"
+            ],
+            "confidence": "medium",
+            "notes": {
+              "en": "Official URL returned HTTP 403 in standard research access; no interactive browser was available. Only the current indexed official text and the existing evidence-backed record were retained.",
+              "tr": "Resmî URL standart araştırma erişiminde HTTP 403 döndürdü; etkileşimli tarayıcı mevcut değildi. Yalnız güncel dizinlenmiş resmî metin ve mevcut kanıtlı kayıt korundu."
+            }
           }
         ],
-        "last_verified": "2026-09-05",
+        "last_verified": "2026-09-06",
         "needs_verification": true,
         "verification_notes": {
           "en": "Critical fields have current checked evidence except that the official scholarship page blocks research access. Keep scholarship confidence at medium and recheck the next intake directly before advice or application.",
@@ -1627,7 +1676,8 @@
           "location": "medium",
           "deadline": "high",
           "application_timeline_profile": "high",
-          "application_documents": "high"
+          "application_documents": "high",
+          "funding": "medium"
         },
         "official_housing_page": "https://www.tudelft.nl/en/education/study-programme-orientation/practical-matters/housing"
       },
@@ -1691,7 +1741,7 @@
       "qs_ranking": 48,
       "data_quality": {
         "status": "partial",
-        "checked_official_source_count": 21,
+        "checked_official_source_count": 22,
         "verified_fields": [
           "program",
           "language",
@@ -1706,7 +1756,7 @@
         ],
         "unverified_critical_fields": [],
         "has_checked_source_log": true,
-        "audited_at": "2026-09-05"
+        "audited_at": "2026-09-06"
       },
       "tuition_eur_per_year": null,
       "annual_fee_eur": null,
@@ -1799,7 +1849,7 @@
         ],
         "confidence": "medium",
         "legacy_relevance_status": "needs_review",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     {
@@ -2002,13 +2052,13 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-09-05"
+          "evaluated_at": "2026-09-06"
         },
         "tuition_derivation": {
           "standard": "cost_model@3.2.0",
           "rule": "not_derivable",
           "reason": "no_readable_tuition_figure",
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "application_fee_charged_per": "application",
         "application_fee_verification": {
@@ -2055,7 +2105,7 @@
             "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
             "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
           },
-          "evaluated_at": "2026-09-05"
+          "evaluated_at": "2026-09-06"
         }
       },
       "scholarship_profile": {
@@ -2232,7 +2282,7 @@
           "band_from_score": "high",
           "capped_from_very_high": false,
           "legacy_value": "high",
-          "evaluated_at": "2026-09-05"
+          "evaluated_at": "2026-09-06"
         },
         "cost_of_living_profile": {
           "standard": "cost_model@3.2.0",
@@ -2262,11 +2312,11 @@
               "monthly_living_cost_eur_min": 1000.0,
               "monthly_living_cost_eur_max": 1500.0
             },
-            "derived_at": "2026-09-05"
+            "derived_at": "2026-09-06"
           },
           "source_url": null,
           "note": null,
-          "evaluated_at": "2026-09-05"
+          "evaluated_at": "2026-09-06"
         }
       },
       "curriculum_profile": {
@@ -2527,11 +2577,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "open",
-          "days_remaining_at_evaluation": 238,
+          "days_remaining_at_evaluation": 237,
           "derived_from": "application_timeline_profile.application_deadline",
           "confidence": "high",
           "source_url": "https://www.tue.nl/en/education/graduate-school/master-mechanical-engineering",
-          "evaluated_at": "2026-09-05",
+          "evaluated_at": "2026-09-06",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -3030,7 +3080,7 @@
         ],
         "confidence": "medium",
         "legacy_relevance_status": "weak",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "academic_match_evidence": {
         "research_group_evidence": {
@@ -3235,7 +3285,7 @@
             "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
             "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
           },
-          "evaluated_at": "2026-09-05"
+          "evaluated_at": "2026-09-06"
         },
         "tuition_eur_per_year": 21700.0,
         "tuition_derivation": {
@@ -3282,7 +3332,7 @@
             "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
             "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
           },
-          "evaluated_at": "2026-09-05"
+          "evaluated_at": "2026-09-06"
         }
       },
       "scholarship_profile": {
@@ -3383,7 +3433,7 @@
           "band_from_score": null,
           "capped_from_very_high": false,
           "legacy_value": "unknown",
-          "evaluated_at": "2026-09-05"
+          "evaluated_at": "2026-09-06"
         },
         "cost_of_living_profile": {
           "standard": "cost_model@3.2.0",
@@ -3409,11 +3459,11 @@
             "derived_from": {
               "monthly_living_cost_eur_estimated": 1311.0
             },
-            "derived_at": "2026-09-05"
+            "derived_at": "2026-09-06"
           },
           "source_url": null,
           "note": null,
-          "evaluated_at": "2026-09-05"
+          "evaluated_at": "2026-09-06"
         }
       },
       "curriculum_profile": {
@@ -3598,11 +3648,11 @@
           "cycle_label": null,
           "is_recurring_annual": false,
           "status": "closing_soon",
-          "days_remaining_at_evaluation": 26,
+          "days_remaining_at_evaluation": 25,
           "derived_from": "application_timeline_profile.application_deadline",
           "confidence": "high",
           "source_url": "https://www.utwente.nl/en/education/master/programmes/robotics/masters-structure/factsheet/",
-          "evaluated_at": "2026-09-05",
+          "evaluated_at": "2026-09-06",
           "audience": "new_applicants",
           "other_milestones": []
         }
@@ -3955,7 +4005,7 @@
         "matched_tags": [],
         "confidence": "medium",
         "legacy_relevance_status": "weak",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "academic_match_evidence": {
         "research_group_evidence": {

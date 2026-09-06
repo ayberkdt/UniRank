@@ -7,6 +7,8 @@ let countryPickerEntries = [];
 let countryPickerOpen = false;
 let activeDrawerData = null;
 let initialResearchDeepLinkHandled = false;
+let comparisonIds = new Set(window.uniStorage.readArray('unirank_comparison').slice(0, 3));
+let comparisonLastTrigger = null;
 
 
 function validateRecordShape(record) {
@@ -482,6 +484,18 @@ const els = {
         body: document.getElementById('drawer-body'),
         closeBtn: document.getElementById('drawer-close'),
         favBtn: document.getElementById('drawer-fav-btn')
+    },
+    comparison: {
+        dock: document.getElementById('comparison-dock'),
+        count: document.getElementById('comparison-count'),
+        chips: document.getElementById('comparison-chips'),
+        clearBtn: document.getElementById('comparison-clear'),
+        openBtn: document.getElementById('comparison-open'),
+        status: document.getElementById('comparison-status'),
+        overlay: document.getElementById('comparison-overlay'),
+        workspace: document.getElementById('comparison-workspace'),
+        grid: document.getElementById('comparison-grid'),
+        closeBtn: document.getElementById('comparison-close')
     }
 };
 
@@ -517,6 +531,172 @@ function syncFavoriteButtons(id) {
         button.setAttribute('aria-label', label);
         button.textContent = isFav ? '★' : '☆';
     });
+}
+
+function comparisonRecord(id) {
+    return rawData.find(record => {
+        const normalized = window.uniDataAdapter?.normalizeUniversityRecord(record);
+        return String(normalized?.id || record?.id || record?.Uni_ID) === String(id);
+    }) || null;
+}
+
+function comparisonRecords() {
+    return Array.from(comparisonIds).map(comparisonRecord).filter(Boolean);
+}
+
+function setComparisonStatus(messageKey) {
+    if (!els.comparison.status) return;
+    els.comparison.status.textContent = messageKey ? (window.t ? window.t(messageKey) : messageKey) : '';
+    window.clearTimeout(window.comparisonStatusTimer);
+    if (messageKey) window.comparisonStatusTimer = window.setTimeout(() => {
+        if (els.comparison.status) els.comparison.status.textContent = '';
+    }, 3200);
+}
+
+function persistComparison() {
+    window.uniStorage.writeJSON('unirank_comparison', Array.from(comparisonIds));
+}
+
+function syncComparisonButtons() {
+    document.querySelectorAll('.compare-button').forEach(button => {
+        const selected = comparisonIds.has(String(button.dataset.compareId));
+        button.classList.toggle('is-active', selected);
+        button.setAttribute('aria-pressed', String(selected));
+        button.setAttribute('aria-label', window.t ? window.t(selected ? 'compare_remove' : 'compare_add') : 'Compare');
+        const label = button.querySelector('[data-compare-label]');
+        if (label) label.textContent = window.t ? window.t(selected ? 'compare_remove' : 'compare_add') : (selected ? 'Remove' : 'Compare');
+    });
+}
+
+function toggleComparison(id, trigger = null) {
+    const key = String(id);
+    comparisonLastTrigger = trigger || document.activeElement;
+    if (comparisonIds.has(key)) {
+        comparisonIds.delete(key);
+    } else if (comparisonIds.size >= 3) {
+        setComparisonStatus('compare_limit');
+        return;
+    } else {
+        comparisonIds.add(key);
+    }
+    persistComparison();
+    renderComparisonDock();
+    if (!els.comparison.overlay.hidden) {
+        if (comparisonIds.size < 2) closeComparison();
+        else renderComparisonWorkspace();
+    }
+}
+
+function renderComparisonDock() {
+    if (!els.comparison.dock) return;
+    if (rawData.length) {
+        comparisonIds = new Set(Array.from(comparisonIds).filter(id => comparisonRecord(id)).slice(0, 3));
+        persistComparison();
+    }
+    const records = comparisonRecords();
+    els.comparison.dock.hidden = records.length === 0;
+    els.comparison.count.textContent = String(records.length);
+    els.comparison.openBtn.disabled = records.length < 2;
+    els.comparison.chips.innerHTML = records.map(record => {
+        const n = window.uniDataAdapter.normalizeUniversityRecord(record);
+        const university = window.localizedField(n.universityName) || n.id;
+        return `<button type="button" class="comparison-chip" data-comparison-remove="${escapeHtml(n.id)}" aria-label="${escapeHtml((window.t ? window.t('compare_remove') : 'Remove') + ': ' + university)}"><span>${escapeHtml(university)}</span><b aria-hidden="true">×</b></button>`;
+    }).join('');
+    els.comparison.chips.querySelectorAll('[data-comparison-remove]').forEach(button => {
+        button.addEventListener('click', () => toggleComparison(button.dataset.comparisonRemove, button));
+    });
+    syncComparisonButtons();
+}
+
+function comparisonCost(n) {
+    if (n.totalAcademicCost !== null || n.tuitionPerYear !== null) return formatMoney(n.totalAcademicCost ?? n.tuitionPerYear);
+    return n.foreignTuition ? formatPublishedTuition(n.foreignTuition) : (window.t ? window.t('unknown_value') : 'Unknown');
+}
+
+function comparisonText(value, fallbackKey = 'unknown_value') {
+    const localized = window.localizedField ? window.localizedField(value) : value;
+    return String(localized || (window.t ? window.t(fallbackKey) : 'Unknown'));
+}
+
+function renderComparisonWorkspace() {
+    const records = comparisonRecords();
+    if (!els.comparison.grid) return;
+    const t = window.t || (key => key);
+    els.comparison.grid.style.setProperty('--comparison-columns', String(Math.max(records.length, 2)));
+    els.comparison.grid.innerHTML = records.map(record => {
+        const n = window.uniDataAdapter.normalizeUniversityRecord(record);
+        const band = scoreBand(record._score);
+        const university = window.localizedField(n.universityName) || n.id;
+        const programme = window.localizedField(n.programName) || t('unknown_value');
+        const language = formatTeachingLanguages(n.teachingLanguage) || t('unknown_value');
+        const deadline = n.deadline ? formatCalendarValue(n.deadline) : t('unknown_value');
+        const living = n.monthlyLivingCost != null ? formatMoney(n.monthlyLivingCost) : t('unknown_value');
+        const applicationFee = window.uniApplicationFee?.read(record);
+        const applicationFeeText = applicationFee ? window.uniApplicationFee.headline(applicationFee) : t('unknown_value');
+        const sources = Number(n.dataQuality?.checkedOfficialSourceCount) || 0;
+        const quality = n.dataQuality?.status || 'needs_verification';
+        const qualityLabels = {
+            verified: window.currentLanguage === 'tr' ? 'Doğrulandı' : 'Verified',
+            partial: window.currentLanguage === 'tr' ? 'Kısmen doğrulandı' : 'Partially verified',
+            needs_verification: t('needs_verification')
+        };
+        const qualityLabel = qualityLabels[quality] || t('needs_verification');
+        const cleanCountry = String(n.country || '').replace(/^[^a-zA-ZçğıöşüÇĞİÖŞÜ]+/, '').trim();
+        const country = window.getCountryName ? window.getCountryName(cleanCountry) : cleanCountry;
+        return `<article class="comparison-column" data-comparison-id="${escapeHtml(n.id)}">
+            <header class="comparison-column__header">
+                <div><span>${escapeHtml([n.city, country].filter(Boolean).join(' · '))}</span><h3>${escapeHtml(university)}</h3><p>${escapeHtml(programme)}</p></div>
+                <button type="button" data-comparison-remove="${escapeHtml(n.id)}" aria-label="${escapeHtml(t('compare_remove_column'))}">×</button>
+            </header>
+            <div class="comparison-score"><span class="fit-score fit-score--${band.key}">${Number(record._score || 0).toFixed(1)}</span><strong>${escapeHtml(band.label)}</strong></div>
+            <section><h4>${escapeHtml(t('compare_programme'))}</h4><dl>
+                <div><dt>${escapeHtml(t('teaching_language'))}</dt><dd>${escapeHtml(language)}</dd></div>
+                <div><dt>${escapeHtml(t('study_format'))}</dt><dd>${escapeHtml([displayValue(n.degree), n.ects ? `${n.ects} ECTS` : '', n.duration || ''].filter(Boolean).join(' · ') || t('unknown_value'))}</dd></div>
+            </dl></section>
+            <section><h4>${escapeHtml(t('compare_costs'))}</h4><dl>
+                <div><dt>${escapeHtml(t('annual_cost'))}</dt><dd>${escapeHtml(comparisonCost(n))}</dd></div>
+                <div><dt>${escapeHtml(t('compare_application_fee'))}</dt><dd>${escapeHtml(applicationFeeText)}</dd></div>
+                <div><dt>${escapeHtml(t('compare_monthly_living'))}</dt><dd>${escapeHtml(living)}</dd></div>
+                <div><dt>${escapeHtml(t('compare_current_deadline'))}</dt><dd>${escapeHtml(deadline)}</dd></div>
+            </dl></section>
+            <section><h4>${escapeHtml(t('compare_risk'))}</h4><dl>
+                <div><dt>${escapeHtml(t('compare_admission_risk'))}</dt><dd>${formatRiskBadge(n.admissionRisk)}</dd></div>
+                <div><dt>${escapeHtml(t('housing_risk'))}</dt><dd>${formatRiskBadge(n.housingDifficulty)}</dd></div>
+            </dl></section>
+            <section class="comparison-column__narrative"><h4>${escapeHtml(t('compare_funding'))}</h4><p>${escapeHtml(comparisonText(n.scholarshipSummary))}</p></section>
+            <section class="comparison-column__narrative"><h4>${escapeHtml(t('compare_research'))}</h4><p>${escapeHtml(comparisonText(n.researchSummary))}</p></section>
+            <footer><span class="comparison-evidence comparison-evidence--${escapeHtml(quality)}">${escapeHtml(t('compare_evidence'))}: ${escapeHtml(qualityLabel)}</span><small>${sources} ${escapeHtml(t('compare_sources'))}</small><button type="button" data-comparison-view="${escapeHtml(n.id)}">${escapeHtml(t('view_program'))} →</button></footer>
+        </article>`;
+    }).join('');
+    els.comparison.grid.querySelectorAll('[data-comparison-remove]').forEach(button => {
+        button.addEventListener('click', () => toggleComparison(button.dataset.comparisonRemove, button));
+    });
+    els.comparison.grid.querySelectorAll('[data-comparison-view]').forEach(button => {
+        button.addEventListener('click', () => {
+            const record = comparisonRecord(button.dataset.comparisonView);
+            closeComparison();
+            if (record) openDrawer(record);
+        });
+    });
+}
+
+function openComparison() {
+    if (comparisonIds.size < 2) {
+        setComparisonStatus('compare_need_two');
+        return;
+    }
+    comparisonLastTrigger = document.activeElement;
+    renderComparisonWorkspace();
+    els.comparison.overlay.hidden = false;
+    document.body.classList.add('comparison-open');
+    window.setTimeout(() => els.comparison.closeBtn.focus(), 30);
+}
+
+function closeComparison() {
+    if (!els.comparison.overlay || els.comparison.overlay.hidden) return;
+    els.comparison.overlay.hidden = true;
+    document.body.classList.remove('comparison-open');
+    if (comparisonLastTrigger instanceof HTMLElement && document.contains(comparisonLastTrigger)) comparisonLastTrigger.focus();
 }
 
 // Initialize
@@ -784,6 +964,19 @@ function setupEventListeners() {
     els.drawer.closeBtn.addEventListener('click', closeDrawer);
     els.drawer.overlay.addEventListener('click', closeDrawer);
 
+    // Comparison workspace
+    els.comparison.clearBtn?.addEventListener('click', () => {
+        comparisonIds.clear();
+        persistComparison();
+        renderComparisonDock();
+        closeComparison();
+    });
+    els.comparison.openBtn?.addEventListener('click', openComparison);
+    els.comparison.closeBtn?.addEventListener('click', closeComparison);
+    els.comparison.overlay?.addEventListener('click', event => {
+        if (event.target === els.comparison.overlay) closeComparison();
+    });
+
     const filterToggle = document.getElementById('filter-toggle');
     const sidebarClose = document.getElementById('sidebar-close');
     const sidebarScrim = document.getElementById('sidebar-scrim');
@@ -821,8 +1014,23 @@ function setupEventListeners() {
     });
 
     document.addEventListener('keydown', event => {
+        if (event.key === 'Tab' && !els.comparison.overlay.hidden) {
+            const focusable = Array.from(els.comparison.workspace.querySelectorAll('button, a[href], input, select, textarea, [tabindex]:not([tabindex="-1"])'))
+                .filter(element => !element.disabled && !element.hidden);
+            const first = focusable[0];
+            const last = focusable.at(-1);
+            if (first && last && event.shiftKey && document.activeElement === first) {
+                event.preventDefault();
+                last.focus();
+            } else if (first && last && !event.shiftKey && document.activeElement === last) {
+                event.preventDefault();
+                first.focus();
+            }
+            return;
+        }
         if (event.key !== 'Escape') return;
         if (countryPickerOpen) closeCountryPicker(true);
+        else if (!els.comparison.overlay.hidden) closeComparison();
         else if (els.drawer.panel.classList.contains('active')) closeDrawer();
         else setFilterSidebar(false);
     });
@@ -1505,6 +1713,7 @@ function renderCardCountdown(record) {
 function renderTable() {
     els.tableBody.innerHTML = '';
     if (filteredData.length === 0) {
+        renderComparisonDock();
         const title = window.t ? window.t('no_results_title') : 'No matching programs';
         const description = window.t ? window.t('no_results_desc') : 'Try removing one or two filters.';
         const resetLabel = window.t ? window.t('reset_filters') : 'Reset filters';
@@ -1529,9 +1738,7 @@ function renderTable() {
         const band = scoreBand(row._score);
         const confidence = confidenceLabel(n.confidenceSummary);
         const language = formatTeachingLanguages(n.teachingLanguage) || (window.t ? window.t('unknown_value') : 'Unknown');
-        const annualCost = n.totalAcademicCost !== null || n.tuitionPerYear !== null
-            ? formatMoney(n.totalAcademicCost ?? n.tuitionPerYear)
-            : formatPublishedTuition(n.foreignTuition);
+        const annualCost = comparisonCost(n);
         const city = displayValue(n.city);
         const degree = displayValue(n.degree);
         const isTurkishUi = window.currentLanguage === 'tr';
@@ -1557,12 +1764,12 @@ function renderTable() {
         const program = window.localizedField(n.programName) || (window.currentLanguage === 'tr' ? 'Program adı doğrulanmalı' : 'Program name needs verification');
 
         const article = document.createElement('article');
-        article.className = 'program-card country-card staggered-item';
+        const isCompared = comparisonIds.has(String(rid));
+        article.className = `program-card country-card staggered-item${isCompared ? ' is-compared' : ''}`;
         article.setAttribute('role', 'listitem');
         article.dataset.programId = rid;
         article.style.animationDelay = `${Math.min(i * 0.05, 1.0)}s`;
         article.innerHTML = `
-            <div class="country-card__flag" aria-hidden="true"></div>
             <div class="program-card__rank" aria-label="Rank ${i + 1}"><span>${String(i + 1).padStart(2, '0')}</span></div>
             <div class="program-card__content">
                 <div class="program-card__head">
@@ -1583,33 +1790,26 @@ function renderTable() {
                     <span>${escapeHtml(degree)}</span>
                     ${n.ects ? `<span>${escapeHtml(n.ects)} ECTS</span>` : ''}
                     ${n.duration ? `<span>${escapeHtml(n.duration)}</span>` : ''}
-                    ${deadline ? `<span class="program-card__meta-date">${escapeHtml(isTurkishUi ? 'Son başvuru' : 'Deadline')} · ${escapeHtml(deadline)}</span>` : ''}
                     ${countdownChip}
                     ${closedToNonEu ? `<span class="program-card__meta-warning">${escapeHtml(isTurkishUi ? 'AB dışı adaylara kapalı' : 'Not open to non-EU applicants')}</span>` : ''}
                 </div>
-                <div class="program-card__facts">
-                    <section class="fact-group fact-group--university" aria-label="${escapeHtml(isTurkishUi ? 'Üniversite' : 'University')}">
-                        <h4>${escapeHtml(isTurkishUi ? 'Üniversite' : 'University')}</h4>
-                        <dl class="fact-list">
-                            <div class="fact"><dt>${escapeHtml(window.t ? window.t('teaching_language') : 'Teaching language')}</dt><dd>${escapeHtml(language)}</dd></div>
-                            <div class="fact"><dt>${escapeHtml(window.t ? window.t('annual_cost') : 'Annual cost')}</dt><dd>${escapeHtml(annualCost)}</dd></div>
-                            ${applyFeeText ? `<div class="fact decision-item--apply-fee"><dt>${escapeHtml(isTurkishUi ? 'Başvurmanın maliyeti' : 'Cost to apply')}</dt><dd><span class="apply-fee apply-fee--${escapeHtml(applyFeeTone)}">${escapeHtml(applyFeeText)}</span></dd></div>` : ''}
-                            ${admissionRiskKnown ? `<div class="fact"><dt>${escapeHtml(isTurkishUi ? 'Kabul riski' : 'Admission risk')}</dt><dd>${formatRiskBadge(n.admissionRisk)}</dd></div>` : ''}
-                        </dl>
-                    </section>
-                    ${housingKnown || livingCost || roomRent ? `
-                    <section class="fact-group fact-group--city" aria-label="${escapeHtml(isTurkishUi ? 'Şehir' : 'City')}">
-                        <h4>${escapeHtml(city && city !== '—' ? city : (isTurkishUi ? 'Şehir' : 'City'))}</h4>
-                        <dl class="fact-list">
-                            ${housingKnown ? `<div class="fact"><dt>${escapeHtml(window.t ? window.t('housing_risk') : 'Housing risk')}</dt><dd>${housingHTML}</dd></div>` : ''}
-                            ${livingCost ? `<div class="fact"><dt>${escapeHtml(isTurkishUi ? 'Aylık yaşam' : 'Monthly living')}</dt><dd>${escapeHtml(livingCost)}</dd></div>` : ''}
-                            ${roomRent ? `<div class="fact"><dt>${escapeHtml(isTurkishUi ? 'Oda kirası' : 'Room rent')}</dt><dd>${escapeHtml(roomRent)}</dd></div>` : ''}
-                        </dl>
-                    </section>` : ''}
+                <dl class="program-card__decision" aria-label="${escapeHtml(isTurkishUi ? 'Karar özeti' : 'Decision snapshot')}">
+                    <div class="decision-fact"><dt>${escapeHtml(window.t ? window.t('teaching_language') : 'Teaching language')}</dt><dd>${escapeHtml(language)}</dd></div>
+                    <div class="decision-fact"><dt>${escapeHtml(window.t ? window.t('annual_cost') : 'Annual cost')}</dt><dd>${escapeHtml(annualCost || (window.t ? window.t('unknown_value') : 'Unknown'))}</dd></div>
+                    <div class="decision-fact"><dt>${escapeHtml(window.t ? window.t('compare_current_deadline') : 'Current deadline')}</dt><dd>${escapeHtml(deadline || (window.t ? window.t('unknown_value') : 'Unknown'))}</dd></div>
+                    <div class="decision-fact"><dt>${escapeHtml(window.t ? window.t('housing_risk') : 'Housing risk')}</dt><dd>${housingKnown ? housingHTML : escapeHtml(window.t ? window.t('unknown_value') : 'Unknown')}</dd></div>
+                </dl>
+                ${(applyFeeText || admissionRiskKnown || livingCost || roomRent) ? `<div class="program-card__secondary-facts">
+                    ${applyFeeText ? `<span><small>${escapeHtml(window.t ? window.t('compare_application_fee') : 'Application fee')}</small><b class="apply-fee apply-fee--${escapeHtml(applyFeeTone)}">${escapeHtml(applyFeeText)}</b></span>` : ''}
+                    ${admissionRiskKnown ? `<span><small>${escapeHtml(window.t ? window.t('compare_admission_risk') : 'Admission risk')}</small>${formatRiskBadge(n.admissionRisk)}</span>` : ''}
+                    ${livingCost ? `<span><small>${escapeHtml(window.t ? window.t('compare_monthly_living') : 'Monthly living')}</small><b>${escapeHtml(livingCost)}</b></span>` : ''}
+                    ${roomRent ? `<span><small>${escapeHtml(isTurkishUi ? 'Oda kirası' : 'Room rent')}</small><b>${escapeHtml(roomRent)}</b></span>` : ''}
                 </div>
+                ` : ''}
             </div>
             <div class="program-card__actions">
                 <button class="favorite-button${isFav ? ' is-active' : ''}" type="button" aria-pressed="${String(isFav)}" aria-label="${escapeHtml(window.t ? window.t(isFav ? 'remove_favorite' : 'add_favorite') : 'Favorite')}">${isFav ? '★' : '☆'}</button>
+                <button class="compare-button${isCompared ? ' is-active' : ''}" type="button" data-compare-id="${escapeHtml(rid)}" aria-pressed="${String(isCompared)}" aria-label="${escapeHtml(window.t ? window.t(isCompared ? 'compare_remove' : 'compare_add') : 'Compare')}"><span aria-hidden="true">${isCompared ? '✓' : '⊞'}</span><span data-compare-label>${escapeHtml(window.t ? window.t(isCompared ? 'compare_remove' : 'compare_add') : 'Compare')}</span></button>
                 <button class="detail-btn" type="button">${escapeHtml(window.t ? window.t('view_program') : 'View program')} <span aria-hidden="true">→</span></button>
             </div>`;
 
@@ -1618,9 +1818,13 @@ function renderTable() {
         article.querySelector('.favorite-button').addEventListener('click', () => {
             toggleFavorite(rid);
         });
+        article.querySelector('.compare-button').addEventListener('click', event => {
+            toggleComparison(rid, event.currentTarget);
+        });
         article.querySelector('.detail-btn').addEventListener('click', () => openDrawer(row));
         els.tableBody.appendChild(article);
     });
+    renderComparisonDock();
 }
 
 
@@ -2550,7 +2754,10 @@ document.addEventListener('languageChanged', async () => {
         const drawerDataToRender = activeDrawerData;
         const drawerWasOpen = els.drawer.panel.classList.contains('active');
         const drawerScrollTop = els.drawer.body.scrollTop;
+        const comparisonWasOpen = !els.comparison.overlay.hidden;
         processAndRender();
+        renderComparisonDock();
+        if (comparisonWasOpen) renderComparisonWorkspace();
         
         // Re-render the open record so bilingual programme data changes immediately too.
         if (drawerWasOpen && drawerDataToRender) {
@@ -2562,6 +2769,12 @@ document.addEventListener('languageChanged', async () => {
 
 window.processAndRender = processAndRender;
 window.openDrawer = openDrawer;
+window.uniComparison = {
+    toggle: toggleComparison,
+    open: openComparison,
+    close: closeComparison,
+    selected: () => Array.from(comparisonIds)
+};
 
 function startApplication() {
     init().catch((error) => {

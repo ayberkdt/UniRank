@@ -11,6 +11,21 @@ const catalogScopeUrl = new URL('../config/catalog_scope.json', import.meta.url)
 const standardsUrl = new URL('../config/standards.json', import.meta.url);
 const visaUrl = new URL('../config/visa_requirements.json', import.meta.url);
 const port = Number(process.env.PORT || 8765);
+const featuredResearchProgramIds = [
+  'mit-aeroastro',
+  'stanford-aa',
+  'caltech-galcit',
+  'university-of-cambridge',
+  'imperial-college-london',
+  'netherlands_delft_msc_aerospace',
+  'se-kth-aero-msc',
+  'germany-tum-msc-aerospace',
+  'germany-stuttgart-msc-aerospace',
+  'purdue-aae',
+  'uiuc-ae',
+  'georgia-tech-ae',
+  'umich-aero',
+];
 
 const mimeTypes = {
   '.css': 'text/css; charset=utf-8',
@@ -41,6 +56,86 @@ function displayText(value) {
   if (typeof value === 'string') return value.trim();
   if (typeof value === 'object') return displayText(value.en || value.tr || value.name || value.label);
   return String(value).trim();
+}
+
+function programmeIdentity(record) {
+  return {
+    programme_id: record.id || record.Uni_ID,
+    university: displayText(record.university || record.University),
+    programme: displayText(record.program_name || record.Program || record.programme_name),
+    country: displayText(record.country || record.Country),
+    degree_level: displayText(record.degree_level || record.Degree),
+  };
+}
+
+function latestVerified(current, profiles) {
+  const dates = [current, ...profiles.map(profile => profile.last_verified)].filter(value => typeof value === 'string');
+  return dates.length ? dates.sort().at(-1) : null;
+}
+
+function institutionalFunding(records) {
+  const order = new Map(featuredResearchProgramIds.map((id, index) => [id, index]));
+  return records.flatMap(record => {
+    const profile = record.scholarship_profile || {};
+    const playbook = Array.isArray(profile.playbook) ? profile.playbook : [];
+    const identity = programmeIdentity(record);
+    if (!identity.programme_id || !playbook.length) return [];
+    return [{
+      ...identity,
+      featured: order.has(identity.programme_id),
+      application_mode: profile.application_mode,
+      scholarship_deadline: profile.scholarship_deadline,
+      deadline_notes: profile.notes || profile.verification_notes,
+      funding_status: profile.funding_status,
+      playbook,
+      last_verified: record.source_profile?.last_verified || record.last_verified,
+    }];
+  }).sort((left, right) => {
+    const featuredDelta = Number(!left.featured) - Number(!right.featured);
+    if (featuredDelta) return featuredDelta;
+    const orderDelta = (order.get(left.programme_id) ?? 999) - (order.get(right.programme_id) ?? 999);
+    return orderDelta || left.university.localeCompare(right.university);
+  });
+}
+
+function programmeResearchDetails(records) {
+  const order = new Map(featuredResearchProgramIds.map((id, index) => [id, index]));
+  return records.flatMap(record => {
+    const profile = record.research_profile || {};
+    const notableProfessors = Array.isArray(profile.notable_professors) ? profile.notable_professors : [];
+    const researchUnits = Array.isArray(profile.research_units) ? profile.research_units : [];
+    const identity = programmeIdentity(record);
+    if (!identity.programme_id || (!notableProfessors.length && !researchUnits.length)) return [];
+    return [{
+      ...identity,
+      featured: order.has(identity.programme_id),
+      faculty_contact_policy: profile.faculty_contact_policy,
+      faculty_contact_note: profile.faculty_contact_note,
+      faculty_email_availability: profile.faculty_email_availability,
+      notable_professors: notableProfessors,
+      research_units: researchUnits,
+      verification_notes: profile.verification_notes,
+      last_verified: record.source_profile?.last_verified || record.last_verified,
+    }];
+  }).sort((left, right) => {
+    const featuredDelta = Number(!left.featured) - Number(!right.featured);
+    if (featuredDelta) return featuredDelta;
+    const orderDelta = (order.get(left.programme_id) ?? 999) - (order.get(right.programme_id) ?? 999);
+    const evidenceDelta = (right.notable_professors.length + right.research_units.length)
+      - (left.notable_professors.length + left.research_units.length);
+    return orderDelta || evidenceDelta || left.university.localeCompare(right.university);
+  });
+}
+
+function officialSourceCount(catalogSources, records, relevantTerms) {
+  const urls = new Set((catalogSources || []).map(source => source?.url).filter(Boolean));
+  const acceptedStatuses = new Set(['ok', 'redirects', 'pdf', 'requires_js']);
+  records.forEach(record => (record.source_profile?.source_log || []).forEach(source => {
+    if (!String(source?.source_type || '').startsWith('official_') || !acceptedStatuses.has(source?.access_status) || !source?.url) return;
+    const fields = (source.relevant_fields || []).join(' ').toLowerCase();
+    if (relevantTerms.some(term => fields.includes(term))) urls.add(source.url);
+  }));
+  return urls.size;
 }
 
 function firstDisplayValue(...values) {
@@ -494,12 +589,23 @@ const server = createServer(async (request, response) => {
 
     if (url.pathname === '/api/scholarships') {
       const catalog = JSON.parse(await readFile(scholarshipCatalogUrl, 'utf8'));
+      const { records } = await loadPrograms();
+      const opportunities = institutionalFunding(records);
+      catalog.institutional_opportunities = opportunities;
+      catalog.last_verified = latestVerified(catalog.last_verified, opportunities);
       sendJson(response, { status: 'success', data: catalog });
       return;
     }
 
     if (url.pathname === '/api/research-pathways') {
       const catalog = JSON.parse(await readFile(researchFieldCatalogUrl, 'utf8'));
+      const { records } = await loadPrograms();
+      const details = programmeResearchDetails(records);
+      catalog.programme_research_details = details;
+      catalog.last_verified = latestVerified(catalog.last_verified, details);
+      catalog.official_source_count = officialSourceCount(
+        catalog.sources, records, ['research', 'faculty', 'professor', 'lab', 'facilit']
+      );
       sendJson(response, { status: 'success', data: catalog });
       return;
     }

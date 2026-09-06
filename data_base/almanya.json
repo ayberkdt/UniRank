@@ -128,7 +128,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "currency": "EUR",
       "tuition_eur_per_semester_non_eu": 6000,
@@ -195,7 +195,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -242,18 +242,19 @@
     },
     "source_profile": {
       "official_program_page": "https://www.tum.de/en/studies/degree-programs/detail/aerospace-master-of-science-msc?cHash=4529d92753fb930cb5ee3b1c475952d0&hl=en-GB",
-      "last_verified": "2026-09-01",
+      "last_verified": "2026-09-06",
       "needs_verification": true,
       "field_confidence": {
         "program_basic_info": "high",
-        "tuition": "medium",
+        "tuition": "high",
         "language": "high",
         "admission": "medium",
         "scholarship": "high",
         "curriculum": "medium",
         "application_timeline_profile": "medium",
         "living_profile": "unknown",
-        "housing": "high"
+        "housing": "high",
+        "funding": "high"
       },
       "source_log": [
         {
@@ -510,23 +511,6 @@
           }
         },
         {
-          "url": "https://www.tum.de/en/studies/fees/tuition/scholarships-and-waivers",
-          "title": "TUM — Scholarships and waivers for international students",
-          "source_type": "official_scholarship_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-29",
-          "relevant_fields": [
-            "scholarship",
-            "funding",
-            "tuition"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Publishes the merit, financial-need and hardship waiver routes with their windows and required documents.",
-            "tr": "Başarı, malî ihtiyaç ve zorluk hâli muafiyet rotalarını pencereleri ve istenen belgeleriyle yayımlar."
-          }
-        },
-        {
           "url": "https://www.tum.de/en/studies/during-your-studies/living-and-working/accommodations/student-halls-of-residence/",
           "title": "TUM — Student halls of residence",
           "source_type": "official_housing_page",
@@ -585,6 +569,21 @@
             "application_fee",
             "cost",
             "fees"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.tum.de/en/studies/fees/tuition/scholarships-and-waivers",
+          "title": "TUM — Scholarships and waivers for international students",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "tuition",
+            "scholarship_deadline",
+            "application_documents"
           ],
           "confidence": "high"
         }
@@ -997,11 +996,11 @@
         "cycle_label": "Summer semester 2027",
         "is_recurring_annual": true,
         "status": "open",
-        "days_remaining_at_evaluation": 86,
+        "days_remaining_at_evaluation": 85,
         "derived_from": "application_timeline_profile.application_deadline",
         "confidence": "high",
         "source_url": "https://www.tum.de/en/studies/degree-programs/detail/aerospace-master-of-science-msc?cHash=4529d92753fb930cb5ee3b1c475952d0&hl=en-GB",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -1042,8 +1041,8 @@
     ],
     "scholarship_profile": {
       "funding_notes": {
-        "en": "At TUM the realistic funding question for a non-EU student is not \"can I win a stipend\" but \"can I get the €6,000-per-semester fee waived\". TUM publishes three separate routes — merit, financial need and hardship — each with its own window and its own paperwork, and the merit route hinges on a ranking certificate your home university must issue.",
-        "tr": "TUM'da AB dışı bir öğrenci için gerçekçi finansman sorusu \"burs kazanabilir miyim\" değil, \"dönem başına 6.000 avroluk ücreti muaf ettirebilir miyim\" sorusudur. TUM üçü de kendi penceresi ve kendi evrakı olan üç ayrı rota yayımlar — başarı, malî ihtiyaç ve zorluk hâli — ve başarı rotası, kendi üniversitenin düzenlemesi gereken bir sıralama belgesine bağlıdır."
+        "en": "For a Turkish fee-paying applicant, TUM's need-based waiver is the strongest published entry-stage route: it waives the full non-EU tuition fee for the standard study duration, but makes no cash payment. It requires a TUM application number and extensive financial evidence for the applicant, parents and spouse where applicable. The next published window is 1 November 2026–15 January 2027 for the following summer semester.",
+        "tr": "Ücret ödeyen Türk aday için TUM'un ihtiyaç temelli muafiyeti yayımlanmış en güçlü giriş aşaması rotasıdır: standart öğrenim süresi boyunca AB dışı öğrenim ücretinin tamamını kaldırır ancak nakit ödeme yapmaz. TUM başvuru numarası ile aday, ebeveynler ve uygunsa eş için kapsamlı malî kanıt ister. Sonraki yayımlanmış pencere izleyen yaz dönemi için 1 Kasım 2026–15 Ocak 2027'dir."
       },
       "regional_scholarship_available": true,
       "regional_scholarship_name": "TUM tuition-fee waiver scholarship",
@@ -1055,57 +1054,51 @@
       ],
       "tuition_waivers": [],
       "non_eu_eligible": true,
-      "scholarship_deadline": "2026-05-31 (winter 2026/27 tuition-fee waiver; verify the next cycle)",
+      "scholarship_deadline": "Need-based tuition waiver: 2026-11-01 to 2027-01-15 for the following summer semester; winter 2026/27 round closed 2026-05-31",
       "scholarship_application_url": "https://www.tum.de/en/studies/fees/tuition/scholarships-and-waivers",
       "verification_notes": {
-        "en": "No programme-specific scholarship eligibility was verified from an official source.",
-        "tr": "Programa özgü burs uygunluğu resmî bir kaynaktan doğrulanmadı."
+        "en": "The waiver is limited in number and based on documented need. Approval must be accepted in the scholarship portal by the stated deadline.",
+        "tr": "Muafiyet sayısı sınırlıdır ve belgelenmiş ihtiyaca dayanır. Onay, burs portalında belirtilen tarihe kadar kabul edilmelidir."
       },
       "application_mode": "separate",
       "automatic_consideration": false,
       "separate_application_required": true,
       "playbook": [
         {
-          "opportunity": "TUM tuition-fee waiver scholarship — merit route (incoming Master's students)",
-          "competitiveness": "selective",
+          "opportunity": "TUM need-based tuition-fee waiver scholarship for incoming Master's students",
           "eligibility_gates": [
             {
-              "en": "You are a non-EU/EEA student who is subject to TUM tuition fees.",
-              "tr": "TUM öğrenim ücretine tabi, AB/AEA dışından bir öğrencisin."
+              "en": "Be a non-EU/EEA applicant subject to TUM tuition fees and starting a Bachelor's or Master's programme.",
+              "tr": "TUM öğrenim ücretine tabi AB/AEA dışı ve lisans veya yüksek lisansa başlayan aday olmak."
             },
             {
-              "en": "You are in your first or second semester of the Master's programme.",
-              "tr": "Yüksek lisans programının birinci veya ikinci döneminde bulunuyorsun."
+              "en": "Demonstrate that the applicant, parents and spouse where applicable lack the financial means to pay the tuition fee.",
+              "tr": "Adayın, ebeveynlerin ve uygunsa eşin öğrenim ücretini ödeyecek malî imkâna sahip olmadığını göstermek."
             },
             {
-              "en": "Your previous institution will issue an official ranking certificate stating your rank within your cohort and the cohort size.",
-              "tr": "Önceki kurumun, kohortundaki sıranı ve kohort büyüklüğünü belirten resmî bir sıralama belgesi düzenleyecek."
+              "en": "Have a TUMonline application number or, if already admitted, a TUM student number.",
+              "tr": "TUMonline başvuru numarasına veya kabul edilmişse TUM öğrenci numarasına sahip olmak."
             }
           ],
           "selection_criteria": [
             {
-              "en": "Academic performance at your previous institution, measured by your rank within your graduating cohort.",
-              "tr": "Önceki kurumundaki akademik performansın; mezuniyet kohortu içindeki sıralamanla ölçülür."
+              "en": "Documented financial need based on income, assets and family circumstances; the number of waivers is limited.",
+              "tr": "Gelir, varlıklar ve aile koşullarına dayalı belgelenmiş malî ihtiyaç; muafiyet sayısı sınırlıdır."
             }
           ],
-          "typical_award": {
-            "coverage": [
-              "tuition_waiver_two_semesters"
-            ]
-          },
           "steps": [
             {
               "order": 1,
               "action": {
-                "en": "Request the ranking certificate from your home university now. It must state your rank within your cohort together with the cohort size — many registrars do not issue this by default and take weeks to produce it, and without it the merit route is closed.",
-                "tr": "Sıralama belgesini şimdiden kendi üniversitenden iste. Belge, kohortundaki sıranı kohort büyüklüğüyle birlikte belirtmelidir — çoğu öğrenci işleri bunu kendiliğinden düzenlemez ve hazırlaması haftalar sürer; belge olmadan başarı rotası kapalıdır."
+                "en": "Submit the TUM Aerospace MSc application in TUMonline and obtain the application number required by the waiver portal.",
+                "tr": "TUM Aerospace MSc başvurusunu TUMonline'da gönder ve muafiyet portalının istediği başvuru numarasını al."
               },
               "owner": "applicant",
-              "timing": "before_application_opens",
+              "timing": "with_the_application",
               "required_documents": [
                 {
-                  "en": "Official ranking certificate showing rank within cohort and cohort size",
-                  "tr": "Kohort içindeki sırayı ve kohort büyüklüğünü gösteren resmî sıralama belgesi"
+                  "en": "TUMonline application number",
+                  "tr": "TUMonline başvuru numarası"
                 }
               ],
               "hard_requirement": true
@@ -1113,103 +1106,61 @@
             {
               "order": 2,
               "action": {
-                "en": "Apply online in the window that matches your intake: 1 January – 31 May for the winter semester, or 1 November – 15 January for the summer semester.",
-                "tr": "Kayıt dönemine uyan pencerede çevrim içi başvur: kış dönemi için 1 Ocak – 31 Mayıs, yaz dönemi için 1 Kasım – 15 Ocak."
+                "en": "Collect complete financial evidence covering the previous 18 months for every account and relevant family member.",
+                "tr": "Her hesap ve ilgili aile üyesi için önceki 18 ayı kapsayan eksiksiz malî kanıtları topla."
               },
               "owner": "applicant",
-              "timing": "separate_before_deadline",
+              "timing": "before_application_opens",
+              "required_documents": [
+                {
+                  "en": "Complete statements for all current, savings, blocked, PayPal, securities and cryptocurrency accounts covering 18 months",
+                  "tr": "Tüm cari, tasarruf, bloke, PayPal, menkul kıymet ve kripto para hesaplarının 18 aylık eksiksiz dökümleri"
+                },
+                {
+                  "en": "Income-tax assessment or equivalent and pension statements covering 18 months",
+                  "tr": "18 aylık gelir vergisi tarhiyatı veya eşdeğeri ile emeklilik dökümleri"
+                },
+                {
+                  "en": "CV and applicable marriage, death, registration, birth or sibling-enrolment certificates",
+                  "tr": "Özgeçmiş ve uygulanabilir evlilik, ölüm, ikamet, doğum veya kardeş öğrenci belgeleri"
+                }
+              ],
               "hard_requirement": true
             },
             {
               "order": 3,
               "action": {
-                "en": "Submit before the semester begins so the waiver can be applied to your fee payment deadline; a waiver granted late does not refund a missed payment window.",
-                "tr": "Muafiyetin ücret ödeme tarihine işlenebilmesi için dönem başlamadan gönder; geç verilen bir muafiyet kaçırılmış ödeme penceresini geri getirmez."
+                "en": "Submit the separate online waiver application in the window for the intended semester; the published summer-semester window is 1 November through 15 January.",
+                "tr": "Ayrı çevrim içi muafiyet başvurusunu hedeflenen dönemin penceresinde gönder; yayımlanan yaz dönemi penceresi 1 Kasım–15 Ocak'tır."
               },
               "owner": "applicant",
               "timing": "separate_before_deadline",
+              "required_documents": [],
               "hard_requirement": true
             },
             {
               "order": 4,
               "action": {
-                "en": "From your third semester onwards, reapply on the TUM performance route using your TUM Examination Report from TUMonline — deadlines 31 May – 30 June for winter and 30 November – 31 December for summer. The waiver only covers two semesters at a time, so this renewal is what keeps a four-semester Master's fee-free.",
-                "tr": "Üçüncü dönemden itibaren TUMonline'daki TUM Sınav Raporunla TUM performans rotasından yeniden başvur — son tarihler kış için 31 Mayıs – 30 Haziran, yaz için 30 Kasım – 31 Aralık. Muafiyet her seferinde yalnızca iki dönemi kapsar; dört dönemlik bir yüksek lisansı ücretsiz tutan şey bu yenilemedir."
+                "en": "If approved, confirm acceptance in the scholarship portal by the deadline communicated by TUM.",
+                "tr": "Onaylanırsa kabulü TUM'un bildirdiği tarihe kadar burs portalında teyit et."
               },
               "owner": "applicant",
-              "timing": "after_enrolment",
-              "required_documents": [
-                {
-                  "en": "Current TUM Examination Report from TUMonline",
-                  "tr": "TUMonline'dan güncel TUM Sınav Raporu"
-                }
-              ],
-              "hard_requirement": false
+              "timing": "after_admission",
+              "required_documents": [],
+              "hard_requirement": true
             }
           ],
-          "renewal_conditions": "Covers two semesters at a time; renewal from the third semester is assessed on TUM performance.",
-          "evidence_url": "https://www.tum.de/en/studies/fees/tuition/scholarships-and-waivers"
-        },
-        {
-          "opportunity": "TUM tuition-fee waiver — financial-need route (incoming students, first semester)",
           "competitiveness": "selective",
-          "eligibility_gates": [
-            {
-              "en": "You are a non-EU/EEA student subject to TUM tuition fees, in your first semester.",
-              "tr": "TUM öğrenim ücretine tabi, AB/AEA dışından ve birinci döneminde bir öğrencisin."
-            },
-            {
-              "en": "You can document financial hardship with bank statements covering eighteen months.",
-              "tr": "Malî zorluğu on sekiz aylık banka hesap özetleriyle belgeleyebiliyorsun."
-            }
-          ],
-          "selection_criteria": [
-            {
-              "en": "Documented financial need of the applicant and the family.",
-              "tr": "Adayın ve ailesinin belgelenmiş malî ihtiyacı."
-            }
-          ],
           "typical_award": {
+            "amount": null,
+            "currency": "EUR",
+            "period": "standard duration of study",
             "coverage": [
-              "tuition_waiver"
+              "full_non_eu_tuition_waiver",
+              "no_cash_payment"
             ]
           },
-          "steps": [
-            {
-              "order": 1,
-              "action": {
-                "en": "Start collecting eighteen months of bank statements plus income, asset and family documentation early — this is the slowest requirement and cannot be assembled in the final week.",
-                "tr": "On sekiz aylık banka hesap özetleri ile gelir, varlık ve aile belgelerini erkenden toplamaya başla — bu, en yavaş gereklilik ve son haftada tamamlanamaz."
-              },
-              "owner": "applicant",
-              "timing": "before_application_opens",
-              "required_documents": [
-                {
-                  "en": "Bank statements covering 18 months",
-                  "tr": "18 aylık banka hesap özetleri"
-                },
-                {
-                  "en": "Proof of income and assets",
-                  "tr": "Gelir ve varlık belgesi"
-                },
-                {
-                  "en": "Family documentation",
-                  "tr": "Aile belgeleri"
-                }
-              ],
-              "hard_requirement": true
-            },
-            {
-              "order": 2,
-              "action": {
-                "en": "Apply in the same windows as the merit route: 1 January – 31 May for winter, 1 November – 15 January for summer.",
-                "tr": "Başarı rotasıyla aynı pencerelerde başvur: kış için 1 Ocak – 31 Mayıs, yaz için 1 Kasım – 15 Ocak."
-              },
-              "owner": "applicant",
-              "timing": "separate_before_deadline",
-              "hard_requirement": true
-            }
-          ],
+          "renewal_conditions": "The published entry-stage need-based waiver covers the standard duration; students still in need near the end of that period must contact TUM during the final standard semester if studies will take longer.",
           "evidence_url": "https://www.tum.de/en/studies/fees/tuition/scholarships-and-waivers"
         }
       ]
@@ -1326,7 +1277,7 @@
         "band_from_score": "high",
         "capped_from_very_high": false,
         "legacy_value": "high",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -1351,7 +1302,7 @@
           "en": "TUM states that a single-person household in the greater Munich area should expect €1,300-2,000 per month; €1,650 is the midpoint of that published range and is used here only as the comparison figure. The range is wide because rent alone runs from €700 for a shared-flat room to €2,000 for a furnished studio.",
           "tr": "TUM, büyük Münih bölgesinde tek kişilik bir hanenin ayda 1.300-2.000 avro beklemesi gerektiğini belirtir; 1.650 avro bu yayımlanmış aralığın orta noktasıdır ve burada yalnızca karşılaştırma rakamı olarak kullanılır. Aralık geniştir, çünkü tek başına kira paylaşımlı dairede oda için 700 avrodan eşyalı stüdyoda 2.000 avroya kadar çıkar."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "housing_guaranteed": false,
       "student_housing_available": true,
@@ -1508,7 +1459,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-01"
+      "audited_at": "2026-09-06"
     },
     "qs_ranking_display": "25",
     "qs_ranking_year": 2027,
@@ -1575,7 +1526,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -1738,7 +1689,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "currency": "EUR",
       "tuition_eur_per_semester_non_eu": 1500,
@@ -1797,7 +1748,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -1817,7 +1768,7 @@
     },
     "source_profile": {
       "official_program_page": "https://www.uni-stuttgart.de/en/study/study-programs/program/Aerospace-Engineering-M.Sc./",
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "needs_verification": true,
       "field_confidence": {
         "tuition": "high",
@@ -1831,9 +1782,10 @@
         "language": "high",
         "research": "high",
         "deadlines": "high",
-        "scholarship": "medium",
+        "scholarship": "high",
         "housing": "high",
-        "non_eu_eligibility": "high"
+        "non_eu_eligibility": "high",
+        "funding": "high"
       },
       "source_log": [
         {
@@ -2083,6 +2035,20 @@
             "en": "Publishes the C@MPUS route, non-EU document checklist, translation rule and additional master's documents.",
             "tr": "C@MPUS yolunu, AB dışı belge listesini, çeviri kuralını ve yüksek lisans ek belgelerini yayımlar."
           }
+        },
+        {
+          "url": "https://www.student.uni-stuttgart.de/en/financing/deutschlandstipendium/application/",
+          "title": "University of Stuttgart — Deutschlandstipendium 2027/28 announcement and application",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "scholarship_deadline",
+            "application_documents"
+          ],
+          "confidence": "high"
         }
       ],
       "verification_notes": {
@@ -2406,7 +2372,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -2443,90 +2409,101 @@
     ],
     "scholarship_profile": {
       "funding_notes": {
-        "en": "At Stuttgart the first funding question is not a scholarship but an exemption: the €1,500-per-semester Baden-Württemberg fee is waived for a long list of categories, some automatically and some on application with a receipt-date deadline. Check that list before treating €3,000 a year as fixed.",
-        "tr": "Stuttgart'ta ilk finansman sorusu burs değil muafiyettir: dönem başına 1.500 avroluk Baden-Württemberg ücreti, bazıları otomatik bazıları teslim tarihi son tarihli başvuruyla olmak üzere uzun bir kategori listesi için kaldırılır. Yılda 3.000 avroyu sabit kabul etmeden önce bu listeyi kontrol et."
+        "en": "A Turkish Aerospace Engineering MSc student can compete for the 2027/28 Deutschlandstipendium after becoming a University of Stuttgart student. It pays €300 per month from 1 April 2027 to 31 March 2028. The exact call, deadline and document checklist are expected in December 2026 and were not yet published.",
+        "tr": "Türk bir Aerospace Engineering MSc öğrencisi University of Stuttgart öğrencisi olduktan sonra 2027/28 Deutschlandstipendium'a başvurabilir. Burs 1 Nisan 2027 ile 31 Mart 2028 arasında ayda 300 EUR öder. Kesin çağrı, son tarih ve belge listesi Aralık 2026'da beklenmektedir ve henüz yayımlanmamıştır."
       },
       "regional_scholarship_available": null,
       "regional_scholarship_name": null,
       "merit_scholarships": [],
       "tuition_waivers": [],
-      "non_eu_eligible": null,
-      "scholarship_deadline": null,
-      "scholarship_application_url": null,
-      "verification_notes": "Scholarship claims were not retained without a checked official scholarship source.",
+      "non_eu_eligible": true,
+      "scholarship_deadline": "Deutschlandstipendium 2027/28 call expected December 2026; exact deadline not yet published",
+      "scholarship_application_url": "https://www.student.uni-stuttgart.de/en/financing/deutschlandstipendium/application/",
+      "verification_notes": {
+        "en": "This is on-course funding, not money available before enrolment. The university requires applicants to be enrolled in the summer semester.",
+        "tr": "Bu, kayıt öncesi finansman değil öğrenim sırasındaki burstur. Üniversite adayların yaz döneminde kayıtlı olmasını ister."
+      },
       "application_mode": "separate",
       "automatic_consideration": false,
-      "separate_application_required": null,
+      "separate_application_required": true,
       "playbook": [
         {
-          "opportunity": "Exemption from the Baden-Württemberg non-EU tuition fee",
-          "competitiveness": "open_to_all_eligible",
+          "opportunity": "University of Stuttgart Deutschlandstipendium — 2027/28",
           "eligibility_gates": [
             {
-              "en": "You fall into one of the published exemption categories — for example a settlement or permanent EU residence permit, refugee status under the Geneva Convention, fifteen months or more of legal residence in Germany, five or more years of legal employment in Germany, or a parent with three or more years of legal German employment.",
-              "tr": "Yayımlanmış muafiyet kategorilerinden birine giriyorsun — örneğin yerleşim veya kalıcı AB oturum izni, Cenevre Sözleşmesi kapsamında mülteci statüsü, Almanya'da on beş ay veya daha uzun yasal ikamet, beş yıl veya daha fazla yasal çalışma ya da Almanya'da üç yıl veya daha fazla yasal çalışmış bir ebeveyn."
+              "en": "Be enrolled as a University of Stuttgart student in the summer semester for the 2027/28 award cycle.",
+              "tr": "2027/28 burs dönemi için yaz döneminde University of Stuttgart öğrencisi olarak kayıtlı olmak."
             },
             {
-              "en": "Some categories are waived automatically — EU/EEA citizens, holders of a German university entrance qualification, and continuing-education Master's or doctoral students — and need no application at all.",
-              "tr": "Bazı kategoriler otomatik olarak muaf tutulur — AB/AEA vatandaşları, Alman üniversite giriş yeterliliği sahipleri ve sürekli eğitim yüksek lisansı veya doktora öğrencileri — ve hiç başvuru gerektirmez."
+              "en": "Have above-average grades and provide evidence for at least one published additional criterion.",
+              "tr": "Ortalamanın üzerinde notlara sahip olmak ve yayımlanmış ek ölçütlerden en az biri için kanıt sunmak."
             }
           ],
           "selection_criteria": [
             {
-              "en": "This is not a competition. It is a documentary check against the published categories, so the only thing that decides it is whether your evidence arrives complete and on time.",
-              "tr": "Bu bir yarışma değildir. Yayımlanmış kategorilere karşı yapılan bir belge kontrolüdür; sonucu belirleyen tek şey, kanıtının eksiksiz ve zamanında ulaşıp ulaşmadığıdır."
+              "en": "Academic or professional achievement.",
+              "tr": "Akademik veya mesleki başarı."
+            },
+            {
+              "en": "Documented additional criteria such as social or ecological engagement, exceptional circumstances, distinctions, notable development or further skills.",
+              "tr": "Sosyal veya ekolojik katılım, olağanüstü koşullar, ödüller, dikkat çekici gelişim veya ek beceriler gibi belgelenmiş ek ölçütler."
             }
           ],
-          "typical_award": {
-            "coverage": [
-              "tuition_waiver"
-            ],
-            "amount_note": {
-              "en": "€1,500 per semester.",
-              "tr": "Dönem başına 1.500 avro."
-            }
-          },
           "steps": [
             {
               "order": 1,
               "action": {
-                "en": "Check the published exemption list before you budget €3,000 a year — several categories that people assume do not apply to them, such as a parent's long employment in Germany, do.",
-                "tr": "Yılda 3.000 avroluk bütçe yapmadan önce yayımlanmış muafiyet listesini kontrol et — insanların kendilerine uymadığını varsaydığı bazı kategoriler, örneğin bir ebeveynin Almanya'da uzun süreli çalışması, aslında uyar."
+                "en": "After enrolment, check the official call expected in December 2026 and record its exact deadline and document checklist.",
+                "tr": "Kayıttan sonra Aralık 2026'da beklenen resmî çağrıyı kontrol et; kesin tarihini ve belge listesini kaydet."
               },
               "owner": "applicant",
-              "timing": "before_application_opens",
-              "hard_requirement": false
+              "timing": "after_enrolment",
+              "required_documents": [],
+              "hard_requirement": true
             },
             {
               "order": 2,
               "action": {
-                "en": "Submit the Application for Exemption together with the Information Form for International Students and your proof documents no later than the day of enrolment. The university states that the date of receipt is decisive — 15 February for the summer semester and 15 August for the winter semester.",
-                "tr": "Muafiyet Başvurusu'nu, Uluslararası Öğrenciler için Bilgi Formu ve kanıt belgelerinle birlikte en geç kayıt gününde gönder. Üniversite, teslim alma tarihinin belirleyici olduğunu belirtir — yaz dönemi için 15 Şubat, kış dönemi için 15 Ağustos."
+                "en": "Prepare evidence that states the type, duration and time commitment of at least one additional criterion; such evidence should generally be no more than two years old.",
+                "tr": "En az bir ek ölçütün türünü, süresini ve zaman taahhüdünü belirten kanıt hazırla; bu kanıt genel olarak iki yıldan eski olmamalıdır."
               },
               "owner": "applicant",
-              "timing": "separate_before_deadline",
+              "timing": "after_enrolment",
               "required_documents": [
                 {
-                  "en": "Application for Exemption",
-                  "tr": "Muafiyet Başvurusu"
+                  "en": "Evidence of at least one additional criterion, including type, dates and hours where applicable",
+                  "tr": "Uygulanabildiğinde tür, tarihler ve saatleri içeren en az bir ek ölçüt kanıtı"
                 },
                 {
-                  "en": "Information Form for International Students",
-                  "tr": "Uluslararası Öğrenciler için Bilgi Formu"
-                },
-                {
-                  "en": "Proof of residence — residence card, permit, registration confirmation or passport",
-                  "tr": "İkamet kanıtı — ikamet kartı, izin, kayıt belgesi veya pasaport"
-                },
-                {
-                  "en": "Employment verification or tax assessment notices where the category depends on employment",
-                  "tr": "Kategorinin çalışmaya bağlı olduğu durumlarda çalışma belgesi veya vergi tarhiyat bildirimleri"
+                  "en": "Academic-performance evidence specified in the forthcoming call",
+                  "tr": "Yaklaşan çağrıda belirtilecek akademik performans kanıtı"
                 }
               ],
               "hard_requirement": true
+            },
+            {
+              "order": 3,
+              "action": {
+                "en": "Submit the separate application through the route published in the 2027/28 call.",
+                "tr": "Ayrı başvuruyu 2027/28 çağrısında yayımlanan rota üzerinden gönder."
+              },
+              "owner": "applicant",
+              "timing": "separate_before_deadline",
+              "required_documents": [],
+              "hard_requirement": true
             }
           ],
-          "evidence_url": "https://www.student.uni-stuttgart.de/en/organizing-studies/formalities/tuition-and-fees/tuition-fee/"
+          "competitiveness": "selective",
+          "typical_award": {
+            "amount": 300,
+            "currency": "EUR",
+            "period": "per month from 2027-04-01 to 2028-03-31",
+            "coverage": [
+              "cash_stipend"
+            ]
+          },
+          "renewal_conditions": "The published 2027/28 award period is 12 months; any later renewal requires a future call.",
+          "evidence_url": "https://www.student.uni-stuttgart.de/en/financing/deutschlandstipendium/application/"
         }
       ]
     },
@@ -2629,7 +2606,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -2658,14 +2635,14 @@
           "derived_from": {
             "monthly_living_cost_eur_min": 992.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": {
           "en": "University of Stuttgart says students need at least EUR 992 per month for living costs; its shared-flat room range excludes electricity, water and heating.",
           "tr": "Stuttgart Üniversitesi yaşam giderleri için ayda en az 992 EUR gerektiğini; paylaşımlı ev oda aralığının elektrik, su ve ısıtmayı içermediğini belirtir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "location": {
@@ -2722,7 +2699,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 15,
+      "checked_official_source_count": 16,
       "verified_fields": [
         "program",
         "language",
@@ -2737,7 +2714,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-05"
+      "audited_at": "2026-09-06"
     },
     "tuition_eur_per_year": null,
     "annual_fee_eur": null,
@@ -2813,7 +2790,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -2973,7 +2950,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_eur_per_year": 3000.0,
       "tuition_derivation": {
@@ -3013,7 +2990,7 @@
           "en": "KIT's application page for international master's applicants sets out the whole route through its own online portal and names no application fee and no uni-assist step. The only charges it prices are a TestDaF exam and Studienkolleg courses, neither of which applies to an English-taught master's.",
           "tr": "KIT'in uluslararası yüksek lisans adayları için başvuru sayfası, tüm yolu kendi çevrimiçi portalı üzerinden anlatır ve ne bir başvuru ücreti ne de bir uni-assist adımı adlandırır. Fiyatladığı tek kalemler TestDaF sınavı ile Studienkolleg kurslarıdır; ikisi de İngilizce ders veren bir yüksek lisans için geçerli değildir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -3457,7 +3434,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -3626,7 +3603,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -3656,14 +3633,14 @@
             "monthly_living_cost_eur_min": 800.0,
             "monthly_living_cost_eur_max": 900.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": {
           "en": "KIT's current guide puts average student expenses in Karlsruhe, including fees and depending on personal situation, at EUR 800–900 per month.",
           "tr": "KIT'in güncel rehberi, Karlsruhe'de öğrenci giderlerini ücretler dahil ve kişisel duruma bağlı olarak ayda 800–900 EUR olarak verir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "location": {
@@ -3809,7 +3786,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "medium",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -3960,7 +3937,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_derivation": {
         "standard": "cost_model@3.2.0",
@@ -3971,7 +3948,7 @@
         },
         "currency": "EUR",
         "includes_mandatory_fees": false,
-        "derived_at": "2026-09-05"
+        "derived_at": "2026-09-06"
       },
       "tuition_eur_per_year": 0,
       "mandatory_fees_eur_per_year": 945.0,
@@ -4028,7 +4005,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -4544,7 +4521,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -4717,7 +4694,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -4747,14 +4724,14 @@
             "monthly_living_cost_eur_min": 992.0,
             "monthly_living_cost_eur_max": 1135.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": {
           "en": "TU Braunschweig says students need at least about EUR 992 monthly and publishes a current itemised planning total of EUR 1,135 per month. The amount varies with lifestyle and is separate from the semester fee.",
           "tr": "TU Braunschweig öğrencilerin ayda en az yaklaşık 992 EUR'a ihtiyacı olduğunu ve güncel kalemli planlama toplamını ayda 1.135 EUR olarak yayımlar. Tutar yaşam tarzına göre değişir ve dönem katkısından ayrıdır."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "location": {
@@ -4894,7 +4871,7 @@
       "matched_tags": [],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -5064,7 +5041,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_eur_per_year": 12450.0,
       "tuition_derivation": {
@@ -5109,7 +5086,7 @@
           "en": "The MSE application procedure lists six steps - online form, documents, interview, result, conditional letter, deposit - and prices only the last of them. The EUR 500 deposit is paid after a conditional offer to convert it into an unconditional one, so it is not a cost of applying.",
           "tr": "MSE başvuru yordamı altı adım sıralar - çevrimiçi form, belgeler, mülakat, sonuç, koşullu mektup, depozito - ve yalnızca sonuncusunu fiyatlandırır. 500 avroluk depozito, koşullu bir teklifi koşulsuza çevirmek için teklif sonrasında ödenir; dolayısıyla bir başvuru maliyeti değildir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -5680,7 +5657,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -5893,7 +5870,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -5919,14 +5896,14 @@
           "derived_from": {
             "monthly_living_cost_eur_estimated": 1000.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": {
           "en": "MSE's current Fees & Funding page advises approximately EUR 1,000 per month for living expenses in Berlin, separately from tuition and organisation fees.",
           "tr": "MSE'nin güncel Ücretler ve Finansman sayfası, öğrenim ücreti ve organizasyon ücretinden ayrı olarak Berlin yaşam giderleri için ayda yaklaşık 1.000 EUR önerir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "location": {
@@ -6064,7 +6041,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -6229,7 +6206,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_derivation": {
         "standard": "cost_model@3.2.0",
@@ -6240,7 +6217,7 @@
         },
         "currency": "EUR",
         "includes_mandatory_fees": false,
-        "derived_at": "2026-09-05"
+        "derived_at": "2026-09-06"
       },
       "tuition_eur_per_year": 0,
       "mandatory_fees_eur_per_year": 850.0,
@@ -6278,7 +6255,7 @@
           "en": "Bremen sends bachelor's applicants from non-EU countries through uni-assist but states that for master's programmes international students apply directly to the University of Bremen, and that application and processing of documents at the university is free of charge.",
           "tr": "Bremen, AB dışı ülkelerden gelen lisans adaylarını uni-assist'e yönlendirir; ancak yüksek lisans programları için uluslararası öğrencilerin doğrudan Üniversite'ye başvurduğunu ve üniversitede başvuru ile belge işleminin ücretsiz olduğunu belirtir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -6428,7 +6405,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -6457,14 +6434,14 @@
           "derived_from": {
             "monthly_living_cost_eur_min": 992.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": {
           "en": "University of Bremen's current international-student guidance says at least EUR 992 per month is required for regular student life in Germany, including rent, food, insurance, leisure and study costs. This is a planning minimum, not a Bremen-specific rent quote.",
           "tr": "Bremen Üniversitesi'nin güncel uluslararası öğrenci rehberi, kira, yemek, sigorta, boş zaman ve eğitim giderleri dahil Almanya'da normal öğrenci hayatı için ayda en az 992 EUR gerektiğini belirtir. Bu bir planlama asgarisidir, Bremen'e özgü kira teklifi değildir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -6710,7 +6687,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -7179,7 +7156,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -7338,7 +7315,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_derivation": {
         "standard": "cost_model@3.2.0",
@@ -7349,7 +7326,7 @@
         },
         "currency": "EUR",
         "includes_mandatory_fees": false,
-        "derived_at": "2026-09-05"
+        "derived_at": "2026-09-06"
       },
       "tuition_eur_per_year": 0,
       "mandatory_fees_eur_per_year": 805.36,
@@ -7387,7 +7364,7 @@
           "en": "Darmstadt's international application page lists every document a foreign applicant must supply, says notarisation is not required, routes the application through its own TUCaN portal, and prices none of it. It names no uni-assist step and no charge for the equivalence check.",
           "tr": "Darmstadt'ın uluslararası başvuru sayfası, yabancı bir adayın vermesi gereken her belgeyi listeler, noter tasdikinin gerekmediğini söyler, başvuruyu kendi TUCaN portalı üzerinden yürütür ve bunların hiçbirini fiyatlandırmaz. Ne bir uni-assist adımı ne de denklik incelemesi için bir ücret adlandırır."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -7529,7 +7506,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -7559,14 +7536,14 @@
             "monthly_living_cost_eur_min": 875.0,
             "monthly_living_cost_eur_max": 1300.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": {
           "en": "Studierendenwerk Darmstadt's current guidance gives EUR 875-1,300/month depending on lifestyle. TU Darmstadt separately cites a EUR 992/month BAfoeG planning figure; both are planning guidance rather than a personal quote.",
           "tr": "Studierendenwerk Darmstadt'in guncel rehberi yasam tarzina gore ayda 875-1.300 EUR verir. TU Darmstadt ayri olarak ayda 992 EUR BAfoeG planlama tutari belirtir; ikisi de kisisel teklif degil planlama rehberidir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -7763,11 +7740,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -52,
+        "days_remaining_at_evaluation": -53,
         "derived_from": "application_timeline_profile.non_eu_deadline",
         "confidence": "high",
         "source_url": "https://www.tu-darmstadt.de/studieren/studieninteressierte/internationale_studieninteressierte/bewerbung_und_zulassung_international/index.en.jsp",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -8255,7 +8232,7 @@
       ],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -8410,7 +8387,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "currency": "EUR",
       "semester_fee_eur": 298.06,
@@ -8428,7 +8405,7 @@
         },
         "currency": "EUR",
         "includes_mandatory_fees": false,
-        "derived_at": "2026-09-05"
+        "derived_at": "2026-09-06"
       },
       "tuition_eur_per_year": 0,
       "mandatory_fees_eur_per_year": 636.12,
@@ -8468,7 +8445,7 @@
           "en": "RWTH takes international master's applications through its own digital portal with no documents posted, and neither the international master's page nor the general application page names a fee or a uni-assist step.",
           "tr": "RWTH, uluslararası yüksek lisans başvurularını posta ile belge gönderilmeksizin kendi dijital portalı üzerinden alır; ne uluslararası yüksek lisans sayfası ne de genel başvuru sayfası bir ücret ya da uni-assist adımı adlandırır."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -8611,7 +8588,7 @@
         "band_from_score": "high",
         "capped_from_very_high": false,
         "legacy_value": "high",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -8671,7 +8648,7 @@
           "en": "Midpoints of the ranges RWTH publishes: accommodation €400-600, food €200-300, health insurance €100-150, study materials €20-40, internet and mobile €20-50, other €50-200. RWTH states the total is at least €1,100 a month. Separately, the residence-permit blocked account was €11,904 for a year as of 1 January 2023, and €992 a month must be shown to extend the permit — that is an immigration threshold, not a budget.",
           "tr": "RWTH'nin yayımladığı aralıkların orta noktaları: konaklama 400-600, gıda 200-300, sağlık sigortası 100-150, ders malzemesi 20-40, internet ve telefon 20-50, diğer 50-200 avro. RWTH toplamın ayda en az 1.100 avro olduğunu belirtir. Bundan ayrı olarak, oturum izni bloke hesabı 1 Ocak 2023 itibarıyla bir yıl için 11.904 avroydu ve izni uzatmak için ayda 992 avro gösterilmesi gerekir — bu bir bütçe değil, göçmenlik eşiğidir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "housing_guaranteed": false,
       "student_housing_operator": "Studierendenwerk Aachen and private halls, all independent of the university",
@@ -9009,7 +8986,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -9526,7 +9503,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -9660,7 +9637,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_derivation": {
         "standard": "cost_model@3.2.0",
@@ -9671,7 +9648,7 @@
         },
         "currency": "EUR",
         "includes_mandatory_fees": false,
-        "derived_at": "2026-09-05"
+        "derived_at": "2026-09-06"
       },
       "tuition_eur_per_year": 0,
       "mandatory_fees_eur_per_year": 768.0,
@@ -9711,7 +9688,7 @@
           "en": "TUHH answers the uni-assist question directly in its master's FAQ - its own admissions office checks the certificates - and names no charge for doing so. That matters here, because the German programmes that do cost money to apply to cost it through uni-assist.",
           "tr": "TUHH, uni-assist sorusunu yüksek lisans SSS'sinde doğrudan yanıtlar - belgeleri kendi kabul ofisi kontrol eder - ve bunun için bir ücret adlandırmaz. Bu burada önemlidir, çünkü başvurması para tutan Alman programlarında o para uni-assist'e ödenir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -9831,7 +9808,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -9860,14 +9837,14 @@
           "derived_from": {
             "monthly_living_cost_eur_min": 950.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": {
           "en": "TU Hamburg's 2026 international-Master's guide advises at least EUR 950 per month including accommodation, health insurance and study material.",
           "tr": "TU Hamburg'un 2026 uluslararası yüksek lisans rehberi; konaklama, sağlık sigortası ve eğitim materyali dahil ayda en az 950 EUR önerir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -10017,7 +9994,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -10465,7 +10442,7 @@
       ],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {

@@ -95,6 +95,48 @@ main { display: grid; width: min(1500px, calc(100% - 40px)); margin: 0 auto; gap
 .faculty-card__role { margin: 0; color: var(--muted); font-size: 12px; }
 .faculty-card__focus { margin: 0; color: var(--ink-soft); font-size: 14px; }
 .faculty-card__actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+.faculty-card__lab { margin: -4px 0 0; color: var(--accent-soft); font-size: 12px; font-weight: 700; }
+.faculty-signals { display: grid; gap: 7px; margin: 0; }
+.faculty-signals div { display: grid; grid-template-columns: 120px 1fr; gap: 10px; padding-top: 7px; border-top: 1px solid var(--rule-soft); }
+.faculty-signals dt { color: var(--muted); font-size: 10px; font-weight: 700; text-transform: uppercase; }
+.faculty-signals dd { margin: 0; color: var(--ink-soft); font-size: 11px; }
+.faculty-email-missing { color: var(--muted); font-size: 10px; font-style: italic; }
+.research-scope { display: grid; justify-items: end; gap: 8px; }
+.research-scope p { margin: 0; color: var(--muted); }
+.research-scope button { padding: 7px 10px; border: 1px solid var(--rule); border-radius: 6px; background: rgba(143, 168, 232, .08); color: var(--accent-soft); cursor: pointer; font: 700 10px var(--body); letter-spacing: .04em; text-transform: uppercase; }
+.research-scope button:hover { border-color: var(--blue); color: var(--ink); }
+
+.lab-section { padding: 64px clamp(18px, 5vw, 72px); border-top: 1px solid var(--rule); }
+.lab-intro { max-width: 900px; margin: -8px 0 22px; color: var(--muted); }
+.lab-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.lab-programme { overflow: hidden; border: 1px solid var(--rule); border-radius: 10px; background: #12141a; }
+.lab-programme.is-featured { border-color: color-mix(in srgb, var(--teal) 45%, var(--rule)); }
+.lab-programme > header { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding: 20px; border-bottom: 1px solid var(--rule-soft); }
+.lab-programme > header span { color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+.lab-programme > header h3 { margin: 4px 0; font: 600 22px/1.15 var(--display); }
+.lab-programme > header p { margin: 0; color: var(--muted); font-size: 12px; }
+.lab-programme > header b { flex: 0 0 auto; padding: 5px 8px; border-radius: 5px; background: rgba(85, 214, 194, .1); color: var(--teal); font-size: 9px; letter-spacing: .06em; text-transform: uppercase; }
+.lab-contact-note, .lab-email-note { margin: 0; padding: 12px 20px; color: var(--muted); font-size: 12px; }
+.lab-contact-note { border-bottom: 1px solid var(--rule-soft); }
+.lab-email-note { border-top: 1px solid var(--rule-soft); font-style: italic; }
+.lab-unit { border-bottom: 1px solid var(--rule-soft); }
+.lab-unit:last-child { border-bottom: 0; }
+.lab-unit > summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 20px; cursor: pointer; list-style: none; }
+.lab-unit > summary::-webkit-details-marker { display: none; }
+.lab-unit > summary > span:first-child { display: grid; gap: 3px; }
+.lab-unit > summary strong { color: var(--ink); font-size: 14px; }
+.lab-unit > summary small { color: var(--muted); text-transform: capitalize; }
+.lab-unit[open] > summary { background: rgba(143, 168, 232, .05); }
+.lab-unit[open] > summary > span:last-child { transform: rotate(180deg); }
+.lab-unit__body { display: grid; gap: 14px; padding: 2px 20px 18px; }
+.lab-unit__body > p { margin: 0; color: var(--ink-soft); font-size: 13px; }
+.lab-unit__body dl { display: grid; gap: 6px; margin: 0; }
+.lab-unit__body dl div { display: grid; grid-template-columns: 110px 1fr; gap: 10px; }
+.lab-unit__body dt, .lab-unit__body h4 { color: var(--muted); font-size: 10px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; }
+.lab-unit__body dd { margin: 0; color: var(--ink-soft); font-size: 12px; }
+.lab-unit__body h4 { margin: 0 0 7px; }
+.lab-unit__body ul { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.lab-unit__body li { padding: 5px 7px; border: 1px solid var(--rule); border-radius: 5px; color: var(--ink-soft); font-size: 10px; }
 
 .outreach-section { display: grid; grid-template-columns: minmax(300px, .8fr) minmax(0, 1.2fr); gap: 36px 70px; background: linear-gradient(125deg, rgba(34, 32, 38, .96), rgba(23, 29, 42, .96)); }
 .outreach-copy > p { color: var(--muted); }
@@ -109,6 +151,7 @@ main { display: grid; width: min(1500px, calc(100% - 40px)); margin: 0 auto; gap
 .empty-state { grid-column: 1 / -1; padding: 36px; border: 1px dashed var(--rule); color: var(--muted); text-align: center; }
 
 @media (max-width: 1100px) {    .faculty-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .lab-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 850px) {    .research-hero, .field-definition, .outreach-section { grid-template-columns: 1fr; }
     .research-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -117,6 +160,7 @@ main { display: grid; width: min(1500px, calc(100% - 40px)); margin: 0 auto; gap
     .programme-grid, .advisor-grid { grid-template-columns: 1fr; }
     .section-heading { align-items: flex-start; flex-direction: column; gap: 10px; }
     .section-heading > p { text-align: left; }
+    .research-scope { justify-items: start; }
     .outreach-avoid { grid-column: auto; }
 }
 @media (max-width: 600px) {
@@ -128,7 +172,7 @@ main { display: grid; width: min(1500px, calc(100% - 40px)); margin: 0 auto; gap
     .faculty-grid { grid-template-columns: 1fr; }
     .programme-card__top { align-items: flex-start; flex-direction: column; gap: 10px; }
     .tier-badge { align-self: flex-start; }
-    .field-workbench, .programme-section, .advisor-section, .faculty-section, .outreach-section { padding: 20px; }
+    .field-workbench, .programme-section, .advisor-section, .faculty-section, .lab-section, .outreach-section { padding: 20px; }
     .advisor-stage { grid-template-columns: 1fr; gap: 4px; }
     .research-footer { flex-direction: column; }
 }

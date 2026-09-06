@@ -226,7 +226,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -271,7 +271,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -351,8 +351,8 @@
         }
       ],
       "funding_notes": {
-        "en": "AeroAstro explicitly tells admitted students to be proactive and not wait for funding. Contact matching faculty after admission; an offer's amount, duration and international eligibility must be checked individually.",
-        "tr": "AeroAstro kabul edilen öğrencilere proaktif olmalarını ve finansmanı beklememelerini açıkça söyler. Kabulden sonra uyumlu öğretim üyeleriyle iletişime geçilmeli; teklifin tutarı, süresi ve uluslararası uygunluğu ayrı ayrı kontrol edilmelidir."
+        "en": "For AeroAstro SM students, the principal realistic institutional route is an RA. The department publishes no fixed application deadline: admitted students contact matching faculty, and RA offers are made from March through August. F-1/J-1 students may hold on-campus RA/TA appointments subject to full-time registration, work-hour and authorization rules.",
+        "tr": "AeroAstro SM öğrencileri için başlıca gerçekçi kurumsal yol RA'dır. Bölüm sabit bir başvuru son tarihi yayımlamaz: kabul edilen öğrenciler ilgili öğretim üyeleriyle iletişime geçer ve RA teklifleri mart-ağustos arasında yapılır. F-1/J-1 öğrencileri tam zamanlı kayıt, çalışma saati ve izin kurallarına tabi olarak kampüs içi RA/TA görevi alabilir."
       },
       "verification_notes": {
         "en": "Coverage is verified for appointment types, but there is no universal automatic scholarship and no verified blanket non-US eligibility for every fellowship.",
@@ -403,6 +403,80 @@
             "en": "Merit-based and commonly one academic year",
             "tr": "Başarı temelli ve çoğunlukla bir akademik yıl"
           }
+        }
+      ],
+      "playbook": [
+        {
+          "opportunity": "Research Assistantship",
+          "eligibility_gates": [
+            {
+              "en": "Be admitted to and registered full-time in an MIT advanced-degree programme.",
+              "tr": "Bir MIT ileri derece programına kabul edilmiş ve tam zamanlı kayıtlı olmak."
+            },
+            {
+              "en": "Match a faculty member's funded research project and complete employment authorization requirements; F-1/J-1 work is limited by immigration rules.",
+              "tr": "Bir öğretim üyesinin fonlanmış araştırma projesiyle eşleşmek ve çalışma izni şartlarını tamamlamak; F-1/J-1 çalışması göçmenlik kurallarıyla sınırlıdır."
+            }
+          ],
+          "selection_criteria": [
+            {
+              "en": "Research fit with an available faculty project and available sponsored funding.",
+              "tr": "Mevcut bir öğretim üyesi projesiyle araştırma uyumu ve sponsor fonunun bulunması."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": {
+                "en": "Complete the AeroAstro degree application; no separate RA form or fixed RA deadline is published.",
+                "tr": "AeroAstro derece başvurusunu tamamla; ayrı RA formu veya sabit RA son tarihi yayımlanmamıştır."
+              },
+              "owner": "applicant",
+              "timing": "with_the_application",
+              "required_documents": [],
+              "hard_requirement": true
+            },
+            {
+              "order": 2,
+              "action": {
+                "en": "After admission, contact faculty whose research matches yours about available RA positions; the published offer period is March through August.",
+                "tr": "Kabulden sonra araştırması seninkiyle örtüşen öğretim üyelerine mevcut RA pozisyonlarını sor; yayımlanmış teklif dönemi mart-ağustostur."
+              },
+              "owner": "applicant",
+              "timing": "after_admission",
+              "required_documents": [],
+              "hard_requirement": true
+            },
+            {
+              "order": 3,
+              "action": {
+                "en": "If selected, complete the I-9 and any visa-specific authorization before beginning paid work.",
+                "tr": "Seçilirsen ücretli işe başlamadan önce I-9 ve vizeye özgü izin işlemlerini tamamla."
+              },
+              "owner": "applicant",
+              "timing": "after_admission",
+              "required_documents": [
+                {
+                  "en": "Identity and employment-authorization documents required for Form I-9",
+                  "tr": "I-9 Formu için gereken kimlik ve çalışma izni belgeleri"
+                }
+              ],
+              "hard_requirement": true
+            }
+          ],
+          "competitiveness": "selective",
+          "typical_award": {
+            "amount": null,
+            "currency": "USD",
+            "period": "degree_duration_when_continued",
+            "coverage": [
+              "full_tuition",
+              "health_insurance",
+              "monthly_stipend"
+            ]
+          },
+          "renewal_conditions": "EN: Generally funds the degree duration, subject to the specific project and appointment. | TR: Genellikle derece süresini fonlar; belirli proje ve atama koşullarına tabidir.",
+          "evidence_url": "https://aeroastro.mit.edu/education/funding/"
         }
       ]
     },
@@ -478,7 +552,7 @@
         "band_from_score": "very_high",
         "capped_from_very_high": true,
         "legacy_value": "high",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -545,7 +619,7 @@
           "en": "MIT's 2026-27 graduate cost of attendance, nine-month column for the standard September-to-May academic year: housing 17,100, food 7,830, books and course materials 1,161, personal 7,794, transportation 2,844 and health insurance 5,148. MIT publishes a twelve-month column as well, used only when a student also registers for the summer session, where housing rises to 22,800 and food to 10,440.",
           "tr": "MIT'nin 2026-27 lisansustu egitim maliyeti, standart Eylul-Mayis akademik yili icin dokuz aylik sutun: konut 17.100, gida 7.830, kitap ve ders malzemesi 1.161, kisisel 7.794, ulasim 2.844 ve saglik sigortasi 5.148. MIT ayrica on iki aylik bir sutun yayimlar; bu sutun yalnizca ogrenci yaz donemine de kayit oldugunda kullanilir ve konut 22.800'e, gida 10.440'a yukselir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_cost_of_attendance",
@@ -773,11 +847,11 @@
         "cycle_label": "Fall 2027",
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 87,
+        "days_remaining_at_evaluation": 86,
         "derived_from": "application_timeline_profile.deadline_eu",
         "confidence": "high",
         "source_url": "https://aeroastro.mit.edu/education/graduate-admission/",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -1174,14 +1248,14 @@
       "official_scholarship_page": "https://aeroastro.mit.edu/education/funding/",
       "official_housing_page": "https://graduatehousing.mit.edu/get-housing/",
       "official_department_page": "https://aeroastro.mit.edu/research/",
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "field_confidence": {
         "program_basic_info": "high",
         "admission": "high",
         "deadlines": "high",
         "tuition": "high",
         "language": "medium",
-        "scholarship": "medium",
+        "scholarship": "high",
         "curriculum": "high",
         "housing": "high",
         "research": "high",
@@ -1271,24 +1345,6 @@
           "notes": {
             "en": "Official 13-field structure and field descriptions.",
             "tr": "Resmî 13 alan yapısı ve alan açıklamaları."
-          }
-        },
-        {
-          "url": "https://aeroastro.mit.edu/education/funding/",
-          "title": "MIT AeroAstro Funding",
-          "source_type": "official_scholarship_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "funding",
-            "assistantships",
-            "scholarship",
-            "industry_sponsors"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Official RA/TA/fellowship coverage, proactive-search rule, timing and sponsor examples.",
-            "tr": "Resmî RA/TA/fellowship kapsamı, proaktif arama kuralı, zamanlama ve sponsor örnekleri."
           }
         },
         {
@@ -1485,22 +1541,6 @@
           }
         },
         {
-          "url": "https://aeroastro.mit.edu/about-us/facilities/",
-          "title": "MIT AeroAstro Facilities",
-          "source_type": "official_department_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "research",
-            "facilities"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Official approximately 100,000 square feet across core facilities; access requires MIT ID and training.",
-            "tr": "Ana tesislerde resmî yaklaşık 100.000 ft² alan; erişim MIT kimliği ve eğitim gerektirir."
-          }
-        },
-        {
           "url": "https://aeroastro.mit.edu/research-areas/earth-space-sciences/",
           "title": "MIT AeroAstro Earth & Space Sciences",
           "source_type": "official_department_page",
@@ -1683,24 +1723,6 @@
           }
         },
         {
-          "url": "https://aeroastro.mit.edu/research/",
-          "title": "MIT AeroAstro — Research areas, laboratories and groups",
-          "source_type": "official_lab_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-29",
-          "relevant_fields": [
-            "research",
-            "labs",
-            "research_areas",
-            "department"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Publishes the department's seven research areas and every named laboratory with its own URL.",
-            "tr": "Bölümün yedi araştırma alanını ve adlandırılmış her laboratuvarı kendi adresiyle yayımlar."
-          }
-        },
-        {
           "url": "https://sfs.mit.edu/graduate-students/cost-of-attendance/grad-cost-of-attendance/",
           "title": "MIT Student Financial Services: Graduate Cost of Attendance 2026-27",
           "source_type": "official_university_page",
@@ -1731,6 +1753,91 @@
             "housing",
             "required_documents",
             "international"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://aeroastro.mit.edu/research/",
+          "title": "MIT AeroAstro — Research areas, laboratories and groups",
+          "source_type": "official_lab_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "labs",
+            "research_areas",
+            "department"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Rechecked current department research areas, named laboratories and principal investigators.",
+            "tr": "Güncel bölüm araştırma alanları, adlandırılmış laboratuvarlar ve yürütücüler yeniden kontrol edildi."
+          }
+        },
+        {
+          "url": "https://aeroastro.mit.edu/about-us/facilities/",
+          "title": "MIT AeroAstro Facilities",
+          "source_type": "official_department_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "facilities"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Rechecked physical-space, building and lab-access requirements.",
+            "tr": "Fiziksel alan, bina ve laboratuvar erişim şartları yeniden kontrol edildi."
+          }
+        },
+        {
+          "url": "https://aeroastro.mit.edu/education/funding/",
+          "title": "Funding | MIT AeroAstro",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "assistantships",
+            "coverage",
+            "application_process",
+            "industry_sponsors"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Current department page states RA coverage, the after-admission faculty-contact route, and the March-August offer period.",
+            "tr": "Güncel bölüm sayfası RA kapsamını, kabul sonrası öğretim üyesiyle iletişim yolunu ve mart-ağustos teklif dönemini belirtir."
+          }
+        },
+        {
+          "url": "https://oge.mit.edu/gpp/funding-compensation/employment-and-professional-activities/international-students/",
+          "title": "International students | MIT Office of Graduate Education",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "funding",
+            "assistantships",
+            "international_eligibility",
+            "employment"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Confirms F-1/J-1 on-campus work eligibility and the 20-hour academic-term limit for international RAs/TAs.",
+            "tr": "F-1/J-1 kampüs içi çalışma uygunluğunu ve uluslararası RA/TA'lar için akademik dönemde 20 saat sınırını doğrular."
+          }
+        },
+        {
+          "url": "https://oge.mit.edu/gpp/funding-compensation/employment-and-professional-activities/i-9-obligations/",
+          "title": "I-9 obligations | MIT Office of Graduate Education",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "assistantships",
+            "required_documents",
+            "employment"
           ],
           "confidence": "high"
         }
@@ -1807,7 +1914,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 24,
+      "checked_official_source_count": 26,
       "verified_fields": [
         "program",
         "language",
@@ -1822,7 +1929,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-05"
+      "audited_at": "2026-09-06"
     },
     "quality_control": {
       "checked_at": "2026-09-05",
@@ -1910,7 +2017,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -2167,7 +2274,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_usd_per_year": 69717.0,
       "tuition_derivation": {
@@ -2220,7 +2327,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -2291,7 +2398,158 @@
       "verification_notes": {
         "en": "Automatic fellowship review does not mean an award is likely. AA explicitly says incoming RAs and first-year MS assistantships are rare; international eligibility is opportunity-specific and is null unless stated.",
         "tr": "Otomatik fellowship değerlendirmesi ödülün olası olduğu anlamına gelmez. AA giriş RA'larının ve birinci yıl MS asistanlıklarının nadir olduğunu açıkça belirtir; uluslararası uygunluk fırsata özeldir ve belirtilmedikçe null'dır."
-      }
+      },
+      "funding_notes": {
+        "en": "Two international-accessible routes are verified. Departmental entering fellowships use the completed degree application by the published December deadline; the official page does not attach a cycle year, so none is inferred. Knight-Hennessy has a separate, current 2027-cohort application due 6 October 2026 at 1:00 p.m. Pacific Time.",
+        "tr": "Uluslararası adaylara açık iki yol doğrulandı. Bölüme giriş bursları, yayımlanmış aralık son tarihine kadar tamamlanan derece başvurusunu kullanır; resmî sayfa döngü yılı vermediği için yıl türetilmedi. Knight-Hennessy'nin 2027 kohortu için ayrı ve güncel başvurusu 6 Ekim 2026 saat 13.00 Pasifik Zamanı'nda sona erer."
+      },
+      "playbook": [
+        {
+          "opportunity": "Stanford Aeronautics and Astronautics entering graduate fellowship",
+          "eligibility_gates": [
+            {
+              "en": "Apply as an entering master's candidate; awards primarily target master's candidates with potential for doctoral study.",
+              "tr": "Yeni yüksek lisans adayı olarak başvurmak; ödüller öncelikle doktora potansiyeli olan yüksek lisans adaylarını hedefler."
+            }
+          ],
+          "selection_criteria": [
+            {
+              "en": "Evaluation of the completed graduate admission application; no additional forms or materials are required.",
+              "tr": "Tamamlanmış lisansüstü kabul başvurusunun değerlendirilmesi; ek form veya materyal gerekmez."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": {
+                "en": "Submit the complete Stanford AA graduate application and all supporting documents by the department's published December deadline; the page does not state the cycle year.",
+                "tr": "Eksiksiz Stanford AA lisansüstü başvurusunu ve tüm destekleyici belgeleri bölümün yayımladığı aralık son tarihine kadar gönder; sayfa döngü yılını belirtmez."
+              },
+              "owner": "applicant",
+              "timing": "with_the_application",
+              "required_documents": [
+                {
+                  "en": "Complete graduate admission application and its supporting documents",
+                  "tr": "Eksiksiz lisansüstü kabul başvurusu ve destekleyici belgeleri"
+                }
+              ],
+              "hard_requirement": true
+            },
+            {
+              "order": 2,
+              "action": {
+                "en": "Await automatic fellowship review; recipients are normally notified in March or April.",
+                "tr": "Otomatik burs değerlendirmesini bekle; burs alanlara normalde mart veya nisanda bildirim yapılır."
+              },
+              "owner": "university",
+              "timing": "after_admission",
+              "required_documents": [],
+              "hard_requirement": false
+            }
+          ],
+          "competitiveness": "highly_selective",
+          "typical_award": {
+            "amount": null,
+            "currency": "USD",
+            "period": "one_academic_year",
+            "coverage": [
+              "full_tuition_8_to_10_units",
+              "living_expense_stipend"
+            ]
+          },
+          "renewal_conditions": null,
+          "evidence_url": "https://aa.stanford.edu/academics-admissions/financial-aid"
+        },
+        {
+          "opportunity": "Knight-Hennessy Scholars",
+          "eligibility_gates": [
+            {
+              "en": "Citizens of any country may apply and must be newly enrolling in a full-time Stanford graduate programme.",
+              "tr": "Her ülkenin vatandaşı başvurabilir ve tam zamanlı bir Stanford lisansüstü programına yeni kayıt olacak olmalıdır."
+            },
+            {
+              "en": "For the 2027 cohort, the first bachelor's degree must have been earned in 2020 or later, except the published military exception.",
+              "tr": "2027 kohortu için yayımlanmış askerlik istisnası dışında ilk lisans derecesi 2020 veya sonrasında alınmış olmalıdır."
+            }
+          ],
+          "selection_criteria": [
+            {
+              "en": "Independence of thought, purposeful leadership, and civic mindset.",
+              "tr": "Düşünce bağımsızlığı, amaç odaklı liderlik ve toplumsal sorumluluk bilinci."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": {
+                "en": "Prepare the separate KHS application components for the 2027 cohort.",
+                "tr": "2027 kohortu için ayrı KHS başvuru bileşenlerini hazırla."
+              },
+              "owner": "applicant",
+              "timing": "before_application_opens",
+              "required_documents": [
+                {
+                  "en": "Resume",
+                  "tr": "Özgeçmiş"
+                },
+                {
+                  "en": "Transcripts and test scores",
+                  "tr": "Transkriptler ve sınav puanları"
+                },
+                {
+                  "en": "Recommendation letters",
+                  "tr": "Referans mektupları"
+                },
+                {
+                  "en": "Short answers and essay",
+                  "tr": "Kısa yanıtlar ve kompozisyon"
+                }
+              ],
+              "hard_requirement": true
+            },
+            {
+              "order": 2,
+              "action": {
+                "en": "Submit the KHS application by 6 October 2026 at 1:00 p.m. Pacific Time.",
+                "tr": "KHS başvurusunu 6 Ekim 2026 saat 13.00 Pasifik Zamanı'na kadar gönder."
+              },
+              "owner": "applicant",
+              "timing": "separate_before_deadline",
+              "required_documents": [],
+              "hard_requirement": true
+            },
+            {
+              "order": 3,
+              "action": {
+                "en": "Submit the separate Stanford AA degree application by its own programme deadline.",
+                "tr": "Ayrı Stanford AA derece başvurusunu programın kendi son tarihine kadar gönder."
+              },
+              "owner": "applicant",
+              "timing": "separate_before_deadline",
+              "required_documents": [
+                {
+                  "en": "Stanford graduate programme application materials",
+                  "tr": "Stanford lisansüstü program başvuru materyalleri"
+                }
+              ],
+              "hard_requirement": true
+            }
+          ],
+          "competitiveness": "highly_selective",
+          "typical_award": {
+            "amount": null,
+            "currency": "USD",
+            "period": "up_to_three_years",
+            "coverage": [
+              "tuition",
+              "living_and_academic_stipend",
+              "annual_travel_stipend"
+            ]
+          },
+          "renewal_conditions": "EN: Funding lasts up to three years depending on degree length and continued scholar participation. | TR: Finansman derece süresine ve bursiyer katılımının sürmesine bağlı olarak en fazla üç yıl devam eder.",
+          "evidence_url": "https://knight-hennessy.stanford.edu/about-knight-hennessy-scholars/overview-knight-hennessy-scholars"
+        }
+      ]
     },
     "living_profile": {
       "city_type": "high_cost_university_region",
@@ -2375,7 +2633,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -2442,7 +2700,7 @@
           "en": "Stanford's 2026-27 standard budget for a single graduate student with no dependents: USD 49,116 across the nine-month academic year, or USD 61,142 over twelve months. The nine-month figure is used because that is the period Stanford labels the academic year. The USD 843 campus health service fee belongs to the same published budget but is held in the mandatory-fee field instead, so it is not counted twice.",
           "tr": "Stanford'un bakmakla yukumlu oldugu kimsesi olmayan tek kisilik bir lisansustu ogrenci icin 2026-27 standart butcesi: dokuz aylik akademik yil boyunca 49.116 USD, on iki ay icin 61.142 USD. Dokuz aylik rakam kullanilir, cunku Stanford akademik yil olarak bu donemi adlandirir. 843 USD kampus saglik hizmeti ucreti ayni yayimlanmis butcenin parcasidir, ancak iki kez sayilmamasi icin zorunlu ucret alaninda tutulur."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_living_budget",
@@ -2643,11 +2901,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 87,
+        "days_remaining_at_evaluation": 86,
         "derived_from": "application_timeline_profile.deadline_eu",
         "confidence": "high",
         "source_url": "https://aa.stanford.edu/academics-admissions/graduate-admissions/masters-admissions",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -3044,7 +3302,7 @@
         "https://www.reddit.com/r/stanford/comments/1k6i32u",
         "https://www.reddit.com/r/stanford/comments/1srdy4u"
       ],
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "field_confidence": {
         "program": "high",
         "degree": "high",
@@ -3233,23 +3491,6 @@
           "notes": {
             "en": "Current annual student premium.",
             "tr": "Güncel yıllık öğrenci primi."
-          }
-        },
-        {
-          "url": "https://aa.stanford.edu/academics-admissions/financial-aid",
-          "title": "Stanford AA Financial Aid",
-          "source_type": "official_scholarship_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "scholarship",
-            "assistantship",
-            "funding"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Department fellowships, automatic review, rare incoming RA and assistantship coverage.",
-            "tr": "Bölüm fellowship'leri, otomatik değerlendirme, nadir giriş RA'sı ve asistanlık kapsamı."
           }
         },
         {
@@ -3463,39 +3704,6 @@
           }
         },
         {
-          "url": "https://aa.stanford.edu/research-impact/labs-and-centers",
-          "title": "Stanford Aeronautics and Astronautics — Labs and centers",
-          "source_type": "official_lab_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-29",
-          "relevant_fields": [
-            "research",
-            "labs",
-            "department"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Publishes the department's named laboratories and centres, each with its own page.",
-            "tr": "Bölümün adlandırılmış laboratuvar ve merkezlerini, her biri kendi sayfasıyla yayımlar."
-          }
-        },
-        {
-          "url": "https://aa.stanford.edu/people/faculty",
-          "title": "Stanford Aeronautics and Astronautics — Faculty",
-          "source_type": "official_department_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-29",
-          "relevant_fields": [
-            "research",
-            "department"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Publishes faculty names and titles; email addresses appear on only some individual profiles.",
-            "tr": "Öğretim üyesi adlarını ve unvanlarını yayımlar; e-posta adresleri yalnızca bazı bireysel profillerde görünür."
-          }
-        },
-        {
           "url": "https://financialaid.stanford.edu/grad/budget/index.html",
           "title": "Stanford Financial Aid: The Graduate Student Budget 2026-27",
           "source_type": "official_university_page",
@@ -3536,6 +3744,87 @@
           "relevant_fields": [
             "deadline",
             "timezone"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://aa.stanford.edu/research-impact/labs-and-centers",
+          "title": "Stanford Aeronautics and Astronautics — Labs and centers",
+          "source_type": "official_lab_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "labs",
+            "department"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Rechecked the current named laboratory and centre directory.",
+            "tr": "Güncel adlandırılmış laboratuvar ve merkez dizini yeniden kontrol edildi."
+          }
+        },
+        {
+          "url": "https://aa.stanford.edu/people/faculty",
+          "title": "Stanford Aeronautics and Astronautics — Faculty",
+          "source_type": "official_department_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "department"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Rechecked the current faculty directory; no unverified email was added.",
+            "tr": "Güncel öğretim üyesi dizini yeniden kontrol edildi; doğrulanmamış e-posta eklenmedi."
+          }
+        },
+        {
+          "url": "https://aa.stanford.edu/academics-admissions/financial-aid",
+          "title": "Financial Aid | Stanford Aeronautics and Astronautics",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "assistantships",
+            "assistantship",
+            "coverage",
+            "deadline",
+            "application_process"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://knight-hennessy.stanford.edu/about-knight-hennessy-scholars/overview-knight-hennessy-scholars",
+          "title": "Overview of Knight-Hennessy Scholars",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "international_eligibility",
+            "coverage",
+            "deadline",
+            "required_documents",
+            "selection"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://knight-hennessy.stanford.edu/admission/preparing-your-applications",
+          "title": "Preparing Your Applications | Knight-Hennessy Scholars",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "deadline",
+            "required_documents",
+            "application_process"
           ],
           "confidence": "high"
         }
@@ -3606,7 +3895,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 24,
+      "checked_official_source_count": 26,
       "verified_fields": [
         "program",
         "language",
@@ -3621,7 +3910,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-05"
+      "audited_at": "2026-09-06"
     },
     "quality_control": {
       "checked_at": "2026-09-05",
@@ -3695,7 +3984,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -3974,7 +4263,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -4015,7 +4304,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -4063,7 +4352,84 @@
       "verification_notes": {
         "en": "Caltech's 98% graduate funding statistic and USD 50,000 PhD stipend must not be applied to this terminal MS. Central pages explicitly identify terminal master's students as the major funding exception; some are admitted without aid and must finance the whole degree.",
         "tr": "Caltech'nin %98 lisansüstü finansman istatistiği ve 50.000 USD doktora stipend'ı bu terminal MS'e uygulanamaz. Merkezî sayfalar terminal yüksek lisans öğrencilerini başlıca finansman istisnası olarak açıkça tanımlar; bazıları desteksiz kabul edilir ve tüm dereceyi finanse etmelidir."
-      }
+      },
+      "funding_notes": {
+        "en": "The Booth-Kresa fellowship is the verified automatic route for entering master's candidates. Applicants must request aid in the graduate application and complete it by the published 15 December deadline; the page does not label a cycle year, so no year is inferred. Caltech warns that some terminal master's students are admitted without aid and that assistantships are limited.",
+        "tr": "Booth-Kresa bursu yeni yüksek lisans adayları için doğrulanmış otomatik yoldur. Adaylar lisansüstü başvuruda yardım talep etmeli ve başvuruyu yayımlanmış 15 Aralık son tarihine kadar tamamlamalıdır; sayfa döngü yılı vermediği için yıl türetilmedi. Caltech bazı terminal yüksek lisans öğrencilerinin desteksiz kabul edildiğini ve asistanlıkların sınırlı olduğunu belirtir."
+      },
+      "playbook": [
+        {
+          "opportunity": "Booth-Kresa Department of Aerospace graduate fellowship",
+          "eligibility_gates": [
+            {
+              "en": "Apply to an Aerospace graduate option, primarily as an entering master's candidate with potential for doctoral study.",
+              "tr": "Öncelikle doktora potansiyeli olan yeni yüksek lisans adayı olarak bir Aerospace lisansüstü seçeneğine başvurmak."
+            },
+            {
+              "en": "Select 'yes' for financial-aid consideration and submit a complete application by the aid deadline.",
+              "tr": "Mali destek değerlendirmesi için 'evet'i seçmek ve eksiksiz başvuruyu destek son tarihine kadar göndermek."
+            }
+          ],
+          "selection_criteria": [
+            {
+              "en": "Evaluation of the graduate admission application; no additional fellowship forms are required.",
+              "tr": "Lisansüstü kabul başvurusunun değerlendirilmesi; ek burs formu gerekmez."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": {
+                "en": "In the online graduate application, check the box requesting financial-aid consideration.",
+                "tr": "Çevrim içi lisansüstü başvuruda mali destek değerlendirmesi isteyen kutuyu işaretle."
+              },
+              "owner": "applicant",
+              "timing": "with_the_application",
+              "required_documents": [
+                {
+                  "en": "Complete Caltech graduate application and supporting materials",
+                  "tr": "Eksiksiz Caltech lisansüstü başvurusu ve destekleyici materyaller"
+                }
+              ],
+              "hard_requirement": true
+            },
+            {
+              "order": 2,
+              "action": {
+                "en": "Complete the application by the published 15 December aid/admission deadline; no cycle year is stated on the page.",
+                "tr": "Başvuruyu yayımlanmış 15 Aralık destek/kabul son tarihine kadar tamamla; sayfada döngü yılı belirtilmez."
+              },
+              "owner": "applicant",
+              "timing": "with_the_application",
+              "required_documents": [],
+              "hard_requirement": true
+            },
+            {
+              "order": 3,
+              "action": {
+                "en": "If selected, review the award normally announced by 15 March and respond by 15 April.",
+                "tr": "Seçilirsen normalde 15 Mart'a kadar açıklanan ödülü incele ve 15 Nisan'a kadar yanıtla."
+              },
+              "owner": "applicant",
+              "timing": "after_admission",
+              "required_documents": [],
+              "hard_requirement": true
+            }
+          ],
+          "competitiveness": "highly_selective",
+          "typical_award": {
+            "amount": null,
+            "currency": "USD",
+            "period": "one_academic_year",
+            "coverage": [
+              "full_tuition",
+              "substantial_living_expense_stipend"
+            ]
+          },
+          "renewal_conditions": null,
+          "evidence_url": "https://aerospace.caltech.edu/academics/admissions"
+        }
+      ]
     },
     "living_profile": {
       "city_type": "high_cost_los_angeles_metro",
@@ -4210,7 +4576,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -4274,7 +4640,7 @@
           "en": "Caltech's 2025-26 twelve-month graduate budget for an on-campus double apartment: housing and utilities 13,320, food 8,904, books 1,400, health, dental and vision 965 and personal 9,585, totalling 34,174. The published range across housing types runs from 31,774 for a quad apartment to 44,554 for an off-campus two-bedroom lease. Caltech warns separately that first-year students should expect relocation and set-up costs on top.",
           "tr": "Caltech'in kampus ici cift kisilik daire icin 2025-26 on iki aylik lisansustu butcesi: konut ve faturalar 13.320, gida 8.904, kitap 1.400, saglik, dis ve goz 965 ve kisisel 9.585; toplam 34.174. Konut turlerine gore yayimlanan aralik, dortlu daire icin 31.774'ten kampus disi iki yatak odali kira icin 44.554'e uzanir. Caltech ayrica birinci yil ogrencilerinin bunlarin ustune tasinma ve kurulum masraflari beklemesi gerektigini belirtir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_living_budget",
@@ -4503,7 +4869,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -4824,7 +5190,7 @@
         "https://housing.caltech.edu/grads/newadmits/newstudent-housingoptions",
         "https://aerospace.caltech.edu/research/space-technology"
       ],
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "field_confidence": {
         "program_basic_info": "high",
         "program_status": "high",
@@ -5025,24 +5391,6 @@
           "notes": {
             "en": "Official 2026/27 tuition and fees with separately labelled 2025/26 living examples.",
             "tr": "Ayrı etiketlenmiş 2025/26 yaşam örnekleriyle resmî 2026/27 öğrenim ve zorunlu ücretleri."
-          }
-        },
-        {
-          "url": "https://gradoffice.caltech.edu/financialsupport/nofinaid",
-          "title": "Caltech — Financing a Graduate Education",
-          "source_type": "official_scholarship_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "funding",
-            "terminal_ms_funding",
-            "employment",
-            "assistantships"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Explicit terminal-master self-funding exception and limited assistantship warning.",
-            "tr": "Açık terminal-yüksek-lisans öz-finansman istisnası ve sınırlı asistanlık uyarısı."
           }
         },
         {
@@ -5322,23 +5670,6 @@
           }
         },
         {
-          "url": "https://aerospace.caltech.edu/research/facilities",
-          "title": "Caltech GALCIT — Research facilities",
-          "source_type": "official_lab_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-29",
-          "relevant_fields": [
-            "research",
-            "labs",
-            "department"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Publishes every named facility with the faculty member who runs it, grouped by gasdynamics, hydrodynamics, biofluid dynamics, combustion, CFD, flow diagnostics, solid dynamics, impact, visualisation, micromechanics and computation.",
-            "tr": "Adlandırılmış her tesisi, onu yöneten öğretim üyesiyle birlikte; gaz dinamiği, hidrodinamik, biyoakışkan dinamiği, yanma, HAD, akış teşhisi, katı dinamiği, çarpma, görselleştirme, mikromekanik ve hesaplama başlıkları altında yayımlar."
-          }
-        },
-        {
           "url": "https://aerospace.caltech.edu/people/faculty",
           "title": "Caltech GALCIT — Faculty",
           "source_type": "official_department_page",
@@ -5420,12 +5751,95 @@
             "en": "Official checklist revision 09/2024; recheck when the 2027-28 portal opens.",
             "tr": "Resmî kontrol listesi 09/2024 revizyonudur; 2027-28 portalı açıldığında yeniden kontrol edin."
           }
+        },
+        {
+          "url": "https://aerospace.caltech.edu/research/facilities",
+          "title": "Caltech Aerospace — Research labs and facilities",
+          "source_type": "official_lab_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "labs",
+            "department"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Rechecked the current gasdynamics, combustion, CFD, solid-mechanics and impact facility directory.",
+            "tr": "Güncel gaz dinamiği, yanma, HAD, katı mekaniği ve çarpma tesisi dizini yeniden kontrol edildi."
+          }
+        },
+        {
+          "url": "https://aerospace.caltech.edu/people",
+          "title": "Caltech Aerospace — People and faculty",
+          "source_type": "official_department_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "department",
+            "faculty"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Current accessible faculty directory replacing reliance on the older faculty-only path; no unverified email was added.",
+            "tr": "Eski yalnızca öğretim üyesi yoluna bağımlılığın yerine güncel erişilebilir öğretim üyesi dizini kullanıldı; doğrulanmamış e-posta eklenmedi."
+          }
+        },
+        {
+          "url": "https://aerospace.caltech.edu/academics/admissions",
+          "title": "Admissions | Booth-Kresa Department of Aerospace",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "coverage",
+            "deadline",
+            "application_process",
+            "required_documents"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://gradoffice.caltech.edu/financialsupport/nofinaid",
+          "title": "Financing a Graduate Education | Caltech Graduate Studies",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "funding",
+            "terminal_ms_funding",
+            "assistantships",
+            "employment"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Warns that terminal master's aid is not guaranteed and assistantship opportunities are limited.",
+            "tr": "Terminal yüksek lisans desteğinin garanti olmadığını ve asistanlık olanaklarının sınırlı olduğunu belirtir."
+          }
+        },
+        {
+          "url": "https://gradoffice.caltech.edu/financialsupport",
+          "title": "Financial Support | Caltech Graduate Studies",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "funding",
+            "assistantships",
+            "coverage",
+            "international_work_authorization"
+          ],
+          "confidence": "high"
         }
       ],
       "verification_notes": {
         "en": "Critical fields use current official evidence. The record remains partial because the official English rules conflict, the deadline page gives no cycle year, the catalog unit components do not reconcile to its stated total, and public current I-20/insurance details are incomplete.",
         "tr": "Kritik alanlar güncel resmî kanıt kullanır. Resmî İngilizce kuralları çeliştiği, son tarih sayfası dönem yılı vermediği, katalog birim bileşenleri belirtilen toplamla uyuşmadığı ve kamuya açık güncel I-20/sigorta ayrıntıları eksik olduğu için kayıt partial kalır."
-      }
+      },
+      "official_scholarship_page": "https://aerospace.caltech.edu/academics/admissions"
     },
     "decision_summary": {
       "main_strengths": [
@@ -5495,7 +5909,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 30,
+      "checked_official_source_count": 33,
       "verified_fields": [
         "program",
         "language",
@@ -5511,7 +5925,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-05"
+      "audited_at": "2026-09-06"
     },
     "quality_control": {
       "checked_at": "2026-09-05",
@@ -5584,7 +5998,7 @@
       "matched_tags": [],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "facility_evidence": {
@@ -5644,20 +6058,44 @@
       "admission_risk": "high",
       "required_documents": [
         {
-          "en": "Recommendation letters and proof of English proficiency/test scores are supplemental materials; the school deadline for those materials is four weeks after the term application deadline.",
-          "tr": "Referans mektupları ile İngilizce yeterlik/test puanları ek belgelerdir; okulun bu belgeler için son tarihi dönem başvuru tarihinden dört hafta sonradır."
+          "en": "Online Georgia Tech graduate application",
+          "tr": "Çevrim içi Georgia Tech lisansüstü başvurusu"
         },
         {
-          "en": "International applicants must follow Georgia Tech's country-specific qualification guidance and provide English translations of non-English academic documents.",
-          "tr": "Uluslararası adaylar Georgia Tech'nin ülkeye özgü yeterlik rehberini izlemeli ve İngilizce olmayan akademik belgeler için İngilizce çeviri sunmalıdır."
+          "en": "Copies of officially issued academic credentials from each institution, such as transcripts, mark sheets or a diploma supplement",
+          "tr": "Her kurumdan resmî olarak düzenlenmiş transkript, not çizelgesi veya diploma eki gibi akademik belgelerin kopyaları"
+        },
+        {
+          "en": "Degree certificate when the awarded degree and conferral date are not printed on the academic record",
+          "tr": "Verilen derece ve mezuniyet tarihi akademik kayıtta yazmıyorsa derece belgesi"
+        },
+        {
+          "en": "Original-language academic documents plus certified word-for-word English translations when the institution does not issue them in English",
+          "tr": "Kurum belgeleri İngilizce düzenlemiyorsa özgün dilde akademik belgeler ve kelimesi kelimesine onaylı İngilizce çevirileri"
+        },
+        {
+          "en": "Resume or CV",
+          "tr": "Özgeçmiş veya CV"
+        },
+        {
+          "en": "Recommendation letters requested through the application; the Institute application supports up to three recommenders depending on the programme",
+          "tr": "Başvuru üzerinden istenen referans mektupları; Enstitü başvurusu programa göre en fazla üç referansı destekler"
+        },
+        {
+          "en": "English-proficiency evidence or official test scores when required",
+          "tr": "Gerektiğinde İngilizce yeterlilik kanıtı veya resmî sınav puanları"
+        },
+        {
+          "en": "Programme-specific supplemental responses or files shown in the application, which may include research experience, writing samples or faculty selection",
+          "tr": "Başvuruda gösterilen ve araştırma deneyimi, yazı örneği veya öğretim üyesi seçimini içerebilen programa özgü ek yanıtlar veya dosyalar"
         }
       ],
       "verification_notes": {
-        "en": "This card deliberately does not claim a universal admission GPA, an Aerospace-specific prior-degree list, or an acceptance rate, because the checked official pages do not publish them.",
-        "tr": "Kontrol edilen resmî sayfalar bunları yayımlamadığı için bu kart evrensel kabul GPA'sı, Havacılık-Mühendisliği'ne özgü önceki diploma listesi veya kabul oranı ileri sürmez."
+        "en": "The checked AE page makes the GRE optional for the MS and PhD. Institute-level application instructions define the academic-document and translation rules; programme-specific supplemental prompts remain portal-dependent.",
+        "tr": "Kontrol edilen AE sayfası MS ve doktora için GRE'yi isteğe bağlı tutar. Enstitü düzeyindeki başvuru talimatları akademik belge ve çeviri kurallarını tanımlar; programa özgü ek sorular portalda gösterilir."
       },
       "gre": {
-        "policy": "unknown",
+        "policy": "optional",
         "test_type": "unknown",
         "minimum_scores": {},
         "recommended_scores": {},
@@ -5737,7 +6175,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_usd": 105,
       "application_fee_verification": {
@@ -5791,7 +6229,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -5815,8 +6253,8 @@
       "regional_scholarship_name": null,
       "scholarship_deadline": "2026-12-01 (Fall 2027 AE research-assistantship priority consideration)",
       "funding_notes": {
-        "en": "Georgia Tech AE states plainly that it cannot guarantee an assistantship, but also that over 70% of its graduate students held a tuition waiver through a GRA, GTA or fellowship as of Fall 2021. The route for an unfunded admit is explicit and unusual in its openness: the school tells you that you may approach individual faculty directly, and that the professor makes the decision.",
-        "tr": "Georgia Tech AE, asistanlığı garanti edemeyeceğini açıkça belirtir; ancak 2021 Güz itibarıyla lisansüstü öğrencilerinin %70'inden fazlasının GRA, GTA veya burs yoluyla öğrenim ücreti muafiyeti aldığını da söyler. Finansmansız kabul alanlar için rota açık ve alışılmadık ölçüde nettir: okul, doğrudan öğretim üyeleriyle temas kurabileceğini ve kararı profesörün vereceğini söyler."
+        "en": "Georgia Tech AE offers GRA/GTA appointments to some incoming and current graduate students, but funding is not guaranteed. F-1/J-1 students with Georgia Tech-issued status may work on campus. No fixed GRA deadline is published; GTA applications are distributed about two months before each semester and first-semester students generally cannot work as GTAs.",
+        "tr": "Georgia Tech AE bazı yeni ve mevcut lisansüstü öğrencilere GRA/GTA görevi verir ancak finansman garanti değildir. Georgia Tech tarafından düzenlenmiş F-1/J-1 statüsündeki öğrenciler kampüste çalışabilir. Sabit GRA son tarihi yayımlanmaz; GTA başvuruları her dönemden yaklaşık iki ay önce dağıtılır ve birinci dönem öğrencileri genellikle GTA olamaz."
       },
       "verification_notes": {
         "en": "The record distinguishes an assistantship job/waiver from a general admission scholarship. International eligibility is not asserted because the checked public pages do not publish an AE-specific eligibility guarantee.",
@@ -5828,76 +6266,131 @@
       "funding_guaranteed_at_admission": false,
       "playbook": [
         {
-          "opportunity": "Graduate Research Assistantship (GRA) in the School of Aerospace Engineering",
-          "competitiveness": "selective",
+          "opportunity": "Graduate Research Assistantship (GRA)",
           "eligibility_gates": [
             {
-              "en": "Admitted to an AE graduate programme.",
-              "tr": "Bir AE lisansüstü programına kabul edilmiş olmak."
+              "en": "Be a full-time Georgia Tech graduate student enrolled for at least 12 hours and hold valid work authorization; F-1/J-1 students with Georgia Tech-issued status may work on campus.",
+              "tr": "En az 12 saate kayıtlı tam zamanlı Georgia Tech lisansüstü öğrencisi olmak ve geçerli çalışma iznine sahip olmak; Georgia Tech tarafından düzenlenmiş F-1/J-1 statüsündekiler kampüste çalışabilir."
             },
             {
-              "en": "A faculty member has a sponsored project whose work matches you.",
-              "tr": "Bir öğretim üyesinin, yaptığın işe uyan fonlanmış bir projesi olması."
+              "en": "Match an individual AE faculty member's sponsored research project.",
+              "tr": "Bir AE öğretim üyesinin sponsorlu araştırma projesiyle eşleşmek."
             }
           ],
           "selection_criteria": [
             {
-              "en": "Alignment with a specific funded research project — the individual professor makes the decision, not the school.",
-              "tr": "Belirli bir fonlanmış araştırma projesiyle uyum — kararı okul değil, ilgili profesör verir."
+              "en": "Faculty assessment of background and research-interest alignment with the sponsored project.",
+              "tr": "Geçmiş ve araştırma ilgisinin sponsorlu projeyle uyumuna ilişkin öğretim üyesi değerlendirmesi."
             }
           ],
-          "typical_award": {
-            "coverage": [
-              "monthly_stipend",
-              "tuition_support"
-            ],
-            "amount_note": {
-              "en": "Institute policy sets a minimum of $1,184 per month for a master's assistantship at one-third time or greater, plus tuition support.",
-              "tr": "Kurum politikası, üçte bir veya daha fazla zamanlı bir yüksek lisans asistanlığı için aylık asgari 1.184 doları, artı öğrenim ücreti desteğini belirler."
-            }
-          },
           "steps": [
             {
               "order": 1,
               "action": {
-                "en": "Read your admission letter first. Some students are offered a GRA or GTA in the letter itself; if yours includes funding, the rest of this list is optional.",
-                "tr": "Önce kabul mektubunu oku. Bazı öğrencilere GRA veya GTA doğrudan mektupta teklif edilir; mektubunda finansman varsa bu listenin geri kalanı isteğe bağlıdır."
+                "en": "Check the admission letter because some incoming students receive a GRA offer automatically with admission.",
+                "tr": "Bazı yeni öğrencilere kabul ile birlikte otomatik GRA teklifi verildiğinden kabul mektubunu kontrol et."
               },
               "owner": "university",
               "timing": "after_admission",
+              "required_documents": [],
               "hard_requirement": false
             },
             {
               "order": 2,
               "action": {
-                "en": "If the letter has no funding, contact individual AE faculty directly — the school explicitly permits this. Write to the professor whose funded project matches your background, naming the project and what you can do on it.",
-                "tr": "Mektupta finansman yoksa doğrudan AE öğretim üyeleriyle iletişime geç — okul buna açıkça izin verir. Fonlanmış projesi geçmişinle örtüşen profesöre, projeyi ve orada ne yapabileceğini adlandırarak yaz."
+                "en": "If no funding is included, contact individual AE faculty directly about sponsored projects; no fixed GRA deadline is published.",
+                "tr": "Finansman yoksa sponsorlu projeler hakkında doğrudan AE öğretim üyeleriyle iletişime geç; sabit GRA son tarihi yayımlanmamıştır."
               },
               "owner": "applicant",
               "timing": "after_admission",
+              "required_documents": [],
               "hard_requirement": true
             },
             {
               "order": 3,
               "action": {
-                "en": "Apply separately for a GTA in the semester before you want it — applications are usually requested about two months before the semester starts, and first-semester students are generally not eligible.",
-                "tr": "GTA için, istediğin dönemden bir önceki dönemde ayrıca başvur — başvurular genellikle dönem başlamadan yaklaşık iki ay önce istenir ve birinci dönem öğrencileri genellikle uygun değildir."
-              },
-              "owner": "applicant",
-              "timing": "after_enrolment",
-              "hard_requirement": false
-            },
-            {
-              "order": 4,
-              "action": {
-                "en": "Budget for the possibility of no funding. The school states it cannot guarantee an assistantship, so treat the first semester as potentially self-funded even though over 70% of AE graduate students held a tuition waiver as of Fall 2021.",
-                "tr": "Finansman çıkmaması ihtimaline göre bütçe yap. Okul asistanlığı garanti edemeyeceğini belirtir; 2021 Güz itibarıyla AE lisansüstü öğrencilerinin %70'inden fazlası öğrenim ücreti muafiyetine sahip olsa da ilk dönemi kendi finansmanınla geçirmeye hazırlan."
+                "en": "If selected, maintain full-time registration and complete employment/visa authorization.",
+                "tr": "Seçilirsen tam zamanlı kaydı sürdür ve istihdam/vize izin işlemlerini tamamla."
               },
               "owner": "applicant",
               "timing": "after_admission",
-              "hard_requirement": false
+              "required_documents": [
+                {
+                  "en": "F-1 I-20 or J-1 DS-2019 and other employment-authorization documents, as applicable",
+                  "tr": "Uygun olduğunda F-1 I-20 veya J-1 DS-2019 ve diğer çalışma izni belgeleri"
+                }
+              ],
+              "hard_requirement": true
             }
           ],
+          "competitiveness": "selective",
+          "typical_award": {
+            "amount": null,
+            "currency": "USD",
+            "period": "one_semester",
+            "coverage": [
+              "monthly_stipend",
+              "tuition_waiver_except_25_usd_and_applicable_differentials",
+              "75_percent_ship_subsidy"
+            ]
+          },
+          "renewal_conditions": "EN: Reconfirmed with the faculty adviser each semester; contingent on funds and satisfactory research performance. | TR: Her dönem öğretim üyesi danışmanla yeniden doğrulanır; fon ve tatmin edici araştırma performansına bağlıdır.",
+          "evidence_url": "https://ae.gatech.edu/graduate-research-and-teaching-opportunities"
+        },
+        {
+          "opportunity": "Graduate Teaching Assistantship (GTA)",
+          "eligibility_gates": [
+            {
+              "en": "Be a full-time Georgia Tech graduate student; students without funding may apply from their second semester onward.",
+              "tr": "Tam zamanlı Georgia Tech lisansüstü öğrencisi olmak; finansmanı olmayan öğrenciler ikinci dönemden itibaren başvurabilir."
+            },
+            {
+              "en": "Hold valid work authorization; F-1/J-1 students with Georgia Tech-issued status may work on campus.",
+              "tr": "Geçerli çalışma iznine sahip olmak; Georgia Tech tarafından düzenlenmiş F-1/J-1 statüsündekiler kampüste çalışabilir."
+            }
+          ],
+          "selection_criteria": [
+            {
+              "en": "AE School teaching needs and the Director of Graduate Teaching's allocation decision.",
+              "tr": "AE School öğretim ihtiyaçları ve Lisansüstü Öğretim Direktörü'nün tahsis kararı."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": {
+                "en": "After the first semester, obtain the GTA application distributed about two months before the next semester.",
+                "tr": "İlk dönemden sonra bir sonraki dönemden yaklaşık iki ay önce dağıtılan GTA başvurusunu edin."
+              },
+              "owner": "university",
+              "timing": "after_enrolment",
+              "required_documents": [],
+              "hard_requirement": true
+            },
+            {
+              "order": 2,
+              "action": {
+                "en": "Submit a new GTA application for each semester; no exact 2026/27 date is published on the checked page.",
+                "tr": "Her dönem için yeni GTA başvurusu gönder; kontrol edilen sayfada kesin 2026/27 tarihi yayımlanmamıştır."
+              },
+              "owner": "applicant",
+              "timing": "separate_before_deadline",
+              "required_documents": [],
+              "hard_requirement": true
+            }
+          ],
+          "competitiveness": "highly_selective",
+          "typical_award": {
+            "amount": null,
+            "currency": "USD",
+            "period": "one_semester",
+            "coverage": [
+              "monthly_stipend",
+              "tuition_waiver_except_25_usd_and_applicable_differentials",
+              "75_percent_ship_subsidy"
+            ]
+          },
+          "renewal_conditions": "EN: Semester-by-semester only; a prior GTA does not imply renewal. | TR: Yalnız dönemliktir; önceki GTA görevi yenilenme anlamına gelmez.",
           "evidence_url": "https://ae.gatech.edu/graduate-research-and-teaching-opportunities"
         }
       ]
@@ -5969,7 +6462,7 @@
         "band_from_score": "high",
         "capped_from_very_high": false,
         "legacy_value": "high",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -6031,7 +6524,7 @@
           "en": "Georgia Tech's 2026-27 out-of-country graduate budget, on-campus column: housing 11,736, food 6,310, books 800, personal 2,800 and transportation 966, published as a total per year for the fall and spring terms. The off-campus column raises housing to 14,380 and the total to 25,256.",
           "tr": "Georgia Tech'in 2026-27 yurt disindan gelen lisansustu butcesi, kampus ici sutunu: konut 11.736, gida 6.310, kitap 800, kisisel 2.800 ve ulasim 966; guz ve bahar donemleri icin yillik toplam olarak yayimlanir. Kampus disi sutunu konutu 14.380'e, toplami 25.256'ya yukseltir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "housing_guaranteed": false,
       "housing_difficulty_evidence": {
@@ -6174,20 +6667,62 @@
         "Fall 2027"
       ],
       "application_rounds": [
-        "Spring 2027: 1 September 2026",
-        "Summer 2027: 1 December 2026 for full financial-aid consideration; final deadline 1 February 2027",
-        "Fall 2027: 1 December 2026 for full financial-aid consideration; final deadline 1 March 2027"
+        {
+          "intake": "Spring 2027",
+          "round": {
+            "en": "Spring 2027 final deadline",
+            "tr": "Bahar 2027 nihai son tarihi"
+          },
+          "deadline": "2026-09-01",
+          "deadline_type": "final"
+        },
+        {
+          "intake": "Summer 2027",
+          "round": {
+            "en": "Summer 2027 full financial-aid consideration",
+            "tr": "Yaz 2027 tam mali yardım değerlendirmesi"
+          },
+          "deadline": "2026-12-01",
+          "deadline_type": "funding_priority"
+        },
+        {
+          "intake": "Summer 2027",
+          "round": {
+            "en": "Summer 2027 final deadline",
+            "tr": "Yaz 2027 nihai son tarihi"
+          },
+          "deadline": "2027-02-01",
+          "deadline_type": "final"
+        },
+        {
+          "intake": "Fall 2027",
+          "round": {
+            "en": "Fall 2027 full financial-aid consideration",
+            "tr": "Güz 2027 tam mali yardım değerlendirmesi"
+          },
+          "deadline": "2026-12-01",
+          "deadline_type": "funding_priority"
+        },
+        {
+          "intake": "Fall 2027",
+          "round": {
+            "en": "Fall 2027 final deadline",
+            "tr": "Güz 2027 nihai son tarihi"
+          },
+          "deadline": "2027-03-01",
+          "deadline_type": "final"
+        }
       ],
-      "non_eu_deadline": "2027-03-01 (Fall 2027 final AE deadline; funding-priority date is 2026-12-01)",
+      "non_eu_deadline": "2027-03-01",
       "eu_deadline": "2027-03-01 (Fall 2027 final AE deadline; funding-priority date is 2026-12-01)",
-      "application_deadline": "2027-03-01 (Fall 2027 final AE deadline)",
+      "application_deadline": "2027-03-01",
       "scholarship_deadline": "2026-12-01 (Fall 2027 research-assistantship full-consideration date)",
       "pre_enrolment_required": null,
       "visa_complexity": "high",
-      "timeline_risk": "high",
+      "timeline_risk": "low",
       "deadline_notes": {
-        "en": "The School says recommendation letters and language-proficiency materials are due four weeks after the relevant application deadline. For funding, the December date—not the March final date—is the decision-critical target. Check the live page before applying.",
-        "tr": "Okul, referans mektupları ve dil yeterlik belgelerinin ilgili başvuru tarihinden dört hafta sonra teslim edileceğini belirtir. Finansman için karar açısından kritik tarih Marttaki nihai tarih değil Aralık tarihidir. Başvuru öncesinde canlı sayfayı kontrol edin."
+        "en": "AE publishes the dated 2027 deadlines. Recommendation letters and required language-test evidence are supplemental materials due four weeks after the applicable term deadline.",
+        "tr": "AE, 2027 tarihlerini açıkça yayımlar. Referans mektupları ve gerekli dil sınavı kanıtları, ilgili dönem son tarihinden dört hafta sonra teslim edilmesi gereken ek belgelerdir."
       },
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
@@ -6199,11 +6734,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 177,
+        "days_remaining_at_evaluation": 176,
         "derived_from": "application_timeline_profile.application_deadline",
         "confidence": "high",
         "source_url": "https://ae.gatech.edu/ae-graduate-apply",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -6511,7 +7046,7 @@
     "source_profile": {
       "primary_url": "https://catalog.gatech.edu/programs/aerospace-engineering-ms/",
       "secondary_urls": [],
-      "last_verified": "2026-09-01",
+      "last_verified": "2026-09-06",
       "field_confidence": {
         "program_basic_info": "high",
         "language": "high",
@@ -6524,7 +7059,9 @@
         "housing": "high",
         "research": "high",
         "industry": "unknown",
-        "sentiment": "unknown"
+        "sentiment": "unknown",
+        "deadline": "high",
+        "application_documents": "high"
       },
       "source_reliability": "high",
       "verification_status": "verified",
@@ -6563,24 +7100,6 @@
           "notes": {
             "en": "Current official catalogue confirms the active MSAE, 33-credit thesis/non-thesis structures and six graduate specializations.",
             "tr": "Güncel resmî katalog aktif MSAE'yi, 33 kredilik tezli/tezsiz yapıları ve altı lisansüstü uzmanlığı doğrular."
-          }
-        },
-        {
-          "url": "https://ae.gatech.edu/ae-graduate-apply",
-          "title": "Georgia Tech AE Graduate Apply",
-          "source_type": "official_admission_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "program",
-            "admission",
-            "deadline",
-            "scholarship"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Official AE page publishes 2027 term deadlines, the financial-aid priority dates, supplemental-material timing and optional GRE policy.",
-            "tr": "Resmî AE sayfası 2027 dönem son tarihlerini, mali yardım öncelik tarihlerini, ek belge zamanlamasını ve isteğe bağlı GRE politikasını yayımlar."
           }
         },
         {
@@ -6639,28 +7158,13 @@
           "last_checked": "2026-08-14",
           "relevant_fields": [
             "housing",
-            "living"
+            "living",
+            "cost"
           ],
           "confidence": "high",
           "notes": {
             "en": "Official out-of-country graduate budget lists USD 11,736 on-campus housing allowance and USD 22,612 total non-tuition on-campus cost of attendance.",
             "tr": "Resmî out-of-country lisansüstü bütçesi 11.736 USD kampüs içi konaklama ödeneği ve 22.612 USD toplam öğrenim ücreti dışı kampüs içi devam maliyeti listeler."
-          }
-        },
-        {
-          "url": "https://grad.gatech.edu/paying-for-grad-school",
-          "title": "Georgia Tech Graduate Education: Paying for Grad School",
-          "source_type": "official_scholarship_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "scholarship",
-            "funding"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Official funding page says department-awarded assistantships provide a tuition waiver and modest stipend, but are not an admission guarantee.",
-            "tr": "Resmî finansman sayfası, bölüm tarafından verilen asistanlıkların öğrenim muafiyeti ve mütevazı burs sağladığını; ancak kabul garantisi olmadığını belirtir."
           }
         },
         {
@@ -6749,22 +7253,6 @@
           "confidence": "high"
         },
         {
-          "url": "https://ae.gatech.edu/graduate-research-and-teaching-opportunities",
-          "title": "Georgia Tech AE — Graduate research and teaching opportunities",
-          "source_type": "official_scholarship_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-29",
-          "relevant_fields": [
-            "scholarship",
-            "funding"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "States that assistantships are not guaranteed, that students may approach faculty directly for a GRA, and how GTA applications run.",
-            "tr": "Asistanlıkların garanti olmadığını, öğrencilerin GRA için doğrudan öğretim üyelerine başvurabileceğini ve GTA başvurularının nasıl işlediğini belirtir."
-          }
-        },
-        {
           "url": "https://policylibrary.gatech.edu/academic-affairs/stipends-graduate-assistantships",
           "title": "Georgia Tech Policy Library — Stipends for graduate assistantships",
           "source_type": "official_university_policy_page",
@@ -6803,8 +7291,8 @@
           "access_status": "ok",
           "last_checked": "2026-08-30",
           "relevant_fields": [
-            "living",
             "housing",
+            "living",
             "cost"
           ],
           "confidence": "high"
@@ -6838,6 +7326,122 @@
             "fees"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://ae.gatech.edu/ae-graduate-apply",
+          "title": "AE Graduate Apply | Daniel Guggenheim School of Aerospace Engineering",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "program",
+            "admission",
+            "deadline",
+            "scholarship",
+            "gre",
+            "required_documents"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Direct AE page with dated Spring, Summer and Fall 2027 deadlines, the optional GRE rule and supplemental-material timing.",
+            "tr": "2027 Bahar, Yaz ve Güz tarihlerini, isteğe bağlı GRE kuralını ve ek belge zamanlamasını yayımlayan doğrudan AE sayfası."
+          }
+        },
+        {
+          "url": "https://grad.gatech.edu/admissions/application-instructions",
+          "title": "Application Instructions | Georgia Tech Graduate Education",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "required_documents",
+            "recommendations",
+            "international_documents"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Defines the application sections, academic credentials, resume/CV, recommendations, translations and programme-dependent supplements.",
+            "tr": "Başvuru bölümlerini, akademik belgeleri, CV'yi, referansları, çevirileri ve programa bağlı ekleri tanımlar."
+          }
+        },
+        {
+          "url": "https://grad.gatech.edu/admissions/international/ready-to-apply",
+          "title": "Ready to Apply | International Applicants | Georgia Tech Graduate Education",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "required_documents",
+            "international_documents",
+            "translations"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Explains acceptable uploaded academic credentials, degree-certificate conditions and certified-copy rules for international applicants.",
+            "tr": "Uluslararası adaylar için kabul edilen yüklenmiş akademik belgeleri, derece belgesi koşullarını ve onaylı kopya kurallarını açıklar."
+          }
+        },
+        {
+          "url": "https://ae.gatech.edu/graduate-research-and-teaching-opportunities",
+          "title": "Graduate Research and Teaching Opportunities | Georgia Tech Aerospace Engineering",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "assistantships",
+            "coverage",
+            "application_process",
+            "selection",
+            "renewal"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://grad.gatech.edu/paying-for-grad-school",
+          "title": "Paying for Grad School | Georgia Tech Graduate Education",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "assistantships",
+            "coverage",
+            "eligibility",
+            "application_process"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://policies.gatech.edu/employment/eligibility-student-employment",
+          "title": "Eligibility for Student Employment | Georgia Tech Policy Library",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "assistantships",
+            "international_eligibility",
+            "employment",
+            "required_documents"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://ae.gatech.edu/sites/default/files/file/2026/04/AE%20Graduate%20Student%20Handbook%20v2026_01_0.pdf",
+          "title": "AE Graduate Student Handbook v2026.01",
+          "source_type": "official_program_page",
+          "access_status": "pdf",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "assistantships",
+            "renewal",
+            "master_funding"
+          ],
+          "confidence": "high"
         }
       ],
       "needs_verification": false,
@@ -6845,7 +7449,7 @@
       "official_admission_page": "https://ae.gatech.edu/ae-graduate-apply",
       "official_curriculum_page": "https://catalog.gatech.edu/programs/aerospace-engineering-ms/",
       "official_tuition_page": "https://bursar.gatech.edu/student/tuition/fa26/fa26_totals_page.pdf",
-      "official_scholarship_page": "https://grad.gatech.edu/paying-for-grad-school",
+      "official_scholarship_page": "https://ae.gatech.edu/graduate-research-and-teaching-opportunities",
       "official_department_page": null,
       "official_housing_page": "https://finaid.gatech.edu/costs/graduate-costs"
     },
@@ -6905,7 +7509,7 @@
     },
     "data_quality": {
       "status": "verified",
-      "checked_official_source_count": 19,
+      "checked_official_source_count": 23,
       "verified_fields": [
         "program",
         "language",
@@ -6920,7 +7524,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-01"
+      "audited_at": "2026-09-06"
     },
     "quality_control": {
       "checked_at": "2026-08-23",
@@ -6989,7 +7593,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -7272,7 +7876,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -7317,7 +7921,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -7368,13 +7972,98 @@
         }
       ],
       "funding_notes": {
-        "en": "The department does not make financial-assistance offers to master's applicants. Students are expected to self-fund. Later GSRA/GSI roles are highly competitive; only about 6% of MSE students hold one during a term. Grader openings may be announced after the term starts.",
-        "tr": "Bölüm yüksek lisans adaylarına mali yardım teklifi yapmaz; öğrencilerin öz finansman sağlaması beklenir. Sonraki GSRA/GSI rolleri çok rekabetçidir; MSE öğrencilerinin yalnızca yaklaşık %6'sı bir dönemde böyle bir görev alır. Değerlendirici pozisyonları dönem başladıktan sonra duyurulabilir."
+        "en": "Michigan does not include aid with master's admission. The verified route available to international MSE students is the competitive semester GSI application after admission. The department publishes recurring fall and winter deadlines (31 May and 1 November) without cycle years; they are not projected into a specific cycle.",
+        "tr": "Michigan yüksek lisans kabulüyle birlikte mali destek vermez. Uluslararası MSE öğrencilerine açık doğrulanmış yol, kabulden sonra yapılan rekabetçi dönemlik GSI başvurusudur. Bölüm, döngü yılı vermeden güz ve kış için tekrar eden son tarihleri (31 Mayıs ve 1 Kasım) yayımlar; bunlar belirli bir döngüye ileri taşınmadı."
       },
       "verification_notes": {
         "en": "A later employment appointment is not an admission scholarship and must not be budgeted as guaranteed income.",
         "tr": "Sonradan alınabilecek çalışma görevi kabul bursu değildir ve garantili gelir olarak bütçelenmemelidir."
-      }
+      },
+      "playbook": [
+        {
+          "opportunity": "Graduate Student Instructorship (GSI)",
+          "eligibility_gates": [
+            {
+              "en": "Be an incoming or current MSE, SUGS or PhD student enrolled in Aerospace Engineering during the appointment term.",
+              "tr": "Görev döneminde Aerospace Engineering programına kayıtlı yeni veya mevcut MSE, SUGS ya da doktora öğrencisi olmak."
+            },
+            {
+              "en": "Have completed the course or an equivalent with grade B or better and hold at least a 3.0 cumulative GPA.",
+              "tr": "Dersi veya eşdeğerini en az B notuyla tamamlamış ve en az 3,0 kümülatif GNO'ya sahip olmak."
+            },
+            {
+              "en": "International students must have valid work eligibility; applicants educated where instruction was not English must pass the GSI Oral English Test.",
+              "tr": "Uluslararası öğrencilerin geçerli çalışma uygunluğu olmalıdır; öğretim dili İngilizce olmayan bir kurumda eğitim görenler GSI Sözlü İngilizce Sınavı'nı geçmelidir."
+            }
+          ],
+          "selection_criteria": [
+            {
+              "en": "Academic performance, teaching experience, completion of similar courses, prior GSI performance, years in graduate study, and possible instructor interview.",
+              "tr": "Akademik performans, öğretim deneyimi, benzer dersleri tamamlama, önceki GSI performansı, lisansüstü eğitim yılı ve olası öğretim üyesi mülakatı."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": {
+                "en": "Review the semester's published course vacancies and submit the online GSI/GSSA application in the semester before appointment.",
+                "tr": "Dönemin yayımlanmış ders boşluklarını incele ve atamadan önceki dönemde çevrim içi GSI/GSSA başvurusunu gönder."
+              },
+              "owner": "applicant",
+              "timing": "after_enrolment",
+              "required_documents": [
+                {
+                  "en": "Top five course choices",
+                  "tr": "İlk beş ders tercihi"
+                },
+                {
+                  "en": "One-page statement of relevant experience or reason for the selected course",
+                  "tr": "İlgili deneyimi veya seçilen dersin gerekçesini açıklayan bir sayfalık beyan"
+                },
+                {
+                  "en": "Resume",
+                  "tr": "Özgeçmiş"
+                }
+              ],
+              "hard_requirement": true
+            },
+            {
+              "order": 2,
+              "action": {
+                "en": "Use the published recurring deadline: 31 May for fall appointments or 1 November for winter appointments; the page does not assign cycle years.",
+                "tr": "Yayımlanmış tekrar eden son tarihi kullan: güz görevleri için 31 Mayıs, kış görevleri için 1 Kasım; sayfa döngü yılı atamaz."
+              },
+              "owner": "applicant",
+              "timing": "separate_before_deadline",
+              "required_documents": [],
+              "hard_requirement": true
+            },
+            {
+              "order": 3,
+              "action": {
+                "en": "If required by your educational background, arrange and pass the GSI Oral English Test before appointment.",
+                "tr": "Eğitim geçmişin gerektiriyorsa atamadan önce GSI Sözlü İngilizce Sınavı'nı ayarla ve geç."
+              },
+              "owner": "applicant",
+              "timing": "after_enrolment",
+              "required_documents": [],
+              "hard_requirement": true
+            }
+          ],
+          "competitiveness": "highly_selective",
+          "typical_award": {
+            "amount": null,
+            "currency": "USD",
+            "period": "one_semester",
+            "coverage": [
+              "salary",
+              "employment_benefits_subject_to_appointment"
+            ]
+          },
+          "renewal_conditions": "EN: Semester-specific and not guaranteed; appointment needs change each term. | TR: Döneme özgüdür ve garanti edilmez; görev ihtiyacı her dönem değişir.",
+          "evidence_url": "https://aero.engin.umich.edu/graduate/funding/"
+        }
+      ]
     },
     "living_profile": {
       "city_cost_level": "high",
@@ -7516,7 +8205,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -7599,7 +8288,7 @@
           "one_off_visa_and_travel_costs"
         ],
         "confidence": "high",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -7865,7 +8554,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -8097,7 +8786,7 @@
         "https://www.reddit.com/r/uofm/comments/1joyvdg/recommendations_for_grad_student_housing/",
         "https://www.reddit.com/r/uofm/comments/1l9m2g9/northwood_ivv_updates/"
       ],
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "field_confidence": {
         "program_basic_info": "high",
         "program": "high",
@@ -8229,24 +8918,6 @@
           "notes": {
             "en": "Current course planning by research area and warning that future offerings may change.",
             "tr": "Araştırma alanına göre güncel ders planlama ve gelecek derslerin değişebileceği uyarısı."
-          }
-        },
-        {
-          "url": "https://aero.engin.umich.edu/graduate/funding/",
-          "title": "Michigan Aerospace Graduate Funding",
-          "source_type": "official_scholarship_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "scholarship",
-            "funding",
-            "non_eu_eligibility",
-            "language"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "No admission aid for MSE, 6% semester employment figure, separate deadlines and GSI qualifications.",
-            "tr": "MSE için kabul yardımı olmaması, %6 dönemlik görev oranı, ayrı tarihler ve GSI nitelikleri."
           }
         },
         {
@@ -8601,8 +9272,29 @@
             "international"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://aero.engin.umich.edu/graduate/funding/",
+          "title": "Funding | Michigan Aerospace Engineering",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "assistantships",
+            "international_eligibility",
+            "non_eu_eligibility",
+            "language",
+            "deadline",
+            "required_documents",
+            "selection",
+            "application_process"
+          ],
+          "confidence": "high"
         }
-      ]
+      ],
+      "official_scholarship_page": "https://aero.engin.umich.edu/graduate/funding/"
     },
     "decision_summary": {
       "best_for": [
@@ -8715,7 +9407,7 @@
         "language"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-05"
+      "audited_at": "2026-09-06"
     },
     "quality_control": {
       "checked_at": "2026-09-05",
@@ -8814,7 +9506,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -9105,7 +9797,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -9150,7 +9842,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -9198,8 +9890,8 @@
         }
       ],
       "funding_notes": {
-        "en": "Purdue AAE does not promise funding to master's applicants. Teaching assistantships are ranked — PhD first, master's thesis second, master's non-thesis third — and research assistantships come from individual professors with funded projects, which the school openly tells students to approach. Choosing the thesis option and having a shortlist of professors ready before the admission decision is what turns this from luck into a plan.",
-        "tr": "Purdue AAE yüksek lisans adaylarına finansman vaat etmez. Öğretim asistanlıkları sıralıdır — önce doktora, sonra tezli yüksek lisans, en son tezsiz — ve araştırma asistanlıkları, okulun öğrencilere açıkça başvurmalarını söylediği, fonlanmış projeleri olan bireysel profesörlerden gelir. Tezli seçeneği seçmek ve kabul kararından önce hazır bir profesör listesi tutmak, bunu şanstan plana dönüştüren şeydir."
+        "en": "AAE encourages graduate students to speak with faculty about funded RAs and publishes no fixed RA deadline. International students may be eligible for Purdue student employment; visa-specific authorization rules apply. A qualifying appointment of at least 0.25 FTE receives tuition and fee remission, but applicable student fees remain the student's responsibility.",
+        "tr": "AAE lisansüstü öğrencileri fonlanmış RA'lar için öğretim üyeleriyle görüşmeye teşvik eder ve sabit RA son tarihi yayımlamaz. Uluslararası öğrenciler Purdue öğrenci istihdamına uygun olabilir; vizeye özgü izin kuralları geçerlidir. En az 0,25 FTE uygun görev öğrenim ve ücret indirimi sağlar ancak geçerli öğrenci ücretleri öğrencinin sorumluluğunda kalır."
       },
       "verification_notes": {
         "en": "Assistantships are employment/research appointments, not automatic admission scholarships. No award amount or international eligibility was generalized across position-specific opportunities.",
@@ -9209,66 +9901,74 @@
       "playbook": [
         {
           "opportunity": "Research assistantship in Purdue AAE",
-          "competitiveness": "selective",
           "eligibility_gates": [
             {
-              "en": "Admitted to an AAE graduate programme.",
-              "tr": "Bir AAE lisansüstü programına kabul edilmiş olmak."
+              "en": "Be an admitted graduate student in a programme eligible to hold a graduate staff appointment.",
+              "tr": "Lisansüstü personel görevi almaya uygun bir programda kabul edilmiş lisansüstü öğrenci olmak."
             },
             {
-              "en": "A faculty member has funded research your background fits.",
-              "tr": "Bir öğretim üyesinin, geçmişine uyan fonlanmış bir araştırması olması."
+              "en": "Match an AAE faculty member's funded research and meet employment/visa authorization requirements.",
+              "tr": "Bir AAE öğretim üyesinin fonlanmış araştırmasıyla eşleşmek ve çalışma/vize izni koşullarını karşılamak."
             }
           ],
           "selection_criteria": [
             {
-              "en": "The individual professor's judgement of fit with a funded project.",
-              "tr": "İlgili profesörün, fonlanmış bir projeye uygunluk hakkındaki değerlendirmesi."
+              "en": "Faculty assessment of research fit and availability of funded projects.",
+              "tr": "Öğretim üyesinin araştırma uyumu değerlendirmesi ve fonlanmış projelerin bulunması."
             }
           ],
           "steps": [
             {
               "order": 1,
               "action": {
-                "en": "Use the faculty directory to shortlist three professors whose published one-line research description overlaps your own topic — Purdue publishes both the description and the email, so this list can be built before you even apply.",
-                "tr": "Yayımlanmış tek satırlık araştırma açıklaması kendi konunla örtüşen üç profesörü seçmek için öğretim üyesi rehberini kullan — Purdue hem açıklamayı hem e-postayı yayımladığı için bu listeyi daha başvurmadan hazırlayabilirsin."
+                "en": "Complete the AAE degree application; no separate central RA form or fixed deadline is published.",
+                "tr": "AAE derece başvurusunu tamamla; ayrı merkezî RA formu veya sabit son tarih yayımlanmamıştır."
               },
               "owner": "applicant",
-              "timing": "before_application_opens",
-              "hard_requirement": false
+              "timing": "with_the_application",
+              "required_documents": [],
+              "hard_requirement": true
             },
             {
               "order": 2,
               "action": {
-                "en": "After you are admitted, write to those professors about their funded research. The school explicitly encourages this: it is the stated route to a research assistantship.",
-                "tr": "Kabul aldıktan sonra bu profesörlere fonlanmış araştırmaları hakkında yaz. Okul bunu açıkça teşvik eder: araştırma asistanlığına giden ilan edilmiş yol budur."
+                "en": "Speak with AAE faculty about funded research assistantships aligned with your background.",
+                "tr": "Geçmişinle uyumlu fonlanmış araştırma asistanlıkları hakkında AAE öğretim üyeleriyle görüş."
               },
               "owner": "applicant",
               "timing": "after_admission",
+              "required_documents": [],
               "hard_requirement": true
             },
             {
               "order": 3,
               "action": {
-                "en": "Choose the thesis option if you want a teaching assistantship to be realistic. TA positions are assigned by the Graduate Chair in a stated order: PhD candidates first, master's thesis students second, master's non-thesis students third.",
-                "tr": "Öğretim asistanlığının gerçekçi olmasını istiyorsan tezli seçeneği seç. TA pozisyonları Lisansüstü Başkanı tarafından belirtilmiş bir sırayla dağıtılır: önce doktora adayları, sonra tezli yüksek lisans, en son tezsiz yüksek lisans öğrencileri."
+                "en": "If appointed, complete Purdue employment and any visa-specific authorization requirements.",
+                "tr": "Atanırsan Purdue istihdam işlemlerini ve vizeye özgü izin şartlarını tamamla."
               },
               "owner": "applicant",
-              "timing": "with_the_application",
-              "hard_requirement": false
-            },
-            {
-              "order": 4,
-              "action": {
-                "en": "Once enrolled, watch your Purdue email for the AAE scholarship callouts the school sends out each year, and look at university-wide fellowships through OGSPS as a separate channel.",
-                "tr": "Kayıt olduktan sonra, okulun her yıl gönderdiği AAE burs duyuruları için Purdue e-postanı takip et ve ayrı bir kanal olarak OGSPS üzerinden üniversite geneli burslara bak."
-              },
-              "owner": "applicant",
-              "timing": "after_enrolment",
-              "hard_requirement": false
+              "timing": "after_admission",
+              "required_documents": [
+                {
+                  "en": "Employment-authorization documents required by Purdue and the student's visa status",
+                  "tr": "Purdue ve öğrencinin vize statüsünün gerektirdiği çalışma izni belgeleri"
+                }
+              ],
+              "hard_requirement": true
             }
           ],
-          "evidence_url": "https://engineering.purdue.edu/AAE/academics/graduate/Graduate-School-Funding/"
+          "competitiveness": "selective",
+          "typical_award": {
+            "amount": null,
+            "currency": "USD",
+            "period": "appointment_term",
+            "coverage": [
+              "salary_or_stipend",
+              "tuition_and_fee_remission_at_0_25_fte_or_more"
+            ]
+          },
+          "renewal_conditions": "EN: Not published as guaranteed; depends on appointment, project funding and continued eligibility. | TR: Garantili olarak yayımlanmamıştır; göreve, proje fonuna ve uygunluğun sürmesine bağlıdır.",
+          "evidence_url": "https://engineering.purdue.edu/AAE/academics/graduate/Graduate-School-Funding"
         }
       ]
     },
@@ -9382,7 +10082,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -9480,7 +10180,7 @@
           "one_off_visa_and_travel_costs"
         ],
         "confidence": "medium",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -9781,7 +10481,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -10162,7 +10862,7 @@
         "https://www.reddit.com/r/PurdueHousing/comments/1tviipp/incoming_msbaim_student_looking_for_housing/",
         "https://www.reddit.com/r/Purdue/comments/1rnqu5p/grad_student_housing_pointers/"
       ],
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "field_confidence": {
         "program_basic_info": "high",
         "program": "high",
@@ -10280,23 +10980,6 @@
           "notes": {
             "en": "International application route, $75 fee, current test minimums and Graduate School process.",
             "tr": "Uluslararası başvuru yolu, 75 $ ücret, güncel sınav tabanları ve Graduate School süreci."
-          }
-        },
-        {
-          "url": "https://engineering.purdue.edu/AAE/academics/graduate/Graduate-School-Funding",
-          "title": "Purdue AAE Graduate School Funding",
-          "source_type": "official_scholarship_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "scholarship",
-            "funding",
-            "non_eu_eligibility"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Current RA outreach, TA nomination and PhD/thesis-MS/non-thesis-MS preference order.",
-            "tr": "Güncel RA iletişimi, TA aday gösterme ve PhD/tezli MS/tezsiz MS tercih sırası."
           }
         },
         {
@@ -10650,8 +11333,52 @@
             "funding"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://engineering.purdue.edu/AAE/academics/graduate/Graduate-School-Funding",
+          "title": "Graduate School Funding | Purdue AAE",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "assistantships",
+            "non_eu_eligibility",
+            "application_process",
+            "selection"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.purdue.edu/academics/ogsps/wp-content/uploads/2026/02/graduate-student-employment-manual.pdf",
+          "title": "Graduate Student Employment Manual | Purdue, updated February 2026",
+          "source_type": "official_scholarship_page",
+          "access_status": "pdf",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "assistantships",
+            "coverage",
+            "eligibility",
+            "employment"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.purdue.edu/studentemployment/site/Policies/EmploymentEligibility.php",
+          "title": "Employment Eligibility | Purdue Student Employment",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "assistantships",
+            "international_eligibility",
+            "employment"
+          ],
+          "confidence": "high"
         }
-      ]
+      ],
+      "official_scholarship_page": "https://engineering.purdue.edu/AAE/academics/graduate/Graduate-School-Funding"
     },
     "decision_summary": {
       "best_for": [
@@ -10756,7 +11483,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 24,
+      "checked_official_source_count": 26,
       "verified_fields": [
         "program",
         "admission",
@@ -10773,7 +11500,7 @@
         "language"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-05"
+      "audited_at": "2026-09-06"
     },
     "quality_control": {
       "checked_at": "2026-09-05",
@@ -10872,7 +11599,7 @@
       ],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -11114,7 +11841,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -11159,7 +11886,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -11211,8 +11938,8 @@
         }
       ],
       "funding_notes": {
-        "en": "All regular applicants are considered without a separate funding application, but RA decisions are made by individual faculty and proactive faculty contact is recommended. TA assignments depend on the advisor and are not guaranteed. Non-thesis MS students receive no AE departmental funding. The department's public directory publishes every professor's email, so the shortlist for that proactive contact can be built before you apply.",
-        "tr": "Normal başvurular ayrı bir finansman başvurusu olmadan değerlendirilir; ancak RA kararlarını tek tek öğretim üyeleri verir ve proaktif iletişim önerilir. TA atamaları danışmana bağlıdır ve garanti edilmez. Tezsiz MS öğrencileri AE bölüm finansmanı alamaz. Bölümün açık rehberi her profesörün e-postasını yayımlar; bu yüzden o proaktif iletişim için liste başvurudan önce hazırlanabilir."
+        "en": "For the thesis MS, faculty-awarded RAs are the realistic international-accessible route after admission. No fixed deadline is published. Appointments of 25%-67% for the required portion of a term generate a tuition/fee waiver; international students may not exceed 50% employment while classes are in session. Non-thesis MS students receive no AE departmental funding; MEng students are not offered departmental TAs.",
+        "tr": "Tezli MS için öğretim üyelerinin verdiği RA'lar, kabul sonrası uluslararası adaylara açık gerçekçi yoldur. Sabit son tarih yayımlanmamıştır. Dönemin gerekli kısmında %25-%67 görev öğrenim/ücret muafiyeti oluşturur; uluslararası öğrenciler dersler sürerken %50 istihdamı aşamaz. Tezsiz MS öğrencileri AE bölüm finansmanı alamaz; MEng öğrencilerine bölüm TA görevi verilmez."
       },
       "verification_notes": {
         "en": "Funding is pathway-dependent and competitive; admission is not a funding promise.",
@@ -11220,67 +11947,70 @@
       },
       "playbook": [
         {
-          "opportunity": "Research assistantship in Illinois Aerospace Engineering",
-          "competitiveness": "selective",
+          "opportunity": "Research Assistantship in Illinois Aerospace Engineering",
           "eligibility_gates": [
             {
-              "en": "Admitted to the Aerospace Engineering graduate programme.",
-              "tr": "Havacılık ve Uzay Mühendisliği lisansüstü programına kabul edilmiş olmak."
+              "en": "Be admitted to the Aerospace Engineering graduate programme and remain in good academic standing and registered during the appointment.",
+              "tr": "Aerospace Engineering lisansüstü programına kabul edilmiş olmak, iyi akademik durumda kalmak ve görev döneminde kayıtlı olmak."
             },
             {
-              "en": "A faculty member has a project with current funding whose work matches you.",
-              "tr": "Bir öğretim üyesinin, yaptığın işe uyan ve güncel fonu olan bir projesinin bulunması."
+              "en": "Match a faculty member's current project and funding; international students must observe the 50% academic-term employment cap.",
+              "tr": "Bir öğretim üyesinin güncel projesi ve fonuyla eşleşmek; uluslararası öğrenciler akademik dönemde %50 çalışma sınırına uymalıdır."
             }
           ],
           "selection_criteria": [
             {
-              "en": "The department states assistantships are determined by the faculty based on student qualifications and current projects and funding — not by a central committee.",
-              "tr": "Bölüm, asistanlıkların merkezî bir komite tarafından değil, öğrenci nitelikleri ile güncel projeler ve fonlara göre öğretim üyeleri tarafından belirlendiğini belirtir."
+              "en": "Faculty assessment of student qualifications, current projects and available funding.",
+              "tr": "Öğrenci nitelikleri, güncel projeler ve mevcut fon hakkında öğretim üyesi değerlendirmesi."
             }
           ],
-          "typical_award": {
-            "coverage": [
-              "monthly_stipend",
-              "tuition_support"
-            ],
-            "amount_note": {
-              "en": "Appointments may run for the academic year, the academic year plus summer, summer only, or occasionally a full twelve months. A half-time assistant whose work is not tied to the thesis should expect twenty hours a week.",
-              "tr": "Atamalar akademik yıl, akademik yıl artı yaz, yalnızca yaz veya bazen tam on iki ay sürebilir. İşi teziyle bağlantılı olmayan yarı zamanlı bir asistan haftada yirmi saat beklemelidir."
-            }
-          },
-          "renewal_conditions": "Generally renewable subject to satisfactory academic progress, satisfactory performance, continued need for the services and availability of funds.",
           "steps": [
             {
               "order": 1,
               "action": {
-                "en": "Build the shortlist before you apply. The departmental directory publishes every professor's email and title in one page, so you can identify the three whose area matches yours without a single message being sent.",
-                "tr": "Listeni başvurudan önce hazırla. Bölüm rehberi her profesörün e-postasını ve unvanını tek sayfada yayımlar; böylece tek bir mesaj göndermeden alanı seninkiyle örtüşen üç kişiyi belirleyebilirsin."
+                "en": "Complete the Aerospace graduate application; no separate RA form or fixed RA deadline is published.",
+                "tr": "Aerospace lisansüstü başvurusunu tamamla; ayrı RA formu veya sabit RA son tarihi yayımlanmamıştır."
               },
               "owner": "applicant",
-              "timing": "before_application_opens",
-              "hard_requirement": false
+              "timing": "with_the_application",
+              "required_documents": [],
+              "hard_requirement": true
             },
             {
               "order": 2,
               "action": {
-                "en": "Write only after you are admitted. The department's own wording is that students may contact faculty \"once they have been admitted\" — a message before that point is outside the published process.",
-                "tr": "Yalnızca kabul aldıktan sonra yaz. Bölümün kendi ifadesi, öğrencilerin \"kabul edildikten sonra\" öğretim üyeleriyle iletişime geçebileceği yönündedir — bu noktadan önceki bir mesaj yayımlanmış sürecin dışındadır."
+                "en": "After receiving admission, contact faculty in your research area to ask about available assistantships.",
+                "tr": "Kabul aldıktan sonra araştırma alanındaki öğretim üyelerine mevcut asistanlıkları sor."
               },
               "owner": "applicant",
               "timing": "after_admission",
+              "required_documents": [],
               "hard_requirement": true
             },
             {
               "order": 3,
               "action": {
-                "en": "Ask about the project, not about funding. The appointment sits in whichever department, laboratory, centre or institute administers the research, and the professor directing it decides — so the useful message names their project and what you could contribute to it.",
-                "tr": "Finansmanı değil, projeyi sor. Atama, araştırmayı yürüten bölüm, laboratuvar, merkez veya enstitüde bulunur ve kararı projeyi yöneten profesör verir — bu yüzden işe yarayan mesaj, onların projesini ve ona ne katabileceğini adlandırır."
+                "en": "If appointed, register for the appointment term and comply with the appointment percentage and international work-hour limits.",
+                "tr": "Atanırsan görev dönemine kayıt ol ve görev yüzdesi ile uluslararası çalışma saati sınırlarına uy."
               },
               "owner": "applicant",
               "timing": "after_admission",
-              "hard_requirement": false
+              "required_documents": [],
+              "hard_requirement": true
             }
           ],
+          "competitiveness": "selective",
+          "typical_award": {
+            "amount": null,
+            "currency": "USD",
+            "period": "appointment_term",
+            "coverage": [
+              "monthly_stipend",
+              "full_tuition_waiver_at_25_percent_or_more",
+              "partial_fee_waiver"
+            ]
+          },
+          "renewal_conditions": "EN: Generally renewable subject to academic progress, satisfactory performance, continued service need and available funds. | TR: Genellikle akademik ilerleme, tatmin edici performans, hizmet ihtiyacının ve fonun sürmesine bağlı olarak yenilenebilir.",
           "evidence_url": "https://aerospace.illinois.edu/academics/graduate/funding/research-assistantships"
         }
       ]
@@ -11446,7 +12176,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -11507,7 +12237,7 @@
           "one_off_visa_and_travel_costs"
         ],
         "confidence": "medium",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -11780,7 +12510,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -12266,7 +12996,7 @@
         "https://www.reddit.com/r/UIUC/comments/1cvflq0/incoming_graduate_student_housing_questions/",
         "https://www.reddit.com/r/UIUC/comments/1is8ags/housing_question/"
       ],
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "field_confidence": {
         "program_basic_info": "high",
         "program": "high",
@@ -12430,23 +13160,6 @@
           "notes": {
             "en": "Official 12-credit international graduate Grainger estimate: tuition, fees, food/housing, books, other expenses and total.",
             "tr": "12 kredilik uluslararası Grainger lisansüstü resmî tahmini: öğrenim ücreti, harçlar, yiyecek/konut, kitap, diğer giderler ve toplam."
-          }
-        },
-        {
-          "url": "https://aerospace.illinois.edu/admissions/graduate/appointments-faq",
-          "title": "Illinois AE Appointments and Funding",
-          "source_type": "official_scholarship_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "scholarship",
-            "funding",
-            "non_eu_eligibility"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "RA/TA assignment process, no guarantee, international workload cap and qualifying assistantship waiver coverage.",
-            "tr": "RA/TA atama süreci, garanti olmaması, uluslararası çalışma sınırı ve uygun asistanlık muafiyet kapsamı."
           }
         },
         {
@@ -12667,22 +13380,6 @@
           }
         },
         {
-          "url": "https://aerospace.illinois.edu/academics/graduate/funding/research-assistantships",
-          "title": "Illinois Aerospace Engineering — Research assistantships",
-          "source_type": "official_scholarship_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-30",
-          "relevant_fields": [
-            "scholarship",
-            "funding"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "States that assistantships are determined by faculty, that students may contact faculty once admitted, and describes appointment lengths and renewal conditions.",
-            "tr": "Asistanlıkların öğretim üyelerince belirlendiğini, öğrencilerin kabul sonrası iletişime geçebileceğini belirtir ve atama sürelerini ve yenileme koşullarını anlatır."
-          }
-        },
-        {
           "url": "https://aerospace.illinois.edu/admissions/graduate/dates-and-deadlines",
           "title": "Dates and Deadlines | Aerospace Engineering | Illinois",
           "source_type": "official_program_page",
@@ -12712,8 +13409,56 @@
             "gre"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://aerospace.illinois.edu/academics/graduate/funding/research-assistantships",
+          "title": "Research Assistantships | Illinois Aerospace Engineering",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "assistantships",
+            "coverage",
+            "application_process",
+            "selection",
+            "renewal"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://aerospace.illinois.edu/admissions/graduate/appointments-faq",
+          "title": "Appointments and Funding | Illinois Aerospace Engineering",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "assistantships",
+            "international_eligibility",
+            "non_eu_eligibility",
+            "coverage",
+            "application_process"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://handbook.grad.illinois.edu/student/tuition-waiver-policy",
+          "title": "Tuition Waiver Policy | Illinois Graduate College Handbook 2026-2027",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "assistantships",
+            "coverage",
+            "eligibility"
+          ],
+          "confidence": "high"
         }
-      ]
+      ],
+      "official_scholarship_page": "https://aerospace.illinois.edu/academics/graduate/funding/research-assistantships"
     },
     "decision_summary": {
       "best_for": [
@@ -12804,7 +13549,7 @@
     },
     "data_quality": {
       "status": "verified",
-      "checked_official_source_count": 22,
+      "checked_official_source_count": 23,
       "verified_fields": [
         "program",
         "language",
@@ -12819,7 +13564,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-05"
+      "audited_at": "2026-09-06"
     },
     "quality_control": {
       "checked_at": "2026-09-05",
@@ -12911,7 +13656,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -13178,7 +13923,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_derivation": {
         "standard": "cost_model@3.1.0",
@@ -13235,7 +13980,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -13443,7 +14188,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -13476,7 +14221,7 @@
           "en": "UT Austin's 2026-27 full-time graduate cost of attendance for a nonresident living on or off campus, across the fall and spring semesters at nine hours of enrolment: housing and food 17,052 to 17,423, transportation 1,840, books and course materials 776 and personal 4,900. The upper bound is used. Housing and food arrive as one line and cannot be separated.",
           "tr": "UT Austin'in 2026-27 tam zamanli lisansustu egitim maliyeti, kampus ici veya disinda yasayan eyalet disi bir ogrenci icin, guz ve bahar donemlerinde dokuz saatlik kayitla: konut ve gida 17.052-17.423, ulasim 1.840, kitap ve ders malzemesi 776 ve kisisel 4.900. Ust sinir kullanilir. Konut ve gida tek satir halinde gelir ve ayristirilamaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_cost_of_attendance",
@@ -13759,7 +14504,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -14911,7 +15656,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -15178,7 +15923,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -15233,7 +15978,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -15548,7 +16293,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -15581,7 +16326,7 @@
           "en": "Texas A&M's twelve-month estimated cost of attendance for immigration documents puts living costs at USD 19,995 within a USD 46,015 total that assumes nonresident engineering rates and two major semesters. This is the amount the university will certify on an I-20, which is a floor for the visa rather than an observed average, and it excludes summer tuition.",
           "tr": "Texas A&M'in gocmenlik belgeleri icin on iki aylik tahmini egitim maliyeti, eyalet disi muhendislik oranlarini ve iki ana donemi varsayan 46.015 USD'lik toplam icinde yasam giderlerini 19.995 USD olarak belirler. Bu, universitenin I-20 uzerinde onaylayacagi tutardir; gozlemlenen bir ortalama degil vize icin bir tabandir ve yaz donemi ogrenim ucretini icermez."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_visa_financial_requirement",
@@ -15771,7 +16516,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -17145,7 +17890,7 @@
       "matched_tags": [],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -17397,7 +18142,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -17438,7 +18183,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -17658,7 +18403,7 @@
         "band_from_score": "high",
         "capped_from_very_high": false,
         "legacy_value": "high",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -17691,7 +18436,7 @@
           "en": "CU Boulder's 2026-27 nonresident graduate budget covers the two semesters of the academic year: housing and food 18,684, books and supplies 1,200, transportation 2,062, personal 1,782 and medical expenses 8,136, totalling 31,864. Housing and food arrive as one line, so they cannot be separated here.",
           "tr": "CU Boulder'in 2026-27 eyalet disi lisansustu butcesi akademik yilin iki donemini kapsar: konut ve gida 18.684, kitap ve malzeme 1.200, ulasim 2.062, kisisel 1.782 ve saglik giderleri 8.136; toplam 31.864. Konut ve gida tek satir halinde geldigi icin burada ayristirilamaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_cost_of_attendance",
@@ -17903,7 +18648,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -18960,7 +19705,7 @@
       "matched_tags": [],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -19238,7 +19983,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_usd_per_year": 41130.0,
       "tuition_derivation": {
@@ -19291,7 +20036,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -19321,8 +20066,8 @@
       "funding_guaranteed": false,
       "full_tuition_award_guaranteed": false,
       "funding_notes": {
-        "en": "Viterbi Dean's Scholarships are competitive $10,000-$30,000 awards open to international and US full-time on-campus master's students; consideration uses the admission application submitted by the scholarship deadline. MS RA/TA positions are unavailable.",
-        "tr": "Viterbi Dean's Scholarships, uluslararası ve ABD'li tam zamanlı kampüs MS öğrencilerine açık rekabetçi 10.000-30.000 $ ödüllerdir; değerlendirme burs tarihine kadar gönderilen kabul başvurusunu kullanır. MS RA/TA pozisyonları mevcut değildir."
+        "en": "The Dean's Scholarship is the verified route for an international on-campus Astronautical Engineering MS applicant. It is automatic through a complete degree application; no separate scholarship form is published. The official page gives recurring spring and fall dates (1 September and 15 December) but no cycle years, so no year is inferred. Viterbi explicitly reserves RA/TA positions for PhD students.",
+        "tr": "Dean's Scholarship, kampüste Astronautical Engineering MS programına başvuran uluslararası aday için doğrulanmış yoldur. Eksiksiz derece başvurusu üzerinden otomatik değerlendirilir; ayrı burs formu yayımlanmamıştır. Resmî sayfa tekrar eden bahar ve güz tarihlerini (1 Eylül ve 15 Aralık) verir ancak döngü yılı vermediği için yıl türetilmedi. Viterbi RA/TA pozisyonlarını açıkça doktora öğrencilerine ayırır."
       },
       "opportunities": [
         {
@@ -19337,7 +20082,83 @@
       "verification_notes": {
         "en": "The verified standard MS route is a competitive partial merit scholarship through the timely admission application. USC Viterbi explicitly states that RA/TA positions are reserved for PhD students and unavailable to master's students; self-funding must therefore be the default plan unless a written award is received.",
         "tr": "Doğrulanan standart MS yolu, zamanında kabul başvurusu üzerinden rekabetçi kısmi başarı bursudur. USC Viterbi RA/TA pozisyonlarının doktora öğrencilerine ayrıldığını ve yüksek lisans öğrencilerine açık olmadığını açıkça belirtir; yazılı ödül alınmadıkça varsayılan plan öz-finansman olmalıdır."
-      }
+      },
+      "playbook": [
+        {
+          "opportunity": "Dean's Scholarships",
+          "eligibility_gates": [
+            {
+              "en": "Be an international or U.S. student applying to a full-time, on-campus Viterbi master's degree.",
+              "tr": "Tam zamanlı, kampüste bir Viterbi yüksek lisansına başvuran uluslararası veya ABD'li öğrenci olmak."
+            },
+            {
+              "en": "Submit the complete graduate admission application by the scholarship date.",
+              "tr": "Eksiksiz lisansüstü kabul başvurusunu burs tarihine kadar göndermek."
+            }
+          ],
+          "selection_criteria": [
+            {
+              "en": "Merit and exemplary potential for success in advanced engineering studies, evaluated from the admission application.",
+              "tr": "Kabul başvurusundan değerlendirilen başarı ve ileri mühendislik çalışmalarında örnek başarı potansiyeli."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": {
+                "en": "Submit the online graduate admission application by the published recurring date: 1 September for spring or 15 December for fall; the page does not state cycle years.",
+                "tr": "Çevrim içi lisansüstü kabul başvurusunu yayımlanmış tekrar eden tarihe kadar gönder: bahar için 1 Eylül, güz için 15 Aralık; sayfa döngü yılı belirtmez."
+              },
+              "owner": "applicant",
+              "timing": "with_the_application",
+              "required_documents": [
+                {
+                  "en": "Online Graduate Application for Admission",
+                  "tr": "Çevrim içi Lisansüstü Kabul Başvurusu"
+                },
+                {
+                  "en": "Scanned transcripts",
+                  "tr": "Taranmış transkriptler"
+                },
+                {
+                  "en": "All required test scores",
+                  "tr": "Gerekli tüm sınav puanları"
+                },
+                {
+                  "en": "Programme-required supplemental materials",
+                  "tr": "Programın istediği ek materyaller"
+                }
+              ],
+              "hard_requirement": true
+            },
+            {
+              "order": 2,
+              "action": {
+                "en": "Await the separate scholarship decision; selected candidates may be asked for additional information.",
+                "tr": "Ayrı burs kararını bekle; seçilen adaylardan ek bilgi istenebilir."
+              },
+              "owner": "university",
+              "timing": "after_admission",
+              "required_documents": [],
+              "hard_requirement": false
+            }
+          ],
+          "competitiveness": "highly_selective",
+          "typical_award": {
+            "amount": {
+              "minimum": 10000,
+              "maximum": 30000
+            },
+            "currency": "USD",
+            "period": "total_award_not_further_specified",
+            "coverage": [
+              "tuition_support"
+            ]
+          },
+          "renewal_conditions": null,
+          "evidence_url": "https://viterbigradadmission.usc.edu/programs/masters/tuition-funding/gradscholarships/"
+        }
+      ]
     },
     "living_profile": {
       "city_type": "Metropolis",
@@ -19436,7 +20257,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -19469,7 +20290,7 @@
           "en": "USC certifies USD 28,044 of living expenses for a twelve-month I-20. A visa minimum is a floor the university will vouch for, not a budget: Viterbi separately estimates university housing reserved for graduate engineering students at USD 1,300 a month, or USD 15,600 across an academic year, and that is housing alone.",
           "tr": "USC, on iki aylik bir I-20 icin 28.044 USD yasam gideri onaylar. Vize asgari tutari, universitenin kefil oldugu bir tabandir, bir butce degildir: Viterbi ayrica lisansustu muhendislik ogrencilerine ayrilan universite konutunu ayda 1.300 USD, bir akademik yil boyunca 15.600 USD olarak tahmin eder ve bu yalnizca konuttur."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_visa_financial_requirement",
@@ -19696,7 +20517,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -19933,7 +20754,7 @@
         "https://www.reddit.com/r/USC/comments/1i2nk5x/graduate_housing_options_everything_looks_so_bleak/",
         "https://www.reddit.com/r/USC/comments/1rdfca1/graduate_housing/"
       ],
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "field_confidence": {
         "program_basic_info": "high",
         "program": "high",
@@ -20121,43 +20942,6 @@
           "notes": {
             "en": "Three-page official four-semester cost example for 27-unit programs.",
             "tr": "27 birimlik programlar için üç sayfalık resmî dört dönem maliyet örneği."
-          }
-        },
-        {
-          "url": "https://viterbigradadmission.usc.edu/programs/masters/tuition-funding/gradscholarships/",
-          "title": "USC Viterbi Master's Scholarships",
-          "source_type": "official_scholarship_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "scholarship",
-            "non_eu_eligibility",
-            "scholarship_deadline"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Dean's Scholarship amount, international eligibility and admission-application consideration route.",
-            "tr": "Dean's Scholarship tutarı, uluslararası uygunluk ve kabul başvurusu üzerinden değerlendirme yolu."
-          }
-        },
-        {
-          "url": "https://viterbigradadmission.usc.edu/programs/masters/faq/",
-          "title": "USC Viterbi Master's Applicant FAQ",
-          "source_type": "official_admission_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "admission",
-            "gre",
-            "scholarship",
-            "assistantships",
-            "english_proficiency",
-            "deadline"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Current 2027 GRE guidance and explicit statement that MS RA/TA roles are unavailable and reserved for PhD students.",
-            "tr": "Güncel 2027 GRE rehberi ve MS RA/TA rollerinin açık olmadığı, doktora öğrencilerine ayrıldığına ilişkin açık beyan."
           }
         },
         {
@@ -20498,8 +21282,46 @@
             "en": "Official general page conflicts with the program-specific February 15 fall final deadline.",
             "tr": "Resmî genel sayfa, programa özgü 15 Şubat güz nihai tarihiyle çelişiyor."
           }
+        },
+        {
+          "url": "https://viterbigradadmission.usc.edu/programs/masters/tuition-funding/gradscholarships/",
+          "title": "Scholarships | USC Viterbi Master's",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "international_eligibility",
+            "non_eu_eligibility",
+            "coverage",
+            "deadline",
+            "scholarship_deadline",
+            "required_documents",
+            "application_process"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://viterbigradadmission.usc.edu/programs/masters/faq/",
+          "title": "Master's Applicant FAQ | USC Viterbi",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "assistantships",
+            "international_eligibility",
+            "admission",
+            "deadline",
+            "english_proficiency",
+            "gre",
+            "application_process"
+          ],
+          "confidence": "high"
         }
-      ]
+      ],
+      "official_scholarship_page": "https://viterbigradadmission.usc.edu/programs/masters/tuition-funding/gradscholarships/"
     },
     "decision_summary": {
       "best_for": [
@@ -20612,7 +21434,7 @@
         "language"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-05"
+      "audited_at": "2026-09-06"
     },
     "quality_control": {
       "checked_at": "2026-09-05",
@@ -20697,7 +21519,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -20984,7 +21806,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -21025,7 +21847,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -21134,7 +21956,7 @@
         "band_from_score": "high",
         "capped_from_very_high": false,
         "legacy_value": "high",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -21201,7 +22023,7 @@
           "en": "UCLA's 2026-27 graduate student budget: housing 18,221, food 10,546, books 2,004, transportation 3,819, personal 3,219 and health insurance 7,515, excluding tuition and fees. The checked page does not say how many months the budget covers; it is read here as the fall-to-spring academic year, so anyone planning a full twelve months in Los Angeles must budget the summer on top.",
           "tr": "UCLA'nin 2026-27 lisansustu ogrenci butcesi: konut 18.221, gida 10.546, kitap 2.004, ulasim 3.819, kisisel 3.219 ve saglik sigortasi 7.515; ogrenim ucreti ve harclar haric. Kontrol edilen sayfa butcenin kac ayi kapsadigini soylemez; burada guzden bahara akademik yil olarak okunur, bu yuzden Los Angeles'ta tam on iki ay planlayan birinin yazi ustune butcelemesi gerekir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_cost_of_attendance",
@@ -21461,11 +22283,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 87,
+        "days_remaining_at_evaluation": 86,
         "derived_from": "application_timeline_profile.deadline_non_eu",
         "confidence": "high",
         "source_url": "https://grad.ucla.edu/programs/school-of-engineering-and-applied-science/mechanical-aerospace-engineering-department/aerospace-engineering/",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -22403,7 +23225,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -22666,7 +23488,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_usd_per_year": 63305.5,
       "tuition_derivation": {
@@ -22719,7 +23541,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -22920,7 +23742,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -22982,7 +23804,7 @@
           "en": "The Fung Institute publishes USD 36,774 of estimated annual personal expenses for the MEng: housing 19,432, food 9,576, books 752, personal 3,246 and transportation 3,768. The page calls the figure annual but never names the number of months, so twelve are used here; if it is in fact a nine-month budget the monthly rate is a third higher.",
           "tr": "Fung Institute, MEng icin yillik 36.774 USD tahmini kisisel gider yayimlar: konut 19.432, gida 9.576, kitap 752, kisisel 3.246 ve ulasim 3.768. Sayfa rakami yillik olarak adlandirir ancak ay sayisini hicbir yerde belirtmez; bu yuzden burada on iki ay kullanilir. Gercekte dokuz aylik bir butce ise aylik tutar ucte bir daha yuksektir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_living_budget",
@@ -23232,11 +24054,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 123,
+        "days_remaining_at_evaluation": 122,
         "derived_from": "application_timeline_profile.application_deadline",
         "confidence": "high",
         "source_url": "https://me.berkeley.edu/graduate/meng-admissions/",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -24286,7 +25108,7 @@
       "matched_tags": [],
       "confidence": "high",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -24542,7 +25364,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -24583,7 +25405,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -24703,7 +25525,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -24739,7 +25561,7 @@
           "en": "UC San Diego states its graduate cost of attendance is built on three quarters of full-time enrolment, so this is a nine-month figure. The off-campus food and housing line for 2026-27 is USD 31,548 within a published total of USD 76,821. Only food and housing are carried here: transportation, books, personal expenses and health insurance sit in the same official budget but were not captured as separate figures, so they must be budgeted on top.",
           "tr": "UC San Diego, lisansustu egitim maliyetinin tam zamanli kayitla uc ceyrek uzerine kuruldugunu belirtir; bu yuzden bu dokuz aylik bir rakamdir. 2026-27 icin kampus disi gida ve konut satiri, yayimlanan 76.821 USD'lik toplam icinde 31.548 USD'dir. Burada yalnizca gida ve konut tasinir: ulasim, kitap, kisisel giderler ve saglik sigortasi ayni resmi butcede yer alir ancak ayri rakamlar olarak kaydedilmemistir, bu yuzden ustune butcelenmelidir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_cost_of_attendance",
@@ -24961,11 +25783,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 130,
+        "days_remaining_at_evaluation": 129,
         "derived_from": "application_timeline_profile.application_deadline",
         "confidence": "high",
         "source_url": "https://mae.ucsd.edu/grad/mae-master-science-program",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -26094,7 +26916,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -26261,7 +27083,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_derivation": {
         "standard": "cost_model@3.1.0",
@@ -26328,7 +27150,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -26413,7 +27235,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -26446,7 +27268,7 @@
           "en": "UW International Student Services estimates USD 37,484 of living expenses for 2026-27 across a four-quarter year, alongside USD 2,148 of ISHIP health insurance. The tuition figure on this record covers the three-quarter academic year instead, so a student staying through summer should expect tuition on top of it as well.",
           "tr": "UW Uluslararasi Ogrenci Hizmetleri, 2026-27 icin dort ceyreklik bir yil boyunca 37.484 USD yasam gideri ve bunun yaninda 2.148 USD ISHIP saglik sigortasi tahmin eder. Bu kayittaki ogrenim ucreti rakami ise uc ceyreklik akademik yili kapsar; bu yuzden yaz boyunca kalan bir ogrenci ustune ogrenim ucreti de beklemelidir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_living_budget",
@@ -26527,7 +27349,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -27342,7 +28164,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -27517,7 +28339,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_usd": 105,
       "application_fee_verification": {
@@ -27571,7 +28393,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -27663,7 +28485,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -27696,14 +28518,14 @@
           "derived_from": {
             "monthly_living_cost_usd_estimated": 3118.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": {
           "en": "Cornell International Services' published graduate living-expense estimate; it is a budget, not rent alone.",
           "tr": "Cornell International Services'ın yayımladığı lisansüstü yaşam gideri tahmini; yalnız kira değildir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -27794,7 +28616,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -28445,7 +29267,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "medium",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -28626,7 +29448,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_usd": 90,
       "application_fee_verification": {
@@ -28680,7 +29502,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -28765,7 +29587,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -28823,7 +29645,7 @@
           "en": "Princeton's 2026-27 living-expense table, twelve-month column: housing on or off campus 17,040, food 10,925, personal expenses 9,365 and books and supplies 2,440, totalling 39,770. The ten-month column totals 33,141. Princeton publishes no separate transport line, so local travel is not inside this figure.",
           "tr": "Princeton'un 2026-27 yasam gideri tablosu, on iki aylik sutun: kampus ici veya disi konut 17.040, gida 10.925, kisisel giderler 9.365 ve kitap ve malzeme 2.440; toplam 39.770. On aylik sutunun toplami 33.141'dir. Princeton ayri bir ulasim satiri yayimlamaz, bu yuzden sehir ici ulasim bu rakamin icinde degildir."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_living_budget",
@@ -28931,7 +29753,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -29605,7 +30427,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -29771,7 +30593,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_usd": 75,
       "application_fee_verification": {
@@ -29825,7 +30647,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -29912,7 +30734,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -29974,7 +30796,7 @@
           "en": "Virginia Tech's 2026-27 out-of-state graduate cost of attendance for the Blacksburg campus, stated as one academic year of fall and spring: housing 13,330, food 3,840, course materials 1,120, transportation 3,014 and personal 4,130. Direct costs of tuition 33,582 and fees 3,754 bring the published total to 62,770. The sheet adds that a first-time graduate student's budget also carries a computer allowance of 2,150 or 3,140 depending on the programme.",
           "tr": "Virginia Tech'in Blacksburg kampusu icin 2026-27 eyalet disi lisansustu egitim maliyeti, guz ve bahardan olusan bir akademik yil olarak belirtilir: konut 13.330, gida 3.840, ders malzemesi 1.120, ulasim 3.014 ve kisisel 4.130. Dogrudan maliyetler olan 33.582 ogrenim ucreti ve 3.754 harc ile yayimlanan toplam 62.770'e ulasir. Belge, ilk kez kayit olan bir lisansustu ogrencinin butcesinin ayrica programa gore 2.150 veya 3.140 bilgisayar odenegi tasidigini ekler."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_cost_of_attendance",
@@ -30074,7 +30896,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -30817,7 +31639,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -30981,7 +31803,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_usd": 85,
       "application_fee_verification": {
@@ -31031,7 +31853,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -31172,7 +31994,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -31181,7 +32003,7 @@
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -31260,7 +32082,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -32038,7 +32860,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -32208,7 +33030,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_usd": 90,
       "application_fee_charged_per": "programme_choice",
@@ -32263,7 +33085,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -32345,7 +33167,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -32378,7 +33200,7 @@
           "en": "UMD's 2026-27 non-resident graduate budget publishes housing and food together as USD 17,724, plus books 1,000, transportation 3,058 and personal 1,200: USD 23,982 in all, alongside tuition 26,824 and mandatory fees 764. Housing and food arrive as a single line, so they cannot be shown as separate components here.",
           "tr": "UMD'nin 2026-27 eyalet disi lisansustu butcesi konut ve gidayi birlikte 17.724 USD olarak yayimlar; buna kitap 1.000, ulasim 3.058 ve kisisel 1.200 eklenir: toplam 23.982 USD, ayrica ogrenim ucreti 26.824 ve zorunlu harclar 764. Konut ve gida tek satir halinde geldigi icin burada ayri bilesenler olarak gosterilemez."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_evidence": {
         "cost_basis": "official_university_cost_of_attendance",
@@ -32459,7 +33281,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -33236,7 +34058,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {

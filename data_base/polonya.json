@@ -186,7 +186,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_pln": 85,
       "application_fee_charged_per": "programme_choice",
@@ -202,7 +202,7 @@
         "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-09-05"
+        "derived_at": "2026-09-06"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -243,7 +243,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -364,7 +364,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -373,7 +373,7 @@
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -456,11 +456,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -46,
+        "days_remaining_at_evaluation": -47,
         "derived_from": "application_timeline_profile.application_deadline",
         "confidence": "high",
         "source_url": "https://www.pw.edu.pl/engpw/Studies-Offer/M.Sc.-programmes/Aerospace-Engineering",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -711,7 +711,7 @@
       ],
       "confidence": "unknown",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     }
   },
   {
@@ -766,11 +766,51 @@
         "total": "90 AKTS (ECTS)"
       },
       "minimum_gpa": null,
-      "admission_mode": "unknown",
+      "admission_mode": "online_application_in_e_rekrutacja_with_online_entrance_exam",
       "admission_risk": "unknown",
       "accepted_backgrounds": [],
-      "required_documents": [],
-      "verification_notes": "",
+      "required_documents": [
+        {
+          "en": "Bachelor's diploma; if the final diploma is not yet available, an official university graduation certificate stating the completed field, graduation date, GPA and awarded professional title",
+          "tr": "Lisans diploması; nihai diploma henüz hazır değilse tamamlanan alanı, mezuniyet tarihini, not ortalamasını ve kazanılan mesleki unvanı belirten resmî üniversite mezuniyet belgesi"
+        },
+        {
+          "en": "Diploma supplement with grades",
+          "tr": "Notları içeren diploma eki"
+        },
+        {
+          "en": "Individual NAWA recognition statement when the foreign diploma was not issued by an authorised university in an EU, OECD or EFTA system and has not otherwise been recognised as equivalent to a Polish diploma",
+          "tr": "Yabancı diploma AB, OECD veya EFTA sistemindeki yetkili bir üniversite tarafından verilmemişse ve başka bir yolla Polonya diplomasına eşdeğer olarak tanınmamışsa bireysel NAWA tanıma belgesi"
+        },
+        {
+          "en": "Apostille or legalisation of the bachelor's diploma when required for the country in which the document was issued",
+          "tr": "Belgenin düzenlendiği ülke için gerektiğinde lisans diplomasının apostili veya yasallaştırması"
+        },
+        {
+          "en": "Official final evidence of at least B2 proficiency in the language of instruction when required under AGH's language-document rules",
+          "tr": "AGH'nin dil belgesi kuralları uyarınca gerektiğinde eğitim dilinde en az B2 düzeyini gösteren resmî nihai kanıt"
+        },
+        {
+          "en": "Dean's decision on missing engineering competencies when required by the applicant's degree title or background",
+          "tr": "Adayın derece unvanı veya geçmişi nedeniyle gerektiğinde eksik mühendislik yeterliliklerine ilişkin dekan kararı"
+        },
+        {
+          "en": "Scan of the valid passport page containing the photograph and personal data",
+          "tr": "Fotoğraf ve kişisel bilgileri içeren geçerli pasaport sayfasının taraması"
+        },
+        {
+          "en": "Polish or English translations of educational documents issued in a language other than English",
+          "tr": "İngilizce dışında bir dilde düzenlenen eğitim belgelerinin Lehçe veya İngilizce çevirileri"
+        },
+        {
+          "en": "Scholarship decision, if the applicant has received a scholarship",
+          "tr": "Aday burs aldıysa burs kararı"
+        }
+      ],
+      "verification_notes": {
+        "en": "The checklist is the current AGH master's recruitment checklist for international candidates. Conditional items remain explicitly conditional. Space Technologies is a full-time field with an online entrance examination; no separate programme-specific document supplement was published on the accessible official pages.",
+        "tr": "Belge listesi uluslararası adaylar için güncel AGH yüksek lisans başvuru listesidir. Koşullu öğeler açıkça koşullu bırakılmıştır. Space Technologies çevrim içi giriş sınavı olan tam zamanlı bir alandır; erişilebilir resmî sayfalarda programa özgü ayrı bir belge eki yayımlanmamıştır."
+      },
       "gre": {
         "policy": "unknown",
         "test_type": "unknown",
@@ -856,7 +896,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_pln": 100,
       "application_fee_charged_per": "programme_choice",
@@ -872,7 +912,7 @@
         "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-09-05"
+        "derived_at": "2026-09-06"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -913,7 +953,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -1034,7 +1074,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -1043,7 +1083,7 @@
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -1106,23 +1146,62 @@
       "visa_complexity": "Medium",
       "deadline_eu": null,
       "deadline_non_eu": null,
-      "timeline_risk": "unknown",
+      "timeline_risk": "high",
       "verification_notes": "",
-      "non_eu_deadline": null,
+      "non_eu_deadline": "2026-09-07",
       "winter_deadline": null,
-      "application_deadline": null,
-      "deadline_notes": null,
+      "application_deadline": "2026-09-07",
+      "deadline_notes": {
+        "en": "The second full-time master's recruitment cycle was still open on 5 September 2026 and closes on 7 September 2026 at 10:00 CEST. The fee must also be credited by that time; the online entrance examination is scheduled for 11 September and registration for qualified candidates for 16-30 September. The official page says the 2026/27 winter-recruitment calendar will be published in December 2026, so no winter or 2027/28 date is inferred.",
+        "tr": "İkinci tam zamanlı yüksek lisans başvuru turu 5 Eylül 2026 tarihinde açıktı ve 7 Eylül 2026 saat 10:00 CEST'te kapanır. Başvuru ücretinin de bu saate kadar hesaba geçmesi gerekir; çevrim içi giriş sınavı 11 Eylül, hak kazananların kaydı 16-30 Eylül olarak planlanmıştır. Resmî sayfa 2026/27 kış başvuru takviminin Aralık 2026'da yayımlanacağını belirttiğinden kış veya 2027/28 tarihi türetilmemiştir."
+      },
       "deadline_events": [],
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
-        "date": null,
-        "status": "not_published",
-        "confidence": "unknown",
-        "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "date": "2026-09-07",
+        "next_expected_date": null,
+        "time": null,
+        "timezone": null,
+        "applies_to": "all_applicants",
+        "cycle_label": null,
+        "is_recurring_annual": false,
+        "status": "closing_soon",
+        "days_remaining_at_evaluation": 1,
+        "derived_from": "application_timeline_profile.application_deadline",
+        "confidence": "high",
+        "source_url": "https://www.agh.edu.pl/en/studies/master-degree/space-technologies",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
-      }
+      },
+      "academic_year": "2026/2027 summer recruitment",
+      "intake_terms": [
+        "October 2026 start"
+      ],
+      "application_rounds": [
+        {
+          "round": {
+            "en": "First 2026/27 summer-recruitment cycle",
+            "tr": "İlk 2026/27 yaz başvuru turu"
+          },
+          "opens": "2026-06-01",
+          "deadline": "2026-07-17",
+          "deadline_time": "10:00 CEST",
+          "status": "closed"
+        },
+        {
+          "round": {
+            "en": "Second 2026/27 summer-recruitment cycle",
+            "tr": "İkinci 2026/27 yaz başvuru turu"
+          },
+          "opens": "2026-07-28",
+          "opens_time": "after 15:00 CEST",
+          "deadline": "2026-09-07",
+          "deadline_time": "10:00 CEST",
+          "status": "open"
+        }
+      ],
+      "eu_deadline": "2026-09-07"
     },
     "research_profile": {
       "research_focus_areas": [],
@@ -1145,11 +1224,11 @@
         "https://www.international.agh.edu.pl/en/studies/recruitment",
         "https://www.agh.edu.pl/en/studies/master-degree/space-technologies"
       ],
-      "last_verified": "2026-09-01",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "tuition": "unknown",
-        "admission": "unknown",
-        "deadlines": "unknown",
+        "admission": "high",
+        "deadlines": "high",
         "scholarship": "unknown",
         "location": "medium",
         "program_basic_info": "unknown",
@@ -1158,7 +1237,9 @@
         "housing": "unknown",
         "program": "unknown",
         "non_eu_eligibility": "unknown",
-        "deadline": "unknown"
+        "deadline": "high",
+        "application_documents": "high",
+        "application_timeline_profile": "high"
       },
       "source_reliability": "high",
       "verification_status": "verified",
@@ -1179,6 +1260,56 @@
             "fees"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://www.international.agh.edu.pl/en/studies/recruitment/required-documents-master",
+          "title": "AGH University of Krakow — Required documents: Master",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "application_documents",
+            "language"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes the recruitment-stage master's checklist, including country- and qualification-dependent NAWA, apostille/legalisation, language and translation conditions.",
+            "tr": "Ülkeye ve yeterliliğe bağlı NAWA, apostil/yasallaştırma, dil ve çeviri koşulları dâhil yüksek lisans başvuru aşaması belge listesini yayımlar."
+          }
+        },
+        {
+          "url": "https://www.international.agh.edu.pl/en/studies/recruitment/deadlines-master-studies",
+          "title": "AGH University of Krakow — Deadlines: Master studies",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "deadline",
+            "admission"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes both 2026/27 summer full-time recruitment cycles, the document-upload and fee cut-offs, examination dates and registration period.",
+            "tr": "2026/27 yaz tam zamanlı başvurunun iki turunu, belge yükleme ve ücret son tarihlerini, sınav tarihlerini ve kayıt dönemini yayımlar."
+          }
+        },
+        {
+          "url": "https://www.international.agh.edu.pl/en/studies/recruitment/recruitment-rules-master",
+          "title": "AGH University of Krakow — Recruitment rules: Master",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "program",
+            "admission",
+            "language"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Lists Space Technologies as a full-time master's field with an online entrance examination and explains degree-title and language-document conditions.",
+            "tr": "Space Technologies alanını çevrim içi giriş sınavı olan tam zamanlı bir yüksek lisans alanı olarak listeler ve derece unvanı ile dil belgesi koşullarını açıklar."
+          }
         }
       ]
     },
@@ -1198,22 +1329,22 @@
     "qs_ranking": null,
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 1,
+      "checked_official_source_count": 4,
       "verified_fields": [
-        "tuition"
+        "program",
+        "admission",
+        "tuition",
+        "deadline"
       ],
       "unverified_critical_fields": [
-        "program",
         "language",
-        "admission",
         "non_eu_eligibility",
         "scholarship",
-        "deadline",
         "curriculum",
         "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-01"
+      "audited_at": "2026-09-06"
     },
     "quality_control": {
       "checked_at": "2026-08-23",
@@ -1333,7 +1464,7 @@
       ],
       "confidence": "unknown",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     }
   },
   {
@@ -1479,7 +1610,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_pln": 85,
       "application_fee_charged_per": "programme_choice",
@@ -1495,7 +1626,7 @@
         "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-09-05"
+        "derived_at": "2026-09-06"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -1536,7 +1667,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -1657,7 +1788,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -1666,7 +1797,7 @@
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -1742,7 +1873,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -1956,7 +2087,7 @@
       ],
       "confidence": "unknown",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     }
   },
   {
@@ -2011,11 +2142,39 @@
         "total": "Bilinmiyor / Resmi Veri Yok"
       },
       "minimum_gpa": null,
-      "admission_mode": "unknown",
+      "admission_mode": "online_application_via_irk_for_international_candidates",
       "admission_risk": "unknown",
       "accepted_backgrounds": [],
-      "required_documents": [],
-      "verification_notes": "",
+      "required_documents": [
+        {
+          "en": "Bachelor's degree diploma, with supplement where applicable, or an equivalent foreign document allowing entry to second-cycle studies in the issuing country; the document must be legalised or apostilled and translated into English or Polish by a certified translator",
+          "tr": "Varsa ekiyle birlikte lisans diploması veya düzenlendiği ülkede ikinci kademe eğitime giriş hakkı veren eşdeğer yabancı belge; belge yasallaştırılmış ya da apostilli olmalı ve yeminli tercüman tarafından İngilizce veya Lehçeye çevrilmelidir"
+        },
+        {
+          "en": "Eligibility statement confirming that the diploma permits second-cycle study in the issuing country, when this is not stated on the diploma",
+          "tr": "Diplomada belirtilmiyorsa diplomanın düzenlendiği ülkede ikinci kademe eğitime izin verdiğini doğrulayan uygunluk belgesi"
+        },
+        {
+          "en": "Proof of English proficiency at B2 level for the English-taught programme, using a document accepted under the university's published language-certificate rules",
+          "tr": "İngilizce yürütülen program için üniversitenin yayımlanmış dil belgesi kurallarınca kabul edilen bir belgeyle B2 düzeyinde İngilizce yeterlilik kanıtı"
+        },
+        {
+          "en": "Document confirming the applicant's identity",
+          "tr": "Adayın kimliğini doğrulayan belge"
+        },
+        {
+          "en": "Applicant photograph meeting the university's identity-photo specifications",
+          "tr": "Üniversitenin kimlik fotoğrafı ölçütlerini karşılayan aday fotoğrafı"
+        },
+        {
+          "en": "NAWA Director's individual recognition statement",
+          "tr": "NAWA Direktörünün bireysel tanıma belgesi"
+        }
+      ],
+      "verification_notes": {
+        "en": "The official international-admissions page publishes a separate checklist for English-taught master's programmes. It states that all required documents are uploaded in IRK and that original legalised educational documents, a valid visa and health-insurance proof are presented only after arrival; those arrival-stage items are not represented as universal initial application uploads.",
+        "tr": "Resmî uluslararası kabul sayfası İngilizce yürütülen yüksek lisans programları için ayrı bir belge listesi yayımlar. Tüm zorunlu belgelerin IRK'ya yüklendiğini; asıl yasallaştırılmış eğitim belgeleri, geçerli vize ve sağlık sigortası kanıtının yalnız ülkeye varıştan sonra sunulduğunu belirtir. Bu varış aşaması öğeleri evrensel ilk başvuru yüklemeleri olarak gösterilmemiştir."
+      },
       "gre": {
         "policy": "unknown",
         "test_type": "unknown",
@@ -2100,7 +2259,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_research": {
         "outcome": "no_fee_published",
@@ -2118,7 +2277,7 @@
         "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-09-05"
+        "derived_at": "2026-09-06"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -2135,7 +2294,7 @@
           "en": "Silesian's admission office page prices only the EUR 4 mathematics entrance exam and says payment is by bank transfer alone; neither it nor the IRK recruitment portal publishes the recruitment fee itself. The apply.polsl.pl page that used to carry it now redirects to the admission office. Every other Polish record in this catalogue charges PLN 85 to PLN 100 per programme, so budget for a charge here rather than assuming none.",
           "tr": "Silezya'nın kabul ofisi sayfası yalnızca 4 avroluk matematik giriş sınavını fiyatlandırır ve ödemenin yalnızca banka havalesiyle yapılacağını söyler; ne o sayfa ne de IRK başvuru portalı kabul ücretinin kendisini yayımlar. Bunu taşıyan apply.polsl.pl sayfası artık kabul ofisine yönlendirmektedir. Bu katalogdaki diğer her Polonya kaydı program başına 85-100 zloti alır; dolayısıyla burada ücret yok varsaymak yerine bir ücret için bütçe ayır."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -2256,7 +2415,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -2265,7 +2424,7 @@
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -2328,23 +2487,50 @@
       "visa_complexity": "Medium",
       "deadline_eu": null,
       "deadline_non_eu": null,
-      "timeline_risk": "unknown",
+      "timeline_risk": "high",
       "verification_notes": "",
-      "non_eu_deadline": null,
+      "non_eu_deadline": "2026-07-30",
       "winter_deadline": null,
-      "application_deadline": null,
-      "deadline_notes": null,
+      "application_deadline": "2026-07-30",
+      "deadline_notes": {
+        "en": "The official programme page labels Aeronautics and Aerospace Engineering as a winter-admission programme. The international Admission Office page publishes a general 2026/27 IRK window ending 30 July 2026, by which the account, programme selection and application-fee payment had to be completed. That call is closed; no 2027/28 programme deadline is published or inferred.",
+        "tr": "Resmî program sayfası Aeronautics and Aerospace Engineering programını kış dönemi kabul programı olarak tanımlar. Uluslararası Kabul Ofisi sayfası hesabın, program seçiminin ve başvuru ücreti ödemesinin tamamlanması gereken 30 Temmuz 2026 bitişli genel 2026/27 IRK penceresini yayımlar. Bu çağrı kapanmıştır; 2027/28 program son tarihi yayımlanmamış veya türetilmemiştir."
+      },
       "deadline_events": [],
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
-        "date": null,
-        "status": "not_published",
-        "confidence": "unknown",
-        "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "date": "2026-07-30",
+        "next_expected_date": null,
+        "time": null,
+        "timezone": null,
+        "applies_to": "non_eu",
+        "cycle_label": null,
+        "is_recurring_annual": false,
+        "status": "closed",
+        "days_remaining_at_evaluation": -38,
+        "derived_from": "application_timeline_profile.non_eu_deadline",
+        "confidence": "high",
+        "source_url": "https://apply.polsl.pl",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
-      }
+      },
+      "academic_year": "2026/2027 winter-semester admission (closed reference cycle)",
+      "intake_terms": [
+        "October 2026 start"
+      ],
+      "application_rounds": [
+        {
+          "round": {
+            "en": "2026/27 international-candidate IRK period",
+            "tr": "2026/27 uluslararası aday IRK dönemi"
+          },
+          "opens": "2026-05-08",
+          "deadline": "2026-07-30",
+          "status": "closed"
+        }
+      ],
+      "eu_deadline": null
     },
     "research_profile": {
       "research_focus_areas": [],
@@ -2367,11 +2553,11 @@
         "https://apply.polsl.pl",
         "https://apply.polsl.pl"
       ],
-      "last_verified": "2026-09-01",
+      "last_verified": "2026-09-05",
       "field_confidence": {
         "tuition": "unknown",
-        "admission": "unknown",
-        "deadlines": "unknown",
+        "admission": "high",
+        "deadlines": "medium",
         "scholarship": "unknown",
         "location": "medium",
         "program_basic_info": "unknown",
@@ -2380,7 +2566,9 @@
         "housing": "unknown",
         "program": "unknown",
         "non_eu_eligibility": "unknown",
-        "deadline": "unknown"
+        "deadline": "medium",
+        "application_documents": "high",
+        "application_timeline_profile": "medium"
       },
       "source_reliability": "high",
       "verification_status": "verified",
@@ -2401,6 +2589,43 @@
             "fees"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://rekrutacja.polsl.pl/kierunek/aeronautics-eng-ii/",
+          "title": "Silesian University of Technology — Aeronautics and aerospace engineering",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "program",
+            "program_status",
+            "degree_level",
+            "language",
+            "admission"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Confirms the active English-taught, full-time, three-semester Master of Science programme and labels it as winter admission.",
+            "tr": "İngilizce yürütülen, tam zamanlı, üç dönemlik aktif Master of Science programını doğrular ve kış dönemi kabulü olarak etiketler."
+          }
+        },
+        {
+          "url": "https://www.polsl.pl/rd1-cos/en/admissionofficeeng/",
+          "title": "Silesian University of Technology — Admission Office: international candidates",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "deadline",
+            "admission",
+            "application_documents",
+            "language"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Updated with the 2026/27 international admission schedule and publishes the English-taught master's document checklist. The 30 July date is university-wide for international candidates rather than programme-specific, so deadline field confidence remains medium.",
+            "tr": "2026/27 uluslararası kabul takvimiyle güncellenmiş olup İngilizce yüksek lisans belge listesini yayımlar. 30 Temmuz tarihi programa özgü değil, uluslararası adaylar için üniversite genelinde olduğundan son tarih alanı güveni orta düzeyde tutulmuştur."
+          }
         }
       ]
     },
@@ -2420,22 +2645,22 @@
     "qs_ranking": null,
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 1,
+      "checked_official_source_count": 3,
       "verified_fields": [
-        "tuition"
+        "program",
+        "admission",
+        "tuition",
+        "deadline"
       ],
       "unverified_critical_fields": [
-        "program",
         "language",
-        "admission",
         "non_eu_eligibility",
         "scholarship",
-        "deadline",
         "curriculum",
         "housing"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-01"
+      "audited_at": "2026-09-06"
     },
     "quality_control": {
       "checked_at": "2026-08-23",
@@ -2555,7 +2780,7 @@
       ],
       "confidence": "unknown",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     }
   },
   {
@@ -2700,7 +2925,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_pln": 85,
       "application_fee_verification": {
@@ -2715,7 +2940,7 @@
         "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-09-05"
+        "derived_at": "2026-09-06"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -2756,7 +2981,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -2877,7 +3102,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -2886,7 +3111,7 @@
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -2962,7 +3187,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -3176,7 +3401,7 @@
       ],
       "confidence": "unknown",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     }
   }
 ]

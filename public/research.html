@@ -81,9 +81,18 @@
         <section class="faculty-section" aria-labelledby="faculty-title">
             <div class="section-heading">
                 <div><span class="research-kicker" data-copy="facultyKicker">Named research matches</span><h2 id="faculty-title" data-copy="facultyTitle">Faculty worth investigating</h2></div>
-                <p id="faculty-meta" aria-live="polite"></p>
+                <div class="research-scope"><p id="faculty-meta" aria-live="polite"></p><button id="research-scope-toggle" type="button"></button></div>
             </div>
             <div class="faculty-grid" id="faculty-grid"></div>
+        </section>
+
+        <section class="lab-section" aria-labelledby="lab-title">
+            <div class="section-heading">
+                <div><span class="research-kicker" data-copy="labKicker">Facilities and access</span><h2 id="lab-title" data-copy="labTitle">What each laboratory actually offers</h2></div>
+                <p id="lab-meta" aria-live="polite"></p>
+            </div>
+            <p class="lab-intro" data-copy="labText">Named equipment and student-access routes are shown only when an official university source states them. Laboratory existence is not a guaranteed place.</p>
+            <div class="lab-grid" id="lab-grid"></div>
         </section>
 
         <section class="outreach-section" aria-labelledby="outreach-title">
@@ -99,6 +108,6 @@
     </main>
 
     <footer class="research-footer"><span data-copy="footerPolicy">No invented faculty match. Every named person and programme claim links to an official source.</span><span id="footer-verified"></span></footer>
-    <script src="research.js?v=2"></script>
+    <script src="research.js?v=3"></script>
 </body>
 </html>

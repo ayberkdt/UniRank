@@ -126,13 +126,13 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_derivation": {
         "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-09-05"
+        "derived_at": "2026-09-06"
       },
       "application_fee_charged_per": "application",
       "application_fee_verification": {
@@ -179,7 +179,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -308,7 +308,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -339,11 +339,11 @@
             "monthly_living_cost_eur_max": 1400.0,
             "monthly_living_cost_eur_estimated": 1050.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -410,7 +410,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -741,7 +741,7 @@
       "matched_tags": [],
       "confidence": "unknown",
       "legacy_relevance_status": "needs_review",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     }
   },
   {
@@ -780,10 +780,51 @@
       ],
       "admission_mode": "foreign-degree equivalency and jury assessment",
       "admission_risk": "medium",
-      "required_documents": [],
+      "required_documents": [
+        {
+          "en": "Signed attestation acknowledging ULiège's measures against enrolment fraud",
+          "tr": "ULiège'in kayıt dolandırıcılığına karşı aldığı önlemlerin bilindiğine dair imzalı beyan"
+        },
+        {
+          "en": "Certificate of nationality or certificate of residence established in Belgium, for a non-EU student who is not assimilated",
+          "tr": "Assimilated sayılmayan AB dışı öğrenci için vatandaşlık belgesi veya Belçika'da düzenlenmiş ikamet belgesi"
+        },
+        {
+          "en": "Bachelor's degree or equivalent qualification giving legal access to the master's programme",
+          "tr": "Yüksek lisans programına yasal erişim sağlayan lisans diploması veya eşdeğer yeterlilik"
+        },
+        {
+          "en": "Transcripts from previous higher-education enrolments; if no credit was earned, certificates of enrolment",
+          "tr": "Önceki yükseköğretim kayıtlarına ait not dökümleri; kredi kazanılmadıysa kayıt belgeleri"
+        },
+        {
+          "en": "Diplomas obtained from any other training programmes, if applicable",
+          "tr": "Varsa diğer eğitim programlarından alınmış diplomalar"
+        },
+        {
+          "en": "Evidence covering any year outside education, if applicable, such as dated employment, training, self-employment or unemployment-benefit records",
+          "tr": "Varsa eğitim dışında geçirilen yılı açıklayan tarihli çalışma, eğitim, serbest meslek veya işsizlik ödeneği belgeleri"
+        },
+        {
+          "en": "Motivation or cover letter explaining the applicant's intention to study at the University of Liège",
+          "tr": "Adayın Liège Üniversitesinde öğrenim görme niyetini açıklayan motivasyon veya ön yazı"
+        },
+        {
+          "en": "Standardised B2 proof in the programme's language of instruction; for this English-taught programme, TOEFL or IELTS is listed. A test without a photograph or more than two years old is not accepted; prior successful study in English may be submitted subject to jury acceptance",
+          "tr": "Programın eğitim dilinde standartlaştırılmış B2 kanıtı; İngilizce yürütülen bu program için TOEFL veya IELTS listelenir. Fotoğrafsız veya iki yıldan eski test kabul edilmez; İngilizce tamamlanmış önceki öğrenim kanıtı jürinin kabulüne bağlı olarak sunulabilir"
+        },
+        {
+          "en": "Official evidence of sufficient financial resources (financing plan)",
+          "tr": "Yeterli mali kaynak bulunduğunu gösteren resmî kanıt (finansman planı)"
+        },
+        {
+          "en": "If previously enrolled at another higher-education institution in the French Community of Belgium, a certificate proving the absence of debt to that institution",
+          "tr": "Daha önce Belçika Fransız Topluluğundaki başka bir yükseköğretim kurumuna kayıt olunduysa o kuruma borç bulunmadığını gösteren belge"
+        }
+      ],
       "verification_notes": {
-        "en": "ULiège's 2026/27 programme page states the 120-credit Aerospace Engineering Master's entry route and that a foreign degree must be recognised as equivalent/comparable by the jury. It also requires B2 English; final admission remains an individual jury decision.",
-        "tr": "ULiège'in 2026/27 program sayfası 120 kredilik Aerospace Engineering yüksek lisansına giriş yolunu ve yabancı derecenin jüri tarafından eşdeğer/karşılaştırılabilir bulunması gerektiğini belirtir. B2 İngilizce de gerekir; nihai kabul aday bazında jüri kararıdır."
+        "en": "This document list applies to the foreign-bachelor's, non-EU/non-assimilated master's route requiring a jury decision. ULiège states that the portal checklist varies with personal circumstances and may request additional documents. Only French, English, Dutch or German documents are accepted. A Belgian study-visa decision and originals may be requested later at enrolment, not as universal initial-upload documents. The current official catalogue presents this as a ULiège programme and states no joint or co-degree partner.",
+        "tr": "Bu belge listesi jüri kararı gerektiren yabancı lisans diplomalı, AB dışı ve assimilated sayılmayan yüksek lisans rotasına uygulanır. ULiège portal kontrol listesinin kişisel duruma göre değiştiğini ve ek belge isteyebileceğini belirtir. Yalnız Fransızca, İngilizce, Hollandaca veya Almanca belgeler kabul edilir. Belçika öğrenim vizesi kararı ve asıllar daha sonra kayıt aşamasında istenebilir; bunlar evrensel ilk yükleme belgeleri değildir. Güncel resmî katalog bunu bir ULiège programı olarak sunar ve ortak ya da çift diploma ortağı belirtmez."
       },
       "required_ects": {
         "total": "180 ECTS (foreign-degree equivalency assessed by jury)"
@@ -865,13 +906,13 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_derivation": {
         "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-09-05"
+        "derived_at": "2026-09-06"
       },
       "application_fee_verification": {
         "checked_on": "2026-09-01",
@@ -917,7 +958,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -1046,7 +1087,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -1077,11 +1118,11 @@
             "monthly_living_cost_eur_max": 1000.0,
             "monthly_living_cost_eur_estimated": 700.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -1321,25 +1362,43 @@
       "ecosystem_strength_score": null
     },
     "application_timeline_profile": {
-      "academic_year": null,
-      "intake_terms": [],
-      "application_rounds": [],
-      "non_eu_deadline": null,
-      "eu_deadline": null,
+      "academic_year": "2026/2027 (latest published cycle)",
+      "intake_terms": [
+        "2026/2027 academic year"
+      ],
+      "application_rounds": [
+        "Non-EU foreign-degree route opened: 2026-02-18",
+        "Non-EU foreign-degree application and document deadline: 2026-03-31",
+        "EU applicants requiring an individual decision: 2026-08-31",
+        "Direct-access registration window: 2026-06-22 to 2026-09-30"
+      ],
+      "non_eu_deadline": "2026-03-31 for non-assimilated applicants with a foreign degree",
+      "eu_deadline": "2026-08-31 when an individual admission decision is required; direct-access registration closes 2026-09-30",
       "scholarship_deadline": null,
       "pre_enrolment_required": null,
-      "timeline_risk": "unknown",
-      "deadline_notes": null,
+      "timeline_risk": "medium",
+      "deadline_notes": {
+        "en": "The non-EU foreign-degree route for 2026/27 is closed. The official procedure distinguishes nationality, assimilation and prior qualification routes; the date applicable to an individual must be confirmed in the portal. No 2027/28 deadline was published.",
+        "tr": "2026/27 AB dışı yabancı diploma rotası kapanmıştır. Resmî prosedür vatandaşlık, assimilated statüsü ve önceki yeterlilik rotalarını ayırır; kişiye uygulanacak tarih portalda doğrulanmalıdır. 2027/28 tarihi yayımlanmamıştır."
+      },
       "winter_deadline": null,
-      "application_deadline": null,
+      "application_deadline": "2026-03-31 for non-EU foreign-degree applicants who are not assimilated; other routes vary",
       "deadline_events": [],
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
-        "date": null,
-        "status": "not_published",
-        "confidence": "unknown",
-        "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "date": "2026-03-31",
+        "next_expected_date": null,
+        "time": null,
+        "timezone": null,
+        "applies_to": "non_eu",
+        "cycle_label": null,
+        "is_recurring_annual": false,
+        "status": "closed",
+        "days_remaining_at_evaluation": -159,
+        "derived_from": "application_timeline_profile.non_eu_deadline",
+        "confidence": "high",
+        "source_url": "https://www.programmes.uliege.be/cocoon/20262027/formations/condac/A2SAER01.html",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -1388,7 +1447,11 @@
           "relevant_fields": [
             "program",
             "language",
-            "curriculum"
+            "curriculum",
+            "admission",
+            "non_eu_eligibility",
+            "tuition",
+            "scholarship"
           ],
           "confidence": "high",
           "notes": ""
@@ -1400,8 +1463,13 @@
           "access_status": "ok",
           "last_checked": "2026-08-14",
           "relevant_fields": [
+            "program",
+            "language",
+            "curriculum",
             "admission",
-            "non_eu_eligibility"
+            "non_eu_eligibility",
+            "tuition",
+            "scholarship"
           ],
           "confidence": "medium",
           "notes": {
@@ -1416,7 +1484,13 @@
           "access_status": "ok",
           "last_checked": "2026-08-14",
           "relevant_fields": [
-            "tuition"
+            "program",
+            "language",
+            "curriculum",
+            "admission",
+            "non_eu_eligibility",
+            "tuition",
+            "scholarship"
           ],
           "confidence": "medium",
           "notes": {
@@ -1431,6 +1505,12 @@
           "access_status": "ok",
           "last_checked": "2026-08-14",
           "relevant_fields": [
+            "program",
+            "language",
+            "curriculum",
+            "admission",
+            "non_eu_eligibility",
+            "tuition",
             "scholarship"
           ],
           "confidence": "medium",
@@ -1446,7 +1526,13 @@
           "access_status": "ok",
           "last_checked": "2026-08-14",
           "relevant_fields": [
-            "curriculum"
+            "program",
+            "language",
+            "curriculum",
+            "admission",
+            "non_eu_eligibility",
+            "tuition",
+            "scholarship"
           ],
           "confidence": "medium",
           "notes": {
@@ -1581,9 +1667,69 @@
             "fees"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://www.programmes.uliege.be/cocoon/20262027/en/formations/condac/A2SAER01.html",
+          "title": "ULiège — MSc. in Aerospace Engineering, professional focus in aerospace engineering (2026-2027)",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "program",
+            "program_status",
+            "degree_level",
+            "language",
+            "admission"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.enseignement.uliege.be/cms/c_13348202/en/registration-procedures-for-international-students",
+          "title": "ULiège — Registration procedures for international students",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "tuition",
+            "application_fee",
+            "cost",
+            "fees",
+            "deadline"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.enseignement.uliege.be/cms/c_9096818/en/access-conditions-to-the-master-outside-eu",
+          "title": "ULiège — Access conditions to the Master: Outside EU",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "deadline",
+            "admission",
+            "language"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.enseignement.uliege.be/cms/c_13916656/en/documents-to-provide",
+          "title": "ULiège — Documents to provide",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "application_documents"
+          ],
+          "confidence": "medium",
+          "notes": {
+            "en": "Official and current, but ULiège states that the exact set depends on the applicant's personal situation.",
+            "tr": "Resmî ve güncel; ancak ULiège kesin belge setinin adayın kişisel durumuna göre değiştiğini belirtir."
+          }
         }
       ],
-      "last_verified": "2026-09-01",
+      "last_verified": "2026-09-05",
       "needs_verification": true,
       "verification_notes": {
         "en": "Only facts supported by the checked official source log are retained; funding and housing eligibility remain programme- and applicant-specific unless explicitly stated.",
@@ -1592,15 +1738,18 @@
       "field_confidence": {
         "program_basic_info": "high",
         "language": "high",
-        "admission": "high",
+        "admission": "medium",
         "tuition": "medium",
         "scholarship": "high",
         "curriculum": "medium",
         "living_profile": "high",
         "non_eu_eligibility": "medium",
         "housing": "high",
-        "deadlines": "unknown",
-        "deadline": "unknown"
+        "deadlines": "high",
+        "deadline": "high",
+        "program_status": "high",
+        "application_timeline_profile": "high",
+        "application_documents": "medium"
       },
       "official_cost_of_living_page": "https://www.international.uliege.be/books/ErasmusGuideEn/11/"
     },
@@ -1640,7 +1789,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 13,
+      "checked_official_source_count": 17,
       "verified_fields": [
         "program",
         "language",
@@ -1648,15 +1797,14 @@
         "non_eu_eligibility",
         "tuition",
         "scholarship",
+        "deadline",
         "curriculum",
         "research",
         "housing"
       ],
-      "unverified_critical_fields": [
-        "deadline"
-      ],
+      "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-01"
+      "audited_at": "2026-09-06"
     },
     "qs_ranking_display": "=364",
     "qs_ranking_year": 2027,
@@ -1724,7 +1872,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "needs_review",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -1847,13 +1995,13 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_derivation": {
         "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-09-05"
+        "derived_at": "2026-09-06"
       },
       "application_fee_research": {
         "outcome": "no_fee_published",
@@ -1880,7 +2028,7 @@
           "en": "The VKI programme page prices participation, not application: a citizen of a NATO country that does not finance the VKI pays EUR 10,000 tuition and is not eligible for the VKI fellowship, and a citizen of a non-NATO country pays EUR 25,000. Turkiye is a NATO member, and a Turkish MSc is named among the degrees the programme accepts. No fee is charged to apply.",
           "tr": "VKI program sayfası başvuruyu değil katılımı fiyatlandırır: VKI'yi finanse etmeyen bir NATO ülkesinin vatandaşı 10.000 avro öğrenim ücreti öder ve VKI bursuna hak kazanamaz; NATO üyesi olmayan bir ülkenin vatandaşı 25.000 avro öder. Türkiye NATO üyesidir ve programın kabul ettiği diplomalar arasında bir Türk yüksek lisansı adıyla anılır. Başvurmak için ücret alınmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -2103,7 +2251,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -2112,7 +2260,7 @@
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -2558,11 +2706,11 @@
         "cycle_label": null,
         "is_recurring_annual": true,
         "status": "closed",
-        "days_remaining_at_evaluation": -97,
+        "days_remaining_at_evaluation": -98,
         "derived_from": "application_timeline_profile.non_eu_deadline",
         "confidence": "high",
         "source_url": "https://www.vki.ac.be/index.php/academics/research-master-in-fluid-dynamics?highlight=WzIwMjFd",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -2959,7 +3107,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -3111,7 +3259,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_verification": {
         "checked_on": "2026-09-01",
@@ -3125,7 +3273,7 @@
         "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-09-05"
+        "derived_at": "2026-09-06"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -3159,7 +3307,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -3284,7 +3432,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -3314,11 +3462,11 @@
             "monthly_living_cost_eur_min": 1200.0,
             "monthly_living_cost_eur_max": 1800.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -3390,7 +3538,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -3739,7 +3887,7 @@
       "matched_tags": [],
       "confidence": "unknown",
       "legacy_relevance_status": "needs_review",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     }
   },
   {
@@ -3756,7 +3904,7 @@
     "university_native_name": "Vrije Universiteit Brussel (VUB)",
     "city": "Brussels",
     "country": "Belgium",
-    "program_name": "MSc Electromechanical Engineering – Aeronautics track (BRUFACE)",
+    "program_name": "Master of Science in Electromechanical Engineering — Aeronautics track (BRUFACE)",
     "program_degree": "MSc",
     "degree_level": "Master",
     "duration_years": 2,
@@ -3777,10 +3925,35 @@
       ],
       "admission_mode": "application_file_review",
       "admission_risk": "medium",
-      "required_documents": [],
+      "required_documents": [
+        {
+          "en": "Identity photograph (3 x 4 cm)",
+          "tr": "Kimlik fotoğrafı (3 x 4 cm)"
+        },
+        {
+          "en": "Copy of both sides of the identity card or a copy of the passport",
+          "tr": "Kimlik kartının iki yüzünün kopyası veya pasaport kopyası"
+        },
+        {
+          "en": "Higher-education diploma or diplomas and official transcripts bearing the institution's stamp and signature",
+          "tr": "Kurumun kaşe ve imzasını taşıyan yükseköğretim diploması veya diplomaları ile resmî transkriptler"
+        },
+        {
+          "en": "If the secondary-school diploma was obtained within the last five years, that diploma plus evidence covering non-degree academic and non-academic activities during those five years, with start and end dates",
+          "tr": "Ortaöğretim diploması son beş yılda alındıysa bu diploma ile son beş yıldaki diploma dışı akademik ve akademik olmayan faaliyetleri başlangıç ve bitiş tarihleriyle gösteren kanıtlar"
+        },
+        {
+          "en": "If previously enrolled at an institution in Belgium's French Community, a certificate showing no outstanding debt to that institution",
+          "tr": "Daha önce Belçika Fransız Topluluğundaki bir kuruma kayıt olunduysa o kuruma borç bulunmadığını gösteren belge"
+        },
+        {
+          "en": "Sworn translation for any required document not issued in French, German, Dutch, English, Spanish, Italian or Portuguese",
+          "tr": "Fransızca, Almanca, Hollandaca, İngilizce, İspanyolca, İtalyanca veya Portekizce düzenlenmemiş zorunlu belgeler için yeminli çeviri"
+        }
+      ],
       "verification_notes": {
-        "en": "BRUFACE lists 31 March 2026 for non-EEA applicants and 30 September 2026 for EEA applicants; eligibility is decided after file review.",
-        "tr": "BRUFACE, AEA dışı adaylar için 31 Mart 2026 ve AEA adayları için 30 Eylül 2026 tarihlerini listeler; uygunluk dosya incelemesi sonrası kararlaştırılır."
+        "en": "BRUFACE is jointly organised by ULB and VUB; students are enrolled at both institutions. The official BRUFACE procedure directs applications through ULB, so the ULB second-cycle checklist is the applicable published general document list. The jury may additionally request a motivation letter or course descriptions; these are not represented as universal requirements.",
+        "tr": "BRUFACE ULB ve VUB tarafından ortaklaşa yürütülür; öğrenciler iki kuruma da kaydolur. Resmî BRUFACE prosedürü başvuruları ULB üzerinden yönlendirdiği için yayımlanan ULB ikinci kademe kontrol listesi geçerli genel belge listesidir. Jüri ayrıca motivasyon mektubu veya ders açıklamaları isteyebilir; bunlar evrensel zorunluluk olarak gösterilmemiştir."
       },
       "gre": {
         "policy": "unknown",
@@ -3857,13 +4030,13 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_derivation": {
         "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-09-05"
+        "derived_at": "2026-09-06"
       },
       "application_fee_charged_per": "application",
       "application_fee_verification": {
@@ -3910,7 +4083,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -4032,7 +4205,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -4058,11 +4231,11 @@
           "derived_from": {
             "monthly_living_cost_eur_estimated": 1000.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -4194,25 +4367,29 @@
       "ecosystem_strength_score": null
     },
     "application_timeline_profile": {
-      "academic_year": "2026/2027",
+      "academic_year": "2026/2027 (September 2026 intake)",
       "intake_terms": [
         "September 2026"
       ],
-      "application_rounds": [],
-      "non_eu_deadline": "2026-04-01 (last day 31 March; passed)",
-      "eu_deadline": "2026-08-01 (last day 31 July; passed)",
+      "application_rounds": [
+        "Applications opened: 2026-02-16",
+        "Non-EEA deadline: 2026-03-31",
+        "EEA deadline: 2026-09-30"
+      ],
+      "non_eu_deadline": "2026-03-31",
+      "eu_deadline": "2026-09-30",
       "scholarship_deadline": null,
       "pre_enrolment_required": null,
-      "timeline_risk": "high",
+      "timeline_risk": "medium",
       "deadline_notes": {
-        "en": "VUB's 2026/27 foreign-diploma deadlines are 1 April for non-EEA applicants and 1 August for EEA applicants. The dates have passed and must not be reused as next-cycle predictions.",
-        "tr": "VUB'nin 2026/27 yabancı diploma son tarihleri AEA dışı adaylar için 1 Nisan, AEA adayları için 1 Ağustos'tur. Tarihler geçmiştir ve sonraki dönem tahmini olarak yeniden kullanılmamalıdır."
+        "en": "The BRUFACE-specific page publishes these dates for first registration in 2026/27. On the verification date the EEA route remained open and the non-EEA route was closed. No 2027/28 dates were published. Applications start through ULB; the joint ULB/VUB jury reviews them and VUB enrolment follows automatically.",
+        "tr": "BRUFACE'e özgü sayfa bu tarihleri 2026/27 ilk kayıtları için yayımlar. Doğrulama tarihinde AEA rotası açık, AEA dışı rota kapalıydı. 2027/28 tarihleri yayımlanmamıştır. Başvuru ULB üzerinden başlar; ortak ULB/VUB jürisi değerlendirir ve VUB kaydı daha sonra otomatik yapılır."
       },
       "winter_deadline": null,
-      "application_deadline": "2026-04-01 for non-EEA or 2026-08-01 for EEA applicants with foreign diplomas; passed",
+      "application_deadline": "2026-03-31 (non-EEA) / 2026-09-30 (EEA)",
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
-        "date": "2026-04-01",
+        "date": "2026-03-31",
         "next_expected_date": null,
         "time": null,
         "timezone": null,
@@ -4220,11 +4397,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -157,
+        "days_remaining_at_evaluation": -159,
         "derived_from": "application_timeline_profile.non_eu_deadline",
         "confidence": "high",
         "source_url": "https://www.vub.be/en/studying-vub/apply-and-enrol-vub/admission-requirements-and-deadlines/when-can-you-apply",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -4265,24 +4442,6 @@
       "official_department_page": null,
       "source_log": [
         {
-          "url": "https://bruface.research.vub.be/how-to-apply/how-to-apply",
-          "title": "BRUFACE admission criteria and deadlines",
-          "source_type": "official_admission_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "admission",
-            "language",
-            "application_deadline",
-            "non_eu_eligibility"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Lists degree, grade and English evidence requirements, and 2026 non-EEA/EEA deadlines.",
-            "tr": "Derece, not ve İngilizce kanıtı gereklilikleri ile 2026 AEA dışı/AEA son tarihlerini listeler."
-          }
-        },
-        {
           "url": "https://www.vub.be/en/studying-vub/all-study-programmes-vub/bachelors-and-masters-programmes-vub/master-electromechanical-engineering/program/master/master-electromechanical-engineering-aeronautics",
           "title": "Vrije Universiteit Brussel (VUB) programme admission",
           "source_type": "official_admission_page",
@@ -4290,7 +4449,14 @@
           "last_checked": "2026-08-14",
           "relevant_fields": [
             "admission",
-            "non_eu_eligibility"
+            "non_eu_eligibility",
+            "tuition",
+            "scholarship",
+            "curriculum",
+            "tracks",
+            "courses",
+            "program",
+            "research"
           ],
           "confidence": "medium",
           "notes": {
@@ -4305,7 +4471,15 @@
           "access_status": "ok",
           "last_checked": "2026-08-14",
           "relevant_fields": [
-            "tuition"
+            "admission",
+            "non_eu_eligibility",
+            "tuition",
+            "scholarship",
+            "curriculum",
+            "tracks",
+            "courses",
+            "program",
+            "research"
           ],
           "confidence": "medium",
           "notes": {
@@ -4320,7 +4494,15 @@
           "access_status": "ok",
           "last_checked": "2026-08-14",
           "relevant_fields": [
-            "scholarship"
+            "admission",
+            "non_eu_eligibility",
+            "tuition",
+            "scholarship",
+            "curriculum",
+            "tracks",
+            "courses",
+            "program",
+            "research"
           ],
           "confidence": "medium",
           "notes": {
@@ -4335,9 +4517,15 @@
           "access_status": "ok",
           "last_checked": "2026-08-14",
           "relevant_fields": [
+            "admission",
+            "non_eu_eligibility",
+            "tuition",
+            "scholarship",
             "curriculum",
             "tracks",
-            "courses"
+            "courses",
+            "program",
+            "research"
           ],
           "confidence": "high",
           "notes": {
@@ -4399,23 +4587,6 @@
           }
         },
         {
-          "url": "https://www.vub.be/en/studying-vub/all-study-programmes-vub/bachelors-and-masters-programmes-vub/master-electromechanical-engineering/program/master/master-electromechanical-engineering-aeronautics",
-          "title": "VUB — Master Electromechanical Engineering: Aeronautics (BRUFACE)",
-          "source_type": "official_program_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-30",
-          "relevant_fields": [
-            "curriculum",
-            "program",
-            "research"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Publishes the complete modular curriculum with ECTS for every course, including the thesis option at either VUB or ULB.",
-            "tr": "Her ders için AKTS ile birlikte tam modüler müfredatı; VUB ya da ULB'de tez seçeneği dâhil yayımlar."
-          }
-        },
-        {
           "url": "https://www.vub.be/en/vub-research/expertise/our-research-groups",
           "title": "VUB — Research groups recognised by the Research Council",
           "source_type": "official_department_page",
@@ -4460,9 +4631,62 @@
             "fees"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://bruface.research.vub.be/how-to-apply/how-to-apply",
+          "title": "BRUFACE — How to apply",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "language",
+            "application_deadline",
+            "non_eu_eligibility",
+            "program",
+            "program_status",
+            "deadline",
+            "application_documents"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.vub.be/en/studying-vub/all-study-programmes-vub/bachelors-and-masters-programmes-vub/master-electromechanical-engineering/program/master/master-electromechanical-engineering-aeronautics",
+          "title": "VUB — Master of Science in Electromechanical Engineering: Aeronautics",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "non_eu_eligibility",
+            "tuition",
+            "scholarship",
+            "curriculum",
+            "tracks",
+            "courses",
+            "program",
+            "research",
+            "program_status",
+            "degree_level",
+            "duration",
+            "language"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.ulb.be/en/prepare-your-application/documents-necessaires",
+          "title": "ULB — Documents required for a Master's application",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "application_documents"
+          ],
+          "confidence": "high"
         }
       ],
-      "last_verified": "2026-09-01",
+      "last_verified": "2026-09-05",
       "needs_verification": true,
       "verification_notes": {
         "en": "Only facts supported by the checked official source log are retained; funding and housing eligibility remain programme- and applicant-specific unless explicitly stated.",
@@ -4480,7 +4704,10 @@
         "application_timeline_profile": "high",
         "living_profile": "high",
         "deadlines": "high",
-        "housing": "high"
+        "housing": "high",
+        "program_status": "high",
+        "deadline": "high",
+        "application_documents": "high"
       },
       "official_housing_page": "https://www.vub.be/en/studying-vub/practical-info-for-students/how-much-does-studying-cost"
     },
@@ -4513,7 +4740,7 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 12,
+      "checked_official_source_count": 13,
       "verified_fields": [
         "program",
         "language",
@@ -4528,7 +4755,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-01"
+      "audited_at": "2026-09-06"
     },
     "qs_ranking_display": "295",
     "qs_ranking_year": 2027,
@@ -4595,7 +4822,7 @@
       "matched_tags": [],
       "confidence": "medium",
       "legacy_relevance_status": "needs_review",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "curriculum_evidence": {
@@ -4624,7 +4851,7 @@
     "university_native_name": "Université libre de Bruxelles (ULB)",
     "city": "Brussels",
     "country": "Belgium",
-    "program_name": "MSc in Electromechanical Engineering (BRUfACE Aeronautics option)",
+    "program_name": "Master of Science in Electromechanical Engineering — Aeronautics track (BRUFACE)",
     "program_degree": "Master 120 credits",
     "degree_level": "Master",
     "duration_years": 2,
@@ -4640,10 +4867,35 @@
       "accepted_backgrounds": [],
       "admission_mode": "programme-specific assessment",
       "admission_risk": "medium",
-      "required_documents": [],
+      "required_documents": [
+        {
+          "en": "Identity photograph (3 x 4 cm)",
+          "tr": "Kimlik fotoğrafı (3 x 4 cm)"
+        },
+        {
+          "en": "Copy of both sides of the identity card or a copy of the passport",
+          "tr": "Kimlik kartının iki yüzünün kopyası veya pasaport kopyası"
+        },
+        {
+          "en": "Higher-education diploma or diplomas and official transcripts bearing the institution's stamp and signature",
+          "tr": "Kurumun kaşe ve imzasını taşıyan yükseköğretim diploması veya diplomaları ile resmî transkriptler"
+        },
+        {
+          "en": "If the secondary-school diploma was obtained within the last five years, that diploma plus evidence covering non-degree academic and non-academic activities during those five years, with start and end dates",
+          "tr": "Ortaöğretim diploması son beş yılda alındıysa bu diploma ile son beş yıldaki diploma dışı akademik ve akademik olmayan faaliyetleri başlangıç ve bitiş tarihleriyle gösteren kanıtlar"
+        },
+        {
+          "en": "If previously enrolled at an institution in Belgium's French Community, a certificate showing no outstanding debt to that institution",
+          "tr": "Daha önce Belçika Fransız Topluluğundaki bir kuruma kayıt olunduysa o kuruma borç bulunmadığını gösteren belge"
+        },
+        {
+          "en": "Sworn translation for any required document not issued in French, German, Dutch, English, Spanish, Italian or Portuguese",
+          "tr": "Fransızca, Almanca, Hollandaca, İngilizce, İspanyolca, İtalyanca veya Portekizce düzenlenmemiş zorunlu belgeler için yeminli çeviri"
+        }
+      ],
       "verification_notes": {
-        "en": "Foreign master's applicants' prior studies are assessed for comparability by the admissions jury; the programme page is the starting point for access conditions.",
-        "tr": "Yurt dışı yüksek lisans adaylarının önceki öğrenimleri kabul jürisi tarafından karşılaştırılabilirlik açısından değerlendirilir; erişim koşulları için başlangıç noktası program sayfasıdır."
+        "en": "BRUFACE is jointly organised by ULB and VUB; students are enrolled at both institutions. The current ULB programme catalogue identifies the English-taught Bruface focus. The jury may additionally request a motivation letter or course descriptions; these are not represented as universal requirements.",
+        "tr": "BRUFACE ULB ve VUB tarafından ortaklaşa yürütülür; öğrenciler iki kuruma da kaydolur. Güncel ULB program kataloğu İngilizce yürütülen Bruface odağını belirtir. Jüri ayrıca motivasyon mektubu veya ders açıklamaları isteyebilir; bunlar evrensel zorunluluk olarak gösterilmemiştir."
       },
       "gre": {
         "policy": "unknown",
@@ -4713,7 +4965,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_eur_per_year": 5369.0,
       "tuition_derivation": {
@@ -4769,7 +5021,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -4899,7 +5151,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -4929,11 +5181,11 @@
             "monthly_living_cost_eur_min": 800.0,
             "monthly_living_cost_eur_max": 800.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -5044,19 +5296,23 @@
       "ecosystem_strength_score": null
     },
     "application_timeline_profile": {
-      "academic_year": "2026/2027",
+      "academic_year": "2026/2027 (September 2026 intake)",
       "intake_terms": [
-        "autumn"
+        "September 2026"
       ],
-      "application_rounds": [],
+      "application_rounds": [
+        "Applications opened: 2026-02-16",
+        "Non-EEA deadline: 2026-03-31",
+        "EEA deadline: 2026-09-30"
+      ],
       "non_eu_deadline": "2026-03-31",
       "eu_deadline": "2026-09-30",
       "scholarship_deadline": null,
       "pre_enrolment_required": null,
       "timeline_risk": "medium",
       "deadline_notes": {
-        "en": "Consult the cited official source for the next application cycle.",
-        "tr": "Sonraki başvuru dönemi için atıf verilen resmî kaynağa bakın."
+        "en": "The BRUFACE-specific page publishes these dates for first registration in 2026/27. On the verification date the EEA route remained open and the non-EEA route was closed. No 2027/28 dates were published. Applications are submitted through ULB and reviewed by the joint ULB/VUB jury.",
+        "tr": "BRUFACE'e özgü sayfa bu tarihleri 2026/27 ilk kayıtları için yayımlar. Doğrulama tarihinde AEA rotası açık, AEA dışı rota kapalıydı. 2027/28 tarihleri yayımlanmamıştır. Başvurular ULB üzerinden sunulur ve ortak ULB/VUB jürisi tarafından değerlendirilir."
       },
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
@@ -5068,14 +5324,15 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -158,
+        "days_remaining_at_evaluation": -159,
         "derived_from": "application_timeline_profile.non_eu_deadline",
         "confidence": "high",
         "source_url": "https://www.ulb.be/en/prepare-your-application/submission-deadlines",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
-      }
+      },
+      "application_deadline": "2026-03-31 (non-EEA) / 2026-09-30 (EEA)"
     },
     "student_sentiment_profile": {
       "student_satisfaction_score": null,
@@ -5170,7 +5427,11 @@
           "last_checked": "2026-08-14",
           "relevant_fields": [
             "admission",
-            "non_eu_eligibility"
+            "non_eu_eligibility",
+            "tuition",
+            "scholarship",
+            "curriculum",
+            "program"
           ],
           "confidence": "medium",
           "notes": {
@@ -5185,7 +5446,12 @@
           "access_status": "ok",
           "last_checked": "2026-08-14",
           "relevant_fields": [
-            "tuition"
+            "admission",
+            "non_eu_eligibility",
+            "tuition",
+            "scholarship",
+            "curriculum",
+            "program"
           ],
           "confidence": "medium",
           "notes": {
@@ -5200,7 +5466,12 @@
           "access_status": "ok",
           "last_checked": "2026-08-14",
           "relevant_fields": [
-            "scholarship"
+            "admission",
+            "non_eu_eligibility",
+            "tuition",
+            "scholarship",
+            "curriculum",
+            "program"
           ],
           "confidence": "medium",
           "notes": {
@@ -5215,7 +5486,12 @@
           "access_status": "ok",
           "last_checked": "2026-08-14",
           "relevant_fields": [
-            "curriculum"
+            "admission",
+            "non_eu_eligibility",
+            "tuition",
+            "scholarship",
+            "curriculum",
+            "program"
           ],
           "confidence": "medium",
           "notes": {
@@ -5269,22 +5545,6 @@
           "notes": {
             "en": "Official ULB page directs international students to ULB scholarship information and ARES/WBI routes with eligibility-dependent scope.",
             "tr": "Resmi ULB sayfasi uluslararasi ogrencileri uygunluga bagli kapsamdaki ULB burs bilgisi ve ARES/WBI yollarina yonlendirir."
-          }
-        },
-        {
-          "url": "https://www.ulb.be/en/programme/ma-irem",
-          "title": "ULB — Master of Science in Electromechanical Engineering (MA-IREM)",
-          "source_type": "official_program_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-30",
-          "relevant_fields": [
-            "curriculum",
-            "program"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Confirms the two focuses, the BRUFACE framework, English delivery, the Solbosch campus and the caveat that the 2026-2027 programme may change.",
-            "tr": "İki odağı, BRUFACE çerçevesini, İngilizce verilişi, Solbosch kampüsünü ve 2026-2027 programının değişebileceği uyarısını teyit eder."
           }
         },
         {
@@ -5344,9 +5604,67 @@
             "fees"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://bruface.research.vub.be/how-to-apply/how-to-apply",
+          "title": "BRUFACE — How to apply",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "program",
+            "program_status",
+            "deadline",
+            "admission",
+            "application_documents"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.ulb.be/en/programme/ma-irem",
+          "title": "ULB — Master of Science in Electromechanical Engineering",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "non_eu_eligibility",
+            "tuition",
+            "scholarship",
+            "curriculum",
+            "program",
+            "program_status",
+            "degree_level",
+            "language"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.ulb.be/en/enrolment/submit-an-application",
+          "title": "ULB — Submit an application",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "deadline",
+            "admission"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.ulb.be/en/prepare-your-application/documents-necessaires",
+          "title": "ULB — Documents required for a Master's application",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "application_documents"
+          ],
+          "confidence": "high"
         }
       ],
-      "last_verified": "2026-09-01",
+      "last_verified": "2026-09-05",
       "needs_verification": true,
       "verification_notes": {
         "en": "Only facts supported by the checked official source log are retained; funding and housing eligibility remain programme- and applicant-specific unless explicitly stated.",
@@ -5355,7 +5673,7 @@
       "field_confidence": {
         "program_basic_info": "high",
         "language": "high",
-        "admission": "medium",
+        "admission": "high",
         "tuition": "medium",
         "scholarship": "medium",
         "curriculum": "medium",
@@ -5363,7 +5681,11 @@
         "industry_ecosystem_profile": "unknown",
         "application_timeline_profile": "high",
         "living_profile": "medium",
-        "housing": "medium"
+        "housing": "medium",
+        "program_status": "high",
+        "deadline": "high",
+        "deadlines": "high",
+        "application_documents": "high"
       },
       "official_cost_of_living_page": "https://www.ulb.be/en/incoming-mobility/practical-information-for-incoming-students"
     },
@@ -5396,9 +5718,10 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 16,
+      "checked_official_source_count": 19,
       "verified_fields": [
         "program",
+        "language",
         "admission",
         "non_eu_eligibility",
         "tuition",
@@ -5408,11 +5731,9 @@
         "research",
         "housing"
       ],
-      "unverified_critical_fields": [
-        "language"
-      ],
+      "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-01"
+      "audited_at": "2026-09-06"
     },
     "non_eu_deadline": "2026-03-31",
     "eu_deadline": "2026-09-30",
@@ -5485,7 +5806,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "needs_review",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "curriculum_evidence": {
@@ -5514,7 +5835,7 @@
     "university_native_name": "UCLouvain (Université catholique de Louvain)",
     "city": "Louvain-la-Neuve",
     "country": "Belgium",
-    "program_name": "Transfers-Fluids-Materials in Aeronautical and Space Applications (TFM-ASA)",
+    "program_name": "International Master in Transfers-Fluids-Materials for Aeronautics Sustainable Applications (TFMASA)",
     "program_degree": "Master of Science (Erasmus Mundus joint degree)",
     "degree_level": "Master",
     "duration_years": 2,
@@ -5530,10 +5851,31 @@
       "accepted_backgrounds": [],
       "admission_mode": "programme-specific assessment",
       "admission_risk": "medium",
-      "required_documents": [],
+      "required_documents": [
+        {
+          "en": "Curriculum vitae in Europass format; the ranking of the university or engineering school must be clearly shown",
+          "tr": "Europass biçiminde özgeçmiş; üniversitenin veya mühendislik okulunun sıralaması açıkça gösterilmelidir"
+        },
+        {
+          "en": "One-page motivation letter explaining how the applicant's goals align with the programme",
+          "tr": "Adayın hedeflerinin programla nasıl örtüştüğünü açıklayan bir sayfalık motivasyon mektubu"
+        },
+        {
+          "en": "Recent reference letter(s) on official letterhead, with the referee's signature and contact information",
+          "tr": "Resmî antetli kâğıtta, referans veren kişinin imzası ve iletişim bilgilerini içeren güncel referans mektubu veya mektupları"
+        },
+        {
+          "en": "Academic transcripts and diplomas, with certified or official translations into English",
+          "tr": "İngilizceye onaylı veya resmî çevirileriyle birlikte akademik not dökümleri ve diplomalar"
+        },
+        {
+          "en": "Proof of English proficiency: IELTS Academic 6.5 with no component below 6; TOEFL PBT 580, CBT 237 or iBT 93; Cambridge Advanced/Proficiency grade B or C; or a university letter confirming English as the medium of instruction. The proof must be no more than three years old when the programme starts",
+          "tr": "İngilizce yeterlilik kanıtı: hiçbir bileşeni 6'nın altında olmayan IELTS Academic 6.5; TOEFL PBT 580, CBT 237 veya iBT 93; Cambridge Advanced/Proficiency B ya da C notu; veya eğitim dilinin İngilizce olduğunu doğrulayan üniversite yazısı. Kanıt program başladığında üç yıldan eski olmamalıdır"
+        }
+      ],
       "verification_notes": {
-        "en": "The official UCLouvain page identifies this as an Erasmus Mundus joint master; consult the programme application route for intake-specific eligibility.",
-        "tr": "Resmî UCLouvain sayfası bunu Erasmus Mundus ortak yüksek lisansı olarak tanımlar; dönem özelindeki uygunluk için program başvuru yoluna bakın."
+        "en": "The current TFMASA is an active two-year Erasmus Mundus joint international master's programme delivered across Université de Bordeaux, UCLouvain and BTU Cottbus-Senftenberg. The official consortium says it leads to one joint diploma; the older database title referring to aeronautical and space applications is no longer the current published name.",
+        "tr": "Güncel TFMASA, Université de Bordeaux, UCLouvain ve BTU Cottbus-Senftenberg arasında yürütülen iki yıllık aktif bir Erasmus Mundus ortak uluslararası yüksek lisans programıdır. Resmî konsorsiyum tek ortak diploma verdiğini belirtir; veri tabanındaki havacılık ve uzay uygulamalarına atıf yapan eski başlık artık yayımlanan güncel ad değildir."
       },
       "gre": {
         "policy": "unknown",
@@ -5607,7 +5949,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_eur_per_year": 9000.0,
       "tuition_derivation": {
@@ -5664,7 +6006,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -5792,7 +6134,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -5822,11 +6164,11 @@
             "monthly_living_cost_eur_min": 1000.0,
             "monthly_living_cost_eur_max": 1200.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -5892,31 +6234,40 @@
       "ecosystem_strength_score": null
     },
     "application_timeline_profile": {
-      "academic_year": "2026/2028 cohort reference",
+      "academic_year": "2027-2029 cohort",
       "intake_terms": [
-        "September 2026 reference cohort"
+        "2027-2029 cohort"
       ],
       "application_rounds": [
-        "Online E-Mundus application; scholarship and self-funded candidates use the same form"
+        "Applications opened: 2026-09-01 08:00 CEST",
+        "Final deadline: 2026-12-01 10:00 CET"
       ],
-      "non_eu_deadline": "1 March (same online route for candidates from all countries; year not displayed)",
-      "eu_deadline": null,
+      "non_eu_deadline": "2026-12-01 10:00 CET",
+      "eu_deadline": "2026-12-01 10:00 CET",
       "scholarship_deadline": null,
       "pre_enrolment_required": null,
-      "timeline_risk": "medium",
+      "timeline_risk": "low",
       "deadline_notes": {
-        "en": "The live programme page says applications are open, opens the online period from 10 December and closes on 1 March, but does not display a year beside the timeline. The card intentionally preserves that limitation instead of inventing an intake year.",
-        "tr": "Canlı program sayfası başvuruların açık olduğunu, çevrimiçi dönemin 10 Aralık'ta başladığını ve 1 Mart'ta kapandığını söyler; ancak takvimin yanında yıl göstermez. Kart, kabul yılı uydurmak yerine bu sınırlamayı korur."
+        "en": "The 2027-2029 application campaign was open on the verification date. Erasmus Mundus scholarship and self-funded candidates use the same fully online form, which is open to applicants from every country.",
+        "tr": "2027-2029 başvuru dönemi doğrulama tarihinde açıktı. Erasmus Mundus bursuna ve kendi finansmanıyla başvuran adaylar, tüm ülkelerden başvuruya açık aynı çevrim içi formu kullanır."
       },
       "winter_deadline": null,
-      "application_deadline": "1 March (year not displayed by current official page; verify live portal before applying)",
+      "application_deadline": "2026-12-01 10:00 CET",
       "primary_deadline": {
         "standard": "application_countdown@3.2.0",
-        "date": null,
-        "status": "not_published",
-        "confidence": "unknown",
-        "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "date": "2026-12-01",
+        "next_expected_date": null,
+        "time": null,
+        "timezone": null,
+        "applies_to": "all_applicants",
+        "cycle_label": null,
+        "is_recurring_annual": false,
+        "status": "open",
+        "days_remaining_at_evaluation": 86,
+        "derived_from": "application_timeline_profile.application_deadline",
+        "confidence": "high",
+        "source_url": "https://tfmasa.com/application/",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -5956,7 +6307,11 @@
             "duration",
             "language",
             "curriculum",
-            "industry"
+            "industry",
+            "admission",
+            "non_eu_eligibility",
+            "tuition",
+            "scholarship"
           ],
           "confidence": "high",
           "notes": {
@@ -5987,8 +6342,16 @@
           "access_status": "blocked",
           "last_checked": "2026-08-14",
           "relevant_fields": [
+            "program",
+            "degree",
+            "duration",
+            "language",
+            "curriculum",
+            "industry",
             "admission",
-            "non_eu_eligibility"
+            "non_eu_eligibility",
+            "tuition",
+            "scholarship"
           ],
           "confidence": "medium",
           "notes": {
@@ -6003,7 +6366,16 @@
           "access_status": "blocked",
           "last_checked": "2026-08-14",
           "relevant_fields": [
-            "tuition"
+            "program",
+            "degree",
+            "duration",
+            "language",
+            "curriculum",
+            "industry",
+            "admission",
+            "non_eu_eligibility",
+            "tuition",
+            "scholarship"
           ],
           "confidence": "medium",
           "notes": {
@@ -6018,6 +6390,15 @@
           "access_status": "blocked",
           "last_checked": "2026-08-14",
           "relevant_fields": [
+            "program",
+            "degree",
+            "duration",
+            "language",
+            "curriculum",
+            "industry",
+            "admission",
+            "non_eu_eligibility",
+            "tuition",
             "scholarship"
           ],
           "confidence": "medium",
@@ -6033,30 +6414,21 @@
           "access_status": "blocked",
           "last_checked": "2026-08-14",
           "relevant_fields": [
-            "curriculum"
+            "program",
+            "degree",
+            "duration",
+            "language",
+            "curriculum",
+            "industry",
+            "admission",
+            "non_eu_eligibility",
+            "tuition",
+            "scholarship"
           ],
           "confidence": "medium",
           "notes": {
             "en": "Official source checked for the stated fields.",
             "tr": "Resmî kaynak belirtilen alanlar için kontrol edildi."
-          }
-        },
-        {
-          "url": "https://tfmasa.com/application/",
-          "title": "TFMASA application and timeline",
-          "source_type": "official_admission_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-14",
-          "relevant_fields": [
-            "admission",
-            "non_eu_eligibility",
-            "deadline",
-            "application_timeline"
-          ],
-          "confidence": "high",
-          "notes": {
-            "en": "Consortium page says applications are open to all countries, gives required documents and shows the online period from 10 December to 1 March without a displayed year.",
-            "tr": "Konsorsiyum sayfası başvuruların tüm ülkelere açık olduğunu, gerekli belgeleri ve yıl gösterilmeden 10 Aralık-1 Mart çevrimiçi dönemini verir."
           }
         },
         {
@@ -6068,7 +6440,9 @@
           "relevant_fields": [
             "tuition",
             "fees",
-            "funding"
+            "funding",
+            "scholarship",
+            "eligibility"
           ],
           "confidence": "high",
           "notes": {
@@ -6083,8 +6457,10 @@
           "access_status": "ok",
           "last_checked": "2026-08-14",
           "relevant_fields": [
-            "scholarship",
+            "tuition",
+            "fees",
             "funding",
+            "scholarship",
             "eligibility"
           ],
           "confidence": "high",
@@ -6141,16 +6517,60 @@
           ],
           "confidence": "medium",
           "notes": "Server refused connections on 2026-09-01; re-check before relying on the amount."
+        },
+        {
+          "url": "https://tfmasa.com/application/",
+          "title": "TFMASA — Application",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "admission",
+            "non_eu_eligibility",
+            "deadline",
+            "application_timeline",
+            "application_documents",
+            "language"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://tfmasa.com/",
+          "title": "TFMASA — International Master in Transfers-Fluids-Materials for Aeronautics Sustainable Applications",
+          "source_type": "official_program_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "program",
+            "program_status",
+            "degree_level",
+            "duration"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://uclouvain.be/fr/facultes/epl/tfm-asa",
+          "title": "UCLouvain — TFM ASA",
+          "source_type": "official_program_page",
+          "access_status": "redirects",
+          "last_checked": "2026-09-05",
+          "relevant_fields": [
+            "program",
+            "program_status",
+            "duration",
+            "language"
+          ],
+          "confidence": "high"
         }
       ],
-      "last_verified": "2026-09-01",
+      "last_verified": "2026-09-05",
       "needs_verification": true,
       "verification_notes": {
         "en": "Only facts supported by the checked official source log are retained; funding and housing eligibility remain programme- and applicant-specific unless explicitly stated.",
         "tr": "Yalnızca kontrol edilmiş resmî kaynak günlüğünün desteklediği bilgiler tutulur; açıkça belirtilmedikçe burs ve konaklama uygunluğu programa ve başvuru sahibine özeldir."
       },
       "field_confidence": {
-        "program_basic_info": "unknown",
+        "program_basic_info": "high",
         "language": "unknown",
         "admission": "high",
         "tuition": "high",
@@ -6158,11 +6578,14 @@
         "curriculum": "unknown",
         "research_profile": "medium",
         "industry_ecosystem_profile": "medium",
-        "application_timeline_profile": "unknown",
+        "application_timeline_profile": "high",
         "living_profile": "medium",
-        "deadlines": "medium",
+        "deadlines": "high",
         "housing": "medium",
-        "program": "unknown"
+        "program": "unknown",
+        "program_status": "high",
+        "deadline": "high",
+        "application_documents": "high"
       },
       "official_housing_page": "https://tfmasa.com/mobility/"
     },
@@ -6210,8 +6633,9 @@
     },
     "data_quality": {
       "status": "partial",
-      "checked_official_source_count": 5,
+      "checked_official_source_count": 7,
       "verified_fields": [
+        "program",
         "admission",
         "non_eu_eligibility",
         "tuition",
@@ -6220,12 +6644,11 @@
         "housing"
       ],
       "unverified_critical_fields": [
-        "program",
         "language",
         "curriculum"
       ],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-01"
+      "audited_at": "2026-09-06"
     },
     "scholarship": {
       "regional_scholarship_available": true,
@@ -6310,7 +6733,7 @@
       ],
       "confidence": "unknown",
       "legacy_relevance_status": "needs_review",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     }
   },
   {
@@ -6430,7 +6853,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_research": {
         "outcome": "no_fee_published",
@@ -6448,7 +6871,7 @@
         "standard": "cost_model@3.2.0",
         "rule": "not_derivable",
         "reason": "no_readable_tuition_figure",
-        "derived_at": "2026-09-05"
+        "derived_at": "2026-09-06"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -6465,7 +6888,7 @@
           "en": "Neither of Antwerp's two admission pages - the general one and the one written for international degree students - names an application fee. What a non-EEA master's student does pay is the increased tuition rate of EUR 1,500 plus EUR 105 a credit, reduced to EUR 4,300 for a 60-credit master's under the High Potential Incentive, which needs no separate application.",
           "tr": "Antwerp'in iki kabul sayfasının hiçbiri - genel olan ve uluslararası diploma öğrencileri için yazılan - bir başvuru ücreti adlandırmaz. AEA dışı bir yüksek lisans öğrencisinin ödediği şey, 1.500 avro artı kredi başına 105 avroluk artırılmış öğrenim ücretidir; High Potential Incentive kapsamında 60 kredilik bir yüksek lisans için 4.300 avroya iner ve ayrı bir başvuru gerektirmez."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -6589,7 +7012,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -6598,7 +7021,7 @@
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -6661,7 +7084,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -6889,7 +7312,7 @@
       "matched_tags": [],
       "confidence": "unknown",
       "legacy_relevance_status": "weak",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     }
   },
   {
@@ -7007,7 +7430,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -7015,7 +7438,7 @@
         "amount": null,
         "currency": null,
         "reason": "record_does_not_verify_admission_or_cost",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -7133,7 +7556,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -7142,7 +7565,7 @@
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -7199,7 +7622,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -7438,7 +7861,7 @@
       "matched_tags": [],
       "confidence": "unknown",
       "legacy_relevance_status": "weak",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     }
   },
   {
@@ -7556,7 +7979,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_standard": {
         "standard": "application_fee@3.2.0",
@@ -7564,7 +7987,7 @@
         "amount": null,
         "currency": null,
         "reason": "record_does_not_verify_admission_or_cost",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -7682,7 +8105,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -7691,7 +8114,7 @@
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -7748,7 +8171,7 @@
         "status": "not_published",
         "confidence": "unknown",
         "reason": "no_iso_dated_deadline_in_record",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -7987,7 +8410,7 @@
       "matched_tags": [],
       "confidence": "unknown",
       "legacy_relevance_status": "weak",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     }
   }
 ]

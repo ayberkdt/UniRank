@@ -198,6 +198,39 @@ main { display: grid; width: min(1500px, calc(100% - 40px)); margin: 0 auto; gap
 .scholarship-card summary::-webkit-details-marker { display: none; }
 .scholarship-card details[open] summary { border-bottom: 1px solid var(--rule-soft); }
 .scholarship-card details[open] summary > span:last-child { transform: rotate(180deg); }
+
+.institutional-funding { padding: 34px clamp(18px, 4vw, 58px) 48px; border-top: 1px solid var(--rule); }
+.institutional-intro { max-width: 850px; margin: -6px 0 20px; color: var(--muted); }
+.institutional-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.institutional-card { overflow: hidden; border: 1px solid var(--rule); border-radius: 11px; background: linear-gradient(145deg, rgba(29, 32, 41, .94), rgba(14, 15, 19, .96)); }
+.institutional-card.is-featured { border-color: color-mix(in srgb, var(--teal) 45%, var(--rule)); }
+.institutional-card > header { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; padding: 18px; border-bottom: 1px solid var(--rule-soft); }
+.institutional-card > header span { color: var(--muted); font-size: 11px; font-weight: 700; text-transform: uppercase; }
+.institutional-card > header h3 { margin: 4px 0; font: 600 21px/1.15 var(--display); }
+.institutional-card > header p { margin: 0; color: var(--muted); font-size: 12px; }
+.institutional-card > header b { flex: 0 0 auto; padding: 5px 8px; border-radius: 5px; background: rgba(81, 200, 179, .1); color: var(--teal); font-size: 9px; letter-spacing: .06em; text-transform: uppercase; }
+.institutional-card__meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; padding: 11px 18px; background: rgba(8, 9, 12, .42); color: var(--ink-soft); font-size: 11px; }
+.institutional-card__meta time { color: var(--gold); }
+.institutional-note { margin: 0; padding: 12px 18px; border-top: 1px solid var(--rule-soft); color: var(--muted); font-size: 12px; }
+.institutional-opportunity { border-top: 1px solid var(--rule-soft); }
+.institutional-opportunity > summary { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 15px 18px; cursor: pointer; list-style: none; }
+.institutional-opportunity > summary::-webkit-details-marker { display: none; }
+.institutional-opportunity > summary > span:first-child { display: grid; gap: 3px; }
+.institutional-opportunity > summary strong { color: var(--ink); font-size: 14px; }
+.institutional-opportunity > summary small { color: var(--muted); text-transform: capitalize; }
+.institutional-opportunity[open] > summary { background: rgba(143, 168, 232, .05); }
+.institutional-opportunity[open] > summary > span:last-child { transform: rotate(180deg); }
+.institutional-opportunity__body { display: grid; gap: 15px; padding: 4px 18px 18px; }
+.institutional-opportunity__body h4 { margin: 0 0 7px; color: var(--muted); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+.institutional-opportunity__body ul { display: grid; gap: 6px; margin: 0; padding-left: 18px; color: var(--ink-soft); font-size: 12px; }
+.institutional-opportunity__body p { margin: 0; color: var(--ink-soft); font-size: 12px; }
+.institutional-steps ol { display: grid; gap: 9px; margin: 0; padding: 0; list-style: none; counter-reset: funding-step; }
+.institutional-steps li { position: relative; display: grid; gap: 3px; padding: 9px 10px 9px 38px; border-left: 2px solid var(--blue); background: rgba(143, 168, 232, .05); counter-increment: funding-step; }
+.institutional-steps li::before { content: counter(funding-step); position: absolute; top: 9px; left: 12px; color: var(--blue); font-weight: 800; }
+.institutional-steps li > span { color: var(--gold); font-size: 10px; font-weight: 700; text-transform: uppercase; }
+.institutional-steps li small { color: var(--muted); }
+.institutional-source { justify-self: start; color: var(--blue); font-size: 12px; font-weight: 700; text-decoration: none; }
+.institutional-verification { margin: 0; padding: 10px 12px; border-left: 3px solid #d59b2a; background: rgba(213, 155, 42, .1); color: var(--ink-soft); font-size: 12px; line-height: 1.5; }
 .scholarship-detail { display: grid; gap: 18px; padding: 18px 22px 22px; }
 .scholarship-detail h4 { margin: 0 0 8px; color: var(--muted); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
 .scholarship-detail ol { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; counter-reset: docs; }
@@ -224,7 +257,7 @@ main { display: grid; width: min(1500px, calc(100% - 40px)); margin: 0 auto; gap
     .funding-hero { grid-template-columns: 1fr; }
     .funding-next { align-self: stretch; }
     .funding-filters { grid-template-columns: repeat(2, 1fr); }
-    .scholarship-grid { grid-template-columns: 1fr; }
+    .scholarship-grid, .institutional-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 760px) {    main,

@@ -45,6 +45,13 @@
             updatedAutomatically: "Countdown updates automatically from today's date.",
             cycleOpens: "Applications open", cycleDeadline: "Deadline", cycleDeadlineClosed: "Deadline (closed)", cycleOffer: "University offer needed by",
             cycleReferenceOpens: "Last cycle opened", cycleReferenceDeadline: "Last cycle closed", cycleReference: "Previous cycle, reference only",
+            institutionalKicker: "University-specific routes", institutionalTitle: "Funding playbooks for aerospace programmes",
+            institutionalText: "These cards turn official scholarship, fellowship and assistantship rules into an ordered application plan. A named lab or admission offer never guarantees funding.",
+            institutionalResults: (shown, total) => `${shown} of ${total} programme funding profiles shown`, featuredProfile: "Priority university profile",
+            howToApply: "When and how to apply", eligibilityGates: "Who can apply", selectionCriteria: "How selection works", award: "Award / coverage",
+            evidence: "Official funding page", separate: "Separate application", automatic: "Automatic consideration", mixedMode: "Multiple routes", invitationOnly: "Invitation only", nomination: "Nomination required", unknownMode: "Route not stated",
+            before_application_opens: "Prepare before applications open", with_the_application: "Submit with the admission application", separate_before_deadline: "Apply separately before the deadline", after_admission: "After admission", after_enrolment: "After enrolment",
+            noInstitutional: "No university-specific funding playbook matches this search yet.", deadlineProfile: "Published profile deadline",
             meaningOpen: "Applications are open now; the countdown is to the official deadline.",
             meaningClosed: "Closed for 2027/28 entry. The next call has not been published; the dates stay for planning.",
             meaningAwaiting: "The 2027/28 call is not published yet. The dates shown are last cycle's, for planning only, not a deadline.",
@@ -84,6 +91,13 @@
             updatedAutomatically: "Geri sayım bugünün tarihine göre otomatik güncellenir.",
             cycleOpens: "Başvurular açılıyor", cycleDeadline: "Son tarih", cycleDeadlineClosed: "Son tarih (kapandı)", cycleOffer: "Üniversite kabulü için son gün",
             cycleReferenceOpens: "Geçen dönem açılış", cycleReferenceDeadline: "Geçen dönem kapanış", cycleReference: "Önceki dönem, yalnızca referans",
+            institutionalKicker: "Üniversiteye özel rotalar", institutionalTitle: "Havacılık-uzay programları için burs playbook’ları",
+            institutionalText: "Bu kartlar resmî burs, fellowship ve asistanlık kurallarını sıralı bir başvuru planına dönüştürür. Adlandırılmış bir laboratuvar veya kabul teklifi finansman garantisi değildir.",
+            institutionalResults: (shown, total) => `${total} program finansman profilinin ${shown} tanesi gösteriliyor`, featuredProfile: "Öncelikli üniversite profili",
+            howToApply: "Ne zaman ve nasıl başvurulur?", eligibilityGates: "Kimler başvurabilir?", selectionCriteria: "Seçim nasıl yapılıyor?", award: "Tutar / kapsam",
+            evidence: "Resmî finansman sayfası", separate: "Ayrı başvuru", automatic: "Otomatik değerlendirme", mixedMode: "Birden çok rota", invitationOnly: "Yalnızca davetle", nomination: "Aday gösterilmek gerekir", unknownMode: "Başvuru yolu belirtilmemiş",
+            before_application_opens: "Başvurular açılmadan hazırla", with_the_application: "Kabul başvurusuyla gönder", separate_before_deadline: "Son tarihten önce ayrıca başvur", after_admission: "Kabulden sonra", after_enrolment: "Kayıttan sonra",
+            noInstitutional: "Bu aramayla eşleşen üniversiteye özel finansman playbook’u henüz yok.", deadlineProfile: "Yayımlanmış profil son tarihi",
             meaningOpen: "Başvurular şu anda açık; geri sayım resmî son tarihe göredir.",
             meaningClosed: "2027/28 girişi için kapandı. Sonraki çağrı yayımlanmadı; tarihler planlama için duruyor.",
             meaningAwaiting: "2027/28 çağrısı henüz yayımlanmadı. Gösterilen tarihler geçen dönemindir; yalnızca planlama içindir, son tarih değildir.",
@@ -97,6 +111,7 @@
     const state = { catalog: null, query: "", level: "all", status: "all", fit: "all" };
     const today = () => { const date = new Date(); return new Date(date.getFullYear(), date.getMonth(), date.getDate(), 12); };
     const parseDate = (iso) => iso ? new Date(`${iso}T12:00:00`) : null;
+    const isIsoDate = (value) => typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value);
     const dayDistance = (iso) => Math.ceil((parseDate(iso) - today()) / 86400000);
     const formatDate = (iso, language = currentLanguage()) => parseDate(iso)?.toLocaleDateString(language === "tr" ? "tr-TR" : "en-GB", { day: "numeric", month: "long", year: "numeric" }) || "";
     const statusOf = (item) => ({
@@ -259,6 +274,59 @@
         $("#scholarship-grid").innerHTML = filtered.length ? filtered.map(renderCard).join("") : `<div class="scholarship-empty"><p>${escapeHtml(c.noResults)}</p></div>`;
     }
 
+    function awardText(award) {
+        if (!award) return "";
+        const rawAmount = award.amount;
+        const amountValue = rawAmount && typeof rawAmount === "object"
+            ? [rawAmount.minimum, rawAmount.maximum].filter((value) => value != null).join("–")
+            : rawAmount;
+        const amount = amountValue != null && amountValue !== "" ? `${amountValue}${award.currency ? ` ${award.currency}` : ""}${award.period ? ` / ${String(award.period).replaceAll("_", " ")}` : ""}` : "";
+        const coverage = (award.coverage || []).map((value) => typeof value === "string" ? value.replaceAll("_", " ") : localized(value)).join(" · ");
+        return [amount, coverage].filter(Boolean).join(" · ");
+    }
+
+    function institutionalSearchText(profile) {
+        return [profile.university, profile.programme, profile.country, ...profile.playbook.flatMap((item) => [
+            item.opportunity,
+            ...(item.eligibility_gates || []).map((value) => localized(value)),
+            ...(item.selection_criteria || []).map((value) => localized(value)),
+            ...(item.steps || []).flatMap((step) => [localized(step.action), ...(step.required_documents || []).map((value) => localized(value))])
+        ])].join(" ").toLocaleLowerCase(currentLanguage() === "tr" ? "tr-TR" : "en-US");
+    }
+
+    function renderInstitutionalOpportunity(profile, opportunity, c) {
+        const steps = [...(opportunity.steps || [])].sort((a, b) => a.order - b.order).map((step) => `<li><span>${escapeHtml(c[step.timing] || step.timing || "")}</span><p>${languageText(step.action)}</p>${step.required_documents?.length ? `<small>${escapeHtml(c.documents)}: ${step.required_documents.map((document) => localized(document)).join(" · ")}</small>` : ""}</li>`).join("");
+        const eligibility = list(opportunity.eligibility_gates, 6);
+        const selection = list(opportunity.selection_criteria, 4);
+        const award = awardText(opportunity.typical_award);
+        return `<details class="institutional-opportunity"><summary><span><strong>${escapeHtml(opportunity.opportunity)}</strong><small>${escapeHtml(String(opportunity.competitiveness || "").replaceAll("_", " "))}</small></span><span aria-hidden="true">⌄</span></summary><div class="institutional-opportunity__body">
+            ${eligibility ? `<section><h4>${escapeHtml(c.eligibilityGates)}</h4><ul>${eligibility}</ul></section>` : ""}
+            ${selection ? `<section><h4>${escapeHtml(c.selectionCriteria)}</h4><ul>${selection}</ul></section>` : ""}
+            ${award ? `<section><h4>${escapeHtml(c.award)}</h4><p>${escapeHtml(award)}</p></section>` : ""}
+            ${steps ? `<section class="institutional-steps"><h4>${escapeHtml(c.howToApply)}</h4><ol>${steps}</ol></section>` : ""}
+            ${opportunity.needs_human_verification && opportunity.verification_note ? `<p class="institutional-verification">${languageText(opportunity.verification_note)}</p>` : ""}
+            <a class="institutional-source" href="${escapeHtml(opportunity.evidence_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(c.evidence)} ↗</a>
+        </div></details>`;
+    }
+
+    function renderInstitutional() {
+        const c = copy[currentLanguage()];
+        const all = state.catalog.institutional_opportunities || [];
+        const query = state.query.trim().toLocaleLowerCase(currentLanguage() === "tr" ? "tr-TR" : "en-US");
+        const filtered = all.filter((profile) => {
+            const level = String(profile.degree_level || "").toLowerCase();
+            const levelMatch = state.level === "all" || (state.level === "master" && level.includes("master")) || (state.level === "phd" && (level.includes("phd") || level.includes("doctor")));
+            return levelMatch && (!query || institutionalSearchText(profile).includes(query));
+        });
+        $("#institutional-meta").textContent = c.institutionalResults(filtered.length, all.length);
+        $("#institutional-grid").innerHTML = filtered.length ? filtered.map((profile) => `<article class="institutional-card${profile.featured ? " is-featured" : ""}">
+            <header><div><span>${escapeHtml(profile.country || "")}</span><h3>${escapeHtml(profile.university)}</h3><p>${escapeHtml(profile.programme)}</p></div>${profile.featured ? `<b>${escapeHtml(c.featuredProfile)}</b>` : ""}</header>
+            <div class="institutional-card__meta"><span>${escapeHtml(({ separate: c.separate, separate_application: c.separate, automatic: c.automatic, automatic_consideration: c.automatic, mixed: c.mixedMode, multiple_routes: c.mixedMode, invitation_only: c.invitationOnly, nomination: c.nomination })[profile.application_mode] || c.unknownMode)}</span>${isIsoDate(profile.scholarship_deadline) ? `<time datetime="${escapeHtml(profile.scholarship_deadline)}">${escapeHtml(c.deadlineProfile)}: ${escapeHtml(formatDate(profile.scholarship_deadline))}</time>` : ""}</div>
+            ${profile.deadline_notes ? `<p class="institutional-note">${languageText(profile.deadline_notes)}</p>` : ""}
+            <div class="institutional-opportunities">${profile.playbook.map((opportunity) => renderInstitutionalOpportunity(profile, opportunity, c)).join("")}</div>
+        </article>`).join("") : `<div class="scholarship-empty"><p>${escapeHtml(c.noInstitutional)}</p></div>`;
+    }
+
     function renderMismatches() {
         const c = copy[currentLanguage()];
         $("#mismatch-grid").innerHTML = state.catalog.common_mismatches.map((item) => `<article class="mismatch-card"><span aria-hidden="true">×</span><div><h3>${languageText(item.name)}</h3><p>${languageText(item.reason)}</p></div><a href="${escapeHtml(item.source.url)}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(c.source)}">↗</a></article>`).join("");
@@ -268,12 +336,12 @@
     function render() {
         if (!state.catalog) return;
         applyCopy();
-        renderNext(); renderCalendar(); renderResults(); renderMismatches();
+        renderNext(); renderCalendar(); renderResults(); renderInstitutional(); renderMismatches();
     }
 
     function bindFilters() {
         const bindings = [["#scholarship-search", "query", "input"], ["#level-filter", "level", "change"], ["#status-filter", "status", "change"], ["#fit-filter", "fit", "change"]];
-        bindings.forEach(([selector, key, event]) => $(selector).addEventListener(event, (input) => { state[key] = input.target.value; renderResults(); }));
+        bindings.forEach(([selector, key, event]) => $(selector).addEventListener(event, (input) => { state[key] = input.target.value; renderResults(); renderInstitutional(); }));
         document.addEventListener("languageChanged", render);
     }
 

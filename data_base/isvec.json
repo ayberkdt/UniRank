@@ -156,7 +156,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_sek_per_year": 180000.0,
       "tuition_derivation": {
@@ -217,7 +217,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -226,16 +226,16 @@
       "details": [],
       "external_options": [],
       "verification_notes": {
-        "en": "No single scholarship is universal: verify the current call and nationality-specific criteria.",
-        "tr": "Tek bir burs herkese açık değildir: güncel çağrı ve vatandaşlığa özgü şartlar doğrulanmalıdır."
+        "en": "The process and criteria are current, but the stored dates are explicitly the closed 2026 scholarship round. Do not substitute the 2027 degree-application deadline for the scholarship deadline.",
+        "tr": "Süreç ve ölçütler günceldir; ancak kaydedilen tarihler açıkça kapanmış 2026 burs turuna aittir. 2027 derece başvuru tarihini burs son tarihi yerine kullanmayın."
       },
       "scholarship_names": [
         "KTH Scholarship",
         "Swedish Institute scholarship (eligible countries only)"
       ],
       "funding_notes": {
-        "en": "KTH Scholarship is open to fee-paying applicants and covers tuition for one or two years; SI eligibility is country-specific.",
-        "tr": "KTH bursu ücret ödeyen adaylara açıktır ve bir veya iki yıl öğrenim ücretini kapsar; SI uygunluğu ülkeye özeldir."
+        "en": "The KTH Scholarship covers the full first- and second-year tuition fee but no living costs. Fee-paying Turkish applicants to the two-year Aerospace Engineering MSc can apply if KTH is ranked first at University Admissions and the application fee is paid. The 2026 round closed on 15 January; KTH had published 2027 admission dates but not the 2027 scholarship window by 6 September 2026.",
+        "tr": "KTH Scholarship birinci ve ikinci yıl öğrenim ücretinin tamamını karşılar ancak yaşam giderlerini karşılamaz. İki yıllık Aerospace Engineering MSc'ye başvuran ücret yükümlüsü Türk adaylar, University Admissions'ta KTH'yi ilk sıraya koyup başvuru ücretini ödediklerinde başvurabilir. 2026 turu 15 Ocak'ta kapandı; KTH 2027 kabul tarihlerini yayımlamış ancak 6 Eylül 2026 itibarıyla 2027 burs penceresini yayımlamamıştı."
       },
       "regional_scholarship_available": true,
       "regional_scholarship_name": "KTH Scholarship",
@@ -245,11 +245,101 @@
           "tr": "KTH Scholarship bir veya iki yıllık öğrenim ücretini karşılar ve ücret ödeyen başvuru sahiplerine açıktır; Swedish Institute programlarının ülke/deneyim kısıtları vardır."
         }
       ],
-      "scholarship_deadline": null,
-      "scholarship_application_url": "https://www.kth.se/en/studies/master/aerospace-engineering/2.25746/scholarship-opportunities-for-master-s-studies-1.860447",
-      "application_mode": "unknown",
-      "automatic_consideration": null,
-      "separate_application_required": null
+      "scholarship_deadline": "2026/27 historical reference: 2026-01-15; 2027 scholarship dates not yet published",
+      "scholarship_application_url": "https://www.kth.se/en/studies/master/admissions/scholarships/kth-scholarship-1.72827",
+      "application_mode": "separate",
+      "automatic_consideration": false,
+      "separate_application_required": true,
+      "playbook": [
+        {
+          "opportunity": "KTH Scholarship (2026/27 historical window; 2027 window not yet published)",
+          "eligibility_gates": [
+            {
+              "en": "Be required to pay tuition fees in Sweden.",
+              "tr": "İsveç'te öğrenim ücreti ödemekle yükümlü olmak."
+            },
+            {
+              "en": "List a KTH master's programme as first priority at universityadmissions.se and pay the application fee.",
+              "tr": "Universityadmissions.se üzerinde bir KTH yüksek lisansını ilk tercih olarak sıralamak ve başvuru ücretini ödemek."
+            },
+            {
+              "en": "Meet the admission requirements for the two-year KTH Aerospace Engineering MSc.",
+              "tr": "İki yıllık KTH Aerospace Engineering MSc kabul koşullarını karşılamak."
+            }
+          ],
+          "selection_criteria": [
+            {
+              "en": "Grades and the ranking of the bachelor's-awarding university.",
+              "tr": "Notlar ve lisans derecesini veren üniversitenin sıralaması."
+            },
+            {
+              "en": "Relevant research, publications, work, teaching, awards and extracurricular experience.",
+              "tr": "İlgili araştırma, yayın, iş, öğretim, ödül ve ders dışı deneyimler."
+            },
+            {
+              "en": "Motivation to contribute to sustainable development with the KTH degree.",
+              "tr": "KTH derecesiyle sürdürülebilir kalkınmaya katkı sunma motivasyonu."
+            }
+          ],
+          "steps": [
+            {
+              "order": 1,
+              "action": {
+                "en": "Apply to Aerospace Engineering through universityadmissions.se and rank KTH first.",
+                "tr": "Aerospace Engineering'e universityadmissions.se üzerinden başvur ve KTH'yi ilk sıraya koy."
+              },
+              "owner": "applicant",
+              "timing": "with_the_application",
+              "required_documents": [
+                {
+                  "en": "Complete Swedish national master's application",
+                  "tr": "Eksiksiz İsveç ulusal yüksek lisans başvurusu"
+                }
+              ],
+              "hard_requirement": true
+            },
+            {
+              "order": 2,
+              "action": {
+                "en": "Pay the national application fee and submit the separate KTH Scholarship form during the published scholarship window; no additional scholarship documents are required.",
+                "tr": "Ulusal başvuru ücretini öde ve yayımlanan burs penceresinde ayrı KTH Scholarship formunu gönder; ek burs belgesi gerekmez."
+              },
+              "owner": "applicant",
+              "timing": "separate_before_deadline",
+              "required_documents": [],
+              "hard_requirement": true
+            },
+            {
+              "order": 3,
+              "action": {
+                "en": "Ensure all degree-application documents reach University Admissions by its supporting-document deadline; KTH reuses those documents for scholarship assessment.",
+                "tr": "Tüm derece başvuru belgelerinin University Admissions'a destekleyici belge tarihine kadar ulaştığını doğrula; KTH burs değerlendirmesinde bu belgeleri yeniden kullanır."
+              },
+              "owner": "applicant",
+              "timing": "separate_before_deadline",
+              "required_documents": [
+                {
+                  "en": "All documents required for the national master's application",
+                  "tr": "Ulusal yüksek lisans başvurusu için gereken tüm belgeler"
+                }
+              ],
+              "hard_requirement": true
+            }
+          ],
+          "competitiveness": "highly_selective",
+          "typical_award": {
+            "amount": null,
+            "currency": "SEK",
+            "period": "first and second year of the master's programme",
+            "coverage": [
+              "full_tuition",
+              "living_costs_excluded"
+            ]
+          },
+          "renewal_conditions": "Second-year tuition remains covered only if first-year study results are satisfactory.",
+          "evidence_url": "https://www.kth.se/en/studies/master/admissions/scholarships/kth-scholarship-1.72827"
+        }
+      ]
     },
     "living_profile": {
       "city_type": "Medium",
@@ -325,7 +415,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -334,7 +424,7 @@
         "reason": "no_official_living_cost_items",
         "components": {},
         "monthly_total": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -455,11 +545,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 132,
+        "days_remaining_at_evaluation": 131,
         "derived_from": "application_timeline_profile.application_deadline",
         "confidence": "high",
         "source_url": "https://www.kth.se/en/studies/master/aerospace-engineering",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -480,9 +570,128 @@
       "faculty_contact_policy": "only_with_specific_research_question",
       "research_units": [
         {
+          "name": "Aerospace Engineering research group",
+          "unit_type": "research_group",
+          "url": "https://www.kth.se/en/tekmek/forskargrupper/flyg-och-rymdteknik/flyg-och-rymdteknik-1.1205092",
+          "lead": null,
+          "topics": [
+            "aerodynamics",
+            "flight_mechanics",
+            "aeroelasticity",
+            "spacecraft_design",
+            "systems_engineering"
+          ],
+          "facilities": [
+            "Wind Tunnel L2000"
+          ],
+          "student_access": "project_course_open",
+          "why_it_fits": {
+            "en": "For aerodynamics, flight_mechanics, aeroelasticity or spacecraft_design, this is the programme's core group and its staff directly teach and examine Aerospace MSc projects and second-cycle degree projects.",
+            "tr": "aerodynamics, flight_mechanics, aeroelasticity veya spacecraft_design hedefi için bu grup programın çekirdeğidir; kadrosu Aerospace MSc projelerini ve ikinci kademe derece projelerini doğrudan yürütür ve değerlendirir."
+          },
+          "last_verified": "2026-09-06"
+        },
+        {
+          "name": "Wind Tunnel L2000",
+          "unit_type": "facility",
+          "url": "https://www.kth.se/en/tekmek/infrastruktur/vindtunnel-l2000-1.1244292",
+          "lead": "Associate Professor Raffaello Mariani (contact)",
+          "topics": [
+            "wind_tunnel",
+            "aerodynamics",
+            "aeroelasticity",
+            "experimental_fluids",
+            "testing"
+          ],
+          "facilities": [
+            "2 m × 2 m octagonal test section",
+            "Closed-circuit low-speed atmospheric tunnel up to 60 m/s",
+            "Six-degree-of-freedom internal balance",
+            "MicroDaq3 64-channel pressure acquisition system",
+            "Streamwise ProCap flow measurement system",
+            "Fluorescent-tuft and smoke-flow visualisation"
+          ],
+          "student_access": "project_course_open",
+          "why_it_fits": {
+            "en": "For wind_tunnel, aerodynamics or aeroelasticity, L2000 provides aircraft-load measurement, pitch/yaw movement and non-standard instrumentation in the same facility used for KTH aeronautics education and research.",
+            "tr": "wind_tunnel, aerodynamics veya aeroelasticity hedefi için L2000, KTH havacılık eğitim ve araştırmalarında kullanılan aynı tesiste uçak yükü ölçümü, hatve/sapma hareketi ve standart dışı cihaz kurulumu sağlar."
+          },
+          "last_verified": "2026-09-06"
+        },
+        {
+          "name": "KTH Space Center",
+          "unit_type": "centre",
+          "url": "https://www.kth.se/en/2.844/centra/centra/2.62258",
+          "lead": "Professor Mark Pearce (Director)",
+          "topics": [
+            "space_systems",
+            "satellite_systems",
+            "spacecraft_design",
+            "rocket_propulsion",
+            "space_environment"
+          ],
+          "facilities": [
+            "KTH Space Technology Laboratory",
+            "MIST 3U CubeSat project",
+            "REXUS/BEXUS student experiment pathway"
+          ],
+          "student_access": "project_course_open",
+          "why_it_fits": {
+            "en": "For space_systems, satellite_systems or spacecraft_design, the centre provides explicit student routes into MIST through Master's theses, project courses or team work, plus REXUS/BEXUS flight experiments and a dedicated space-technology laboratory.",
+            "tr": "space_systems, satellite_systems veya spacecraft_design hedefi için merkez; yüksek lisans tezleri, proje dersleri ya da ekip çalışması üzerinden MIST'e, ayrıca REXUS/BEXUS uçuş deneylerine ve özel uzay teknolojisi laboratuvarına açık öğrenci yolları sağlar."
+          },
+          "last_verified": "2026-09-06"
+        },
+        {
+          "name": "Fluid Physics Laboratory",
+          "unit_type": "lab",
+          "url": "https://www.kth.se/en/tekmek/infrastruktur/stromningsfysiklaboratoriet-1.1239985",
+          "lead": "Professor Jens Fransson (contact)",
+          "topics": [
+            "experimental_fluids",
+            "turbulence",
+            "wind_tunnel",
+            "aerodynamics"
+          ],
+          "facilities": [
+            "Minimum-Turbulence-Level wind tunnel",
+            "Wind-tunnel laboratory",
+            "Water laboratory",
+            "Shock-tube laboratory",
+            "Cicero laboratory"
+          ],
+          "student_access": "not_stated",
+          "why_it_fits": {
+            "en": "For experimental_fluids, turbulence or wind_tunnel, the laboratory groups several complementary experimental environments, including the Minimum-Turbulence-Level tunnel and a shock-tube lab, under one department.",
+            "tr": "experimental_fluids, turbulence veya wind_tunnel hedefi için laboratuvar, Minimum-Turbulence-Level tüneli ve şok tüpü laboratuvarı dâhil birbirini tamamlayan çeşitli deney ortamlarını aynı bölüm altında toplar."
+          },
+          "last_verified": "2026-09-06"
+        },
+        {
+          "name": "Lightweight Structures group",
+          "unit_type": "research_group",
+          "url": "https://www.kth.se/en/tekmek/forskargrupper/lattkonstruktioner",
+          "lead": null,
+          "topics": [
+            "lightweight_design",
+            "composites",
+            "aerospace_structures",
+            "materials",
+            "structural_mechanics"
+          ],
+          "facilities": [],
+          "student_access": "not_stated",
+          "why_it_fits": {
+            "en": "For lightweight_design, composites or aerospace_structures, the group combines composite and sandwich structures with manufacturing, durability and integrated functionality using theoretical, numerical and experimental methods.",
+            "tr": "lightweight_design, composites veya aerospace_structures hedefi için grup; kompozit ve sandviç yapıları üretim, dayanıklılık ve bütünleşik işlevlerle kuramsal, sayısal ve deneysel yöntemler üzerinden birleştirir."
+          },
+          "last_verified": "2026-09-06"
+        },
+        {
           "name": "FLOW research centre",
           "unit_type": "centre",
           "url": "https://www.flow.kth.se/",
+          "lead": null,
           "topics": [
             "turbulence",
             "cfd",
@@ -490,62 +699,128 @@
             "aerodynamics",
             "hpc"
           ],
-          "student_access": "msc_thesis_open",
+          "facilities": [],
+          "student_access": "not_stated",
           "why_it_fits": {
-            "en": "KTH's fluid mechanics centre, internationally known for turbulence and flow control. If turbulence or cfd is your tag, FLOW is the specific unit to name — the department's other application areas dilute the aerospace framing but not the fluid mechanics depth.",
-            "tr": "KTH'nin akışkanlar mekaniği merkezi; türbülans ve akış kontrolüyle uluslararası olarak tanınır. Etiketin turbulence veya cfd ise, adlandırman gereken spesifik birim FLOW'dur — bölümün diğer uygulama alanları havacılık çerçevesini seyreltir ancak akışkanlar mekaniği derinliğini değil."
+            "en": "For turbulence, cfd or hpc, FLOW is KTH's focused fluid-mechanics research environment and complements the Aerospace group's vehicle-level work with deeper flow physics and computation.",
+            "tr": "turbulence, cfd veya hpc hedefi için FLOW, KTH'nin odaklı akışkanlar mekaniği araştırma ortamıdır ve Aerospace grubunun araç düzeyindeki çalışmalarını daha derin akış fiziği ve hesaplamayla tamamlar."
           },
-          "last_verified": "2026-08-30"
-        },
-        {
-          "name": "Engineering Mechanics research areas",
-          "unit_type": "research_group",
-          "url": "https://www.kth.se/en/tekmek/institutionen-for-teknisk-mekanik-1.1204789",
-          "topics": [
-            "structural_mechanics",
-            "aeroacoustics",
-            "lightweight_design",
-            "turbulence",
-            "flight_mechanics"
-          ],
-          "stated_research_areas": [
-            "Fundamental mechanics",
-            "Fluid mechanics",
-            "Solid mechanics",
-            "Engineering acoustics",
-            "Lightweight structures",
-            "Application areas: aerospace, naval, vehicle dynamics, railway vehicles, biomechanics"
-          ],
-          "student_access": "msc_thesis_open",
-          "last_verified": "2026-08-30"
-        },
-        {
-          "name": "MSc Aerospace Engineering track structure with wind tunnel testing",
-          "unit_type": "facility",
-          "url": "https://www.kth.se/en/studies/master/aerospace-engineering/msc-aerospace-engineering-1.6529",
-          "topics": [
-            "wind_tunnel",
-            "aerodynamics",
-            "aircraft_design",
-            "aeroelasticity",
-            "systems_engineering"
-          ],
-          "student_access": "project_course_open",
-          "why_it_fits": {
-            "en": "The Aeronautics track states that students plan, perform and evaluate a wind tunnel test during their studies, and that the track covers how aerodynamic and structural properties influence stability and control. That is a taught aeroelasticity thread, which many programmes leave to electives.",
-            "tr": "Havacılık izi, öğrencilerin eğitimleri sırasında bir rüzgâr tüneli testi planlayıp yürüttüğünü ve değerlendirdiğini; izin aerodinamik ve yapısal özelliklerin kararlılık ile kontrolü nasıl etkilediğini kapsadığını belirtir. Bu, birçok programın seçmelilere bıraktığı, öğretilen bir aeroelastisite hattıdır."
-          },
-          "last_verified": "2026-08-30"
+          "last_verified": "2026-09-06"
         }
       ],
       "faculty_email_availability": {
-        "status": "not_published",
+        "status": "published_on_individual_profiles",
         "note": {
-          "en": "The department and programme pages describe the research areas and tracks but publish no individual staff addresses on the checked pages.",
-          "tr": "Bölüm ve program sayfaları araştırma alanlarını ve izleri anlatır ancak kontrol edilen sayfalarda bireysel personel adresi yayımlamaz."
+          "en": "Each stored address is published on the corresponding official KTH profile or research-group page; no email was inferred from KTH's naming pattern.",
+          "tr": "Kaydedilen her adres ilgili resmî KTH profilinde veya araştırma grubu sayfasında yayımlanır; KTH'nin adlandırma kalıbından hiçbir e-posta türetilmedi."
         },
-        "directory_url": "https://www.kth.se/en/tekmek/institutionen-for-teknisk-mekanik-1.1204789"
-      }
+        "directory_url": "https://www.kth.se/en/tekmek/forskargrupper/flyg-och-rymdteknik/flyg-och-rymdteknik-1.1205092"
+      },
+      "research_strength_summary": {
+        "en": "KTH gives Aerospace MSc students three distinct practical pathways: aircraft aerodynamics and aeroelasticity through the Aerospace Engineering group and L2000 tunnel, space hardware through KTH Space Center and MIST, and structures/fluids depth through Lightweight Structures, FLOW and the Fluid Physics Laboratory.",
+        "tr": "KTH, Aerospace MSc öğrencilerine üç ayrı uygulamalı yol sunar: Aerospace Engineering grubu ve L2000 tüneli üzerinden uçak aerodinamiği ile aeroelastisite; KTH Space Center ve MIST üzerinden uzay donanımı; Lightweight Structures, FLOW ve Akışkan Fiziği Laboratuvarı üzerinden yapılar ve akışkanlar derinliği."
+      },
+      "faculty_contact_note": {
+        "en": "The selected KTH profiles and the Aerospace Engineering group page publish direct faculty emails. Contact timing and student availability are not stated, so the addresses should be used only for a concise, specific research or thesis-fit question.",
+        "tr": "Seçilen KTH profilleri ve Aerospace Engineering grup sayfası öğretim üyelerinin doğrudan e-postalarını yayımlar. İletişim zamanı ve öğrenci kabul durumu belirtilmediğinden adresler yalnızca kısa ve belirli bir araştırma ya da tez uyumu sorusu için kullanılmalıdır."
+      },
+      "notable_professors": [
+        {
+          "name": "Raffaello Mariani",
+          "role": {
+            "en": "Associate Professor in the Division of Aerospace, Moveability and Naval Architecture",
+            "tr": "Havacılık, Hareketlilik ve Gemi İnşaatı Bölümünde Doçent"
+          },
+          "focus": {
+            "en": "Experimental aerodynamics and wind-tunnel testing, including compressible vortex-ring impacts, quantitative schlieren and supersonic jets.",
+            "tr": "Sıkıştırılabilir girdap halkası çarpmaları, nicel schlieren ve süpersonik jetler dâhil deneysel aerodinamik ve rüzgâr tüneli testleri."
+          },
+          "fit_tags": [
+            "aerodynamics",
+            "experimental_fluids",
+            "wind_tunnel"
+          ],
+          "email": "rmariani@kth.se",
+          "email_source": "https://www.kth.se/profile/rmariani/",
+          "profile_url": "https://www.kth.se/profile/rmariani/",
+          "lab": "Wind Tunnel L2000 and Aerospace Engineering group",
+          "contact_timing": "unknown",
+          "accepting_students_signal": "not_stated",
+          "last_verified": "2026-09-06"
+        },
+        {
+          "name": "Ulf Ringertz",
+          "role": {
+            "en": "Professor in Aerospace, Moveability and Naval Architecture",
+            "tr": "Havacılık, Hareketlilik ve Gemi İnşaatı Profesörü"
+          },
+          "focus": {
+            "en": "Aeroelasticity, flight mechanics, aeronautics degree projects and aerospace engineering project work.",
+            "tr": "Aeroelastisite, uçuş mekaniği, havacılık derece projeleri ve havacılık-uzay mühendisliği proje çalışmaları."
+          },
+          "fit_tags": [
+            "aeroelasticity",
+            "flight_mechanics",
+            "stability_control",
+            "aircraft_design"
+          ],
+          "email": "rzu@kth.se",
+          "email_source": "https://www.kth.se/profile/rzu?l=en",
+          "profile_url": "https://www.kth.se/profile/rzu?l=en",
+          "lab": "Aerospace Engineering group",
+          "contact_timing": "unknown",
+          "accepting_students_signal": "not_stated",
+          "last_verified": "2026-09-06"
+        },
+        {
+          "name": "Gunnar Tibert",
+          "role": {
+            "en": "Associate Professor in Aerospace, Moveability and Naval Architecture",
+            "tr": "Havacılık, Hareketlilik ve Gemi İnşaatı Bölümünde Doçent"
+          },
+          "focus": {
+            "en": "Spacecraft dynamics, space environment, spacecraft engineering and systems integration for space technology, with responsibility for second-cycle space-technology degree projects.",
+            "tr": "İkinci kademe uzay teknolojisi derece projeleri sorumluluğuyla uzay aracı dinamiği, uzay ortamı, uzay aracı mühendisliği ve uzay teknolojileri sistem entegrasyonu."
+          },
+          "fit_tags": [
+            "spacecraft_design",
+            "attitude_dynamics_control",
+            "space_environment",
+            "systems_engineering"
+          ],
+          "email": "tibert@kth.se",
+          "email_source": "https://www.kth.se/profile/tibert?l=en",
+          "profile_url": "https://www.kth.se/profile/tibert?l=en",
+          "lab": "Aerospace Engineering group",
+          "contact_timing": "unknown",
+          "accepting_students_signal": "not_stated",
+          "last_verified": "2026-09-06"
+        },
+        {
+          "name": "Dan Zenkert",
+          "role": {
+            "en": "Professor in Material and Structural Mechanics",
+            "tr": "Malzeme ve Yapı Mekaniği Profesörü"
+          },
+          "focus": {
+            "en": "Mechanics of multifunctional composite materials, including structural batteries, shape-morphing composites, integrated sensing and energy harvesting.",
+            "tr": "Yapısal bataryalar, şekil değiştiren kompozitler, bütünleşik algılama ve enerji hasadı dâhil çok işlevli kompozit malzemelerin mekaniği."
+          },
+          "fit_tags": [
+            "composites",
+            "materials",
+            "lightweight_design",
+            "aerospace_structures"
+          ],
+          "email": "danz@kth.se",
+          "email_source": "https://www.kth.se/profile/danz/",
+          "profile_url": "https://www.kth.se/profile/danz/",
+          "lab": "Lightweight Structures group",
+          "contact_timing": "unknown",
+          "accepting_students_signal": "not_stated",
+          "last_verified": "2026-09-06"
+        }
+      ]
     },
     "industry_ecosystem_profile": {
       "local_industry_strength": "very_high",
@@ -561,7 +836,7 @@
         "https://www.universityadmissions.se/intl/search?period=18&freeText=aerospace+engineering",
         "https://www.kth.se/en/studies/master/aerospace-engineering"
       ],
-      "last_verified": "2026-09-05",
+      "last_verified": "2026-09-06",
       "field_confidence": {
         "tuition": "high",
         "admission": "high",
@@ -574,7 +849,8 @@
         "location": "medium",
         "deadline": "high",
         "application_timeline_profile": "high",
-        "application_documents": "high"
+        "application_documents": "high",
+        "funding": "high"
       },
       "source_reliability": "high",
       "verification_status": "verified",
@@ -736,18 +1012,6 @@
           }
         },
         {
-          "url": "https://www.flow.kth.se/",
-          "title": "KTH — FLOW research centre",
-          "source_type": "official_lab_page",
-          "access_status": "ok",
-          "last_checked": "2026-08-30",
-          "relevant_fields": [
-            "research",
-            "labs"
-          ],
-          "confidence": "high"
-        },
-        {
           "url": "https://www.kth.se/en/studies/master/aerospace-engineering",
           "title": "KTH — MSc Aerospace Engineering",
           "source_type": "official_program_page",
@@ -773,6 +1037,231 @@
             "application_documents"
           ],
           "confidence": "high"
+        },
+        {
+          "url": "https://www.kth.se/profile/rmariani/",
+          "title": "KTH — Raffaello Mariani",
+          "source_type": "official_faculty_profile",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "faculty",
+            "faculty_email",
+            "notable_professors"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes role, direct email and experimental-aerodynamics background.",
+            "tr": "Rolü, doğrudan e-postayı ve deneysel aerodinamik geçmişini yayımlar."
+          }
+        },
+        {
+          "url": "https://www.kth.se/profile/rzu?l=en",
+          "title": "KTH — Ulf Ringertz",
+          "source_type": "official_faculty_profile",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "faculty",
+            "faculty_email",
+            "notable_professors"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes role, direct email and current aeroelasticity, flight-mechanics and degree-project responsibilities.",
+            "tr": "Rolü, doğrudan e-postayı ve güncel aeroelastisite, uçuş mekaniği ile derece projesi sorumluluklarını yayımlar."
+          }
+        },
+        {
+          "url": "https://www.kth.se/profile/tibert?l=en",
+          "title": "KTH — Gunnar Tibert",
+          "source_type": "official_faculty_profile",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "faculty",
+            "faculty_email",
+            "notable_professors"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes role, direct email and current spacecraft, space-systems and degree-project responsibilities.",
+            "tr": "Rolü, doğrudan e-postayı ve güncel uzay aracı, uzay sistemleri ile derece projesi sorumluluklarını yayımlar."
+          }
+        },
+        {
+          "url": "https://www.kth.se/profile/danz/",
+          "title": "KTH — Dan Zenkert",
+          "source_type": "official_faculty_profile",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "faculty",
+            "faculty_email",
+            "notable_professors"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes role, direct email and multifunctional-composites research focus.",
+            "tr": "Rolü, doğrudan e-postayı ve çok işlevli kompozitler araştırma odağını yayımlar."
+          }
+        },
+        {
+          "url": "https://www.kth.se/en/tekmek/forskargrupper/flyg-och-rymdteknik/flyg-och-rymdteknik-1.1205092",
+          "title": "KTH — Aerospace Engineering research group",
+          "source_type": "official_research_group_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "labs",
+            "research_units",
+            "faculty",
+            "faculty_email"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Defines the aerospace group's technical scope and publishes its faculty roster and direct emails.",
+            "tr": "Havacılık-uzay grubunun teknik kapsamını tanımlar ve öğretim üyesi listesini doğrudan e-postalarıyla yayımlar."
+          }
+        },
+        {
+          "url": "https://www.kth.se/en/tekmek/infrastruktur/vindtunnel-l2000-1.1244292",
+          "title": "KTH — Wind Tunnel L2000",
+          "source_type": "official_facility_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "labs",
+            "research_units",
+            "facilities"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes tunnel geometry, speed, instrumentation, aeronautics use and official contact.",
+            "tr": "Tünel geometrisini, hızını, cihazlarını, havacılık kullanımını ve resmî irtibatı yayımlar."
+          }
+        },
+        {
+          "url": "https://www.kth.se/en/2.844/centra/centra/2.62258",
+          "title": "KTH — KTH Space Center",
+          "source_type": "official_research_center_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "labs",
+            "research_units",
+            "facilities"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Publishes the current centre director, Space Technology Laboratory and MIST participation information.",
+            "tr": "Güncel merkez direktörünü, Uzay Teknolojisi Laboratuvarını ve MIST katılım bilgisini yayımlar."
+          }
+        },
+        {
+          "url": "https://www.kth.se/en/2.844/centra/centra/2.62258/for-students",
+          "title": "KTH Space Center — For Students",
+          "source_type": "official_student_projects_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "research_units",
+            "student_access",
+            "facilities"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Explicitly describes MIST participation through Master's theses, project courses or voluntary team work and the REXUS/BEXUS route.",
+            "tr": "MIST katılımını yüksek lisans tezleri, proje dersleri veya gönüllü ekip çalışması üzerinden ve REXUS/BEXUS yolunu açıkça anlatır."
+          }
+        },
+        {
+          "url": "https://www.kth.se/en/tekmek/infrastruktur/stromningsfysiklaboratoriet-1.1239985",
+          "title": "KTH — Fluid Physics Laboratory",
+          "source_type": "official_lab_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "labs",
+            "research_units",
+            "facilities"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Names the MTL wind tunnel, water, shock-tube and Cicero laboratories and official contact.",
+            "tr": "MTL rüzgâr tünelini, su, şok tüpü ve Cicero laboratuvarlarını ve resmî irtibatı adlandırır."
+          }
+        },
+        {
+          "url": "https://www.kth.se/en/tekmek/forskargrupper/lattkonstruktioner",
+          "title": "KTH — Lightweight Structures",
+          "source_type": "official_research_group_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "research_units",
+            "faculty",
+            "faculty_email"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Defines the group's materials, structures, manufacturing and durability scope and publishes faculty contacts.",
+            "tr": "Grubun malzeme, yapı, üretim ve dayanıklılık kapsamını tanımlar ve öğretim üyesi irtibatlarını yayımlar."
+          }
+        },
+        {
+          "url": "https://www.flow.kth.se/",
+          "title": "KTH — FLOW research centre",
+          "source_type": "official_lab_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "research",
+            "labs",
+            "research_units"
+          ],
+          "confidence": "high",
+          "notes": {
+            "en": "Official FLOW centre homepage.",
+            "tr": "Resmî FLOW merkez ana sayfası."
+          }
+        },
+        {
+          "url": "https://www.kth.se/en/studies/master/admissions/scholarships/kth-scholarship-1.72827",
+          "title": "KTH — KTH Scholarship",
+          "source_type": "official_scholarship_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "scholarship",
+            "funding",
+            "scholarship_deadline",
+            "application_documents"
+          ],
+          "confidence": "high"
+        },
+        {
+          "url": "https://www.kth.se/en/studies/2.19400/how-to-apply-for-masters-studies-1.68487",
+          "title": "KTH — How to apply for master's studies starting in 2027",
+          "source_type": "official_admission_page",
+          "access_status": "ok",
+          "last_checked": "2026-09-06",
+          "relevant_fields": [
+            "admission",
+            "deadline",
+            "scholarship"
+          ],
+          "confidence": "high"
         }
       ],
       "needs_verification": false
@@ -793,7 +1282,7 @@
     "qs_ranking": 82,
     "data_quality": {
       "status": "verified",
-      "checked_official_source_count": 13,
+      "checked_official_source_count": 16,
       "verified_fields": [
         "program",
         "language",
@@ -808,7 +1297,7 @@
       ],
       "unverified_critical_fields": [],
       "has_checked_source_log": true,
-      "audited_at": "2026-09-05"
+      "audited_at": "2026-09-06"
     },
     "quality_control": {
       "checked_at": "2026-09-05",
@@ -847,8 +1336,8 @@
     },
     "academic_match_profile": {
       "standard": "academic_match@3.2.0",
-      "tier": "partial_match",
-      "score": 50,
+      "tier": "core_match",
+      "score": 89,
       "score_basis_weight": 90,
       "evidenced_dimensions": 4,
       "dimensions_required_for_publication": 3,
@@ -866,13 +1355,13 @@
           "source_url": "https://www.kth.se/en/tekmek/institutionen-for-teknisk-mekanik-1.1204789"
         },
         "faculty_evidence": {
-          "level": "none",
-          "basis": "no_named_items",
+          "level": "strong",
+          "basis": "4_named_items",
           "weight": 25
         },
         "facility_evidence": {
-          "level": "none",
-          "basis": "no_named_items",
+          "level": "strong",
+          "basis": "15_named_items",
           "weight": 10
         },
         "industry_outlet_evidence": {
@@ -889,7 +1378,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "needs_review",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -1078,7 +1567,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_sek_per_year": 160000.0,
       "tuition_derivation": {
@@ -1144,7 +1633,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -1250,7 +1739,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -1287,11 +1776,11 @@
             "monthly_living_cost_sek_min": 14360.0,
             "monthly_living_cost_sek_max": 18360.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -1368,11 +1857,11 @@
         "cycle_label": null,
         "is_recurring_annual": true,
         "status": "open",
-        "days_remaining_at_evaluation": 132,
+        "days_remaining_at_evaluation": 131,
         "derived_from": "application_timeline_profile.application_deadline",
         "confidence": "high",
         "source_url": "https://www.chalmers.se/en/education/find-masters-programme/mobility-engineering-msc/?p=12",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -1773,7 +2262,7 @@
       ],
       "confidence": "unknown",
       "legacy_relevance_status": "medium",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -1948,7 +2437,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "tuition_sek_per_year": 166000.0,
       "tuition_derivation": {
@@ -2018,7 +2507,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -2117,7 +2606,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -2154,11 +2643,11 @@
             "monthly_living_cost_sek_min": 6400.0,
             "monthly_living_cost_sek_max": 13100.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -2238,11 +2727,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "closed",
-        "days_remaining_at_evaluation": -233,
+        "days_remaining_at_evaluation": -234,
         "derived_from": "application_timeline_profile.non_eu_deadline",
         "confidence": "high",
         "source_url": "https://liu.se/en/education/application-and-admission/how-to-apply",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       }
@@ -2626,7 +3115,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "needs_review",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {
@@ -2789,7 +3278,7 @@
           "en": "A total is published only when tuition and a component-checked living budget are both verified in the same currency; otherwise the parts are shown separately so no invented sum reaches a student.",
           "tr": "Toplam yalnızca öğrenim ücreti ve bileşenleri kontrol edilmiş yaşam bütçesi aynı para biriminde doğrulandığında yayımlanır; aksi hâlde parçalar ayrı gösterilir ve öğrenciye uydurma bir toplam ulaşmaz."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "application_fee_sek": 900,
       "application_fee_charged_by": "central_application_service",
@@ -2842,7 +3331,7 @@
           "en": "Paid once, when you apply. It is never added to the annual total, because a one-off charge folded into a per-year figure would recur for every year of the degree.",
           "tr": "Basvuru sirasinda bir kez odenir. Yillik toplama hicbir zaman eklenmez; tek seferlik bir kalem yillik bir rakamin icine katilsaydi diplomanin her yili icin tekrarlardi."
         },
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "scholarship_profile": {
@@ -2927,7 +3416,7 @@
         "band_from_score": null,
         "capped_from_very_high": false,
         "legacy_value": "unknown",
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       },
       "cost_of_living_profile": {
         "standard": "cost_model@3.2.0",
@@ -2964,11 +3453,11 @@
             "monthly_living_cost_sek_min": 10000.0,
             "monthly_living_cost_sek_max": 10000.0
           },
-          "derived_at": "2026-09-05"
+          "derived_at": "2026-09-06"
         },
         "source_url": null,
         "note": null,
-        "evaluated_at": "2026-09-05"
+        "evaluated_at": "2026-09-06"
       }
     },
     "curriculum_profile": {
@@ -3056,11 +3545,11 @@
         "cycle_label": null,
         "is_recurring_annual": false,
         "status": "open",
-        "days_remaining_at_evaluation": 132,
+        "days_remaining_at_evaluation": 131,
         "derived_from": "application_timeline_profile.application_deadline",
         "confidence": "high",
         "source_url": "https://www.ltu.se/en/education/programme/tmrra-master-programme-in-space-science-and-technology",
-        "evaluated_at": "2026-09-05",
+        "evaluated_at": "2026-09-06",
         "audience": "new_applicants",
         "other_milestones": []
       },
@@ -3561,7 +4050,7 @@
       ],
       "confidence": "medium",
       "legacy_relevance_status": "strong",
-      "evaluated_at": "2026-09-05"
+      "evaluated_at": "2026-09-06"
     },
     "academic_match_evidence": {
       "research_group_evidence": {

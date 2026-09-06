@@ -12,6 +12,11 @@
       policy_after: 'RA outreach after admission', policy_during: 'Supervisor match during the MSc',
       applyFee: 'Cost to apply', perApplication: 'per application', perProgrammeChoice: 'per programme choice',
       nonRefundable: 'non-refundable', waiverClosedIntl: 'fee waiver closed to applicants from abroad'
+      ,labKicker: 'Facilities and access', labTitle: 'What each laboratory actually offers', labText: 'Named equipment and student-access routes are shown only when an official university source states them. Laboratory existence is not a guaranteed place.',
+      showingLabs: '{units} research units across {programmes} programmes', featuredProfile: 'Priority profile', facilities: 'Named facilities', studentAccess: 'Student access', labLead: 'Lead', officialLab: 'Official lab page', contactTiming: 'Contact timing', acceptingStudents: 'Accepting-student signal', emailNotPublished: 'Email not published on the checked official profile',
+      before_application_encouraged: 'Contact before applying is encouraged', before_application_optional: 'Optional before application', only_with_specific_research_question: 'Only with a specific research question', after_admission_for_ra: 'After admission for RA opportunities', do_not_contact_centralised_admission: 'Centralised admission — do not cold-email', unknown: 'Not stated', stated_open: 'Officially stated open', stated_closed: 'Officially stated closed', not_stated: 'Not stated',
+      msc_thesis_open: 'MSc thesis route published', project_course_open: 'Project/course access published', ra_position_only: 'RA/project position only', phd_only: 'PhD only'
+      ,showAllProfiles: 'Show all evidence profiles', showPriorityProfiles: 'Show priority universities only'
     },
     tr: {
       skip: 'Araştırma eşleşmelerine geç', brand: 'Araştırma uyumu', programmes: 'Programlar', calendar: 'Başvuru takvimi', scholarships: 'Burslar', researchFit: 'Araştırma uyumu',
@@ -23,11 +28,17 @@
       policy_after: 'RA iletişimi kabulden sonra', policy_during: 'Danışman eşleşmesi MSc içinde',
       applyFee: 'Başvurmanın maliyeti', perApplication: 'başvuru başına', perProgrammeChoice: 'program tercihi başına',
       nonRefundable: 'iade edilmez', waiverClosedIntl: 'ücret muafiyeti yurt dışından başvuranlara kapalı'
+      ,labKicker: 'Tesisler ve erişim', labTitle: 'Her laboratuvar gerçekte ne sunuyor?', labText: 'Adlandırılmış ekipman ve öğrenci erişim rotaları yalnızca resmî üniversite kaynağında yazıyorsa gösterilir. Laboratuvarın varlığı yer garantisi değildir.',
+      showingLabs: '{programmes} programda {units} araştırma birimi', featuredProfile: 'Öncelikli profil', facilities: 'Adlandırılmış tesisler', studentAccess: 'Öğrenci erişimi', labLead: 'Yürütücü', officialLab: 'Resmî laboratuvar sayfası', contactTiming: 'İletişim zamanı', acceptingStudents: 'Öğrenci kabul sinyali', emailNotPublished: 'Kontrol edilen resmî profilde e-posta yayımlanmamış',
+      before_application_encouraged: 'Başvuru öncesi iletişim teşvik ediliyor', before_application_optional: 'Başvuru öncesi isteğe bağlı', only_with_specific_research_question: 'Yalnızca spesifik araştırma sorusuyla', after_admission_for_ra: 'RA fırsatları için kabulden sonra', do_not_contact_centralised_admission: 'Merkezî kabul — soğuk e-posta gönderme', unknown: 'Belirtilmemiş', stated_open: 'Resmen açık olduğu belirtilmiş', stated_closed: 'Resmen kapalı olduğu belirtilmiş', not_stated: 'Belirtilmemiş',
+      msc_thesis_open: 'MSc tez rotası yayımlanmış', project_course_open: 'Proje/ders erişimi yayımlanmış', ra_position_only: 'Yalnızca RA/proje pozisyonu', phd_only: 'Yalnızca doktora'
+      ,showAllProfiles: 'Tüm kanıtlı profilleri göster', showPriorityProfiles: 'Yalnızca öncelikli üniversiteleri göster'
     }
   };
 
   let catalog = null;
   let selectedField = 'all';
+  let showAllProfiles = false;
   const byId = (id) => document.getElementById(id);
   const lang = () => window.currentLanguage === 'tr' ? 'tr' : 'en';
   const t = (key, vars = {}) => Object.entries(vars).reduce((value, [name, replacement]) => value.replace(`{${name}}`, replacement), copy[lang()][key] || copy.en[key] || key);
@@ -36,6 +47,7 @@
   const fieldMap = () => new Map(catalog.canonical_fields.map((field) => [field.id, field]));
   const fieldLabel = (id) => local(fieldMap().get(id)?.short_label) || id;
   const schoolFor = (programmeId) => catalog.strong_programmes.find((item) => item.programme_id === programmeId)?.university || programmeId;
+  const researchDetails = () => catalog.programme_research_details || [];
 
   function applyCopy() {
     document.querySelectorAll('[data-copy]').forEach((element) => { element.textContent = t(element.dataset.copy); });
@@ -43,12 +55,13 @@
   }
 
   function renderStats() {
-    const facultyCount = catalog.advisor_guides.reduce((sum, guide) => sum + guide.faculty.length, 0);
+    const detailedFacultyCount = researchDetails().reduce((sum, profile) => sum + profile.notable_professors.length, 0);
+    const facultyCount = detailedFacultyCount || catalog.advisor_guides.reduce((sum, guide) => sum + guide.faculty.length, 0);
     const stats = [
       [catalog.canonical_fields.length, t('canonicalFields'), '⌁'],
       [catalog.strong_programmes.length, t('strongProgrammes'), '◈'],
       [facultyCount, t('facultyMatches'), '◎'],
-      [catalog.sources.length, t('officialSources'), '✓']
+      [catalog.official_source_count || catalog.sources.length, t('officialSources'), '✓']
     ];
     byId('research-stats').innerHTML = stats.map(([number, label, icon]) => `<article class="stat-card"><i>${icon}</i><strong>${number}</strong><span>${escapeHtml(label)}</span></article>`).join('');
   }
@@ -127,14 +140,44 @@
   }
 
   function renderFaculty() {
-    const faculty = catalog.advisor_guides.flatMap((guide) => guide.faculty.map((person) => ({ ...person, programme_id: guide.programme_id })));
+    const detailedFaculty = researchDetails().filter((profile) => showAllProfiles || profile.featured).flatMap((profile) => profile.notable_professors.map((person) => ({
+      ...person,
+      programme_id: profile.programme_id,
+      university: profile.university,
+      fit_fields: person.fit_tags || [],
+      verified_email: Boolean(person.email && person.email_source)
+    })));
+    const faculty = detailedFaculty.length ? detailedFaculty : catalog.advisor_guides.flatMap((guide) => guide.faculty.map((person) => ({ ...person, programme_id: guide.programme_id, university: schoolFor(guide.programme_id), verified_email: Boolean(person.email) })));
     const matches = faculty.filter((person) => selectedField === 'all' || person.fit_fields.includes(selectedField));
     byId('faculty-meta').textContent = t('showingFaculty', { count: matches.length });
     byId('faculty-grid').innerHTML = matches.length ? matches.map((person) => `<article class="faculty-card">
-      <div><span class="faculty-card__school">${escapeHtml(schoolFor(person.programme_id))}</span><h3>${escapeHtml(person.name)}</h3><p class="faculty-card__role">${escapeHtml(local(person.role))}</p></div>
+      <div><span class="faculty-card__school">${escapeHtml(person.university || schoolFor(person.programme_id))}</span><h3>${escapeHtml(person.name)}</h3><p class="faculty-card__role">${escapeHtml(local(person.role))}</p></div>
       <div class="field-chips">${person.fit_fields.map((field) => `<span class="field-chip">${escapeHtml(fieldLabel(field))}</span>`).join('')}</div>
       <p class="faculty-card__focus">${escapeHtml(local(person.focus))}</p>
-      <div class="faculty-card__actions"><a class="text-link text-link--primary" href="${escapeHtml(person.profile_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t('officialProfile'))} ↗</a><a class="text-link" href="mailto:${escapeHtml(person.email)}">${escapeHtml(t('email'))}</a></div>
+      ${person.lab ? `<p class="faculty-card__lab">${escapeHtml(person.lab)}</p>` : ''}
+      <dl class="faculty-signals"><div><dt>${escapeHtml(t('contactTiming'))}</dt><dd>${escapeHtml(t(person.contact_timing || 'unknown'))}</dd></div><div><dt>${escapeHtml(t('acceptingStudents'))}</dt><dd>${escapeHtml(t(person.accepting_students_signal || 'not_stated'))}</dd></div></dl>
+      <div class="faculty-card__actions"><a class="text-link text-link--primary" href="${escapeHtml(person.profile_url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t('officialProfile'))} ↗</a>${person.verified_email ? `<a class="text-link" href="mailto:${escapeHtml(person.email)}">${escapeHtml(person.email)}</a>` : `<span class="faculty-email-missing">${escapeHtml(t('emailNotPublished'))}</span>`}</div>
+    </article>`).join('') : `<div class="empty-state">${escapeHtml(t('noMatch'))}</div>`;
+  }
+
+  function renderLabs() {
+    const profiles = researchDetails().filter((profile) => showAllProfiles || profile.featured).map((profile) => ({
+      ...profile,
+      matching_units: profile.research_units.filter((unit) => selectedField === 'all' || (unit.topics || []).includes(selectedField))
+    })).filter((profile) => profile.matching_units.length);
+    const unitCount = profiles.reduce((sum, profile) => sum + profile.matching_units.length, 0);
+    byId('lab-meta').textContent = t('showingLabs', { units: unitCount, programmes: profiles.length });
+    byId('lab-grid').innerHTML = profiles.length ? profiles.map((profile) => `<article class="lab-programme${profile.featured ? ' is-featured' : ''}">
+      <header><div><span>${escapeHtml(profile.country || '')}</span><h3>${escapeHtml(profile.university)}</h3><p>${escapeHtml(profile.programme)}</p></div>${profile.featured ? `<b>${escapeHtml(t('featuredProfile'))}</b>` : ''}</header>
+      ${profile.faculty_contact_note ? `<p class="lab-contact-note">${escapeHtml(local(profile.faculty_contact_note))}</p>` : ''}
+      <div class="lab-units">${profile.matching_units.map((unit) => `<details class="lab-unit"><summary><span><strong>${escapeHtml(unit.name)}</strong><small>${escapeHtml(String(unit.unit_type || '').replaceAll('_', ' '))}</small></span><span aria-hidden="true">⌄</span></summary><div class="lab-unit__body">
+        <div class="field-chips">${(unit.topics || []).map((topic) => `<span class="field-chip">${escapeHtml(fieldLabel(topic))}</span>`).join('')}</div>
+        ${unit.why_it_fits ? `<p>${escapeHtml(local(unit.why_it_fits))}</p>` : ''}
+        <dl>${unit.lead ? `<div><dt>${escapeHtml(t('labLead'))}</dt><dd>${escapeHtml(unit.lead)}</dd></div>` : ''}<div><dt>${escapeHtml(t('studentAccess'))}</dt><dd>${escapeHtml(t(unit.student_access || 'not_stated'))}</dd></div></dl>
+        ${unit.facilities?.length ? `<section><h4>${escapeHtml(t('facilities'))}</h4><ul>${unit.facilities.map((facility) => `<li>${escapeHtml(typeof facility === 'string' ? facility : local(facility))}</li>`).join('')}</ul></section>` : ''}
+        <a class="text-link text-link--primary" href="${escapeHtml(unit.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(t('officialLab'))} ↗</a>
+      </div></details>`).join('')}</div>
+      ${profile.faculty_email_availability?.note ? `<p class="lab-email-note">${escapeHtml(local(profile.faculty_email_availability.note))}</p>` : ''}
     </article>`).join('') : `<div class="empty-state">${escapeHtml(t('noMatch'))}</div>`;
   }
 
@@ -152,6 +195,10 @@
     renderProgrammes();
     renderAdvisorGuides();
     renderFaculty();
+    renderLabs();
+    const scopeToggle = byId('research-scope-toggle');
+    scopeToggle.textContent = t(showAllProfiles ? 'showPriorityProfiles' : 'showAllProfiles');
+    scopeToggle.setAttribute('aria-pressed', String(showAllProfiles));
     renderOutreach();
     const verifiedText = `${t('verified')}: ${catalog.last_verified}`;
     byId('last-verified').textContent = verifiedText;
@@ -166,6 +213,7 @@
     catalog = payload.data || payload;
     const requestedField = new URLSearchParams(location.search).get('field');
     if (requestedField && catalog.canonical_fields.some((field) => field.id === requestedField)) selectedField = requestedField;
+    byId('research-scope-toggle').addEventListener('click', () => { showAllProfiles = !showAllProfiles; renderAll(); });
     renderAll();
   }
 

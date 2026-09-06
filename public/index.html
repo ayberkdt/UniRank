@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="site.css?v=4">
     <link rel="stylesheet" href="style.css?v=19">
-    <link rel="stylesheet" href="redesign.css?v=18">
+    <link rel="stylesheet" href="redesign.css?v=19">
     <link rel="stylesheet" href="profile.css?v=1">
     <link rel="stylesheet" href="decisionPanels.css?v=9">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
@@ -19,7 +19,7 @@
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="storage.js?v=1"></script>
-    <script src="i18n.js?v=13"></script>
+    <script src="i18n.js?v=14"></script>
     <script src="taxonomy.js?v=3"></script>
     <script src="standards.js?v=2"></script>
     <script src="visaPanel.js?v=2"></script>
@@ -393,6 +393,33 @@
             </section>
         </main>
 
+        <aside class="comparison-dock" id="comparison-dock" aria-live="polite" hidden>
+            <div class="comparison-dock__summary">
+                <span data-i18n="compare_shortlist">Comparison shortlist</span>
+                <strong><span id="comparison-count">0</span>/3</strong>
+            </div>
+            <div class="comparison-dock__chips" id="comparison-chips"></div>
+            <div class="comparison-dock__actions">
+                <button class="comparison-clear" id="comparison-clear" type="button" data-i18n="compare_clear">Clear</button>
+                <button class="comparison-open" id="comparison-open" type="button" disabled data-i18n="compare_open">Compare side by side</button>
+            </div>
+            <span class="comparison-dock__status" id="comparison-status" aria-live="assertive"></span>
+        </aside>
+
+        <div class="comparison-overlay" id="comparison-overlay" hidden>
+            <section class="comparison-workspace" id="comparison-workspace" role="dialog" aria-modal="true" aria-labelledby="comparison-title" aria-describedby="comparison-subtitle">
+                <header class="comparison-workspace__header">
+                    <div>
+                        <span class="section-kicker" data-i18n="compare_kicker">Decision comparison</span>
+                        <h2 id="comparison-title" data-i18n="compare_title">Compare programmes side by side</h2>
+                        <p id="comparison-subtitle" data-i18n="compare_subtitle">The same decision fields stay aligned across every selected programme.</p>
+                    </div>
+                    <button class="comparison-close" id="comparison-close" type="button" data-i18n-aria-label="compare_close" aria-label="Close comparison">&times;</button>
+                </header>
+                <div class="comparison-grid" id="comparison-grid"></div>
+            </section>
+        </div>
+
         <div class="drawer-overlay" id="drawer-overlay"></div>
         <aside class="drawer" id="detail-drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
             <div class="drawer-header">
@@ -416,7 +443,7 @@
     <script src="requirementSummary.js?v=1"></script>
     <script src="decisionPanels.js?v=6"></script>
     <script src="deadlineDashboard.js?v=17"></script>
-    <script src="script.js?v=40"></script>
+    <script src="script.js?v=41"></script>
     <script src="map.js?v=11"></script>
 
     <!-- Login Modal -->

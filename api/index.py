@@ -13,6 +13,23 @@ import numpy as np
 from unirank.core.json_loader import load_database_folder
 
 
+FEATURED_RESEARCH_PROGRAM_IDS = [
+    "mit-aeroastro",
+    "stanford-aa",
+    "caltech-galcit",
+    "university-of-cambridge",
+    "imperial-college-london",
+    "netherlands_delft_msc_aerospace",
+    "se-kth-aero-msc",
+    "germany-tum-msc-aerospace",
+    "germany-stuttgart-msc-aerospace",
+    "purdue-aae",
+    "uiuc-ae",
+    "georgia-tech-ae",
+    "umich-aero",
+]
+
+
 def _json_safe(value):
     if isinstance(value, dict):
         return {key: _json_safe(item) for key, item in value.items()}
@@ -47,25 +64,151 @@ def _project_file(*parts):
     ]
     return next((path for path in candidates if path.exists() and path.is_file()), None)
 
+
+def _database_directory():
+    candidates = [
+        Path(os.getcwd()) / "data_base",
+        Path(__file__).parent.parent / "data_base",
+        Path("/var/task/data_base"),
+    ]
+    return next((path for path in candidates if path.exists() and path.is_dir()), None)
+
+
+def _database_records():
+    """Load the canonical programme rows for the two evidence catalogues.
+
+    The catalogues remain useful editorial entry points, but scholarship
+    playbooks and faculty/lab evidence live on programme records.  Loading the
+    same canonical rows as /api/universities keeps those pages from drifting
+    into separate, manually copied databases.
+    """
+    database_path = _database_directory()
+    if not database_path:
+        return []
+    dataframe, _ = load_database_folder(database_path, strict=False)
+    if dataframe is None or dataframe.empty:
+        return []
+    dataframe = dataframe.replace({np.nan: None})
+    return _json_safe(dataframe.to_dict(orient="records"))
+
+
+def _latest_verified(current, profiles):
+    dates = [current] if isinstance(current, str) else []
+    dates.extend(
+        profile.get("last_verified")
+        for profile in profiles
+        if isinstance(profile.get("last_verified"), str)
+    )
+    return max(dates) if dates else None
+
+
+def _official_source_count(catalog_sources, records, relevant_terms):
+    urls = {
+        source.get("url")
+        for source in catalog_sources or []
+        if isinstance(source, dict) and source.get("url")
+    }
+    accepted_statuses = {"ok", "redirects", "pdf", "requires_js"}
+    for record in records:
+        source_profile = record.get("source_profile") or {}
+        for source in source_profile.get("source_log") or []:
+            if not isinstance(source, dict) or not str(source.get("source_type", "")).startswith("official_"):
+                continue
+            if source.get("access_status") not in accepted_statuses or not source.get("url"):
+                continue
+            fields = " ".join(str(field).lower() for field in source.get("relevant_fields") or [])
+            if any(term in fields for term in relevant_terms):
+                urls.add(source["url"])
+    return len(urls)
+
+
+def _programme_identity(record):
+    return {
+        "programme_id": record.get("id") or record.get("Uni_ID"),
+        "university": record.get("University") or record.get("university") or "",
+        "programme": record.get("program_name") or record.get("Program") or record.get("programme_name") or "",
+        "country": record.get("country") or record.get("Country") or "",
+        "degree_level": record.get("degree_level") or record.get("Degree") or "",
+    }
+
+
+def _institutional_funding(records):
+    opportunities = []
+    featured_order = {programme_id: index for index, programme_id in enumerate(FEATURED_RESEARCH_PROGRAM_IDS)}
+    for record in records:
+        profile = record.get("scholarship_profile") or {}
+        playbook = profile.get("playbook") or []
+        if not isinstance(playbook, list) or not playbook:
+            continue
+        identity = _programme_identity(record)
+        programme_id = identity["programme_id"]
+        if not programme_id:
+            continue
+        source_profile = record.get("source_profile") or {}
+        opportunities.append({
+            **identity,
+            "featured": programme_id in featured_order,
+            "application_mode": profile.get("application_mode"),
+            "scholarship_deadline": profile.get("scholarship_deadline"),
+            "deadline_notes": profile.get("notes") or profile.get("verification_notes"),
+            "funding_status": profile.get("funding_status"),
+            "playbook": playbook,
+            "last_verified": source_profile.get("last_verified") or record.get("last_verified"),
+        })
+    opportunities.sort(key=lambda item: (
+        0 if item["featured"] else 1,
+        featured_order.get(item["programme_id"], 999),
+        item["university"],
+    ))
+    return opportunities
+
+
+def _programme_research_details(records):
+    details = []
+    featured_order = {programme_id: index for index, programme_id in enumerate(FEATURED_RESEARCH_PROGRAM_IDS)}
+    for record in records:
+        profile = record.get("research_profile") or {}
+        professors = profile.get("notable_professors") or []
+        units = profile.get("research_units") or []
+        if not isinstance(professors, list) or not isinstance(units, list) or not (professors or units):
+            continue
+        identity = _programme_identity(record)
+        programme_id = identity["programme_id"]
+        if not programme_id:
+            continue
+        source_profile = record.get("source_profile") or {}
+        details.append({
+            **identity,
+            "featured": programme_id in featured_order,
+            "faculty_contact_policy": profile.get("faculty_contact_policy"),
+            "faculty_contact_note": profile.get("faculty_contact_note"),
+            "faculty_email_availability": profile.get("faculty_email_availability"),
+            "notable_professors": professors,
+            "research_units": units,
+            "verification_notes": profile.get("verification_notes"),
+            "last_verified": source_profile.get("last_verified") or record.get("last_verified"),
+        })
+    details.sort(key=lambda item: (
+        0 if item["featured"] else 1,
+        featured_order.get(item["programme_id"], 999),
+        -(len(item["notable_professors"]) + len(item["research_units"])),
+        item["university"],
+    ))
+    return details
+
 @app.get("/api/universities")
 def get_universities():
     # In Vercel serverless functions, the directory structure can be tricky
-    possible_paths = [
-        Path(os.getcwd()) / "data_base",
-        Path(__file__).parent.parent / "data_base",
-        Path("/var/task/data_base")
-    ]
-    
-    db_path = None
-    for p in possible_paths:
-        if p.exists() and p.is_dir():
-            db_path = p
-            break
+    db_path = _database_directory()
 
     headers = {"Cache-Control": "no-store, no-cache, must-revalidate, max-age=0"}
 
     if not db_path:
-        searched = [str(p) for p in possible_paths]
+        searched = [
+            str(Path(os.getcwd()) / "data_base"),
+            str(Path(__file__).parent.parent / "data_base"),
+            "/var/task/data_base",
+        ]
         return JSONResponse(
             {"status": "error", "message": f"Database directory not found. Searched: {searched}", "data": []},
             headers=headers
@@ -131,6 +274,10 @@ def get_scholarships():
     try:
         with open(catalog_path, "r", encoding="utf-8") as catalog_file:
             catalog = json.load(catalog_file)
+        records = _database_records()
+        opportunities = _institutional_funding(records)
+        catalog["institutional_opportunities"] = opportunities
+        catalog["last_verified"] = _latest_verified(catalog.get("last_verified"), opportunities)
         return JSONResponse({"status": "success", "data": catalog}, headers=headers)
     except (OSError, json.JSONDecodeError):
         return JSONResponse({"status": "error", "message": "Scholarship catalog could not be loaded.", "data": {}}, status_code=500, headers=headers)
@@ -145,6 +292,13 @@ def get_research_pathways():
     try:
         with open(catalog_path, "r", encoding="utf-8") as catalog_file:
             catalog = json.load(catalog_file)
+        records = _database_records()
+        details = _programme_research_details(records)
+        catalog["programme_research_details"] = details
+        catalog["last_verified"] = _latest_verified(catalog.get("last_verified"), details)
+        catalog["official_source_count"] = _official_source_count(
+            catalog.get("sources"), records, ("research", "faculty", "professor", "lab", "facilit")
+        )
         return JSONResponse({"status": "success", "data": catalog}, headers=headers)
     except (OSError, json.JSONDecodeError):
         return JSONResponse({"status": "error", "message": "Research pathway catalog could not be loaded.", "data": {}}, status_code=500, headers=headers)
