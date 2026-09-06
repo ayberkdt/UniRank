@@ -47,4 +47,7 @@ def test_programme_cards_keep_horizontal_country_identity():
     assert '<div class="country-card__flag" aria-hidden="true"></div>' in script
     assert ".country-card__flag {" in styles
     assert "background: var(--country-flag);" in styles
+    assert "width: 60%;" in styles
+    assert "opacity: 0.52;" in styles
+    assert "rgba(0, 0, 0, 0.42) 64%" in styles
     assert ".results-grid { grid-template-columns: repeat(2" not in styles

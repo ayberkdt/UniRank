@@ -94,6 +94,20 @@ Karar profilindeki altı eksen `scoring.js` çıktısından 0–100 ölçeğinde
 
 Uzun bölümler varsayılan olarak katlı tutulur. Başvuru gereklilikleri ilk açılışta görünür; müfredat, laboratuvar, hoca, maliyet dayanağı, burs, konaklama ve kaynak günlüğü kullanıcı istediğinde açılır. Bu düzen veri kapsamını azaltmaz, ilk okumadaki bilişsel yükü azaltır.
 
+### Davranış ve algı ilkeleri
+
+Arayüz kararları bir yasa listesine dekoratif olarak uydurulmaz; öğrencinin ana işi olan program eleme ve karşılaştırmayı hızlandıracak biçimde uygulanır:
+
+- Hick, Miller, Pareto ve Occam: kartta dört karar alanı, üç eylem ve tek baskın eylem bulunur; uzun kanıt dökümü detayda kalır.
+- Fitts ve hedef mesafesi: bütün kart detay açma hedefidir; favori, karşılaştırma ve detay kontrolleri en az 44 piksel yüksekliğindedir.
+- Jakob, benzerlik, yakınlık ve bağlantılılık: kartlar aynı bilgi sırasında, ilişkili alanlar aynı çerçevede ve aynı görsel dilde gösterilir.
+- Von Restorff ve seri konum: üniversite kimliği başlangıçta, “Programı incele” eylemi kartın sonunda tek vurgu rengiyle sunulur.
+- Doherty: ilk veri yüklenirken sonuç alanı boş kalmaz; anında yer tutucu kartlar gösterilir.
+- Zeigarnik ve Peak-End: doğrulama/eksik veri durumu görünür kalır; detay akışı resmî kaynaklar ve uygulanabilir eylemlerle biter.
+- Prägnanz ve Tesler: karmaşık kaynak ve puan hesapları veri katmanında tutulur; kullanıcıya kısa özet, açıklanabilir puan ve isteğe bağlı ayrıntı verilir.
+- Postel: eski ve yeni ülke adları gibi güvenli girdi varyasyonları kabul edilir, kullanıcıya tek standart çıktı sunulur.
+- Parkinson: filtreleme işi açık uçlu bırakılmaz; aktif filtreler görünürdür ve tek eylemle temizlenebilir.
+
 ## 10. Yayın öncesi ürün kontrolü
 
 JavaScript sözdizimi, çeviri anahtarları, erişilebilir adlar, klavye ile kapatma, kalıcı seçim ve duyarlı yerleşim kontrol edilir. Uygulamanın yerel API ile açıldığı doğrulanır. Veri araştırması içeren bir sürümde bunlara canary ve tam test paketi de eklenir.

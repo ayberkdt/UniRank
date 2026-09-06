@@ -55,3 +55,18 @@ def test_flags_do_not_depend_on_a_remote_image_service():
     assert "flagcdn.com" not in script
     for country in ("czechia", "greece", "norway", "portugal", "turkey", "united_kingdom", "usa"):
         assert f"{country}:" in country_visual
+
+    for code in ("cn", "cz", "gr", "no", "pt", "kr", "tr", "gb", "us"):
+        assert (ROOT / "public" / "assets" / "flags" / f"{code}.png").is_file()
+        assert f'/assets/flags/{code}.png' in country_visual
+
+
+def test_results_show_immediate_feedback_and_one_dominant_action():
+    script = (ROOT / "public" / "script.js").read_text(encoding="utf-8")
+    styles = (ROOT / "public" / "redesign.css").read_text(encoding="utf-8")
+
+    assert "function showLoadingCards()" in script
+    assert "program-card--skeleton" in script
+    assert "els.tableBody.setAttribute('aria-busy', 'true')" in script
+    assert ".program-card__actions .detail-btn" in styles
+    assert "background: var(--ui-accent);" in styles

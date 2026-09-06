@@ -4930,6 +4930,7 @@ input[type="range"]::-webkit-slider-thumb {
     box-shadow: inset 3px 0 0 var(--country-accent, var(--ui-accent)) !important;
     content-visibility: auto;
     contain-intrinsic-block-size: 330px;
+    cursor: pointer;
 }
 
 .program-card.country-card::before {
@@ -4937,7 +4938,7 @@ input[type="range"]::-webkit-slider-thumb {
     position: absolute;
     z-index: 0;
     inset: 0;
-    background: radial-gradient(circle at 92% 50%, rgba(var(--country-rgb), 0.12), transparent 48%);
+    background: radial-gradient(circle at 88% 50%, rgba(var(--country-rgb), 0.16), transparent 54%);
     content: '';
     pointer-events: none;
 }
@@ -4953,15 +4954,15 @@ input[type="range"]::-webkit-slider-thumb {
     top: 0;
     right: 0;
     bottom: 0;
-    width: min(46%, 520px);
+    width: 60%;
     border-radius: 0;
     background: var(--country-flag);
     background-position: center right;
     background-size: cover;
     background-repeat: no-repeat;
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.28) 34%, rgba(0, 0, 0, 0.92) 100%);
-    mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.28) 34%, rgba(0, 0, 0, 0.92) 100%);
-    opacity: 0.34;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.42) 64%, #000 100%);
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.42) 64%, #000 100%);
+    opacity: 0.52;
     transform-origin: center right;
     transition: opacity 180ms ease, transform 280ms ease;
     pointer-events: none;
@@ -4980,8 +4981,8 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .program-card.country-card:hover .country-card__flag {
-    opacity: 0.44;
-    transform: scale(1.025);
+    opacity: 0.62;
+    transform: scale(1.05);
 }
 
 .program-card.country-card.is-compared {
@@ -5531,7 +5532,7 @@ body.comparison-open { overflow: hidden; }
 
 .top-header {
     isolation: isolate;
-    min-height: 310px;
+    min-height: 264px;
     background-image:
         linear-gradient(90deg, rgba(10, 11, 16, 0.98) 0%, rgba(10, 11, 16, 0.93) 42%, rgba(10, 11, 16, 0.58) 72%, rgba(10, 11, 16, 0.28) 100%),
         url("assets/unirank-orbital-hero.webp");
@@ -5744,7 +5745,7 @@ body.comparison-open { overflow: hidden; }
 #detail-drawer .links-card .premium-btn { min-height: 43px; padding: 10px 12px; font-size: 12px; }
 
 @media (max-width: 760px) {
-    .top-header { min-height: 350px; background-position: 64% center; }
+    .top-header { min-height: 330px; background-position: 64% center; }
     #detail-drawer.drawer { top: 0; z-index: 2700; height: 100dvh; }
     .drawer-overlay { top: 0; height: 100dvh; }
     #detail-drawer .drawer-header { padding: 14px 16px; }
@@ -5757,6 +5758,84 @@ body.comparison-open { overflow: hidden; }
     .drawer-priority-group > summary small { grid-column: 1; grid-row: 2; }
     .drawer-priority-group > summary i { grid-column: 2; grid-row: 1 / span 2; }
     #detail-drawer .links-card .action-buttons { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* UX-law pass --------------------------------------------------------------
+   The card is one recognisable object (Prägnanz/connectedness), its four
+   decision facts form one repeated group (Miller/proximity/similarity), and a
+   single violet action is visually dominant (Hick/Von Restorff). */
+
+.program-card.country-card:focus-within {
+    border-color: color-mix(in srgb, var(--country-accent) 58%, var(--ui-accent)) !important;
+    box-shadow: inset 3px 0 0 var(--country-accent), 0 0 0 2px rgba(143, 125, 255, 0.18) !important;
+}
+
+.program-card__actions .favorite-button,
+.program-card__actions .compare-button,
+.program-card__actions .detail-btn {
+    min-height: 44px;
+}
+
+.program-card__actions .favorite-button { min-width: 44px; }
+
+.program-card__actions .detail-btn,
+.country-card .program-card__actions .detail-btn {
+    border-color: var(--ui-accent);
+    background: var(--ui-accent);
+    color: #111217;
+    box-shadow: 0 8px 22px rgba(143, 125, 255, 0.2);
+}
+
+.program-card__actions .detail-btn:hover,
+.program-card__actions .detail-btn:focus-visible,
+.country-card .program-card__actions .detail-btn:hover,
+.country-card .program-card__actions .detail-btn:focus-visible {
+    border-color: #b8adff;
+    background: #a99cff;
+    color: #0d0e12;
+    box-shadow: 0 10px 28px rgba(143, 125, 255, 0.32);
+}
+
+.program-card__actions .compare-button { background: rgba(25, 27, 32, 0.88); }
+
+.program-card--skeleton {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 18px;
+    min-height: 252px;
+    padding: 20px;
+    overflow: hidden;
+    border: 1px solid var(--ui-rule);
+    border-radius: 12px;
+    background: var(--ui-surface);
+}
+
+.program-card--skeleton > span,
+.program-card--skeleton i,
+.program-card--skeleton b {
+    display: block;
+    border-radius: 6px;
+    background: linear-gradient(100deg, #22252c 24%, #30343d 38%, #22252c 52%);
+    background-size: 220% 100%;
+    animation: result-skeleton-sweep 1.15s ease-in-out infinite;
+}
+
+.program-card--skeleton > span { width: 28px; height: 28px; }
+.program-card--skeleton > div { display: grid; align-content: start; gap: 12px; }
+.program-card--skeleton i:nth-child(1) { width: 34%; height: 13px; }
+.program-card--skeleton i:nth-child(2) { width: 58%; height: 26px; }
+.program-card--skeleton i:nth-child(3) { width: 44%; height: 15px; }
+.program-card--skeleton b { width: 100%; height: 82px; margin-top: 12px; }
+
+@keyframes result-skeleton-sweep {
+    from { background-position: 110% 0; }
+    to { background-position: -110% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .program-card--skeleton > span,
+    .program-card--skeleton i,
+    .program-card--skeleton b { animation: none; }
 }
 
 @media (max-width: 480px) {

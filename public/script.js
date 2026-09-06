@@ -765,11 +765,21 @@ function initSpotlightCards() {
 // Fetch Data
 let dataRefreshInFlight = false;
 
+function showLoadingCards() {
+    if (!els.tableBody || rawData.length || els.tableBody.children.length) return;
+    els.tableBody.setAttribute('aria-busy', 'true');
+    els.tableBody.innerHTML = Array.from({ length: 3 }, () => `
+        <article class="program-card program-card--skeleton" aria-hidden="true">
+            <span></span><div><i></i><i></i><i></i><b></b></div>
+        </article>`).join('');
+}
+
 async function fetchData({ silent = false } = {}) {
     if (dataRefreshInFlight) return false;
     dataRefreshInFlight = true;
     const loader = document.getElementById('loader');
     if (loader && !silent) loader.classList.add('active');
+    if (!silent) showLoadingCards();
     try {
         const res = await fetch('/api/universities');
         if (!res.ok) throw new Error(`API request failed (${res.status})`);
@@ -831,6 +841,7 @@ async function fetchData({ silent = false } = {}) {
     } finally {
         dataRefreshInFlight = false;
         if (loader && !silent) loader.classList.remove('active');
+        if (els.tableBody) els.tableBody.removeAttribute('aria-busy');
     }
 }
 
@@ -1853,6 +1864,10 @@ function renderTable() {
             toggleComparison(rid, event.currentTarget);
         });
         article.querySelector('.detail-btn').addEventListener('click', () => openDrawer(row));
+        article.addEventListener('click', (event) => {
+            if (event.target.closest('button, a, input, select, textarea, label')) return;
+            openDrawer(row);
+        });
         fragment.appendChild(article);
     });
     els.tableBody.appendChild(fragment);
